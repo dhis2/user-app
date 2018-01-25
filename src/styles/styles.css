@@ -1,0 +1,16 @@
+body {
+    background-color: #f3f3f3;
+    font-family: 'Roboto', sans-serif;
+}
+
+.data-table__filter-bar .data-table-pager--buttons {
+    margin: 8px 0;
+}
+
+.data-table__filter-bar__checkbox label {
+    color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.data-table__filter-bar__checkbox svg {
+    fill: rgba(0, 0, 0, 0.3) !important;
+}
