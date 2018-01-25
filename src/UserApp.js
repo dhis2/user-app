@@ -8,6 +8,7 @@ import headerBarStore$ from 'd2-ui/lib/app-header/headerBar.store';
 import withStateFrom from 'd2-ui/lib/component-helpers/withStateFrom';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import store from './store';
+import './styles/styles.css';
 import SectionLoader from './components/SectionLoader';
 
 const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);

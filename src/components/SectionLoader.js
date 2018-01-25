@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { Switch, Route } from 'react-router-dom';
+import api from '../api';
+import ROUTE_CONFIG from '../constants/routeConfig';
 import SideNav from './SideNav';
-import UserGrid from './UserGrid';
-import RoleGrid from './RoleGrid';
-import GroupGrid from './GroupGrid';
-import DeleteCurrentUserView from './DeleteCurrentUserView';
 
 const style = {
     marginTop: '4rem',
@@ -13,49 +12,41 @@ const style = {
 };
 
 class SectionLoader extends Component {
-    getSections() {
-        // TODO: Only return sections available to the currentUser
-        return [
-            {
-                key: 'user_section',
-                label: 'User',
-                path: '/user',
-                component: UserGrid,
-            },
-            {
-                key: 'user_role_section',
-                label: 'User role',
-                path: '/user-role',
-                component: RoleGrid,
-            },
-            {
-                key: 'user_group_section',
-                label: 'User group',
-                path: '/user-group',
-                component: GroupGrid,
-            },
-            {
-                key: 'delete_current_user_section',
-                label: 'Delete current user',
-                path: '/delete-current-user',
-                component: DeleteCurrentUserView,
-            },
-        ];
+    static contextTypes = {
+        d2: PropTypes.object,
+    };
+
+    componentWillMount() {
+        const { d2 } = this.context;
+        api.init(d2);
     }
 
-    renderRoutes(sections) {
-        return sections.map(section => {
-            const { key, path, component } = section;
-            return <Route key={key} path={path} component={component} />;
-        });
+    getRouteConfig() {
+        // TODO: Only return sections available to the currentUser
+        return ROUTE_CONFIG.reduce(
+            (routeConfig, configItem) => {
+                let { routes, sections } = routeConfig;
+                if (configItem.label) {
+                    sections.push(configItem);
+                }
+                routes.push(configItem);
+                return routeConfig;
+            },
+            { routes: [], sections: [] }
+        );
+    }
+
+    renderRoutes(routes) {
+        return routes.map(section => <Route {...section} />);
     }
 
     render() {
-        const sections = this.getSections();
+        const { routes, sections } = this.getRouteConfig();
+
         return (
             <main style={style}>
                 <SideNav sections={sections} />
-                {this.renderRoutes(sections)}
+                <Switch>{this.renderRoutes(routes)}</Switch>
             </main>
         );
     }
