@@ -9,7 +9,8 @@ import {
 /*
  * List can have the following states:
  * - Populated array after receiving a response
- * - Empty array during request
+ * - Empty array after receiving a response with no matches
+ * - Null during request
  * - Error message string on error
  */
 const listReducer = (state = null, { type, payload }) => {

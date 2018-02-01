@@ -12,26 +12,20 @@ import './styles/styles.css';
 import SectionLoader from './components/SectionLoader';
 
 const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
+
 injectTapEventPlugin();
 
-// TODO: pass config as parameter in index.js after manifest is loaded
-const UserApp = () => {
-    const config = {
-        baseUrl: 'http://localhost:8080/dhis/api',
-        schemas: ['userRole', 'user', 'userGroup'],
-    };
-    return (
-        <Provider store={store}>
-            <D2UIApp initConfig={config} LoadingComponent={LoadingMask}>
-                <div>
-                    <HeaderBar />
-                    <HashRouter hashType={'noslash'}>
-                        <SectionLoader />
-                    </HashRouter>
-                </div>
-            </D2UIApp>
-        </Provider>
-    );
-};
+const UserApp = config => (
+    <Provider store={store}>
+        <D2UIApp initConfig={config} LoadingComponent={LoadingMask}>
+            <div>
+                <HeaderBar />
+                <HashRouter hashType={'noslash'}>
+                    <SectionLoader />
+                </HashRouter>
+            </div>
+        </D2UIApp>
+    </Provider>
+);
 
 export default UserApp;

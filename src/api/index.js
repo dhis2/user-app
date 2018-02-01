@@ -1,21 +1,23 @@
 import {
     PAGE as DEFAULT_PAGE,
     PAGE_SIZE as DEFAULT_PAGE_SIZE,
-    USER_FIELDS as DEFAULT_USER_FIELDS,
+    USER_LIST_FIELDS as DEFAULT_USER_LIST_FIELDS,
+    USER_PROFILE_FIELDS as DEFAULT_USER_PROFILE_FIELDS,
 } from '../constants/defaults';
-import TRANSLATIONS from '../constants/translations';
 
 const init = d2 => {
     this.d2 = d2;
     this.d2Api = d2.Api.getApi();
-    addTranslations(d2.i18n.translations);
+    // addTranslations();
+
+    // TODO: Remove this
+    window.d2 = this.d2;
     window.d2Api = this.d2Api;
-    console.warn(`d2Api added to the window object for easy testing in the console.
+    console.warn(`d2 and d2Api added to the window object for easy testing in the console.
         Please remove this before building.`);
 };
 
 const parseFilter = (reqData, filter) => {
-    console.log(filter);
     const { query, inactiveMonths, selfRegistered, invitationStatus } = filter;
 
     if (query) reqData.query = query;
@@ -28,7 +30,7 @@ const parseFilter = (reqData, filter) => {
 
 const getUsers = (page = DEFAULT_PAGE, filter) => {
     const pageSize = DEFAULT_PAGE_SIZE;
-    const fields = DEFAULT_USER_FIELDS;
+    const fields = DEFAULT_USER_LIST_FIELDS;
     let reqData = {
         pageSize,
         fields,
@@ -38,16 +40,20 @@ const getUsers = (page = DEFAULT_PAGE, filter) => {
     return this.d2Api.get('users', reqData);
 };
 
-const addTranslations = apiTranslations => {
-    TRANSLATIONS.reduce((apiTranslations, item) => {
-        if (!apiTranslations[item.key]) {
-            apiTranslations[item.key] = item.value;
-        }
-        return apiTranslations;
-    }, apiTranslations);
+const getUser = id => {
+    if (typeof id !== 'string') {
+        throw new Error(
+            `api.getUser was called without passing a valid id. Value of id is: ${id}`
+        );
+    }
+    return this.d2Api.get(`users/${id}`, { fields: DEFAULT_USER_PROFILE_FIELDS });
 };
+
+const getD2 = () => this.d2;
 
 export default {
     init,
+    getD2,
     getUsers,
+    getUser,
 };

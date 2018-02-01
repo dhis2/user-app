@@ -1756,8 +1756,8 @@ currently-unhandled@^0.4.1:
     array-find-index "^1.0.1"
 
 d2-ui@^28.0.15:
-  version "28.0.15"
-  resolved "https://registry.yarnpkg.com/d2-ui/-/d2-ui-28.0.15.tgz#afee6f5a0c405086b62721f7f1218ad68148f055"
+  version "28.1.2"
+  resolved "https://registry.yarnpkg.com/d2-ui/-/d2-ui-28.1.2.tgz#e34bb8b40cd266ae1081e20d0e63daf46c203e06"
 
 d2-utilizr@^0.2.15:
   version "0.2.15"
@@ -5750,6 +5750,10 @@ requizzle@~0.2.1:
   resolved "https://registry.yarnpkg.com/requizzle/-/requizzle-0.2.1.tgz#6943c3530c4d9a7e46f1cddd51c158fc670cdbde"
   dependencies:
     underscore "~1.6.0"
+
+reselect@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/reselect/-/reselect-3.0.1.tgz#efdaa98ea7451324d092b2b2163a6a1d7a9a2147"
 
 resolve-cwd@^2.0.0:
   version "2.0.0"

@@ -8,6 +8,7 @@ const createAction = (type, payload) => {
     };
 };
 
+// Thunks
 export const getUsers = () => (dispatch, getState) => {
     const { filter, pager: { page } } = getState();
     dispatch(createAction(ACTIONS.LIST_REQUESTED));
@@ -17,6 +18,18 @@ export const getUsers = () => (dispatch, getState) => {
         .catch(error => dispatch(createAction(ACTIONS.LIST_ERRORED, error.message)));
 };
 
+export const getUser = id => (dispatch, getState) => {
+    dispatch(createAction(ACTIONS.ITEM_REQUESTED));
+    api
+        .getUser(id)
+        .then(response => {
+            console.info('RECEIVED USER: ', JSON.parse(JSON.stringify(response)));
+            return dispatch(createAction(ACTIONS.USER_ITEM_RECEIVED, response));
+        })
+        .catch(error => dispatch(createAction(ACTIONS.ITEM_ERRORED, error.message)));
+};
+
+// Regular actions
 export const incrementPage = currentPage => {
     return createAction(ACTIONS.PAGE_INCREMENTED, currentPage);
 };

@@ -8,6 +8,7 @@ import Heading from 'd2-ui/lib/headings/Heading.component';
 import 'd2-ui/lib/css/DataTable.css';
 import 'd2-ui/lib/css/Pagination.css';
 import { getUsers, incrementPage, decrementPage } from '../../actions';
+import createUserContextActions from './userContextActions';
 import UserFilter from './UserFilter';
 import ErrorMessage from '../ErrorMessage';
 
@@ -34,6 +35,14 @@ class UserList extends Component {
         incrementPage: PropTypes.func.isRequired,
         decrementPage: PropTypes.func.isRequired,
     };
+
+    constructor(props) {
+        super(props);
+        const { actions, icons, isActionAllowed } = createUserContextActions(props);
+        this.contextMenuActions = actions;
+        this.contextMenuIcons = icons;
+        this.isContextActionAllowed = isActionAllowed;
+    }
 
     componentWillMount() {
         const { getUsers } = this.props;
@@ -97,6 +106,7 @@ class UserList extends Component {
 
     renderDataTable() {
         const { users } = this.props;
+
         if (typeof users === 'string') {
             const introText = 'There was an error fetching the user list:';
             return <ErrorMessage introText={introText} errorMessage={users} />;
@@ -115,7 +125,9 @@ class UserList extends Component {
                 rows={users}
                 columns={['displayName', 'userName']}
                 primaryAction={this.toEditView.bind(this)}
-                isContextActionAllowed={() => false}
+                contextMenuActions={this.contextMenuActions}
+                contextMenuIcons={this.contextMenuIcons}
+                isContextActionAllowed={this.isContextActionAllowed}
             />
         );
     }
