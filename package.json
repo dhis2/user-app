@@ -8,6 +8,8 @@
         "d2-ui": "^28.0.15",
         "d2-utilizr": "^0.2.15",
         "d3-color": "^1.0.3",
+        "i18next": "^10.3.0",
+        "i18next-xhr-backend": "^1.5.1",
         "material-ui": "^0.20.0",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
@@ -17,16 +19,27 @@
         "react-scripts": "1.1.0",
         "react-tap-event-plugin": "^3.0.2",
         "redux": "^3.7.2",
+        "redux-form": "^7.2.3",
+        "redux-form-material-ui": "^4.3.3",
         "redux-thunk": "^2.2.0",
+        "reselect": "^3.0.1",
         "rxjs": "^5.5.6"
     },
     "scripts": {
-        "start": "react-scripts start",
+        "start": "npm run convert-po  && react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test --env=jsdom",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "convert-po": "node po-converter.js",
+        "extract-pot": "node pot-extractor.js",
+        "refresh-translations-template": "npm run extract-pot -- -o translations.pot && git add ./public/i18n/translations.pot"
     },
     "devDependencies": {
+        "fs": "^0.0.1-security",
+        "i18next-conv": "^6.0.0",
+        "i18next-scanner": "^2.4.4",
+        "minimist": "^1.2.0",
+        "recursive-readdir": "^2.2.1",
         "redux-logger": "^3.0.6"
     }
 }

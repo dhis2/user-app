@@ -7,6 +7,8 @@ const style = {
     marginRight: '1rem',
 };
 
+// TODO: Translate these babies
+
 export const QUERY = {
     name: 'query',
     value: '',

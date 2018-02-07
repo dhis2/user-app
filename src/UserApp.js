@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -10,28 +11,30 @@ import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import store from './store';
 import './styles/styles.css';
 import SectionLoader from './components/SectionLoader';
+import SnackbarContainer from './components/SnackbarContainer';
+import DialogContainer from './components/DialogContainer';
 
 const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
+
 injectTapEventPlugin();
 
-// TODO: pass config as parameter in index.js after manifest is loaded
-const UserApp = () => {
-    const config = {
-        baseUrl: 'http://localhost:8080/dhis/api',
-        schemas: ['userRole', 'user', 'userGroup'],
-    };
-    return (
-        <Provider store={store}>
-            <D2UIApp initConfig={config} LoadingComponent={LoadingMask}>
-                <div>
-                    <HeaderBar />
-                    <HashRouter hashType={'noslash'}>
-                        <SectionLoader />
-                    </HashRouter>
-                </div>
-            </D2UIApp>
-        </Provider>
-    );
+const UserApp = ({ config }) => (
+    <Provider store={store}>
+        <D2UIApp initConfig={config} LoadingComponent={LoadingMask}>
+            <div>
+                <HeaderBar />
+                <HashRouter hashType={'noslash'}>
+                    <SectionLoader />
+                </HashRouter>
+                <SnackbarContainer />
+                <DialogContainer />
+            </div>
+        </D2UIApp>
+    </Provider>
+);
+
+UserApp.propTypes = {
+    config: PropTypes.object.isRequired,
 };
 
 export default UserApp;

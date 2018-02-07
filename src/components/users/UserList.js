@@ -7,7 +7,16 @@ import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import 'd2-ui/lib/css/DataTable.css';
 import 'd2-ui/lib/css/Pagination.css';
-import { getUsers, incrementPage, decrementPage } from '../../actions';
+import {
+    getUsers,
+    incrementPage,
+    decrementPage,
+    showSnackbar,
+    hideSnackbar,
+    showDialog,
+    hideDialog,
+} from '../../actions';
+import createUserContextActions from './UserContextActions';
 import UserFilter from './UserFilter';
 import ErrorMessage from '../ErrorMessage';
 
@@ -35,27 +44,31 @@ class UserList extends Component {
         decrementPage: PropTypes.func.isRequired,
     };
 
+    constructor(props) {
+        super(props);
+        const contextActions = createUserContextActions(props);
+        Object.assign(this, contextActions);
+    }
+
     componentWillMount() {
         const { getUsers } = this.props;
         getUsers();
     }
 
-    toEditView(user) {
+    selectUserAndGoToNextPage(user) {
         const { history } = this.props;
         const { id } = user;
-        console.log('Go to edit view for this user: ', user);
         history.push(`/users/edit/${id}`);
     }
 
     renderPagination() {
         const {
-            getUsers,
             users,
             incrementPage,
             decrementPage,
+            pager,
             pager: { page, pageCount, total, currentlyShown },
         } = this.props;
-
         const style =
             users && (users.length === 0 || typeof users === 'string')
                 ? { visibility: 'hidden' }
@@ -65,12 +78,10 @@ class UserList extends Component {
             hasNextPage: () => users && users.length && page < pageCount,
             hasPreviousPage: () => users && users.length && page > 1,
             onNextPageClick: () => {
-                incrementPage(page);
-                getUsers();
+                incrementPage(pager);
             },
             onPreviousPageClick: () => {
-                decrementPage(page);
-                getUsers();
+                decrementPage(pager);
             },
             total,
             currentlyShown,
@@ -97,6 +108,7 @@ class UserList extends Component {
 
     renderDataTable() {
         const { users } = this.props;
+
         if (typeof users === 'string') {
             const introText = 'There was an error fetching the user list:';
             return <ErrorMessage introText={introText} errorMessage={users} />;
@@ -114,8 +126,10 @@ class UserList extends Component {
             <DataTable
                 rows={users}
                 columns={['displayName', 'userName']}
-                primaryAction={this.toEditView.bind(this)}
-                isContextActionAllowed={() => false}
+                primaryAction={this.selectUserAndGoToNextPage.bind(this)}
+                contextMenuActions={this.contextMenuActions}
+                contextMenuIcons={this.contextMenuIcons}
+                isContextActionAllowed={this.isContextActionAllowed}
             />
         );
     }
@@ -142,4 +156,8 @@ export default connect(mapStateToProps, {
     getUsers,
     incrementPage,
     decrementPage,
+    showSnackbar,
+    hideSnackbar,
+    showDialog,
+    hideDialog,
 })(UserList);

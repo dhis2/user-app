@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-class EditUser extends Component {
+class UserEdit extends Component {
     render() {
         const { match: { params: { id } } } = this.props;
         return (
@@ -15,4 +15,4 @@ class EditUser extends Component {
     }
 }
 
-export default EditUser;
+export default UserEdit;
