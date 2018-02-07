@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import i18next from 'i18next';
+import _ from '../../constants/lodash';
+import { parseDateFromUTCString } from '../../utils';
 import Paper from 'material-ui/Paper';
 import { List, ListItem } from 'material-ui/List';
-import { translate } from '../../utils';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import IconLink from '../IconLink';
 import ErrorMessage from '../ErrorMessage';
 import { connect } from 'react-redux';
-import { USER_PROFILE_FIELDS_JSON as PROFILE_FIELDS } from '../../constants/defaults';
+import { USER_PROFILE_DISPLAY_FIELD_CONFIG } from '../../constants/defaults';
 import { getUser } from '../../actions';
 
 const styles = {
@@ -34,9 +36,44 @@ class UserProfile extends Component {
     }
 
     renderProfileFields(user) {
-        return PROFILE_FIELDS.map((field, index) => {
-            const label = translate(field);
-            const value = user[field] || ' ';
+        // TODO: if logic like this is needed elsewhere, move it to utils
+        // If not, then this is an over engineered turd
+        return USER_PROFILE_DISPLAY_FIELD_CONFIG.map((field, index) => {
+            let {
+                key,
+                label,
+                removeText,
+                parseDate,
+                nestedPropselector,
+                parseArrayAsCommaDelimitedString,
+            } = field;
+            label = i18next.t(label);
+            let value = user[key];
+
+            if (nestedPropselector) {
+                nestedPropselector.forEach(selector => {
+                    value = value[selector];
+                });
+            }
+
+            if (
+                value &&
+                typeof value.length !== 'undefined' &&
+                parseArrayAsCommaDelimitedString
+            ) {
+                value = value
+                    .map(item => item[parseArrayAsCommaDelimitedString])
+                    .join(', ');
+            }
+
+            if (value && removeText) {
+                value = _.capitalize(value.replace(removeText, ''));
+            }
+
+            if (value && parseDate && typeof value === 'string') {
+                value = parseDateFromUTCString(value);
+            }
+
             return (
                 <ListItem
                     key={index}
@@ -50,7 +87,6 @@ class UserProfile extends Component {
 
     render() {
         const { user } = this.props;
-
         if (user === null) {
             return <LoadingMask />;
         }

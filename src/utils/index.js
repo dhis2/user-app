@@ -1,5 +1,5 @@
 import api from '../api';
-import _ from '../constants/lodash';
+import i18next from 'i18next';
 
 export const parseDateFromUTCString = utcString => {
     const d2 = api.getD2();
@@ -13,7 +13,26 @@ export const parseDateFromUTCString = utcString => {
     return new Intl.DateTimeFormat(locale, options).format(date);
 };
 
-export const translate = key => {
-    const d2 = api.getD2();
-    return d2.i18n.getTranslation(_.snakeCase(key));
+export const checkPasswordForErrors = password => {
+    const upperCase = /^(?=.*[A-Z]).+$/;
+    const digit = /^(?=.*[0-9]).+$/;
+    const specialChar = /[`~!@#$%^&*()_|+\-=?;:'",.<>{}[\]\\/]/;
+
+    if (password.length < 8) {
+        return i18next.t('Password should be at least 8 characters long');
+    }
+    if (password.length > 35) {
+        return i18next.t('Password should be no longer than 34 characters');
+    }
+    if (!upperCase.test(password)) {
+        return i18next.t('Password should contain at least one UPPERCASE letter');
+    }
+    if (!digit.test(password)) {
+        return i18next.t('Password should contain at least one number');
+    }
+    if (!specialChar.test(password)) {
+        return i18next.t('Password should have at least one special character');
+    }
+
+    return null;
 };

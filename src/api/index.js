@@ -1,14 +1,14 @@
 import {
     PAGE as DEFAULT_PAGE,
     PAGE_SIZE as DEFAULT_PAGE_SIZE,
-    USER_LIST_FIELDS as DEFAULT_USER_LIST_FIELDS,
-    USER_PROFILE_FIELDS as DEFAULT_USER_PROFILE_FIELDS,
+    USER_LIST_FIELD_FILTER,
+    USER_PROFILE_FIELD_FILTER,
 } from '../constants/defaults';
 
 const init = d2 => {
     this.d2 = d2;
     this.d2Api = d2.Api.getApi();
-    // addTranslations();
+    this.pager = null;
 
     // TODO: Remove this
     window.d2 = this.d2;
@@ -30,14 +30,14 @@ const parseFilter = (reqData, filter) => {
 
 const getUsers = (page = DEFAULT_PAGE, filter) => {
     const pageSize = DEFAULT_PAGE_SIZE;
-    const fields = DEFAULT_USER_LIST_FIELDS;
+    const fields = USER_LIST_FIELD_FILTER;
     let reqData = {
         pageSize,
         fields,
         page,
     };
     reqData = parseFilter(reqData, filter);
-    return this.d2Api.get('users', reqData);
+    return this.d2.models.users.list(reqData);
 };
 
 const getUser = id => {
@@ -46,7 +46,21 @@ const getUser = id => {
             `api.getUser was called without passing a valid id. Value of id is: ${id}`
         );
     }
-    return this.d2Api.get(`users/${id}`, { fields: DEFAULT_USER_PROFILE_FIELDS });
+    return this.d2.models.user.get(id, { fields: USER_PROFILE_FIELD_FILTER });
+};
+
+const getUserByUsername = username => {
+    return this.d2.models.users
+        .filter()
+        .on('userCredentials.username')
+        .equals(username)
+        .list({ fields: ['id'] });
+};
+
+const replicateUser = (id, username, password) => {
+    const url = `/users/${id}/replica`;
+    const data = { username, password };
+    return this.d2Api.post(url, data);
 };
 
 const getD2 = () => this.d2;
@@ -56,4 +70,6 @@ export default {
     getD2,
     getUsers,
     getUser,
+    getUserByUsername,
+    replicateUser,
 };

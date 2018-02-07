@@ -18,7 +18,7 @@ const listReducer = (state = null, { type, payload }) => {
         case LIST_REQUESTED:
             return null;
         case USER_LIST_RECEIVED:
-            return payload.users.map(parseUser);
+            return payload.toArray().map(parseUser);
         case USER_ROLE_LIST_RECEIVED:
             return payload.users.map(parseUserRole);
         case USER_GROUP_LIST_RECEIVED:
@@ -30,11 +30,10 @@ const listReducer = (state = null, { type, payload }) => {
     }
 };
 
-const parseUser = user => ({
-    id: user.id,
-    displayName: user.displayName,
-    userName: user.userCredentials.username,
-});
+const parseUser = user => {
+    user.userName = user.userCredentials.username;
+    return user;
+};
 
 const parseUserRole = role => ({
     displayName: role.displayName,

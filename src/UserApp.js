@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -10,12 +11,14 @@ import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import store from './store';
 import './styles/styles.css';
 import SectionLoader from './components/SectionLoader';
+import SnackbarContainer from './components/SnackbarContainer';
+import DialogContainer from './components/DialogContainer';
 
 const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
 
 injectTapEventPlugin();
 
-const UserApp = config => (
+const UserApp = ({ config }) => (
     <Provider store={store}>
         <D2UIApp initConfig={config} LoadingComponent={LoadingMask}>
             <div>
@@ -23,9 +26,15 @@ const UserApp = config => (
                 <HashRouter hashType={'noslash'}>
                     <SectionLoader />
                 </HashRouter>
+                <SnackbarContainer />
+                <DialogContainer />
             </div>
         </D2UIApp>
     </Provider>
 );
+
+UserApp.propTypes = {
+    config: PropTypes.object.isRequired,
+};
 
 export default UserApp;
