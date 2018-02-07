@@ -21,24 +21,28 @@ const ROUTE_CONFIG = [
     {
         key: 'user_section',
         label: 'Users',
+        icon: 'person',
         path: '/users',
         component: UserList,
     },
     {
         key: 'user_role_section',
         label: 'User role',
+        icon: 'folder_shared',
         path: '/user-role',
         component: RoleGrid,
     },
     {
         key: 'user_group_section',
         label: 'User group',
+        icon: 'group',
         path: '/user-group',
         component: GroupGrid,
     },
     {
         key: 'delete_current_user_section',
         label: 'Delete current user',
+        icon: 'delete',
         path: '/delete-current-user',
         component: DeleteCurrentUserView,
     },
