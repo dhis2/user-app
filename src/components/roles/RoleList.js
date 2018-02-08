@@ -2,28 +2,28 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
-    getUsers,
+    getRoles,
     showSnackbar,
     hideSnackbar,
     showDialog,
     hideDialog,
 } from '../../actions';
 import List from '../List';
-import UserContextMenuActions from './UserContextMenuActions';
-import UserFilter from './UserFilter';
+import RoleContextMenuActions from './RoleContextMenuActions';
+import SearchFilter from '../SearchFilter';
 
-class UserList extends Component {
+class RoleList extends Component {
     static propTypes = {
         match: PropTypes.object.isRequired,
         location: PropTypes.object.isRequired,
         history: PropTypes.object.isRequired,
         users: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
-        getUsers: PropTypes.func.isRequired,
+        getRoles: PropTypes.func.isRequired,
     };
 
     constructor(props) {
         super(props);
-        const contextActions = UserContextMenuActions.create(props);
+        const contextActions = RoleContextMenuActions.create(props);
         Object.assign(this, contextActions);
     }
 
@@ -34,12 +34,12 @@ class UserList extends Component {
     }
 
     render() {
-        const { getUsers } = this.props;
+        const { getRoles } = this.props;
         return (
             <List
-                getItems={getUsers}
-                columns={['displayName', 'userName']}
-                FilterComponent={UserFilter}
+                getItems={getRoles}
+                FilterComponent={SearchFilter}
+                columns={['displayName', 'description']}
                 primaryAction={this.selectUserAndGoToNextPage.bind(this)}
                 contextMenuActions={this.contextMenuActions}
                 contextMenuIcons={this.contextMenuIcons}
@@ -50,9 +50,9 @@ class UserList extends Component {
 }
 
 export default connect(null, {
-    getUsers,
+    getRoles,
     showSnackbar,
     hideSnackbar,
     showDialog,
     hideDialog,
-})(UserList);
+})(RoleList);

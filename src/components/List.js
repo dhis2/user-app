@@ -71,12 +71,12 @@ class List extends Component {
     }
 
     renderHeaderBar() {
-        const { FilterComponent } = this.props;
+        const { FilterComponent, getItems } = this.props;
         return (
             <div className="data-table__filter-bar" style={styles.clearBoth}>
                 <div style={styles.headerBarPagination}>{this.renderPagination()}</div>
                 <div>
-                    <FilterComponent />
+                    <FilterComponent getItems={getItems} />
                 </div>
             </div>
         );
@@ -85,6 +85,7 @@ class List extends Component {
     renderDataTable() {
         const {
             users,
+            columns,
             primaryAction,
             contextMenuActions,
             contextMenuIcons,
@@ -107,7 +108,7 @@ class List extends Component {
         return (
             <DataTable
                 rows={users}
-                columns={['displayName', 'userName']}
+                columns={columns}
                 primaryAction={primaryAction}
                 contextMenuActions={contextMenuActions}
                 contextMenuIcons={contextMenuIcons}

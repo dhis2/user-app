@@ -2,8 +2,8 @@ import UserList from '../components/users/UserList';
 import UserEdit from '../components/users/UserEdit';
 import UserProfile from '../components/users/UserProfile';
 import PageNotFound from '../components/PageNotFound';
-import RoleGrid from '../components/RoleGrid';
-import GroupGrid from '../components/GroupGrid';
+import RoleList from '../components/roles/RoleList';
+import GroupList from '../components/groups/GroupList';
 import DeleteCurrentUserView from '../components/DeleteCurrentUserView';
 
 // Label property is used in sidebar, so routes without a label will be omitted
@@ -30,14 +30,14 @@ const ROUTE_CONFIG = [
         label: 'User role',
         icon: 'folder_shared',
         path: '/user-role',
-        component: RoleGrid,
+        component: RoleList,
     },
     {
         key: 'user_group_section',
         label: 'User group',
         icon: 'group',
         path: '/user-group',
-        component: GroupGrid,
+        component: GroupList,
     },
     {
         key: 'delete_current_user_section',

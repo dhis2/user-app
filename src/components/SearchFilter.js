@@ -1,52 +1,36 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import _ from '../../constants/lodash';
-import { updateFilter, getUsers } from '../../actions';
+import _ from '../constants/lodash';
+import { updateFilter } from '../actions';
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
-import {
-    FIELD_NAMES,
-    getQuery,
-    getInactiveMonths,
-    getInvitationStatus,
-    getSelfRegistered,
-} from '../../utils/filterFields';
+import { FIELD_NAMES, getQuery } from '../utils/filterFields';
 
-class UserFilter extends Component {
+class SearchFilter extends Component {
     constructor(props) {
         super(props);
         this.onQueryChange = this.onQueryChange.bind(this);
-        this.onSelfRegisteredChange = this.onSelfRegisteredChange.bind(this);
         this.debouncedOnFilterChange = _.debounce(this.onFilterChange.bind(this), 375);
     }
 
     onFilterChange(fieldName, newValue) {
-        const { filter, getUsers, updateFilter } = this.props;
+        const { filter, getItems, updateFilter } = this.props;
         // Meh empty option in Select returns null as a string
         if (newValue === 'null') {
             newValue = null;
         }
         updateFilter(filter, fieldName, newValue);
-        getUsers();
+        getItems();
     }
 
     onQueryChange(event) {
         this.debouncedOnFilterChange(FIELD_NAMES.QUERY, event.target.value);
     }
 
-    onSelfRegisteredChange(event, value) {
-        this.onFilterChange(FIELD_NAMES.SELF_REGISTERED, value);
-    }
-
     getFields() {
         const { filter } = this.props;
-        const query = getQuery(filter.query, this.onQueryChange);
-        const inactiveMonths = getInactiveMonths(filter.inactiveMonths);
-        const invitationStatus = getInvitationStatus(filter.invitationStatus);
-        const selfRegistered = getSelfRegistered(
-            filter.selfRegistered,
-            this.onSelfRegisteredChange
-        );
-        return [query, inactiveMonths, invitationStatus, selfRegistered];
+        const customStyle = { marginBottom: '24px' };
+        const query = getQuery(filter.query, this.onQueryChange, customStyle);
+        return [query];
     }
 
     render() {
@@ -66,5 +50,4 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, {
     updateFilter,
-    getUsers,
-})(UserFilter);
+})(SearchFilter);

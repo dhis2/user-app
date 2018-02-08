@@ -1,18 +1,11 @@
 import { PAGER as DEFAULT_PAGER } from '../constants/defaults';
-import {
-    USER_LIST_RECEIVED,
-    USER_ROLE_LIST_RECEIVED,
-    USER_GROUP_LIST_RECEIVED,
-    PAGER_RESET,
-} from '../constants/actionTypes';
+import { LIST_RECEIVED, PAGER_RESET } from '../constants/actionTypes';
 
 const pagerReducer = (state = DEFAULT_PAGER, { type, payload }) => {
     switch (type) {
         case PAGER_RESET:
             return { ...DEFAULT_PAGER };
-        case USER_LIST_RECEIVED:
-        case USER_ROLE_LIST_RECEIVED:
-        case USER_GROUP_LIST_RECEIVED:
+        case LIST_RECEIVED:
             return parsePager(payload.pager);
         default:
             return state;

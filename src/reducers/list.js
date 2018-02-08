@@ -1,10 +1,4 @@
-import {
-    LIST_REQUESTED,
-    USER_LIST_RECEIVED,
-    USER_ROLE_LIST_RECEIVED,
-    USER_GROUP_LIST_RECEIVED,
-    LIST_ERRORED,
-} from '../constants/actionTypes';
+import { LIST_REQUESTED, LIST_RECEIVED, LIST_ERRORED } from '../constants/actionTypes';
 
 /*
  * List can have the following states:
@@ -17,12 +11,8 @@ const listReducer = (state = null, { type, payload }) => {
     switch (type) {
         case LIST_REQUESTED:
             return null;
-        case USER_LIST_RECEIVED:
-            return payload.toArray().map(parseUser);
-        case USER_ROLE_LIST_RECEIVED:
-            return payload.users.map(parseUserRole);
-        case USER_GROUP_LIST_RECEIVED:
-            return payload.users.map(parseUserGroup);
+        case LIST_RECEIVED:
+            return parseListType(payload);
         case LIST_ERRORED:
             return payload;
         default:
@@ -30,17 +20,20 @@ const listReducer = (state = null, { type, payload }) => {
     }
 };
 
-const parseUser = user => {
-    user.userName = user.userCredentials.username;
-    return user;
+const parseListType = modelCollection => {
+    const type = modelCollection.modelDefinition.name;
+    return modelCollection.toArray().map(mappings[type]);
 };
 
-const parseUserRole = role => ({
-    displayName: role.displayName,
-});
-
-const parseUserGroup = group => ({
-    displayName: group.displayName,
-});
+const mappings = {
+    user: item => {
+        item.userName = item.userCredentials.username;
+        return item;
+    },
+    userRole: item => item,
+    userGroup: item => {
+        return item;
+    },
+};
 
 export default listReducer;

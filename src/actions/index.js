@@ -4,18 +4,19 @@ import api from '../api';
 // Helpers
 const createAction = (type, payload) => ({ type, payload });
 
-const createListRequestActionSequence = (
-    dispatch,
-    promise,
-    receivedActionName,
-    silent
-) => {
+const createListRequestActionSequence = (dispatch, promise, silent) => {
     if (!silent) {
         dispatch(createAction(ACTIONS.LIST_REQUESTED));
     }
     promise
-        .then(response => dispatch(createAction(receivedActionName, response)))
+        .then(response => dispatch(createAction(ACTIONS.LIST_RECEIVED, response)))
         .catch(error => dispatch(createAction(ACTIONS.LIST_ERRORED, error.message)));
+};
+
+const getListGeneric = (listName, dispatch, getState, silent) => {
+    const { filter, pager: { page } } = getState();
+    const promise = api[`get${listName}`](page, filter);
+    createListRequestActionSequence(dispatch, promise, silent);
 };
 
 const createItemRequestActionSequence = (dispatch, promise, receivedActionName) => {
@@ -35,29 +36,23 @@ export const getUser = id => (dispatch, getState) => {
 };
 
 export const getUsers = silent => (dispatch, getState) => {
-    const { filter, pager: { page } } = getState();
-    createListRequestActionSequence(
-        dispatch,
-        api.getUsers(page, filter),
-        ACTIONS.USER_LIST_RECEIVED,
-        silent
-    );
+    getListGeneric('Users', dispatch, getState, silent);
+};
+
+export const getRoles = silent => (dispatch, getState) => {
+    getListGeneric('Roles', dispatch, getState, silent);
+};
+
+export const getGroups = silent => (dispatch, getState) => {
+    getListGeneric('Groups', dispatch, getState, silent);
 };
 
 export const incrementPage = pager => dispatch => {
-    createListRequestActionSequence(
-        dispatch,
-        pager.getNextPage(),
-        ACTIONS.USER_LIST_RECEIVED
-    );
+    createListRequestActionSequence(dispatch, pager.getNextPage());
 };
 
 export const decrementPage = pager => dispatch => {
-    createListRequestActionSequence(
-        dispatch,
-        pager.getPreviousPage(),
-        ACTIONS.USER_LIST_RECEIVED
-    );
+    createListRequestActionSequence(dispatch, pager.getPreviousPage());
 };
 
 // Regular actions

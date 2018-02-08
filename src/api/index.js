@@ -2,6 +2,8 @@ import {
     PAGE as DEFAULT_PAGE,
     PAGE_SIZE as DEFAULT_PAGE_SIZE,
     USER_LIST_FIELD_FILTER,
+    USER_ROLES_LIST_FIELD_FILTER,
+    USER_GROUPS_LIST_FIELD_FILTER,
     USER_PROFILE_FIELD_FILTER,
 } from '../constants/defaults';
 
@@ -17,27 +19,36 @@ const init = d2 => {
         Please remove this before building.`);
 };
 
-const parseFilter = (reqData, filter) => {
+const parseRequestData = (page = DEFAULT_PAGE, filter, fields) => {
     const { query, inactiveMonths, selfRegistered, invitationStatus } = filter;
 
-    if (query) reqData.query = query;
-    if (inactiveMonths) reqData.inactiveMonths = inactiveMonths;
-    if (selfRegistered) reqData.selfRegistered = selfRegistered;
-    if (invitationStatus) reqData.invitationStatus = invitationStatus;
-
-    return reqData;
-};
-
-const getUsers = (page = DEFAULT_PAGE, filter) => {
-    const pageSize = DEFAULT_PAGE_SIZE;
-    const fields = USER_LIST_FIELD_FILTER;
-    let reqData = {
-        pageSize,
+    let requestData = {
+        pageSize: DEFAULT_PAGE_SIZE,
         fields,
         page,
     };
-    reqData = parseFilter(reqData, filter);
-    return this.d2.models.users.list(reqData);
+
+    if (query) requestData.query = query;
+    if (inactiveMonths) requestData.inactiveMonths = inactiveMonths;
+    if (selfRegistered) requestData.selfRegistered = selfRegistered;
+    if (invitationStatus) requestData.invitationStatus = invitationStatus;
+
+    return requestData;
+};
+
+const getUsers = (page = DEFAULT_PAGE, filter) => {
+    const requestData = parseRequestData(page, filter, USER_LIST_FIELD_FILTER);
+    return this.d2.models.users.list(requestData);
+};
+
+const getRoles = (page, filter) => {
+    const requestData = parseRequestData(page, filter, USER_ROLES_LIST_FIELD_FILTER);
+    return this.d2.models.userRoles.list(requestData);
+};
+
+const getGroups = (page, filter) => {
+    const requestData = parseRequestData(page, filter, USER_GROUPS_LIST_FIELD_FILTER);
+    return this.d2.models.userGroups.list(requestData);
 };
 
 const getUser = id => {
@@ -69,6 +80,8 @@ export default {
     init,
     getD2,
     getUsers,
+    getRoles,
+    getGroups,
     getUser,
     getUserByUsername,
     replicateUser,

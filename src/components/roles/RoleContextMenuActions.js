@@ -2,18 +2,18 @@ import React from 'react';
 import Action from 'd2-ui/lib/action/Action';
 import _ from '../../constants/lodash';
 import i18next from 'i18next';
-import ReplicateUserForm from './ReplicateUserForm';
+import ReplicateUserForm from '../users/ReplicateUserForm';
 
-const createUserContextActions = parentProps => {
-    let userContextMenu = new UserContextMenu(parentProps);
-    return {
-        contextMenuActions: userContextMenu.actions,
-        contextMenuIcons: userContextMenu.icons,
-        isContextActionAllowed: userContextMenu.isActionAllowed,
-    };
-};
+export default class RoleContextMenuActions {
+    static create(parentProps) {
+        const instance = new RoleContextMenuActions(parentProps);
+        return {
+            contextMenuActions: instance.actions,
+            contextMenuIcons: instance.icons,
+            isContextActionAllowed: instance.isActionAllowed,
+        };
+    }
 
-class UserContextMenu {
     constructor(parentProps) {
         this.parentProps = parentProps;
         this.setActions();
@@ -119,5 +119,3 @@ class UserContextMenu {
         console.log('enable: ', action);
     }
 }
-
-export default createUserContextActions;
