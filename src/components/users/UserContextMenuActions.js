@@ -1,121 +1,92 @@
 import React from 'react';
 import Action from 'd2-ui/lib/action/Action';
-import _ from '../../constants/lodash';
+import { navigateTo } from '../../utils';
+import store from '../../store';
+import {
+    getUsers,
+    showSnackbar,
+    hideSnackbar,
+    showDialog,
+    hideDialog,
+} from '../../actions';
 import i18next from 'i18next';
 import ReplicateUserForm from './ReplicateUserForm';
 
-export default class UserContextMenuActions {
-    static create(parentProps) {
-        const instance = new UserContextMenuActions(parentProps);
-        return {
-            contextMenuActions: instance.actions,
-            contextMenuIcons: instance.icons,
-            isContextActionAllowed: instance.isActionAllowed,
-        };
-    }
+export const isUserContextActionAllowed = () => true;
 
-    constructor(parentProps) {
-        this.parentProps = parentProps;
-        this.setActions();
-        this.setIcons();
-    }
+export const userContextMenuIcons = {
+    profile: 'account_circle',
+    edit: 'edit',
+    assign_search_org_units: 'account_balance',
+    remove: 'delete',
+    replicate: 'content_copy',
+    disable: 'block',
+    enable: 'check',
+};
 
-    setActions() {
-        this.actions = Action.createActionsFromNames([
-            'profile',
-            'edit',
-            'assign_search_org_units',
-            'remove',
-            'replicate',
-            'disable',
-            'enable',
-        ]);
-        Object.keys(this.actions).forEach(actionName => {
-            const handlerName = `${_.camelCase(actionName)}ActionHandler`;
-            const actionHandler = this[handlerName].bind(this);
-            this.actions[actionName].subscribe(action => {
-                actionHandler(action);
-            });
+export const userContextMenuActions = Action.createActionsFromNames([
+    'profile',
+    'edit',
+    'assign_search_org_units',
+    'remove',
+    'replicate',
+    'disable',
+    'enable',
+]);
+
+userContextMenuActions.profile.subscribe(({ data: { id } }) => {
+    navigateTo(`/users/view/${id}`);
+});
+
+userContextMenuActions.edit.subscribe(({ data: { id } }) => {
+    navigateTo(`/users/edit/${id}`);
+});
+
+userContextMenuActions.assign_search_org_units.subscribe(action => {
+    console.log('assignSearchOrgUnits: ', action);
+});
+
+userContextMenuActions.remove.subscribe(({ data: user }) => {
+    console.log(user);
+    const snackbarProps = {
+        message: i18next.t('Are you sure you want to remove this user?'),
+        action: i18next.t('Confirm'),
+        autoHideDuration: null,
+        onActionClick: () => onRemoveConfirm(user),
+    };
+    store.dispatch(showSnackbar(snackbarProps));
+});
+
+const onRemoveConfirm = user => {
+    const successMsg = i18next.t('User removed succesfully');
+    const errorMsg = i18next.t('There was a problem deleting the user');
+
+    store.dispatch(hideSnackbar());
+
+    user
+        .delete()
+        .then(() => {
+            store.dispatch(showSnackbar({ message: successMsg }));
+            store.dispatch(getUsers());
+        })
+        .catch(() => {
+            store.dispatch(showSnackbar({ message: errorMsg }));
         });
-    }
+};
 
-    setIcons() {
-        this.icons = {
-            profile: 'account_circle',
-            edit: 'edit',
-            assign_search_org_units: 'account_balance',
-            remove: 'delete',
-            replicate: 'content_copy',
-            disable: 'block',
-            enable: 'check',
-        };
-    }
+userContextMenuActions.replicate.subscribe(({ data: { id } }) => {
+    const content = <ReplicateUserForm userIdToReplicate={id} />;
+    const props = {
+        onRequestClose: () => store.dispatch(hideDialog()),
+        title: i18next.t('Replicate user'),
+    };
+    store.dispatch(showDialog(content, props));
+});
 
-    isActionAllowed(action) {
-        return true;
-    }
+userContextMenuActions.disable.subscribe(action => {
+    console.log('disable: ', action);
+});
 
-    profileActionHandler({ data: { id } }) {
-        const { history } = this.parentProps;
-        history.push(`/users/view/${id}`);
-    }
-
-    editActionHandler({ data: { id } }) {
-        const { history } = this.parentProps;
-        history.push(`/users/edit/${id}`);
-    }
-
-    assignSearchOrgUnitsActionHandler(action) {
-        console.log('assignSearchOrgUnits: ', action);
-    }
-
-    removeActionHandler(action) {
-        const user = action.data;
-        const { showSnackbar } = this.parentProps;
-        const snackbarProps = {
-            message: i18next.t('Are you sure you want to remove this user?'),
-            action: i18next.t('Confirm'),
-            autoHideDuration: null,
-            onActionClick: () => this.removeConfirmHandler(user),
-        };
-        showSnackbar(snackbarProps);
-    }
-
-    removeConfirmHandler(user) {
-        const { getUsers, hideSnackbar, showSnackbar } = this.parentProps;
-        hideSnackbar();
-        user
-            .delete()
-            .then(() => {
-                showSnackbar({
-                    autoHideDuration: 3000,
-                    message: i18next.t('User removed succesfully'),
-                });
-                getUsers();
-            })
-            .catch(() => {
-                showSnackbar({
-                    autoHideDuration: 3000,
-                    message: i18next.t('There was a problem deleting the user'),
-                });
-            });
-    }
-
-    replicateActionHandler({ data: { id } }) {
-        const { showDialog, hideDialog } = this.parentProps;
-        const content = <ReplicateUserForm userIdToReplicate={id} />;
-        const props = {
-            onRequestClose: hideDialog,
-            title: i18next.t('Replicate user'),
-        };
-        showDialog(content, props);
-    }
-
-    disableActionHandler(action) {
-        console.log('disable: ', action);
-    }
-
-    enableActionHandler(action) {
-        console.log('enable: ', action);
-    }
-}
+userContextMenuActions.enable.subscribe(action => {
+    console.log('enable: ', action);
+});

@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {
-    getUsers,
-    showSnackbar,
-    hideSnackbar,
-    showDialog,
-    hideDialog,
-} from '../../actions';
+import { getUsers } from '../../actions';
 import List from '../List';
-import UserContextMenuActions from './UserContextMenuActions';
+import {
+    userContextMenuActions,
+    userContextMenuIcons,
+    isUserContextActionAllowed,
+} from './UserContextMenuActions';
 import UserFilter from './UserFilter';
 
 class UserList extends Component {
@@ -20,12 +18,6 @@ class UserList extends Component {
         users: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
         getUsers: PropTypes.func.isRequired,
     };
-
-    constructor(props) {
-        super(props);
-        const contextActions = UserContextMenuActions.create(props);
-        Object.assign(this, contextActions);
-    }
 
     selectUserAndGoToNextPage(user) {
         const { history } = this.props;
@@ -41,9 +33,9 @@ class UserList extends Component {
                 columns={['displayName', 'userName']}
                 FilterComponent={UserFilter}
                 primaryAction={this.selectUserAndGoToNextPage.bind(this)}
-                contextMenuActions={this.contextMenuActions}
-                contextMenuIcons={this.contextMenuIcons}
-                isContextActionAllowed={this.isContextActionAllowed}
+                contextMenuActions={userContextMenuActions}
+                contextMenuIcons={userContextMenuIcons}
+                isContextActionAllowed={isUserContextActionAllowed}
             />
         );
     }
@@ -51,8 +43,4 @@ class UserList extends Component {
 
 export default connect(null, {
     getUsers,
-    showSnackbar,
-    hideSnackbar,
-    showDialog,
-    hideDialog,
 })(UserList);

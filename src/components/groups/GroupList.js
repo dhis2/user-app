@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {
-    getGroups,
-    showSnackbar,
-    hideSnackbar,
-    showDialog,
-    hideDialog,
-} from '../../actions';
+import { getGroups } from '../../actions';
 import List from '../List';
-import GroupContextMenuActions from './GroupContextMenuActions';
+import {
+    isGroupContextActionAllowed,
+    groupContextMenuIcons,
+    groupContextMenuActions,
+} from './GroupContextMenuActions';
 import SearchFilter from '../SearchFilter';
 
 class GroupList extends Component {
@@ -20,12 +18,6 @@ class GroupList extends Component {
         users: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
         getGroups: PropTypes.func.isRequired,
     };
-
-    constructor(props) {
-        super(props);
-        const contextActions = GroupContextMenuActions.create(props);
-        Object.assign(this, contextActions);
-    }
 
     selectUserAndGoToNextPage(user) {
         const { history } = this.props;
@@ -41,9 +33,9 @@ class GroupList extends Component {
                 FilterComponent={SearchFilter}
                 columns={['displayName']}
                 primaryAction={this.selectUserAndGoToNextPage.bind(this)}
-                contextMenuActions={this.contextMenuActions}
-                contextMenuIcons={this.contextMenuIcons}
-                isContextActionAllowed={this.isContextActionAllowed}
+                contextMenuActions={groupContextMenuActions}
+                contextMenuIcons={groupContextMenuIcons}
+                isContextActionAllowed={isGroupContextActionAllowed}
             />
         );
     }
@@ -51,8 +43,4 @@ class GroupList extends Component {
 
 export default connect(null, {
     getGroups,
-    showSnackbar,
-    hideSnackbar,
-    showDialog,
-    hideDialog,
 })(GroupList);

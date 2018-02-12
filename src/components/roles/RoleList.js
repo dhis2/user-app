@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {
-    getRoles,
-    showSnackbar,
-    hideSnackbar,
-    showDialog,
-    hideDialog,
-} from '../../actions';
+import { getRoles } from '../../actions';
 import List from '../List';
-import RoleContextMenuActions from './RoleContextMenuActions';
+import {
+    roleContextMenuActions,
+    roleContextMenuIcons,
+    isRoleContextActionAllowed,
+} from './RoleContextMenuActions';
 import SearchFilter from '../SearchFilter';
 
 class RoleList extends Component {
@@ -20,12 +18,6 @@ class RoleList extends Component {
         users: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
         getRoles: PropTypes.func.isRequired,
     };
-
-    constructor(props) {
-        super(props);
-        const contextActions = RoleContextMenuActions.create(props);
-        Object.assign(this, contextActions);
-    }
 
     selectUserAndGoToNextPage(user) {
         const { history } = this.props;
@@ -41,9 +33,9 @@ class RoleList extends Component {
                 FilterComponent={SearchFilter}
                 columns={['displayName', 'description']}
                 primaryAction={this.selectUserAndGoToNextPage.bind(this)}
-                contextMenuActions={this.contextMenuActions}
-                contextMenuIcons={this.contextMenuIcons}
-                isContextActionAllowed={this.isContextActionAllowed}
+                contextMenuActions={roleContextMenuActions}
+                contextMenuIcons={roleContextMenuIcons}
+                isContextActionAllowed={isRoleContextActionAllowed}
             />
         );
     }
@@ -51,8 +43,4 @@ class RoleList extends Component {
 
 export default connect(null, {
     getRoles,
-    showSnackbar,
-    hideSnackbar,
-    showDialog,
-    hideDialog,
 })(RoleList);

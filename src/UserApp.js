@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import { HashRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
+import history from './utils/history';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import D2UIApp from 'd2-ui/lib/app/D2UIApp';
 import HeaderBarComponent from 'd2-ui/lib/app-header/HeaderBar';
@@ -23,9 +24,9 @@ const UserApp = ({ config }) => (
         <D2UIApp initConfig={config} LoadingComponent={LoadingMask}>
             <div>
                 <HeaderBar />
-                <HashRouter hashType={'noslash'}>
+                <Router history={history} hashType={'noslash'}>
                     <SectionLoader />
-                </HashRouter>
+                </Router>
                 <SnackbarContainer />
                 <DialogContainer />
             </div>
