@@ -1,15 +1,10 @@
 import React from 'react';
+import i18next from 'i18next';
 import Action from 'd2-ui/lib/action/Action';
 import { navigateTo } from '../../utils';
 import store from '../../store';
-import {
-    getUsers,
-    showSnackbar,
-    hideSnackbar,
-    showDialog,
-    hideDialog,
-} from '../../actions';
-import i18next from 'i18next';
+import { removeEntity } from '../../utils/sharedActions';
+import { getRoles, showDialog, hideDialog } from '../../actions';
 import ReplicateUserForm from '../users/ReplicateUserForm';
 
 export const isRoleContextActionAllowed = () => true;
@@ -46,32 +41,16 @@ roleContextMenuActions.assign_search_org_units.subscribe(action => {
     console.log('assignSearchOrgUnits: ', action);
 });
 
-roleContextMenuActions.remove.subscribe(({ data: user }) => {
-    const snackbarProps = {
-        message: i18next.t('Are you sure you want to remove this user?'),
-        action: i18next.t('Confirm'),
-        autoHideDuration: null,
-        onActionClick: () => onRemoveConfirm(user),
+roleContextMenuActions.remove.subscribe(({ data: role }) => {
+    const params = {
+        confirmMsg: i18next.t('Are you sure you want to remove this user role?'),
+        successMsg: i18next.t('User role removed succesfully'),
+        errorMsg: i18next.t('There was a problem deleting the user role'),
+        entity: role,
+        getList: getRoles,
     };
-    store.dispatch(showSnackbar(snackbarProps));
+    removeEntity(params);
 });
-
-const onRemoveConfirm = user => {
-    const successMsg = i18next.t('User removed succesfully');
-    const errorMsg = i18next.t('There was a problem deleting the user');
-
-    store.dispatch(hideSnackbar());
-
-    user
-        .delete()
-        .then(() => {
-            store.dispatch(showSnackbar({ message: successMsg }));
-            store.dispatch(getUsers());
-        })
-        .catch(() => {
-            store.dispatch(showSnackbar({ message: errorMsg }));
-        });
-};
 
 roleContextMenuActions.replicate.subscribe(({ data: { id } }) => {
     const content = <ReplicateUserForm userIdToReplicate={id} />;

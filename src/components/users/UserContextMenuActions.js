@@ -1,15 +1,10 @@
 import React from 'react';
+import i18next from 'i18next';
 import Action from 'd2-ui/lib/action/Action';
 import { navigateTo } from '../../utils';
 import store from '../../store';
-import {
-    getUsers,
-    showSnackbar,
-    hideSnackbar,
-    showDialog,
-    hideDialog,
-} from '../../actions';
-import i18next from 'i18next';
+import { removeEntity } from '../../utils/sharedActions';
+import { getUsers, showDialog, hideDialog } from '../../actions';
 import ReplicateUserForm from './ReplicateUserForm';
 
 export const isUserContextActionAllowed = () => true;
@@ -47,32 +42,15 @@ userContextMenuActions.assign_search_org_units.subscribe(action => {
 });
 
 userContextMenuActions.remove.subscribe(({ data: user }) => {
-    console.log(user);
-    const snackbarProps = {
-        message: i18next.t('Are you sure you want to remove this user?'),
-        action: i18next.t('Confirm'),
-        autoHideDuration: null,
-        onActionClick: () => onRemoveConfirm(user),
+    const params = {
+        confirmMsg: i18next.t('Are you sure you want to remove this user?'),
+        successMsg: i18next.t('User removed succesfully'),
+        errorMsg: i18next.t('There was a problem deleting the user'),
+        entity: user,
+        getList: getUsers,
     };
-    store.dispatch(showSnackbar(snackbarProps));
+    removeEntity(params);
 });
-
-const onRemoveConfirm = user => {
-    const successMsg = i18next.t('User removed succesfully');
-    const errorMsg = i18next.t('There was a problem deleting the user');
-
-    store.dispatch(hideSnackbar());
-
-    user
-        .delete()
-        .then(() => {
-            store.dispatch(showSnackbar({ message: successMsg }));
-            store.dispatch(getUsers());
-        })
-        .catch(() => {
-            store.dispatch(showSnackbar({ message: errorMsg }));
-        });
-};
 
 userContextMenuActions.replicate.subscribe(({ data: { id } }) => {
     const content = <ReplicateUserForm userIdToReplicate={id} />;
