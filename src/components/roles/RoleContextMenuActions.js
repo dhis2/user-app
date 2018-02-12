@@ -1,44 +1,38 @@
-import React from 'react';
+// import React from 'react';
 import i18next from 'i18next';
 import Action from 'd2-ui/lib/action/Action';
-import { navigateTo } from '../../utils';
-import store from '../../store';
+// import { navigateTo } from '../../utils';
+// import store from '../../store';
 import { removeEntity } from '../../utils/sharedActions';
-import { getRoles, showDialog, hideDialog } from '../../actions';
-import ReplicateUserForm from '../users/ReplicateUserForm';
+import { getRoles /*showDialog, hideDialog*/ } from '../../actions';
 
 export const isRoleContextActionAllowed = () => true;
 
 export const roleContextMenuIcons = {
-    profile: 'account_circle',
+    show_details: 'info',
+    sharing_settings: 'share',
     edit: 'edit',
-    assign_search_org_units: 'account_balance',
     remove: 'delete',
-    replicate: 'content_copy',
-    disable: 'block',
-    enable: 'check',
 };
 
 export const roleContextMenuActions = Action.createActionsFromNames([
-    'profile',
+    'show_details',
+    'sharing_settings',
     'edit',
-    'assign_search_org_units',
     'remove',
-    'replicate',
-    'disable',
-    'enable',
 ]);
 
-roleContextMenuActions.profile.subscribe(({ data: { id } }) => {
-    navigateTo(`/users/view/${id}`);
+roleContextMenuActions.show_details.subscribe(({ data: { id } }) => {
+    // navigateTo(`/users/view/${id}`);
+    console.log('show_details for user with id: ', id);
+});
+
+roleContextMenuActions.sharing_settings.subscribe(action => {
+    console.log('sharing_settings: ', action);
 });
 
 roleContextMenuActions.edit.subscribe(({ data: { id } }) => {
-    navigateTo(`/users/edit/${id}`);
-});
-
-roleContextMenuActions.assign_search_org_units.subscribe(action => {
-    console.log('assignSearchOrgUnits: ', action);
+    console.log('edit user with id ' + id);
 });
 
 roleContextMenuActions.remove.subscribe(({ data: role }) => {
@@ -50,21 +44,4 @@ roleContextMenuActions.remove.subscribe(({ data: role }) => {
         getList: getRoles,
     };
     removeEntity(params);
-});
-
-roleContextMenuActions.replicate.subscribe(({ data: { id } }) => {
-    const content = <ReplicateUserForm userIdToReplicate={id} />;
-    const props = {
-        onRequestClose: () => store.dispatch(hideDialog()),
-        title: i18next.t('Replicate user'),
-    };
-    store.dispatch(showDialog(content, props));
-});
-
-roleContextMenuActions.disable.subscribe(action => {
-    console.log('disable: ', action);
-});
-
-roleContextMenuActions.enable.subscribe(action => {
-    console.log('enable: ', action);
 });

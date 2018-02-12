@@ -1,44 +1,45 @@
-import React from 'react';
+// import React from 'react';
 import i18next from 'i18next';
 import Action from 'd2-ui/lib/action/Action';
-import { navigateTo } from '../../utils';
-import store from '../../store';
+// import { navigateTo } from '../../utils';
+// import store from '../../store';
 import { removeEntity } from '../../utils/sharedActions';
-import { getGroups, showDialog, hideDialog } from '../../actions';
-import ReplicateUserForm from '../users/ReplicateUserForm';
+import { getGroups /*showDialog, hideDialog */ } from '../../actions';
+// import ReplicateUserForm from '../users/ReplicateUserForm';
 
 export const isGroupContextActionAllowed = () => true;
 
 export const groupContextMenuIcons = {
-    profile: 'account_circle',
+    show_details: 'info',
+    sharing_settings: 'share',
     edit: 'edit',
-    assign_search_org_units: 'account_balance',
+    leave_group: 'exit_to_app',
     remove: 'delete',
-    replicate: 'content_copy',
-    disable: 'block',
-    enable: 'check',
 };
 
 export const groupContextMenuActions = Action.createActionsFromNames([
-    'profile',
+    'show_details',
+    'sharing_settings',
     'edit',
-    'assign_search_org_units',
+    'leave_group',
     'remove',
-    'replicate',
-    'disable',
-    'enable',
 ]);
 
-groupContextMenuActions.profile.subscribe(({ data: { id } }) => {
-    navigateTo(`/users/view/${id}`);
+groupContextMenuActions.show_details.subscribe(({ data: { id } }) => {
+    // navigateTo(`/users/view/${id}`);
+    console.log('show_details for user with id: ', id);
+});
+
+groupContextMenuActions.sharing_settings.subscribe(action => {
+    console.log('share_settings: ', action);
 });
 
 groupContextMenuActions.edit.subscribe(({ data: { id } }) => {
-    navigateTo(`/users/edit/${id}`);
+    console.log('edit user with id ' + id);
 });
 
-groupContextMenuActions.assign_search_org_units.subscribe(action => {
-    console.log('assignSearchOrgUnits: ', action);
+groupContextMenuActions.leave_group.subscribe(action => {
+    console.log('leave_group: ', action);
 });
 
 groupContextMenuActions.remove.subscribe(({ data: group }) => {
@@ -50,21 +51,4 @@ groupContextMenuActions.remove.subscribe(({ data: group }) => {
         getList: getGroups,
     };
     removeEntity(params);
-});
-
-groupContextMenuActions.replicate.subscribe(({ data: { id } }) => {
-    const content = <ReplicateUserForm userIdToReplicate={id} />;
-    const props = {
-        onRequestClose: () => store.dispatch(hideDialog()),
-        title: i18next.t('Replicate user'),
-    };
-    store.dispatch(showDialog(content, props));
-});
-
-groupContextMenuActions.disable.subscribe(action => {
-    console.log('disable: ', action);
-});
-
-groupContextMenuActions.enable.subscribe(action => {
-    console.log('enable: ', action);
 });
