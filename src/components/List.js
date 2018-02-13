@@ -60,19 +60,26 @@ class List extends Component {
         }
     }
 
-    renderPagination() {
-        const { pager } = this.props;
+    getPagerConfig(pager) {
         if (!pager) {
-            return null;
+            return {
+                page: null,
+                pageCount: null,
+                total: null,
+                currentlyShown: null,
+            };
         }
+        return pager;
+    }
 
-        const { items, incrementPage, decrementPage } = this.props;
-        const { page, pageCount, total, currentlyShown } = pager;
-        const shouldHide = items && (items.length === 0 || typeof items === 'string');
+    renderPagination() {
+        const { pager, items, incrementPage, decrementPage } = this.props;
+        const { page, pageCount, total, currentlyShown } = this.getPagerConfig(pager);
+        const shouldHide = !items || items.length === 0 || typeof items === 'string';
         const style = shouldHide ? { visibility: 'hidden' } : {};
         const paginationProps = {
-            hasNextPage: () => items && items.length && page < pageCount,
-            hasPreviousPage: () => items && items.length && page > 1,
+            hasNextPage: () => page && items && items.length && page < pageCount,
+            hasPreviousPage: () => page && items && items.length && page > 1,
             onNextPageClick: () => {
                 incrementPage(pager);
             },
