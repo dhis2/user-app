@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { resetFilter, resetPager } from '../actions';
 import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
 
 const style = {
@@ -29,12 +27,8 @@ class SideNav extends Component {
     }
 
     changeSectionHandler(key) {
-        const { sections, history, resetFilter, resetPager } = this.props;
+        const { sections, history } = this.props;
         const section = sections.find(section => section.key === key);
-        const useUserFilter = section === sections[0];
-
-        resetFilter(useUserFilter);
-        resetPager();
 
         history.push(section.path);
     }
@@ -66,9 +60,4 @@ class SideNav extends Component {
     }
 }
 
-export default withRouter(
-    connect(null, {
-        resetFilter,
-        resetPager,
-    })(SideNav)
-);
+export default withRouter(SideNav);

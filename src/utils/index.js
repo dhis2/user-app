@@ -1,5 +1,10 @@
 import api from '../api';
 import i18next from 'i18next';
+import history from './history';
+
+export const navigateTo = path => {
+    history.push(path);
+};
 
 export const parseDateFromUTCString = utcString => {
     const d2 = api.getD2();

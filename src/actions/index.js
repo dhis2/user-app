@@ -1,23 +1,38 @@
 import * as ACTIONS from '../constants/actionTypes';
+import { PAGE as DEFAULT_PAGE } from '../constants/defaults';
 import api from '../api';
 
 // Helpers
 const createAction = (type, payload) => ({ type, payload });
 
-const createListRequestActionSequence = (
-    dispatch,
-    promise,
-    receivedActionName,
-    silent
-) => {
+// List fetching
+const createListRequestActionSequence = (dispatch, promise, type, silent) => {
     if (!silent) {
-        dispatch(createAction(ACTIONS.LIST_REQUESTED));
+        dispatch(createAction(ACTIONS.LIST_REQUESTED, type));
     }
     promise
-        .then(response => dispatch(createAction(receivedActionName, response)))
-        .catch(error => dispatch(createAction(ACTIONS.LIST_ERRORED, error.message)));
+        .then(response =>
+            dispatch(createAction(ACTIONS.LIST_RECEIVED, { type, response }))
+        )
+        .catch(error => dispatch(createAction(ACTIONS.LIST_ERRORED, { type, error })));
 };
 
+export const getList = (entityName, silent) => (dispatch, getState) => {
+    const { filter, pager } = getState();
+    const page = pager ? pager.page : DEFAULT_PAGE;
+    const promise = api.getList(entityName, page, filter);
+    createListRequestActionSequence(dispatch, promise, entityName, silent);
+};
+
+export const incrementPage = pager => dispatch => {
+    createListRequestActionSequence(dispatch, pager.getNextPage());
+};
+
+export const decrementPage = pager => dispatch => {
+    createListRequestActionSequence(dispatch, pager.getPreviousPage());
+};
+
+// Item fetching
 const createItemRequestActionSequence = (dispatch, promise, receivedActionName) => {
     dispatch(createAction(ACTIONS.ITEM_REQUESTED));
     promise
@@ -25,38 +40,11 @@ const createItemRequestActionSequence = (dispatch, promise, receivedActionName) 
         .catch(error => dispatch(createAction(ACTIONS.ITEM_ERRORED, error.message)));
 };
 
-// Thunks
 export const getUser = id => (dispatch, getState) => {
     createItemRequestActionSequence(
         dispatch,
         api.getUser(id),
         ACTIONS.USER_ITEM_RECEIVED
-    );
-};
-
-export const getUsers = silent => (dispatch, getState) => {
-    const { filter, pager: { page } } = getState();
-    createListRequestActionSequence(
-        dispatch,
-        api.getUsers(page, filter),
-        ACTIONS.USER_LIST_RECEIVED,
-        silent
-    );
-};
-
-export const incrementPage = pager => dispatch => {
-    createListRequestActionSequence(
-        dispatch,
-        pager.getNextPage(),
-        ACTIONS.USER_LIST_RECEIVED
-    );
-};
-
-export const decrementPage = pager => dispatch => {
-    createListRequestActionSequence(
-        dispatch,
-        pager.getPreviousPage(),
-        ACTIONS.USER_LIST_RECEIVED
     );
 };
 

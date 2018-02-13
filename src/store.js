@@ -10,7 +10,7 @@ import notificationsReducer from './reducers/notifications/';
 
 let middlewares = [ReduxThunk];
 
-const shouldLog = false;
+const shouldLog = true;
 
 if (process.env.NODE_ENV === 'development' && shouldLog) {
     middlewares.push(logger);
