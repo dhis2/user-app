@@ -6,8 +6,9 @@ import { orange500 } from 'material-ui/styles/colors';
 import i18next from 'i18next';
 import api from '../../api';
 import { connect } from 'react-redux';
+import { USER } from '../../constants/entityTypes';
 import { checkPasswordForErrors } from '../../utils/';
-import { getUsers, hideDialog, showSnackbar, hideSnackbar } from '../../actions';
+import { getList, hideDialog, showSnackbar, hideSnackbar } from '../../actions';
 
 const FORM_NAME = 'replicateUserForm';
 const USERNAME = 'username';
@@ -68,9 +69,9 @@ class ReplicateUserForm extends Component {
     }
 
     onReplicationSucces() {
-        const { showSnackbar } = this.props;
+        const { getList, showSnackbar } = this.props;
         showSnackbar({ message: i18next.t('User replicated successfuly') });
-        getUsers(true);
+        getList(USER, true);
     }
 
     onReplicationError() {
@@ -147,7 +148,7 @@ const ReduxFormWrapped = reduxForm({
 })(ReplicateUserForm);
 
 export default connect(mapStateToProps, {
-    getUsers,
+    getList,
     hideDialog,
     showSnackbar,
     hideSnackbar,

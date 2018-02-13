@@ -3,8 +3,9 @@ import i18next from 'i18next';
 import Action from 'd2-ui/lib/action/Action';
 import { navigateTo } from '../../utils';
 import store from '../../store';
-import { removeEntity } from '../../utils/sharedActions';
-import { getUsers, showDialog, hideDialog } from '../../actions';
+import { deleteModel } from '../../utils/sharedActions';
+import { USER } from '../../constants/entityTypes';
+import { showDialog, hideDialog } from '../../actions';
 import ReplicateUserForm from './ReplicateUserForm';
 
 export const isUserContextActionAllowed = () => true;
@@ -46,10 +47,10 @@ userContextMenuActions.remove.subscribe(({ data: user }) => {
         confirmMsg: i18next.t('Are you sure you want to remove this user?'),
         successMsg: i18next.t('User removed succesfully'),
         errorMsg: i18next.t('There was a problem deleting the user'),
-        entity: user,
-        getList: getUsers,
+        model: user,
+        entityType: USER,
     };
-    removeEntity(params);
+    deleteModel(params);
 });
 
 userContextMenuActions.replicate.subscribe(({ data: { id } }) => {

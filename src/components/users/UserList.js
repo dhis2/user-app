@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { getUsers } from '../../actions';
+import { USER } from '../../constants/entityTypes';
 import List from '../List';
+
 import {
     userContextMenuActions,
     userContextMenuIcons,
@@ -15,8 +15,6 @@ class UserList extends Component {
         match: PropTypes.object.isRequired,
         location: PropTypes.object.isRequired,
         history: PropTypes.object.isRequired,
-        users: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
-        getUsers: PropTypes.func.isRequired,
     };
 
     selectUserAndGoToNextPage(user) {
@@ -26,10 +24,9 @@ class UserList extends Component {
     }
 
     render() {
-        const { getUsers } = this.props;
         return (
             <List
-                getItems={getUsers}
+                entityType={USER}
                 columns={['displayName', 'userName']}
                 FilterComponent={UserFilter}
                 primaryAction={this.selectUserAndGoToNextPage.bind(this)}
@@ -41,6 +38,4 @@ class UserList extends Component {
     }
 }
 
-export default connect(null, {
-    getUsers,
-})(UserList);
+export default UserList;

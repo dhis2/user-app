@@ -7,6 +7,8 @@ import {
     USER_PROFILE_FIELD_FILTER,
 } from '../constants/defaults';
 
+import { USER, USER_GROUP, USER_ROLE } from '../constants/entityTypes';
+
 const init = d2 => {
     this.d2 = d2;
     this.d2Api = d2.Api.getApi();
@@ -17,6 +19,19 @@ const init = d2 => {
     window.d2Api = this.d2Api;
     console.warn(`d2 and d2Api added to the window object for easy testing in the console.
         Please remove this before building.`);
+};
+
+const getFieldsForListType = entityName => {
+    switch (entityName) {
+        case USER:
+            return USER_LIST_FIELD_FILTER;
+        case USER_GROUP:
+            return USER_GROUPS_LIST_FIELD_FILTER;
+        case USER_ROLE:
+            return USER_ROLES_LIST_FIELD_FILTER;
+        default:
+            return USER_LIST_FIELD_FILTER;
+    }
 };
 
 const parseRequestData = (page = DEFAULT_PAGE, filter, fields) => {
@@ -36,19 +51,10 @@ const parseRequestData = (page = DEFAULT_PAGE, filter, fields) => {
     return requestData;
 };
 
-const getUsers = (page = DEFAULT_PAGE, filter) => {
-    const requestData = parseRequestData(page, filter, USER_LIST_FIELD_FILTER);
-    return this.d2.models.users.list(requestData);
-};
-
-const getRoles = (page, filter) => {
-    const requestData = parseRequestData(page, filter, USER_ROLES_LIST_FIELD_FILTER);
-    return this.d2.models.userRoles.list(requestData);
-};
-
-const getGroups = (page, filter) => {
-    const requestData = parseRequestData(page, filter, USER_GROUPS_LIST_FIELD_FILTER);
-    return this.d2.models.userGroups.list(requestData);
+const getList = (entityName, page, filter) => {
+    const fields = getFieldsForListType(entityName);
+    const requestData = parseRequestData(page, filter, fields);
+    return this.d2.models[entityName].list(requestData);
 };
 
 const getUser = id => {
@@ -79,9 +85,7 @@ const getD2 = () => this.d2;
 export default {
     init,
     getD2,
-    getUsers,
-    getRoles,
-    getGroups,
+    getList,
     getUser,
     getUserByUsername,
     replicateUser,

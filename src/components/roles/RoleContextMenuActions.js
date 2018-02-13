@@ -1,10 +1,10 @@
-// import React from 'react';
 import i18next from 'i18next';
 import Action from 'd2-ui/lib/action/Action';
 // import { navigateTo } from '../../utils';
 // import store from '../../store';
-import { removeEntity } from '../../utils/sharedActions';
-import { getRoles /*showDialog, hideDialog*/ } from '../../actions';
+import { USER_ROLE } from '../../constants/entityTypes';
+import { deleteModel } from '../../utils/sharedActions';
+import /*showDialog, hideDialog*/ '../../actions';
 
 export const isRoleContextActionAllowed = () => true;
 
@@ -40,8 +40,8 @@ roleContextMenuActions.remove.subscribe(({ data: role }) => {
         confirmMsg: i18next.t('Are you sure you want to remove this user role?'),
         successMsg: i18next.t('User role removed succesfully'),
         errorMsg: i18next.t('There was a problem deleting the user role'),
-        entity: role,
-        getList: getRoles,
+        model: role,
+        entityType: USER_ROLE,
     };
-    removeEntity(params);
+    deleteModel(params);
 });

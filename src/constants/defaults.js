@@ -97,36 +97,6 @@ export const USER_PROFILE_DISPLAY_FIELD_CONFIG = [
     },
 ];
 
-const outputKeys = object => {
-    Object.keys(object).forEach(key => {
-        if (typeof object[key] === 'object') {
-            outputKeys(object[key]);
-        }
-        console.log(key);
-    });
-};
-
-export const USER_PROFILE_FIELDS_JSON = USER_PROFILE_FIELD_FILTER.reduce(
-    (allFields, field) => {
-        switch (field) {
-            case 'id':
-            case 'displayName':
-            case 'organisationUnits[displayName]':
-            case 'userCredentials[userRoles[displayName]]':
-                break;
-            // allFields.push('organisationUnits');
-            // break;
-            // allFields.push('userRoles');
-            // break;
-            default:
-                allFields.push(field);
-                break;
-        }
-        return allFields;
-    },
-    []
-);
-
 export const LIST_FILTER = {
     query: '', // string
 };
@@ -136,14 +106,6 @@ export const USER_LIST_FILTER = {
     inactiveMonths: null, // Number
     selfRegistered: false, // Bool
     invitationStatus: null, // 'all' || 'expired',
-};
-
-export const PAGER = {
-    page: 1,
-    pageCount: null,
-    total: null,
-    pageSize: null,
-    currentlyShown: null,
 };
 
 export const INITIAL_SNACKBAR_STATE = {

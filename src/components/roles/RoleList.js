@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { getRoles } from '../../actions';
+import { USER_ROLE } from '../../constants/entityTypes';
 import List from '../List';
 import {
     roleContextMenuActions,
@@ -15,8 +14,6 @@ class RoleList extends Component {
         match: PropTypes.object.isRequired,
         location: PropTypes.object.isRequired,
         history: PropTypes.object.isRequired,
-        users: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
-        getRoles: PropTypes.func.isRequired,
     };
 
     selectUserAndGoToNextPage(user) {
@@ -26,10 +23,9 @@ class RoleList extends Component {
     }
 
     render() {
-        const { getRoles } = this.props;
         return (
             <List
-                getItems={getRoles}
+                entityType={USER_ROLE}
                 FilterComponent={SearchFilter}
                 columns={['displayName', 'description']}
                 primaryAction={this.selectUserAndGoToNextPage.bind(this)}
@@ -41,6 +37,4 @@ class RoleList extends Component {
     }
 }
 
-export default connect(null, {
-    getRoles,
-})(RoleList);
+export default RoleList;

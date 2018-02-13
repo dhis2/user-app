@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from '../../constants/lodash';
-import { updateFilter, getUsers } from '../../actions';
+import { updateFilter, getList } from '../../actions';
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 import {
     FIELD_NAMES,
@@ -20,13 +20,13 @@ class UserFilter extends Component {
     }
 
     onFilterChange(fieldName, newValue) {
-        const { filter, getUsers, updateFilter } = this.props;
+        const { filter, getList, entityType, updateFilter } = this.props;
         // Meh empty option in Select returns null as a string
         if (newValue === 'null') {
             newValue = null;
         }
         updateFilter(filter, fieldName, newValue);
-        getUsers();
+        getList(entityType);
     }
 
     onQueryChange(event) {
@@ -66,5 +66,5 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, {
     updateFilter,
-    getUsers,
+    getList,
 })(UserFilter);

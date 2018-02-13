@@ -1,25 +1,25 @@
 import store from '../store';
-import { showSnackbar, hideSnackbar } from '../actions';
+import { getList, showSnackbar, hideSnackbar } from '../actions';
 import i18next from 'i18next';
 
-export const removeEntity = ({ confirmMsg, successMsg, errorMsg, entity, getList }) => {
+export const deleteModel = ({ confirmMsg, successMsg, errorMsg, model, entityType }) => {
     const snackbarProps = {
         message: confirmMsg,
         action: i18next.t('Confirm'),
         autoHideDuration: null,
-        onActionClick: () => onRemoveConfirm(entity, successMsg, errorMsg, getList),
+        onActionClick: () => onRemoveConfirm(model, successMsg, errorMsg, entityType),
     };
     store.dispatch(showSnackbar(snackbarProps));
 };
 
-const onRemoveConfirm = (entity, successMsg, errorMsg, getList) => {
+const onRemoveConfirm = (model, successMsg, errorMsg, entityType) => {
     store.dispatch(hideSnackbar());
 
-    entity
+    model
         .delete()
         .then(() => {
             store.dispatch(showSnackbar({ message: successMsg }));
-            store.dispatch(getList());
+            store.dispatch(getList(entityType));
         })
         .catch(() => {
             store.dispatch(showSnackbar({ message: errorMsg }));

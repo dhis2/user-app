@@ -1,11 +1,10 @@
-// import React from 'react';
 import i18next from 'i18next';
 import Action from 'd2-ui/lib/action/Action';
 // import { navigateTo } from '../../utils';
 // import store from '../../store';
-import { removeEntity } from '../../utils/sharedActions';
-import { getGroups /*showDialog, hideDialog */ } from '../../actions';
-// import ReplicateUserForm from '../users/ReplicateUserForm';
+import { deleteModel } from '../../utils/sharedActions';
+import { USER_GROUP } from '../../constants/entityTypes';
+import /*showDialog, hideDialog */ '../../actions';
 
 export const isGroupContextActionAllowed = () => true;
 
@@ -47,8 +46,8 @@ groupContextMenuActions.remove.subscribe(({ data: group }) => {
         confirmMsg: i18next.t('Are you sure you want to remove this user group?'),
         successMsg: i18next.t('User group removed succesfully'),
         errorMsg: i18next.t('There was a problem deleting the user group'),
-        entity: group,
-        getList: getGroups,
+        model: group,
+        entityType: USER_GROUP,
     };
-    removeEntity(params);
+    deleteModel(params);
 });

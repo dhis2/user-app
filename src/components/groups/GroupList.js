@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { getGroups } from '../../actions';
 import List from '../List';
 import {
     isGroupContextActionAllowed,
     groupContextMenuIcons,
     groupContextMenuActions,
 } from './GroupContextMenuActions';
+import { USER_GROUP } from '../../constants/entityTypes';
 import SearchFilter from '../SearchFilter';
 
 class GroupList extends Component {
@@ -15,8 +14,6 @@ class GroupList extends Component {
         match: PropTypes.object.isRequired,
         location: PropTypes.object.isRequired,
         history: PropTypes.object.isRequired,
-        users: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
-        getGroups: PropTypes.func.isRequired,
     };
 
     selectUserAndGoToNextPage(user) {
@@ -26,10 +23,9 @@ class GroupList extends Component {
     }
 
     render() {
-        const { getGroups } = this.props;
         return (
             <List
-                getItems={getGroups}
+                entityType={USER_GROUP}
                 FilterComponent={SearchFilter}
                 columns={['displayName']}
                 primaryAction={this.selectUserAndGoToNextPage.bind(this)}
@@ -41,6 +37,4 @@ class GroupList extends Component {
     }
 }
 
-export default connect(null, {
-    getGroups,
-})(GroupList);
+export default GroupList;

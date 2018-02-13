@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import _ from '../constants/lodash';
-import { updateFilter, getList } from '../actions';
+import _ from '../../constants/lodash';
+import { updateFilter, getRoles } from '../../actions';
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
-import { FIELD_NAMES, getQuery } from '../utils/filterFields';
+import * as FILTER_FIELDS from '../../constants/filterFields';
 
-class SearchFilter extends Component {
+class RoleFilter extends Component {
     constructor(props) {
         super(props);
         this.onQueryChange = this.onQueryChange.bind(this);
@@ -13,23 +13,31 @@ class SearchFilter extends Component {
     }
 
     onFilterChange(fieldName, newValue) {
-        const { filter, getList, entityType, updateFilter } = this.props;
+        const { filter, getRoles, updateFilter } = this.props;
         // Meh empty option in Select returns null as a string
         if (newValue === 'null') {
             newValue = null;
         }
         updateFilter(filter, fieldName, newValue);
-        getList(entityType);
+        getRoles();
     }
 
     onQueryChange(event) {
-        this.debouncedOnFilterChange(FIELD_NAMES.QUERY, event.target.value);
+        this.debouncedOnFilterChange(FILTER_FIELDS.QUERY.name, event.target.value);
     }
 
     getFields() {
+        const { QUERY } = FILTER_FIELDS;
         const { filter } = this.props;
-        const customStyle = { marginBottom: '24px' };
-        const query = getQuery(filter.query, this.onQueryChange, customStyle);
+
+        const query = {
+            ...QUERY,
+            value: filter.query,
+            props: {
+                ...QUERY.props,
+                onInput: this.onQueryChange,
+            },
+        };
         return [query];
     }
 
@@ -49,6 +57,6 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps, {
-    getList,
     updateFilter,
-})(SearchFilter);
+    getRoles,
+})(RoleFilter);
