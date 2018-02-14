@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import TextField from 'material-ui/TextField';
 import ActionOpenInNew from 'material-ui/svg-icons/action/open-in-new';
@@ -39,8 +39,19 @@ const styles = {
     },
 };
 
-const OrganisationUnitInput = ({ organisationUnits, showDialog, hideDialog }) => {
-    const showOrgTreeInDialog = () => {
+class OrganisationUnitInput extends Component {
+    static propTypes = {
+        organisationUnits: PropTypes.string.isRequired,
+        showDialog: PropTypes.func.isRequired,
+        hideDialog: PropTypes.func.isRequired,
+    };
+
+    focusOrgUnitInput() {
+        this.refs.orgUnitInput.focus();
+    }
+
+    showOrgTreeInDialog() {
+        const { showDialog, hideDialog } = this.props;
         const content = <OrganisationUnitFilter />;
         const props = {
             onRequestClose: hideDialog,
@@ -53,26 +64,25 @@ const OrganisationUnitInput = ({ organisationUnits, showDialog, hideDialog }) =>
             },
         };
         showDialog(content, props);
-    };
-    return (
-        <div style={styles.wrap}>
-            <ActionOpenInNew style={styles.icon} />
-            <TextField
-                style={styles.textField}
-                floatingLabelText={i18next.t('Organisation unit')}
-                onFocus={showOrgTreeInDialog}
-                value={organisationUnits}
-                inputStyle={styles.input}
-            />
-        </div>
-    );
-};
+    }
 
-OrganisationUnitInput.propTypes = {
-    organisationUnits: PropTypes.string.isRequired,
-    showDialog: PropTypes.func.isRequired,
-    hideDialog: PropTypes.func.isRequired,
-};
+    render() {
+        const { organisationUnits } = this.props;
+        return (
+            <div style={styles.wrap} onClick={this.focusOrgUnitInput.bind(this)}>
+                <ActionOpenInNew style={styles.icon} />
+                <TextField
+                    ref="orgUnitInput"
+                    style={styles.textField}
+                    floatingLabelText={i18next.t('Organisation unit')}
+                    onFocus={this.showOrgTreeInDialog.bind(this)}
+                    value={organisationUnits}
+                    inputStyle={styles.input}
+                />
+            </div>
+        );
+    }
+}
 
 const mapStateToProps = state => ({
     organisationUnits: orgUnitsAsStringSelector(state.filter.organisationUnits),
