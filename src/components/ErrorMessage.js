@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const style = {
     clear: 'both',
@@ -13,5 +14,10 @@ const ErrorMessage = ({ introText, errorMessage }) => (
         <pre>{errorMessage}</pre>
     </div>
 );
+
+ErrorMessage.propTypes= {
+    introText: PropTypes.string.isRequired,
+    errorMessage: PropTypes.string.isRequired,
+}
 
 export default ErrorMessage;

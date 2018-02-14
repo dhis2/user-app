@@ -24,12 +24,14 @@ export const getList = (entityName, silent) => (dispatch, getState) => {
     createListRequestActionSequence(dispatch, promise, entityName, silent);
 };
 
-export const incrementPage = pager => dispatch => {
-    createListRequestActionSequence(dispatch, pager.getNextPage());
+export const incrementPage = pager => (dispatch, getState) => {
+    const { list: { type } } = getState();
+    createListRequestActionSequence(dispatch, pager.getNextPage(), type);
 };
 
-export const decrementPage = pager => dispatch => {
-    createListRequestActionSequence(dispatch, pager.getPreviousPage());
+export const decrementPage = pager => (dispatch, getState) => {
+    const { list: { type } } = getState();
+    createListRequestActionSequence(dispatch, pager.getPreviousPage(), type);
 };
 
 // Item fetching
@@ -49,17 +51,15 @@ export const getUser = id => (dispatch, getState) => {
 };
 
 // Regular actions
-export const updateFilter = (currentFilter, updateKey, updateValue) => {
+export const updateFilter = (updateKey, updateValue) => {
     return createAction(ACTIONS.FILTER_UPDATED, {
-        currentFilter,
         updateKey,
         updateValue,
     });
 };
 
 export const resetFilter = forUsers => {
-    const actionType = forUsers ? ACTIONS.FILTER_RESET_FOR_USER : ACTIONS.FILTER_RESET;
-    return createAction(actionType);
+    return createAction(ACTIONS.FILTER_RESET);
 };
 
 export const resetPager = () => {
