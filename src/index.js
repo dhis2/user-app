@@ -24,7 +24,13 @@ const updateConfig = manifest => {
         : dhisDevConfig.baseUrl + API_VERSION;
 
     config.baseUrl = baseUrl;
-    config.schemas = ['userRole', 'user', 'userGroup', 'userCredentials'];
+    config.schemas = [
+        'userRole',
+        'user',
+        'userGroup',
+        'userCredentials',
+        'organisationUnit',
+    ];
 };
 
 const configI18n = userSettings => {

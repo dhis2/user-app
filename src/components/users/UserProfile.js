@@ -56,11 +56,11 @@ class UserProfile extends Component {
                 });
             }
 
-            if (
-                value &&
-                typeof value.length !== 'undefined' &&
-                parseArrayAsCommaDelimitedString
-            ) {
+            if (parseArrayAsCommaDelimitedString) {
+                // Some nested lists come through as a modelCollection but others are already arrays
+                if (typeof value.toArray === 'function') {
+                    value = value.toArray();
+                }
                 value = value
                     .map(item => item[parseArrayAsCommaDelimitedString])
                     .join(', ');

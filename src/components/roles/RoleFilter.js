@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import _ from '../../constants/lodash';
 import { updateFilter, getRoles } from '../../actions';
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 import * as FILTER_FIELDS from '../../constants/filterFields';
 
 class RoleFilter extends Component {
+    static propTypes = {
+        filter: PropTypes.object.isRequired,
+        getRoles: PropTypes.func.isRequired,
+        updateFilter: PropTypes.func.isRequired,
+    };
+
     constructor(props) {
         super(props);
         this.onQueryChange = this.onQueryChange.bind(this);
@@ -13,12 +20,12 @@ class RoleFilter extends Component {
     }
 
     onFilterChange(fieldName, newValue) {
-        const { filter, getRoles, updateFilter } = this.props;
+        const { getRoles, updateFilter } = this.props;
         // Meh empty option in Select returns null as a string
         if (newValue === 'null') {
             newValue = null;
         }
-        updateFilter(filter, fieldName, newValue);
+        updateFilter(fieldName, newValue);
         getRoles();
     }
 

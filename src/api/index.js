@@ -5,6 +5,7 @@ import {
     USER_ROLES_LIST_FIELD_FILTER,
     USER_GROUPS_LIST_FIELD_FILTER,
     USER_PROFILE_FIELD_FILTER,
+    ORG_UNITS_QUERY_CONFIG,
 } from '../constants/defaults';
 
 import { USER, USER_GROUP, USER_ROLE } from '../constants/entityTypes';
@@ -34,8 +35,14 @@ const getFieldsForListType = entityName => {
     }
 };
 
-const parseRequestData = (page = DEFAULT_PAGE, filter, fields) => {
-    const { query, inactiveMonths, selfRegistered, invitationStatus } = filter;
+const createRequestData = (page = DEFAULT_PAGE, filter, fields) => {
+    const {
+        query,
+        inactiveMonths,
+        selfRegistered,
+        invitationStatus,
+        organisationUnits,
+    } = filter;
 
     let requestData = {
         pageSize: DEFAULT_PAGE_SIZE,
@@ -48,12 +55,17 @@ const parseRequestData = (page = DEFAULT_PAGE, filter, fields) => {
     if (selfRegistered) requestData.selfRegistered = selfRegistered;
     if (invitationStatus) requestData.invitationStatus = invitationStatus;
 
+    if (organisationUnits.length) {
+        const ids = organisationUnits.map(unit => unit.id).join();
+        requestData.filter = `organisationUnits.id:in:[${ids}]`;
+    }
+
     return requestData;
 };
 
 const getList = (entityName, page, filter) => {
     const fields = getFieldsForListType(entityName);
-    const requestData = parseRequestData(page, filter, fields);
+    const requestData = createRequestData(page, filter, fields);
     return this.d2.models[entityName].list(requestData);
 };
 
@@ -80,6 +92,24 @@ const replicateUser = (id, username, password) => {
     return this.d2Api.post(url, data);
 };
 
+const getOrgUnits = () => {
+    const listConfig = {
+        ...ORG_UNITS_QUERY_CONFIG,
+        level: 1,
+    };
+    return this.d2.models.organisationUnits
+        .list(listConfig)
+        .then(rootLevel => rootLevel.toArray()[0]);
+};
+
+const queryOrgUnits = query => {
+    const listConfig = {
+        ...ORG_UNITS_QUERY_CONFIG,
+        query,
+    };
+    return this.d2.models.organisationUnits.list(listConfig);
+};
+
 const getD2 = () => this.d2;
 
 export default {
@@ -89,4 +119,6 @@ export default {
     getUser,
     getUserByUsername,
     replicateUser,
+    getOrgUnits,
+    queryOrgUnits,
 };

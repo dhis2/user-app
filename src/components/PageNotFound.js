@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const style = {
@@ -16,5 +17,9 @@ const PageNotFound = ({ location }) => (
         <Link to="/users">Go back home</Link>
     </div>
 );
+
+PageNotFound.propTypes = {
+    location: PropTypes.object.isRequired,
+};
 
 export default PageNotFound;

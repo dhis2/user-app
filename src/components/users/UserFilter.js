@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from '../../constants/lodash';
+import PropTypes from 'prop-types';
 import { updateFilter, getList } from '../../actions';
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
+import OrganisationUnitInput from './OrganisationUnitInput';
 import {
     FIELD_NAMES,
     getQuery,
@@ -12,6 +14,12 @@ import {
 } from '../../utils/filterFields';
 
 class UserFilter extends Component {
+    static propTypes = {
+        filter: PropTypes.object.isRequired,
+        getList: PropTypes.func.isRequired,
+        updateFilter: PropTypes.func.isRequired,
+        entityType: PropTypes.string.isRequired,
+    };
     constructor(props) {
         super(props);
         this.onQueryChange = this.onQueryChange.bind(this);
@@ -20,12 +28,12 @@ class UserFilter extends Component {
     }
 
     onFilterChange(fieldName, newValue) {
-        const { filter, getList, entityType, updateFilter } = this.props;
+        const { getList, entityType, updateFilter } = this.props;
         // Meh empty option in Select returns null as a string
         if (newValue === 'null') {
             newValue = null;
         }
-        updateFilter(filter, fieldName, newValue);
+        updateFilter(fieldName, newValue);
         getList(entityType);
     }
 
@@ -51,10 +59,13 @@ class UserFilter extends Component {
 
     render() {
         return (
-            <FormBuilder
-                fields={this.getFields()}
-                onUpdateField={this.onFilterChange.bind(this)}
-            />
+            <div>
+                <FormBuilder
+                    fields={this.getFields()}
+                    onUpdateField={this.onFilterChange.bind(this)}
+                />
+                <OrganisationUnitInput />
+            </div>
         );
     }
 }

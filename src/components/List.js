@@ -8,6 +8,7 @@ import Heading from 'd2-ui/lib/headings/Heading.component';
 import 'd2-ui/lib/css/DataTable.css';
 import 'd2-ui/lib/css/Pagination.css';
 import { listSelector, pagerSelector } from '../selectors';
+import { USER } from '../constants/entityTypes';
 import {
     getList,
     resetFilter,
@@ -36,6 +37,16 @@ class List extends Component {
         getList: PropTypes.func.isRequired,
         incrementPage: PropTypes.func.isRequired,
         decrementPage: PropTypes.func.isRequired,
+        resetPager: PropTypes.func.isRequired,
+        resetFilter: PropTypes.func.isRequired,
+        entityType: PropTypes.string.isRequired,
+        listType: PropTypes.string.isRequired,
+        FilterComponent: PropTypes.func.isRequired,
+        columns: PropTypes.arrayOf(String).isRequired,
+        primaryAction: PropTypes.func.isRequired,
+        contextMenuActions: PropTypes.object.isRequired,
+        contextMenuIcons: PropTypes.object.isRequired,
+        isContextActionAllowed: PropTypes.func.isRequired,
     };
 
     componentWillMount() {
@@ -53,7 +64,7 @@ class List extends Component {
             // If list type is defined but doesn't match current entity
             // this means the user has switched section so pager and filter must be reset
             if (listType !== entityType) {
-                resetFilter();
+                resetFilter(entityType === USER);
                 resetPager();
             }
             getList(entityType);

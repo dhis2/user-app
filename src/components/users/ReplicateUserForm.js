@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 import { RaisedButton } from 'material-ui';
 import { TextField } from 'redux-form-material-ui';
@@ -58,6 +59,18 @@ const validate = (values, props) => {
 };
 
 class ReplicateUserForm extends Component {
+    static propTypes = {
+        userIdToReplicate: PropTypes.string.isRequired,
+        hideDialog: PropTypes.func.isRequired,
+        getList: PropTypes.func.isRequired,
+        showSnackbar: PropTypes.func.isRequired,
+        formState: PropTypes.object.isRequired,
+        asyncValidating: PropTypes.bool.isRequired,
+        pristine: PropTypes.bool.isRequired,
+        valid: PropTypes.bool.isRequired,
+        handleSubmit: PropTypes.func.isRequired,
+    };
+
     onHandleSubmit(data) {
         const { userIdToReplicate, hideDialog } = this.props;
         const { username, password } = data;

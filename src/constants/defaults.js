@@ -24,6 +24,10 @@ export const USER_PROFILE_FIELD_FILTER = [
     'organisationUnits[id,displayName]',
     'userCredentials[username,externalAuth,userRoles[id,displayName]]',
 ];
+export const ORG_UNITS_QUERY_CONFIG = {
+    paging: false,
+    fields: ['id', 'path', 'displayName', 'children::isNotEmpty'],
+};
 
 export const USER_PROFILE_DISPLAY_FIELD_CONFIG = [
     {
@@ -99,13 +103,10 @@ export const USER_PROFILE_DISPLAY_FIELD_CONFIG = [
 
 export const LIST_FILTER = {
     query: '', // string
-};
-
-export const USER_LIST_FILTER = {
-    query: '', // string
     inactiveMonths: null, // Number
     selfRegistered: false, // Bool
     invitationStatus: null, // 'all' || 'expired',
+    organisationUnits: [],
 };
 
 export const INITIAL_SNACKBAR_STATE = {

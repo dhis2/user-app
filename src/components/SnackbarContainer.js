@@ -16,6 +16,7 @@ const SnackbarContainer = ({ open, snackbarProps, hideSnackbar }) => {
 SnackbarContainer.propTypes = {
     open: PropTypes.bool.isRequired,
     snackbarProps: PropTypes.object.isRequired,
+    hideSnackbar: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({

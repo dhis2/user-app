@@ -29,3 +29,7 @@ const mappings = {
     userRole: item => item,
     userGroup: item => item,
 };
+
+export const orgUnitsAsStringSelector = orgUnits => {
+    return orgUnits.map(unit => unit.displayName).join(', ');
+};

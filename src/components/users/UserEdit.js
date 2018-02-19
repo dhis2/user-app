@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 class UserEdit extends Component {
+    static propTypes = {
+        match: PropTypes.object.isRequired,
+    };
+
     render() {
         const { match: { params: { id } } } = this.props;
         return (
