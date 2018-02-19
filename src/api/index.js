@@ -5,7 +5,7 @@ import {
     USER_ROLES_LIST_FIELD_FILTER,
     USER_GROUPS_LIST_FIELD_FILTER,
     USER_PROFILE_FIELD_FILTER,
-    ORG_UNITS_FIELD_FILTER,
+    ORG_UNITS_QUERY_CONFIG,
 } from '../constants/defaults';
 
 import { USER, USER_GROUP, USER_ROLE } from '../constants/entityTypes';
@@ -94,13 +94,20 @@ const replicateUser = (id, username, password) => {
 
 const getOrgUnits = () => {
     const listConfig = {
-        paging: false,
+        ...ORG_UNITS_QUERY_CONFIG,
         level: 1,
-        fields: ORG_UNITS_FIELD_FILTER,
     };
     return this.d2.models.organisationUnits
         .list(listConfig)
         .then(rootLevel => rootLevel.toArray()[0]);
+};
+
+const queryOrgUnits = query => {
+    const listConfig = {
+        ...ORG_UNITS_QUERY_CONFIG,
+        query,
+    };
+    return this.d2.models.organisationUnits.list(listConfig);
 };
 
 const getD2 = () => this.d2;
@@ -113,4 +120,5 @@ export default {
     getUserByUsername,
     replicateUser,
     getOrgUnits,
+    queryOrgUnits,
 };

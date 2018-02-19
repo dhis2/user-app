@@ -24,12 +24,10 @@ export const USER_PROFILE_FIELD_FILTER = [
     'organisationUnits[id,displayName]',
     'userCredentials[username,externalAuth,userRoles[id,displayName]]',
 ];
-export const ORG_UNITS_FIELD_FILTER = [
-    'id',
-    'path',
-    'displayName',
-    'children::isNotEmpty',
-];
+export const ORG_UNITS_QUERY_CONFIG = {
+    paging: false,
+    fields: ['id', 'path', 'displayName', 'children::isNotEmpty'],
+};
 
 export const USER_PROFILE_DISPLAY_FIELD_CONFIG = [
     {
