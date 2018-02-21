@@ -110,6 +110,11 @@ const queryOrgUnits = query => {
     return this.d2.models.organisationUnits.list(listConfig);
 };
 
+const updateUserTeiSearchOrganisations = (userId, data) => {
+    const url = `/users/${userId}/teiSearchOrganisationUnits`;
+    return this.d2Api.post(url, data);
+};
+
 const getD2 = () => this.d2;
 
 export default {
@@ -121,4 +126,5 @@ export default {
     replicateUser,
     getOrgUnits,
     queryOrgUnits,
+    updateUserTeiSearchOrganisations,
 };

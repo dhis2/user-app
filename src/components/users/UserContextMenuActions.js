@@ -7,6 +7,7 @@ import { deleteModel } from '../../utils/sharedActions';
 import { USER } from '../../constants/entityTypes';
 import { showDialog, hideDialog } from '../../actions';
 import ReplicateUserForm from './ReplicateUserForm';
+import AssignSearchOrganisationUnits from './AssignSearchOrganisationUnits';
 
 export const isUserContextActionAllowed = () => true;
 
@@ -38,8 +39,16 @@ userContextMenuActions.edit.subscribe(({ data: { id } }) => {
     navigateTo(`/users/edit/${id}`);
 });
 
-userContextMenuActions.assign_search_org_units.subscribe(action => {
-    console.log('assignSearchOrgUnits: ', action);
+userContextMenuActions.assign_search_org_units.subscribe(({ data: user }) => {
+    const content = <AssignSearchOrganisationUnits user={user} />;
+    const props = {
+        onRequestClose: () => store.dispatch(hideDialog()),
+        title: i18next.t('Assign Search Organisation Units'),
+        contentStyle: {
+            minHeight: '100vh',
+        },
+    };
+    store.dispatch(showDialog(content, props));
 });
 
 userContextMenuActions.remove.subscribe(({ data: user }) => {

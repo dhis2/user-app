@@ -70,7 +70,7 @@ class SearchableOrgUnitTree extends Component {
             filteredOrgUnits: [],
             selectedOrgUnits: [...props.selectedOrgUnits],
             orgUnitFilter: null,
-            initiallyExpanded: props.selectedOrgUnits.map(this.removeLastPathSegment),
+            initiallyExpanded: this.getInitiallyExpandedItems(props.selectedOrgUnits),
             searchWarning: null,
             errorStyle: styles.error.info,
             autoCompleteText: '',
@@ -84,6 +84,16 @@ class SearchableOrgUnitTree extends Component {
                 root: root,
             });
         });
+    }
+
+    getInitiallyExpandedItems(orgUnits) {
+        return orgUnits.reduce((expandedUnits, orgUnit) => {
+            const strippedPath = this.removeLastPathSegment(orgUnit);
+            if (strippedPath) {
+                expandedUnits.push(strippedPath);
+            }
+            return expandedUnits;
+        }, []);
     }
 
     getIndexOfOrgUnit(orgUnit) {

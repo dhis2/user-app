@@ -2,7 +2,12 @@ export const PAGE_SIZE = 5;
 
 export const PAGE = 1;
 
-export const USER_LIST_FIELD_FILTER = ['displayName', 'id', 'userCredentials[username]'];
+export const USER_LIST_FIELD_FILTER = [
+    'displayName',
+    'id',
+    'userCredentials[username]',
+    'teiSearchOrganisationUnits[id,path]',
+];
 export const USER_ROLES_LIST_FIELD_FILTER = ['displayName', 'id', 'description'];
 export const USER_GROUPS_LIST_FIELD_FILTER = ['displayName', 'id'];
 export const USER_PROFILE_FIELD_FILTER = [

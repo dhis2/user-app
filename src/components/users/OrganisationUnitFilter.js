@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import i18next from 'i18next';
 import PropTypes from 'prop-types';
 import { USER } from '../../constants/entityTypes';
 import { connect } from 'react-redux';
