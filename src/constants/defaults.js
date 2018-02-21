@@ -23,6 +23,7 @@ export const USER_PROFILE_FIELD_FILTER = [
     'phoneNumber',
     'organisationUnits[id,displayName]',
     'userCredentials[username,externalAuth,userRoles[id,displayName]]',
+    'teiSearchOrganisationUnits[id,path]',
 ];
 export const ORG_UNITS_QUERY_CONFIG = {
     paging: false,
