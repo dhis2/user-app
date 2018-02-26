@@ -6,6 +6,7 @@ import {
     USER_GROUPS_LIST_FIELD_FILTER,
     USER_PROFILE_FIELD_FILTER,
     ORG_UNITS_QUERY_CONFIG,
+    USER_GROUP_QUERY_CONFIG,
 } from '../constants/defaults';
 
 import { USER, USER_GROUP, USER_ROLE } from '../constants/entityTypes';
@@ -110,8 +111,21 @@ const queryOrgUnits = query => {
     return this.d2.models.organisationUnits.list(listConfig);
 };
 
+const queryUserGroups = query => {
+    const listConfig = {
+        ...USER_GROUP_QUERY_CONFIG,
+        query,
+    };
+    return this.d2.models.userGroups.list(listConfig);
+};
+
 const updateUserTeiSearchOrganisations = (userId, data) => {
     const url = `/users/${userId}/teiSearchOrganisationUnits`;
+    return this.d2Api.post(url, data);
+};
+
+const updateSharingSettings = (entityType, id, data) => {
+    const url = `/sharing?type=${entityType}&id=${id}`;
     return this.d2Api.post(url, data);
 };
 
@@ -126,5 +140,7 @@ export default {
     replicateUser,
     getOrgUnits,
     queryOrgUnits,
+    queryUserGroups,
     updateUserTeiSearchOrganisations,
+    updateSharingSettings,
 };

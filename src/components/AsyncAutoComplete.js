@@ -35,6 +35,14 @@ const baseState = {
     errorStyle: styles.error.info,
 };
 
+const defaultAutoCompleteProps = {
+    floatingLabelText: i18next.t('Search'),
+    hintText: i18next.t('Enter search term'),
+    fullWidth: true,
+    type: 'search',
+    filter: () => true,
+};
+
 class AsyncAutoComplete extends Component {
     constructor(props) {
         super(props);
@@ -66,7 +74,6 @@ class AsyncAutoComplete extends Component {
             // Then query
             query(value).then(modelCollection => {
                 if (modelCollection.size > 0) {
-                    console.log(modelCollection);
                     // Display results if any were returned
                     const filteredItems = modelCollection.toArray().map(model => ({
                         text: model.displayName,
@@ -107,11 +114,14 @@ class AsyncAutoComplete extends Component {
 
     render() {
         const { autoCompleteProps } = this.props;
+        const mergedAutoCompleteProps = {
+            ...defaultAutoCompleteProps,
+            ...autoCompleteProps,
+        };
         const { filteredItems, searchWarning, errorStyle, autoCompleteText } = this.state;
         const marginBottom = searchWarning ? 0 : 28;
-
         const mergedProps = {
-            ...autoCompleteProps,
+            ...mergedAutoCompleteProps,
             onUpdateInput: this.onAutoCompleteChange.bind(this),
             onNewRequest: this.onItemSelect.bind(this),
             searchText: autoCompleteText,
@@ -137,13 +147,6 @@ AsyncAutoComplete.propTypes = {
 AsyncAutoComplete.defaultProps = {
     queryDebounceTime: 375,
     minCharLength: 3,
-    autoCompleteProps: {
-        floatingLabelText: i18next.t('Search'),
-        hintText: i18next.t('Enter search term'),
-        fullWidth: false,
-        type: 'search',
-        filter: () => true,
-    },
 };
 
 export default AsyncAutoComplete;

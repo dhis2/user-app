@@ -8,8 +8,17 @@ export const USER_LIST_FIELD_FILTER = [
     'userCredentials[username]',
     'teiSearchOrganisationUnits[id,path]',
 ];
-export const USER_ROLES_LIST_FIELD_FILTER = ['displayName', 'id', 'description'];
-export const USER_GROUPS_LIST_FIELD_FILTER = ['displayName', 'id'];
+export const USER_GROUPS_LIST_FIELD_FILTER = [
+    'displayName',
+    'id',
+    'user[displayName,id]',
+    'publicAccess',
+    'userGroupAccesses',
+];
+export const USER_ROLES_LIST_FIELD_FILTER = [
+    ...USER_GROUPS_LIST_FIELD_FILTER,
+    'description',
+];
 export const USER_PROFILE_FIELD_FILTER = [
     'id',
     'displayName',
@@ -33,6 +42,11 @@ export const USER_PROFILE_FIELD_FILTER = [
 export const ORG_UNITS_QUERY_CONFIG = {
     paging: false,
     fields: ['id', 'path', 'displayName', 'children::isNotEmpty'],
+};
+
+export const USER_GROUP_QUERY_CONFIG = {
+    paging: false,
+    fields: ['id', 'displayName'],
 };
 
 export const USER_PROFILE_DISPLAY_FIELD_CONFIG = [

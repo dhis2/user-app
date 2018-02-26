@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import i18next from 'i18next';
 import _ from '../../constants/lodash';
 import { parseDateFromUTCString } from '../../utils';
-import Paper from 'material-ui/Paper';
-import { List, ListItem } from 'material-ui/List';
+import { Table, TableBody, TableRow, TableRowColumn } from 'material-ui/Table';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import IconLink from '../IconLink';
@@ -18,6 +17,25 @@ const styles = {
         overflow: 'auto',
         whiteSpace: 'normal',
         height: 'auto',
+    },
+    main: {
+        width: '100%',
+    },
+    table: {
+        width: '100%',
+        minWidth: '100%',
+        tableLayout: 'auto',
+    },
+    labelCell: {
+        fontSize: '1rem',
+        textAlign: 'right',
+        color: '#757575',
+        // width: '30%',
+    },
+    valueCell: {
+        fontSize: '1rem',
+        textAlign: 'left',
+        // width: '70%',
     },
 };
 
@@ -75,12 +93,10 @@ class UserProfile extends Component {
             }
 
             return (
-                <ListItem
-                    key={index}
-                    primaryText={label}
-                    secondaryText={<p style={styles.overflowSecundaryText}>{value}</p>}
-                    secondaryTextLines={1}
-                />
+                <TableRow key={index} displayBorder={false}>
+                    <TableRowColumn style={styles.labelCell}>{label}</TableRowColumn>
+                    <TableRowColumn style={styles.valueCell}>{value}</TableRowColumn>
+                </TableRow>
             );
         });
     }
@@ -97,16 +113,19 @@ class UserProfile extends Component {
         }
 
         const { id } = user;
+
         return (
-            <main style={{ width: '100%' }}>
+            <main style={styles.main}>
                 <Heading>
                     <IconLink to="/users" tooltip="Back to users" icon="arrow_back" />
                     {user.displayName}
                     <IconLink to={`/users/edit/${id}`} tooltip="Edit user" icon="edit" />
                 </Heading>
-                <Paper>
-                    <List>{this.renderProfileFields(user)}</List>
-                </Paper>
+                <Table selectable={false} style={styles.table}>
+                    <TableBody displayRowCheckbox={false}>
+                        {this.renderProfileFields(user)}
+                    </TableBody>
+                </Table>
             </main>
         );
     }

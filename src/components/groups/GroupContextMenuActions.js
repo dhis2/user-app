@@ -2,7 +2,7 @@ import i18next from 'i18next';
 import Action from 'd2-ui/lib/action/Action';
 // import { navigateTo } from '../../utils';
 // import store from '../../store';
-import { deleteModel } from '../../utils/sharedActions';
+import { deleteModel, openSharingSettings } from '../../utils/sharedActions';
 import { USER_GROUP } from '../../constants/entityTypes';
 import /*showDialog, hideDialog */ '../../actions';
 
@@ -29,9 +29,7 @@ groupContextMenuActions.show_details.subscribe(({ data: { id } }) => {
     console.log('show_details for user with id: ', id);
 });
 
-groupContextMenuActions.sharing_settings.subscribe(action => {
-    console.log('share_settings: ', action);
-});
+groupContextMenuActions.sharing_settings.subscribe(openSharingSettings);
 
 groupContextMenuActions.edit.subscribe(({ data: { id } }) => {
     console.log('edit user with id ' + id);
