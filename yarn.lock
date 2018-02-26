@@ -1790,9 +1790,9 @@ currently-unhandled@^0.4.1:
   dependencies:
     array-find-index "^1.0.1"
 
-d2-ui@29.0.5:
-  version "29.0.5"
-  resolved "https://registry.yarnpkg.com/d2-ui/-/d2-ui-29.0.5.tgz#47bbb2a7461e257c680c4016ec25a568a9e07121"
+d2-ui@^29.0.7:
+  version "29.0.8"
+  resolved "https://registry.yarnpkg.com/d2-ui/-/d2-ui-29.0.8.tgz#907f1105db1c6e16efcde22ba5b3180add163e35"
 
 d2-utilizr@^0.2.15:
   version "0.2.15"

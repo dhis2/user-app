@@ -28,11 +28,12 @@ class UserFilter extends Component {
     }
 
     onFilterChange(fieldName, newValue) {
-        const { getList, entityType, updateFilter } = this.props;
-        // Meh empty option in Select returns null as a string
-        if (newValue === 'null') {
-            newValue = null;
+        const { getList, entityType, updateFilter, filter } = this.props;
+
+        if (filter[fieldName] === newValue) {
+            return;
         }
+
         updateFilter(fieldName, newValue);
         getList(entityType);
     }

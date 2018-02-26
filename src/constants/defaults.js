@@ -1,5 +1,4 @@
 export const PAGE_SIZE = 5;
-
 export const PAGE = 1;
 
 export const USER_LIST_FIELD_FILTER = [

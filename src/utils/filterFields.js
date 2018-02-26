@@ -1,4 +1,4 @@
-import SelectField from 'd2-ui/lib/form-fields/DropDown.component';
+import DropDown from 'd2-ui/lib/form-fields/DropDown.component';
 import TextField from 'd2-ui/lib/form-fields/TextField';
 import CheckBox from 'd2-ui/lib/form-fields/CheckBox.component';
 import i18next from 'i18next';
@@ -34,7 +34,7 @@ export const getInactiveMonths = value => {
     return {
         name: FIELD_NAMES.INACTIVE_MONTHS,
         value: value,
-        component: SelectField,
+        component: DropDown,
         props: {
             menuItems: [
                 { id: 1, displayName: `1 ${month}` },
@@ -50,10 +50,10 @@ export const getInactiveMonths = value => {
                 { id: 11, displayName: `11 ${months}` },
                 { id: 12, displayName: `12 ${months}` },
             ],
-            includeEmpty: true,
-            emptyLabel: i18next.t('<No value>'),
             floatingLabelText: i18next.t('Show by inactivity'),
             style: { ...style, width: '172px' },
+            includeEmpty: true,
+            emptyLabel: i18next.t('<No value>'),
         },
     };
 };
@@ -61,16 +61,16 @@ export const getInactiveMonths = value => {
 export const getInvitationStatus = value => ({
     name: FIELD_NAMES.INVITATION_STATUS,
     value: value,
-    component: SelectField,
+    component: DropDown,
     props: {
         menuItems: [
             { id: 'all', displayName: i18next.t('All invitations') },
             { id: 'expired', displayName: i18next.t('Expired invitations') },
         ],
-        includeEmpty: true,
-        emptyLabel: i18next.t('<No value>'),
         floatingLabelText: i18next.t('Show invitations'),
         style: { ...style, width: '172px' },
+        includeEmpty: true,
+        emptyLabel: i18next.t('<No value>'),
     },
 });
 

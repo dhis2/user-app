@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import _ from '../../constants/lodash';
 import { USER } from '../../constants/entityTypes';
 import { connect } from 'react-redux';
 import { updateFilter, hideDialog, getList } from '../../actions';
 import SearchableOrgUnitTree from '../SearchableOrgUnitTree';
 
 class OrganisationUnitFilter extends Component {
-    applyFilter(selectedOrgUnits) {
-        const { updateFilter, hideDialog, getList } = this.props;
-        updateFilter('organisationUnits', selectedOrgUnits);
+    applyFilter(newSelectedOrgUnits) {
+        const { updateFilter, hideDialog, getList, selectedOrgUnits } = this.props;
+
+        if (_.isEqual(newSelectedOrgUnits, selectedOrgUnits)) {
+            return;
+        }
+
+        updateFilter('organisationUnits', newSelectedOrgUnits);
         hideDialog();
         getList(USER);
     }
