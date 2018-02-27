@@ -1806,9 +1806,9 @@ d2-utilizr@^0.2.15:
     lodash.isset "^4.3.0"
     lodash.isstring "^4.0.1"
 
-d2@^29.0.2:
+d2@dhis2/d2#feature/patch-requests-via-api:
   version "29.0.2"
-  resolved "https://registry.yarnpkg.com/d2/-/d2-29.0.2.tgz#058f104ce33d5192f1a36153401c52827992e8ab"
+  resolved "https://codeload.github.com/dhis2/d2/tar.gz/da8cad85236ffe471e6bee659e0f328d2d79af44"
   dependencies:
     docdash "^0.4.0"
     jsdoc "^3.5.5"

@@ -128,6 +128,12 @@ const updateCurrentUserGroupMembership = (groupId, deleteMembership) => {
     return this.d2Api[method](url);
 };
 
+const updateDisabledState = (id, disabled) => {
+    const url = `/users/${id}`;
+    const data = { userCredentials: { disabled: disabled } };
+    return this.d2Api.patch(url, data);
+};
+
 const getD2 = () => this.d2;
 
 const getCurrentUser = () => this.d2.currentUser;
@@ -145,6 +151,7 @@ export default {
     queryUserGroups,
     getCurrentUserGroupMemberships,
     updateCurrentUserGroupMembership,
+    updateDisabledState,
     updateUserTeiSearchOrganisations,
     updateSharingSettings,
 };
