@@ -21,7 +21,7 @@ const currentUserReducer = (state = null, { type, payload }) => {
         case CURRENT_USER_GROUP_MEMBERSHIP_REQUESTED:
             return { ...state, userGroups: null };
         case CURRENT_USER_GROUP_MEMBERSHIP_RECEIVED:
-            return { ...state, userGroups: payload.toArray() };
+            return { ...state, userGroups: payload };
         case CURRENT_USER_GROUP_MEMBERSHIP_ERRORED:
             return { ...state, userGroups: payload };
         default:

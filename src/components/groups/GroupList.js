@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import List from '../List';
+import i18next from 'i18next';
 import {
     isGroupContextActionAllowed,
     groupContextMenuIcons,
@@ -23,14 +24,10 @@ class GroupList extends Component {
     };
 
     componentWillMount() {
-        const { getCurrentUserGroupMemberships } = this.props;
-        getCurrentUserGroupMemberships();
-    }
-
-    selectUserAndGoToNextPage(user) {
-        const { history } = this.props;
-        const { id } = user;
-        history.push(`/users/edit/${id}`);
+        const { groupMemberships, getCurrentUserGroupMemberships } = this.props;
+        if (!groupMemberships) {
+            getCurrentUserGroupMemberships();
+        }
     }
 
     render() {
@@ -49,10 +46,11 @@ class GroupList extends Component {
                 entityType={USER_GROUP}
                 FilterComponent={SearchFilter}
                 columns={['displayName', 'currentUserIsMember']}
-                primaryAction={this.selectUserAndGoToNextPage.bind(this)}
+                primaryAction={groupContextMenuActions.edit}
                 contextMenuActions={groupContextMenuActions}
                 contextMenuIcons={groupContextMenuIcons}
                 isContextActionAllowed={isGroupContextActionAllowed}
+                sectionName={i18next.t('User Group Management')}
             />
         );
     }

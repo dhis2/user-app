@@ -118,6 +118,16 @@ const updateSharingSettings = (entityType, id, data) => {
     return this.d2Api.post(url, data);
 };
 
+const getCurrentUserGroupMemberships = () => {
+    return this.d2Api.get('/me', { fields: ['userGroups[:all]'] });
+};
+
+const updateCurrentUserGroupMembership = (groupId, deleteMembership) => {
+    const method = deleteMembership ? 'delete' : 'post';
+    const url = `/users/${this.d2.currentUser.id}/userGroups/${groupId}`;
+    return this.d2Api[method](url);
+};
+
 const getD2 = () => this.d2;
 
 const getCurrentUser = () => this.d2.currentUser;
@@ -133,6 +143,8 @@ export default {
     getOrgUnits,
     queryOrgUnits,
     queryUserGroups,
+    getCurrentUserGroupMemberships,
+    updateCurrentUserGroupMembership,
     updateUserTeiSearchOrganisations,
     updateSharingSettings,
 };

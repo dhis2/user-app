@@ -79,18 +79,12 @@ export const initCurrentUser = () => {
 };
 
 export const getCurrentUserGroupMemberships = () => (dispatch, getState) => {
+    const RECEIVED = ACTIONS.CURRENT_USER_GROUP_MEMBERSHIP_RECEIVED;
+    const ERRORED = ACTIONS.CURRENT_USER_GROUP_MEMBERSHIP_ERRORED;
+
     dispatch(createAction(ACTIONS.CURRENT_USER_GROUP_MEMBERSHIP_REQUESTED));
     api
-        .getCurrentUser()
-        .getUserGroups()
-        .then(response =>
-            dispatch(
-                createAction(ACTIONS.CURRENT_USER_GROUP_MEMBERSHIP_RECEIVED, response)
-            )
-        )
-        .catch(error =>
-            dispatch(
-                createAction(ACTIONS.CURRENT_USER_GROUP_MEMBERSHIP_ERRORED, error.message)
-            )
-        );
+        .getCurrentUserGroupMemberships()
+        .then(response => dispatch(createAction(RECEIVED, response.userGroups)))
+        .catch(error => dispatch(createAction(ERRORED, error.message)));
 };

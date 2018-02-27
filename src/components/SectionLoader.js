@@ -50,7 +50,6 @@ class SectionLoader extends Component {
 
     render() {
         const { routes, sections } = this.getRouteConfig();
-        console.log(routes, sections);
         return (
             <main style={style}>
                 <SideNav sections={sections} />

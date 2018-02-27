@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { USER_ROLE } from '../../constants/entityTypes';
 import List from '../List';
+import i18next from 'i18next';
 import {
     roleContextMenuActions,
     roleContextMenuIcons,
@@ -16,22 +17,17 @@ class RoleList extends Component {
         history: PropTypes.object.isRequired,
     };
 
-    selectUserAndGoToNextPage(user) {
-        const { history } = this.props;
-        const { id } = user;
-        history.push(`/users/edit/${id}`);
-    }
-
     render() {
         return (
             <List
                 entityType={USER_ROLE}
                 FilterComponent={SearchFilter}
                 columns={['displayName', 'description']}
-                primaryAction={this.selectUserAndGoToNextPage.bind(this)}
+                primaryAction={roleContextMenuActions.edit}
                 contextMenuActions={roleContextMenuActions}
                 contextMenuIcons={roleContextMenuIcons}
                 isContextActionAllowed={isRoleContextActionAllowed}
+                sectionName={i18next.t('User Role Management')}
             />
         );
     }

@@ -29,7 +29,7 @@ roleContextMenuActions.show_details.subscribe(({ data: { id } }) => {
 roleContextMenuActions.sharing_settings.subscribe(openSharingSettings);
 
 roleContextMenuActions.edit.subscribe(({ data: { id } }) => {
-    console.log('edit user with id ' + id);
+    navigateTo(`/user-roles/edit/${id}`);
 });
 
 roleContextMenuActions.remove.subscribe(({ data: role }) => {
