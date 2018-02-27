@@ -34,20 +34,12 @@ export const decrementPage = pager => (dispatch, getState) => {
     createListRequestActionSequence(dispatch, pager.getPreviousPage(), type);
 };
 
-// Item fetching
-const createItemRequestActionSequence = (dispatch, promise, receivedActionName) => {
+export const getItem = (entityName, viewType, id) => (dispatch, getState) => {
     dispatch(createAction(ACTIONS.ITEM_REQUESTED));
-    promise
-        .then(response => dispatch(createAction(receivedActionName, response)))
+    api
+        .getItem(entityName, viewType, id)
+        .then(response => dispatch(createAction(ACTIONS.ITEM_RECEIVED, response)))
         .catch(error => dispatch(createAction(ACTIONS.ITEM_ERRORED, error.message)));
-};
-
-export const getUser = id => (dispatch, getState) => {
-    createItemRequestActionSequence(
-        dispatch,
-        api.getUser(id),
-        ACTIONS.USER_ITEM_RECEIVED
-    );
 };
 
 // Regular actions

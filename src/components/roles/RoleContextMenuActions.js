@@ -1,6 +1,6 @@
 import i18next from 'i18next';
 import Action from 'd2-ui/lib/action/Action';
-// import { navigateTo } from '../../utils';
+import { navigateTo } from '../../utils';
 // import store from '../../store';
 import { USER_ROLE } from '../../constants/entityTypes';
 import { deleteModel, openSharingSettings } from '../../utils/sharedActions';
@@ -23,8 +23,7 @@ export const roleContextMenuActions = Action.createActionsFromNames([
 ]);
 
 roleContextMenuActions.show_details.subscribe(({ data: { id } }) => {
-    // navigateTo(`/users/view/${id}`);
-    console.log('show_details for user with id: ', id);
+    navigateTo(`/user-roles/view/${id}`);
 });
 
 roleContextMenuActions.sharing_settings.subscribe(openSharingSettings);

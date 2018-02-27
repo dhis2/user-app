@@ -13,6 +13,9 @@ import ImageEdit from 'material-ui/svg-icons/image/edit';
 import { Link } from 'react-router-dom';
 
 const styles = {
+    main: {
+        width: '100%',
+    },
     heading: {
         paddingBottom: '1rem',
     },
@@ -37,6 +40,7 @@ const styles = {
 
 const renderPropertyFields = (summaryObject, config) => {
     const labelCellStyle = { ...styles.cell, ...styles.valueCell };
+    console.log(summaryObject);
     return config.map((field, index) => {
         let {
             key,
@@ -45,30 +49,45 @@ const renderPropertyFields = (summaryObject, config) => {
             parseDate,
             nestedPropselector,
             parseArrayAsCommaDelimitedString,
+            count,
         } = field;
         label = i18next.t(label);
         let value = summaryObject[key];
 
-        if (nestedPropselector) {
-            nestedPropselector.forEach(selector => {
-                value = value[selector];
-            });
-        }
-
-        if (parseArrayAsCommaDelimitedString) {
-            // Some nested lists come through as a modelCollection but others are already arrays
-            if (typeof value.toArray === 'function') {
-                value = value.toArray();
+        if (typeof value === 'undefined') {
+            value = '';
+        } else {
+            if (nestedPropselector) {
+                nestedPropselector.forEach(selector => {
+                    value = value[selector];
+                });
             }
-            value = value.map(item => item[parseArrayAsCommaDelimitedString]).join(', ');
-        }
 
-        if (value && removeText) {
-            value = _.capitalize(value.replace(removeText, ''));
-        }
+            if (parseArrayAsCommaDelimitedString) {
+                // Some nested lists come through as a modelCollection but others are already arrays
+                if (typeof value.toArray === 'function') {
+                    value = value.toArray();
+                }
+                value = value
+                    .map(item => item[parseArrayAsCommaDelimitedString])
+                    .join(', ');
+            }
 
-        if (value && parseDate && typeof value === 'string') {
-            value = parseDateFromUTCString(value);
+            if (removeText) {
+                value = _.capitalize(value.replace(removeText, ''));
+            }
+
+            if (parseDate && typeof value === 'string') {
+                value = parseDateFromUTCString(value);
+            }
+
+            if (count) {
+                if (typeof value.size === 'number') {
+                    value = value.size;
+                } else if (typeof value.length === 'number') {
+                    value = value.length;
+                }
+            }
         }
 
         return (
@@ -80,9 +99,7 @@ const renderPropertyFields = (summaryObject, config) => {
     });
 };
 
-const DetailView = ({ summaryObject, config, baseName }) => {
-    const plural = `${baseName}s`;
-
+const DetailSummary = ({ summaryObject, config, baseName }) => {
     if (summaryObject === null) {
         return <LoadingMask />;
     }
@@ -93,16 +110,16 @@ const DetailView = ({ summaryObject, config, baseName }) => {
     }
 
     const { id, displayName } = summaryObject;
-
-    const backLink = `/${plural}`,
+    const plural = `${baseName}s`,
+        baseRoute = `/${_.kebabCase(plural)}`,
         backTooltip = i18next.t(`Back to ${plural}`),
-        editLink = `/${plural}/edit/${id}`,
+        editLink = `${baseRoute}/edit/${id}`,
         editTooltip = i18next.t(`Edit ${baseName}`);
 
     return (
         <main style={styles.main}>
             <Heading style={styles.heading}>
-                <IconLink to={backLink} tooltip={backTooltip} icon="arrow_back" />
+                <IconLink to={baseRoute} tooltip={backTooltip} icon="arrow_back" />
                 {displayName}
                 <RaisedButton
                     style={styles.raisedButton}
@@ -121,10 +138,10 @@ const DetailView = ({ summaryObject, config, baseName }) => {
     );
 };
 
-DetailView.propTypes = {
+DetailSummary.propTypes = {
     summaryObject: PropTypes.object,
     config: PropTypes.array.isRequired,
     baseName: PropTypes.string.isRequired,
 };
 
-export default DetailView;
+export default DetailSummary;

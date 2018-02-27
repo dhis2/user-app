@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { USER } from '../../constants/entityTypes';
-import DetailView from '../DetailView';
+import { USER, DETAILS } from '../../constants/entityTypes';
+import DetailSummary from '../DetailSummary';
 import { connect } from 'react-redux';
-import { USER_PROFILE_DISPLAY_FIELD_CONFIG } from '../../constants/defaults';
-import { getUser } from '../../actions';
+import { USER_PROFILE } from '../../constants/detailFieldConfigs';
+import { getItem } from '../../actions';
 
 class UserProfile extends Component {
     static propTypes = {
@@ -12,23 +12,18 @@ class UserProfile extends Component {
         location: PropTypes.object.isRequired,
         history: PropTypes.object.isRequired,
         user: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-        getUser: PropTypes.func.isRequired,
+        getItem: PropTypes.func.isRequired,
     };
 
     componentWillMount() {
-        const { getUser, match: { params: { id } } } = this.props;
-        getUser(id);
+        const { getItem, match: { params: { id } } } = this.props;
+        getItem(USER, DETAILS, id);
     }
 
     render() {
         const { user } = this.props;
-
         return (
-            <DetailView
-                summaryObject={user}
-                config={USER_PROFILE_DISPLAY_FIELD_CONFIG}
-                baseName={USER}
-            />
+            <DetailSummary summaryObject={user} config={USER_PROFILE} baseName={USER} />
         );
     }
 }
@@ -38,5 +33,5 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, {
-    getUser,
+    getItem,
 })(UserProfile);

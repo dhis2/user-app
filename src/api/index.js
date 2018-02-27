@@ -1,15 +1,13 @@
+import _ from '../constants/lodash';
 import {
     PAGE as DEFAULT_PAGE,
     PAGE_SIZE as DEFAULT_PAGE_SIZE,
-    USER_LIST_FIELD_FILTER,
-    USER_ROLES_LIST_FIELD_FILTER,
-    USER_GROUPS_LIST_FIELD_FILTER,
-    USER_PROFILE_FIELD_FILTER,
-    ORG_UNITS_QUERY_CONFIG,
-    USER_GROUP_QUERY_CONFIG,
 } from '../constants/defaults';
 
-import { USER, USER_GROUP, USER_ROLE } from '../constants/entityTypes';
+import FIELDS, {
+    ORG_UNITS_QUERY_CONFIG,
+    USER_GROUP_QUERY_CONFIG,
+} from '../constants/queryFields';
 
 const init = d2 => {
     this.d2 = d2;
@@ -23,17 +21,13 @@ const init = d2 => {
         Please remove this before building.`);
 };
 
-const getFieldsForListType = entityName => {
-    switch (entityName) {
-        case USER:
-            return USER_LIST_FIELD_FILTER;
-        case USER_GROUP:
-            return USER_GROUPS_LIST_FIELD_FILTER;
-        case USER_ROLE:
-            return USER_ROLES_LIST_FIELD_FILTER;
-        default:
-            return USER_LIST_FIELD_FILTER;
-    }
+const getQueryFields = (entityName, viewType) => {
+    const formattedEntityName = _.snakeCase(entityName).toUpperCase();
+    const varName = viewType
+        ? `${formattedEntityName}_${viewType}`
+        : `${formattedEntityName}_LIST`;
+
+    return FIELDS[varName];
 };
 
 const createRequestData = (page = DEFAULT_PAGE, filter, fields) => {
@@ -65,18 +59,14 @@ const createRequestData = (page = DEFAULT_PAGE, filter, fields) => {
 };
 
 const getList = (entityName, page, filter) => {
-    const fields = getFieldsForListType(entityName);
+    const fields = getQueryFields(entityName);
     const requestData = createRequestData(page, filter, fields);
     return this.d2.models[entityName].list(requestData);
 };
 
-const getUser = id => {
-    if (typeof id !== 'string') {
-        throw new Error(
-            `api.getUser was called without passing a valid id. Value of id is: ${id}`
-        );
-    }
-    return this.d2.models.user.get(id, { fields: USER_PROFILE_FIELD_FILTER });
+const getItem = (entityName, viewType, id) => {
+    const fields = getQueryFields(entityName, viewType);
+    return this.d2.models[entityName].get(id, fields);
 };
 
 const getUserByUsername = username => {
@@ -135,7 +125,7 @@ export default {
     init,
     getD2,
     getList,
-    getUser,
+    getItem,
     getUserByUsername,
     replicateUser,
     getOrgUnits,

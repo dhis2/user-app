@@ -1,6 +1,6 @@
 import i18next from 'i18next';
 import Action from 'd2-ui/lib/action/Action';
-// import { navigateTo } from '../../utils';
+import { navigateTo } from '../../utils';
 // import store from '../../store';
 import { deleteModel, openSharingSettings } from '../../utils/sharedActions';
 import { USER_GROUP } from '../../constants/entityTypes';
@@ -25,8 +25,7 @@ export const groupContextMenuActions = Action.createActionsFromNames([
 ]);
 
 groupContextMenuActions.show_details.subscribe(({ data: { id } }) => {
-    // navigateTo(`/users/view/${id}`);
-    console.log('show_details for user with id: ', id);
+    navigateTo(`/user-groups/view/${id}`);
 });
 
 groupContextMenuActions.sharing_settings.subscribe(openSharingSettings);
