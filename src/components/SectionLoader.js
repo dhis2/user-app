@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import api from '../api';
 import { initCurrentUser } from '../actions';
 import ROUTE_CONFIG from '../constants/routeConfig';
@@ -60,6 +60,8 @@ class SectionLoader extends Component {
     }
 }
 
-export default connect(null, {
-    initCurrentUser,
-})(SectionLoader);
+export default withRouter(
+    connect(null, {
+        initCurrentUser,
+    })(SectionLoader)
+);
