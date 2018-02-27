@@ -170,7 +170,7 @@ class List extends Component {
 const mapStateToProps = state => {
     return {
         listType: state.list.type,
-        items: listSelector(state.list.items),
+        items: listSelector(state.list.items, state.currentUser.userGroups),
         pager: pagerSelector(state.pager),
     };
 };

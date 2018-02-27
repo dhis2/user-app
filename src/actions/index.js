@@ -73,3 +73,24 @@ export const showDialog = (content, props) => {
 export const hideDialog = () => {
     return createAction(ACTIONS.HIDE_DIALOG);
 };
+
+export const initCurrentUser = () => {
+    return createAction(ACTIONS.INIT_CURRENT_USER, api.getCurrentUser());
+};
+
+export const getCurrentUserGroupMemberships = () => (dispatch, getState) => {
+    dispatch(createAction(ACTIONS.CURRENT_USER_GROUP_MEMBERSHIP_REQUESTED));
+    api
+        .getCurrentUser()
+        .getUserGroups()
+        .then(response =>
+            dispatch(
+                createAction(ACTIONS.CURRENT_USER_GROUP_MEMBERSHIP_RECEIVED, response)
+            )
+        )
+        .catch(error =>
+            dispatch(
+                createAction(ACTIONS.CURRENT_USER_GROUP_MEMBERSHIP_ERRORED, error.message)
+            )
+        );
+};

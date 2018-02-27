@@ -40,7 +40,6 @@ const styles = {
 
 const renderPropertyFields = (summaryObject, config) => {
     const labelCellStyle = { ...styles.cell, ...styles.valueCell };
-    console.log(summaryObject);
     return config.map((field, index) => {
         let {
             key,

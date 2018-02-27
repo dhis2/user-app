@@ -12,13 +12,13 @@ export const pagerSelector = pager => {
     return pager;
 };
 
-export const listSelector = list => {
+export const listSelector = (list, itemMemberships) => {
     if (!list || typeof list === 'string') {
         return list;
     }
 
     const listType = list.modelDefinition.name;
-    return list.toArray().map(mappings[listType]);
+    return list.toArray().map(item => mappings[listType](item, itemMemberships));
 };
 
 const mappings = {
@@ -27,7 +27,12 @@ const mappings = {
         return item;
     },
     userRole: item => item,
-    userGroup: item => item,
+    userGroup: (item, itemMemberships) => {
+        item.currentUserIsMember = itemMemberships.some(({ id }) => id === item.id)
+            ? '\u2713'
+            : '';
+        return item;
+    },
 };
 
 export const orgUnitsAsStringSelector = orgUnits => {

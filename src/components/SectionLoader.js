@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import api from '../api';
+import { initCurrentUser } from '../actions';
 import ROUTE_CONFIG from '../constants/routeConfig';
 import SideNav from './SideNav';
 
@@ -16,9 +18,15 @@ class SectionLoader extends Component {
         d2: PropTypes.object,
     };
 
+    static propTypes = {
+        initCurrentUser: PropTypes.func.isRequired,
+    };
+
     componentWillMount() {
         const { d2 } = this.context;
+        const { initCurrentUser } = this.props;
         api.init(d2);
+        initCurrentUser();
     }
 
     getRouteConfig() {
@@ -42,7 +50,7 @@ class SectionLoader extends Component {
 
     render() {
         const { routes, sections } = this.getRouteConfig();
-
+        console.log(routes, sections);
         return (
             <main style={style}>
                 <SideNav sections={sections} />
@@ -52,4 +60,6 @@ class SectionLoader extends Component {
     }
 }
 
-export default SectionLoader;
+export default connect(null, {
+    initCurrentUser,
+})(SectionLoader);

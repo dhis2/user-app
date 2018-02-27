@@ -12,7 +12,6 @@ import FIELDS, {
 const init = d2 => {
     this.d2 = d2;
     this.d2Api = d2.Api.getApi();
-    this.pager = null;
 
     // TODO: Remove this
     window.d2 = this.d2;
@@ -121,9 +120,12 @@ const updateSharingSettings = (entityType, id, data) => {
 
 const getD2 = () => this.d2;
 
+const getCurrentUser = () => this.d2.currentUser;
+
 export default {
     init,
     getD2,
+    getCurrentUser,
     getList,
     getItem,
     getUserByUsername,
