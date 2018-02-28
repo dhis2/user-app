@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { USER } from '../../constants/entityTypes';
 import List from '../List';
+import i18next from 'i18next';
 
 import {
     userContextMenuActions,
@@ -17,22 +18,17 @@ class UserList extends Component {
         history: PropTypes.object.isRequired,
     };
 
-    selectUserAndGoToNextPage(user) {
-        const { history } = this.props;
-        const { id } = user;
-        history.push(`/users/edit/${id}`);
-    }
-
     render() {
         return (
             <List
                 entityType={USER}
                 columns={['displayName', 'userName']}
                 FilterComponent={UserFilter}
-                primaryAction={this.selectUserAndGoToNextPage.bind(this)}
+                primaryAction={userContextMenuActions.edit}
                 contextMenuActions={userContextMenuActions}
                 contextMenuIcons={userContextMenuIcons}
                 isContextActionAllowed={isUserContextActionAllowed}
+                sectionName={i18next.t('User Management')}
             />
         );
     }

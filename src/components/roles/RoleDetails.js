@@ -1,37 +1,42 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { USER, DETAILS } from '../../constants/entityTypes';
+import { USER_ROLE, DETAILS } from '../../constants/entityTypes';
 import DetailSummary from '../DetailSummary';
 import { connect } from 'react-redux';
-import { USER_PROFILE } from '../../constants/detailFieldConfigs';
+import { USER_ROLE_DETAILS } from '../../constants/detailFieldConfigs';
 import { getItem } from '../../actions';
 
-class UserProfile extends Component {
+class RoleDetails extends Component {
     static propTypes = {
         match: PropTypes.object.isRequired,
         location: PropTypes.object.isRequired,
         history: PropTypes.object.isRequired,
-        user: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+        role: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
         getItem: PropTypes.func.isRequired,
     };
 
     componentWillMount() {
         const { getItem, match: { params: { id } } } = this.props;
-        getItem(USER, DETAILS, id);
+        getItem(USER_ROLE, DETAILS, id);
     }
 
     render() {
-        const { user } = this.props;
+        const { role } = this.props;
+
         return (
-            <DetailSummary summaryObject={user} config={USER_PROFILE} baseName={USER} />
+            <DetailSummary
+                summaryObject={role}
+                config={USER_ROLE_DETAILS}
+                baseName={USER_ROLE}
+            />
         );
     }
 }
 
 const mapStateToProps = state => ({
-    user: state.currentItem,
+    role: state.currentItem,
 });
 
 export default connect(mapStateToProps, {
     getItem,
-})(UserProfile);
+})(RoleDetails);

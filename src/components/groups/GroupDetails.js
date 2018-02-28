@@ -1,37 +1,42 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { USER, DETAILS } from '../../constants/entityTypes';
+import { USER_GROUP, DETAILS } from '../../constants/entityTypes';
 import DetailSummary from '../DetailSummary';
 import { connect } from 'react-redux';
-import { USER_PROFILE } from '../../constants/detailFieldConfigs';
+import { USER_GROUP_DETAILS } from '../../constants/detailFieldConfigs';
 import { getItem } from '../../actions';
 
-class UserProfile extends Component {
+class GroupDetails extends Component {
     static propTypes = {
         match: PropTypes.object.isRequired,
         location: PropTypes.object.isRequired,
         history: PropTypes.object.isRequired,
-        user: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+        group: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
         getItem: PropTypes.func.isRequired,
     };
 
     componentWillMount() {
         const { getItem, match: { params: { id } } } = this.props;
-        getItem(USER, DETAILS, id);
+        getItem(USER_GROUP, DETAILS, id);
     }
 
     render() {
-        const { user } = this.props;
+        const { group } = this.props;
+
         return (
-            <DetailSummary summaryObject={user} config={USER_PROFILE} baseName={USER} />
+            <DetailSummary
+                summaryObject={group}
+                config={USER_GROUP_DETAILS}
+                baseName={USER_GROUP}
+            />
         );
     }
 }
 
 const mapStateToProps = state => ({
-    user: state.currentItem,
+    group: state.currentItem,
 });
 
 export default connect(mapStateToProps, {
     getItem,
-})(UserProfile);
+})(GroupDetails);

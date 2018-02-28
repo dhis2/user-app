@@ -34,20 +34,12 @@ export const decrementPage = pager => (dispatch, getState) => {
     createListRequestActionSequence(dispatch, pager.getPreviousPage(), type);
 };
 
-// Item fetching
-const createItemRequestActionSequence = (dispatch, promise, receivedActionName) => {
+export const getItem = (entityName, viewType, id) => (dispatch, getState) => {
     dispatch(createAction(ACTIONS.ITEM_REQUESTED));
-    promise
-        .then(response => dispatch(createAction(receivedActionName, response)))
+    api
+        .getItem(entityName, viewType, id)
+        .then(response => dispatch(createAction(ACTIONS.ITEM_RECEIVED, response)))
         .catch(error => dispatch(createAction(ACTIONS.ITEM_ERRORED, error.message)));
-};
-
-export const getUser = id => (dispatch, getState) => {
-    createItemRequestActionSequence(
-        dispatch,
-        api.getUser(id),
-        ACTIONS.USER_ITEM_RECEIVED
-    );
 };
 
 // Regular actions
@@ -80,4 +72,19 @@ export const showDialog = (content, props) => {
 
 export const hideDialog = () => {
     return createAction(ACTIONS.HIDE_DIALOG);
+};
+
+export const initCurrentUser = () => {
+    return createAction(ACTIONS.INIT_CURRENT_USER, api.getCurrentUser());
+};
+
+export const getCurrentUserGroupMemberships = () => (dispatch, getState) => {
+    const RECEIVED = ACTIONS.CURRENT_USER_GROUP_MEMBERSHIP_RECEIVED;
+    const ERRORED = ACTIONS.CURRENT_USER_GROUP_MEMBERSHIP_ERRORED;
+
+    dispatch(createAction(ACTIONS.CURRENT_USER_GROUP_MEMBERSHIP_REQUESTED));
+    api
+        .getCurrentUserGroupMemberships()
+        .then(response => dispatch(createAction(RECEIVED, response.userGroups)))
+        .catch(error => dispatch(createAction(ERRORED, error.message)));
 };

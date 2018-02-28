@@ -1,44 +1,86 @@
 import i18next from 'i18next';
 import Action from 'd2-ui/lib/action/Action';
-// import { navigateTo } from '../../utils';
-// import store from '../../store';
-import { deleteModel } from '../../utils/sharedActions';
+import { navigateTo } from '../../utils';
+import api from '../../api';
+import store from '../../store';
+import { deleteModel, openSharingSettings } from '../../utils/sharedActions';
 import { USER_GROUP } from '../../constants/entityTypes';
-import /*showDialog, hideDialog */ '../../actions';
+import { showSnackbar, getCurrentUserGroupMemberships } from '../../actions';
 
-export const isGroupContextActionAllowed = () => true;
+const show_details = 'show_details';
+const sharing_settings = 'sharing_settings';
+const edit = 'edit';
+const join_group = 'join_group';
+const leave_group = 'leave_group';
+const remove = 'remove';
+
+export const isGroupContextActionAllowed = (model, action) => {
+    if (!model) {
+        return false;
+    }
+
+    if (action === join_group && model.currentUserIsMember) {
+        return false;
+    }
+
+    if (action === leave_group && !model.currentUserIsMember) {
+        return false;
+    }
+
+    return true;
+};
 
 export const groupContextMenuIcons = {
-    show_details: 'info',
-    sharing_settings: 'share',
-    edit: 'edit',
-    leave_group: 'exit_to_app',
-    remove: 'delete',
+    [show_details]: 'info',
+    [sharing_settings]: 'share',
+    [edit]: 'edit',
+    [join_group]: 'group_add',
+    [leave_group]: 'exit_to_app',
+    [remove]: 'delete',
 };
 
 export const groupContextMenuActions = Action.createActionsFromNames([
-    'show_details',
-    'sharing_settings',
-    'edit',
-    'leave_group',
-    'remove',
+    show_details,
+    sharing_settings,
+    edit,
+    join_group,
+    leave_group,
+    remove,
 ]);
 
+const updateGroupMembership = ({ displayName, id }, deleteMembership) => {
+    const joinSuccessBaseMsg = i18next.t('You joined group');
+    const leaveSuccessBaseMsg = i18next.t('You left group');
+    const errorMsg = i18next.t('There was a problem updating your group membership');
+
+    api
+        .updateCurrentUserGroupMembership(id, deleteMembership)
+        .then(() => {
+            const baseMsg = deleteMembership ? leaveSuccessBaseMsg : joinSuccessBaseMsg;
+            store.dispatch(showSnackbar({ message: `${baseMsg} ${displayName}` }));
+            store.dispatch(getCurrentUserGroupMemberships());
+        })
+        .catch(() => {
+            store.dispatch(showSnackbar({ message: errorMsg }));
+        });
+};
+
 groupContextMenuActions.show_details.subscribe(({ data: { id } }) => {
-    // navigateTo(`/users/view/${id}`);
-    console.log('show_details for user with id: ', id);
+    navigateTo(`/user-groups/view/${id}`);
 });
 
-groupContextMenuActions.sharing_settings.subscribe(action => {
-    console.log('share_settings: ', action);
-});
+groupContextMenuActions.sharing_settings.subscribe(openSharingSettings);
 
 groupContextMenuActions.edit.subscribe(({ data: { id } }) => {
-    console.log('edit user with id ' + id);
+    navigateTo(`/user-groups/edit/${id}`);
 });
 
-groupContextMenuActions.leave_group.subscribe(action => {
-    console.log('leave_group: ', action);
+groupContextMenuActions.join_group.subscribe(({ data }) => {
+    updateGroupMembership(data, false);
+});
+
+groupContextMenuActions.leave_group.subscribe(({ data }) => {
+    updateGroupMembership(data, true);
 });
 
 groupContextMenuActions.remove.subscribe(({ data: group }) => {

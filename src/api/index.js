@@ -1,19 +1,17 @@
+import _ from '../constants/lodash';
 import {
     PAGE as DEFAULT_PAGE,
     PAGE_SIZE as DEFAULT_PAGE_SIZE,
-    USER_LIST_FIELD_FILTER,
-    USER_ROLES_LIST_FIELD_FILTER,
-    USER_GROUPS_LIST_FIELD_FILTER,
-    USER_PROFILE_FIELD_FILTER,
-    ORG_UNITS_QUERY_CONFIG,
 } from '../constants/defaults';
 
-import { USER, USER_GROUP, USER_ROLE } from '../constants/entityTypes';
+import FIELDS, {
+    ORG_UNITS_QUERY_CONFIG,
+    USER_GROUP_QUERY_CONFIG,
+} from '../constants/queryFields';
 
 const init = d2 => {
     this.d2 = d2;
     this.d2Api = d2.Api.getApi();
-    this.pager = null;
 
     // TODO: Remove this
     window.d2 = this.d2;
@@ -22,17 +20,13 @@ const init = d2 => {
         Please remove this before building.`);
 };
 
-const getFieldsForListType = entityName => {
-    switch (entityName) {
-        case USER:
-            return USER_LIST_FIELD_FILTER;
-        case USER_GROUP:
-            return USER_GROUPS_LIST_FIELD_FILTER;
-        case USER_ROLE:
-            return USER_ROLES_LIST_FIELD_FILTER;
-        default:
-            return USER_LIST_FIELD_FILTER;
-    }
+const getQueryFields = (entityName, viewType) => {
+    const formattedEntityName = _.snakeCase(entityName).toUpperCase();
+    const varName = viewType
+        ? `${formattedEntityName}_${viewType}`
+        : `${formattedEntityName}_LIST`;
+
+    return FIELDS[varName];
 };
 
 const createRequestData = (page = DEFAULT_PAGE, filter, fields) => {
@@ -64,18 +58,14 @@ const createRequestData = (page = DEFAULT_PAGE, filter, fields) => {
 };
 
 const getList = (entityName, page, filter) => {
-    const fields = getFieldsForListType(entityName);
+    const fields = getQueryFields(entityName);
     const requestData = createRequestData(page, filter, fields);
     return this.d2.models[entityName].list(requestData);
 };
 
-const getUser = id => {
-    if (typeof id !== 'string') {
-        throw new Error(
-            `api.getUser was called without passing a valid id. Value of id is: ${id}`
-        );
-    }
-    return this.d2.models.user.get(id, { fields: USER_PROFILE_FIELD_FILTER });
+const getItem = (entityName, viewType, id) => {
+    const fields = getQueryFields(entityName, viewType);
+    return this.d2.models[entityName].get(id, fields);
 };
 
 const getUserByUsername = username => {
@@ -110,15 +100,58 @@ const queryOrgUnits = query => {
     return this.d2.models.organisationUnits.list(listConfig);
 };
 
+const queryUserGroups = query => {
+    const listConfig = {
+        ...USER_GROUP_QUERY_CONFIG,
+        query,
+    };
+    return this.d2.models.userGroups.list(listConfig);
+};
+
+const updateUserTeiSearchOrganisations = (userId, data) => {
+    const url = `/users/${userId}/teiSearchOrganisationUnits`;
+    return this.d2Api.post(url, data);
+};
+
+const updateSharingSettings = (entityType, id, data) => {
+    const url = `/sharing?type=${entityType}&id=${id}`;
+    return this.d2Api.post(url, data);
+};
+
+const getCurrentUserGroupMemberships = () => {
+    return this.d2Api.get('/me', { fields: ['userGroups[:all]'] });
+};
+
+const updateCurrentUserGroupMembership = (groupId, deleteMembership) => {
+    const method = deleteMembership ? 'delete' : 'post';
+    const url = `/users/${this.d2.currentUser.id}/userGroups/${groupId}`;
+    return this.d2Api[method](url);
+};
+
+const updateDisabledState = (id, disabled) => {
+    const url = `/users/${id}`;
+    const data = { userCredentials: { disabled: disabled } };
+    return this.d2Api.patch(url, data);
+};
+
 const getD2 = () => this.d2;
+
+const getCurrentUser = () => this.d2.currentUser;
 
 export default {
     init,
     getD2,
+    getCurrentUser,
     getList,
-    getUser,
+    getItem,
     getUserByUsername,
     replicateUser,
     getOrgUnits,
     queryOrgUnits,
+    queryUserGroups,
+    getCurrentUserGroupMemberships,
+    updateCurrentUserGroupMembership,
+    updateDisabledState,
+    updateUserTeiSearchOrganisations,
+    updateSharingSettings,
 };

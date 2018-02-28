@@ -34,6 +34,7 @@ class List extends Component {
     static propTypes = {
         items: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
         pager: PropTypes.object,
+        sectionName: PropTypes.string.isRequired,
         getList: PropTypes.func.isRequired,
         incrementPage: PropTypes.func.isRequired,
         decrementPage: PropTypes.func.isRequired,
@@ -157,9 +158,10 @@ class List extends Component {
     }
 
     render() {
+        const { sectionName } = this.props;
         return (
             <div style={styles.dataTableWrap}>
-                <Heading>User management</Heading>
+                <Heading>{sectionName}</Heading>
                 {this.renderHeaderBar()}
                 {this.renderDataTable()}
                 {this.renderPagination()}
@@ -170,7 +172,7 @@ class List extends Component {
 const mapStateToProps = state => {
     return {
         listType: state.list.type,
-        items: listSelector(state.list.items),
+        items: listSelector(state.list.items, state.currentUser.userGroups),
         pager: pagerSelector(state.pager),
     };
 };

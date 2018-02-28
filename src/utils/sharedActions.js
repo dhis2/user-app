@@ -1,6 +1,8 @@
+import React from 'react';
 import store from '../store';
-import { getList, showSnackbar, hideSnackbar } from '../actions';
+import { getList, showSnackbar, hideSnackbar, showDialog, hideDialog } from '../actions';
 import i18next from 'i18next';
+import SharingSettingsForm from '../components/SharingSettingsForm';
 
 export const deleteModel = ({ confirmMsg, successMsg, errorMsg, model, entityType }) => {
     const snackbarProps = {
@@ -24,4 +26,16 @@ const onRemoveConfirm = (model, successMsg, errorMsg, entityType) => {
         .catch(() => {
             store.dispatch(showSnackbar({ message: errorMsg }));
         });
+};
+
+export const openSharingSettings = ({ data: model }) => {
+    const content = <SharingSettingsForm model={model} />;
+    const props = {
+        onRequestClose: () => store.dispatch(hideDialog()),
+        title: model.displayName,
+        contentStyle: {
+            minHeight: '100vh',
+        },
+    };
+    store.dispatch(showDialog(content, props));
 };

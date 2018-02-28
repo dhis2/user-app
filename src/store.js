@@ -6,11 +6,12 @@ import listReducer from './reducers/list';
 import filterReducer from './reducers/filter';
 import pagerReducer from './reducers/pager';
 import currentItemReducer from './reducers/currentItem';
+import currentUserReducer from './reducers/currentUser';
 import notificationsReducer from './reducers/notifications/';
 
 let middlewares = [ReduxThunk];
 
-const shouldLog = true;
+const shouldLog = false;
 
 if (process.env.NODE_ENV === 'development' && shouldLog) {
     middlewares.push(logger);
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
     filter: filterReducer,
     pager: pagerReducer,
     currentItem: currentItemReducer,
+    currentUser: currentUserReducer,
     notifications: notificationsReducer,
     form: formReducer,
 });
