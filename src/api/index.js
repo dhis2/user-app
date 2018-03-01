@@ -134,6 +134,14 @@ const updateDisabledState = (id, disabled) => {
     return this.d2Api.patch(url, data);
 };
 
+const verifyPassword = password => {
+    return this.d2Api.post('/me/verifyPassword', { password });
+};
+
+const deleteUser = id => {
+    return this.d2Api.delete(`/users/${id}`);
+};
+
 const getD2 = () => this.d2;
 
 const getCurrentUser = () => this.d2.currentUser;
@@ -154,4 +162,6 @@ export default {
     updateDisabledState,
     updateUserTeiSearchOrganisations,
     updateSharingSettings,
+    verifyPassword,
+    deleteUser,
 };

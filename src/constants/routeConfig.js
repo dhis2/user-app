@@ -8,7 +8,7 @@ import RoleList from '../components/roles/RoleList';
 import RoleDetails from '../components/roles/RoleDetails';
 import GroupList from '../components/groups/GroupList';
 import GroupDetails from '../components/groups/GroupDetails';
-import DeleteCurrentUserView from '../components/DeleteCurrentUserView';
+import DeleteCurrentUser from '../components/DeleteCurrentUser';
 import { USER, USER_ROLE, USER_GROUP } from './entityTypes';
 
 // Label property is used in sidebar, so routes without a label will be omitted
@@ -82,7 +82,7 @@ const ROUTE_CONFIG = [
         label: 'Delete current user',
         icon: 'delete',
         path: '/delete-current-user',
-        component: DeleteCurrentUserView,
+        component: DeleteCurrentUser,
     },
     {
         key: 'not_found',
