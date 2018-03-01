@@ -11,6 +11,7 @@ const style = {
     marginTop: '4rem',
     display: 'flex',
     flex: '1 1 0%',
+    paddingRight: '2rem',
 };
 
 class SectionLoader extends Component {

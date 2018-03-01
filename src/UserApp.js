@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
+import theme from './theme';
 import history from './utils/history';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import D2UIApp from 'd2-ui/lib/app/D2UIApp';
@@ -21,7 +22,7 @@ injectTapEventPlugin();
 
 const UserApp = ({ config }) => (
     <Provider store={store}>
-        <D2UIApp initConfig={config} LoadingComponent={LoadingMask}>
+        <D2UIApp initConfig={config} LoadingComponent={LoadingMask} muiTheme={theme}>
             <div>
                 <HeaderBar />
                 <Router history={history} hashType={'noslash'}>
