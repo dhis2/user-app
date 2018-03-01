@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CircularProgress from 'material-ui/CircularProgress';
 import AutoComplete from 'material-ui/AutoComplete';
 import MenuItem from 'material-ui/MenuItem';
-import { orange500, cyan500 } from 'material-ui/styles/colors';
+import { orange500, blue500 } from 'material-ui/styles/colors';
 import i18next from 'i18next';
 import _ from '../constants/lodash';
 import PropTypes from 'prop-types';
@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 const styles = {
     error: {
         info: {
-            color: cyan500,
+            color: blue500,
         },
         warning: {
             color: orange500,
