@@ -1,23 +1,28 @@
 import UserList from '../components/users/UserList';
-import UserEdit from '../components/users/UserEdit';
-import GroupEdit from '../components/groups/GroupEdit';
-import RoleEdit from '../components/roles/RoleEdit';
+import UserForm from '../components/users/UserForm';
+import GroupForm from '../components/groups/GroupForm';
+import RoleForm from '../components/roles/RoleForm';
 import UserProfile from '../components/users/UserProfile';
 import PageNotFound from '../components/PageNotFound';
 import RoleList from '../components/roles/RoleList';
 import RoleDetails from '../components/roles/RoleDetails';
 import GroupList from '../components/groups/GroupList';
 import GroupDetails from '../components/groups/GroupDetails';
-import DeleteCurrentUserView from '../components/DeleteCurrentUserView';
 import { USER, USER_ROLE, USER_GROUP } from './entityTypes';
 
 // Label property is used in sidebar, so routes without a label will be omitted
 const ROUTE_CONFIG = [
     // USER
     {
+        key: 'user_new_view',
+        path: '/users/new',
+        component: UserForm,
+        entityType: USER,
+    },
+    {
         key: 'user_edit_view',
         path: '/users/edit/:id',
-        component: UserEdit,
+        component: UserForm,
         entityType: USER,
     },
     {
@@ -36,9 +41,15 @@ const ROUTE_CONFIG = [
     },
     // ROLE
     {
+        key: 'user_role_new_view',
+        path: '/user-roles/new',
+        component: RoleForm,
+        entityType: USER_ROLE,
+    },
+    {
         key: 'user_role_edit_view',
         path: '/user-roles/edit/:id',
-        component: RoleEdit,
+        component: RoleForm,
         entityType: USER_ROLE,
     },
     {
@@ -57,9 +68,15 @@ const ROUTE_CONFIG = [
     },
     // GROUP
     {
+        key: 'user_group_new_view',
+        path: '/user-groups/new',
+        component: GroupForm,
+        entityType: USER_GROUP,
+    },
+    {
         key: 'user_group_edit_view',
         path: '/user-groups/edit/:id',
-        component: GroupEdit,
+        component: GroupForm,
         entityType: USER_GROUP,
     },
     {
@@ -75,14 +92,6 @@ const ROUTE_CONFIG = [
         path: '/user-groups',
         component: GroupList,
         entityType: USER_GROUP,
-    },
-    // OTHER
-    {
-        key: 'delete_current_user_section',
-        label: 'Delete current user',
-        icon: 'delete',
-        path: '/delete-current-user',
-        component: DeleteCurrentUserView,
     },
     {
         key: 'not_found',

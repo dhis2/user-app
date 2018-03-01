@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import i18next from 'i18next';
 import { USER_ROLE } from '../../constants/entityTypes';
 import List from '../List';
-import i18next from 'i18next';
 import {
     roleContextMenuActions,
     roleContextMenuIcons,
@@ -28,6 +28,7 @@ class RoleList extends Component {
                 contextMenuIcons={roleContextMenuIcons}
                 isContextActionAllowed={isRoleContextActionAllowed}
                 sectionName={i18next.t('User Role Management')}
+                newItemPath={'/user-roles/new'}
             />
         );
     }

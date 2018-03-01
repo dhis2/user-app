@@ -29,6 +29,7 @@ class UserList extends Component {
                 contextMenuIcons={userContextMenuIcons}
                 isContextActionAllowed={isUserContextActionAllowed}
                 sectionName={i18next.t('User Management')}
+                newItemPath={'/users/new'}
             />
         );
     }

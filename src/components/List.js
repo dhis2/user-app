@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 import DataTable from 'd2-ui/lib/data-table/DataTable.component';
 import Pagination from 'd2-ui/lib/pagination/Pagination.component';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import 'd2-ui/lib/css/DataTable.css';
 import 'd2-ui/lib/css/Pagination.css';
+import { navigateTo } from '../utils';
 import { listSelector, pagerSelector } from '../selectors';
 import { USER } from '../constants/entityTypes';
 import {
@@ -41,6 +44,7 @@ class List extends Component {
         resetPager: PropTypes.func.isRequired,
         resetFilter: PropTypes.func.isRequired,
         entityType: PropTypes.string.isRequired,
+        newItemPath: PropTypes.string.isRequired,
         listType: PropTypes.string.isRequired,
         FilterComponent: PropTypes.func.isRequired,
         columns: PropTypes.arrayOf(String).isRequired,
@@ -158,13 +162,19 @@ class List extends Component {
     }
 
     render() {
-        const { sectionName } = this.props;
+        const { sectionName, newItemPath } = this.props;
         return (
             <div style={styles.dataTableWrap}>
                 <Heading>{sectionName}</Heading>
                 {this.renderHeaderBar()}
                 {this.renderDataTable()}
                 {this.renderPagination()}
+                <FloatingActionButton
+                    className="entity-list__add-new-entity"
+                    onClick={() => navigateTo(newItemPath)}
+                >
+                    <ContentAdd />
+                </FloatingActionButton>,
             </div>
         );
     }

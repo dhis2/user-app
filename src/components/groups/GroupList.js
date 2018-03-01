@@ -51,6 +51,7 @@ class GroupList extends Component {
                 contextMenuIcons={groupContextMenuIcons}
                 isContextActionAllowed={isGroupContextActionAllowed}
                 sectionName={i18next.t('User Group Management')}
+                newItemPath={'/user-groups/new'}
             />
         );
     }
