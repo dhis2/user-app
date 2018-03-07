@@ -134,6 +134,41 @@ const updateDisabledState = (id, disabled) => {
     return this.d2Api.patch(url, data);
 };
 
+const getManagedUsers = () => {
+    const data = { /*canManage: true,*/ fields: ['id', 'displayName'] };
+    return this.d2.models.user.list(data);
+};
+
+const getAvailableUsergroups = () => {
+    const data = { /*canManage: true,*/ fields: ['id', 'displayName'] };
+    return this.d2.models.userGroups.list(data);
+};
+
+const getAvailableUserRoles = () => {
+    const data = { /*canManage: true,*/ fields: ['id', 'displayName'] };
+    return this.d2.models.userRoles.list(data);
+};
+
+const getAvailableDataAnalyticsDimensionRestrictions = () => {
+    const url = '/dimensions/constraints';
+    const data = { fields: ['id', 'name'] };
+    return this.d2Api.get(url, data).then(({ dimensions }) => dimensions);
+};
+
+const updateUserGroup = (id, data) => {
+    const url = `/userGroups/${id}`;
+    return this.d2Api.patch(url, data);
+};
+
+const getAvailableLocales = () => {
+    const dbLocales = this.d2Api.get('/locales/db');
+    const uiLocales = this.d2Api.get('/locales/ui');
+    return Promise.all([dbLocales, uiLocales]).then(responses => ({
+        db: responses[0],
+        ui: responses[1],
+    }));
+};
+
 const getD2 = () => this.d2;
 
 const getCurrentUser = () => this.d2.currentUser;
@@ -154,4 +189,10 @@ export default {
     updateDisabledState,
     updateUserTeiSearchOrganisations,
     updateSharingSettings,
+    getManagedUsers,
+    getAvailableUsergroups,
+    getAvailableUserRoles,
+    getAvailableDataAnalyticsDimensionRestrictions,
+    getAvailableLocales,
+    updateUserGroup,
 };

@@ -39,7 +39,12 @@ export const getItem = (entityName, viewType, id) => (dispatch, getState) => {
     api
         .getItem(entityName, viewType, id)
         .then(response => dispatch(createAction(ACTIONS.ITEM_RECEIVED, response)))
-        .catch(error => dispatch(createAction(ACTIONS.ITEM_ERRORED, error.message)));
+        .catch(error => dispatch(createAction(ACTIONS.ITEM_ERRORED, error)));
+};
+
+export const initNewItem = entityType => {
+    const newItem = api.getD2().models[entityType].create();
+    return createAction(ACTIONS.INIT_NEW_ITEM, newItem);
 };
 
 // Regular actions

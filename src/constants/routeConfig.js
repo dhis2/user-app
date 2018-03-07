@@ -1,7 +1,9 @@
+import React from 'react';
 import UserList from '../components/users/UserList';
-import UserForm from '../components/users/UserForm';
-import GroupForm from '../components/groups/GroupForm';
-import RoleForm from '../components/roles/RoleForm';
+import FormLoader from '../components/FormLoader';
+// import UserForm from '../components/users/UserForm';
+// import GroupForm from '../components/groups/GroupForm';
+// import RoleForm from '../components/roles/RoleForm';
 import UserProfile from '../components/users/UserProfile';
 import PageNotFound from '../components/PageNotFound';
 import RoleList from '../components/roles/RoleList';
@@ -16,20 +18,17 @@ const ROUTE_CONFIG = [
     {
         key: 'user_new_view',
         path: '/users/new',
-        component: UserForm,
-        entityType: USER,
+        render: props => <FormLoader entityType={USER} {...props} />,
     },
     {
         key: 'user_edit_view',
         path: '/users/edit/:id',
-        component: UserForm,
-        entityType: USER,
+        render: props => <FormLoader entityType={USER} {...props} />,
     },
     {
         key: 'user_profile_view',
         path: '/users/view/:id',
         component: UserProfile,
-        entityType: USER,
     },
     {
         key: 'user_section',
@@ -37,26 +36,22 @@ const ROUTE_CONFIG = [
         icon: 'person',
         path: '/users',
         component: UserList,
-        entityType: USER,
     },
     // ROLE
     {
         key: 'user_role_new_view',
         path: '/user-roles/new',
-        component: RoleForm,
-        entityType: USER_ROLE,
+        render: props => <FormLoader entityType={USER_ROLE} {...props} />,
     },
     {
         key: 'user_role_edit_view',
         path: '/user-roles/edit/:id',
-        component: RoleForm,
-        entityType: USER_ROLE,
+        render: props => <FormLoader entityType={USER_ROLE} {...props} />,
     },
     {
         key: 'user_role_details_view',
         path: '/user-roles/view/:id',
         component: RoleDetails,
-        entityType: USER_ROLE,
     },
     {
         key: 'user_role_section',
@@ -64,26 +59,22 @@ const ROUTE_CONFIG = [
         icon: 'folder_shared',
         path: '/user-roles',
         component: RoleList,
-        entityType: USER_ROLE,
     },
     // GROUP
     {
         key: 'user_group_new_view',
         path: '/user-groups/new',
-        component: GroupForm,
-        entityType: USER_GROUP,
+        render: props => <FormLoader entityType={USER_GROUP} {...props} />,
     },
     {
         key: 'user_group_edit_view',
         path: '/user-groups/edit/:id',
-        component: GroupForm,
-        entityType: USER_GROUP,
+        render: props => <FormLoader entityType={USER_GROUP} {...props} />,
     },
     {
         key: 'user_group_details_view',
         path: '/user-groups/view/:id',
         component: GroupDetails,
-        entityType: USER_GROUP,
     },
     {
         key: 'user_group_section',
@@ -91,7 +82,6 @@ const ROUTE_CONFIG = [
         icon: 'group',
         path: '/user-groups',
         component: GroupList,
-        entityType: USER_GROUP,
     },
     {
         key: 'not_found',

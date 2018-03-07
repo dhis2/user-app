@@ -31,6 +31,9 @@ const styles = {
     headerBarPagination: {
         float: 'right',
     },
+    pagination: {
+        userSelect: 'none',
+    },
 };
 
 class List extends Component {
@@ -92,7 +95,9 @@ class List extends Component {
         const { pager, items, incrementPage, decrementPage } = this.props;
         const { page, pageCount, total, currentlyShown } = this.getPagerConfig(pager);
         const shouldHide = !items || items.length === 0 || typeof items === 'string';
-        const style = shouldHide ? { visibility: 'hidden' } : {};
+        const style = shouldHide
+            ? { ...styles.pagination, visibility: 'hidden' }
+            : styles.pagination;
         const paginationProps = {
             hasNextPage: () => page && items && items.length && page < pageCount,
             hasPreviousPage: () => page && items && items.length && page > 1,
@@ -153,7 +158,7 @@ class List extends Component {
             <DataTable
                 rows={items}
                 columns={columns}
-                primaryAction={primaryAction}
+                primaryAction={action => primaryAction(action)}
                 contextMenuActions={contextMenuActions}
                 contextMenuIcons={contextMenuIcons}
                 isContextActionAllowed={isContextActionAllowed}
@@ -174,7 +179,7 @@ class List extends Component {
                     onClick={() => navigateTo(newItemPath)}
                 >
                     <ContentAdd />
-                </FloatingActionButton>,
+                </FloatingActionButton>
             </div>
         );
     }

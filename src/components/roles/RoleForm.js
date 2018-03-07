@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { getItem, initNewItem } from '../../actions';
 
 class RoleForm extends Component {
     static propTypes = {
-        match: PropTypes.object.isRequired,
+        getItem: PropTypes.func.isRequired,
+        initNewItem: PropTypes.func.isRequired,
     };
 
     render() {
-        const { match: { params: { id } } } = this.props;
-        return (
-            <main>
-                <h1>I am the edit user role section!</h1>
-                <h2>Displaying info for user role with id: {id}</h2>
-                <Link to="/user-roles">Back to user roles</Link>
-            </main>
-        );
+        console.log(this.props);
+        return <div>Ik ben het user role form</div>;
     }
 }
 
-export default RoleForm;
+const mapStateToProps = state => ({
+    role: state.currentItem,
+});
+
+export default connect(mapStateToProps, {
+    getItem,
+    initNewItem,
+})(RoleForm);

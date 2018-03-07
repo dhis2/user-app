@@ -41,3 +41,13 @@ export const checkPasswordForErrors = password => {
 
     return null;
 };
+
+export const asArray = object => {
+    return typeof object.toArray === 'function' ? object.toArray() : object;
+};
+
+export const getNestedProp = (propertyPathStr, parent) => {
+    return propertyPathStr.split('.').reduce((currentLevel, propName) => {
+        return currentLevel && currentLevel[propName] ? currentLevel[propName] : null;
+    }, parent);
+};

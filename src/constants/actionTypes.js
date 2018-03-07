@@ -4,6 +4,7 @@ export const LIST_RECEIVED = 'LIST_RECEIVED';
 export const LIST_ERRORED = 'LIST_ERRORED';
 
 // ITEMS
+export const INIT_NEW_ITEM = 'INIT_NEW_ITEM';
 export const ITEM_REQUESTED = 'ITEM_REQUESTED';
 export const ITEM_RECEIVED = 'ITEM_RECEIVED';
 export const ITEM_ERRORED = 'ITEM_ERRORED';

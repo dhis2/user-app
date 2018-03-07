@@ -18,6 +18,10 @@ class UserList extends Component {
         history: PropTypes.object.isRequired,
     };
 
+    test(action) {
+        console.log(action);
+    }
+
     render() {
         return (
             <List
