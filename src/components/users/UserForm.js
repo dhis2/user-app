@@ -32,6 +32,9 @@ const styles = {
         marginBottom: '1.5rem',
         color: blue600,
     },
+    checkbox: {
+        marginTop: '32px',
+    },
 };
 
 const USERNAME = 'username';
@@ -180,6 +183,14 @@ class UserForm extends Component {
             showMore: false,
             locales: null,
         };
+
+        // Bind input rendering functions to this scope here and not in .renderFields
+        // https://github.com/erikras/redux-form/issues/1094/#issuecomment-278915819
+        this.renderTextField = this.renderTextField.bind(this);
+        this.renderCheckbox = this.renderCheckbox.bind(this);
+        this.renderSelectField = this.renderSelectField.bind(this);
+        this.renderSearchableGroupEditor = this.renderSearchableGroupEditor.bind(this);
+        this.renderSearchableOrgUnitTree = this.renderSearchableOrgUnitTree.bind(this);
     }
 
     componentWillMount() {
@@ -217,7 +228,7 @@ class UserForm extends Component {
     }
 
     renderCheckbox({ input, label, meta: { touched, error }, ...other }) {
-        return <Checkbox label={label} {...input} />;
+        return <Checkbox label={label} {...input} style={styles.checkbox} />;
     }
 
     renderSelectField({
@@ -275,7 +286,7 @@ class UserForm extends Component {
         return fields.map((fieldConfig, index) => {
             const { name, component, label, ...other } = fieldConfig;
             const labelText = i18next.t(label);
-            const componentRenderer = this[`render${component}`].bind(this);
+            const componentRenderer = this[`render${component}`];
 
             return (
                 <Field
@@ -298,22 +309,6 @@ class UserForm extends Component {
             return null;
         }
         return this.renderFields(ADDITIONAL_FIELDS);
-    }
-
-    renderField(fieldConfig) {
-        console.log(fieldConfig);
-        const { fieldName, label, component } = fieldConfig;
-        return (
-            <Field
-                key={fieldName}
-                component={component}
-                name={fieldName}
-                floatingLabelText={label}
-                hintText={label}
-                fullWidth={true}
-                type="password"
-            />
-        );
     }
 
     renderToggler(showMore) {
