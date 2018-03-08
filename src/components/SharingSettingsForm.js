@@ -12,6 +12,7 @@ import Heading from 'd2-ui/lib/headings/Heading.component';
 import i18next from 'i18next';
 import api from '../api';
 import { connect } from 'react-redux';
+import { initialSharingSettingsSelector } from '../selectors';
 import { getList, hideDialog, showSnackbar, hideSnackbar } from '../actions';
 
 const styles = {
@@ -248,18 +249,9 @@ class SharingSettingsForm extends Component {
     }
 }
 
-const parseInitialvalues = ({ publicAccess, userGroupAccesses }) =>
-    userGroupAccesses.reduce(
-        (initialValues, accessGroup) => {
-            initialValues[`group_${accessGroup.id}`] = accessGroup.access;
-            return initialValues;
-        },
-        { publicAccess }
-    );
-
 function mapStateToProps(state, { model }) {
     return {
-        initialValues: parseInitialvalues(model),
+        initialValues: initialSharingSettingsSelector(model),
     };
 }
 

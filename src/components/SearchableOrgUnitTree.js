@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component';
+import Paper from 'material-ui/Paper';
 import CircularProgress from 'material-ui/CircularProgress';
 import AsyncAutoComplete from './AsyncAutoComplete';
 import RaisedButton from 'material-ui/RaisedButton';
+import Heading from 'd2-ui/lib/headings/Heading.component';
 import i18next from 'i18next';
 import _ from '../constants/lodash';
 import PropTypes from 'prop-types';
@@ -19,7 +21,6 @@ const styles = {
         maxHeight: 'calc(60vh - 154px)',
         minHeight: 'calc(20vh - 154px)',
         overflowY: 'auto',
-        border: '1px solid #e0e0e0',
         paddingTop: '8px',
         paddingBottom: '8px',
         borderRadius: '2px',
@@ -37,8 +38,15 @@ const styles = {
     buttonMargin: {
         marginRight: '8px',
     },
+    header: {
+        paddingBottom: 0,
+        fontSize: '1.2rem',
+        marginBottom: '-16px',
+    },
 };
 
+// This component will show buttons if you pass it a confirmSelection (func) property
+// If you pass an onChange (func) property it will use that as a callback
 class SearchableOrgUnitTree extends Component {
     constructor(props) {
         super(props);
@@ -78,6 +86,19 @@ class SearchableOrgUnitTree extends Component {
         return path.substr(0, path.lastIndexOf('/'));
     }
 
+    update(selectedOrgUnits, initiallyExpanded) {
+        const { onChange } = this.props;
+        const updateObject = initiallyExpanded
+            ? { selectedOrgUnits, initiallyExpanded }
+            : { selectedOrgUnits };
+
+        if (onChange) {
+            onChange(selectedOrgUnits.map(unit => unit.id));
+        }
+
+        this.setState(updateObject);
+    }
+
     toggleSelectedOrgUnits(_, orgUnit) {
         const { selectedOrgUnits } = this.state;
         const orgUnitIndex = this.getIndexOfOrgUnit(orgUnit);
@@ -89,36 +110,38 @@ class SearchableOrgUnitTree extends Component {
                       ...selectedOrgUnits.slice(orgUnitIndex + 1),
                   ];
 
-        this.setState({
-            selectedOrgUnits: newOrgUnits,
-            initiallyExpanded: [],
-        });
+        this.update(newOrgUnits, []);
     }
 
     selectAndShowFilteredOrgUnitInTreeView(dataSourceItem) {
         const orgUnit = dataSourceItem.value;
         const { selectedOrgUnits } = this.state;
         const initiallyExpanded = [this.removeLastPathSegment(orgUnit)];
-        this.setState({
-            selectedOrgUnits: [...selectedOrgUnits, orgUnit],
-            initiallyExpanded: initiallyExpanded,
-        });
+        const newOrgUnits = [...selectedOrgUnits, orgUnit];
+
+        this.update(newOrgUnits, initiallyExpanded);
+    }
+
+    clearSelection() {
+        this.update([]);
+        _.defer(this.applySelection.bind(this));
     }
 
     applySelection() {
         const { selectedOrgUnits } = this.state;
-        const { applySelection } = this.props;
-        applySelection(selectedOrgUnits);
-    }
-
-    clearSelection() {
-        this.setState({ selectedOrgUnits: [] });
-        _.defer(this.applySelection.bind(this));
+        const { confirmSelection } = this.props;
+        confirmSelection(selectedOrgUnits);
     }
 
     render() {
         const { root, selectedOrgUnits, initiallyExpanded, orgUnitFilter } = this.state;
-        const { displayClearFilterButton, cancel } = this.props;
+        const {
+            confirmSelection,
+            displayClearFilterButton,
+            cancel,
+            headerText,
+            wrapperStyle,
+        } = this.props;
         const selected = selectedOrgUnits.map(unit => unit.path);
 
         const autoCompleteProps = {
@@ -128,7 +151,12 @@ class SearchableOrgUnitTree extends Component {
         };
 
         return (
-            <div style={styles.wrapper}>
+            <div style={{ ...styles.wrapper, ...wrapperStyle }}>
+                {headerText ? (
+                    <Heading level={4} style={styles.header}>
+                        {headerText}
+                    </Heading>
+                ) : null}
                 <AsyncAutoComplete
                     autoCompleteProps={autoCompleteProps}
                     query={api.queryOrgUnits}
@@ -136,7 +164,7 @@ class SearchableOrgUnitTree extends Component {
                     queryDebounceTime={375}
                     selectHandler={this.selectAndShowFilteredOrgUnitInTreeView.bind(this)}
                 />
-                <div style={styles.scrollBox}>
+                <Paper style={styles.scrollBox}>
                     {!root ? (
                         <CircularProgress style={styles.loader} />
                     ) : (
@@ -148,27 +176,28 @@ class SearchableOrgUnitTree extends Component {
                             orgUnitsPathsToInclude={orgUnitFilter}
                         />
                     )}
-                </div>
-
-                <div style={styles.buttonStrip}>
-                    <RaisedButton
-                        label={i18next.t('Apply')}
-                        primary={true}
-                        style={styles.buttonMargin}
-                        onClick={this.applySelection.bind(this)}
-                        disabled={!root}
-                    />
-                    {displayClearFilterButton ? (
+                </Paper>
+                {confirmSelection ? (
+                    <div style={styles.buttonStrip}>
                         <RaisedButton
-                            label={i18next.t('Clear all')}
-                            secondary={true}
+                            label={i18next.t('Apply')}
+                            primary={true}
                             style={styles.buttonMargin}
-                            onClick={this.clearSelection.bind(this)}
+                            onClick={this.applySelection.bind(this)}
                             disabled={!root}
                         />
-                    ) : null}
-                    <RaisedButton onClick={cancel} label={i18next.t('Cancel')} />
-                </div>
+                        {displayClearFilterButton ? (
+                            <RaisedButton
+                                label={i18next.t('Clear all')}
+                                secondary={true}
+                                style={styles.buttonMargin}
+                                onClick={this.clearSelection.bind(this)}
+                                disabled={!root}
+                            />
+                        ) : null}
+                        <RaisedButton onClick={cancel} label={i18next.t('Cancel')} />
+                    </div>
+                ) : null}
             </div>
         );
     }
@@ -176,9 +205,12 @@ class SearchableOrgUnitTree extends Component {
 
 SearchableOrgUnitTree.propTypes = {
     selectedOrgUnits: PropTypes.array.isRequired,
+    headerText: PropTypes.string,
+    wrapperStyle: PropTypes.object,
     displayClearFilterButton: PropTypes.bool,
-    applySelection: PropTypes.func.isRequired,
-    cancel: PropTypes.func.isRequired,
+    confirmSelection: PropTypes.func,
+    onChange: PropTypes.func,
+    cancel: PropTypes.func,
 };
 
 export default SearchableOrgUnitTree;

@@ -47,7 +47,6 @@ class SearchableGroupEditor extends Component {
 
     componentWillMount() {
         const { availableItemsQuery } = this.props;
-        console.log('groupeditor mounting', availableItemsQuery.name);
         availableItemsQuery()
             .then(this.onAvailableItemsReceived.bind(this))
             .catch(() => alert('Problem getting the available items'));

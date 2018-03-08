@@ -46,7 +46,7 @@ class AssignSearchOrganisationUnits extends Component {
             <SearchableOrgUnitTree
                 selectedOrgUnits={selectedOrgUnits}
                 displayClearFilterButton={false}
-                applySelection={this.assignSearchOrganisationUnits.bind(this)}
+                confirmSelection={this.assignSearchOrganisationUnits.bind(this)}
                 cancel={hideDialog}
             />
         );

@@ -25,7 +25,7 @@ class OrganisationUnitFilter extends Component {
             <SearchableOrgUnitTree
                 selectedOrgUnits={selectedOrgUnits}
                 displayClearFilterButton={true}
-                applySelection={this.applyFilter.bind(this)}
+                confirmSelection={this.applyFilter.bind(this)}
                 cancel={hideDialog}
             />
         );

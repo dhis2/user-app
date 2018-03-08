@@ -18,10 +18,10 @@ export const listSelector = (list, itemMemberships) => {
     }
 
     const listType = list.modelDefinition.name;
-    return list.toArray().map(item => mappings[listType](item, itemMemberships));
+    return list.toArray().map(item => listMappings[listType](item, itemMemberships));
 };
 
-const mappings = {
+const listMappings = {
     user: item => {
         item.userName = item.userCredentials.username;
         return item;
@@ -37,4 +37,14 @@ const mappings = {
 
 export const orgUnitsAsStringSelector = orgUnits => {
     return orgUnits.map(unit => unit.displayName).join(', ');
+};
+
+export const initialSharingSettingsSelector = ({ publicAccess, userGroupAccesses }) => {
+    return userGroupAccesses.reduce(
+        (initialValues, accessGroup) => {
+            initialValues[`group_${accessGroup.id}`] = accessGroup.access;
+            return initialValues;
+        },
+        { publicAccess }
+    );
 };

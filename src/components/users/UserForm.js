@@ -6,7 +6,6 @@ import Heading from 'd2-ui/lib/headings/Heading.component';
 import TextField from 'material-ui/TextField/TextField';
 import Checkbox from 'material-ui/Checkbox/Checkbox';
 import SelectField from 'material-ui/SelectField/SelectField';
-import Divider from 'material-ui/Divider';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import MenuItem from 'material-ui/MenuItem';
@@ -29,11 +28,25 @@ const styles = {
         textAlign: 'center',
     },
     toggler: {
-        marginBottom: '1.5rem',
         color: blue600,
     },
     checkbox: {
         marginTop: '32px',
+    },
+    orgUnitTree: {
+        width: 'calc(50% - 60px)',
+        float: 'left',
+        minHeight: '100px',
+        maxHeight: '1200px',
+    },
+    togglerWrap: {
+        clear: 'both',
+        paddingTop: '1.2rem',
+        marginBottom: '1.5rem',
+    },
+    additionalFieldsWrap: {
+        clear: 'both',
+        paddingTop: '1.5rem',
     },
 };
 
@@ -135,13 +148,27 @@ const BASE_FIELDS = [
     },
     {
         name: DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
-        label: 'dataCaptureAndMaintenanceOrgUnits',
+        label: 'Data capture and maintenance organisation units',
         component: 'SearchableOrgUnitTree',
+        wrapperStyle: { ...styles.orgUnitTree, paddingRight: '60px' },
     },
     {
         name: DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS,
-        label: 'dataOutputAndAnalyticsOrgUnits',
+        label: 'Data output and analytic organisation units',
         component: 'SearchableOrgUnitTree',
+        wrapperStyle: { ...styles.orgUnitTree, paddingLeft: '60px' },
+    },
+    {
+        key: 'org_unit_info',
+        label:
+            'Selecting an organisation unit provides access to all units in the sub-hierarchy',
+        component: 'Text',
+        style: {
+            clear: 'both',
+            paddingTop: '0.8rem',
+            fontStyle: 'italic',
+            fontSize: '0.9rem',
+        },
     },
 ];
 
@@ -278,8 +305,28 @@ class UserForm extends Component {
         );
     }
 
-    renderSearchableOrgUnitTree() {
-        return <p>renderSearchableOrgUnitTree</p>;
+    renderSearchableOrgUnitTree({
+        input,
+        label,
+        meta: { touched, error },
+        wrapperStyle,
+    }) {
+        return (
+            <SearchableOrgUnitTree
+                selectedOrgUnits={[]}
+                onChange={input.onChange}
+                wrapperStyle={wrapperStyle}
+                headerText={label}
+            />
+        );
+    }
+
+    renderText({ key, label, style }) {
+        return (
+            <p key={key} style={style}>
+                {label}
+            </p>
+        );
     }
 
     renderFields(fields) {
@@ -287,6 +334,10 @@ class UserForm extends Component {
             const { name, component, label, ...other } = fieldConfig;
             const labelText = i18next.t(label);
             const componentRenderer = this[`render${component}`];
+
+            if (component === 'Text') {
+                return this.renderText(fieldConfig);
+            }
 
             return (
                 <Field
@@ -308,7 +359,11 @@ class UserForm extends Component {
         if (!showMore) {
             return null;
         }
-        return this.renderFields(ADDITIONAL_FIELDS);
+        return (
+            <div style={styles.additionalFieldsWrap}>
+                {this.renderFields(ADDITIONAL_FIELDS)}
+            </div>
+        );
     }
 
     renderToggler(showMore) {
@@ -321,12 +376,14 @@ class UserForm extends Component {
             <HardwareKeyboardArrowDown />
         );
         return (
-            <FlatButton
-                onClick={this.toggleShowMore.bind(this)}
-                label={togglerText}
-                style={styles.toggler}
-                icon={icon}
-            />
+            <div style={styles.togglerWrap}>
+                <FlatButton
+                    onClick={this.toggleShowMore.bind(this)}
+                    label={togglerText}
+                    style={styles.toggler}
+                    icon={icon}
+                />
+            </div>
         );
     }
 
@@ -345,7 +402,6 @@ class UserForm extends Component {
         return (
             <main>
                 <Heading level={2}>{i18next.t('Details')}</Heading>
-                <Divider />
                 <form onSubmit={handleSubmit(this.updateUser.bind(this))}>
                     {this.renderBaseFields()}
                     {this.renderAdditionalFields(showMore)}
