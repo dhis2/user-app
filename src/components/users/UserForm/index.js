@@ -31,6 +31,7 @@ class UserForm extends Component {
         showSnackbar: PropTypes.func.isRequired,
         handleSubmit: PropTypes.func.isRequired,
         change: PropTypes.func.isRequired,
+        initialize: PropTypes.func.isRequired,
     };
 
     constructor(props) {
@@ -42,14 +43,14 @@ class UserForm extends Component {
     }
 
     componentWillMount() {
-        const { user, showSnackbar } = this.props;
+        const { user, showSnackbar, initialize } = this.props;
+
         const username = user.id ? user.userCredentials.username : null;
         api
             .getSelectedAndAvailableLocales(username)
             .then(locales => {
                 this.setState({ locales });
-                this.props.change(CONFIG.INTERFACE_LANGUAGE, locales.ui.selected);
-                this.props.change(CONFIG.DATABASE_LANGUAGE, locales.db.selected);
+                initialize(userFormInitialValuesSelector(user, locales));
             })
             .catch(error => {
                 const msg = 'Could not load the user data. Please refresh the page.';
@@ -191,7 +192,6 @@ class UserForm extends Component {
 const mapStateToProps = (state, ownProps) => {
     return {
         user: state.currentItem,
-        initialValues: userFormInitialValuesSelector(state.currentItem),
     };
 };
 

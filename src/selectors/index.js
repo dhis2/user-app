@@ -1,5 +1,10 @@
 import _ from '../constants/lodash';
-import { USER_PROPS, USER_CRED_PROPS } from '../components/users/UserForm/config';
+import {
+    USER_PROPS,
+    USER_CRED_PROPS,
+    INTERFACE_LANGUAGE,
+    DATABASE_LANGUAGE,
+} from '../components/users/UserForm/config';
 import { asArray, getNestedProp } from '../utils';
 
 export const pagerSelector = _.memoize(pager => {
@@ -55,7 +60,7 @@ export const initialSharingSettingsSelector = _.memoize(
     }
 );
 
-export const userFormInitialValuesSelector = _.memoize(user => {
+export const userFormInitialValuesSelector = _.memoize((user, locales) => {
     if (!user.id) {
         return null;
     }
@@ -69,6 +74,9 @@ export const userFormInitialValuesSelector = _.memoize(user => {
     USER_CRED_PROPS.forEach(propName => {
         initialValues[propName] = user.userCredentials[propName];
     });
+
+    initialValues[INTERFACE_LANGUAGE] = locales.ui.selected;
+    initialValues[DATABASE_LANGUAGE] = locales.db.selected;
 
     return initialValues;
 });
