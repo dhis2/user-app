@@ -2,6 +2,14 @@ import { blue600 } from 'material-ui/styles/colors';
 import { asArray, getNestedProp } from '../../../utils';
 import api from '../../../api';
 import { analyticsDimensionsRestrictionsSelector } from '../../../selectors';
+import {
+    renderTextField,
+    renderCheckbox,
+    renderSelectField,
+    renderSearchableGroupEditor,
+    renderSearchableOrgUnitTree,
+    renderText,
+} from './fieldRenderers';
 
 export const STYLES = {
     loaderWrap: {
@@ -58,18 +66,18 @@ export const BASE_FIELDS = [
     {
         name: USERNAME,
         label: 'Username',
-        component: 'TextField',
+        fieldRenderer: renderTextField,
         required: true,
     },
     {
         name: EXTERNAL_AUTH,
         label: 'External authentication only (OpenID or LDAP)',
-        component: 'Checkbox',
+        fieldRenderer: renderCheckbox,
     },
     {
         name: PASSWORD,
         label: 'Password',
-        component: 'TextField',
+        fieldRenderer: renderTextField,
         props: {
             type: 'password',
         },
@@ -77,7 +85,7 @@ export const BASE_FIELDS = [
     {
         name: REPEAT_PASSWORD,
         label: 'Retype password',
-        component: 'TextField',
+        fieldRenderer: renderTextField,
         props: {
             type: 'password',
         },
@@ -85,48 +93,48 @@ export const BASE_FIELDS = [
     {
         name: SURNAME,
         label: 'Surname',
-        component: 'TextField',
+        fieldRenderer: renderTextField,
     },
     {
         name: FIRST_NAME,
         label: 'First name',
-        component: 'TextField',
+        fieldRenderer: renderTextField,
     },
     {
         name: EMAIL,
         label: 'E-mail',
-        component: 'TextField',
+        fieldRenderer: renderTextField,
     },
     {
         name: OPEN_ID,
         label: 'openID',
-        component: 'TextField',
+        fieldRenderer: renderTextField,
     },
     {
         name: LDAP_ID,
         label: 'LDAP Identifier',
-        component: 'TextField',
+        fieldRenderer: renderTextField,
     },
     {
         name: PHONE_NUMBER,
         label: 'Mobile phone number',
-        component: 'TextField',
+        fieldRenderer: renderTextField,
     },
     {
         name: INTERFACE_LANGUAGE,
         label: 'Interface language',
-        component: 'SelectField',
+        fieldRenderer: renderSelectField,
         optionsSelector: 'locales.ui.available',
     },
     {
         name: DATABASE_LANGUAGE,
         label: 'Database language',
-        component: 'SelectField',
+        fieldRenderer: renderSelectField,
         optionsSelector: 'locales.db.available',
     },
     {
         name: ASSIGNED_ROLES,
-        component: 'SearchableGroupEditor',
+        fieldRenderer: renderSearchableGroupEditor,
         initialItemsSelector: user =>
             asArray(getNestedProp('userCredentials.userRoles', user) || []),
         availableItemsQuery: api.getAvailableUserRoles,
@@ -136,22 +144,22 @@ export const BASE_FIELDS = [
     {
         name: DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
         label: 'Data capture and maintenance organisation units',
-        component: 'SearchableOrgUnitTree',
+        fieldRenderer: renderSearchableOrgUnitTree,
         wrapperStyle: { ...STYLES.orgUnitTree, paddingRight: '60px' },
         initialValuesPropName: 'organisationUnits',
     },
     {
         name: DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS,
         label: 'Data output and analytic organisation units',
-        component: 'SearchableOrgUnitTree',
+        fieldRenderer: renderSearchableOrgUnitTree,
         wrapperStyle: { ...STYLES.orgUnitTree, paddingLeft: '60px' },
         initialValuesPropName: 'dataViewOrganisationUnits',
     },
     {
-        key: 'org_unit_info',
+        name: 'org_unit_info',
         label:
             'Selecting an organisation unit provides access to all units in the sub-hierarchy',
-        component: 'Text',
+        fieldRenderer: renderText,
         style: {
             clear: 'both',
             paddingTop: '0.8rem',
@@ -164,7 +172,7 @@ export const BASE_FIELDS = [
 export const ADDITIONAL_FIELDS = [
     {
         name: ASSIGNED_USER_GROUPS,
-        component: 'SearchableGroupEditor',
+        fieldRenderer: renderSearchableGroupEditor,
         initialItemsSelector: user => asArray(user.userGroups) || [],
         availableItemsQuery: api.getAvailableUsergroups,
         availableItemsLabel: 'Available user groups',
@@ -172,7 +180,7 @@ export const ADDITIONAL_FIELDS = [
     },
     {
         name: DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
-        component: 'SearchableGroupEditor',
+        fieldRenderer: renderSearchableGroupEditor,
         initialItemsSelector: user => analyticsDimensionsRestrictionsSelector(user),
         availableItemsQuery: api.getAvailableDataAnalyticsDimensionRestrictions,
         availableItemsLabel: 'Available dimension restrictions for data analytics',
