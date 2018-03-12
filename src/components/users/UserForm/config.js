@@ -146,14 +146,14 @@ export const BASE_FIELDS = [
         label: 'Data capture and maintenance organisation units',
         fieldRenderer: renderSearchableOrgUnitTree,
         wrapperStyle: { ...STYLES.orgUnitTree, paddingRight: '60px' },
-        initialValuesPropName: 'organisationUnits',
+        userPropName: 'organisationUnits',
     },
     {
         name: DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS,
         label: 'Data output and analytic organisation units',
         fieldRenderer: renderSearchableOrgUnitTree,
         wrapperStyle: { ...STYLES.orgUnitTree, paddingLeft: '60px' },
-        initialValuesPropName: 'dataViewOrganisationUnits',
+        userPropName: 'dataViewOrganisationUnits',
     },
     {
         name: 'org_unit_info',

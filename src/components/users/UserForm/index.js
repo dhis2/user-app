@@ -18,6 +18,7 @@ import { asArray, getNestedProp } from '../../../utils';
 import * as CONFIG from './config';
 import validate from './validate';
 import {
+    renderTextField,
     renderText,
     renderSearchableOrgUnitTree,
     renderSearchableGroupEditor,
@@ -73,6 +74,7 @@ class UserForm extends Component {
     }
 
     renderFields(fields) {
+        const { user } = this.props;
         return fields.map((fieldConfig, index) => {
             const { name, fieldRenderer, label, ...other } = fieldConfig;
             const labelText = i18next.t(label);
@@ -82,15 +84,14 @@ class UserForm extends Component {
             }
 
             switch (fieldRenderer) {
+                case renderTextField:
+                    other.disabled = Boolean(name === CONFIG.USERNAME && user.id);
+                    break;
                 case renderSearchableOrgUnitTree:
-                    other.initialValues = asArray(
-                        this.props.user[fieldConfig.initialValuesPropName]
-                    );
+                    other.initialValues = asArray(user[fieldConfig.userPropName]);
                     break;
                 case renderSearchableGroupEditor:
-                    other.initialValues = fieldConfig.initialItemsSelector(
-                        this.props.user
-                    );
+                    other.initialValues = fieldConfig.initialItemsSelector(user);
                     break;
                 case renderSelectField:
                     other.options = getNestedProp(
