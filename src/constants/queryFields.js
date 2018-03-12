@@ -30,33 +30,16 @@ export const USER_DETAILS = [
     'languages',
     'email',
     'phoneNumber',
-    'organisationUnits[id,displayName]',
-    'userCredentials[username,externalAuth,userRoles[id,displayName]]',
+    'userGroups',
+    'organisationUnits[id,displayName,path]',
+    'dataViewOrganisationUnits[id,displayName,path]',
+    'userCredentials[username,externalAuth,userRoles[id,displayName],cogsDimensionConstraints,catDimensionConstraints,openId,ldapId]',
     'teiSearchOrganisationUnits[id,path]',
 ];
 export const USER_GROUP_DETAILS = ['id', 'displayName', 'users'];
 export const USER_ROLE_DETAILS = [...USER_GROUP_DETAILS];
 // EDIT
-export const USER_EDIT = [
-    'id',
-    'displayName',
-    'surname',
-    'firstName',
-    'introduction',
-    'jobTitle',
-    'employer',
-    'education',
-    'interests',
-    'nationality',
-    'birthday',
-    'gender',
-    'languages',
-    'email',
-    'phoneNumber',
-    'organisationUnits[id,displayName]',
-    'userCredentials[username,externalAuth,userRoles[id,displayName]]',
-    'teiSearchOrganisationUnits[id,path]',
-];
+export const USER_EDIT = [...USER_DETAILS];
 export const USER_GROUP_EDIT = ['id', 'displayName', 'users'];
 export const USER_ROLE_EDIT = [...USER_GROUP_EDIT];
 

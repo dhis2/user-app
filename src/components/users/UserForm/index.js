@@ -10,189 +10,22 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import MenuItem from 'material-ui/MenuItem';
 import CircularProgress from 'material-ui/CircularProgress';
-import { blue600 } from 'material-ui/styles/colors';
 import HardwareKeyboardArrowUp from 'material-ui/svg-icons/hardware/keyboard-arrow-up';
 import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down';
 import i18next from 'i18next';
-import SearchableGroupEditor from '../SearchableGroupEditor';
-import SearchableOrgUnitTree from '../SearchableOrgUnitTree';
-import { navigateTo } from '../../utils';
-import api from '../../api';
-import { getList, showSnackbar } from '../../actions';
-import { USER } from '../../constants/entityTypes';
-import { asArray, getNestedProp } from '../../utils';
+import SearchableGroupEditor from '../../SearchableGroupEditor';
+import SearchableOrgUnitTree from '../../SearchableOrgUnitTree';
+import { navigateTo } from '../../../utils';
+import api from '../../../api';
+import { userFormInitialValuesSelector } from '../../../selectors';
 
-const styles = {
-    loaderWrap: {
-        padding: '3rem',
-        textAlign: 'center',
-    },
-    toggler: {
-        color: blue600,
-    },
-    checkbox: {
-        marginTop: '32px',
-    },
-    orgUnitTree: {
-        width: 'calc(50% - 60px)',
-        float: 'left',
-        minHeight: '100px',
-        maxHeight: '1200px',
-    },
-    togglerWrap: {
-        clear: 'both',
-        paddingTop: '1.2rem',
-        marginBottom: '1.5rem',
-    },
-    additionalFieldsWrap: {
-        clear: 'both',
-        paddingTop: '1.5rem',
-    },
-};
-
-const USERNAME = 'username';
-const EXTERNAL_AUTH_ONLY = 'externalAuthOnly';
-const PASSWORD = 'password';
-const REPEAT_PASSWORD = 'repeatPassword';
-const SURNAME = 'surname';
-const FIRST_NAME = 'firstName';
-const EMAIL = 'email';
-const OPEN_ID = 'openId';
-const LDAP_IDENTIFIER = 'ldapIdentifier';
-const PHONE = 'phone';
-const INTERFACE_LANGUAGE = 'interfaceLanguage';
-const DATABASE_LANGUAGE = 'databaseLanguage';
-const ASSIGNED_ROLES = 'assignedRoles';
-const DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS = 'dataCaptureAndMaintenanceOrgUnits';
-const DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS = 'dataOutputAndAnalyticsOrgUnits';
-const ASSIGNED_USER_GROUPS = 'assignedUserGroups';
-const DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS = 'dimensionRestrictionsForDataAnalytics';
-
-const BASE_FIELDS = [
-    {
-        name: USERNAME,
-        label: 'Username',
-        component: 'TextField',
-        required: true,
-    },
-    {
-        name: EXTERNAL_AUTH_ONLY,
-        label: 'External authentication only (OpenID or LDAP)',
-        component: 'Checkbox',
-    },
-    {
-        name: PASSWORD,
-        label: 'Password',
-        component: 'TextField',
-        props: {
-            type: 'password',
-        },
-    },
-    {
-        name: REPEAT_PASSWORD,
-        label: 'Retype password',
-        component: 'TextField',
-        props: {
-            type: 'password',
-        },
-    },
-    {
-        name: SURNAME,
-        label: 'Surname',
-        component: 'TextField',
-    },
-    {
-        name: FIRST_NAME,
-        label: 'First name',
-        component: 'TextField',
-    },
-    {
-        name: EMAIL,
-        label: 'E-mail',
-        component: 'TextField',
-    },
-    {
-        name: OPEN_ID,
-        label: 'openID',
-        component: 'TextField',
-    },
-    {
-        name: LDAP_IDENTIFIER,
-        label: 'LDAP Identifier',
-        component: 'TextField',
-    },
-    {
-        name: PHONE,
-        label: 'Mobile phone number',
-        component: 'TextField',
-    },
-    {
-        name: INTERFACE_LANGUAGE,
-        label: 'Interface language',
-        component: 'SelectField',
-        optionsSelector: 'locales.ui',
-    },
-    {
-        name: DATABASE_LANGUAGE,
-        label: 'Database language',
-        component: 'SelectField',
-        optionsSelector: 'locales.db',
-    },
-    {
-        name: ASSIGNED_ROLES,
-        component: 'SearchableGroupEditor',
-        initialItemsSelector: 'userCredentials.userRoles',
-        availableItemsQuery: api.getAvailableUserRoles,
-        availableItemsLabel: 'Available roles',
-        assignedItemsLabel: 'Selected roles',
-    },
-    {
-        name: DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
-        label: 'Data capture and maintenance organisation units',
-        component: 'SearchableOrgUnitTree',
-        wrapperStyle: { ...styles.orgUnitTree, paddingRight: '60px' },
-    },
-    {
-        name: DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS,
-        label: 'Data output and analytic organisation units',
-        component: 'SearchableOrgUnitTree',
-        wrapperStyle: { ...styles.orgUnitTree, paddingLeft: '60px' },
-    },
-    {
-        key: 'org_unit_info',
-        label:
-            'Selecting an organisation unit provides access to all units in the sub-hierarchy',
-        component: 'Text',
-        style: {
-            clear: 'both',
-            paddingTop: '0.8rem',
-            fontStyle: 'italic',
-            fontSize: '0.9rem',
-        },
-    },
-];
-
-const ADDITIONAL_FIELDS = [
-    {
-        name: ASSIGNED_USER_GROUPS,
-        component: 'SearchableGroupEditor',
-        initialItemsSelector: 'userGroups',
-        availableItemsQuery: api.getAvailableUsergroups,
-        availableItemsLabel: 'Available user groups',
-        assignedItemsLabel: 'Selected user groups',
-    },
-    {
-        name: DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
-        component: 'SearchableGroupEditor',
-        initialItemsSelector: 'userCredentials.catDimensionConstraints',
-        availableItemsQuery: api.getAvailableDataAnalyticsDimensionRestrictions,
-        availableItemsLabel: 'Available dimension restrictions for data analytics',
-        assignedItemsLabel: 'Selected dimension restrictions for data analytics',
-    },
-];
+import { getList, showSnackbar } from '../../../actions';
+// import { USER } from '../../../constants/entityTypes';
+import { asArray, getNestedProp } from '../../../utils';
+import * as CONFIG from './config';
 
 const validate = (values, props) => {
-    console.log('in validate', values, props);
+    console.log('in validate', values);
     return {};
 };
 
@@ -202,6 +35,7 @@ class UserForm extends Component {
         getList: PropTypes.func.isRequired,
         showSnackbar: PropTypes.func.isRequired,
         handleSubmit: PropTypes.func.isRequired,
+        change: PropTypes.func.isRequired,
     };
 
     constructor(props) {
@@ -221,11 +55,19 @@ class UserForm extends Component {
     }
 
     componentWillMount() {
-        api.getAvailableLocales().then(locales => {
-            this.setState({
-                locales,
+        const { user, showSnackbar } = this.props;
+        const username = user.id ? user.userCredentials.username : null;
+        api
+            .getSelectedAndAvailableLocales(username)
+            .then(locales => {
+                this.setState({ locales });
+                this.props.change(CONFIG.INTERFACE_LANGUAGE, locales.ui.selected);
+                this.props.change(CONFIG.DATABASE_LANGUAGE, locales.db.selected);
+            })
+            .catch(error => {
+                const msg = 'Could not load the user data. Please refresh the page.';
+                showSnackbar({ message: i18next.t(msg) });
             });
-        });
     }
 
     toggleShowMore() {
@@ -255,7 +97,14 @@ class UserForm extends Component {
     }
 
     renderCheckbox({ input, label, meta: { touched, error }, ...other }) {
-        return <Checkbox label={label} {...input} style={styles.checkbox} />;
+        return (
+            <Checkbox
+                checked={Boolean(input.value)}
+                label={label}
+                {...input}
+                style={CONFIG.STYLES.checkbox}
+            />
+        );
     }
 
     renderSelectField({
@@ -287,10 +136,9 @@ class UserForm extends Component {
         availableItemsQuery,
         availableItemsLabel,
         assignedItemsLabel,
+        ...other
     }) {
-        const initialItems = asArray(
-            getNestedProp(initialItemsSelector, this.props.user) || []
-        );
+        const initialItems = initialItemsSelector(this.props.user);
         const availableItemsHeader = i18next.t(availableItemsLabel);
         const assignedItemsHeader = i18next.t(assignedItemsLabel);
 
@@ -301,6 +149,7 @@ class UserForm extends Component {
                 availableItemsQuery={availableItemsQuery}
                 availableItemsHeader={availableItemsHeader}
                 assignedItemsHeader={assignedItemsHeader}
+                {...other}
             />
         );
     }
@@ -310,10 +159,13 @@ class UserForm extends Component {
         label,
         meta: { touched, error },
         wrapperStyle,
+        initialValuesPropName,
     }) {
+        const initialValues = asArray(this.props.user[initialValuesPropName]);
+
         return (
             <SearchableOrgUnitTree
-                selectedOrgUnits={[]}
+                selectedOrgUnits={initialValues}
                 onChange={input.onChange}
                 wrapperStyle={wrapperStyle}
                 headerText={label}
@@ -352,7 +204,7 @@ class UserForm extends Component {
     }
 
     renderBaseFields() {
-        return this.renderFields(BASE_FIELDS);
+        return this.renderFields(CONFIG.BASE_FIELDS);
     }
 
     renderAdditionalFields(showMore) {
@@ -360,8 +212,8 @@ class UserForm extends Component {
             return null;
         }
         return (
-            <div style={styles.additionalFieldsWrap}>
-                {this.renderFields(ADDITIONAL_FIELDS)}
+            <div style={CONFIG.STYLES.additionalFieldsWrap}>
+                {this.renderFields(CONFIG.ADDITIONAL_FIELDS)}
             </div>
         );
     }
@@ -375,12 +227,13 @@ class UserForm extends Component {
         ) : (
             <HardwareKeyboardArrowDown />
         );
+
         return (
-            <div style={styles.togglerWrap}>
+            <div style={CONFIG.STYLES.togglerWrap}>
                 <FlatButton
                     onClick={this.toggleShowMore.bind(this)}
                     label={togglerText}
-                    style={styles.toggler}
+                    style={CONFIG.STYLES.toggler}
                     icon={icon}
                 />
             </div>
@@ -393,7 +246,7 @@ class UserForm extends Component {
 
         if (!locales) {
             return (
-                <div style={styles.loaderWrap}>
+                <div style={CONFIG.STYLES.loaderWrap}>
                     <CircularProgress />
                 </div>
             );
@@ -425,9 +278,12 @@ class UserForm extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-    user: state.currentItem,
-});
+const mapStateToProps = (state, ownProps) => {
+    return {
+        user: state.currentItem,
+        initialValues: userFormInitialValuesSelector(state.currentItem),
+    };
+};
 
 const ReduxFormWrappedUserForm = reduxForm({
     form: 'userForm',

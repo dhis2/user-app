@@ -64,8 +64,8 @@ const getList = (entityName, page, filter) => {
 };
 
 const getItem = (entityName, viewType, id) => {
-    const fields = getQueryFields(entityName, viewType);
-    return this.d2.models[entityName].get(id, fields);
+    const data = { fields: getQueryFields(entityName, viewType) };
+    return this.d2.models[entityName].get(id, data);
 };
 
 const getUserByUsername = username => {
@@ -151,7 +151,7 @@ const getAvailableUserRoles = () => {
 
 const getAvailableDataAnalyticsDimensionRestrictions = () => {
     const url = '/dimensions/constraints';
-    const data = { fields: ['id', 'name'] };
+    const data = { fields: ['id', 'name', 'dimensionType'] };
     return this.d2Api.get(url, data).then(({ dimensions }) => dimensions);
 };
 
@@ -160,14 +160,48 @@ const updateUserGroup = (id, data) => {
     return this.d2Api.patch(url, data);
 };
 
-const getAvailableLocales = () => {
+// TODO: find a cleaner way to do this, possibly through another endpoint
+const getSelectedAndAvailableLocales = username => {
+    const DB_LOCALE = 'db_locale';
+    const useDbLocaleOption = {
+        locale: DB_LOCALE,
+        name: 'Use database locale / no translation',
+    };
+
     const dbLocales = this.d2Api.get('/locales/db');
     const uiLocales = this.d2Api.get('/locales/ui');
-    return Promise.all([dbLocales, uiLocales]).then(responses => ({
-        db: responses[0],
-        ui: responses[1],
-    }));
+    const uiLocale = username
+        ? this.d2Api.get(`/userSettings/keyUiLocale?user=${username}`)
+        : Promise.resolve('en');
+    const dbLocale = username
+        ? this.d2Api.get(`/userSettings/keyDbLocale?user=${username}`).then(
+              response => response,
+              error => {
+                  // Swallow this error and assume the user wants to use the DB locale
+                  if (error.message === 'User setting not found for key: keyDbLocale') {
+                      return DB_LOCALE;
+                  } else {
+                      throw new Error(error.message);
+                  }
+              }
+          )
+        : Promise.resolve(DB_LOCALE);
+
+    return Promise.all([dbLocales, uiLocales, dbLocale, uiLocale]).then(responses => {
+        return {
+            db: {
+                available: [useDbLocaleOption, ...responses[0]],
+                selected: responses[2],
+            },
+            ui: {
+                available: responses[1],
+                selected: responses[3],
+            },
+        };
+    });
 };
+
+window.getSelectedAndAvailableLocales = getSelectedAndAvailableLocales;
 
 const getD2 = () => this.d2;
 
@@ -193,6 +227,6 @@ export default {
     getAvailableUsergroups,
     getAvailableUserRoles,
     getAvailableDataAnalyticsDimensionRestrictions,
-    getAvailableLocales,
+    getSelectedAndAvailableLocales,
     updateUserGroup,
 };

@@ -35,6 +35,7 @@ class SearchableGroupEditor extends Component {
         onChange: PropTypes.func.isRequired,
         availableItemsHeader: PropTypes.string.isRequired,
         assignedItemsHeader: PropTypes.string.isRequired,
+        returnModelsOnUpdate: PropTypes.bool,
     };
     constructor(props) {
         super(props);
@@ -53,10 +54,19 @@ class SearchableGroupEditor extends Component {
     }
 
     onAvailableItemsReceived(response) {
-        const { initiallyAssignedItems } = this.props;
+        // On update we want to be able to return an array of IDs or models
+        const { initiallyAssignedItems, returnModelsOnUpdate } = this.props;
         const { itemStore, assignedItemStore } = this.state;
+
+        if (returnModelsOnUpdate) {
+            this.modelLookup = {};
+        }
+
         const assignedItems = asArray(initiallyAssignedItems).map(({ id }) => id);
         const availableItems = asArray(response).map(item => {
+            if (returnModelsOnUpdate) {
+                this.modelLookup[item.id] = item;
+            }
             const text = item.displayName || item.name;
             return {
                 value: item.id,
@@ -70,23 +80,29 @@ class SearchableGroupEditor extends Component {
 
     onAssignItems(items) {
         const { assignedItemStore } = this.state;
-        const { onChange } = this.props;
         const assigned = assignedItemStore.state.concat(items);
 
-        assignedItemStore.setState(assigned);
-        onChange(assigned);
-        return Promise.resolve();
+        return this.update(assigned);
     }
 
     onRemoveItems(items) {
         const { assignedItemStore } = this.state;
-        const { onChange } = this.props;
         const assigned = assignedItemStore.state.filter(
             item => items.indexOf(item) === -1
         );
 
-        assignedItemStore.setState(assigned);
-        onChange(assigned);
+        return this.update(assigned);
+    }
+
+    update(assignedItemIds) {
+        const { onChange, returnModelsOnUpdate } = this.props;
+        const { assignedItemStore } = this.state;
+        const assignedItems = returnModelsOnUpdate
+            ? assignedItemIds.map(id => this.modelLookup[id])
+            : assignedItemIds;
+
+        assignedItemStore.setState(assignedItemIds);
+        onChange(assignedItems);
         return Promise.resolve();
     }
 

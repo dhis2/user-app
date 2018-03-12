@@ -43,6 +43,9 @@ export const checkPasswordForErrors = password => {
 };
 
 export const asArray = object => {
+    if (!object) {
+        return [];
+    }
     return typeof object.toArray === 'function' ? object.toArray() : object;
 };
 
