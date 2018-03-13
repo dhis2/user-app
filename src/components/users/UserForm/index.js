@@ -17,6 +17,7 @@ import { getList, showSnackbar } from '../../../actions';
 import { asArray, getNestedProp } from '../../../utils';
 import * as CONFIG from './config';
 import validate from './validate';
+import asyncValidateUsername from './asyncValidateUsername';
 import {
     renderTextField,
     renderText,
@@ -33,6 +34,10 @@ class UserForm extends Component {
         handleSubmit: PropTypes.func.isRequired,
         change: PropTypes.func.isRequired,
         initialize: PropTypes.func.isRequired,
+        asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+            .isRequired,
+        pristine: PropTypes.bool.isRequired,
+        valid: PropTypes.bool.isRequired,
     };
 
     constructor(props) {
@@ -73,11 +78,24 @@ class UserForm extends Component {
         navigateTo('/users');
     }
 
+    getLabelText(label, user, isRequiredField) {
+        let labelText = i18next.t(label);
+
+        if (
+            isRequiredField === CONFIG.ALWAYS_REQUIRED ||
+            (isRequiredField === CONFIG.CREATE_REQUIRED && !user.id)
+        ) {
+            labelText += ' *';
+        }
+
+        return labelText;
+    }
+
     renderFields(fields) {
         const { user } = this.props;
         return fields.map((fieldConfig, index) => {
-            const { name, fieldRenderer, label, ...other } = fieldConfig;
-            const labelText = i18next.t(label);
+            const { name, fieldRenderer, label, isRequiredField, ...other } = fieldConfig;
+            const labelText = this.getLabelText(label, user, isRequiredField);
 
             if (fieldRenderer === renderText) {
                 return renderText(fieldConfig);
@@ -91,6 +109,12 @@ class UserForm extends Component {
                     other.initialValues = asArray(user[fieldConfig.userPropName]);
                     break;
                 case renderSearchableGroupEditor:
+                    other.assignedItemsLabel = this.getLabelText(
+                        other.assignedItemsLabel,
+                        user,
+                        isRequiredField
+                    );
+                    other.availableItemsLabel = i18next.t(other.availableItemsLabel);
                     other.initialValues = fieldConfig.initialItemsSelector(user);
                     break;
                 case renderSelectField:
@@ -153,8 +177,9 @@ class UserForm extends Component {
     }
 
     render() {
-        const { handleSubmit } = this.props;
+        const { handleSubmit, asyncValidating, pristine, valid } = this.props;
         const { showMore, locales } = this.state;
+        const disableSubmit = Boolean(asyncValidating || pristine || !valid);
 
         if (!locales) {
             return (
@@ -176,7 +201,7 @@ class UserForm extends Component {
                             label={i18next.t('Save')}
                             type="submit"
                             primary={true}
-                            disabled={false}
+                            disabled={disableSubmit}
                             style={{ marginRight: '8px' }}
                         />
                         <RaisedButton
@@ -199,6 +224,8 @@ const mapStateToProps = (state, ownProps) => {
 const ReduxFormWrappedUserForm = reduxForm({
     form: 'userForm',
     validate,
+    asyncValidate: asyncValidateUsername,
+    asyncBlurFields: [CONFIG.USERNAME],
 })(UserForm);
 
 export default connect(mapStateToProps, {

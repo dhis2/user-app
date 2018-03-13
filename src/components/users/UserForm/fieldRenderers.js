@@ -69,9 +69,11 @@ export const renderSearchableGroupEditor = ({
         <SearchableGroupEditor
             initiallyAssignedItems={initialValues}
             onChange={input.onChange}
+            onBlur={input.onBlur}
             availableItemsQuery={availableItemsQuery}
             availableItemsHeader={availableItemsHeader}
             assignedItemsHeader={assignedItemsHeader}
+            errorText={touched && error}
             {...other}
         />
     );

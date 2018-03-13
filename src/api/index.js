@@ -160,8 +160,13 @@ const updateUserGroup = (id, data) => {
     return this.d2Api.patch(url, data);
 };
 
-// TODO: find a cleaner way to do this, possibly through another endpoint
+// TODO: This needs to be rewritten once the backend issues are solved
+// https://jira.dhis2.org/browse/DHIS2-3169
+// https://jira.dhis2.org/browse/DHIS2-3168
+// https://jira.dhis2.org/browse/DHIS2-3185
+// https://jira.dhis2.org/browse/DHIS2-3181
 const getSelectedAndAvailableLocales = username => {
+    username = username ? encodeURIComponent(username) : null;
     const DB_LOCALE = 'db_locale';
     const useDbLocaleOption = {
         locale: DB_LOCALE,

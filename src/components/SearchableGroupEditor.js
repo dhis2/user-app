@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GroupEditor from 'd2-ui/lib/group-editor/GroupEditor.component';
 import Store from 'd2-ui/lib//store/Store';
 import PropTypes from 'prop-types';
+import { red500 } from 'material-ui/styles/colors';
 import TextField from 'material-ui/TextField/TextField';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import { asArray } from '../utils';
@@ -23,6 +24,13 @@ const styles = {
         paddingBottom: 0,
         fontSize: '1.2rem',
     },
+    error: {
+        color: red500,
+    },
+    errorText: {
+        fontSize: '0.8rem',
+        marginLeft: '0.8rem',
+    },
 };
 
 class SearchableGroupEditor extends Component {
@@ -36,6 +44,8 @@ class SearchableGroupEditor extends Component {
         availableItemsHeader: PropTypes.string.isRequired,
         assignedItemsHeader: PropTypes.string.isRequired,
         returnModelsOnUpdate: PropTypes.bool,
+        errorText: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+        onBlur: PropTypes.func,
     };
     constructor(props) {
         super(props);
@@ -95,7 +105,7 @@ class SearchableGroupEditor extends Component {
     }
 
     update(assignedItemIds) {
-        const { onChange, returnModelsOnUpdate } = this.props;
+        const { onChange, returnModelsOnUpdate, onBlur } = this.props;
         const { assignedItemStore } = this.state;
         const assignedItems = returnModelsOnUpdate
             ? assignedItemIds.map(id => this.modelLookup[id])
@@ -103,6 +113,8 @@ class SearchableGroupEditor extends Component {
 
         assignedItemStore.setState(assignedItemIds);
         onChange(assignedItems);
+        // Also call onBlur if this is available. In a redux-form the component will be 'touched' by it
+        onBlur && onBlur();
         return Promise.resolve();
     }
 
@@ -111,15 +123,20 @@ class SearchableGroupEditor extends Component {
     }
 
     renderHeader() {
-        const { availableItemsHeader, assignedItemsHeader } = this.props;
+        const { availableItemsHeader, assignedItemsHeader, errorText } = this.props;
+        const assignedStyle = errorText
+            ? { ...styles.header, ...styles.error }
+            : styles.header;
+
         return (
             <div style={styles.headerWrap}>
                 <Heading level={4} style={styles.header}>
                     {availableItemsHeader}
                 </Heading>
                 <div style={styles.headerSpacer} />
-                <Heading level={4} style={styles.header}>
+                <Heading level={4} style={assignedStyle}>
                     {assignedItemsHeader}
+                    {errorText ? <span style={styles.errorText}>{errorText}</span> : null}
                 </Heading>
             </div>
         );

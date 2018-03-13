@@ -58,16 +58,18 @@ export const ASSIGNED_USER_GROUPS = 'assignedUserGroups';
 export const DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS =
     'dimensionRestrictionsForDataAnalytics';
 
-// Exported because they are used by a selector function
 export const USER_PROPS = [SURNAME, FIRST_NAME, EMAIL, PHONE_NUMBER];
 export const USER_CRED_PROPS = [USERNAME, OPEN_ID, LDAP_ID, EXTERNAL_AUTH];
+
+export const ALWAYS_REQUIRED = 'ALWAYS_REQUIRED';
+export const CREATE_REQUIRED = 'CREATE_REQUIRED';
 
 export const BASE_FIELDS = [
     {
         name: USERNAME,
         label: 'Username',
         fieldRenderer: renderTextField,
-        required: true,
+        isRequiredField: CREATE_REQUIRED,
     },
     {
         name: EXTERNAL_AUTH,
@@ -78,6 +80,7 @@ export const BASE_FIELDS = [
         name: PASSWORD,
         label: 'Password',
         fieldRenderer: renderTextField,
+        isRequiredField: CREATE_REQUIRED,
         props: {
             type: 'password',
         },
@@ -86,6 +89,7 @@ export const BASE_FIELDS = [
         name: REPEAT_PASSWORD,
         label: 'Retype password',
         fieldRenderer: renderTextField,
+        isRequiredField: CREATE_REQUIRED,
         props: {
             type: 'password',
         },
@@ -93,14 +97,14 @@ export const BASE_FIELDS = [
     {
         name: SURNAME,
         label: 'Surname',
+        isRequiredField: ALWAYS_REQUIRED,
         fieldRenderer: renderTextField,
-        required: true,
     },
     {
         name: FIRST_NAME,
         label: 'First name',
+        isRequiredField: ALWAYS_REQUIRED,
         fieldRenderer: renderTextField,
-        required: true,
     },
     {
         name: EMAIL,
@@ -137,12 +141,12 @@ export const BASE_FIELDS = [
     {
         name: ASSIGNED_ROLES,
         fieldRenderer: renderSearchableGroupEditor,
+        isRequiredField: ALWAYS_REQUIRED,
         initialItemsSelector: user =>
             asArray(getNestedProp('userCredentials.userRoles', user) || []),
         availableItemsQuery: api.getAvailableUserRoles,
         availableItemsLabel: 'Available roles',
         assignedItemsLabel: 'Selected roles',
-        required: true,
     },
     {
         name: DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,

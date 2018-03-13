@@ -8,34 +8,13 @@ import i18next from 'i18next';
 import api from '../../api';
 import { connect } from 'react-redux';
 import { USER } from '../../constants/entityTypes';
+import asyncValidateUsername from './UserForm/asyncValidateUsername';
 import { checkPasswordForErrors } from '../../utils/';
 import { getList, hideDialog, showSnackbar, hideSnackbar } from '../../actions';
 
 const FORM_NAME = 'replicateUserForm';
 const USERNAME = 'username';
 const PASSWORD = 'password';
-
-const asyncValidate = values => {
-    const newUserName = values[USERNAME];
-    if (!newUserName) {
-        return Promise.resolve();
-    }
-    let errors = {};
-    return api
-        .getUserByUsername(newUserName)
-        .then(modelCollection => {
-            if (modelCollection.size > 0) {
-                errors[USERNAME] = i18next.t('Username already taken');
-                return errors;
-            }
-        })
-        .catch(error => {
-            errors[USERNAME] = i18next.t(
-                'There was a problem whilst checking the availability of this username'
-            );
-            throw errors;
-        });
-};
 
 const validate = (values, props) => {
     const { pristine } = props;
@@ -156,7 +135,7 @@ const mapStateToProps = state => ({ formState: state.form[FORM_NAME] });
 const ReduxFormWrapped = reduxForm({
     form: FORM_NAME,
     validate,
-    asyncValidate,
+    asyncValidate: asyncValidateUsername,
     asyncBlurFields: [USERNAME],
 })(ReplicateUserForm);
 

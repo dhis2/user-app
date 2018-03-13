@@ -1,35 +1,19 @@
+import i18next from 'i18next';
 import _ from '../../../constants/lodash';
 import { checkPasswordForErrors } from '../../../utils';
 import {
     USERNAME,
-    EXTERNAL_AUTH,
     PASSWORD,
     REPEAT_PASSWORD,
     SURNAME,
     FIRST_NAME,
     EMAIL,
-    OPEN_ID,
-    LDAP_ID,
-    PHONE_NUMBER,
-    INTERFACE_LANGUAGE,
-    DATABASE_LANGUAGE,
     ASSIGNED_ROLES,
-    DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
-    DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS,
-    ASSIGNED_USER_GROUPS,
-    DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
 } from './config';
 
-const CREATE_REQUIRED_FIELDS = [
-    USERNAME,
-    PASSWORD,
-    REPEAT_PASSWORD,
-    SURNAME,
-    FIRST_NAME,
-    ASSIGNED_ROLES,
-];
+const CREATE_REQUIRED_FIELDS = [USERNAME, PASSWORD, REPEAT_PASSWORD, SURNAME, FIRST_NAME];
 
-const EDIT_REQUIRED_FIELDS = [SURNAME, FIRST_NAME, ASSIGNED_ROLES];
+const EDIT_REQUIRED_FIELDS = [SURNAME, FIRST_NAME];
 
 export default function validate(values, props) {
     const { pristine } = props;
@@ -41,17 +25,30 @@ export default function validate(values, props) {
 
     const createUser = !props.user.id;
     const requiredFields = createUser ? CREATE_REQUIRED_FIELDS : EDIT_REQUIRED_FIELDS;
-    const requiredFieldValidator = createUser ? valueIsRequired : valueMayNotBeEmpty;
 
     requiredFields.forEach(fieldName =>
-        requiredFieldValidator(errors, fieldName, values[fieldName])
+        validateRequiredField(errors, fieldName, values[fieldName])
     );
 
+    validateAssignedRoles(errors, values[ASSIGNED_ROLES], createUser);
     validatePassword(errors, values, createUser);
-
     validateEmail(errors, values[EMAIL]);
-
     return errors;
+}
+
+function validateRequiredField(errors, propName, value, createUser) {
+    if ((createUser && !value) || (!createUser && value === '')) {
+        errors[propName] = i18next.t('This field is required');
+    }
+}
+
+function validateAssignedRoles(errors, value, createUser) {
+    const unTouchedOnEdit = !createUser && !value;
+    const isArrayWithLength = _.isArray(value) && value.length > 0;
+
+    if (!unTouchedOnEdit && !isArrayWithLength) {
+        errors[ASSIGNED_ROLES] = i18next.t('A user should have at least one User Role');
+    }
 }
 
 function validatePassword(errors, values, createUser) {
@@ -67,25 +64,13 @@ function validatePassword(errors, values, createUser) {
     }
 
     if (values[REPEAT_PASSWORD] && values[REPEAT_PASSWORD] !== values[PASSWORD]) {
-        errors[REPEAT_PASSWORD] = 'Passwords do not match';
-    }
-}
-
-function valueIsRequired(errors, propName, value) {
-    if (!value) {
-        errors[propName] = 'Required field';
-    }
-}
-
-function valueMayNotBeEmpty(errors, propName, value) {
-    if (value === '') {
-        errors[propName] = 'Required field';
+        errors[REPEAT_PASSWORD] = i18next.t('Passwords do not match');
     }
 }
 
 function validateEmail(errors, value) {
-    const emailPattern = /[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+    const emailPattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
     if (value && !emailPattern.test(value)) {
-        errors[EMAIL] = 'Please provide a valid email';
+        errors[EMAIL] = i18next.t('Please provide a valid email address');
     }
 }
