@@ -94,11 +94,13 @@ export const BASE_FIELDS = [
         name: SURNAME,
         label: 'Surname',
         fieldRenderer: renderTextField,
+        required: true,
     },
     {
         name: FIRST_NAME,
         label: 'First name',
         fieldRenderer: renderTextField,
+        required: true,
     },
     {
         name: EMAIL,
@@ -140,6 +142,7 @@ export const BASE_FIELDS = [
         availableItemsQuery: api.getAvailableUserRoles,
         availableItemsLabel: 'Available roles',
         assignedItemsLabel: 'Selected roles',
+        required: true,
     },
     {
         name: DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,

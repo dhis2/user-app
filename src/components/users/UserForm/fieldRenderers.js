@@ -15,6 +15,7 @@ export const renderTextField = ({ input, label, meta: { touched, error }, ...oth
             floatingLabelText={label}
             hintText={label}
             fullWidth={true}
+            errorText={touched && error}
             {...other}
             {...input}
         />
