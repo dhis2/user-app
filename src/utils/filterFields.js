@@ -90,10 +90,9 @@ export const getSelfRegistered = (value, onCheckHandler) => {
                 ...style,
                 display: 'inline-block',
                 float: 'left',
-                width: '222px',
+                width: '224px',
                 paddingTop: '37px',
                 height: '35px',
-                marginBottom: '24px', // Give some padding to the last filter element to create space for the table
             },
             wrapperStyle: {
                 marginTop: 0,

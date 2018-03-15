@@ -4,6 +4,7 @@ import {
     USER_CRED_PROPS,
     INTERFACE_LANGUAGE,
     DATABASE_LANGUAGE,
+    DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
 } from '../components/users/UserForm/config';
 import { asArray, getNestedProp } from '../utils';
 
@@ -21,14 +22,14 @@ export const pagerSelector = _.memoize(pager => {
     return pager;
 });
 
-export const listSelector = _.memoize((list, itemMemberships) => {
+export const listSelector = (list, itemMemberships) => {
     if (!list || typeof list === 'string') {
         return list;
     }
 
     const listType = list.modelDefinition.name;
     return list.toArray().map(item => listMappings[listType](item, itemMemberships));
-});
+};
 
 const listMappings = {
     user: item => {
@@ -60,6 +61,22 @@ export const initialSharingSettingsSelector = _.memoize(
     }
 );
 
+const addInitialValueFrom = (sourceObject, initialValues, propName) => {
+    if (propName === DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS) {
+        initialValues[propName] = [
+            ...sourceObject.catDimensionConstraints,
+            ...sourceObject.cogsDimensionConstraints,
+        ];
+    } else if (
+        (sourceObject[propName] && !_.isUndefined(sourceObject[propName].size)) ||
+        _.isArray(sourceObject[propName])
+    ) {
+        initialValues[propName] = asArray(sourceObject[propName]).map(({ id }) => id);
+    } else {
+        initialValues[propName] = sourceObject[propName];
+    }
+};
+
 export const userFormInitialValuesSelector = _.memoize((user, locales) => {
     if (!user.id) {
         return null;
@@ -68,11 +85,11 @@ export const userFormInitialValuesSelector = _.memoize((user, locales) => {
     let initialValues = {};
 
     USER_PROPS.forEach(propName => {
-        initialValues[propName] = user[propName];
+        addInitialValueFrom(user, initialValues, propName);
     });
 
     USER_CRED_PROPS.forEach(propName => {
-        initialValues[propName] = user.userCredentials[propName];
+        addInitialValueFrom(user.userCredentials, initialValues, propName);
     });
 
     initialValues[INTERFACE_LANGUAGE] = locales.ui.selected;

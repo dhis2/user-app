@@ -160,7 +160,7 @@ class SearchableOrgUnitTree extends Component {
                 <AsyncAutoComplete
                     autoCompleteProps={autoCompleteProps}
                     query={api.queryOrgUnits}
-                    minCharLength={3}
+                    minCharLength={2}
                     queryDebounceTime={375}
                     selectHandler={this.selectAndShowFilteredOrgUnitInTreeView.bind(this)}
                 />

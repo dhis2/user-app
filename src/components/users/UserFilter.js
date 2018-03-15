@@ -60,7 +60,7 @@ class UserFilter extends Component {
 
     render() {
         return (
-            <div>
+            <div style={{ marginRight: '225px', marginBottom: '24px' }}>
                 <FormBuilder
                     fields={this.getFields()}
                     onUpdateField={this.onFilterChange.bind(this)}

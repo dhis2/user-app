@@ -6,7 +6,7 @@ import { config, getUserSettings, getManifest } from 'd2/lib/d2';
 import i18next from 'i18next';
 import Backend from 'i18next-xhr-backend';
 
-const API_VERSION = '28';
+const API_VERSION = '29';
 
 const updateConfig = manifest => {
     // TODO

@@ -1,3 +1,4 @@
+import { generateUid } from 'd2/lib/uid';
 import _ from '../constants/lodash';
 import {
     PAGE as DEFAULT_PAGE,
@@ -8,6 +9,14 @@ import FIELDS, {
     ORG_UNITS_QUERY_CONFIG,
     USER_GROUP_QUERY_CONFIG,
 } from '../constants/queryFields';
+
+import {
+    USER_PROPS,
+    USER_CRED_PROPS,
+    INTERFACE_LANGUAGE,
+    DATABASE_LANGUAGE,
+    DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
+} from '../components/users/UserForm/config';
 
 const init = d2 => {
     this.d2 = d2;
@@ -206,7 +215,79 @@ const getSelectedAndAvailableLocales = username => {
     });
 };
 
-window.getSelectedAndAvailableLocales = getSelectedAndAvailableLocales;
+const addValueAsProp = (data, value, propName) => {
+    if (!_.isUndefined(value)) {
+        data[propName] = _.isArray(value) ? value.map(id => ({ id })) : value;
+    }
+};
+
+const parseUserSaveData = (values, user) => {
+    const userId = user.id || generateUid();
+    const userCredId = (user.userCredentials && user.userCredentials.id) || generateUid();
+    let data = {
+        id: userId,
+        userCredentials: {
+            id: userCredId,
+            userInfo: { id: userId },
+            cogsDimensionConstraints: [],
+            catDimensionConstraints: [],
+        },
+    };
+    let cred = data.userCredentials;
+
+    if (_.isArray(values.catCogsDimensionConstraints)) {
+        values.catCogsDimensionConstraints.forEach(constraint => {
+            if (constraint.dimensionType === 'CATEGORY_OPTION_GROUP_SET') {
+                cred.cogsDimensionConstraints.push({ id: constraint.id });
+            } else {
+                cred.catDimensionConstraints.push({ id: constraint.id });
+            }
+        });
+    }
+
+    USER_PROPS.forEach(propName => addValueAsProp(data, values[propName], propName));
+    USER_CRED_PROPS.forEach(propName => addValueAsProp(cred, values[propName], propName));
+
+    delete cred[DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS];
+
+    return data;
+};
+
+const createLocaleSetter = (type, username, val) => {
+    const url = `/userSettings/key${type}Locale?user=${username}&value=${val}`;
+    return this.d2Api.post(url);
+};
+
+const saveUser = (values, user, currentUiLocale, currentDbLocale) => {
+    let saveFunction;
+    let localePromises = [];
+    const userData = parseUserSaveData(values, user);
+
+    if (user.id) {
+        saveFunction = this.d2Api.update(`/users/${user.id}`, userData);
+    } else {
+        saveFunction = this.d2Api.post('/users', userData);
+    }
+
+    if (values[INTERFACE_LANGUAGE] !== currentUiLocale) {
+        localePromises.push(
+            createLocaleSetter('Ui', values.username, values[INTERFACE_LANGUAGE])
+        );
+    }
+
+    if (values[DATABASE_LANGUAGE] !== currentDbLocale) {
+        localePromises.push(
+            createLocaleSetter('Db', values.username, values[DATABASE_LANGUAGE])
+        );
+    }
+
+    if (localePromises.length === 0) {
+        localePromises.push(Promise.resolve('Nothing happened'));
+    }
+
+    // Updating locales after user in case the use was not available yet
+    return saveFunction.then(Promise.all(localePromises));
+};
 
 const getD2 = () => this.d2;
 
@@ -234,4 +315,5 @@ export default {
     getAvailableDataAnalyticsDimensionRestrictions,
     getSelectedAndAvailableLocales,
     updateUserGroup,
+    saveUser,
 };

@@ -1,6 +1,5 @@
 import { blue600 } from 'material-ui/styles/colors';
 import { asArray, getNestedProp } from '../../../utils';
-import api from '../../../api';
 import { analyticsDimensionsRestrictionsSelector } from '../../../selectors';
 import {
     renderTextField,
@@ -51,15 +50,31 @@ export const LDAP_ID = 'ldapId';
 export const PHONE_NUMBER = 'phoneNumber';
 export const INTERFACE_LANGUAGE = 'interfaceLanguage';
 export const DATABASE_LANGUAGE = 'databaseLanguage';
-export const ASSIGNED_ROLES = 'assignedRoles';
-export const DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS = 'dataCaptureAndMaintenanceOrgUnits';
-export const DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS = 'dataOutputAndAnalyticsOrgUnits';
-export const ASSIGNED_USER_GROUPS = 'assignedUserGroups';
-export const DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS =
-    'dimensionRestrictionsForDataAnalytics';
+export const ASSIGNED_ROLES = 'userRoles';
+export const DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS = 'organisationUnits';
+export const DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS = 'dataViewOrganisationUnits';
+export const ASSIGNED_USER_GROUPS = 'userGroups';
+export const DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS = 'catCogsDimensionConstraints';
 
-export const USER_PROPS = [SURNAME, FIRST_NAME, EMAIL, PHONE_NUMBER];
-export const USER_CRED_PROPS = [USERNAME, OPEN_ID, LDAP_ID, EXTERNAL_AUTH];
+export const USER_PROPS = [
+    SURNAME,
+    FIRST_NAME,
+    EMAIL,
+    PHONE_NUMBER,
+    DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
+    DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS,
+    ASSIGNED_USER_GROUPS,
+];
+
+export const USER_CRED_PROPS = [
+    USERNAME,
+    EXTERNAL_AUTH,
+    PASSWORD,
+    OPEN_ID,
+    LDAP_ID,
+    ASSIGNED_ROLES,
+    DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
+];
 
 export const ALWAYS_REQUIRED = 'ALWAYS_REQUIRED';
 export const CREATE_REQUIRED = 'CREATE_REQUIRED';
@@ -144,7 +159,7 @@ export const BASE_FIELDS = [
         isRequiredField: ALWAYS_REQUIRED,
         initialItemsSelector: user =>
             asArray(getNestedProp('userCredentials.userRoles', user) || []),
-        availableItemsQuery: api.getAvailableUserRoles,
+        availableItemsQuery: 'getAvailableUserRoles',
         availableItemsLabel: 'Available roles',
         assignedItemsLabel: 'Selected roles',
     },
@@ -181,7 +196,7 @@ export const ADDITIONAL_FIELDS = [
         name: ASSIGNED_USER_GROUPS,
         fieldRenderer: renderSearchableGroupEditor,
         initialItemsSelector: user => asArray(user.userGroups) || [],
-        availableItemsQuery: api.getAvailableUsergroups,
+        availableItemsQuery: 'getAvailableUsergroups',
         availableItemsLabel: 'Available user groups',
         assignedItemsLabel: 'Selected user groups',
     },
@@ -189,7 +204,7 @@ export const ADDITIONAL_FIELDS = [
         name: DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
         fieldRenderer: renderSearchableGroupEditor,
         initialItemsSelector: user => analyticsDimensionsRestrictionsSelector(user),
-        availableItemsQuery: api.getAvailableDataAnalyticsDimensionRestrictions,
+        availableItemsQuery: 'getAvailableDataAnalyticsDimensionRestrictions',
         availableItemsLabel: 'Available dimension restrictions for data analytics',
         assignedItemsLabel: 'Selected dimension restrictions for data analytics',
         returnModelsOnUpdate: true,

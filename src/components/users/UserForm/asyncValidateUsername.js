@@ -2,11 +2,14 @@ import { USERNAME } from './config';
 import i18next from 'i18next';
 import api from '../../../api';
 
-export default function asyncValidateUsername (values) {
+export default function asyncValidateUsername(values, _, props) {
     const newUserName = values[USERNAME];
-    if (!newUserName) {
+    const editingExistingUser = props.user && props.user.id;
+
+    if (!newUserName || editingExistingUser) {
         return Promise.resolve();
     }
+
     let errors = {};
     return api
         .getUserByUsername(newUserName)

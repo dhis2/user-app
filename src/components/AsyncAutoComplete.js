@@ -130,6 +130,7 @@ class AsyncAutoComplete extends Component {
             errorStyle: errorStyle,
             floatingLabelShrinkStyle: errorStyle,
             style: { marginBottom: marginBottom },
+            menuStyle: { maxHeight: '600px' },
         };
 
         return <AutoComplete {...mergedProps} />;

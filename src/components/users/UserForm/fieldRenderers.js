@@ -26,6 +26,7 @@ export const renderCheckbox = ({ input, label, meta: { touched, error }, ...othe
     return (
         <Checkbox
             checked={Boolean(input.value)}
+            onCheck={input.onChange}
             label={label}
             {...input}
             style={STYLES.checkbox}

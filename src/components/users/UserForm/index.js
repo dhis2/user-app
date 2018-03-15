@@ -13,7 +13,7 @@ import { navigateTo } from '../../../utils';
 import api from '../../../api';
 import { userFormInitialValuesSelector } from '../../../selectors';
 import { getList, showSnackbar } from '../../../actions';
-// import { USER } from '../../../constants/entityTypes';
+import { USER } from '../../../constants/entityTypes';
 import { asArray, getNestedProp } from '../../../utils';
 import * as CONFIG from './config';
 import validate from './validate';
@@ -50,8 +50,8 @@ class UserForm extends Component {
 
     componentWillMount() {
         const { user, showSnackbar, initialize } = this.props;
-
         const username = user.id ? user.userCredentials.username : null;
+
         api
             .getSelectedAndAvailableLocales(username)
             .then(locales => {
@@ -70,8 +70,22 @@ class UserForm extends Component {
         });
     }
 
-    updateUser() {
-        console.log('weet ik veel');
+    saveUser(values, _, props) {
+        const { user, showSnackbar, getList } = props;
+        const selectedUiLocale = this.state.locales.ui.selected;
+        const selectedDbLocale = this.state.locales.db.selected;
+        api
+            .saveUser(values, user, selectedUiLocale, selectedDbLocale)
+            .then(() => {
+                const msg = i18next.t('User saved successfully');
+                showSnackbar({ message: msg });
+                getList(USER);
+                this.backToList();
+            })
+            .catch(error => {
+                const msg = i18next.t('There was a problem saving the user.');
+                showSnackbar({ message: msg });
+            });
     }
 
     backToList() {
@@ -91,10 +105,21 @@ class UserForm extends Component {
         return labelText;
     }
 
+    prepareGroupEditor(conf, fieldConfig, user, isRequiredField) {
+        conf.assignedItemsLabel = this.getLabelText(
+            conf.assignedItemsLabel,
+            user,
+            isRequiredField
+        );
+        conf.availableItemsQuery = api[conf.availableItemsQuery];
+        conf.availableItemsLabel = i18next.t(conf.availableItemsLabel);
+        conf.initialValues = fieldConfig.initialItemsSelector(user);
+    }
+
     renderFields(fields) {
         const { user } = this.props;
         return fields.map((fieldConfig, index) => {
-            const { name, fieldRenderer, label, isRequiredField, ...other } = fieldConfig;
+            const { name, fieldRenderer, label, isRequiredField, ...conf } = fieldConfig;
             const labelText = this.getLabelText(label, user, isRequiredField);
 
             if (fieldRenderer === renderText) {
@@ -103,25 +128,16 @@ class UserForm extends Component {
 
             switch (fieldRenderer) {
                 case renderTextField:
-                    other.disabled = Boolean(name === CONFIG.USERNAME && user.id);
+                    conf.disabled = Boolean(name === CONFIG.USERNAME && user.id);
                     break;
                 case renderSearchableOrgUnitTree:
-                    other.initialValues = asArray(user[fieldConfig.userPropName]);
+                    conf.initialValues = asArray(user[fieldConfig.userPropName]);
                     break;
                 case renderSearchableGroupEditor:
-                    other.assignedItemsLabel = this.getLabelText(
-                        other.assignedItemsLabel,
-                        user,
-                        isRequiredField
-                    );
-                    other.availableItemsLabel = i18next.t(other.availableItemsLabel);
-                    other.initialValues = fieldConfig.initialItemsSelector(user);
+                    this.prepareGroupEditor(conf, fieldConfig, user, isRequiredField);
                     break;
                 case renderSelectField:
-                    other.options = getNestedProp(
-                        fieldConfig.optionsSelector,
-                        this.state
-                    );
+                    conf.options = getNestedProp(fieldConfig.optionsSelector, this.state);
                     break;
                 default:
                     break;
@@ -133,7 +149,7 @@ class UserForm extends Component {
                     key={name}
                     component={fieldRenderer}
                     label={labelText}
-                    {...other}
+                    {...conf}
                 />
             );
         });
@@ -192,7 +208,7 @@ class UserForm extends Component {
         return (
             <main>
                 <Heading level={2}>{i18next.t('Details')}</Heading>
-                <form onSubmit={handleSubmit(this.updateUser.bind(this))}>
+                <form onSubmit={handleSubmit(this.saveUser.bind(this))}>
                     {this.renderBaseFields()}
                     {this.renderAdditionalFields(showMore)}
                     {this.renderToggler(showMore)}
