@@ -9,7 +9,11 @@ import i18next from 'i18next';
 import SearchableOrgUnitTree from '../SearchableOrgUnitTree';
 
 class AssignSearchOrganisationUnits extends Component {
-    assignSearchOrganisationUnits(selectedOrgUnits) {
+    constructor(props) {
+        super(props);
+        this.assignSearchOrgUnits = this.assignSearchOrgUnits.bind(this);
+    }
+    assignSearchOrgUnits(selectedOrgUnits) {
         const { user, hideDialog } = this.props;
         const previousOrgUnits = user.teiSearchOrganisationUnits.toArray();
         const postData = {
@@ -46,7 +50,7 @@ class AssignSearchOrganisationUnits extends Component {
             <SearchableOrgUnitTree
                 selectedOrgUnits={selectedOrgUnits}
                 displayClearFilterButton={false}
-                confirmSelection={this.assignSearchOrganisationUnits.bind(this)}
+                confirmSelection={this.assignSearchOrgUnits}
                 cancel={hideDialog}
             />
         );

@@ -46,6 +46,12 @@ class OrganisationUnitInput extends Component {
         hideDialog: PropTypes.func.isRequired,
     };
 
+    constructor(props) {
+        super(props);
+        this.focusOrgUnitInput = this.focusOrgUnitInput.bind(this);
+        this.showOrgTreeInDialog = this.showOrgTreeInDialog.bind(this);
+    }
+
     focusOrgUnitInput() {
         this.refs.orgUnitInput.focus();
     }
@@ -69,13 +75,13 @@ class OrganisationUnitInput extends Component {
     render() {
         const { organisationUnits } = this.props;
         return (
-            <div style={styles.wrap} onClick={this.focusOrgUnitInput.bind(this)}>
+            <div style={styles.wrap} onClick={this.focusOrgUnitInput}>
                 <ActionOpenInNew style={styles.icon} />
                 <TextField
                     ref="orgUnitInput"
                     style={styles.textField}
                     floatingLabelText={i18next.t('Organisation unit')}
-                    onFocus={this.showOrgTreeInDialog.bind(this)}
+                    onFocus={this.showOrgTreeInDialog}
                     value={organisationUnits}
                     inputStyle={styles.input}
                 />

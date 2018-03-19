@@ -57,6 +57,11 @@ class SharingSettingsForm extends Component {
         this.state = {
             accessGroups: this.loadAccessGroups(),
         };
+
+        this.excludeItemsInAccessGroups = this.excludeItemsInAccessGroups.bind(this);
+        this.addUserGroupFormSection = this.addUserGroupFormSection.bind(this);
+        this.submitSharingSettings = this.submitSharingSettings.bind(this);
+        this.renderUserGroupAccesses = this.renderUserGroupAccesses.bind(this);
     }
 
     loadAccessGroups() {
@@ -73,10 +78,10 @@ class SharingSettingsForm extends Component {
             autoCompleteProps: {
                 floatingLabelText: i18next.t('Search for user groups to give access to'),
                 hintText: i18next.t('Enter user group name'),
-                filter: this.excludeItemsInAccessGroups.bind(this),
+                filter: this.excludeItemsInAccessGroups,
             },
             query: api.queryUserGroups,
-            selectHandler: this.addUserGroupFormSection.bind(this),
+            selectHandler: this.addUserGroupFormSection,
             minCharLength: 2,
         };
     }
@@ -220,13 +225,13 @@ class SharingSettingsForm extends Component {
                     {i18next.t('Created by')} {model.user.displayName}
                 </Heading>
                 <AsyncAutoComplete {...this.getAsyncAutoCompleteProps()} />
-                <form onSubmit={handleSubmit(this.submitSharingSettings.bind(this))}>
+                <form onSubmit={handleSubmit(this.submitSharingSettings)}>
                     <Table selectable={false}>
                         <TableBody displayRowCheckbox={false}>
                             {this.renderPublicAccessField()}
                             <FieldArray
                                 name="accessGroups"
-                                component={this.renderUserGroupAccesses.bind(this)}
+                                component={this.renderUserGroupAccesses}
                             />
                         </TableBody>
                     </Table>

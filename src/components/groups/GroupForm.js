@@ -27,6 +27,9 @@ class GroupForm extends Component {
         };
         this.groupMembers = asArray(props.group.users).map(({ id }) => id);
         this.groupManagedGroups = asArray(props.group.managedGroups).map(({ id }) => id);
+        this.onGroupNameInputChange = this.onGroupNameInputChange.bind(this);
+        this.onUsersChange = this.onUsersChange.bind(this);
+        this.onUserGroupChange = this.onUserGroupChange.bind(this);
     }
 
     onUsersChange(assignedUserIds) {
@@ -59,7 +62,7 @@ class GroupForm extends Component {
 
         this.setState({ submitting: true });
 
-        group.save().then(() => this.onRequestComplete(!!group.id));
+        group.save().then(() => this.onRequestComplete(Boolean(group.id)));
     }
 
     onRequestComplete(isUpdate) {
@@ -86,7 +89,7 @@ class GroupForm extends Component {
             <main>
                 <TextField
                     fullWidth={true}
-                    onChange={this.onGroupNameInputChange.bind(this)}
+                    onChange={this.onGroupNameInputChange}
                     value={groupName}
                     floatingLabelText={groupNameTxt}
                     hintText={groupNameTxt}
@@ -96,14 +99,14 @@ class GroupForm extends Component {
                 <SearchableGroupEditor
                     initiallyAssignedItems={group.users}
                     availableItemsQuery={api.getManagedUsers}
-                    onChange={this.onUsersChange.bind(this)}
+                    onChange={this.onUsersChange}
                     availableItemsHeader={i18next.t('Available users')}
                     assignedItemsHeader={i18next.t('Group members')}
                 />
                 <SearchableGroupEditor
                     initiallyAssignedItems={group.managedGroups}
                     availableItemsQuery={api.getAvailableUsergroups}
-                    onChange={this.onUserGroupChange.bind(this)}
+                    onChange={this.onUserGroupChange}
                     availableItemsHeader={i18next.t('Available user groups')}
                     assignedItemsHeader={i18next.t('Managed user groups')}
                 />
@@ -111,14 +114,11 @@ class GroupForm extends Component {
                     <RaisedButton
                         label={i18next.t('Save')}
                         primary={true}
-                        onClick={this.updateGroup.bind(this)}
+                        onClick={this.updateGroup}
                         disabled={!!(groupNameError || submitting)}
                         style={{ marginRight: '8px' }}
                     />
-                    <RaisedButton
-                        label={i18next.t('Cancel')}
-                        onClick={this.backToList.bind(this)}
-                    />
+                    <RaisedButton label={i18next.t('Cancel')} onClick={this.backToList} />
                 </div>
             </main>
         );

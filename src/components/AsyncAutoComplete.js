@@ -49,6 +49,8 @@ class AsyncAutoComplete extends Component {
         const debounceTime = props.queryDebounceTime || 375;
         this.state = { ...baseState };
         this.getItems = _.debounce(this.getItems.bind(this), debounceTime);
+        this.onAutoCompleteChange = this.onAutoCompleteChange.bind(this);
+        this.onItemSelect = this.onItemSelect.bind(this);
     }
 
     onAutoCompleteChange(value) {
@@ -122,8 +124,8 @@ class AsyncAutoComplete extends Component {
         const marginBottom = searchWarning ? 0 : 28;
         const mergedProps = {
             ...mergedAutoCompleteProps,
-            onUpdateInput: this.onAutoCompleteChange.bind(this),
-            onNewRequest: this.onItemSelect.bind(this),
+            onUpdateInput: this.onAutoCompleteChange,
+            onNewRequest: this.onItemSelect,
             searchText: autoCompleteText,
             dataSource: filteredItems,
             errorText: searchWarning,

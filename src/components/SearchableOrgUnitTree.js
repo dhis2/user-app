@@ -17,6 +17,7 @@ const styles = {
         position: 'relative',
     },
     scrollBox: {
+        position: 'relative',
         marginTop: '-12px',
         maxHeight: 'calc(60vh - 154px)',
         minHeight: 'calc(20vh - 154px)',
@@ -56,6 +57,12 @@ class SearchableOrgUnitTree extends Component {
             orgUnitFilter: null,
             initiallyExpanded: this.getInitiallyExpandedItems(props.selectedOrgUnits),
         };
+
+        this.applySelection = this.applySelection.bind(this);
+        this.selectAndShowFilteredOrgUnit = this.selectAndShowFilteredOrgUnit.bind(this);
+        this.toggleSelectedOrgUnits = this.toggleSelectedOrgUnits.bind(this);
+        this.applySelection = this.applySelection.bind(this);
+        this.clearSelection = this.clearSelection.bind(this);
     }
 
     componentWillMount() {
@@ -113,7 +120,7 @@ class SearchableOrgUnitTree extends Component {
         this.update(newOrgUnits, []);
     }
 
-    selectAndShowFilteredOrgUnitInTreeView(dataSourceItem) {
+    selectAndShowFilteredOrgUnit(dataSourceItem) {
         const orgUnit = dataSourceItem.value;
         const { selectedOrgUnits } = this.state;
         const initiallyExpanded = [this.removeLastPathSegment(orgUnit)];
@@ -124,7 +131,7 @@ class SearchableOrgUnitTree extends Component {
 
     clearSelection() {
         this.update([]);
-        _.defer(this.applySelection.bind(this));
+        _.defer(this.applySelection);
     }
 
     applySelection() {
@@ -162,7 +169,7 @@ class SearchableOrgUnitTree extends Component {
                     query={api.queryOrgUnits}
                     minCharLength={2}
                     queryDebounceTime={375}
-                    selectHandler={this.selectAndShowFilteredOrgUnitInTreeView.bind(this)}
+                    selectHandler={this.selectAndShowFilteredOrgUnit}
                 />
                 <Paper style={styles.scrollBox}>
                     {!root ? (
@@ -170,7 +177,7 @@ class SearchableOrgUnitTree extends Component {
                     ) : (
                         <OrgUnitTree
                             root={root}
-                            onSelectClick={this.toggleSelectedOrgUnits.bind(this)}
+                            onSelectClick={this.toggleSelectedOrgUnits}
                             selected={selected}
                             initiallyExpanded={initiallyExpanded}
                             orgUnitsPathsToInclude={orgUnitFilter}
@@ -183,7 +190,7 @@ class SearchableOrgUnitTree extends Component {
                             label={i18next.t('Apply')}
                             primary={true}
                             style={styles.buttonMargin}
-                            onClick={this.applySelection.bind(this)}
+                            onClick={this.applySelection}
                             disabled={!root}
                         />
                         {displayClearFilterButton ? (
@@ -191,7 +198,7 @@ class SearchableOrgUnitTree extends Component {
                                 label={i18next.t('Clear all')}
                                 secondary={true}
                                 style={styles.buttonMargin}
-                                onClick={this.clearSelection.bind(this)}
+                                onClick={this.clearSelection}
                                 disabled={!root}
                             />
                         ) : null}

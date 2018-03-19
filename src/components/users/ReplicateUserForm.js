@@ -50,13 +50,20 @@ class ReplicateUserForm extends Component {
         handleSubmit: PropTypes.func.isRequired,
     };
 
+    constructor(props) {
+        super(props);
+        this.onReplicationSucces = this.onReplicationSucces.bind(this);
+        this.onReplicationError = this.onReplicationError.bind(this);
+        this.onHandleSubmit = this.onHandleSubmit.bind(this);
+    }
+
     onHandleSubmit(data) {
         const { userIdToReplicate, hideDialog } = this.props;
         const { username, password } = data;
         api
             .replicateUser(userIdToReplicate, username, password)
-            .then(this.onReplicationSucces.bind(this))
-            .catch(this.onReplicationError.bind(this));
+            .then(this.onReplicationSucces)
+            .catch(this.onReplicationError);
         hideDialog();
     }
 
@@ -95,7 +102,7 @@ class ReplicateUserForm extends Component {
         const validatingProps = isCheckingUsername ? this.getLoadingProps() : null;
 
         return (
-            <form onSubmit={handleSubmit(this.onHandleSubmit.bind(this))}>
+            <form onSubmit={handleSubmit(this.onHandleSubmit)}>
                 <Field
                     name={USERNAME}
                     component={TextField}

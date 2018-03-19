@@ -12,7 +12,7 @@ import i18next from 'i18next';
 import { navigateTo } from '../../../utils';
 import api from '../../../api';
 import { userFormInitialValuesSelector } from '../../../selectors';
-import { getList, showSnackbar } from '../../../actions';
+import { clearItem, getList, showSnackbar } from '../../../actions';
 import { USER } from '../../../constants/entityTypes';
 import { asArray, getNestedProp } from '../../../utils';
 import * as CONFIG from './config';
@@ -46,6 +46,10 @@ class UserForm extends Component {
             showMore: false,
             locales: null,
         };
+
+        this.toggleShowMore = this.toggleShowMore.bind(this);
+        this.saveUser = this.saveUser.bind(this);
+        this.backToList = this.backToList.bind(this);
     }
 
     componentWillMount() {
@@ -71,7 +75,7 @@ class UserForm extends Component {
     }
 
     saveUser(values, _, props) {
-        const { user, showSnackbar, getList } = props;
+        const { user, showSnackbar, clearItem, getList } = props;
         const selectedUiLocale = this.state.locales.ui.selected;
         const selectedDbLocale = this.state.locales.db.selected;
         api
@@ -79,6 +83,7 @@ class UserForm extends Component {
             .then(() => {
                 const msg = i18next.t('User saved successfully');
                 showSnackbar({ message: msg });
+                clearItem();
                 getList(USER);
                 this.backToList();
             })
@@ -183,7 +188,7 @@ class UserForm extends Component {
         return (
             <div style={CONFIG.STYLES.togglerWrap}>
                 <FlatButton
-                    onClick={this.toggleShowMore.bind(this)}
+                    onClick={this.toggleShowMore}
                     label={togglerText}
                     style={CONFIG.STYLES.toggler}
                     icon={icon}
@@ -208,7 +213,7 @@ class UserForm extends Component {
         return (
             <main>
                 <Heading level={2}>{i18next.t('Details')}</Heading>
-                <form onSubmit={handleSubmit(this.saveUser.bind(this))}>
+                <form onSubmit={handleSubmit(this.saveUser)}>
                     {this.renderBaseFields()}
                     {this.renderAdditionalFields(showMore)}
                     {this.renderToggler(showMore)}
@@ -222,7 +227,7 @@ class UserForm extends Component {
                         />
                         <RaisedButton
                             label={i18next.t('Cancel')}
-                            onClick={this.backToList.bind(this)}
+                            onClick={this.backToList}
                         />
                     </div>
                 </form>
@@ -245,6 +250,7 @@ const ReduxFormWrappedUserForm = reduxForm({
 })(UserForm);
 
 export default connect(mapStateToProps, {
+    clearItem,
     showSnackbar,
     getList,
 })(ReduxFormWrappedUserForm);

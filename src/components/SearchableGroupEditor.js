@@ -54,12 +54,17 @@ class SearchableGroupEditor extends Component {
             assignedItemStore: Store.create(),
             filterText: '',
         };
+
+        this.onAvailableItemsReceived = this.onAvailableItemsReceived.bind(this);
+        this.updateFilterText = this.updateFilterText.bind(this);
+        this.onAssignItems = this.onAssignItems.bind(this);
+        this.onRemoveItems = this.onRemoveItems.bind(this);
     }
 
     componentWillMount() {
         const { availableItemsQuery } = this.props;
         availableItemsQuery()
-            .then(this.onAvailableItemsReceived.bind(this))
+            .then(this.onAvailableItemsReceived)
             .catch(() => alert('Problem getting the available items'));
     }
 
@@ -147,7 +152,7 @@ class SearchableGroupEditor extends Component {
             <TextField
                 fullWidth={true}
                 type="search"
-                onChange={this.updateFilterText.bind(this)}
+                onChange={this.updateFilterText}
                 value={this.state.filterText}
                 floatingLabelText={i18next.t('Filter')}
                 hintText={i18next.t('Filter available and selected items')}
@@ -164,8 +169,8 @@ class SearchableGroupEditor extends Component {
                 <GroupEditor
                     itemStore={this.state.itemStore}
                     assignedItemStore={this.state.assignedItemStore}
-                    onAssignItems={this.onAssignItems.bind(this)}
-                    onRemoveItems={this.onRemoveItems.bind(this)}
+                    onAssignItems={this.onAssignItems}
+                    onRemoveItems={this.onRemoveItems}
                     height={250}
                     filterText={this.state.filterText}
                 />

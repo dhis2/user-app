@@ -24,7 +24,8 @@ class UserFilter extends Component {
         super(props);
         this.onQueryChange = this.onQueryChange.bind(this);
         this.onSelfRegisteredChange = this.onSelfRegisteredChange.bind(this);
-        this.debouncedOnFilterChange = _.debounce(this.onFilterChange.bind(this), 375);
+        this.onFilterChange = this.onFilterChange.bind(this);
+        this.debouncedOnFilterChange = _.debounce(this.onFilterChange, 375);
     }
 
     onFilterChange(fieldName, newValue) {
@@ -63,7 +64,7 @@ class UserFilter extends Component {
             <div style={{ marginRight: '225px', marginBottom: '24px' }}>
                 <FormBuilder
                     fields={this.getFields()}
-                    onUpdateField={this.onFilterChange.bind(this)}
+                    onUpdateField={this.onFilterChange}
                 />
                 <OrganisationUnitInput />
             </div>

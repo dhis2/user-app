@@ -17,7 +17,8 @@ class SearchFilter extends Component {
     constructor(props) {
         super(props);
         this.onQueryChange = this.onQueryChange.bind(this);
-        this.debouncedOnFilterChange = _.debounce(this.onFilterChange.bind(this), 375);
+        this.onFilterChange = this.onFilterChange.bind(this);
+        this.debouncedOnFilterChange = _.debounce(this.onFilterChange, 375);
     }
 
     onFilterChange(fieldName, newValue) {
@@ -43,10 +44,7 @@ class SearchFilter extends Component {
 
     render() {
         return (
-            <FormBuilder
-                fields={this.getFields()}
-                onUpdateField={this.onFilterChange.bind(this)}
-            />
+            <FormBuilder fields={this.getFields()} onUpdateField={this.onFilterChange} />
         );
     }
 }
