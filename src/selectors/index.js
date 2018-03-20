@@ -1,4 +1,14 @@
-export const pagerSelector = pager => {
+import _ from '../constants/lodash';
+import {
+    USER_PROPS,
+    USER_CRED_PROPS,
+    INTERFACE_LANGUAGE,
+    DATABASE_LANGUAGE,
+    DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
+} from '../components/users/UserForm/config';
+import { asArray, getNestedProp } from '../utils';
+
+export const pagerSelector = _.memoize(pager => {
     if (pager === null) {
         return pager;
     }
@@ -10,7 +20,7 @@ export const pagerSelector = pager => {
 
     pager.currentlyShown = `${startItem} - ${endItem > total ? total : endItem}`;
     return pager;
-};
+});
 
 export const listSelector = (list, itemMemberships) => {
     if (!list || typeof list === 'string') {
@@ -18,23 +28,81 @@ export const listSelector = (list, itemMemberships) => {
     }
 
     const listType = list.modelDefinition.name;
-    return list.toArray().map(item => mappings[listType](item, itemMemberships));
+    return list.toArray().map(item => listMappings[listType](item, itemMemberships));
 };
 
-const mappings = {
+const listMappings = {
     user: item => {
         item.userName = item.userCredentials.username;
+        item.disabled = item.userCredentials.disabled;
         return item;
     },
     userRole: item => item,
     userGroup: (item, itemMemberships) => {
-        item.currentUserIsMember = itemMemberships.some(({ id }) => id === item.id)
-            ? '\u2713'
-            : '';
+        item.currentUserIsMember = itemMemberships.some(({ id }) => id === item.id);
         return item;
     },
 };
 
-export const orgUnitsAsStringSelector = orgUnits => {
+export const orgUnitsAsStringSelector = _.memoize(orgUnits => {
     return orgUnits.map(unit => unit.displayName).join(', ');
+});
+
+export const initialSharingSettingsSelector = _.memoize(
+    ({ publicAccess, userGroupAccesses }) => {
+        return userGroupAccesses.reduce(
+            (initialValues, accessGroup) => {
+                initialValues[`group_${accessGroup.id}`] = accessGroup.access;
+                return initialValues;
+            },
+            { publicAccess }
+        );
+    }
+);
+
+const addInitialValueFrom = (sourceObject, initialValues, propName) => {
+    if (propName === DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS) {
+        initialValues[propName] = [
+            ...sourceObject.catDimensionConstraints,
+            ...sourceObject.cogsDimensionConstraints,
+        ];
+    } else if (
+        (sourceObject[propName] && !_.isUndefined(sourceObject[propName].size)) ||
+        _.isArray(sourceObject[propName])
+    ) {
+        initialValues[propName] = asArray(sourceObject[propName]).map(({ id }) => id);
+    } else {
+        initialValues[propName] = sourceObject[propName];
+    }
 };
+
+export const userFormInitialValuesSelector = _.memoize((user, locales) => {
+    if (!user.id) {
+        return null;
+    }
+
+    let initialValues = {};
+
+    USER_PROPS.forEach(propName => {
+        addInitialValueFrom(user, initialValues, propName);
+    });
+
+    USER_CRED_PROPS.forEach(propName => {
+        addInitialValueFrom(user.userCredentials, initialValues, propName);
+    });
+
+    initialValues[INTERFACE_LANGUAGE] = locales.ui.selected;
+    initialValues[DATABASE_LANGUAGE] = locales.db.selected;
+
+    return initialValues;
+});
+
+export const analyticsDimensionsRestrictionsSelector = _.memoize(user => {
+    const catConstraints = asArray(
+        getNestedProp('userCredentials.catDimensionConstraints', user)
+    );
+    const cogsConstraints = asArray(
+        getNestedProp('userCredentials.cogsDimensionConstraints', user)
+    );
+    return [...catConstraints, ...cogsConstraints];
+});

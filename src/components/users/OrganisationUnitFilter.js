@@ -7,6 +7,11 @@ import { updateFilter, hideDialog, getList } from '../../actions';
 import SearchableOrgUnitTree from '../SearchableOrgUnitTree';
 
 class OrganisationUnitFilter extends Component {
+    constructor(props) {
+        super(props);
+        this.applyFilter = this.applyFilter.bind(this);
+    }
+
     applyFilter(newSelectedOrgUnits) {
         const { updateFilter, hideDialog, getList, selectedOrgUnits } = this.props;
 
@@ -25,7 +30,7 @@ class OrganisationUnitFilter extends Component {
             <SearchableOrgUnitTree
                 selectedOrgUnits={selectedOrgUnits}
                 displayClearFilterButton={true}
-                applySelection={this.applyFilter.bind(this)}
+                confirmSelection={this.applyFilter}
                 cancel={hideDialog}
             />
         );

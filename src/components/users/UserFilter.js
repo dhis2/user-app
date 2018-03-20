@@ -1,17 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import _ from '../../constants/lodash';
+import i18next from 'i18next';
 import PropTypes from 'prop-types';
 import { updateFilter, getList } from '../../actions';
-import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
+import DropDown from 'd2-ui/lib/form-fields/DropDown.component';
 import OrganisationUnitInput from './OrganisationUnitInput';
+import SearchFilter from '../SearchFilter';
 import {
-    FIELD_NAMES,
-    getQuery,
-    getInactiveMonths,
-    getInvitationStatus,
-    getSelfRegistered,
-} from '../../utils/filterFields';
+    INACTIVE_MONTHS,
+    INVITATION_STATUS,
+    SELF_REGISTERED,
+} from '../../constants/filterFieldNames';
+import { Checkbox } from 'material-ui';
+
+const style = {
+    float: 'left',
+    marginRight: '1rem',
+};
+
+const selfRegisteredStyle = {
+    ...style,
+    display: 'inline-block',
+    float: 'left',
+    width: '182px',
+    paddingTop: '37px',
+    height: '35px',
+};
 
 class UserFilter extends Component {
     static propTypes = {
@@ -22,9 +36,7 @@ class UserFilter extends Component {
     };
     constructor(props) {
         super(props);
-        this.onQueryChange = this.onQueryChange.bind(this);
-        this.onSelfRegisteredChange = this.onSelfRegisteredChange.bind(this);
-        this.debouncedOnFilterChange = _.debounce(this.onFilterChange.bind(this), 375);
+        this.onFilterChange = this.onFilterChange.bind(this);
     }
 
     onFilterChange(fieldName, newValue) {
@@ -38,38 +50,84 @@ class UserFilter extends Component {
         getList(entityType);
     }
 
-    onQueryChange(event) {
-        this.debouncedOnFilterChange(FIELD_NAMES.QUERY, event.target.value);
+    createInactiveMonthsOptions() {
+        const month = i18next.t('month');
+        const months = i18next.t('months');
+        return Array(11)
+            .fill()
+            .map((_, index) => {
+                const id = index + 1;
+                const displayName = id === 1 ? `${id} ${month}` : `${id} ${months}`;
+                return { id, displayName };
+            });
     }
 
-    onSelfRegisteredChange(event, value) {
-        this.onFilterChange(FIELD_NAMES.SELF_REGISTERED, value);
+    renderDropDown(config) {
+        const mergedConfig = {
+            ...config,
+            includeEmpty: true,
+            emptyLabel: i18next.t('<No value>'),
+        };
+        return <DropDown {...mergedConfig} />;
     }
 
-    getFields() {
-        const { filter } = this.props;
-        const query = getQuery(filter.query, this.onQueryChange);
-        const inactiveMonths = getInactiveMonths(filter.inactiveMonths);
-        const invitationStatus = getInvitationStatus(filter.invitationStatus);
-        const selfRegistered = getSelfRegistered(
-            filter.selfRegistered,
-            this.onSelfRegisteredChange
+    renderInactiveMonthsFilter() {
+        const dropDownConfig = {
+            menuItems: this.createInactiveMonthsOptions(),
+            floatingLabelText: i18next.t('Inactivity'),
+            value: this.props.filter.inactiveMonths,
+            onChange: event => this.onFilterChange(INACTIVE_MONTHS, event.target.value),
+            style: { ...style, width: '132px' },
+        };
+
+        return this.renderDropDown(dropDownConfig);
+    }
+
+    renderInvitationStatusFilter() {
+        const dropDownConfig = {
+            menuItems: [
+                { id: 'all', displayName: i18next.t('All invitations') },
+                { id: 'expired', displayName: i18next.t('Expired invitations') },
+            ],
+            floatingLabelText: i18next.t('Invitations'),
+            value: this.props.filter.invitationStatus,
+            onChange: event => this.onFilterChange(INVITATION_STATUS, event.target.value),
+            style: { ...style, width: '172px' },
+        };
+
+        return this.renderDropDown(dropDownConfig);
+    }
+
+    renderSelfRegisteredFilter() {
+        const value = this.props.filter.selfRegistered;
+        const baseClassName = 'data-table__filter-bar__checkbox';
+        const checkedClassName = `${baseClassName}--checked`;
+
+        return (
+            <Checkbox
+                value={value}
+                onCheck={(event, value) => this.onFilterChange(SELF_REGISTERED, value)}
+                label={i18next.t('Self registrations')}
+                className={value ? checkedClassName : baseClassName}
+                style={selfRegisteredStyle}
+            />
         );
-        return [query, inactiveMonths, invitationStatus, selfRegistered];
     }
 
     render() {
+        const { entityType } = this.props;
         return (
             <div>
-                <FormBuilder
-                    fields={this.getFields()}
-                    onUpdateField={this.onFilterChange.bind(this)}
-                />
+                <SearchFilter entityType={entityType} />
                 <OrganisationUnitInput />
+                {this.renderInactiveMonthsFilter()}
+                {this.renderInvitationStatusFilter()}
+                {this.renderSelfRegisteredFilter()}
             </div>
         );
     }
 }
+
 const mapStateToProps = state => {
     return {
         filter: state.filter,

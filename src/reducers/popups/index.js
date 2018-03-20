@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import snackbarReducer from './snackbar';
 import dialogReducer from './dialog';
+import sharingReducer from './sharing';
 
-const notificationsReducer = combineReducers({
+const popupsReducer = combineReducers({
     snackbar: snackbarReducer,
     dialog: dialogReducer,
+    sharing: sharingReducer,
 });
 
-export default notificationsReducer;
+export default popupsReducer;

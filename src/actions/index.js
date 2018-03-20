@@ -39,7 +39,16 @@ export const getItem = (entityName, viewType, id) => (dispatch, getState) => {
     api
         .getItem(entityName, viewType, id)
         .then(response => dispatch(createAction(ACTIONS.ITEM_RECEIVED, response)))
-        .catch(error => dispatch(createAction(ACTIONS.ITEM_ERRORED, error.message)));
+        .catch(error => dispatch(createAction(ACTIONS.ITEM_ERRORED, error)));
+};
+
+export const initNewItem = entityType => {
+    const newItem = api.getD2().models[entityType].create();
+    return createAction(ACTIONS.INIT_NEW_ITEM, newItem);
+};
+
+export const clearItem = () => {
+    return createAction(ACTIONS.CLEAR_ITEM);
 };
 
 // Regular actions
@@ -72,6 +81,14 @@ export const showDialog = (content, props) => {
 
 export const hideDialog = () => {
     return createAction(ACTIONS.HIDE_DIALOG);
+};
+
+export const showSharingDialog = (id, type) => {
+    return createAction(ACTIONS.SHOW_SHARING_DIALOG, { id, type });
+};
+
+export const hideSharingDialog = () => {
+    return createAction(ACTIONS.HIDE_SHARING_DIALOG);
 };
 
 export const initCurrentUser = () => {

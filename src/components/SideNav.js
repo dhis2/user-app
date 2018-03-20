@@ -17,6 +17,11 @@ class SideNav extends Component {
         }),
     };
 
+    constructor(props) {
+        super(props);
+        this.changeSectionHandler = this.changeSectionHandler.bind(this);
+    }
+
     componentWillMount() {
         const { sections, history, location: { pathname } } = this.props;
         const userPath = sections[0].path;
@@ -42,7 +47,6 @@ class SideNav extends Component {
     render() {
         const { sections } = this.props;
         const currentSectionKey = this.getSectionKeyForCurrentPath();
-        const boundChangeHandler = this.changeSectionHandler.bind(this);
 
         if (!currentSectionKey) {
             return null;
@@ -52,7 +56,7 @@ class SideNav extends Component {
             <div style={style}>
                 <Sidebar
                     sections={sections}
-                    onChangeSection={boundChangeHandler}
+                    onChangeSection={this.changeSectionHandler}
                     currentSection={currentSectionKey}
                 />
             </div>

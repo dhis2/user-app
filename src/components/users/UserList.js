@@ -22,13 +22,15 @@ class UserList extends Component {
         return (
             <List
                 entityType={USER}
-                columns={['displayName', 'userName']}
+                columns={['displayName', 'userName', 'disabled']}
                 FilterComponent={UserFilter}
                 primaryAction={userContextMenuActions.edit}
                 contextMenuActions={userContextMenuActions}
                 contextMenuIcons={userContextMenuIcons}
                 isContextActionAllowed={isUserContextActionAllowed}
                 sectionName={i18next.t('User Management')}
+                newItemPath={'/users/new'}
+                className="user-list"
             />
         );
     }

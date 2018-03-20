@@ -4,6 +4,8 @@ export const LIST_RECEIVED = 'LIST_RECEIVED';
 export const LIST_ERRORED = 'LIST_ERRORED';
 
 // ITEMS
+export const CLEAR_ITEM = 'CLEAR_ITEM';
+export const INIT_NEW_ITEM = 'INIT_NEW_ITEM';
 export const ITEM_REQUESTED = 'ITEM_REQUESTED';
 export const ITEM_RECEIVED = 'ITEM_RECEIVED';
 export const ITEM_ERRORED = 'ITEM_ERRORED';
@@ -12,6 +14,8 @@ export const SHOW_SNACKBAR = 'SHOW_SNACKBAR';
 export const HIDE_SNACKBAR = 'HIDE_SNACKBAR';
 export const SHOW_DIALOG = 'SHOW_DIALOG';
 export const HIDE_DIALOG = 'HIDE_DIALOG';
+export const SHOW_SHARING_DIALOG = 'SHOW_SHARING_DIALOG';
+export const HIDE_SHARING_DIALOG = 'HIDE_SHARING_DIALOG';
 
 // PAGER
 export const PAGER_RESET = 'PAGER_RESET';

@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import i18next from 'i18next';
+import TextField from 'material-ui/TextField/TextField';
 import _ from '../constants/lodash';
 import { updateFilter, getList } from '../actions';
-import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
-import { FIELD_NAMES, getQuery } from '../utils/filterFields';
+import { QUERY } from '../constants/filterFieldNames';
+
+const style = {
+    float: 'left',
+    marginRight: '1rem',
+    width: '236px',
+};
 
 class SearchFilter extends Component {
     static propTypes = {
@@ -16,36 +23,35 @@ class SearchFilter extends Component {
 
     constructor(props) {
         super(props);
-        this.onQueryChange = this.onQueryChange.bind(this);
-        this.debouncedOnFilterChange = _.debounce(this.onFilterChange.bind(this), 375);
+        this.state = {
+            localQueryStr: props.filter.query,
+        };
+        this.onQueryStrChange = this.onQueryStrChange.bind(this);
+        this.updateSearchFilter = _.debounce(this.updateSearchFilter.bind(this), 375);
     }
 
-    onFilterChange(fieldName, newValue) {
+    updateSearchFilter(newValue) {
         const { getList, entityType, updateFilter } = this.props;
-        // Meh empty option in Select returns null as a string
-        if (newValue === 'null') {
-            newValue = null;
-        }
-        updateFilter(fieldName, newValue);
+        updateFilter(QUERY, newValue);
         getList(entityType);
     }
 
-    onQueryChange(event) {
-        this.debouncedOnFilterChange(FIELD_NAMES.QUERY, event.target.value);
-    }
-
-    getFields() {
-        const { filter } = this.props;
-        const customStyle = { marginBottom: '24px' };
-        const query = getQuery(filter.query, this.onQueryChange, customStyle);
-        return [query];
+    onQueryStrChange(event) {
+        const value = event.target.value;
+        this.setState({ localQueryStr: value });
+        this.updateSearchFilter(value);
     }
 
     render() {
+        const { localQueryStr } = this.state;
         return (
-            <FormBuilder
-                fields={this.getFields()}
-                onUpdateField={this.onFilterChange.bind(this)}
+            <TextField
+                floatingLabelText={i18next.t('Search by name')}
+                style={style}
+                hintText={''}
+                value={localQueryStr}
+                type="search"
+                onChange={this.onQueryStrChange}
             />
         );
     }

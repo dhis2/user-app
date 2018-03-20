@@ -1,4 +1,4 @@
-export const PAGE_SIZE = 5;
+export const PAGE_SIZE = 20;
 export const PAGE = 1;
 
 export const LIST_FILTER = {
@@ -20,4 +20,10 @@ export const INITIAL_DIALOG_STATE = {
     show: false,
     props: {},
     content: null,
+};
+
+export const INITIAL_SHARING_STATE = {
+    show: false,
+    id: null,
+    type: null,
 };

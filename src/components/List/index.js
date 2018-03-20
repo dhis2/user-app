@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 import DataTable from 'd2-ui/lib/data-table/DataTable.component';
 import Pagination from 'd2-ui/lib/pagination/Pagination.component';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import 'd2-ui/lib/css/DataTable.css';
 import 'd2-ui/lib/css/Pagination.css';
-import { listSelector, pagerSelector } from '../selectors';
-import { USER } from '../constants/entityTypes';
+import { navigateTo } from '../../utils';
+import { listSelector, pagerSelector } from '../../selectors';
+import { USER } from '../../constants/entityTypes';
 import {
     getList,
     resetFilter,
     resetPager,
     incrementPage,
     decrementPage,
-} from '../actions';
-import ErrorMessage from './ErrorMessage';
+} from '../../actions';
+import ErrorMessage from '../ErrorMessage';
+import './booleanValueRenderer';
 
 const styles = {
     dataTableWrap: {
@@ -25,8 +29,17 @@ const styles = {
     clearBoth: {
         clear: 'both',
     },
+    filterBar: {
+        display: 'table',
+        marginBottom: '1rem',
+        width: '100%',
+    },
     headerBarPagination: {
         float: 'right',
+        marginTop: '14px',
+    },
+    pagination: {
+        userSelect: 'none',
     },
 };
 
@@ -41,6 +54,7 @@ class List extends Component {
         resetPager: PropTypes.func.isRequired,
         resetFilter: PropTypes.func.isRequired,
         entityType: PropTypes.string.isRequired,
+        newItemPath: PropTypes.string.isRequired,
         listType: PropTypes.string.isRequired,
         FilterComponent: PropTypes.func.isRequired,
         columns: PropTypes.arrayOf(String).isRequired,
@@ -48,6 +62,11 @@ class List extends Component {
         contextMenuActions: PropTypes.object.isRequired,
         contextMenuIcons: PropTypes.object.isRequired,
         isContextActionAllowed: PropTypes.func.isRequired,
+        className: PropTypes.string,
+    };
+
+    static defaultProps = {
+        className: 'paged-filterable-data-table',
     };
 
     componentWillMount() {
@@ -88,7 +107,9 @@ class List extends Component {
         const { pager, items, incrementPage, decrementPage } = this.props;
         const { page, pageCount, total, currentlyShown } = this.getPagerConfig(pager);
         const shouldHide = !items || items.length === 0 || typeof items === 'string';
-        const style = shouldHide ? { visibility: 'hidden' } : {};
+        const style = shouldHide
+            ? { ...styles.pagination, visibility: 'hidden' }
+            : styles.pagination;
         const paginationProps = {
             hasNextPage: () => page && items && items.length && page < pageCount,
             hasPreviousPage: () => page && items && items.length && page > 1,
@@ -113,7 +134,7 @@ class List extends Component {
     renderHeaderBar() {
         const { FilterComponent, entityType } = this.props;
         return (
-            <div className="data-table__filter-bar" style={styles.clearBoth}>
+            <div className="data-table__filter-bar" style={styles.filterBar}>
                 <div style={styles.headerBarPagination}>{this.renderPagination()}</div>
                 <div>
                     <FilterComponent entityType={entityType} />
@@ -144,12 +165,11 @@ class List extends Component {
         if (items.length === 0) {
             return <div style={styles.clearBoth}>No results found.</div>;
         }
-
         return (
             <DataTable
                 rows={items}
                 columns={columns}
-                primaryAction={primaryAction}
+                primaryAction={action => primaryAction(action)}
                 contextMenuActions={contextMenuActions}
                 contextMenuIcons={contextMenuIcons}
                 isContextActionAllowed={isContextActionAllowed}
@@ -158,13 +178,19 @@ class List extends Component {
     }
 
     render() {
-        const { sectionName } = this.props;
+        const { sectionName, newItemPath, className } = this.props;
         return (
-            <div style={styles.dataTableWrap}>
+            <div style={styles.dataTableWrap} className={className}>
                 <Heading>{sectionName}</Heading>
                 {this.renderHeaderBar()}
                 {this.renderDataTable()}
                 {this.renderPagination()}
+                <FloatingActionButton
+                    className="entity-list__add-new-entity"
+                    onClick={() => navigateTo(newItemPath)}
+                >
+                    <ContentAdd />
+                </FloatingActionButton>
             </div>
         );
     }

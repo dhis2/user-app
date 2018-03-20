@@ -11,10 +11,11 @@ import { orgUnitsAsStringSelector } from '../../selectors';
 const styles = {
     wrap: {
         position: 'relative',
-        display: 'inline-block',
         lineHeight: '24px',
         height: '72px',
         cursor: 'pointer',
+        float: 'left',
+        marginRight: '1rem',
     },
     icon: {
         position: 'absolute',
@@ -30,6 +31,7 @@ const styles = {
         whiteSpace: 'nowrap',
         overflow: 'hidden',
         textOverflow: 'ellipsis',
+        width: '152px',
     },
     input: {
         width: 'calc(100% - 20px)',
@@ -45,6 +47,12 @@ class OrganisationUnitInput extends Component {
         showDialog: PropTypes.func.isRequired,
         hideDialog: PropTypes.func.isRequired,
     };
+
+    constructor(props) {
+        super(props);
+        this.focusOrgUnitInput = this.focusOrgUnitInput.bind(this);
+        this.showOrgTreeInDialog = this.showOrgTreeInDialog.bind(this);
+    }
 
     focusOrgUnitInput() {
         this.refs.orgUnitInput.focus();
@@ -69,13 +77,13 @@ class OrganisationUnitInput extends Component {
     render() {
         const { organisationUnits } = this.props;
         return (
-            <div style={styles.wrap} onClick={this.focusOrgUnitInput.bind(this)}>
+            <div style={styles.wrap} onClick={this.focusOrgUnitInput}>
                 <ActionOpenInNew style={styles.icon} />
                 <TextField
                     ref="orgUnitInput"
                     style={styles.textField}
                     floatingLabelText={i18next.t('Organisation unit')}
-                    onFocus={this.showOrgTreeInDialog.bind(this)}
+                    onFocus={this.showOrgTreeInDialog}
                     value={organisationUnits}
                     inputStyle={styles.input}
                 />

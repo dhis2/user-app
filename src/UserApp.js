@@ -15,6 +15,7 @@ import './styles/styles.css';
 import SectionLoader from './components/SectionLoader';
 import SnackbarContainer from './components/SnackbarContainer';
 import DialogContainer from './components/DialogContainer';
+import SharingDialogContainer from './components/SharingDialogContainer';
 
 const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
 
@@ -30,6 +31,7 @@ const UserApp = ({ config }) => (
                 </Router>
                 <SnackbarContainer />
                 <DialogContainer />
+                <SharingDialogContainer />
             </div>
         </D2UIApp>
     </Provider>

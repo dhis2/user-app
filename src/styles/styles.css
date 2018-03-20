@@ -1,6 +1,6 @@
 body {
     background-color: #f3f3f3;
-    font-family: 'Roboto', sans-serif;
+    font-family: Roboto;
 }
 
 .data-table__filter-bar .data-table-pager--buttons {
@@ -13,4 +13,33 @@ body {
 
 .data-table__filter-bar__checkbox svg {
     fill: rgba(0, 0, 0, 0.3) !important;
+}
+.entity-list__add-new-entity {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+}
+.data-table__rows__row__column {
+    white-space: nowrap;
+}
+
+.user-list .data-table__rows__row__column:nth-child(2) {
+    width: 30%;
+}
+
+.user-list .data-table__rows__row__column:nth-child(3) {
+    width: 10%;
+}
+
+.group-list .data-table__rows__row__column:nth-child(2) {
+    width: 10%;
+}
+
+.data-table__rows__row__column:last-child {
+    max-width: 90px;
+    min-width: initial;
+}
+
+.data-table__headers__header {
+    white-space: nowrap;
 }

@@ -1,157 +1,229 @@
-import _ from '../constants/lodash';
+import { getInstance } from 'd2/lib/d2';
 import {
-    PAGE as DEFAULT_PAGE,
-    PAGE_SIZE as DEFAULT_PAGE_SIZE,
-} from '../constants/defaults';
+    getQueryFields,
+    createRequestData,
+    parseUserSaveData,
+    parseLocaleUrl,
+} from './helpers';
 
-import FIELDS, {
+import {
     ORG_UNITS_QUERY_CONFIG,
     USER_GROUP_QUERY_CONFIG,
 } from '../constants/queryFields';
 
-const init = d2 => {
-    this.d2 = d2;
-    this.d2Api = d2.Api.getApi();
+import {
+    INTERFACE_LANGUAGE,
+    DATABASE_LANGUAGE,
+} from '../components/users/UserForm/config';
 
-    // TODO: Remove this
-    window.d2 = this.d2;
-    window.d2Api = this.d2Api;
-    console.warn(`d2 and d2Api added to the window object for easy testing in the console.
-        Please remove this before building.`);
-};
-
-const getQueryFields = (entityName, viewType) => {
-    const formattedEntityName = _.snakeCase(entityName).toUpperCase();
-    const varName = viewType
-        ? `${formattedEntityName}_${viewType}`
-        : `${formattedEntityName}_LIST`;
-
-    return FIELDS[varName];
-};
-
-const createRequestData = (page = DEFAULT_PAGE, filter, fields) => {
-    const {
-        query,
-        inactiveMonths,
-        selfRegistered,
-        invitationStatus,
-        organisationUnits,
-    } = filter;
-
-    let requestData = {
-        pageSize: DEFAULT_PAGE_SIZE,
-        fields,
-        page,
-    };
-
-    if (query) requestData.query = query;
-    if (inactiveMonths) requestData.inactiveMonths = inactiveMonths;
-    if (selfRegistered) requestData.selfRegistered = selfRegistered;
-    if (invitationStatus) requestData.invitationStatus = invitationStatus;
-
-    if (organisationUnits.length) {
-        const ids = organisationUnits.map(unit => unit.id).join();
-        requestData.filter = `organisationUnits.id:in:[${ids}]`;
+class Api {
+    constructor() {
+        this.bindAllMethodsToThisScope();
+        getInstance().then(d2 => {
+            this.d2 = d2;
+            this.d2Api = d2.Api.getApi();
+            // In developement you can access d2 and d2Api via the console
+            if (process.env.NODE_ENV === 'development') {
+                window.d2 = this.d2;
+                window.d2Api = this.d2Api;
+            }
+        });
     }
 
-    return requestData;
-};
+    bindAllMethodsToThisScope() {
+        const methodNames = Object.getOwnPropertyNames(this.constructor.prototype);
+        const skipMethods = ['constructor', 'init', 'bindAllMethodsToThisScope'];
+        methodNames.forEach(methodName => {
+            if (!skipMethods.includes(methodName)) {
+                this[methodName] = this[methodName].bind(this);
+            }
+        });
+    }
 
-const getList = (entityName, page, filter) => {
-    const fields = getQueryFields(entityName);
-    const requestData = createRequestData(page, filter, fields);
-    return this.d2.models[entityName].list(requestData);
-};
+    getList(entityName, page, filter) {
+        const fields = getQueryFields(entityName);
+        const requestData = createRequestData(page, filter, fields);
+        return this.d2.models[entityName].list(requestData);
+    }
 
-const getItem = (entityName, viewType, id) => {
-    const fields = getQueryFields(entityName, viewType);
-    return this.d2.models[entityName].get(id, fields);
-};
+    getItem(entityName, viewType, id) {
+        const data = { fields: getQueryFields(entityName, viewType) };
+        return this.d2.models[entityName].get(id, data);
+    }
 
-const getUserByUsername = username => {
-    return this.d2.models.users
-        .filter()
-        .on('userCredentials.username')
-        .equals(username)
-        .list({ fields: ['id'] });
-};
+    getUserByUsername(username) {
+        return this.d2.models.users
+            .filter()
+            .on('userCredentials.username')
+            .equals(username)
+            .list({ fields: ['id'] });
+    }
 
-const replicateUser = (id, username, password) => {
-    const url = `/users/${id}/replica`;
-    const data = { username, password };
-    return this.d2Api.post(url, data);
-};
+    replicateUser(id, username, password) {
+        const url = `/users/${id}/replica`;
+        const data = { username, password };
+        return this.d2Api.post(url, data);
+    }
 
-const getOrgUnits = () => {
-    const listConfig = {
-        ...ORG_UNITS_QUERY_CONFIG,
-        level: 1,
-    };
-    return this.d2.models.organisationUnits
-        .list(listConfig)
-        .then(rootLevel => rootLevel.toArray()[0]);
-};
+    getOrgUnits() {
+        const listConfig = {
+            ...ORG_UNITS_QUERY_CONFIG,
+            level: 1,
+        };
+        return this.d2.models.organisationUnits
+            .list(listConfig)
+            .then(rootLevel => rootLevel.toArray()[0]);
+    }
 
-const queryOrgUnits = query => {
-    const listConfig = {
-        ...ORG_UNITS_QUERY_CONFIG,
-        query,
-    };
-    return this.d2.models.organisationUnits.list(listConfig);
-};
+    queryOrgUnits(query) {
+        const listConfig = {
+            ...ORG_UNITS_QUERY_CONFIG,
+            query,
+        };
+        return this.d2.models.organisationUnits.list(listConfig);
+    }
 
-const queryUserGroups = query => {
-    const listConfig = {
-        ...USER_GROUP_QUERY_CONFIG,
-        query,
-    };
-    return this.d2.models.userGroups.list(listConfig);
-};
+    queryUserGroups(query) {
+        const listConfig = {
+            ...USER_GROUP_QUERY_CONFIG,
+            query,
+        };
+        return this.d2.models.userGroups.list(listConfig);
+    }
 
-const updateUserTeiSearchOrganisations = (userId, data) => {
-    const url = `/users/${userId}/teiSearchOrganisationUnits`;
-    return this.d2Api.post(url, data);
-};
+    getCurrentUserGroupMemberships() {
+        return this.d2Api.get('/me', { fields: ['userGroups[:all]'] });
+    }
 
-const updateSharingSettings = (entityType, id, data) => {
-    const url = `/sharing?type=${entityType}&id=${id}`;
-    return this.d2Api.post(url, data);
-};
+    updateCurrentUserGroupMembership(groupId, deleteMembership) {
+        const method = deleteMembership ? 'delete' : 'post';
+        const url = `/users/${this.d2.currentUser.id}/userGroups/${groupId}`;
+        return this.d2Api[method](url);
+    }
 
-const getCurrentUserGroupMemberships = () => {
-    return this.d2Api.get('/me', { fields: ['userGroups[:all]'] });
-};
+    updateDisabledState(id, disabled) {
+        const url = `/users/${id}`;
+        const data = { userCredentials: { disabled: disabled } };
+        return this.d2Api.patch(url, data);
+    }
 
-const updateCurrentUserGroupMembership = (groupId, deleteMembership) => {
-    const method = deleteMembership ? 'delete' : 'post';
-    const url = `/users/${this.d2.currentUser.id}/userGroups/${groupId}`;
-    return this.d2Api[method](url);
-};
+    getManagedUsers() {
+        const data = { fields: ['id', 'displayName'] };
+        console.log(this);
+        return this.d2.models.user.list(data);
+    }
 
-const updateDisabledState = (id, disabled) => {
-    const url = `/users/${id}`;
-    const data = { userCredentials: { disabled: disabled } };
-    return this.d2Api.patch(url, data);
-};
+    getAvailableUserGroups() {
+        const data = { fields: ['id', 'displayName'] };
+        return this.d2.models.userGroups.list(data);
+    }
 
-const getD2 = () => this.d2;
+    getAvailableUserRoles() {
+        const data = { canIssue: true, fields: ['id', 'displayName'] };
+        return this.d2.models.userRoles.list(data);
+    }
 
-const getCurrentUser = () => this.d2.currentUser;
+    getAvailableDataAnalyticsDimensionRestrictions() {
+        const url = '/dimensions/constraints';
+        const data = { fields: ['id', 'name', 'dimensionType'] };
+        return this.d2Api.get(url, data).then(({ dimensions }) => dimensions);
+    }
 
-export default {
-    init,
-    getD2,
-    getCurrentUser,
-    getList,
-    getItem,
-    getUserByUsername,
-    replicateUser,
-    getOrgUnits,
-    queryOrgUnits,
-    queryUserGroups,
-    getCurrentUserGroupMemberships,
-    updateCurrentUserGroupMembership,
-    updateDisabledState,
-    updateUserTeiSearchOrganisations,
-    updateSharingSettings,
-};
+    updateUserGroup(id, data) {
+        const url = `/userGroups/${id}`;
+        return this.d2Api.patch(url, data);
+    }
+
+    // TODO: This needs to be rewritten once the backend issues are solved
+    // https://jira.dhis2.org/browse/DHIS2-3169
+    // https://jira.dhis2.org/browse/DHIS2-3168
+    // https://jira.dhis2.org/browse/DHIS2-3185
+    // https://jira.dhis2.org/browse/DHIS2-3181
+    getSelectedAndAvailableLocales(username) {
+        username = username ? encodeURIComponent(username) : null;
+        const DB_LOCALE = 'db_locale';
+        const useDbLocaleOption = {
+            locale: DB_LOCALE,
+            name: 'Use database locale / no translation',
+        };
+
+        const dbLocales = this.d2Api.get('/locales/db');
+        const uiLocales = this.d2Api.get('/locales/ui');
+        const uiLocale = username
+            ? this.d2Api.get(`/userSettings/keyUiLocale?user=${username}`)
+            : Promise.resolve('en');
+        const dbLocale = username
+            ? this.d2Api.get(`/userSettings/keyDbLocale?user=${username}`).then(
+                  response => response,
+                  error => {
+                      // Swallow this error and assume the user wants to use the DB locale
+                      if (
+                          error.message === 'User setting not found for key: keyDbLocale'
+                      ) {
+                          return DB_LOCALE;
+                      } else {
+                          throw new Error(error.message);
+                      }
+                  }
+              )
+            : Promise.resolve(DB_LOCALE);
+
+        return Promise.all([dbLocales, uiLocales, dbLocale, uiLocale]).then(responses => {
+            return {
+                db: {
+                    available: [useDbLocaleOption, ...responses[0]],
+                    selected: responses[2],
+                },
+                ui: {
+                    available: responses[1],
+                    selected: responses[3],
+                },
+            };
+        });
+    }
+
+    saveUser(values, user, currentUiLocale, currentDbLocale) {
+        let saveFunction;
+        let localePromises = [];
+        const userData = parseUserSaveData(values, user);
+
+        if (user.id) {
+            saveFunction = this.d2Api.update(`/users/${user.id}`, userData);
+        } else {
+            saveFunction = this.d2Api.post('/users', userData);
+        }
+
+        if (values[INTERFACE_LANGUAGE] !== currentUiLocale) {
+            localePromises.push(
+                this.d2Api.post(
+                    parseLocaleUrl('Ui', values.username, values[INTERFACE_LANGUAGE])
+                )
+            );
+        }
+
+        if (values[DATABASE_LANGUAGE] !== currentDbLocale) {
+            localePromises.push(
+                this.d2Api.post(
+                    parseLocaleUrl('Db', values.username, values[DATABASE_LANGUAGE])
+                )
+            );
+        }
+
+        if (localePromises.length === 0) {
+            localePromises.push(Promise.resolve('Nothing happened'));
+        }
+
+        // Updating locales after user in case the use was not available yet
+        return saveFunction.then(Promise.all(localePromises));
+    }
+
+    getD2() {
+        return this.d2;
+    }
+
+    getCurrentUser() {
+        return this.d2.currentUser;
+    }
+}
+const api = new Api();
+export default api;
