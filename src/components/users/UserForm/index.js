@@ -136,7 +136,7 @@ class UserForm extends Component {
                     conf.disabled = Boolean(name === CONFIG.USERNAME && user.id);
                     break;
                 case renderSearchableOrgUnitTree:
-                    conf.initialValues = asArray(user[fieldConfig.userPropName]);
+                    conf.initialValues = asArray(user[fieldConfig.name]);
                     break;
                 case renderSearchableGroupEditor:
                     this.prepareGroupEditor(conf, fieldConfig, user, isRequiredField);

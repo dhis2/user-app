@@ -8,11 +8,9 @@ import { deleteModel } from '../../utils/sharedActions';
 import { USER } from '../../constants/entityTypes';
 import { showDialog, hideDialog, showSnackbar, getList } from '../../actions';
 import ReplicateUserForm from './ReplicateUserForm';
-import AssignSearchOrganisationUnits from './AssignSearchOrganisationUnits';
 
 const profile = 'profile';
 const edit = 'edit';
-const assign_search_org_units = 'assign_search_org_units';
 const remove = 'remove';
 const replicate = 'replicate';
 const disable = 'disable';
@@ -37,7 +35,6 @@ export const isUserContextActionAllowed = (model, action) => {
 export const userContextMenuIcons = {
     [profile]: 'account_circle',
     [edit]: 'edit',
-    [assign_search_org_units]: 'account_balance',
     [remove]: 'delete',
     [replicate]: 'content_copy',
     [disable]: 'block',
@@ -47,7 +44,6 @@ export const userContextMenuIcons = {
 export const userContextMenuActions = Action.createActionsFromNames([
     profile,
     edit,
-    assign_search_org_units,
     remove,
     replicate,
     disable,
@@ -60,18 +56,6 @@ userContextMenuActions.profile.subscribe(({ data: { id } }) => {
 
 userContextMenuActions.edit.subscribe(({ data: { id } }) => {
     navigateTo(`/users/edit/${id}`);
-});
-
-userContextMenuActions.assign_search_org_units.subscribe(({ data: user }) => {
-    const content = <AssignSearchOrganisationUnits user={user} />;
-    const props = {
-        onRequestClose: () => store.dispatch(hideDialog()),
-        title: i18next.t('Assign Search Organisation Units'),
-        contentStyle: {
-            minHeight: '100vh',
-        },
-    };
-    store.dispatch(showDialog(content, props));
 });
 
 userContextMenuActions.remove.subscribe(({ data: user }) => {

@@ -53,6 +53,7 @@ export const DATABASE_LANGUAGE = 'databaseLanguage';
 export const ASSIGNED_ROLES = 'userRoles';
 export const DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS = 'organisationUnits';
 export const DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS = 'dataViewOrganisationUnits';
+export const TEI_SEARCH_ORG_UNITS = 'teiSearchOrganisationUnits';
 export const ASSIGNED_USER_GROUPS = 'userGroups';
 export const DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS = 'catCogsDimensionConstraints';
 
@@ -64,6 +65,7 @@ export const USER_PROPS = [
     DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
     DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS,
     ASSIGNED_USER_GROUPS,
+    TEI_SEARCH_ORG_UNITS,
 ];
 
 export const USER_CRED_PROPS = [
@@ -78,6 +80,18 @@ export const USER_CRED_PROPS = [
 
 export const ALWAYS_REQUIRED = 'ALWAYS_REQUIRED';
 export const CREATE_REQUIRED = 'CREATE_REQUIRED';
+
+const BASE_CAPTION = {
+    label:
+        'Selecting an organisation unit provides access to all units in the sub-hierarchy',
+    fieldRenderer: renderText,
+    style: {
+        clear: 'both',
+        paddingTop: '0.8rem',
+        fontStyle: 'italic',
+        fontSize: '0.9rem',
+    },
+};
 
 export const BASE_FIELDS = [
     {
@@ -168,26 +182,26 @@ export const BASE_FIELDS = [
         label: 'Data capture and maintenance organisation units',
         fieldRenderer: renderSearchableOrgUnitTree,
         wrapperStyle: { ...STYLES.orgUnitTree, paddingRight: '60px' },
-        userPropName: 'organisationUnits',
     },
     {
         name: DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS,
         label: 'Data output and analytic organisation units',
         fieldRenderer: renderSearchableOrgUnitTree,
         wrapperStyle: { ...STYLES.orgUnitTree, paddingLeft: '60px' },
-        userPropName: 'dataViewOrganisationUnits',
     },
     {
-        name: 'org_unit_info',
-        label:
-            'Selecting an organisation unit provides access to all units in the sub-hierarchy',
-        fieldRenderer: renderText,
-        style: {
-            clear: 'both',
-            paddingTop: '0.8rem',
-            fontStyle: 'italic',
-            fontSize: '0.9rem',
-        },
+        ...BASE_CAPTION,
+        name: 'org_unit_info_1',
+    },
+    {
+        name: TEI_SEARCH_ORG_UNITS,
+        label: 'Search Organisation Units',
+        fieldRenderer: renderSearchableOrgUnitTree,
+        wrapperStyle: { ...STYLES.orgUnitTree, paddingRight: '60px' },
+    },
+    {
+        ...BASE_CAPTION,
+        name: 'org_unit_info_2',
     },
 ];
 
