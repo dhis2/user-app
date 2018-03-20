@@ -20,8 +20,8 @@ SnackbarContainer.propTypes = {
 };
 
 const mapStateToProps = state => ({
-    open: state.notifications.snackbar.show,
-    snackbarProps: state.notifications.snackbar.props,
+    open: state.popups.snackbar.show,
+    snackbarProps: state.popups.snackbar.props,
 });
 
 export default connect(mapStateToProps, {

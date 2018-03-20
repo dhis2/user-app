@@ -47,6 +47,10 @@ export const initNewItem = entityType => {
     return createAction(ACTIONS.INIT_NEW_ITEM, newItem);
 };
 
+export const clearItem = () => {
+    return createAction(ACTIONS.CLEAR_ITEM);
+};
+
 // Regular actions
 export const updateFilter = (updateKey, updateValue) => {
     return createAction(ACTIONS.FILTER_UPDATED, {
@@ -77,6 +81,14 @@ export const showDialog = (content, props) => {
 
 export const hideDialog = () => {
     return createAction(ACTIONS.HIDE_DIALOG);
+};
+
+export const showSharingDialog = (id, type) => {
+    return createAction(ACTIONS.SHOW_SHARING_DIALOG, { id, type });
+};
+
+export const hideSharingDialog = () => {
+    return createAction(ACTIONS.HIDE_SHARING_DIALOG);
 };
 
 export const initCurrentUser = () => {

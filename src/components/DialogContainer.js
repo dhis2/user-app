@@ -16,9 +16,9 @@ DialogContainer.propTypes = {
 };
 
 const mapStateToProps = state => ({
-    open: state.notifications.dialog.show,
-    dialogProps: state.notifications.dialog.props,
-    content: state.notifications.dialog.content,
+    open: state.popups.dialog.show,
+    dialogProps: state.popups.dialog.props,
+    content: state.popups.dialog.content,
 });
 
 export default connect(mapStateToProps)(DialogContainer);

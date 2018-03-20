@@ -21,3 +21,9 @@ export const INITIAL_DIALOG_STATE = {
     props: {},
     content: null,
 };
+
+export const INITIAL_SHARING_STATE = {
+    show: false,
+    id: null,
+    type: null,
+};

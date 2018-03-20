@@ -7,7 +7,7 @@ import filterReducer from './reducers/filter';
 import pagerReducer from './reducers/pager';
 import currentItemReducer from './reducers/currentItem';
 import currentUserReducer from './reducers/currentUser';
-import notificationsReducer from './reducers/notifications/';
+import popupsReducer from './reducers/popups/';
 
 let middlewares = [ReduxThunk];
 
@@ -23,7 +23,7 @@ const rootReducer = combineReducers({
     pager: pagerReducer,
     currentItem: currentItemReducer,
     currentUser: currentUserReducer,
-    notifications: notificationsReducer,
+    popups: popupsReducer,
     form: formReducer,
 });
 
