@@ -91,16 +91,6 @@ class Api {
         return this.d2.models.userGroups.list(listConfig);
     }
 
-    updateUserTeiSearchOrganisations(userId, data) {
-        const url = `/users/${userId}/teiSearchOrganisationUnits`;
-        return this.d2Api.post(url, data);
-    }
-
-    updateSharingSettings(entityType, id, data) {
-        const url = `/sharing?type=${entityType}&id=${id}`;
-        return this.d2Api.post(url, data);
-    }
-
     getCurrentUserGroupMemberships() {
         return this.d2Api.get('/me', { fields: ['userGroups[:all]'] });
     }
