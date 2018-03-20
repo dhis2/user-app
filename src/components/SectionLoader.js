@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Switch, Route, withRouter } from 'react-router-dom';
-import api from '../api';
 import { initCurrentUser } from '../actions';
 import ROUTE_CONFIG from '../constants/routeConfig';
 import SideNav from './SideNav';
@@ -24,9 +23,7 @@ class SectionLoader extends Component {
     };
 
     componentWillMount() {
-        const { d2 } = this.context;
         const { initCurrentUser } = this.props;
-        api.init(d2);
         initCurrentUser();
     }
 

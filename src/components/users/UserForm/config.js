@@ -196,7 +196,7 @@ export const ADDITIONAL_FIELDS = [
         name: ASSIGNED_USER_GROUPS,
         fieldRenderer: renderSearchableGroupEditor,
         initialItemsSelector: user => asArray(user.userGroups) || [],
-        availableItemsQuery: 'getAvailableUsergroups',
+        availableItemsQuery: 'getAvailableUserGroups',
         availableItemsLabel: 'Available user groups',
         assignedItemsLabel: 'Selected user groups',
     },

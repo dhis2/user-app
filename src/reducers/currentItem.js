@@ -1,4 +1,5 @@
 import {
+    CLEAR_ITEM,
     INIT_NEW_ITEM,
     ITEM_REQUESTED,
     ITEM_RECEIVED,
@@ -13,6 +14,7 @@ import {
  */
 const currentItemReducer = (state = null, { type, payload }) => {
     switch (type) {
+        case CLEAR_ITEM:
         case ITEM_REQUESTED:
             return null;
         case INIT_NEW_ITEM:

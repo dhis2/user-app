@@ -23,7 +23,7 @@ const styles = {
         paddingBottom: '1rem',
     },
     paper: {
-        padding: '1.4rem',
+        padding: '2rem 5rem 4rem',
     },
 };
 

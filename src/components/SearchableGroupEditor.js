@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GroupEditor from 'd2-ui/lib/group-editor/GroupEditor.component';
-import Store from 'd2-ui/lib//store/Store';
+import Store from 'd2-ui/lib/store/Store';
 import PropTypes from 'prop-types';
 import { red500 } from 'material-ui/styles/colors';
 import TextField from 'material-ui/TextField/TextField';

@@ -105,7 +105,7 @@ class GroupForm extends Component {
                 />
                 <SearchableGroupEditor
                     initiallyAssignedItems={group.managedGroups}
-                    availableItemsQuery={api.getAvailableUsergroups}
+                    availableItemsQuery={api.getAvailableUserGroups}
                     onChange={this.onUserGroupChange}
                     availableItemsHeader={i18next.t('Available user groups')}
                     assignedItemsHeader={i18next.t('Managed user groups')}

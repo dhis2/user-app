@@ -22,6 +22,11 @@ class Api {
         getInstance().then(d2 => {
             this.d2 = d2;
             this.d2Api = d2.Api.getApi();
+            // In developement you can access d2 and d2Api via the console
+            if (process.env.NODE_ENV === 'development') {
+                window.d2 = this.d2;
+                window.d2Api = this.d2Api;
+            }
         });
     }
 
@@ -43,7 +48,6 @@ class Api {
 
     getItem(entityName, viewType, id) {
         const data = { fields: getQueryFields(entityName, viewType) };
-        console.log('api this:', api, data);
         return this.d2.models[entityName].get(id, data);
     }
 
@@ -114,18 +118,18 @@ class Api {
     }
 
     getManagedUsers() {
-        const data = { /*canManage: true,*/ fields: ['id', 'displayName'] };
+        const data = { fields: ['id', 'displayName'] };
         console.log(this);
         return this.d2.models.user.list(data);
     }
 
-    getAvailableUsergroups() {
-        const data = { /*canManage: true,*/ fields: ['id', 'displayName'] };
+    getAvailableUserGroups() {
+        const data = { fields: ['id', 'displayName'] };
         return this.d2.models.userGroups.list(data);
     }
 
     getAvailableUserRoles() {
-        const data = { /*canManage: true,*/ fields: ['id', 'displayName'] };
+        const data = { canIssue: true, fields: ['id', 'displayName'] };
         return this.d2.models.userRoles.list(data);
     }
 
