@@ -29,8 +29,14 @@ const styles = {
     clearBoth: {
         clear: 'both',
     },
+    filterBar: {
+        display: 'table',
+        marginBottom: '1rem',
+        width: '100%',
+    },
     headerBarPagination: {
         float: 'right',
+        marginTop: '14px',
     },
     pagination: {
         userSelect: 'none',
@@ -128,7 +134,7 @@ class List extends Component {
     renderHeaderBar() {
         const { FilterComponent, entityType } = this.props;
         return (
-            <div className="data-table__filter-bar" style={styles.clearBoth}>
+            <div className="data-table__filter-bar" style={styles.filterBar}>
                 <div style={styles.headerBarPagination}>{this.renderPagination()}</div>
                 <div>
                     <FilterComponent entityType={entityType} />

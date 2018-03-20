@@ -11,10 +11,11 @@ import { orgUnitsAsStringSelector } from '../../selectors';
 const styles = {
     wrap: {
         position: 'relative',
-        display: 'inline-block',
         lineHeight: '24px',
         height: '72px',
         cursor: 'pointer',
+        float: 'left',
+        marginRight: '1rem',
     },
     icon: {
         position: 'absolute',
