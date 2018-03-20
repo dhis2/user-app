@@ -29,6 +29,7 @@ class RoleList extends Component {
                 isContextActionAllowed={isRoleContextActionAllowed}
                 sectionName={i18next.t('User Role Management')}
                 newItemPath={'/user-roles/new'}
+                className={'role-list'}
             />
         );
     }

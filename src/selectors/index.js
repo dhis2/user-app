@@ -34,13 +34,12 @@ export const listSelector = (list, itemMemberships) => {
 const listMappings = {
     user: item => {
         item.userName = item.userCredentials.username;
+        item.disabled = item.userCredentials.disabled;
         return item;
     },
     userRole: item => item,
     userGroup: (item, itemMemberships) => {
-        item.currentUserIsMember = itemMemberships.some(({ id }) => id === item.id)
-            ? '\u2713'
-            : '';
+        item.currentUserIsMember = itemMemberships.some(({ id }) => id === item.id);
         return item;
     },
 };

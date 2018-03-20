@@ -52,6 +52,7 @@ class GroupList extends Component {
                 isContextActionAllowed={isGroupContextActionAllowed}
                 sectionName={i18next.t('User Group Management')}
                 newItemPath={'/user-groups/new'}
+                className={'group-list'}
             />
         );
     }

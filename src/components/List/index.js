@@ -9,17 +9,18 @@ import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import 'd2-ui/lib/css/DataTable.css';
 import 'd2-ui/lib/css/Pagination.css';
-import { navigateTo } from '../utils';
-import { listSelector, pagerSelector } from '../selectors';
-import { USER } from '../constants/entityTypes';
+import { navigateTo } from '../../utils';
+import { listSelector, pagerSelector } from '../../selectors';
+import { USER } from '../../constants/entityTypes';
 import {
     getList,
     resetFilter,
     resetPager,
     incrementPage,
     decrementPage,
-} from '../actions';
-import ErrorMessage from './ErrorMessage';
+} from '../../actions';
+import ErrorMessage from '../ErrorMessage';
+import './booleanValueRenderer';
 
 const styles = {
     dataTableWrap: {
@@ -55,6 +56,11 @@ class List extends Component {
         contextMenuActions: PropTypes.object.isRequired,
         contextMenuIcons: PropTypes.object.isRequired,
         isContextActionAllowed: PropTypes.func.isRequired,
+        className: PropTypes.string,
+    };
+
+    static defaultProps = {
+        className: 'paged-filterable-data-table',
     };
 
     componentWillMount() {
@@ -153,7 +159,6 @@ class List extends Component {
         if (items.length === 0) {
             return <div style={styles.clearBoth}>No results found.</div>;
         }
-
         return (
             <DataTable
                 rows={items}
@@ -167,9 +172,9 @@ class List extends Component {
     }
 
     render() {
-        const { sectionName, newItemPath } = this.props;
+        const { sectionName, newItemPath, className } = this.props;
         return (
-            <div style={styles.dataTableWrap}>
+            <div style={styles.dataTableWrap} className={className}>
                 <Heading>{sectionName}</Heading>
                 {this.renderHeaderBar()}
                 {this.renderDataTable()}

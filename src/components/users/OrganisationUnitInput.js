@@ -30,6 +30,7 @@ const styles = {
         whiteSpace: 'nowrap',
         overflow: 'hidden',
         textOverflow: 'ellipsis',
+        width: '180px',
     },
     input: {
         width: 'calc(100% - 20px)',

@@ -18,15 +18,11 @@ class UserList extends Component {
         history: PropTypes.object.isRequired,
     };
 
-    test(action) {
-        console.log(action);
-    }
-
     render() {
         return (
             <List
                 entityType={USER}
-                columns={['displayName', 'userName']}
+                columns={['displayName', 'userName', 'disabled']}
                 FilterComponent={UserFilter}
                 primaryAction={userContextMenuActions.edit}
                 contextMenuActions={userContextMenuActions}
@@ -34,6 +30,7 @@ class UserList extends Component {
                 isContextActionAllowed={isUserContextActionAllowed}
                 sectionName={i18next.t('User Management')}
                 newItemPath={'/users/new'}
+                className="user-list"
             />
         );
     }
