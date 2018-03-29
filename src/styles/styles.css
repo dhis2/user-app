@@ -43,3 +43,6 @@ body {
 .data-table__headers__header {
     white-space: nowrap;
 }
+.search-input input {
+    -webkit-appearance: textfield;
+}

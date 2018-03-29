@@ -37,7 +37,12 @@ export const USER_DETAILS = [
     'teiSearchOrganisationUnits[id,path]',
 ];
 export const USER_GROUP_DETAILS = ['id', 'displayName', 'users'];
-export const USER_ROLE_DETAILS = [...USER_GROUP_DETAILS];
+export const USER_ROLE_DETAILS = [
+    ...USER_GROUP_DETAILS,
+    'name',
+    'description',
+    'authorities',
+];
 // EDIT
 export const USER_EDIT = [...USER_DETAILS];
 export const USER_GROUP_EDIT = ['id', 'displayName', 'users'];

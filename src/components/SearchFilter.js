@@ -46,6 +46,7 @@ class SearchFilter extends Component {
         const { localQueryStr } = this.state;
         return (
             <TextField
+                className="search-input"
                 floatingLabelText={i18next.t('Search by name')}
                 style={style}
                 hintText={''}

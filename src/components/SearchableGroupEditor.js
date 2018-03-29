@@ -74,13 +74,13 @@ class SearchableGroupEditor extends Component {
         const { itemStore, assignedItemStore } = this.state;
 
         if (returnModelsOnUpdate) {
-            this.modelLookup = {};
+            this.modelLookup = new Map();
         }
 
         const assignedItems = asArray(initiallyAssignedItems).map(({ id }) => id);
         const availableItems = asArray(response).map(item => {
             if (returnModelsOnUpdate) {
-                this.modelLookup[item.id] = item;
+                this.modelLookup.set(item.id, item);
             }
             const text = item.displayName || item.name;
             return {
@@ -113,7 +113,7 @@ class SearchableGroupEditor extends Component {
         const { onChange, returnModelsOnUpdate, onBlur } = this.props;
         const { assignedItemStore } = this.state;
         const assignedItems = returnModelsOnUpdate
-            ? assignedItemIds.map(id => this.modelLookup[id])
+            ? assignedItemIds.map(id => this.modelLookup.get(id))
             : assignedItemIds;
 
         assignedItemStore.setState(assignedItemIds);

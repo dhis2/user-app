@@ -1,4 +1,5 @@
 import _ from '../constants/lodash';
+import i18next from 'i18next';
 import {
     USER_PROPS,
     USER_CRED_PROPS,
@@ -45,7 +46,9 @@ const listMappings = {
 };
 
 export const orgUnitsAsStringSelector = _.memoize(orgUnits => {
-    return orgUnits.map(unit => unit.displayName).join(', ');
+    return orgUnits.length < 3
+        ? orgUnits.map(unit => unit.displayName).join(', ')
+        : i18next.t('{{count}} selected', { count: orgUnits.length });
 });
 
 export const initialSharingSettingsSelector = _.memoize(

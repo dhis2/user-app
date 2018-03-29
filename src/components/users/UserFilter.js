@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import i18next from 'i18next';
-import PropTypes from 'prop-types';
-import { updateFilter, getList } from '../../actions';
+import { Checkbox } from 'material-ui';
 import DropDown from 'd2-ui/lib/form-fields/DropDown.component';
+import { updateFilter, getList } from '../../actions';
 import OrganisationUnitInput from './OrganisationUnitInput';
 import SearchFilter from '../SearchFilter';
 import {
@@ -11,7 +12,6 @@ import {
     INVITATION_STATUS,
     SELF_REGISTERED,
 } from '../../constants/filterFieldNames';
-import { Checkbox } from 'material-ui';
 
 const style = {
     float: 'left',

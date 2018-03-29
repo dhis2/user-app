@@ -5,9 +5,15 @@ import TextField from 'material-ui/TextField/TextField';
 import Checkbox from 'material-ui/Checkbox/Checkbox';
 import SelectField from 'material-ui/SelectField/SelectField';
 import MenuItem from 'material-ui/MenuItem';
-import SearchableGroupEditor from '../../SearchableGroupEditor';
-import SearchableOrgUnitTree from '../../SearchableOrgUnitTree';
-import { STYLES } from './config';
+import SearchableGroupEditor from '../components/SearchableGroupEditor';
+import SearchableOrgUnitTree from '../components/SearchableOrgUnitTree';
+import AuthorityEditor from '../components/AuthorityEditor';
+
+const styles = {
+    checkbox: {
+        marginTop: '32px',
+    },
+};
 
 export const renderTextField = ({ input, label, meta: { touched, error }, ...other }) => {
     return (
@@ -22,6 +28,22 @@ export const renderTextField = ({ input, label, meta: { touched, error }, ...oth
     );
 };
 
+export const renderAuthorityEditor = ({
+    input,
+    label,
+    meta: { touched, error },
+    ...other
+}) => {
+    const initiallySelected = input.value === '' ? [] : input.value;
+    return (
+        <AuthorityEditor
+            initiallySelected={initiallySelected}
+            reduxFormOnChange={input.onChange}
+            reduxFormOnBlur={input.onBlur}
+        />
+    );
+};
+
 export const renderCheckbox = ({ input, label, meta: { touched, error }, ...other }) => {
     return (
         <Checkbox
@@ -29,7 +51,7 @@ export const renderCheckbox = ({ input, label, meta: { touched, error }, ...othe
             onCheck={input.onChange}
             label={label}
             {...input}
-            style={STYLES.checkbox}
+            style={styles.checkbox}
         />
     );
 };
@@ -135,6 +157,11 @@ renderSearchableOrgUnitTree.propTypes = {
     ...sharedPropTypes,
     wrapperStyle: PropTypes.object,
     initialValues: PropTypes.array.isRequired,
+};
+
+renderAuthorityEditor.propTypes = {
+    ...sharedPropTypes,
+    initialValues: PropTypes.array,
 };
 
 renderText.propTypes = {

@@ -6,6 +6,8 @@ import {
     parseLocaleUrl,
 } from './helpers';
 
+import groupAuthorities from '../components/AuthorityEditor/utils/groupAuthorities';
+
 import {
     ORG_UNITS_QUERY_CONFIG,
     USER_GROUP_QUERY_CONFIG,
@@ -52,10 +54,19 @@ class Api {
     }
 
     getUserByUsername(username) {
-        return this.d2.models.users
+        const propName = 'userCredentials.username';
+        return this.genericFind('users', propName, username);
+    }
+
+    findRoleOrGroupByName(entityName, name) {
+        return this.genericFind(entityName, 'name', name);
+    }
+
+    genericFind(entityName, propertyName, value) {
+        return this.d2.models[entityName]
             .filter()
-            .on('userCredentials.username')
-            .equals(username)
+            .on(propertyName)
+            .equals(value)
             .list({ fields: ['id'] });
     }
 
@@ -141,7 +152,7 @@ class Api {
     // https://jira.dhis2.org/browse/DHIS2-3181
     getSelectedAndAvailableLocales(username) {
         username = username ? encodeURIComponent(username) : null;
-        const DB_LOCALE = 'db_locale';
+        const DB_LOCALE = ' ';
         const useDbLocaleOption = {
             locale: DB_LOCALE,
             name: 'Use database locale / no translation',
@@ -149,24 +160,27 @@ class Api {
 
         const dbLocales = this.d2Api.get('/locales/db');
         const uiLocales = this.d2Api.get('/locales/ui');
-        const uiLocale = username
-            ? this.d2Api.get(`/userSettings/keyUiLocale?user=${username}`)
-            : Promise.resolve('en');
-        const dbLocale = username
-            ? this.d2Api.get(`/userSettings/keyDbLocale?user=${username}`).then(
-                  response => response,
-                  error => {
-                      // Swallow this error and assume the user wants to use the DB locale
-                      if (
-                          error.message === 'User setting not found for key: keyDbLocale'
-                      ) {
-                          return DB_LOCALE;
-                      } else {
-                          throw new Error(error.message);
+        const uiLocale =
+            username && 1 === 2
+                ? this.d2Api.get(`/userSettings/keyUiLocale?username=${username}`)
+                : Promise.resolve('en');
+        const dbLocale =
+            username && 1 === 2
+                ? this.d2Api.get(`/userSettings/keyDbLocale?username=${username}`).then(
+                      response => response,
+                      error => {
+                          // Swallow this error and assume the user wants to use the DB locale
+                          if (
+                              error.message ===
+                              'User setting not found for key: keyDbLocale'
+                          ) {
+                              return DB_LOCALE;
+                          } else {
+                              throw new Error(error.message);
+                          }
                       }
-                  }
-              )
-            : Promise.resolve(DB_LOCALE);
+                  )
+                : Promise.resolve(DB_LOCALE);
 
         return Promise.all([dbLocales, uiLocales, dbLocale, uiLocale]).then(responses => {
             return {
@@ -217,6 +231,23 @@ class Api {
         return saveFunction.then(Promise.all(localePromises));
     }
 
+    // TODO: A proper API endpoint will be made available for this call once ALL struts apps
+    // have been ported to React. Once this is done we need to update this method.
+    getGroupedAuthorities() {
+        if (this.groupedAuths) {
+            // Return cached version if available
+            return Promise.resolve(this.groupedAuths);
+        }
+
+        const baseUrl = this.d2Api.baseUrl;
+        const shortBaseUrl = baseUrl.substr(0, baseUrl.indexOf('/api'));
+        const url = `${shortBaseUrl}/dhis-web-maintenance-user/getSystemAuthorities.action`;
+        return this.d2Api.request('GET', url).then(({ systemAuthorities }) => {
+            // Store on instance for subsequent requests
+            return (this.groupedAuths = groupAuthorities(systemAuthorities));
+        });
+    }
+
     getD2() {
         return this.d2;
     }
@@ -226,4 +257,5 @@ class Api {
     }
 }
 const api = new Api();
+window.api = api;
 export default api;

@@ -8,7 +8,7 @@ import {
     renderSearchableGroupEditor,
     renderSearchableOrgUnitTree,
     renderText,
-} from './fieldRenderers';
+} from '../../../utils/fieldRenderers';
 
 export const STYLES = {
     loaderWrap: {
@@ -17,9 +17,6 @@ export const STYLES = {
     },
     toggler: {
         color: blue600,
-    },
-    checkbox: {
-        marginTop: '32px',
     },
     orgUnitTree: {
         width: 'calc(50% - 60px)',

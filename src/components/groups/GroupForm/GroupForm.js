@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import SearchableGroupEditor from '../SearchableGroupEditor';
+import SearchableGroupEditor from '../../SearchableGroupEditor';
 import TextField from 'material-ui/TextField/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import i18next from 'i18next';
-import { navigateTo } from '../../utils';
-import api from '../../api';
-import { getList, showSnackbar } from '../../actions';
-import { USER_GROUP } from '../../constants/entityTypes';
-import { asArray } from '../../utils';
+import { navigateTo, asArray } from '../../../utils';
+import api from '../../../api';
+import { getList, showSnackbar } from '../../../actions';
+import { USER_GROUP } from '../../../constants/entityTypes';
 
 class GroupForm extends Component {
     static propTypes = {
