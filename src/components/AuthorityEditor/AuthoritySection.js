@@ -16,6 +16,7 @@ class AuthoritySection extends Component {
     constructor(props) {
         super(props);
         this.state = { renderedItems: null };
+        this.appendInterval = null;
     }
 
     componentWillReceiveProps(newProps) {
