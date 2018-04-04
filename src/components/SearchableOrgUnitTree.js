@@ -57,12 +57,6 @@ class SearchableOrgUnitTree extends Component {
             orgUnitFilter: null,
             initiallyExpanded: this.getInitiallyExpandedItems(props.selectedOrgUnits),
         };
-
-        this.applySelection = this.applySelection.bind(this);
-        this.selectAndShowFilteredOrgUnit = this.selectAndShowFilteredOrgUnit.bind(this);
-        this.toggleSelectedOrgUnits = this.toggleSelectedOrgUnits.bind(this);
-        this.applySelection = this.applySelection.bind(this);
-        this.clearSelection = this.clearSelection.bind(this);
     }
 
     componentWillMount() {
@@ -106,7 +100,7 @@ class SearchableOrgUnitTree extends Component {
         this.setState(updateObject);
     }
 
-    toggleSelectedOrgUnits(_, orgUnit) {
+    toggleSelectedOrgUnits = (_, orgUnit) => {
         const { selectedOrgUnits } = this.state;
         const orgUnitIndex = this.getIndexOfOrgUnit(orgUnit);
         const newOrgUnits =
@@ -118,27 +112,27 @@ class SearchableOrgUnitTree extends Component {
                   ];
 
         this.update(newOrgUnits, []);
-    }
+    };
 
-    selectAndShowFilteredOrgUnit(dataSourceItem) {
+    selectAndShowFilteredOrgUnit = dataSourceItem => {
         const orgUnit = dataSourceItem.value;
         const { selectedOrgUnits } = this.state;
         const initiallyExpanded = [this.removeLastPathSegment(orgUnit)];
         const newOrgUnits = [...selectedOrgUnits, orgUnit];
 
         this.update(newOrgUnits, initiallyExpanded);
-    }
+    };
 
-    clearSelection() {
+    clearSelection = () => {
         this.update([]);
         _.defer(this.applySelection);
-    }
+    };
 
-    applySelection() {
+    applySelection = () => {
         const { selectedOrgUnits } = this.state;
         const { confirmSelection } = this.props;
         confirmSelection(selectedOrgUnits);
-    }
+    };
 
     render() {
         const { root, selectedOrgUnits, initiallyExpanded, orgUnitFilter } = this.state;

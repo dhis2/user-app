@@ -23,20 +23,22 @@ class FilteredAuthoritySections extends Component {
         this.updateFilter = _.debounce(this.updateFilter, 375);
     }
 
-    getChildContext = () => ({
-        searchChunks: this.state.searchChunks,
-    });
+    getChildContext() {
+        return {
+            searchChunks: this.state.searchChunks,
+        };
+    }
 
     componentWillReceiveProps(nextProps) {
         this.updateFilteredAuthorities(nextProps.allGroupedAuthorities, null, null);
     }
 
-    updateFilter = (searchStr, selectedOnly) => {
+    updateFilter(searchStr, selectedOnly) {
         const { allGroupedAuthorities } = this.props;
         this.updateFilteredAuthorities(allGroupedAuthorities, searchStr, selectedOnly);
-    };
+    }
 
-    updateFilteredAuthorities = (all, searchStr, selectedOnly) => {
+    updateFilteredAuthorities(all, searchStr, selectedOnly) {
         const { selectedItemsLookup } = this.context;
         const searchChunks = searchStr ? searchStr.toLowerCase().split(' ') : null;
         this.setState({
@@ -48,7 +50,7 @@ class FilteredAuthoritySections extends Component {
             ),
             searchChunks,
         });
-    };
+    }
 
     render() {
         const { filteredAuthorities } = this.state;

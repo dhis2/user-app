@@ -78,6 +78,8 @@ export const USER_CRED_PROPS = [
 export const ALWAYS_REQUIRED = 'ALWAYS_REQUIRED';
 export const CREATE_REQUIRED = 'CREATE_REQUIRED';
 
+export const USE_DB_LOCALE = null;
+
 const BASE_CAPTION = {
     label:
         'Selecting an organisation unit provides access to all units in the sub-hierarchy',

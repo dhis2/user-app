@@ -25,17 +25,21 @@ class AuthoritySection extends Component {
         this.state = { renderedItems: null };
     }
 
-    componentWillReceiveProps = newProps => {
+    componentWillReceiveProps(newProps) {
         if (newProps.authSection.items.length) {
             this.setState({ renderedItems: null });
             this.createBatchedRenderInterval(newProps);
         }
-    };
+    }
 
-    createBatchedRenderInterval = props => {
+    componentWillUnmount() {
+        clearInterval(this.appendInterval);
+    }
+
+    createBatchedRenderInterval(props) {
         const items = props.authSection.items;
         let currSliceEnd = 0;
-        const appendInterval = setInterval(() => {
+        this.appendInterval = setInterval(() => {
             const currItems = this.state.renderedItems || [];
             const reachedEnd = currSliceEnd + FLUSH_COUNT > items.length;
             const sliceEnd = reachedEnd ? items.length : currSliceEnd + FLUSH_COUNT;
@@ -45,12 +49,12 @@ class AuthoritySection extends Component {
             currSliceEnd = sliceEnd;
 
             if (renderedItems.length === items.length) {
-                clearInterval(appendInterval);
+                clearInterval(this.appendInterval);
             }
 
             this.setState({ renderedItems });
         }, FLUSH_INTERVAL);
-    };
+    }
 
     renderAuthRow = (authSubject, index) => {
         const { shouldSelect, onAuthChange } = this.context;
@@ -70,25 +74,31 @@ class AuthoritySection extends Component {
         );
     };
 
-    renderAuthRows = () => this.state.renderedItems.map(this.renderAuthRow);
+    renderAuthRows = () => {
+        return this.state.renderedItems.map(this.renderAuthRow);
+    };
 
-    renderLoaderRow = () => (
-        <tr>
-            <td className="authority-editor__placeholder-cell">
-                <CircularProgress size={36} />
-            </td>
-        </tr>
-    );
+    renderLoaderRow() {
+        return (
+            <tr>
+                <td className="authority-editor__placeholder-cell">
+                    <CircularProgress size={36} />
+                </td>
+            </tr>
+        );
+    }
 
-    renderNoResultsRow = () => (
-        <tr>
-            <td className="authority-editor__placeholder-cell">
-                {i18next.t('No matches found')}
-            </td>
-        </tr>
-    );
+    renderNoResultsRow() {
+        return (
+            <tr>
+                <td className="authority-editor__placeholder-cell">
+                    {i18next.t('No matches found')}
+                </td>
+            </tr>
+        );
+    }
 
-    renderContent = authSection => {
+    renderContent(authSection) {
         const { renderedItems } = this.state;
         if (!authSection.items || !renderedItems) {
             return this.renderLoaderRow();
@@ -106,19 +116,21 @@ class AuthoritySection extends Component {
                 render={this.renderAuthRows}
             />
         );
-    };
+    }
 
-    renderTableHead = ({ headers }) => (
-        <thead>
-            <tr>
-                {headers.map((header, index) => (
-                    <th key={`header-${index}`}>{header}</th>
-                ))}
-            </tr>
-        </thead>
-    );
+    renderTableHead({ headers }) {
+        return (
+            <thead>
+                <tr>
+                    {headers.map((header, index) => (
+                        <th key={`header-${index}`}>{header}</th>
+                    ))}
+                </tr>
+            </thead>
+        );
+    }
 
-    render = () => {
+    render() {
         const { sectionKey, authSection } = this.props;
         let tableClassName = 'authority-editor__auth-group-table';
         tableClassName += ` columns-${authSection.headers.length}`;
@@ -134,7 +146,7 @@ class AuthoritySection extends Component {
                 </table>
             </Paper>
         );
-    };
+    }
 }
 
 AuthoritySection.propTypes = {

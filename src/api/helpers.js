@@ -13,10 +13,10 @@ import {
     DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
 } from '../components/users/UserForm/config';
 
-export const getQueryFields = (entityName, viewType) => {
+export const getQueryFields = (entityName, detailFields) => {
     const formattedEntityName = _.snakeCase(entityName).toUpperCase();
-    const varName = viewType
-        ? `${formattedEntityName}_${viewType}`
+    const varName = detailFields
+        ? `${formattedEntityName}_DETAILS`
         : `${formattedEntityName}_LIST`;
 
     return FIELDS[varName];

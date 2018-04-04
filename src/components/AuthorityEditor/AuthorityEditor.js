@@ -9,10 +9,6 @@ import AuthorityFilter from './AuthorityFilter';
 import FilteredAuthoritySections from './FilteredAuthoritySections';
 import { EMPTY_GROUPED_AUTHORITIES } from './utils/groupAuthorities';
 
-// TODO: Remove once grouping is final
-const renderCopyPasteOutput = false;
-const keysInCopyPasteOutput = false;
-
 class AuthorityEditor extends Component {
     static propTypes = {
         initiallySelected: PropTypes.array,
@@ -36,18 +32,19 @@ class AuthorityEditor extends Component {
             allGroupedAuthorities: EMPTY_GROUPED_AUTHORITIES,
         };
         // This lookup may be updated without triggering re-renders
-
         this.selectedItemsLookup = props.initiallySelected.reduce(
             (lookup, item) => lookup.set(item, true),
             new Map()
         );
     }
 
-    getChildContext = () => ({
-        shouldSelect: this.shouldSelect,
-        onAuthChange: this.onAuthChange,
-        selectedItemsLookup: this.selectedItemsLookup,
-    });
+    getChildContext() {
+        return {
+            shouldSelect: this.shouldSelect,
+            onAuthChange: this.onAuthChange,
+            selectedItemsLookup: this.selectedItemsLookup,
+        };
+    }
 
     componentDidMount() {
         api.getGroupedAuthorities().then(allGroupedAuthorities => {
@@ -69,7 +66,7 @@ class AuthorityEditor extends Component {
         const stateChanges = this.getChangedProperties(nextState, this.state);
         const allChanges = [...propChanges, ...stateChanges];
 
-        return !(allChanges.length === 1 && allChanges[0] === 'initiallySelected');
+        return allChanges.length > 0 && allChanges.includes('allGroupedAuthorities');
     }
 
     onFilterChange = (searchStr, selectedOnly) => {
@@ -98,46 +95,9 @@ class AuthorityEditor extends Component {
         return Boolean(this.selectedItemsLookup.get(id));
     };
 
-    // TODO: Remove once grouping is final
-    renderCopyPasteOutput(filteredAuthorities) {
-        return Object.keys(filteredAuthorities).map(key => {
-            const authGroup = filteredAuthorities[key];
-            return (
-                <div key={key}>
-                    <h1>{authGroup.name}</h1>
-                    <table>
-                        <tbody>
-                            {authGroup.items.map((item, index) => (
-                                <tr key={`row-${index}`}>
-                                    {item.items ? (
-                                        item.items.map(({ id, name }, index) => (
-                                            <td key={`cell-${index}`}>
-                                                {keysInCopyPasteOutput
-                                                    ? `${id} | ${name}`
-                                                    : name}
-                                            </td>
-                                        ))
-                                    ) : (
-                                        <td>
-                                            {keysInCopyPasteOutput
-                                                ? `${item.id} | ${item.name}`
-                                                : item.name}
-                                        </td>
-                                    )}
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-            );
-        });
-    }
-
     render() {
         const { allGroupedAuthorities } = this.state;
-        if (renderCopyPasteOutput && allGroupedAuthorities) {
-            return this.renderCopyPasteOutput(allGroupedAuthorities);
-        }
+
         return (
             <div className="authority-editor">
                 <Heading level={4} className="authority-editor__header">

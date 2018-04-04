@@ -6,38 +6,55 @@ import { Field, reduxForm } from 'redux-form';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import RaisedButton from 'material-ui/RaisedButton';
 import { navigateTo } from '../../../utils';
-import { getItem, initNewItem } from '../../../actions';
+import { clearItem, showSnackbar, getList } from '../../../actions';
 import { NAME, DESCRIPTION, AUTHORITIES, FIELDS } from './config';
-// import api from '../../api';
+import { USER_ROLE } from '../../../constants/entityTypes';
 import validate from './validate';
 import asyncValidateUniqueness from '../../../utils/asyncValidateUniqueness';
 
 class RoleForm extends Component {
     static propTypes = {
-        getItem: PropTypes.func.isRequired,
-        initNewItem: PropTypes.func.isRequired,
+        showSnackbar: PropTypes.func.isRequired,
+        clearItem: PropTypes.func.isRequired,
+        getList: PropTypes.func.isRequired,
         handleSubmit: PropTypes.func.isRequired,
         initialValues: PropTypes.object.isRequired,
         role: PropTypes.object.isRequired,
+        asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+            .isRequired,
+        pristine: PropTypes.bool.isRequired,
+        valid: PropTypes.bool.isRequired,
     };
 
     saveRole = (values, _, props) => {
-        console.log('saving....', values, props);
+        const { role, showSnackbar, clearItem, getList } = this.props;
+        role[NAME] = values[NAME];
+        role[DESCRIPTION] = values[DESCRIPTION];
+        role[AUTHORITIES] = values[AUTHORITIES].map(value => ({ id: value }));
+
+        role
+            .save()
+            .then(() => {
+                const msg = i18next.t('User role saved successfully');
+                showSnackbar({ message: msg });
+                clearItem();
+                getList(USER_ROLE);
+                this.backToList();
+            })
+            .catch(error => {
+                const msg = i18next.t('There was a problem saving the user role.');
+                showSnackbar({ message: msg });
+            });
     };
 
     backToList = () => {
         navigateTo('/user-roles');
     };
 
-    renderFields = () => {
-        // const {role} = this.props;
-
+    renderFields() {
         return FIELDS.map(fieldConfig => {
             const { name, fieldRenderer, label, isRequiredField, ...conf } = fieldConfig;
             let labelText = i18next.t(label);
-            if (name === AUTHORITIES) {
-                conf.onAuthorityChange = this.onAuthorityChange;
-            }
 
             return (
                 <Field
@@ -49,10 +66,11 @@ class RoleForm extends Component {
                 />
             );
         });
-    };
+    }
 
     render = () => {
-        const { role, handleSubmit } = this.props;
+        const { handleSubmit, asyncValidating, pristine, valid } = this.props;
+        const disableSubmit = Boolean(asyncValidating || pristine || !valid);
         return (
             <main>
                 <Heading level={2}>{i18next.t('Details')}</Heading>
@@ -63,7 +81,7 @@ class RoleForm extends Component {
                             label={i18next.t('Save')}
                             type="submit"
                             primary={true}
-                            disabled={false}
+                            disabled={disableSubmit}
                             style={{ marginRight: '8px' }}
                         />
                         <RaisedButton
@@ -87,13 +105,14 @@ const mapStateToProps = state => ({
 });
 
 const ReduxFormWrappedRoleForm = reduxForm({
-    form: 'userForm',
+    form: 'roleForm',
     validate,
     asyncValidate: asyncValidateUniqueness,
     asyncBlurFields: [NAME],
 })(RoleForm);
 
 export default connect(mapStateToProps, {
-    getItem,
-    initNewItem,
+    clearItem,
+    showSnackbar,
+    getList,
 })(ReduxFormWrappedRoleForm);

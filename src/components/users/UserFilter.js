@@ -34,12 +34,8 @@ class UserFilter extends Component {
         updateFilter: PropTypes.func.isRequired,
         entityType: PropTypes.string.isRequired,
     };
-    constructor(props) {
-        super(props);
-        this.onFilterChange = this.onFilterChange.bind(this);
-    }
 
-    onFilterChange(fieldName, newValue) {
+    onFilterChange = (fieldName, newValue) => {
         const { getList, entityType, updateFilter, filter } = this.props;
 
         if (filter[fieldName] === newValue) {
@@ -48,7 +44,7 @@ class UserFilter extends Component {
 
         updateFilter(fieldName, newValue);
         getList(entityType);
-    }
+    };
 
     createInactiveMonthsOptions() {
         const month = i18next.t('month');

@@ -1,124 +1,111 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import SearchableGroupEditor from '../../SearchableGroupEditor';
-import TextField from 'material-ui/TextField/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
 import i18next from 'i18next';
-import { navigateTo, asArray } from '../../../utils';
-import api from '../../../api';
-import { getList, showSnackbar } from '../../../actions';
+import { Field, reduxForm } from 'redux-form';
+import Heading from 'd2-ui/lib/headings/Heading.component';
+import RaisedButton from 'material-ui/RaisedButton';
+import { navigateTo } from '../../../utils';
+import { clearItem, showSnackbar, getList } from '../../../actions';
+import { NAME, USERS, MANAGED_GROUPS, FIELDS } from './config';
 import { USER_GROUP } from '../../../constants/entityTypes';
+import validate from './validate';
+import asyncValidateUniqueness from '../../../utils/asyncValidateUniqueness';
+import api from '../../../api';
+import { renderSearchableGroupEditor } from '../../../utils/fieldRenderers';
+import { asArray } from '../../../utils';
 
 class GroupForm extends Component {
     static propTypes = {
-        group: PropTypes.object.isRequired,
         showSnackbar: PropTypes.func.isRequired,
+        clearItem: PropTypes.func.isRequired,
         getList: PropTypes.func.isRequired,
+        handleSubmit: PropTypes.func.isRequired,
+        initialValues: PropTypes.object.isRequired,
+        group: PropTypes.object.isRequired,
+        asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+            .isRequired,
+        pristine: PropTypes.bool.isRequired,
+        valid: PropTypes.bool.isRequired,
     };
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            groupName: props.group.displayName || '',
-            groupNameError: null,
-            submitting: false,
-        };
-        this.groupMembers = asArray(props.group.users).map(({ id }) => id);
-        this.groupManagedGroups = asArray(props.group.managedGroups).map(({ id }) => id);
-        this.onGroupNameInputChange = this.onGroupNameInputChange.bind(this);
-        this.onUsersChange = this.onUsersChange.bind(this);
-        this.onUserGroupChange = this.onUserGroupChange.bind(this);
-    }
+    saveGroup = (values, _, props) => {
+        const { group, showSnackbar, clearItem, getList } = this.props;
 
-    onUsersChange(assignedUserIds) {
-        this.groupMembers = assignedUserIds;
-    }
+        group[NAME] = values[NAME];
+        group[USERS] = values[USERS].map(({ id }) => ({ id }));
+        group[MANAGED_GROUPS] = values[MANAGED_GROUPS].map(({ id }) => ({ id }));
 
-    onUserGroupChange(assignedUserGroupIds) {
-        this.groupManagedGroups = assignedUserGroupIds;
-    }
+        group
+            .save()
+            .then(() => {
+                const msg = i18next.t('User group saved successfully');
+                showSnackbar({ message: msg });
+                clearItem();
+                getList(USER_GROUP);
+                this.backToList();
+            })
+            .catch(error => {
+                const msg = i18next.t('There was a problem saving the user group.');
+                showSnackbar({ message: msg });
+            });
+    };
 
-    onGroupNameInputChange(event) {
-        const groupName = event.target.value;
-        const groupNameError = !groupName ? i18next.t('Required') : null;
-
-        this.setState({ groupName, groupNameError });
-    }
-
-    updateGroup() {
-        const {
-            props: { group },
-            state: { groupName },
-            groupMembers,
-            groupManagedGroups,
-        } = this;
-
-        group.name = groupName;
-        group.displayName = groupName;
-        group.users = groupMembers.map(value => ({ id: value }));
-        group.managedGroups = groupManagedGroups.map(value => ({ id: value }));
-
-        this.setState({ submitting: true });
-
-        group.save().then(() => this.onRequestComplete(Boolean(group.id)));
-    }
-
-    onRequestComplete(isUpdate) {
-        const { showSnackbar, getList } = this.props;
-        const message = isUpdate
-            ? i18next.t('Group successfully updated')
-            : i18next.t('Group successfully created');
-
-        showSnackbar({ message });
-        getList(USER_GROUP);
-        this.backToList();
-    }
-
-    backToList() {
+    backToList = () => {
         navigateTo('/user-groups');
+    };
+
+    renderFields() {
+        const { group } = this.props;
+        return FIELDS.map(fieldConfig => {
+            const { name, fieldRenderer, label, isRequiredField, ...conf } = fieldConfig;
+            const suffix = isRequiredField ? ' *' : '';
+            const labelText = i18next.t(label) + suffix;
+
+            if (fieldRenderer === renderSearchableGroupEditor) {
+                conf.availableItemsQuery = api[conf.availableItemsQuery];
+                conf.availableItemsLabel = i18next.t(conf.availableItemsLabel);
+                conf.assignedItemsLabel = i18next.t(conf.assignedItemsLabel);
+                if (isRequiredField) {
+                    conf.assignedItemsLabel += ' *';
+                }
+                conf.initialValues = fieldConfig.initialItemsSelector(group);
+            }
+
+            return (
+                <Field
+                    name={name}
+                    key={name}
+                    component={fieldRenderer}
+                    label={labelText}
+                    {...conf}
+                />
+            );
+        });
     }
 
     render() {
-        const { group } = this.props;
-        const { groupName, groupNameError, submitting } = this.state;
-        const groupNameTxt = `${i18next.t('Name')} *`;
-
+        const { handleSubmit, asyncValidating, pristine, valid } = this.props;
+        const disableSubmit = Boolean(asyncValidating || pristine || !valid);
         return (
             <main>
-                <TextField
-                    fullWidth={true}
-                    onChange={this.onGroupNameInputChange}
-                    value={groupName}
-                    floatingLabelText={groupNameTxt}
-                    hintText={groupNameTxt}
-                    errorText={groupNameError}
-                    style={{ marginBottom: '1rem' }}
-                />
-                <SearchableGroupEditor
-                    initiallyAssignedItems={group.users}
-                    availableItemsQuery={api.getManagedUsers}
-                    onChange={this.onUsersChange}
-                    availableItemsHeader={i18next.t('Available users')}
-                    assignedItemsHeader={i18next.t('Group members')}
-                />
-                <SearchableGroupEditor
-                    initiallyAssignedItems={group.managedGroups}
-                    availableItemsQuery={api.getAvailableUserGroups}
-                    onChange={this.onUserGroupChange}
-                    availableItemsHeader={i18next.t('Available user groups')}
-                    assignedItemsHeader={i18next.t('Managed user groups')}
-                />
-                <div>
-                    <RaisedButton
-                        label={i18next.t('Save')}
-                        primary={true}
-                        onClick={this.updateGroup}
-                        disabled={!!(groupNameError || submitting)}
-                        style={{ marginRight: '8px' }}
-                    />
-                    <RaisedButton label={i18next.t('Cancel')} onClick={this.backToList} />
-                </div>
+                <Heading level={2}>{i18next.t('Details')}</Heading>
+                <form onSubmit={handleSubmit(this.saveGroup)}>
+                    {this.renderFields()}
+                    <div style={{ marginTop: '2rem' }}>
+                        <RaisedButton
+                            label={i18next.t('Save')}
+                            type="submit"
+                            primary={true}
+                            disabled={disableSubmit}
+                            style={{ marginRight: '8px' }}
+                        />
+                        <RaisedButton
+                            label={i18next.t('Cancel')}
+                            onClick={this.backToList}
+                        />
+                    </div>
+                </form>
             </main>
         );
     }
@@ -126,9 +113,22 @@ class GroupForm extends Component {
 
 const mapStateToProps = state => ({
     group: state.currentItem,
+    initialValues: {
+        [NAME]: state.currentItem[NAME],
+        [USERS]: asArray(state.currentItem[USERS]),
+        [MANAGED_GROUPS]: asArray(state.currentItem[MANAGED_GROUPS]),
+    },
 });
 
+const ReduxFormWrappedGroupForm = reduxForm({
+    form: 'groupForm',
+    validate,
+    asyncValidate: asyncValidateUniqueness,
+    asyncBlurFields: [NAME],
+})(GroupForm);
+
 export default connect(mapStateToProps, {
+    clearItem,
     showSnackbar,
     getList,
-})(GroupForm);
+})(ReduxFormWrappedGroupForm);

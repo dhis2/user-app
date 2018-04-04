@@ -6,6 +6,7 @@ import {
     INTERFACE_LANGUAGE,
     DATABASE_LANGUAGE,
     DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
+    USE_DB_LOCALE,
 } from '../components/users/UserForm/config';
 import { asArray, getNestedProp } from '../utils';
 
@@ -85,6 +86,10 @@ export const userFormInitialValuesSelector = _.memoize((user, locales) => {
     }
 
     let initialValues = {};
+    const useDbLocaleOption = {
+        locale: USE_DB_LOCALE,
+        name: i18next.t('Use database locale / no translation'),
+    };
 
     USER_PROPS.forEach(propName => {
         addInitialValueFrom(user, initialValues, propName);
@@ -95,7 +100,7 @@ export const userFormInitialValuesSelector = _.memoize((user, locales) => {
     });
 
     initialValues[INTERFACE_LANGUAGE] = locales.ui.selected;
-    initialValues[DATABASE_LANGUAGE] = locales.db.selected;
+    initialValues[DATABASE_LANGUAGE] = [useDbLocaleOption, ...locales.db.selected];
 
     return initialValues;
 });

@@ -36,7 +36,7 @@ class AuthorityFilter extends Component {
                     className="authority-editor__filter-checkbox"
                     label={i18next.t('Selected authorities only')}
                     checked={this.state.selectedOnly}
-                    onCheck={this.onSelectedOnlyChange.bind(this)}
+                    onCheck={this.onSelectedOnlyChange}
                     style={{ width: '300px' }}
                 />
             </div>

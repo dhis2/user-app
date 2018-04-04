@@ -7,16 +7,12 @@ import api from '../api';
 import { hideSharingDialog, showSnackbar } from '../actions';
 
 class SharingDialogContainer extends Component {
-    constructor(props) {
-        super(props);
-        this.closeAndConfirm = this.closeAndConfirm.bind(this);
-    }
-    closeAndConfirm() {
+    closeAndConfirm = () => {
         const { hideSharingDialog, showSnackbar } = this.props;
         const message = i18next.t('Sharing settings have been updated');
         hideSharingDialog();
         showSnackbar({ message });
-    }
+    };
 
     render() {
         const { open, id, type } = this.props;

@@ -48,17 +48,11 @@ class OrganisationUnitInput extends Component {
         hideDialog: PropTypes.func.isRequired,
     };
 
-    constructor(props) {
-        super(props);
-        this.focusOrgUnitInput = this.focusOrgUnitInput.bind(this);
-        this.showOrgTreeInDialog = this.showOrgTreeInDialog.bind(this);
-    }
-
-    focusOrgUnitInput() {
+    focusOrgUnitInput = () => {
         this.refs.orgUnitInput.focus();
-    }
+    };
 
-    showOrgTreeInDialog() {
+    showOrgTreeInDialog = () => {
         const { showDialog, hideDialog } = this.props;
         const content = <OrganisationUnitFilter />;
         const props = {
@@ -72,7 +66,7 @@ class OrganisationUnitInput extends Component {
             },
         };
         showDialog(content, props);
-    }
+    };
 
     render() {
         const { organisationUnits } = this.props;

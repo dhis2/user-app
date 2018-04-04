@@ -54,11 +54,6 @@ class SearchableGroupEditor extends Component {
             assignedItemStore: Store.create(),
             filterText: '',
         };
-
-        this.onAvailableItemsReceived = this.onAvailableItemsReceived.bind(this);
-        this.updateFilterText = this.updateFilterText.bind(this);
-        this.onAssignItems = this.onAssignItems.bind(this);
-        this.onRemoveItems = this.onRemoveItems.bind(this);
     }
 
     componentWillMount() {
@@ -68,7 +63,7 @@ class SearchableGroupEditor extends Component {
             .catch(() => alert('Problem getting the available items'));
     }
 
-    onAvailableItemsReceived(response) {
+    onAvailableItemsReceived = response => {
         // On update we want to be able to return an array of IDs or models
         const { initiallyAssignedItems, returnModelsOnUpdate } = this.props;
         const { itemStore, assignedItemStore } = this.state;
@@ -91,23 +86,23 @@ class SearchableGroupEditor extends Component {
 
         itemStore.setState(availableItems);
         assignedItemStore.setState(assignedItems);
-    }
+    };
 
-    onAssignItems(items) {
+    onAssignItems = items => {
         const { assignedItemStore } = this.state;
         const assigned = assignedItemStore.state.concat(items);
 
         return this.update(assigned);
-    }
+    };
 
-    onRemoveItems(items) {
+    onRemoveItems = items => {
         const { assignedItemStore } = this.state;
         const assigned = assignedItemStore.state.filter(
             item => items.indexOf(item) === -1
         );
 
         return this.update(assigned);
-    }
+    };
 
     update(assignedItemIds) {
         const { onChange, returnModelsOnUpdate, onBlur } = this.props;
@@ -123,9 +118,9 @@ class SearchableGroupEditor extends Component {
         return Promise.resolve();
     }
 
-    updateFilterText(event) {
+    updateFilterText = event => {
         this.setState({ filterText: event.target.value });
-    }
+    };
 
     renderHeader() {
         const { availableItemsHeader, assignedItemsHeader, errorText } = this.props;

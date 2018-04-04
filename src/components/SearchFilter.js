@@ -26,21 +26,20 @@ class SearchFilter extends Component {
         this.state = {
             localQueryStr: props.filter.query,
         };
-        this.onQueryStrChange = this.onQueryStrChange.bind(this);
-        this.updateSearchFilter = _.debounce(this.updateSearchFilter.bind(this), 375);
+        this.updateSearchFilter = _.debounce(this.updateSearchFilter, 375);
     }
 
-    updateSearchFilter(newValue) {
+    updateSearchFilter = newValue => {
         const { getList, entityType, updateFilter } = this.props;
         updateFilter(QUERY, newValue);
         getList(entityType);
-    }
+    };
 
-    onQueryStrChange(event) {
+    onQueryStrChange = event => {
         const value = event.target.value;
         this.setState({ localQueryStr: value });
         this.updateSearchFilter(value);
-    }
+    };
 
     render() {
         const { localQueryStr } = this.state;

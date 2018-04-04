@@ -48,17 +48,15 @@ class AsyncAutoComplete extends Component {
         super(props);
         const debounceTime = props.queryDebounceTime || 375;
         this.state = { ...baseState };
-        this.getItems = _.debounce(this.getItems.bind(this), debounceTime);
-        this.onAutoCompleteChange = this.onAutoCompleteChange.bind(this);
-        this.onItemSelect = this.onItemSelect.bind(this);
+        this.getItems = _.debounce(this.getItems, debounceTime);
     }
 
-    onAutoCompleteChange(value) {
+    onAutoCompleteChange = value => {
         this.setState({ autoCompleteText: value });
         this.getItems(value);
-    }
+    };
 
-    getItems(value) {
+    getItems = value => {
         const { minCharLength, query } = this.props;
 
         if (!value || value.length < minCharLength) {
@@ -95,13 +93,13 @@ class AsyncAutoComplete extends Component {
                 }
             });
         }
-    }
+    };
 
-    onItemSelect(dataSourceItem) {
+    onItemSelect = dataSourceItem => {
         const { selectHandler } = this.props;
         this.setState({ autoCompleteText: '' });
         selectHandler(dataSourceItem);
-    }
+    };
 
     selectAndShowFilteredOrgUnitInTreeView(dataSourceItem) {
         const orgUnit = dataSourceItem.value;

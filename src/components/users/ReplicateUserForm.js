@@ -50,14 +50,7 @@ class ReplicateUserForm extends Component {
         handleSubmit: PropTypes.func.isRequired,
     };
 
-    constructor(props) {
-        super(props);
-        this.onReplicationSucces = this.onReplicationSucces.bind(this);
-        this.onReplicationError = this.onReplicationError.bind(this);
-        this.onHandleSubmit = this.onHandleSubmit.bind(this);
-    }
-
-    onHandleSubmit(data) {
+    onHandleSubmit = data => {
         const { userIdToReplicate, hideDialog } = this.props;
         const { username, password } = data;
         api
@@ -65,18 +58,18 @@ class ReplicateUserForm extends Component {
             .then(this.onReplicationSucces)
             .catch(this.onReplicationError);
         hideDialog();
-    }
+    };
 
-    onReplicationSucces() {
+    onReplicationSucces = () => {
         const { getList, showSnackbar } = this.props;
         showSnackbar({ message: i18next.t('User replicated successfuly') });
         getList(USER, true);
-    }
+    };
 
-    onReplicationError() {
+    onReplicationError = () => {
         const { showSnackbar } = this.props;
         showSnackbar({ message: i18next.t('There was a problem replicating the user') });
-    }
+    };
 
     shouldDisableSubmit() {
         const { formState, asyncValidating, pristine, valid } = this.props;

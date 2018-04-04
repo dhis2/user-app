@@ -30,6 +30,7 @@ class UserForm extends Component {
     static propTypes = {
         user: PropTypes.object.isRequired,
         getList: PropTypes.func.isRequired,
+        clearItem: PropTypes.func.isRequired,
         showSnackbar: PropTypes.func.isRequired,
         handleSubmit: PropTypes.func.isRequired,
         change: PropTypes.func.isRequired,
@@ -46,10 +47,6 @@ class UserForm extends Component {
             showMore: false,
             locales: null,
         };
-
-        this.toggleShowMore = this.toggleShowMore.bind(this);
-        this.saveUser = this.saveUser.bind(this);
-        this.backToList = this.backToList.bind(this);
     }
 
     componentWillMount() {
@@ -68,13 +65,13 @@ class UserForm extends Component {
             });
     }
 
-    toggleShowMore() {
+    toggleShowMore = () => {
         this.setState({
             showMore: !this.state.showMore,
         });
-    }
+    };
 
-    saveUser(values, _, props) {
+    saveUser = (values, _, props) => {
         const { user, showSnackbar, clearItem, getList } = props;
         const selectedUiLocale = this.state.locales.ui.selected;
         const selectedDbLocale = this.state.locales.db.selected;
@@ -91,11 +88,11 @@ class UserForm extends Component {
                 const msg = i18next.t('There was a problem saving the user.');
                 showSnackbar({ message: msg });
             });
-    }
+    };
 
-    backToList() {
+    backToList = () => {
         navigateTo('/users');
-    }
+    };
 
     getLabelText(label, user, isRequiredField) {
         let labelText = i18next.t(label);

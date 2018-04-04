@@ -13,6 +13,7 @@ export const USER_GROUP_LIST = [
     'userGroupAccesses',
 ];
 export const USER_ROLE_LIST = [...USER_GROUP_LIST, 'description'];
+
 // DETAILS
 export const USER_DETAILS = [
     'id',
@@ -36,17 +37,14 @@ export const USER_DETAILS = [
     'userCredentials[id,username,externalAuth,userRoles[id,displayName],cogsDimensionConstraints[id,displayName,dimensionType],catDimensionConstraints[id,displayName,dimensionType],openId,ldapId]',
     'teiSearchOrganisationUnits[id,path]',
 ];
-export const USER_GROUP_DETAILS = ['id', 'displayName', 'users'];
+export const USER_GROUP_DETAILS = ['id', 'displayName', 'name', 'users', 'managedGroups'];
 export const USER_ROLE_DETAILS = [
-    ...USER_GROUP_DETAILS,
+    'id',
+    'displayName',
     'name',
     'description',
     'authorities',
 ];
-// EDIT
-export const USER_EDIT = [...USER_DETAILS];
-export const USER_GROUP_EDIT = ['id', 'displayName', 'users'];
-export const USER_ROLE_EDIT = [...USER_GROUP_EDIT];
 
 export const ORG_UNITS_QUERY_CONFIG = {
     paging: false,
@@ -65,8 +63,5 @@ const FIELDS = {
     USER_DETAILS,
     USER_GROUP_DETAILS,
     USER_ROLE_DETAILS,
-    USER_EDIT,
-    USER_GROUP_EDIT,
-    USER_ROLE_EDIT,
 };
 export default FIELDS;
