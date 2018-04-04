@@ -4,9 +4,6 @@ import { Checkbox } from 'material-ui';
 import HighlightableText from './HighlightableText';
 
 class AuthorityItem extends Component {
-    static contextTypes = {
-        searchChunks: PropTypes.array,
-    };
     constructor(props) {
         super(props);
         this.state = { selected: props.selected };
@@ -62,6 +59,10 @@ AuthorityItem.propTypes = {
     onCheckedCallBack: PropTypes.func.isRequired,
     selected: PropTypes.bool.isRequired,
     disabled: PropTypes.bool,
+};
+
+AuthorityItem.contextTypes = {
+    searchChunks: PropTypes.array,
 };
 
 export default AuthorityItem;

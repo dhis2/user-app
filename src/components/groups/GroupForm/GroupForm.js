@@ -16,19 +16,6 @@ import { renderSearchableGroupEditor } from '../../../utils/fieldRenderers';
 import { asArray } from '../../../utils';
 
 class GroupForm extends Component {
-    static propTypes = {
-        showSnackbar: PropTypes.func.isRequired,
-        clearItem: PropTypes.func.isRequired,
-        getList: PropTypes.func.isRequired,
-        handleSubmit: PropTypes.func.isRequired,
-        initialValues: PropTypes.object.isRequired,
-        group: PropTypes.object.isRequired,
-        asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
-            .isRequired,
-        pristine: PropTypes.bool.isRequired,
-        valid: PropTypes.bool.isRequired,
-    };
-
     saveGroup = (values, _, props) => {
         const { group, showSnackbar, clearItem, getList } = this.props;
 
@@ -110,6 +97,18 @@ class GroupForm extends Component {
         );
     }
 }
+
+GroupForm.propTypes = {
+    showSnackbar: PropTypes.func.isRequired,
+    clearItem: PropTypes.func.isRequired,
+    getList: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    initialValues: PropTypes.object.isRequired,
+    group: PropTypes.object.isRequired,
+    asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]).isRequired,
+    pristine: PropTypes.bool.isRequired,
+    valid: PropTypes.bool.isRequired,
+};
 
 const mapStateToProps = state => ({
     group: state.currentItem,

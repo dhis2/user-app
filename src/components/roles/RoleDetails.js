@@ -7,14 +7,6 @@ import { USER_ROLE_DETAILS } from '../../constants/detailFieldConfigs';
 import { getItem } from '../../actions';
 
 class RoleDetails extends Component {
-    static propTypes = {
-        match: PropTypes.object.isRequired,
-        location: PropTypes.object.isRequired,
-        history: PropTypes.object.isRequired,
-        role: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-        getItem: PropTypes.func.isRequired,
-    };
-
     componentWillMount() {
         const { getItem, match: { params: { id } } } = this.props;
         getItem(USER_ROLE, DETAILS, id);
@@ -32,6 +24,14 @@ class RoleDetails extends Component {
         );
     }
 }
+
+RoleDetails.propTypes = {
+    match: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired,
+    role: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    getItem: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = state => ({
     role: state.currentItem,

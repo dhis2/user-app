@@ -12,12 +12,6 @@ import {
 import UserFilter from './UserFilter';
 
 class UserList extends Component {
-    static propTypes = {
-        match: PropTypes.object.isRequired,
-        location: PropTypes.object.isRequired,
-        history: PropTypes.object.isRequired,
-    };
-
     render() {
         return (
             <List
@@ -35,5 +29,11 @@ class UserList extends Component {
         );
     }
 }
+
+UserList.propTypes = {
+    match: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired,
+};
 
 export default UserList;

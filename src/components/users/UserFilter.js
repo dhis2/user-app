@@ -28,13 +28,6 @@ const selfRegisteredStyle = {
 };
 
 class UserFilter extends Component {
-    static propTypes = {
-        filter: PropTypes.object.isRequired,
-        getList: PropTypes.func.isRequired,
-        updateFilter: PropTypes.func.isRequired,
-        entityType: PropTypes.string.isRequired,
-    };
-
     onFilterChange = (fieldName, newValue) => {
         const { getList, entityType, updateFilter, filter } = this.props;
 
@@ -123,6 +116,13 @@ class UserFilter extends Component {
         );
     }
 }
+
+UserFilter.propTypes = {
+    filter: PropTypes.object.isRequired,
+    getList: PropTypes.func.isRequired,
+    updateFilter: PropTypes.func.isRequired,
+    entityType: PropTypes.string.isRequired,
+};
 
 const mapStateToProps = state => {
     return {

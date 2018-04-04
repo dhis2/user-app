@@ -27,20 +27,6 @@ import {
 } from '../../../utils/fieldRenderers';
 
 class UserForm extends Component {
-    static propTypes = {
-        user: PropTypes.object.isRequired,
-        getList: PropTypes.func.isRequired,
-        clearItem: PropTypes.func.isRequired,
-        showSnackbar: PropTypes.func.isRequired,
-        handleSubmit: PropTypes.func.isRequired,
-        change: PropTypes.func.isRequired,
-        initialize: PropTypes.func.isRequired,
-        asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
-            .isRequired,
-        pristine: PropTypes.bool.isRequired,
-        valid: PropTypes.bool.isRequired,
-    };
-
     constructor(props) {
         super(props);
         this.state = {
@@ -232,6 +218,19 @@ class UserForm extends Component {
         );
     }
 }
+
+UserForm.propTypes = {
+    user: PropTypes.object.isRequired,
+    getList: PropTypes.func.isRequired,
+    clearItem: PropTypes.func.isRequired,
+    showSnackbar: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    change: PropTypes.func.isRequired,
+    initialize: PropTypes.func.isRequired,
+    asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]).isRequired,
+    pristine: PropTypes.bool.isRequired,
+    valid: PropTypes.bool.isRequired,
+};
 
 const mapStateToProps = (state, ownProps) => {
     return {

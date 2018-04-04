@@ -13,19 +13,6 @@ import validate from './validate';
 import asyncValidateUniqueness from '../../../utils/asyncValidateUniqueness';
 
 class RoleForm extends Component {
-    static propTypes = {
-        showSnackbar: PropTypes.func.isRequired,
-        clearItem: PropTypes.func.isRequired,
-        getList: PropTypes.func.isRequired,
-        handleSubmit: PropTypes.func.isRequired,
-        initialValues: PropTypes.object.isRequired,
-        role: PropTypes.object.isRequired,
-        asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
-            .isRequired,
-        pristine: PropTypes.bool.isRequired,
-        valid: PropTypes.bool.isRequired,
-    };
-
     saveRole = (values, _, props) => {
         const { role, showSnackbar, clearItem, getList } = this.props;
         role[NAME] = values[NAME];
@@ -94,6 +81,18 @@ class RoleForm extends Component {
         );
     };
 }
+
+RoleForm.propTypes = {
+    showSnackbar: PropTypes.func.isRequired,
+    clearItem: PropTypes.func.isRequired,
+    getList: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    initialValues: PropTypes.object.isRequired,
+    role: PropTypes.object.isRequired,
+    asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]).isRequired,
+    pristine: PropTypes.bool.isRequired,
+    valid: PropTypes.bool.isRequired,
+};
 
 const mapStateToProps = state => ({
     role: state.currentItem,

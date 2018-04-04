@@ -15,11 +15,6 @@ const FLUSH_INTERVAL = 10;
 // a long list of MUI Checkboxes. To prevent this we have switched to batched rendering
 // which makes the component a little more complicated but it renders a lot better.
 class AuthoritySection extends Component {
-    static contextTypes = {
-        shouldSelect: PropTypes.func.isRequired,
-        onAuthChange: PropTypes.func.isRequired,
-    };
-
     constructor(props) {
         super(props);
         this.state = { renderedItems: null };
@@ -152,6 +147,11 @@ class AuthoritySection extends Component {
 AuthoritySection.propTypes = {
     sectionKey: PropTypes.string.isRequired,
     authSection: PropTypes.object.isRequired,
+};
+
+AuthoritySection.contextTypes = {
+    shouldSelect: PropTypes.func.isRequired,
+    onAuthChange: PropTypes.func.isRequired,
 };
 
 export default AuthoritySection;

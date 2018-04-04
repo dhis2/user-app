@@ -14,13 +14,6 @@ const style = {
 };
 
 class SearchFilter extends Component {
-    static propTypes = {
-        filter: PropTypes.object.isRequired,
-        getList: PropTypes.func.isRequired,
-        entityType: PropTypes.string.isRequired,
-        updateFilter: PropTypes.func.isRequired,
-    };
-
     constructor(props) {
         super(props);
         this.state = {
@@ -56,6 +49,14 @@ class SearchFilter extends Component {
         );
     }
 }
+
+SearchFilter.propTypes = {
+    filter: PropTypes.object.isRequired,
+    getList: PropTypes.func.isRequired,
+    entityType: PropTypes.string.isRequired,
+    updateFilter: PropTypes.func.isRequired,
+};
+
 const mapStateToProps = state => {
     return {
         filter: state.filter,

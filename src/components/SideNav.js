@@ -9,14 +9,6 @@ const style = {
 };
 
 class SideNav extends Component {
-    static propTypes = {
-        sections: PropTypes.array.isRequired,
-        history: PropTypes.object.isRequired,
-        location: PropTypes.shape({
-            pathname: PropTypes.string.isRequired,
-        }),
-    };
-
     componentWillMount() {
         const { sections, history, location: { pathname } } = this.props;
         const userPath = sections[0].path;
@@ -58,5 +50,13 @@ class SideNav extends Component {
         );
     }
 }
+
+SideNav.propTypes = {
+    sections: PropTypes.array.isRequired,
+    history: PropTypes.object.isRequired,
+    location: PropTypes.shape({
+        pathname: PropTypes.string.isRequired,
+    }),
+};
 
 export default withRouter(SideNav);

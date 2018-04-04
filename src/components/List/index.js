@@ -44,31 +44,6 @@ const styles = {
 };
 
 class List extends Component {
-    static propTypes = {
-        items: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
-        pager: PropTypes.object,
-        sectionName: PropTypes.string.isRequired,
-        getList: PropTypes.func.isRequired,
-        incrementPage: PropTypes.func.isRequired,
-        decrementPage: PropTypes.func.isRequired,
-        resetPager: PropTypes.func.isRequired,
-        resetFilter: PropTypes.func.isRequired,
-        entityType: PropTypes.string.isRequired,
-        newItemPath: PropTypes.string.isRequired,
-        listType: PropTypes.string.isRequired,
-        FilterComponent: PropTypes.func.isRequired,
-        columns: PropTypes.arrayOf(String).isRequired,
-        primaryAction: PropTypes.func.isRequired,
-        contextMenuActions: PropTypes.object.isRequired,
-        contextMenuIcons: PropTypes.object.isRequired,
-        isContextActionAllowed: PropTypes.func.isRequired,
-        className: PropTypes.string,
-    };
-
-    static defaultProps = {
-        className: 'paged-filterable-data-table',
-    };
-
     componentWillMount() {
         const {
             items,
@@ -195,6 +170,32 @@ class List extends Component {
         );
     }
 }
+
+List.propTypes = {
+    items: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
+    pager: PropTypes.object,
+    sectionName: PropTypes.string.isRequired,
+    getList: PropTypes.func.isRequired,
+    incrementPage: PropTypes.func.isRequired,
+    decrementPage: PropTypes.func.isRequired,
+    resetPager: PropTypes.func.isRequired,
+    resetFilter: PropTypes.func.isRequired,
+    entityType: PropTypes.string.isRequired,
+    newItemPath: PropTypes.string.isRequired,
+    listType: PropTypes.string.isRequired,
+    FilterComponent: PropTypes.func.isRequired,
+    columns: PropTypes.arrayOf(String).isRequired,
+    primaryAction: PropTypes.func.isRequired,
+    contextMenuActions: PropTypes.object.isRequired,
+    contextMenuIcons: PropTypes.object.isRequired,
+    isContextActionAllowed: PropTypes.func.isRequired,
+    className: PropTypes.string,
+};
+
+List.defaultProps = {
+    className: 'paged-filterable-data-table',
+};
+
 const mapStateToProps = state => {
     return {
         listType: state.list.type,

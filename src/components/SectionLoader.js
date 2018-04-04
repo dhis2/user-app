@@ -14,14 +14,6 @@ const style = {
 };
 
 class SectionLoader extends Component {
-    static contextTypes = {
-        d2: PropTypes.object,
-    };
-
-    static propTypes = {
-        initCurrentUser: PropTypes.func.isRequired,
-    };
-
     componentWillMount() {
         const { initCurrentUser } = this.props;
         initCurrentUser();
@@ -56,6 +48,14 @@ class SectionLoader extends Component {
         );
     }
 }
+
+SectionLoader.contextTypes = {
+    d2: PropTypes.object,
+};
+
+SectionLoader.propTypes = {
+    initCurrentUser: PropTypes.func.isRequired,
+};
 
 export default withRouter(
     connect(null, {

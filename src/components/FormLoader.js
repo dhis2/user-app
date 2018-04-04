@@ -28,14 +28,6 @@ const styles = {
 };
 
 class FormLoader extends Component {
-    static propTypes = {
-        match: PropTypes.object.isRequired,
-        entityType: PropTypes.string.isRequired,
-        item: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-        getItem: PropTypes.func.isRequired,
-        initNewItem: PropTypes.func.isRequired,
-    };
-
     componentWillMount() {
         const {
             match: { params: { id } },
@@ -102,6 +94,14 @@ class FormLoader extends Component {
         );
     }
 }
+
+FormLoader.propTypes = {
+    match: PropTypes.object.isRequired,
+    entityType: PropTypes.string.isRequired,
+    item: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    getItem: PropTypes.func.isRequired,
+    initNewItem: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = state => ({
     item: state.currentItem,

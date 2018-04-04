@@ -34,19 +34,6 @@ const styles = {
 };
 
 class SearchableGroupEditor extends Component {
-    static propTypes = {
-        availableItemsQuery: PropTypes.func.isRequired,
-        initiallyAssignedItems: PropTypes.oneOfType([
-            PropTypes.object.isRequired,
-            PropTypes.array.isRequired,
-        ]),
-        onChange: PropTypes.func.isRequired,
-        availableItemsHeader: PropTypes.string.isRequired,
-        assignedItemsHeader: PropTypes.string.isRequired,
-        returnModelsOnUpdate: PropTypes.bool,
-        errorText: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-        onBlur: PropTypes.func,
-    };
     constructor(props) {
         super(props);
         this.state = {
@@ -173,5 +160,19 @@ class SearchableGroupEditor extends Component {
         );
     }
 }
+
+SearchableGroupEditor.propTypes = {
+    availableItemsQuery: PropTypes.func.isRequired,
+    initiallyAssignedItems: PropTypes.oneOfType([
+        PropTypes.object.isRequired,
+        PropTypes.array.isRequired,
+    ]),
+    onChange: PropTypes.func.isRequired,
+    availableItemsHeader: PropTypes.string.isRequired,
+    assignedItemsHeader: PropTypes.string.isRequired,
+    returnModelsOnUpdate: PropTypes.bool,
+    errorText: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    onBlur: PropTypes.func,
+};
 
 export default SearchableGroupEditor;

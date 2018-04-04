@@ -7,12 +7,6 @@ import HighlightableText from './HighlightableText';
 import { PUBLIC_ADD_SUFFIX, PRIVATE_ADD_SUFFIX } from './utils/groupAuthorities';
 
 class AuthorityGroup extends Component {
-    static contextTypes = {
-        shouldSelect: PropTypes.func.isRequired,
-        onAuthChange: PropTypes.func.isRequired,
-        searchChunks: PropTypes.array,
-    };
-
     onAuthGroupChanged = (id, value) => {
         this.context.onAuthChange(id, value);
 
@@ -70,6 +64,12 @@ class AuthorityGroup extends Component {
 AuthorityGroup.propTypes = {
     items: PropTypes.array.isRequired,
     name: PropTypes.string.isRequired,
+};
+
+AuthorityGroup.contextTypes = {
+    shouldSelect: PropTypes.func.isRequired,
+    onAuthChange: PropTypes.func.isRequired,
+    searchChunks: PropTypes.array,
 };
 
 export default AuthorityGroup;

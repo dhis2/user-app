@@ -38,18 +38,6 @@ const validate = (values, props) => {
 };
 
 class ReplicateUserForm extends Component {
-    static propTypes = {
-        userIdToReplicate: PropTypes.string.isRequired,
-        hideDialog: PropTypes.func.isRequired,
-        getList: PropTypes.func.isRequired,
-        showSnackbar: PropTypes.func.isRequired,
-        formState: PropTypes.object,
-        asyncValidating: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-        pristine: PropTypes.bool.isRequired,
-        valid: PropTypes.bool.isRequired,
-        handleSubmit: PropTypes.func.isRequired,
-    };
-
     onHandleSubmit = data => {
         const { userIdToReplicate, hideDialog } = this.props;
         const { username, password } = data;
@@ -129,6 +117,18 @@ class ReplicateUserForm extends Component {
         );
     }
 }
+
+ReplicateUserForm.propTypes = {
+    userIdToReplicate: PropTypes.string.isRequired,
+    hideDialog: PropTypes.func.isRequired,
+    getList: PropTypes.func.isRequired,
+    showSnackbar: PropTypes.func.isRequired,
+    formState: PropTypes.object,
+    asyncValidating: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    pristine: PropTypes.bool.isRequired,
+    valid: PropTypes.bool.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = state => ({ formState: state.form[FORM_NAME] });
 

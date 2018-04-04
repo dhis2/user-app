@@ -42,12 +42,6 @@ const styles = {
 };
 
 class OrganisationUnitInput extends Component {
-    static propTypes = {
-        organisationUnits: PropTypes.string.isRequired,
-        showDialog: PropTypes.func.isRequired,
-        hideDialog: PropTypes.func.isRequired,
-    };
-
     focusOrgUnitInput = () => {
         this.refs.orgUnitInput.focus();
     };
@@ -85,6 +79,12 @@ class OrganisationUnitInput extends Component {
         );
     }
 }
+
+OrganisationUnitInput.propTypes = {
+    organisationUnits: PropTypes.string.isRequired,
+    showDialog: PropTypes.func.isRequired,
+    hideDialog: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = state => ({
     organisationUnits: orgUnitsAsStringSelector(state.filter.organisationUnits),

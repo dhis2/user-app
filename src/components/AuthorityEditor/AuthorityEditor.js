@@ -10,22 +10,6 @@ import FilteredAuthoritySections from './FilteredAuthoritySections';
 import { EMPTY_GROUPED_AUTHORITIES } from './utils/groupAuthorities';
 
 class AuthorityEditor extends Component {
-    static propTypes = {
-        initiallySelected: PropTypes.array,
-        reduxFormOnChange: PropTypes.func,
-        reduxFormOnBlur: PropTypes.func,
-    };
-
-    static defaultProps = {
-        initiallySelected: [],
-    };
-
-    static childContextTypes = {
-        shouldSelect: PropTypes.func.isRequired,
-        onAuthChange: PropTypes.func.isRequired,
-        selectedItemsLookup: PropTypes.object.isRequired,
-    };
-
     constructor(props) {
         super(props);
         this.state = {
@@ -114,5 +98,21 @@ class AuthorityEditor extends Component {
         );
     }
 }
+
+AuthorityEditor.propTypes = {
+    initiallySelected: PropTypes.array,
+    reduxFormOnChange: PropTypes.func,
+    reduxFormOnBlur: PropTypes.func,
+};
+
+AuthorityEditor.defaultProps = {
+    initiallySelected: [],
+};
+
+AuthorityEditor.childContextTypes = {
+    shouldSelect: PropTypes.func.isRequired,
+    onAuthChange: PropTypes.func.isRequired,
+    selectedItemsLookup: PropTypes.object.isRequired,
+};
 
 export default AuthorityEditor;

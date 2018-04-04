@@ -15,14 +15,6 @@ import SearchFilter from '../SearchFilter';
 import ErrorMessage from '../ErrorMessage';
 
 class GroupList extends Component {
-    static propTypes = {
-        match: PropTypes.object.isRequired,
-        location: PropTypes.object.isRequired,
-        history: PropTypes.object.isRequired,
-        getCurrentUserGroupMemberships: PropTypes.func.isRequired,
-        groupMemberships: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
-    };
-
     componentWillMount() {
         const { groupMemberships, getCurrentUserGroupMemberships } = this.props;
         if (!groupMemberships) {
@@ -57,6 +49,15 @@ class GroupList extends Component {
         );
     }
 }
+
+GroupList.propTypes = {
+    match: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired,
+    getCurrentUserGroupMemberships: PropTypes.func.isRequired,
+    groupMemberships: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
+};
+
 const mapStateToProps = state => {
     return {
         groupMemberships: state.currentUser.userGroups,

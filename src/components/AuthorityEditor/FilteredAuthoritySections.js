@@ -5,15 +5,6 @@ import filterAuthorities from './utils/filterAuthorities';
 import AuthoritySection from './AuthoritySection';
 
 class FilteredAuthoritySections extends Component {
-    static contextTypes = {
-        shouldSelect: PropTypes.func.isRequired,
-        onAuthChange: PropTypes.func.isRequired,
-        selectedItemsLookup: PropTypes.object.isRequired,
-    };
-    static childContextTypes = {
-        searchChunks: PropTypes.array,
-    };
-
     constructor(props) {
         super(props);
         this.state = {
@@ -73,6 +64,15 @@ class FilteredAuthoritySections extends Component {
 
 FilteredAuthoritySections.propTypes = {
     allGroupedAuthorities: PropTypes.object,
+};
+
+FilteredAuthoritySections.contextTypes = {
+    shouldSelect: PropTypes.func.isRequired,
+    onAuthChange: PropTypes.func.isRequired,
+    selectedItemsLookup: PropTypes.object.isRequired,
+};
+FilteredAuthoritySections.childContextTypes = {
+    searchChunks: PropTypes.array,
 };
 
 export default FilteredAuthoritySections;

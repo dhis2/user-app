@@ -7,14 +7,6 @@ import { USER_GROUP_DETAILS } from '../../constants/detailFieldConfigs';
 import { getItem } from '../../actions';
 
 class GroupDetails extends Component {
-    static propTypes = {
-        match: PropTypes.object.isRequired,
-        location: PropTypes.object.isRequired,
-        history: PropTypes.object.isRequired,
-        group: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-        getItem: PropTypes.func.isRequired,
-    };
-
     componentWillMount() {
         const { getItem, match: { params: { id } } } = this.props;
         getItem(USER_GROUP, DETAILS, id);
@@ -32,6 +24,14 @@ class GroupDetails extends Component {
         );
     }
 }
+
+GroupDetails.propTypes = {
+    match: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired,
+    group: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    getItem: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = state => ({
     group: state.currentItem,
