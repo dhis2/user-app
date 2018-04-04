@@ -3,13 +3,11 @@ import PropTypes from 'prop-types';
 import { Paper, CircularProgress } from 'material-ui';
 import i18next from 'i18next';
 import Heading from 'd2-ui/lib/headings/Heading.component';
-import Batch from 'react-batch';
-
 import AuthorityGroup from './AuthorityGroup';
 import AuthorityItem from './AuthorityItem';
 
-const FLUSH_COUNT = 10;
-const FLUSH_INTERVAL = 10;
+const FLUSH_COUNT = 6;
+const FLUSH_INTERVAL = 1;
 
 // This component used to cause the page to hang whilst it was rendering
 // a long list of MUI Checkboxes. To prevent this we have switched to batched rendering
@@ -69,10 +67,6 @@ class AuthoritySection extends Component {
         );
     };
 
-    renderAuthRows = () => {
-        return this.state.renderedItems.map(this.renderAuthRow);
-    };
-
     renderLoaderRow() {
         return (
             <tr>
@@ -103,14 +97,7 @@ class AuthoritySection extends Component {
             return this.renderNoResultsRow();
         }
 
-        return (
-            <Batch
-                flushCount={FLUSH_COUNT}
-                flushInterval={FLUSH_INTERVAL}
-                count={renderedItems.length}
-                render={this.renderAuthRows}
-            />
-        );
+        return this.state.renderedItems.map(this.renderAuthRow);
     }
 
     renderTableHead({ headers }) {

@@ -6062,10 +6062,6 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-batch@HendrikThePendric/react-batch:
-  version "1.0.0"
-  resolved "https://codeload.github.com/HendrikThePendric/react-batch/tar.gz/dc99f32770877a891466f76ca753a173cd90b288"
-
 react-dev-utils@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-5.0.0.tgz#425ac7c9c40c2603bc4f7ab8836c1406e96bb473"
