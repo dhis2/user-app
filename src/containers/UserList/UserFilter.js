@@ -6,7 +6,7 @@ import { Checkbox } from 'material-ui';
 import DropDown from 'd2-ui/lib/form-fields/DropDown.component';
 import { updateFilter, getList } from '../../actions';
 import OrganisationUnitInput from './OrganisationUnitInput';
-import SearchFilter from '../SearchFilter';
+import SearchFilter from '../../components/SearchFilter';
 import {
     INACTIVE_MONTHS,
     INVITATION_STATUS,

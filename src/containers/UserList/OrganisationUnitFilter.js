@@ -4,7 +4,7 @@ import _ from '../../constants/lodash';
 import { USER } from '../../constants/entityTypes';
 import { connect } from 'react-redux';
 import { updateFilter, hideDialog, getList } from '../../actions';
-import SearchableOrgUnitTree from '../SearchableOrgUnitTree';
+import SearchableOrgUnitTree from '../../components/SearchableOrgUnitTree';
 
 class OrganisationUnitFilter extends Component {
     applyFilter = newSelectedOrgUnits => {

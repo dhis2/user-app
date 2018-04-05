@@ -6,7 +6,7 @@ import {
     INTERFACE_LANGUAGE,
     DATABASE_LANGUAGE,
     DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
-} from '../components/users/UserForm/config';
+} from '../containers/UserForm/config';
 import { asArray, getNestedProp } from '../utils';
 
 export const pagerSelector = _.memoize(pager => {
@@ -106,4 +106,11 @@ export const analyticsDimensionsRestrictionsSelector = _.memoize(user => {
         getNestedProp('userCredentials.cogsDimensionConstraints', user)
     );
     return [...catConstraints, ...cogsConstraints];
+});
+
+export const shortItemSelector = _.memoize((id, list) => {
+    if (!list || !id) {
+        return null;
+    }
+    return list.get(id);
 });

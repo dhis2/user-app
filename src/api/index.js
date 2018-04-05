@@ -18,7 +18,7 @@ import {
     INTERFACE_LANGUAGE,
     DATABASE_LANGUAGE,
     USE_DB_LOCALE,
-} from '../components/users/UserForm/config';
+} from '../containers/UserForm/config';
 
 class Api {
     constructor() {

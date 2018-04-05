@@ -1,4 +1,4 @@
-import { renderTextField, renderAuthorityEditor } from '../../../utils/fieldRenderers';
+import { renderTextField, renderAuthorityEditor } from '../../utils/fieldRenderers';
 
 export const NAME = 'name';
 export const DESCRIPTION = 'description';

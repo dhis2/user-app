@@ -8,7 +8,7 @@ import i18next from 'i18next';
 import api from '../../api';
 import { connect } from 'react-redux';
 import { USER } from '../../constants/entityTypes';
-import asyncValidateUsername from './UserForm/asyncValidateUsername';
+import asyncValidateUsername from '../../containers/UserForm/asyncValidateUsername';
 import { checkPasswordForErrors } from '../../utils/';
 import { getList, hideDialog, showSnackbar, hideSnackbar } from '../../actions';
 

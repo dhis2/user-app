@@ -1,6 +1,6 @@
 import { USERNAME } from './config';
 import i18next from 'i18next';
-import api from '../../../api';
+import api from '../../api';
 
 export default function asyncValidateUsername(values, _, props) {
     const newUserName = values[USERNAME];

@@ -1,6 +1,6 @@
 import i18next from 'i18next';
-import _ from '../../../constants/lodash';
-import { checkPasswordForErrors } from '../../../utils';
+import _ from '../../constants/lodash';
+import { checkPasswordForErrors } from '../../utils';
 import {
     USERNAME,
     PASSWORD,

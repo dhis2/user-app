@@ -5,43 +5,59 @@ import i18next from 'i18next';
 import { Field, reduxForm } from 'redux-form';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import RaisedButton from 'material-ui/RaisedButton';
-import { navigateTo } from '../../../utils';
-import { clearItem, showSnackbar, getList } from '../../../actions';
-import { NAME, DESCRIPTION, AUTHORITIES, FIELDS } from './config';
-import { USER_ROLE } from '../../../constants/entityTypes';
+import { navigateTo } from '../../utils';
+import { clearItem, showSnackbar, getList } from '../../actions';
+import { NAME, USERS, MANAGED_GROUPS, FIELDS } from './config';
+import { USER_GROUP } from '../../constants/entityTypes';
 import validate from './validate';
-import asyncValidateUniqueness from '../../../utils/asyncValidateUniqueness';
+import asyncValidateUniqueness from '../../utils/asyncValidateUniqueness';
+import api from '../../api';
+import { renderSearchableGroupEditor } from '../../utils/fieldRenderers';
+import { asArray } from '../../utils';
 
-class RoleForm extends Component {
-    saveRole = (values, _, props) => {
-        const { role, showSnackbar, clearItem, getList } = this.props;
-        role[NAME] = values[NAME];
-        role[DESCRIPTION] = values[DESCRIPTION];
-        role[AUTHORITIES] = values[AUTHORITIES].map(value => ({ id: value }));
+class GroupForm extends Component {
+    saveGroup = (values, _, props) => {
+        const { group, showSnackbar, clearItem, getList } = this.props;
 
-        role
+        group[NAME] = values[NAME];
+        group[USERS] = values[USERS].map(({ id }) => ({ id }));
+        group[MANAGED_GROUPS] = values[MANAGED_GROUPS].map(({ id }) => ({ id }));
+
+        group
             .save()
             .then(() => {
-                const msg = i18next.t('User role saved successfully');
+                const msg = i18next.t('User group saved successfully');
                 showSnackbar({ message: msg });
                 clearItem();
-                getList(USER_ROLE);
+                getList(USER_GROUP);
                 this.backToList();
             })
             .catch(error => {
-                const msg = i18next.t('There was a problem saving the user role.');
+                const msg = i18next.t('There was a problem saving the user group.');
                 showSnackbar({ message: msg });
             });
     };
 
     backToList = () => {
-        navigateTo('/user-roles');
+        navigateTo('/user-groups');
     };
 
     renderFields() {
+        const { group } = this.props;
         return FIELDS.map(fieldConfig => {
             const { name, fieldRenderer, label, isRequiredField, ...conf } = fieldConfig;
-            let labelText = i18next.t(label);
+            const suffix = isRequiredField ? ' *' : '';
+            const labelText = i18next.t(label) + suffix;
+
+            if (fieldRenderer === renderSearchableGroupEditor) {
+                conf.availableItemsQuery = api[conf.availableItemsQuery];
+                conf.availableItemsLabel = i18next.t(conf.availableItemsLabel);
+                conf.assignedItemsLabel = i18next.t(conf.assignedItemsLabel);
+                if (isRequiredField) {
+                    conf.assignedItemsLabel += ' *';
+                }
+                conf.initialValues = fieldConfig.initialItemsSelector(group);
+            }
 
             return (
                 <Field
@@ -55,13 +71,13 @@ class RoleForm extends Component {
         });
     }
 
-    render = () => {
+    render() {
         const { handleSubmit, asyncValidating, pristine, valid } = this.props;
         const disableSubmit = Boolean(asyncValidating || pristine || !valid);
         return (
             <main>
                 <Heading level={2}>{i18next.t('Details')}</Heading>
-                <form onSubmit={handleSubmit(this.saveRole)}>
+                <form onSubmit={handleSubmit(this.saveGroup)}>
                     {this.renderFields()}
                     <div style={{ marginTop: '2rem' }}>
                         <RaisedButton
@@ -79,39 +95,39 @@ class RoleForm extends Component {
                 </form>
             </main>
         );
-    };
+    }
 }
 
-RoleForm.propTypes = {
+GroupForm.propTypes = {
     showSnackbar: PropTypes.func.isRequired,
     clearItem: PropTypes.func.isRequired,
     getList: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     initialValues: PropTypes.object.isRequired,
-    role: PropTypes.object.isRequired,
+    group: PropTypes.object.isRequired,
     asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]).isRequired,
     pristine: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({
-    role: state.currentItem,
+    group: state.currentItem,
     initialValues: {
         [NAME]: state.currentItem[NAME],
-        [DESCRIPTION]: state.currentItem[DESCRIPTION],
-        [AUTHORITIES]: state.currentItem[AUTHORITIES],
+        [USERS]: asArray(state.currentItem[USERS]),
+        [MANAGED_GROUPS]: asArray(state.currentItem[MANAGED_GROUPS]),
     },
 });
 
-const ReduxFormWrappedRoleForm = reduxForm({
-    form: 'roleForm',
+const ReduxFormWrappedGroupForm = reduxForm({
+    form: 'groupForm',
     validate,
     asyncValidate: asyncValidateUniqueness,
     asyncBlurFields: [NAME],
-})(RoleForm);
+})(GroupForm);
 
 export default connect(mapStateToProps, {
     clearItem,
     showSnackbar,
     getList,
-})(ReduxFormWrappedRoleForm);
+})(ReduxFormWrappedGroupForm);

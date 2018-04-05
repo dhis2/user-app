@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import List from '../List';
+import List from '../../components/List';
 import i18next from 'i18next';
 import {
     isGroupContextActionAllowed,
@@ -11,8 +11,8 @@ import {
 import { getCurrentUserGroupMemberships } from '../../actions';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import { USER_GROUP } from '../../constants/entityTypes';
-import SearchFilter from '../SearchFilter';
-import ErrorMessage from '../ErrorMessage';
+import SearchFilter from '../../components/SearchFilter';
+import ErrorMessage from '../../components/ErrorMessage';
 
 class GroupList extends Component {
     componentWillMount() {

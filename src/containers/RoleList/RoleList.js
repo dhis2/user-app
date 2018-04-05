@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import i18next from 'i18next';
 import { USER_ROLE } from '../../constants/entityTypes';
-import List from '../List';
+import List from '../../components/List';
 import {
     roleContextMenuActions,
     roleContextMenuIcons,
     isRoleContextActionAllowed,
 } from './RoleContextMenuActions';
-import SearchFilter from '../SearchFilter';
+import SearchFilter from '../../components/SearchFilter';
 
 class RoleList extends Component {
     render() {

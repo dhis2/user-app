@@ -11,7 +11,7 @@ import {
     USER_PROPS,
     USER_CRED_PROPS,
     DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
-} from '../components/users/UserForm/config';
+} from '../containers/UserForm/config';
 
 export const getQueryFields = (entityName, detailFields) => {
     const formattedEntityName = _.snakeCase(entityName).toUpperCase();

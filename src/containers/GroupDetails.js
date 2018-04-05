@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { USER_GROUP, DETAILS } from '../../constants/entityTypes';
-import DetailSummary from '../DetailSummary';
+import { USER_GROUP, DETAILS } from '../constants/entityTypes';
+import DetailSummary from '../components/DetailSummary';
 import { connect } from 'react-redux';
-import { USER_GROUP_DETAILS } from '../../constants/detailFieldConfigs';
-import { getItem } from '../../actions';
+import { USER_GROUP_DETAILS } from '../constants/detailFieldConfigs';
+import { getItem } from '../actions';
 
 class GroupDetails extends Component {
     componentWillMount() {

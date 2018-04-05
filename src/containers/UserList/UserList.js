@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { USER } from '../../constants/entityTypes';
-import List from '../List';
+import List from '../../components/List';
 import i18next from 'i18next';
 
 import {

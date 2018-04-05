@@ -9,12 +9,12 @@ import CircularProgress from 'material-ui/CircularProgress';
 import HardwareKeyboardArrowUp from 'material-ui/svg-icons/hardware/keyboard-arrow-up';
 import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down';
 import i18next from 'i18next';
-import { navigateTo } from '../../../utils';
-import api from '../../../api';
-import { userFormInitialValuesSelector } from '../../../selectors';
-import { clearItem, getList, showSnackbar } from '../../../actions';
-import { USER } from '../../../constants/entityTypes';
-import { asArray, getNestedProp } from '../../../utils';
+import { navigateTo } from '../../utils';
+import api from '../../api';
+import { userFormInitialValuesSelector } from '../../selectors';
+import { clearItem, getList, showSnackbar } from '../../actions';
+import { USER } from '../../constants/entityTypes';
+import { asArray, getNestedProp } from '../../utils';
 import * as CONFIG from './config';
 import validate from './validate';
 import asyncValidateUsername from './asyncValidateUsername';
@@ -24,7 +24,7 @@ import {
     renderSearchableOrgUnitTree,
     renderSearchableGroupEditor,
     renderSelectField,
-} from '../../../utils/fieldRenderers';
+} from '../../utils/fieldRenderers';
 
 class UserForm extends Component {
     constructor(props) {

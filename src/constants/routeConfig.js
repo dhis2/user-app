@@ -1,13 +1,13 @@
 import React from 'react';
-import UserList from '../components/users/UserList';
+import UserList from '../containers/UserList';
 import FormLoader from '../components/FormLoader';
-import UserProfile from '../components/users/UserProfile';
+import UserProfile from '../containers/UserProfile';
 import PageNotFound from '../components/PageNotFound';
 import CardLinks from '../components/CardLinks';
-import RoleList from '../components/roles/RoleList';
-import RoleDetails from '../components/roles/RoleDetails';
-import GroupList from '../components/groups/GroupList';
-import GroupDetails from '../components/groups/GroupDetails';
+import RoleList from '../containers/RoleList';
+import RoleDetails from '../containers/RoleDetails';
+import GroupList from '../containers/GroupList';
+import GroupDetails from '../containers/GroupDetails';
 import { USER, USER_ROLE, USER_GROUP } from './entityTypes';
 
 const USER_SECTION = {

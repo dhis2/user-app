@@ -1,6 +1,6 @@
 import { blue600 } from 'material-ui/styles/colors';
-import { asArray, getNestedProp } from '../../../utils';
-import { analyticsDimensionsRestrictionsSelector } from '../../../selectors';
+import { asArray, getNestedProp } from '../../utils';
+import { analyticsDimensionsRestrictionsSelector } from '../../selectors';
 import {
     renderTextField,
     renderCheckbox,
@@ -8,7 +8,7 @@ import {
     renderSearchableGroupEditor,
     renderSearchableOrgUnitTree,
     renderText,
-} from '../../../utils/fieldRenderers';
+} from '../../utils/fieldRenderers';
 
 export const STYLES = {
     loaderWrap: {
