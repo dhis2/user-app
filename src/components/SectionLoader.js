@@ -19,15 +19,26 @@ class SectionLoader extends Component {
         initCurrentUser();
     }
 
+    userHasAuthorities({ entityType }) {
+        if (!entityType) {
+            return true;
+        }
+        const { currentUser, models } = this.context.d2;
+        const canCreate = currentUser.canCreate(models[entityType]);
+        const canDelete = currentUser.canDelete(models[entityType]);
+        return canCreate || canDelete;
+    }
+
     getRouteConfig() {
-        // TODO: Only return sections available to the currentUser
         return ROUTE_CONFIG.reduce(
             (routeConfig, configItem) => {
                 let { routes, sections } = routeConfig;
-                if (configItem.label) {
-                    sections.push(configItem);
+                if (this.userHasAuthorities(configItem)) {
+                    routes.push(configItem);
+                    if (configItem.label) {
+                        sections.push(configItem);
+                    }
                 }
-                routes.push(configItem);
                 return routeConfig;
             },
             { routes: [], sections: [] }

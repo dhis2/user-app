@@ -4,20 +4,44 @@ import { navigateTo } from '../../utils';
 import { USER_ROLE } from '../../constants/entityTypes';
 import { deleteModel, openSharingSettings } from '../../utils/sharedActions';
 
-export const isRoleContextActionAllowed = () => true;
+const show_details = 'show_details';
+const sharing_settings = 'sharing_settings';
+const edit = 'edit';
+const remove = 'remove';
+
+export const isRoleContextActionAllowed = (model, action) => {
+    if (!model) {
+        return false;
+    }
+
+    const { access } = model;
+
+    switch (action) {
+        case show_details:
+            return access.read;
+        case sharing_settings:
+            return access.externalize;
+        case edit:
+            return access.update;
+        case remove:
+            return access.delete;
+        default:
+            return true;
+    }
+};
 
 export const roleContextMenuIcons = {
-    show_details: 'info',
-    sharing_settings: 'share',
-    edit: 'edit',
-    remove: 'delete',
+    [show_details]: 'info',
+    [sharing_settings]: 'share',
+    [edit]: 'edit',
+    [remove]: 'delete',
 };
 
 export const roleContextMenuActions = Action.createActionsFromNames([
-    'show_details',
-    'sharing_settings',
-    'edit',
-    'remove',
+    [show_details],
+    [sharing_settings],
+    [edit],
+    [remove],
 ]);
 
 roleContextMenuActions.show_details.subscribe(({ data: { id } }) => {

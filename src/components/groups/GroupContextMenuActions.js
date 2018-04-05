@@ -19,15 +19,24 @@ export const isGroupContextActionAllowed = (model, action) => {
         return false;
     }
 
-    if (action === join_group && model.currentUserIsMember) {
-        return false;
-    }
+    const { access } = model;
 
-    if (action === leave_group && !model.currentUserIsMember) {
-        return false;
+    switch (action) {
+        case show_details:
+            return access.read;
+        case sharing_settings:
+            return access.externalize;
+        case edit:
+            return access.update;
+        case join_group:
+            return access.update && !model.currentUserIsMember;
+        case leave_group:
+            return access.update && model.currentUserIsMember;
+        case remove:
+            return access.delete;
+        default:
+            return true;
     }
-
-    return true;
 };
 
 export const groupContextMenuIcons = {

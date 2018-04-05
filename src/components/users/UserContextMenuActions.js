@@ -21,15 +21,26 @@ export const isUserContextActionAllowed = (model, action) => {
         return false;
     }
 
-    if (action === disable && model.userCredentials.disabled) {
-        return false;
-    }
+    const { access, userCredentials: { disabled } } = model;
 
-    if (action === enable && !model.userCredentials.disabled) {
-        return false;
+    switch (action) {
+        case profile:
+            return access.read;
+        case edit:
+            return access.update;
+        case remove:
+            return access.delete;
+        case replicate:
+            const currentUser = api.getCurrentUser();
+            const userModelDefinition = api.getModelDefinition(USER);
+            return access.update && currentUser.canCreate(userModelDefinition);
+        case disable:
+            return access.update && !disabled;
+        case enable:
+            return access.update && disabled;
+        default:
+            return true;
     }
-
-    return true;
 };
 
 export const userContextMenuIcons = {

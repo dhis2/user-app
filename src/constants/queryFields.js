@@ -2,12 +2,14 @@
 export const USER_LIST = [
     'displayName',
     'id',
+    'access',
     'userCredentials[username,disabled]',
     'teiSearchOrganisationUnits[id,path]',
 ];
 export const USER_GROUP_LIST = [
     'displayName',
     'id',
+    'access',
     'user[displayName,id]',
     'publicAccess',
     'userGroupAccesses',
