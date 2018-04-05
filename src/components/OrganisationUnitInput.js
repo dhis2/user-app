@@ -4,9 +4,9 @@ import TextField from 'material-ui/TextField';
 import ActionOpenInNew from 'material-ui/svg-icons/action/open-in-new';
 import PropTypes from 'prop-types';
 import i18next from 'i18next';
-import { showDialog, hideDialog } from '../../actions';
+import { showDialog, hideDialog } from '../actions';
 import OrganisationUnitFilter from './OrganisationUnitFilter';
-import { orgUnitsAsStringSelector } from '../../selectors';
+import { orgUnitsAsStringSelector } from '../selectors';
 
 const styles = {
     wrap: {

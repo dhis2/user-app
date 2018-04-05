@@ -5,12 +5,12 @@ import { RaisedButton } from 'material-ui';
 import { TextField } from 'redux-form-material-ui';
 import { orange500 } from 'material-ui/styles/colors';
 import i18next from 'i18next';
-import api from '../../api';
+import api from '../api';
 import { connect } from 'react-redux';
-import { USER } from '../../constants/entityTypes';
-import asyncValidateUsername from '../../containers/UserForm/asyncValidateUsername';
-import { checkPasswordForErrors } from '../../utils/';
-import { getList, hideDialog, showSnackbar, hideSnackbar } from '../../actions';
+import { USER } from '../constants/entityTypes';
+import asyncValidateUsername from '../containers/UserForm/asyncValidateUsername';
+import { checkPasswordForErrors } from '../utils/';
+import { getList, hideDialog, showSnackbar, hideSnackbar } from '../actions';
 
 const FORM_NAME = 'replicateUserForm';
 const USERNAME = 'username';

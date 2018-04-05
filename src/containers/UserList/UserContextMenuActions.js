@@ -7,7 +7,7 @@ import api from '../../api';
 import { deleteModel } from '../../utils/sharedActions';
 import { USER } from '../../constants/entityTypes';
 import { showDialog, hideDialog, showSnackbar, getList } from '../../actions';
-import ReplicateUserForm from './ReplicateUserForm';
+import ReplicateUserForm from '../../components/ReplicateUserForm';
 
 const profile = 'profile';
 const edit = 'edit';

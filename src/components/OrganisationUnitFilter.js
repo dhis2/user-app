@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import _ from '../../constants/lodash';
-import { USER } from '../../constants/entityTypes';
+import _ from '../constants/lodash';
+import { USER } from '../constants/entityTypes';
 import { connect } from 'react-redux';
-import { updateFilter, hideDialog, getList } from '../../actions';
-import SearchableOrgUnitTree from '../../components/SearchableOrgUnitTree';
+import { updateFilter, hideDialog, getList } from '../actions';
+import SearchableOrgUnitTree from '../components/SearchableOrgUnitTree';
 
 class OrganisationUnitFilter extends Component {
     applyFilter = newSelectedOrgUnits => {
