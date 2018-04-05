@@ -9,15 +9,6 @@ const style = {
 };
 
 class SideNav extends Component {
-    componentWillMount() {
-        const { sections, history, location: { pathname } } = this.props;
-        const userPath = sections[0].path;
-
-        if (pathname === '/') {
-            history.push(userPath);
-        }
-    }
-
     changeSectionHandler = key => {
         const { sections, history } = this.props;
         const section = sections.find(section => section.key === key);
