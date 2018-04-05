@@ -1,4 +1,5 @@
 import { getInstance } from 'd2/lib/d2';
+import i18next from 'i18next';
 import {
     getQueryFields,
     createRequestData,
@@ -148,31 +149,34 @@ class Api {
     getSelectedAndAvailableLocales(username) {
         username = username ? encodeURIComponent(username) : null;
 
+        const useDbLocaleOption = {
+            locale: USE_DB_LOCALE,
+            name: i18next.t('Use database locale / no translation'),
+        };
+
         const dbLocales = this.d2Api.get('/locales/db');
         const uiLocales = this.d2Api.get('/locales/ui');
 
         const uiLocale = username
-            ? this.d2Api.get(`/userSettings/keyUiLocale?username=${username}`)
-            : this.d2Api.get('/systemSettings/keyUiLocale');
+            ? this.d2Api.get(`/userSettings/keyUiLocale?user=${username}`)
+            : this.d2.system.settings.get('keyUiLocale');
 
         const dbLocale = username
-            ? this.d2Api.get(
-                  `/userSettings/keyDbLocale?username=${username}&useFallback=false`
-              )
+            ? this.d2Api.get(`/userSettings/keyDbLocale?user=${username}`)
             : Promise.resolve(USE_DB_LOCALE);
 
-        return Promise.all([dbLocales, uiLocales, dbLocale, uiLocale]).then(responses => {
-            return {
+        return Promise.all([dbLocales, uiLocales, dbLocale, uiLocale]).then(
+            ([dbLocales, uiLocales, dbLocale, uiLocale]) => ({
                 db: {
-                    available: responses[0],
-                    selected: responses[2],
+                    available: [useDbLocaleOption, ...dbLocales],
+                    selected: dbLocale || USE_DB_LOCALE,
                 },
                 ui: {
-                    available: responses[1],
-                    selected: responses[3],
+                    available: uiLocales,
+                    selected: uiLocale,
                 },
-            };
-        });
+            })
+        );
     }
 
     saveUser(values, user, currentUiLocale, currentDbLocale) {
@@ -215,92 +219,6 @@ class Api {
         return saveFunction.then(Promise.all(localePromises));
     }
 
-    // TODO: This needs to be rewritten once the backend issues are solved
-    // https://jira.dhis2.org/browse/DHIS2-3169
-    // https://jira.dhis2.org/browse/DHIS2-3168
-    // https://jira.dhis2.org/browse/DHIS2-3185
-    // https://jira.dhis2.org/browse/DHIS2-3181
-    // getSelectedAndAvailableLocales(username) {
-    //     username = username ? encodeURIComponent(username) : null;
-    //     const DB_LOCALE = ' ';
-    //     const useDbLocaleOption = {
-    //         locale: DB_LOCALE,
-    //         name: 'Use database locale / no translation',
-    //     };
-
-    //     const dbLocales = this.d2Api.get('/locales/db');
-    //     const uiLocales = this.d2Api.get('/locales/ui');
-    //     const uiLocale =
-    //         username && 1 === 2
-    //             ? this.d2Api.get(`/userSettings/keyUiLocale?username=${username}`)
-    //             : Promise.resolve('en');
-    //     const dbLocale =
-    //         username && 1 === 2
-    //             ? this.d2Api.get(`/userSettings/keyDbLocale?username=${username}`).then(
-    //                   response => response,
-    //                   error => {
-    //                       // Swallow this error and assume the user wants to use the DB locale
-    //                       if (
-    //                           error.message ===
-    //                           'User setting not found for key: keyDbLocale'
-    //                       ) {
-    //                           return DB_LOCALE;
-    //                       } else {
-    //                           throw new Error(error.message);
-    //                       }
-    //                   }
-    //               )
-    //             : Promise.resolve(DB_LOCALE);
-
-    //     return Promise.all([dbLocales, uiLocales, dbLocale, uiLocale]).then(responses => {
-    //         return {
-    //             db: {
-    //                 available: [useDbLocaleOption, ...responses[0]],
-    //                 selected: responses[2],
-    //             },
-    //             ui: {
-    //                 available: responses[1],
-    //                 selected: responses[3],
-    //             },
-    //         };
-    //     });
-    // }
-
-    // saveUser(values, user, currentUiLocale, currentDbLocale) {
-    //     let saveFunction;
-    //     let localePromises = [];
-    //     const userData = parseUserSaveData(values, user);
-
-    //     if (user.id) {
-    //         saveFunction = this.d2Api.update(`/users/${user.id}`, userData);
-    //     } else {
-    //         saveFunction = this.d2Api.post('/users', userData);
-    //     }
-
-    //     if (values[INTERFACE_LANGUAGE] !== currentUiLocale) {
-    //         localePromises.push(
-    //             this.d2Api.post(
-    //                 parseLocaleUrl('Ui', values.username, values[INTERFACE_LANGUAGE])
-    //             )
-    //         );
-    //     }
-
-    //     if (values[DATABASE_LANGUAGE] !== currentDbLocale) {
-    //         localePromises.push(
-    //             this.d2Api.post(
-    //                 parseLocaleUrl('Db', values.username, values[DATABASE_LANGUAGE])
-    //             )
-    //         );
-    //     }
-
-    //     if (localePromises.length === 0) {
-    //         localePromises.push(Promise.resolve('Nothing happened'));
-    //     }
-
-    //     // Updating locales after user in case the use was not available yet
-    //     return saveFunction.then(Promise.all(localePromises));
-    // }
-
     // TODO: A proper API endpoint will be made available for this call once ALL struts apps
     // have been ported to React. Once this is done we need to update this method.
     getGroupedAuthorities() {
@@ -325,6 +243,10 @@ class Api {
 
     getContextPath() {
         return this.d2.system.systemInfo.contextPath;
+    }
+
+    getModelDefinition(name) {
+        return this.d2.models[name];
     }
 }
 const api = new Api();
