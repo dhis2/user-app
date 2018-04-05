@@ -5,15 +5,13 @@ import i18next from 'i18next';
 import { Field, reduxForm } from 'redux-form';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import RaisedButton from 'material-ui/RaisedButton';
-import { navigateTo } from '../../utils';
+import { navigateTo, asyncValidateUniqueness, asArray } from '../../utils';
+import { renderSearchableGroupEditor } from '../../utils/fieldRenderers';
 import { clearItem, showSnackbar, getList } from '../../actions';
 import { NAME, USERS, MANAGED_GROUPS, FIELDS } from './config';
 import { USER_GROUP } from '../../constants/entityTypes';
 import validate from './validate';
-import asyncValidateUniqueness from '../../utils/asyncValidateUniqueness';
 import api from '../../api';
-import { renderSearchableGroupEditor } from '../../utils/fieldRenderers';
-import { asArray } from '../../utils';
 
 class GroupForm extends Component {
     saveGroup = (values, _, props) => {

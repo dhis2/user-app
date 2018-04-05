@@ -5,12 +5,11 @@ import i18next from 'i18next';
 import { Field, reduxForm } from 'redux-form';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import RaisedButton from 'material-ui/RaisedButton';
-import { navigateTo } from '../../utils';
+import { navigateTo, asyncValidateUniqueness } from '../../utils';
 import { clearItem, showSnackbar, getList } from '../../actions';
 import { NAME, DESCRIPTION, AUTHORITIES, FIELDS } from './config';
 import { USER_ROLE } from '../../constants/entityTypes';
 import validate from './validate';
-import asyncValidateUniqueness from '../../utils/asyncValidateUniqueness';
 
 class RoleForm extends Component {
     saveRole = (values, _, props) => {
