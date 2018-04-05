@@ -5,7 +5,7 @@ import {
     createRequestData,
     parseUserSaveData,
     parseLocaleUrl,
-} from './helpers';
+} from './utils';
 
 import groupAuthorities from '../components/AuthorityEditor/utils/groupAuthorities';
 
