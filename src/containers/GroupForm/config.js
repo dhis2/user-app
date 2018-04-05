@@ -1,5 +1,5 @@
 import { renderTextField, renderSearchableGroupEditor } from '../../utils/fieldRenderers';
-import { asArray } from '../../utils';
+import asArray from '../../utils/asArray';
 
 export const NAME = 'name';
 export const USERS = 'users';

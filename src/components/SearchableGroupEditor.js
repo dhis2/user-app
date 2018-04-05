@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { red500 } from 'material-ui/styles/colors';
 import TextField from 'material-ui/TextField/TextField';
 import Heading from 'd2-ui/lib/headings/Heading.component';
-import { asArray } from '../utils';
+import asArray from '../utils/asArray';
 import i18next from 'i18next';
 
 const styles = {

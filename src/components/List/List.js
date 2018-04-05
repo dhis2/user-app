@@ -9,7 +9,7 @@ import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import 'd2-ui/lib/css/DataTable.css';
 import 'd2-ui/lib/css/Pagination.css';
-import { navigateTo } from '../../utils';
+import navigateTo from '../../utils/navigateTo';
 import { listSelector, pagerSelector } from '../../selectors';
 import { USER } from '../../constants/entityTypes';
 import {

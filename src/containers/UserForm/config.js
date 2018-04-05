@@ -1,5 +1,6 @@
 import { blue600 } from 'material-ui/styles/colors';
-import { asArray, getNestedProp } from '../../utils';
+import asArray from '../../utils/asArray';
+import getNestedProp from '../../utils/getNestedProp';
 import { analyticsDimensionsRestrictionsSelector } from '../../selectors';
 import {
     renderTextField,

@@ -9,7 +9,7 @@ import api from '../api';
 import { connect } from 'react-redux';
 import { USER } from '../constants/entityTypes';
 import asyncValidateUsername from '../containers/UserForm/asyncValidateUsername';
-import { checkPasswordForErrors } from '../utils/';
+import checkPasswordForErrors from '../utils/checkPasswordForErrors';
 import { getList, hideDialog, showSnackbar, hideSnackbar } from '../actions';
 
 const FORM_NAME = 'replicateUserForm';

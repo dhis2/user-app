@@ -1,6 +1,6 @@
 import i18next from 'i18next';
 import Action from 'd2-ui/lib/action/Action';
-import { navigateTo } from '../../utils';
+import navigateTo from '../../utils/navigateTo';
 import { USER_ROLE } from '../../constants/entityTypes';
 import { deleteModel, openSharingSettings } from '../../utils/sharedActions';
 

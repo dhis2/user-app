@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 import theme from './theme';
-import { history } from './utils';
+import history from './utils/history';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import D2UIApp from 'd2-ui/lib/app/D2UIApp';
 import HeaderBarComponent from 'd2-ui/lib/app-header/HeaderBar';

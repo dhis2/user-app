@@ -8,7 +8,7 @@ import CardActions from 'material-ui/Card/CardActions';
 import IconButton from 'material-ui/IconButton/IconButton';
 import { grey600 } from 'material-ui/styles/colors';
 import _ from '../constants/lodash';
-import { navigateTo } from '../utils';
+import navigateTo from '../utils/navigateTo';
 import { SECTIONS } from '../constants/routeConfig';
 
 const cardStyle = {

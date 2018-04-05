@@ -4,7 +4,7 @@ import { Paper } from 'material-ui';
 import _ from '../constants/lodash';
 import api from '../api';
 import i18next from 'i18next';
-import { parseDateFromUTCString } from '../utils';
+import parseDateFromUTCString from '../utils/parseDateFromUTCString';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import ErrorMessage from './ErrorMessage';
 import Heading from 'd2-ui/lib/headings/Heading.component';

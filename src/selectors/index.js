@@ -7,7 +7,8 @@ import {
     DATABASE_LANGUAGE,
     DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
 } from '../containers/UserForm/config';
-import { asArray, getNestedProp } from '../utils';
+import asArray from '../utils/asArray';
+import getNestedProp from '../utils/getNestedProp';
 
 export const pagerSelector = _.memoize(pager => {
     if (pager === null) {
