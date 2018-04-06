@@ -9,6 +9,7 @@ import CircularProgress from 'material-ui/CircularProgress';
 import HardwareKeyboardArrowUp from 'material-ui/svg-icons/hardware/keyboard-arrow-up';
 import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down';
 import i18next from 'i18next';
+import makeTrashable from 'trashable';
 import navigateTo from '../../utils/navigateTo';
 import asArray from '../../utils/asArray';
 import getNestedProp from '../../utils/getNestedProp';
@@ -34,14 +35,18 @@ class UserForm extends Component {
             showMore: false,
             locales: null,
         };
+        this.trashableLocalePromise = null;
     }
 
     componentWillMount() {
         const { user, showSnackbar, initialize } = this.props;
         const username = user.id ? user.userCredentials.username : null;
 
-        api
-            .getSelectedAndAvailableLocales(username)
+        this.trashableLocalePromise = makeTrashable(
+            api.getSelectedAndAvailableLocales(username)
+        );
+
+        this.trashableLocalePromise
             .then(locales => {
                 this.setState({ locales });
                 initialize(userFormInitialValuesSelector(user, locales));
@@ -50,6 +55,10 @@ class UserForm extends Component {
                 const msg = 'Could not load the user data. Please refresh the page.';
                 showSnackbar({ message: i18next.t(msg) });
             });
+    }
+
+    componentWillUnmount() {
+        this.trashableLocalePromise.trash();
     }
 
     toggleShowMore = () => {

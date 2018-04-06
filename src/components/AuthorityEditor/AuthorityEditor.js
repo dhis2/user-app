@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import i18next from 'i18next';
 import './style.css';
-import api from '../../api';
 import Heading from 'd2-ui/lib/headings/Heading.component';
+import makeTrashable from 'trashable';
 
+import api from '../../api';
 import AuthorityFilter from './AuthorityFilter';
 import FilteredAuthoritySections from './FilteredAuthoritySections';
 import { EMPTY_GROUPED_AUTHORITIES } from './utils/groupAuthorities';
@@ -20,6 +21,7 @@ class AuthorityEditor extends Component {
             (lookup, item) => lookup.set(item, true),
             new Map()
         );
+        this.groupedAuthoritiesPromise = null;
     }
 
     getChildContext() {
@@ -31,9 +33,14 @@ class AuthorityEditor extends Component {
     }
 
     componentDidMount() {
-        api.getGroupedAuthorities().then(allGroupedAuthorities => {
+        this.groupedAuthoritiesPromise = makeTrashable(api.getGroupedAuthorities());
+        this.groupedAuthoritiesPromise.then(allGroupedAuthorities => {
             this.setState({ allGroupedAuthorities: allGroupedAuthorities });
         });
+    }
+
+    componentWillUnmount() {
+        this.groupedAuthoritiesPromise.trash();
     }
 
     getChangedProperties(newObject, oldObject) {

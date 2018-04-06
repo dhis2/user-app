@@ -4,6 +4,7 @@ import AutoComplete from 'material-ui/AutoComplete';
 import MenuItem from 'material-ui/MenuItem';
 import { orange500, blue500 } from 'material-ui/styles/colors';
 import i18next from 'i18next';
+import makeTrashable from 'trashable';
 import _ from '../constants/lodash';
 import PropTypes from 'prop-types';
 
@@ -49,6 +50,11 @@ class AsyncAutoComplete extends Component {
         const debounceTime = props.queryDebounceTime || 375;
         this.state = { ...baseState };
         this.getItems = _.debounce(this.getItems, debounceTime);
+        this.trashableQuery = null;
+    }
+
+    componentWillUnmount() {
+        this.trashableQuery && this.trashableQuery.trash();
     }
 
     onAutoCompleteChange = value => {
@@ -72,7 +78,8 @@ class AsyncAutoComplete extends Component {
             this.setState({ ...baseState, filteredItems: loaderDataSource });
 
             // Then query
-            query(value).then(modelCollection => {
+            this.trashableQuery = makeTrashable(query(value));
+            this.trashableQuery.then(modelCollection => {
                 if (modelCollection.size > 0) {
                     // Display results if any were returned
                     const filteredItems = modelCollection.toArray().map(model => ({

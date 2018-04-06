@@ -13,7 +13,7 @@ import {
 
 export const STYLES = {
     loaderWrap: {
-        padding: '3rem',
+        paddingTop: '2rem',
         textAlign: 'center',
     },
     toggler: {

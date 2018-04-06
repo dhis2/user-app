@@ -180,43 +180,41 @@ class Api {
     }
 
     saveUser(values, user, currentUiLocale, currentDbLocale) {
-        let saveFunction;
-        let localePromises = [];
         const userData = parseUserSaveData(values, user);
-        const username = values.username;
+        const saveUserPromise = user.id
+            ? this.d2Api.update(`/users/${user.id}`, userData)
+            : this.d2Api.post('/users', userData);
 
-        if (user.id) {
-            saveFunction = this.d2Api.update(`/users/${user.id}`, userData);
-        } else {
-            saveFunction = this.d2Api.post('/users', userData);
-        }
+        return saveUserPromise.then(() => {
+            const localePromises = [];
+            const username = encodeURIComponent(values.username);
 
-        // Add follow-up request for setting uiLocale if needed
-        const uiLocale = values[INTERFACE_LANGUAGE];
-        if (uiLocale !== currentUiLocale) {
-            localePromises.push(
-                this.d2Api.post(parseLocaleUrl('Ui', username, uiLocale))
-            );
-        }
+            // Add follow-up request for setting uiLocale if needed
+            const uiLocale = values[INTERFACE_LANGUAGE];
+            if (uiLocale !== currentUiLocale) {
+                localePromises.push(
+                    this.d2Api.post(parseLocaleUrl('Ui', username, uiLocale))
+                );
+            }
 
-        // Add follow-up request for setting dbLocale if needed
-        const dbLocale = values[DATABASE_LANGUAGE];
-        if (dbLocale !== currentDbLocale) {
-            const dbLocalePromise =
-                dbLocale === USE_DB_LOCALE
-                    ? this.d2Api.delete(`/userSettings/keyDbLocale?user=${username}`)
-                    : this.d2Api.post(parseLocaleUrl('Db', username, dbLocale));
-            localePromises.push(dbLocalePromise);
-        }
+            // Add follow-up request for setting dbLocale if needed
+            const dbLocale = values[DATABASE_LANGUAGE];
+            if (dbLocale !== currentDbLocale) {
+                const dbLocalePromise =
+                    dbLocale === USE_DB_LOCALE
+                        ? this.d2Api.delete(`/userSettings/keyDbLocale?user=${username}`)
+                        : this.d2Api.post(parseLocaleUrl('Db', username, dbLocale));
+                localePromises.push(dbLocalePromise);
+            }
 
-        // Dummy follow-up request to prevent Promise.all error
-        // if neither locale fields need updating
-        if (localePromises.length === 0) {
-            localePromises.push(Promise.resolve('No locale changes detected'));
-        }
-
-        // Updating locales after user in case the user is new
-        return saveFunction.then(Promise.all(localePromises));
+            // Dummy follow-up request to prevent Promise.all error
+            // if neither locale fields need updating
+            if (localePromises.length === 0) {
+                localePromises.push(Promise.resolve('No locale changes detected'));
+            }
+            // Updating locales after user in case the user is new
+            return Promise.all(localePromises);
+        });
     }
 
     // TODO: A proper API endpoint will be made available for this call once ALL struts apps
@@ -250,5 +248,4 @@ class Api {
     }
 }
 const api = new Api();
-window.api = api;
 export default api;

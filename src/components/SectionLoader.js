@@ -46,7 +46,7 @@ class SectionLoader extends Component {
     }
 
     renderRoutes(routes) {
-        return routes.map(section => <Route {...section} />);
+        return routes.map(section => <Route exact strict {...section} />);
     }
 
     render() {

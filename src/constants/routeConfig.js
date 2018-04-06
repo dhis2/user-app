@@ -106,7 +106,6 @@ const ROUTE_CONFIG = [
     {
         key: 'landing_page',
         path: '/',
-        exact: true,
         component: CardLinks,
     },
     {
