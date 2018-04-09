@@ -10,7 +10,7 @@
         "d2-utilizr": "^0.2.15",
         "d3-color": "^1.0.3",
         "i18next": "^10.3.0",
-        "i18next-xhr-backend": "^1.5.1",
+        "d2-i18n": "^1.x",
         "material-ui": "^0.20.0",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
@@ -28,19 +28,18 @@
         "trashable": "^1.0.6"
     },
     "scripts": {
-        "start": "npm run convert-po  && react-scripts start",
+        "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test --env=jsdom",
         "eject": "react-scripts eject",
-        "convert-po": "node po-converter.js",
-        "extract-pot": "node pot-extractor.js",
-        "refresh-translations-template": "npm run extract-pot -- -o translations.pot && git add ./public/i18n/translations.pot",
-        "lint-all": "node node_modules/eslint/bin/eslint.js --config node_modules/eslint-config-react-app/index.js src/**"
+        "localize": "npm run extract-pot && d2-i18n-generate -n user-app -p ./i18n/ -o ./src/locales/",
+        "extract-pot": "d2-i18n-extract -p src/ -o i18n/"
     },
     "devDependencies": {
         "fs": "^0.0.1-security",
-        "i18next-conv": "^6.0.0",
-        "i18next-scanner": "^2.4.4",
+        "d2-i18n-extract": "^1.x",
+        "d2-i18n-generate": "^1.x",
+        "husky": "^0.15.0-rc.12",
         "minimist": "^1.2.0",
         "recursive-readdir": "^2.2.1",
         "redux-logger": "^3.0.6"

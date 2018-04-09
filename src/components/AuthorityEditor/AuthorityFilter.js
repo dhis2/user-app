@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import { TextField, Checkbox } from 'material-ui';
 
 class AuthorityFilter extends Component {
@@ -28,13 +28,13 @@ class AuthorityFilter extends Component {
             <div className="authority-editor__filterbar">
                 <TextField
                     className="authority-editor__filter-text-input search-input"
-                    floatingLabelText={i18next.t('Search')}
+                    floatingLabelText={i18n.t('Search')}
                     onChange={this.onSearchStrChange}
                     type="search"
                 />
                 <Checkbox
                     className="authority-editor__filter-checkbox"
-                    label={i18next.t('Selected authorities only')}
+                    label={i18n.t('Selected authorities only')}
                     checked={this.state.selectedOnly}
                     onCheck={this.onSelectedOnlyChange}
                     style={{ width: '300px' }}

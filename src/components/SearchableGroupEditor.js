@@ -6,7 +6,7 @@ import { red500 } from 'material-ui/styles/colors';
 import TextField from 'material-ui/TextField/TextField';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import asArray from '../utils/asArray';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 
 const styles = {
     outerWrap: {
@@ -136,8 +136,8 @@ class SearchableGroupEditor extends Component {
                 type="search"
                 onChange={this.updateFilterText}
                 value={this.state.filterText}
-                floatingLabelText={i18next.t('Filter')}
-                hintText={i18next.t('Filter available and selected items')}
+                floatingLabelText={i18n.t('Filter')}
+                hintText={i18n.t('Filter available and selected items')}
                 style={{ marginTop: '-16px' }}
             />
         );

@@ -1,5 +1,6 @@
 import { blue600 } from 'material-ui/styles/colors';
 import asArray from '../../utils/asArray';
+import i18n from 'd2-i18n';
 import getNestedProp from '../../utils/getNestedProp';
 import { analyticsDimensionsRestrictionsSelector } from '../../selectors';
 import {
@@ -82,8 +83,9 @@ export const CREATE_REQUIRED = 'CREATE_REQUIRED';
 export const USE_DB_LOCALE = 'use_db_locale';
 
 const BASE_CAPTION = {
-    label:
-        'Selecting an organisation unit provides access to all units in the sub-hierarchy',
+    label: i18n.t(
+        'Selecting an organisation unit provides access to all units in the sub-hierarchy'
+    ),
     fieldRenderer: renderText,
     style: {
         clear: 'both',
@@ -96,18 +98,18 @@ const BASE_CAPTION = {
 export const BASE_FIELDS = [
     {
         name: USERNAME,
-        label: 'Username',
+        label: i18n.t('Username'),
         fieldRenderer: renderTextField,
         isRequiredField: CREATE_REQUIRED,
     },
     {
         name: EXTERNAL_AUTH,
-        label: 'External authentication only (OpenID or LDAP)',
+        label: i18n.t('External authentication only (OpenID or LDAP)'),
         fieldRenderer: renderCheckbox,
     },
     {
         name: PASSWORD,
-        label: 'Password',
+        label: i18n.t('Password'),
         fieldRenderer: renderTextField,
         isRequiredField: CREATE_REQUIRED,
         props: {
@@ -116,7 +118,7 @@ export const BASE_FIELDS = [
     },
     {
         name: REPEAT_PASSWORD,
-        label: 'Retype password',
+        label: i18n.t('Retype password'),
         fieldRenderer: renderTextField,
         isRequiredField: CREATE_REQUIRED,
         props: {
@@ -125,45 +127,45 @@ export const BASE_FIELDS = [
     },
     {
         name: SURNAME,
-        label: 'Surname',
+        label: i18n.t('Surname'),
         isRequiredField: ALWAYS_REQUIRED,
         fieldRenderer: renderTextField,
     },
     {
         name: FIRST_NAME,
-        label: 'First name',
+        label: i18n.t('First name'),
         isRequiredField: ALWAYS_REQUIRED,
         fieldRenderer: renderTextField,
     },
     {
         name: EMAIL,
-        label: 'E-mail',
+        label: i18n.t('E-mail'),
         fieldRenderer: renderTextField,
     },
     {
         name: OPEN_ID,
-        label: 'openID',
+        label: i18n.t('openID'),
         fieldRenderer: renderTextField,
     },
     {
         name: LDAP_ID,
-        label: 'LDAP Identifier',
+        label: i18n.t('LDAP Identifier'),
         fieldRenderer: renderTextField,
     },
     {
         name: PHONE_NUMBER,
-        label: 'Mobile phone number',
+        label: i18n.t('Mobile phone number'),
         fieldRenderer: renderTextField,
     },
     {
         name: INTERFACE_LANGUAGE,
-        label: 'Interface language',
+        label: i18n.t('Interface language'),
         fieldRenderer: renderSelectField,
         optionsSelector: 'locales.ui.available',
     },
     {
         name: DATABASE_LANGUAGE,
-        label: 'Database language',
+        label: i18n.t('Database language'),
         fieldRenderer: renderSelectField,
         optionsSelector: 'locales.db.available',
     },
@@ -174,18 +176,18 @@ export const BASE_FIELDS = [
         initialItemsSelector: user =>
             asArray(getNestedProp('userCredentials.userRoles', user) || []),
         availableItemsQuery: 'getAvailableUserRoles',
-        availableItemsLabel: 'Available roles',
-        assignedItemsLabel: 'Selected roles',
+        availableItemsLabel: i18n.t('Available roles'),
+        assignedItemsLabel: i18n.t('Selected roles'),
     },
     {
         name: DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
-        label: 'Data capture and maintenance organisation units',
+        label: i18n.t('Data capture and maintenance organisation units'),
         fieldRenderer: renderSearchableOrgUnitTree,
         wrapperStyle: { ...STYLES.orgUnitTree, paddingRight: '60px' },
     },
     {
         name: DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS,
-        label: 'Data output and analytic organisation units',
+        label: i18n.t('Data output and analytic organisation units'),
         fieldRenderer: renderSearchableOrgUnitTree,
         wrapperStyle: { ...STYLES.orgUnitTree, paddingLeft: '60px' },
     },
@@ -195,7 +197,7 @@ export const BASE_FIELDS = [
     },
     {
         name: TEI_SEARCH_ORG_UNITS,
-        label: 'Search Organisation Units',
+        label: i18n.t('Search Organisation Units'),
         fieldRenderer: renderSearchableOrgUnitTree,
         wrapperStyle: { ...STYLES.orgUnitTree, paddingRight: '60px' },
     },
@@ -211,16 +213,18 @@ export const ADDITIONAL_FIELDS = [
         fieldRenderer: renderSearchableGroupEditor,
         initialItemsSelector: user => asArray(user.userGroups) || [],
         availableItemsQuery: 'getAvailableUserGroups',
-        availableItemsLabel: 'Available user groups',
-        assignedItemsLabel: 'Selected user groups',
+        availableItemsLabel: i18n.t('Available user groups'),
+        assignedItemsLabel: i18n.t('Selected user groups'),
     },
     {
         name: DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
         fieldRenderer: renderSearchableGroupEditor,
         initialItemsSelector: user => analyticsDimensionsRestrictionsSelector(user),
         availableItemsQuery: 'getAvailableDataAnalyticsDimensionRestrictions',
-        availableItemsLabel: 'Available dimension restrictions for data analytics',
-        assignedItemsLabel: 'Selected dimension restrictions for data analytics',
+        availableItemsLabel: i18n.t(
+            'Available dimension restrictions for data analytics'
+        ),
+        assignedItemsLabel: i18n.t('Selected dimension restrictions for data analytics'),
         returnModelsOnUpdate: true,
     },
 ];

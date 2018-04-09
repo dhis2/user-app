@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import List from '../../components/List';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import {
     isGroupContextActionAllowed,
     groupContextMenuIcons,
@@ -42,7 +42,7 @@ class GroupList extends Component {
                 contextMenuActions={groupContextMenuActions}
                 contextMenuIcons={groupContextMenuIcons}
                 isContextActionAllowed={isGroupContextActionAllowed}
-                sectionName={i18next.t('User Group Management')}
+                sectionName={i18n.t('User Group Management')}
                 newItemPath={'/user-groups/new'}
                 className={'group-list'}
             />

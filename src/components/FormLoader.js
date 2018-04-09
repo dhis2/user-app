@@ -6,7 +6,7 @@ import { getItem, initNewItem } from '../actions';
 import { USER, USER_GROUP, USER_ROLE, DETAILS } from '../constants/entityTypes';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import IconLink from './IconLink';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import _ from '../constants/lodash';
 import ErrorMessage from './ErrorMessage';
 import RoleForm from '../containers/RoleForm';
@@ -41,7 +41,7 @@ class FormLoader extends Component {
         } else if (!id) {
             initNewItem(entityType);
         }
-        this.formNotFoundErrorMsg = i18next.t('There was an error getting the form:');
+        this.formNotFoundErrorMsg = i18n.t('There was an error getting the form:');
     }
 
     renderForm() {
@@ -70,11 +70,11 @@ class FormLoader extends Component {
             ? baseItem.modelDefinition.displayName
             : _.capitalize(entityType);
         const displayName = baseItem ? baseItem.displayName : '';
-        const updateMsg = `${i18next.t('Update')} ${entityTxt}: ${displayName}`; //uit list?
-        const createMsg = `${i18next.t('Create new')} ${entityTxt}`;
+        const updateMsg = `${i18n.t('Update')} ${entityTxt}: ${displayName}`;
+        const createMsg = `${i18n.t('Create new')} ${entityTxt}`;
         const msg = id ? updateMsg : createMsg;
         const link = baseItem ? `/${_.kebabCase(baseItem.modelDefinition.plural)}` : null;
-        const linkTooltip = `${i18next.t('Back to')} ${entityTxt}s`;
+        const linkTooltip = `${i18n.t('Back to')} ${entityTxt}s`;
 
         return (
             <Heading style={styles.heading}>

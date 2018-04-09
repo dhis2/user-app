@@ -1,5 +1,5 @@
 import { USERNAME } from './config';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import api from '../../api';
 
 export default function asyncValidateUsername(values, _, props) {
@@ -15,12 +15,12 @@ export default function asyncValidateUsername(values, _, props) {
         .getUserByUsername(newUserName)
         .then(modelCollection => {
             if (modelCollection.size > 0) {
-                errors[USERNAME] = i18next.t('Username already taken');
+                errors[USERNAME] = i18n.t('Username already taken');
                 return errors;
             }
         })
         .catch(error => {
-            errors[USERNAME] = i18next.t(
+            errors[USERNAME] = i18n.t(
                 'There was a problem whilst checking the availability of this username'
             );
             throw errors;

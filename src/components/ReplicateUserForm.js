@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 import { RaisedButton } from 'material-ui';
 import { TextField } from 'redux-form-material-ui';
 import { orange500 } from 'material-ui/styles/colors';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import api from '../api';
 import { connect } from 'react-redux';
 import { USER } from '../constants/entityTypes';
@@ -19,7 +19,7 @@ const PASSWORD = 'password';
 const validate = (values, props) => {
     const { pristine } = props;
     let errors = {};
-    let requiredFieldErrorMsg = i18next.t('This field is required');
+    let requiredFieldErrorMsg = i18n.t('This field is required');
     if (pristine) {
         return errors;
     }
@@ -50,13 +50,13 @@ class ReplicateUserForm extends Component {
 
     onReplicationSucces = () => {
         const { getList, showSnackbar } = this.props;
-        showSnackbar({ message: i18next.t('User replicated successfuly') });
+        showSnackbar({ message: i18n.t('User replicated successfuly') });
         getList(USER, true);
     };
 
     onReplicationError = () => {
         const { showSnackbar } = this.props;
-        showSnackbar({ message: i18next.t('There was a problem replicating the user') });
+        showSnackbar({ message: i18n.t('There was a problem replicating the user') });
     };
 
     shouldDisableSubmit() {
@@ -71,7 +71,7 @@ class ReplicateUserForm extends Component {
 
     getLoadingProps() {
         return {
-            errorText: i18next.t('Validating...'),
+            errorText: i18n.t('Validating...'),
             errorStyle: { color: orange500 },
         };
     }
@@ -87,28 +87,28 @@ class ReplicateUserForm extends Component {
                 <Field
                     name={USERNAME}
                     component={TextField}
-                    floatingLabelText={i18next.t('Username')}
-                    hintText={i18next.t('Username for new user')}
+                    floatingLabelText={i18n.t('Username')}
+                    hintText={i18n.t('Username for new user')}
                     fullWidth={true}
                     {...validatingProps}
                 />
                 <Field
                     name={PASSWORD}
                     component={TextField}
-                    floatingLabelText={i18next.t('Password')}
-                    hintText={i18next.t('Password for new user')}
+                    floatingLabelText={i18n.t('Password')}
+                    hintText={i18n.t('Password for new user')}
                     fullWidth={true}
                     type="password"
                 />
                 <div style={{ marginTop: 16 }}>
                     <RaisedButton
-                        label={i18next.t('Replicate')}
+                        label={i18n.t('Replicate')}
                         type="submit"
                         disabled={submitDisabled}
                         primary={true}
                     />
                     <RaisedButton
-                        label={i18next.t('Cancel')}
+                        label={i18n.t('Cancel')}
                         onClick={hideDialog}
                         style={{ marginLeft: 8 }}
                     />

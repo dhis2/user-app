@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import './style.css';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import makeTrashable from 'trashable';
@@ -92,7 +92,7 @@ class AuthorityEditor extends Component {
         return (
             <div className="authority-editor">
                 <Heading level={4} className="authority-editor__header">
-                    {i18next.t('Authorities')}
+                    {i18n.t('Authorities')}
                 </Heading>
                 <AuthorityFilter onFilterChange={this.onFilterChange} />
                 <FilteredAuthoritySections

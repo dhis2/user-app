@@ -1,11 +1,11 @@
 import store from '../store';
 import { getList, showSnackbar, hideSnackbar, showSharingDialog } from '../actions';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 
 export const deleteModel = ({ confirmMsg, successMsg, errorMsg, model, entityType }) => {
     const snackbarProps = {
         message: confirmMsg,
-        action: i18next.t('Confirm'),
+        action: i18n.t('Confirm'),
         autoHideDuration: null,
         onActionClick: () => onRemoveConfirm(model, successMsg, errorMsg, entityType),
     };

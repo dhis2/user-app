@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import { Field, reduxForm } from 'redux-form';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -22,14 +22,14 @@ class RoleForm extends Component {
         role
             .save()
             .then(() => {
-                const msg = i18next.t('User role saved successfully');
+                const msg = i18n.t('User role saved successfully');
                 showSnackbar({ message: msg });
                 clearItem();
                 getList(USER_ROLE);
                 this.backToList();
             })
             .catch(error => {
-                const msg = i18next.t('There was a problem saving the user role.');
+                const msg = i18n.t('There was a problem saving the user role.');
                 showSnackbar({ message: msg });
             });
     };
@@ -41,14 +41,13 @@ class RoleForm extends Component {
     renderFields() {
         return FIELDS.map(fieldConfig => {
             const { name, fieldRenderer, label, isRequiredField, ...conf } = fieldConfig;
-            let labelText = i18next.t(label);
 
             return (
                 <Field
                     name={name}
                     key={name}
                     component={fieldRenderer}
-                    label={labelText}
+                    label={label}
                     {...conf}
                 />
             );
@@ -60,19 +59,19 @@ class RoleForm extends Component {
         const disableSubmit = Boolean(asyncValidating || pristine || !valid);
         return (
             <main>
-                <Heading level={2}>{i18next.t('Details')}</Heading>
+                <Heading level={2}>{i18n.t('Details')}</Heading>
                 <form onSubmit={handleSubmit(this.saveRole)}>
                     {this.renderFields()}
                     <div style={{ marginTop: '2rem' }}>
                         <RaisedButton
-                            label={i18next.t('Save')}
+                            label={i18n.t('Save')}
                             type="submit"
                             primary={true}
                             disabled={disableSubmit}
                             style={{ marginRight: '8px' }}
                         />
                         <RaisedButton
-                            label={i18next.t('Cancel')}
+                            label={i18n.t('Cancel')}
                             onClick={this.backToList}
                         />
                     </div>

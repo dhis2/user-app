@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import UserApp from './UserApp';
 import registerServiceWorker from './registerServiceWorker';
 import { config, getUserSettings, getManifest } from 'd2/lib/d2';
-import i18next from 'i18next';
-import Backend from 'i18next-xhr-backend';
+import i18n from './locales';
 
 const API_VERSION = '29';
 
@@ -41,23 +40,7 @@ const configI18n = userSettings => {
         sources.add(`i18n/module/i18n_module_${uiLocale}.properties`);
     }
     sources.add('i18n/module/i18n_module_en.properties');
-
-    // But for direct translations use i18Next
-    i18next.use(Backend).init(
-        {
-            returnEmptyString: false,
-            fallbackLng: false,
-            keySeparator: '|',
-            backend: {
-                loadPath: '/public/i18n/{{lng}}.json',
-            },
-        },
-        function(err, t) {
-            if (uiLocale && uiLocale !== 'en') {
-                i18next.changeLanguage(uiLocale);
-            }
-        }
-    );
+    i18n.changeLanguage(uiLocale);
 };
 
 const renderAppInDOM = () => {

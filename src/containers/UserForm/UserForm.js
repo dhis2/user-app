@@ -8,7 +8,7 @@ import FlatButton from 'material-ui/FlatButton';
 import CircularProgress from 'material-ui/CircularProgress';
 import HardwareKeyboardArrowUp from 'material-ui/svg-icons/hardware/keyboard-arrow-up';
 import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import makeTrashable from 'trashable';
 import navigateTo from '../../utils/navigateTo';
 import asArray from '../../utils/asArray';
@@ -52,8 +52,10 @@ class UserForm extends Component {
                 initialize(userFormInitialValuesSelector(user, locales));
             })
             .catch(error => {
-                const msg = 'Could not load the user data. Please refresh the page.';
-                showSnackbar({ message: i18next.t(msg) });
+                const message = i18n.t(
+                    'Could not load the user data. Please refresh the page.'
+                );
+                showSnackbar({ message });
             });
     }
 
@@ -74,14 +76,14 @@ class UserForm extends Component {
         api
             .saveUser(values, user, selectedUiLocale, selectedDbLocale)
             .then(() => {
-                const msg = i18next.t('User saved successfully');
+                const msg = i18n.t('User saved successfully');
                 showSnackbar({ message: msg });
                 clearItem();
                 getList(USER);
                 this.backToList();
             })
             .catch(error => {
-                const msg = i18next.t('There was a problem saving the user.');
+                const msg = i18n.t('There was a problem saving the user.');
                 showSnackbar({ message: msg });
             });
     };
@@ -91,16 +93,10 @@ class UserForm extends Component {
     };
 
     getLabelText(label, user, isRequiredField) {
-        let labelText = i18next.t(label);
-
-        if (
-            isRequiredField === CONFIG.ALWAYS_REQUIRED ||
+        return isRequiredField === CONFIG.ALWAYS_REQUIRED ||
             (isRequiredField === CONFIG.CREATE_REQUIRED && !user.id)
-        ) {
-            labelText += ' *';
-        }
-
-        return labelText;
+            ? `${label} *`
+            : label;
     }
 
     prepareGroupEditor(conf, fieldConfig, user, isRequiredField) {
@@ -110,7 +106,6 @@ class UserForm extends Component {
             isRequiredField
         );
         conf.availableItemsQuery = api[conf.availableItemsQuery];
-        conf.availableItemsLabel = i18next.t(conf.availableItemsLabel);
         conf.initialValues = fieldConfig.initialItemsSelector(user);
     }
 
@@ -170,8 +165,8 @@ class UserForm extends Component {
 
     renderToggler(showMore) {
         const togglerText = showMore
-            ? i18next.t('Show fewer options')
-            : i18next.t('Show more options');
+            ? i18n.t('Show fewer options')
+            : i18n.t('Show more options');
         const icon = showMore ? (
             <HardwareKeyboardArrowUp />
         ) : (
@@ -205,21 +200,21 @@ class UserForm extends Component {
 
         return (
             <main>
-                <Heading level={2}>{i18next.t('Details')}</Heading>
+                <Heading level={2}>{i18n.t('Details')}</Heading>
                 <form onSubmit={handleSubmit(this.saveUser)}>
                     {this.renderBaseFields()}
                     {this.renderAdditionalFields(showMore)}
                     {this.renderToggler(showMore)}
                     <div>
                         <RaisedButton
-                            label={i18next.t('Save')}
+                            label={i18n.t('Save')}
                             type="submit"
                             primary={true}
                             disabled={disableSubmit}
                             style={{ marginRight: '8px' }}
                         />
                         <RaisedButton
-                            label={i18next.t('Cancel')}
+                            label={i18n.t('Cancel')}
                             onClick={this.backToList}
                         />
                     </div>

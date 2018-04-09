@@ -1,4 +1,5 @@
 import { renderTextField, renderAuthorityEditor } from '../../utils/fieldRenderers';
+import i18n from 'd2-i18n';
 
 export const NAME = 'name';
 export const DESCRIPTION = 'description';
@@ -9,18 +10,18 @@ export const ROLE_PROPS = [NAME, DESCRIPTION, AUTHORITIES];
 export const FIELDS = [
     {
         name: NAME,
-        label: 'Name',
+        label: i18n.t('Name'),
         fieldRenderer: renderTextField,
         isRequiredField: true,
     },
     {
         name: DESCRIPTION,
-        label: 'Description',
+        label: i18n.t('Description'),
         fieldRenderer: renderTextField,
     },
     {
         name: AUTHORITIES,
-        label: 'Authorities',
+        label: i18n.t('Authorities'),
         fieldRenderer: renderAuthorityEditor,
     },
 ];

@@ -1,5 +1,5 @@
 import { getInstance } from 'd2/lib/d2';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import {
     getQueryFields,
     createRequestData,
@@ -151,7 +151,7 @@ class Api {
 
         const useDbLocaleOption = {
             locale: USE_DB_LOCALE,
-            name: i18next.t('Use database locale / no translation'),
+            name: i18n.t('Use database locale / no translation'),
         };
 
         const dbLocales = this.d2Api.get('/locales/db');

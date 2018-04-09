@@ -1,4 +1,4 @@
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import api from '../api';
 
 export default function asyncValidateUniqueness(values, _, props) {
@@ -18,13 +18,13 @@ export default function asyncValidateUniqueness(values, _, props) {
             if (modelCollection.size > 0) {
                 const foundId = modelCollection.values().next().value.id;
                 if (foundId !== model.id) {
-                    errors.name = i18next.t('Name is already taken');
+                    errors.name = i18n.t('Name is already taken');
                 }
             }
             return errors;
         })
         .catch(error => {
-            errors.name = i18next.t('Could not verify if this name is unique');
+            errors.name = i18n.t('Could not verify if this name is unique');
             throw errors;
         });
 }
