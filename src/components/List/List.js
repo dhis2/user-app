@@ -182,7 +182,7 @@ List.propTypes = {
     resetFilter: PropTypes.func.isRequired,
     entityType: PropTypes.string.isRequired,
     newItemPath: PropTypes.string.isRequired,
-    listType: PropTypes.string.isRequired,
+    listType: PropTypes.string,
     FilterComponent: PropTypes.func.isRequired,
     columns: PropTypes.arrayOf(String).isRequired,
     primaryAction: PropTypes.func.isRequired,

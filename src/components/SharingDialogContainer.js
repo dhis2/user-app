@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import SharingDialog from 'd2-ui-sharing';
 import api from '../api';
-import { hideSharingDialog, showSnackbar } from '../actions';
+import { hideSharingDialog } from '../actions';
 
 const SharingDialogContainer = ({ open, id, type, hideSharingDialog }) => {
     return (
@@ -22,7 +22,6 @@ SharingDialogContainer.propTypes = {
     id: PropTypes.string,
     type: PropTypes.string,
     hideSharingDialog: PropTypes.func.isRequired,
-    showSnackbar: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -33,5 +32,4 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps, {
     hideSharingDialog,
-    showSnackbar,
 })(SharingDialogContainer);

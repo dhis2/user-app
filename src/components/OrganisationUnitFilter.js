@@ -10,13 +10,12 @@ class OrganisationUnitFilter extends Component {
     applyFilter = newSelectedOrgUnits => {
         const { updateFilter, hideDialog, getList, selectedOrgUnits } = this.props;
 
-        if (_.isEqual(newSelectedOrgUnits, selectedOrgUnits)) {
-            return;
+        if (!_.isEqual(newSelectedOrgUnits, selectedOrgUnits)) {
+            updateFilter('organisationUnits', newSelectedOrgUnits);
+            getList(USER);
         }
 
-        updateFilter('organisationUnits', newSelectedOrgUnits);
         hideDialog();
-        getList(USER);
     };
 
     render() {
