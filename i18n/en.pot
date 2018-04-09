@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-04-09T14:11:16.108Z\n"
-"PO-Revision-Date: 2018-04-09T14:11:16.108Z\n"
+"POT-Creation-Date: 2018-04-09T14:44:22.056Z\n"
+"PO-Revision-Date: 2018-04-09T14:44:22.056Z\n"
 
 msgid "Use database locale / no translation"
 msgstr ""
@@ -119,6 +119,21 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
+msgid "Name"
+msgstr ""
+
+msgid "Available users"
+msgstr ""
+
+msgid "Group members"
+msgstr ""
+
+msgid "Available user groups"
+msgstr ""
+
+msgid "Managed user groups"
+msgstr ""
+
 msgid "You joined group"
 msgstr ""
 
@@ -146,6 +161,9 @@ msgstr ""
 msgid "There was a problem saving the user role."
 msgstr ""
 
+msgid "Description"
+msgstr ""
+
 msgid "Are you sure you want to remove this user role?"
 msgstr ""
 
@@ -156,6 +174,9 @@ msgid "There was a problem deleting the user role"
 msgstr ""
 
 msgid "User Role Management"
+msgstr ""
+
+msgid "Could not load the user data. Please refresh the page."
 msgstr ""
 
 msgid "User saved successfully"
@@ -174,6 +195,65 @@ msgid "Username already taken"
 msgstr ""
 
 msgid "There was a problem whilst checking the availability of this username"
+msgstr ""
+
+msgid ""
+"Selecting an organisation unit provides access to all units in the "
+"sub-hierarchy"
+msgstr ""
+
+msgid "External authentication only (OpenID or LDAP)"
+msgstr ""
+
+msgid "Retype password"
+msgstr ""
+
+msgid "Surname"
+msgstr ""
+
+msgid "First name"
+msgstr ""
+
+msgid "E-mail"
+msgstr ""
+
+msgid "openID"
+msgstr ""
+
+msgid "LDAP Identifier"
+msgstr ""
+
+msgid "Mobile phone number"
+msgstr ""
+
+msgid "Interface language"
+msgstr ""
+
+msgid "Database language"
+msgstr ""
+
+msgid "Available roles"
+msgstr ""
+
+msgid "Selected roles"
+msgstr ""
+
+msgid "Data capture and maintenance organisation units"
+msgstr ""
+
+msgid "Data output and analytic organisation units"
+msgstr ""
+
+msgid "Search Organisation Units"
+msgstr ""
+
+msgid "Selected user groups"
+msgstr ""
+
+msgid "Available dimension restrictions for data analytics"
+msgstr ""
+
+msgid "Selected dimension restrictions for data analytics"
 msgstr ""
 
 msgid "A user should have at least one User Role"
