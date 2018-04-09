@@ -20,8 +20,8 @@ class GroupForm extends Component {
         const { group, showSnackbar, clearItem, getList } = this.props;
 
         group[NAME] = values[NAME];
-        group[USERS] = values[USERS].map(({ id }) => ({ id }));
-        group[MANAGED_GROUPS] = values[MANAGED_GROUPS].map(({ id }) => ({ id }));
+        group[USERS] = values[USERS].map(value => ({ id: value }));
+        group[MANAGED_GROUPS] = values[MANAGED_GROUPS].map(value => ({ id: value }));
 
         group
             .save()
