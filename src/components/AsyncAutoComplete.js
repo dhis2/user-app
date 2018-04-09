@@ -4,6 +4,7 @@ import AutoComplete from 'material-ui/AutoComplete';
 import MenuItem from 'material-ui/MenuItem';
 import { orange500, blue500 } from 'material-ui/styles/colors';
 import i18next from 'i18next';
+import makeTrashable from 'trashable';
 import _ from '../constants/lodash';
 import PropTypes from 'prop-types';
 
@@ -48,17 +49,20 @@ class AsyncAutoComplete extends Component {
         super(props);
         const debounceTime = props.queryDebounceTime || 375;
         this.state = { ...baseState };
-        this.getItems = _.debounce(this.getItems.bind(this), debounceTime);
-        this.onAutoCompleteChange = this.onAutoCompleteChange.bind(this);
-        this.onItemSelect = this.onItemSelect.bind(this);
+        this.getItems = _.debounce(this.getItems, debounceTime);
+        this.trashableQuery = null;
     }
 
-    onAutoCompleteChange(value) {
+    componentWillUnmount() {
+        this.trashableQuery && this.trashableQuery.trash();
+    }
+
+    onAutoCompleteChange = value => {
         this.setState({ autoCompleteText: value });
         this.getItems(value);
-    }
+    };
 
-    getItems(value) {
+    getItems = value => {
         const { minCharLength, query } = this.props;
 
         if (!value || value.length < minCharLength) {
@@ -74,7 +78,8 @@ class AsyncAutoComplete extends Component {
             this.setState({ ...baseState, filteredItems: loaderDataSource });
 
             // Then query
-            query(value).then(modelCollection => {
+            this.trashableQuery = makeTrashable(query(value));
+            this.trashableQuery.then(modelCollection => {
                 if (modelCollection.size > 0) {
                     // Display results if any were returned
                     const filteredItems = modelCollection.toArray().map(model => ({
@@ -95,13 +100,13 @@ class AsyncAutoComplete extends Component {
                 }
             });
         }
-    }
+    };
 
-    onItemSelect(dataSourceItem) {
+    onItemSelect = dataSourceItem => {
         const { selectHandler } = this.props;
         this.setState({ autoCompleteText: '' });
         selectHandler(dataSourceItem);
-    }
+    };
 
     selectAndShowFilteredOrgUnitInTreeView(dataSourceItem) {
         const orgUnit = dataSourceItem.value;

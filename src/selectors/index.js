@@ -1,12 +1,14 @@
 import _ from '../constants/lodash';
+import i18next from 'i18next';
 import {
     USER_PROPS,
     USER_CRED_PROPS,
     INTERFACE_LANGUAGE,
     DATABASE_LANGUAGE,
     DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
-} from '../components/users/UserForm/config';
-import { asArray, getNestedProp } from '../utils';
+} from '../containers/UserForm/config';
+import asArray from '../utils/asArray';
+import getNestedProp from '../utils/getNestedProp';
 
 export const pagerSelector = _.memoize(pager => {
     if (pager === null) {
@@ -45,7 +47,9 @@ const listMappings = {
 };
 
 export const orgUnitsAsStringSelector = _.memoize(orgUnits => {
-    return orgUnits.map(unit => unit.displayName).join(', ');
+    return orgUnits.length < 3
+        ? orgUnits.map(unit => unit.displayName).join(', ')
+        : i18next.t('{{count}} selected', { count: orgUnits.length });
 });
 
 export const initialSharingSettingsSelector = _.memoize(
@@ -77,19 +81,17 @@ const addInitialValueFrom = (sourceObject, initialValues, propName) => {
 };
 
 export const userFormInitialValuesSelector = _.memoize((user, locales) => {
-    if (!user.id) {
-        return null;
-    }
-
     let initialValues = {};
 
-    USER_PROPS.forEach(propName => {
-        addInitialValueFrom(user, initialValues, propName);
-    });
+    if (user.id) {
+        USER_PROPS.forEach(propName => {
+            addInitialValueFrom(user, initialValues, propName);
+        });
 
-    USER_CRED_PROPS.forEach(propName => {
-        addInitialValueFrom(user.userCredentials, initialValues, propName);
-    });
+        USER_CRED_PROPS.forEach(propName => {
+            addInitialValueFrom(user.userCredentials, initialValues, propName);
+        });
+    }
 
     initialValues[INTERFACE_LANGUAGE] = locales.ui.selected;
     initialValues[DATABASE_LANGUAGE] = locales.db.selected;
@@ -105,4 +107,11 @@ export const analyticsDimensionsRestrictionsSelector = _.memoize(user => {
         getNestedProp('userCredentials.cogsDimensionConstraints', user)
     );
     return [...catConstraints, ...cogsConstraints];
+});
+
+export const shortItemSelector = _.memoize((id, list) => {
+    if (!list || !id) {
+        return null;
+    }
+    return list.get(id);
 });

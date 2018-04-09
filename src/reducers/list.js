@@ -1,8 +1,7 @@
 import { LIST_REQUESTED, LIST_RECEIVED, LIST_ERRORED } from '../constants/actionTypes';
-import { USER } from '../constants/entityTypes';
 
 const initialState = {
-    type: USER,
+    type: null,
     items: null,
 };
 
@@ -26,7 +25,7 @@ const listReducer = (state = initialState, { type, payload }) => {
             };
         case LIST_ERRORED:
             return {
-                type: payload.type,
+                type: null,
                 items: payload.message,
             };
         default:

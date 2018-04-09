@@ -14,38 +14,31 @@ const style = {
 };
 
 class SearchFilter extends Component {
-    static propTypes = {
-        filter: PropTypes.object.isRequired,
-        getList: PropTypes.func.isRequired,
-        entityType: PropTypes.string.isRequired,
-        updateFilter: PropTypes.func.isRequired,
-    };
-
     constructor(props) {
         super(props);
         this.state = {
             localQueryStr: props.filter.query,
         };
-        this.onQueryStrChange = this.onQueryStrChange.bind(this);
-        this.updateSearchFilter = _.debounce(this.updateSearchFilter.bind(this), 375);
+        this.updateSearchFilter = _.debounce(this.updateSearchFilter, 375);
     }
 
-    updateSearchFilter(newValue) {
+    updateSearchFilter = newValue => {
         const { getList, entityType, updateFilter } = this.props;
         updateFilter(QUERY, newValue);
         getList(entityType);
-    }
+    };
 
-    onQueryStrChange(event) {
+    onQueryStrChange = event => {
         const value = event.target.value;
         this.setState({ localQueryStr: value });
         this.updateSearchFilter(value);
-    }
+    };
 
     render() {
         const { localQueryStr } = this.state;
         return (
             <TextField
+                className="search-input"
                 floatingLabelText={i18next.t('Search by name')}
                 style={style}
                 hintText={''}
@@ -56,6 +49,14 @@ class SearchFilter extends Component {
         );
     }
 }
+
+SearchFilter.propTypes = {
+    filter: PropTypes.object.isRequired,
+    getList: PropTypes.func.isRequired,
+    entityType: PropTypes.string.isRequired,
+    updateFilter: PropTypes.func.isRequired,
+};
+
 const mapStateToProps = state => {
     return {
         filter: state.filter,

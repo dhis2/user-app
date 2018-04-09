@@ -9,34 +9,12 @@ const style = {
 };
 
 class SideNav extends Component {
-    static propTypes = {
-        sections: PropTypes.array.isRequired,
-        history: PropTypes.object.isRequired,
-        location: PropTypes.shape({
-            pathname: PropTypes.string.isRequired,
-        }),
-    };
-
-    constructor(props) {
-        super(props);
-        this.changeSectionHandler = this.changeSectionHandler.bind(this);
-    }
-
-    componentWillMount() {
-        const { sections, history, location: { pathname } } = this.props;
-        const userPath = sections[0].path;
-
-        if (pathname === '/') {
-            history.push(userPath);
-        }
-    }
-
-    changeSectionHandler(key) {
+    changeSectionHandler = key => {
         const { sections, history } = this.props;
         const section = sections.find(section => section.key === key);
 
         history.push(section.path);
-    }
+    };
 
     getSectionKeyForCurrentPath() {
         const { sections, location: { pathname } } = this.props;
@@ -63,5 +41,13 @@ class SideNav extends Component {
         );
     }
 }
+
+SideNav.propTypes = {
+    sections: PropTypes.array.isRequired,
+    history: PropTypes.object.isRequired,
+    location: PropTypes.shape({
+        pathname: PropTypes.string.isRequired,
+    }),
+};
 
 export default withRouter(SideNav);

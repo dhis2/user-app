@@ -14,28 +14,31 @@ const style = {
 };
 
 class SectionLoader extends Component {
-    static contextTypes = {
-        d2: PropTypes.object,
-    };
-
-    static propTypes = {
-        initCurrentUser: PropTypes.func.isRequired,
-    };
-
     componentWillMount() {
         const { initCurrentUser } = this.props;
         initCurrentUser();
     }
 
+    userHasAuthorities({ entityType }) {
+        if (!entityType) {
+            return true;
+        }
+        const { currentUser, models } = this.context.d2;
+        const canCreate = currentUser.canCreate(models[entityType]);
+        const canDelete = currentUser.canDelete(models[entityType]);
+        return canCreate || canDelete;
+    }
+
     getRouteConfig() {
-        // TODO: Only return sections available to the currentUser
         return ROUTE_CONFIG.reduce(
             (routeConfig, configItem) => {
                 let { routes, sections } = routeConfig;
-                if (configItem.label) {
-                    sections.push(configItem);
+                if (this.userHasAuthorities(configItem)) {
+                    routes.push(configItem);
+                    if (configItem.label) {
+                        sections.push(configItem);
+                    }
                 }
-                routes.push(configItem);
                 return routeConfig;
             },
             { routes: [], sections: [] }
@@ -43,7 +46,7 @@ class SectionLoader extends Component {
     }
 
     renderRoutes(routes) {
-        return routes.map(section => <Route {...section} />);
+        return routes.map(section => <Route exact strict {...section} />);
     }
 
     render() {
@@ -56,6 +59,14 @@ class SectionLoader extends Component {
         );
     }
 }
+
+SectionLoader.contextTypes = {
+    d2: PropTypes.object,
+};
+
+SectionLoader.propTypes = {
+    initCurrentUser: PropTypes.func.isRequired,
+};
 
 export default withRouter(
     connect(null, {

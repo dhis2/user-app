@@ -7,6 +7,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import i18next from 'i18next';
 import _ from '../constants/lodash';
+import makeTrashable from 'trashable';
 import PropTypes from 'prop-types';
 import api from '../api';
 
@@ -57,20 +58,20 @@ class SearchableOrgUnitTree extends Component {
             orgUnitFilter: null,
             initiallyExpanded: this.getInitiallyExpandedItems(props.selectedOrgUnits),
         };
-
-        this.applySelection = this.applySelection.bind(this);
-        this.selectAndShowFilteredOrgUnit = this.selectAndShowFilteredOrgUnit.bind(this);
-        this.toggleSelectedOrgUnits = this.toggleSelectedOrgUnits.bind(this);
-        this.applySelection = this.applySelection.bind(this);
-        this.clearSelection = this.clearSelection.bind(this);
+        this.trashableGetOrgUnits = null;
     }
 
     componentWillMount() {
-        api.getOrgUnits().then(root => {
+        this.trashableGetOrgUnits = makeTrashable(api.getOrgUnits());
+        this.trashableGetOrgUnits.then(root => {
             this.setState({
                 root: root,
             });
         });
+    }
+
+    componentWillUnmount() {
+        this.trashableGetOrgUnits.trash();
     }
 
     getInitiallyExpandedItems(orgUnits) {
@@ -106,7 +107,7 @@ class SearchableOrgUnitTree extends Component {
         this.setState(updateObject);
     }
 
-    toggleSelectedOrgUnits(_, orgUnit) {
+    toggleSelectedOrgUnits = (_, orgUnit) => {
         const { selectedOrgUnits } = this.state;
         const orgUnitIndex = this.getIndexOfOrgUnit(orgUnit);
         const newOrgUnits =
@@ -118,27 +119,27 @@ class SearchableOrgUnitTree extends Component {
                   ];
 
         this.update(newOrgUnits, []);
-    }
+    };
 
-    selectAndShowFilteredOrgUnit(dataSourceItem) {
+    selectAndShowFilteredOrgUnit = dataSourceItem => {
         const orgUnit = dataSourceItem.value;
         const { selectedOrgUnits } = this.state;
         const initiallyExpanded = [this.removeLastPathSegment(orgUnit)];
         const newOrgUnits = [...selectedOrgUnits, orgUnit];
 
         this.update(newOrgUnits, initiallyExpanded);
-    }
+    };
 
-    clearSelection() {
+    clearSelection = () => {
         this.update([]);
         _.defer(this.applySelection);
-    }
+    };
 
-    applySelection() {
+    applySelection = () => {
         const { selectedOrgUnits } = this.state;
         const { confirmSelection } = this.props;
         confirmSelection(selectedOrgUnits);
-    }
+    };
 
     render() {
         const { root, selectedOrgUnits, initiallyExpanded, orgUnitFilter } = this.state;

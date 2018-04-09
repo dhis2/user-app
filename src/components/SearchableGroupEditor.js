@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { red500 } from 'material-ui/styles/colors';
 import TextField from 'material-ui/TextField/TextField';
 import Heading from 'd2-ui/lib/headings/Heading.component';
-import { asArray } from '../utils';
+import asArray from '../utils/asArray';
 import i18next from 'i18next';
 
 const styles = {
@@ -34,19 +34,6 @@ const styles = {
 };
 
 class SearchableGroupEditor extends Component {
-    static propTypes = {
-        availableItemsQuery: PropTypes.func.isRequired,
-        initiallyAssignedItems: PropTypes.oneOfType([
-            PropTypes.object.isRequired,
-            PropTypes.array.isRequired,
-        ]),
-        onChange: PropTypes.func.isRequired,
-        availableItemsHeader: PropTypes.string.isRequired,
-        assignedItemsHeader: PropTypes.string.isRequired,
-        returnModelsOnUpdate: PropTypes.bool,
-        errorText: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-        onBlur: PropTypes.func,
-    };
     constructor(props) {
         super(props);
         this.state = {
@@ -54,11 +41,6 @@ class SearchableGroupEditor extends Component {
             assignedItemStore: Store.create(),
             filterText: '',
         };
-
-        this.onAvailableItemsReceived = this.onAvailableItemsReceived.bind(this);
-        this.updateFilterText = this.updateFilterText.bind(this);
-        this.onAssignItems = this.onAssignItems.bind(this);
-        this.onRemoveItems = this.onRemoveItems.bind(this);
     }
 
     componentWillMount() {
@@ -68,19 +50,19 @@ class SearchableGroupEditor extends Component {
             .catch(() => alert('Problem getting the available items'));
     }
 
-    onAvailableItemsReceived(response) {
+    onAvailableItemsReceived = response => {
         // On update we want to be able to return an array of IDs or models
         const { initiallyAssignedItems, returnModelsOnUpdate } = this.props;
         const { itemStore, assignedItemStore } = this.state;
 
         if (returnModelsOnUpdate) {
-            this.modelLookup = {};
+            this.modelLookup = new Map();
         }
 
         const assignedItems = asArray(initiallyAssignedItems).map(({ id }) => id);
         const availableItems = asArray(response).map(item => {
             if (returnModelsOnUpdate) {
-                this.modelLookup[item.id] = item;
+                this.modelLookup.set(item.id, item);
             }
             const text = item.displayName || item.name;
             return {
@@ -91,29 +73,29 @@ class SearchableGroupEditor extends Component {
 
         itemStore.setState(availableItems);
         assignedItemStore.setState(assignedItems);
-    }
+    };
 
-    onAssignItems(items) {
+    onAssignItems = items => {
         const { assignedItemStore } = this.state;
         const assigned = assignedItemStore.state.concat(items);
 
         return this.update(assigned);
-    }
+    };
 
-    onRemoveItems(items) {
+    onRemoveItems = items => {
         const { assignedItemStore } = this.state;
         const assigned = assignedItemStore.state.filter(
             item => items.indexOf(item) === -1
         );
 
         return this.update(assigned);
-    }
+    };
 
     update(assignedItemIds) {
         const { onChange, returnModelsOnUpdate, onBlur } = this.props;
         const { assignedItemStore } = this.state;
         const assignedItems = returnModelsOnUpdate
-            ? assignedItemIds.map(id => this.modelLookup[id])
+            ? assignedItemIds.map(id => this.modelLookup.get(id))
             : assignedItemIds;
 
         assignedItemStore.setState(assignedItemIds);
@@ -123,9 +105,9 @@ class SearchableGroupEditor extends Component {
         return Promise.resolve();
     }
 
-    updateFilterText(event) {
+    updateFilterText = event => {
         this.setState({ filterText: event.target.value });
-    }
+    };
 
     renderHeader() {
         const { availableItemsHeader, assignedItemsHeader, errorText } = this.props;
@@ -178,5 +160,19 @@ class SearchableGroupEditor extends Component {
         );
     }
 }
+
+SearchableGroupEditor.propTypes = {
+    availableItemsQuery: PropTypes.func.isRequired,
+    initiallyAssignedItems: PropTypes.oneOfType([
+        PropTypes.object.isRequired,
+        PropTypes.array.isRequired,
+    ]),
+    onChange: PropTypes.func.isRequired,
+    availableItemsHeader: PropTypes.string.isRequired,
+    assignedItemsHeader: PropTypes.string.isRequired,
+    returnModelsOnUpdate: PropTypes.bool,
+    errorText: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    onBlur: PropTypes.func,
+};
 
 export default SearchableGroupEditor;

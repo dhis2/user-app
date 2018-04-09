@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import i18next from 'i18next';
 import { Link } from 'react-router-dom';
 
 const style = {
@@ -10,11 +11,12 @@ const style = {
 
 const PageNotFound = ({ location }) => (
     <div style={style}>
-        <h1>Page not found.</h1>
+        <h1>{i18next.t('Page not found.')}</h1>
         <h3>
-            No match for <code>{location.pathname}</code>
+            {i18next.t('No match for')}
+            <code> {location.pathname}</code>
         </h3>
-        <Link to="/users">Go back home</Link>
+        <Link to="/"> {i18next.t('Go back home')}</Link>
     </div>
 );
 

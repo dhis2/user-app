@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Paper } from 'material-ui';
+import { Paper, CircularProgress } from 'material-ui';
 import { connect } from 'react-redux';
 import { getItem, initNewItem } from '../actions';
 import { USER, USER_GROUP, USER_ROLE, DETAILS } from '../constants/entityTypes';
 import Heading from 'd2-ui/lib/headings/Heading.component';
-import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import IconLink from './IconLink';
 import i18next from 'i18next';
 import _ from '../constants/lodash';
 import ErrorMessage from './ErrorMessage';
-import RoleForm from './roles/RoleForm';
-import GroupForm from './groups/GroupForm';
-import UserForm from './users/UserForm';
+import RoleForm from '../containers/RoleForm';
+import GroupForm from '../containers/GroupForm';
+import UserForm from '../containers/UserForm';
+import { shortItemSelector } from '../selectors';
 
 const styles = {
     main: {
@@ -28,14 +28,6 @@ const styles = {
 };
 
 class FormLoader extends Component {
-    static propTypes = {
-        match: PropTypes.object.isRequired,
-        entityType: PropTypes.string.isRequired,
-        item: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-        getItem: PropTypes.func.isRequired,
-        initNewItem: PropTypes.func.isRequired,
-    };
-
     componentWillMount() {
         const {
             match: { params: { id } },
@@ -71,11 +63,41 @@ class FormLoader extends Component {
         }
     }
 
-    render() {
+    renderHeader() {
+        const { match: { params: { id } }, item, shortItem, entityType } = this.props;
+        const baseItem = item && item.id === id ? item : shortItem;
+        const entityTxt = baseItem
+            ? baseItem.modelDefinition.displayName
+            : _.capitalize(entityType);
+        const displayName = baseItem ? baseItem.displayName : '';
+        const updateMsg = `${i18next.t('Update')} ${entityTxt}: ${displayName}`; //uit list?
+        const createMsg = `${i18next.t('Create new')} ${entityTxt}`;
+        const msg = id ? updateMsg : createMsg;
+        const link = baseItem ? `/${_.kebabCase(baseItem.modelDefinition.plural)}` : null;
+        const linkTooltip = `${i18next.t('Back to')} ${entityTxt}s`;
+
+        return (
+            <Heading style={styles.heading}>
+                <IconLink
+                    to={link}
+                    tooltip={linkTooltip}
+                    disabled={true}
+                    icon="arrow_back"
+                />
+                {msg}
+            </Heading>
+        );
+    }
+
+    renderContent() {
         const { match: { params: { id } }, item } = this.props;
 
         if (!item || (item && item.id !== id)) {
-            return <LoadingMask />;
+            return (
+                <div style={{ textAlign: 'center', paddingTop: '2rem' }}>
+                    <CircularProgress />
+                </div>
+            );
         }
 
         if (typeof item === 'string') {
@@ -84,28 +106,35 @@ class FormLoader extends Component {
             );
         }
 
-        const entityTxt = item.modelDefinition.displayName;
-        const updateMsg = `${i18next.t('Update')} ${entityTxt}: ${item.displayName}`;
-        const createMsg = `${i18next.t('Create new')} ${entityTxt}`;
-        const msg = id ? updateMsg : createMsg;
-        const link = `/${_.kebabCase(item.modelDefinition.plural)}`;
-        const linkTooltip = `${i18next.t('Back to')} ${entityTxt}s`;
+        return this.renderForm();
+    }
 
+    render() {
         return (
             <main style={styles.main}>
-                <Heading style={styles.heading}>
-                    <IconLink to={link} tooltip={linkTooltip} icon="arrow_back" />
-                    {msg}
-                </Heading>
-                <Paper style={styles.paper}>{this.renderForm()}</Paper>
+                {this.renderHeader()}
+                <Paper style={styles.paper}>{this.renderContent()}</Paper>
             </main>
         );
     }
 }
 
-const mapStateToProps = state => ({
-    item: state.currentItem,
-});
+FormLoader.propTypes = {
+    match: PropTypes.object.isRequired,
+    entityType: PropTypes.string.isRequired,
+    item: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    shortItem: PropTypes.object,
+    getItem: PropTypes.func.isRequired,
+    initNewItem: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state, props) => {
+    return {
+        item: state.currentItem,
+        // shortItem is available when navigating from a list but not after refesh
+        shortItem: shortItemSelector(props.match.params.id, state.list.items),
+    };
+};
 
 export default connect(mapStateToProps, {
     getItem,

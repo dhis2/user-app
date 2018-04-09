@@ -2,15 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Paper } from 'material-ui';
 import _ from '../constants/lodash';
+import api from '../api';
 import i18next from 'i18next';
-import { parseDateFromUTCString } from '../utils';
+import parseDateFromUTCString from '../utils/parseDateFromUTCString';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import ErrorMessage from './ErrorMessage';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import IconLink from './IconLink';
 import RaisedButton from 'material-ui/RaisedButton';
 import ImageEdit from 'material-ui/svg-icons/image/edit';
+import ContentSend from 'material-ui/svg-icons/content/send';
 import { Link } from 'react-router-dom';
+import { USER } from '../constants/entityTypes';
 
 const styles = {
     main: {
@@ -24,6 +27,7 @@ const styles = {
         height: '36px',
         transform: 'translateY(10px)',
         float: 'right',
+        marginLeft: '1rem',
     },
     paper: {
         padding: '1.4rem',
@@ -99,6 +103,19 @@ const renderPropertyFields = (summaryObject, config) => {
     });
 };
 
+const renderSendMessageBtn = userId => {
+    const url = `${api.getContextPath()}/dhis-web-messaging/showSendMessage.action?id=${userId}`;
+    return (
+        <RaisedButton
+            style={styles.raisedButton}
+            label={i18next.t('Send message')}
+            secondary={true}
+            containerElement={<a href={url}> </a>}
+            icon={<ContentSend />}
+        />
+    );
+};
+
 const DetailSummary = ({ summaryObject, config, baseName }) => {
     if (summaryObject === null) {
         return <LoadingMask />;
@@ -128,6 +145,7 @@ const DetailSummary = ({ summaryObject, config, baseName }) => {
                     containerElement={<Link to={editLink} />}
                     icon={<ImageEdit />}
                 />
+                {baseName === USER ? renderSendMessageBtn(id) : null}
             </Heading>
             <Paper style={styles.paper}>
                 <table>

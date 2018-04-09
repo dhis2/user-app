@@ -1,16 +1,44 @@
 import React from 'react';
-import UserList from '../components/users/UserList';
+import UserList from '../containers/UserList';
 import FormLoader from '../components/FormLoader';
-// import UserForm from '../components/users/UserForm';
-// import GroupForm from '../components/groups/GroupForm';
-// import RoleForm from '../components/roles/RoleForm';
-import UserProfile from '../components/users/UserProfile';
+import UserProfile from '../containers/UserProfile';
 import PageNotFound from '../components/PageNotFound';
-import RoleList from '../components/roles/RoleList';
-import RoleDetails from '../components/roles/RoleDetails';
-import GroupList from '../components/groups/GroupList';
-import GroupDetails from '../components/groups/GroupDetails';
+import CardLinks from '../components/CardLinks';
+import RoleList from '../containers/RoleList';
+import RoleDetails from '../containers/RoleDetails';
+import GroupList from '../containers/GroupList';
+import GroupDetails from '../containers/GroupDetails';
 import { USER, USER_ROLE, USER_GROUP } from './entityTypes';
+
+const USER_SECTION = {
+    key: 'user_section',
+    label: 'Users',
+    icon: 'person',
+    path: '/users',
+    description: 'Create, modify, view and delete Users',
+    component: UserList,
+    entityType: USER,
+};
+const USER_ROLE_SECTION = {
+    key: 'user_role_section',
+    label: 'User role',
+    icon: 'folder_shared',
+    path: '/user-roles',
+    description: 'Create, modify, view and delete User Roles',
+    component: RoleList,
+    entityType: USER_ROLE,
+};
+const USER_GROUP_SECTION = {
+    key: 'user_group_section',
+    label: 'User group',
+    icon: 'group',
+    path: '/user-groups',
+    description: 'Create, modify, view and delete User Groups',
+    component: GroupList,
+    entityType: USER_GROUP,
+};
+
+export const SECTIONS = [USER_SECTION, USER_ROLE_SECTION, USER_GROUP_SECTION];
 
 // Label property is used in sidebar, so routes without a label will be omitted
 const ROUTE_CONFIG = [
@@ -19,69 +47,66 @@ const ROUTE_CONFIG = [
         key: 'user_new_view',
         path: '/users/new',
         render: props => <FormLoader entityType={USER} {...props} />,
+        entityType: USER,
     },
     {
         key: 'user_edit_view',
         path: '/users/edit/:id',
         render: props => <FormLoader entityType={USER} {...props} />,
+        entityType: USER,
     },
     {
         key: 'user_profile_view',
         path: '/users/view/:id',
         component: UserProfile,
+        entityType: USER,
     },
-    {
-        key: 'user_section',
-        label: 'Users',
-        icon: 'person',
-        path: '/users',
-        component: UserList,
-    },
+    USER_SECTION,
     // ROLE
     {
         key: 'user_role_new_view',
         path: '/user-roles/new',
         render: props => <FormLoader entityType={USER_ROLE} {...props} />,
+        entityType: USER_ROLE,
     },
     {
         key: 'user_role_edit_view',
         path: '/user-roles/edit/:id',
         render: props => <FormLoader entityType={USER_ROLE} {...props} />,
+        entityType: USER_ROLE,
     },
     {
         key: 'user_role_details_view',
         path: '/user-roles/view/:id',
         component: RoleDetails,
+        entityType: USER_ROLE,
     },
-    {
-        key: 'user_role_section',
-        label: 'User role',
-        icon: 'folder_shared',
-        path: '/user-roles',
-        component: RoleList,
-    },
+    USER_ROLE_SECTION,
     // GROUP
     {
         key: 'user_group_new_view',
         path: '/user-groups/new',
         render: props => <FormLoader entityType={USER_GROUP} {...props} />,
+        entityType: USER_GROUP,
     },
     {
         key: 'user_group_edit_view',
         path: '/user-groups/edit/:id',
         render: props => <FormLoader entityType={USER_GROUP} {...props} />,
+        entityType: USER_GROUP,
     },
     {
         key: 'user_group_details_view',
         path: '/user-groups/view/:id',
         component: GroupDetails,
+        entityType: USER_GROUP,
     },
+    USER_GROUP_SECTION,
+    // Other
     {
-        key: 'user_group_section',
-        label: 'User group',
-        icon: 'group',
-        path: '/user-groups',
-        component: GroupList,
+        key: 'landing_page',
+        path: '/',
+        component: CardLinks,
     },
     {
         key: 'not_found',
