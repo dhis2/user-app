@@ -19,10 +19,12 @@ const listReducer = (state = initialState, { type, payload }) => {
                 items: null,
             };
         case LIST_RECEIVED:
-            return {
-                type: payload.type,
-                items: payload.response,
-            };
+            return state.type === payload.type
+                ? {
+                      type: payload.type,
+                      items: payload.response,
+                  }
+                : state;
         case LIST_ERRORED:
             return {
                 type: null,

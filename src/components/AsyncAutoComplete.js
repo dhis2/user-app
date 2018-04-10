@@ -3,7 +3,7 @@ import CircularProgress from 'material-ui/CircularProgress';
 import AutoComplete from 'material-ui/AutoComplete';
 import MenuItem from 'material-ui/MenuItem';
 import { orange500, blue500 } from 'material-ui/styles/colors';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import makeTrashable from 'trashable';
 import _ from '../constants/lodash';
 import PropTypes from 'prop-types';
@@ -37,8 +37,8 @@ const baseState = {
 };
 
 const defaultAutoCompleteProps = {
-    floatingLabelText: i18next.t('Search'),
-    hintText: i18next.t('Enter search term'),
+    floatingLabelText: i18n.t('Search'),
+    hintText: i18n.t('Enter search term'),
     fullWidth: true,
     type: 'search',
     filter: () => true,
@@ -68,7 +68,7 @@ class AsyncAutoComplete extends Component {
         if (!value || value.length < minCharLength) {
             // Don't query if too few characters were entered
             const searchWarning = value
-                ? i18next.t('Please enter at least {{ minCharCount }} characters', {
+                ? i18n.t('Please enter at least {{ minCharCount }} characters', {
                       minCharCount: minCharLength,
                   })
                 : null;
@@ -95,7 +95,7 @@ class AsyncAutoComplete extends Component {
                     this.setState({
                         ...baseState,
                         errorStyle: styles.error.warning,
-                        searchWarning: i18next.t('No matches found'),
+                        searchWarning: i18n.t('No matches found'),
                     });
                 }
             });

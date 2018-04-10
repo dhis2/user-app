@@ -1,5 +1,5 @@
 import _ from '../constants/lodash';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import {
     USER_PROPS,
     USER_CRED_PROPS,
@@ -49,7 +49,7 @@ const listMappings = {
 export const orgUnitsAsStringSelector = _.memoize(orgUnits => {
     return orgUnits.length < 3
         ? orgUnits.map(unit => unit.displayName).join(', ')
-        : i18next.t('{{count}} selected', { count: orgUnits.length });
+        : i18n.t('{{count}} selected', { count: orgUnits.length });
 });
 
 export const initialSharingSettingsSelector = _.memoize(

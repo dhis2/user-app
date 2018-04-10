@@ -1,4 +1,4 @@
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import _ from '../../constants/lodash';
 import checkPasswordForErrors from '../../utils/checkPasswordForErrors';
 import {
@@ -38,7 +38,7 @@ export default function validate(values, props) {
 
 function validateRequiredField(errors, propName, value, createUser) {
     if ((createUser && !value) || (!createUser && value === '')) {
-        errors[propName] = i18next.t('This field is required');
+        errors[propName] = i18n.t('This field is required');
     }
 }
 
@@ -47,7 +47,7 @@ function validateAssignedRoles(errors, value, createUser) {
     const isArrayWithLength = _.isArray(value) && value.length > 0;
 
     if (!unTouchedOnEdit && !isArrayWithLength) {
-        errors[ASSIGNED_ROLES] = i18next.t('A user should have at least one User Role');
+        errors[ASSIGNED_ROLES] = i18n.t('A user should have at least one User Role');
     }
 }
 
@@ -64,13 +64,13 @@ function validatePassword(errors, values, createUser) {
     }
 
     if (values[REPEAT_PASSWORD] && values[REPEAT_PASSWORD] !== values[PASSWORD]) {
-        errors[REPEAT_PASSWORD] = i18next.t('Passwords do not match');
+        errors[REPEAT_PASSWORD] = i18n.t('Passwords do not match');
     }
 }
 
 function validateEmail(errors, value) {
     const emailPattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
     if (value && !emailPattern.test(value)) {
-        errors[EMAIL] = i18next.t('Please provide a valid email address');
+        errors[EMAIL] = i18n.t('Please provide a valid email address');
     }
 }

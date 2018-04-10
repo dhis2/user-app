@@ -1,5 +1,5 @@
 import React from 'react';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import Action from 'd2-ui/lib/action/Action';
 import navigateTo from '../../utils/navigateTo';
 import store from '../../store';
@@ -30,10 +30,11 @@ export const isUserContextActionAllowed = (model, action) => {
             return access.update;
         case remove:
             return access.delete;
-        case replicate:
+        case replicate: {
             const currentUser = api.getCurrentUser();
             const userModelDefinition = api.getModelDefinition(USER);
             return access.update && currentUser.canCreate(userModelDefinition);
+        }
         case disable:
             return access.update && !disabled;
         case enable:
@@ -71,9 +72,9 @@ userContextMenuActions.edit.subscribe(({ data: { id } }) => {
 
 userContextMenuActions.remove.subscribe(({ data: user }) => {
     const params = {
-        confirmMsg: i18next.t('Are you sure you want to remove this user?'),
-        successMsg: i18next.t('User removed succesfully'),
-        errorMsg: i18next.t('There was a problem deleting the user'),
+        confirmMsg: i18n.t('Are you sure you want to remove this user?'),
+        successMsg: i18n.t('User removed succesfully'),
+        errorMsg: i18n.t('There was a problem deleting the user'),
         model: user,
         entityType: USER,
     };
@@ -84,7 +85,7 @@ userContextMenuActions.replicate.subscribe(({ data: { id } }) => {
     const content = <ReplicateUserForm userIdToReplicate={id} />;
     const props = {
         onRequestClose: () => store.dispatch(hideDialog()),
-        title: i18next.t('Replicate user'),
+        title: i18n.t('Replicate user'),
     };
     store.dispatch(showDialog(content, props));
 });
@@ -98,9 +99,9 @@ userContextMenuActions.enable.subscribe(({ data }) => {
 });
 
 const updateDisabledState = ({ displayName, id }, disabledState) => {
-    const enabledSuccessBaseMsg = i18next.t('successfully enabled');
-    const disabledSuccessBaseMsg = i18next.t('sucessfully disabled');
-    const errorMsg = i18next.t('There was a problem updating the enabled state');
+    const enabledSuccessBaseMsg = i18n.t('successfully enabled');
+    const disabledSuccessBaseMsg = i18n.t('sucessfully disabled');
+    const errorMsg = i18n.t('There was a problem updating the enabled state');
 
     api
         .updateDisabledState(id, disabledState)

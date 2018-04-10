@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { USER } from '../../constants/entityTypes';
 import List from '../../components/List';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 
 import {
     userContextMenuActions,
@@ -22,7 +22,7 @@ class UserList extends Component {
                 contextMenuActions={userContextMenuActions}
                 contextMenuIcons={userContextMenuIcons}
                 isContextActionAllowed={isUserContextActionAllowed}
-                sectionName={i18next.t('User Management')}
+                sectionName={i18n.t('User Management')}
                 newItemPath={'/users/new'}
                 className="user-list"
             />

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import TextField from 'material-ui/TextField';
 import ActionOpenInNew from 'material-ui/svg-icons/action/open-in-new';
 import PropTypes from 'prop-types';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import { showDialog, hideDialog } from '../actions';
 import OrganisationUnitFilter from './OrganisationUnitFilter';
 import { orgUnitsAsStringSelector } from '../selectors';
@@ -51,7 +51,7 @@ class OrganisationUnitInput extends Component {
         const content = <OrganisationUnitFilter />;
         const props = {
             onRequestClose: hideDialog,
-            title: i18next.t('Select an organisation unit'),
+            title: i18n.t('Select an organisation unit'),
             contentStyle: {
                 // This doesn't actually influence the height of the dialogue
                 // but it will force it upwards, enabling it to have more height
@@ -70,7 +70,7 @@ class OrganisationUnitInput extends Component {
                 <TextField
                     ref="orgUnitInput"
                     style={styles.textField}
-                    floatingLabelText={i18next.t('Organisation unit')}
+                    floatingLabelText={i18n.t('Organisation unit')}
                     onFocus={this.showOrgTreeInDialog}
                     value={organisationUnits}
                     inputStyle={styles.input}

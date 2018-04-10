@@ -5,7 +5,7 @@ import CircularProgress from 'material-ui/CircularProgress';
 import AsyncAutoComplete from './AsyncAutoComplete';
 import RaisedButton from 'material-ui/RaisedButton';
 import Heading from 'd2-ui/lib/headings/Heading.component';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import _ from '../constants/lodash';
 import makeTrashable from 'trashable';
 import PropTypes from 'prop-types';
@@ -153,8 +153,8 @@ class SearchableOrgUnitTree extends Component {
         const selected = selectedOrgUnits.map(unit => unit.path);
 
         const autoCompleteProps = {
-            floatingLabelText: i18next.t('Search'),
-            hintText: i18next.t('Enter search term'),
+            floatingLabelText: i18n.t('Search'),
+            hintText: i18n.t('Enter search term'),
             fullWidth: true,
         };
 
@@ -188,7 +188,7 @@ class SearchableOrgUnitTree extends Component {
                 {confirmSelection ? (
                     <div style={styles.buttonStrip}>
                         <RaisedButton
-                            label={i18next.t('Apply')}
+                            label={i18n.t('Apply')}
                             primary={true}
                             style={styles.buttonMargin}
                             onClick={this.applySelection}
@@ -196,14 +196,14 @@ class SearchableOrgUnitTree extends Component {
                         />
                         {displayClearFilterButton ? (
                             <RaisedButton
-                                label={i18next.t('Clear all')}
+                                label={i18n.t('Clear all')}
                                 secondary={true}
                                 style={styles.buttonMargin}
                                 onClick={this.clearSelection}
                                 disabled={!root}
                             />
                         ) : null}
-                        <RaisedButton onClick={cancel} label={i18next.t('Cancel')} />
+                        <RaisedButton onClick={cancel} label={i18n.t('Cancel')} />
                     </div>
                 ) : null}
             </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import PropTypes from 'prop-types';
 import TextField from 'material-ui/TextField/TextField';
 import Checkbox from 'material-ui/Checkbox/Checkbox';
@@ -86,8 +86,8 @@ export const renderSearchableGroupEditor = ({
     initialValues,
     ...other
 }) => {
-    const availableItemsHeader = i18next.t(availableItemsLabel);
-    const assignedItemsHeader = i18next.t(assignedItemsLabel);
+    const availableItemsHeader = i18n.t(availableItemsLabel);
+    const assignedItemsHeader = i18n.t(assignedItemsLabel);
     return (
         <SearchableGroupEditor
             initiallyAssignedItems={initialValues}

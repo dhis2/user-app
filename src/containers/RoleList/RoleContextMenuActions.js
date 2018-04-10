@@ -1,4 +1,4 @@
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import Action from 'd2-ui/lib/action/Action';
 import navigateTo from '../../utils/navigateTo';
 import { USER_ROLE } from '../../constants/entityTypes';
@@ -56,9 +56,9 @@ roleContextMenuActions.edit.subscribe(({ data: { id } }) => {
 
 roleContextMenuActions.remove.subscribe(({ data: role }) => {
     const params = {
-        confirmMsg: i18next.t('Are you sure you want to remove this user role?'),
-        successMsg: i18next.t('User role removed succesfully'),
-        errorMsg: i18next.t('There was a problem deleting the user role'),
+        confirmMsg: i18n.t('Are you sure you want to remove this user role?'),
+        successMsg: i18n.t('User role removed succesfully'),
+        errorMsg: i18n.t('There was a problem deleting the user role'),
         model: role,
         entityType: USER_ROLE,
     };

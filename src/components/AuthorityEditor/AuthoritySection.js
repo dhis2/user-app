@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Paper, CircularProgress } from 'material-ui';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import AuthorityGroup from './AuthorityGroup';
 import AuthorityItem from './AuthorityItem';
 
-const FLUSH_COUNT = 6;
+const FLUSH_COUNT = 20;
 const FLUSH_INTERVAL = 1;
 
 // This component used to cause the page to hang whilst it was rendering
@@ -82,7 +82,7 @@ class AuthoritySection extends Component {
         return (
             <tr>
                 <td className="authority-editor__placeholder-cell">
-                    {i18next.t('No matches found')}
+                    {i18n.t('No matches found')}
                 </td>
             </tr>
         );

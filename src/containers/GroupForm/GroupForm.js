@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import { Field, reduxForm } from 'redux-form';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -20,20 +20,20 @@ class GroupForm extends Component {
         const { group, showSnackbar, clearItem, getList } = this.props;
 
         group[NAME] = values[NAME];
-        group[USERS] = values[USERS].map(({ id }) => ({ id }));
-        group[MANAGED_GROUPS] = values[MANAGED_GROUPS].map(({ id }) => ({ id }));
+        group[USERS] = values[USERS].map(value => ({ id: value }));
+        group[MANAGED_GROUPS] = values[MANAGED_GROUPS].map(value => ({ id: value }));
 
         group
             .save()
             .then(() => {
-                const msg = i18next.t('User group saved successfully');
+                const msg = i18n.t('User group saved successfully');
                 showSnackbar({ message: msg });
                 clearItem();
                 getList(USER_GROUP);
                 this.backToList();
             })
             .catch(error => {
-                const msg = i18next.t('There was a problem saving the user group.');
+                const msg = i18n.t('There was a problem saving the user group.');
                 showSnackbar({ message: msg });
             });
     };
@@ -47,12 +47,10 @@ class GroupForm extends Component {
         return FIELDS.map(fieldConfig => {
             const { name, fieldRenderer, label, isRequiredField, ...conf } = fieldConfig;
             const suffix = isRequiredField ? ' *' : '';
-            const labelText = i18next.t(label) + suffix;
+            const labelText = label + suffix;
 
             if (fieldRenderer === renderSearchableGroupEditor) {
                 conf.availableItemsQuery = api[conf.availableItemsQuery];
-                conf.availableItemsLabel = i18next.t(conf.availableItemsLabel);
-                conf.assignedItemsLabel = i18next.t(conf.assignedItemsLabel);
                 if (isRequiredField) {
                     conf.assignedItemsLabel += ' *';
                 }
@@ -76,19 +74,19 @@ class GroupForm extends Component {
         const disableSubmit = Boolean(asyncValidating || pristine || !valid);
         return (
             <main>
-                <Heading level={2}>{i18next.t('Details')}</Heading>
+                <Heading level={2}>{i18n.t('Details')}</Heading>
                 <form onSubmit={handleSubmit(this.saveGroup)}>
                     {this.renderFields()}
                     <div style={{ marginTop: '2rem' }}>
                         <RaisedButton
-                            label={i18next.t('Save')}
+                            label={i18n.t('Save')}
                             type="submit"
                             primary={true}
                             disabled={disableSubmit}
                             style={{ marginRight: '8px' }}
                         />
                         <RaisedButton
-                            label={i18next.t('Cancel')}
+                            label={i18n.t('Cancel')}
                             onClick={this.backToList}
                         />
                     </div>

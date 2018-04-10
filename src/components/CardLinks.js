@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import Card from 'material-ui/Card/Card';
 import CardHeader from 'material-ui/Card/CardHeader';
 import CardText from 'material-ui/Card/CardText';
@@ -49,7 +49,7 @@ class CardLinks extends Component {
                 <IconButton
                     key="add"
                     iconClassName="material-icons"
-                    tooltip={i18next.t('Add')}
+                    tooltip={i18n.t('Add')}
                     tooltipPosition="top-center"
                     onClick={() => navigateTo(createPath)}
                 >
@@ -63,7 +63,7 @@ class CardLinks extends Component {
                 <IconButton
                     key="list"
                     iconClassName="material-icons"
-                    tooltip={i18next.t('list')}
+                    tooltip={i18n.t('list')}
                     tooltipPosition="top-center"
                     onClick={() => navigateTo(card.path)}
                 >

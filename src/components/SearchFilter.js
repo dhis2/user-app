@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import TextField from 'material-ui/TextField/TextField';
 import _ from '../constants/lodash';
 import { updateFilter, getList } from '../actions';
@@ -39,7 +39,7 @@ class SearchFilter extends Component {
         return (
             <TextField
                 className="search-input"
-                floatingLabelText={i18next.t('Search by name')}
+                floatingLabelText={i18n.t('Search by name')}
                 style={style}
                 hintText={''}
                 value={localQueryStr}

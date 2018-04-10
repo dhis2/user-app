@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import { USER_ROLE } from '../../constants/entityTypes';
 import List from '../../components/List';
 import {
@@ -21,7 +21,7 @@ class RoleList extends Component {
                 contextMenuActions={roleContextMenuActions}
                 contextMenuIcons={roleContextMenuIcons}
                 isContextActionAllowed={isRoleContextActionAllowed}
-                sectionName={i18next.t('User Role Management')}
+                sectionName={i18n.t('User Role Management')}
                 newItemPath={'/user-roles/new'}
                 className={'role-list'}
             />

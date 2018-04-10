@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Paper } from 'material-ui';
 import _ from '../constants/lodash';
 import api from '../api';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import parseDateFromUTCString from '../utils/parseDateFromUTCString';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import ErrorMessage from './ErrorMessage';
@@ -55,7 +55,7 @@ const renderPropertyFields = (summaryObject, config) => {
             parseArrayAsCommaDelimitedString,
             count,
         } = field;
-        label = i18next.t(label);
+        label = i18n.t(label);
         let value = summaryObject[key];
 
         if (typeof value === 'undefined') {
@@ -108,7 +108,7 @@ const renderSendMessageBtn = userId => {
     return (
         <RaisedButton
             style={styles.raisedButton}
-            label={i18next.t('Send message')}
+            label={i18n.t('Send message')}
             secondary={true}
             containerElement={<a href={url}> </a>}
             icon={<ContentSend />}
@@ -122,16 +122,16 @@ const DetailSummary = ({ summaryObject, config, baseName }) => {
     }
 
     if (typeof summaryObject === 'string') {
-        const errorText = i18next.t(`There was an error fetching the ${baseName}`);
+        const errorText = i18n.t(`There was an error fetching the ${baseName}`);
         return <ErrorMessage introText={errorText} errorMessage={summaryObject} />;
     }
 
     const { id, displayName } = summaryObject;
     const plural = `${baseName}s`,
         baseRoute = `/${_.kebabCase(plural)}`,
-        backTooltip = i18next.t(`Back to ${plural}`),
+        backTooltip = i18n.t(`Back to ${plural}`),
         editLink = `${baseRoute}/edit/${id}`,
-        editTooltip = i18next.t(`Edit ${baseName}`);
+        editTooltip = i18n.t(`Edit ${baseName}`);
 
     return (
         <main style={styles.main}>

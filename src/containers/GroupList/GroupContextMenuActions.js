@@ -1,4 +1,4 @@
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import Action from 'd2-ui/lib/action/Action';
 import navigateTo from '../../utils/navigateTo';
 import api from '../../api';
@@ -58,9 +58,9 @@ export const groupContextMenuActions = Action.createActionsFromNames([
 ]);
 
 const updateGroupMembership = ({ displayName, id }, deleteMembership) => {
-    const joinSuccessBaseMsg = i18next.t('You joined group');
-    const leaveSuccessBaseMsg = i18next.t('You left group');
-    const errorMsg = i18next.t('There was a problem updating your group membership');
+    const joinSuccessBaseMsg = i18n.t('You joined group');
+    const leaveSuccessBaseMsg = i18n.t('You left group');
+    const errorMsg = i18n.t('There was a problem updating your group membership');
 
     api
         .updateCurrentUserGroupMembership(id, deleteMembership)
@@ -94,9 +94,9 @@ groupContextMenuActions.leave_group.subscribe(({ data }) => {
 
 groupContextMenuActions.remove.subscribe(({ data: group }) => {
     const params = {
-        confirmMsg: i18next.t('Are you sure you want to remove this user group?'),
-        successMsg: i18next.t('User group removed succesfully'),
-        errorMsg: i18next.t('There was a problem deleting the user group'),
+        confirmMsg: i18n.t('Are you sure you want to remove this user group?'),
+        successMsg: i18n.t('User group removed succesfully'),
+        errorMsg: i18n.t('There was a problem deleting the user group'),
         model: group,
         entityType: USER_GROUP,
     };

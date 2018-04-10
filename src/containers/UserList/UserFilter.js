@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import i18next from 'i18next';
+import i18n from 'd2-i18n';
 import { Checkbox } from 'material-ui';
 import DropDown from 'd2-ui/lib/form-fields/DropDown.component';
 import { updateFilter, getList } from '../../actions';
@@ -40,8 +40,8 @@ class UserFilter extends Component {
     };
 
     createInactiveMonthsOptions() {
-        const month = i18next.t('month');
-        const months = i18next.t('months');
+        const month = i18n.t('month');
+        const months = i18n.t('months');
         return Array(11)
             .fill()
             .map((_, index) => {
@@ -55,7 +55,7 @@ class UserFilter extends Component {
         const mergedConfig = {
             ...config,
             includeEmpty: true,
-            emptyLabel: i18next.t('<No value>'),
+            emptyLabel: i18n.t('<No value>'),
         };
         return <DropDown {...mergedConfig} />;
     }
@@ -63,7 +63,7 @@ class UserFilter extends Component {
     renderInactiveMonthsFilter() {
         const dropDownConfig = {
             menuItems: this.createInactiveMonthsOptions(),
-            floatingLabelText: i18next.t('Inactivity'),
+            floatingLabelText: i18n.t('Inactivity'),
             value: this.props.filter.inactiveMonths,
             onChange: event => this.onFilterChange(INACTIVE_MONTHS, event.target.value),
             style: { ...style, width: '132px' },
@@ -75,10 +75,10 @@ class UserFilter extends Component {
     renderInvitationStatusFilter() {
         const dropDownConfig = {
             menuItems: [
-                { id: 'all', displayName: i18next.t('All invitations') },
-                { id: 'expired', displayName: i18next.t('Expired invitations') },
+                { id: 'all', displayName: i18n.t('All invitations') },
+                { id: 'expired', displayName: i18n.t('Expired invitations') },
             ],
-            floatingLabelText: i18next.t('Invitations'),
+            floatingLabelText: i18n.t('Invitations'),
             value: this.props.filter.invitationStatus,
             onChange: event => this.onFilterChange(INVITATION_STATUS, event.target.value),
             style: { ...style, width: '172px' },
@@ -96,7 +96,7 @@ class UserFilter extends Component {
             <Checkbox
                 value={value}
                 onCheck={(event, value) => this.onFilterChange(SELF_REGISTERED, value)}
-                label={i18next.t('Self registrations')}
+                label={i18n.t('Self registrations')}
                 className={value ? checkedClassName : baseClassName}
                 style={selfRegisteredStyle}
             />
