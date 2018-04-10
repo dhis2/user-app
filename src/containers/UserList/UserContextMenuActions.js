@@ -30,10 +30,11 @@ export const isUserContextActionAllowed = (model, action) => {
             return access.update;
         case remove:
             return access.delete;
-        case replicate:
+        case replicate: {
             const currentUser = api.getCurrentUser();
             const userModelDefinition = api.getModelDefinition(USER);
             return access.update && currentUser.canCreate(userModelDefinition);
+        }
         case disable:
             return access.update && !disabled;
         case enable:

@@ -38,6 +38,10 @@ const styles = {
         float: 'right',
         marginTop: '14px',
     },
+    headerBarFilterWrap: {
+        display: 'table',
+        marginRight: '230px',
+    },
     pagination: {
         userSelect: 'none',
     },
@@ -111,7 +115,7 @@ class List extends Component {
         return (
             <div className="data-table__filter-bar" style={styles.filterBar}>
                 <div style={styles.headerBarPagination}>{this.renderPagination()}</div>
-                <div>
+                <div style={styles.headerBarFilterWrap}>
                     <FilterComponent entityType={entityType} />
                 </div>
             </div>

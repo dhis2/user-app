@@ -34,6 +34,7 @@ class Api {
         });
     }
 
+    // TODO: use arrow functions
     bindAllMethodsToThisScope() {
         const methodNames = Object.getOwnPropertyNames(this.constructor.prototype);
         const skipMethods = ['constructor', 'init', 'bindAllMethodsToThisScope'];

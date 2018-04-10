@@ -92,17 +92,17 @@ class FormLoader extends Component {
     renderContent() {
         const { match: { params: { id } }, item } = this.props;
 
+        if (typeof item === 'string') {
+            return (
+                <ErrorMessage introText={this.formNotFoundErrorMsg} errorMessage={item} />
+            );
+        }
+
         if (!item || (item && item.id !== id)) {
             return (
                 <div style={{ textAlign: 'center', paddingTop: '2rem' }}>
                     <CircularProgress />
                 </div>
-            );
-        }
-
-        if (typeof item === 'string') {
-            return (
-                <ErrorMessage introText={this.formNotFoundErrorMsg} errorMessage={item} />
             );
         }
 
