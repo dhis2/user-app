@@ -8,7 +8,12 @@ import SearchableOrgUnitTree from '../components/SearchableOrgUnitTree';
 
 class OrganisationUnitFilter extends Component {
     applyFilter = newSelectedOrgUnits => {
-        const { updateFilter, hideDialog, getList, selectedOrgUnits } = this.props;
+        const {
+            updateFilter,
+            hideDialog,
+            getList,
+            selectedOrgUnits,
+        } = this.props;
 
         if (!_.isEqual(newSelectedOrgUnits, selectedOrgUnits)) {
             updateFilter('organisationUnits', newSelectedOrgUnits);

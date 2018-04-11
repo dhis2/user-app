@@ -1,4 +1,7 @@
-import { renderTextField, renderAuthorityEditor } from '../../utils/fieldRenderers';
+import {
+    renderTextField,
+    renderAuthorityEditor,
+} from '../../utils/fieldRenderers';
 import i18n from 'd2-i18n';
 
 export const NAME = 'name';

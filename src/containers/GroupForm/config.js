@@ -1,4 +1,7 @@
-import { renderTextField, renderSearchableGroupEditor } from '../../utils/fieldRenderers';
+import {
+    renderTextField,
+    renderSearchableGroupEditor,
+} from '../../utils/fieldRenderers';
 import asArray from '../../utils/asArray';
 import i18n from 'd2-i18n';
 

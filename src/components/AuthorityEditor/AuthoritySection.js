@@ -36,7 +36,9 @@ class AuthoritySection extends Component {
         this.appendInterval = setInterval(() => {
             const currItems = this.state.renderedItems || [];
             const reachedEnd = currSliceEnd + FLUSH_COUNT > items.length;
-            const sliceEnd = reachedEnd ? items.length : currSliceEnd + FLUSH_COUNT;
+            const sliceEnd = reachedEnd
+                ? items.length
+                : currSliceEnd + FLUSH_COUNT;
             const newItems = items.slice(currSliceEnd, sliceEnd);
             const renderedItems = [...currItems, ...newItems];
 
@@ -55,7 +57,10 @@ class AuthoritySection extends Component {
         return (
             <tr key={`row-${index}`}>
                 {authSubject.items ? (
-                    <AuthorityGroup items={authSubject.items} name={authSubject.name} />
+                    <AuthorityGroup
+                        items={authSubject.items}
+                        name={authSubject.name}
+                    />
                 ) : (
                     <AuthorityItem
                         authSubject={authSubject}
@@ -120,7 +125,10 @@ class AuthoritySection extends Component {
 
         return (
             <Paper className={`authority-editor__auth-group ${sectionKey}`}>
-                <Heading level={6} className="authority-editor__auth-group-header">
+                <Heading
+                    level={6}
+                    className="authority-editor__auth-group-header"
+                >
                     {authSection.name}
                 </Heading>
                 <table className={tableClassName}>

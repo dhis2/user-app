@@ -112,7 +112,13 @@ class UserForm extends Component {
     renderFields(fields) {
         const { user } = this.props;
         return fields.map((fieldConfig, index) => {
-            const { name, fieldRenderer, label, isRequiredField, ...conf } = fieldConfig;
+            const {
+                name,
+                fieldRenderer,
+                label,
+                isRequiredField,
+                ...conf
+            } = fieldConfig;
             const labelText = this.getLabelText(label, user, isRequiredField);
 
             if (fieldRenderer === renderText) {
@@ -121,16 +127,26 @@ class UserForm extends Component {
 
             switch (fieldRenderer) {
                 case renderTextField:
-                    conf.disabled = Boolean(name === CONFIG.USERNAME && user.id);
+                    conf.disabled = Boolean(
+                        name === CONFIG.USERNAME && user.id
+                    );
                     break;
                 case renderSearchableOrgUnitTree:
                     conf.initialValues = asArray(user[fieldConfig.name]);
                     break;
                 case renderSearchableGroupEditor:
-                    this.prepareGroupEditor(conf, fieldConfig, user, isRequiredField);
+                    this.prepareGroupEditor(
+                        conf,
+                        fieldConfig,
+                        user,
+                        isRequiredField
+                    );
                     break;
                 case renderSelectField:
-                    conf.options = getNestedProp(fieldConfig.optionsSelector, this.state);
+                    conf.options = getNestedProp(
+                        fieldConfig.optionsSelector,
+                        this.state
+                    );
                     break;
                 default:
                     break;
@@ -232,7 +248,8 @@ UserForm.propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     change: PropTypes.func.isRequired,
     initialize: PropTypes.func.isRequired,
-    asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]).isRequired,
+    asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+        .isRequired,
     pristine: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired,
 };

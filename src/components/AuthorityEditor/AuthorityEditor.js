@@ -33,7 +33,9 @@ class AuthorityEditor extends Component {
     }
 
     componentDidMount() {
-        this.groupedAuthoritiesPromise = makeTrashable(api.getGroupedAuthorities());
+        this.groupedAuthoritiesPromise = makeTrashable(
+            api.getGroupedAuthorities()
+        );
         this.groupedAuthoritiesPromise.then(allGroupedAuthorities => {
             this.setState({ allGroupedAuthorities: allGroupedAuthorities });
         });
@@ -57,7 +59,10 @@ class AuthorityEditor extends Component {
         const stateChanges = this.getChangedProperties(nextState, this.state);
         const allChanges = [...propChanges, ...stateChanges];
 
-        return allChanges.length > 0 && allChanges.includes('allGroupedAuthorities');
+        return (
+            allChanges.length > 0 &&
+            allChanges.includes('allGroupedAuthorities')
+        );
     }
 
     onFilterChange = (searchStr, selectedOnly) => {

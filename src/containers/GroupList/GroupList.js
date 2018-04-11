@@ -26,7 +26,12 @@ class GroupList extends Component {
         const { groupMemberships } = this.props;
         if (typeof groupMemberships === 'string') {
             const introText = 'There was an error fetching the user list:';
-            return <ErrorMessage introText={introText} errorMessage={groupMemberships} />;
+            return (
+                <ErrorMessage
+                    introText={introText}
+                    errorMessage={groupMemberships}
+                />
+            );
         }
 
         if (groupMemberships === null) {

@@ -1,4 +1,8 @@
-import { LIST_REQUESTED, LIST_RECEIVED, LIST_ERRORED } from '../constants/actionTypes';
+import {
+    LIST_REQUESTED,
+    LIST_RECEIVED,
+    LIST_ERRORED,
+} from '../constants/actionTypes';
 
 const initialState = {
     type: null,

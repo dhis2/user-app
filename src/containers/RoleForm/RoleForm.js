@@ -40,7 +40,13 @@ class RoleForm extends Component {
 
     renderFields() {
         return FIELDS.map(fieldConfig => {
-            const { name, fieldRenderer, label, isRequiredField, ...conf } = fieldConfig;
+            const {
+                name,
+                fieldRenderer,
+                label,
+                isRequiredField,
+                ...conf
+            } = fieldConfig;
 
             return (
                 <Field
@@ -88,7 +94,8 @@ RoleForm.propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     initialValues: PropTypes.object.isRequired,
     role: PropTypes.object.isRequired,
-    asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]).isRequired,
+    asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+        .isRequired,
     pristine: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired,
 };

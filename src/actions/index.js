@@ -14,7 +14,9 @@ const createListRequestActionSequence = (dispatch, promise, type, silent) => {
         .then(response =>
             dispatch(createAction(ACTIONS.LIST_RECEIVED, { type, response }))
         )
-        .catch(error => dispatch(createAction(ACTIONS.LIST_ERRORED, { type, error })));
+        .catch(error =>
+            dispatch(createAction(ACTIONS.LIST_ERRORED, { type, error }))
+        );
 };
 
 export const getList = (entityName, silent) => (dispatch, getState) => {
@@ -38,7 +40,9 @@ export const getItem = (entityName, viewType, id) => (dispatch, getState) => {
     dispatch(createAction(ACTIONS.ITEM_REQUESTED));
     api
         .getItem(entityName, viewType, id)
-        .then(response => dispatch(createAction(ACTIONS.ITEM_RECEIVED, response)))
+        .then(response =>
+            dispatch(createAction(ACTIONS.ITEM_RECEIVED, response))
+        )
         .catch(error => dispatch(createAction(ACTIONS.ITEM_ERRORED, error)));
 };
 

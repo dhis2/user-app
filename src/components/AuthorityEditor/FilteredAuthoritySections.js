@@ -21,17 +21,27 @@ class FilteredAuthoritySections extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        this.updateFilteredAuthorities(nextProps.allGroupedAuthorities, null, null);
+        this.updateFilteredAuthorities(
+            nextProps.allGroupedAuthorities,
+            null,
+            null
+        );
     }
 
     updateFilter(searchStr, selectedOnly) {
         const { allGroupedAuthorities } = this.props;
-        this.updateFilteredAuthorities(allGroupedAuthorities, searchStr, selectedOnly);
+        this.updateFilteredAuthorities(
+            allGroupedAuthorities,
+            searchStr,
+            selectedOnly
+        );
     }
 
     updateFilteredAuthorities(all, searchStr, selectedOnly) {
         const { selectedItemsLookup } = this.context;
-        const searchChunks = searchStr ? searchStr.toLowerCase().split(' ') : null;
+        const searchChunks = searchStr
+            ? searchStr.toLowerCase().split(' ')
+            : null;
         this.setState({
             filteredAuthorities: filterAuthorities(
                 all,

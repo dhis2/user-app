@@ -1,3 +1,4 @@
+/* global DHIS_CONFIG, manifest */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import UserApp from './UserApp';
@@ -5,24 +6,19 @@ import registerServiceWorker from './registerServiceWorker';
 import { config, getUserSettings, getManifest } from 'd2/lib/d2';
 import i18n from './locales';
 
-const API_VERSION = '29';
-
-const updateConfig = manifest => {
-    // TODO
-    // Webpack needs to add a stringified version of DHIS_HOME/config.json
-    // to process.env. This is probably not possible until we have ejected.
-    // For now we hardcode it
-    const dhisDevConfig = {
+const updateConfig = () => {
+    const fallbackDevConfig = {
         baseUrl: 'http://localhost:8080/dhis/api/',
         authorization: 'Basic YWRtaW46ZGlzdHJpY3Q=', // admin:district
     };
-
+    const dhisDevConfig = DHIS_CONFIG || fallbackDevConfig;
+    const apiVersion = manifest.dhis2.apiVersion || '29';
     const isProd = process.env.NODE_ENV === 'production';
     const baseUrl = isProd
-        ? manifest.getBaseUrl() + API_VERSION
-        : dhisDevConfig.baseUrl + API_VERSION;
+        ? manifest.activities.dhis.href
+        : dhisDevConfig.baseUrl;
 
-    config.baseUrl = baseUrl;
+    config.baseUrl = `${baseUrl}/api/${apiVersion}`;
     config.schemas = [
         'userRole',
         'user',
@@ -48,9 +44,19 @@ const renderAppInDOM = () => {
     ReactDOM.render(<UserApp config={config} />, rootEl);
 };
 
-getManifest('manifest.json')
-    .then(updateConfig)
-    .then(getUserSettings)
-    .then(configI18n)
-    .then(renderAppInDOM)
-    .then(registerServiceWorker);
+// getManifest('manifest.json')
+//     .then(updateConfig)
+//     .then(getUserSettings)
+//     .then(configI18n)
+//     .then(renderAppInDOM)
+//     .then(registerServiceWorker);
+
+const init = () => {
+    updateConfig();
+    getUserSettings()
+        .then(configI18n)
+        .then(renderAppInDOM)
+        .then(registerServiceWorker);
+};
+
+init();

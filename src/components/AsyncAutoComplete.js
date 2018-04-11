@@ -68,9 +68,12 @@ class AsyncAutoComplete extends Component {
         if (!value || value.length < minCharLength) {
             // Don't query if too few characters were entered
             const searchWarning = value
-                ? i18n.t('Please enter at least {{ minCharCount }} characters', {
-                      minCharCount: minCharLength,
-                  })
+                ? i18n.t(
+                      'Please enter at least {{ minCharCount }} characters',
+                      {
+                          minCharCount: minCharLength,
+                      }
+                  )
                 : null;
             this.setState({ ...baseState, searchWarning });
         } else {
@@ -82,10 +85,12 @@ class AsyncAutoComplete extends Component {
             this.trashableQuery.then(modelCollection => {
                 if (modelCollection.size > 0) {
                     // Display results if any were returned
-                    const filteredItems = modelCollection.toArray().map(model => ({
-                        text: model.displayName,
-                        value: model,
-                    }));
+                    const filteredItems = modelCollection
+                        .toArray()
+                        .map(model => ({
+                            text: model.displayName,
+                            value: model,
+                        }));
                     this.setState({
                         ...baseState,
                         filteredItems: filteredItems,
@@ -125,7 +130,12 @@ class AsyncAutoComplete extends Component {
             ...defaultAutoCompleteProps,
             ...autoCompleteProps,
         };
-        const { filteredItems, searchWarning, errorStyle, autoCompleteText } = this.state;
+        const {
+            filteredItems,
+            searchWarning,
+            errorStyle,
+            autoCompleteText,
+        } = this.state;
         const marginBottom = searchWarning ? 0 : 28;
         const mergedProps = {
             ...mergedAutoCompleteProps,

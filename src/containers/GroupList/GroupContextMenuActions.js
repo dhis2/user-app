@@ -60,13 +60,19 @@ export const groupContextMenuActions = Action.createActionsFromNames([
 const updateGroupMembership = ({ displayName, id }, deleteMembership) => {
     const joinSuccessBaseMsg = i18n.t('You joined group');
     const leaveSuccessBaseMsg = i18n.t('You left group');
-    const errorMsg = i18n.t('There was a problem updating your group membership');
+    const errorMsg = i18n.t(
+        'There was a problem updating your group membership'
+    );
 
     api
         .updateCurrentUserGroupMembership(id, deleteMembership)
         .then(() => {
-            const baseMsg = deleteMembership ? leaveSuccessBaseMsg : joinSuccessBaseMsg;
-            store.dispatch(showSnackbar({ message: `${baseMsg} ${displayName}` }));
+            const baseMsg = deleteMembership
+                ? leaveSuccessBaseMsg
+                : joinSuccessBaseMsg;
+            store.dispatch(
+                showSnackbar({ message: `${baseMsg} ${displayName}` })
+            );
             store.dispatch(getCurrentUserGroupMemberships());
         })
         .catch(() => {

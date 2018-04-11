@@ -21,7 +21,9 @@ class GroupForm extends Component {
 
         group[NAME] = values[NAME];
         group[USERS] = values[USERS].map(value => ({ id: value }));
-        group[MANAGED_GROUPS] = values[MANAGED_GROUPS].map(value => ({ id: value }));
+        group[MANAGED_GROUPS] = values[MANAGED_GROUPS].map(value => ({
+            id: value,
+        }));
 
         group
             .save()
@@ -33,7 +35,9 @@ class GroupForm extends Component {
                 this.backToList();
             })
             .catch(error => {
-                const msg = i18n.t('There was a problem saving the user group.');
+                const msg = i18n.t(
+                    'There was a problem saving the user group.'
+                );
                 showSnackbar({ message: msg });
             });
     };
@@ -45,7 +49,13 @@ class GroupForm extends Component {
     renderFields() {
         const { group } = this.props;
         return FIELDS.map(fieldConfig => {
-            const { name, fieldRenderer, label, isRequiredField, ...conf } = fieldConfig;
+            const {
+                name,
+                fieldRenderer,
+                label,
+                isRequiredField,
+                ...conf
+            } = fieldConfig;
             const suffix = isRequiredField ? ' *' : '';
             const labelText = label + suffix;
 
@@ -103,7 +113,8 @@ GroupForm.propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     initialValues: PropTypes.object.isRequired,
     group: PropTypes.object.isRequired,
-    asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]).isRequired,
+    asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+        .isRequired,
     pristine: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired,
 };

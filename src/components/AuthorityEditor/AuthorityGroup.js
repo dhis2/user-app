@@ -4,7 +4,10 @@ import _ from '../../constants/lodash';
 
 import AuthorityItem from './AuthorityItem';
 import HighlightableText from './HighlightableText';
-import { PUBLIC_ADD_SUFFIX, PRIVATE_ADD_SUFFIX } from './utils/groupAuthorities';
+import {
+    PUBLIC_ADD_SUFFIX,
+    PRIVATE_ADD_SUFFIX,
+} from './utils/groupAuthorities';
 
 class AuthorityGroup extends Component {
     onAuthGroupChanged = (id, value) => {
@@ -33,7 +36,9 @@ class AuthorityGroup extends Component {
             (authGroup, authSubject, index) => {
                 const isPublicAdd = this.isPublicAdd(authSubject.id);
                 const isPrivateAdd = this.isPrivateAdd(authSubject.id);
-                const implicitSelect = Boolean(publicAddSelected && isPrivateAdd);
+                const implicitSelect = Boolean(
+                    publicAddSelected && isPrivateAdd
+                );
                 const selected = shouldSelect(authSubject.id) || implicitSelect;
 
                 if (isPublicAdd) {
@@ -54,7 +59,10 @@ class AuthorityGroup extends Component {
             },
             [
                 <td key={'group-label'}>
-                    <HighlightableText text={name} searchChunks={searchChunks} />
+                    <HighlightableText
+                        text={name}
+                        searchChunks={searchChunks}
+                    />
                 </td>,
             ]
         );

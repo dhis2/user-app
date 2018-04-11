@@ -93,7 +93,10 @@ class CardLinks extends Component {
                     title={card.label}
                     titleColor={canList ? 'inherit' : grey600}
                 />
-                <CardText style={textStyle} color={canList ? 'inherit' : grey600}>
+                <CardText
+                    style={textStyle}
+                    color={canList ? 'inherit' : grey600}
+                >
                     {card.description}
                 </CardText>
                 <CardActions style={actionStyle}>

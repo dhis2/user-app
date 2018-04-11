@@ -59,7 +59,9 @@ class SearchableGroupEditor extends Component {
             this.modelLookup = new Map();
         }
 
-        const assignedItems = asArray(initiallyAssignedItems).map(({ id }) => id);
+        const assignedItems = asArray(initiallyAssignedItems).map(
+            ({ id }) => id
+        );
         const availableItems = asArray(response).map(item => {
             if (returnModelsOnUpdate) {
                 this.modelLookup.set(item.id, item);
@@ -110,7 +112,11 @@ class SearchableGroupEditor extends Component {
     };
 
     renderHeader() {
-        const { availableItemsHeader, assignedItemsHeader, errorText } = this.props;
+        const {
+            availableItemsHeader,
+            assignedItemsHeader,
+            errorText,
+        } = this.props;
         const assignedStyle = errorText
             ? { ...styles.header, ...styles.error }
             : styles.header;
@@ -123,7 +129,9 @@ class SearchableGroupEditor extends Component {
                 <div style={styles.headerSpacer} />
                 <Heading level={4} style={assignedStyle}>
                     {assignedItemsHeader}
-                    {errorText ? <span style={styles.errorText}>{errorText}</span> : null}
+                    {errorText ? (
+                        <span style={styles.errorText}>{errorText}</span>
+                    ) : null}
                 </Heading>
             </div>
         );
