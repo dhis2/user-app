@@ -22,7 +22,6 @@ import {
 
 class Api {
     constructor() {
-        this.bindAllMethodsToThisScope();
         getInstance().then(d2 => {
             this.d2 = d2;
             this.d2Api = d2.Api.getApi();
@@ -34,58 +33,41 @@ class Api {
         });
     }
 
-    // TODO: use arrow functions
-    bindAllMethodsToThisScope() {
-        const methodNames = Object.getOwnPropertyNames(
-            this.constructor.prototype
-        );
-        const skipMethods = [
-            'constructor',
-            'init',
-            'bindAllMethodsToThisScope',
-        ];
-        methodNames.forEach(methodName => {
-            if (!skipMethods.includes(methodName)) {
-                this[methodName] = this[methodName].bind(this);
-            }
-        });
-    }
-
-    getList(entityName, page, filter) {
+    getList = (entityName, page, filter) => {
         const fields = getQueryFields(entityName);
         const requestData = createRequestData(page, filter, fields);
         return this.d2.models[entityName].list(requestData);
-    }
+    };
 
-    getItem(entityName, viewType, id) {
+    getItem = (entityName, viewType, id) => {
         const data = { fields: getQueryFields(entityName, true) };
         return this.d2.models[entityName].get(id, data);
-    }
+    };
 
-    getUserByUsername(username) {
+    getUserByUsername = username => {
         const propName = 'userCredentials.username';
         return this.genericFind('users', propName, username);
-    }
+    };
 
-    findRoleOrGroupByName(entityName, name) {
+    findRoleOrGroupByName = (entityName, name) => {
         return this.genericFind(entityName, 'name', name);
-    }
+    };
 
-    genericFind(entityName, propertyName, value) {
+    genericFind = (entityName, propertyName, value) => {
         return this.d2.models[entityName]
             .filter()
             .on(propertyName)
             .equals(value)
             .list({ fields: ['id'] });
-    }
+    };
 
-    replicateUser(id, username, password) {
+    replicateUser = (id, username, password) => {
         const url = `/users/${id}/replica`;
         const data = { username, password };
         return this.d2Api.post(url, data);
-    }
+    };
 
-    getOrgUnits() {
+    getOrgUnits = () => {
         const listConfig = {
             ...ORG_UNITS_QUERY_CONFIG,
             level: 1,
@@ -93,67 +75,67 @@ class Api {
         return this.d2.models.organisationUnits
             .list(listConfig)
             .then(rootLevel => rootLevel.toArray()[0]);
-    }
+    };
 
-    queryOrgUnits(query) {
+    queryOrgUnits = query => {
         const listConfig = {
             ...ORG_UNITS_QUERY_CONFIG,
             query,
         };
         return this.d2.models.organisationUnits.list(listConfig);
-    }
+    };
 
-    queryUserGroups(query) {
+    queryUserGroups = query => {
         const listConfig = {
             ...USER_GROUP_QUERY_CONFIG,
             query,
         };
         return this.d2.models.userGroups.list(listConfig);
-    }
+    };
 
-    getCurrentUserGroupMemberships() {
+    getCurrentUserGroupMemberships = () => {
         return this.d2Api.get('/me', { fields: ['userGroups[:all]'] });
-    }
+    };
 
-    updateCurrentUserGroupMembership(groupId, deleteMembership) {
+    updateCurrentUserGroupMembership = (groupId, deleteMembership) => {
         const method = deleteMembership ? 'delete' : 'post';
         const url = `/users/${this.d2.currentUser.id}/userGroups/${groupId}`;
         return this.d2Api[method](url);
-    }
+    };
 
-    updateDisabledState(id, disabled) {
+    updateDisabledState = (id, disabled) => {
         const url = `/users/${id}`;
         const data = { userCredentials: { disabled: disabled } };
         return this.d2Api.patch(url, data);
-    }
+    };
 
-    getManagedUsers() {
+    getManagedUsers = () => {
         const data = { fields: ['id', 'displayName'] };
         return this.d2.models.user.list(data);
-    }
+    };
 
-    getAvailableUserGroups() {
+    getAvailableUserGroups = () => {
         const data = { fields: ['id', 'displayName'] };
         return this.d2.models.userGroups.list(data);
-    }
+    };
 
-    getAvailableUserRoles() {
+    getAvailableUserRoles = () => {
         const data = { canIssue: true, fields: ['id', 'displayName'] };
         return this.d2.models.userRoles.list(data);
-    }
+    };
 
-    getAvailableDataAnalyticsDimensionRestrictions() {
+    getAvailableDataAnalyticsDimensionRestrictions = () => {
         const url = '/dimensions/constraints';
         const data = { fields: ['id', 'name', 'dimensionType'] };
         return this.d2Api.get(url, data).then(({ dimensions }) => dimensions);
-    }
+    };
 
-    updateUserGroup(id, data) {
+    updateUserGroup = (id, data) => {
         const url = `/userGroups/${id}`;
         return this.d2Api.patch(url, data);
-    }
+    };
 
-    getSelectedAndAvailableLocales(username) {
+    getSelectedAndAvailableLocales = username => {
         username = username ? encodeURIComponent(username) : null;
 
         const useDbLocaleOption = {
@@ -184,9 +166,9 @@ class Api {
                 },
             })
         );
-    }
+    };
 
-    saveUser(values, user, currentUiLocale, currentDbLocale) {
+    saveUser = (values, user, currentUiLocale, currentDbLocale) => {
         const userData = parseUserSaveData(values, user);
         const saveUserPromise = user.id
             ? this.d2Api.update(`/users/${user.id}`, userData)
@@ -228,11 +210,11 @@ class Api {
             // Updating locales after user in case the user is new
             return Promise.all(localePromises);
         });
-    }
+    };
 
     // TODO: A proper API endpoint will be made available for this call once ALL struts apps
     // have been ported to React. Once this is done we need to update this method.
-    getGroupedAuthorities() {
+    getGroupedAuthorities = () => {
         if (this.groupedAuths) {
             // Return cached version if available
             return Promise.resolve(this.groupedAuths);
@@ -242,23 +224,23 @@ class Api {
             // Store on instance for subsequent requests
             return (this.groupedAuths = groupAuthorities(systemAuthorities));
         });
-    }
+    };
 
-    getD2() {
+    getD2 = () => {
         return this.d2;
-    }
+    };
 
-    getCurrentUser() {
+    getCurrentUser = () => {
         return this.d2.currentUser;
-    }
+    };
 
-    getContextPath() {
+    getContextPath = () => {
         return this.d2.system.systemInfo.contextPath;
-    }
+    };
 
-    getModelDefinition(name) {
+    getModelDefinition = name => {
         return this.d2.models[name];
-    }
+    };
 }
 const api = new Api();
 export default api;
