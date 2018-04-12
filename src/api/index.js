@@ -237,7 +237,7 @@ class Api {
             // Return cached version if available
             return Promise.resolve(this.groupedAuths);
         }
-        const url = `${this.getContextPath()}/dhis-web-maintenance-user/getSystemAuthorities.action`;
+        const url = `${this.getContextPath()}/dhis-web-commons/security/getSystemAuthorities.action`;
         return this.d2Api.request('GET', url).then(({ systemAuthorities }) => {
             // Store on instance for subsequent requests
             return (this.groupedAuths = groupAuthorities(systemAuthorities));

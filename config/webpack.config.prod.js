@@ -14,7 +14,7 @@ const getClientEnvironment = require('./env');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
-const publicPath = paths.servedPath;
+const publicPath = './';
 // Some apps do not use client-side routing with pushState.
 // For these, "homepage" can be set to "." to enable relative asset paths.
 const shouldUseRelativeAssetPaths = publicPath === './';
@@ -265,6 +265,7 @@ module.exports = {
             template: paths.appHtml,
             vendorScripts: [
                 `${scriptPrefix}/dhis-web-core-resource/fonts/roboto.css`,
+                `${scriptPrefix}/dhis-web-core-resource/material-design-icons/material-icons.css`,
                 `${scriptPrefix}/dhis-web-core-resource/babel-polyfill/6.20.0/dist/polyfill.min.js`,
                 `${scriptPrefix}/dhis-web-core-resource/react/16.2.0/umd/react.production.min.js`,
                 `${scriptPrefix}/dhis-web-core-resource/react-dom/16.2.0/umd/react-dom.production.min.js`,

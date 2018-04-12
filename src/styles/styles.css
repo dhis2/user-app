@@ -7,6 +7,7 @@ body {
 .data-table-pager,
 .tree-view.orgunit {
     font-size: 14px;
+    font-family: Roboto, sans-serif;
 }
 
 .data-table__filter-bar__checkbox label,
