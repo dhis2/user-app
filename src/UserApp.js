@@ -23,7 +23,11 @@ injectTapEventPlugin();
 
 const UserApp = ({ config }) => (
     <Provider store={store}>
-        <D2UIApp initConfig={config} LoadingComponent={LoadingMask} muiTheme={theme}>
+        <D2UIApp
+            initConfig={config}
+            LoadingComponent={LoadingMask}
+            muiTheme={theme}
+        >
             <div>
                 <HeaderBar />
                 <Router history={history} hashType={'noslash'}>

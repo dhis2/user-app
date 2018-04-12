@@ -15,9 +15,9 @@ const ErrorMessage = ({ introText, errorMessage }) => (
     </div>
 );
 
-ErrorMessage.propTypes= {
+ErrorMessage.propTypes = {
     introText: PropTypes.string.isRequired,
     errorMessage: PropTypes.string.isRequired,
-}
+};
 
 export default ErrorMessage;

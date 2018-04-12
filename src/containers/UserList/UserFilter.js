@@ -46,7 +46,8 @@ class UserFilter extends Component {
             .fill()
             .map((_, index) => {
                 const id = index + 1;
-                const displayName = id === 1 ? `${id} ${month}` : `${id} ${months}`;
+                const displayName =
+                    id === 1 ? `${id} ${month}` : `${id} ${months}`;
                 return { id, displayName };
             });
     }
@@ -65,7 +66,8 @@ class UserFilter extends Component {
             menuItems: this.createInactiveMonthsOptions(),
             floatingLabelText: i18n.t('Inactivity'),
             value: this.props.filter.inactiveMonths,
-            onChange: event => this.onFilterChange(INACTIVE_MONTHS, event.target.value),
+            onChange: event =>
+                this.onFilterChange(INACTIVE_MONTHS, event.target.value),
             style: { ...style, width: '132px' },
         };
 
@@ -80,7 +82,8 @@ class UserFilter extends Component {
             ],
             floatingLabelText: i18n.t('Invitations'),
             value: this.props.filter.invitationStatus,
-            onChange: event => this.onFilterChange(INVITATION_STATUS, event.target.value),
+            onChange: event =>
+                this.onFilterChange(INVITATION_STATUS, event.target.value),
             style: { ...style, width: '172px' },
         };
 
@@ -95,7 +98,9 @@ class UserFilter extends Component {
         return (
             <Checkbox
                 value={value}
-                onCheck={(event, value) => this.onFilterChange(SELF_REGISTERED, value)}
+                onCheck={(event, value) =>
+                    this.onFilterChange(SELF_REGISTERED, value)
+                }
                 label={i18n.t('Self registrations')}
                 className={value ? checkedClassName : baseClassName}
                 style={selfRegisteredStyle}

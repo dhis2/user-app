@@ -123,7 +123,9 @@ const DetailSummary = ({ summaryObject, config, baseName }) => {
 
     if (typeof summaryObject === 'string') {
         const errorText = i18n.t(`There was an error fetching the ${baseName}`);
-        return <ErrorMessage introText={errorText} errorMessage={summaryObject} />;
+        return (
+            <ErrorMessage introText={errorText} errorMessage={summaryObject} />
+        );
     }
 
     const { id, displayName } = summaryObject;
@@ -136,7 +138,11 @@ const DetailSummary = ({ summaryObject, config, baseName }) => {
     return (
         <main style={styles.main}>
             <Heading style={styles.heading}>
-                <IconLink to={baseRoute} tooltip={backTooltip} icon="arrow_back" />
+                <IconLink
+                    to={baseRoute}
+                    tooltip={backTooltip}
+                    icon="arrow_back"
+                />
                 {displayName}
                 <RaisedButton
                     style={styles.raisedButton}

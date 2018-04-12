@@ -3,9 +3,6 @@
     position: relative;
     padding-top: 2rem;
 }
-.authority-editor__header {
-    color: green;
-}
 .authority-editor__loader-wrap {
     min-height: 300px;
     text-align: center;
@@ -63,6 +60,10 @@
 .authority-editor__auth-group-table thead,
 .authority-editor__auth-group-table tbody {
     display: block;
+}
+
+.authority-editor__auth-group-table td {
+    font-size: 16px;
 }
 
 .authority-editor__auth-group-table thead tr {

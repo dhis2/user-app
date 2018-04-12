@@ -20,7 +20,9 @@ export const pagerSelector = _.memoize(pager => {
     const startItem = 1 + pageCalculationValue - pageSize;
     const endItem = pageCalculationValue;
 
-    pager.currentlyShown = `${startItem} - ${endItem > total ? total : endItem}`;
+    pager.currentlyShown = `${startItem} - ${
+        endItem > total ? total : endItem
+    }`;
     return pager;
 });
 
@@ -30,7 +32,9 @@ export const listSelector = (list, itemMemberships) => {
     }
 
     const listType = list.modelDefinition.name;
-    return list.toArray().map(item => listMappings[listType](item, itemMemberships));
+    return list
+        .toArray()
+        .map(item => listMappings[listType](item, itemMemberships));
 };
 
 const listMappings = {
@@ -41,7 +45,9 @@ const listMappings = {
     },
     userRole: item => item,
     userGroup: (item, itemMemberships) => {
-        item.currentUserIsMember = itemMemberships.some(({ id }) => id === item.id);
+        item.currentUserIsMember = itemMemberships.some(
+            ({ id }) => id === item.id
+        );
         return item;
     },
 };
@@ -71,10 +77,13 @@ const addInitialValueFrom = (sourceObject, initialValues, propName) => {
             ...sourceObject.cogsDimensionConstraints,
         ];
     } else if (
-        (sourceObject[propName] && !_.isUndefined(sourceObject[propName].size)) ||
+        (sourceObject[propName] &&
+            !_.isUndefined(sourceObject[propName].size)) ||
         _.isArray(sourceObject[propName])
     ) {
-        initialValues[propName] = asArray(sourceObject[propName]).map(({ id }) => id);
+        initialValues[propName] = asArray(sourceObject[propName]).map(
+            ({ id }) => id
+        );
     } else {
         initialValues[propName] = sourceObject[propName];
     }

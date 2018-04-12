@@ -39,7 +39,13 @@ export const USER_DETAILS = [
     'userCredentials[id,username,externalAuth,userRoles[id,displayName],cogsDimensionConstraints[id,displayName,dimensionType],catDimensionConstraints[id,displayName,dimensionType],openId,ldapId]',
     'teiSearchOrganisationUnits[id,path]',
 ];
-export const USER_GROUP_DETAILS = ['id', 'displayName', 'name', 'users', 'managedGroups'];
+export const USER_GROUP_DETAILS = [
+    'id',
+    'displayName',
+    'name',
+    'users',
+    'managedGroups',
+];
 export const USER_ROLE_DETAILS = [
     'id',
     'displayName',

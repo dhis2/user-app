@@ -58,7 +58,8 @@ const addValueAsProp = (data, value, propName) => {
 
 export const parseUserSaveData = (values, user) => {
     const userId = user.id || generateUid();
-    const userCredId = (user.userCredentials && user.userCredentials.id) || generateUid();
+    const userCredId =
+        (user.userCredentials && user.userCredentials.id) || generateUid();
     let data = {
         id: userId,
         userCredentials: {
@@ -80,8 +81,12 @@ export const parseUserSaveData = (values, user) => {
         });
     }
 
-    USER_PROPS.forEach(propName => addValueAsProp(data, values[propName], propName));
-    USER_CRED_PROPS.forEach(propName => addValueAsProp(cred, values[propName], propName));
+    USER_PROPS.forEach(propName =>
+        addValueAsProp(data, values[propName], propName)
+    );
+    USER_CRED_PROPS.forEach(propName =>
+        addValueAsProp(cred, values[propName], propName)
+    );
 
     delete cred[DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS];
 

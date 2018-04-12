@@ -27,8 +27,12 @@ class AuthorityItem extends Component {
         const { name, empty, implicit } = authSubject;
         const label = withLabel ? name : '';
         const baseClassName = 'authority-editor__auth-checkbox';
-        const className = withLabel ? baseClassName : `${baseClassName}--without-label`;
-        const labelTxt = <HighlightableText text={label} searchChunks={searchChunks} />;
+        const className = withLabel
+            ? baseClassName
+            : `${baseClassName}--without-label`;
+        const labelTxt = (
+            <HighlightableText text={label} searchChunks={searchChunks} />
+        );
 
         return (
             <td>

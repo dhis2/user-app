@@ -15,7 +15,11 @@ class UserProfile extends Component {
     render() {
         const { user } = this.props;
         return (
-            <DetailSummary summaryObject={user} config={USER_PROFILE} baseName={USER} />
+            <DetailSummary
+                summaryObject={user}
+                config={USER_PROFILE}
+                baseName={USER}
+            />
         );
     }
 }

@@ -55,7 +55,9 @@ const createGroup = (auth, suffixes, lookup) => {
     }
 
     const baseName = auth.id.replace(metaDataSuffix, '');
-    const hasAllSuffixes = suffixes.every(suffix => Boolean(lookup[baseName + suffix]));
+    const hasAllSuffixes = suffixes.every(suffix =>
+        Boolean(lookup[baseName + suffix])
+    );
     if (!hasAllSuffixes) {
         return null;
     }
@@ -95,10 +97,13 @@ const processExeption = (auth, grouped, lookup) => {
 };
 
 const groupAuthorities = allAuths => {
-    const base = Object.keys(EMPTY_GROUPED_AUTHORITIES).reduce((groupedBase, key) => {
-        groupedBase[key] = { ...EMPTY_GROUPED_AUTHORITIES[key], items: [] };
-        return groupedBase;
-    }, {});
+    const base = Object.keys(EMPTY_GROUPED_AUTHORITIES).reduce(
+        (groupedBase, key) => {
+            groupedBase[key] = { ...EMPTY_GROUPED_AUTHORITIES[key], items: [] };
+            return groupedBase;
+        },
+        {}
+    );
     const allLookup = allAuths.reduce((lookup, auth) => {
         lookup[auth.id] = auth;
         return lookup;

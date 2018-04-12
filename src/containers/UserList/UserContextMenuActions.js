@@ -110,7 +110,9 @@ const updateDisabledState = ({ displayName, id }, disabledState) => {
                 ? disabledSuccessBaseMsg
                 : enabledSuccessBaseMsg;
 
-            store.dispatch(showSnackbar({ message: `${displayName} ${baseMsg}` }));
+            store.dispatch(
+                showSnackbar({ message: `${displayName} ${baseMsg}` })
+            );
             store.dispatch(getList(USER));
         })
         .catch(() => {

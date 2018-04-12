@@ -1,6 +1,19 @@
 body {
     background-color: #f3f3f3;
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
+}
+
+.data-table,
+.data-table-pager,
+.tree-view.orgunit {
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+}
+
+.data-table__filter-bar__checkbox label,
+.data-table__filter-bar__checkbox--checked label,
+.authority-editor__filter-checkbox label {
+    font-size: 16px;
 }
 
 .data-table__filter-bar .data-table-pager--buttons {

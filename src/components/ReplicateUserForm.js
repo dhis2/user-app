@@ -30,7 +30,8 @@ const validate = (values, props) => {
         }
     });
 
-    const passwordError = values[PASSWORD] && checkPasswordForErrors(values[PASSWORD]);
+    const passwordError =
+        values[PASSWORD] && checkPasswordForErrors(values[PASSWORD]);
     if (passwordError) {
         errors[PASSWORD] = passwordError;
     }
@@ -56,7 +57,9 @@ class ReplicateUserForm extends Component {
 
     onReplicationError = () => {
         const { showSnackbar } = this.props;
-        showSnackbar({ message: i18n.t('There was a problem replicating the user') });
+        showSnackbar({
+            message: i18n.t('There was a problem replicating the user'),
+        });
     };
 
     shouldDisableSubmit() {
@@ -80,7 +83,9 @@ class ReplicateUserForm extends Component {
         const { hideDialog, handleSubmit, asyncValidating } = this.props;
         const submitDisabled = this.shouldDisableSubmit();
         const isCheckingUsername = asyncValidating === USERNAME;
-        const validatingProps = isCheckingUsername ? this.getLoadingProps() : null;
+        const validatingProps = isCheckingUsername
+            ? this.getLoadingProps()
+            : null;
 
         return (
             <form onSubmit={handleSubmit(this.onHandleSubmit)}>
