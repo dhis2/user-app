@@ -8,14 +8,22 @@
   <artifactId>dhis-app-user</artifactId>
   <version>2.29-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>User</name>
-  <description>DHIS 2 user app</description>
+  <name>User App</name>
+  <description>DHIS 2 User App</description>
   <url>https://github.com/dhis2/user-app</url>
 
   <organization>
     <name>DHIS 2</name>
     <url>https://www.dhis2.org</url>
   </organization>
+
+  <developers>
+    <developer>
+      <name>Hendrik de Graaf</name>
+      <email>hendrik@dhis2.org</email>
+      <organization>University of Oslo</organization>
+    </developer>
+  </developers>
 
   <licenses>
     <license>
@@ -31,8 +39,8 @@
   </scm>
 
   <issueManagement>
-    <system>GitHub</system>
-    <url>https://github.com/dhis2/user-app</url>
+	<system>JIRA</system>
+	<url>https://jira.dhis2.org</url>
   </issueManagement>
 
   <distributionManagement>
@@ -66,5 +74,4 @@
       </plugin>
     </plugins>
   </build>
-
 </project>
