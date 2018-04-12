@@ -12,6 +12,7 @@ import AuthorityEditor from '../components/AuthorityEditor';
 const styles = {
     checkbox: {
         marginTop: '32px',
+        fontSize: '16px',
     },
 };
 

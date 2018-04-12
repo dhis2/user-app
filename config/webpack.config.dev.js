@@ -50,6 +50,11 @@ const globals = Object.assign(
 );
 
 const scriptPrefix = dhisConfig.baseUrl;
+// "http://domain.com" or "https://domain.com" will be split into an array of 3 items
+const pathnamePrefix = scriptPrefix
+    .split('/')
+    .slice(3)
+    .join('/');
 
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
@@ -57,7 +62,7 @@ const scriptPrefix = dhisConfig.baseUrl;
 module.exports = {
     // You may want 'eval' instead if you prefer to see the compiled output in DevTools.
     // See the discussion in https://github.com/facebookincubator/create-react-app/issues/343.
-    devtool: 'cheap-module-source-map',
+    devtool: 'source-map',
     // These are the "entry points" to our application.
     // This means they will be the "root" imports that are included in JS bundle.
     // The first two entry points enable "hot" CSS and auto-refreshes for JS.
@@ -255,7 +260,8 @@ module.exports = {
             inject: true,
             template: paths.appHtml,
             vendorScripts: [
-                // `${scriptPrefix}/dhis-web-commons/fonts/roboto.css`,
+                `./${pathnamePrefix}/dhis-web-core-resource/material-design-icons/material-icons.css`,
+                `./${pathnamePrefix}/dhis-web-core-resource/fonts/roboto.css`,
                 `${scriptPrefix}/dhis-web-core-resource/babel-polyfill/6.20.0/dist/polyfill.js`,
                 `${scriptPrefix}/dhis-web-core-resource/react/16.2.0/umd/react.development.js`,
                 `${scriptPrefix}/dhis-web-core-resource/react-dom/16.2.0/umd/react-dom.development.js`,
