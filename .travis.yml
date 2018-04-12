@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- node
+- '8'
+cache:
+  yarn: true
+script:
+- npm run build
+after_success:
+- if ( [ "$TRAVIS_BRANCH" == "master" ] || [ ! -z "$TRAVIS_TAG" ] ) && [ "$TRAVIS_REPO_SLUG"
+  == "dhis2/user-app" ]  &&  [ "$TRAVIS_PULL_REQUEST" == "false" ] ; then
+  mvn clean deploy --settings deploy/settings.xml && exit 0; fi
+
+env:
+  global:
+  - secure: w1DJ0Gwy6JUIXwR7dyu++PPjGU+e8oRsWDsm0c4tZZ4dIYpXHx4Vbvhps0/NtDgVoH/kbu6bM8O9pflG8TGJ505sk0/9itJ0Hn4O1T36E0egHV4zyMorAD4OpdYNWxqH2nsyZ7bO0GeKE7hD7rMNJKN5IBuO6hNQcTrrL1dRU3Min/fCN5Iueqk0pYdNgwvCMHWzsRizbZs6vdhZ2QgcABg7T+XubBuWUJ6E03khwRoHLo0YH2q9vrJbzSlqdCalG0wzxg++Ly2Q2CNywaWwPSgBEEfQcQGuT1SjUNutamdyC5Auum7x6bgvnLhGiE3V7cGZM5vgvBJBzu+V2u+ITzUZ9MO3KQuDsGXfx8srmeEVmYE4L1+VlLAc5onKesyXLk7bqBbkvYog6lMkvpx0/pdsU/c5zeAK1QrmK1gNfH2ByKSJ9OtjaP4FuzKHM4FP/46RylZsL+bFYRn7oU7cp4RrChduGmoDtDmzdp8YPB+3VehQat96wjddT6cMknZ22hVzd7NuSe+TqEeqRy4WpdzkoaNIm5+CcRjR30CHEH6iRoOuWWVASruKYR/3RP3ZbQWsVWySAGZ6bnhCaSt3DWzo1ofmnBv/JYxa1uY7lfqmU5LQe2nIXKuqKRD5NVAY4sQjZ4BQAJvKoRSqurR7KFcMbON+4IQHF1kDcjbnpyg=
+  - secure: WBp3gx7yFcIukQPYEhV6jMRngUxx/Ur60vxpMMblI5Y5J+xxQEsivwJsMuLzg8UZtm5obP8BlXFz8shxgE/GuvDvjs+JfkE1U6i3gLSgERWtQYnMMp9splCV9w2O2huNZ5GuC4AupZ3yq9cY33brvEKTaIL88EJlb9px66QrHzKRcQvfjqjDf+1eUVWRB/V0/cCwQMqj4+XvyHxuY+f7n/H8LHWOLfPT91O7Ni22jPv6gVjngi/ZNzupNKnxxnl+Euio6sdjCNVGHZrqK4M8QR2HLNjbVCeRGY4NxEnweT30K7Pij99DJ/Sw9cG0FCDvnCpmLWQDNhOOnOYy66dqvWtCpqI9T0gSn1nLnLBEJiL8O8IacPriWdH+olMArpxFH+l5t7bN+TvdZxjTymYWrc1AMPuBMEW906i/Ez5gE+7SPB5vrSIgA+YJBb9C+r6qe4svkeNJMhXAw0Nu8eJMNL0R1YqUA2awIXieWu441z5xgVkk/5KpeJmgaQQvjjNvn4P8m+paWlOS8uTdN1klhlXFfMb1RNqQK6iiILUk4q/r/ulOX27wFV9d9VPoscKOlaNvHCfSIeGhcBSPOqAiJe1If7JmfMuZBnYNRXeZgln+D4mmXmtCui5jjiSWpbietEWn0qfZaFId83hwBEaTzg5B6rnD4Q77TseG/Js8TRw=
