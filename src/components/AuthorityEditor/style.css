@@ -18,7 +18,7 @@
 }
 .authority-editor__auth-group {
     flex: 1 0 300px;
-    max-height: 400px;
+    /* max-height: 400px; */
     min-width: 350px;
     max-width: 50%;
     overflow: hidden;
@@ -121,6 +121,10 @@
 .authority-editor__auth-group-table.columns-4 tbody td,
 .authority-editor__auth-group-table.columns-4 thead th {
     width: calc((100% - 1.6rem) / 4);
+}
+.authority-editor__auth-group-table.columns-5 tbody td,
+.authority-editor__auth-group-table.columns-5 thead th {
+    width: calc((100% - 1.6rem) / 5);
 }
 .authority-editor__placeholder-cell {
     width: calc(100% - 1.6rem) !important;

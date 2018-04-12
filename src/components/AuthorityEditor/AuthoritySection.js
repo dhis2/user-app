@@ -6,7 +6,7 @@ import Heading from 'd2-ui/lib/headings/Heading.component';
 import AuthorityGroup from './AuthorityGroup';
 import AuthorityItem from './AuthorityItem';
 
-const FLUSH_COUNT = 20;
+const FLUSH_COUNT = 300;
 const FLUSH_INTERVAL = 1;
 
 // This component used to cause the page to hang whilst it was rendering

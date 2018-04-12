@@ -1,12 +1,49 @@
 import _ from '../../../constants/lodash';
 
-const DELETE_SUFFIX = '_DELETE';
+/**
+ * This module receives an array of authorities and returns and object that is grouped into
+ * logical sections. This is done in a semi dynamic way by using pre- and suffixes in tandem
+ * with hard-coded group definitions
+ * @param {array} allAuths the key-value list of authorities that will be transformed
+ * @param {Object[]} allAuth - The allAuth who are responsible for the project.
+ * @param {string} allAuth[].id - The name of an employee.
+ * @param {string} allAuth[].name - The employee's department.
+ */
+
+// The target object to which the allAuths array will be mapped
+// Exported so it can be used by the AuthorityEditor component
+export const EMPTY_GROUPED_AUTHORITIES = {
+    metadata: {
+        name: 'Meta data',
+        items: null,
+        headers: [
+            'Name',
+            'Add/Update Public',
+            'Add/Update Private',
+            'Delete',
+            'External access',
+        ],
+    },
+    apps: {
+        name: 'Apps',
+        items: null,
+        headers: ['Name'],
+    },
+    actions: {
+        name: 'Actions',
+        items: null,
+        headers: ['Name'],
+    },
+};
 export const PUBLIC_ADD_SUFFIX = '_PUBLIC_ADD';
 export const PRIVATE_ADD_SUFFIX = '_PRIVATE_ADD';
+
+const DELETE_SUFFIX = '_DELETE';
+const EXTERNAL_ACCESS_SUFFIX = '_EXTERNAL';
 const APP_AUTH_PREFIX = 'M_';
 const MD_SUFFIXES = [PUBLIC_ADD_SUFFIX, PRIVATE_ADD_SUFFIX, DELETE_SUFFIX];
 const ID_SUFFIXES = ['_ADD', DELETE_SUFFIX];
-const ALL_SUFFIXES = [...MD_SUFFIXES, ...ID_SUFFIXES];
+const ALL_SUFFIXES = [...MD_SUFFIXES, ...ID_SUFFIXES, EXTERNAL_ACCESS_SUFFIX];
 
 const AUTHS_WITH_IMPLICIT_ADD_PRIVATE_AND_DELETE = {
     F_CHART_PUBLIC_ADD: true,
@@ -23,22 +60,9 @@ const EMPTY_GROUP_ITEM = {
     empty: true,
 };
 
-export const EMPTY_GROUPED_AUTHORITIES = {
-    metadata: {
-        name: 'Meta data',
-        items: null,
-        headers: ['Name', 'Add/Update Public', 'Add/Update Private', 'Delete'],
-    },
-    apps: {
-        name: 'Apps',
-        items: null,
-        headers: ['Name'],
-    },
-    actions: {
-        name: 'Actions',
-        items: null,
-        headers: ['Name'],
-    },
+const IMPLICIT_OPTION = {
+    implicit: true,
+    name: `**CHECKED AND DISABLED**`,
 };
 
 const hasNoSuffix = auth => {
@@ -69,6 +93,9 @@ const createGroup = (auth, suffixes, lookup) => {
     suffixes.forEach(suffix => {
         const currAuth = lookup[baseName + suffix];
         group.items.push(currAuth);
+        if (currAuth.id === 'F_CHART_EXTERNAL') {
+            console.log('deleting your friend');
+        }
         delete lookup[currAuth.id];
     });
 
@@ -76,27 +103,37 @@ const createGroup = (auth, suffixes, lookup) => {
         group.items.splice(1, 0, EMPTY_GROUP_ITEM);
     }
 
+    appendExternalAccessGroup(group, baseName, lookup);
+
     return group;
 };
 
 const processExeption = (auth, grouped, lookup) => {
     if (AUTHS_WITH_IMPLICIT_ADD_PRIVATE_AND_DELETE[auth.id]) {
-        const implicitOption = {
-            implicit: true,
-            name: `**CHECKED AND DISABLED**`,
-        };
+        const baseName = auth.id.replace(PUBLIC_ADD_SUFFIX, '');
         const group = {
             name: auth.name.replace('Add/Update Public ', ''),
-            items: [auth, implicitOption, implicitOption],
+            items: [auth, IMPLICIT_OPTION, IMPLICIT_OPTION],
         };
+        appendExternalAccessGroup(group, baseName, lookup);
         grouped.metadata.items.push(group);
-    } else {
+        delete lookup[auth.id];
+    } else if (!_.endsWith(auth.id, EXTERNAL_ACCESS_SUFFIX)) {
         grouped.actions.items.push(auth);
+        delete lookup[auth.id];
     }
-    delete lookup[auth.id];
 };
 
-const groupAuthorities = allAuths => {
+const appendExternalAccessGroup = (group, baseName, lookup, test) => {
+    const authName = baseName + EXTERNAL_ACCESS_SUFFIX;
+    const auth = lookup[authName] || EMPTY_GROUP_ITEM;
+    group.items.push(auth);
+    if (!auth.empty) {
+        delete lookup[authName];
+    }
+};
+
+const groupAuthorities = authorities => {
     const base = Object.keys(EMPTY_GROUPED_AUTHORITIES).reduce(
         (groupedBase, key) => {
             groupedBase[key] = { ...EMPTY_GROUPED_AUTHORITIES[key], items: [] };
@@ -104,17 +141,28 @@ const groupAuthorities = allAuths => {
         },
         {}
     );
-    const allLookup = allAuths.reduce((lookup, auth) => {
+    const allLookup = authorities.reduce((lookup, auth) => {
         lookup[auth.id] = auth;
         return lookup;
     }, {});
 
-    return allAuths.reduce((grouped, auth) => {
+    console.log(
+        'Bestaat ie hier nog? ',
+        JSON.stringify(allLookup['F_CHART_EXTERNAL'])
+    );
+
+    return authorities.reduce((grouped, auth) => {
         if (_.startsWith(auth.id, APP_AUTH_PREFIX)) {
             grouped.apps.items.push(auth);
+            if (auth.id === 'F_CHART_EXTERNAL') {
+                console.log('deleting your friend');
+            }
             delete allLookup[auth.id];
         } else if (hasNoSuffix(auth)) {
             grouped.actions.items.push(auth);
+            if (auth.id === 'F_CHART_EXTERNAL') {
+                console.log('deleting your friend');
+            }
             delete allLookup[auth.id];
         } else {
             const mGroup = createGroup(auth, MD_SUFFIXES, allLookup);
