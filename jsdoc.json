@@ -2,7 +2,8 @@
     "source": {
         "include": "./src",
         "includePattern": ".js$",
-        "excludePattern": "(node_modules/|docs|__tests__|__mocks__|__fixtures__)"
+        "excludePattern":
+            "(node_modules/|docs|__tests__|__mocks__|__fixtures__)"
     },
     "opts": {
         "template": "node_modules/docdash",
@@ -11,11 +12,9 @@
         "recurse": true,
         "verbose": true
     },
-    "plugins": [
-        "plugins/markdown"
-    ],
+    "plugins": ["plugins/markdown"],
     "docdash": {
         "static": true,
-        "sort": true
+        "sort": false
     }
 }

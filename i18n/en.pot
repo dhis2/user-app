@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-04-09T14:44:22.056Z\n"
-"PO-Revision-Date: 2018-04-09T14:44:22.056Z\n"
+"POT-Creation-Date: 2018-04-16T13:14:12.064Z\n"
+"PO-Revision-Date: 2018-04-16T13:14:12.064Z\n"
 
 msgid "Use database locale / no translation"
 msgstr ""
@@ -27,6 +27,192 @@ msgid "Authorities"
 msgstr ""
 
 msgid "Selected authorities only"
+msgstr ""
+
+msgid "Analytics Table Hook"
+msgstr ""
+
+msgid "Attribute"
+msgstr ""
+
+msgid "Category Combo"
+msgstr ""
+
+msgid "Category"
+msgstr ""
+
+msgid "Category Option"
+msgstr ""
+
+msgid "Category Option Group"
+msgstr ""
+
+msgid "Category Option Group Set"
+msgstr ""
+
+msgid "Chart"
+msgstr ""
+
+msgid "Color Set"
+msgstr ""
+
+msgid "Constant"
+msgstr ""
+
+msgid "Dashboard"
+msgstr ""
+
+msgid "Data Element Group Sets"
+msgstr ""
+
+msgid "Data Element Groups"
+msgstr ""
+
+msgid "Data Element"
+msgstr ""
+
+msgid "Min/max rule"
+msgstr ""
+
+msgid "Data Set"
+msgstr ""
+
+msgid "Data Value"
+msgstr ""
+
+msgid "Document"
+msgstr ""
+
+msgid "Add/Update Event Chart "
+msgstr ""
+
+msgid "Add/Update Event Report"
+msgstr ""
+
+msgid "External Map Layer"
+msgstr ""
+
+msgid "Indicator Group Sets"
+msgstr ""
+
+msgid "Indicator Group"
+msgstr ""
+
+msgid "Indicator Type"
+msgstr ""
+
+msgid "Indicator"
+msgstr ""
+
+msgid "Legend Set"
+msgstr ""
+
+msgid "Add Public Map"
+msgstr ""
+
+msgid "Min-Max Data Element"
+msgstr ""
+
+msgid "Option Group Set"
+msgstr ""
+
+msgid "Option Group"
+msgstr ""
+
+msgid "Option Set"
+msgstr ""
+
+msgid "Organisation Unit"
+msgstr ""
+
+msgid "Organisation Unit Group Set"
+msgstr ""
+
+msgid "Organisation Unit Group"
+msgstr ""
+
+msgid "data predictor"
+msgstr ""
+
+msgid "Program Stage"
+msgstr ""
+
+msgid "Program"
+msgstr ""
+
+msgid "Program Indicator"
+msgstr ""
+
+msgid "Program Indicator Group"
+msgstr ""
+
+msgid "Program Rule"
+msgstr ""
+
+msgid "Program Tracked Entity Attribute Group"
+msgstr ""
+
+msgid "Push Analysis"
+msgstr ""
+
+msgid "Relationship Type"
+msgstr ""
+
+msgid "Report Table"
+msgstr ""
+
+msgid "Report"
+msgstr ""
+
+msgid "Section"
+msgstr ""
+
+msgid "SQL View"
+msgstr ""
+
+msgid "Tracked Entity"
+msgstr ""
+
+msgid "Tracked Entity Attribute"
+msgstr ""
+
+msgid "Tracked Entity Data Value"
+msgstr ""
+
+msgid "Tracked Entity Instance"
+msgstr ""
+
+msgid "User Group"
+msgstr ""
+
+msgid "User Role"
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "Validation Rule Group"
+msgstr ""
+
+msgid "Validation Rule"
+msgstr ""
+
+msgid "Apps"
+msgstr ""
+
+msgid "Tracker"
+msgstr ""
+
+msgid "Import-Export"
+msgstr ""
+
+msgid "Operations"
+msgstr ""
+
+msgid "System"
+msgstr ""
+
+msgid "Uncategorized"
 msgstr ""
 
 msgid "Add"

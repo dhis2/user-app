@@ -13,17 +13,20 @@
 .authority-editor__auth-group-wrap {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
     margin-top: -1.5rem;
     margin-left: -1.5rem;
 }
 .authority-editor__auth-group {
     flex: 1 0 300px;
-    /* max-height: 400px; */
     min-width: 350px;
     max-width: 50%;
-    overflow: hidden;
     margin-top: 1.5rem;
     margin-left: 1.5rem;
+}
+.authority-editor__auth-group.scrollable {
+    overflow: hidden;
+    max-height: 550px;
 }
 .authority-editor__auth-group.metadata {
     min-width: 880px;
@@ -43,7 +46,7 @@
 }
 
 .authority-editor__auth-group-header {
-    padding-left: 1.6rem !important;
+    padding-left: 0.8rem !important;
 }
 
 /* Scrollable tables */
@@ -63,11 +66,7 @@
 }
 
 .authority-editor__auth-group-table td {
-    font-size: 16px;
-}
-
-.authority-editor__auth-group-table thead tr {
-    width: calc(100% - 16px);
+    font-size: 14px;
 }
 
 .authority-editor__auth-group-table tr:after {
@@ -77,9 +76,9 @@
     clear: both;
 }
 
-.authority-editor__auth-group-table tbody {
+.scrollable .authority-editor__auth-group-table tbody {
     /* Container max-height - header - thead */
-    max-height: calc(400px - 101px);
+    max-height: calc(550px - 101px);
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -87,61 +86,82 @@
 .authority-editor__auth-group-table tbody td,
 .authority-editor__auth-group-table thead th {
     float: left;
-    width: calc(100% - 1.6rem);
+    width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.scrollable .authority-editor__auth-group-table tbody td,
+.scrollable .authority-editor__auth-group-table thead th {
+    width: 100%;
+}
 .authority-editor__auth-group-table tbody td:first-child,
 .authority-editor__auth-group-table thead th:first-child {
-    padding-left: 1.6rem;
+    padding: 4px 0 4px 0.8rem;
+    box-sizing: border-box;
 }
 .authority-editor__auth-group-table tbody td {
-    padding: 0.8rem 0;
+    padding: 4px 0;
     border-bottom: 1px solid #e0e0e0;
+    line-height: 16px !important;
 }
 
 .authority-editor__auth-group-table thead th {
     border-bottom: 2px solid #e0e0e0;
-    padding: 0.8rem 0;
-    font-size: 1.1rem;
+    padding: 4px 0;
+    font-size: 16px;
     font-weight: bolder;
 }
-.authority-editor__auth-group-table thead tr th,
-.authority-editor__auth-group-table tbody td:first-child {
-    line-height: 24px;
-}
+
 .authority-editor__auth-group-table thead th:first-child {
     text-align: left;
 }
-.authority-editor__auth-group-table.columns-3 tbody td,
-.authority-editor__auth-group-table.columns-3 thead th {
-    width: calc((100% - 1.6rem) / 3);
+.authority-editor__auth-group-table.columns-5 tbody td:first-child,
+.authority-editor__auth-group-table.columns-5 thead th:first-child {
+    width: calc(40%);
 }
-.authority-editor__auth-group-table.columns-4 tbody td,
-.authority-editor__auth-group-table.columns-4 thead th {
-    width: calc((100% - 1.6rem) / 4);
-}
+
 .authority-editor__auth-group-table.columns-5 tbody td,
 .authority-editor__auth-group-table.columns-5 thead th {
-    width: calc((100% - 1.6rem) / 5);
+    width: calc(60% / 4);
 }
+
 .authority-editor__placeholder-cell {
-    width: calc(100% - 1.6rem) !important;
+    width: calc(100% - 0.8rem) !important;
     text-align: center;
     font-style: italic;
     color: rgba(0, 0, 0, 0.6);
 }
 
 /* Centered Checkboxes */
+.authority-editor__auth-checkbox,
+.authority-editor__auth-checkbox--without-label,
+.authority-editor__auth-checkbox label {
+    line-height: 16px !important;
+}
+
+.authority-editor__auth-checkbox > div > div,
+.authority-editor__auth-checkbox--without-label > div > div,
+.authority-editor__auth-checkbox > div > div svg,
+.authority-editor__auth-checkbox--without-label > div > div svg {
+    width: 16px !important;
+    height: 16px !important;
+}
+.authority-editor__auth-checkbox > div > div span,
+.authority-editor__auth-checkbox--without-label > div > div span {
+    top: -8px !important;
+    left: -8px !important;
+}
+
 .authority-editor__auth-checkbox--without-label > div {
-    width: 24px !important;
+    width: 16px !important;
     margin-left: auto;
     margin-right: auto;
 }
 
 .authority-editor__empty-cell {
-    height: 24px;
+    display: inline-block;
+    line-height: 16px;
 }
 
 /* Filter bar */
