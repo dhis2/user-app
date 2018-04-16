@@ -6,7 +6,8 @@ import Heading from 'd2-ui/lib/headings/Heading.component';
 import AuthorityGroup from './AuthorityGroup';
 import AuthorityItem from './AuthorityItem';
 
-const FLUSH_COUNT = 20;
+// 19 rows fit a section viewport
+const FLUSH_COUNT = 19;
 const FLUSH_INTERVAL = 1;
 
 // This component used to cause the page to hang whilst it was rendering
@@ -77,7 +78,7 @@ class AuthoritySection extends Component {
         return (
             <tr>
                 <td className="authority-editor__placeholder-cell">
-                    <CircularProgress size={36} />
+                    <CircularProgress size={24} />
                 </td>
             </tr>
         );
@@ -120,11 +121,16 @@ class AuthoritySection extends Component {
 
     render() {
         const { sectionKey, authSection } = this.props;
+        let wrapperClassName = `authority-editor__auth-group ${sectionKey}`;
+        if (sectionKey === 'metadata' || sectionKey === 'apps') {
+            wrapperClassName += ' scrollable';
+        }
+
         let tableClassName = 'authority-editor__auth-group-table';
         tableClassName += ` columns-${authSection.headers.length}`;
 
         return (
-            <Paper className={`authority-editor__auth-group ${sectionKey}`}>
+            <Paper className={wrapperClassName}>
                 <Heading
                     level={6}
                     className="authority-editor__auth-group-header"
