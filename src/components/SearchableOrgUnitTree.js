@@ -65,9 +65,14 @@ class SearchableOrgUnitTree extends Component {
 
     componentWillMount() {
         this.trashableGetOrgUnits = makeTrashable(api.getOrgUnits());
+        const { initiallyExpanded } = this.state;
         this.trashableGetOrgUnits.then(root => {
             this.setState({
                 root: root,
+                initiallyExpanded:
+                    initiallyExpanded.length === 0
+                        ? [root.path]
+                        : initiallyExpanded,
             });
         });
     }
