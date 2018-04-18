@@ -1,6 +1,7 @@
 import i18n from 'd2-i18n';
 
 const checkPasswordForErrors = password => {
+    const lowerCase = /^(?=.*[a-z]).+$/;
     const upperCase = /^(?=.*[A-Z]).+$/;
     const digit = /^(?=.*[0-9]).+$/;
     const specialChar = /[`~!@#$%^&*()_|+\-=?;:'",.<>{}[\]\\/]/;
@@ -10,6 +11,9 @@ const checkPasswordForErrors = password => {
     }
     if (password.length > 35) {
         return i18n.t('Password should be no longer than 34 characters');
+    }
+    if (!lowerCase.test(password)) {
+        return i18n.t('Password should contain at least one lowercase letter');
     }
     if (!upperCase.test(password)) {
         return i18n.t('Password should contain at least one UPPERCASE letter');
