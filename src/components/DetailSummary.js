@@ -128,7 +128,7 @@ const DetailSummary = ({ summaryObject, config, baseName }) => {
         );
     }
 
-    const { id, displayName } = summaryObject;
+    const { id, displayName, access } = summaryObject;
     const plural = `${baseName}s`,
         baseRoute = `/${_.kebabCase(plural)}`,
         backTooltip = i18n.t(`Back to ${plural}`),
@@ -144,13 +144,17 @@ const DetailSummary = ({ summaryObject, config, baseName }) => {
                     icon="arrow_back"
                 />
                 {displayName}
-                <RaisedButton
-                    style={styles.raisedButton}
-                    label={editTooltip}
-                    primary={true}
-                    containerElement={<Link to={editLink} />}
-                    icon={<ImageEdit />}
-                />
+
+                {access.update ? (
+                    <RaisedButton
+                        style={styles.raisedButton}
+                        label={editTooltip}
+                        primary={true}
+                        containerElement={<Link to={editLink} />}
+                        icon={<ImageEdit />}
+                    />
+                ) : null}
+
                 {baseName === USER ? renderSendMessageBtn(id) : null}
             </Heading>
             <Paper style={styles.paper}>

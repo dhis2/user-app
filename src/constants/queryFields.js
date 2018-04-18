@@ -19,6 +19,7 @@ export const USER_ROLE_LIST = [...USER_GROUP_LIST, 'description'];
 // DETAILS
 export const USER_DETAILS = [
     'id',
+    'access',
     'displayName',
     'surname',
     'firstName',
@@ -41,6 +42,7 @@ export const USER_DETAILS = [
 ];
 export const USER_GROUP_DETAILS = [
     'id',
+    'access',
     'displayName',
     'name',
     'users',
@@ -48,6 +50,7 @@ export const USER_GROUP_DETAILS = [
 ];
 export const USER_ROLE_DETAILS = [
     'id',
+    'access',
     'displayName',
     'name',
     'description',
