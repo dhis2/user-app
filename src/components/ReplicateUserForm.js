@@ -87,7 +87,7 @@ class ReplicateUserForm extends Component {
     }
 
     render() {
-        const { hideDialog, handleSubmit, asyncValidating } = this.props;
+        const { hideDialog, asyncValidating } = this.props;
         const submitDisabled = this.shouldDisableSubmit();
         const isCheckingUsername = asyncValidating === USERNAME;
         const validatingProps = isCheckingUsername

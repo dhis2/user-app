@@ -218,7 +218,7 @@ class UserForm extends Component {
     }
 
     render() {
-        const { handleSubmit, asyncValidating, pristine, valid } = this.props;
+        const { asyncValidating, pristine, valid } = this.props;
         const { showMore, locales } = this.state;
         const disableSubmit = Boolean(asyncValidating || pristine || !valid);
 
