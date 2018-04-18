@@ -198,6 +198,9 @@ export const BASE_FIELDS = [
         ...BASE_CAPTION,
         name: 'org_unit_info_1',
     },
+];
+
+export const ADDITIONAL_FIELDS = [
     {
         name: TEI_SEARCH_ORG_UNITS,
         label: i18n.t('Search Organisation Units'),
@@ -209,9 +212,6 @@ export const BASE_FIELDS = [
         ...BASE_CAPTION,
         name: 'org_unit_info_2',
     },
-];
-
-export const ADDITIONAL_FIELDS = [
     {
         name: ASSIGNED_USER_GROUPS,
         fieldRenderer: renderSearchableGroupEditor,
