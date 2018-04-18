@@ -36,7 +36,7 @@ export const USER_DETAILS = [
     'userGroups',
     'organisationUnits[id,displayName,path]',
     'dataViewOrganisationUnits[id,displayName,path]',
-    'userCredentials[id,username,externalAuth,userRoles[id,displayName],cogsDimensionConstraints[id,displayName,dimensionType],catDimensionConstraints[id,displayName,dimensionType],openId,ldapId]',
+    'userCredentials[id,username,externalAuth,twoFA,userRoles[id,displayName],cogsDimensionConstraints[id,displayName,dimensionType],catDimensionConstraints[id,displayName,dimensionType],openId,ldapId]',
     'teiSearchOrganisationUnits[id,path]',
 ];
 export const USER_GROUP_DETAILS = [
