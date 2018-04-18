@@ -6,7 +6,7 @@ import { hideSnackbar } from '../actions';
 
 const SnackbarContainer = ({ open, snackbarProps, hideSnackbar }) => {
     const defaults = {
-        autoHideDuration: 3000,
+        autoHideDuration: 6000,
         onRequestClose: hideSnackbar,
     };
     const finalProps = { ...defaults, ...snackbarProps };
