@@ -6,8 +6,6 @@ import CardHeader from 'material-ui/Card/CardHeader';
 import CardText from 'material-ui/Card/CardText';
 import CardActions from 'material-ui/Card/CardActions';
 import IconButton from 'material-ui/IconButton/IconButton';
-import { grey600 } from 'material-ui/styles/colors';
-import _ from '../constants/lodash';
 import navigateTo from '../utils/navigateTo';
 import { SECTIONS } from '../constants/routeConfig';
 
@@ -24,10 +22,6 @@ const headerStyle = {
     borderBottom: '1px solid #ddd',
     cursor: 'pointer',
     fontWeight: 'bold',
-};
-
-const disabledStyle = {
-    cursor: 'not-allowed',
 };
 
 const textStyle = {
@@ -82,23 +76,19 @@ class CardLinks extends Component {
         const canCreate = currentUser.canCreate(models[card.entityType]);
         const canDelete = currentUser.canDelete(models[card.entityType]);
         const canList = canCreate || canDelete;
-        const onHeaderClick = canList ? () => navigateTo(card.path) : _.noop;
-        const addStyle = canList ? {} : disabledStyle;
+
+        if (!canList) {
+            return null;
+        }
 
         return (
-            <Card key={`card-${index}`} style={{ ...cardStyle, ...addStyle }}>
+            <Card key={`card-${index}`} style={cardStyle}>
                 <CardHeader
-                    onClick={onHeaderClick}
-                    style={{ ...headerStyle, ...addStyle }}
+                    onClick={() => navigateTo(card.path)}
+                    style={headerStyle}
                     title={card.label}
-                    titleColor={canList ? 'inherit' : grey600}
                 />
-                <CardText
-                    style={textStyle}
-                    color={canList ? 'inherit' : grey600}
-                >
-                    {card.description}
-                </CardText>
+                <CardText style={textStyle}>{card.description}</CardText>
                 <CardActions style={actionStyle}>
                     {this.renderActionButtons(card, canList, canCreate)}
                 </CardActions>
@@ -107,7 +97,19 @@ class CardLinks extends Component {
     };
 
     render() {
-        return SECTIONS.map(this.renderCard);
+        const cards = SECTIONS.map(this.renderCard);
+
+        if (cards.length === 0) {
+            return (
+                <div>
+                    {i18n.t(
+                        'You do not have access to any section of the DHIS 2 User Management App'
+                    )}
+                </div>
+            );
+        }
+
+        return cards;
     }
 }
 

@@ -5,8 +5,13 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-04-16T13:14:12.064Z\n"
-"PO-Revision-Date: 2018-04-16T13:14:12.064Z\n"
+"POT-Creation-Date: 2018-04-18T08:02:52.676Z\n"
+"PO-Revision-Date: 2018-04-18T08:02:52.676Z\n"
+
+msgid ""
+"Something went wrong whilst fetching the organisation units. Please refresh "
+"the page."
+msgstr ""
 
 msgid "Use database locale / no translation"
 msgstr ""
@@ -219,6 +224,9 @@ msgid "Add"
 msgstr ""
 
 msgid "list"
+msgstr ""
+
+msgid "You do not have access to any section of the DHIS 2 User Management App"
 msgstr ""
 
 msgid "Send message"

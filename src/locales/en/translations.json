@@ -1,4 +1,5 @@
 {
+    "Something went wrong whilst fetching the organisation units. Please refresh the page.": "",
     "Use database locale / no translation": "",
     "Search": "",
     "Enter search term": "",
@@ -70,6 +71,7 @@
     "Uncategorized": "",
     "Add": "",
     "list": "",
+    "You do not have access to any section of the DHIS 2 User Management App": "",
     "Send message": "",
     "Update": "",
     "Create new": "",
