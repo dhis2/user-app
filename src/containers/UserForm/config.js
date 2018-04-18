@@ -145,12 +145,12 @@ export const BASE_FIELDS = [
     },
     {
         name: OPEN_ID,
-        label: i18n.t('openID'),
+        label: i18n.t('OpenID'),
         fieldRenderer: renderTextField,
     },
     {
         name: LDAP_ID,
-        label: i18n.t('LDAP Identifier'),
+        label: i18n.t('LDAP identifier'),
         fieldRenderer: renderTextField,
     },
     {
