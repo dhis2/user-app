@@ -6,6 +6,7 @@ import {
     INTERFACE_LANGUAGE,
     DATABASE_LANGUAGE,
     DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
+    DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
 } from '../containers/UserForm/config';
 import asArray from '../utils/asArray';
 import getNestedProp from '../utils/getNestedProp';
@@ -124,3 +125,19 @@ export const shortItemSelector = _.memoize((id, list) => {
     }
     return list.get(id);
 });
+
+export const orgUnitRootsSelector = (orgUnitType, currentUser) => {
+    const fallBackOrgUnitRoots =
+        currentUser[DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS];
+
+    if (!fallBackOrgUnitRoots) {
+        return null;
+    }
+
+    const orgUnitRootsForType = currentUser[orgUnitType].toArray();
+    if (orgUnitRootsForType.length === 0) {
+        return fallBackOrgUnitRoots.toArray();
+    } else {
+        return orgUnitRootsForType;
+    }
+};

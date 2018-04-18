@@ -5,6 +5,7 @@ import {
     createRequestData,
     parseUserSaveData,
     parseLocaleUrl,
+    getFilteredOrgUnits,
 } from './utils';
 
 import groupAuthorities from '../components/AuthorityEditor/utils/groupAuthorities';
@@ -12,6 +13,7 @@ import groupAuthorities from '../components/AuthorityEditor/utils/groupAuthoriti
 import {
     ORG_UNITS_QUERY_CONFIG,
     USER_GROUP_QUERY_CONFIG,
+    CURRENT_USER_ORG_UNITS_FIELDS,
 } from '../constants/queryFields';
 
 import {
@@ -44,15 +46,6 @@ class Api {
         return this.d2.models[entityName].get(id, data);
     };
 
-    getUserByUsername = username => {
-        const propName = 'userCredentials.username';
-        return this.genericFind('users', propName, username);
-    };
-
-    findRoleOrGroupByName = (entityName, name) => {
-        return this.genericFind(entityName, 'name', name);
-    };
-
     genericFind = (entityName, propertyName, value) => {
         return this.d2.models[entityName]
             .filter()
@@ -67,22 +60,21 @@ class Api {
         return this.d2Api.post(url, data);
     };
 
-    getOrgUnits = () => {
-        const listConfig = {
-            ...ORG_UNITS_QUERY_CONFIG,
-            level: 1,
-        };
-        return this.d2.models.organisationUnits
-            .list(listConfig)
-            .then(rootLevel => rootLevel.toArray()[0]);
+    getCurrentUserOrgUnits = () => {
+        return this.d2.models.users.get(
+            this.d2.currentUser.id,
+            CURRENT_USER_ORG_UNITS_FIELDS
+        );
     };
 
-    queryOrgUnits = query => {
+    queryOrgUnits = (query, orgUnitType) => {
         const listConfig = {
             ...ORG_UNITS_QUERY_CONFIG,
             query,
         };
-        return this.d2.models.organisationUnits.list(listConfig);
+        return this.d2.models.organisationUnits
+            .list(listConfig)
+            .then(orgUnits => getFilteredOrgUnits(orgUnits, orgUnitType));
     };
 
     queryUserGroups = query => {

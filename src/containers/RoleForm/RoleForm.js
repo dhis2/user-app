@@ -13,6 +13,11 @@ import { USER_ROLE } from '../../constants/entityTypes';
 import validate from './validate';
 
 class RoleForm extends Component {
+    constructor(props) {
+        super(props);
+        this.boundSubmitHandler = props.handleSubmit(this.saveRole).bind(this);
+    }
+
     saveRole = (values, _, props) => {
         const { role, showSnackbar, clearItem, getList } = this.props;
         role[NAME] = values[NAME];
@@ -61,12 +66,12 @@ class RoleForm extends Component {
     }
 
     render = () => {
-        const { handleSubmit, asyncValidating, pristine, valid } = this.props;
+        const { asyncValidating, pristine, valid } = this.props;
         const disableSubmit = Boolean(asyncValidating || pristine || !valid);
         return (
             <main>
                 <Heading level={2}>{i18n.t('Details')}</Heading>
-                <form onSubmit={handleSubmit(this.saveRole)}>
+                <form onSubmit={this.boundSubmitHandler}>
                     {this.renderFields()}
                     <div style={{ marginTop: '2rem' }}>
                         <RaisedButton

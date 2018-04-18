@@ -1,9 +1,13 @@
 import i18n from 'd2-i18n';
 import { NAME, USERS } from './config';
 
-export default function validate(values, props) {
+export default function validate(values, { pristine }) {
     let errors = {};
     const requiredMsg = i18n.t('This field is required');
+
+    if (pristine) {
+        return errors;
+    }
 
     if (!values[NAME]) {
         errors[NAME] = requiredMsg;

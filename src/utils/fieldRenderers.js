@@ -1,5 +1,4 @@
 import React from 'react';
-import i18n from 'd2-i18n';
 import PropTypes from 'prop-types';
 import TextField from 'material-ui/TextField/TextField';
 import Checkbox from 'material-ui/Checkbox/Checkbox';
@@ -101,16 +100,14 @@ export const renderSearchableGroupEditor = ({
     initialValues,
     ...other
 }) => {
-    const availableItemsHeader = i18n.t(availableItemsLabel);
-    const assignedItemsHeader = i18n.t(assignedItemsLabel);
     return (
         <SearchableGroupEditor
             initiallyAssignedItems={initialValues}
             onChange={input.onChange}
             onBlur={input.onBlur}
             availableItemsQuery={availableItemsQuery}
-            availableItemsHeader={availableItemsHeader}
-            assignedItemsHeader={assignedItemsHeader}
+            availableItemsHeader={availableItemsLabel}
+            assignedItemsHeader={assignedItemsLabel}
             errorText={touched && error}
             {...other}
         />
@@ -123,6 +120,7 @@ export const renderSearchableOrgUnitTree = ({
     meta: { touched, error },
     wrapperStyle,
     initialValues,
+    orgUnitType,
 }) => {
     return (
         <SearchableOrgUnitTree
@@ -130,6 +128,7 @@ export const renderSearchableOrgUnitTree = ({
             onChange={input.onChange}
             wrapperStyle={wrapperStyle}
             headerText={label}
+            orgUnitType={orgUnitType}
         />
     );
 };
@@ -144,7 +143,7 @@ export const renderText = ({ name, label, style }) => {
 
 const sharedPropTypes = {
     input: PropTypes.object.isRequired,
-    label: PropTypes.string.isRequired,
+    label: PropTypes.string,
     meta: PropTypes.shape({
         touched: PropTypes.bool.isRequired,
         error: PropTypes.string,

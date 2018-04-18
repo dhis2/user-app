@@ -7,6 +7,7 @@ import i18n from 'd2-i18n';
 import makeTrashable from 'trashable';
 import _ from '../constants/lodash';
 import PropTypes from 'prop-types';
+import asArray from '../utils/asArray';
 
 const styles = {
     error: {
@@ -63,7 +64,7 @@ class AsyncAutoComplete extends Component {
     };
 
     getItems = value => {
-        const { minCharLength, query } = this.props;
+        const { minCharLength, query, queryParam } = this.props;
 
         if (!value || value.length < minCharLength) {
             // Don't query if too few characters were entered
@@ -81,16 +82,16 @@ class AsyncAutoComplete extends Component {
             this.setState({ ...baseState, filteredItems: loaderDataSource });
 
             // Then query
-            this.trashableQuery = makeTrashable(query(value));
-            this.trashableQuery.then(modelCollection => {
-                if (modelCollection.size > 0) {
+            this.trashableQuery = makeTrashable(query(value, queryParam));
+            this.trashableQuery.then(filteredResults => {
+                // Normalise to array if needed
+                filteredResults = asArray(filteredResults);
+                if (filteredResults.length > 0) {
                     // Display results if any were returned
-                    const filteredItems = modelCollection
-                        .toArray()
-                        .map(model => ({
-                            text: model.displayName,
-                            value: model,
-                        }));
+                    const filteredItems = filteredResults.map(model => ({
+                        text: model.displayName,
+                        value: model,
+                    }));
                     this.setState({
                         ...baseState,
                         filteredItems: filteredItems,
@@ -158,6 +159,7 @@ AsyncAutoComplete.propTypes = {
     queryDebounceTime: PropTypes.number,
     minCharLength: PropTypes.number,
     query: PropTypes.func.isRequired,
+    queryParam: PropTypes.any,
     selectHandler: PropTypes.func.isRequired,
     autoCompleteProps: PropTypes.object,
 };

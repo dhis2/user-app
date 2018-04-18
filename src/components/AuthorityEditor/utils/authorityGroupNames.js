@@ -1,6 +1,7 @@
 import i18n from 'd2-i18n';
 
 export default new Map([
+    ['ALL', i18n.t('All (Full authority)')],
     ['F_ANALYTICSTABLEHOOK', i18n.t('Analytics Table Hook')],
     ['F_ATTRIBUTE', i18n.t('Attribute')],
     ['F_CATEGORY_COMBO', i18n.t('Category Combo')],

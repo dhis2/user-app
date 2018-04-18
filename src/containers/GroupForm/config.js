@@ -7,9 +7,10 @@ import i18n from 'd2-i18n';
 
 export const NAME = 'name';
 export const USERS = 'users';
+export const CODE = 'code';
 export const MANAGED_GROUPS = 'managedGroups';
 
-export const GROUP_PROPS = [NAME, USERS, MANAGED_GROUPS];
+export const GROUP_PROPS = [NAME, CODE, USERS, MANAGED_GROUPS];
 
 export const FIELDS = [
     {
@@ -17,6 +18,11 @@ export const FIELDS = [
         label: i18n.t('Name'),
         fieldRenderer: renderTextField,
         isRequiredField: true,
+    },
+    {
+        name: CODE,
+        label: i18n.t('Code'),
+        fieldRenderer: renderTextField,
     },
     {
         name: USERS,

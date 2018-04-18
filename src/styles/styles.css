@@ -59,3 +59,12 @@ body {
 .search-input input {
     -webkit-appearance: textfield;
 }
+/* OrgTreeView empty items should look the same as ones with children */
+.orgunit.without-children {
+    font-size: 14px !important;
+    font-weight: normal !important;
+}
+.orgunit.without-children > div:first-child {
+    width: 16px !important;
+    height: 13px !important;
+}

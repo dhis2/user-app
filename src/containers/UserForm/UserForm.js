@@ -15,7 +15,12 @@ import asArray from '../../utils/asArray';
 import getNestedProp from '../../utils/getNestedProp';
 import api from '../../api';
 import { userFormInitialValuesSelector } from '../../selectors';
-import { clearItem, getList, showSnackbar } from '../../actions';
+import {
+    clearItem,
+    getList,
+    showSnackbar,
+    appendCurrentUserOrgUnits,
+} from '../../actions';
 import { USER } from '../../constants/entityTypes';
 import * as CONFIG from './config';
 import validate from './validate';
@@ -36,11 +41,21 @@ class UserForm extends Component {
             locales: null,
         };
         this.trashableLocalePromise = null;
+        this.boundSubmitHandler = props.handleSubmit(this.saveUser).bind(this);
     }
 
     componentWillMount() {
-        const { user, showSnackbar, initialize } = this.props;
+        const {
+            user,
+            showSnackbar,
+            initialize,
+            fallbackOrgUnits,
+            appendCurrentUserOrgUnits,
+        } = this.props;
         const username = user.id ? user.userCredentials.username : null;
+        const errorMsg = i18n.t(
+            'Could not load the user data. Please refresh the page.'
+        );
 
         this.trashableLocalePromise = makeTrashable(
             api.getSelectedAndAvailableLocales(username)
@@ -52,11 +67,12 @@ class UserForm extends Component {
                 initialize(userFormInitialValuesSelector(user, locales));
             })
             .catch(error => {
-                const message = i18n.t(
-                    'Could not load the user data. Please refresh the page.'
-                );
-                showSnackbar({ message });
+                showSnackbar({ message: errorMsg });
             });
+
+        if (!fallbackOrgUnits) {
+            appendCurrentUserOrgUnits();
+        }
     }
 
     componentWillUnmount() {
@@ -202,7 +218,7 @@ class UserForm extends Component {
     }
 
     render() {
-        const { handleSubmit, asyncValidating, pristine, valid } = this.props;
+        const { asyncValidating, pristine, valid } = this.props;
         const { showMore, locales } = this.state;
         const disableSubmit = Boolean(asyncValidating || pristine || !valid);
 
@@ -217,7 +233,7 @@ class UserForm extends Component {
         return (
             <main>
                 <Heading level={2}>{i18n.t('Details')}</Heading>
-                <form onSubmit={handleSubmit(this.saveUser)}>
+                <form onSubmit={this.boundSubmitHandler}>
                     {this.renderBaseFields()}
                     {this.renderAdditionalFields(showMore)}
                     {this.renderToggler(showMore)}
@@ -252,11 +268,15 @@ UserForm.propTypes = {
         .isRequired,
     pristine: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired,
+    fallbackOrgUnits: PropTypes.object,
+    appendCurrentUserOrgUnits: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state, ownProps) => {
     return {
         user: state.currentItem,
+        fallbackOrgUnits:
+            state.currentUser[CONFIG.DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS],
     };
 };
 
@@ -271,4 +291,5 @@ export default connect(mapStateToProps, {
     clearItem,
     showSnackbar,
     getList,
+    appendCurrentUserOrgUnits,
 })(ReduxFormWrappedUserForm);

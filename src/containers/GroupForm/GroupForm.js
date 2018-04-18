@@ -10,20 +10,32 @@ import asyncValidateUniqueness from '../../utils/asyncValidateUniqueness';
 import asArray from '../../utils/asArray';
 import { renderSearchableGroupEditor } from '../../utils/fieldRenderers';
 import { clearItem, showSnackbar, getList } from '../../actions';
-import { NAME, USERS, MANAGED_GROUPS, FIELDS } from './config';
+import { NAME, CODE, USERS, MANAGED_GROUPS, FIELDS } from './config';
 import { USER_GROUP } from '../../constants/entityTypes';
 import validate from './validate';
 import api from '../../api';
 
 class GroupForm extends Component {
+    constructor(props) {
+        super(props);
+        this.boundSubmitHandler = props.handleSubmit(this.saveGroup).bind(this);
+    }
+
+    createIdValueObject(value) {
+        return {
+            id: typeof value === 'string' ? value : value.id,
+        };
+    }
+
     saveGroup = (values, _, props) => {
         const { group, showSnackbar, clearItem, getList } = this.props;
 
         group[NAME] = values[NAME];
-        group[USERS] = values[USERS].map(value => ({ id: value }));
-        group[MANAGED_GROUPS] = values[MANAGED_GROUPS].map(value => ({
-            id: value,
-        }));
+        group[CODE] = values[CODE];
+        group[USERS] = values[USERS].map(this.createIdValueObject);
+        group[MANAGED_GROUPS] = values[MANAGED_GROUPS].map(
+            this.createIdValueObject
+        );
 
         group
             .save()
@@ -80,12 +92,12 @@ class GroupForm extends Component {
     }
 
     render() {
-        const { handleSubmit, asyncValidating, pristine, valid } = this.props;
+        const { asyncValidating, pristine, valid } = this.props;
         const disableSubmit = Boolean(asyncValidating || pristine || !valid);
         return (
             <main>
                 <Heading level={2}>{i18n.t('Details')}</Heading>
-                <form onSubmit={handleSubmit(this.saveGroup)}>
+                <form onSubmit={this.boundSubmitHandler}>
                     {this.renderFields()}
                     <div style={{ marginTop: '2rem' }}>
                         <RaisedButton
@@ -123,6 +135,7 @@ const mapStateToProps = state => ({
     group: state.currentItem,
     initialValues: {
         [NAME]: state.currentItem[NAME],
+        [CODE]: state.currentItem[CODE],
         [USERS]: asArray(state.currentItem[USERS]),
         [MANAGED_GROUPS]: asArray(state.currentItem[MANAGED_GROUPS]),
     },
@@ -132,7 +145,7 @@ const ReduxFormWrappedGroupForm = reduxForm({
     form: 'groupForm',
     validate,
     asyncValidate: asyncValidateUniqueness,
-    asyncBlurFields: [NAME],
+    asyncBlurFields: [NAME, CODE],
 })(GroupForm);
 
 export default connect(mapStateToProps, {

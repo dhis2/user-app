@@ -39,6 +39,7 @@ export const STYLES = {
 
 export const USERNAME = 'username';
 export const EXTERNAL_AUTH = 'externalAuth';
+export const TWO_FA = 'twoFA';
 export const PASSWORD = 'password';
 export const REPEAT_PASSWORD = 'repeatPassword';
 export const SURNAME = 'surname';
@@ -71,6 +72,7 @@ export const USER_PROPS = [
 export const USER_CRED_PROPS = [
     USERNAME,
     EXTERNAL_AUTH,
+    TWO_FA,
     PASSWORD,
     OPEN_ID,
     LDAP_ID,
@@ -106,6 +108,11 @@ export const BASE_FIELDS = [
     {
         name: EXTERNAL_AUTH,
         label: i18n.t('External authentication only (OpenID or LDAP)'),
+        fieldRenderer: renderCheckbox,
+    },
+    {
+        name: TWO_FA,
+        label: i18n.t('Two Factor Authentication enabled'),
         fieldRenderer: renderCheckbox,
     },
     {
@@ -145,12 +152,12 @@ export const BASE_FIELDS = [
     },
     {
         name: OPEN_ID,
-        label: i18n.t('openID'),
+        label: i18n.t('OpenID'),
         fieldRenderer: renderTextField,
     },
     {
         name: LDAP_ID,
-        label: i18n.t('LDAP Identifier'),
+        label: i18n.t('LDAP identifier'),
         fieldRenderer: renderTextField,
     },
     {
@@ -183,12 +190,14 @@ export const BASE_FIELDS = [
     {
         name: DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
         label: i18n.t('Data capture and maintenance organisation units'),
+        orgUnitType: DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
         fieldRenderer: renderSearchableOrgUnitTree,
         wrapperStyle: { ...STYLES.orgUnitTree, paddingRight: '60px' },
     },
     {
         name: DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS,
         label: i18n.t('Data output and analytic organisation units'),
+        orgUnitType: DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS,
         fieldRenderer: renderSearchableOrgUnitTree,
         wrapperStyle: { ...STYLES.orgUnitTree, paddingLeft: '60px' },
     },
@@ -196,9 +205,13 @@ export const BASE_FIELDS = [
         ...BASE_CAPTION,
         name: 'org_unit_info_1',
     },
+];
+
+export const ADDITIONAL_FIELDS = [
     {
         name: TEI_SEARCH_ORG_UNITS,
         label: i18n.t('Search Organisation Units'),
+        orgUnitType: TEI_SEARCH_ORG_UNITS,
         fieldRenderer: renderSearchableOrgUnitTree,
         wrapperStyle: { ...STYLES.orgUnitTree, paddingRight: '60px' },
     },
@@ -206,9 +219,6 @@ export const BASE_FIELDS = [
         ...BASE_CAPTION,
         name: 'org_unit_info_2',
     },
-];
-
-export const ADDITIONAL_FIELDS = [
     {
         name: ASSIGNED_USER_GROUPS,
         fieldRenderer: renderSearchableGroupEditor,

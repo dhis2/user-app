@@ -1,6 +1,7 @@
 import * as ACTIONS from '../constants/actionTypes';
 import { PAGE as DEFAULT_PAGE } from '../constants/defaults';
 import api from '../api';
+import i18n from 'd2-i18n';
 
 // Helpers
 const createAction = (type, payload) => ({ type, payload });
@@ -97,6 +98,20 @@ export const hideSharingDialog = () => {
 
 export const initCurrentUser = () => {
     return createAction(ACTIONS.INIT_CURRENT_USER, api.getCurrentUser());
+};
+
+export const appendCurrentUserOrgUnits = () => (dispatch, getState) => {
+    const RECEIVED = ACTIONS.CURRENT_USER_ORG_UNITS_RECEIVED;
+
+    api
+        .getCurrentUserOrgUnits()
+        .then(response => dispatch(createAction(RECEIVED, response)))
+        .catch(error => {
+            const errorMsg = i18n.t(
+                'Something went wrong whilst fetching the organisation units. Please refresh the page.'
+            );
+            dispatch(showSnackbar({ message: errorMsg }));
+        });
 };
 
 export const getCurrentUserGroupMemberships = () => (dispatch, getState) => {
