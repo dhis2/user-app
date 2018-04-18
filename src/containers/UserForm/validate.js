@@ -35,7 +35,7 @@ export default function validate(values, props) {
         : EDIT_REQUIRED_FIELDS;
 
     requiredFields.forEach(fieldName =>
-        validateRequiredField(errors, fieldName, values[fieldName])
+        validateRequiredField(errors, fieldName, values[fieldName], createUser)
     );
 
     validateAssignedRoles(errors, values[ASSIGNED_ROLES], createUser);
