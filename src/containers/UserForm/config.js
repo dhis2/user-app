@@ -183,12 +183,14 @@ export const BASE_FIELDS = [
     {
         name: DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
         label: i18n.t('Data capture and maintenance organisation units'),
+        orgUnitType: DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
         fieldRenderer: renderSearchableOrgUnitTree,
         wrapperStyle: { ...STYLES.orgUnitTree, paddingRight: '60px' },
     },
     {
         name: DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS,
         label: i18n.t('Data output and analytic organisation units'),
+        orgUnitType: DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS,
         fieldRenderer: renderSearchableOrgUnitTree,
         wrapperStyle: { ...STYLES.orgUnitTree, paddingLeft: '60px' },
     },
@@ -199,6 +201,7 @@ export const BASE_FIELDS = [
     {
         name: TEI_SEARCH_ORG_UNITS,
         label: i18n.t('Search Organisation Units'),
+        orgUnitType: TEI_SEARCH_ORG_UNITS,
         fieldRenderer: renderSearchableOrgUnitTree,
         wrapperStyle: { ...STYLES.orgUnitTree, paddingRight: '60px' },
     },

@@ -15,7 +15,12 @@ import asArray from '../../utils/asArray';
 import getNestedProp from '../../utils/getNestedProp';
 import api from '../../api';
 import { userFormInitialValuesSelector } from '../../selectors';
-import { clearItem, getList, showSnackbar } from '../../actions';
+import {
+    clearItem,
+    getList,
+    showSnackbar,
+    appendCurrentUserOrgUnits,
+} from '../../actions';
 import { USER } from '../../constants/entityTypes';
 import * as CONFIG from './config';
 import validate from './validate';
@@ -39,8 +44,17 @@ class UserForm extends Component {
     }
 
     componentWillMount() {
-        const { user, showSnackbar, initialize } = this.props;
+        const {
+            user,
+            showSnackbar,
+            initialize,
+            fallbackOrgUnits,
+            appendCurrentUserOrgUnits,
+        } = this.props;
         const username = user.id ? user.userCredentials.username : null;
+        const errorMsg = i18n.t(
+            'Could not load the user data. Please refresh the page.'
+        );
 
         this.trashableLocalePromise = makeTrashable(
             api.getSelectedAndAvailableLocales(username)
@@ -52,11 +66,12 @@ class UserForm extends Component {
                 initialize(userFormInitialValuesSelector(user, locales));
             })
             .catch(error => {
-                const message = i18n.t(
-                    'Could not load the user data. Please refresh the page.'
-                );
-                showSnackbar({ message });
+                showSnackbar({ message: errorMsg });
             });
+
+        if (!fallbackOrgUnits) {
+            appendCurrentUserOrgUnits();
+        }
     }
 
     componentWillUnmount() {
@@ -252,11 +267,15 @@ UserForm.propTypes = {
         .isRequired,
     pristine: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired,
+    fallbackOrgUnits: PropTypes.object,
+    appendCurrentUserOrgUnits: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state, ownProps) => {
     return {
         user: state.currentItem,
+        fallbackOrgUnits:
+            state.currentUser[CONFIG.DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS],
     };
 };
 
@@ -271,4 +290,5 @@ export default connect(mapStateToProps, {
     clearItem,
     showSnackbar,
     getList,
+    appendCurrentUserOrgUnits,
 })(ReduxFormWrappedUserForm);

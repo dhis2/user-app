@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component';
+import { connect } from 'react-redux';
+import OrgUnitTreeMultipleRoots from 'd2-ui/lib/org-unit-tree/OrgUnitTreeMultipleRoots.component';
 import Paper from 'material-ui/Paper';
 import CircularProgress from 'material-ui/CircularProgress';
 import AsyncAutoComplete from './AsyncAutoComplete';
@@ -7,13 +8,13 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import i18n from 'd2-i18n';
 import _ from '../constants/lodash';
-import makeTrashable from 'trashable';
 import PropTypes from 'prop-types';
 import api from '../api';
+import { orgUnitRootsSelector } from '../selectors';
 
 const styles = {
     wrapper: {
-        minHeight: '20vh',
+        minHeight: '300px',
         maxHeight: '60vh',
         position: 'relative',
     },
@@ -21,7 +22,7 @@ const styles = {
         position: 'relative',
         marginTop: '-12px',
         maxHeight: 'calc(60vh - 154px)',
-        minHeight: 'calc(20vh - 154px)',
+        minHeight: 'calc(300px - 154px)',
         overflowY: 'auto',
         paddingTop: '8px',
         paddingBottom: '8px',
@@ -53,32 +54,13 @@ class SearchableOrgUnitTree extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            root: null,
+            roots: null,
             selectedOrgUnits: [...props.selectedOrgUnits],
             orgUnitFilter: null,
             initiallyExpanded: this.getInitiallyExpandedItems(
                 props.selectedOrgUnits
             ),
         };
-        this.trashableGetOrgUnits = null;
-    }
-
-    componentWillMount() {
-        this.trashableGetOrgUnits = makeTrashable(api.getOrgUnits());
-        const { initiallyExpanded } = this.state;
-        this.trashableGetOrgUnits.then(root => {
-            this.setState({
-                root: root,
-                initiallyExpanded:
-                    initiallyExpanded.length === 0
-                        ? [root.path]
-                        : initiallyExpanded,
-            });
-        });
-    }
-
-    componentWillUnmount() {
-        this.trashableGetOrgUnits.trash();
     }
 
     getInitiallyExpandedItems(orgUnits) {
@@ -152,20 +134,20 @@ class SearchableOrgUnitTree extends Component {
 
     render() {
         const {
-            root,
             selectedOrgUnits,
             initiallyExpanded,
             orgUnitFilter,
         } = this.state;
         const {
+            roots,
             confirmSelection,
             displayClearFilterButton,
             cancel,
+            orgUnitType,
             headerText,
             wrapperStyle,
         } = this.props;
         const selected = selectedOrgUnits.map(unit => unit.path);
-
         const autoCompleteProps = {
             floatingLabelText: i18n.t('Search'),
             hintText: i18n.t('Enter search term'),
@@ -182,16 +164,17 @@ class SearchableOrgUnitTree extends Component {
                 <AsyncAutoComplete
                     autoCompleteProps={autoCompleteProps}
                     query={api.queryOrgUnits}
+                    queryParam={orgUnitType}
                     minCharLength={2}
                     queryDebounceTime={375}
                     selectHandler={this.selectAndShowFilteredOrgUnit}
                 />
                 <Paper style={styles.scrollBox}>
-                    {!root ? (
+                    {!roots ? (
                         <CircularProgress style={styles.loader} />
                     ) : (
-                        <OrgUnitTree
-                            root={root}
+                        <OrgUnitTreeMultipleRoots
+                            roots={roots}
                             onSelectClick={this.toggleSelectedOrgUnits}
                             selected={selected}
                             initiallyExpanded={initiallyExpanded}
@@ -229,7 +212,9 @@ class SearchableOrgUnitTree extends Component {
 }
 
 SearchableOrgUnitTree.propTypes = {
+    roots: PropTypes.array,
     selectedOrgUnits: PropTypes.array.isRequired,
+    orgUnitType: PropTypes.string.isRequired,
     headerText: PropTypes.string,
     wrapperStyle: PropTypes.object,
     displayClearFilterButton: PropTypes.bool,
@@ -238,4 +223,11 @@ SearchableOrgUnitTree.propTypes = {
     cancel: PropTypes.func,
 };
 
-export default SearchableOrgUnitTree;
+// export default SearchableOrgUnitTree;
+const mapStateToProps = (state, props) => {
+    return {
+        roots: orgUnitRootsSelector(props.orgUnitType, state.currentUser),
+    };
+};
+
+export default connect(mapStateToProps)(SearchableOrgUnitTree);

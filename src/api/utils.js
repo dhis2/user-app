@@ -1,5 +1,6 @@
 import { generateUid } from 'd2/lib/uid';
 import _ from '../constants/lodash';
+import store from '../store';
 import {
     PAGE as DEFAULT_PAGE,
     PAGE_SIZE as DEFAULT_PAGE_SIZE,
@@ -95,4 +96,20 @@ export const parseUserSaveData = (values, user) => {
 
 export const parseLocaleUrl = (type, username, val) => {
     return `/userSettings/key${type}Locale?user=${username}&value=${val}`;
+};
+
+export const getFilteredOrgUnits = (orgUnits, orgUnitType) => {
+    const { currentUser } = store.getState();
+    const availableOrgUnits = currentUser[orgUnitType];
+
+    return orgUnits.toArray().filter(unit => {
+        const isAvailableUnit = Boolean(availableOrgUnits.get(unit.id));
+        const hasAvailableAncestor =
+            !isAvailableUnit &&
+            unit.ancestors
+                .toArray()
+                .some(ancestor => Boolean(availableOrgUnits.get(ancestor.id)));
+
+        return isAvailableUnit || hasAvailableAncestor;
+    });
 };

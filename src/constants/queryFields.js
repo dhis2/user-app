@@ -54,9 +54,18 @@ export const USER_ROLE_DETAILS = [
     'authorities',
 ];
 
+export const CURRENT_USER_ORG_UNITS_FIELDS = {
+    fields: [
+        'organisationUnits[id,path,displayName,children::isNotEmpty]',
+        'dataViewOrganisationUnits[id,path,displayName,children::isNotEmpty]',
+        'teiSearchOrganisationUnits[id,path,displayName,children::isNotEmpty]',
+    ],
+};
+
 export const ORG_UNITS_QUERY_CONFIG = {
     paging: false,
-    fields: ['id', 'path', 'displayName', 'children::isNotEmpty'],
+    // userDataViewFallback: true
+    fields: ['id', 'path', 'displayName', 'children::isNotEmpty', 'ancestors'],
 };
 
 export const USER_GROUP_QUERY_CONFIG = {
