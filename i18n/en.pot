@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-04-18T08:02:52.676Z\n"
-"PO-Revision-Date: 2018-04-18T08:02:52.676Z\n"
+"POT-Creation-Date: 2018-04-18T13:08:33.386Z\n"
+"PO-Revision-Date: 2018-04-18T13:08:33.386Z\n"
 
 msgid ""
 "Something went wrong whilst fetching the organisation units. Please refresh "
@@ -32,6 +32,9 @@ msgid "Authorities"
 msgstr ""
 
 msgid "Selected authorities only"
+msgstr ""
+
+msgid "All (Full authority)"
 msgstr ""
 
 msgid "Analytics Table Hook"
@@ -316,6 +319,9 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
+msgid "Code"
+msgstr ""
+
 msgid "Available users"
 msgstr ""
 
@@ -399,6 +405,9 @@ msgstr ""
 msgid "External authentication only (OpenID or LDAP)"
 msgstr ""
 
+msgid "Two Factor Authentication enabled"
+msgstr ""
+
 msgid "Retype password"
 msgstr ""
 
@@ -411,10 +420,10 @@ msgstr ""
 msgid "E-mail"
 msgstr ""
 
-msgid "openID"
+msgid "OpenID"
 msgstr ""
 
-msgid "LDAP Identifier"
+msgid "LDAP identifier"
 msgstr ""
 
 msgid "Mobile phone number"
@@ -512,16 +521,19 @@ msgid_plural "{{count}} selected"
 msgstr[0] ""
 msgstr[1] ""
 
-msgid "Name is already taken"
+msgid "{{fieldDisplayName}} is already taken"
 msgstr ""
 
-msgid "Could not verify if this name is unique"
+msgid "Could not verify if this {{fieldDisplayName}} is unique"
 msgstr ""
 
 msgid "Password should be at least 8 characters long"
 msgstr ""
 
 msgid "Password should be no longer than 34 characters"
+msgstr ""
+
+msgid "Password should contain at least one lowercase letter"
 msgstr ""
 
 msgid "Password should contain at least one UPPERCASE letter"

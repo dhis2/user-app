@@ -37,7 +37,6 @@ class AuthorityEditor extends Component {
             api.getGroupedAuthorities()
         );
         this.groupedAuthoritiesPromise.then(allGroupedAuthorities => {
-            console.log(allGroupedAuthorities);
             this.setState({ allGroupedAuthorities: allGroupedAuthorities });
         });
     }

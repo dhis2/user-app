@@ -41,6 +41,7 @@ class UserForm extends Component {
             locales: null,
         };
         this.trashableLocalePromise = null;
+        this.boundSubmitHandler = props.handleSubmit(this.saveUser).bind(this);
     }
 
     componentWillMount() {
@@ -232,7 +233,7 @@ class UserForm extends Component {
         return (
             <main>
                 <Heading level={2}>{i18n.t('Details')}</Heading>
-                <form onSubmit={handleSubmit(this.saveUser)}>
+                <form onSubmit={this.boundSubmitHandler}>
                     {this.renderBaseFields()}
                     {this.renderAdditionalFields(showMore)}
                     {this.renderToggler(showMore)}

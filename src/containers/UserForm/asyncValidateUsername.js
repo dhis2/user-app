@@ -11,8 +11,9 @@ export default function asyncValidateUsername(values, _, props) {
     }
 
     let errors = {};
+
     return api
-        .getUserByUsername(newUserName)
+        .genericFind('users', 'userCredentials.username', newUserName)
         .then(modelCollection => {
             if (modelCollection.size > 0) {
                 errors[USERNAME] = i18n.t('Username already taken');

@@ -46,15 +46,6 @@ class Api {
         return this.d2.models[entityName].get(id, data);
     };
 
-    getUserByUsername = username => {
-        const propName = 'userCredentials.username';
-        return this.genericFind('users', propName, username);
-    };
-
-    findRoleOrGroupByName = (entityName, name) => {
-        return this.genericFind(entityName, 'name', name);
-    };
-
     genericFind = (entityName, propertyName, value) => {
         return this.d2.models[entityName]
             .filter()

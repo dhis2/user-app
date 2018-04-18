@@ -42,6 +42,7 @@ export const USER_DETAILS = [
 ];
 export const USER_GROUP_DETAILS = [
     'id',
+    'code',
     'access',
     'displayName',
     'name',
