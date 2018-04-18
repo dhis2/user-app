@@ -6,9 +6,8 @@ import Heading from 'd2-ui/lib/headings/Heading.component';
 import AuthorityGroup from './AuthorityGroup';
 import AuthorityItem from './AuthorityItem';
 
-// 19 rows fit a section viewport
-const FLUSH_COUNT = 19;
-const FLUSH_INTERVAL = 1;
+const FLUSH_COUNT = 7;
+const FLUSH_INTERVAL = 10;
 
 // This component used to cause the page to hang whilst it was rendering
 // a long list of MUI Checkboxes. To prevent this we have switched to batched rendering
