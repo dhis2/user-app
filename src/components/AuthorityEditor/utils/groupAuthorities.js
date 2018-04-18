@@ -270,6 +270,11 @@ const addToAuthoritySection = (auth, groupedAuthorities, lookup) => {
         Object.keys(AUTHORITY_GROUPS).find(groupKey =>
             AUTHORITY_GROUPS[groupKey].has(auth.id)
         ) || 'uncategorized';
+
+    if (auth.id === 'ALL') {
+        auth.name = nameLookup.get(auth.id);
+    }
+
     groupedAuthorities[groupKey].items.push(auth);
     lookup.delete(auth.id);
 };
