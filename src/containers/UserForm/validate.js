@@ -52,6 +52,7 @@ function validateAssignedRoles(errors, value, createUser) {
 }
 
 function validatePassword(errors, values, createUser) {
+    // Only skip on when editing user and both fields are blank
     const skipValidation = !createUser && !values[PASSWORD] && !values[REPEAT_PASSWORD];
 
     if (skipValidation) {

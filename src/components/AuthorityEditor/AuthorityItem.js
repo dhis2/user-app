@@ -25,17 +25,20 @@ class AuthorityItem extends Component {
         const { authSubject, withLabel, disabled } = this.props;
         const { searchChunks } = this.context;
         const { name, empty, implicit } = authSubject;
-        const label = withLabel ? name : '';
         const baseClassName = 'authority-editor__auth-checkbox';
         const className = withLabel ? baseClassName : `${baseClassName}--without-label`;
-        const labelTxt = <HighlightableText text={label} searchChunks={searchChunks} />;
+        const label = withLabel ? (
+            <HighlightableText text={name} searchChunks={searchChunks} />
+        ) : (
+            ''
+        );
 
         return (
             <td>
                 {!empty ? (
                     <Checkbox
                         onCheck={this.onChecked}
-                        label={labelTxt}
+                        label={label}
                         className={className}
                         checked={this.state.selected || Boolean(implicit)}
                         disabled={implicit || disabled}
