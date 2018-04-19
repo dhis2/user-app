@@ -7,7 +7,7 @@ const checkPasswordForErrors = password => {
     const specialChar = /[`~!@#$%^&*()_|+\-=?;:'",.<>{}[\]\\/]/;
 
     if (!password) {
-        return i18n.t('This fields is required');
+        return i18n.t('This field is required');
     }
     if (password.length < 8) {
         return i18n.t('Password should be at least 8 characters long');
