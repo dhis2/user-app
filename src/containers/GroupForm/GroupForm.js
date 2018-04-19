@@ -16,9 +16,13 @@ import validate from './validate';
 import api from '../../api';
 
 class GroupForm extends Component {
-    constructor(props) {
-        super(props);
-        this.boundSubmitHandler = props.handleSubmit(this.saveGroup).bind(this);
+    shouldComponentUpdate(nextProps, nextState) {
+        // Using REDUX form asyncBlurFields together with MaterialUI buttons can cause a problem:
+        // when you have focus on one of the aSync blur fields, and you click submit with your mouse
+        // The button will now fist call focus, blurring the async blur field as a result of this
+        // the aSync validation for that single field (value is a string) is triggered instead of the
+        // aSyncValidation for all fields, which is triggered from submit
+        return typeof nextProps.asyncValidating !== 'string';
     }
 
     createIdValueObject(value) {
@@ -27,31 +31,25 @@ class GroupForm extends Component {
         };
     }
 
-    saveGroup = (values, _, props) => {
+    saveGroup = async (values, _, props) => {
         const { group, showSnackbar, clearItem, getList } = this.props;
 
         group[NAME] = values[NAME];
         group[CODE] = values[CODE];
         group[USERS] = values[USERS].map(this.createIdValueObject);
-        group[MANAGED_GROUPS] = values[MANAGED_GROUPS].map(
-            this.createIdValueObject
-        );
+        group[MANAGED_GROUPS] = values[MANAGED_GROUPS].map(this.createIdValueObject);
 
-        group
-            .save()
-            .then(() => {
-                const msg = i18n.t('User group saved successfully');
-                showSnackbar({ message: msg });
-                clearItem();
-                getList(USER_GROUP);
-                this.backToList();
-            })
-            .catch(error => {
-                const msg = i18n.t(
-                    'There was a problem saving the user group.'
-                );
-                showSnackbar({ message: msg });
-            });
+        try {
+            await group.save();
+            const msg = i18n.t('User group saved successfully');
+            showSnackbar({ message: msg });
+            clearItem();
+            getList(USER_GROUP);
+            this.backToList();
+        } catch (error) {
+            const msg = i18n.t('There was a problem saving the user group.');
+            showSnackbar({ message: msg });
+        }
     };
 
     backToList = () => {
@@ -61,13 +59,7 @@ class GroupForm extends Component {
     renderFields() {
         const { group } = this.props;
         return FIELDS.map(fieldConfig => {
-            const {
-                name,
-                fieldRenderer,
-                label,
-                isRequiredField,
-                ...conf
-            } = fieldConfig;
+            const { name, fieldRenderer, label, isRequiredField, ...conf } = fieldConfig;
             const suffix = isRequiredField ? ' *' : '';
             const labelText = label + suffix;
 
@@ -92,12 +84,12 @@ class GroupForm extends Component {
     }
 
     render() {
-        const { asyncValidating, pristine, valid } = this.props;
+        const { handleSubmit, asyncValidating, pristine, valid } = this.props;
         const disableSubmit = Boolean(asyncValidating || pristine || !valid);
         return (
             <main>
                 <Heading level={2}>{i18n.t('Details')}</Heading>
-                <form onSubmit={this.boundSubmitHandler}>
+                <form onSubmit={handleSubmit(this.saveGroup)}>
                     {this.renderFields()}
                     <div style={{ marginTop: '2rem' }}>
                         <RaisedButton
@@ -125,8 +117,7 @@ GroupForm.propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     initialValues: PropTypes.object.isRequired,
     group: PropTypes.object.isRequired,
-    asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
-        .isRequired,
+    asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]).isRequired,
     pristine: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired,
 };

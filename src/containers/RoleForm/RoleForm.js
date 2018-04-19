@@ -13,30 +13,27 @@ import { USER_ROLE } from '../../constants/entityTypes';
 import validate from './validate';
 
 class RoleForm extends Component {
-    constructor(props) {
-        super(props);
-        this.boundSubmitHandler = props.handleSubmit(this.saveRole).bind(this);
+    shouldComponentUpdate(nextProps, nextState) {
+        return typeof nextProps.asyncValidating !== 'string';
     }
 
-    saveRole = (values, _, props) => {
+    saveRole = async (values, _, props) => {
         const { role, showSnackbar, clearItem, getList } = this.props;
         role[NAME] = values[NAME];
         role[DESCRIPTION] = values[DESCRIPTION];
         role[AUTHORITIES] = values[AUTHORITIES].map(value => ({ id: value }));
 
-        role
-            .save()
-            .then(() => {
-                const msg = i18n.t('User role saved successfully');
-                showSnackbar({ message: msg });
-                clearItem();
-                getList(USER_ROLE);
-                this.backToList();
-            })
-            .catch(error => {
-                const msg = i18n.t('There was a problem saving the user role.');
-                showSnackbar({ message: msg });
-            });
+        try {
+            await role.save();
+            const msg = i18n.t('User role saved successfully');
+            showSnackbar({ message: msg });
+            clearItem();
+            getList(USER_ROLE);
+            this.backToList();
+        } catch (error) {
+            const msg = i18n.t('There was a problem saving the user role.');
+            showSnackbar({ message: msg });
+        }
     };
 
     backToList = () => {
@@ -45,13 +42,7 @@ class RoleForm extends Component {
 
     renderFields() {
         return FIELDS.map(fieldConfig => {
-            const {
-                name,
-                fieldRenderer,
-                label,
-                isRequiredField,
-                ...conf
-            } = fieldConfig;
+            const { name, fieldRenderer, label, isRequiredField, ...conf } = fieldConfig;
 
             return (
                 <Field
@@ -66,12 +57,12 @@ class RoleForm extends Component {
     }
 
     render = () => {
-        const { asyncValidating, pristine, valid } = this.props;
+        const { handleSubmit, asyncValidating, pristine, valid } = this.props;
         const disableSubmit = Boolean(asyncValidating || pristine || !valid);
         return (
             <main>
                 <Heading level={2}>{i18n.t('Details')}</Heading>
-                <form onSubmit={this.boundSubmitHandler}>
+                <form onSubmit={handleSubmit(this.saveRole)}>
                     {this.renderFields()}
                     <div style={{ marginTop: '2rem' }}>
                         <RaisedButton
@@ -99,8 +90,7 @@ RoleForm.propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     initialValues: PropTypes.object.isRequired,
     role: PropTypes.object.isRequired,
-    asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
-        .isRequired,
+    asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]).isRequired,
     pristine: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired,
 };

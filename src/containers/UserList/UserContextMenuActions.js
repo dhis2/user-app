@@ -98,24 +98,17 @@ userContextMenuActions.enable.subscribe(({ data }) => {
     updateDisabledState(data, false);
 });
 
-const updateDisabledState = ({ displayName, id }, disabledState) => {
+const updateDisabledState = async ({ displayName, id }, disabledState) => {
     const enabledSuccessBaseMsg = i18n.t('successfully enabled');
     const disabledSuccessBaseMsg = i18n.t('sucessfully disabled');
     const errorMsg = i18n.t('There was a problem updating the enabled state');
 
-    api
-        .updateDisabledState(id, disabledState)
-        .then(() => {
-            const baseMsg = disabledState
-                ? disabledSuccessBaseMsg
-                : enabledSuccessBaseMsg;
-
-            store.dispatch(
-                showSnackbar({ message: `${displayName} ${baseMsg}` })
-            );
-            store.dispatch(getList(USER));
-        })
-        .catch(() => {
-            store.dispatch(showSnackbar({ message: errorMsg }));
-        });
+    try {
+        await api.updateDisabledState(id, disabledState);
+        const baseMsg = disabledState ? disabledSuccessBaseMsg : enabledSuccessBaseMsg;
+        store.dispatch(showSnackbar({ message: `${displayName} ${baseMsg}` }));
+        store.dispatch(getList(USER));
+    } catch (error) {
+        store.dispatch(showSnackbar({ message: errorMsg }));
+    }
 };

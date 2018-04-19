@@ -5,11 +5,7 @@ import DetailSummary from '../components/DetailSummary';
 import { USER_ROLE_DETAILS } from '../constants/detailFieldConfigs';
 
 const RoleDetails = ({ match: { params: { id } } }) => (
-    <DetailSummary
-        routeId={id}
-        config={USER_ROLE_DETAILS}
-        baseName={USER_ROLE}
-    />
+    <DetailSummary routeId={id} config={USER_ROLE_DETAILS} baseName={USER_ROLE} />
 );
 
 RoleDetails.propTypes = {

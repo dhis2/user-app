@@ -55,8 +55,7 @@ export const DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS = 'organisationUnits';
 export const DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS = 'dataViewOrganisationUnits';
 export const TEI_SEARCH_ORG_UNITS = 'teiSearchOrganisationUnits';
 export const ASSIGNED_USER_GROUPS = 'userGroups';
-export const DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS =
-    'catCogsDimensionConstraints';
+export const DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS = 'catCogsDimensionConstraints';
 
 export const USER_PROPS = [
     SURNAME,
@@ -230,15 +229,12 @@ export const ADDITIONAL_FIELDS = [
     {
         name: DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
         fieldRenderer: renderSearchableGroupEditor,
-        initialItemsSelector: user =>
-            analyticsDimensionsRestrictionsSelector(user),
+        initialItemsSelector: user => analyticsDimensionsRestrictionsSelector(user),
         availableItemsQuery: 'getAvailableDataAnalyticsDimensionRestrictions',
         availableItemsLabel: i18n.t(
             'Available dimension restrictions for data analytics'
         ),
-        assignedItemsLabel: i18n.t(
-            'Selected dimension restrictions for data analytics'
-        ),
+        assignedItemsLabel: i18n.t('Selected dimension restrictions for data analytics'),
         returnModelsOnUpdate: true,
     },
 ];

@@ -183,21 +183,15 @@ class Api {
             if (dbLocale !== currentDbLocale) {
                 const dbLocalePromise =
                     dbLocale === USE_DB_LOCALE
-                        ? this.d2Api.delete(
-                              `/userSettings/keyDbLocale?user=${username}`
-                          )
-                        : this.d2Api.post(
-                              parseLocaleUrl('Db', username, dbLocale)
-                          );
+                        ? this.d2Api.delete(`/userSettings/keyDbLocale?user=${username}`)
+                        : this.d2Api.post(parseLocaleUrl('Db', username, dbLocale));
                 localePromises.push(dbLocalePromise);
             }
 
             // Dummy follow-up request to prevent Promise.all error
             // if neither locale fields need updating
             if (localePromises.length === 0) {
-                localePromises.push(
-                    Promise.resolve('No locale changes detected')
-                );
+                localePromises.push(Promise.resolve('No locale changes detected'));
             }
             // Updating locales after user in case the user is new
             return Promise.all(localePromises);

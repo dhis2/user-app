@@ -171,6 +171,7 @@
     "{{count}} selected_plural": "",
     "{{fieldDisplayName}} is already taken": "",
     "Could not verify if this {{fieldDisplayName}} is unique": "",
+    "This fields is required": "",
     "Password should be at least 8 characters long": "",
     "Password should be no longer than 34 characters": "",
     "Password should contain at least one lowercase letter": "",

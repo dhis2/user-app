@@ -3,12 +3,7 @@ import PropTypes from 'prop-types';
 import _ from '../constants/lodash';
 import { USER } from '../constants/entityTypes';
 import { connect } from 'react-redux';
-import {
-    updateFilter,
-    hideDialog,
-    getList,
-    appendCurrentUserOrgUnits,
-} from '../actions';
+import { updateFilter, hideDialog, getList, appendCurrentUserOrgUnits } from '../actions';
 import SearchableOrgUnitTree from '../components/SearchableOrgUnitTree';
 import {
     DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
@@ -24,12 +19,7 @@ class OrganisationUnitFilter extends Component {
     }
 
     applyFilter = newSelectedOrgUnits => {
-        const {
-            updateFilter,
-            hideDialog,
-            getList,
-            selectedOrgUnits,
-        } = this.props;
+        const { updateFilter, hideDialog, getList, selectedOrgUnits } = this.props;
 
         if (!_.isEqual(newSelectedOrgUnits, selectedOrgUnits)) {
             updateFilter('organisationUnits', newSelectedOrgUnits);

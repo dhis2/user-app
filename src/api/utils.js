@@ -12,6 +12,7 @@ import {
     USER_PROPS,
     USER_CRED_PROPS,
     DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
+    DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
 } from '../containers/UserForm/config';
 
 export const getQueryFields = (entityName, detailFields) => {
@@ -59,8 +60,7 @@ const addValueAsProp = (data, value, propName) => {
 
 export const parseUserSaveData = (values, user) => {
     const userId = user.id || generateUid();
-    const userCredId =
-        (user.userCredentials && user.userCredentials.id) || generateUid();
+    const userCredId = (user.userCredentials && user.userCredentials.id) || generateUid();
     let data = {
         id: userId,
         userCredentials: {
@@ -82,12 +82,8 @@ export const parseUserSaveData = (values, user) => {
         });
     }
 
-    USER_PROPS.forEach(propName =>
-        addValueAsProp(data, values[propName], propName)
-    );
-    USER_CRED_PROPS.forEach(propName =>
-        addValueAsProp(cred, values[propName], propName)
-    );
+    USER_PROPS.forEach(propName => addValueAsProp(data, values[propName], propName));
+    USER_CRED_PROPS.forEach(propName => addValueAsProp(cred, values[propName], propName));
 
     delete cred[DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS];
 
@@ -100,7 +96,10 @@ export const parseLocaleUrl = (type, username, val) => {
 
 export const getFilteredOrgUnits = (orgUnits, orgUnitType) => {
     const { currentUser } = store.getState();
-    const availableOrgUnits = currentUser[orgUnitType];
+    const availableOrgUnits =
+        currentUser[orgUnitType].size > 0
+            ? currentUser[orgUnitType]
+            : currentUser[DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS];
 
     return orgUnits.toArray().filter(unit => {
         const isAvailableUnit = Boolean(availableOrgUnits.get(unit.id));

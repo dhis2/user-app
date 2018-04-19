@@ -5,7 +5,7 @@ const pagerReducer = (state = null, { type, payload }) => {
         case PAGER_RESET:
             return null;
         case LIST_RECEIVED:
-            return payload.response.pager;
+            return payload.items.pager;
         default:
             return state;
     }

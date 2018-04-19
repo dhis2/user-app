@@ -41,9 +41,7 @@ class FormLoader extends Component {
         } else if (!id) {
             initNewItem(entityType);
         }
-        this.formNotFoundErrorMsg = i18n.t(
-            'There was an error getting the form:'
-        );
+        this.formNotFoundErrorMsg = i18n.t('There was an error getting the form:');
     }
 
     renderForm() {
@@ -66,12 +64,7 @@ class FormLoader extends Component {
     }
 
     renderHeader() {
-        const {
-            match: { params: { id } },
-            item,
-            shortItem,
-            entityType,
-        } = this.props;
+        const { match: { params: { id } }, item, shortItem, entityType } = this.props;
         const baseItem = item && item.id === id ? item : shortItem;
         const entityTxt = baseItem
             ? baseItem.modelDefinition.displayName
@@ -80,9 +73,7 @@ class FormLoader extends Component {
         const updateMsg = `${i18n.t('Update')} ${entityTxt}: ${displayName}`;
         const createMsg = `${i18n.t('Create new')} ${entityTxt}`;
         const msg = id ? updateMsg : createMsg;
-        const link = baseItem
-            ? `/${_.kebabCase(baseItem.modelDefinition.plural)}`
-            : null;
+        const link = baseItem ? `/${_.kebabCase(baseItem.modelDefinition.plural)}` : null;
         const linkTooltip = `${i18n.t('Back to')} ${entityTxt}s`;
 
         return (
@@ -103,10 +94,7 @@ class FormLoader extends Component {
 
         if (typeof item === 'string') {
             return (
-                <ErrorMessage
-                    introText={this.formNotFoundErrorMsg}
-                    errorMessage={item}
-                />
+                <ErrorMessage introText={this.formNotFoundErrorMsg} errorMessage={item} />
             );
         }
 

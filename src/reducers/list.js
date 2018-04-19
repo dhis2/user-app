@@ -1,8 +1,4 @@
-import {
-    LIST_REQUESTED,
-    LIST_RECEIVED,
-    LIST_ERRORED,
-} from '../constants/actionTypes';
+import { LIST_REQUESTED, LIST_RECEIVED, LIST_ERRORED } from '../constants/actionTypes';
 
 const initialState = {
     type: null,
@@ -26,7 +22,7 @@ const listReducer = (state = initialState, { type, payload }) => {
             return state.type === payload.type
                 ? {
                       type: payload.type,
-                      items: payload.response,
+                      items: payload.items,
                   }
                 : state;
         case LIST_ERRORED:

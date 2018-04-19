@@ -1,7 +1,4 @@
-import {
-    SHOW_SHARING_DIALOG,
-    HIDE_SHARING_DIALOG,
-} from '../../constants/actionTypes';
+import { SHOW_SHARING_DIALOG, HIDE_SHARING_DIALOG } from '../../constants/actionTypes';
 import { INITIAL_SHARING_STATE } from '../../constants/defaults';
 
 const sharingReducer = (state = INITIAL_SHARING_STATE, { type, payload }) => {

@@ -7,44 +7,44 @@ import i18n from 'd2-i18n';
 const createAction = (type, payload) => ({ type, payload });
 
 // List fetching
-const createListRequestActionSequence = (dispatch, promise, type, silent) => {
-    if (!silent) {
-        dispatch(createAction(ACTIONS.LIST_REQUESTED, type));
+const createListActionSequence = async (dispatch, promise, type, silent) => {
+    if (!silent) dispatch(createAction(ACTIONS.LIST_REQUESTED, type));
+
+    try {
+        const items = await promise;
+        dispatch(createAction(ACTIONS.LIST_RECEIVED, { type, items }));
+    } catch (error) {
+        dispatch(createAction(ACTIONS.LIST_ERRORED, { type, error }));
     }
-    promise
-        .then(response =>
-            dispatch(createAction(ACTIONS.LIST_RECEIVED, { type, response }))
-        )
-        .catch(error =>
-            dispatch(createAction(ACTIONS.LIST_ERRORED, { type, error }))
-        );
 };
 
 export const getList = (entityName, silent) => (dispatch, getState) => {
     const { filter, pager } = getState();
     const page = pager ? pager.page : DEFAULT_PAGE;
     const promise = api.getList(entityName, page, filter);
-    createListRequestActionSequence(dispatch, promise, entityName, silent);
+    createListActionSequence(dispatch, promise, entityName, silent);
 };
 
 export const incrementPage = pager => (dispatch, getState) => {
     const { list: { type } } = getState();
-    createListRequestActionSequence(dispatch, pager.getNextPage(), type);
+    createListActionSequence(dispatch, pager.getNextPage(), type);
 };
 
 export const decrementPage = pager => (dispatch, getState) => {
     const { list: { type } } = getState();
-    createListRequestActionSequence(dispatch, pager.getPreviousPage(), type);
+    createListActionSequence(dispatch, pager.getPreviousPage(), type);
 };
 
-export const getItem = (entityName, viewType, id) => (dispatch, getState) => {
+export const getItem = (entityName, viewType, id) => async (dispatch, getState) => {
     dispatch(createAction(ACTIONS.ITEM_REQUESTED));
-    api
-        .getItem(entityName, viewType, id)
-        .then(response =>
-            dispatch(createAction(ACTIONS.ITEM_RECEIVED, response))
-        )
-        .catch(error => dispatch(createAction(ACTIONS.ITEM_ERRORED, error)));
+
+    try {
+        const item = await api.getItem(entityName, viewType, id);
+        dispatch(createAction(ACTIONS.ITEM_RECEIVED, item));
+    } catch (error) {
+        console.log(error);
+        dispatch(createAction(ACTIONS.ITEM_ERRORED, error));
+    }
 };
 
 export const initNewItem = entityType => {
@@ -100,27 +100,30 @@ export const initCurrentUser = () => {
     return createAction(ACTIONS.INIT_CURRENT_USER, api.getCurrentUser());
 };
 
-export const appendCurrentUserOrgUnits = () => (dispatch, getState) => {
+export const appendCurrentUserOrgUnits = () => async (dispatch, getState) => {
     const RECEIVED = ACTIONS.CURRENT_USER_ORG_UNITS_RECEIVED;
 
-    api
-        .getCurrentUserOrgUnits()
-        .then(response => dispatch(createAction(RECEIVED, response)))
-        .catch(error => {
-            const errorMsg = i18n.t(
-                'Something went wrong whilst fetching the organisation units. Please refresh the page.'
-            );
-            dispatch(showSnackbar({ message: errorMsg }));
-        });
+    try {
+        const orgUnits = await api.getCurrentUserOrgUnits();
+        dispatch(createAction(RECEIVED, orgUnits));
+    } catch (error) {
+        const errorMsg = i18n.t(
+            'Something went wrong whilst fetching the organisation units. Please refresh the page.'
+        );
+        dispatch(showSnackbar({ message: errorMsg }));
+    }
 };
 
-export const getCurrentUserGroupMemberships = () => (dispatch, getState) => {
+export const getCurrentUserGroupMemberships = () => async (dispatch, getState) => {
     const RECEIVED = ACTIONS.CURRENT_USER_GROUP_MEMBERSHIP_RECEIVED;
     const ERRORED = ACTIONS.CURRENT_USER_GROUP_MEMBERSHIP_ERRORED;
 
     dispatch(createAction(ACTIONS.CURRENT_USER_GROUP_MEMBERSHIP_REQUESTED));
-    api
-        .getCurrentUserGroupMemberships()
-        .then(response => dispatch(createAction(RECEIVED, response.userGroups)))
-        .catch(error => dispatch(createAction(ERRORED, error.message)));
+
+    try {
+        const response = await api.getCurrentUserGroupMemberships();
+        dispatch(createAction(RECEIVED, response.userGroups));
+    } catch (error) {
+        dispatch(createAction(ERRORED, error.message));
+    }
 };

@@ -15,12 +15,7 @@ const styles = {
     },
 };
 
-export const renderTextField = ({
-    input,
-    label,
-    meta: { touched, error },
-    ...other
-}) => {
+export const renderTextField = ({ input, label, meta: { touched, error }, ...other }) => {
     return (
         <TextField
             floatingLabelText={label}
@@ -49,12 +44,7 @@ export const renderAuthorityEditor = ({
     );
 };
 
-export const renderCheckbox = ({
-    input,
-    label,
-    meta: { touched, error },
-    ...other
-}) => {
+export const renderCheckbox = ({ input, label, meta: { touched, error }, ...other }) => {
     return (
         <Checkbox
             checked={Boolean(input.value)}
@@ -81,11 +71,7 @@ export const renderSelectField = ({
             onChange={(event, index, value) => input.onChange(value)}
         >
             {options.map(({ locale, name }, i) => (
-                <MenuItem
-                    key={`option_${i}`}
-                    value={locale}
-                    primaryText={name}
-                />
+                <MenuItem key={`option_${i}`} value={locale} primaryText={name} />
             ))}
         </SelectField>
     );
