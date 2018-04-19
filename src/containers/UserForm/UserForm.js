@@ -41,7 +41,6 @@ class UserForm extends Component {
             locales: null,
         };
         this.trashableLocalePromise = null;
-        this.boundSubmitHandler = props.handleSubmit(this.saveUser).bind(this);
     }
 
     async componentWillMount() {
@@ -70,6 +69,10 @@ class UserForm extends Component {
         if (!fallbackOrgUnits) {
             appendCurrentUserOrgUnits();
         }
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        return typeof nextProps.asyncValidating !== 'string';
     }
 
     componentWillUnmount() {
@@ -198,7 +201,7 @@ class UserForm extends Component {
     }
 
     render() {
-        const { asyncValidating, pristine, valid } = this.props;
+        const { handleSubmit, asyncValidating, pristine, valid } = this.props;
         const { showMore, locales } = this.state;
         const disableSubmit = Boolean(asyncValidating || pristine || !valid);
 
@@ -213,7 +216,7 @@ class UserForm extends Component {
         return (
             <main>
                 <Heading level={2}>{i18n.t('Details')}</Heading>
-                <form onSubmit={this.boundSubmitHandler}>
+                <form onSubmit={handleSubmit(this.saveUser)}>
                     {this.renderBaseFields()}
                     {this.renderAdditionalFields(showMore)}
                     {this.renderToggler(showMore)}

@@ -38,9 +38,8 @@ const validate = (values, props) => {
 };
 
 class ReplicateUserForm extends Component {
-    constructor(props) {
-        super(props);
-        this.boundSubmitHandler = props.handleSubmit(this.replicateUser).bind(this);
+    shouldComponentUpdate(nextProps, nextState) {
+        return typeof nextProps.asyncValidating !== 'string';
     }
 
     replicateUser = async data => {
@@ -86,13 +85,13 @@ class ReplicateUserForm extends Component {
     }
 
     render() {
-        const { hideDialog, asyncValidating } = this.props;
+        const { handleSubmit, hideDialog, asyncValidating } = this.props;
         const submitDisabled = this.shouldDisableSubmit();
         const isCheckingUsername = asyncValidating === USERNAME;
         const validatingProps = isCheckingUsername ? this.getLoadingProps() : null;
 
         return (
-            <form onSubmit={this.boundSubmitHandler}>
+            <form onSubmit={handleSubmit(this.replicateUser)}>
                 <Field
                     name={USERNAME}
                     component={TextField}

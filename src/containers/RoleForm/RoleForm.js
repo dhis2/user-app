@@ -13,9 +13,8 @@ import { USER_ROLE } from '../../constants/entityTypes';
 import validate from './validate';
 
 class RoleForm extends Component {
-    constructor(props) {
-        super(props);
-        this.boundSubmitHandler = props.handleSubmit(this.saveRole).bind(this);
+    shouldComponentUpdate(nextProps, nextState) {
+        return typeof nextProps.asyncValidating !== 'string';
     }
 
     saveRole = async (values, _, props) => {
@@ -58,12 +57,12 @@ class RoleForm extends Component {
     }
 
     render = () => {
-        const { asyncValidating, pristine, valid } = this.props;
+        const { handleSubmit, asyncValidating, pristine, valid } = this.props;
         const disableSubmit = Boolean(asyncValidating || pristine || !valid);
         return (
             <main>
                 <Heading level={2}>{i18n.t('Details')}</Heading>
-                <form onSubmit={this.boundSubmitHandler}>
+                <form onSubmit={handleSubmit(this.saveRole)}>
                     {this.renderFields()}
                     <div style={{ marginTop: '2rem' }}>
                         <RaisedButton
