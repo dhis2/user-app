@@ -58,12 +58,12 @@ function validatePassword(errors, values, createUser) {
         return;
     }
 
-    const passwordError = values[PASSWORD] && checkPasswordForErrors(values[PASSWORD]);
+    const passwordError = checkPasswordForErrors(values[PASSWORD]);
     if (passwordError) {
         errors[PASSWORD] = passwordError;
     }
 
-    if (values[REPEAT_PASSWORD] && values[REPEAT_PASSWORD] !== values[PASSWORD]) {
+    if (values[REPEAT_PASSWORD] !== values[PASSWORD]) {
         errors[REPEAT_PASSWORD] = i18n.t('Passwords do not match');
     }
 }
