@@ -25,7 +25,7 @@ export const isGroupContextActionAllowed = (model, action) => {
         case show_details:
             return access.read;
         case sharing_settings:
-            return access.externalize;
+            return access.manage;
         case edit:
             return access.update;
         case join_group:
