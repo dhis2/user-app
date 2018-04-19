@@ -63,18 +63,15 @@ class AsyncAutoComplete extends Component {
         this.getItems(value);
     };
 
-    getItems = value => {
+    getItems = async value => {
         const { minCharLength, query, queryParam } = this.props;
 
         if (!value || value.length < minCharLength) {
             // Don't query if too few characters were entered
             const searchWarning = value
-                ? i18n.t(
-                      'Please enter at least {{ minCharCount }} characters',
-                      {
-                          minCharCount: minCharLength,
-                      }
-                  )
+                ? i18n.t('Please enter at least {{ minCharCount }} characters', {
+                      minCharCount: minCharLength,
+                  })
                 : null;
             this.setState({ ...baseState, searchWarning });
         } else {
@@ -83,8 +80,8 @@ class AsyncAutoComplete extends Component {
 
             // Then query
             this.trashableQuery = makeTrashable(query(value, queryParam));
-            this.trashableQuery.then(filteredResults => {
-                // Normalise to array if needed
+            try {
+                let filteredResults = await this.trashableQuery;
                 filteredResults = asArray(filteredResults);
                 if (filteredResults.length > 0) {
                     // Display results if any were returned
@@ -104,7 +101,9 @@ class AsyncAutoComplete extends Component {
                         searchWarning: i18n.t('No matches found'),
                     });
                 }
-            });
+            } catch (error) {
+                console.error(error);
+            }
         }
     };
 
@@ -131,12 +130,7 @@ class AsyncAutoComplete extends Component {
             ...defaultAutoCompleteProps,
             ...autoCompleteProps,
         };
-        const {
-            filteredItems,
-            searchWarning,
-            errorStyle,
-            autoCompleteText,
-        } = this.state;
+        const { filteredItems, searchWarning, errorStyle, autoCompleteText } = this.state;
         const marginBottom = searchWarning ? 0 : 28;
         const mergedProps = {
             ...mergedAutoCompleteProps,

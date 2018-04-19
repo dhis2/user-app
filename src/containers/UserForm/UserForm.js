@@ -44,7 +44,7 @@ class UserForm extends Component {
         this.boundSubmitHandler = props.handleSubmit(this.saveUser).bind(this);
     }
 
-    componentWillMount() {
+    async componentWillMount() {
         const {
             user,
             showSnackbar,
@@ -53,22 +53,19 @@ class UserForm extends Component {
             appendCurrentUserOrgUnits,
         } = this.props;
         const username = user.id ? user.userCredentials.username : null;
-        const errorMsg = i18n.t(
-            'Could not load the user data. Please refresh the page.'
-        );
+        const errorMsg = i18n.t('Could not load the user data. Please refresh the page.');
 
         this.trashableLocalePromise = makeTrashable(
             api.getSelectedAndAvailableLocales(username)
         );
 
-        this.trashableLocalePromise
-            .then(locales => {
-                this.setState({ locales });
-                initialize(userFormInitialValuesSelector(user, locales));
-            })
-            .catch(error => {
-                showSnackbar({ message: errorMsg });
-            });
+        try {
+            const locales = await this.trashableLocalePromise;
+            this.setState({ locales });
+            initialize(userFormInitialValuesSelector(user, locales));
+        } catch (error) {
+            showSnackbar({ message: errorMsg });
+        }
 
         if (!fallbackOrgUnits) {
             appendCurrentUserOrgUnits();
@@ -85,23 +82,22 @@ class UserForm extends Component {
         });
     };
 
-    saveUser = (values, _, props) => {
+    saveUser = async (values, _, props) => {
         const { user, showSnackbar, clearItem, getList } = props;
         const selectedUiLocale = this.state.locales.ui.selected;
         const selectedDbLocale = this.state.locales.db.selected;
-        api
-            .saveUser(values, user, selectedUiLocale, selectedDbLocale)
-            .then(() => {
-                const msg = i18n.t('User saved successfully');
-                showSnackbar({ message: msg });
-                clearItem();
-                getList(USER);
-                this.backToList();
-            })
-            .catch(error => {
-                const msg = i18n.t('There was a problem saving the user.');
-                showSnackbar({ message: msg });
-            });
+
+        try {
+            await api.saveUser(values, user, selectedUiLocale, selectedDbLocale);
+            const msg = i18n.t('User saved successfully');
+            showSnackbar({ message: msg });
+            clearItem();
+            getList(USER);
+            this.backToList();
+        } catch (error) {
+            const msg = i18n.t('There was a problem saving the user.');
+            showSnackbar({ message: msg });
+        }
     };
 
     backToList = () => {
@@ -128,13 +124,7 @@ class UserForm extends Component {
     renderFields(fields) {
         const { user } = this.props;
         return fields.map((fieldConfig, index) => {
-            const {
-                name,
-                fieldRenderer,
-                label,
-                isRequiredField,
-                ...conf
-            } = fieldConfig;
+            const { name, fieldRenderer, label, isRequiredField, ...conf } = fieldConfig;
             const labelText = this.getLabelText(label, user, isRequiredField);
 
             if (fieldRenderer === renderText) {
@@ -143,26 +133,16 @@ class UserForm extends Component {
 
             switch (fieldRenderer) {
                 case renderTextField:
-                    conf.disabled = Boolean(
-                        name === CONFIG.USERNAME && user.id
-                    );
+                    conf.disabled = Boolean(name === CONFIG.USERNAME && user.id);
                     break;
                 case renderSearchableOrgUnitTree:
                     conf.initialValues = asArray(user[fieldConfig.name]);
                     break;
                 case renderSearchableGroupEditor:
-                    this.prepareGroupEditor(
-                        conf,
-                        fieldConfig,
-                        user,
-                        isRequiredField
-                    );
+                    this.prepareGroupEditor(conf, fieldConfig, user, isRequiredField);
                     break;
                 case renderSelectField:
-                    conf.options = getNestedProp(
-                        fieldConfig.optionsSelector,
-                        this.state
-                    );
+                    conf.options = getNestedProp(fieldConfig.optionsSelector, this.state);
                     break;
                 default:
                     break;
@@ -264,8 +244,7 @@ UserForm.propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     change: PropTypes.func.isRequired,
     initialize: PropTypes.func.isRequired,
-    asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
-        .isRequired,
+    asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]).isRequired,
     pristine: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired,
     fallbackOrgUnits: PropTypes.object,

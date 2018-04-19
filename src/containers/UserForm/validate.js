@@ -11,13 +11,7 @@ import {
     ASSIGNED_ROLES,
 } from './config';
 
-const CREATE_REQUIRED_FIELDS = [
-    USERNAME,
-    PASSWORD,
-    REPEAT_PASSWORD,
-    SURNAME,
-    FIRST_NAME,
-];
+const CREATE_REQUIRED_FIELDS = [USERNAME, PASSWORD, REPEAT_PASSWORD, SURNAME, FIRST_NAME];
 
 const EDIT_REQUIRED_FIELDS = [SURNAME, FIRST_NAME];
 
@@ -30,9 +24,7 @@ export default function validate(values, props) {
     }
 
     const createUser = !props.user.id;
-    const requiredFields = createUser
-        ? CREATE_REQUIRED_FIELDS
-        : EDIT_REQUIRED_FIELDS;
+    const requiredFields = createUser ? CREATE_REQUIRED_FIELDS : EDIT_REQUIRED_FIELDS;
 
     requiredFields.forEach(fieldName =>
         validateRequiredField(errors, fieldName, values[fieldName], createUser)
@@ -55,30 +47,23 @@ function validateAssignedRoles(errors, value, createUser) {
     const isArrayWithLength = _.isArray(value) && value.length > 0;
 
     if (!unTouchedOnEdit && !isArrayWithLength) {
-        errors[ASSIGNED_ROLES] = i18n.t(
-            'A user should have at least one User Role'
-        );
+        errors[ASSIGNED_ROLES] = i18n.t('A user should have at least one User Role');
     }
 }
 
 function validatePassword(errors, values, createUser) {
-    const skipValidation =
-        !createUser && !values[PASSWORD] && !values[REPEAT_PASSWORD];
+    const skipValidation = !createUser && !values[PASSWORD] && !values[REPEAT_PASSWORD];
 
     if (skipValidation) {
         return;
     }
 
-    const passwordError =
-        values[PASSWORD] && checkPasswordForErrors(values[PASSWORD]);
+    const passwordError = values[PASSWORD] && checkPasswordForErrors(values[PASSWORD]);
     if (passwordError) {
         errors[PASSWORD] = passwordError;
     }
 
-    if (
-        values[REPEAT_PASSWORD] &&
-        values[REPEAT_PASSWORD] !== values[PASSWORD]
-    ) {
+    if (values[REPEAT_PASSWORD] && values[REPEAT_PASSWORD] !== values[PASSWORD]) {
         errors[REPEAT_PASSWORD] = i18n.t('Passwords do not match');
     }
 }

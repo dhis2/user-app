@@ -57,9 +57,7 @@ class SearchableOrgUnitTree extends Component {
             roots: null,
             selectedOrgUnits: [...props.selectedOrgUnits],
             orgUnitFilter: null,
-            initiallyExpanded: this.getInitiallyExpandedItems(
-                props.selectedOrgUnits
-            ),
+            initiallyExpanded: this.getInitiallyExpandedItems(props.selectedOrgUnits),
         };
     }
 
@@ -75,9 +73,7 @@ class SearchableOrgUnitTree extends Component {
 
     getIndexOfOrgUnit(orgUnit) {
         const { selectedOrgUnits } = this.state;
-        const selectedUnit = selectedOrgUnits.find(
-            unit => unit.path === orgUnit.path
-        );
+        const selectedUnit = selectedOrgUnits.find(unit => unit.path === orgUnit.path);
         return selectedOrgUnits.indexOf(selectedUnit);
     }
 
@@ -133,11 +129,7 @@ class SearchableOrgUnitTree extends Component {
     };
 
     render() {
-        const {
-            selectedOrgUnits,
-            initiallyExpanded,
-            orgUnitFilter,
-        } = this.state;
+        const { selectedOrgUnits, initiallyExpanded, orgUnitFilter } = this.state;
         const {
             roots,
             confirmSelection,
@@ -200,10 +192,7 @@ class SearchableOrgUnitTree extends Component {
                                 disabled={!root}
                             />
                         ) : null}
-                        <RaisedButton
-                            onClick={cancel}
-                            label={i18n.t('Cancel')}
-                        />
+                        <RaisedButton onClick={cancel} label={i18n.t('Cancel')} />
                     </div>
                 ) : null}
             </div>

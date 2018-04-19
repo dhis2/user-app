@@ -134,15 +134,8 @@ class DetailSummary extends Component {
         }
 
         if (typeof summaryObject === 'string') {
-            const errorText = i18n.t(
-                `There was an error fetching the ${baseName}`
-            );
-            return (
-                <ErrorMessage
-                    introText={errorText}
-                    errorMessage={summaryObject}
-                />
-            );
+            const errorText = i18n.t(`There was an error fetching the ${baseName}`);
+            return <ErrorMessage introText={errorText} errorMessage={summaryObject} />;
         }
 
         const { id, displayName, access } = summaryObject;
@@ -155,11 +148,7 @@ class DetailSummary extends Component {
         return (
             <main style={styles.main}>
                 <Heading style={styles.heading}>
-                    <IconLink
-                        to={baseRoute}
-                        tooltip={backTooltip}
-                        icon="arrow_back"
-                    />
+                    <IconLink to={baseRoute} tooltip={backTooltip} icon="arrow_back" />
                     {displayName}
 
                     {access.update ? (

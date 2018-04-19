@@ -5,11 +5,7 @@ import DetailSummary from '../components/DetailSummary';
 import { USER_GROUP_DETAILS } from '../constants/detailFieldConfigs';
 
 const GroupDetails = ({ match: { params: { id } } }) => (
-    <DetailSummary
-        routeId={id}
-        config={USER_GROUP_DETAILS}
-        baseName={USER_GROUP}
-    />
+    <DetailSummary routeId={id} config={USER_GROUP_DETAILS} baseName={USER_GROUP} />
 );
 
 GroupDetails.propTypes = {

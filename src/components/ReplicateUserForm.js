@@ -30,8 +30,7 @@ const validate = (values, props) => {
         }
     });
 
-    const passwordError =
-        values[PASSWORD] && checkPasswordForErrors(values[PASSWORD]);
+    const passwordError = values[PASSWORD] && checkPasswordForErrors(values[PASSWORD]);
     if (passwordError) {
         errors[PASSWORD] = passwordError;
     }
@@ -41,28 +40,28 @@ const validate = (values, props) => {
 class ReplicateUserForm extends Component {
     constructor(props) {
         super(props);
-        this.boundSubmitHandler = props
-            .handleSubmit(this.replicateUser)
-            .bind(this);
+        this.boundSubmitHandler = props.handleSubmit(this.replicateUser).bind(this);
     }
 
-    replicateUser = data => {
+    replicateUser = async data => {
         const { userIdToReplicate, hideDialog } = this.props;
         const { username, password } = data;
-        api
-            .replicateUser(userIdToReplicate, username, password)
-            .then(this.onReplicationSucces)
-            .catch(this.onReplicationError);
+        try {
+            await api.replicateUser(userIdToReplicate, username, password);
+            this.replicateSuccesHandler();
+        } catch (error) {
+            this.replicateErrorHandler();
+        }
         hideDialog();
     };
 
-    onReplicationSucces = () => {
+    replicateSuccesHandler = () => {
         const { getList, showSnackbar } = this.props;
         showSnackbar({ message: i18n.t('User replicated successfuly') });
         getList(USER, true);
     };
 
-    onReplicationError = () => {
+    replicateErrorHandler = () => {
         const { showSnackbar } = this.props;
         showSnackbar({
             message: i18n.t('There was a problem replicating the user'),
@@ -90,9 +89,7 @@ class ReplicateUserForm extends Component {
         const { hideDialog, asyncValidating } = this.props;
         const submitDisabled = this.shouldDisableSubmit();
         const isCheckingUsername = asyncValidating === USERNAME;
-        const validatingProps = isCheckingUsername
-            ? this.getLoadingProps()
-            : null;
+        const validatingProps = isCheckingUsername ? this.getLoadingProps() : null;
 
         return (
             <form onSubmit={this.boundSubmitHandler}>

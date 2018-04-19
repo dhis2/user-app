@@ -84,17 +84,13 @@ class List extends Component {
 
     renderPagination() {
         const { pager, items, incrementPage, decrementPage } = this.props;
-        const { page, pageCount, total, currentlyShown } = this.getPagerConfig(
-            pager
-        );
-        const shouldHide =
-            !items || items.length === 0 || typeof items === 'string';
+        const { page, pageCount, total, currentlyShown } = this.getPagerConfig(pager);
+        const shouldHide = !items || items.length === 0 || typeof items === 'string';
         const style = shouldHide
             ? { ...styles.pagination, visibility: 'hidden' }
             : styles.pagination;
         const paginationProps = {
-            hasNextPage: () =>
-                page && items && items.length && page < pageCount,
+            hasNextPage: () => page && items && items.length && page < pageCount,
             hasPreviousPage: () => page && items && items.length && page > 1,
             onNextPageClick: () => {
                 incrementPage(pager);
@@ -118,9 +114,7 @@ class List extends Component {
         const { FilterComponent, entityType } = this.props;
         return (
             <div className="data-table__filter-bar" style={styles.filterBar}>
-                <div style={styles.headerBarPagination}>
-                    {this.renderPagination()}
-                </div>
+                <div style={styles.headerBarPagination}>{this.renderPagination()}</div>
                 <div style={styles.headerBarFilterWrap}>
                     <FilterComponent entityType={entityType} />
                 </div>

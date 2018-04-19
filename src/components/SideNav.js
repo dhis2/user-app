@@ -18,9 +18,7 @@ class SideNav extends Component {
 
     getSectionKeyForCurrentPath() {
         const { sections, location: { pathname } } = this.props;
-        const currentSection = sections.find(
-            section => section.path === pathname
-        );
+        const currentSection = sections.find(section => section.path === pathname);
         return currentSection ? currentSection.key : null;
     }
 

@@ -211,9 +211,7 @@ const createMetadataGroup = (auth, lookup) => {
     }
 
     // The suffix of the the incomming authority, i.e. "F_CATEGORY_COMBO_DELETE" => "_DELETE"
-    const authSuffix = ALL_METADATA_SUFFIXES.find(suffix =>
-        _.endsWith(auth.id, suffix)
-    );
+    const authSuffix = ALL_METADATA_SUFFIXES.find(suffix => _.endsWith(auth.id, suffix));
     // The authority baseName, i.e. "F_CATEGORY_COMBO_DELETE" => "F_CATEGORY_COMBO"
     const baseName = auth.id.replace(authSuffix, '');
 
@@ -232,8 +230,7 @@ const createMetadataGroup = (auth, lookup) => {
     );
 
     // Set each authority item for the current authority group
-    const publicAddAuth =
-        genericAdd || lookup.get(baseName + PUBLIC_ADD_SUFFIX);
+    const publicAddAuth = genericAdd || lookup.get(baseName + PUBLIC_ADD_SUFFIX);
     const privateAddAuth = genericAdd
         ? EMPTY_GROUP_ITEM
         : hasImplicitAddPrivateAndDelete

@@ -57,27 +57,19 @@ export const groupContextMenuActions = Action.createActionsFromNames([
     remove,
 ]);
 
-const updateGroupMembership = ({ displayName, id }, deleteMembership) => {
+const updateGroupMembership = async ({ displayName, id }, deleteMembership) => {
     const joinSuccessBaseMsg = i18n.t('You joined group');
     const leaveSuccessBaseMsg = i18n.t('You left group');
-    const errorMsg = i18n.t(
-        'There was a problem updating your group membership'
-    );
+    const errorMsg = i18n.t('There was a problem updating your group membership');
 
-    api
-        .updateCurrentUserGroupMembership(id, deleteMembership)
-        .then(() => {
-            const baseMsg = deleteMembership
-                ? leaveSuccessBaseMsg
-                : joinSuccessBaseMsg;
-            store.dispatch(
-                showSnackbar({ message: `${baseMsg} ${displayName}` })
-            );
-            store.dispatch(getCurrentUserGroupMemberships());
-        })
-        .catch(() => {
-            store.dispatch(showSnackbar({ message: errorMsg }));
-        });
+    try {
+        await api.updateCurrentUserGroupMembership(id, deleteMembership);
+        const baseMsg = deleteMembership ? leaveSuccessBaseMsg : joinSuccessBaseMsg;
+        store.dispatch(showSnackbar({ message: `${baseMsg} ${displayName}` }));
+        store.dispatch(getCurrentUserGroupMemberships());
+    } catch (error) {
+        store.dispatch(showSnackbar({ message: errorMsg }));
+    }
 };
 
 groupContextMenuActions.show_details.subscribe(({ data: { id } }) => {

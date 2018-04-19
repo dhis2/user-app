@@ -27,31 +27,25 @@ class GroupForm extends Component {
         };
     }
 
-    saveGroup = (values, _, props) => {
+    saveGroup = async (values, _, props) => {
         const { group, showSnackbar, clearItem, getList } = this.props;
 
         group[NAME] = values[NAME];
         group[CODE] = values[CODE];
         group[USERS] = values[USERS].map(this.createIdValueObject);
-        group[MANAGED_GROUPS] = values[MANAGED_GROUPS].map(
-            this.createIdValueObject
-        );
+        group[MANAGED_GROUPS] = values[MANAGED_GROUPS].map(this.createIdValueObject);
 
-        group
-            .save()
-            .then(() => {
-                const msg = i18n.t('User group saved successfully');
-                showSnackbar({ message: msg });
-                clearItem();
-                getList(USER_GROUP);
-                this.backToList();
-            })
-            .catch(error => {
-                const msg = i18n.t(
-                    'There was a problem saving the user group.'
-                );
-                showSnackbar({ message: msg });
-            });
+        try {
+            await group.save();
+            const msg = i18n.t('User group saved successfully');
+            showSnackbar({ message: msg });
+            clearItem();
+            getList(USER_GROUP);
+            this.backToList();
+        } catch (error) {
+            const msg = i18n.t('There was a problem saving the user group.');
+            showSnackbar({ message: msg });
+        }
     };
 
     backToList = () => {
@@ -61,13 +55,7 @@ class GroupForm extends Component {
     renderFields() {
         const { group } = this.props;
         return FIELDS.map(fieldConfig => {
-            const {
-                name,
-                fieldRenderer,
-                label,
-                isRequiredField,
-                ...conf
-            } = fieldConfig;
+            const { name, fieldRenderer, label, isRequiredField, ...conf } = fieldConfig;
             const suffix = isRequiredField ? ' *' : '';
             const labelText = label + suffix;
 
@@ -125,8 +113,7 @@ GroupForm.propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     initialValues: PropTypes.object.isRequired,
     group: PropTypes.object.isRequired,
-    asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
-        .isRequired,
+    asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]).isRequired,
     pristine: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired,
 };
