@@ -42,7 +42,6 @@ export const getItem = (entityName, viewType, id) => async (dispatch, getState) 
         const item = await api.getItem(entityName, viewType, id);
         dispatch(createAction(ACTIONS.ITEM_RECEIVED, item));
     } catch (error) {
-        console.log(error);
         dispatch(createAction(ACTIONS.ITEM_ERRORED, error));
     }
 };

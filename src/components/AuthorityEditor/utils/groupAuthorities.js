@@ -1,3 +1,4 @@
+/** @module components/AuthorityEditor/groupAuthorities */
 import i18n from 'd2-i18n';
 import _ from '../../../constants/lodash';
 import nameLookup from './authorityGroupNames';
