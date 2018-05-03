@@ -5,6 +5,9 @@
   "private": true,
   "license": "BSD-3-Clause",
   "dependencies": {
+    "@dhis2/d2-i18n": "^1.0.3",
+    "@dhis2/d2-i18n-extract": "^1.0.6",
+    "@dhis2/d2-i18n-generate": "^1.0.18",
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
@@ -17,7 +20,6 @@
     "classnames": "^2.2.5",
     "css-loader": "0.28.7",
     "d2": "^29.1.0",
-    "d2-i18n": "^1.x",
     "d2-ui": "^29.0.11",
     "d2-ui-sharing": "^1.0.1",
     "d2-utilizr": "^0.2.15",
@@ -155,8 +157,6 @@
   },
   "devDependencies": {
     "babel-polyfill": "^6.26.0",
-    "d2-i18n-extract": "^1.x",
-    "d2-i18n-generate": "^1.x",
     "d2-manifest": "^1.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",

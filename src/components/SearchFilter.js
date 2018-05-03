@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import i18n from 'd2-i18n';
+import i18n from '@dhis2/d2-i18n';
 import TextField from 'material-ui/TextField/TextField';
 import _ from '../constants/lodash';
 import { updateFilter, getList } from '../actions';

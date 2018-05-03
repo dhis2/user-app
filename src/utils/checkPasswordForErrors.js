@@ -1,4 +1,4 @@
-import i18n from 'd2-i18n';
+import i18n from '@dhis2/d2-i18n';
 
 const checkPasswordForErrors = password => {
     const lowerCase = /^(?=.*[a-z]).+$/;

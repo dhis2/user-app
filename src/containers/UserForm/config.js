@@ -1,6 +1,6 @@
 import { blue600 } from 'material-ui/styles/colors';
 import asArray from '../../utils/asArray';
-import i18n from 'd2-i18n';
+import i18n from '@dhis2/d2-i18n';
 import getNestedProp from '../../utils/getNestedProp';
 import { analyticsDimensionsRestrictionsSelector } from '../../selectors';
 import {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import List from '../../components/List';
-import i18n from 'd2-i18n';
+import i18n from '@dhis2/d2-i18n';
 import {
     isGroupContextActionAllowed,
     groupContextMenuIcons,

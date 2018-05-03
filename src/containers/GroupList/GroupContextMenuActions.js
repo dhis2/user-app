@@ -3,7 +3,7 @@
  * Contains definitions for menu item visibility, individual menu item actions, icons and names.
  * @module conainers/GroupList/GroupContextMenuActions
  */
-import i18n from 'd2-i18n';
+import i18n from '@dhis2/d2-i18n';
 import Action from 'd2-ui/lib/action/Action';
 import navigateTo from '../../utils/navigateTo';
 import api from '../../api';

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-04-23T11:54:05.395Z\n"
-"PO-Revision-Date: 2018-04-23T11:54:05.395Z\n"
+"POT-Creation-Date: 2018-05-03T10:00:51.844Z\n"
+"PO-Revision-Date: 2018-05-03T10:00:51.844Z\n"
 
 msgid ""
 "Something went wrong whilst fetching the organisation units. Please refresh "
@@ -218,9 +218,6 @@ msgid "Operations"
 msgstr ""
 
 msgid "System"
-msgstr ""
-
-msgid "Uncategorized"
 msgstr ""
 
 msgid "Add"
