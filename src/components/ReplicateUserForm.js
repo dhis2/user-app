@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 import { RaisedButton } from 'material-ui';
 import { TextField } from 'redux-form-material-ui';
 import { orange500 } from 'material-ui/styles/colors';
-import i18n from 'd2-i18n';
+import i18n from '@dhis2/d2-i18n';
 import api from '../api';
 import { connect } from 'react-redux';
 import { USER } from '../constants/entityTypes';

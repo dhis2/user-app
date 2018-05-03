@@ -1,7 +1,7 @@
 import React from 'react';
 import { USER } from '../../constants/entityTypes';
 import List from '../../components/List';
-import i18n from 'd2-i18n';
+import i18n from '@dhis2/d2-i18n';
 
 import {
     userContextMenuActions,

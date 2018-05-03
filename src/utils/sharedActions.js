@@ -1,6 +1,6 @@
 import store from '../store';
 import { getList, showSnackbar, hideSnackbar, showSharingDialog } from '../actions';
-import i18n from 'd2-i18n';
+import i18n from '@dhis2/d2-i18n';
 
 export const deleteModel = ({ confirmMsg, successMsg, errorMsg, model, entityType }) => {
     const snackbarProps = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import i18n from 'd2-i18n';
+import i18n from '@dhis2/d2-i18n';
 import Action from 'd2-ui/lib/action/Action';
 import navigateTo from '../../utils/navigateTo';
 import store from '../../store';

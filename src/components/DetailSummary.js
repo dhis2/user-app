@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Paper } from 'material-ui';
 import _ from '../constants/lodash';
 import api from '../api';
-import i18n from 'd2-i18n';
+import i18n from '@dhis2/d2-i18n';
 import parseDateFromUTCString from '../utils/parseDateFromUTCString';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import ErrorMessage from './ErrorMessage';

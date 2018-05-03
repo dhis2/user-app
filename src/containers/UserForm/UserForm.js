@@ -8,7 +8,7 @@ import FlatButton from 'material-ui/FlatButton';
 import CircularProgress from 'material-ui/CircularProgress';
 import HardwareKeyboardArrowUp from 'material-ui/svg-icons/hardware/keyboard-arrow-up';
 import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down';
-import i18n from 'd2-i18n';
+import i18n from '@dhis2/d2-i18n';
 import makeTrashable from 'trashable';
 import navigateTo from '../../utils/navigateTo';
 import asArray from '../../utils/asArray';

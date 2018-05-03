@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Paper, CircularProgress } from 'material-ui';
-import i18n from 'd2-i18n';
+import i18n from '@dhis2/d2-i18n';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import AuthorityGroup from './AuthorityGroup';
 import AuthorityItem from './AuthorityItem';

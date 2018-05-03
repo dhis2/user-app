@@ -6,7 +6,7 @@ import { getItem, initNewItem } from '../actions';
 import { USER, USER_GROUP, USER_ROLE, DETAILS } from '../constants/entityTypes';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import IconLink from './IconLink';
-import i18n from 'd2-i18n';
+import i18n from '@dhis2/d2-i18n';
 import _ from '../constants/lodash';
 import ErrorMessage from './ErrorMessage';
 import RoleForm from '../containers/RoleForm';

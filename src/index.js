@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import UserApp from './UserApp';
 import registerServiceWorker from './registerServiceWorker';
 import { config, getUserSettings } from 'd2/lib/d2';
-import i18n from './locales';
+import i18n from '@dhis2/d2-i18n'; './locales';
 
 const updateConfig = () => {
     let baseUrl;

@@ -1,7 +1,7 @@
 import * as ACTIONS from '../constants/actionTypes';
 import { PAGE as DEFAULT_PAGE } from '../constants/defaults';
 import api from '../api';
-import i18n from 'd2-i18n';
+import i18n from '@dhis2/d2-i18n';
 
 // Helpers
 const createAction = (type, payload) => ({ type, payload });

@@ -1,4 +1,4 @@
-import i18n from 'd2-i18n';
+import i18n from '@dhis2/d2-i18n';
 
 export default new Map([
     ['ALL', i18n.t('All (Full authority)')],

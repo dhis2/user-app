@@ -1,5 +1,5 @@
 import _ from '../constants/lodash';
-import i18n from 'd2-i18n';
+import i18n from '@dhis2/d2-i18n';
 import {
     USER_PROPS,
     USER_CRED_PROPS,

@@ -1,6 +1,6 @@
 import { renderTextField, renderSearchableGroupEditor } from '../../utils/fieldRenderers';
 import asArray from '../../utils/asArray';
-import i18n from 'd2-i18n';
+import i18n from '@dhis2/d2-i18n';
 
 export const NAME = 'name';
 export const USERS = 'users';

@@ -3,7 +3,7 @@ import CircularProgress from 'material-ui/CircularProgress';
 import AutoComplete from 'material-ui/AutoComplete';
 import MenuItem from 'material-ui/MenuItem';
 import { orange500, blue500 } from 'material-ui/styles/colors';
-import i18n from 'd2-i18n';
+import i18n from '@dhis2/d2-i18n';
 import makeTrashable from 'trashable';
 import _ from '../constants/lodash';
 import PropTypes from 'prop-types';
