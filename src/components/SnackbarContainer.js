@@ -4,6 +4,10 @@ import { connect } from 'react-redux';
 import Snackbar from 'material-ui/Snackbar';
 import { hideSnackbar } from '../actions';
 
+/**
+ * A small wrapper around the  MUI Snackbar so it can easily be controlled by state
+ * @class
+ */
 const SnackbarContainer = ({ open, snackbarProps, hideSnackbar }) => {
     const defaults = {
         autoHideDuration: 6000,

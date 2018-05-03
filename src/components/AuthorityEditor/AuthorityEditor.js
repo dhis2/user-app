@@ -10,6 +10,10 @@ import AuthorityFilter from './AuthorityFilter';
 import FilteredAuthoritySections from './FilteredAuthoritySections';
 import { EMPTY_GROUPED_AUTHORITIES } from './utils/groupAuthorities';
 
+/**
+ * This is the parent component of the authorities section in the RoleForm.
+ * It has been made compliant with REDUX-form.
+ */
 class AuthorityEditor extends Component {
     constructor(props) {
         super(props);
@@ -65,11 +69,17 @@ class AuthorityEditor extends Component {
 
     onFilterChange = (searchStr, selectedOnly) => {
         // Here we directly call a method on a child component instead of
-        // letting state changes trigger full rerender. This is to prevent the TextField
+        // letting state changes trigger full re-render. This is to prevent the TextField
         // from being blocked whilst typing.
         this.filteredAuthSections.updateFilter(searchStr, selectedOnly);
     };
 
+    /**
+     * Responds to checkbox changes. Will also notify redux-form Field components if onChange and onBlur handlers were passed
+     * @param {string} id - The ID of the authority that was toggled
+     * @param {boolean} value - Checkbox was toggled to checked (true) or unchecked (false)
+     * @method
+     */
     onAuthChange = (id, value) => {
         const { reduxFormOnBlur, reduxFormOnChange } = this.props;
         let authorityIds = [];

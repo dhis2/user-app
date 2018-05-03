@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import i18n from 'd2-i18n';
 import { TextField, Checkbox } from 'material-ui';
 
+/**
+ * Renders a TextField and Checkbox above the AuthoritySections.
+ * The actual filtering is being done in the FilteredAuthoritySections component which uses `utils/filterAuthorities`
+ * However, this is done via the AuthorityEditor component
+ */
 class AuthorityFilter extends Component {
     constructor(props) {
         super(props);

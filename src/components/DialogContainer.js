@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Dialog from 'material-ui/Dialog';
 
+/**
+ * A thin wrapper around the MUI Dialog component so it can easily be controlled by redux state
+ * @class
+ */
 const DialogContainer = ({ open, dialogProps, content }) => (
     <Dialog key="dialog" open={open} {...dialogProps}>
         {content}

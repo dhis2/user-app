@@ -10,6 +10,11 @@ import {
     TEI_SEARCH_ORG_UNITS,
 } from '../containers/UserForm/config';
 
+/**
+ * Displayed inside of a Dialog and displayed by clicking the OrganisationUnitInput.
+ * This component renders a SearchableOrgUnitTree and lets a user select one or more organisation units.
+ * When this selection is applied the filter state is updated.
+ */
 class OrganisationUnitFilter extends Component {
     componentWillMount() {
         const { fallbackOrgUnits, appendCurrentUserOrgUnits } = this.props;
@@ -35,7 +40,6 @@ class OrganisationUnitFilter extends Component {
             <SearchableOrgUnitTree
                 orgUnitType={TEI_SEARCH_ORG_UNITS}
                 selectedOrgUnits={selectedOrgUnits}
-                displayClearFilterButton={true}
                 confirmSelection={this.applyFilter}
                 cancel={hideDialog}
             />

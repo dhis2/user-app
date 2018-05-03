@@ -13,6 +13,10 @@ const style = {
     paddingRight: '2rem',
 };
 
+/**
+ * This component prepares the user-app sections and routes based on the current user's authorities
+ * The sections will be rendered in the SideNav and the routes within a react-router Switch component
+ */
 class SectionLoader extends Component {
     componentWillMount() {
         const { initCurrentUser } = this.props;

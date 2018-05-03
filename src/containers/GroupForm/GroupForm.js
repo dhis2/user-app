@@ -15,6 +15,10 @@ import { USER_GROUP } from '../../constants/entityTypes';
 import validate from './validate';
 import api from '../../api';
 
+/**
+ * Container component that is controlled by redux-form. It renders an array of fields and validates their input.
+ * When valid it will save on submit and show relevant snackbar message.
+ */
 class GroupForm extends Component {
     shouldComponentUpdate(nextProps, nextState) {
         // Using REDUX form asyncBlurFields together with MaterialUI buttons can cause a problem:

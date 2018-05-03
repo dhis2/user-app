@@ -8,6 +8,10 @@ const style = {
     padding: '1.5rem 1.5rem 1rem',
 };
 
+/**
+ * A simple component that can display an error message
+ * @class
+ */
 const ErrorMessage = ({ introText, errorMessage }) => (
     <div style={style}>
         {introText}

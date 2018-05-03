@@ -45,6 +45,10 @@ const defaultAutoCompleteProps = {
     filter: () => true,
 };
 
+/**
+ * Generic component that renders a MUI AutoComplete. It can execute an async query and show a list of results.
+ * Which query to execute and what happens when a list item is clicked should be defined in the parent component.
+ */
 class AsyncAutoComplete extends Component {
     constructor(props) {
         super(props);
@@ -112,17 +116,6 @@ class AsyncAutoComplete extends Component {
         this.setState({ autoCompleteText: '' });
         selectHandler(dataSourceItem);
     };
-
-    selectAndShowFilteredOrgUnitInTreeView(dataSourceItem) {
-        const orgUnit = dataSourceItem.value;
-        const { selectedOrgUnits } = this.state;
-        const initiallyExpanded = [this.removeLastPathSegment(orgUnit)];
-        this.setState({
-            autoCompleteText: '',
-            selectedOrgUnits: [...selectedOrgUnits, orgUnit],
-            initiallyExpanded: initiallyExpanded,
-        });
-    }
 
     render() {
         const { autoCompleteProps } = this.props;

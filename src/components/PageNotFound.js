@@ -8,7 +8,11 @@ const style = {
     textAlign: 'center',
     padding: '1.5rem 1.5rem 1rem',
 };
-
+/**
+ * Will display when no matching route was found.
+ * Renders text and the pathname that is in the URL after the `/#`
+ * @class
+ */
 const PageNotFound = ({ location }) => (
     <div style={style}>
         <h1>{i18n.t('Page not found.')}</h1>

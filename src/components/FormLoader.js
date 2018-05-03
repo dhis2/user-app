@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Paper, CircularProgress } from 'material-ui';
 import { connect } from 'react-redux';
 import { getItem, initNewItem } from '../actions';
-import { USER, USER_GROUP, USER_ROLE, DETAILS } from '../constants/entityTypes';
+import { USER, USER_GROUP, USER_ROLE } from '../constants/entityTypes';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import IconLink from './IconLink';
 import i18n from 'd2-i18n';
@@ -37,7 +37,7 @@ class FormLoader extends Component {
             entityType,
         } = this.props;
         if (id && !(item && item.id === id)) {
-            getItem(entityType, DETAILS, id);
+            getItem(entityType, id);
         } else if (!id) {
             initNewItem(entityType);
         }

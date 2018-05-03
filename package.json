@@ -66,7 +66,7 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "documentation": "./node_modules/.bin/jsdoc -c jsdoc.json",
+    "documentation": "rm -rf build && ./node_modules/.bin/jsdoc -c jsdoc.json",
     "prestart": "npm run localize && d2-manifest package.json ./public/manifest.webapp",
     "start": "node scripts/start.js",
     "build": "npm run localize && node scripts/build.js",

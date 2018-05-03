@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import { Checkbox } from 'material-ui';
 import HighlightableText from './HighlightableText';
 
+/**
+ * Renders a single authority cell. This can be an empty cell, or a checkbox with or without a label.
+ * If label and searchChunks are present, the label text will be highlighted.
+ * Depending on state this checkbox can be disabled or selected.
+ */
 class AuthorityItem extends Component {
     constructor(props) {
         super(props);

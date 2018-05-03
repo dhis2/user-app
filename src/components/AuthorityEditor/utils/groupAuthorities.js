@@ -1,4 +1,4 @@
-/** @module components/AuthorityEditor/groupAuthorities */
+/** @module AuthorityEditor/utils/groupAuthorities */
 import i18n from 'd2-i18n';
 import _ from '../../../constants/lodash';
 import nameLookup from './authorityGroupNames';
@@ -148,14 +148,14 @@ const AUTHORITY_GROUPS = {
  * @returns {Object} - The grouped authorities object
  */
 const groupAuthorities = authorities => {
-    // A lookup map that can be used to verify the existance of a particular authority ID in linear time
+    // A lookup map that can be used to verify the existence of a particular authority ID in linear time
     const lookup = authorities.reduce((lookup, auth) => {
         lookup.set(auth.id, auth);
         return lookup;
     }, new Map());
 
     // The initial state of items in EMPTY_GROUPED_AUTHORITIES is null, which makes the authority sections render a loader
-    // but the accumulator object passed into the reduce fundtion below expects items to be empty arrays
+    // but the accumulator object passed into the reduce function below expects items to be empty arrays
     const groupedAuthorities = Object.keys(EMPTY_GROUPED_AUTHORITIES).reduce(
         (groupedBase, key) => {
             groupedBase[key] = { ...EMPTY_GROUPED_AUTHORITIES[key], items: [] };
@@ -211,7 +211,7 @@ const createMetadataGroup = (auth, lookup) => {
         return null;
     }
 
-    // The suffix of the the incomming authority, i.e. "F_CATEGORY_COMBO_DELETE" => "_DELETE"
+    // The suffix of the the incoming authority, i.e. "F_CATEGORY_COMBO_DELETE" => "_DELETE"
     const authSuffix = ALL_METADATA_SUFFIXES.find(suffix => _.endsWith(auth.id, suffix));
     // The authority baseName, i.e. "F_CATEGORY_COMBO_DELETE" => "F_CATEGORY_COMBO"
     const baseName = auth.id.replace(authSuffix, '');
@@ -225,7 +225,7 @@ const createMetadataGroup = (auth, lookup) => {
 
     // Some authorities do not have _ADD_PRIVATE and _DELETE siblings in the authority list
     // however, they do belong to the metadata section. If a role is granted ADD_PUBLIC rights it is also allowed
-    // to ADD_PRIVATE and DELETE implicitely
+    // to ADD_PRIVATE and DELETE implicitly
     const hasImplicitAddPrivateAndDelete = AUTHS_WITH_IMPLICIT_ADD_PRIVATE_AND_DELETE.has(
         baseName + PUBLIC_ADD_SUFFIX
     );

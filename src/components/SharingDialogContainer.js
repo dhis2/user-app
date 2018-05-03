@@ -5,6 +5,10 @@ import SharingDialog from 'd2-ui-sharing';
 import api from '../api';
 import { hideSharingDialog } from '../actions';
 
+/**
+ * A small wrapper around the d2-ui SharingDialog so it can easily be controlled by state
+ * @class
+ */
 const SharingDialogContainer = ({ open, id, type, hideSharingDialog }) => {
     return (
         <SharingDialog

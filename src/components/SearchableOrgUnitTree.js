@@ -48,8 +48,11 @@ const styles = {
     },
 };
 
-// This component will show buttons if you pass it a confirmSelection (func) property
-// If you pass an onChange (func) property it will use that as a callback
+/**
+ * Renders a d2-ui OrgUnitTreeMultipleRoots with an asyncAutoComplete above it and a button strip below
+ * This component will only show buttons if you pass it a confirmSelection (func) property
+ * It has been made compliant with redux form
+ */
 class SearchableOrgUnitTree extends Component {
     constructor(props) {
         super(props);
@@ -133,7 +136,6 @@ class SearchableOrgUnitTree extends Component {
         const {
             roots,
             confirmSelection,
-            displayClearFilterButton,
             cancel,
             orgUnitType,
             headerText,
@@ -183,15 +185,13 @@ class SearchableOrgUnitTree extends Component {
                             onClick={this.applySelection}
                             disabled={!root}
                         />
-                        {displayClearFilterButton ? (
-                            <RaisedButton
-                                label={i18n.t('Clear all')}
-                                secondary={true}
-                                style={styles.buttonMargin}
-                                onClick={this.clearSelection}
-                                disabled={!root}
-                            />
-                        ) : null}
+                        <RaisedButton
+                            label={i18n.t('Clear all')}
+                            secondary={true}
+                            style={styles.buttonMargin}
+                            onClick={this.clearSelection}
+                            disabled={!root}
+                        />
                         <RaisedButton onClick={cancel} label={i18n.t('Cancel')} />
                     </div>
                 ) : null}
@@ -206,13 +206,11 @@ SearchableOrgUnitTree.propTypes = {
     orgUnitType: PropTypes.string.isRequired,
     headerText: PropTypes.string,
     wrapperStyle: PropTypes.object,
-    displayClearFilterButton: PropTypes.bool,
     confirmSelection: PropTypes.func,
     onChange: PropTypes.func,
     cancel: PropTypes.func,
 };
 
-// export default SearchableOrgUnitTree;
 const mapStateToProps = (state, props) => {
     return {
         roots: orgUnitRootsSelector(props.orgUnitType, state.currentUser),

@@ -41,6 +41,10 @@ const styles = {
     },
 };
 
+/**
+ * Part of the UserFilter. This component renders the displayNames of the organisation units that have been set in the filter state.
+ * If 3 or more units are selected in the filter, only the length of this array will be displayed.
+ */
 class OrganisationUnitInput extends Component {
     focusOrgUnitInput = () => {
         this.refs.orgUnitInput.focus();

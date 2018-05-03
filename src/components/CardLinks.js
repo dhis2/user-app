@@ -33,6 +33,10 @@ const actionStyle = {
     textAlign: 'right',
 };
 
+/**
+ * Conditionally renders cards representing the different sections present in the user-app
+ * Cards will only be displayed if the current user can create or delete a model type.
+ */
 class CardLinks extends Component {
     renderActionButtons(card, canList, canCreate) {
         const actionButtons = [];

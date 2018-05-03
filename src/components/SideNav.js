@@ -8,6 +8,11 @@ const style = {
     flex: '0 0 320px',
 };
 
+/**
+ * Renders the sidebar containing the available sections.
+ * If its on a path/route that doesn't match any section it will render null.
+ * This is because when a form or the CardLinks are displayed, the sidebar should not show.
+ */
 class SideNav extends Component {
     changeSectionHandler = key => {
         const { sections, history } = this.props;
