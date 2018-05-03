@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-04-19T13:02:53.570Z\n"
-"PO-Revision-Date: 2018-04-19T13:02:53.570Z\n"
+"POT-Creation-Date: 2018-05-03T09:55:13.029Z\n"
+"PO-Revision-Date: 2018-05-03T09:55:13.029Z\n"
 
 msgid ""
 "Something went wrong whilst fetching the organisation units. Please refresh "
@@ -525,9 +525,6 @@ msgid "{{fieldDisplayName}} is already taken"
 msgstr ""
 
 msgid "Could not verify if this {{fieldDisplayName}} is unique"
-msgstr ""
-
-msgid "This fields is required"
 msgstr ""
 
 msgid "Password should be at least 8 characters long"

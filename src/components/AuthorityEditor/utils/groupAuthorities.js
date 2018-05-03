@@ -42,11 +42,6 @@ export const EMPTY_GROUPED_AUTHORITIES = {
         items: null,
         headers: ['Name'],
     },
-    uncategorized: {
-        name: i18n.t('Uncategorized'),
-        items: null,
-        headers: ['Name'],
-    },
 };
 
 // Suffixes and prefixes
@@ -266,7 +261,7 @@ const addToAuthoritySection = (auth, groupedAuthorities, lookup) => {
     const groupKey =
         Object.keys(AUTHORITY_GROUPS).find(groupKey =>
             AUTHORITY_GROUPS[groupKey].has(auth.id)
-        ) || 'uncategorized';
+        ) || 'system';
 
     if (auth.id === 'ALL') {
         auth.name = nameLookup.get(auth.id);
