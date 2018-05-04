@@ -6,6 +6,10 @@ import AuthorityItem from './AuthorityItem';
 import HighlightableText from './HighlightableText';
 import { PUBLIC_ADD_SUFFIX, PRIVATE_ADD_SUFFIX } from './utils/groupAuthorities';
 
+/**
+ * A metadata authority group, which renders an array of 5 table cells.
+ * The first cell contains the authority name and subsequent cells are authority-types corresponding to this name
+ */
 class AuthorityGroup extends Component {
     onAuthGroupChanged = (id, value) => {
         this.context.onAuthChange(id, value);

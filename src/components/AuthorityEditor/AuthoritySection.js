@@ -9,9 +9,11 @@ import AuthorityItem from './AuthorityItem';
 const FLUSH_COUNT = 7;
 const FLUSH_INTERVAL = 10;
 
-// This component used to cause the page to hang whilst it was rendering
-// a long list of MUI Checkboxes. To prevent this we have switched to batched rendering
-// which makes the component a little more complicated but it renders a lot better.
+/**
+ * Renders a logical authority section. Within the section it can either render rows with `AuthorityGroups` for metadata,
+ * or `AuthorityItems` for other types of authorities. This component renders a lot MUI checkboxes which would cause the UI to hang
+ * if they were all rendered in one cycle. To prevent this UI lag, it uses batched rendering.
+ */
 class AuthoritySection extends Component {
     constructor(props) {
         super(props);
@@ -22,7 +24,7 @@ class AuthoritySection extends Component {
     componentWillReceiveProps(newProps) {
         if (newProps.authSection.items.length) {
             this.setState({ renderedItems: null });
-            this.createBatchedRenderInterval(newProps);
+            this.createBatchedRenderInterval(newProps.authSection.items);
         }
     }
 
@@ -30,8 +32,12 @@ class AuthoritySection extends Component {
         clearInterval(this.appendInterval);
     }
 
-    createBatchedRenderInterval(props) {
-        const items = props.authSection.items;
+    /**
+     * Will receives a (long) array of authorities and gradually populates the state.renderedItems with these.
+     * By decreasing the `FLUSH_COUNT` and/or increasing the `FLUSH_INTERVAL` the rendering will become slower but the UI will be more responsive.
+     * @param {Array} items - The authorities to render
+     */
+    createBatchedRenderInterval(items) {
         let currSliceEnd = 0;
         this.appendInterval = setInterval(() => {
             const currItems = this.state.renderedItems || [];

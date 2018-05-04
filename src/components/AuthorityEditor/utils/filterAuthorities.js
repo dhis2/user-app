@@ -1,3 +1,5 @@
+/** @module AuthorityEditor/utils/filterAuthorities */
+
 const matchesSearchStr = (item, searchChunks) => {
     if (!searchChunks) {
         return true;
@@ -28,6 +30,14 @@ const matchesSelectedSetting = (item, selectedOnly, lookup) => {
     }
 };
 
+/**
+ * Filters a list of all available authorities based on a search chunks and a selectedOnly flag
+ * @param {Object} allAuthorities - A nested object in which all authorities have been grouped in a logical way
+ * @param {Object} selectedItemsLookup - A lookup Map that can be used for quickly filtering selected authorities
+ * @param {Array} searchChunks - A search string that has been split into an array by spaces
+ * @param {Boolean} selectedOnly - Flag for only allowing selected items
+ * @returns {Object} An object with the same structure as `allAuthorities` but containing filtered arrays of authorities
+ */
 const filterAuthorities = (
     allAuthorities,
     selectedItemsLookup,

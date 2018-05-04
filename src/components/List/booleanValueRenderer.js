@@ -1,8 +1,20 @@
+/**
+ * If you import this module into a component that renders a DataTable,
+ * it will render MaterialUI checkboxes for TRUE values and keep FALSE values empty.
+ * @module List/booleanValueRenderer
+ */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import CheckIcon from 'material-ui/svg-icons/navigation/check';
 import { addValueRenderer } from 'd2-ui/lib/data-table/data-value/valueRenderers';
 
+/**
+ * Defines behavior for the DataTable when receiving boolean values
+ * @param {Object} DataTableCell - A DataTableCell containing a value property
+ * @param {Boolean} DataTableCell.value - The cell value
+ * @returns Either a CheckIcon or null
+ */
 const BooleanCellField = ({ value }) =>
     value ? (
         <div style={{ width: '40px' }}>

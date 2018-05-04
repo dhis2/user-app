@@ -13,6 +13,9 @@ const style = {
     width: '236px',
 };
 
+/**
+ * Generic search filter component that is used by the RoleList and the GroupList
+ */
 class SearchFilter extends Component {
     constructor(props) {
         super(props);

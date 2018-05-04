@@ -9,6 +9,10 @@ import {
 } from './RoleContextMenuActions';
 import SearchFilter from '../../components/SearchFilter';
 
+/**
+ * Container component that renders a List component with correct properties for displaying a list of UserRoles
+ * @class
+ */
 const RoleList = () => (
     <List
         entityType={USER_ROLE}

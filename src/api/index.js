@@ -2,10 +2,10 @@ import { getInstance } from 'd2/lib/d2';
 import i18n from '@dhis2/d2-i18n';
 import {
     getQueryFields,
-    createRequestData,
+    createListRequestData,
     parseUserSaveData,
     parseLocaleUrl,
-    getFilteredOrgUnits,
+    getRestrictedOrgUnits,
 } from './utils';
 
 import groupAuthorities from '../components/AuthorityEditor/utils/groupAuthorities';
@@ -22,12 +22,19 @@ import {
     USE_DB_LOCALE,
 } from '../containers/UserForm/config';
 
+/**
+ * The Api class exposes all necessary functions to get the required data from the DHIS2 web api.
+ */
 class Api {
+    /**
+     * On instantiation d2 and the d2-api instance are attached to the this scope, so they are easily accessible by its members.
+     * @constructor
+     */
     constructor() {
         getInstance().then(d2 => {
             this.d2 = d2;
             this.d2Api = d2.Api.getApi();
-            // In developement you can access d2 and d2Api via the console
+            // In development you can access d2 and d2Api via the console
             if (process.env.NODE_ENV === 'development') {
                 window.d2 = this.d2;
                 window.d2Api = this.d2Api;
@@ -37,11 +44,11 @@ class Api {
 
     getList = (entityName, page, filter) => {
         const fields = getQueryFields(entityName);
-        const requestData = createRequestData(page, filter, fields);
+        const requestData = createListRequestData(page, filter, fields);
         return this.d2.models[entityName].list(requestData);
     };
 
-    getItem = (entityName, viewType, id) => {
+    getItem = (entityName, id) => {
         const data = { fields: getQueryFields(entityName, true) };
         return this.d2.models[entityName].get(id, data);
     };
@@ -74,7 +81,7 @@ class Api {
         };
         return this.d2.models.organisationUnits
             .list(listConfig)
-            .then(orgUnits => getFilteredOrgUnits(orgUnits, orgUnitType));
+            .then(orgUnits => getRestrictedOrgUnits(orgUnits, orgUnitType));
     };
 
     queryUserGroups = query => {
@@ -160,6 +167,15 @@ class Api {
         );
     };
 
+    /**
+     * Will first execute a create/update user request, and if any locale values have been set will add subsequent request to update these too.
+     * @param {Object} values - Form data produced by redux-form
+     * @param {Object} user - A d2 user model instance
+     * @param {String} currentUiLocale - Locale string for the UI, i.e. 'en'
+     * @param {String} currentDbLocale - Locale string for the DB, i.e. 'fr'
+     * @returns {Promise} Promise object for the combined ajax calls to save a user
+     * @method
+     */
     saveUser = (values, user, currentUiLocale, currentDbLocale) => {
         const userData = parseUserSaveData(values, user);
         const saveUserPromise = user.id

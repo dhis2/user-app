@@ -10,6 +10,10 @@ import {
 } from './UserContextMenuActions';
 import UserFilter from './UserFilter';
 
+/**
+ * Container component that renders a List component with correct properties for displaying a list of Users
+ * @class
+ */
 const UserList = () => (
     <List
         entityType={USER}

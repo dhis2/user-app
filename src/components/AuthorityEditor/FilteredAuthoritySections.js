@@ -4,6 +4,9 @@ import _ from '../../constants/lodash';
 import filterAuthorities from './utils/filterAuthorities';
 import AuthoritySection from './AuthoritySection';
 
+/**
+ * Component responsible for providing the `AuthoritySections` with filtered authority lists.
+ */
 class FilteredAuthoritySections extends Component {
     constructor(props) {
         super(props);

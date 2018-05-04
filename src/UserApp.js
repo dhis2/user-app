@@ -21,6 +21,13 @@ const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
 
 injectTapEventPlugin();
 
+/**
+ * Main Component. Renders a D2UIApp wrapped in a Provider containing the HeaderBar,
+ * Router, SectionLoader, and various popups
+ * @param {Object} props
+ * @param {Object} props.config - The d2 config object to pass to the D2UIApp
+ * @class
+ */
 const UserApp = ({ config }) => (
     <Provider store={store}>
         <D2UIApp initConfig={config} LoadingComponent={LoadingMask} muiTheme={theme}>

@@ -15,6 +15,12 @@ const styles = {
     },
 };
 
+/**
+ * Helper functions used as "component" props for redux-form Field components.
+ * @name fieldRenderers
+ * @memberof module:utils
+ */
+
 export const renderTextField = ({ input, label, meta: { touched, error }, ...other }) => {
     return (
         <TextField

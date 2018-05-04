@@ -27,6 +27,10 @@ const selfRegisteredStyle = {
     height: '35px',
 };
 
+/**
+ * Renders a SearchFilter, OrganisationUnitInput, dropdowns for inactive months and invitation status, and a checkbox for self registration.
+ * Controlled by the filter state and updates this on change.
+ */
 class UserFilter extends Component {
     onFilterChange = (fieldName, newValue) => {
         const { getList, entityType, updateFilter, filter } = this.props;

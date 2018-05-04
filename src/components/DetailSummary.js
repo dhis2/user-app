@@ -13,7 +13,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import ImageEdit from 'material-ui/svg-icons/image/edit';
 import ContentSend from 'material-ui/svg-icons/content/send';
 import { Link } from 'react-router-dom';
-import { USER, DETAILS } from '../constants/entityTypes';
+import { USER } from '../constants/entityTypes';
 import { connect } from 'react-redux';
 import { getItem } from '../actions';
 
@@ -44,13 +44,20 @@ const styles = {
         color: '#757575',
     },
 };
-
+/**
+ * This component reads specified properties of an object and displays this in a table
+ */
 class DetailSummary extends Component {
     componentWillMount() {
         const { baseName, routeId, getItem } = this.props;
-        getItem(baseName, DETAILS, routeId);
+        getItem(baseName, routeId);
     }
 
+    /**
+     * Renders a button wrapped in a link.
+     * The link points to a location outside of the user-app where a message can be sent to a user with a given id.
+     * @param {string} userId
+     */
     renderSendMessageBtn(userId) {
         const url = `${api.getContextPath()}/dhis-web-messaging/showSendMessage.action?id=${userId}`;
         return (

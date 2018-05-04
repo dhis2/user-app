@@ -5,11 +5,20 @@ const initialState = {
     items: null,
 };
 
-/*
- * List can have the following states:
- * - ModelCollection
- * - Null during request
- * - Error message string on error
+/**
+ * Reducer to control the list state
+ * @memberof module:reducers
+ * @param {Object} state - The list state
+ * @param {String|null} state.type=null - The list type, either one of 'user', 'userGroup', 'userRole', or `null` after error.
+ * @param {Object|String|null} state.items=null - Can have the following forms:
+ * - A d2 ModelCollection instance of type User, UserGroup, or UserRole
+ * - A string in case of an error
+ * - `null` while the API request is pending
+ * @param {Object} action
+ * @param {String} action.type - Indicator of action to switch to
+ * @param {Object|String|null} action.payload - Input for the new state
+ * @returns {Object|String|null} - A new state object
+ * @function
  */
 const listReducer = (state = initialState, { type, payload }) => {
     switch (type) {

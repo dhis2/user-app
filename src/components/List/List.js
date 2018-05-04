@@ -47,6 +47,9 @@ const styles = {
     },
 };
 
+/**
+ * Generic component that fetches list data, and displays this in a DataTable with paging and filtering
+ */
 class List extends Component {
     componentWillMount() {
         const {

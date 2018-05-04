@@ -33,6 +33,11 @@ import {
     renderSelectField,
 } from '../../utils/fieldRenderers';
 
+/**
+ * Container component that is controlled by redux-form. When mounting, it will fetch available and selected locales.
+ * Once these are loaded, it renders an array of fields and validates their input.
+ * When valid it will save on submit and show relevant snackbar message.
+ */
 class UserForm extends Component {
     constructor(props) {
         super(props);

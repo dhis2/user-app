@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Paper, CircularProgress } from 'material-ui';
 import { connect } from 'react-redux';
 import { getItem, initNewItem } from '../actions';
-import { USER, USER_GROUP, USER_ROLE, DETAILS } from '../constants/entityTypes';
+import { USER, USER_GROUP, USER_ROLE } from '../constants/entityTypes';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import IconLink from './IconLink';
 import i18n from '@dhis2/d2-i18n';
@@ -30,14 +30,16 @@ const styles = {
 class FormLoader extends Component {
     componentWillMount() {
         const {
-            match: { params: { id } },
+            match: {
+                params: { id },
+            },
             item,
             getItem,
             initNewItem,
             entityType,
         } = this.props;
         if (id && !(item && item.id === id)) {
-            getItem(entityType, DETAILS, id);
+            getItem(entityType, id);
         } else if (!id) {
             initNewItem(entityType);
         }
@@ -64,7 +66,14 @@ class FormLoader extends Component {
     }
 
     renderHeader() {
-        const { match: { params: { id } }, item, shortItem, entityType } = this.props;
+        const {
+            match: {
+                params: { id },
+            },
+            item,
+            shortItem,
+            entityType,
+        } = this.props;
         const baseItem = item && item.id === id ? item : shortItem;
         const entityTxt = baseItem
             ? baseItem.modelDefinition.displayName
@@ -90,7 +99,12 @@ class FormLoader extends Component {
     }
 
     renderContent() {
-        const { match: { params: { id } }, item } = this.props;
+        const {
+            match: {
+                params: { id },
+            },
+            item,
+        } = this.props;
 
         if (typeof item === 'string') {
             return (

@@ -12,6 +12,10 @@ import { NAME, DESCRIPTION, AUTHORITIES, FIELDS } from './config';
 import { USER_ROLE } from '../../constants/entityTypes';
 import validate from './validate';
 
+/**
+ * Container component that is controlled by redux-form. It renders an array of fields and validates their input.
+ * When valid it will save on submit and show relevant snackbar message.
+ */
 class RoleForm extends Component {
     shouldComponentUpdate(nextProps, nextState) {
         return typeof nextProps.asyncValidating !== 'string';

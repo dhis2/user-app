@@ -33,6 +33,11 @@ const styles = {
     },
 };
 
+/**
+ * A component that renders the d2-ui GroupEditor with a search input above it.
+ * It can fetch its own items and has been made compliant with redux form.
+ * On update it can return an array of either IDs or d2-models
+ */
 class SearchableGroupEditor extends Component {
     constructor(props) {
         super(props);

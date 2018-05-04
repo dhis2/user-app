@@ -14,6 +14,10 @@ import { USER_GROUP } from '../../constants/entityTypes';
 import SearchFilter from '../../components/SearchFilter';
 import ErrorMessage from '../../components/ErrorMessage';
 
+/**
+ * Container component that renders a List component with correct properties for displaying a list of UserGroups
+ * Before rendering the List it will first get the current user's group memberships to populate the "currentUserIsMember" column
+ */
 class GroupList extends Component {
     componentWillMount() {
         const { groupMemberships, getCurrentUserGroupMemberships } = this.props;
