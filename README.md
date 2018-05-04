@@ -84,3 +84,7 @@ git push origin v29.0.22 (pushes the v29.0.22 tag)
 ```
 
 To deploy a major upgrade, it is necessary to branch the current version, and update the pom.xml on master. Details of this will be provided elsewhere.
+
+## License
+
+The software is open source and released under the [BSD 2-Clause License](./LICENCE).
