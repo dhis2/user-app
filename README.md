@@ -1,4 +1,4 @@
-# Dashboards-app
+# User-app
 
 [![Build Status](https://travis-ci.org/dhis2/user-app.svg)](https://travis-ci.org/dhis2/user-app)
 [![Test Coverage](https://codeclimate.com/github/dhis2/user-app/badges/coverage.svg)](https://codeclimate.com/github/dhis2/user-app/coverage)
