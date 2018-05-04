@@ -30,7 +30,9 @@ const styles = {
 class FormLoader extends Component {
     componentWillMount() {
         const {
-            match: { params: { id } },
+            match: {
+                params: { id },
+            },
             item,
             getItem,
             initNewItem,
@@ -64,7 +66,14 @@ class FormLoader extends Component {
     }
 
     renderHeader() {
-        const { match: { params: { id } }, item, shortItem, entityType } = this.props;
+        const {
+            match: {
+                params: { id },
+            },
+            item,
+            shortItem,
+            entityType,
+        } = this.props;
         const baseItem = item && item.id === id ? item : shortItem;
         const entityTxt = baseItem
             ? baseItem.modelDefinition.displayName
@@ -90,7 +99,12 @@ class FormLoader extends Component {
     }
 
     renderContent() {
-        const { match: { params: { id } }, item } = this.props;
+        const {
+            match: {
+                params: { id },
+            },
+            item,
+        } = this.props;
 
         if (typeof item === 'string') {
             return (

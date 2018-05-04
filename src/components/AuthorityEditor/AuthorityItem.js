@@ -15,7 +15,10 @@ class AuthorityItem extends Component {
     }
 
     onChecked = (_, value) => {
-        const { authSubject: { id }, onCheckedCallBack } = this.props;
+        const {
+            authSubject: { id },
+            onCheckedCallBack,
+        } = this.props;
         this.setState({ selected: value });
         onCheckedCallBack(id, value);
     };
