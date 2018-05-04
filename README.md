@@ -87,4 +87,4 @@ To deploy a major upgrade, it is necessary to branch the current version, and up
 
 ## License
 
-The software is open source and released under the [BSD 2-Clause License](https://github.com/dhis2/user-app/blob/master/license).
+The software is open source and released under the [BSD 2-Clause License](https://github.com/dhis2/user-app/blob/master/LICENSE).
