@@ -95,10 +95,10 @@ const addInitialValueFrom = (sourceObject, initialValues, propName) => {
 };
 
 /**
- * Produces initial values for REDUX form
+ * Produces initial values for redux form
  * @param {Object} user - A d2 user model instance (state.currentItem)
  * @param {Object} locales - Contains available and selected locales for the UI and DB
- * @returns {Object} Initial values for the REDUX form wrapping the UserForm component
+ * @returns {Object} Initial values for the redux form wrapping the UserForm component
  * @function
  */
 export const userFormInitialValuesSelector = _.memoize((user, locales) => {

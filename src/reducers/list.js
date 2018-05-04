@@ -9,8 +9,11 @@ const initialState = {
  * Reducer to control the list state
  * @memberof module:reducers
  * @param {Object} state - The list state
- * @param {String|null} state.type=null - The list type, either one of 'user', 'userGroup', 'userRole', or nul after error.
- * @param {Object|String|null} state=null - Either a d2 model collection instance of type User, UserGroup, or UserRole, a string in case of an error, or null while the API request is pending.
+ * @param {String|null} state.type=null - The list type, either one of 'user', 'userGroup', 'userRole', or `null` after error.
+ * @param {Object|String|null} state.items=null - Can have the following forms:
+ * - A d2 ModelCollection instance of type User, UserGroup, or UserRole
+ * - A string in case of an error
+ * - `null` while the API request is pending
  * @param {Object} action
  * @param {String} action.type - Indicator of action to switch to
  * @param {Object|String|null} action.payload - Input for the new state

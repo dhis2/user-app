@@ -9,7 +9,7 @@ import api from '../api';
 import i18n from '@dhis2/d2-i18n';
 
 /**
- * Convenience function for creating a REDUX action
+ * Convenience function for creating a redux action
  * @param {String} type - The action type
  * @param {any} payload - The action payload
  * @return {Object} - An action object with type and payload property
@@ -48,12 +48,16 @@ export const getList = (entityName, silent) => (dispatch, getState) => {
 };
 
 export const incrementPage = pager => (dispatch, getState) => {
-    const { list: { type } } = getState();
+    const {
+        list: { type },
+    } = getState();
     createListActionSequence(dispatch, pager.getNextPage(), type);
 };
 
 export const decrementPage = pager => (dispatch, getState) => {
-    const { list: { type } } = getState();
+    const {
+        list: { type },
+    } = getState();
     createListActionSequence(dispatch, pager.getPreviousPage(), type);
 };
 

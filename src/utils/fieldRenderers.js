@@ -16,7 +16,7 @@ const styles = {
 };
 
 /**
- * Helper functions used as "component" props for REDUX-Form Field components.
+ * Helper functions used as "component" props for redux-form Field components.
  * @name fieldRenderers
  * @memberof module:utils
  */

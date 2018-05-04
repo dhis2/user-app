@@ -12,7 +12,7 @@ import { EMPTY_GROUPED_AUTHORITIES } from './utils/groupAuthorities';
 
 /**
  * This is the parent component of the authorities section in the RoleForm.
- * It has been made compliant with REDUX-form.
+ * It has been made compliant with redux-form.
  */
 class AuthorityEditor extends Component {
     constructor(props) {

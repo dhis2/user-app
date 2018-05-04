@@ -24,7 +24,7 @@ import {
  * Helper function that produces a "fields" array used in the api request payload
  * @param {String} entityName - "user" "userRole" or "userGroup"
  * @param {Boolean} detailFields - Should be true if caller want to get field
- * @return An array of fields/properties that should be included in the api response
+ * @return {Array} An array of fields/properties that should be included in the api response
  * @function
  */
 export const getQueryFields = (entityName, detailFields) => {
@@ -42,7 +42,7 @@ export const getQueryFields = (entityName, detailFields) => {
  * @param {Number} page - The page number that should be requested
  * @param {Object} filter - Parameters to filter the result set with on the server
  * @param {Array} fields - Properties that should be returned for each object
- * @returns A valid request payload for api list calls
+ * @returns {Object} A valid request payload for api list calls
  * @function
  */
 export const createListRequestData = (page = DEFAULT_PAGE, filter, fields) => {

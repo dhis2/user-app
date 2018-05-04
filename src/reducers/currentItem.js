@@ -7,9 +7,16 @@ import {
 } from '../constants/actionTypes';
 
 /**
+ * @module reducers
+ */
+
+/**
  * Reducer to control the current item state
  * @memberof module:reducers
- * @param {Object|String|null} state=null - Either a d2 model instance of type User, UserGroup, or UserRole, a string in case of an error, or null while the API request is pending.
+ * @param {Object|String|null} state=null - Can have the following forms:
+ * - A d2 model instance of type User, UserGroup, or UserRole
+ * - A string in case of an error
+ * - `null` while the API request is pending.
  * @param {Object} action
  * @param {String} action.type - Indicator of action to switch to
  * @param {Object|String|null} action.payload - Input for the new state

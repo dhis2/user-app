@@ -4,7 +4,7 @@ import _ from '../constants/lodash';
 
 /**
  * Calls the genericFind method of the Api instance to find out whether a userRole/userGroup model instance with the same property value exists
- * @param {Object} values - REDUX form values object
+ * @param {Object} values - redux form values object
  * @param {Object} _dispatch - store.dispatch method - ignored
  * @param {Object} props - Component properties, containing either a userRole or userGroup model
  * @param {Object} fieldName - The property name to check on uniqueness
