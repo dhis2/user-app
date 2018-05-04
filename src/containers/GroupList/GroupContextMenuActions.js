@@ -1,7 +1,7 @@
 /**
  * Defines the GroupList context menu for current user on a given UserGroup model instance.
  * Contains definitions for menu item visibility, individual menu item actions, icons and names.
- * @module conainers/GroupList/GroupContextMenuActions
+ * @module containers/GroupList/GroupContextMenuActions
  */
 import i18n from '@dhis2/d2-i18n';
 import Action from 'd2-ui/lib/action/Action';
@@ -24,6 +24,7 @@ const remove = 'remove';
  * @param {Object} model - d2 UserGroup model instance
  * @param {String} action - Action name
  * @returns {Boolean} - Action visibility
+ * @function
  */
 export const isGroupContextActionAllowed = (model, action) => {
     if (!model) {

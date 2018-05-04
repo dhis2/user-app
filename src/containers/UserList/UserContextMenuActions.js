@@ -1,7 +1,7 @@
 /**
  * Defines the UserList context menu for current user on a given UserUser model instance.
  * Contains definitions for menu item visibility, individual menu item actions, icons and names.
- * @module conainers/UserList/UserContextMenuActions
+ * @module containers/UserList/UserContextMenuActions
  */
 
 import React from 'react';
@@ -27,13 +27,17 @@ const enable = 'enable';
  * @param {Object} model - d2 User model instance
  * @param {String} action - Action name
  * @returns {Boolean} - Action visibility
+ * @function
  */
 export const isUserContextActionAllowed = (model, action) => {
     if (!model) {
         return false;
     }
 
-    const { access, userCredentials: { disabled } } = model;
+    const {
+        access,
+        userCredentials: { disabled },
+    } = model;
 
     switch (action) {
         case profile:

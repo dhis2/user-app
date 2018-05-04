@@ -17,6 +17,10 @@ if (process.env.NODE_ENV === 'development' && shouldLog) {
     middlewares.push(logger);
 }
 
+/**
+ * @module reducers
+ */
+
 const rootReducer = combineReducers({
     list: listReducer,
     filter: filterReducer,

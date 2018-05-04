@@ -6,6 +6,14 @@ import registerServiceWorker from './registerServiceWorker';
 import { config, getUserSettings } from 'd2/lib/d2';
 import i18n from './locales';
 
+/**
+ * @module index
+ */
+
+/**
+ * Sets baseUrl and schemas on the d2 config object
+ * @function
+ */
 const updateConfig = () => {
     let baseUrl;
     const isProd = process.env.NODE_ENV === 'production';
@@ -32,6 +40,12 @@ const updateConfig = () => {
     ];
 };
 
+/**
+ * Adds translation sources to the d2 config object for deprecated translation methods used by d2-ui
+ * And sets language for new i18n module from "@dhis2/d2-i18n"
+ * @param {Object} userSettings - user settings object returned by the d2 getUserSettings promise
+ * @function
+ */
 const configI18n = userSettings => {
     const uiLocale = userSettings.keyUiLocale;
     const sources = config.i18n.sources;
@@ -43,11 +57,19 @@ const configI18n = userSettings => {
     i18n.changeLanguage(uiLocale);
 };
 
+/**
+ * Renders app into root element
+ * @function
+ */
 const renderAppInDOM = () => {
     const rootEl = document.getElementById('root');
     ReactDOM.render(<UserApp config={config} />, rootEl);
 };
 
+/**
+ * Starts the app
+ * @function
+ */
 const init = () => {
     updateConfig();
     getUserSettings()

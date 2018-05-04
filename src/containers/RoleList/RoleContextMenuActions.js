@@ -1,7 +1,7 @@
 /**
  * Defines the RoleList context menu for current user on a given UserRole model instance.
  * Contains definitions for menu item visibility, individual menu item actions, icons and names.
- * @module conainers/RoleList/RoleContextMenuActions
+ * @module containers/RoleList/RoleContextMenuActions
  */
 import i18n from '@dhis2/d2-i18n';
 import Action from 'd2-ui/lib/action/Action';
@@ -19,6 +19,7 @@ const remove = 'remove';
  * @param {Object} model - d2 UserRole model instance
  * @param {String} action - Action name
  * @returns {Boolean} - Action visibility
+ * @function
  */
 export const isRoleContextActionAllowed = (model, action) => {
     if (!model) {

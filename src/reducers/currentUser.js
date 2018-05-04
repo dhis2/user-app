@@ -6,6 +6,19 @@ import {
     CURRENT_USER_GROUP_MEMBERSHIP_ERRORED,
 } from '../constants/actionTypes';
 
+/**
+ * Reducer to control the current user state. The basic state is initialized from the sectionLoader,
+ * before the sections themselves are rendered. At that point it does not contain information about
+ * organisation units or group memberships.
+ * Information about group and organisation unit memberships is appended and refreshed on demand.
+ * @memberof module:reducers
+ * @param {Object|null} state=null - An object containing relevant properties of the current user.
+ * @param {Object} action
+ * @param {String} action.type - Indicator of action to switch to
+ * @param {Object|String|null} action.payload - Input for the new state
+ * @returns {Object} - A new state object
+ * @function
+ */
 const currentUserReducer = (state = null, { type, payload }) => {
     switch (type) {
         case INIT_CURRENT_USER:

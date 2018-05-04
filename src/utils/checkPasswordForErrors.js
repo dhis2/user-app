@@ -1,5 +1,18 @@
 import i18n from '@dhis2/d2-i18n';
 
+/**
+ * Tests if a given password is compliant with the password restrictions. This function checks all restrictions below, but returns when the first violation was found:
+ * - At least 8 characters
+ * - No more than 34 characters
+ * - Contains at least 1 lowercase character
+ * - Contains at least 1 UPPERCASE character
+ * - Contains at least 1 number
+ * - Contains at least 1 special character
+ * @param {String} password
+ * @return {null|String} Null if password is OK, otherwise an error message
+ * @memberof module:utils
+ * @function
+ */
 const checkPasswordForErrors = password => {
     const lowerCase = /^(?=.*[a-z]).+$/;
     const upperCase = /^(?=.*[A-Z]).+$/;
