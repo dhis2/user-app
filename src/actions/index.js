@@ -67,7 +67,7 @@ export const decrementPage = pager => (dispatch, getState) => {
  * @param {String} id - The item ID
  * @function
  */
-export const getItem = (entityName, id) => async (dispatch, getState) => {
+export const getItem = (entityName, id) => async dispatch => {
     dispatch(createAction(ACTIONS.ITEM_REQUESTED));
 
     try {
@@ -78,7 +78,7 @@ export const getItem = (entityName, id) => async (dispatch, getState) => {
     }
 };
 
-export const appendCurrentUserOrgUnits = () => async (dispatch, getState) => {
+export const appendCurrentUserOrgUnits = () => async dispatch => {
     const RECEIVED = ACTIONS.CURRENT_USER_ORG_UNITS_RECEIVED;
 
     try {
@@ -92,7 +92,7 @@ export const appendCurrentUserOrgUnits = () => async (dispatch, getState) => {
     }
 };
 
-export const getCurrentUserGroupMemberships = () => async (dispatch, getState) => {
+export const getCurrentUserGroupMemberships = () => async dispatch => {
     const RECEIVED = ACTIONS.CURRENT_USER_GROUP_MEMBERSHIP_RECEIVED;
     const ERRORED = ACTIONS.CURRENT_USER_GROUP_MEMBERSHIP_ERRORED;
 
@@ -125,7 +125,7 @@ export const updateFilter = (updateKey, updateValue) => {
     });
 };
 
-export const resetFilter = forUsers => {
+export const resetFilter = () => {
     return createAction(ACTIONS.FILTER_RESET);
 };
 

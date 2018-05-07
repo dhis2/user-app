@@ -41,7 +41,7 @@ const validate = (values, props) => {
  * Form component for replicating a using redux-form and displayed in a Dialog
  */
 class ReplicateUserForm extends Component {
-    shouldComponentUpdate(nextProps, nextState) {
+    shouldComponentUpdate(nextProps) {
         return typeof nextProps.asyncValidating !== 'string';
     }
 

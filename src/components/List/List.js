@@ -11,7 +11,6 @@ import 'd2-ui/lib/css/DataTable.css';
 import 'd2-ui/lib/css/Pagination.css';
 import navigateTo from '../../utils/navigateTo';
 import { listSelector, pagerSelector } from '../../selectors';
-import { USER } from '../../constants/entityTypes';
 import {
     getList,
     resetFilter,
@@ -66,7 +65,7 @@ class List extends Component {
             // If list type is defined but doesn't match current entity
             // this means the user has switched section so pager and filter must be reset
             if (listType !== entityType) {
-                resetFilter(entityType === USER);
+                resetFilter();
                 resetPager();
             }
             getList(entityType);

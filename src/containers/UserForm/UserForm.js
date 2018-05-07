@@ -76,7 +76,7 @@ class UserForm extends Component {
         }
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
+    shouldComponentUpdate(nextProps) {
         return typeof nextProps.asyncValidating !== 'string';
     }
 
@@ -131,7 +131,7 @@ class UserForm extends Component {
 
     renderFields(fields) {
         const { user } = this.props;
-        return fields.map((fieldConfig, index) => {
+        return fields.map(fieldConfig => {
             const { name, fieldRenderer, label, isRequiredField, ...conf } = fieldConfig;
             const labelText = this.getLabelText(label, user, isRequiredField);
 
@@ -259,7 +259,7 @@ UserForm.propTypes = {
     appendCurrentUserOrgUnits: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = state => {
     return {
         user: state.currentItem,
         fallbackOrgUnits:

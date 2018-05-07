@@ -20,7 +20,7 @@ import api from '../../api';
  * When valid it will save on submit and show relevant snackbar message.
  */
 class GroupForm extends Component {
-    shouldComponentUpdate(nextProps, nextState) {
+    shouldComponentUpdate(nextProps) {
         // Using redux form asyncBlurFields together with MaterialUI buttons can cause a problem:
         // when you have focus on one of the aSync blur fields, and you click submit with your mouse
         // The button will now fist call focus, blurring the async blur field as a result of this
@@ -36,7 +36,7 @@ class GroupForm extends Component {
     }
 
     saveGroup = async (values, _, props) => {
-        const { group, showSnackbar, clearItem, getList } = this.props;
+        const { group, showSnackbar, clearItem, getList } = props;
 
         group[NAME] = values[NAME];
         group[CODE] = values[CODE];

@@ -34,12 +34,7 @@ export const renderTextField = ({ input, label, meta: { touched, error }, ...oth
     );
 };
 
-export const renderAuthorityEditor = ({
-    input,
-    label,
-    meta: { touched, error },
-    ...other
-}) => {
+export const renderAuthorityEditor = ({ input }) => {
     const initiallySelected = input.value === '' ? [] : input.value;
     return (
         <AuthorityEditor
@@ -50,7 +45,7 @@ export const renderAuthorityEditor = ({
     );
 };
 
-export const renderCheckbox = ({ input, label, meta: { touched, error }, ...other }) => {
+export const renderCheckbox = ({ input, label }) => {
     return (
         <Checkbox
             checked={Boolean(input.value)}
@@ -62,13 +57,7 @@ export const renderCheckbox = ({ input, label, meta: { touched, error }, ...othe
     );
 };
 
-export const renderSelectField = ({
-    input,
-    label,
-    meta: { touched, error },
-    options,
-    ...other
-}) => {
+export const renderSelectField = ({ input, label, options }) => {
     return (
         <SelectField
             floatingLabelText={label}
@@ -109,7 +98,6 @@ export const renderSearchableGroupEditor = ({
 export const renderSearchableOrgUnitTree = ({
     input,
     label,
-    meta: { touched, error },
     wrapperStyle,
     initialValues,
     orgUnitType,
