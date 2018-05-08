@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-05-07T10:18:30.792Z\n"
-"PO-Revision-Date: 2018-05-07T10:18:30.792Z\n"
+"POT-Creation-Date: 2018-05-08T10:00:48.762Z\n"
+"PO-Revision-Date: 2018-05-08T10:00:48.762Z\n"
 
 msgid ""
 "Something went wrong whilst fetching the organisation units. Please refresh "
@@ -14,6 +14,9 @@ msgid ""
 msgstr ""
 
 msgid "Use database locale / no translation"
+msgstr ""
+
+msgid "Cannot invite users with critical authorities"
 msgstr ""
 
 msgid "Search"
@@ -91,10 +94,10 @@ msgstr ""
 msgid "Document"
 msgstr ""
 
-msgid "Add/Update Event Chart "
+msgid "Event Chart"
 msgstr ""
 
-msgid "Add/Update Event Report"
+msgid "Event Report"
 msgstr ""
 
 msgid "External Map Layer"
@@ -139,7 +142,7 @@ msgstr ""
 msgid "Organisation Unit Group"
 msgstr ""
 
-msgid "data predictor"
+msgid "Predictor"
 msgstr ""
 
 msgid "Program Stage"
@@ -388,6 +391,9 @@ msgstr ""
 msgid "Show more options"
 msgstr ""
 
+msgid "Send invite"
+msgstr ""
+
 msgid "Username already taken"
 msgstr ""
 
@@ -399,10 +405,10 @@ msgid ""
 "sub-hierarchy"
 msgstr ""
 
-msgid "E-mail"
+msgid "Set password or invite"
 msgstr ""
 
-msgid "Set password or invite"
+msgid "E-mail"
 msgstr ""
 
 msgid "External authentication only (OpenID or LDAP)"

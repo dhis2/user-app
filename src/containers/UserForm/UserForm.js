@@ -93,7 +93,7 @@ class UserForm extends Component {
     };
 
     handleSubmit = async (values, _, props) => {
-        const { user, inviteUser, showSnackbar, clearItem, getList } = props;
+        const { user, showSnackbar, clearItem, getList } = props;
         const selectedUiLocale = this.state.locales.ui.selected;
         const selectedDbLocale = this.state.locales.db.selected;
 
