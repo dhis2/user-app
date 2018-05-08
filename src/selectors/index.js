@@ -9,8 +9,10 @@ import {
     USER_CRED_PROPS,
     INTERFACE_LANGUAGE,
     DATABASE_LANGUAGE,
+    INVITE,
     DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
     DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
+    SET_PASSWORD,
 } from '../containers/UserForm/config';
 import asArray from '../utils/asArray';
 import getNestedProp from '../utils/getNestedProp';
@@ -102,7 +104,9 @@ const addInitialValueFrom = (sourceObject, initialValues, propName) => {
  * @function
  */
 export const userFormInitialValuesSelector = _.memoize((user, locales) => {
-    let initialValues = {};
+    let initialValues = {
+        [INVITE]: SET_PASSWORD,
+    };
 
     if (user.id) {
         USER_PROPS.forEach(propName => {

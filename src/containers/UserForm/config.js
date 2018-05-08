@@ -38,13 +38,14 @@ export const STYLES = {
 };
 
 export const USERNAME = 'username';
+export const EMAIL = 'email';
+export const INVITE = 'inviteUser';
 export const EXTERNAL_AUTH = 'externalAuth';
 export const TWO_FA = 'twoFA';
 export const PASSWORD = 'password';
 export const REPEAT_PASSWORD = 'repeatPassword';
 export const SURNAME = 'surname';
 export const FIRST_NAME = 'firstName';
-export const EMAIL = 'email';
 export const OPEN_ID = 'openId';
 export const LDAP_ID = 'ldapId';
 export const PHONE_NUMBER = 'phoneNumber';
@@ -80,9 +81,13 @@ export const USER_CRED_PROPS = [
 ];
 
 export const ALWAYS_REQUIRED = 'ALWAYS_REQUIRED';
+export const INVITE_REQUIRED = 'INVITE_REQUIRED';
 export const CREATE_REQUIRED = 'CREATE_REQUIRED';
 
 export const USE_DB_LOCALE = 'use_db_locale';
+
+export const SET_PASSWORD = 'SET_PASSWORD';
+export const INVITE_USER = 'INVITE_USER';
 
 const BASE_CAPTION = {
     label: i18n.t(
@@ -99,10 +104,36 @@ const BASE_CAPTION = {
 
 export const BASE_FIELDS = [
     {
+        name: INVITE,
+        label: i18n.t('Set password or invite'),
+        fieldRenderer: renderSelectField,
+        options: [
+            {
+                id: SET_PASSWORD,
+                label: 'Set a password for this user',
+            },
+            {
+                id: INVITE_USER,
+                label: 'Send an invite to this user',
+            },
+        ],
+        props: {
+            style: {
+                // backgroundColor: 'rgb(110,188,253)',
+            },
+        },
+    },
+    {
         name: USERNAME,
         label: i18n.t('Username'),
         fieldRenderer: renderTextField,
         isRequiredField: CREATE_REQUIRED,
+    },
+    {
+        name: EMAIL,
+        label: i18n.t('E-mail'),
+        fieldRenderer: renderTextField,
+        isRequiredField: INVITE_REQUIRED,
     },
     {
         name: EXTERNAL_AUTH,
@@ -142,11 +173,6 @@ export const BASE_FIELDS = [
         name: FIRST_NAME,
         label: i18n.t('First name'),
         isRequiredField: ALWAYS_REQUIRED,
-        fieldRenderer: renderTextField,
-    },
-    {
-        name: EMAIL,
-        label: i18n.t('E-mail'),
         fieldRenderer: renderTextField,
     },
     {

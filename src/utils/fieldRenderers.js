@@ -57,16 +57,17 @@ export const renderCheckbox = ({ input, label }) => {
     );
 };
 
-export const renderSelectField = ({ input, label, options }) => {
+export const renderSelectField = ({ input, label, options, style }) => {
     return (
         <SelectField
             floatingLabelText={label}
             fullWidth={true}
             {...input}
             onChange={(event, index, value) => input.onChange(value)}
+            style={style}
         >
-            {options.map(({ locale, name }, i) => (
-                <MenuItem key={`option_${i}`} value={locale} primaryText={name} />
+            {options.map(({ id, label }, i) => (
+                <MenuItem key={`option_${i}`} value={id} primaryText={label} />
             ))}
         </SelectField>
     );

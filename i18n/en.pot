@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-05-03T10:00:51.844Z\n"
-"PO-Revision-Date: 2018-05-03T10:00:51.844Z\n"
+"POT-Creation-Date: 2018-05-07T10:18:30.792Z\n"
+"PO-Revision-Date: 2018-05-07T10:18:30.792Z\n"
 
 msgid ""
 "Something went wrong whilst fetching the organisation units. Please refresh "
@@ -399,6 +399,12 @@ msgid ""
 "sub-hierarchy"
 msgstr ""
 
+msgid "E-mail"
+msgstr ""
+
+msgid "Set password or invite"
+msgstr ""
+
 msgid "External authentication only (OpenID or LDAP)"
 msgstr ""
 
@@ -412,9 +418,6 @@ msgid "Surname"
 msgstr ""
 
 msgid "First name"
-msgstr ""
-
-msgid "E-mail"
 msgstr ""
 
 msgid "OpenID"

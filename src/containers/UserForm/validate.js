@@ -12,38 +12,42 @@ import {
 } from './config';
 
 const CREATE_REQUIRED_FIELDS = [USERNAME, PASSWORD, REPEAT_PASSWORD, SURNAME, FIRST_NAME];
-
+const INVITE_REQUIRED_FIELDS = [USERNAME, EMAIL, SURNAME, FIRST_NAME];
 const EDIT_REQUIRED_FIELDS = [SURNAME, FIRST_NAME];
 
 export default function validate(values, props) {
-    const { pristine } = props;
+    const { pristine, inviteUser } = props;
     let errors = {};
 
     if (pristine) {
         return errors;
     }
 
-    const createUser = !props.user.id;
-    const requiredFields = createUser ? CREATE_REQUIRED_FIELDS : EDIT_REQUIRED_FIELDS;
+    const editUser = props.user.id;
+    const requiredFields = editUser
+        ? EDIT_REQUIRED_FIELDS
+        : inviteUser
+            ? INVITE_REQUIRED_FIELDS
+            : CREATE_REQUIRED_FIELDS;
 
     requiredFields.forEach(fieldName =>
-        validateRequiredField(errors, fieldName, values[fieldName], createUser)
+        validateRequiredField(errors, fieldName, values[fieldName], editUser)
     );
 
-    validateAssignedRoles(errors, values[ASSIGNED_ROLES], createUser);
-    validatePassword(errors, values, createUser);
+    validateAssignedRoles(errors, values[ASSIGNED_ROLES], editUser);
+    validatePassword(errors, values, editUser, inviteUser);
     validateEmail(errors, values[EMAIL]);
     return errors;
 }
 
-function validateRequiredField(errors, propName, value, createUser) {
-    if ((createUser && !value) || (!createUser && value === '')) {
+function validateRequiredField(errors, propName, value, editUser) {
+    if ((!editUser && !value) || (editUser && value === '')) {
         errors[propName] = i18n.t('This field is required');
     }
 }
 
-function validateAssignedRoles(errors, value, createUser) {
-    const unTouchedOnEdit = !createUser && !value;
+function validateAssignedRoles(errors, value, editUser) {
+    const unTouchedOnEdit = editUser && !value;
     const isArrayWithLength = _.isArray(value) && value.length > 0;
 
     if (!unTouchedOnEdit && !isArrayWithLength) {
@@ -51,11 +55,11 @@ function validateAssignedRoles(errors, value, createUser) {
     }
 }
 
-function validatePassword(errors, values, createUser) {
+function validatePassword(errors, values, editUser, inviteUser) {
     // Only skip on when editing user and both fields are blank
-    const skipValidation = !createUser && !values[PASSWORD] && !values[REPEAT_PASSWORD];
+    const emptyOnEdit = editUser && !values[PASSWORD] && !values[REPEAT_PASSWORD];
 
-    if (skipValidation) {
+    if (emptyOnEdit || inviteUser) {
         return;
     }
 

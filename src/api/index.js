@@ -6,6 +6,7 @@ import {
     parseUserSaveData,
     parseLocaleUrl,
     getRestrictedOrgUnits,
+    mapLocale,
 } from './utils';
 
 import groupAuthorities from '../components/AuthorityEditor/utils/groupAuthorities';
@@ -20,7 +21,11 @@ import {
     INTERFACE_LANGUAGE,
     DATABASE_LANGUAGE,
     USE_DB_LOCALE,
+    INVITE,
+    INVITE_USER,
 } from '../containers/UserForm/config';
+
+import { USER } from '../constants/entityTypes';
 
 /**
  * The Api class exposes all necessary functions to get the required data from the DHIS2 web api.
@@ -138,8 +143,8 @@ class Api {
         username = username ? encodeURIComponent(username) : null;
 
         const useDbLocaleOption = {
-            locale: USE_DB_LOCALE,
-            name: i18n.t('Use database locale / no translation'),
+            id: USE_DB_LOCALE,
+            label: i18n.t('Use database locale / no translation'),
         };
 
         const dbLocales = this.d2Api.get('/locales/db');
@@ -156,11 +161,11 @@ class Api {
         return Promise.all([dbLocales, uiLocales, dbLocale, uiLocale]).then(
             ([dbLocales, uiLocales, dbLocale, uiLocale]) => ({
                 db: {
-                    available: [useDbLocaleOption, ...dbLocales],
+                    available: [useDbLocaleOption, ...dbLocales.map(mapLocale)],
                     selected: dbLocale || USE_DB_LOCALE,
                 },
                 ui: {
-                    available: uiLocales,
+                    available: uiLocales.map(mapLocale),
                     selected: uiLocale,
                 },
             })
@@ -176,11 +181,14 @@ class Api {
      * @returns {Promise} Promise object for the combined ajax calls to save a user
      * @method
      */
-    saveUser = (values, user, currentUiLocale, currentDbLocale) => {
-        const userData = parseUserSaveData(values, user);
+    saveOrInviteUser = (values, user, currentUiLocale, currentDbLocale) => {
+        const inviteUser = (values[INVITE] = INVITE_USER);
+        const userData = parseUserSaveData(values, user, inviteUser);
+        const postUrl = inviteUser ? '/users/invite' : '/users';
+        console.log('save me to: ', postUrl, '\n\n', JSON.stringify(userData, null, 4));
         const saveUserPromise = user.id
             ? this.d2Api.update(`/users/${user.id}`, userData)
-            : this.d2Api.post('/users', userData);
+            : this.d2Api.post(postUrl, userData);
 
         return saveUserPromise.then(() => {
             const localePromises = [];
@@ -227,6 +235,34 @@ class Api {
             return (this.groupedAuths = groupAuthorities(systemAuthorities));
         });
     };
+
+    resendUserInvite(userId) {
+        return this.getItem(USER, userId)
+            .then(user => {
+                const userCredentials = user.userCredentials;
+                user = { ...user.toJSON(), userCredentials };
+                return this.d2Api.update('/users/invite', user);
+                // user = user.toJSON();
+                // const isProtected = userRoles.some(({ authorities }) =>
+                //     authorities.some(auth => Boolean(INVITE_EXCLUDED.has(auth)))
+                // );
+
+                // if (isProtected) {
+                //     const msg = i18n.t('Cannot invite users with critical authorities');
+                //     return Promise.resolve(msg);
+                // } else {
+                //     return this.d2Api.post(
+                //         '/users/invite?strategy=UPDATE&mergeMode=MERGE&importMode=UPDATE',
+                //         {
+                //             id: userId,
+                //             email: 'hendrikdegraaf@gmail.com',
+                //             userCredentials: { id },
+                //         }
+                //     );
+                // }
+            })
+            .catch(error => error);
+    }
 
     getD2 = () => {
         return this.d2;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, formValueSelector } from 'redux-form';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
@@ -32,6 +32,8 @@ import {
     renderSearchableGroupEditor,
     renderSelectField,
 } from '../../utils/fieldRenderers';
+
+const FORM_NAME = 'userForm';
 
 /**
  * Container component that is controlled by redux-form. When mounting, it will fetch available and selected locales.
@@ -90,13 +92,13 @@ class UserForm extends Component {
         });
     };
 
-    saveUser = async (values, _, props) => {
-        const { user, showSnackbar, clearItem, getList } = props;
+    handleSubmit = async (values, _, props) => {
+        const { user, inviteUser, showSnackbar, clearItem, getList } = props;
         const selectedUiLocale = this.state.locales.ui.selected;
         const selectedDbLocale = this.state.locales.db.selected;
 
         try {
-            await api.saveUser(values, user, selectedUiLocale, selectedDbLocale);
+            await api.saveOrInviteUser(values, user, selectedUiLocale, selectedDbLocale);
             const msg = i18n.t('User saved successfully');
             showSnackbar({ message: msg });
             clearItem();
@@ -113,8 +115,10 @@ class UserForm extends Component {
     };
 
     getLabelText(label, user, isRequiredField) {
+        const { inviteUser } = this.props;
         return isRequiredField === CONFIG.ALWAYS_REQUIRED ||
-            (isRequiredField === CONFIG.CREATE_REQUIRED && !user.id)
+            (inviteUser && isRequiredField === CONFIG.INVITE_REQUIRED) ||
+            (isRequiredField === CONFIG.CREATE_REQUIRED && !user.id && !inviteUser)
             ? `${label} *`
             : label;
     }
@@ -129,14 +133,51 @@ class UserForm extends Component {
         conf.initialValues = fieldConfig.initialItemsSelector(user);
     }
 
+    exludeField(fieldName) {
+        const { user, inviteUser, externalAuthOnly } = this.props;
+
+        if (user.id && fieldName === CONFIG.INVITE) {
+            return true;
+        }
+
+        if (
+            (inviteUser || externalAuthOnly) &&
+            (fieldName === CONFIG.PASSWORD || fieldName === CONFIG.REPEAT_PASSWORD)
+        ) {
+            return true;
+        }
+
+        if (
+            inviteUser &&
+            [
+                CONFIG.EXTERNAL_AUTH,
+                CONFIG.OPEN_ID,
+                CONFIG.LDAP_ID,
+                CONFIG.TWO_FA,
+                CONFIG.FIRST_NAME,
+                CONFIG.SURNAME,
+            ].includes(fieldName)
+        ) {
+            return true;
+        }
+
+        return false;
+    }
+
     renderFields(fields) {
         const { user } = this.props;
-        return fields.map(fieldConfig => {
+
+        return fields.reduce((filteredFields, fieldConfig) => {
             const { name, fieldRenderer, label, isRequiredField, ...conf } = fieldConfig;
             const labelText = this.getLabelText(label, user, isRequiredField);
 
+            if (this.exludeField(name)) {
+                return filteredFields;
+            }
+
             if (fieldRenderer === renderText) {
-                return renderText(fieldConfig);
+                filteredFields.push(renderText(fieldConfig));
+                return filteredFields;
             }
 
             switch (fieldRenderer) {
@@ -150,13 +191,15 @@ class UserForm extends Component {
                     this.prepareGroupEditor(conf, fieldConfig, user, isRequiredField);
                     break;
                 case renderSelectField:
-                    conf.options = getNestedProp(fieldConfig.optionsSelector, this.state);
+                    conf.options = fieldConfig.optionsSelector
+                        ? getNestedProp(fieldConfig.optionsSelector, this.state)
+                        : fieldConfig.options;
                     break;
                 default:
                     break;
             }
 
-            return (
+            filteredFields.push(
                 <Field
                     name={name}
                     key={name}
@@ -165,7 +208,8 @@ class UserForm extends Component {
                     {...conf}
                 />
             );
-        });
+            return filteredFields;
+        }, []);
     }
 
     renderBaseFields() {
@@ -206,9 +250,10 @@ class UserForm extends Component {
     }
 
     render() {
-        const { handleSubmit, asyncValidating, pristine, valid } = this.props;
+        const { handleSubmit, asyncValidating, pristine, valid, inviteUser } = this.props;
         const { showMore, locales } = this.state;
         const disableSubmit = Boolean(asyncValidating || pristine || !valid);
+        const submitText = inviteUser ? i18n.t('Send invite') : i18n.t('Save');
 
         if (!locales) {
             return (
@@ -221,13 +266,13 @@ class UserForm extends Component {
         return (
             <main>
                 <Heading level={2}>{i18n.t('Details')}</Heading>
-                <form onSubmit={handleSubmit(this.saveUser)}>
+                <form onSubmit={handleSubmit(this.handleSubmit)}>
                     {this.renderBaseFields()}
                     {this.renderAdditionalFields(showMore)}
                     {this.renderToggler(showMore)}
                     <div>
                         <RaisedButton
-                            label={i18n.t('Save')}
+                            label={submitText}
                             type="submit"
                             primary={true}
                             disabled={disableSubmit}
@@ -257,18 +302,23 @@ UserForm.propTypes = {
     valid: PropTypes.bool.isRequired,
     fallbackOrgUnits: PropTypes.object,
     appendCurrentUserOrgUnits: PropTypes.func.isRequired,
+    inviteUser: PropTypes.bool.isRequired,
+    externalAuthOnly: PropTypes.bool.isRequired,
 };
 
+const selector = formValueSelector(FORM_NAME);
 const mapStateToProps = state => {
     return {
         user: state.currentItem,
         fallbackOrgUnits:
             state.currentUser[CONFIG.DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS],
+        inviteUser: selector(state, CONFIG.INVITE) === CONFIG.INVITE_USER,
+        externalAuthOnly: Boolean(selector(state, CONFIG.EXTERNAL_AUTH)),
     };
 };
 
 const ReduxFormWrappedUserForm = reduxForm({
-    form: 'userForm',
+    form: FORM_NAME,
     validate,
     asyncValidate: asyncValidateUsername,
     asyncBlurFields: [CONFIG.USERNAME],
