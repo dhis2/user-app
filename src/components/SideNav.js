@@ -26,7 +26,7 @@ class SideNav extends Component {
             sections,
             location: { pathname },
         } = this.props;
-        const sectionForPath = sections.some(section => section.path === pathname);
+        const sectionForPath = sections.find(section => section.path === pathname);
         const onLandingPage = pathname === '/';
 
         if (!sectionForPath && !onLandingPage) {
