@@ -21,20 +21,15 @@ class SideNav extends Component {
         history.push(section.path);
     };
 
-    getSectionKeyForCurrentPath() {
+    render() {
         const {
             sections,
             location: { pathname },
         } = this.props;
-        const currentSection = sections.find(section => section.path === pathname);
-        return currentSection ? currentSection.key : null;
-    }
+        const sectionForPath = sections.some(section => section.path === pathname);
+        const onLandingPage = pathname === '/';
 
-    render() {
-        const { sections } = this.props;
-        const currentSectionKey = this.getSectionKeyForCurrentPath();
-
-        if (!currentSectionKey) {
+        if (!sectionForPath && !onLandingPage) {
             return null;
         }
 
@@ -43,7 +38,7 @@ class SideNav extends Component {
                 <Sidebar
                     sections={sections}
                     onChangeSection={this.changeSectionHandler}
-                    currentSection={currentSectionKey}
+                    currentSection={sectionForPath.key}
                 />
             </div>
         );
