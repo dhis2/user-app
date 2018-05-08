@@ -1,5 +1,6 @@
 import {
-    INIT_CURRENT_USER,
+    CURRENT_USER_RECEIVED,
+    CURRENT_USER_ERRORED,
     CURRENT_USER_ORG_UNITS_RECEIVED,
     CURRENT_USER_GROUP_MEMBERSHIP_REQUESTED,
     CURRENT_USER_GROUP_MEMBERSHIP_RECEIVED,
@@ -21,20 +22,9 @@ import {
  */
 const currentUserReducer = (state = null, { type, payload }) => {
     switch (type) {
-        case INIT_CURRENT_USER:
-            // return payload;
-            // Exclude symbols, methods and orgUnit related props
-            return Object.getOwnPropertyNames(payload).reduce(
-                (state, propertyName) => {
-                    if (propertyName !== 'teiSearchOrganisationUnits') {
-                        state[propertyName] = payload[propertyName];
-                    }
-                    return state;
-                },
-                {
-                    userGroups: null,
-                }
-            );
+        case CURRENT_USER_RECEIVED:
+        case CURRENT_USER_ERRORED:
+            return payload;
         case CURRENT_USER_ORG_UNITS_RECEIVED:
             const {
                 organisationUnits,

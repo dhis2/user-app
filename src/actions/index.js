@@ -92,6 +92,15 @@ export const appendCurrentUserOrgUnits = () => async dispatch => {
     }
 };
 
+export const initCurrentUser = () => async dispatch => {
+    try {
+        const currentUser = await api.getCurrentUser();
+        dispatch(createAction(ACTIONS.CURRENT_USER_RECEIVED, currentUser));
+    } catch (error) {
+        dispatch(createAction(ACTIONS.CURRENT_USER_ERRORED, error.message));
+    }
+};
+
 export const getCurrentUserGroupMemberships = () => async dispatch => {
     const RECEIVED = ACTIONS.CURRENT_USER_GROUP_MEMBERSHIP_RECEIVED;
     const ERRORED = ACTIONS.CURRENT_USER_GROUP_MEMBERSHIP_ERRORED;
@@ -155,8 +164,4 @@ export const showSharingDialog = (id, type) => {
 
 export const hideSharingDialog = () => {
     return createAction(ACTIONS.HIDE_SHARING_DIALOG);
-};
-
-export const initCurrentUser = () => {
-    return createAction(ACTIONS.INIT_CURRENT_USER, api.getCurrentUser());
 };

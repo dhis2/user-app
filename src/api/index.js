@@ -7,6 +7,7 @@ import {
     parseLocaleUrl,
     getRestrictedOrgUnits,
     mapLocale,
+    normalizeCurrentUser,
 } from './utils';
 
 import groupAuthorities from '../components/AuthorityEditor/utils/groupAuthorities';
@@ -269,7 +270,17 @@ class Api {
     };
 
     getCurrentUser = () => {
-        return this.d2.currentUser;
+        const { currentUser } = this.d2;
+        return Promise.all([
+            currentUser.getUserGroups(),
+            currentUser.getUserRoles(),
+        ]).then(([userGroups, userRoles]) => {
+            return {
+                ...normalizeCurrentUser(currentUser),
+                userGroups: userGroups.toArray().map(ug => ug.toJSON()),
+                userRoles: userRoles.toArray().map(ur => ur.toJSON()),
+            };
+        });
     };
 
     getContextPath = () => {
