@@ -14,6 +14,7 @@ import { deleteModel } from '../../utils/sharedActions';
 import { USER } from '../../constants/entityTypes';
 import { showDialog, hideDialog, showSnackbar, getList } from '../../actions';
 import ReplicateUserForm from '../../components/ReplicateUserForm';
+import createHumanErrorMessage from '../../utils/createHumanErrorMessage';
 
 const profile = 'profile';
 const edit = 'edit';
@@ -115,16 +116,21 @@ userContextMenuActions.enable.subscribe(({ data }) => {
 });
 
 const updateDisabledState = async ({ displayName, id }, disabledState) => {
-    const enabledSuccessBaseMsg = i18n.t('successfully enabled');
-    const disabledSuccessBaseMsg = i18n.t('sucessfully disabled');
-    const errorMsg = i18n.t('There was a problem updating the enabled state');
-
     try {
         await api.updateDisabledState(id, disabledState);
-        const baseMsg = disabledState ? disabledSuccessBaseMsg : enabledSuccessBaseMsg;
+        const baseMsg = disabledState
+            ? i18n.t('sucessfully disabled')
+            : i18n.t('successfully enabled');
         store.dispatch(showSnackbar({ message: `${displayName} ${baseMsg}` }));
         store.dispatch(getList(USER));
     } catch (error) {
-        store.dispatch(showSnackbar({ message: errorMsg }));
+        store.dispatch(
+            showSnackbar({
+                message: createHumanErrorMessage(
+                    error,
+                    i18n.t('There was a problem updating the enabled state')
+                ),
+            })
+        );
     }
 };

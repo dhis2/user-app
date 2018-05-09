@@ -9,6 +9,7 @@ import navigateTo from '../../utils/navigateTo';
 import asyncValidateUniqueness from '../../utils/asyncValidateUniqueness';
 import asArray from '../../utils/asArray';
 import { renderSearchableGroupEditor } from '../../utils/fieldRenderers';
+import createHumanErrorMessage from '../../utils/createHumanErrorMessage';
 import { clearItem, showSnackbar, getList } from '../../actions';
 import { NAME, CODE, USERS, MANAGED_GROUPS, FIELDS } from './config';
 import { USER_GROUP } from '../../constants/entityTypes';
@@ -51,8 +52,12 @@ class GroupForm extends Component {
             getList(USER_GROUP);
             this.backToList();
         } catch (error) {
-            const msg = i18n.t('There was a problem saving the user group.');
-            showSnackbar({ message: msg });
+            showSnackbar({
+                message: createHumanErrorMessage(
+                    error,
+                    i18n.t('There was a problem saving the user group.')
+                ),
+            });
         }
     };
 

@@ -1,5 +1,6 @@
 import store from '../store';
 import { getList, showSnackbar, hideSnackbar, showSharingDialog } from '../actions';
+import createHumanErrorMessage from './createHumanErrorMessage';
 import i18n from '@dhis2/d2-i18n';
 
 export const deleteModel = ({ confirmMsg, successMsg, errorMsg, model, entityType }) => {
@@ -20,7 +21,8 @@ const onRemoveConfirm = async (model, successMsg, errorMsg, entityType) => {
         store.dispatch(showSnackbar({ message: successMsg }));
         store.dispatch(getList(entityType));
     } catch (error) {
-        store.dispatch(showSnackbar({ message: errorMsg }));
+        const msg = createHumanErrorMessage(error, errorMsg);
+        store.dispatch(showSnackbar({ message: msg }));
     }
 };
 

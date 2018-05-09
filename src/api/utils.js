@@ -166,17 +166,3 @@ export const getRestrictedOrgUnits = (orgUnits, orgUnitType) => {
         return isAvailableUnit || hasAvailableAncestor;
     });
 };
-
-export const normalizeCurrentUser = currentUserModel => {
-    return Object.getOwnPropertyNames(currentUserModel).reduce(
-        (currentUser, propertyName) => {
-            if (propertyName !== 'teiSearchOrganisationUnits') {
-                currentUser[propertyName] = currentUserModel[propertyName];
-            }
-            return currentUser;
-        },
-        {
-            userGroups: null,
-        }
-    );
-};

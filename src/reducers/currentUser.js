@@ -1,17 +1,12 @@
 import {
+    CURRENT_USER_REQUESTED,
     CURRENT_USER_RECEIVED,
     CURRENT_USER_ERRORED,
-    CURRENT_USER_ORG_UNITS_RECEIVED,
-    CURRENT_USER_GROUP_MEMBERSHIP_REQUESTED,
-    CURRENT_USER_GROUP_MEMBERSHIP_RECEIVED,
-    CURRENT_USER_GROUP_MEMBERSHIP_ERRORED,
 } from '../constants/actionTypes';
 
 /**
- * Reducer to control the current user state. The basic state is initialized from the sectionLoader,
- * before the sections themselves are rendered. At that point it does not contain information about
- * organisation units or group memberships.
- * Information about group and organisation unit memberships is appended and refreshed on demand.
+ * Reducer to control the current user state, initialized from the sectionLoader,
+ * Can also be reloaded if certain changes take place that influence the current user.
  * @memberof module:reducers
  * @param {Object|null} state=null - An object containing relevant properties of the current user.
  * @param {Object} action
@@ -22,27 +17,11 @@ import {
  */
 const currentUserReducer = (state = null, { type, payload }) => {
     switch (type) {
+        case CURRENT_USER_REQUESTED:
+            return null;
         case CURRENT_USER_RECEIVED:
         case CURRENT_USER_ERRORED:
             return payload;
-        case CURRENT_USER_ORG_UNITS_RECEIVED:
-            const {
-                organisationUnits,
-                dataViewOrganisationUnits,
-                teiSearchOrganisationUnits,
-            } = payload;
-            return {
-                ...state,
-                organisationUnits,
-                dataViewOrganisationUnits,
-                teiSearchOrganisationUnits,
-            };
-        case CURRENT_USER_GROUP_MEMBERSHIP_REQUESTED:
-            return { ...state, userGroups: null };
-        case CURRENT_USER_GROUP_MEMBERSHIP_RECEIVED:
-            return { ...state, userGroups: payload };
-        case CURRENT_USER_GROUP_MEMBERSHIP_ERRORED:
-            return { ...state, userGroups: payload };
         default:
             return state;
     }

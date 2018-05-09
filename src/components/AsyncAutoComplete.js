@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import CircularProgress from 'material-ui/CircularProgress';
 import AutoComplete from 'material-ui/AutoComplete';
 import MenuItem from 'material-ui/MenuItem';
-import { orange500, blue500 } from 'material-ui/styles/colors';
+import { orange500, blue500, red500 } from 'material-ui/styles/colors';
 import i18n from '@dhis2/d2-i18n';
 import makeTrashable from 'trashable';
+import createHumanErrorMessage from '../utils/createHumanErrorMessage';
 import _ from '../constants/lodash';
 import PropTypes from 'prop-types';
 import asArray from '../utils/asArray';
@@ -16,6 +17,9 @@ const styles = {
         },
         warning: {
             color: orange500,
+        },
+        error: {
+            color: red500,
         },
     },
 };
@@ -106,7 +110,15 @@ class AsyncAutoComplete extends Component {
                     });
                 }
             } catch (error) {
-                console.error(error);
+                // Show error on input
+                this.setState({
+                    ...baseState,
+                    errorStyle: styles.error.warning,
+                    searchWarning: createHumanErrorMessage(
+                        error,
+                        i18n.t('There was a problem retreiving your search results')
+                    ),
+                });
             }
         }
     };

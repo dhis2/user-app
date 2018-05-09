@@ -10,6 +10,8 @@ import asyncValidateUniqueness from '../../utils/asyncValidateUniqueness';
 import { clearItem, showSnackbar, getList } from '../../actions';
 import { NAME, DESCRIPTION, AUTHORITIES, FIELDS } from './config';
 import { USER_ROLE } from '../../constants/entityTypes';
+import detectCurrentUserChanges from '../../utils/detectCurrentUserChanges';
+import createHumanErrorMessage from '../../utils/createHumanErrorMessage';
 import validate from './validate';
 
 /**
@@ -34,9 +36,14 @@ class RoleForm extends Component {
             clearItem();
             getList(USER_ROLE);
             this.backToList();
+            detectCurrentUserChanges(USER_ROLE, role);
         } catch (error) {
-            const msg = i18n.t('There was a problem saving the user role.');
-            showSnackbar({ message: msg });
+            showSnackbar({
+                message: createHumanErrorMessage(
+                    error,
+                    i18n.t('There was a problem saving the user role.')
+                ),
+            });
         }
     };
 

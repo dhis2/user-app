@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import { USER } from '../constants/entityTypes';
 import asyncValidateUsername from '../containers/UserForm/asyncValidateUsername';
 import checkPasswordForErrors from '../utils/checkPasswordForErrors';
+import createHumanErrorMessage from '../utils/createHumanErrorMessage';
 import { getList, hideDialog, showSnackbar, hideSnackbar } from '../actions';
 
 const FORM_NAME = 'replicateUserForm';
@@ -52,7 +53,7 @@ class ReplicateUserForm extends Component {
             await api.replicateUser(userIdToReplicate, username, password);
             this.replicateSuccesHandler();
         } catch (error) {
-            this.replicateErrorHandler();
+            this.replicateErrorHandler(error);
         }
         hideDialog();
     };
@@ -63,10 +64,13 @@ class ReplicateUserForm extends Component {
         getList(USER, true);
     };
 
-    replicateErrorHandler = () => {
+    replicateErrorHandler = error => {
         const { showSnackbar } = this.props;
         showSnackbar({
-            message: i18n.t('There was a problem replicating the user'),
+            message: createHumanErrorMessage(
+                error,
+                i18n.t('There was a problem replicating the user')
+            ),
         });
     };
 

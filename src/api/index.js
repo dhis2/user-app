@@ -7,14 +7,12 @@ import {
     parseLocaleUrl,
     getRestrictedOrgUnits,
     mapLocale,
-    normalizeCurrentUser,
 } from './utils';
 
 import groupAuthorities from '../components/AuthorityEditor/utils/groupAuthorities';
 
 import {
     ORG_UNITS_QUERY_CONFIG,
-    USER_GROUP_QUERY_CONFIG,
     CURRENT_USER_ORG_UNITS_FIELDS,
 } from '../constants/queryFields';
 
@@ -25,8 +23,6 @@ import {
     INVITE,
     INVITE_USER,
 } from '../containers/UserForm/config';
-
-import { USER } from '../constants/entityTypes';
 
 /**
  * The Api class exposes all necessary functions to get the required data from the DHIS2 web api.
@@ -48,6 +44,22 @@ class Api {
         });
     }
 
+    /**************************
+     ********* GENERIC ********
+     **************************/
+
+    getD2 = () => {
+        return this.d2;
+    };
+
+    getContextPath = () => {
+        return this.d2.system.systemInfo.contextPath;
+    };
+
+    getModelDefinition = name => {
+        return this.d2.models[name];
+    };
+
     getList = (entityName, page, filter) => {
         const fields = getQueryFields(entityName);
         const requestData = createListRequestData(page, filter, fields);
@@ -67,19 +79,25 @@ class Api {
             .list({ fields: ['id'] });
     };
 
+    /**************************
+     ********* USERS **********
+     **************************/
+
     replicateUser = (id, username, password) => {
         const url = `/users/${id}/replica`;
         const data = { username, password };
         return this.d2Api.post(url, data);
     };
 
-    getCurrentUserOrgUnits = () => {
-        return this.d2.models.users.get(
-            this.d2.currentUser.id,
-            CURRENT_USER_ORG_UNITS_FIELDS
-        );
-    };
-
+    /**
+     * Fetches organisation units matching the query string from the server.
+     * Once the results are returned they are filtered client-side
+     * to only contain organisation units available to the current user.
+     * Used by SearchableOrgUnitTree in UserForm and UserList.
+     * @param {String} query - They search string to let the server query on
+     * @param {String} orgUnitType - The type of organisation unit to use for client side filtering
+     * @returns {Array} A filtered array of organisation units
+     */
     queryOrgUnits = (query, orgUnitType) => {
         const listConfig = {
             ...ORG_UNITS_QUERY_CONFIG,
@@ -88,40 +106,6 @@ class Api {
         return this.d2.models.organisationUnits
             .list(listConfig)
             .then(orgUnits => getRestrictedOrgUnits(orgUnits, orgUnitType));
-    };
-
-    queryUserGroups = query => {
-        const listConfig = {
-            ...USER_GROUP_QUERY_CONFIG,
-            query,
-        };
-        return this.d2.models.userGroups.list(listConfig);
-    };
-
-    getCurrentUserGroupMemberships = () => {
-        return this.d2Api.get('/me', { fields: ['userGroups[:all]'] });
-    };
-
-    updateCurrentUserGroupMembership = (groupId, deleteMembership) => {
-        const method = deleteMembership ? 'delete' : 'post';
-        const url = `/users/${this.d2.currentUser.id}/userGroups/${groupId}`;
-        return this.d2Api[method](url);
-    };
-
-    updateDisabledState = (id, disabled) => {
-        const url = `/users/${id}`;
-        const data = { userCredentials: { disabled: disabled } };
-        return this.d2Api.patch(url, data);
-    };
-
-    getManagedUsers = () => {
-        const data = { fields: ['id', 'displayName'] };
-        return this.d2.models.user.list(data);
-    };
-
-    getAvailableUserGroups = () => {
-        const data = { fields: ['id', 'displayName'] };
-        return this.d2.models.userGroups.list(data);
     };
 
     getAvailableUserRoles = () => {
@@ -135,8 +119,9 @@ class Api {
         return this.d2Api.get(url, data).then(({ dimensions }) => dimensions);
     };
 
-    updateUserGroup = (id, data) => {
-        const url = `/userGroups/${id}`;
+    updateDisabledState = (id, disabled) => {
+        const url = `/users/${id}`;
+        const data = { userCredentials: { disabled: disabled } };
         return this.d2Api.patch(url, data);
     };
 
@@ -223,6 +208,30 @@ class Api {
         });
     };
 
+    //TODO: Needs a dedicated endpoint
+    resendUserInvite(id) {
+        return Promise.resolve(`User with id ${id} was re-invited`);
+    }
+
+    /**************************
+     ***** USER GROUPS ********
+     **************************/
+
+    getManagedUsers = () => {
+        const data = { fields: ['id', 'displayName'] };
+        return this.d2.models.user.list(data);
+    };
+
+    // Also used by GroupForm
+    getAvailableUserGroups = () => {
+        const data = { fields: ['id', 'displayName'] };
+        return this.d2.models.userGroups.list(data);
+    };
+
+    /**************************
+     ****** USER ROLES ********
+     **************************/
+
     // TODO: A proper API endpoint will be made available for this call once ALL struts apps
     // have been ported to React. Once this is done we need to update this method.
     getGroupedAuthorities = () => {
@@ -237,58 +246,76 @@ class Api {
         });
     };
 
-    resendUserInvite(userId) {
-        return this.getItem(USER, userId)
-            .then(user => {
-                const userCredentials = user.userCredentials;
-                user = { ...user.toJSON(), userCredentials };
-                return this.d2Api.update('/users/invite', user);
-                // user = user.toJSON();
-                // const isProtected = userRoles.some(({ authorities }) =>
-                //     authorities.some(auth => Boolean(INVITE_EXCLUDED.has(auth)))
-                // );
-
-                // if (isProtected) {
-                //     const msg = i18n.t('Cannot invite users with critical authorities');
-                //     return Promise.resolve(msg);
-                // } else {
-                //     return this.d2Api.post(
-                //         '/users/invite?strategy=UPDATE&mergeMode=MERGE&importMode=UPDATE',
-                //         {
-                //             id: userId,
-                //             email: 'hendrikdegraaf@gmail.com',
-                //             userCredentials: { id },
-                //         }
-                //     );
-                // }
-            })
-            .catch(error => error);
-    }
-
-    getD2 = () => {
-        return this.d2;
-    };
+    /**************************
+     ****** CURRENT USER ******
+     **************************/
 
     getCurrentUser = () => {
-        const { currentUser } = this.d2;
+        return this.d2.currentUser;
+    };
+
+    initCurrentUser = () => {
         return Promise.all([
-            currentUser.getUserGroups(),
-            currentUser.getUserRoles(),
-        ]).then(([userGroups, userRoles]) => {
-            return {
-                ...normalizeCurrentUser(currentUser),
-                userGroups: userGroups.toArray().map(ug => ug.toJSON()),
-                userRoles: userRoles.toArray().map(ur => ur.toJSON()),
-            };
+            this.d2.currentUser.getUserGroups(),
+            this.d2.currentUser.getUserRoles(),
+            this.getCurrentUserOrgUnits(),
+        ]).then(
+            ([
+                userGroups,
+                userRoles,
+                {
+                    organisationUnits,
+                    dataViewOrganisationUnits,
+                    teiSearchOrganisationUnits,
+                },
+            ]) => {
+                return Object.assign(this.d2.currentUser, {
+                    userGroups,
+                    userRoles,
+                    organisationUnits,
+                    dataViewOrganisationUnits,
+                    teiSearchOrganisationUnits,
+                });
+            }
+        );
+    };
+
+    refreshCurrentUser = () => {
+        const CurrentUserClass = Object.getPrototypeOf(this.d2.currentUser).constructor;
+        const meFields = [
+            ':all',
+            'organisationUnits[id]',
+            'userGroups[id]',
+            'userCredentials[:all,!user,userRoles[id]',
+        ];
+        const models = this.d2.models;
+        const userSettings = this.d2.currentUser.userSettings;
+
+        return Promise.all([
+            this.d2Api.get('me', { fields: meFields }),
+            this.d2Api.get('me/authorization'),
+        ]).then(([me, authorities]) => {
+            this.d2.currentUser = CurrentUserClass.create(
+                me,
+                authorities,
+                models,
+                userSettings
+            );
+            return this.initCurrentUser();
         });
     };
 
-    getContextPath = () => {
-        return this.d2.system.systemInfo.contextPath;
+    getCurrentUserOrgUnits = () => {
+        return this.d2.models.users.get(
+            this.d2.currentUser.id,
+            CURRENT_USER_ORG_UNITS_FIELDS
+        );
     };
 
-    getModelDefinition = name => {
-        return this.d2.models[name];
+    updateCurrentUserGroupMembership = (groupId, deleteMembership) => {
+        const method = deleteMembership ? 'delete' : 'post';
+        const url = `/users/${this.d2.currentUser.id}/userGroups/${groupId}`;
+        return this.d2Api[method](url);
     };
 }
 const api = new Api();

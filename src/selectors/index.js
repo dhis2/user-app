@@ -64,7 +64,7 @@ const listMappings = {
     },
     userRole: item => item,
     userGroup: (item, groupMemberships) => {
-        item.currentUserIsMember = groupMemberships.some(({ id }) => id === item.id);
+        item.currentUserIsMember = Boolean(groupMemberships.get(item.id));
         return item;
     },
 };

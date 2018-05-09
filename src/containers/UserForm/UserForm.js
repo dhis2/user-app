@@ -11,16 +11,12 @@ import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-a
 import i18n from '@dhis2/d2-i18n';
 import makeTrashable from 'trashable';
 import navigateTo from '../../utils/navigateTo';
+import createHumanErrorMessage from '../../utils/createHumanErrorMessage';
 import asArray from '../../utils/asArray';
 import getNestedProp from '../../utils/getNestedProp';
 import api from '../../api';
 import { userFormInitialValuesSelector } from '../../selectors';
-import {
-    clearItem,
-    getList,
-    showSnackbar,
-    appendCurrentUserOrgUnits,
-} from '../../actions';
+import { clearItem, getList, showSnackbar } from '../../actions';
 import { USER } from '../../constants/entityTypes';
 import * as CONFIG from './config';
 import validate from './validate';
@@ -51,15 +47,8 @@ class UserForm extends Component {
     }
 
     async componentWillMount() {
-        const {
-            user,
-            showSnackbar,
-            initialize,
-            fallbackOrgUnits,
-            appendCurrentUserOrgUnits,
-        } = this.props;
+        const { user, showSnackbar, initialize } = this.props;
         const username = user.id ? user.userCredentials.username : null;
-        const errorMsg = i18n.t('Could not load the user data. Please refresh the page.');
 
         this.trashableLocalePromise = makeTrashable(
             api.getSelectedAndAvailableLocales(username)
@@ -70,11 +59,12 @@ class UserForm extends Component {
             this.setState({ locales });
             initialize(userFormInitialValuesSelector(user, locales));
         } catch (error) {
-            showSnackbar({ message: errorMsg });
-        }
-
-        if (!fallbackOrgUnits) {
-            appendCurrentUserOrgUnits();
+            showSnackbar({
+                message: createHumanErrorMessage(
+                    error,
+                    i18n.t('Could not load the user data. Please refresh the page.')
+                ),
+            });
         }
     }
 
@@ -301,7 +291,6 @@ UserForm.propTypes = {
     pristine: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired,
     fallbackOrgUnits: PropTypes.object,
-    appendCurrentUserOrgUnits: PropTypes.func.isRequired,
     inviteUser: PropTypes.bool.isRequired,
     externalAuthOnly: PropTypes.bool.isRequired,
 };
@@ -328,5 +317,4 @@ export default connect(mapStateToProps, {
     clearItem,
     showSnackbar,
     getList,
-    appendCurrentUserOrgUnits,
 })(ReduxFormWrappedUserForm);

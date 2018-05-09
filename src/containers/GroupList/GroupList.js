@@ -8,35 +8,14 @@ import {
     groupContextMenuIcons,
     groupContextMenuActions,
 } from './GroupContextMenuActions';
-import { getCurrentUserGroupMemberships } from '../../actions';
-import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import { USER_GROUP } from '../../constants/entityTypes';
 import SearchFilter from '../../components/SearchFilter';
-import ErrorMessage from '../../components/ErrorMessage';
 
 /**
  * Container component that renders a List component with correct properties for displaying a list of UserGroups
- * Before rendering the List it will first get the current user's group memberships to populate the "currentUserIsMember" column
  */
 class GroupList extends Component {
-    componentWillMount() {
-        const { groupMemberships, getCurrentUserGroupMemberships } = this.props;
-        if (!groupMemberships) {
-            getCurrentUserGroupMemberships();
-        }
-    }
-
     render() {
-        const { groupMemberships } = this.props;
-        if (typeof groupMemberships === 'string') {
-            const introText = i18n.t('There was an error fetching the user group list:');
-            return <ErrorMessage introText={introText} errorMessage={groupMemberships} />;
-        }
-
-        if (groupMemberships === null) {
-            return <LoadingMask />;
-        }
-
         return (
             <List
                 entityType={USER_GROUP}
@@ -58,8 +37,7 @@ GroupList.propTypes = {
     match: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
-    getCurrentUserGroupMemberships: PropTypes.func.isRequired,
-    groupMemberships: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
+    groupMemberships: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => {
@@ -68,6 +46,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps, {
-    getCurrentUserGroupMemberships,
-})(GroupList);
+export default connect(mapStateToProps)(GroupList);
