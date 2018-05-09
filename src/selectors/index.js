@@ -10,6 +10,7 @@ import {
     INTERFACE_LANGUAGE,
     DATABASE_LANGUAGE,
     INVITE,
+    INVITE_USER,
     DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
     DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
     SET_PASSWORD,
@@ -176,4 +177,20 @@ export const orgUnitRootsSelector = (orgUnitType, currentUser) => {
     } else {
         return orgUnitRootsForType;
     }
+};
+
+/**
+ * The redux form `formValueSelector` was returning incorrect values,
+ * so this selector was born.
+ * @param {Object} formState - state.form.userForm
+ * @returns {Boolean} - True if select box was switched to 'Invite user'
+ * @function
+ */
+export const inviteUserValueSelector = formState => {
+    const fields = formState && formState.registeredFields;
+    const values = formState && formState.values;
+    const isRenderedField = Boolean(fields && fields[INVITE]);
+    const fieldValue = isRenderedField && values && values[INVITE];
+
+    return fieldValue === INVITE_USER;
 };

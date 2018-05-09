@@ -93,8 +93,10 @@ class GroupForm extends Component {
     }
 
     render() {
-        const { handleSubmit, asyncValidating, pristine, valid } = this.props;
-        const disableSubmit = Boolean(asyncValidating || pristine || !valid);
+        const { handleSubmit, submitting, asyncValidating, pristine, valid } = this.props;
+        const disableSubmit = Boolean(
+            submitting || asyncValidating || pristine || !valid
+        );
         return (
             <main>
                 <Heading level={2}>{i18n.t('Details')}</Heading>
@@ -128,6 +130,7 @@ GroupForm.propTypes = {
     group: PropTypes.object.isRequired,
     asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]).isRequired,
     pristine: PropTypes.bool.isRequired,
+    submitting: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired,
 };
 

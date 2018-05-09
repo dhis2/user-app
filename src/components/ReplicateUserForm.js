@@ -75,13 +75,15 @@ class ReplicateUserForm extends Component {
     };
 
     shouldDisableSubmit() {
-        const { formState, asyncValidating, pristine, valid } = this.props;
+        const { formState, submitting, asyncValidating, pristine, valid } = this.props;
         const hasBothFields =
             formState &&
             formState.values &&
             formState.values[USERNAME] &&
             formState.values[PASSWORD];
-        return !!(asyncValidating || pristine || !valid || !hasBothFields);
+        return Boolean(
+            submitting || asyncValidating || pristine || !valid || !hasBothFields
+        );
     }
 
     getLoadingProps() {
@@ -141,6 +143,7 @@ ReplicateUserForm.propTypes = {
     formState: PropTypes.object,
     asyncValidating: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     pristine: PropTypes.bool.isRequired,
+    submitting: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired,
     handleSubmit: PropTypes.func.isRequired,
 };

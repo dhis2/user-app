@@ -20,6 +20,7 @@ import { clearItem, getList, showSnackbar } from '../../actions';
 import { USER } from '../../constants/entityTypes';
 import * as CONFIG from './config';
 import validate from './validate';
+import { inviteUserValueSelector } from '../../selectors';
 import asyncValidateUsername from './asyncValidateUsername';
 import {
     renderTextField,
@@ -240,10 +241,19 @@ class UserForm extends Component {
     }
 
     render() {
-        const { handleSubmit, asyncValidating, pristine, valid, inviteUser } = this.props;
+        const {
+            handleSubmit,
+            submitting,
+            asyncValidating,
+            pristine,
+            valid,
+            inviteUser,
+        } = this.props;
         const { showMore, locales } = this.state;
-        const disableSubmit = Boolean(asyncValidating || pristine || !valid);
-        const submitText = inviteUser ? i18n.t('Send invite') : i18n.t('Save');
+        const disableSubmit = Boolean(
+            submitting || asyncValidating || pristine || !valid
+        );
+        const submitText = inviteUser === true ? i18n.t('Send invite') : i18n.t('Save');
 
         if (!locales) {
             return (
@@ -289,6 +299,7 @@ UserForm.propTypes = {
     initialize: PropTypes.func.isRequired,
     asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]).isRequired,
     pristine: PropTypes.bool.isRequired,
+    submitting: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired,
     fallbackOrgUnits: PropTypes.object,
     inviteUser: PropTypes.bool.isRequired,
@@ -301,7 +312,7 @@ const mapStateToProps = state => {
         user: state.currentItem,
         fallbackOrgUnits:
             state.currentUser[CONFIG.DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS],
-        inviteUser: selector(state, CONFIG.INVITE) === CONFIG.INVITE_USER,
+        inviteUser: inviteUserValueSelector(state.form[FORM_NAME]),
         externalAuthOnly: Boolean(selector(state, CONFIG.EXTERNAL_AUTH)),
     };
 };

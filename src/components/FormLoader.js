@@ -90,7 +90,7 @@ class FormLoader extends Component {
                 <IconLink
                     to={link}
                     tooltip={linkTooltip}
-                    disabled={true}
+                    disabled={Boolean(link)}
                     icon="arrow_back"
                 />
                 {msg}

@@ -171,7 +171,6 @@ class Api {
         const inviteUser = (values[INVITE] = INVITE_USER);
         const userData = parseUserSaveData(values, user, inviteUser);
         const postUrl = inviteUser ? '/users/invite' : '/users';
-        console.log('save me to: ', postUrl, '\n\n', JSON.stringify(userData, null, 4));
         const saveUserPromise = user.id
             ? this.d2Api.update(`/users/${user.id}`, userData)
             : this.d2Api.post(postUrl, userData);
