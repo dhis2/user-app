@@ -20,7 +20,7 @@
 .authority-editor__auth-group {
     flex: 1 0 300px;
     min-width: 350px;
-    max-width: 50%;
+    max-width: 500px;
     margin-top: 1.5rem;
     margin-left: 1.5rem;
 }
