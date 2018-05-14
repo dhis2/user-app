@@ -13,6 +13,7 @@ import createHumanErrorMessage from '../../utils/createHumanErrorMessage';
 import { clearItem, showSnackbar, getList } from '../../actions';
 import { NAME, CODE, USERS, MANAGED_GROUPS, FIELDS } from './config';
 import { USER_GROUP } from '../../constants/entityTypes';
+import detectCurrentUserChanges from '../../utils/detectCurrentUserChanges';
 import validate from './validate';
 import api from '../../api';
 
@@ -51,6 +52,7 @@ class GroupForm extends Component {
             clearItem();
             getList(USER_GROUP);
             this.backToList();
+            detectCurrentUserChanges(group);
         } catch (error) {
             showSnackbar({
                 message: createHumanErrorMessage(

@@ -36,7 +36,7 @@ class RoleForm extends Component {
             clearItem();
             getList(USER_ROLE);
             this.backToList();
-            detectCurrentUserChanges(USER_ROLE, role);
+            detectCurrentUserChanges(role);
         } catch (error) {
             showSnackbar({
                 message: createHumanErrorMessage(

@@ -28,6 +28,7 @@ class SideNav extends Component {
         } = this.props;
         const sectionForPath = sections.find(section => section.path === pathname);
         const onLandingPage = pathname === '/';
+        const sectionKey = sectionForPath ? sectionForPath.key : null;
 
         if (!sectionForPath && !onLandingPage) {
             return null;
@@ -38,7 +39,7 @@ class SideNav extends Component {
                 <Sidebar
                     sections={sections}
                     onChangeSection={this.changeSectionHandler}
-                    currentSection={sectionForPath.key}
+                    currentSection={sectionKey}
                 />
             </div>
         );

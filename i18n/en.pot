@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-05-09T13:03:45.699Z\n"
-"PO-Revision-Date: 2018-05-09T13:03:45.699Z\n"
+"POT-Creation-Date: 2018-05-14T10:14:49.591Z\n"
+"PO-Revision-Date: 2018-05-14T10:14:49.591Z\n"
 
 msgid "Use database locale / no translation"
 msgstr ""
@@ -309,6 +309,9 @@ msgid "Clear all"
 msgstr ""
 
 msgid "There was an error loading the current user"
+msgstr ""
+
+msgid "You do not have authorities to see users, user roles or user groups"
 msgstr ""
 
 msgid "User group saved successfully"

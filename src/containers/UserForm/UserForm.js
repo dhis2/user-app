@@ -12,6 +12,7 @@ import i18n from '@dhis2/d2-i18n';
 import makeTrashable from 'trashable';
 import navigateTo from '../../utils/navigateTo';
 import createHumanErrorMessage from '../../utils/createHumanErrorMessage';
+import detectCurrentUserChanges from '../../utils/detectCurrentUserChanges';
 import asArray from '../../utils/asArray';
 import getNestedProp from '../../utils/getNestedProp';
 import api from '../../api';
@@ -84,17 +85,24 @@ class UserForm extends Component {
     };
 
     handleSubmit = async (values, _, props) => {
-        const { user, showSnackbar, clearItem, getList } = props;
-        const selectedUiLocale = this.state.locales.ui.selected;
-        const selectedDbLocale = this.state.locales.db.selected;
+        const { user, inviteUser, showSnackbar, clearItem, getList } = props;
+        const initialUiLocale = this.state.locales.ui.selected;
+        const initialDbLocale = this.state.locales.db.selected;
 
         try {
-            await api.saveOrInviteUser(values, user, selectedUiLocale, selectedDbLocale);
+            await api.saveOrInviteUser(
+                values,
+                user,
+                inviteUser,
+                initialUiLocale,
+                initialDbLocale
+            );
             const msg = i18n.t('User saved successfully');
             showSnackbar({ message: msg });
             clearItem();
             getList(USER);
             this.backToList();
+            detectCurrentUserChanges(user);
         } catch (error) {
             const msg = i18n.t('There was a problem saving the user.');
             showSnackbar({ message: msg });
@@ -145,8 +153,6 @@ class UserForm extends Component {
                 CONFIG.OPEN_ID,
                 CONFIG.LDAP_ID,
                 CONFIG.TWO_FA,
-                CONFIG.FIRST_NAME,
-                CONFIG.SURNAME,
             ].includes(fieldName)
         ) {
             return true;

@@ -20,8 +20,6 @@ import {
     INTERFACE_LANGUAGE,
     DATABASE_LANGUAGE,
     USE_DB_LOCALE,
-    INVITE,
-    INVITE_USER,
 } from '../containers/UserForm/config';
 
 /**
@@ -162,13 +160,12 @@ class Api {
      * Will first execute a create/update user request, and if any locale values have been set will add subsequent request to update these too.
      * @param {Object} values - Form data produced by redux-form
      * @param {Object} user - A d2 user model instance
-     * @param {String} currentUiLocale - Locale string for the UI, i.e. 'en'
-     * @param {String} currentDbLocale - Locale string for the DB, i.e. 'fr'
+     * @param {String} initialUiLocale - Locale string for the UI, i.e. 'en'
+     * @param {String} initialDbLocale - Locale string for the DB, i.e. 'fr'
      * @returns {Promise} Promise object for the combined ajax calls to save a user
      * @method
      */
-    saveOrInviteUser = (values, user, currentUiLocale, currentDbLocale) => {
-        const inviteUser = (values[INVITE] = INVITE_USER);
+    saveOrInviteUser = (values, user, inviteUser, initialUiLocale, initialDbLocale) => {
         const userData = parseUserSaveData(values, user, inviteUser);
         const postUrl = inviteUser ? '/users/invite' : '/users';
         const saveUserPromise = user.id
@@ -181,7 +178,7 @@ class Api {
 
             // Add follow-up request for setting uiLocale if needed
             const uiLocale = values[INTERFACE_LANGUAGE];
-            if (uiLocale !== currentUiLocale) {
+            if (uiLocale !== initialUiLocale) {
                 localePromises.push(
                     this.d2Api.post(parseLocaleUrl('Ui', username, uiLocale))
                 );
@@ -189,7 +186,7 @@ class Api {
 
             // Add follow-up request for setting dbLocale if needed
             const dbLocale = values[DATABASE_LANGUAGE];
-            if (dbLocale !== currentDbLocale) {
+            if (dbLocale !== initialDbLocale) {
                 const dbLocalePromise =
                     dbLocale === USE_DB_LOCALE
                         ? this.d2Api.delete(`/userSettings/keyDbLocale?user=${username}`)
@@ -206,11 +203,6 @@ class Api {
             return Promise.all(localePromises);
         });
     };
-
-    //TODO: Needs a dedicated endpoint
-    resendUserInvite(id) {
-        return Promise.resolve(`User with id ${id} was re-invited`);
-    }
 
     /**************************
      ***** USER GROUPS ********

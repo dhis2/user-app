@@ -20,6 +20,7 @@ import {
     DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
     PASSWORD,
     REPEAT_PASSWORD,
+    EXTERNAL_AUTH,
 } from '../containers/UserForm/config';
 
 /**
@@ -120,7 +121,7 @@ export const parseUserSaveData = (values, user, inviteUser) => {
     // This property was appended to the model by hand but needs to be removed before saving the user
     delete cred[DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS];
 
-    if (inviteUser) {
+    if (inviteUser || values[EXTERNAL_AUTH]) {
         delete cred[PASSWORD];
         delete cred[REPEAT_PASSWORD];
     }

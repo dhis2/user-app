@@ -72,6 +72,13 @@ class SectionLoader extends Component {
 
         const { routes, sections } = this.getRouteConfig();
 
+        if (sections && sections.length === 0) {
+            const introText = i18n.t(
+                'You do not have authorities to see users, user roles or user groups'
+            );
+            return <ErrorMessage introText={introText} errorMessage="" />;
+        }
+
         return [
             <SideNav key="sidenav" sections={sections} />,
             <Switch key="routeswitch">{this.renderRoutes(routes)}</Switch>,
