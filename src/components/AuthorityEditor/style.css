@@ -102,8 +102,14 @@
     padding: 4px 0 4px 0.8rem;
     box-sizing: border-box;
 }
+
+.authority-editor__auth-group-table.columns-1 tbody td:first-child {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 .authority-editor__auth-group-table tbody td {
-    padding: 4px 0;
+    padding: 0 0;
     border-bottom: 1px solid #e0e0e0;
     line-height: 16px !important;
 }
@@ -154,6 +160,13 @@
 
 /* Centered Checkboxes */
 .authority-editor__auth-checkbox,
+.authority-editor__auth-checkbox--without-label {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    display: block !important;
+}
+
+.authority-editor__auth-checkbox,
 .authority-editor__auth-checkbox--without-label,
 .authority-editor__auth-checkbox label {
     line-height: 16px !important;
@@ -179,8 +192,7 @@
 }
 
 .authority-editor__empty-cell {
-    display: inline-block;
-    line-height: 16px;
+    height: 24px;
 }
 
 /* Filter bar */
