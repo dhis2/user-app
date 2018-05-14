@@ -24,7 +24,6 @@ import { USER, USER_ROLE, USER_GROUP } from '../constants/entityTypes';
 const detectCurrentUserChanges = (model, disable) => {
     const { currentUser } = store.getState();
     const entityType = model.modelDefinition.name;
-    console.log('detecting...', model, entityType);
 
     if (entityType === USER && model.id === currentUser.id) {
         disable ? logout() : refreshCurrentUser();

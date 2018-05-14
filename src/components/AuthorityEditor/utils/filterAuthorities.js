@@ -56,7 +56,6 @@ const filterAuthorities = (
                 selectedOnly,
                 selectedItemsLookup
             );
-            // console.log(item.name, allowedBySearchStr, allowedBySelectedSetting);
             return allowedBySearchStr && allowedBySelectedSetting;
         });
         filtered[key] = { ...section, items: filteredItems };
