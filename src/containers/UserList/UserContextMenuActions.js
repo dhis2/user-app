@@ -14,6 +14,8 @@ import { deleteModel } from '../../utils/sharedActions';
 import { USER } from '../../constants/entityTypes';
 import { showDialog, hideDialog, showSnackbar, getList } from '../../actions';
 import ReplicateUserForm from '../../components/ReplicateUserForm';
+import createHumanErrorMessage from '../../utils/createHumanErrorMessage';
+import detectCurrentUserChanges from '../../utils/detectCurrentUserChanges';
 
 const profile = 'profile';
 const edit = 'edit';
@@ -30,6 +32,8 @@ const enable = 'enable';
  * @function
  */
 export const isUserContextActionAllowed = (model, action) => {
+    const { currentUser } = store.getState();
+
     if (!model) {
         return false;
     }
@@ -45,7 +49,7 @@ export const isUserContextActionAllowed = (model, action) => {
         case edit:
             return access.update;
         case remove:
-            return access.delete;
+            return currentUser.id !== model.id && access.delete;
         case replicate: {
             const currentUser = api.getCurrentUser();
             const userModelDefinition = api.getModelDefinition(USER);
@@ -114,17 +118,27 @@ userContextMenuActions.enable.subscribe(({ data }) => {
     updateDisabledState(data, false);
 });
 
-const updateDisabledState = async ({ displayName, id }, disabledState) => {
-    const enabledSuccessBaseMsg = i18n.t('successfully enabled');
-    const disabledSuccessBaseMsg = i18n.t('sucessfully disabled');
-    const errorMsg = i18n.t('There was a problem updating the enabled state');
-
+const updateDisabledState = async (model, shouldDisable) => {
+    const { displayName, id } = model;
     try {
-        await api.updateDisabledState(id, disabledState);
-        const baseMsg = disabledState ? disabledSuccessBaseMsg : enabledSuccessBaseMsg;
+        await api.updateDisabledState(id, shouldDisable);
+        const baseMsg = shouldDisable
+            ? i18n.t('sucessfully disabled')
+            : i18n.t('successfully enabled');
         store.dispatch(showSnackbar({ message: `${displayName} ${baseMsg}` }));
         store.dispatch(getList(USER));
+
+        if (shouldDisable) {
+            detectCurrentUserChanges(model, true);
+        }
     } catch (error) {
-        store.dispatch(showSnackbar({ message: errorMsg }));
+        store.dispatch(
+            showSnackbar({
+                message: createHumanErrorMessage(
+                    error,
+                    i18n.t('There was a problem updating the enabled state')
+                ),
+            })
+        );
     }
 };

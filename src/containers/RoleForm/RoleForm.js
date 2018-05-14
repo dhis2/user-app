@@ -10,6 +10,8 @@ import asyncValidateUniqueness from '../../utils/asyncValidateUniqueness';
 import { clearItem, showSnackbar, getList } from '../../actions';
 import { NAME, DESCRIPTION, AUTHORITIES, FIELDS } from './config';
 import { USER_ROLE } from '../../constants/entityTypes';
+import detectCurrentUserChanges from '../../utils/detectCurrentUserChanges';
+import createHumanErrorMessage from '../../utils/createHumanErrorMessage';
 import validate from './validate';
 
 /**
@@ -34,9 +36,14 @@ class RoleForm extends Component {
             clearItem();
             getList(USER_ROLE);
             this.backToList();
+            detectCurrentUserChanges(role);
         } catch (error) {
-            const msg = i18n.t('There was a problem saving the user role.');
-            showSnackbar({ message: msg });
+            showSnackbar({
+                message: createHumanErrorMessage(
+                    error,
+                    i18n.t('There was a problem saving the user role.')
+                ),
+            });
         }
     };
 
@@ -61,8 +68,10 @@ class RoleForm extends Component {
     }
 
     render = () => {
-        const { handleSubmit, asyncValidating, pristine, valid } = this.props;
-        const disableSubmit = Boolean(asyncValidating || pristine || !valid);
+        const { handleSubmit, submitting, asyncValidating, pristine, valid } = this.props;
+        const disableSubmit = Boolean(
+            submitting || asyncValidating || pristine || !valid
+        );
         return (
             <main>
                 <Heading level={2}>{i18n.t('Details')}</Heading>
@@ -96,6 +105,7 @@ RoleForm.propTypes = {
     role: PropTypes.object.isRequired,
     asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]).isRequired,
     pristine: PropTypes.bool.isRequired,
+    submitting: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired,
 };
 

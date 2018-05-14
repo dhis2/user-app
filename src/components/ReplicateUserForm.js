@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import { USER } from '../constants/entityTypes';
 import asyncValidateUsername from '../containers/UserForm/asyncValidateUsername';
 import checkPasswordForErrors from '../utils/checkPasswordForErrors';
+import createHumanErrorMessage from '../utils/createHumanErrorMessage';
 import { getList, hideDialog, showSnackbar, hideSnackbar } from '../actions';
 
 const FORM_NAME = 'replicateUserForm';
@@ -52,7 +53,7 @@ class ReplicateUserForm extends Component {
             await api.replicateUser(userIdToReplicate, username, password);
             this.replicateSuccesHandler();
         } catch (error) {
-            this.replicateErrorHandler();
+            this.replicateErrorHandler(error);
         }
         hideDialog();
     };
@@ -63,21 +64,26 @@ class ReplicateUserForm extends Component {
         getList(USER, true);
     };
 
-    replicateErrorHandler = () => {
+    replicateErrorHandler = error => {
         const { showSnackbar } = this.props;
         showSnackbar({
-            message: i18n.t('There was a problem replicating the user'),
+            message: createHumanErrorMessage(
+                error,
+                i18n.t('There was a problem replicating the user')
+            ),
         });
     };
 
     shouldDisableSubmit() {
-        const { formState, asyncValidating, pristine, valid } = this.props;
+        const { formState, submitting, asyncValidating, pristine, valid } = this.props;
         const hasBothFields =
             formState &&
             formState.values &&
             formState.values[USERNAME] &&
             formState.values[PASSWORD];
-        return !!(asyncValidating || pristine || !valid || !hasBothFields);
+        return Boolean(
+            submitting || asyncValidating || pristine || !valid || !hasBothFields
+        );
     }
 
     getLoadingProps() {
@@ -137,6 +143,7 @@ ReplicateUserForm.propTypes = {
     formState: PropTypes.object,
     asyncValidating: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     pristine: PropTypes.bool.isRequired,
+    submitting: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired,
     handleSubmit: PropTypes.func.isRequired,
 };

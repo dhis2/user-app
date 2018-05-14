@@ -9,8 +9,11 @@ import {
     USER_CRED_PROPS,
     INTERFACE_LANGUAGE,
     DATABASE_LANGUAGE,
+    INVITE,
+    INVITE_USER,
     DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
     DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
+    SET_PASSWORD,
 } from '../containers/UserForm/config';
 import asArray from '../utils/asArray';
 import getNestedProp from '../utils/getNestedProp';
@@ -62,7 +65,7 @@ const listMappings = {
     },
     userRole: item => item,
     userGroup: (item, groupMemberships) => {
-        item.currentUserIsMember = groupMemberships.some(({ id }) => id === item.id);
+        item.currentUserIsMember = Boolean(groupMemberships.get(item.id));
         return item;
     },
 };
@@ -102,7 +105,9 @@ const addInitialValueFrom = (sourceObject, initialValues, propName) => {
  * @function
  */
 export const userFormInitialValuesSelector = _.memoize((user, locales) => {
-    let initialValues = {};
+    let initialValues = {
+        [INVITE]: SET_PASSWORD,
+    };
 
     if (user.id) {
         USER_PROPS.forEach(propName => {
@@ -172,4 +177,20 @@ export const orgUnitRootsSelector = (orgUnitType, currentUser) => {
     } else {
         return orgUnitRootsForType;
     }
+};
+
+/**
+ * The redux form `formValueSelector` was returning incorrect values,
+ * so this selector was born.
+ * @param {Object} formState - state.form.userForm
+ * @returns {Boolean} - True if select box was switched to 'Invite user'
+ * @function
+ */
+export const inviteUserValueSelector = formState => {
+    const fields = formState && formState.registeredFields;
+    const values = formState && formState.values;
+    const isRenderedField = Boolean(fields && fields[INVITE]);
+    const fieldValue = isRenderedField && values && values[INVITE];
+
+    return fieldValue === INVITE_USER;
 };

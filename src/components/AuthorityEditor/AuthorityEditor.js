@@ -4,7 +4,7 @@ import i18n from '@dhis2/d2-i18n';
 import './style.css';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import makeTrashable from 'trashable';
-
+import createHumanErrorMessage from '../../utils/createHumanErrorMessage';
 import api from '../../api';
 import AuthorityFilter from './AuthorityFilter';
 import FilteredAuthoritySections from './FilteredAuthoritySections';
@@ -40,14 +40,29 @@ class AuthorityEditor extends Component {
         this.groupedAuthoritiesPromise = makeTrashable(api.getGroupedAuthorities());
         try {
             const allGroupedAuthorities = await this.groupedAuthoritiesPromise;
-            this.setState({ allGroupedAuthorities: allGroupedAuthorities });
+            this.setState({ allGroupedAuthorities });
         } catch (error) {
-            console.error(error);
+            this.handleAuthorityFetchError(error);
         }
     }
 
     componentWillUnmount() {
         this.groupedAuthoritiesPromise.trash();
+    }
+
+    handleAuthorityFetchError(error) {
+        const errorMsg = createHumanErrorMessage(
+            error,
+            i18n.t('There was a problem retreiving the available authorities.')
+        );
+        const allGroupedAuthorities = Object.keys(EMPTY_GROUPED_AUTHORITIES).reduce(
+            (total, key) => {
+                total[key] = { ...EMPTY_GROUPED_AUTHORITIES[key], items: errorMsg };
+                return total;
+            },
+            {}
+        );
+        this.setState({ allGroupedAuthorities });
     }
 
     getChangedProperties(newObject, oldObject) {

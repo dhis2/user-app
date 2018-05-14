@@ -6,7 +6,6 @@
 import * as ACTIONS from '../constants/actionTypes';
 import { PAGE as DEFAULT_PAGE } from '../constants/defaults';
 import api from '../api';
-import i18n from '@dhis2/d2-i18n';
 
 /**
  * Convenience function for creating a redux action
@@ -62,48 +61,55 @@ export const decrementPage = pager => (dispatch, getState) => {
 };
 
 /**
+ * Helper function for general fetch scenarios. Used by `getItem`, `initCurrentUser` and `refreshCurrentUser`.
+ * @param {Object} actions - The action types to dispatch
+ * @param {String} actions.requested - The name of the action to dispatch when initializing the request
+ * @param {String} actions.received - The name of the action to dispatch on successfull response
+ * @param {String} actions.errored - The name of the action to dispatch when request failed
+ * @param {Object} promise - The promise to await
+ * @param {Function} dispatch - Redux helper function that can dispatch an action
+ * @function
+ */
+const createAsyncActionSequence = async (actionTypes, promise, dispatch) => {
+    dispatch(createAction(actionTypes.requested));
+
+    try {
+        const payload = await promise;
+        dispatch(createAction(actionTypes.received, payload));
+    } catch (error) {
+        dispatch(createAction(actionTypes.errored, error));
+    }
+};
+/**
  * Gets an item of a specified type and dispatches actions on request, response and error
  * @param {String} entityName - The type of item to fetch, i.e. user / userRole / userGroup
  * @param {String} id - The item ID
  * @function
  */
-export const getItem = (entityName, id) => async dispatch => {
-    dispatch(createAction(ACTIONS.ITEM_REQUESTED));
-
-    try {
-        const item = await api.getItem(entityName, id);
-        dispatch(createAction(ACTIONS.ITEM_RECEIVED, item));
-    } catch (error) {
-        dispatch(createAction(ACTIONS.ITEM_ERRORED, error));
-    }
+export const getItem = (entityName, id) => dispatch => {
+    createAsyncActionSequence(
+        {
+            requested: ACTIONS.ITEM_REQUESTED,
+            received: ACTIONS.ITEM_RECEIVED,
+            errored: ACTIONS.ITEM_ERRORED,
+        },
+        api.getItem(entityName, id),
+        dispatch
+    );
 };
 
-export const appendCurrentUserOrgUnits = () => async dispatch => {
-    const RECEIVED = ACTIONS.CURRENT_USER_ORG_UNITS_RECEIVED;
-
-    try {
-        const orgUnits = await api.getCurrentUserOrgUnits();
-        dispatch(createAction(RECEIVED, orgUnits));
-    } catch (error) {
-        const errorMsg = i18n.t(
-            'Something went wrong whilst fetching the organisation units. Please refresh the page.'
-        );
-        dispatch(showSnackbar({ message: errorMsg }));
-    }
+const currentUserActions = {
+    requested: ACTIONS.CURRENT_USER_REQUESTED,
+    received: ACTIONS.CURRENT_USER_RECEIVED,
+    errored: ACTIONS.CURRENT_USER_ERRORED,
 };
 
-export const getCurrentUserGroupMemberships = () => async dispatch => {
-    const RECEIVED = ACTIONS.CURRENT_USER_GROUP_MEMBERSHIP_RECEIVED;
-    const ERRORED = ACTIONS.CURRENT_USER_GROUP_MEMBERSHIP_ERRORED;
+export const initCurrentUser = () => dispatch => {
+    createAsyncActionSequence(currentUserActions, api.initCurrentUser(), dispatch);
+};
 
-    dispatch(createAction(ACTIONS.CURRENT_USER_GROUP_MEMBERSHIP_REQUESTED));
-
-    try {
-        const response = await api.getCurrentUserGroupMemberships();
-        dispatch(createAction(RECEIVED, response.userGroups));
-    } catch (error) {
-        dispatch(createAction(ERRORED, error.message));
-    }
+export const refreshCurrentUser = () => dispatch => {
+    createAsyncActionSequence(currentUserActions, api.refreshCurrentUser(), dispatch);
 };
 
 /*****************
@@ -155,8 +161,4 @@ export const showSharingDialog = (id, type) => {
 
 export const hideSharingDialog = () => {
     return createAction(ACTIONS.HIDE_SHARING_DIALOG);
-};
-
-export const initCurrentUser = () => {
-    return createAction(ACTIONS.INIT_CURRENT_USER, api.getCurrentUser());
 };

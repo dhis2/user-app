@@ -9,9 +9,11 @@ import navigateTo from '../../utils/navigateTo';
 import asyncValidateUniqueness from '../../utils/asyncValidateUniqueness';
 import asArray from '../../utils/asArray';
 import { renderSearchableGroupEditor } from '../../utils/fieldRenderers';
+import createHumanErrorMessage from '../../utils/createHumanErrorMessage';
 import { clearItem, showSnackbar, getList } from '../../actions';
 import { NAME, CODE, USERS, MANAGED_GROUPS, FIELDS } from './config';
 import { USER_GROUP } from '../../constants/entityTypes';
+import detectCurrentUserChanges from '../../utils/detectCurrentUserChanges';
 import validate from './validate';
 import api from '../../api';
 
@@ -50,9 +52,14 @@ class GroupForm extends Component {
             clearItem();
             getList(USER_GROUP);
             this.backToList();
+            detectCurrentUserChanges(group);
         } catch (error) {
-            const msg = i18n.t('There was a problem saving the user group.');
-            showSnackbar({ message: msg });
+            showSnackbar({
+                message: createHumanErrorMessage(
+                    error,
+                    i18n.t('There was a problem saving the user group.')
+                ),
+            });
         }
     };
 
@@ -88,8 +95,10 @@ class GroupForm extends Component {
     }
 
     render() {
-        const { handleSubmit, asyncValidating, pristine, valid } = this.props;
-        const disableSubmit = Boolean(asyncValidating || pristine || !valid);
+        const { handleSubmit, submitting, asyncValidating, pristine, valid } = this.props;
+        const disableSubmit = Boolean(
+            submitting || asyncValidating || pristine || !valid
+        );
         return (
             <main>
                 <Heading level={2}>{i18n.t('Details')}</Heading>
@@ -123,6 +132,7 @@ GroupForm.propTypes = {
     group: PropTypes.object.isRequired,
     asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]).isRequired,
     pristine: PropTypes.bool.isRequired,
+    submitting: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired,
 };
 

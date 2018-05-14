@@ -6,6 +6,8 @@ import { red500 } from 'material-ui/styles/colors';
 import TextField from 'material-ui/TextField/TextField';
 import Heading from 'd2-ui/lib/headings/Heading.component';
 import asArray from '../utils/asArray';
+import ErrorMessage from './ErrorMessage';
+import createHumanErrorMessage from '../utils/createHumanErrorMessage';
 import i18n from '@dhis2/d2-i18n';
 
 const styles = {
@@ -45,6 +47,7 @@ class SearchableGroupEditor extends Component {
             itemStore: Store.create(),
             assignedItemStore: Store.create(),
             filterText: '',
+            fetchErrorMsg: null,
         };
     }
 
@@ -53,7 +56,11 @@ class SearchableGroupEditor extends Component {
             const availableItems = await this.props.availableItemsQuery();
             this.availableItemsReceivedHandler(availableItems);
         } catch (error) {
-            console.error(error);
+            const fetchErrorMsg = createHumanErrorMessage(
+                error,
+                i18n.t('Could not load available items')
+            );
+            this.setState({ fetchErrorMsg });
         }
     }
 
@@ -149,20 +156,32 @@ class SearchableGroupEditor extends Component {
             />
         );
     }
+    renderGroupEditor() {
+        const { itemStore, assignedItemStore, filterText, fetchErrorMsg } = this.state;
+
+        if (fetchErrorMsg) {
+            const introText = i18n.t('There was a problem displaying the GroupEditor');
+            return <ErrorMessage introText={introText} errorMessage={fetchErrorMsg} />;
+        }
+
+        return (
+            <GroupEditor
+                itemStore={itemStore}
+                assignedItemStore={assignedItemStore}
+                onAssignItems={this.onAssignItems}
+                onRemoveItems={this.onRemoveItems}
+                height={250}
+                filterText={filterText}
+            />
+        );
+    }
 
     render() {
         return (
             <div style={styles.outerWrap}>
                 {this.renderHeader()}
                 {this.renderSearchInput()}
-                <GroupEditor
-                    itemStore={this.state.itemStore}
-                    assignedItemStore={this.state.assignedItemStore}
-                    onAssignItems={this.onAssignItems}
-                    onRemoveItems={this.onRemoveItems}
-                    height={250}
-                    filterText={this.state.filterText}
-                />
+                {this.renderGroupEditor()}
             </div>
         );
     }

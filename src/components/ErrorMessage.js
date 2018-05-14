@@ -6,6 +6,8 @@ const style = {
     color: '#c33017',
     backgroundColor: '#ffe3de',
     padding: '1.5rem 1.5rem 1rem',
+    fontSize: '1rem',
+    width: '100%',
 };
 
 /**

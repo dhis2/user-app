@@ -84,12 +84,18 @@ class AuthoritySection extends Component {
         );
     }
 
-    renderNoResultsRow() {
+    renderInfoRow(errorMsg) {
+        let className = 'authority-editor__placeholder-cell';
+        let msg = i18n.t('No matches found');
+
+        if (errorMsg) {
+            className += '--error';
+            msg = errorMsg;
+        }
+
         return (
             <tr>
-                <td className="authority-editor__placeholder-cell">
-                    {i18n.t('No matches found')}
-                </td>
+                <td className={className}>{msg}</td>
             </tr>
         );
     }
@@ -100,8 +106,12 @@ class AuthoritySection extends Component {
             return this.renderLoaderRow();
         }
 
+        if (typeof authSection.items === 'string') {
+            return this.renderInfoRow(authSection.items);
+        }
+
         if (authSection.items.length === 0) {
-            return this.renderNoResultsRow();
+            return this.renderInfoRow();
         }
 
         return this.state.renderedItems.map(this.renderAuthRow);
@@ -122,7 +132,7 @@ class AuthoritySection extends Component {
     render() {
         const { sectionKey, authSection } = this.props;
         let wrapperClassName = `authority-editor__auth-group ${sectionKey}`;
-        if (sectionKey === 'metadata' || sectionKey === 'apps') {
+        if (['metadata', 'apps', 'system'].includes(sectionKey)) {
             wrapperClassName += ' scrollable';
         }
 

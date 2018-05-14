@@ -18,6 +18,9 @@ import {
     USER_CRED_PROPS,
     DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
     DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
+    PASSWORD,
+    REPEAT_PASSWORD,
+    EXTERNAL_AUTH,
 } from '../containers/UserForm/config';
 
 /**
@@ -86,7 +89,7 @@ const addValueAsProp = (data, value, propName) => {
  * @returns {Object}  Object that may be PUT/POSTed to the server to save a user
  * @function
  */
-export const parseUserSaveData = (values, user) => {
+export const parseUserSaveData = (values, user, inviteUser) => {
     const userId = user.id || generateUid();
     const userCredId = (user.userCredentials && user.userCredentials.id) || generateUid();
     let data = {
@@ -118,11 +121,23 @@ export const parseUserSaveData = (values, user) => {
     // This property was appended to the model by hand but needs to be removed before saving the user
     delete cred[DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS];
 
+    if (inviteUser || values[EXTERNAL_AUTH]) {
+        delete cred[PASSWORD];
+        delete cred[REPEAT_PASSWORD];
+    }
+
     return data;
 };
 
 export const parseLocaleUrl = (type, username, val) => {
     return `/userSettings/key${type}Locale?user=${username}&value=${val}`;
+};
+
+export const mapLocale = ({ locale, name }) => {
+    return {
+        id: locale,
+        label: name,
+    };
 };
 
 /**

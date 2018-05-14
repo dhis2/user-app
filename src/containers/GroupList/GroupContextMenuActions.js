@@ -10,8 +10,8 @@ import api from '../../api';
 import store from '../../store';
 import { deleteModel, openSharingSettings } from '../../utils/sharedActions';
 import { USER_GROUP } from '../../constants/entityTypes';
-import { showSnackbar, getCurrentUserGroupMemberships } from '../../actions';
-
+import { showSnackbar, refreshCurrentUser } from '../../actions';
+import createHumanErrorMessage from '../../utils/createHumanErrorMessage';
 const show_details = 'show_details';
 const sharing_settings = 'sharing_settings';
 const edit = 'edit';
@@ -70,17 +70,22 @@ export const groupContextMenuActions = Action.createActionsFromNames([
 ]);
 
 const updateGroupMembership = async ({ displayName, id }, deleteMembership) => {
-    const joinSuccessBaseMsg = i18n.t('You joined group');
-    const leaveSuccessBaseMsg = i18n.t('You left group');
-    const errorMsg = i18n.t('There was a problem updating your group membership');
-
     try {
         await api.updateCurrentUserGroupMembership(id, deleteMembership);
-        const baseMsg = deleteMembership ? leaveSuccessBaseMsg : joinSuccessBaseMsg;
+        const baseMsg = deleteMembership
+            ? i18n.t('You left group')
+            : i18n.t('You joined group');
         store.dispatch(showSnackbar({ message: `${baseMsg} ${displayName}` }));
-        store.dispatch(getCurrentUserGroupMemberships());
+        store.dispatch(refreshCurrentUser());
     } catch (error) {
-        store.dispatch(showSnackbar({ message: errorMsg }));
+        store.dispatch(
+            showSnackbar({
+                message: createHumanErrorMessage(
+                    error,
+                    i18n.t('There was a problem updating your group membership')
+                ),
+            })
+        );
     }
 };
 

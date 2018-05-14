@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import i18n from '@dhis2/d2-i18n';
 import { connect } from 'react-redux';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { initCurrentUser } from '../actions';
+import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
+import ErrorMessage from './ErrorMessage';
 import ROUTE_CONFIG from '../constants/routeConfig';
 import SideNav from './SideNav';
 
@@ -19,8 +22,10 @@ const style = {
  */
 class SectionLoader extends Component {
     componentWillMount() {
-        const { initCurrentUser } = this.props;
-        initCurrentUser();
+        const { initCurrentUser, currentUser } = this.props;
+        if (!currentUser) {
+            initCurrentUser();
+        }
     }
 
     userHasAuthorities({ entityType }) {
@@ -53,14 +58,35 @@ class SectionLoader extends Component {
         return routes.map(section => <Route exact strict {...section} />);
     }
 
-    render() {
+    renderContent() {
+        const { currentUser } = this.props;
+
+        if (!currentUser) {
+            return <LoadingMask />;
+        }
+
+        if (typeof currentUser === 'string') {
+            const introText = i18n.t('There was an error loading the current user');
+            return <ErrorMessage introText={introText} errorMessage={currentUser} />;
+        }
+
         const { routes, sections } = this.getRouteConfig();
-        return (
-            <main style={style}>
-                <SideNav sections={sections} />
-                <Switch>{this.renderRoutes(routes)}</Switch>
-            </main>
-        );
+
+        if (sections && sections.length === 0) {
+            const introText = i18n.t(
+                'You do not have authorities to see users, user roles or user groups'
+            );
+            return <ErrorMessage introText={introText} errorMessage="" />;
+        }
+
+        return [
+            <SideNav key="sidenav" sections={sections} />,
+            <Switch key="routeswitch">{this.renderRoutes(routes)}</Switch>,
+        ];
+    }
+
+    render() {
+        return <main style={style}>{this.renderContent()}</main>;
     }
 }
 
@@ -70,10 +96,13 @@ SectionLoader.contextTypes = {
 
 SectionLoader.propTypes = {
     initCurrentUser: PropTypes.func.isRequired,
+    currentUser: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };
 
+const mapStateToProps = ({ currentUser }) => ({ currentUser });
+
 export default withRouter(
-    connect(null, {
+    connect(mapStateToProps, {
         initCurrentUser,
     })(SectionLoader)
 );
