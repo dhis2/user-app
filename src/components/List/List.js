@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import i18n from '@dhis2/d2-i18n';
 import { connect } from 'react-redux';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
@@ -135,7 +136,7 @@ class List extends Component {
         } = this.props;
 
         if (typeof items === 'string') {
-            const introText = 'There was an error fetching the user list:';
+            const introText = i18n.t('There was an error fetching the list');
             return <ErrorMessage introText={introText} errorMessage={items} />;
         }
 

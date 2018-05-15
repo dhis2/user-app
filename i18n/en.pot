@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-05-15T09:44:58.939Z\n"
-"PO-Revision-Date: 2018-05-15T09:44:58.939Z\n"
+"POT-Creation-Date: 2018-05-15T12:23:32.706Z\n"
+"PO-Revision-Date: 2018-05-15T12:23:32.706Z\n"
 
 msgid "Use database locale / no translation"
 msgstr ""
@@ -240,6 +240,9 @@ msgid "Create new"
 msgstr ""
 
 msgid "Back to"
+msgstr ""
+
+msgid "There was an error fetching the list"
 msgstr ""
 
 msgid "Select an organisation unit"
