@@ -61,6 +61,7 @@ export const createListRequestData = (page = DEFAULT_PAGE, filter, fields) => {
         pageSize: DEFAULT_PAGE_SIZE,
         fields,
         page,
+        order: 'lastUpdated:desc',
     };
 
     if (query) requestData.query = query;
