@@ -54,13 +54,15 @@ class RoleForm extends Component {
     renderFields() {
         return FIELDS.map(fieldConfig => {
             const { name, fieldRenderer, label, isRequiredField, ...conf } = fieldConfig;
+            const suffix = isRequiredField ? ' *' : '';
+            const labelText = label + suffix;
 
             return (
                 <Field
                     name={name}
                     key={name}
                     component={fieldRenderer}
-                    label={label}
+                    label={labelText}
                     {...conf}
                 />
             );
@@ -114,7 +116,7 @@ const mapStateToProps = state => ({
     initialValues: {
         [NAME]: state.currentItem[NAME],
         [DESCRIPTION]: state.currentItem[DESCRIPTION],
-        [AUTHORITIES]: state.currentItem[AUTHORITIES],
+        [AUTHORITIES]: state.currentItem[AUTHORITIES] || [],
     },
 });
 
