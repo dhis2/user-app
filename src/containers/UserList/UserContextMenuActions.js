@@ -51,9 +51,7 @@ export const isUserContextActionAllowed = (model, action) => {
         case remove:
             return currentUser.id !== model.id && access.delete;
         case replicate: {
-            const currentUser = api.getCurrentUser();
-            const userModelDefinition = api.getModelDefinition(USER);
-            return access.update && currentUser.canCreate(userModelDefinition);
+            return access.update && currentUser.authorities.has('F_REPLICATE_USER');
         }
         case disable:
             return access.update && !disabled;
