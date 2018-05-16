@@ -54,10 +54,6 @@ class Api {
         return this.d2.system.systemInfo.contextPath;
     };
 
-    getModelDefinition = name => {
-        return this.d2.models[name];
-    };
-
     getList = (entityName, page, filter) => {
         const fields = getQueryFields(entityName);
         const requestData = createListRequestData(page, filter, fields);
