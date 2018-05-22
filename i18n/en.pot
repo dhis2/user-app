@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-05-15T12:23:32.706Z\n"
-"PO-Revision-Date: 2018-05-15T12:23:32.706Z\n"
+"POT-Creation-Date: 2018-05-22T08:21:05.901Z\n"
+"PO-Revision-Date: 2018-05-22T08:21:05.901Z\n"
 
 msgid "Use database locale / no translation"
 msgstr ""
@@ -116,7 +116,7 @@ msgstr ""
 msgid "Legend Set"
 msgstr ""
 
-msgid "Add Public Map"
+msgid "Map"
 msgstr ""
 
 msgid "Min-Max Data Element"
@@ -213,9 +213,6 @@ msgid "Tracker"
 msgstr ""
 
 msgid "Import-Export"
-msgstr ""
-
-msgid "Operations"
 msgstr ""
 
 msgid "System"

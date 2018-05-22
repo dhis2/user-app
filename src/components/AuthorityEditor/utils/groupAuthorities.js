@@ -33,11 +33,6 @@ export const EMPTY_GROUPED_AUTHORITIES = {
         items: null,
         headers: ['Name'],
     },
-    operations: {
-        name: i18n.t('Operations'),
-        items: null,
-        headers: ['Name'],
-    },
     system: {
         name: i18n.t('System'),
         items: null,
@@ -105,7 +100,7 @@ const AUTHORITY_GROUPS = {
         'F_METADATA_IMPORT',
         'F_METADATA_MANAGE',
     ]),
-    operations: new Set([
+    system: new Set([
         'ALL',
         'F_APPROVE_DATA',
         'F_APPROVE_DATA_LOWER_LEVELS',
@@ -118,8 +113,6 @@ const AUTHORITY_GROUPS = {
         'F_USER_VIEW',
         'F_USERGROUP_MANAGING_RELATIONSHIPS_ADD',
         'F_USERGROUP_MANAGING_RELATIONSHIPS_VIEW',
-    ]),
-    system: new Set([
         'F_PERFORM_MAINTENANCE',
         'F_SCHEDULING_ADMIN',
         'F_GENERATE_MIN_MAX_VALUES',
