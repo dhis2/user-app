@@ -156,7 +156,7 @@
 
 .authority-editor__placeholder-cell,
 .authority-editor__placeholder-cell--error {
-    width: calc(100% - 0.8rem) !important;
+    width: 100% !important;
     text-align: center;
     font-style: italic;
     color: rgba(0, 0, 0, 0.6);
