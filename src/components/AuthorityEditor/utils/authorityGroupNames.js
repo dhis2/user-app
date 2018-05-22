@@ -28,7 +28,7 @@ export default new Map([
     ['F_INDICATORTYPE', i18n.t('Indicator Type')],
     ['F_INDICATOR', i18n.t('Indicator')],
     ['F_LEGEND_SET', i18n.t('Legend Set')],
-    ['F_MAP', i18n.t('Add Public Map')],
+    ['F_MAP', i18n.t('Map')],
     ['F_MINMAX_DATAELEMENT', i18n.t('Min-Max Data Element')],
     ['F_OPTIONGROUPSET', i18n.t('Option Group Set')],
     ['F_OPTIONGROUP', i18n.t('Option Group')],
