@@ -209,6 +209,10 @@ class UserForm extends Component {
         }, []);
     }
 
+    renderCreateOrInviteField() {
+        return this.renderFields(CONFIG.INVITE_FIELDS);
+    }
+
     renderBaseFields() {
         return this.renderFields(CONFIG.BASE_FIELDS);
     }
@@ -253,6 +257,7 @@ class UserForm extends Component {
             asyncValidating,
             pristine,
             valid,
+            user,
             inviteUser,
         } = this.props;
         const { showMore, locales } = this.state;
@@ -260,6 +265,7 @@ class UserForm extends Component {
             submitting || asyncValidating || pristine || !valid
         );
         const submitText = inviteUser === true ? i18n.t('Send invite') : i18n.t('Save');
+        const headerStyle = !user.id ? { marginTop: '1rem' } : {};
 
         if (!locales) {
             return (
@@ -271,8 +277,11 @@ class UserForm extends Component {
 
         return (
             <main>
-                <Heading level={2}>{i18n.t('Details')}</Heading>
                 <form onSubmit={handleSubmit(this.handleSubmit)}>
+                    {this.renderCreateOrInviteField()}
+                    <Heading level={2} style={headerStyle}>
+                        {i18n.t('Details')}
+                    </Heading>
                     {this.renderBaseFields()}
                     {this.renderAdditionalFields(showMore)}
                     {this.renderToggler(showMore)}

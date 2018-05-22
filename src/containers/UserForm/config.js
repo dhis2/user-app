@@ -102,7 +102,7 @@ const BASE_CAPTION = {
     },
 };
 
-export const BASE_FIELDS = [
+export const INVITE_FIELDS = [
     {
         name: INVITE,
         label: i18n.t('Set password or invite'),
@@ -123,6 +123,9 @@ export const BASE_FIELDS = [
             },
         },
     },
+];
+
+export const BASE_FIELDS = [
     {
         name: USERNAME,
         label: i18n.t('Username'),
