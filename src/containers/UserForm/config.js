@@ -105,16 +105,16 @@ const BASE_CAPTION = {
 export const INVITE_FIELDS = [
     {
         name: INVITE,
-        label: i18n.t('Set password or invite'),
+        label: i18n.t('Create account or email invitation'),
         fieldRenderer: renderSelectField,
         options: [
             {
                 id: SET_PASSWORD,
-                label: 'Set a password for this user',
+                label: 'Create account with user details',
             },
             {
                 id: INVITE_USER,
-                label: 'Send an invite to this user',
+                label: 'Email invitation to create account',
             },
         ],
         props: {
