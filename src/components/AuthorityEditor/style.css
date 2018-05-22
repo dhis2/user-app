@@ -55,7 +55,7 @@
     border-spacing: 0;
     border-collapse: collapse;
     table-layout: fixed;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     border-bottom: 1px solid #e0e0e0;
 }
 
@@ -83,6 +83,14 @@
     max-height: calc(375px - 101px);
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+.authority-editor__auth-group:not(.scrollable) .authority-editor__auth-group-table {
+    border-color: transparent;
+}
+
+.authority-editor__auth-group:not(.scrollable) .authority-editor__auth-group-table tbody {
+    min-height: calc(375px - 101px);
 }
 
 .authority-editor__auth-group-table tbody td,
