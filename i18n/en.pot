@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-05-22T14:44:52.088Z\n"
-"PO-Revision-Date: 2018-05-22T14:44:52.088Z\n"
+"POT-Creation-Date: 2018-05-30T10:06:01.770Z\n"
+"PO-Revision-Date: 2018-05-30T10:06:01.770Z\n"
 
 msgid "Use database locale / no translation"
 msgstr ""
@@ -204,6 +204,9 @@ msgid "Validation Rule Group"
 msgstr ""
 
 msgid "Validation Rule"
+msgstr ""
+
+msgid "Data predictor group"
 msgstr ""
 
 msgid "Apps"
