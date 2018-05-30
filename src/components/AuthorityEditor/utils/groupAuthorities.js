@@ -240,7 +240,7 @@ const createMetadataGroup = (auth, lookup) => {
     ALL_METADATA_SUFFIXES.forEach(suffix => lookup.delete(baseName + suffix));
 
     return {
-        name: nameLookup.get(baseName),
+        name: nameLookup.get(baseName) || baseName,
         items: [publicAddAuth, privateAddAuth, deleteAuth, externalAccessAuth],
     };
 };
