@@ -119,7 +119,8 @@ export const userFormInitialValuesSelector = _.memoize((user, locales) => {
         });
     }
 
-    initialValues[INTERFACE_LANGUAGE] = locales.ui.selected;
+    // 'en' is a fallback for systems that have no default system UI locale specified
+    initialValues[INTERFACE_LANGUAGE] = locales.ui.selected || 'en';
     initialValues[DATABASE_LANGUAGE] = locales.db.selected;
 
     return initialValues;
