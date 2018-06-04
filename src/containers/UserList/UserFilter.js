@@ -46,7 +46,7 @@ class UserFilter extends Component {
     createInactiveMonthsOptions() {
         const month = i18n.t('month');
         const months = i18n.t('months');
-        return Array(11)
+        return Array(12)
             .fill()
             .map((_, index) => {
                 const id = index + 1;
