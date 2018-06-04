@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-05-30T10:06:01.770Z\n"
-"PO-Revision-Date: 2018-05-30T10:06:01.770Z\n"
+"POT-Creation-Date: 2018-06-04T13:49:01.105Z\n"
+"PO-Revision-Date: 2018-06-04T13:49:01.105Z\n"
 
 msgid "Use database locale / no translation"
 msgstr ""
@@ -502,6 +502,15 @@ msgstr ""
 msgid "Replicate user"
 msgstr ""
 
+msgid "Are you sure you want to disable"
+msgstr ""
+
+msgid "Are you sure you want to enable"
+msgstr ""
+
+msgid "Confirm"
+msgstr ""
+
 msgid "sucessfully disabled"
 msgstr ""
 
@@ -568,7 +577,4 @@ msgid "Password should have at least one special character"
 msgstr ""
 
 msgid "Something went wrong when processing your request."
-msgstr ""
-
-msgid "Confirm"
 msgstr ""

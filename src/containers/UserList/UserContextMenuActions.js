@@ -12,7 +12,13 @@ import store from '../../store';
 import api from '../../api';
 import { deleteModel } from '../../utils/sharedActions';
 import { USER } from '../../constants/entityTypes';
-import { showDialog, hideDialog, showSnackbar, getList } from '../../actions';
+import {
+    showDialog,
+    hideDialog,
+    showSnackbar,
+    hideSnackbar,
+    getList,
+} from '../../actions';
 import ReplicateUserForm from '../../components/ReplicateUserForm';
 import createHumanErrorMessage from '../../utils/createHumanErrorMessage';
 import detectCurrentUserChanges from '../../utils/detectCurrentUserChanges';
@@ -116,7 +122,23 @@ userContextMenuActions.enable.subscribe(({ data }) => {
     updateDisabledState(data, false);
 });
 
-const updateDisabledState = async (model, shouldDisable) => {
+const updateDisabledState = (model, shouldDisable) => {
+    const baseMsg = shouldDisable
+        ? i18n.t('Are you sure you want to disable')
+        : i18n.t('Are you sure you want to enable');
+
+    const snackbarProps = {
+        message: `${baseMsg} ${model.displayName}`,
+        action: i18n.t('Confirm'),
+        autoHideDuration: null,
+        onActionClick: () => onDisableConfirm(model, shouldDisable),
+    };
+    store.dispatch(showSnackbar(snackbarProps));
+};
+
+const onDisableConfirm = async (model, shouldDisable) => {
+    store.dispatch(hideSnackbar());
+
     const { displayName, id } = model;
     try {
         await api.updateDisabledState(id, shouldDisable);
