@@ -15,23 +15,37 @@ import createHumanErrorMessage from '../utils/createHumanErrorMessage';
  */
 
 const asyncValidateUniqueness = async (values, _dispatch, props, fieldName) => {
-    const formNameValue = values[fieldName];
+    let errors = {};
+    let validationPromises = [];
+    const { validExceptSubmit, asyncBlurFields, group, role } = props;
+    const model = role || group;
 
-    if (!formNameValue) {
-        return Promise.resolve({});
+    // BEWARE!!!! Under certain conditions reduxForm.asyncValidate can be called
+    // with param fieldName === undefined. If this happens you can assume everything
+    // needs to be validated, so just loop through all fields
+    if (validExceptSubmit && !fieldName && asyncBlurFields && asyncBlurFields.length) {
+        asyncBlurFields.forEach(blurField => {
+            validationPromises.push(asyncValidateField(blurField, values, errors, model));
+        });
+    } else {
+        validationPromises.push(asyncValidateField(fieldName, values, errors, model));
     }
 
-    let errors = {};
-    const model = props.role || props.group;
+    await Promise.all(validationPromises);
+    return errors;
+};
+
+const asyncValidateField = async (fieldName, values, errors, model) => {
     const entityName = model.modelDefinition.name;
+    const fieldValue = values[fieldName];
     const fieldDisplayName = _.capitalize(fieldName);
 
+    if (!fieldValue) {
+        return Promise.resolve(errors);
+    }
+
     try {
-        const modelCollection = await api.genericFind(
-            entityName,
-            fieldName,
-            formNameValue
-        );
+        const modelCollection = await api.genericFind(entityName, fieldName, fieldValue);
         if (modelCollection.size > 0) {
             const foundId = modelCollection.values().next().value.id;
             if (foundId !== model.id) {

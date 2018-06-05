@@ -86,7 +86,6 @@
     "This field is required": "",
     "User replicated successfuly": "",
     "There was a problem replicating the user": "",
-    "Validating...": "",
     "Username": "",
     "Username for new user": "",
     "Password": "",
@@ -188,5 +187,6 @@
     "Password should contain at least one UPPERCASE letter": "",
     "Password should contain at least one number": "",
     "Password should have at least one special character": "",
-    "Something went wrong when processing your request.": ""
+    "Something went wrong when processing your request.": "",
+    "Validating...": ""
 }

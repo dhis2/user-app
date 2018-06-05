@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 import { RaisedButton } from 'material-ui';
-import { TextField } from 'redux-form-material-ui';
-import { orange500 } from 'material-ui/styles/colors';
+import { renderTextField } from '../utils/fieldRenderers';
 import i18n from '@dhis2/d2-i18n';
 import api from '../api';
 import { connect } from 'react-redux';
@@ -74,54 +73,40 @@ class ReplicateUserForm extends Component {
         });
     };
 
-    shouldDisableSubmit() {
-        const { formState, submitting, asyncValidating, pristine, valid } = this.props;
-        const hasBothFields =
-            formState &&
-            formState.values &&
-            formState.values[USERNAME] &&
-            formState.values[PASSWORD];
-        return Boolean(
-            submitting || asyncValidating || pristine || !valid || !hasBothFields
-        );
-    }
-
-    getLoadingProps() {
-        return {
-            errorText: i18n.t('Validating...'),
-            errorStyle: { color: orange500 },
-        };
-    }
-
     render() {
-        const { handleSubmit, hideDialog, asyncValidating } = this.props;
-        const submitDisabled = this.shouldDisableSubmit();
-        const isCheckingUsername = asyncValidating === USERNAME;
-        const validatingProps = isCheckingUsername ? this.getLoadingProps() : null;
+        const {
+            submitting,
+            pristine,
+            valid,
+            handleSubmit,
+            hideDialog,
+            asyncValidating,
+        } = this.props;
+
+        const disableSubmit = Boolean(
+            submitting || asyncValidating || pristine || !valid
+        );
 
         return (
             <form onSubmit={handleSubmit(this.replicateUser)}>
                 <Field
                     name={USERNAME}
-                    component={TextField}
-                    floatingLabelText={i18n.t('Username')}
+                    component={renderTextField}
+                    label={i18n.t('Username')}
                     hintText={i18n.t('Username for new user')}
-                    fullWidth={true}
-                    {...validatingProps}
                 />
                 <Field
                     name={PASSWORD}
-                    component={TextField}
-                    floatingLabelText={i18n.t('Password')}
+                    component={renderTextField}
+                    label={i18n.t('Password')}
                     hintText={i18n.t('Password for new user')}
-                    fullWidth={true}
                     type="password"
                 />
                 <div style={{ marginTop: 16 }}>
                     <RaisedButton
                         label={i18n.t('Replicate')}
                         type="submit"
-                        disabled={submitDisabled}
+                        disabled={disableSubmit}
                         primary={true}
                     />
                     <RaisedButton
