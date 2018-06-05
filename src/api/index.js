@@ -103,13 +103,13 @@ class Api {
     };
 
     getAvailableUserRoles = () => {
-        const data = { canIssue: true, fields: ['id', 'displayName'] };
+        const data = { canIssue: true, fields: ['id', 'displayName'], paging: false };
         return this.d2.models.userRoles.list(data);
     };
 
     getAvailableDataAnalyticsDimensionRestrictions = () => {
         const url = '/dimensions/constraints';
-        const data = { fields: ['id', 'name', 'dimensionType'] };
+        const data = { fields: ['id', 'name', 'dimensionType'], paging: false };
         return this.d2Api.get(url, data).then(({ dimensions }) => dimensions);
     };
 
@@ -205,13 +205,13 @@ class Api {
      **************************/
 
     getManagedUsers = () => {
-        const data = { fields: ['id', 'displayName'] };
+        const data = { fields: ['id', 'displayName'], paging: false };
         return this.d2.models.user.list(data);
     };
 
     // Also used by GroupForm
     getAvailableUserGroups = () => {
-        const data = { fields: ['id', 'displayName'] };
+        const data = { fields: ['id', 'displayName'], paging: false };
         return this.d2.models.userGroups.list(data);
     };
 
