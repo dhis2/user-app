@@ -48,7 +48,7 @@ class UserForm extends Component {
         this.trashableLocalePromise = null;
     }
 
-    async componentWillMount() {
+    async componentDidMount() {
         const { user, showSnackbar, initialize } = this.props;
         const username = user.id ? user.userCredentials.username : null;
 

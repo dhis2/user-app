@@ -51,7 +51,7 @@ class SearchableGroupEditor extends Component {
         };
     }
 
-    async componentWillMount() {
+    async componentDidMount() {
         try {
             const availableItems = await this.props.availableItemsQuery();
             this.availableItemsReceivedHandler(availableItems);

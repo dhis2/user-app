@@ -48,7 +48,7 @@ const styles = {
  * This component reads specified properties of an object and displays this in a table
  */
 class DetailSummary extends Component {
-    componentWillMount() {
+    componentDidMount() {
         const { baseName, routeId, getItem } = this.props;
         getItem(baseName, routeId);
     }

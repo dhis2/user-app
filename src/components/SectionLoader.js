@@ -21,7 +21,7 @@ const style = {
  * The sections will be rendered in the SideNav and the routes within a react-router Switch component
  */
 class SectionLoader extends Component {
-    componentWillMount() {
+    componentDidMount() {
         const { initCurrentUser, currentUser } = this.props;
         if (!currentUser) {
             initCurrentUser();

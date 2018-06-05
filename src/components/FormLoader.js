@@ -28,7 +28,7 @@ const styles = {
 };
 
 class FormLoader extends Component {
-    componentWillMount() {
+    componentDidMount() {
         const {
             match: {
                 params: { id },
