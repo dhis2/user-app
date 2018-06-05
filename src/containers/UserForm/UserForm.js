@@ -70,10 +70,6 @@ class UserForm extends Component {
         }
     }
 
-    shouldComponentUpdate(nextProps) {
-        return typeof nextProps.asyncValidating !== 'string';
-    }
-
     componentWillUnmount() {
         this.trashableLocalePromise.trash();
     }

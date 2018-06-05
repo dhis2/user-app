@@ -22,15 +22,6 @@ import api from '../../api';
  * When valid it will save on submit and show relevant snackbar message.
  */
 class GroupForm extends Component {
-    shouldComponentUpdate(nextProps) {
-        // Using redux form asyncBlurFields together with MaterialUI buttons can cause a problem:
-        // when you have focus on one of the aSync blur fields, and you click submit with your mouse
-        // The button will now fist call focus, blurring the async blur field as a result of this
-        // the aSync validation for that single field (value is a string) is triggered instead of the
-        // aSyncValidation for all fields, which is triggered from submit
-        return typeof nextProps.asyncValidating !== 'string';
-    }
-
     createIdValueObject(value) {
         return {
             id: typeof value === 'string' ? value : value.id,

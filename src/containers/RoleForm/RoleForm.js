@@ -19,10 +19,6 @@ import validate from './validate';
  * When valid it will save on submit and show relevant snackbar message.
  */
 class RoleForm extends Component {
-    shouldComponentUpdate(nextProps) {
-        return typeof nextProps.asyncValidating !== 'string';
-    }
-
     saveRole = async (values, _, props) => {
         const { role, showSnackbar, clearItem, getList } = props;
         role[NAME] = values[NAME];
