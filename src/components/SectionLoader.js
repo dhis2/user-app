@@ -8,6 +8,7 @@ import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import ErrorMessage from './ErrorMessage';
 import ROUTE_CONFIG from '../constants/routeConfig';
 import SideNav from './SideNav';
+import navigateTo from '../utils/navigateTo';
 
 const style = {
     marginTop: '4rem',
@@ -25,33 +26,65 @@ class SectionLoader extends Component {
         const { initCurrentUser, currentUser } = this.props;
         if (!currentUser) {
             initCurrentUser();
+        } else {
+            this.setRouteConfig(currentUser);
         }
     }
 
-    userHasAuthorities({ entityType }) {
+    componentWillReceiveProps({ currentUser, location: { pathname } }) {
+        this.setRouteConfig(currentUser);
+
+        // Navigate home if the current user has edited a setting that restricts
+        // him from an active section. I.e. adjusting his own user role
+        // so he cannot edit user roles anymore
+        if (
+            currentUser &&
+            currentUser !== this.props.currentUser &&
+            pathname !== '/' &&
+            !this.pathHasAvailableSection(pathname)
+        ) {
+            navigateTo('/');
+        }
+    }
+
+    pathHasAvailableSection(pathname) {
+        if (!this.routeConfig) {
+            return false;
+        }
+
+        const { sections } = this.routeConfig;
+        return Boolean(
+            sections &&
+                sections.find(section => pathname.includes(section.path.split(':')[0]))
+        );
+    }
+
+    setRouteConfig(currentUser) {
+        this.routeConfig = !currentUser
+            ? null
+            : ROUTE_CONFIG.reduce(
+                  (routeConfig, configItem) => {
+                      let { routes, sections } = routeConfig;
+                      if (this.userHasAuthorities(configItem, currentUser)) {
+                          routes.push(configItem);
+                          if (configItem.label) {
+                              sections.push(configItem);
+                          }
+                      }
+                      return routeConfig;
+                  },
+                  { routes: [], sections: [] }
+              );
+    }
+
+    userHasAuthorities({ entityType }, currentUser) {
         if (!entityType) {
             return true;
         }
-        const { currentUser, models } = this.context.d2;
+        const { models } = this.context.d2;
         const canCreate = currentUser.canCreate(models[entityType]);
         const canDelete = currentUser.canDelete(models[entityType]);
         return canCreate || canDelete;
-    }
-
-    getRouteConfig() {
-        return ROUTE_CONFIG.reduce(
-            (routeConfig, configItem) => {
-                let { routes, sections } = routeConfig;
-                if (this.userHasAuthorities(configItem)) {
-                    routes.push(configItem);
-                    if (configItem.label) {
-                        sections.push(configItem);
-                    }
-                }
-                return routeConfig;
-            },
-            { routes: [], sections: [] }
-        );
     }
 
     renderRoutes(routes) {
@@ -70,7 +103,7 @@ class SectionLoader extends Component {
             return <ErrorMessage introText={introText} errorMessage={currentUser} />;
         }
 
-        const { routes, sections } = this.getRouteConfig();
+        const { routes, sections } = this.routeConfig;
 
         if (sections && sections.length === 0) {
             const introText = i18n.t(
