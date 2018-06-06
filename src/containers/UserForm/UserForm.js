@@ -130,8 +130,9 @@ class UserForm extends Component {
 
     exludeField(fieldName) {
         const { user, inviteUser, externalAuthOnly } = this.props;
+        const systemCanEmail = this.context.d2.system.systemInfo.emailConfigured;
 
-        if (user.id && fieldName === CONFIG.INVITE) {
+        if (systemCanEmail && user.id && fieldName === CONFIG.INVITE) {
             return true;
         }
 
@@ -315,6 +316,10 @@ UserForm.propTypes = {
     fallbackOrgUnits: PropTypes.object,
     inviteUser: PropTypes.bool.isRequired,
     externalAuthOnly: PropTypes.bool.isRequired,
+};
+
+UserForm.contextTypes = {
+    d2: PropTypes.object.isRequired,
 };
 
 const selector = formValueSelector(FORM_NAME);
