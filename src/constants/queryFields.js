@@ -19,6 +19,7 @@ export const USER_ROLE_LIST = [...USER_GROUP_LIST, 'description'];
 // DETAILS
 export const USER_DETAILS = [
     'id',
+    'created',
     'access',
     'displayName',
     'surname',
@@ -37,9 +38,20 @@ export const USER_DETAILS = [
     'userGroups',
     'organisationUnits[id,displayName,path]',
     'dataViewOrganisationUnits[id,displayName,path]',
-    'userCredentials[id,username,externalAuth,twoFA,userRoles[id,displayName],cogsDimensionConstraints[id,displayName,dimensionType],catDimensionConstraints[id,displayName,dimensionType],openId,ldapId]',
+    'userCredentials[id,username,lastLogin,externalAuth,twoFA,userRoles[id,displayName],cogsDimensionConstraints[id,displayName,dimensionType],catDimensionConstraints[id,displayName,dimensionType],openId,ldapId]',
     'teiSearchOrganisationUnits[id,path]',
 ];
+
+export const USER_ROLE_DETAILS = [
+    'id',
+    'access',
+    'displayName',
+    'name',
+    'users',
+    'description',
+    'authorities',
+];
+
 export const USER_GROUP_DETAILS = [
     'id',
     'code',
@@ -48,14 +60,6 @@ export const USER_GROUP_DETAILS = [
     'name',
     'users',
     'managedGroups',
-];
-export const USER_ROLE_DETAILS = [
-    'id',
-    'access',
-    'displayName',
-    'name',
-    'description',
-    'authorities',
 ];
 
 export const CURRENT_USER_ORG_UNITS_FIELDS = {

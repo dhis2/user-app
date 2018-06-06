@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-06-05T07:30:23.498Z\n"
-"PO-Revision-Date: 2018-06-05T07:30:23.498Z\n"
+"POT-Creation-Date: 2018-06-06T08:50:23.672Z\n"
+"PO-Revision-Date: 2018-06-06T08:50:23.672Z\n"
 
 msgid "Use database locale / no translation"
 msgstr ""
@@ -314,6 +314,69 @@ msgstr ""
 msgid "You do not have authorities to see users, user roles or user groups"
 msgstr ""
 
+msgid "Display name"
+msgstr ""
+
+msgid "ID"
+msgstr ""
+
+msgid "Last login"
+msgstr ""
+
+msgid "Created"
+msgstr ""
+
+msgid "Surname"
+msgstr ""
+
+msgid "First name"
+msgstr ""
+
+msgid "Introduction"
+msgstr ""
+
+msgid "Job title"
+msgstr ""
+
+msgid "Works at"
+msgstr ""
+
+msgid "Education"
+msgstr ""
+
+msgid "Interests"
+msgstr ""
+
+msgid "Nationality"
+msgstr ""
+
+msgid "Birthday"
+msgstr ""
+
+msgid "Gender"
+msgstr ""
+
+msgid "Speaks"
+msgstr ""
+
+msgid "E-mail"
+msgstr ""
+
+msgid "Mobile phone number"
+msgstr ""
+
+msgid "Organisations units"
+msgstr ""
+
+msgid "User roles"
+msgstr ""
+
+msgid "Members"
+msgstr ""
+
+msgid "Number of users"
+msgstr ""
+
 msgid "User group saved successfully"
 msgstr ""
 
@@ -421,9 +484,6 @@ msgstr ""
 msgid "Create account or email invitation"
 msgstr ""
 
-msgid "E-mail"
-msgstr ""
-
 msgid "External authentication only (OpenID or LDAP)"
 msgstr ""
 
@@ -433,19 +493,10 @@ msgstr ""
 msgid "Retype password"
 msgstr ""
 
-msgid "Surname"
-msgstr ""
-
-msgid "First name"
-msgstr ""
-
 msgid "OpenID"
 msgstr ""
 
 msgid "LDAP identifier"
-msgstr ""
-
-msgid "Mobile phone number"
 msgstr ""
 
 msgid "Interface language"

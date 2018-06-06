@@ -81,6 +81,7 @@ class DetailSummary extends Component {
                 label,
                 removeText,
                 parseDate,
+                parseDateTime,
                 nestedPropselector,
                 parseArrayAsCommaDelimitedString,
                 count,
@@ -111,8 +112,8 @@ class DetailSummary extends Component {
                     value = _.capitalize(value.replace(removeText, ''));
                 }
 
-                if (parseDate && typeof value === 'string') {
-                    value = parseDateFromUTCString(value);
+                if ((parseDate || parseDateTime) && typeof value === 'string') {
+                    value = parseDateFromUTCString(value, parseDateTime);
                 }
 
                 if (count) {

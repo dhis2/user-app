@@ -1,88 +1,109 @@
-export const USER_PROFILE = [
+import i18n from '@dhis2/d2-i18n';
+
+const BASE_FIELDS = [
     {
         key: 'displayName',
-        label: 'Display name',
+        label: i18n.t('Display name'),
+    },
+    {
+        key: 'id',
+        label: i18n.t('ID'),
+    },
+];
+
+export const USER_PROFILE = [
+    ...BASE_FIELDS,
+    {
+        key: 'userCredentials',
+        nestedPropselector: ['lastLogin'],
+        label: i18n.t('Last login'),
+        parseDateTime: true,
+    },
+    {
+        key: 'created',
+        label: i18n.t('Created'),
+        parseDate: true,
     },
     {
         key: 'surname',
-        label: 'Surname',
+        label: i18n.t('Surname'),
     },
     {
         key: 'firstName',
-        label: 'First name',
+        label: i18n.t('First name'),
     },
     {
         key: 'introduction',
-        label: 'Introduction',
+        label: i18n.t('Introduction'),
     },
     {
         key: 'jobTitle',
-        label: 'Job title',
+        label: i18n.t('Job title'),
     },
     {
         key: 'employer',
-        label: 'Works at',
+        label: i18n.t('Works at'),
     },
     {
         key: 'education',
-        label: 'Education',
+        label: i18n.t('Education'),
     },
     {
         key: 'interests',
-        label: 'Interests',
+        label: i18n.t('Interests'),
     },
     {
         key: 'nationality',
-        label: 'Nationality',
+        label: i18n.t('Nationality'),
     },
     {
         key: 'birthday',
-        label: 'Birthday',
+        label: i18n.t('Birthday'),
         parseDate: true,
     },
     {
         key: 'gender',
-        label: 'Gender',
+        label: i18n.t('Gender'),
         removeText: 'gender_',
     },
     {
         key: 'languages',
-        label: 'Speaks',
+        label: i18n.t('Speaks'),
     },
     {
         key: 'email',
-        label: 'E-mail',
+        label: i18n.t('E-mail'),
     },
     {
         key: 'phoneNumber',
-        label: 'Mobile phone number',
+        label: i18n.t('Mobile phone number'),
     },
     {
         key: 'organisationUnits',
-        label: 'Organisations units',
+        label: i18n.t('Organisations units'),
         parseArrayAsCommaDelimitedString: 'displayName',
     },
     {
         key: 'userCredentials',
-        label: 'User roles',
+        label: i18n.t('User roles'),
         nestedPropselector: ['userRoles'],
         parseArrayAsCommaDelimitedString: 'displayName',
     },
 ];
 
 export const USER_ROLE_DETAILS = [
-    {
-        key: 'displayName',
-        label: 'Display name',
-    },
+    ...BASE_FIELDS,
     {
         key: 'users',
-        label: 'Members',
+        label: i18n.t('Members'),
         count: true,
     },
+];
+export const USER_GROUP_DETAILS = [
+    ...BASE_FIELDS,
     {
-        key: 'id',
-        label: 'ID',
+        key: 'users',
+        label: i18n.t('Number of users'),
+        count: true,
     },
 ];
-export const USER_GROUP_DETAILS = [...USER_ROLE_DETAILS];
