@@ -166,18 +166,20 @@ export const shortItemSelector = _.memoize((id, list) => {
  * @function
  */
 export const orgUnitRootsSelector = (orgUnitType, currentUser) => {
+    const systemOrgRoot = currentUser.systemOrganisationUnitRoot;
+    const requestedOrgUnitRoots = currentUser[orgUnitType];
     const fallBackOrgUnitRoots = currentUser[DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS];
 
-    if (!fallBackOrgUnitRoots) {
-        return null;
+    let orgUnitRoots = null;
+    if (currentUser.authorities.has('ALL')) {
+        orgUnitRoots = [systemOrgRoot];
+    } else if (requestedOrgUnitRoots.size === 0) {
+        orgUnitRoots = fallBackOrgUnitRoots.toArray();
+    } else if (fallBackOrgUnitRoots.size > 0) {
+        orgUnitRoots = fallBackOrgUnitRoots.toArray();
     }
 
-    const orgUnitRootsForType = currentUser[orgUnitType].toArray();
-    if (orgUnitRootsForType.length === 0) {
-        return fallBackOrgUnitRoots.toArray();
-    } else {
-        return orgUnitRootsForType;
-    }
+    return orgUnitRoots;
 };
 
 /**

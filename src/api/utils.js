@@ -151,6 +151,12 @@ export const mapLocale = ({ locale, name }) => {
  */
 export const getRestrictedOrgUnits = (orgUnits, orgUnitType) => {
     const { currentUser } = store.getState();
+
+    // Superuser can always see all org units
+    if (currentUser.authorities.has('ALL')) {
+        return orgUnits.toArray();
+    }
+
     // Try the requested orgUnitType first and use currentUser.organisationUnits as fallback
     const availableOrgUnits =
         currentUser[orgUnitType].size > 0

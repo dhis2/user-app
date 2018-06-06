@@ -246,6 +246,7 @@ class Api {
             this.d2.currentUser.getUserGroups(),
             this.d2.currentUser.getUserRoles(),
             this.getCurrentUserOrgUnits(),
+            this.getSystemOrgUnitRoot(),
         ]).then(
             ([
                 userGroups,
@@ -255,6 +256,7 @@ class Api {
                     dataViewOrganisationUnits,
                     teiSearchOrganisationUnits,
                 },
+                systemOrganisationUnitRoot,
             ]) => {
                 return Object.assign(this.d2.currentUser, {
                     userGroups,
@@ -262,6 +264,7 @@ class Api {
                     organisationUnits,
                     dataViewOrganisationUnits,
                     teiSearchOrganisationUnits,
+                    systemOrganisationUnitRoot,
                 });
             }
         );
@@ -297,6 +300,18 @@ class Api {
             this.d2.currentUser.id,
             CURRENT_USER_ORG_UNITS_FIELDS
         );
+    };
+
+    getSystemOrgUnitRoot = () => {
+        return this.d2.models.organisationUnits
+            .list({
+                paging: false,
+                level: 1,
+                fields: 'id,path,displayName,children::isNotEmpty',
+            })
+            .then(modelCollection => {
+                return modelCollection.toArray()[0];
+            });
     };
 
     updateCurrentUserGroupMembership = (groupId, deleteMembership) => {
