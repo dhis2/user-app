@@ -109,9 +109,6 @@ groupContextMenuActions.leave_group.subscribe(({ data }) => {
 
 groupContextMenuActions.remove.subscribe(({ data: group }) => {
     const params = {
-        confirmMsg: i18n.t('Are you sure you want to remove this user group?'),
-        successMsg: i18n.t('User group removed succesfully'),
-        errorMsg: i18n.t('There was a problem deleting the user group'),
         model: group,
         entityType: USER_GROUP,
     };

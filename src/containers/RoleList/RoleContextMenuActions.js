@@ -3,7 +3,6 @@
  * Contains definitions for menu item visibility, individual menu item actions, icons and names.
  * @module containers/RoleList/RoleContextMenuActions
  */
-import i18n from '@dhis2/d2-i18n';
 import Action from 'd2-ui/lib/action/Action';
 import navigateTo from '../../utils/navigateTo';
 import { USER_ROLE } from '../../constants/entityTypes';
@@ -68,9 +67,6 @@ roleContextMenuActions.edit.subscribe(({ data: { id } }) => {
 
 roleContextMenuActions.remove.subscribe(({ data: role }) => {
     const params = {
-        confirmMsg: i18n.t('Are you sure you want to remove this user role?'),
-        successMsg: i18n.t('User role removed succesfully'),
-        errorMsg: i18n.t('There was a problem deleting the user role'),
         model: role,
         entityType: USER_ROLE,
     };

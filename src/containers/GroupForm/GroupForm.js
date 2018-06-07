@@ -38,7 +38,9 @@ class GroupForm extends Component {
 
         try {
             await group.save();
-            const msg = i18n.t('User group saved successfully');
+            const msg = i18n.t('User group "{{displayName}}" saved successfully', {
+                displayName: group.displayName,
+            });
             showSnackbar({ message: msg });
             clearItem();
             getList(USER_GROUP);

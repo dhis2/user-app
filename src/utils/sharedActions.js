@@ -4,13 +4,30 @@ import createHumanErrorMessage from './createHumanErrorMessage';
 import detectCurrentUserChanges from './detectCurrentUserChanges';
 import i18n from '@dhis2/d2-i18n';
 
-export const deleteModel = ({ confirmMsg, successMsg, errorMsg, model, entityType }) => {
+export const deleteModel = ({ model, entityType }) => {
+    const interpolator = {
+        type: model.modelDefinition.displayName,
+        displayName: model.displayName,
+    };
+    const confirmMsg = i18n.t(
+        'Are you sure you want to remove the {{type}} "{{displayName}}"?',
+        interpolator
+    );
+    const successMsg = i18n.t(
+        '{{type}} "{{displayName}}" removed successfully',
+        interpolator
+    );
+    const errorMsg = i18n.t(
+        'There was a problem removing {{type}} "{{displayName}}"?',
+        interpolator
+    );
     const snackbarProps = {
         message: confirmMsg,
         action: i18n.t('Confirm'),
         autoHideDuration: null,
         onActionClick: () => onRemoveConfirm(model, successMsg, errorMsg, entityType),
     };
+
     store.dispatch(showSnackbar(snackbarProps));
 };
 

@@ -42,20 +42,24 @@ const validate = (values, props) => {
  */
 class ReplicateUserForm extends Component {
     replicateUser = async data => {
-        const { userIdToReplicate, hideDialog } = this.props;
+        const { userToReplicate, hideDialog } = this.props;
         const { username, password } = data;
         try {
-            await api.replicateUser(userIdToReplicate, username, password);
-            this.replicateSuccesHandler();
+            await api.replicateUser(userToReplicate.id, username, password);
+            this.replicateSuccesHandler(userToReplicate.displayName);
         } catch (error) {
             this.replicateErrorHandler(error);
         }
         hideDialog();
     };
 
-    replicateSuccesHandler = () => {
+    replicateSuccesHandler = displayName => {
         const { getList, showSnackbar } = this.props;
-        showSnackbar({ message: i18n.t('User replicated successfuly') });
+        console.log(displayName);
+        const message = i18n.t('User "{{displayName}}" replicated successfuly', {
+            displayName,
+        });
+        showSnackbar({ message });
         getList(USER, true);
     };
 
@@ -117,7 +121,7 @@ class ReplicateUserForm extends Component {
 }
 
 ReplicateUserForm.propTypes = {
-    userIdToReplicate: PropTypes.string.isRequired,
+    userToReplicate: PropTypes.object.isRequired,
     hideDialog: PropTypes.func.isRequired,
     getList: PropTypes.func.isRequired,
     showSnackbar: PropTypes.func.isRequired,

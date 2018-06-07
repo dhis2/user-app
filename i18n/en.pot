@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-06-06T08:50:23.672Z\n"
-"PO-Revision-Date: 2018-06-06T08:50:23.672Z\n"
+"POT-Creation-Date: 2018-06-07T13:37:15.851Z\n"
+"PO-Revision-Date: 2018-06-07T13:37:15.851Z\n"
 
 msgid "Use database locale / no translation"
 msgstr ""
@@ -242,6 +242,12 @@ msgstr ""
 msgid "Back to"
 msgstr ""
 
+msgid "You are not allowed to edit"
+msgstr ""
+
+msgid "Confirm"
+msgstr ""
+
 msgid "There was an error fetching the list"
 msgstr ""
 
@@ -263,7 +269,7 @@ msgstr ""
 msgid "This field is required"
 msgstr ""
 
-msgid "User replicated successfuly"
+msgid "User \"{{displayName}}\" replicated successfuly"
 msgstr ""
 
 msgid "There was a problem replicating the user"
@@ -377,7 +383,7 @@ msgstr ""
 msgid "Number of users"
 msgstr ""
 
-msgid "User group saved successfully"
+msgid "User group \"{{displayName}}\" saved successfully"
 msgstr ""
 
 msgid "There was a problem saving the user group."
@@ -419,19 +425,10 @@ msgstr ""
 msgid "There was a problem updating your group membership"
 msgstr ""
 
-msgid "Are you sure you want to remove this user group?"
-msgstr ""
-
-msgid "User group removed succesfully"
-msgstr ""
-
-msgid "There was a problem deleting the user group"
-msgstr ""
-
 msgid "User Group Management"
 msgstr ""
 
-msgid "User role saved successfully"
+msgid "User role \"{{displayName}}\" saved successfully"
 msgstr ""
 
 msgid "There was a problem saving the user role."
@@ -440,22 +437,13 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-msgid "Are you sure you want to remove this user role?"
-msgstr ""
-
-msgid "User role removed succesfully"
-msgstr ""
-
-msgid "There was a problem deleting the user role"
-msgstr ""
-
 msgid "User Role Management"
 msgstr ""
 
 msgid "Could not load the user data. Please refresh the page."
 msgstr ""
 
-msgid "User saved successfully"
+msgid "User \"{{displayName}}\" saved successfully"
 msgstr ""
 
 msgid "There was a problem saving the user."
@@ -538,15 +526,6 @@ msgstr ""
 msgid "Please provide a valid email address"
 msgstr ""
 
-msgid "Are you sure you want to remove this user?"
-msgstr ""
-
-msgid "User removed succesfully"
-msgstr ""
-
-msgid "There was a problem deleting the user"
-msgstr ""
-
 msgid "Replicate user"
 msgstr ""
 
@@ -554,9 +533,6 @@ msgid "Are you sure you want to disable"
 msgstr ""
 
 msgid "Are you sure you want to enable"
-msgstr ""
-
-msgid "Confirm"
 msgstr ""
 
 msgid "sucessfully disabled"
@@ -628,4 +604,13 @@ msgid "Something went wrong when processing your request."
 msgstr ""
 
 msgid "Validating..."
+msgstr ""
+
+msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
+msgstr ""
+
+msgid "{{type}} \"{{displayName}}\" removed successfully"
+msgstr ""
+
+msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
 msgstr ""

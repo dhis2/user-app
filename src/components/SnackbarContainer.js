@@ -12,6 +12,9 @@ const SnackbarContainer = ({ open, snackbarProps, hideSnackbar }) => {
     const defaults = {
         autoHideDuration: 6000,
         onRequestClose: hideSnackbar,
+        style: { whiteSpace: 'nowrap' }, // Forces text to stay on one line
+        bodyStyle: { maxWidth: '100%' }, // Overrides the default max-width of 587px
+        contentStyle: { display: 'flex' }, // Forces the confirm button to be on the same line as the text
     };
     const finalProps = { ...defaults, ...snackbarProps };
     return <Snackbar open={open} {...finalProps} />;

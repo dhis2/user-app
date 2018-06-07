@@ -93,7 +93,9 @@ class UserForm extends Component {
                 initialUiLocale,
                 initialDbLocale
             );
-            const msg = i18n.t('User saved successfully');
+            const msg = i18n.t('User "{{displayName}}" saved successfully', {
+                displayName: user.displayName,
+            });
             showSnackbar({ message: msg });
             clearItem();
             getList(USER);

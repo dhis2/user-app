@@ -96,17 +96,14 @@ userContextMenuActions.edit.subscribe(({ data: { id } }) => {
 
 userContextMenuActions.remove.subscribe(({ data: user }) => {
     const params = {
-        confirmMsg: i18n.t('Are you sure you want to remove this user?'),
-        successMsg: i18n.t('User removed succesfully'),
-        errorMsg: i18n.t('There was a problem deleting the user'),
         model: user,
         entityType: USER,
     };
     deleteModel(params);
 });
 
-userContextMenuActions.replicate.subscribe(({ data: { id } }) => {
-    const content = <ReplicateUserForm userIdToReplicate={id} />;
+userContextMenuActions.replicate.subscribe(({ data: user }) => {
+    const content = <ReplicateUserForm userToReplicate={user} />;
     const props = {
         onRequestClose: () => store.dispatch(hideDialog()),
         title: i18n.t('Replicate user'),
