@@ -18,6 +18,8 @@ import {
     resetPager,
     incrementPage,
     decrementPage,
+    showSnackbar,
+    hideSnackbar,
 } from '../../actions';
 import ErrorMessage from '../ErrorMessage';
 import './booleanValueRenderer';
@@ -72,6 +74,25 @@ class List extends Component {
             getList(entityType);
         }
     }
+
+    executeEditIfAllowed = model => {
+        const {
+            isContextActionAllowed,
+            primaryAction,
+            showSnackbar,
+            hideSnackbar,
+        } = this.props;
+        if (isContextActionAllowed(model, 'edit')) {
+            primaryAction(model);
+        } else {
+            showSnackbar({
+                message: `${i18n.t('You are not allowed to edit')} ${model.displayName}`,
+                action: i18n.t('Confirm'),
+                autoHideDuration: null,
+                onActionClick: hideSnackbar,
+            });
+        }
+    };
 
     getPagerConfig(pager) {
         if (!pager) {
@@ -129,7 +150,6 @@ class List extends Component {
         const {
             items,
             columns,
-            primaryAction,
             contextMenuActions,
             contextMenuIcons,
             isContextActionAllowed,
@@ -151,7 +171,7 @@ class List extends Component {
             <DataTable
                 rows={items}
                 columns={columns}
-                primaryAction={action => primaryAction(action)}
+                primaryAction={this.executeEditIfAllowed}
                 contextMenuActions={contextMenuActions}
                 contextMenuIcons={contextMenuIcons}
                 isContextActionAllowed={isContextActionAllowed}
@@ -187,6 +207,8 @@ List.propTypes = {
     decrementPage: PropTypes.func.isRequired,
     resetPager: PropTypes.func.isRequired,
     resetFilter: PropTypes.func.isRequired,
+    showSnackbar: PropTypes.func.isRequired,
+    hideSnackbar: PropTypes.func.isRequired,
     entityType: PropTypes.string.isRequired,
     newItemPath: PropTypes.string.isRequired,
     listType: PropTypes.string,
@@ -217,4 +239,6 @@ export default connect(mapStateToProps, {
     resetPager,
     incrementPage,
     decrementPage,
+    showSnackbar,
+    hideSnackbar,
 })(List);
