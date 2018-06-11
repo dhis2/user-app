@@ -134,7 +134,7 @@ class UserForm extends Component {
         const { user, inviteUser, externalAuthOnly } = this.props;
         const systemCanEmail = this.context.d2.system.systemInfo.emailConfigured;
 
-        if (systemCanEmail && user.id && fieldName === CONFIG.INVITE) {
+        if ((!systemCanEmail || user.id) && fieldName === CONFIG.INVITE) {
             return true;
         }
 
