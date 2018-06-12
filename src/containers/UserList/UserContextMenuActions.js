@@ -31,7 +31,7 @@ const disable = 'disable';
 const enable = 'enable';
 
 /**
- * Determines whether a specific user action should be visible for current user and given User instance
+ * Determines whether a specific user action should be visible for current user and given a User Model instance
  * @param {Object} model - d2 User model instance
  * @param {String} action - Action name
  * @returns {Boolean} - Action visibility
