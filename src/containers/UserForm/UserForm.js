@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Field, reduxForm, formValueSelector } from 'redux-form';
-import Heading from 'd2-ui/lib/headings/Heading.component';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import CircularProgress from 'material-ui/CircularProgress';
@@ -256,7 +255,6 @@ class UserForm extends Component {
             asyncValidating,
             pristine,
             valid,
-            user,
             inviteUser,
         } = this.props;
         const { showMore, locales } = this.state;
@@ -264,7 +262,6 @@ class UserForm extends Component {
             submitting || asyncValidating || pristine || !valid
         );
         const submitText = inviteUser === true ? i18n.t('Send invite') : i18n.t('Save');
-        const headerStyle = !user.id ? { marginTop: '1rem' } : {};
 
         if (!locales) {
             return (
@@ -278,9 +275,6 @@ class UserForm extends Component {
             <main>
                 <form onSubmit={handleSubmit(this.handleSubmit)}>
                     {this.renderCreateOrInviteField()}
-                    <Heading level={2} style={headerStyle}>
-                        {i18n.t('Details')}
-                    </Heading>
                     {this.renderBaseFields()}
                     {this.renderAdditionalFields(showMore)}
                     {this.renderToggler(showMore)}

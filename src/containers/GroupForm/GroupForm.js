@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import i18n from '@dhis2/d2-i18n';
 import { Field, reduxForm } from 'redux-form';
-import Heading from 'd2-ui/lib/headings/Heading.component';
 import RaisedButton from 'material-ui/RaisedButton';
 import navigateTo from '../../utils/navigateTo';
 import asyncValidateUniqueness from '../../utils/asyncValidateUniqueness';
@@ -94,7 +93,6 @@ class GroupForm extends Component {
         );
         return (
             <main>
-                <Heading level={2}>{i18n.t('Details')}</Heading>
                 <form onSubmit={handleSubmit(this.saveGroup)}>
                     {this.renderFields()}
                     <div style={{ marginTop: '2rem' }}>
