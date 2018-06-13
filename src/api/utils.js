@@ -23,6 +23,8 @@ import {
     EXTERNAL_AUTH,
 } from '../containers/UserForm/config';
 
+import { USER } from '../constants/entityTypes';
+
 /**
  * Helper function that produces a "fields" array used in the api request payload
  * @param {String} entityName - "user" "userRole" or "userGroup"
@@ -48,7 +50,12 @@ export const getQueryFields = (entityName, detailFields) => {
  * @returns {Object} A valid request payload for api list calls
  * @function
  */
-export const createListRequestData = (page = DEFAULT_PAGE, filter, fields) => {
+export const createListRequestData = (
+    page = DEFAULT_PAGE,
+    filter,
+    fields,
+    entityName
+) => {
     const {
         query,
         inactiveMonths,
@@ -63,6 +70,11 @@ export const createListRequestData = (page = DEFAULT_PAGE, filter, fields) => {
         page,
         order: 'lastUpdated:desc',
     };
+
+    if (entityName === USER) {
+        requestData.userOrgUnits = true;
+        requestData.includeChildren = true;
+    }
 
     if (query) requestData.query = query;
     if (inactiveMonths) requestData.inactiveMonths = inactiveMonths;

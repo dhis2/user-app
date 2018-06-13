@@ -56,7 +56,7 @@ class Api {
 
     getList = (entityName, page, filter) => {
         const fields = getQueryFields(entityName);
-        const requestData = createListRequestData(page, filter, fields);
+        const requestData = createListRequestData(page, filter, fields, entityName);
         return this.d2.models[entityName].list(requestData);
     };
 
