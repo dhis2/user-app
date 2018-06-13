@@ -26,9 +26,7 @@ const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 const publicUrl = publicPath.slice(0, -1);
 // Get environment variables to inject into our app.
 const env = getClientEnvironment(publicUrl);
-const manifest = JSON.parse(
-    fs.readFileSync(`${paths.appBuild}/manifest.webapp`, 'utf8')
-);
+const manifest = JSON.parse(fs.readFileSync(`${paths.appBuild}/manifest.webapp`, 'utf8'));
 const globals = Object.assign(
     {},
     {
@@ -79,9 +77,7 @@ module.exports = {
         publicPath: publicPath,
         // Point sourcemap entries to original disk location (format as URL on Windows)
         devtoolModuleFilenameTemplate: info =>
-            path
-                .relative(paths.appSrc, info.absoluteResourcePath)
-                .replace(/\\/g, '/'),
+            path.relative(paths.appSrc, info.absoluteResourcePath).replace(/\\/g, '/'),
     },
     resolve: {
         // This allows you to set a fallback for where Webpack should look for modules.
@@ -186,9 +182,7 @@ module.exports = {
                                     },
                                     use: [
                                         {
-                                            loader: require.resolve(
-                                                'css-loader'
-                                            ),
+                                            loader: require.resolve('css-loader'),
                                             options: {
                                                 importLoaders: 1,
                                                 minimize: true,
@@ -196,9 +190,7 @@ module.exports = {
                                             },
                                         },
                                         {
-                                            loader: require.resolve(
-                                                'postcss-loader'
-                                            ),
+                                            loader: require.resolve('postcss-loader'),
                                             options: {
                                                 // Necessary for external CSS imports to work
                                                 // https://github.com/facebookincubator/create-react-app/issues/2677
@@ -271,11 +263,6 @@ module.exports = {
                 `${scriptPrefix}/dhis-web-core-resource/react-dom/16.2.0/umd/react-dom.production.min.js`,
                 `${scriptPrefix}/dhis-web-core-resource/jquery/3.2.1/dist/jquery.min.js`,
                 `${scriptPrefix}/dhis-web-core-resource/jquery-migrate/3.0.1/dist/jquery-migrate.min.js`,
-                `${scriptPrefix}/dhis-web-pivot/reporttable.js`,
-                `${scriptPrefix}/dhis-web-visualizer/chart.js`,
-                `${scriptPrefix}/dhis-web-maps/map.js`,
-                `${scriptPrefix}/dhis-web-event-reports/eventreport.js`,
-                `${scriptPrefix}/dhis-web-event-visualizer/eventchart.js`,
             ]
                 .map(asset => {
                     return /\.js$/.test(asset)
