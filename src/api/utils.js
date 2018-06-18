@@ -54,7 +54,8 @@ export const createListRequestData = (
     page = DEFAULT_PAGE,
     filter,
     fields,
-    entityName
+    entityName,
+    currentUser
 ) => {
     const {
         query,
@@ -71,7 +72,7 @@ export const createListRequestData = (
         order: 'lastUpdated:desc',
     };
 
-    if (entityName === USER) {
+    if (entityName === USER && !isSuperUser(currentUser)) {
         requestData.userOrgUnits = true;
         requestData.includeChildren = true;
     }
@@ -88,6 +89,8 @@ export const createListRequestData = (
 
     return requestData;
 };
+
+const isSuperUser = ({ authorities }) => authorities.has('ALL');
 
 const addValueAsProp = (data, value, propName) => {
     if (!_.isUndefined(value)) {
