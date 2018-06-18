@@ -41,7 +41,6 @@ export const USERNAME = 'username';
 export const EMAIL = 'email';
 export const INVITE = 'inviteUser';
 export const EXTERNAL_AUTH = 'externalAuth';
-export const TWO_FA = 'twoFA';
 export const PASSWORD = 'password';
 export const REPEAT_PASSWORD = 'repeatPassword';
 export const SURNAME = 'surname';
@@ -72,7 +71,6 @@ export const USER_PROPS = [
 export const USER_CRED_PROPS = [
     USERNAME,
     EXTERNAL_AUTH,
-    TWO_FA,
     PASSWORD,
     OPEN_ID,
     LDAP_ID,
@@ -141,11 +139,6 @@ export const BASE_FIELDS = [
     {
         name: EXTERNAL_AUTH,
         label: i18n.t('External authentication only (OpenID or LDAP)'),
-        fieldRenderer: renderCheckbox,
-    },
-    {
-        name: TWO_FA,
-        label: i18n.t('Two Factor Authentication enabled'),
         fieldRenderer: renderCheckbox,
     },
     {

@@ -119,6 +119,12 @@ class Api {
         return this.d2Api.patch(url, data);
     };
 
+    disable2FA = id => {
+        const url = `/users/${id}`;
+        const data = { userCredentials: { twoFA: false } };
+        return this.d2Api.patch(url, data);
+    };
+
     getSelectedAndAvailableLocales = username => {
         username = username ? encodeURIComponent(username) : null;
 

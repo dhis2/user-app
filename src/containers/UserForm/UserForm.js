@@ -146,12 +146,7 @@ class UserForm extends Component {
 
         if (
             inviteUser &&
-            [
-                CONFIG.EXTERNAL_AUTH,
-                CONFIG.OPEN_ID,
-                CONFIG.LDAP_ID,
-                CONFIG.TWO_FA,
-            ].includes(fieldName)
+            [CONFIG.EXTERNAL_AUTH, CONFIG.OPEN_ID, CONFIG.LDAP_ID].includes(fieldName)
         ) {
             return true;
         }
