@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/dhis2/user-app.svg)](https://travis-ci.org/dhis2/user-app)
 [![Test Coverage](https://codeclimate.com/github/dhis2/user-app/badges/coverage.svg)](https://codeclimate.com/github/dhis2/user-app/coverage)
 [![Code Climate](https://codeclimate.com/github/dhis2/user-app/badges/gpa.svg)](https://codeclimate.com/github/dhis2/user-app)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdhis2%2Fuser-app.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdhis2%2Fuser-app?ref=badge_shield)
 
 This repo contains the user app first released in DHIS2 version 2.30.
 
@@ -88,3 +89,6 @@ To deploy a major upgrade, it is necessary to branch the current version, and up
 ## License
 
 The software is open source and released under the [BSD 2-Clause License](https://github.com/dhis2/user-app/blob/master/LICENSE).
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdhis2%2Fuser-app.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdhis2%2Fuser-app?ref=badge_large)
