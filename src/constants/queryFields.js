@@ -3,7 +3,7 @@ export const USER_LIST = [
     'displayName',
     'id',
     'access',
-    'userCredentials[username,disabled]',
+    'userCredentials[username,disabled,twoFA]',
     'teiSearchOrganisationUnits[id,path]',
 ];
 export const USER_GROUP_LIST = [
@@ -38,7 +38,7 @@ export const USER_DETAILS = [
     'userGroups',
     'organisationUnits[id,displayName,path]',
     'dataViewOrganisationUnits[id,displayName,path]',
-    'userCredentials[id,username,lastLogin,externalAuth,twoFA,userRoles[id,displayName],cogsDimensionConstraints[id,displayName,dimensionType],catDimensionConstraints[id,displayName,dimensionType],openId,ldapId]',
+    'userCredentials[id,username,lastLogin,externalAuth,userRoles[id,displayName],cogsDimensionConstraints[id,displayName,dimensionType],catDimensionConstraints[id,displayName,dimensionType],openId,ldapId]',
     'teiSearchOrganisationUnits[id,path]',
 ];
 

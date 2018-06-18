@@ -29,6 +29,7 @@ const remove = 'remove';
 const replicate = 'replicate';
 const disable = 'disable';
 const enable = 'enable';
+const disable_2fa = 'disable_2fa';
 
 /**
  * Determines whether a specific user action should be visible for current user and given a User Model instance
@@ -46,7 +47,7 @@ export const isUserContextActionAllowed = (model, action) => {
 
     const {
         access,
-        userCredentials: { disabled },
+        userCredentials: { disabled, twoFA },
     } = model;
 
     switch (action) {
@@ -56,13 +57,14 @@ export const isUserContextActionAllowed = (model, action) => {
             return access.update;
         case remove:
             return currentUser.id !== model.id && access.delete;
-        case replicate: {
+        case replicate:
             return access.update && currentUser.authorities.has('F_REPLICATE_USER');
-        }
         case disable:
             return access.update && !disabled;
         case enable:
             return access.update && disabled;
+        case disable_2fa:
+            return access.update && twoFA;
         default:
             return true;
     }
@@ -74,7 +76,8 @@ export const userContextMenuIcons = {
     [remove]: 'delete',
     [replicate]: 'content_copy',
     [disable]: 'block',
-    [enable]: 'check',
+    [enable]: 'playlist_add_check',
+    [disable_2fa]: 'phonelink_erase',
 };
 
 export const userContextMenuActions = Action.createActionsFromNames([
@@ -84,6 +87,7 @@ export const userContextMenuActions = Action.createActionsFromNames([
     replicate,
     disable,
     enable,
+    disable_2fa,
 ]);
 
 userContextMenuActions.profile.subscribe(({ data: { id } }) => {
@@ -118,6 +122,44 @@ userContextMenuActions.disable.subscribe(({ data }) => {
 userContextMenuActions.enable.subscribe(({ data }) => {
     updateDisabledState(data, false);
 });
+
+userContextMenuActions.disable_2fa.subscribe(({ data }) => {
+    showDisable2FAConfirmation(data);
+});
+
+const showDisable2FAConfirmation = model => {
+    const baseMsg = i18n.t(
+        'Are you sure you want to disable two factor authentication for'
+    );
+    const snackbarProps = {
+        message: `${baseMsg} ${model.displayName}`,
+        action: i18n.t('Confirm'),
+        autoHideDuration: null,
+        onActionClick: () => onDisable2FAConfirm(model),
+    };
+    store.dispatch(showSnackbar(snackbarProps));
+};
+
+const onDisable2FAConfirm = async model => {
+    store.dispatch(hideSnackbar());
+
+    const { displayName, id } = model;
+    try {
+        await api.disable2FA(id);
+        const baseMsg = i18n.t('Succesfully disabled two factor authentication for');
+        store.dispatch(showSnackbar({ message: `${baseMsg} ${displayName}` }));
+        store.dispatch(getList(USER));
+    } catch (error) {
+        store.dispatch(
+            showSnackbar({
+                message: createHumanErrorMessage(
+                    error,
+                    i18n.t('There was a problem updating two factor authentication')
+                ),
+            })
+        );
+    }
+};
 
 const updateDisabledState = (model, shouldDisable) => {
     const baseMsg = shouldDisable
