@@ -55,7 +55,6 @@ class ReplicateUserForm extends Component {
 
     replicateSuccesHandler = displayName => {
         const { getList, showSnackbar } = this.props;
-        console.log(displayName);
         const message = i18n.t('User "{{displayName}}" replicated successfuly', {
             displayName,
         });
