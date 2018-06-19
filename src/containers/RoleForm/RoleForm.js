@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import i18n from '@dhis2/d2-i18n';
 import { Field, reduxForm } from 'redux-form';
 import RaisedButton from 'material-ui/RaisedButton';
+import api from '../../api';
 import navigateTo from '../../utils/navigateTo';
 import asyncValidateUniqueness from '../../utils/asyncValidateUniqueness';
 import { clearItem, showSnackbar, getList } from '../../actions';
@@ -20,12 +21,15 @@ import validate from './validate';
 class RoleForm extends Component {
     saveRole = async (values, _, props) => {
         const { role, showSnackbar, clearItem, getList } = props;
-        role[NAME] = values[NAME];
-        role[DESCRIPTION] = values[DESCRIPTION];
-        role[AUTHORITIES] = values[AUTHORITIES].map(value => ({ id: value }));
+        const data = {
+            ...role.toJSON(),
+            [NAME]: values[NAME],
+            [DESCRIPTION]: values[DESCRIPTION],
+            [AUTHORITIES]: values[AUTHORITIES],
+        };
 
         try {
-            await role.save();
+            await api.saveRole(data);
             const msg = i18n.t('User role "{{displayName}}" saved successfully', {
                 displayName: role.displayName,
             });
