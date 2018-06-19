@@ -2,37 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
-import theme from './theme';
 import history from './utils/history';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import D2UIApp from 'd2-ui/lib/app/D2UIApp';
-import HeaderBarComponent from 'd2-ui/lib/app-header/HeaderBar';
-import headerBarStore$ from 'd2-ui/lib/app-header/headerBar.store';
-import withStateFrom from 'd2-ui/lib/component-helpers/withStateFrom';
-import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
+import HeaderBar from '@dhis2/d2-ui-header-bar';
 import store from './store';
 import './styles/styles.css';
+import AppWithD2ContextAndTheme from './components/AppWithD2ContextAndTheme';
 import SectionLoader from './components/SectionLoader';
 import SnackbarContainer from './components/SnackbarContainer';
 import DialogContainer from './components/DialogContainer';
 import SharingDialogContainer from './components/SharingDialogContainer';
 
-const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
-
 injectTapEventPlugin();
 
 /**
- * Main Component. Renders a D2UIApp wrapped in a Provider containing the HeaderBar,
+ * Main Component. Renders a AppWithD2ContextAndTheme wrapped in a Provider containing the HeaderBar,
  * Router, SectionLoader, and various popups
  * @param {Object} props
- * @param {Object} props.config - The d2 config object to pass to the D2UIApp
+ * @param {Object} props.d2 - The d2 instance to pass to the Headerbar and AppWithD2ContextAndTheme
  * @class
  */
-const UserApp = ({ config }) => (
+const UserApp = ({ d2 }) => (
     <Provider store={store}>
-        <D2UIApp initConfig={config} LoadingComponent={LoadingMask} muiTheme={theme}>
+        <AppWithD2ContextAndTheme d2={d2}>
             <div>
-                <HeaderBar />
+                <HeaderBar d2={d2} /> */}
                 <Router history={history} hashType={'noslash'}>
                     <SectionLoader />
                 </Router>
@@ -40,12 +34,12 @@ const UserApp = ({ config }) => (
                 <DialogContainer />
                 <SharingDialogContainer />
             </div>
-        </D2UIApp>
+        </AppWithD2ContextAndTheme>
     </Provider>
 );
 
 UserApp.propTypes = {
-    config: PropTypes.object.isRequired,
+    d2: PropTypes.object.isRequired,
 };
 
 export default UserApp;

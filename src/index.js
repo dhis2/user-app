@@ -1,9 +1,9 @@
 /* global DHIS_CONFIG, manifest */
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import UserApp from './UserApp';
 import registerServiceWorker from './registerServiceWorker';
-import { config, getUserSettings } from 'd2/lib/d2';
+import { config, getUserSettings, init } from 'd2/lib/d2';
 import i18n from './locales';
 
 /**
@@ -11,10 +11,10 @@ import i18n from './locales';
  */
 
 /**
- * Sets baseUrl and schemas on the d2 config object
+ * Sets baseUrl, schemas and sources on the d2 config object and then initializes d2
  * @function
  */
-const updateConfig = () => {
+const setupD2 = () => {
     let baseUrl;
     const isProd = process.env.NODE_ENV === 'production';
     const apiVersion = manifest.dhis2.apiVersion || '29';
@@ -38,6 +38,10 @@ const updateConfig = () => {
         'userCredentials',
         'organisationUnit',
     ];
+
+    return getUserSettings()
+        .then(configI18n)
+        .then(init);
 };
 
 /**
@@ -55,27 +59,18 @@ const configI18n = userSettings => {
     }
     sources.add('i18n/i18n_module_en.properties');
     i18n.changeLanguage(uiLocale);
+    return config;
 };
 
 /**
  * Renders app into root element
  * @function
  */
-const renderAppInDOM = () => {
+const renderAppInDOM = d2 => {
     const rootEl = document.getElementById('root');
-    ReactDOM.render(<UserApp config={config} />, rootEl);
+    render(<UserApp d2={d2} />, rootEl);
 };
 
-/**
- * Starts the app
- * @function
- */
-const init = () => {
-    updateConfig();
-    getUserSettings()
-        .then(configI18n)
-        .then(renderAppInDOM)
-        .then(registerServiceWorker);
-};
-
-init();
+setupD2()
+    .then(renderAppInDOM)
+    .then(registerServiceWorker);
