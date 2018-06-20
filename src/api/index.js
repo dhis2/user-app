@@ -245,6 +245,16 @@ class Api {
         });
     };
 
+    // Calling role.save() would result in an error in d2 because d2 expects you always want to
+    // save { id: <ID> } objects but authorities should be saved as a plain JSON array
+    saveRole(data) {
+        if (data.id) {
+            return this.d2Api.update(`/userRoles/${data.id}`, data);
+        } else {
+            return this.d2Api.post('/userRoles/', data);
+        }
+    }
+
     /**************************
      ****** CURRENT USER ******
      **************************/
