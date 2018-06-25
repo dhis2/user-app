@@ -90,6 +90,8 @@ const AUTHORITY_GROUPS = {
         'F_TRACKED_ENTITY_UPDATE',
         'F_UNCOMPLETE_EVENT',
         'F_VIEW_EVENT_ANALYTICS',
+        'F_PROGRAM_RULE_MANAGEMENT',
+        'F_ENROLLMENT_CASCADE_DELETE',
     ]),
     importExport: new Set([
         'F_EXPORT_DATA',
@@ -145,7 +147,7 @@ const groupAuthorities = authorities => {
 
     // The initial state of items in EMPTY_GROUPED_AUTHORITIES is null, which makes the authority sections render a loader
     // but the accumulator object passed into the reduce function below expects items to be empty arrays
-    const groupedAuthorities = Object.keys(EMPTY_GROUPED_AUTHORITIES).reduce(
+    const emptyGroupedAuthorities = Object.keys(EMPTY_GROUPED_AUTHORITIES).reduce(
         (groupedBase, key) => {
             groupedBase[key] = { ...EMPTY_GROUPED_AUTHORITIES[key], items: [] };
             return groupedBase;
@@ -154,7 +156,7 @@ const groupAuthorities = authorities => {
     );
 
     // Append items to the groupedAuthorities accumulator and return the accumulated object
-    return authorities.reduce((groupedAuthorities, auth) => {
+    const groupedAuthories = authorities.reduce((groupedAuthorities, auth) => {
         if (_.startsWith(auth.id, APP_AUTH_PREFIX)) {
             // Group under apps
             groupedAuthorities.apps.items.push(auth);
@@ -175,7 +177,17 @@ const groupAuthorities = authorities => {
             }
         }
         return groupedAuthorities;
-    }, groupedAuthorities);
+    }, emptyGroupedAuthorities);
+
+    return sortGroupedAuthorities(groupedAuthories);
+};
+
+const sortGroupedAuthorities = groupedAuthories => {
+    Object.keys(groupedAuthories).forEach(key => {
+        const group = groupedAuthories[key];
+        group.items = _.sortBy(group.items, 'name');
+    });
+    return groupedAuthories;
 };
 
 /**
