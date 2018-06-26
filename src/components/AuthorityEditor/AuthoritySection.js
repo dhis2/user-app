@@ -132,7 +132,7 @@ class AuthoritySection extends Component {
     render() {
         const { sectionKey, authSection } = this.props;
         let wrapperClassName = `authority-editor__auth-group ${sectionKey}`;
-        if (['metadata', 'apps', 'system'].includes(sectionKey)) {
+        if (authSection.items && authSection.items.length > 11) {
             wrapperClassName += ' scrollable';
         }
 
