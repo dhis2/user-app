@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-06-18T10:54:01.485Z\n"
-"PO-Revision-Date: 2018-06-18T10:54:01.485Z\n"
+"POT-Creation-Date: 2018-07-04T12:03:06.521Z\n"
+"PO-Revision-Date: 2018-07-04T12:03:06.521Z\n"
 
 msgid "Use database locale / no translation"
 msgstr ""
@@ -509,6 +509,12 @@ msgid "Available dimension restrictions for data analytics"
 msgstr ""
 
 msgid "Selected dimension restrictions for data analytics"
+msgstr ""
+
+msgid "A username should be at least 2 characters long"
+msgstr ""
+
+msgid "Username may not exceed 140 characters"
 msgstr ""
 
 msgid "A user should have at least one User Role"

@@ -166,6 +166,8 @@
     "Selected user groups": "",
     "Available dimension restrictions for data analytics": "",
     "Selected dimension restrictions for data analytics": "",
+    "A username should be at least 2 characters long": "",
+    "Username may not exceed 140 characters": "",
     "A user should have at least one User Role": "",
     "Passwords do not match": "",
     "Please provide a valid email address": "",

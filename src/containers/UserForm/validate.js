@@ -34,6 +34,10 @@ export default function validate(values, props) {
         validateRequiredField(errors, fieldName, values[fieldName], editUser)
     );
 
+    if (!editUser && !errors[USERNAME]) {
+        validateUsername(errors, values[USERNAME]);
+    }
+
     validateAssignedRoles(errors, values[ASSIGNED_ROLES], editUser);
     validatePassword(errors, values, editUser, inviteUser);
     validateEmail(errors, values[EMAIL]);
@@ -43,6 +47,16 @@ export default function validate(values, props) {
 function validateRequiredField(errors, propName, value, editUser) {
     if ((!editUser && !value) || (editUser && value === '')) {
         errors[propName] = i18n.t('This field is required');
+    }
+}
+
+export function validateUsername(errors, username) {
+    if (username.length < 2) {
+        errors[USERNAME] = i18n.t('A username should be at least 2 characters long');
+    }
+
+    if (username.length > 140) {
+        errors[USERNAME] = i18n.t('Username may not exceed 140 characters');
     }
 }
 
