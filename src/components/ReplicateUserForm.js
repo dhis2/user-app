@@ -8,6 +8,7 @@ import api from '../api';
 import { connect } from 'react-redux';
 import { USER } from '../constants/entityTypes';
 import asyncValidateUsername from '../containers/UserForm/asyncValidateUsername';
+import { validateUsername } from '../containers/UserForm/validate';
 import checkPasswordForErrors from '../utils/checkPasswordForErrors';
 import createHumanErrorMessage from '../utils/createHumanErrorMessage';
 import { getList, hideDialog, showSnackbar, hideSnackbar } from '../actions';
@@ -29,6 +30,10 @@ const validate = (values, props) => {
             errors[fieldName] = requiredFieldErrorMsg;
         }
     });
+
+    if (!errors[USERNAME]) {
+        validateUsername(errors, values[USERNAME]);
+    }
 
     const passwordError = values[PASSWORD] && checkPasswordForErrors(values[PASSWORD]);
     if (passwordError) {
