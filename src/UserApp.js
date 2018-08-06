@@ -26,7 +26,7 @@ const UserApp = ({ d2 }) => (
     <Provider store={store}>
         <AppWithD2ContextAndTheme d2={d2}>
             <div>
-                <HeaderBar d2={d2} /> */}
+                <HeaderBar d2={d2} />
                 <Router history={history} hashType={'noslash'}>
                     <SectionLoader />
                 </Router>
