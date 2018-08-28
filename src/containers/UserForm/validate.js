@@ -51,11 +51,11 @@ function validateRequiredField(errors, propName, value, editUser) {
 }
 
 export function validateUsername(errors, username) {
-    if (username.length < 2) {
+    if (username && username.length < 2) {
         errors[USERNAME] = i18n.t('A username should be at least 2 characters long');
     }
 
-    if (username.length > 140) {
+    if (username && username.length > 140) {
         errors[USERNAME] = i18n.t('Username may not exceed 140 characters');
     }
 }
