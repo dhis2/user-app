@@ -36,11 +36,13 @@ body {
     white-space: nowrap;
 }
 
-.user-list .data-table__rows__row__column:nth-child(2) {
+.user-list .data-table__rows__row__column:nth-child(1),
+.user-list .data-table__rows__row__column:nth-child(2),
+.user-list .data-table__rows__row__column:nth-child(3) {
     width: 30%;
 }
 
-.user-list .data-table__rows__row__column:nth-child(3) {
+.user-list .data-table__rows__row__column:nth-child(4) {
     width: 10%;
 }
 

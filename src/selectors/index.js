@@ -61,6 +61,7 @@ const listMappings = {
     user: item => {
         item.userName = item.userCredentials.username;
         item.disabled = item.userCredentials.disabled;
+        item.lastLogin = item.userCredentials.lastLogin;
         return item;
     },
     userRole: item => item,

@@ -17,7 +17,7 @@ import UserFilter from './UserFilter';
 const UserList = () => (
     <List
         entityType={USER}
-        columns={['displayName', 'userName', 'disabled']}
+        columns={['displayName', 'userName', 'lastLogin', 'disabled']}
         FilterComponent={UserFilter}
         primaryAction={userContextMenuActions.edit}
         contextMenuActions={userContextMenuActions}
