@@ -3,7 +3,7 @@ export const USER_LIST = [
     'displayName',
     'id',
     'access',
-    'userCredentials[username,disabled,twoFA]',
+    'userCredentials[username,disabled,lastLogin,twoFA]',
     'teiSearchOrganisationUnits[id,path]',
 ];
 export const USER_GROUP_LIST = [
