@@ -35,6 +35,15 @@ const globals = Object.assign(
     env.stringified
 );
 
+const appLicense = `/* DHIS2 User App
+ *
+ * Copyright (c) 2018-present, DHIS2.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ * https://github.com/dhis2/user-app/blob/master/LICENSE
+ */`;
+
 // Assert this just to be safe.
 // Development builds of React are slow and not intended for production.
 if (env.stringified['process.env'].NODE_ENV !== '"production"') {
@@ -355,6 +364,11 @@ module.exports = {
         // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
         // You can remove this if you don't use Moment.js:
         new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+        new webpack.BannerPlugin({
+            banner: appLicense,
+            raw: true,
+            entryOnly: true,
+        }),
     ],
     // Some libraries import Node modules but don't use them in the browser.
     // Tell Webpack to provide empty mocks for them so importing them works.
