@@ -1,6 +1,6 @@
 {
   "name": "user-app",
-  "version": "30.0.0",
+  "version": "31.0.0",
   "description": "DHIS2 User app",
   "private": true,
   "license": "BSD-3-Clause",
@@ -20,8 +20,8 @@
     "chalk": "1.1.3",
     "classnames": "^2.2.5",
     "css-loader": "0.28.7",
-    "d2": "^29.1.0",
-    "d2-ui": "^29.0.11",
+    "d2": "^31.0.1",
+    "d2-ui": "29.0.25",
     "d2-ui-sharing": "^1.0.1",
     "d2-utilizr": "^0.2.15",
     "d3-color": "^1.0.3",
@@ -98,7 +98,7 @@
       "name": "DHIS2"
     },
     "dhis2": {
-      "apiVersion": "29"
+      "apiVersion": "31"
     },
     "activities": {
       "dhis": {

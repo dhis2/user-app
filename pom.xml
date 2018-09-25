@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.hisp.dhis</groupId>
   <artifactId>dhis-app-user</artifactId>
-  <version>2.29-SNAPSHOT</version>
+  <version>2.31-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>User App</name>
   <description>DHIS 2 User App</description>
@@ -39,8 +38,8 @@
   </scm>
 
   <issueManagement>
-	<system>JIRA</system>
-	<url>https://jira.dhis2.org</url>
+    <system>JIRA</system>
+    <url>https://jira.dhis2.org</url>
   </issueManagement>
 
   <distributionManagement>
