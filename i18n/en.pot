@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-07-04T12:03:06.521Z\n"
-"PO-Revision-Date: 2018-07-04T12:03:06.521Z\n"
+"POT-Creation-Date: 2018-09-25T10:59:52.962Z\n"
+"PO-Revision-Date: 2018-09-25T10:59:52.962Z\n"
 
 msgid "Use database locale / no translation"
 msgstr ""
@@ -479,6 +479,21 @@ msgid "OpenID"
 msgstr ""
 
 msgid "LDAP identifier"
+msgstr ""
+
+msgid "WhatsApp"
+msgstr ""
+
+msgid "Facebook messenger"
+msgstr ""
+
+msgid "Skype"
+msgstr ""
+
+msgid "Telegram"
+msgstr ""
+
+msgid "Twitter"
 msgstr ""
 
 msgid "Interface language"

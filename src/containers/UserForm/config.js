@@ -56,12 +56,22 @@ export const DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS = 'dataViewOrganisationUnits';
 export const TEI_SEARCH_ORG_UNITS = 'teiSearchOrganisationUnits';
 export const ASSIGNED_USER_GROUPS = 'userGroups';
 export const DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS = 'catCogsDimensionConstraints';
+export const WHATS_APP = 'whatsApp';
+export const FACEBOOK_MESSENGER = 'facebookMessenger';
+export const SKYPE = 'skype';
+export const TELEGRAM = 'telegram';
+export const TWITTER = 'twitter';
 
 export const USER_PROPS = [
     SURNAME,
     FIRST_NAME,
     EMAIL,
     PHONE_NUMBER,
+    WHATS_APP,
+    FACEBOOK_MESSENGER,
+    SKYPE,
+    TELEGRAM,
+    TWITTER,
     DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
     DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS,
     ASSIGNED_USER_GROUPS,
@@ -184,6 +194,31 @@ export const BASE_FIELDS = [
     {
         name: PHONE_NUMBER,
         label: i18n.t('Mobile phone number'),
+        fieldRenderer: renderTextField,
+    },
+    {
+        name: WHATS_APP,
+        label: i18n.t('WhatsApp'),
+        fieldRenderer: renderTextField,
+    },
+    {
+        name: FACEBOOK_MESSENGER,
+        label: i18n.t('Facebook messenger'),
+        fieldRenderer: renderTextField,
+    },
+    {
+        name: SKYPE,
+        label: i18n.t('Skype'),
+        fieldRenderer: renderTextField,
+    },
+    {
+        name: TELEGRAM,
+        label: i18n.t('Telegram'),
+        fieldRenderer: renderTextField,
+    },
+    {
+        name: TWITTER,
+        label: i18n.t('Twitter'),
         fieldRenderer: renderTextField,
     },
     {
