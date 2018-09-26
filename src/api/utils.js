@@ -189,3 +189,10 @@ export const getRestrictedOrgUnits = (orgUnits, orgUnitType) => {
         return isAvailableUnit || hasAvailableAncestor;
     });
 };
+
+export const appendUsernametoDisplayName = userModelCollection => {
+    userModelCollection.forEach(user => {
+        user.displayName += ` (${user.userCredentials.username})`;
+    });
+    return userModelCollection;
+};

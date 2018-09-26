@@ -7,6 +7,7 @@ import {
     parseLocaleUrl,
     getRestrictedOrgUnits,
     mapLocale,
+    appendUsernametoDisplayName,
 } from './utils';
 
 import groupAuthorities from '../components/AuthorityEditor/utils/groupAuthorities';
@@ -217,8 +218,11 @@ class Api {
      **************************/
 
     getManagedUsers = () => {
-        const data = { fields: ['id', 'displayName'], paging: false };
-        return this.d2.models.user.list(data);
+        const data = {
+            fields: ['id', 'displayName', 'userCredentials[username]'],
+            paging: false,
+        };
+        return this.d2.models.user.list(data).then(appendUsernametoDisplayName);
     };
 
     // Also used by GroupForm
