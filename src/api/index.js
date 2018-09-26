@@ -7,6 +7,7 @@ import {
     parseLocaleUrl,
     getRestrictedOrgUnits,
     mapLocale,
+    parse200Error,
 } from './utils';
 
 import groupAuthorities from '../components/AuthorityEditor/utils/groupAuthorities';
@@ -21,6 +22,8 @@ import {
     DATABASE_LANGUAGE,
     USE_DB_LOCALE,
 } from '../containers/UserForm/config';
+
+const ERROR = 'ERROR';
 
 /**
  * The Api class exposes all necessary functions to get the required data from the DHIS2 web api.
@@ -180,7 +183,11 @@ class Api {
             ? this.d2Api.update(`/users/${user.id}`, userData)
             : this.d2Api.post(postUrl, userData);
 
-        return saveUserPromise.then(() => {
+        return saveUserPromise.then(response => {
+            if (response.status === ERROR) {
+                return Promise.reject(parse200Error(response));
+            }
+
             const localePromises = [];
             const username = encodeURIComponent(values.username);
 
