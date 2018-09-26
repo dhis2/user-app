@@ -203,7 +203,7 @@ export const BASE_FIELDS = [
     },
     {
         name: FACEBOOK_MESSENGER,
-        label: i18n.t('Facebook messenger'),
+        label: i18n.t('Facebook Messenger'),
         fieldRenderer: renderTextField,
     },
     {
