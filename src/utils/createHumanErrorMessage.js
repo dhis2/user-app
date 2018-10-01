@@ -20,7 +20,7 @@ const createHumanErrorMessage = (
         (!httpStatusCode && messages && messages.length > 0);
 
     if (!message && messages && messages.length > 0) {
-        message = messages.map(({ message }) => message).join(' ');
+        message = messages.map(({ message }) => message).join(', ');
     }
 
     return useMessage ? message : fallbackMsg;

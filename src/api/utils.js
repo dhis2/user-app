@@ -196,3 +196,15 @@ export const appendUsernameToDisplayName = userModelCollection => {
     });
     return userModelCollection;
 };
+
+export const parse200Error = response => {
+    const messages = [];
+    for (let typeReport of response.typeReports) {
+        for (let objectReport of typeReport.objectReports) {
+            for (let errorReport of objectReport.errorReports) {
+                messages.push({ message: errorReport.message });
+            }
+        }
+    }
+    return { messages };
+};

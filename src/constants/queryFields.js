@@ -40,6 +40,11 @@ export const USER_DETAILS = [
     'dataViewOrganisationUnits[id,displayName,path]',
     'userCredentials[id,username,lastLogin,externalAuth,userRoles[id,displayName],cogsDimensionConstraints[id,displayName,dimensionType],catDimensionConstraints[id,displayName,dimensionType],openId,ldapId]',
     'teiSearchOrganisationUnits[id,path]',
+    'whatsApp',
+    'facebookMessenger',
+    'skype',
+    'telegram',
+    'twitter',
 ];
 
 export const USER_ROLE_DETAILS = [

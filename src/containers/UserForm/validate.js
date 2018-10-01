@@ -8,12 +8,16 @@ import {
     SURNAME,
     FIRST_NAME,
     EMAIL,
+    WHATS_APP,
     ASSIGNED_ROLES,
 } from './config';
 
 const CREATE_REQUIRED_FIELDS = [USERNAME, PASSWORD, REPEAT_PASSWORD, SURNAME, FIRST_NAME];
 const INVITE_REQUIRED_FIELDS = [EMAIL, SURNAME, FIRST_NAME];
 const EDIT_REQUIRED_FIELDS = [SURNAME, FIRST_NAME];
+
+const EMAIL_ADDRESS_PATTERN = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+const INTERNATIONAL_PHONE_NUMBER_PATTERN = /^[+][0-9]{10}$/;
 
 export default function validate(values, props) {
     const { pristine, inviteUser } = props;
@@ -38,6 +42,7 @@ export default function validate(values, props) {
         validateUsername(errors, values[USERNAME]);
     }
 
+    validateWhatsApp(errors, values[WHATS_APP]);
     validateAssignedRoles(errors, values[ASSIGNED_ROLES], editUser);
     validatePassword(errors, values, editUser, inviteUser);
     validateEmail(errors, values[EMAIL]);
@@ -57,6 +62,13 @@ export function validateUsername(errors, username) {
 
     if (username && username.length > 140) {
         errors[USERNAME] = i18n.t('Username may not exceed 140 characters');
+    }
+}
+function validateWhatsApp(errors, whatsAppValue) {
+    if (whatsAppValue && !INTERNATIONAL_PHONE_NUMBER_PATTERN.test(whatsAppValue)) {
+        errors[WHATS_APP] = i18n.t(
+            'Please provide a valid international phone number (+0123456789)'
+        );
     }
 }
 
@@ -88,8 +100,7 @@ function validatePassword(errors, values, editUser, inviteUser) {
 }
 
 function validateEmail(errors, value) {
-    const emailPattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-    if (value && !emailPattern.test(value)) {
+    if (value && !EMAIL_ADDRESS_PATTERN.test(value)) {
         errors[EMAIL] = i18n.t('Please provide a valid email address');
     }
 }
