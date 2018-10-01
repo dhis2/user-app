@@ -7,6 +7,7 @@ import {
     parseLocaleUrl,
     getRestrictedOrgUnits,
     mapLocale,
+    parse200Error,
 } from './utils';
 
 import groupAuthorities from '../components/AuthorityEditor/utils/groupAuthorities';
@@ -180,7 +181,11 @@ class Api {
             ? this.d2Api.update(`/users/${user.id}`, userData)
             : this.d2Api.post(postUrl, userData);
 
-        return saveUserPromise.then(() => {
+        return saveUserPromise.then(response => {
+            if (response.status === 'ERROR') {
+                return Promise.reject(parse200Error(response));
+            }
+
             const localePromises = [];
             const username = encodeURIComponent(values.username);
 

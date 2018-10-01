@@ -101,8 +101,12 @@ class UserForm extends Component {
             this.backToList();
             detectCurrentUserChanges(user);
         } catch (error) {
-            const msg = i18n.t('There was a problem saving the user.');
-            showSnackbar({ message: msg });
+            showSnackbar({
+                message: createHumanErrorMessage(
+                    error,
+                    i18n.t('There was a problem saving the user.')
+                ),
+            });
         }
     };
 
