@@ -7,6 +7,7 @@ import {
     parseLocaleUrl,
     getRestrictedOrgUnits,
     mapLocale,
+    appendUsernameToDisplayName,
     parse200Error,
 } from './utils';
 
@@ -222,8 +223,11 @@ class Api {
      **************************/
 
     getManagedUsers = () => {
-        const data = { fields: ['id', 'displayName'], paging: false };
-        return this.d2.models.user.list(data);
+        const data = {
+            fields: ['id', 'displayName', 'userCredentials[username]'],
+            paging: false,
+        };
+        return this.d2.models.user.list(data).then(appendUsernameToDisplayName);
     };
 
     // Also used by GroupForm
