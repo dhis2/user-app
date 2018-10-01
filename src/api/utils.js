@@ -190,7 +190,7 @@ export const getRestrictedOrgUnits = (orgUnits, orgUnitType) => {
     });
 };
 
-export const appendUsernametoDisplayName = userModelCollection => {
+export const appendUsernameToDisplayName = userModelCollection => {
     userModelCollection.forEach(user => {
         user.displayName += ` (${user.userCredentials.username})`;
     });
