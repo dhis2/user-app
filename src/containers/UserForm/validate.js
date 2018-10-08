@@ -17,7 +17,7 @@ const INVITE_REQUIRED_FIELDS = [EMAIL, SURNAME, FIRST_NAME];
 const EDIT_REQUIRED_FIELDS = [SURNAME, FIRST_NAME];
 
 const EMAIL_ADDRESS_PATTERN = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-const INTERNATIONAL_PHONE_NUMBER_PATTERN = /^[+][0-9]{10}$/;
+const INTERNATIONAL_PHONE_NUMBER_PATTERN = /^\+(?:[0-9].?){4,14}[0-9]$/;
 
 export default function validate(values, props) {
     const { pristine, inviteUser } = props;
