@@ -94,7 +94,16 @@ const isSuperUser = ({ authorities }) => authorities.has('ALL');
 
 const addValueAsProp = (data, value, propName) => {
     if (!_.isUndefined(value)) {
-        data[propName] = _.isArray(value) ? value.map(id => ({ id })) : value;
+        data[propName] = Array.isArray(value) ? value.map(id => ({ id })) : value;
+    }
+};
+
+const addAttributeValues = (data, user) => {
+    if (Array.isArray(user.attributeValues) && user.attributeValues.length > 0) {
+        data.attributeValues = user.attributeValues.map(({ value, attribute }) => ({
+            value,
+            attribute,
+        }));
     }
 };
 
@@ -121,7 +130,7 @@ export const parseUserSaveData = (values, user, inviteUser) => {
 
     // catCogsDimensionConstraints are combined into a single input component,
     // but need to be stored separately
-    if (_.isArray(values.catCogsDimensionConstraints)) {
+    if (Array.isArray(values.catCogsDimensionConstraints)) {
         values.catCogsDimensionConstraints.forEach(constraint => {
             if (constraint.dimensionType === 'CATEGORY_OPTION_GROUP_SET') {
                 cred.cogsDimensionConstraints.push({ id: constraint.id });
@@ -133,6 +142,8 @@ export const parseUserSaveData = (values, user, inviteUser) => {
 
     USER_PROPS.forEach(propName => addValueAsProp(data, values[propName], propName));
     USER_CRED_PROPS.forEach(propName => addValueAsProp(cred, values[propName], propName));
+
+    addAttributeValues(data, user);
 
     // This property was appended to the model by hand but needs to be removed before saving the user
     delete cred[DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS];

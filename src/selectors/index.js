@@ -90,7 +90,7 @@ const addInitialValueFrom = (sourceObject, initialValues, propName) => {
         ];
     } else if (
         (sourceObject[propName] && !_.isUndefined(sourceObject[propName].size)) ||
-        _.isArray(sourceObject[propName])
+        Array.isArray(sourceObject[propName])
     ) {
         initialValues[propName] = asArray(sourceObject[propName]).map(({ id }) => id);
     } else {

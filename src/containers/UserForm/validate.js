@@ -1,5 +1,4 @@
 import i18n from '@dhis2/d2-i18n';
-import _ from '../../constants/lodash';
 import checkPasswordForErrors from '../../utils/checkPasswordForErrors';
 import {
     USERNAME,
@@ -62,7 +61,7 @@ export function validateUsername(errors, username) {
 
 function validateAssignedRoles(errors, value, editUser) {
     const unTouchedOnEdit = editUser && !value;
-    const isArrayWithLength = _.isArray(value) && value.length > 0;
+    const isArrayWithLength = Array.isArray(value) && value.length > 0;
 
     if (!unTouchedOnEdit && !isArrayWithLength) {
         errors[ASSIGNED_ROLES] = i18n.t('A user should have at least one User Role');
