@@ -98,6 +98,15 @@ const addValueAsProp = (data, value, propName) => {
     }
 };
 
+const addAttributeValues = (data, user) => {
+    if (_.isArray(user.attributeValues) && user.attributeValues.length > 0) {
+        data.attributeValues = user.attributeValues.map(({ value, attribute }) => ({
+            value,
+            attribute,
+        }));
+    }
+};
+
 /**
  * This function prepares a the payload object used for saving a user
  * @param {Object} values - Key-value with form values produced by redux-form
@@ -133,6 +142,8 @@ export const parseUserSaveData = (values, user, inviteUser) => {
 
     USER_PROPS.forEach(propName => addValueAsProp(data, values[propName], propName));
     USER_CRED_PROPS.forEach(propName => addValueAsProp(cred, values[propName], propName));
+
+    addAttributeValues(data, user);
 
     // This property was appended to the model by hand but needs to be removed before saving the user
     delete cred[DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS];

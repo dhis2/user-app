@@ -19,6 +19,7 @@ export const USER_ROLE_LIST = [...USER_GROUP_LIST, 'description'];
 // DETAILS
 export const USER_DETAILS = [
     'id',
+    'attributeValues',
     'created',
     'access',
     'displayName',
