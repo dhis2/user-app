@@ -94,12 +94,12 @@ const isSuperUser = ({ authorities }) => authorities.has('ALL');
 
 const addValueAsProp = (data, value, propName) => {
     if (!_.isUndefined(value)) {
-        data[propName] = _.isArray(value) ? value.map(id => ({ id })) : value;
+        data[propName] = Array.isArray(value) ? value.map(id => ({ id })) : value;
     }
 };
 
 const addAttributeValues = (data, user) => {
-    if (_.isArray(user.attributeValues) && user.attributeValues.length > 0) {
+    if (Array.isArray(user.attributeValues) && user.attributeValues.length > 0) {
         data.attributeValues = user.attributeValues.map(({ value, attribute }) => ({
             value,
             attribute,
@@ -130,7 +130,7 @@ export const parseUserSaveData = (values, user, inviteUser) => {
 
     // catCogsDimensionConstraints are combined into a single input component,
     // but need to be stored separately
-    if (_.isArray(values.catCogsDimensionConstraints)) {
+    if (Array.isArray(values.catCogsDimensionConstraints)) {
         values.catCogsDimensionConstraints.forEach(constraint => {
             if (constraint.dimensionType === 'CATEGORY_OPTION_GROUP_SET') {
                 cred.cogsDimensionConstraints.push({ id: constraint.id });
