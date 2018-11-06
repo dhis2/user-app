@@ -1,5 +1,4 @@
 import i18n from '@dhis2/d2-i18n';
-import _ from '../../constants/lodash';
 import checkPasswordForErrors from '../../utils/checkPasswordForErrors';
 import {
     USERNAME,
