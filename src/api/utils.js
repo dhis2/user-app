@@ -98,15 +98,6 @@ const addValueAsProp = (data, value, propName) => {
     }
 };
 
-const addAttributeValues = (data, user) => {
-    if (Array.isArray(user.attributeValues) && user.attributeValues.length > 0) {
-        data.attributeValues = user.attributeValues.map(({ value, attribute }) => ({
-            value,
-            attribute,
-        }));
-    }
-};
-
 /**
  * This function prepares a the payload object used for saving a user
  * @param {Object} values - Key-value with form values produced by redux-form
@@ -117,6 +108,7 @@ const addAttributeValues = (data, user) => {
 export const parseUserSaveData = (values, user, inviteUser) => {
     const userId = user.id || generateUid();
     const userCredId = (user.userCredentials && user.userCredentials.id) || generateUid();
+    const userModelOwnedProperties = user.modelDefinition.getOwnedPropertyNames();
     let data = {
         id: userId,
         userCredentials: {
@@ -143,14 +135,20 @@ export const parseUserSaveData = (values, user, inviteUser) => {
     USER_PROPS.forEach(propName => addValueAsProp(data, values[propName], propName));
     USER_CRED_PROPS.forEach(propName => addValueAsProp(cred, values[propName], propName));
 
-    addAttributeValues(data, user);
-
     // This property was appended to the model by hand but needs to be removed before saving the user
     delete cred[DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS];
 
     if (inviteUser || values[EXTERNAL_AUTH]) {
         delete cred[PASSWORD];
         delete cred[REPEAT_PASSWORD];
+    }
+
+    // Because the data object is used as the payload of a PUT request, properties that are omitted will be removed
+    // To prevent this, all remaining owned properties are copied from the user to the data object
+    for (const ownedPropName of userModelOwnedProperties) {
+        if (user[ownedPropName] && !data[ownedPropName]) {
+            data[ownedPropName] = user[ownedPropName];
+        }
     }
 
     return data;
