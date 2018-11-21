@@ -305,12 +305,12 @@ class Api {
             'userCredentials[:all,!user,userRoles[id]',
         ];
         const models = this.d2.models;
-        const userSettings = this.d2.currentUser.userSettings;
 
         return Promise.all([
             this.d2Api.get('me', { fields: meFields }),
             this.d2Api.get('me/authorization'),
-        ]).then(([me, authorities]) => {
+            this.d2Api.get('userSettings'),
+        ]).then(([me, authorities, userSettings]) => {
             this.d2.currentUser = CurrentUserClass.create(
                 me,
                 authorities,
