@@ -106,6 +106,7 @@ const addValueAsProp = (data, value, propName) => {
  * @function
  */
 export const parseUserSaveData = (values, user, inviteUser) => {
+    const isNewUser = !user.id;
     const userId = user.id || generateUid();
     const userCredId = (user.userCredentials && user.userCredentials.id) || generateUid();
     const userModelOwnedProperties = user.modelDefinition.getOwnedPropertyNames();
@@ -145,9 +146,12 @@ export const parseUserSaveData = (values, user, inviteUser) => {
 
     // Because the data object is used as the payload of a PUT request, properties that are omitted will be removed
     // To prevent this, all remaining owned properties are copied from the user to the data object
-    for (const ownedPropName of userModelOwnedProperties) {
-        if (user[ownedPropName] && !data[ownedPropName]) {
-            data[ownedPropName] = user[ownedPropName];
+    // This is only required when editing users, because new users can't have such properties
+    if (!isNewUser) {
+        for (const ownedPropName of userModelOwnedProperties) {
+            if (user[ownedPropName] && !data[ownedPropName]) {
+                data[ownedPropName] = user[ownedPropName];
+            }
         }
     }
 
