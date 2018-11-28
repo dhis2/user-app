@@ -166,6 +166,16 @@ class Api {
         );
     };
 
+    getUserAttributes() {
+        return this.d2Api
+            .get('attributes', {
+                fields: 'id,displayName,mandatory,unique,valueType',
+                filter: 'userAttribute:eq:true',
+                paging: false,
+            })
+            .then(resp => resp.attributes);
+    }
+
     /**
      * Will first execute a create/update user request, and if any locale values have been set will add subsequent request to update these too.
      * @param {Object} values - Form data produced by redux-form

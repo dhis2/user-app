@@ -7,53 +7,114 @@ import {
     SURNAME,
     FIRST_NAME,
     EMAIL,
-    WHATS_APP,
-    ASSIGNED_ROLES,
 } from './config';
 
-const CREATE_REQUIRED_FIELDS = [USERNAME, PASSWORD, REPEAT_PASSWORD, SURNAME, FIRST_NAME];
-const INVITE_REQUIRED_FIELDS = [EMAIL, SURNAME, FIRST_NAME];
-const EDIT_REQUIRED_FIELDS = [SURNAME, FIRST_NAME];
+const CREATE_REQUIRED_FIELDS = new Set([
+    USERNAME,
+    PASSWORD,
+    REPEAT_PASSWORD,
+    SURNAME,
+    FIRST_NAME,
+]);
+const INVITE_REQUIRED_FIELDS = new Set([EMAIL, SURNAME, FIRST_NAME]);
+const EDIT_REQUIRED_FIELDS = new Set([SURNAME, FIRST_NAME]);
 
 const EMAIL_ADDRESS_PATTERN = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
 const INTERNATIONAL_PHONE_NUMBER_PATTERN = /^\+(?:[0-9].?){4,14}[0-9]$/;
 
-export default function validate(values, props) {
-    const { pristine, inviteUser } = props;
-    let errors = {};
+const fieldSpecificValidatorLookup = {
+    username,
+    whatsApp,
+    userRoles,
+    password,
+    email,
+};
 
-    if (pristine) {
-        return errors;
+export default function collectValidators(
+    props,
+    name,
+    isRequiredField,
+    isAttributeField
+) {
+    const validators = [];
+    const isEditingUser = Boolean(props.user.id);
+    const isRequiredAttributeField = isAttributeField && isRequiredField;
+    const fieldValidator = fieldSpecificValidatorLookup[name];
+    const isRequiredStaticField =
+        !isAttributeField && isEditingUser
+            ? EDIT_REQUIRED_FIELDS.has(name)
+            : props.inviteUser
+                ? INVITE_REQUIRED_FIELDS.has(name)
+                : CREATE_REQUIRED_FIELDS.has(name);
+
+    if (fieldValidator) {
+        validators.push(fieldValidator);
     }
 
-    const editUser = props.user.id;
-    const requiredFields = editUser
-        ? EDIT_REQUIRED_FIELDS
-        : inviteUser
-            ? INVITE_REQUIRED_FIELDS
-            : CREATE_REQUIRED_FIELDS;
-
-    requiredFields.forEach(fieldName =>
-        validateRequiredField(errors, fieldName, values[fieldName], editUser)
-    );
-
-    if (!editUser && !errors[USERNAME]) {
-        validateUsername(errors, values[USERNAME]);
+    if (isRequiredAttributeField || isRequiredStaticField) {
+        validators.push(required);
     }
 
-    validateWhatsApp(errors, values[WHATS_APP]);
-    validateAssignedRoles(errors, values[ASSIGNED_ROLES], editUser);
-    validatePassword(errors, values, editUser, inviteUser);
-    validateEmail(errors, values[EMAIL]);
-    return errors;
+    return validators;
 }
 
-function validateRequiredField(errors, propName, value, editUser) {
-    if ((!editUser && !value) || (editUser && value === '')) {
-        errors[propName] = i18n.t('This field is required');
+function required(value) {
+    return !Boolean(value) ? i18n.t('This field is required') : undefined;
+}
+
+function username(value) {
+    if (value && value.length < 2) {
+        return i18n.t('A username should be at least 2 characters long');
+    }
+
+    if (value && value.length > 140) {
+        return i18n.t('Username may not exceed 140 characters');
     }
 }
 
+function whatsApp(value) {
+    if (value && !INTERNATIONAL_PHONE_NUMBER_PATTERN.test(value)) {
+        return i18n.t('Please provide a valid international phone number (+0123456789)');
+    }
+}
+
+function userRoles(value, _, props) {
+    const isEditingUser = Boolean(props.user.id);
+    const unTouchedOnEdit = isEditingUser && !value;
+    const isArrayWithLength = Array.isArray(value) && value.length > 0;
+
+    if (!unTouchedOnEdit && !isArrayWithLength) {
+        return i18n.t('A user should have at least one User Role');
+    }
+}
+
+function password(value, allValues, props, name) {
+    // Only skip on when editing user and both fields are blank
+    const isEditingUser = Boolean(props.user.id);
+    const emptyOnEdit =
+        isEditingUser && !allValues[PASSWORD] && !allValues[REPEAT_PASSWORD];
+
+    if (emptyOnEdit || props.inviteUser) {
+        return;
+    }
+
+    const passwordError = checkPasswordForErrors(allValues[PASSWORD]);
+    if (passwordError) {
+        return passwordError;
+    }
+
+    if (name === REPEAT_PASSWORD && allValues[REPEAT_PASSWORD] !== allValues[PASSWORD]) {
+        return i18n.t('Passwords do not match');
+    }
+}
+
+function email(value) {
+    if (value && !EMAIL_ADDRESS_PATTERN.test(value)) {
+        return i18n.t('Please provide a valid email address');
+    }
+}
+
+// LEGACY EXPORT STILL BEING USED BY OTHER COMPONENT, SHOULD BE REFACTORED AWAY
 export function validateUsername(errors, username) {
     if (username && username.length < 2) {
         errors[USERNAME] = i18n.t('A username should be at least 2 characters long');
@@ -61,45 +122,5 @@ export function validateUsername(errors, username) {
 
     if (username && username.length > 140) {
         errors[USERNAME] = i18n.t('Username may not exceed 140 characters');
-    }
-}
-function validateWhatsApp(errors, whatsAppValue) {
-    if (whatsAppValue && !INTERNATIONAL_PHONE_NUMBER_PATTERN.test(whatsAppValue)) {
-        errors[WHATS_APP] = i18n.t(
-            'Please provide a valid international phone number (+0123456789)'
-        );
-    }
-}
-
-function validateAssignedRoles(errors, value, editUser) {
-    const unTouchedOnEdit = editUser && !value;
-    const isArrayWithLength = Array.isArray(value) && value.length > 0;
-
-    if (!unTouchedOnEdit && !isArrayWithLength) {
-        errors[ASSIGNED_ROLES] = i18n.t('A user should have at least one User Role');
-    }
-}
-
-function validatePassword(errors, values, editUser, inviteUser) {
-    // Only skip on when editing user and both fields are blank
-    const emptyOnEdit = editUser && !values[PASSWORD] && !values[REPEAT_PASSWORD];
-
-    if (emptyOnEdit || inviteUser) {
-        return;
-    }
-
-    const passwordError = checkPasswordForErrors(values[PASSWORD]);
-    if (passwordError) {
-        errors[PASSWORD] = passwordError;
-    }
-
-    if (values[REPEAT_PASSWORD] !== values[PASSWORD]) {
-        errors[REPEAT_PASSWORD] = i18n.t('Passwords do not match');
-    }
-}
-
-function validateEmail(errors, value) {
-    if (value && !EMAIL_ADDRESS_PATTERN.test(value)) {
-        errors[EMAIL] = i18n.t('Please provide a valid email address');
     }
 }
