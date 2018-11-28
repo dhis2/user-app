@@ -105,27 +105,31 @@ const addInitialValueFrom = (sourceObject, initialValues, propName) => {
  * @returns {Object} Initial values for the redux form wrapping the UserForm component
  * @function
  */
-export const userFormInitialValuesSelector = _.memoize((user, locales) => {
-    let initialValues = {
-        [INVITE]: SET_PASSWORD,
-    };
+export const userFormInitialValuesSelector = _.memoize(
+    (user, locales, attributeFields) => {
+        let initialValues = {
+            [INVITE]: SET_PASSWORD,
+        };
 
-    if (user.id) {
-        USER_PROPS.forEach(propName => {
-            addInitialValueFrom(user, initialValues, propName);
-        });
+        if (user.id) {
+            USER_PROPS.forEach(propName => {
+                addInitialValueFrom(user, initialValues, propName);
+            });
 
-        USER_CRED_PROPS.forEach(propName => {
-            addInitialValueFrom(user.userCredentials, initialValues, propName);
-        });
+            USER_CRED_PROPS.forEach(propName => {
+                addInitialValueFrom(user.userCredentials, initialValues, propName);
+            });
+
+            attributeFields.forEach(field => (initialValues[field.name] = field.value));
+        }
+
+        // 'en' is a fallback for systems that have no default system UI locale specified
+        initialValues[INTERFACE_LANGUAGE] = locales.ui.selected || 'en';
+        initialValues[DATABASE_LANGUAGE] = locales.db.selected;
+
+        return initialValues;
     }
-
-    // 'en' is a fallback for systems that have no default system UI locale specified
-    initialValues[INTERFACE_LANGUAGE] = locales.ui.selected || 'en';
-    initialValues[DATABASE_LANGUAGE] = locales.db.selected;
-
-    return initialValues;
-});
+);
 
 /**
  * Used to combine cat and cog dimension restrictions into a single array

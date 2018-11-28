@@ -19,9 +19,10 @@ import { userFormInitialValuesSelector } from '../../selectors';
 import { clearItem, getList, showSnackbar } from '../../actions';
 import { USER } from '../../constants/entityTypes';
 import * as CONFIG from './config';
-import validate from './validate';
+import collectValidators from './validate';
 import { inviteUserValueSelector } from '../../selectors';
-import asyncValidateUsername from './asyncValidateUsername';
+import { asyncValidatorSwitch } from './asyncValidateUsername';
+import generateAttributeFields from '../../utils/dynamicAttributeFieldGenerator';
 import {
     renderTextField,
     renderText,
@@ -44,6 +45,7 @@ class UserForm extends Component {
             showMore: false,
             locales: null,
         };
+        this.attibuteFields = null;
         this.trashableLocalePromise = null;
     }
 
@@ -54,12 +56,20 @@ class UserForm extends Component {
         this.trashableLocalePromise = makeTrashable(
             api.getSelectedAndAvailableLocales(username)
         );
+        this.trashableAttributesPromise = makeTrashable(api.getUserAttributes());
 
         try {
             const locales = await this.trashableLocalePromise;
+            const attributes = await this.trashableAttributesPromise;
+            this.attibuteFields = generateAttributeFields(
+                attributes,
+                user.attributeValues
+            );
+            this.updateAsyncBlurFields();
             this.setState({ locales });
-            initialize(userFormInitialValuesSelector(user, locales));
+            initialize(userFormInitialValuesSelector(user, locales, this.attibuteFields));
         } catch (error) {
+            console.error(error);
             showSnackbar({
                 message: createHumanErrorMessage(
                     error,
@@ -71,6 +81,17 @@ class UserForm extends Component {
 
     componentWillUnmount() {
         this.trashableLocalePromise.trash();
+        this.trashableAttributesPromise.trash();
+    }
+
+    updateAsyncBlurFields() {
+        this.attibuteFields.forEach(({ shouldBeUnique, name }) => {
+            if (shouldBeUnique) {
+                // This seems hacky, but seems to be the way to do it:
+                // https://github.com/erikras/redux-form/issues/708#issuecomment-191446641
+                this.props.asyncBlurFields.push(name);
+            }
+        });
     }
 
     toggleShowMore = () => {
@@ -158,7 +179,16 @@ class UserForm extends Component {
         const { user } = this.props;
 
         return fields.reduce((filteredFields, fieldConfig) => {
-            const { name, fieldRenderer, label, isRequiredField, ...conf } = fieldConfig;
+            const {
+                name,
+                fieldRenderer,
+                label,
+                isRequiredField,
+                isAttributeField,
+                shouldBeUnique,
+                attributeId,
+                ...conf
+            } = fieldConfig;
             const labelText = this.getLabelText(label, user, isRequiredField);
 
             if (this.exludeField(name)) {
@@ -189,6 +219,13 @@ class UserForm extends Component {
                     break;
             }
 
+            conf.validate = collectValidators(
+                this.props,
+                name,
+                isRequiredField,
+                isAttributeField
+            );
+
             filteredFields.push(
                 <Field
                     name={name}
@@ -204,6 +241,10 @@ class UserForm extends Component {
 
     renderCreateOrInviteField() {
         return this.renderFields(CONFIG.INVITE_FIELDS);
+    }
+
+    renderAttributeFields() {
+        return this.renderFields(this.attibuteFields);
     }
 
     renderBaseFields() {
@@ -271,6 +312,7 @@ class UserForm extends Component {
                 <form onSubmit={handleSubmit(this.handleSubmit)}>
                     {this.renderCreateOrInviteField()}
                     {this.renderBaseFields()}
+                    {this.renderAttributeFields()}
                     {this.renderAdditionalFields(showMore)}
                     {this.renderToggler(showMore)}
                     <div>
@@ -307,6 +349,7 @@ UserForm.propTypes = {
     fallbackOrgUnits: PropTypes.object,
     inviteUser: PropTypes.bool.isRequired,
     externalAuthOnly: PropTypes.bool.isRequired,
+    asyncBlurFields: PropTypes.arrayOf(PropTypes.string),
 };
 
 UserForm.contextTypes = {
@@ -326,8 +369,7 @@ const mapStateToProps = state => {
 
 const ReduxFormWrappedUserForm = reduxForm({
     form: FORM_NAME,
-    validate,
-    asyncValidate: asyncValidateUsername,
+    asyncValidate: asyncValidatorSwitch,
     asyncBlurFields: [CONFIG.USERNAME],
 })(UserForm);
 
