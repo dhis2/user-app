@@ -7,7 +7,7 @@ import i18n from '@dhis2/d2-i18n';
 import api from '../api';
 import { connect } from 'react-redux';
 import { USER } from '../constants/entityTypes';
-import { asyncValidateUsername } from '../containers/UserForm/asyncValidateUsername';
+import { asyncValidateUsername } from '../containers/UserForm/validateAsync';
 import { validateUsername } from '../containers/UserForm/validate';
 import checkPasswordForErrors from '../utils/checkPasswordForErrors';
 import createHumanErrorMessage from '../utils/createHumanErrorMessage';

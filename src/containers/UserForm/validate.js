@@ -32,7 +32,8 @@ export default function collectValidators(
     props,
     name,
     isRequiredField,
-    isAttributeField
+    isAttributeField,
+    fieldValidators
 ) {
     const validators = [];
     const isEditingUser = Boolean(props.user.id);
@@ -53,6 +54,10 @@ export default function collectValidators(
         validators.push(required);
     }
 
+    if (isAttributeField && fieldValidators) {
+        validators.push(...fieldValidators);
+    }
+
     return validators;
 }
 
@@ -67,6 +72,30 @@ function username(value) {
 
     if (value && value.length > 140) {
         return i18n.t('Username may not exceed 140 characters');
+    }
+}
+
+export function number(value) {
+    if (isNaN(value)) {
+        return i18n.t('Value should be a number');
+    }
+}
+
+export function integer(value) {
+    if (!isInteger(value)) {
+        return i18n.t('Value should be an integer');
+    }
+}
+
+export function positiveInteger(value) {
+    if (!isInteger(value) || parseInt(value, 10) <= 0) {
+        return i18n.t('Value should be a positive integer');
+    }
+}
+
+export function negativeInteger(value) {
+    if (!isInteger(value) || parseInt(value, 10) >= 0) {
+        return i18n.t('Value should be a nagative integer');
     }
 }
 
@@ -115,4 +144,13 @@ export function validateUsername(errors, username) {
     if (username && username.length > 140) {
         errors[USERNAME] = i18n.t('Username may not exceed 140 characters');
     }
+}
+
+// Helper
+function isInteger(value) {
+    if (isNaN(value)) {
+        return false;
+    }
+    const x = parseFloat(value);
+    return (x | 0) === x;
 }

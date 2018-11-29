@@ -1,4 +1,12 @@
-import { renderTextField } from './fieldRenderers';
+import { renderTextField, renderCheckbox, renderSelectField } from './fieldRenderers';
+import {
+    number,
+    integer,
+    positiveInteger,
+    negativeInteger,
+} from '../containers/UserForm/validate';
+
+export const USER_ATTRIBUTE_FIELD_PREFIX = 'userAttibute_';
 /*
 Below is a list of all possible attribute valueTypes. 
 Only the checked ones are implemented
@@ -36,21 +44,48 @@ const mapping = {
     LONG_TEXT: {
         fieldRenderer: renderTextField,
         props: {
-            multiline: true,
+            multiLine: true,
+            rows: 3,
+            rowsMax: 6,
         },
     },
-    BOOLEAN: {},
-    TRUE_ONLY: {},
-    NUMBER: {},
-    INTEGER: {},
-    INTEGER_POSITIVE: {},
-    INTEGER_NEGATIVE: {},
+    BOOLEAN: {
+        fieldRenderer: renderSelectField,
+        props: {
+            options: [{ id: 'true', label: 'Yes' }, { id: 'false', label: 'No' }],
+        },
+    },
+    TRUE_ONLY: {
+        fieldRenderer: renderCheckbox,
+    },
+    NUMBER: {
+        fieldRenderer: renderTextField,
+        fieldValidators: [number],
+    },
+    INTEGER: {
+        fieldRenderer: renderTextField,
+        fieldValidators: [integer],
+    },
+    INTEGER_POSITIVE: {
+        fieldRenderer: renderTextField,
+        fieldValidators: [positiveInteger],
+    },
+    INTEGER_NEGATIVE: {
+        fieldRenderer: renderTextField,
+        fieldValidators: [negativeInteger],
+    },
 };
 
 export default function generateAttributeFields(attributes, userAttributeValues) {
-    return attributes.map(attribute =>
-        generateAttributeField(attribute, userAttributeValues)
-    );
+    // Only generate fields for supported attributes
+    return attributes.reduce((supportedAttributes, attribute) => {
+        if (mapping[attribute.valueType]) {
+            supportedAttributes.push(
+                generateAttributeField(attribute, userAttributeValues)
+            );
+        }
+        return supportedAttributes;
+    }, []);
 }
 
 function generateAttributeField(attribute, userAttributeValues) {
@@ -60,13 +95,14 @@ function generateAttributeField(attribute, userAttributeValues) {
             attributeValue => attributeValue.attribute.id === attribute.id
         );
     return {
-        name: `userAttibute_${attribute.id}`,
+        name: USER_ATTRIBUTE_FIELD_PREFIX + attribute.id,
         isAttributeField: true,
         label: attribute.displayName,
         isRequiredField: attribute.mandatory,
         shouldBeUnique: attribute.unique,
         attributeId: attribute.id,
         value: (userAttribute && userAttribute.value) || null,
+        valueType: attribute.valueType,
         ...mapping[attribute.valueType],
     };
 }
