@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-09-26T15:27:21.722Z\n"
-"PO-Revision-Date: 2018-09-26T15:27:21.722Z\n"
+"POT-Creation-Date: 2018-11-29T16:04:29.871Z\n"
+"PO-Revision-Date: 2018-11-29T16:04:29.871Z\n"
 
 msgid "Use database locale / no translation"
 msgstr ""
@@ -455,12 +455,6 @@ msgstr ""
 msgid "Send invite"
 msgstr ""
 
-msgid "Username already taken"
-msgstr ""
-
-msgid "There was a problem whilst checking the availability of this username"
-msgstr ""
-
 msgid ""
 "Selecting an organisation unit provides access to all units in the "
 "sub-hierarchy"
@@ -532,6 +526,18 @@ msgstr ""
 msgid "Username may not exceed 140 characters"
 msgstr ""
 
+msgid "Value should be a number"
+msgstr ""
+
+msgid "Value should be an integer"
+msgstr ""
+
+msgid "Value should be a positive integer"
+msgstr ""
+
+msgid "Value should be a nagative integer"
+msgstr ""
+
 msgid "Please provide a valid international phone number (+0123456789)"
 msgstr ""
 
@@ -542,6 +548,18 @@ msgid "Passwords do not match"
 msgstr ""
 
 msgid "Please provide a valid email address"
+msgstr ""
+
+msgid "Attribute value needs to be unique, value already taken."
+msgstr ""
+
+msgid "There was a problem checking if this attribute value is unique"
+msgstr ""
+
+msgid "Username already taken"
+msgstr ""
+
+msgid "There was a problem whilst checking the availability of this username"
 msgstr ""
 
 msgid "Replicate user"

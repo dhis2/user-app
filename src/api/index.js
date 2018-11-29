@@ -176,6 +176,28 @@ class Api {
             .then(resp => resp.attributes);
     }
 
+    isUserAttributeUnique(userId, attributeId, value) {
+        return (
+            this.d2.models.user
+                // All users but current
+                .filter()
+                .on('id')
+                .notEqual(userId)
+                // Attribute id being validated
+                .filter()
+                .on('attributeValues.attribute.id')
+                .equals(attributeId)
+                // Value on form
+                .filter()
+                .on('attributeValues.value')
+                .equals(value)
+                // Smallest response payload possible
+                .list({ paging: false, fields: ['id'] })
+                // Only unique if none is found
+                .then(modelCollection => modelCollection.size === 0)
+        );
+    }
+
     /**
      * Will first execute a create/update user request, and if any locale values have been set will add subsequent request to update these too.
      * @param {Object} values - Form data produced by redux-form
@@ -185,8 +207,15 @@ class Api {
      * @returns {Promise} Promise object for the combined ajax calls to save a user
      * @method
      */
-    saveOrInviteUser = (values, user, inviteUser, initialUiLocale, initialDbLocale) => {
-        const userData = parseUserSaveData(values, user, inviteUser);
+    saveOrInviteUser = (
+        values,
+        user,
+        inviteUser,
+        initialUiLocale,
+        initialDbLocale,
+        attributeFields
+    ) => {
+        const userData = parseUserSaveData(values, user, inviteUser, attributeFields);
         const postUrl = inviteUser ? '/users/invite' : '/users';
         const saveUserPromise = user.id
             ? this.d2Api.update(`/users/${user.id}`, userData)

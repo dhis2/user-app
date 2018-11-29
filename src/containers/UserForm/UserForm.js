@@ -21,7 +21,7 @@ import { USER } from '../../constants/entityTypes';
 import * as CONFIG from './config';
 import collectValidators from './validate';
 import { inviteUserValueSelector } from '../../selectors';
-import { asyncValidatorSwitch } from './asyncValidateUsername';
+import { asyncValidatorSwitch } from './validateAsync';
 import generateAttributeFields from '../../utils/dynamicAttributeFieldGenerator';
 import {
     renderTextField,
@@ -44,8 +44,9 @@ class UserForm extends Component {
         this.state = {
             showMore: false,
             locales: null,
+            attributeFields: null,
         };
-        this.attibuteFields = null;
+        this.trashableAttributesPromise = null;
         this.trashableLocalePromise = null;
     }
 
@@ -61,13 +62,13 @@ class UserForm extends Component {
         try {
             const locales = await this.trashableLocalePromise;
             const attributes = await this.trashableAttributesPromise;
-            this.attibuteFields = generateAttributeFields(
+            const attributeFields = generateAttributeFields(
                 attributes,
                 user.attributeValues
             );
-            this.updateAsyncBlurFields();
-            this.setState({ locales });
-            initialize(userFormInitialValuesSelector(user, locales, this.attibuteFields));
+            this.updateAsyncBlurFields(attributeFields);
+            this.setState({ locales, attributeFields });
+            initialize(userFormInitialValuesSelector(user, locales, attributeFields));
         } catch (error) {
             console.error(error);
             showSnackbar({
@@ -84,10 +85,10 @@ class UserForm extends Component {
         this.trashableAttributesPromise.trash();
     }
 
-    updateAsyncBlurFields() {
-        this.attibuteFields.forEach(({ shouldBeUnique, name }) => {
+    updateAsyncBlurFields(attributeFields) {
+        attributeFields.forEach(({ shouldBeUnique, name }) => {
             if (shouldBeUnique) {
-                // This seems hacky, but seems to be the way to do it:
+                // It seems hacky to push to props, but seems to be the way to do it:
                 // https://github.com/erikras/redux-form/issues/708#issuecomment-191446641
                 this.props.asyncBlurFields.push(name);
             }
@@ -111,7 +112,8 @@ class UserForm extends Component {
                 user,
                 inviteUser,
                 initialUiLocale,
-                initialDbLocale
+                initialDbLocale,
+                this.state.attributeFields
             );
             const msg = i18n.t('User "{{displayName}}" saved successfully', {
                 displayName: `${values.firstName} ${values.surname}`,
@@ -122,6 +124,7 @@ class UserForm extends Component {
             this.backToList();
             detectCurrentUserChanges(user);
         } catch (error) {
+            console.error(error);
             showSnackbar({
                 message: createHumanErrorMessage(
                     error,
@@ -139,7 +142,8 @@ class UserForm extends Component {
         const { inviteUser } = this.props;
         return isRequiredField === CONFIG.ALWAYS_REQUIRED ||
             (inviteUser && isRequiredField === CONFIG.INVITE_REQUIRED) ||
-            (isRequiredField === CONFIG.CREATE_REQUIRED && !user.id && !inviteUser)
+            (isRequiredField === CONFIG.CREATE_REQUIRED && !user.id && !inviteUser) ||
+            (typeof isRequiredField === 'boolean' && isRequiredField)
             ? `${label} *`
             : label;
     }
@@ -191,6 +195,8 @@ class UserForm extends Component {
                 isAttributeField,
                 shouldBeUnique,
                 attributeId,
+                fieldValidators,
+                valueType,
                 ...conf
             } = fieldConfig;
             const labelText = this.getLabelText(label, user, isRequiredField);
@@ -206,6 +212,7 @@ class UserForm extends Component {
 
             switch (fieldRenderer) {
                 case renderTextField:
+                    conf.hintText = label;
                     conf.disabled = Boolean(name === CONFIG.USERNAME && user.id);
                     break;
                 case renderSearchableOrgUnitTree:
@@ -227,7 +234,8 @@ class UserForm extends Component {
                 this.props,
                 name,
                 isRequiredField,
-                isAttributeField
+                isAttributeField,
+                fieldValidators
             );
 
             filteredFields.push(
@@ -248,7 +256,7 @@ class UserForm extends Component {
     }
 
     renderAttributeFields() {
-        return this.renderFields(this.attibuteFields);
+        return this.renderFields(this.state.attributeFields);
     }
 
     renderBaseFields() {
