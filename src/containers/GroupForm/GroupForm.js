@@ -5,7 +5,8 @@ import i18n from '@dhis2/d2-i18n';
 import { Field, reduxForm } from 'redux-form';
 import RaisedButton from 'material-ui/RaisedButton';
 import navigateTo from '../../utils/navigateTo';
-import asyncValidateUniqueness from '../../utils/asyncValidateUniqueness';
+import { asyncValidateUniqueness } from '../../utils/validatorsAsync';
+import { code, required, requiredArray } from '../../utils/validators';
 import asArray from '../../utils/asArray';
 import { renderSearchableGroupEditor } from '../../utils/fieldRenderers';
 import createHumanErrorMessage from '../../utils/createHumanErrorMessage';
@@ -13,7 +14,6 @@ import { clearItem, showSnackbar, getList } from '../../actions';
 import { NAME, CODE, USERS, MANAGED_GROUPS, FIELDS } from './config';
 import { USER_GROUP } from '../../constants/entityTypes';
 import detectCurrentUserChanges from '../../utils/detectCurrentUserChanges';
-import validate from './validate';
 import api from '../../api';
 
 /**
@@ -65,6 +65,7 @@ class GroupForm extends Component {
             const { name, fieldRenderer, label, isRequiredField, ...conf } = fieldConfig;
             const suffix = isRequiredField ? ' *' : '';
             const labelText = label + suffix;
+            const validators = [];
 
             if (fieldRenderer === renderSearchableGroupEditor) {
                 conf.availableItemsQuery = api[conf.availableItemsQuery];
@@ -74,12 +75,25 @@ class GroupForm extends Component {
                 conf.initialValues = fieldConfig.initialItemsSelector(group);
             }
 
+            if (name === NAME) {
+                validators.push(required);
+            }
+
+            if (name === USERS) {
+                validators.push(requiredArray);
+            }
+
+            if (name === CODE) {
+                validators.push(code);
+            }
+
             return (
                 <Field
                     name={name}
                     key={name}
                     component={fieldRenderer}
                     label={labelText}
+                    validate={validators}
                     {...conf}
                 />
             );
@@ -139,7 +153,6 @@ const mapStateToProps = state => ({
 
 const ReduxFormWrappedGroupForm = reduxForm({
     form: 'groupForm',
-    validate,
     asyncValidate: asyncValidateUniqueness,
     asyncBlurFields: [NAME, CODE],
 })(GroupForm);

@@ -7,51 +7,24 @@ import i18n from '@dhis2/d2-i18n';
 import api from '../api';
 import { connect } from 'react-redux';
 import { USER } from '../constants/entityTypes';
-import { asyncValidateUsername } from '../containers/UserForm/validateAsync';
-import { validateUsername } from '../containers/UserForm/validate';
-import checkPasswordForErrors from '../utils/checkPasswordForErrors';
+import { USERNAME, PASSWORD } from '../containers/UserForm/config';
+import { username, password } from '../utils/validators';
+import { asyncValidateUsername } from '../utils/validatorsAsync';
 import createHumanErrorMessage from '../utils/createHumanErrorMessage';
 import { getList, hideDialog, showSnackbar, hideSnackbar } from '../actions';
 
-const FORM_NAME = 'replicateUserForm';
-const USERNAME = 'username';
-const PASSWORD = 'password';
-
-const validate = (values, props) => {
-    const { pristine } = props;
-    let errors = {};
-    let requiredFieldErrorMsg = i18n.t('This field is required');
-    if (pristine) {
-        return errors;
-    }
-
-    [USERNAME, PASSWORD].forEach(fieldName => {
-        if (!values[fieldName]) {
-            errors[fieldName] = requiredFieldErrorMsg;
-        }
-    });
-
-    if (!errors[USERNAME]) {
-        validateUsername(errors, values[USERNAME]);
-    }
-
-    const passwordError = values[PASSWORD] && checkPasswordForErrors(values[PASSWORD]);
-    if (passwordError) {
-        errors[PASSWORD] = passwordError;
-    }
-    return errors;
-};
+export const FORM_NAME = 'replicateUserForm';
 
 /**
  * Form component for replicating a using redux-form and displayed in a Dialog
  */
 class ReplicateUserForm extends Component {
     replicateUser = async data => {
-        const { userToReplicate, hideDialog } = this.props;
+        const { user, hideDialog } = this.props;
         const { username, password } = data;
         try {
-            await api.replicateUser(userToReplicate.id, username, password);
-            this.replicateSuccesHandler(userToReplicate.displayName);
+            await api.replicateUser(user.id, username, password);
+            this.replicateSuccesHandler(user.displayName);
         } catch (error) {
             this.replicateErrorHandler(error);
         }
@@ -98,12 +71,14 @@ class ReplicateUserForm extends Component {
                     component={renderTextField}
                     label={i18n.t('Username')}
                     hintText={i18n.t('Username for new user')}
+                    validate={[username]}
                 />
                 <Field
                     name={PASSWORD}
                     component={renderTextField}
                     label={i18n.t('Password')}
                     hintText={i18n.t('Password for new user')}
+                    validate={[password]}
                     type="password"
                 />
                 <div style={{ marginTop: 16 }}>
@@ -125,7 +100,7 @@ class ReplicateUserForm extends Component {
 }
 
 ReplicateUserForm.propTypes = {
-    userToReplicate: PropTypes.object.isRequired,
+    user: PropTypes.object.isRequired,
     hideDialog: PropTypes.func.isRequired,
     getList: PropTypes.func.isRequired,
     showSnackbar: PropTypes.func.isRequired,
@@ -141,7 +116,6 @@ const mapStateToProps = state => ({ formState: state.form[FORM_NAME] });
 
 const ReduxFormWrapped = reduxForm({
     form: FORM_NAME,
-    validate,
     asyncValidate: asyncValidateUsername,
     asyncBlurFields: [USERNAME],
 })(ReplicateUserForm);
