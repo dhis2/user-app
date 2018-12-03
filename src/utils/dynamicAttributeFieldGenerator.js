@@ -33,7 +33,7 @@ Only the checked ones are implemented
     [ ] IMAGE
 */
 
-const mapping = {
+const valueTypeMapping = {
     TEXT: {
         fieldRenderer: renderTextField,
     },
@@ -84,15 +84,9 @@ const mapping = {
 };
 
 export default function generateAttributeFields(attributes, userAttributeValues) {
-    // Only generate fields for supported attributes
-    return attributes.reduce((supportedAttributes, attribute) => {
-        if (mapping[attribute.valueType]) {
-            supportedAttributes.push(
-                generateAttributeField(attribute, userAttributeValues)
-            );
-        }
-        return supportedAttributes;
-    }, []);
+    return attributes.map(attribute =>
+        generateAttributeField(attribute, userAttributeValues)
+    );
 }
 
 function generateAttributeField(attribute, userAttributeValues) {
@@ -101,6 +95,9 @@ function generateAttributeField(attribute, userAttributeValues) {
         userAttributeValues.find(
             attributeValue => attributeValue.attribute.id === attribute.id
         );
+    // Use valueTypeMapping.TEXT as fallback field renderer.
+    // This way all attributes will always be editable, albeit not necesarrily enforcing the correct formatting
+    const valueTypeProps = valueTypeMapping[attribute.valueType] || valueTypeMapping.TEXT;
     return {
         name: USER_ATTRIBUTE_FIELD_PREFIX + attribute.id,
         isAttributeField: true,
@@ -110,6 +107,6 @@ function generateAttributeField(attribute, userAttributeValues) {
         attributeId: attribute.id,
         value: (userAttribute && userAttribute.value) || null,
         valueType: attribute.valueType,
-        ...mapping[attribute.valueType],
+        ...valueTypeProps,
     };
 }
