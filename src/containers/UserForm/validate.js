@@ -8,6 +8,12 @@ import {
     EMAIL,
 } from './config';
 
+// Use this to make sure validator names match form field names (see const fieldSpecificValidator)
+const validatorLookup = {
+    ...validators,
+    userRoles: validators.requiredArray,
+};
+
 const CREATE_REQUIRED_FIELDS = new Set([
     USERNAME,
     PASSWORD,
@@ -28,7 +34,7 @@ export default function collectValidators(
     const validatorsToApply = [];
     const isEditingUser = Boolean(props.user.id);
     const isRequiredAttributeField = isAttributeField && isRequiredField;
-    const fieldSpecificValidator = validators[name];
+    const fieldSpecificValidator = validatorLookup[name];
     const isRequiredStaticField =
         !isAttributeField && isEditingUser
             ? EDIT_REQUIRED_FIELDS.has(name)
