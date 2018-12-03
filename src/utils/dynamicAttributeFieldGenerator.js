@@ -1,5 +1,6 @@
 import { renderTextField, renderCheckbox, renderSelectField } from './fieldRenderers';
-import { number, integer, positiveInteger, negativeInteger } from './validators';
+import { number, integer, positiveInteger, negativeInteger, date } from './validators';
+import browserHasDateInputSupport from './browserHasDateInputSupport';
 
 export const USER_ATTRIBUTE_FIELD_PREFIX = 'userAttibute_';
 /*
@@ -43,6 +44,17 @@ const mapping = {
             rows: 3,
             rowsMax: 6,
         },
+    },
+    DATE: {
+        fieldRenderer: renderTextField,
+        props: {
+            type: 'date',
+            // If browser supports <input type="date"/>, the label should always float above the input
+            // because the date input has some text that overlaps with the hintText
+            floatingLabelFixed: browserHasDateInputSupport(),
+            hintText: null,
+        },
+        fieldValidators: [date],
     },
     BOOLEAN: {
         fieldRenderer: renderSelectField,
