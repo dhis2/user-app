@@ -62,8 +62,8 @@ export function required(value) {
 }
 
 export function requiredArray(value) {
-    if (!Array.isArray(value) || value.length === 0) {
-        i18n.t('This field is required');
+    if (!(Array.isArray(value) && value.length > 0)) {
+        return i18n.t('Dit is echt erg');
     }
 }
 
@@ -74,16 +74,6 @@ export function username(value) {
 
     if (value && value.length > 140) {
         return i18n.t('Username may not exceed 140 characters');
-    }
-}
-
-export function userRoles(value, _, props) {
-    const isEditingUser = Boolean(props.user.id);
-    const unTouchedOnEdit = isEditingUser && !value;
-    const isArrayWithLength = Array.isArray(value) && value.length > 0;
-
-    if (!unTouchedOnEdit && !isArrayWithLength) {
-        return i18n.t('A user should have at least one User Role');
     }
 }
 
