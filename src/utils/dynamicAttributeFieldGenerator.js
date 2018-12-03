@@ -1,8 +1,10 @@
+import i18n from '@dhis2/d2-i18n';
 import { renderTextField, renderCheckbox, renderSelectField } from './fieldRenderers';
 import { number, integer, positiveInteger, negativeInteger, date } from './validators';
 import browserHasDateInputSupport from './browserHasDateInputSupport';
 
 export const USER_ATTRIBUTE_FIELD_PREFIX = 'userAttibute_';
+export const NO_VALUE_OPTION = 'no_value';
 /*
 Below is a list of all possible attribute valueTypes. 
 Only the checked ones are implemented
@@ -34,6 +36,9 @@ Only the checked ones are implemented
 */
 
 const valueTypeMapping = {
+    OPTION_SET: {
+        fieldRenderer: renderSelectField,
+    },
     TEXT: {
         fieldRenderer: renderTextField,
     },
@@ -59,7 +64,10 @@ const valueTypeMapping = {
     BOOLEAN: {
         fieldRenderer: renderSelectField,
         props: {
-            options: [{ id: 'true', label: 'Yes' }, { id: 'false', label: 'No' }],
+            options: [
+                { id: 'true', label: i18n.t('Yes') },
+                { id: 'false', label: i18n.t('No') },
+            ],
         },
     },
     TRUE_ONLY: {
@@ -89,24 +97,59 @@ export default function generateAttributeFields(attributes, userAttributeValues)
     );
 }
 
-function generateAttributeField(attribute, userAttributeValues) {
+function generateAttributeField(
+    { id, valueType, displayName, mandatory, unique, optionSet },
+    userAttributeValues
+) {
     const userAttribute =
         userAttributeValues &&
-        userAttributeValues.find(
-            attributeValue => attributeValue.attribute.id === attribute.id
-        );
-    // Use valueTypeMapping.TEXT as fallback field renderer.
-    // This way all attributes will always be editable, albeit not necesarrily enforcing the correct formatting
-    const valueTypeProps = valueTypeMapping[attribute.valueType] || valueTypeMapping.TEXT;
+        userAttributeValues.find(attributeValue => attributeValue.attribute.id === id);
+
+    const valueTypeProps = getValueTypeProps(valueType, optionSet, mandatory);
+
     return {
-        name: USER_ATTRIBUTE_FIELD_PREFIX + attribute.id,
+        name: USER_ATTRIBUTE_FIELD_PREFIX + id,
         isAttributeField: true,
-        label: attribute.displayName,
-        isRequiredField: attribute.mandatory,
-        shouldBeUnique: attribute.unique,
-        attributeId: attribute.id,
+        label: displayName,
+        isRequiredField: mandatory,
+        shouldBeUnique: unique,
+        attributeId: id,
         value: (userAttribute && userAttribute.value) || null,
-        valueType: attribute.valueType,
+        valueType,
         ...valueTypeProps,
     };
+}
+
+function getValueTypeProps(valueType, optionSet, mandatory) {
+    // Attributes based on an option-set have TEXT as their value type but need to render a select/dropdown with the options
+    const valueTypeProps = optionSet
+        ? {
+              ...valueTypeMapping.OPTION_SET,
+              props: {
+                  options: optionSet.options.map(option => ({
+                      id: option.id,
+                      label: option.displayName,
+                  })),
+              },
+          }
+        : // Use valueTypeMapping.TEXT as fallback field renderer.
+          // This way all attributes will always be editable, albeit not necesarrily enforcing the correct formatting
+          valueTypeMapping[valueType] || valueTypeMapping.TEXT;
+
+    // Optional dropdown fields need a way to be cleared
+    if (
+        valueTypeProps.fieldRenderer === renderSelectField &&
+        !mandatory &&
+        valueTypeProps.props.options[0].id !== NO_VALUE_OPTION
+    ) {
+        valueTypeProps.props.options = [
+            {
+                id: NO_VALUE_OPTION,
+                label: i18n.t('<No value>'),
+            },
+            ...valueTypeProps.props.options,
+        ];
+    }
+
+    return valueTypeProps;
 }
