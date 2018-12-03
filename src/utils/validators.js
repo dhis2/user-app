@@ -3,11 +3,22 @@ import { PASSWORD, REPEAT_PASSWORD } from '../containers/UserForm/config';
 
 const EMAIL_ADDRESS_PATTERN = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
 const INTERNATIONAL_PHONE_NUMBER_PATTERN = /^\+(?:[0-9].?){4,14}[0-9]$/;
+const DATE_PATTERN = /[0-9]{4}-[0-9]{2}-[0-9]{2}/;
+const LOWER_CASE_PATTERN = /^(?=.*[a-z]).+$/;
+const UPPER_CASE_PATTERN = /^(?=.*[A-Z]).+$/;
+const DIGIT_PATTERN = /^(?=.*[0-9]).+$/;
+const SPECIAL_CHARACTER_PATTERN = /[`~!@#$%^&*()_|+\-=?;:'",.<>{}[\]\\/]/;
 
 // validators (ordered alphabetically)
 export function code(value) {
     if (value && value.length > 50) {
         return i18n.t('Exceeds maximum character limit of 50');
+    }
+}
+
+export function date(value) {
+    if (!DATE_PATTERN.test(value)) {
+        return i18n.t('Please enter a valid date with the following format yyyy-mm-dd');
     }
 }
 
@@ -98,11 +109,6 @@ export function whatsApp(value) {
  * @function
  */
 function checkPasswordForErrors(password) {
-    const lowerCase = /^(?=.*[a-z]).+$/;
-    const upperCase = /^(?=.*[A-Z]).+$/;
-    const digit = /^(?=.*[0-9]).+$/;
-    const specialChar = /[`~!@#$%^&*()_|+\-=?;:'",.<>{}[\]\\/]/;
-
     if (!password) {
         return i18n.t('This field is required');
     }
@@ -112,16 +118,16 @@ function checkPasswordForErrors(password) {
     if (password.length > 35) {
         return i18n.t('Password should be no longer than 34 characters');
     }
-    if (!lowerCase.test(password)) {
+    if (!LOWER_CASE_PATTERN.test(password)) {
         return i18n.t('Password should contain at least one lowercase letter');
     }
-    if (!upperCase.test(password)) {
+    if (!UPPER_CASE_PATTERN.test(password)) {
         return i18n.t('Password should contain at least one UPPERCASE letter');
     }
-    if (!digit.test(password)) {
+    if (!DIGIT_PATTERN.test(password)) {
         return i18n.t('Password should contain at least one number');
     }
-    if (!specialChar.test(password)) {
+    if (!SPECIAL_CHARACTER_PATTERN.test(password)) {
         return i18n.t('Password should have at least one special character');
     }
 

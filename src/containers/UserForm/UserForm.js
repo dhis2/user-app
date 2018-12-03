@@ -212,7 +212,9 @@ class UserForm extends Component {
 
             switch (fieldRenderer) {
                 case renderTextField:
-                    conf.hintText = label;
+                    if (!conf.hintText) {
+                        conf.hintText = label;
+                    }
                     conf.disabled = Boolean(name === CONFIG.USERNAME && user.id);
                     break;
                 case renderSearchableOrgUnitTree:
