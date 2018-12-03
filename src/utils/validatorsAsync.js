@@ -1,7 +1,61 @@
 import i18n from '@dhis2/d2-i18n';
-import api from '../api';
 import _ from '../constants/lodash';
-import createHumanErrorMessage from '../utils/createHumanErrorMessage';
+import api from '../api';
+import { USER_ATTRIBUTE_FIELD_PREFIX } from './dynamicAttributeFieldGenerator';
+import { USERNAME } from '../containers/UserForm/config';
+import { FORM_NAME as REPLICATE_USER_FORM } from '../components/ReplicateUserForm';
+import createHumanErrorMessage from './createHumanErrorMessage';
+
+export async function asyncValidateAttributeUniqueness(values, _, props, blurredField) {
+    const errors = {};
+    const userId = props.user.id || '_';
+    const attributeId = blurredField.replace(USER_ATTRIBUTE_FIELD_PREFIX, '');
+    const value = values[blurredField];
+
+    try {
+        const isUnique = await api.isUserAttributeUnique(userId, attributeId, value);
+        if (!isUnique) {
+            errors[blurredField] = i18n.t(
+                'Attribute value needs to be unique, value already taken.'
+            );
+        }
+        return errors;
+    } catch (error) {
+        errors[blurredField] = i18n.t(
+            'There was a problem checking if this attribute value is unique'
+        );
+        throw errors;
+    }
+}
+
+export async function asyncValidateUsername(values, _, props) {
+    const newUserName = values[USERNAME];
+    const editingExistingUser =
+        props.form !== REPLICATE_USER_FORM && props.user && props.user.id;
+
+    if (!newUserName || editingExistingUser) {
+        return Promise.resolve();
+    }
+
+    const errors = {};
+
+    try {
+        const modelCollection = await api.genericFind(
+            'users',
+            'userCredentials.username',
+            newUserName
+        );
+        if (modelCollection.size > 0) {
+            errors[USERNAME] = i18n.t('Username already taken');
+        }
+        return errors;
+    } catch (error) {
+        errors[USERNAME] = i18n.t(
+            'There was a problem whilst checking the availability of this username'
+        );
+        throw errors;
+    }
+}
 
 /**
  * Calls the genericFind method of the Api instance to find out whether a userRole/userGroup model instance with the same property value exists
@@ -14,7 +68,7 @@ import createHumanErrorMessage from '../utils/createHumanErrorMessage';
  * @function
  */
 
-const asyncValidateUniqueness = async (values, _dispatch, props, fieldName) => {
+export async function asyncValidateUniqueness(values, _dispatch, props, fieldName) {
     let errors = {};
     let validationPromises = [];
     const { validExceptSubmit, asyncBlurFields, group, role } = props;
@@ -33,7 +87,7 @@ const asyncValidateUniqueness = async (values, _dispatch, props, fieldName) => {
 
     await Promise.all(validationPromises);
     return errors;
-};
+}
 
 const asyncValidateField = async (fieldName, values, errors, model) => {
     const entityName = model.modelDefinition.name;

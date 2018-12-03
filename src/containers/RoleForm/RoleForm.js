@@ -6,13 +6,13 @@ import { Field, reduxForm } from 'redux-form';
 import RaisedButton from 'material-ui/RaisedButton';
 import api from '../../api';
 import navigateTo from '../../utils/navigateTo';
-import asyncValidateUniqueness from '../../utils/asyncValidateUniqueness';
+import { asyncValidateUniqueness } from '../../utils/validatorsAsync';
+import { required } from '../../utils/validators';
 import { clearItem, showSnackbar, getList } from '../../actions';
 import { NAME, DESCRIPTION, AUTHORITIES, FIELDS } from './config';
 import { USER_ROLE } from '../../constants/entityTypes';
 import detectCurrentUserChanges from '../../utils/detectCurrentUserChanges';
 import createHumanErrorMessage from '../../utils/createHumanErrorMessage';
-import validate from './validate';
 
 /**
  * Container component that is controlled by redux-form. It renders an array of fields and validates their input.
@@ -57,6 +57,7 @@ class RoleForm extends Component {
             const { name, fieldRenderer, label, isRequiredField, ...conf } = fieldConfig;
             const suffix = isRequiredField ? ' *' : '';
             const labelText = label + suffix;
+            const validators = name === NAME ? [required] : [];
 
             return (
                 <Field
@@ -64,6 +65,7 @@ class RoleForm extends Component {
                     key={name}
                     component={fieldRenderer}
                     label={labelText}
+                    validate={validators}
                     {...conf}
                 />
             );
@@ -122,7 +124,6 @@ const mapStateToProps = state => ({
 
 const ReduxFormWrappedRoleForm = reduxForm({
     form: 'roleForm',
-    validate,
     asyncValidate: asyncValidateUniqueness,
     asyncBlurFields: [NAME],
 })(RoleForm);

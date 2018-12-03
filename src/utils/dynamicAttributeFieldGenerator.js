@@ -1,10 +1,5 @@
 import { renderTextField, renderCheckbox, renderSelectField } from './fieldRenderers';
-import {
-    number,
-    integer,
-    positiveInteger,
-    negativeInteger,
-} from '../containers/UserForm/validate';
+import { number, integer, positiveInteger, negativeInteger } from './validators';
 
 export const USER_ATTRIBUTE_FIELD_PREFIX = 'userAttibute_';
 /*
