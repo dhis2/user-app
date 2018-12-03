@@ -1,6 +1,7 @@
 import i18n from '@dhis2/d2-i18n';
 import _ from '../constants/lodash';
 import api from '../api';
+import { USER } from '../constants/entityTypes';
 import { USER_ATTRIBUTE_FIELD_PREFIX } from './dynamicAttributeFieldGenerator';
 import { USERNAME } from '../containers/UserForm/config';
 import { FORM_NAME as REPLICATE_USER_FORM } from '../components/ReplicateUserForm';
@@ -13,7 +14,7 @@ export async function asyncValidateAttributeUniqueness(values, _, props, blurred
     const value = values[blurredField];
 
     try {
-        const isUnique = await api.isUserAttributeUnique(userId, attributeId, value);
+        const isUnique = await api.isAttributeUnique(USER, userId, attributeId, value);
         if (!isUnique) {
             errors[blurredField] = i18n.t(
                 'Attribute value needs to be unique, value already taken.'

@@ -57,7 +57,7 @@ class UserForm extends Component {
         this.trashableLocalePromise = makeTrashable(
             api.getSelectedAndAvailableLocales(username)
         );
-        this.trashableAttributesPromise = makeTrashable(api.getUserAttributes());
+        this.trashableAttributesPromise = makeTrashable(api.getAttributes(USER));
 
         try {
             const locales = await this.trashableLocalePromise;

@@ -164,7 +164,7 @@ class Api {
         );
     };
 
-    getUserAttributes() {
+    getAttributes(entityType) {
         return this.d2Api
             .get('attributes', {
                 fields: [
@@ -175,19 +175,19 @@ class Api {
                     'valueType',
                     'optionSet[options[id,displayName]]',
                 ],
-                filter: 'userAttribute:eq:true',
+                filter: `${entityType}Attribute:eq:true`,
                 paging: false,
             })
             .then(resp => resp.attributes);
     }
 
-    isUserAttributeUnique(userId, attributeId, value) {
+    isAttributeUnique(entityType, modelId, attributeId, value) {
         return (
-            this.d2.models.user
+            this.d2.models[entityType]
                 // All users but current
                 .filter()
                 .on('id')
-                .notEqual(userId)
+                .notEqual(modelId)
                 // Attribute id being validated
                 .filter()
                 .on('attributeValues.attribute.id')
