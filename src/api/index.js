@@ -169,7 +169,14 @@ class Api {
     getUserAttributes() {
         return this.d2Api
             .get('attributes', {
-                fields: 'id,displayName,mandatory,unique,valueType',
+                fields: [
+                    'id',
+                    'displayName',
+                    'mandatory',
+                    'unique',
+                    'valueType',
+                    'optionSet[options[id,displayName]]',
+                ],
                 filter: 'userAttribute:eq:true',
                 paging: false,
             })

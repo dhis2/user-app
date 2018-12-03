@@ -24,7 +24,10 @@ import {
 } from '../containers/UserForm/config';
 
 import { USER } from '../constants/entityTypes';
-import { USER_ATTRIBUTE_FIELD_PREFIX } from '../utils/dynamicAttributeFieldGenerator';
+import {
+    USER_ATTRIBUTE_FIELD_PREFIX,
+    NO_VALUE_OPTION,
+} from '../utils/dynamicAttributeFieldGenerator';
 
 /**
  * Helper function that produces a "fields" array used in the api request payload
@@ -115,8 +118,9 @@ const parseAttributeValues = (values, attributeFields) => {
             const id = key.replace(USER_ATTRIBUTE_FIELD_PREFIX, '');
             const value = values[key];
             const isClearedTrueOnlyField = fieldTypeLookup[id] === 'TRUE_ONLY' && !value;
+            const isClearedOptionalDropDown = value === NO_VALUE_OPTION;
 
-            if (!isClearedTrueOnlyField) {
+            if (!isClearedTrueOnlyField && !isClearedOptionalDropDown) {
                 attributeValues.push({
                     value: value,
                     attribute: {
