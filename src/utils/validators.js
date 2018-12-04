@@ -74,7 +74,7 @@ export function required(value) {
 
 export function requiredArray(value) {
     if (!(Array.isArray(value) && value.length > 0)) {
-        return i18n.t('Dit is echt erg');
+        return i18n.t('This field is required. Please select at least one');
     }
 }
 

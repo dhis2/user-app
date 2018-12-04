@@ -9,6 +9,13 @@ export const MANAGED_GROUPS = 'managedGroups';
 
 export const GROUP_PROPS = [NAME, CODE, USERS, MANAGED_GROUPS];
 
+export const STYLES = {
+    loaderWrap: {
+        paddingTop: '2rem',
+        textAlign: 'center',
+    },
+};
+
 export const FIELDS = [
     {
         name: NAME,

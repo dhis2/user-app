@@ -24,10 +24,7 @@ import {
 } from '../containers/UserForm/config';
 
 import { USER } from '../constants/entityTypes';
-import {
-    USER_ATTRIBUTE_FIELD_PREFIX,
-    NO_VALUE_OPTION,
-} from '../utils/dynamicAttributeFieldGenerator';
+import { parseAttributeValues } from '../utils/attributeFieldHelpers';
 
 /**
  * Helper function that produces a "fields" array used in the api request payload
@@ -100,37 +97,6 @@ const addValueAsProp = (data, value, propName) => {
     if (!_.isUndefined(value)) {
         data[propName] = Array.isArray(value) ? value.map(id => ({ id })) : value;
     }
-};
-
-const parseAttributeValues = (values, attributeFields) => {
-    const fieldTypeLookup = attributeFields.reduce(
-        (lookup, { attributeId, valueType }) => {
-            lookup[attributeId] = valueType;
-            return lookup;
-        },
-        {}
-    );
-
-    return Object.keys(values).reduce((attributeValues, key) => {
-        const isUserAttribute = key.indexOf(USER_ATTRIBUTE_FIELD_PREFIX) !== -1;
-
-        if (isUserAttribute) {
-            const id = key.replace(USER_ATTRIBUTE_FIELD_PREFIX, '');
-            const value = values[key];
-            const isClearedTrueOnlyField = fieldTypeLookup[id] === 'TRUE_ONLY' && !value;
-            const isClearedOptionalDropDown = value === NO_VALUE_OPTION;
-
-            if (!isClearedTrueOnlyField && !isClearedOptionalDropDown) {
-                attributeValues.push({
-                    value: value,
-                    attribute: {
-                        id: id,
-                    },
-                });
-            }
-        }
-        return attributeValues;
-    }, []);
 };
 
 /**
