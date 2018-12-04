@@ -22,7 +22,10 @@ import * as CONFIG from './config';
 import collectValidators from './validate';
 import { inviteUserValueSelector } from '../../selectors';
 import { asyncValidatorSwitch } from './validateAsync';
-import generateAttributeFields from '../../utils/dynamicAttributeFieldGenerator';
+import {
+    generateAttributeFields,
+    addUniqueAttributesToAsyncBlurFields,
+} from '../../utils/attributeFieldHelpers';
 import {
     renderTextField,
     renderText,
@@ -66,7 +69,10 @@ class UserForm extends Component {
                 attributes,
                 user.attributeValues
             );
-            this.updateAsyncBlurFields(attributeFields);
+            addUniqueAttributesToAsyncBlurFields(
+                attributeFields,
+                this.props.asyncBlurFields
+            );
             this.setState({ locales, attributeFields });
             initialize(userFormInitialValuesSelector(user, locales, attributeFields));
         } catch (error) {
@@ -83,16 +89,6 @@ class UserForm extends Component {
     componentWillUnmount() {
         this.trashableLocalePromise.trash();
         this.trashableAttributesPromise.trash();
-    }
-
-    updateAsyncBlurFields(attributeFields) {
-        attributeFields.forEach(({ shouldBeUnique, name }) => {
-            if (shouldBeUnique) {
-                // It seems hacky to push to props, but seems to be the way to do it:
-                // https://github.com/erikras/redux-form/issues/708#issuecomment-191446641
-                this.props.asyncBlurFields.push(name);
-            }
-        });
     }
 
     toggleShowMore = () => {

@@ -15,6 +15,7 @@ import {
     DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
     SET_PASSWORD,
 } from '../containers/UserForm/config';
+import { FIELDS as USER_GROUP_FIELDS } from '../containers/GroupForm/config';
 import asArray from '../utils/asArray';
 import getNestedProp from '../utils/getNestedProp';
 
@@ -107,7 +108,7 @@ const addInitialValueFrom = (sourceObject, initialValues, propName) => {
  */
 export const userFormInitialValuesSelector = _.memoize(
     (user, locales, attributeFields) => {
-        let initialValues = {
+        const initialValues = {
             [INVITE]: SET_PASSWORD,
         };
 
@@ -126,6 +127,22 @@ export const userFormInitialValuesSelector = _.memoize(
         // 'en' is a fallback for systems that have no default system UI locale specified
         initialValues[INTERFACE_LANGUAGE] = locales.ui.selected || 'en';
         initialValues[DATABASE_LANGUAGE] = locales.db.selected;
+
+        return initialValues;
+    }
+);
+
+export const userGroupFormInitialValuesSelector = _.memoize(
+    (userGroup, attributeFields) => {
+        const initialValues = {};
+
+        if (userGroup.id) {
+            USER_GROUP_FIELDS.forEach(field => {
+                addInitialValueFrom(userGroup, initialValues, field.name);
+            });
+
+            attributeFields.forEach(field => (initialValues[field.name] = field.value));
+        }
 
         return initialValues;
     }

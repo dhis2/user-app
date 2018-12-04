@@ -5,35 +5,83 @@ import browserHasDateInputSupport from './browserHasDateInputSupport';
 
 export const USER_ATTRIBUTE_FIELD_PREFIX = 'userAttibute_';
 export const NO_VALUE_OPTION = 'no_value';
-/*
-Below is a list of all possible attribute valueTypes. 
-Only the checked ones are implemented
-    [X] TEXT
-    [X] LONG_TEXT
-    [ ] LETTER
-    [ ] PHONE_NUMBER
-    [ ] EMAIL
-    [X] BOOLEAN
-    [X] TRUE_ONLY
-    [ ] DATE
-    [ ] DATETIME
-    [ ] TIME
-    [X] NUMBER
-    [ ] UNIT_INTERVAL
-    [ ] PERCENTAGE
-    [X] INTEGER
-    [X] INTEGER_POSITIVE
-    [X] INTEGER_NEGATIVE
-    [ ] INTEGER_ZERO_OR_POSITIVE
-    [ ] TRACKER_ASSOCIATE
-    [ ] USERNAME
-    [ ] COORDINATE
-    [ ] ORGANISATION_UNIT
-    [ ] AGE
-    [ ] URL
-    [ ] FILE_RESOURCE
-    [ ] IMAGE
-*/
+/**************************************************************************
+    Attributes can be either based on an optionSet, or based on a valueType.
+    Attributes based on optionSets are supported.
+    Attributes based on valueTypes are partially supported, see below:
+        [X] TEXT
+        [X] LONG_TEXT
+        [ ] LETTER
+        [ ] PHONE_NUMBER
+        [ ] EMAIL
+        [X] BOOLEAN
+        [X] TRUE_ONLY
+        [ ] DATE
+        [ ] DATETIME
+        [ ] TIME
+        [X] NUMBER
+        [ ] UNIT_INTERVAL
+        [ ] PERCENTAGE
+        [X] INTEGER
+        [X] INTEGER_POSITIVE
+        [X] INTEGER_NEGATIVE
+        [ ] INTEGER_ZERO_OR_POSITIVE
+        [ ] TRACKER_ASSOCIATE
+        [ ] USERNAME
+        [ ] COORDINATE
+        [ ] ORGANISATION_UNIT
+        [ ] AGE
+        [ ] URL
+        [ ] FILE_RESOURCE
+        [ ] IMAGE
+****************************************************************************/
+
+export function generateAttributeFields(attributes, userAttributeValues) {
+    return attributes.map(attribute =>
+        generateAttributeField(attribute, userAttributeValues)
+    );
+}
+
+export function addUniqueAttributesToAsyncBlurFields(attributeFields, asyncBlurFields) {
+    attributeFields.forEach(({ shouldBeUnique, name }) => {
+        if (shouldBeUnique) {
+            // It seems hacky to push to props, but seems to be the way to do it:
+            // https://github.com/erikras/redux-form/issues/708#issuecomment-191446641
+            asyncBlurFields.push(name);
+        }
+    });
+}
+
+export function parseAttributeValues(values, attributeFields) {
+    const fieldTypeLookup = attributeFields.reduce(
+        (lookup, { attributeId, valueType }) => {
+            lookup[attributeId] = valueType;
+            return lookup;
+        },
+        {}
+    );
+
+    return Object.keys(values).reduce((attributeValues, key) => {
+        const isUserAttribute = key.indexOf(USER_ATTRIBUTE_FIELD_PREFIX) !== -1;
+
+        if (isUserAttribute) {
+            const id = key.replace(USER_ATTRIBUTE_FIELD_PREFIX, '');
+            const value = values[key];
+            const isClearedTrueOnlyField = fieldTypeLookup[id] === 'TRUE_ONLY' && !value;
+            const isClearedOptionalDropDown = value === NO_VALUE_OPTION;
+
+            if (!isClearedTrueOnlyField && !isClearedOptionalDropDown) {
+                attributeValues.push({
+                    value: value,
+                    attribute: {
+                        id: id,
+                    },
+                });
+            }
+        }
+        return attributeValues;
+    }, []);
+}
 
 const valueTypeMapping = {
     OPTION_SET: {
@@ -91,12 +139,6 @@ const valueTypeMapping = {
     },
 };
 
-export default function generateAttributeFields(attributes, userAttributeValues) {
-    return attributes.map(attribute =>
-        generateAttributeField(attribute, userAttributeValues)
-    );
-}
-
 function generateAttributeField(
     { id, valueType, displayName, mandatory, unique, optionSet },
     userAttributeValues
@@ -121,7 +163,7 @@ function generateAttributeField(
 }
 
 function getValueTypeProps(valueType, optionSet, mandatory) {
-    // Attributes based on an option-set have TEXT as their value type but need to render a select/dropdown with the options
+    // Attributes based on an option-set have TEXT as their valueType but need to render a select/dropdown with the options
     const valueTypeProps = optionSet
         ? {
               ...valueTypeMapping.OPTION_SET,
@@ -136,7 +178,7 @@ function getValueTypeProps(valueType, optionSet, mandatory) {
           // This way all attributes will always be editable, albeit not necesarrily enforcing the correct formatting
           valueTypeMapping[valueType] || valueTypeMapping.TEXT;
 
-    // Optional dropdown fields need a way to be cleared
+    // Optional dropdown fields need a way to be cleared, so we create an empty option
     if (
         valueTypeProps.fieldRenderer === renderSelectField &&
         !mandatory &&

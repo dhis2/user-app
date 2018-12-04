@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-12-03T11:52:38.343Z\n"
-"PO-Revision-Date: 2018-12-03T11:52:38.343Z\n"
+"POT-Creation-Date: 2018-12-04T08:37:32.171Z\n"
+"PO-Revision-Date: 2018-12-04T08:37:32.171Z\n"
 
 msgid "Use database locale / no translation"
 msgstr ""
@@ -380,6 +380,9 @@ msgstr ""
 msgid "Number of users"
 msgstr ""
 
+msgid "Could not load the user group data. Please refresh the page."
+msgstr ""
+
 msgid "User group \"{{displayName}}\" saved successfully"
 msgstr ""
 
@@ -558,6 +561,12 @@ msgid_plural "{{count}} selected"
 msgstr[0] ""
 msgstr[1] ""
 
+msgid "Yes"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
 msgid "Something went wrong when processing your request."
 msgstr ""
 
@@ -574,6 +583,9 @@ msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
 msgstr ""
 
 msgid "Exceeds maximum character limit of 50"
+msgstr ""
+
+msgid "Please enter a valid date with the following format yyyy-mm-dd"
 msgstr ""
 
 msgid "Please provide a valid email address"
@@ -597,13 +609,13 @@ msgstr ""
 msgid "This field is required"
 msgstr ""
 
+msgid "This field is required. Please select at least one"
+msgstr ""
+
 msgid "A username should be at least 2 characters long"
 msgstr ""
 
 msgid "Username may not exceed 140 characters"
-msgstr ""
-
-msgid "A user should have at least one User Role"
 msgstr ""
 
 msgid "Please provide a valid international phone number (+0123456789)"
