@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-12-04T08:37:32.171Z\n"
-"PO-Revision-Date: 2018-12-04T08:37:32.171Z\n"
+"POT-Creation-Date: 2018-12-04T10:22:57.832Z\n"
+"PO-Revision-Date: 2018-12-04T10:22:57.832Z\n"
 
 msgid "Use database locale / no translation"
 msgstr ""
@@ -654,16 +654,16 @@ msgstr ""
 msgid "Password should have at least one special character"
 msgstr ""
 
-msgid "Attribute value needs to be unique, value already taken."
-msgstr ""
-
-msgid "There was a problem checking if this attribute value is unique"
-msgstr ""
-
 msgid "Username already taken"
 msgstr ""
 
 msgid "There was a problem whilst checking the availability of this username"
+msgstr ""
+
+msgid "Attribute value needs to be unique, value already taken."
+msgstr ""
+
+msgid "There was a problem checking if this attribute value is unique"
 msgstr ""
 
 msgid "{{fieldDisplayName}} is already taken"

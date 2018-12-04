@@ -7,13 +7,12 @@ import RaisedButton from 'material-ui/RaisedButton';
 import CircularProgress from 'material-ui/CircularProgress';
 import makeTrashable from 'trashable';
 import navigateTo from '../../utils/navigateTo';
-import { asyncValidateUniqueness } from '../../utils/validatorsAsync';
-import { code, required, requiredArray } from '../../utils/validators';
+import { asyncValidatorSwitch } from '../../utils/validatorsAsync';
 import asArray from '../../utils/asArray';
 import { renderSearchableGroupEditor } from '../../utils/fieldRenderers';
 import createHumanErrorMessage from '../../utils/createHumanErrorMessage';
 import { clearItem, showSnackbar, getList } from '../../actions';
-import { NAME, CODE, USERS, MANAGED_GROUPS, FIELDS } from './config';
+import { FORM_NAME, NAME, CODE, USERS, MANAGED_GROUPS, FIELDS } from './config';
 import { userGroupFormInitialValuesSelector } from '../../selectors';
 import { USER_GROUP } from '../../constants/entityTypes';
 import detectCurrentUserChanges from '../../utils/detectCurrentUserChanges';
@@ -23,6 +22,7 @@ import {
     addUniqueAttributesToAsyncBlurFields,
 } from '../../utils/attributeFieldHelpers';
 import * as CONFIG from './config';
+import collectValidators from './collectValidators';
 import api from '../../api';
 
 /**
@@ -108,7 +108,18 @@ class GroupForm extends Component {
     renderFields(fields) {
         const { group } = this.props;
         return fields.map(fieldConfig => {
-            const { name, fieldRenderer, label, isRequiredField, ...conf } = fieldConfig;
+            const {
+                name,
+                fieldRenderer,
+                label,
+                isRequiredField,
+                isAttributeField,
+                shouldBeUnique,
+                attributeId,
+                fieldValidators,
+                valueType,
+                ...conf
+            } = fieldConfig;
             const suffix = isRequiredField ? ' *' : '';
             const labelText = label + suffix;
             const validators = [];
@@ -121,17 +132,13 @@ class GroupForm extends Component {
                 conf.initialValues = fieldConfig.initialItemsSelector(group);
             }
 
-            if (name === NAME) {
-                validators.push(required);
-            }
-
-            if (name === USERS) {
-                validators.push(requiredArray);
-            }
-
-            if (name === CODE) {
-                validators.push(code);
-            }
+            conf.validate = collectValidators(
+                this.props,
+                name,
+                isRequiredField,
+                isAttributeField,
+                fieldValidators
+            );
 
             return (
                 <Field
@@ -210,8 +217,8 @@ const mapStateToProps = state => ({
 });
 
 const ReduxFormWrappedGroupForm = reduxForm({
-    form: 'groupForm',
-    asyncValidate: asyncValidateUniqueness,
+    form: FORM_NAME,
+    asyncValidate: asyncValidatorSwitch,
     asyncBlurFields: [NAME, CODE],
 })(GroupForm);
 

@@ -37,6 +37,7 @@ export const STYLES = {
     },
 };
 
+export const FORM_NAME = 'userForm';
 export const USERNAME = 'username';
 export const EMAIL = 'email';
 export const INVITE = 'inviteUser';

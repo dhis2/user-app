@@ -19,9 +19,9 @@ import { userFormInitialValuesSelector } from '../../selectors';
 import { clearItem, getList, showSnackbar } from '../../actions';
 import { USER } from '../../constants/entityTypes';
 import * as CONFIG from './config';
-import collectValidators from './validate';
+import collectValidators from './collectValidators';
 import { inviteUserValueSelector } from '../../selectors';
-import { asyncValidatorSwitch } from './validateAsync';
+import { asyncValidatorSwitch } from '../../utils/validatorsAsync';
 import {
     generateAttributeFields,
     addUniqueAttributesToAsyncBlurFields,
@@ -33,8 +33,6 @@ import {
     renderSearchableGroupEditor,
     renderSelectField,
 } from '../../utils/fieldRenderers';
-
-const FORM_NAME = 'userForm';
 
 /**
  * Container component that is controlled by redux-form. When mounting, it will fetch available and selected locales.
@@ -366,19 +364,19 @@ UserForm.contextTypes = {
     d2: PropTypes.object.isRequired,
 };
 
-const selector = formValueSelector(FORM_NAME);
+const selector = formValueSelector(CONFIG.FORM_NAME);
 const mapStateToProps = state => {
     return {
         user: state.currentItem,
         fallbackOrgUnits:
             state.currentUser[CONFIG.DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS],
-        inviteUser: inviteUserValueSelector(state.form[FORM_NAME]),
+        inviteUser: inviteUserValueSelector(state.form[CONFIG.FORM_NAME]),
         externalAuthOnly: Boolean(selector(state, CONFIG.EXTERNAL_AUTH)),
     };
 };
 
 const ReduxFormWrappedUserForm = reduxForm({
-    form: FORM_NAME,
+    form: CONFIG.FORM_NAME,
     asyncValidate: asyncValidatorSwitch,
     asyncBlurFields: [CONFIG.USERNAME],
 })(UserForm);
