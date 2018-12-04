@@ -209,10 +209,10 @@
     "Password should contain at least one UPPERCASE letter": "",
     "Password should contain at least one number": "",
     "Password should have at least one special character": "",
-    "Attribute value needs to be unique, value already taken.": "",
-    "There was a problem checking if this attribute value is unique": "",
     "Username already taken": "",
     "There was a problem whilst checking the availability of this username": "",
+    "Attribute value needs to be unique, value already taken.": "",
+    "There was a problem checking if this attribute value is unique": "",
     "{{fieldDisplayName}} is already taken": "",
     "Could not verify if this {{fieldDisplayName}} is unique": ""
 }
