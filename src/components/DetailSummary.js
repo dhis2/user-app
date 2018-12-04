@@ -59,7 +59,7 @@ class DetailSummary extends Component {
      * @param {string} userId
      */
     renderSendMessageBtn(userId) {
-        const url = `${api.getContextPath()}/dhis-web-messaging/showSendMessage.action?id=${userId}`;
+        const url = `${api.getContextPath()}/dhis-web-messaging/#/PRIVATE/create/${userId}`;
         return (
             <RaisedButton
                 style={styles.raisedButton}
