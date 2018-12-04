@@ -186,7 +186,7 @@ class Api {
     isAttributeUnique(entityType, modelId, attributeId, value) {
         return (
             this.d2.models[entityType]
-                // All users but current
+                // All users/userGroups but current
                 .filter()
                 .on('id')
                 .notEqual(modelId)
