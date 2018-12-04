@@ -16,7 +16,7 @@ export const NO_VALUE_OPTION = 'no_value';
         [ ] EMAIL
         [X] BOOLEAN
         [X] TRUE_ONLY
-        [ ] DATE
+        [X] DATE
         [ ] DATETIME
         [ ] TIME
         [X] NUMBER
