@@ -9,6 +9,7 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const fs = require('fs');
 const getClientEnvironment = require('./env');
+const dhisConfig = require('./dhisConfig');
 const paths = require('./paths');
 const parse = require('url-parse');
 
@@ -21,20 +22,6 @@ const publicPath = '/';
 const publicUrl = '';
 // Get environment variables to inject into our app.
 const env = getClientEnvironment(publicUrl);
-
-const dhisConfigPath = process.env.DHIS2_HOME && `${process.env.DHIS2_HOME}/config`;
-
-let dhisConfig;
-try {
-    dhisConfig = require(dhisConfigPath);
-} catch (e) {
-    // Failed to load config file - use default config
-    console.warn(`\nWARNING! Failed to load DHIS config:`, e.message);
-    dhisConfig = {
-        baseUrl: 'http://localhost:8080',
-        authorization: 'Basic YWRtaW46ZGlzdHJpY3Q=', // admin:district
-    };
-}
 
 const manifest = JSON.parse(
     fs.readFileSync(`${paths.appPublic}/manifest.webapp`, 'utf8')
