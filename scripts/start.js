@@ -79,7 +79,8 @@ choosePort(HOST, DEFAULT_PORT)
         if (!p.target) {
           p.target = dhisConfig.baseUrl;
           p.changeOrigin = true;
-          p.auth = dhisConfig.authorization;
+          // http-proxy-middleware cannot use the encrypted auth found in dhisConfig.authorization
+          p.auth = 'admin:district';
         }
      });
     const proxyConfig = prepareProxy(proxySetting, paths.appPublic);
