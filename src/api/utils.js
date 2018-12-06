@@ -24,6 +24,7 @@ import {
 } from '../containers/UserForm/config';
 
 import { USER } from '../constants/entityTypes';
+import { parseAttributeValues } from '../utils/attributeFieldHelpers';
 
 /**
  * Helper function that produces a "fields" array used in the api request payload
@@ -105,7 +106,7 @@ const addValueAsProp = (data, value, propName) => {
  * @returns {Object}  Object that may be PUT/POSTed to the server to save a user
  * @function
  */
-export const parseUserSaveData = (values, user, inviteUser) => {
+export const parseUserSaveData = (values, user, inviteUser, attributeFields) => {
     const isNewUser = !user.id;
     const userId = user.id || generateUid();
     const userCredId = (user.userCredentials && user.userCredentials.id) || generateUid();
@@ -135,6 +136,8 @@ export const parseUserSaveData = (values, user, inviteUser) => {
 
     USER_PROPS.forEach(propName => addValueAsProp(data, values[propName], propName));
     USER_CRED_PROPS.forEach(propName => addValueAsProp(cred, values[propName], propName));
+
+    data.attributeValues = parseAttributeValues(values, attributeFields);
 
     // This property was appended to the model by hand but needs to be removed before saving the user
     delete cred[DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS];

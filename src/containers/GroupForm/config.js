@@ -2,12 +2,20 @@ import { renderTextField, renderSearchableGroupEditor } from '../../utils/fieldR
 import asArray from '../../utils/asArray';
 import i18n from '@dhis2/d2-i18n';
 
+export const FORM_NAME = 'groupForm';
 export const NAME = 'name';
 export const USERS = 'users';
 export const CODE = 'code';
 export const MANAGED_GROUPS = 'managedGroups';
 
 export const GROUP_PROPS = [NAME, CODE, USERS, MANAGED_GROUPS];
+
+export const STYLES = {
+    loaderWrap: {
+        paddingTop: '2rem',
+        textAlign: 'center',
+    },
+};
 
 export const FIELDS = [
     {

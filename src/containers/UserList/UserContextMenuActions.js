@@ -107,7 +107,7 @@ userContextMenuActions.remove.subscribe(({ data: user }) => {
 });
 
 userContextMenuActions.replicate.subscribe(({ data: user }) => {
-    const content = <ReplicateUserForm userToReplicate={user} />;
+    const content = <ReplicateUserForm user={user} />;
     const props = {
         onRequestClose: () => store.dispatch(hideDialog()),
         title: i18n.t('Replicate user'),
