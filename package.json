@@ -106,7 +106,12 @@
       }
     }
   },
-  "proxies": [ "/dhis-web-core-resource" ],
+  "proxy": {
+    "/dhis-web-core-resource": {
+      "target": null
+    }
+  },
+
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
