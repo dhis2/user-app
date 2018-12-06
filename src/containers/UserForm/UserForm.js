@@ -19,9 +19,13 @@ import { userFormInitialValuesSelector } from '../../selectors';
 import { clearItem, getList, showSnackbar } from '../../actions';
 import { USER } from '../../constants/entityTypes';
 import * as CONFIG from './config';
-import validate from './validate';
+import collectValidators from './collectValidators';
 import { inviteUserValueSelector } from '../../selectors';
-import asyncValidateUsername from './asyncValidateUsername';
+import { asyncValidatorSwitch } from '../../utils/validatorsAsync';
+import {
+    generateAttributeFields,
+    addUniqueAttributesToAsyncBlurFields,
+} from '../../utils/attributeFieldHelpers';
 import {
     renderTextField,
     renderText,
@@ -29,8 +33,6 @@ import {
     renderSearchableGroupEditor,
     renderSelectField,
 } from '../../utils/fieldRenderers';
-
-const FORM_NAME = 'userForm';
 
 /**
  * Container component that is controlled by redux-form. When mounting, it will fetch available and selected locales.
@@ -43,7 +45,9 @@ class UserForm extends Component {
         this.state = {
             showMore: false,
             locales: null,
+            attributeFields: null,
         };
+        this.trashableAttributesPromise = null;
         this.trashableLocalePromise = null;
     }
 
@@ -54,12 +58,23 @@ class UserForm extends Component {
         this.trashableLocalePromise = makeTrashable(
             api.getSelectedAndAvailableLocales(username)
         );
+        this.trashableAttributesPromise = makeTrashable(api.getAttributes(USER));
 
         try {
             const locales = await this.trashableLocalePromise;
-            this.setState({ locales });
-            initialize(userFormInitialValuesSelector(user, locales));
+            const attributes = await this.trashableAttributesPromise;
+            const attributeFields = generateAttributeFields(
+                attributes,
+                user.attributeValues
+            );
+            addUniqueAttributesToAsyncBlurFields(
+                attributeFields,
+                this.props.asyncBlurFields
+            );
+            this.setState({ locales, attributeFields });
+            initialize(userFormInitialValuesSelector(user, locales, attributeFields));
         } catch (error) {
+            console.error(error);
             showSnackbar({
                 message: createHumanErrorMessage(
                     error,
@@ -71,6 +86,7 @@ class UserForm extends Component {
 
     componentWillUnmount() {
         this.trashableLocalePromise.trash();
+        this.trashableAttributesPromise.trash();
     }
 
     toggleShowMore = () => {
@@ -90,7 +106,8 @@ class UserForm extends Component {
                 user,
                 inviteUser,
                 initialUiLocale,
-                initialDbLocale
+                initialDbLocale,
+                this.state.attributeFields
             );
             const msg = i18n.t('User "{{displayName}}" saved successfully', {
                 displayName: `${values.firstName} ${values.surname}`,
@@ -101,6 +118,7 @@ class UserForm extends Component {
             this.backToList();
             detectCurrentUserChanges(user);
         } catch (error) {
+            console.error(error);
             showSnackbar({
                 message: createHumanErrorMessage(
                     error,
@@ -118,7 +136,8 @@ class UserForm extends Component {
         const { inviteUser } = this.props;
         return isRequiredField === CONFIG.ALWAYS_REQUIRED ||
             (inviteUser && isRequiredField === CONFIG.INVITE_REQUIRED) ||
-            (isRequiredField === CONFIG.CREATE_REQUIRED && !user.id && !inviteUser)
+            (isRequiredField === CONFIG.CREATE_REQUIRED && !user.id && !inviteUser) ||
+            (typeof isRequiredField === 'boolean' && isRequiredField)
             ? `${label} *`
             : label;
     }
@@ -162,7 +181,18 @@ class UserForm extends Component {
         const { user } = this.props;
 
         return fields.reduce((filteredFields, fieldConfig) => {
-            const { name, fieldRenderer, label, isRequiredField, ...conf } = fieldConfig;
+            const {
+                name,
+                fieldRenderer,
+                label,
+                isRequiredField,
+                isAttributeField,
+                shouldBeUnique,
+                attributeId,
+                fieldValidators,
+                valueType,
+                ...conf
+            } = fieldConfig;
             const labelText = this.getLabelText(label, user, isRequiredField);
 
             if (this.exludeField(name)) {
@@ -176,6 +206,9 @@ class UserForm extends Component {
 
             switch (fieldRenderer) {
                 case renderTextField:
+                    if (!conf.hintText) {
+                        conf.hintText = label;
+                    }
                     conf.disabled = Boolean(name === CONFIG.USERNAME && user.id);
                     break;
                 case renderSearchableOrgUnitTree:
@@ -193,6 +226,14 @@ class UserForm extends Component {
                     break;
             }
 
+            conf.validate = collectValidators(
+                this.props,
+                name,
+                isRequiredField,
+                isAttributeField,
+                fieldValidators
+            );
+
             filteredFields.push(
                 <Field
                     name={name}
@@ -208,6 +249,10 @@ class UserForm extends Component {
 
     renderCreateOrInviteField() {
         return this.renderFields(CONFIG.INVITE_FIELDS);
+    }
+
+    renderAttributeFields() {
+        return this.renderFields(this.state.attributeFields);
     }
 
     renderBaseFields() {
@@ -275,6 +320,7 @@ class UserForm extends Component {
                 <form onSubmit={handleSubmit(this.handleSubmit)}>
                     {this.renderCreateOrInviteField()}
                     {this.renderBaseFields()}
+                    {this.renderAttributeFields()}
                     {this.renderAdditionalFields(showMore)}
                     {this.renderToggler(showMore)}
                     <div>
@@ -311,27 +357,27 @@ UserForm.propTypes = {
     fallbackOrgUnits: PropTypes.object,
     inviteUser: PropTypes.bool.isRequired,
     externalAuthOnly: PropTypes.bool.isRequired,
+    asyncBlurFields: PropTypes.arrayOf(PropTypes.string),
 };
 
 UserForm.contextTypes = {
     d2: PropTypes.object.isRequired,
 };
 
-const selector = formValueSelector(FORM_NAME);
+const selector = formValueSelector(CONFIG.FORM_NAME);
 const mapStateToProps = state => {
     return {
         user: state.currentItem,
         fallbackOrgUnits:
             state.currentUser[CONFIG.DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS],
-        inviteUser: inviteUserValueSelector(state.form[FORM_NAME]),
+        inviteUser: inviteUserValueSelector(state.form[CONFIG.FORM_NAME]),
         externalAuthOnly: Boolean(selector(state, CONFIG.EXTERNAL_AUTH)),
     };
 };
 
 const ReduxFormWrappedUserForm = reduxForm({
-    form: FORM_NAME,
-    validate,
-    asyncValidate: asyncValidateUsername,
+    form: CONFIG.FORM_NAME,
+    asyncValidate: asyncValidatorSwitch,
     asyncBlurFields: [CONFIG.USERNAME],
 })(UserForm);
 
