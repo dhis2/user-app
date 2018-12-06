@@ -46,6 +46,7 @@ export const USER_GROUP_DETAILS = [
     'name',
     'users',
     'managedGroups',
+    'attributeValues',
 ];
 
 export const CURRENT_USER_ORG_UNITS_FIELDS = {

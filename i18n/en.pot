@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-07-04T12:03:06.521Z\n"
-"PO-Revision-Date: 2018-07-04T12:03:06.521Z\n"
+"POT-Creation-Date: 2018-12-04T10:22:57.832Z\n"
+"PO-Revision-Date: 2018-12-04T10:22:57.832Z\n"
 
 msgid "Use database locale / no translation"
 msgstr ""
@@ -266,9 +266,6 @@ msgstr ""
 msgid "Go back home"
 msgstr ""
 
-msgid "This field is required"
-msgstr ""
-
 msgid "User \"{{displayName}}\" replicated successfuly"
 msgstr ""
 
@@ -383,6 +380,9 @@ msgstr ""
 msgid "Number of users"
 msgstr ""
 
+msgid "Could not load the user group data. Please refresh the page."
+msgstr ""
+
 msgid "User group \"{{displayName}}\" saved successfully"
 msgstr ""
 
@@ -408,9 +408,6 @@ msgid "Available user groups"
 msgstr ""
 
 msgid "Managed user groups"
-msgstr ""
-
-msgid "Exceeds maximum character limit of 50"
 msgstr ""
 
 msgid "You left group"
@@ -453,12 +450,6 @@ msgid "Show more options"
 msgstr ""
 
 msgid "Send invite"
-msgstr ""
-
-msgid "Username already taken"
-msgstr ""
-
-msgid "There was a problem whilst checking the availability of this username"
 msgstr ""
 
 msgid ""
@@ -509,21 +500,6 @@ msgid "Available dimension restrictions for data analytics"
 msgstr ""
 
 msgid "Selected dimension restrictions for data analytics"
-msgstr ""
-
-msgid "A username should be at least 2 characters long"
-msgstr ""
-
-msgid "Username may not exceed 140 characters"
-msgstr ""
-
-msgid "A user should have at least one User Role"
-msgstr ""
-
-msgid "Passwords do not match"
-msgstr ""
-
-msgid "Please provide a valid email address"
 msgstr ""
 
 msgid "Replicate user"
@@ -585,10 +561,64 @@ msgid_plural "{{count}} selected"
 msgstr[0] ""
 msgstr[1] ""
 
-msgid "{{fieldDisplayName}} is already taken"
+msgid "Yes"
 msgstr ""
 
-msgid "Could not verify if this {{fieldDisplayName}} is unique"
+msgid "No"
+msgstr ""
+
+msgid "Something went wrong when processing your request."
+msgstr ""
+
+msgid "Validating..."
+msgstr ""
+
+msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
+msgstr ""
+
+msgid "{{type}} \"{{displayName}}\" removed successfully"
+msgstr ""
+
+msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
+msgstr ""
+
+msgid "Exceeds maximum character limit of 50"
+msgstr ""
+
+msgid "Please enter a valid date with the following format yyyy-mm-dd"
+msgstr ""
+
+msgid "Please provide a valid email address"
+msgstr ""
+
+msgid "Value should be an integer"
+msgstr ""
+
+msgid "Value should be a nagative integer"
+msgstr ""
+
+msgid "Value should be a number"
+msgstr ""
+
+msgid "Value should be a positive integer"
+msgstr ""
+
+msgid "Passwords do not match"
+msgstr ""
+
+msgid "This field is required"
+msgstr ""
+
+msgid "This field is required. Please select at least one"
+msgstr ""
+
+msgid "A username should be at least 2 characters long"
+msgstr ""
+
+msgid "Username may not exceed 140 characters"
+msgstr ""
+
+msgid "Please provide a valid international phone number (+0123456789)"
 msgstr ""
 
 msgid "Password should be at least 8 characters long"
@@ -609,17 +639,20 @@ msgstr ""
 msgid "Password should have at least one special character"
 msgstr ""
 
-msgid "Something went wrong when processing your request."
+msgid "Username already taken"
 msgstr ""
 
-msgid "Validating..."
+msgid "There was a problem whilst checking the availability of this username"
 msgstr ""
 
-msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
+msgid "Attribute value needs to be unique, value already taken."
 msgstr ""
 
-msgid "{{type}} \"{{displayName}}\" removed successfully"
+msgid "There was a problem checking if this attribute value is unique"
 msgstr ""
 
-msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
+msgid "{{fieldDisplayName}} is already taken"
+msgstr ""
+
+msgid "Could not verify if this {{fieldDisplayName}} is unique"
 msgstr ""

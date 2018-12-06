@@ -15,6 +15,7 @@ import {
     DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
     SET_PASSWORD,
 } from '../containers/UserForm/config';
+import { FIELDS as USER_GROUP_FIELDS } from '../containers/GroupForm/config';
 import asArray from '../utils/asArray';
 import getNestedProp from '../utils/getNestedProp';
 
@@ -105,27 +106,47 @@ const addInitialValueFrom = (sourceObject, initialValues, propName) => {
  * @returns {Object} Initial values for the redux form wrapping the UserForm component
  * @function
  */
-export const userFormInitialValuesSelector = _.memoize((user, locales) => {
-    let initialValues = {
-        [INVITE]: SET_PASSWORD,
-    };
+export const userFormInitialValuesSelector = _.memoize(
+    (user, locales, attributeFields) => {
+        const initialValues = {
+            [INVITE]: SET_PASSWORD,
+        };
 
-    if (user.id) {
-        USER_PROPS.forEach(propName => {
-            addInitialValueFrom(user, initialValues, propName);
-        });
+        if (user.id) {
+            USER_PROPS.forEach(propName => {
+                addInitialValueFrom(user, initialValues, propName);
+            });
 
-        USER_CRED_PROPS.forEach(propName => {
-            addInitialValueFrom(user.userCredentials, initialValues, propName);
-        });
+            USER_CRED_PROPS.forEach(propName => {
+                addInitialValueFrom(user.userCredentials, initialValues, propName);
+            });
+
+            attributeFields.forEach(field => (initialValues[field.name] = field.value));
+        }
+
+        // 'en' is a fallback for systems that have no default system UI locale specified
+        initialValues[INTERFACE_LANGUAGE] = locales.ui.selected || 'en';
+        initialValues[DATABASE_LANGUAGE] = locales.db.selected;
+
+        return initialValues;
     }
+);
 
-    // 'en' is a fallback for systems that have no default system UI locale specified
-    initialValues[INTERFACE_LANGUAGE] = locales.ui.selected || 'en';
-    initialValues[DATABASE_LANGUAGE] = locales.db.selected;
+export const userGroupFormInitialValuesSelector = _.memoize(
+    (userGroup, attributeFields) => {
+        const initialValues = {};
 
-    return initialValues;
-});
+        if (userGroup.id) {
+            USER_GROUP_FIELDS.forEach(field => {
+                addInitialValueFrom(userGroup, initialValues, field.name);
+            });
+
+            attributeFields.forEach(field => (initialValues[field.name] = field.value));
+        }
+
+        return initialValues;
+    }
+);
 
 /**
  * Used to combine cat and cog dimension restrictions into a single array
