@@ -75,8 +75,11 @@ choosePort(HOST, DEFAULT_PORT)
     // Load proxy config
     const proxy = require(paths.appPackageJson).proxy;
     const proxySetting = Object.keys(proxy).forEach(key => {
-        if (!proxy[key].target) {
-          proxy[key].target = dhisConfig.baseUrl;
+        const p = proxy[key];
+        if (!p.target) {
+          p.target = dhisConfig.baseUrl;
+          p.changeOrigin = true;
+          p.auth = dhisConfig.authorization;
         }
      });
     const proxyConfig = prepareProxy(proxySetting, paths.appPublic);
