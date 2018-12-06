@@ -107,9 +107,10 @@
   },
   "proxy": {
     "/dhis-web-core-resource": {
-      "target": "http://localhost:8080"
+      "target": null
     }
   },
+
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
