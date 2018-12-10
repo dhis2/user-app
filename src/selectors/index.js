@@ -136,13 +136,11 @@ export const userGroupFormInitialValuesSelector = _.memoize(
     (userGroup, attributeFields) => {
         const initialValues = {};
 
-        if (userGroup.id) {
-            USER_GROUP_FIELDS.forEach(field => {
-                addInitialValueFrom(userGroup, initialValues, field.name);
-            });
+        USER_GROUP_FIELDS.forEach(field => {
+            addInitialValueFrom(userGroup, initialValues, field.name);
+        });
 
-            attributeFields.forEach(field => (initialValues[field.name] = field.value));
-        }
+        attributeFields.forEach(field => (initialValues[field.name] = field.value));
 
         return initialValues;
     }
