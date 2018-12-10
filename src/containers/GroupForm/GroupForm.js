@@ -77,8 +77,8 @@ class GroupForm extends Component {
 
         group[NAME] = values[NAME];
         group[CODE] = values[CODE];
-        group[USERS] = values[USERS].map(this.createIdValueObject);
-        group[MANAGED_GROUPS] = values[MANAGED_GROUPS].map(this.createIdValueObject);
+        group[USERS] = (values[USERS] || []).map(this.createIdValueObject);
+        group[MANAGED_GROUPS] = (values[MANAGED_GROUPS] || []).map(this.createIdValueObject);
         group.attributeValues = parseAttributeValues(values, this.state.attributeFields);
 
         try {
