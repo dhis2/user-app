@@ -8,7 +8,6 @@ import CircularProgress from 'material-ui/CircularProgress';
 import makeTrashable from 'trashable';
 import navigateTo from '../../utils/navigateTo';
 import { asyncValidatorSwitch } from '../../utils/validatorsAsync';
-import asArray from '../../utils/asArray';
 import { renderSearchableGroupEditor } from '../../utils/fieldRenderers';
 import createHumanErrorMessage from '../../utils/createHumanErrorMessage';
 import { clearItem, showSnackbar, getList } from '../../actions';
@@ -208,12 +207,6 @@ GroupForm.propTypes = {
 
 const mapStateToProps = state => ({
     group: state.currentItem,
-    initialValues: {
-        [NAME]: state.currentItem[NAME],
-        [CODE]: state.currentItem[CODE],
-        [USERS]: asArray(state.currentItem[USERS]),
-        [MANAGED_GROUPS]: asArray(state.currentItem[MANAGED_GROUPS]),
-    },
 });
 
 const ReduxFormWrappedGroupForm = reduxForm({
