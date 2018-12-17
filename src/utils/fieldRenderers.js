@@ -72,15 +72,30 @@ export const renderCheckbox = ({ input, label }) => {
     );
 };
 
-export const renderSelectField = ({ input, label, options, style }) => {
+export const renderSelectField = ({
+    input,
+    label,
+    meta: { touched, error, asyncValidating },
+    options,
+    style,
+}) => {
+    const errorText = asyncValidating ? i18n.t('Validating...') : touched && error;
+    const errorStyle = asyncValidating ? styles.warning : undefined;
+
     return (
         <SelectField
             floatingLabelText={label}
             fullWidth={true}
             {...input}
-            onChange={(event, index, value) => input.onChange(value)}
-            onBlur={() => input.onBlur(input.value)}
+            onChange={(event, index, value) => {
+                input.onChange(value);
+                // Trigger onBlur after a value is selected, in order to trigger
+                // a validator to run if the SelectField is in the asyncBlurFields list
+                setTimeout(() => input.onBlur(value), 1);
+            }}
             style={style}
+            errorText={errorText}
+            errorStyle={errorStyle}
         >
             {options.map(({ id, label }, i) => (
                 <MenuItem key={`option_${i}`} value={id} primaryText={label} />
