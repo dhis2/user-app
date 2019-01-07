@@ -8,34 +8,68 @@ import { CODE, NAME, FORM_NAME as GROUP_FORM } from '../containers/GroupForm/con
 import { FORM_NAME as REPLICATE_USER_FORM } from '../components/ReplicateUserForm';
 import createHumanErrorMessage from './createHumanErrorMessage';
 
-export function asyncValidatorSwitch(values, _, props, blurredField) {
+export async function asyncValidatorSwitch(values, _, props, blurredField) {
+    const priorErrors = props.asyncErrors;
     // Skip aSync validation when submitting the form because all fields have been
     // validated on blur anyway, and the server will reject them
-    if (!blurredField) {
+    if (!blurredField && !priorErrors) {
         return Promise.resolve({});
     }
 
+    let newError;
     if (props.form === USER_FORM && blurredField === USERNAME) {
-        return asyncValidateUsername(values, _, props);
+        newError = await getUserNameError(values, props);
+    } else if (
+        props.form === GROUP_FORM &&
+        (blurredField === CODE || blurredField === NAME)
+    ) {
+        newError = await getGenericUniquenessError(values, props, blurredField);
+    } else {
+        newError = await getAttributeUniquenessError(values, props, blurredField);
     }
 
-    if (props.form === GROUP_FORM && (blurredField === CODE || blurredField === NAME)) {
-        return asyncValidateUniqueness(values, _, props);
-    }
+    const errors = priorErrors || newError ? { ...priorErrors, ...newError } : undefined;
 
-    return asyncValidateAttributeUniqueness(values, _, props, blurredField);
+    if (errors) {
+        throw errors;
+    } else {
+        return Promise.resolve({});
+    }
 }
 
-export async function asyncValidateUsername(values, _, props) {
+export async function asyncValidateUsername(values, _, props, blurredField) {
+    return asyncSingleFieldValidator(values, props, blurredField, getUserNameError);
+}
+
+export async function asyncValidateUniqueness(values, _, props, blurredField) {
+    return asyncSingleFieldValidator(
+        values,
+        props,
+        blurredField,
+        getGenericUniquenessError
+    );
+}
+
+async function asyncSingleFieldValidator(values, props, blurredField, apiMethod) {
+    if (!blurredField) {
+        return Promise.resolve({});
+    }
+    const error = await apiMethod(values, props, blurredField);
+    if (error) {
+        throw error;
+    } else {
+        return Promise.resolve({});
+    }
+}
+
+async function getUserNameError(values, props) {
     const newUserName = values[USERNAME];
     const editingExistingUser =
         props.form !== REPLICATE_USER_FORM && props.user && props.user.id;
 
     if (!newUserName || editingExistingUser) {
-        return Promise.resolve();
+        return Promise.resolve({});
     }
-
-    const errors = {};
 
     try {
         const modelCollection = await api.genericFind(
@@ -44,21 +78,22 @@ export async function asyncValidateUsername(values, _, props) {
             newUserName
         );
         if (modelCollection.size > 0) {
-            errors[USERNAME] = i18n.t('Username already taken');
+            return {
+                [USERNAME]: i18n.t('Username already taken'),
+            };
         }
-        return errors;
     } catch (error) {
-        errors[USERNAME] = i18n.t(
-            'There was a problem whilst checking the availability of this username'
-        );
-        throw errors;
+        return {
+            [USERNAME]: i18n.t(
+                'There was a problem whilst checking the availability of this username'
+            ),
+        };
     }
 }
 
 /**
  * Calls the genericFind method of the Api instance to find out whether a userRole/userGroup model instance with the same property value exists
  * @param {Object} values - redux form values object
- * @param {Object} _dispatch - store.dispatch method - ignored
  * @param {Object} props - Component properties, containing either a userRole or userGroup model
  * @param {Object} fieldName - The property name to check on uniqueness
  * @returns {Object} errors - Will be empty of the entry was unique. Otherwise will contain error message  for duplicate property values.
@@ -66,58 +101,15 @@ export async function asyncValidateUsername(values, _, props) {
  * @function
  */
 
-export async function asyncValidateUniqueness(values, _dispatch, props, fieldName) {
-    let errors = {};
-    let validationPromises = [];
-    const { validExceptSubmit, asyncBlurFields, group, role } = props;
+async function getGenericUniquenessError(values, props, fieldName) {
+    const { group, role } = props;
     const model = role || group;
-
-    // BEWARE!!!! Under certain conditions reduxForm.asyncValidate can be called
-    // with param fieldName === undefined. If this happens you can assume everything
-    // needs to be validated, so just loop through all fields
-    if (validExceptSubmit && !fieldName && asyncBlurFields && asyncBlurFields.length) {
-        asyncBlurFields.forEach(blurField => {
-            validationPromises.push(asyncValidateField(blurField, values, errors, model));
-        });
-    } else {
-        validationPromises.push(asyncValidateField(fieldName, values, errors, model));
-    }
-
-    await Promise.all(validationPromises);
-    return errors;
-}
-
-async function asyncValidateAttributeUniqueness(values, _, props, blurredField) {
-    const errors = {};
-    const entityType = props.form === USER_FORM ? USER : USER_GROUP;
-    const id = entityType === USER ? props.user.id || '_' : props.group.id || '_';
-    const attributeId = blurredField.replace(USER_ATTRIBUTE_FIELD_PREFIX, '');
-    const value = values[blurredField];
-
-    try {
-        const isUnique = await api.isAttributeUnique(entityType, id, attributeId, value);
-        if (!isUnique) {
-            errors[blurredField] = i18n.t(
-                'Attribute value needs to be unique, value already taken.'
-            );
-        }
-        return errors;
-    } catch (error) {
-        console.error(error);
-        errors[blurredField] = i18n.t(
-            'There was a problem checking if this attribute value is unique'
-        );
-        throw errors;
-    }
-}
-
-const asyncValidateField = async (fieldName, values, errors, model) => {
     const entityName = model.modelDefinition.name;
     const fieldValue = values[fieldName];
     const fieldDisplayName = _.capitalize(fieldName);
 
     if (!fieldValue) {
-        return Promise.resolve(errors);
+        return Promise.resolve({});
     }
 
     try {
@@ -125,12 +117,13 @@ const asyncValidateField = async (fieldName, values, errors, model) => {
         if (modelCollection.size > 0) {
             const foundId = modelCollection.values().next().value.id;
             if (foundId !== model.id) {
-                errors[fieldName] = i18n.t('{{fieldDisplayName}} is already taken', {
-                    fieldDisplayName,
-                });
+                return {
+                    [fieldName]: i18n.t('{{fieldDisplayName}} is already taken', {
+                        fieldDisplayName,
+                    }),
+                };
             }
         }
-        return errors;
     } catch (error) {
         const fallBackMsg = i18n.t(
             'Could not verify if this {{fieldDisplayName}} is unique',
@@ -139,9 +132,32 @@ const asyncValidateField = async (fieldName, values, errors, model) => {
             }
         );
 
-        errors[fieldName] = createHumanErrorMessage(error, fallBackMsg);
-        throw errors;
+        return {
+            [fieldName]: createHumanErrorMessage(error, fallBackMsg),
+        };
     }
-};
+}
 
-export default asyncValidateUniqueness;
+async function getAttributeUniquenessError(values, props, blurredField) {
+    const entityType = props.form === USER_FORM ? USER : USER_GROUP;
+    const id = entityType === USER ? props.user.id || '_' : props.group.id || '_';
+    const attributeId = blurredField.replace(USER_ATTRIBUTE_FIELD_PREFIX, '');
+    const value = values[blurredField];
+
+    try {
+        const isUnique = await api.isAttributeUnique(entityType, id, attributeId, value);
+        if (!isUnique) {
+            return {
+                [blurredField]: i18n.t(
+                    'Attribute value needs to be unique, value already taken.'
+                ),
+            };
+        }
+    } catch (error) {
+        return {
+            [blurredField]: i18n.t(
+                'There was a problem checking if this attribute value is unique'
+            ),
+        };
+    }
+}

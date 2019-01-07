@@ -211,8 +211,8 @@
     "Password should have at least one special character": "",
     "Username already taken": "",
     "There was a problem whilst checking the availability of this username": "",
-    "Attribute value needs to be unique, value already taken.": "",
-    "There was a problem checking if this attribute value is unique": "",
     "{{fieldDisplayName}} is already taken": "",
-    "Could not verify if this {{fieldDisplayName}} is unique": ""
+    "Could not verify if this {{fieldDisplayName}} is unique": "",
+    "Attribute value needs to be unique, value already taken.": "",
+    "There was a problem checking if this attribute value is unique": ""
 }
