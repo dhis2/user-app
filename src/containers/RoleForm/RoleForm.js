@@ -31,7 +31,7 @@ class RoleForm extends Component {
         try {
             await api.saveRole(data);
             const msg = i18n.t('User role "{{displayName}}" saved successfully', {
-                displayName: role.name,
+                displayName: data[NAME],
             });
             showSnackbar({ message: msg });
             clearItem();
