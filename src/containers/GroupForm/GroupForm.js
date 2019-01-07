@@ -197,7 +197,6 @@ GroupForm.propTypes = {
     clearItem: PropTypes.func.isRequired,
     getList: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
-    initialValues: PropTypes.object.isRequired,
     group: PropTypes.object.isRequired,
     asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]).isRequired,
     pristine: PropTypes.bool.isRequired,
