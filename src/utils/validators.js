@@ -11,37 +11,37 @@ const SPECIAL_CHARACTER_PATTERN = /[`~!@#$%^&*()_|+\-=?;:'",.<>{}[\]\\/]/;
 
 // validators (ordered alphabetically)
 export function code(value) {
-    if (value && value.length > 50) {
+    if (hasValue(value) && value.length > 50) {
         return i18n.t('Exceeds maximum character limit of 50');
     }
 }
 
 export function date(value) {
-    if (!DATE_PATTERN.test(value)) {
+    if (hasValue(value) && !DATE_PATTERN.test(value)) {
         return i18n.t('Please enter a valid date with the following format yyyy-mm-dd');
     }
 }
 
 export function email(value) {
-    if (value && !EMAIL_ADDRESS_PATTERN.test(value)) {
+    if (hasValue(value) && !EMAIL_ADDRESS_PATTERN.test(value)) {
         return i18n.t('Please provide a valid email address');
     }
 }
 
 export function integer(value) {
-    if (!isInteger(value)) {
+    if (hasValue(value) && !isInteger(value)) {
         return i18n.t('Value should be an integer');
     }
 }
 
 export function negativeInteger(value) {
-    if (!isInteger(value) || parseInt(value, 10) >= 0) {
+    if (hasValue(value) && (!isInteger(value) || parseInt(value, 10) >= 0)) {
         return i18n.t('Value should be a nagative integer');
     }
 }
 
 export function number(value) {
-    if (isNaN(value)) {
+    if (hasValue(value) && isNaN(value)) {
         return i18n.t('Value should be a number');
     }
 }
@@ -57,7 +57,7 @@ export function password(value, allValues, props) {
 }
 
 export function positiveInteger(value) {
-    if (!isInteger(value) || parseInt(value, 10) <= 0) {
+    if (hasValue(value) && (!isInteger(value) || parseInt(value, 10) <= 0)) {
         return i18n.t('Value should be a positive integer');
     }
 }
@@ -69,7 +69,7 @@ export function repeatPassword(value, allValues) {
 }
 
 export function required(value) {
-    return !Boolean(value) ? i18n.t('This field is required') : undefined;
+    return !hasValue(value) ? i18n.t('This field is required') : undefined;
 }
 
 export function requiredArray(value) {
@@ -79,17 +79,17 @@ export function requiredArray(value) {
 }
 
 export function username(value) {
-    if (value && value.length < 2) {
+    if (hasValue(value) && value.length < 2) {
         return i18n.t('A username should be at least 2 characters long');
     }
 
-    if (value && value.length > 140) {
+    if (hasValue(value) && value.length > 140) {
         return i18n.t('Username may not exceed 140 characters');
     }
 }
 
 export function whatsApp(value) {
-    if (value && !INTERNATIONAL_PHONE_NUMBER_PATTERN.test(value)) {
+    if (hasValue(value) && !INTERNATIONAL_PHONE_NUMBER_PATTERN.test(value)) {
         return i18n.t('Please provide a valid international phone number (+0123456789)');
     }
 }
@@ -109,7 +109,7 @@ export function whatsApp(value) {
  * @function
  */
 function checkPasswordForErrors(password) {
-    if (!password) {
+    if (!hasValue(password)) {
         return i18n.t('This field is required');
     }
     if (password.length < 8) {
@@ -152,4 +152,8 @@ function shouldValidatePassword(allValues, props) {
         isEditingUser && !allValues[PASSWORD] && !allValues[REPEAT_PASSWORD];
 
     return isEmptyOnEdit ? false : true;
+}
+
+function hasValue(value) {
+    return typeof value !== 'undefined' && value !== null && value !== '';
 }
