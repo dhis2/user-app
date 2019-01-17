@@ -167,13 +167,13 @@ export const shortItemSelector = _.memoize((id, list) => {
  * @function
  */
 export const orgUnitRootsSelector = (orgUnitType, currentUser) => {
-    const systemOrgRoot = currentUser.systemOrganisationUnitRoot;
+    const systemOrgRoots = currentUser.systemOrganisationUnitRoots;
     const requestedOrgUnitRoots = currentUser[orgUnitType];
     const fallBackOrgUnitRoots = currentUser[DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS];
 
     let orgUnitRoots = null;
     if (currentUser.authorities.has('ALL')) {
-        orgUnitRoots = [systemOrgRoot];
+        orgUnitRoots = systemOrgRoots;
     } else if (requestedOrgUnitRoots.size === 0) {
         orgUnitRoots = fallBackOrgUnitRoots.toArray();
     } else if (fallBackOrgUnitRoots.size > 0) {
