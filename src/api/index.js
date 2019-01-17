@@ -318,7 +318,7 @@ class Api {
             this.d2.currentUser.getUserGroups(),
             this.d2.currentUser.getUserRoles(),
             this.getCurrentUserOrgUnits(),
-            this.getSystemOrgUnitRoot(),
+            this.getSystemOrgUnitRoots(),
         ]).then(
             ([
                 userGroups,
@@ -328,7 +328,7 @@ class Api {
                     dataViewOrganisationUnits,
                     teiSearchOrganisationUnits,
                 },
-                systemOrganisationUnitRoot,
+                systemOrganisationUnitRoots,
             ]) => {
                 return Object.assign(this.d2.currentUser, {
                     userGroups,
@@ -336,7 +336,7 @@ class Api {
                     organisationUnits,
                     dataViewOrganisationUnits,
                     teiSearchOrganisationUnits,
-                    systemOrganisationUnitRoot,
+                    systemOrganisationUnitRoots,
                 });
             }
         );
@@ -374,7 +374,7 @@ class Api {
         );
     };
 
-    getSystemOrgUnitRoot = () => {
+    getSystemOrgUnitRoots = () => {
         return this.d2.models.organisationUnits
             .list({
                 paging: false,
@@ -382,7 +382,7 @@ class Api {
                 fields: 'id,path,displayName,children::isNotEmpty',
             })
             .then(modelCollection => {
-                return modelCollection.toArray()[0];
+                return modelCollection.toArray();
             });
     };
 
