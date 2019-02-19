@@ -13,7 +13,7 @@ export async function asyncValidatorSwitch(values, _, props, blurredField) {
     // Skip aSync validation when submitting the form because all fields have been
     // validated on blur anyway, and the server will reject them
     if (!blurredField && !priorErrors) {
-        return Promise.resolve({});
+        return Promise.resolve();
     }
 
     let newError;
@@ -33,7 +33,7 @@ export async function asyncValidatorSwitch(values, _, props, blurredField) {
     if (errors) {
         throw errors;
     } else {
-        return Promise.resolve({});
+        return Promise.resolve();
     }
 }
 
@@ -52,13 +52,13 @@ export async function asyncValidateUniqueness(values, _, props, blurredField) {
 
 async function asyncSingleFieldValidator(values, props, blurredField, apiMethod) {
     if (!blurredField) {
-        return Promise.resolve({});
+        return Promise.resolve();
     }
     const error = await apiMethod(values, props, blurredField);
     if (error) {
         throw error;
     } else {
-        return Promise.resolve({});
+        return Promise.resolve();
     }
 }
 
@@ -68,7 +68,7 @@ async function getUserNameError(values, props) {
         props.form !== REPLICATE_USER_FORM && props.user && props.user.id;
 
     if (!newUserName || editingExistingUser) {
-        return Promise.resolve({});
+        return Promise.resolve();
     }
 
     try {
@@ -109,7 +109,7 @@ async function getGenericUniquenessError(values, props, fieldName) {
     const fieldDisplayName = _.capitalize(fieldName);
 
     if (!fieldValue) {
-        return Promise.resolve({});
+        return Promise.resolve();
     }
 
     try {
@@ -139,10 +139,15 @@ async function getGenericUniquenessError(values, props, fieldName) {
 }
 
 async function getAttributeUniquenessError(values, props, blurredField) {
+    const value = values[blurredField];
+
+    if (!value) {
+        return Promise.resolve();
+    }
+
     const entityType = props.form === USER_FORM ? USER : USER_GROUP;
     const id = entityType === USER ? props.user.id || '_' : props.group.id || '_';
     const attributeId = blurredField.replace(USER_ATTRIBUTE_FIELD_PREFIX, '');
-    const value = values[blurredField];
 
     try {
         const isUnique = await api.isAttributeUnique(entityType, id, attributeId, value);
