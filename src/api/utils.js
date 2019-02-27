@@ -231,7 +231,6 @@ export const getAttributesWithValueAndId = (userCollection, value, attributeId) 
         .reduce(
             (list, user) =>
                 list.concat(
-                    list,
                     user.attributeValues.filter(
                         attributeValue =>
                             value === attributeValue.value &&
