@@ -224,3 +224,19 @@ export const parse200Error = response => {
     }
     return { messages };
 };
+
+export const getAttributesWithValueAndId = (userCollection, value, attributeId) =>
+    userCollection
+        .toArray()
+        .reduce(
+            (list, user) =>
+                list.concat(
+                    list,
+                    user.attributeValues.filter(
+                        attributeValue =>
+                            value === attributeValue.value &&
+                            attributeId === attributeValue.attribute.id
+                    )
+                ),
+            []
+        );
