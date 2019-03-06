@@ -62,4 +62,5 @@ export default new Map([
     ['F_VALIDATIONRULEGROUP', i18n.t('Validation Rule Group')],
     ['F_VALIDATIONRULE', i18n.t('Validation Rule')],
     ['F_PREDICTORGROUP', i18n.t('Data predictor group')],
+    ['F_SKIP_DATA_IMPORT_AUDIT', i18n.t('Skip data import audit')],
 ]);
