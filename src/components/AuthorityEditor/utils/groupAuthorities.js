@@ -102,6 +102,7 @@ const AUTHORITY_GROUPS = {
         'F_METADATA_EXPORT',
         'F_METADATA_IMPORT',
         'F_METADATA_MANAGE',
+        'F_SKIP_DATA_IMPORT_AUDIT',
     ]),
     system: new Set([
         'ALL',
