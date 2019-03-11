@@ -11,7 +11,6 @@ import SideNav from './SideNav';
 import navigateTo from '../utils/navigateTo';
 
 const style = {
-    marginTop: '4rem',
     display: 'flex',
     flex: '1 1 0%',
     paddingRight: '2rem',

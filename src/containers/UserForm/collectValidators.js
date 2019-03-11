@@ -31,7 +31,7 @@ const CREATE_REQUIRED_FIELDS = new Set([
 const INVITE_REQUIRED_FIELDS = new Set([EMAIL, SURNAME, FIRST_NAME]);
 
 // In edit mode, the username field is disabled, because this is create-only.
-// The password fields are also optional, we just keep the current password 
+// The password fields are also optional, we just keep the current password
 // if no new values are provided. Only firstname and surname are required,
 // to prevent these fields from being cleared.
 const EDIT_REQUIRED_FIELDS = new Set([SURNAME, FIRST_NAME]);

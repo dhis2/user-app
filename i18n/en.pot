@@ -5,8 +5,11 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-06T10:54:33.962Z\n"
-"PO-Revision-Date: 2019-03-06T10:54:33.962Z\n"
+"POT-Creation-Date: 2019-03-11T14:22:05.956Z\n"
+"PO-Revision-Date: 2019-03-11T14:22:05.956Z\n"
+
+msgid "User management"
+msgstr ""
 
 msgid "Use database locale / no translation"
 msgstr ""
