@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 import history from './utils/history';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import HeaderBar from '@dhis2/d2-ui-header-bar';
 import store from './store';
 import './styles/styles.css';
 import AppWithD2ContextAndTheme from './components/AppWithD2ContextAndTheme';
@@ -13,7 +11,11 @@ import SnackbarContainer from './components/SnackbarContainer';
 import DialogContainer from './components/DialogContainer';
 import SharingDialogContainer from './components/SharingDialogContainer';
 
-injectTapEventPlugin();
+import HeaderBar from '@dhis2/ui/widgets/HeaderBar';
+import i18n from '@dhis2/d2-i18n';
+
+import 'typeface-roboto';
+import 'material-design-icons-iconfont/dist/material-design-icons.css';
 
 /**
  * Main Component. Renders a AppWithD2ContextAndTheme wrapped in a Provider containing the HeaderBar,
@@ -26,7 +28,7 @@ const UserApp = ({ d2 }) => (
     <Provider store={store}>
         <AppWithD2ContextAndTheme d2={d2}>
             <div>
-                <HeaderBar d2={d2} />
+                <HeaderBar appName={i18n.t('User management')} />
                 <Router history={history} hashType={'noslash'}>
                     <SectionLoader />
                 </Router>
