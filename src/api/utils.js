@@ -70,7 +70,7 @@ export const createListRequestData = (
         pageSize: DEFAULT_PAGE_SIZE,
         fields,
         page,
-        order: 'lastUpdated:desc',
+        order: entityName === USER ? ['firstName:asc', 'surname:asc'] : 'name:asc',
     };
 
     if (entityName === USER && !isSuperUser(currentUser)) {
