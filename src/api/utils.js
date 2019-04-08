@@ -69,12 +69,13 @@ export const createListRequestData = (
         pageSize: DEFAULT_PAGE_SIZE,
         fields,
         page,
-        order: 'lastUpdated:desc',
+        order: 'name:asc',
     };
 
     if (entityName === USER && !isSuperUser(currentUser)) {
         requestData.userOrgUnits = true;
         requestData.includeChildren = true;
+        requestData.order = ['firstName:asc', 'surname:asc'];
     }
 
     if (query) requestData.query = query;
