@@ -12,6 +12,7 @@ import { SECTIONS } from '../constants/routeConfig';
 const cardStyle = {
     padding: '0',
     margin: '.5rem',
+    marginTop: '1rem',
     float: 'left',
     width: '230px',
 };
