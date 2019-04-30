@@ -1,7 +1,7 @@
+import SharingDialog from '@dhis2/d2-ui-sharing-dialog';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import SharingDialog from 'd2-ui-sharing';
 import api from '../api';
 import { hideSharingDialog } from '../actions';
 
