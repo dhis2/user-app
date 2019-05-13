@@ -7,7 +7,9 @@ const DATE_PATTERN = /[0-9]{4}-[0-9]{2}-[0-9]{2}/;
 const LOWER_CASE_PATTERN = /^(?=.*[a-z]).+$/;
 const UPPER_CASE_PATTERN = /^(?=.*[A-Z]).+$/;
 const DIGIT_PATTERN = /^(?=.*[0-9]).+$/;
-const SPECIAL_CHARACTER_PATTERN = /[`~!@#$%^&*()_|+\-=?;:'",.<>{}[\]\\/]/;
+// Using this regex to match all non-alphanumeric characters to match server-side implementation
+// https://github.com/dhis2/dhis2-core/blob/master/dhis-2/dhis-services/dhis-service-core/src/main/java/org/hisp/dhis/user/SpecialCharacterValidationRule.java#L39
+const SPECIAL_CHARACTER_PATTERN = /[^a-zA-Z0-9]/;
 
 // validators (ordered alphabetically)
 export function code(value) {
