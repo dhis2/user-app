@@ -1,4 +1,4 @@
-import createHashHistory from 'history/createHashHistory'
+import { createHashHistory } from 'history'
 
 /**
  * Creates and exports an empty hash history object that will be used by the Router
