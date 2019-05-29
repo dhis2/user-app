@@ -1,7 +1,7 @@
 /* global DHIS_CONFIG, manifest */
 import React from 'react'
 import { render } from 'react-dom'
-import UserApp from './UserApp'
+import App from './App'
 import * as serviceWorker from './serviceWorker'
 import { config, getUserSettings, init } from 'd2/lib/d2'
 import i18n from './locales'
@@ -68,7 +68,7 @@ const configI18n = userSettings => {
  */
 const renderAppInDOM = d2 => {
     const rootEl = document.getElementById('root')
-    render(<UserApp d2={d2} />, rootEl)
+    render(<App d2={d2} />, rootEl)
 }
 
 setupD2().then(renderAppInDOM)

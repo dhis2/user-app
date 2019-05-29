@@ -25,7 +25,7 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css'
  * @param {Object} props.d2 - The d2 instance to pass to the Headerbar and AppWithD2ContextAndTheme
  * @class
  */
-const UserApp = ({ d2 }) => (
+const App = ({ d2 }) => (
     <Provider store={store}>
         <AppWithD2ContextAndTheme d2={d2}>
             <div>
@@ -41,8 +41,8 @@ const UserApp = ({ d2 }) => (
     </Provider>
 )
 
-UserApp.propTypes = {
+App.propTypes = {
     d2: PropTypes.object.isRequired,
 }
 
-export default UserApp
+export default App
