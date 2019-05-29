@@ -191,14 +191,14 @@ class SearchableOrgUnitTree extends Component {
                             primary={true}
                             style={styles.buttonMargin}
                             onClick={this.applySelection}
-                            disabled={!root}
+                            disabled={!roots}
                         />
                         <RaisedButton
                             label={i18n.t('Clear all')}
                             secondary={true}
                             style={styles.buttonMargin}
                             onClick={this.clearSelection}
-                            disabled={!root}
+                            disabled={!roots}
                         />
                         <RaisedButton
                             onClick={cancel}
