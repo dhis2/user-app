@@ -2,16 +2,21 @@
   "name": "user-app",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint:style": "d2-style js check --all"
+  },
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "@dhis2/cli-style": "^3.2.2",
+    "husky": "^2.3.0"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,5 +32,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "d2-style commit check",
+      "pre-commit": "d2-style js apply"
+    }
   }
 }
