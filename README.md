@@ -1,92 +1,68 @@
-# User-app
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-[![Build Status](https://travis-ci.com/dhis2/user-app.svg)](https://travis-ci.com/dhis2/user-app)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdhis2%2Fuser-app.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdhis2%2Fuser-app?ref=badge_shield)
+## Available Scripts
 
-This repo contains the user app first released in DHIS2 version 2.30.
+In the project directory, you can run:
 
-It was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app), and later ejected.
+### `npm start`
 
-## Developer guide
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### Prerequisites
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-To use the user-app in development mode, it is necessary to have a running DHIS2 instance, and be logged in to it. This is because the app requests resources, like react and react-dom, from the DHIS2 core resources. Most developers use their local DHIS2 instance. If you haven't configured your DHIS2_HOME env variable and set up a config.json, then the app will default to using localhost:8080 with the admin user (see
-[config/webpack.config.dev.js](config/webpack.config.dev.js#L35)).
+### `npm test`
 
-### Installation
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-First clone the repo, then:
+### `npm run build`
 
-```
-yarn install
-yarn start
-```
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The webpack-dev-server will start up on localhost:3000, by default.
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
 
-### Running tests
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-`yarn test or yarn coverage`
+### `npm run eject`
 
-### Other useful things to know
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-#### eslint/prettier
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-The user-app uses **eslint** for code correctness checking, and **prettier** for formatting, and the build will fail if any of the checks fail. To make life easier, we suggest that you add the eslint and prettier plugins to your editor. But if you prefer, you can run the following before pushing your code:
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-```
-yarn lint
-yarn prettify
-```
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-#### d2/d2-ui
+## Learn More
 
-The user-app uses the d2 library for communicating with the DHIS2 api. And as much as possible, we use d2-ui components, rather than using material-ui directly. Make sure to upgrade these dependencies regularly, and contribute to them.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### Deploy
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-#### Local deployment
+### Code Splitting
 
-In order to test the build of the user-app (rather than just the dev server), deploy it to your local dhis2 build. The instructions here assume a good understanding of building DHIS2 locally.
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-From the root of the user-app, build the user-app locally
+### Analyzing the Bundle Size
 
-```
-yarn build
-```
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-Then run the command below to install the built project to the `/repository/org/hisp/dhis/dhis-app-user` folder your .m2 directory:
+### Making a Progressive Web App
 
-```
-mvn install
-```
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-Navigate to your local dhis2 repo, `/dhis-2/dhis-web` directory. Then run the command below to build a `dhis.war` file under `dhis-web/dhis-web-portal/target`
+### Advanced Configuration
 
-```
-mvn clean install -o
-```
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-Finally, paste the built `dhis.war` file into you Tomcat `/webapps` directory
+### Deployment
 
-#### Deploy to production
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-Every commit to master is automatically deployed. To deploy a build to an older user-app version, e.g., 2.29, a tag needs to be created. Do the following:
+### `npm run build` fails to minify
 
-```
-git checkout 2.29
-git pull
-yarn version (interactive, will ask you for a new version number, eg. 29.0.22)
-git push origin master
-git push origin v29.0.22 (pushes the v29.0.22 tag)
-```
-
-To deploy a major upgrade, it is necessary to branch the current version, and update the pom.xml on master. Details of this will be provided elsewhere.
-
-## License
-
-The software is open source and released under the [BSD 2-Clause License](https://github.com/dhis2/user-app/blob/master/LICENSE).
-
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdhis2%2Fuser-app.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdhis2%2Fuser-app?ref=badge_large)
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
