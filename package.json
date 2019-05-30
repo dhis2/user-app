@@ -14,7 +14,8 @@
     "prebuild": "npm run localize",
     "pretest": "npm run localize",
     "extract-pot": "d2-i18n-extract -p src/ -o i18n/",
-    "localize": "npm run extract-pot && d2-i18n-generate -n user-app -p ./i18n/ -o ./src/locales/"
+    "localize": "npm run extract-pot && d2-i18n-generate -n user-app -p ./i18n/ -o ./src/locales/",
+    "documentation": "rimraf build && jsdoc -c jsdoc.json"
   },
   "dependencies": {
     "@dhis2/d2-i18n": "^1.0.3",
@@ -45,7 +46,9 @@
     "@dhis2/d2-i18n-extract": "^1.0.6",
     "@dhis2/d2-i18n-generate": "^1.0.18",
     "husky": "^2.3.0",
-    "redux-logger": "^3.0.6"
+    "jsdoc": "^3.6.2",
+    "redux-logger": "^3.0.6",
+    "rimraf": "^2.6.3"
   },
   "husky": {
     "hooks": {
