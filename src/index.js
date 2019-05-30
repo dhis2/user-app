@@ -30,7 +30,7 @@ const setupD2 = () => {
 
     return getUserSettings()
         .then(configI18n)
-        .then(() => init(initConfig))
+        .then(({ i18n }) => init({ ...initConfig, i18n }))
 }
 
 /**
