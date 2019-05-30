@@ -1,7 +1,7 @@
 /* eslint-disable max-params */
 
 import i18n from '@dhis2/d2-i18n'
-import _ from '../constants/lodash'
+import capitalize from 'lodash.capitalize'
 import api from '../api'
 import { USER, USER_GROUP } from '../constants/entityTypes'
 import { USER_ATTRIBUTE_FIELD_PREFIX } from './attributeFieldHelpers'
@@ -127,7 +127,7 @@ async function getGenericUniquenessError(values, props, fieldName) {
     const model = role || group
     const entityName = model.modelDefinition.name
     const fieldValue = values[fieldName]
-    const fieldDisplayName = _.capitalize(fieldName)
+    const fieldDisplayName = capitalize(fieldName)
 
     if (!fieldValue) {
         return Promise.resolve()

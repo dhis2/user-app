@@ -2,7 +2,8 @@
  * A collection of selector functions that return derived state slices. Results are memoized where possible.
  * @module selectors
  */
-import _ from '../constants/lodash'
+import memoize from 'lodash.memoize'
+import isUndefined from 'lodash.isundefined'
 import i18n from '@dhis2/d2-i18n'
 import {
     USER_PROPS,
@@ -24,7 +25,7 @@ import getNestedProp from '../utils/getNestedProp'
  * @returns {Object} The d2 Pager instance with an appended 'currentlyShown' property
  * @function
  */
-export const pagerSelector = _.memoize(pager => {
+export const pagerSelector = memoize(pager => {
     if (pager === null) {
         return pager
     }
@@ -79,7 +80,7 @@ const listMappings = {
  * @returns {String} Either a comma delimited list of organisation unit names, or a count of selected organisation units phrase
  * @function
  */
-export const orgUnitsAsStringSelector = _.memoize(orgUnits => {
+export const orgUnitsAsStringSelector = memoize(orgUnits => {
     return orgUnits.length < 3
         ? orgUnits.map(unit => unit.displayName).join(', ')
         : i18n.t('{{count}} selected', { count: orgUnits.length })
@@ -92,8 +93,7 @@ const addInitialValueFrom = (sourceObject, initialValues, propName) => {
             ...sourceObject.cogsDimensionConstraints,
         ]
     } else if (
-        (sourceObject[propName] &&
-            !_.isUndefined(sourceObject[propName].size)) ||
+        (sourceObject[propName] && !isUndefined(sourceObject[propName].size)) ||
         Array.isArray(sourceObject[propName])
     ) {
         initialValues[propName] = asArray(sourceObject[propName]).map(
@@ -111,7 +111,7 @@ const addInitialValueFrom = (sourceObject, initialValues, propName) => {
  * @returns {Object} Initial values for the redux form wrapping the UserForm component
  * @function
  */
-export const userFormInitialValuesSelector = _.memoize(
+export const userFormInitialValuesSelector = memoize(
     (user, locales, attributeFields) => {
         const initialValues = {
             [INVITE]: SET_PASSWORD,
@@ -143,7 +143,7 @@ export const userFormInitialValuesSelector = _.memoize(
     }
 )
 
-export const userGroupFormInitialValuesSelector = _.memoize(
+export const userGroupFormInitialValuesSelector = memoize(
     (userGroup, attributeFields) => {
         const initialValues = {}
 
@@ -165,7 +165,7 @@ export const userGroupFormInitialValuesSelector = _.memoize(
  * @returns {Object} An array of cat and cog IDs
  * @function
  */
-export const analyticsDimensionsRestrictionsSelector = _.memoize(user => {
+export const analyticsDimensionsRestrictionsSelector = memoize(user => {
     const catConstraints = asArray(
         getNestedProp('userCredentials.catDimensionConstraints', user)
     )
@@ -184,7 +184,7 @@ export const analyticsDimensionsRestrictionsSelector = _.memoize(user => {
  * @returns {Object} A d2 model instance containing only a few basic properties
  * @function
  */
-export const shortItemSelector = _.memoize((id, list) => {
+export const shortItemSelector = memoize((id, list) => {
     if (!list || !id) {
         return null
     }

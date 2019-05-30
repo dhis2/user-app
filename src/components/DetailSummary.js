@@ -3,7 +3,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Paper } from 'material-ui'
-import _ from '../constants/lodash'
+import kebabCase from 'lodash.kebabcase'
+import capitalize from 'lodash.capitalize'
 import api from '../api'
 import i18n from '@dhis2/d2-i18n'
 import parseDateFromUTCString from '../utils/parseDateFromUTCString'
@@ -112,7 +113,7 @@ class DetailSummary extends Component {
                 }
 
                 if (removeText) {
-                    value = _.capitalize(value.replace(removeText, ''))
+                    value = capitalize(value.replace(removeText, ''))
                 }
 
                 if ((parseDate || parseDateTime) && typeof value === 'string') {
@@ -158,7 +159,7 @@ class DetailSummary extends Component {
 
         const { id, displayName, access } = summaryObject
         const plural = `${baseName}s`,
-            baseRoute = `/${_.kebabCase(plural)}`,
+            baseRoute = `/${kebabCase(plural)}`,
             backTooltip = i18n.t(`Back to ${plural}`),
             editLink = `${baseRoute}/edit/${id}`,
             editTooltip = i18n.t(`Edit ${baseName}`)

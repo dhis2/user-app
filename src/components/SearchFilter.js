@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import i18n from '@dhis2/d2-i18n'
 import TextField from 'material-ui/TextField/TextField'
-import _ from '../constants/lodash'
+import debounce from 'lodash.debounce'
 import { updateFilter, getList } from '../actions'
 import { QUERY } from '../constants/filterFieldNames'
 
@@ -22,7 +22,7 @@ class SearchFilter extends Component {
         this.state = {
             localQueryStr: props.filter.query,
         }
-        this.updateSearchFilter = _.debounce(this.updateSearchFilter, 375)
+        this.updateSearchFilter = debounce(this.updateSearchFilter, 375)
     }
 
     updateSearchFilter = newValue => {

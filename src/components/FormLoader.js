@@ -7,7 +7,8 @@ import { USER, USER_GROUP, USER_ROLE } from '../constants/entityTypes'
 import Heading from 'd2-ui/lib/headings/Heading.component'
 import IconLink from './IconLink'
 import i18n from '@dhis2/d2-i18n'
-import _ from '../constants/lodash'
+import kebabCase from 'lodash.kebabcase'
+import capitalize from 'lodash.capitalize'
 import ErrorMessage from './ErrorMessage'
 import RoleForm from '../containers/RoleForm'
 import GroupForm from '../containers/GroupForm'
@@ -79,13 +80,13 @@ class FormLoader extends Component {
         const baseItem = item && item.id === id ? item : shortItem
         const entityTxt = baseItem
             ? baseItem.modelDefinition.displayName
-            : _.capitalize(entityType)
+            : capitalize(entityType)
         const displayName = baseItem ? baseItem.displayName : ''
         const updateMsg = `${i18n.t('Update')} ${entityTxt}: ${displayName}`
         const createMsg = `${i18n.t('Create new')} ${entityTxt}`
         const msg = id ? updateMsg : createMsg
         const link = baseItem
-            ? `/${_.kebabCase(baseItem.modelDefinition.plural)}`
+            ? `/${kebabCase(baseItem.modelDefinition.plural)}`
             : null
         const linkTooltip = `${i18n.t('Back to')} ${entityTxt}s`
 

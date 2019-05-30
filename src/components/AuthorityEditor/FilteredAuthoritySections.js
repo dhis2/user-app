@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import _ from '../../constants/lodash'
+import debounce from 'lodash.debounce'
 import filterAuthorities from './utils/filterAuthorities'
 import AuthoritySection from './AuthoritySection'
 
@@ -14,7 +14,7 @@ class FilteredAuthoritySections extends Component {
             filteredAuthorities: props.allGroupedAuthorities,
             searchChunks: null,
         }
-        this.updateFilter = _.debounce(this.updateFilter, 375)
+        this.updateFilter = debounce(this.updateFilter, 375)
     }
 
     getChildContext() {

@@ -6,7 +6,7 @@ import { orange500, blue500, red500 } from 'material-ui/styles/colors'
 import i18n from '@dhis2/d2-i18n'
 import makeTrashable from 'trashable'
 import createHumanErrorMessage from '../utils/createHumanErrorMessage'
-import _ from '../constants/lodash'
+import debounce from 'lodash.debounce'
 import PropTypes from 'prop-types'
 import asArray from '../utils/asArray'
 
@@ -58,7 +58,7 @@ class AsyncAutoComplete extends Component {
         super(props)
         const debounceTime = props.queryDebounceTime || 375
         this.state = { ...baseState }
-        this.getItems = _.debounce(this.getItems, debounceTime)
+        this.getItems = debounce(this.getItems, debounceTime)
         this.trashableQuery = null
     }
 

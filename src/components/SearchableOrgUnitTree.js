@@ -7,7 +7,7 @@ import AsyncAutoComplete from './AsyncAutoComplete'
 import RaisedButton from 'material-ui/RaisedButton'
 import Heading from 'd2-ui/lib/headings/Heading.component'
 import i18n from '@dhis2/d2-i18n'
-import _ from '../constants/lodash'
+import defer from 'lodash.defer'
 import PropTypes from 'prop-types'
 import api from '../api'
 import { orgUnitRootsSelector } from '../selectors'
@@ -126,7 +126,7 @@ class SearchableOrgUnitTree extends Component {
 
     clearSelection = () => {
         this.update([])
-        _.defer(this.applySelection)
+        defer(this.applySelection)
     }
 
     applySelection = () => {

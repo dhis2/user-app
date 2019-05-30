@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import _ from '../constants/lodash'
+import isEqual from 'lodash.isequal'
 import { USER } from '../constants/entityTypes'
 import { connect } from 'react-redux'
 import { updateFilter, hideDialog, getList } from '../actions'
@@ -24,7 +24,7 @@ class OrganisationUnitFilter extends Component {
             selectedOrgUnits,
         } = this.props
 
-        if (!_.isEqual(newSelectedOrgUnits, selectedOrgUnits)) {
+        if (!isEqual(newSelectedOrgUnits, selectedOrgUnits)) {
             updateFilter('organisationUnits', newSelectedOrgUnits)
             getList(USER)
         }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import _ from '../../constants/lodash'
+import endsWith from 'lodash.endswith'
 
 import AuthorityItem from './AuthorityItem'
 import HighlightableText from './HighlightableText'
@@ -21,11 +21,11 @@ class AuthorityGroup extends Component {
     }
 
     isPublicAdd(id) {
-        return _.endsWith(id, PUBLIC_ADD_SUFFIX)
+        return endsWith(id, PUBLIC_ADD_SUFFIX)
     }
 
     isPrivateAdd(id) {
-        return _.endsWith(id, PRIVATE_ADD_SUFFIX)
+        return endsWith(id, PRIVATE_ADD_SUFFIX)
     }
 
     render() {

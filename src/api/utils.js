@@ -6,7 +6,8 @@
  */
 
 import { generateUid } from 'd2/lib/uid'
-import _ from '../constants/lodash'
+import snakeCase from 'lodash.snakecase'
+import isUndefined from 'lodash.isundefined'
 import store from '../store'
 import {
     PAGE as DEFAULT_PAGE,
@@ -36,7 +37,7 @@ import { parseAttributeValues } from '../utils/attributeFieldHelpers'
  * @function
  */
 export const getQueryFields = (entityName, detailFields) => {
-    const formattedEntityName = _.snakeCase(entityName).toUpperCase()
+    const formattedEntityName = snakeCase(entityName).toUpperCase()
     const varName = detailFields
         ? `${formattedEntityName}_DETAILS`
         : `${formattedEntityName}_LIST`
@@ -97,7 +98,7 @@ export const createListRequestData = (
 const isSuperUser = ({ authorities }) => authorities.has('ALL')
 
 const addValueAsProp = (data, value, propName) => {
-    if (!_.isUndefined(value)) {
+    if (!isUndefined(value)) {
         data[propName] = Array.isArray(value)
             ? value.map(id => ({ id }))
             : value

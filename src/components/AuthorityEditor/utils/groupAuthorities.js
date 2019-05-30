@@ -1,6 +1,8 @@
 /** @module AuthorityEditor/utils/groupAuthorities */
 import i18n from '@dhis2/d2-i18n'
-import _ from '../../../constants/lodash'
+import startsWith from 'lodash.startswith'
+import endsWith from 'lodash.endswith'
+import sortBy from 'lodash.sortby'
 import nameLookup from './authorityGroupNames'
 
 // The next 3 constants are exported so they can be used by the AuthorityEditor component
@@ -157,7 +159,7 @@ const groupAuthorities = authorities => {
 
     // Append items to the groupedAuthorities accumulator and return the accumulated object
     const groupedAuthories = authorities.reduce((groupedAuthorities, auth) => {
-        if (_.startsWith(auth.id, APP_AUTH_PREFIX)) {
+        if (startsWith(auth.id, APP_AUTH_PREFIX)) {
             // Group under apps
             groupedAuthorities.apps.items.push(auth)
             lookup.delete(auth.id)
@@ -185,7 +187,7 @@ const groupAuthorities = authorities => {
 const sortGroupedAuthorities = groupedAuthories => {
     Object.keys(groupedAuthories).forEach(key => {
         const group = groupedAuthories[key]
-        group.items = _.sortBy(group.items, 'name')
+        group.items = sortBy(group.items, 'name')
     })
     return groupedAuthories
 }
@@ -196,7 +198,7 @@ const sortGroupedAuthorities = groupedAuthories => {
  * @return {Boolean} - True if no group suffix was found in the auth id
  */
 const hasNoGroupSuffix = auth => {
-    return !ALL_METADATA_SUFFIXES.some(suffix => _.endsWith(auth.id, suffix))
+    return !ALL_METADATA_SUFFIXES.some(suffix => endsWith(auth.id, suffix))
 }
 
 /**
@@ -214,7 +216,7 @@ const createMetadataGroup = (auth, lookup) => {
 
     // The suffix of the the incoming authority, i.e. "F_CATEGORY_COMBO_DELETE" => "_DELETE"
     const authSuffix = ALL_METADATA_SUFFIXES.find(suffix =>
-        _.endsWith(auth.id, suffix)
+        endsWith(auth.id, suffix)
     )
     // The authority baseName, i.e. "F_CATEGORY_COMBO_DELETE" => "F_CATEGORY_COMBO"
     const baseName = auth.id.replace(authSuffix, '')
