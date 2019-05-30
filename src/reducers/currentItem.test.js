@@ -1,4 +1,4 @@
-import reducer from '../currentItem'
+import reducer from './currentItem'
 
 describe('currentItem reducer', () => {
     it('should return the default state', () => {
