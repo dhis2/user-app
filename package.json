@@ -23,6 +23,8 @@
     "@dhis2/ui": "^1.0.0-beta.14",
     "d2": "31.0.1",
     "d2-ui": "29.0.25",
+    "d2-utilizr": "^0.2.15",
+    "d3-color": "^1.0.3",
     "lodash.capitalize": "^4.2.1",
     "lodash.debounce": "^4.0.8",
     "lodash.defer": "^4.1.0",
