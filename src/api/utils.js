@@ -1,17 +1,20 @@
+/* eslint-disable max-params */
+
 /**
  * This module includes helper functions used by the API class
  * @module Api/utils
  */
 
-import { generateUid } from 'd2/lib/uid';
-import _ from '../constants/lodash';
-import store from '../store';
+import { generateUid } from 'd2/lib/uid'
+import snakeCase from 'lodash.snakecase'
+import isUndefined from 'lodash.isundefined'
+import store from '../store'
 import {
     PAGE as DEFAULT_PAGE,
     PAGE_SIZE as DEFAULT_PAGE_SIZE,
-} from '../constants/defaults';
+} from '../constants/defaults'
 
-import FIELDS from '../constants/queryFields';
+import FIELDS from '../constants/queryFields'
 
 import {
     USER_PROPS,
@@ -21,10 +24,10 @@ import {
     PASSWORD,
     REPEAT_PASSWORD,
     EXTERNAL_AUTH,
-} from '../containers/UserForm/config';
+} from '../containers/UserForm/config'
 
-import { USER } from '../constants/entityTypes';
-import { parseAttributeValues } from '../utils/attributeFieldHelpers';
+import { USER } from '../constants/entityTypes'
+import { parseAttributeValues } from '../utils/attributeFieldHelpers'
 
 /**
  * Helper function that produces a "fields" array used in the api request payload
@@ -34,13 +37,13 @@ import { parseAttributeValues } from '../utils/attributeFieldHelpers';
  * @function
  */
 export const getQueryFields = (entityName, detailFields) => {
-    const formattedEntityName = _.snakeCase(entityName).toUpperCase();
+    const formattedEntityName = snakeCase(entityName).toUpperCase()
     const varName = detailFields
         ? `${formattedEntityName}_DETAILS`
-        : `${formattedEntityName}_LIST`;
+        : `${formattedEntityName}_LIST`
 
-    return FIELDS[varName];
-};
+    return FIELDS[varName]
+}
 
 /**
  * Helper function that prepares the request payload for a getList api call.
@@ -64,40 +67,43 @@ export const createListRequestData = (
         selfRegistered,
         invitationStatus,
         organisationUnits,
-    } = filter;
+    } = filter
 
-    let requestData = {
+    const requestData = {
         pageSize: DEFAULT_PAGE_SIZE,
         fields,
         page,
-        order: entityName === USER ? ['firstName:asc', 'surname:asc'] : 'name:asc',
-    };
+        order:
+            entityName === USER ? ['firstName:asc', 'surname:asc'] : 'name:asc',
+    }
 
     if (entityName === USER && !isSuperUser(currentUser)) {
-        requestData.userOrgUnits = true;
-        requestData.includeChildren = true;
+        requestData.userOrgUnits = true
+        requestData.includeChildren = true
     }
 
-    if (query) requestData.query = query;
-    if (inactiveMonths) requestData.inactiveMonths = inactiveMonths;
-    if (selfRegistered) requestData.selfRegistered = selfRegistered;
-    if (invitationStatus) requestData.invitationStatus = invitationStatus;
+    if (query) requestData.query = query
+    if (inactiveMonths) requestData.inactiveMonths = inactiveMonths
+    if (selfRegistered) requestData.selfRegistered = selfRegistered
+    if (invitationStatus) requestData.invitationStatus = invitationStatus
 
     if (organisationUnits.length) {
-        const ids = organisationUnits.map(unit => unit.id).join();
-        requestData.filter = `organisationUnits.id:in:[${ids}]`;
+        const ids = organisationUnits.map(unit => unit.id).join()
+        requestData.filter = `organisationUnits.id:in:[${ids}]`
     }
 
-    return requestData;
-};
+    return requestData
+}
 
-const isSuperUser = ({ authorities }) => authorities.has('ALL');
+const isSuperUser = ({ authorities }) => authorities.has('ALL')
 
 const addValueAsProp = (data, value, propName) => {
-    if (!_.isUndefined(value)) {
-        data[propName] = Array.isArray(value) ? value.map(id => ({ id })) : value;
+    if (!isUndefined(value)) {
+        data[propName] = Array.isArray(value)
+            ? value.map(id => ({ id }))
+            : value
     }
-};
+}
 
 /**
  * This function prepares a the payload object used for saving a user
@@ -106,12 +112,18 @@ const addValueAsProp = (data, value, propName) => {
  * @returns {Object}  Object that may be PUT/POSTed to the server to save a user
  * @function
  */
-export const parseUserSaveData = (values, user, inviteUser, attributeFields) => {
-    const isNewUser = !user.id;
-    const userId = user.id || generateUid();
-    const userCredId = (user.userCredentials && user.userCredentials.id) || generateUid();
-    const userModelOwnedProperties = user.modelDefinition.getOwnedPropertyNames();
-    let data = {
+export const parseUserSaveData = (
+    values,
+    user,
+    inviteUser,
+    attributeFields
+) => {
+    const isNewUser = !user.id
+    const userId = user.id || generateUid()
+    const userCredId =
+        (user.userCredentials && user.userCredentials.id) || generateUid()
+    const userModelOwnedProperties = user.modelDefinition.getOwnedPropertyNames()
+    const data = {
         id: userId,
         userCredentials: {
             id: userCredId,
@@ -119,32 +131,36 @@ export const parseUserSaveData = (values, user, inviteUser, attributeFields) => 
             cogsDimensionConstraints: [],
             catDimensionConstraints: [],
         },
-    };
-    let cred = data.userCredentials;
+    }
+    const cred = data.userCredentials
 
     // catCogsDimensionConstraints are combined into a single input component,
     // but need to be stored separately
     if (Array.isArray(values.catCogsDimensionConstraints)) {
         values.catCogsDimensionConstraints.forEach(constraint => {
             if (constraint.dimensionType === 'CATEGORY_OPTION_GROUP_SET') {
-                cred.cogsDimensionConstraints.push({ id: constraint.id });
+                cred.cogsDimensionConstraints.push({ id: constraint.id })
             } else {
-                cred.catDimensionConstraints.push({ id: constraint.id });
+                cred.catDimensionConstraints.push({ id: constraint.id })
             }
-        });
+        })
     }
 
-    USER_PROPS.forEach(propName => addValueAsProp(data, values[propName], propName));
-    USER_CRED_PROPS.forEach(propName => addValueAsProp(cred, values[propName], propName));
+    USER_PROPS.forEach(propName =>
+        addValueAsProp(data, values[propName], propName)
+    )
+    USER_CRED_PROPS.forEach(propName =>
+        addValueAsProp(cred, values[propName], propName)
+    )
 
-    data.attributeValues = parseAttributeValues(values, attributeFields);
+    data.attributeValues = parseAttributeValues(values, attributeFields)
 
     // This property was appended to the model by hand but needs to be removed before saving the user
-    delete cred[DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS];
+    delete cred[DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS]
 
     if (inviteUser || values[EXTERNAL_AUTH]) {
-        delete cred[PASSWORD];
-        delete cred[REPEAT_PASSWORD];
+        delete cred[PASSWORD]
+        delete cred[REPEAT_PASSWORD]
     }
 
     // Because the data object is used as the payload of a PUT request, properties that are omitted will be removed
@@ -153,24 +169,24 @@ export const parseUserSaveData = (values, user, inviteUser, attributeFields) => 
     if (!isNewUser) {
         for (const ownedPropName of userModelOwnedProperties) {
             if (user[ownedPropName] && !data[ownedPropName]) {
-                data[ownedPropName] = user[ownedPropName];
+                data[ownedPropName] = user[ownedPropName]
             }
         }
     }
 
-    return data;
-};
+    return data
+}
 
 export const parseLocaleUrl = (type, username, val) => {
-    return `/userSettings/key${type}Locale?user=${username}&value=${val}`;
-};
+    return `/userSettings/key${type}Locale?user=${username}&value=${val}`
+}
 
 export const mapLocale = ({ locale, name }) => {
     return {
         id: locale,
         label: name,
-    };
-};
+    }
+}
 
 /**
  * When querying the server for organisation units that match a certain query string, the server returns all units from the system root.
@@ -181,51 +197,55 @@ export const mapLocale = ({ locale, name }) => {
  * @function
  */
 export const getRestrictedOrgUnits = (orgUnits, orgUnitType) => {
-    const { currentUser } = store.getState();
+    const { currentUser } = store.getState()
 
     // Superuser can always see all org units
     if (currentUser.authorities.has('ALL')) {
-        return orgUnits.toArray();
+        return orgUnits.toArray()
     }
 
     // Try the requested orgUnitType first and use currentUser.organisationUnits as fallback
     const availableOrgUnits =
         currentUser[orgUnitType].size > 0
             ? currentUser[orgUnitType]
-            : currentUser[DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS];
+            : currentUser[DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS]
 
     return orgUnits.toArray().filter(unit => {
-        const isAvailableUnit = Boolean(availableOrgUnits.get(unit.id));
+        const isAvailableUnit = Boolean(availableOrgUnits.get(unit.id))
         const hasAvailableAncestor =
             !isAvailableUnit &&
             unit.ancestors
                 .toArray()
-                .some(ancestor => Boolean(availableOrgUnits.get(ancestor.id)));
+                .some(ancestor => Boolean(availableOrgUnits.get(ancestor.id)))
 
-        return isAvailableUnit || hasAvailableAncestor;
-    });
-};
+        return isAvailableUnit || hasAvailableAncestor
+    })
+}
 
 export const appendUsernameToDisplayName = userModelCollection => {
     userModelCollection.forEach(user => {
-        user.displayName += ` (${user.userCredentials.username})`;
-    });
-    return userModelCollection;
-};
+        user.displayName += ` (${user.userCredentials.username})`
+    })
+    return userModelCollection
+}
 
 export const parse200Error = response => {
-    const messages = [];
-    for (let typeReport of response.typeReports) {
-        for (let objectReport of typeReport.objectReports) {
-            for (let errorReport of objectReport.errorReports) {
-                messages.push({ message: errorReport.message });
+    const messages = []
+    for (const typeReport of response.typeReports) {
+        for (const objectReport of typeReport.objectReports) {
+            for (const errorReport of objectReport.errorReports) {
+                messages.push({ message: errorReport.message })
             }
         }
     }
-    return { messages };
-};
+    return { messages }
+}
 
-export const getAttributesWithValueAndId = (userCollection, value, attributeId) =>
+export const getAttributesWithValueAndId = (
+    userCollection,
+    value,
+    attributeId
+) =>
     userCollection
         .toArray()
         .reduce(
@@ -238,4 +258,4 @@ export const getAttributesWithValueAndId = (userCollection, value, attributeId) 
                     )
                 ),
             []
-        );
+        )

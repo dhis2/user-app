@@ -1,5 +1,7 @@
-import { getInstance } from 'd2/lib/d2';
-import i18n from '@dhis2/d2-i18n';
+/* eslint-disable max-params */
+
+import { getInstance } from 'd2/lib/d2'
+import i18n from '@dhis2/d2-i18n'
 import {
     getQueryFields,
     createListRequestData,
@@ -10,20 +12,20 @@ import {
     appendUsernameToDisplayName,
     parse200Error,
     getAttributesWithValueAndId,
-} from './utils';
+} from './utils'
 
-import groupAuthorities from '../components/AuthorityEditor/utils/groupAuthorities';
+import groupAuthorities from '../components/AuthorityEditor/utils/groupAuthorities'
 
 import {
     ORG_UNITS_QUERY_CONFIG,
     CURRENT_USER_ORG_UNITS_FIELDS,
-} from '../constants/queryFields';
+} from '../constants/queryFields'
 
 import {
     INTERFACE_LANGUAGE,
     DATABASE_LANGUAGE,
     USE_DB_LOCALE,
-} from '../containers/UserForm/config';
+} from '../containers/UserForm/config'
 
 /**
  * The Api class exposes all necessary functions to get the required data from the DHIS2 web api.
@@ -35,14 +37,14 @@ class Api {
      */
     constructor() {
         getInstance().then(d2 => {
-            this.d2 = d2;
-            this.d2Api = d2.Api.getApi();
+            this.d2 = d2
+            this.d2Api = d2.Api.getApi()
             // In development you can access d2 and d2Api via the console
             if (process.env.NODE_ENV === 'development') {
-                window.d2 = this.d2;
-                window.d2Api = this.d2Api;
+                window.d2 = this.d2
+                window.d2Api = this.d2Api
             }
-        });
+        })
     }
 
     /**************************
@@ -50,47 +52,47 @@ class Api {
      **************************/
 
     getD2 = () => {
-        return this.d2;
-    };
+        return this.d2
+    }
 
     getContextPath = () => {
-        return this.d2.system.systemInfo.contextPath;
-    };
+        return this.d2.system.systemInfo.contextPath
+    }
 
     getList = (entityName, page, filter) => {
-        const fields = getQueryFields(entityName);
+        const fields = getQueryFields(entityName)
         const requestData = createListRequestData(
             page,
             filter,
             fields,
             entityName,
             this.getCurrentUser()
-        );
-        return this.d2.models[entityName].list(requestData);
-    };
+        )
+        return this.d2.models[entityName].list(requestData)
+    }
 
     getItem = (entityName, id) => {
-        const data = { fields: getQueryFields(entityName, true) };
-        return this.d2.models[entityName].get(id, data);
-    };
+        const data = { fields: getQueryFields(entityName, true) }
+        return this.d2.models[entityName].get(id, data)
+    }
 
     genericFind = (entityName, propertyName, value) => {
         return this.d2.models[entityName]
             .filter()
             .on(propertyName)
             .equals(value)
-            .list({ fields: ['id'] });
-    };
+            .list({ fields: ['id'] })
+    }
 
     /**************************
      ********* USERS **********
      **************************/
 
     replicateUser = (id, username, password) => {
-        const url = `/users/${id}/replica`;
-        const data = { username, password };
-        return this.d2Api.post(url, data);
-    };
+        const url = `/users/${id}/replica`
+        const data = { username, password }
+        return this.d2Api.post(url, data)
+    }
 
     /**
      * Fetches organisation units matching the query string from the server.
@@ -105,53 +107,57 @@ class Api {
         const listConfig = {
             ...ORG_UNITS_QUERY_CONFIG,
             query,
-        };
+        }
         return this.d2.models.organisationUnits
             .list(listConfig)
-            .then(orgUnits => getRestrictedOrgUnits(orgUnits, orgUnitType));
-    };
+            .then(orgUnits => getRestrictedOrgUnits(orgUnits, orgUnitType))
+    }
 
     getAvailableUserRoles = () => {
-        const data = { canIssue: true, fields: ['id', 'displayName'], paging: false };
-        return this.d2.models.userRoles.list(data);
-    };
+        const data = {
+            canIssue: true,
+            fields: ['id', 'displayName'],
+            paging: false,
+        }
+        return this.d2.models.userRoles.list(data)
+    }
 
     getAvailableDataAnalyticsDimensionRestrictions = () => {
-        const url = '/dimensions/constraints';
-        const data = { fields: ['id', 'name', 'dimensionType'], paging: false };
-        return this.d2Api.get(url, data).then(({ dimensions }) => dimensions);
-    };
+        const url = '/dimensions/constraints'
+        const data = { fields: ['id', 'name', 'dimensionType'], paging: false }
+        return this.d2Api.get(url, data).then(({ dimensions }) => dimensions)
+    }
 
     updateDisabledState = (id, disabled) => {
-        const url = `/users/${id}`;
-        const data = { userCredentials: { disabled: disabled } };
-        return this.d2Api.patch(url, data);
-    };
+        const url = `/users/${id}`
+        const data = { userCredentials: { disabled: disabled } }
+        return this.d2Api.patch(url, data)
+    }
 
     disable2FA = id => {
-        const url = `/users/${id}`;
-        const data = { userCredentials: { twoFA: false } };
-        return this.d2Api.patch(url, data);
-    };
+        const url = `/users/${id}`
+        const data = { userCredentials: { twoFA: false } }
+        return this.d2Api.patch(url, data)
+    }
 
     getSelectedAndAvailableLocales = username => {
-        username = username ? encodeURIComponent(username) : null;
+        username = username ? encodeURIComponent(username) : null
 
         const useDbLocaleOption = {
             id: USE_DB_LOCALE,
             label: i18n.t('Use database locale / no translation'),
-        };
+        }
 
-        const dbLocales = this.d2Api.get('/locales/db');
-        const uiLocales = this.d2Api.get('/locales/ui');
+        const dbLocales = this.d2Api.get('/locales/db')
+        const uiLocales = this.d2Api.get('/locales/ui')
 
         const uiLocale = username
             ? this.d2Api.get(`/userSettings/keyUiLocale?user=${username}`)
-            : this.d2.system.settings.get('keyUiLocale');
+            : this.d2.system.settings.get('keyUiLocale')
 
         const dbLocale = username
             ? this.d2Api.get(`/userSettings/keyDbLocale?user=${username}`)
-            : Promise.resolve(USE_DB_LOCALE);
+            : Promise.resolve(USE_DB_LOCALE)
 
         return Promise.all([dbLocales, uiLocales, dbLocale, uiLocale]).then(
             ([dbLocales, uiLocales, dbLocale, uiLocale]) => ({
@@ -164,8 +170,8 @@ class Api {
                     selected: uiLocale,
                 },
             })
-        );
-    };
+        )
+    }
 
     getAttributes(entityType) {
         return this.d2Api
@@ -181,7 +187,7 @@ class Api {
                 filter: `${entityType}Attribute:eq:true`,
                 paging: false,
             })
-            .then(resp => resp.attributes);
+            .then(resp => resp.attributes)
     }
 
     isAttributeUnique(entityType, modelId, attributeId, value) {
@@ -208,7 +214,7 @@ class Api {
                 .then(userCollection => {
                     // If no users are found at this point, the attribute value is definitely unique
                     if (userCollection.size === 0) {
-                        return true;
+                        return true
                     }
 
                     // If users are returned, this can still include records with the SAME value
@@ -217,11 +223,11 @@ class Api {
                         userCollection,
                         value,
                         attributeId
-                    );
+                    )
 
-                    return attributesWithValueAndId.length === 0;
+                    return attributesWithValueAndId.length === 0
                 })
-        );
+        )
     }
 
     /**
@@ -241,47 +247,58 @@ class Api {
         initialDbLocale,
         attributeFields
     ) => {
-        const userData = parseUserSaveData(values, user, inviteUser, attributeFields);
-        const postUrl = inviteUser ? '/users/invite' : '/users';
+        const userData = parseUserSaveData(
+            values,
+            user,
+            inviteUser,
+            attributeFields
+        )
+        const postUrl = inviteUser ? '/users/invite' : '/users'
         const saveUserPromise = user.id
             ? this.d2Api.update(`/users/${user.id}`, userData)
-            : this.d2Api.post(postUrl, userData);
+            : this.d2Api.post(postUrl, userData)
 
         return saveUserPromise.then(response => {
             if (response.status === 'ERROR') {
-                return Promise.reject(parse200Error(response));
+                return Promise.reject(parse200Error(response))
             }
 
-            const localePromises = [];
-            const username = encodeURIComponent(values.username);
+            const localePromises = []
+            const username = encodeURIComponent(values.username)
 
             // Add follow-up request for setting uiLocale if needed
-            const uiLocale = values[INTERFACE_LANGUAGE];
+            const uiLocale = values[INTERFACE_LANGUAGE]
             if (uiLocale !== initialUiLocale) {
                 localePromises.push(
                     this.d2Api.post(parseLocaleUrl('Ui', username, uiLocale))
-                );
+                )
             }
 
             // Add follow-up request for setting dbLocale if needed
-            const dbLocale = values[DATABASE_LANGUAGE];
+            const dbLocale = values[DATABASE_LANGUAGE]
             if (dbLocale !== initialDbLocale) {
                 const dbLocalePromise =
                     dbLocale === USE_DB_LOCALE
-                        ? this.d2Api.delete(`/userSettings/keyDbLocale?user=${username}`)
-                        : this.d2Api.post(parseLocaleUrl('Db', username, dbLocale));
-                localePromises.push(dbLocalePromise);
+                        ? this.d2Api.delete(
+                              `/userSettings/keyDbLocale?user=${username}`
+                          )
+                        : this.d2Api.post(
+                              parseLocaleUrl('Db', username, dbLocale)
+                          )
+                localePromises.push(dbLocalePromise)
             }
 
             // Dummy follow-up request to prevent Promise.all error
             // if neither locale fields need updating
             if (localePromises.length === 0) {
-                localePromises.push(Promise.resolve('No locale changes detected'));
+                localePromises.push(
+                    Promise.resolve('No locale changes detected')
+                )
             }
             // Updating locales after user in case the user is new
-            return Promise.all(localePromises);
-        });
-    };
+            return Promise.all(localePromises)
+        })
+    }
 
     /**************************
      ***** USER GROUPS ********
@@ -291,15 +308,15 @@ class Api {
         const data = {
             fields: ['id', 'displayName', 'userCredentials[username]'],
             paging: false,
-        };
-        return this.d2.models.user.list(data).then(appendUsernameToDisplayName);
-    };
+        }
+        return this.d2.models.user.list(data).then(appendUsernameToDisplayName)
+    }
 
     // Also used by GroupForm
     getAvailableUserGroups = () => {
-        const data = { fields: ['id', 'displayName'], paging: false };
-        return this.d2.models.userGroups.list(data);
-    };
+        const data = { fields: ['id', 'displayName'], paging: false }
+        return this.d2.models.userGroups.list(data)
+    }
 
     /**************************
      ****** USER ROLES ********
@@ -310,22 +327,22 @@ class Api {
     getGroupedAuthorities = () => {
         if (this.groupedAuths) {
             // Return cached version if available
-            return Promise.resolve(this.groupedAuths);
+            return Promise.resolve(this.groupedAuths)
         }
-        const url = `${this.getContextPath()}/dhis-web-commons/security/getSystemAuthorities.action`;
+        const url = `${this.getContextPath()}/dhis-web-commons/security/getSystemAuthorities.action`
         return this.d2Api.request('GET', url).then(({ systemAuthorities }) => {
             // Store on instance for subsequent requests
-            return (this.groupedAuths = groupAuthorities(systemAuthorities));
-        });
-    };
+            return (this.groupedAuths = groupAuthorities(systemAuthorities))
+        })
+    }
 
     // Calling role.save() would result in an error in d2 because d2 expects you always want to
     // save { id: <ID> } objects but authorities should be saved as a plain JSON array
     saveRole(data) {
         if (data.id) {
-            return this.d2Api.update(`/userRoles/${data.id}`, data);
+            return this.d2Api.update(`/userRoles/${data.id}`, data)
         } else {
-            return this.d2Api.post('/userRoles/', data);
+            return this.d2Api.post('/userRoles/', data)
         }
     }
 
@@ -334,8 +351,8 @@ class Api {
      **************************/
 
     getCurrentUser = () => {
-        return this.d2.currentUser;
-    };
+        return this.d2.currentUser
+    }
 
     initCurrentUser = () => {
         return Promise.all([
@@ -361,20 +378,21 @@ class Api {
                     dataViewOrganisationUnits,
                     teiSearchOrganisationUnits,
                     systemOrganisationUnitRoots,
-                });
+                })
             }
-        );
-    };
+        )
+    }
 
     refreshCurrentUser = () => {
-        const CurrentUserClass = Object.getPrototypeOf(this.d2.currentUser).constructor;
+        const CurrentUserClass = Object.getPrototypeOf(this.d2.currentUser)
+            .constructor
         const meFields = [
             ':all',
             'organisationUnits[id]',
             'userGroups[id]',
             'userCredentials[:all,!user,userRoles[id]',
-        ];
-        const models = this.d2.models;
+        ]
+        const models = this.d2.models
 
         return Promise.all([
             this.d2Api.get('me', { fields: meFields }),
@@ -386,17 +404,17 @@ class Api {
                 authorities,
                 models,
                 userSettings
-            );
-            return this.initCurrentUser();
-        });
-    };
+            )
+            return this.initCurrentUser()
+        })
+    }
 
     getCurrentUserOrgUnits = () => {
         return this.d2.models.users.get(
             this.d2.currentUser.id,
             CURRENT_USER_ORG_UNITS_FIELDS
-        );
-    };
+        )
+    }
 
     getSystemOrgUnitRoots = () => {
         return this.d2.models.organisationUnits
@@ -406,15 +424,15 @@ class Api {
                 fields: 'id,path,displayName,children::isNotEmpty',
             })
             .then(modelCollection => {
-                return modelCollection.toArray();
-            });
-    };
+                return modelCollection.toArray()
+            })
+    }
 
     updateCurrentUserGroupMembership = (groupId, deleteMembership) => {
-        const method = deleteMembership ? 'delete' : 'post';
-        const url = `/users/${this.d2.currentUser.id}/userGroups/${groupId}`;
-        return this.d2Api[method](url);
-    };
+        const method = deleteMembership ? 'delete' : 'post'
+        const url = `/users/${this.d2.currentUser.id}/userGroups/${groupId}`
+        return this.d2Api[method](url)
+    }
 }
-const api = new Api();
-export default api;
+const api = new Api()
+export default api

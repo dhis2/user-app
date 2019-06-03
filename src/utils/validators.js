@@ -1,98 +1,102 @@
-import i18n from '@dhis2/d2-i18n';
-import { PASSWORD, REPEAT_PASSWORD } from '../containers/UserForm/config';
+import i18n from '@dhis2/d2-i18n'
+import { PASSWORD, REPEAT_PASSWORD } from '../containers/UserForm/config'
 
-const EMAIL_ADDRESS_PATTERN = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-const INTERNATIONAL_PHONE_NUMBER_PATTERN = /^\+(?:[0-9].?){4,14}[0-9]$/;
-const DATE_PATTERN = /[0-9]{4}-[0-9]{2}-[0-9]{2}/;
-const LOWER_CASE_PATTERN = /^(?=.*[a-z]).+$/;
-const UPPER_CASE_PATTERN = /^(?=.*[A-Z]).+$/;
-const DIGIT_PATTERN = /^(?=.*[0-9]).+$/;
+const EMAIL_ADDRESS_PATTERN = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+const INTERNATIONAL_PHONE_NUMBER_PATTERN = /^\+(?:[0-9].?){4,14}[0-9]$/
+const DATE_PATTERN = /[0-9]{4}-[0-9]{2}-[0-9]{2}/
+const LOWER_CASE_PATTERN = /^(?=.*[a-z]).+$/
+const UPPER_CASE_PATTERN = /^(?=.*[A-Z]).+$/
+const DIGIT_PATTERN = /^(?=.*[0-9]).+$/
 // Using this regex to match all non-alphanumeric characters to match server-side implementation
 // https://github.com/dhis2/dhis2-core/blob/master/dhis-2/dhis-services/dhis-service-core/src/main/java/org/hisp/dhis/user/SpecialCharacterValidationRule.java#L39
-const SPECIAL_CHARACTER_PATTERN = /[^a-zA-Z0-9]/;
+const SPECIAL_CHARACTER_PATTERN = /[^a-zA-Z0-9]/
 
 // validators (ordered alphabetically)
 export function code(value) {
     if (hasValue(value) && value.length > 50) {
-        return i18n.t('Exceeds maximum character limit of 50');
+        return i18n.t('Exceeds maximum character limit of 50')
     }
 }
 
 export function date(value) {
     if (hasValue(value) && !DATE_PATTERN.test(value)) {
-        return i18n.t('Please enter a valid date with the following format yyyy-mm-dd');
+        return i18n.t(
+            'Please enter a valid date with the following format yyyy-mm-dd'
+        )
     }
 }
 
 export function email(value) {
     if (hasValue(value) && !EMAIL_ADDRESS_PATTERN.test(value)) {
-        return i18n.t('Please provide a valid email address');
+        return i18n.t('Please provide a valid email address')
     }
 }
 
 export function integer(value) {
     if (hasValue(value) && !isInteger(value)) {
-        return i18n.t('Value should be an integer');
+        return i18n.t('Value should be an integer')
     }
 }
 
 export function negativeInteger(value) {
     if (hasValue(value) && (!isInteger(value) || parseInt(value, 10) >= 0)) {
-        return i18n.t('Value should be a nagative integer');
+        return i18n.t('Value should be a nagative integer')
     }
 }
 
 export function number(value) {
     if (hasValue(value) && isNaN(value)) {
-        return i18n.t('Value should be a number');
+        return i18n.t('Value should be a number')
     }
 }
 
 export function password(value, allValues, props) {
     if (!shouldValidatePassword(allValues, props)) {
-        return undefined;
+        return undefined
     }
-    const passwordError = checkPasswordForErrors(allValues[PASSWORD]);
+    const passwordError = checkPasswordForErrors(allValues[PASSWORD])
     if (passwordError) {
-        return passwordError;
+        return passwordError
     }
 }
 
 export function positiveInteger(value) {
     if (hasValue(value) && (!isInteger(value) || parseInt(value, 10) <= 0)) {
-        return i18n.t('Value should be a positive integer');
+        return i18n.t('Value should be a positive integer')
     }
 }
 
 export function repeatPassword(value, allValues) {
     if (allValues[REPEAT_PASSWORD] !== allValues[PASSWORD]) {
-        return i18n.t('Passwords do not match');
+        return i18n.t('Passwords do not match')
     }
 }
 
 export function required(value) {
-    return !hasValue(value) ? i18n.t('This field is required') : undefined;
+    return !hasValue(value) ? i18n.t('This field is required') : undefined
 }
 
 export function requiredArray(value) {
     if (!(Array.isArray(value) && value.length > 0)) {
-        return i18n.t('This field is required. Please select at least one');
+        return i18n.t('This field is required. Please select at least one')
     }
 }
 
 export function username(value) {
     if (hasValue(value) && value.length < 2) {
-        return i18n.t('A username should be at least 2 characters long');
+        return i18n.t('A username should be at least 2 characters long')
     }
 
     if (hasValue(value) && value.length > 140) {
-        return i18n.t('Username may not exceed 140 characters');
+        return i18n.t('Username may not exceed 140 characters')
     }
 }
 
 export function whatsApp(value) {
     if (hasValue(value) && !INTERNATIONAL_PHONE_NUMBER_PATTERN.test(value)) {
-        return i18n.t('Please provide a valid international phone number (+0123456789)');
+        return i18n.t(
+            'Please provide a valid international phone number (+0123456789)'
+        )
     }
 }
 
@@ -112,50 +116,50 @@ export function whatsApp(value) {
  */
 function checkPasswordForErrors(password) {
     if (!hasValue(password)) {
-        return i18n.t('This field is required');
+        return i18n.t('This field is required')
     }
     if (password.length < 8) {
-        return i18n.t('Password should be at least 8 characters long');
+        return i18n.t('Password should be at least 8 characters long')
     }
     if (password.length > 35) {
-        return i18n.t('Password should be no longer than 34 characters');
+        return i18n.t('Password should be no longer than 34 characters')
     }
     if (!LOWER_CASE_PATTERN.test(password)) {
-        return i18n.t('Password should contain at least one lowercase letter');
+        return i18n.t('Password should contain at least one lowercase letter')
     }
     if (!UPPER_CASE_PATTERN.test(password)) {
-        return i18n.t('Password should contain at least one UPPERCASE letter');
+        return i18n.t('Password should contain at least one UPPERCASE letter')
     }
     if (!DIGIT_PATTERN.test(password)) {
-        return i18n.t('Password should contain at least one number');
+        return i18n.t('Password should contain at least one number')
     }
     if (!SPECIAL_CHARACTER_PATTERN.test(password)) {
-        return i18n.t('Password should have at least one special character');
+        return i18n.t('Password should have at least one special character')
     }
 
-    return null;
+    return null
 }
 
 function isInteger(value) {
     if (isNaN(value)) {
-        return false;
+        return false
     }
-    const x = parseFloat(value);
-    return (x | 0) === x;
+    const x = parseFloat(value)
+    return (x | 0) === x
 }
 
 function shouldValidatePassword(allValues, props) {
     if (props.inviteUser) {
-        return false;
+        return false
     }
 
-    const isEditingUser = Boolean(props.user.id);
+    const isEditingUser = Boolean(props.user.id)
     const isEmptyOnEdit =
-        isEditingUser && !allValues[PASSWORD] && !allValues[REPEAT_PASSWORD];
+        isEditingUser && !allValues[PASSWORD] && !allValues[REPEAT_PASSWORD]
 
-    return isEmptyOnEdit ? false : true;
+    return isEmptyOnEdit ? false : true
 }
 
 function hasValue(value) {
-    return typeof value !== 'undefined' && value !== null && value !== '';
+    return typeof value !== 'undefined' && value !== null && value !== ''
 }

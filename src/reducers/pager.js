@@ -1,4 +1,4 @@
-import { LIST_RECEIVED, PAGER_RESET } from '../constants/actionTypes';
+import { LIST_RECEIVED, PAGER_RESET } from '../constants/actionTypes'
 
 /**
  * Reducer to control the pager state. The pager state is used as a query parameter when fetching lists from the API.
@@ -13,12 +13,12 @@ import { LIST_RECEIVED, PAGER_RESET } from '../constants/actionTypes';
 const pagerReducer = (state = null, { type, payload }) => {
     switch (type) {
         case PAGER_RESET:
-            return null;
+            return null
         case LIST_RECEIVED:
-            return payload.items.pager;
+            return payload.items.pager
         default:
-            return state;
+            return state
     }
-};
+}
 
-export default pagerReducer;
+export default pagerReducer

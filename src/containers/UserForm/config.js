@@ -1,8 +1,8 @@
-import { blue600 } from 'material-ui/styles/colors';
-import asArray from '../../utils/asArray';
-import i18n from '@dhis2/d2-i18n';
-import getNestedProp from '../../utils/getNestedProp';
-import { analyticsDimensionsRestrictionsSelector } from '../../selectors';
+import { blue600 } from 'material-ui/styles/colors'
+import asArray from '../../utils/asArray'
+import i18n from '@dhis2/d2-i18n'
+import getNestedProp from '../../utils/getNestedProp'
+import { analyticsDimensionsRestrictionsSelector } from '../../selectors'
 import {
     renderTextField,
     renderCheckbox,
@@ -10,7 +10,7 @@ import {
     renderSearchableGroupEditor,
     renderSearchableOrgUnitTree,
     renderText,
-} from '../../utils/fieldRenderers';
+} from '../../utils/fieldRenderers'
 
 export const STYLES = {
     loaderWrap: {
@@ -35,33 +35,34 @@ export const STYLES = {
         clear: 'both',
         paddingTop: '1.5rem',
     },
-};
+}
 
-export const FORM_NAME = 'userForm';
-export const USERNAME = 'username';
-export const EMAIL = 'email';
-export const INVITE = 'inviteUser';
-export const EXTERNAL_AUTH = 'externalAuth';
-export const PASSWORD = 'password';
-export const REPEAT_PASSWORD = 'repeatPassword';
-export const SURNAME = 'surname';
-export const FIRST_NAME = 'firstName';
-export const OPEN_ID = 'openId';
-export const LDAP_ID = 'ldapId';
-export const PHONE_NUMBER = 'phoneNumber';
-export const INTERFACE_LANGUAGE = 'interfaceLanguage';
-export const DATABASE_LANGUAGE = 'databaseLanguage';
-export const ASSIGNED_ROLES = 'userRoles';
-export const DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS = 'organisationUnits';
-export const DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS = 'dataViewOrganisationUnits';
-export const TEI_SEARCH_ORG_UNITS = 'teiSearchOrganisationUnits';
-export const ASSIGNED_USER_GROUPS = 'userGroups';
-export const DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS = 'catCogsDimensionConstraints';
-export const WHATS_APP = 'whatsApp';
-export const FACEBOOK_MESSENGER = 'facebookMessenger';
-export const SKYPE = 'skype';
-export const TELEGRAM = 'telegram';
-export const TWITTER = 'twitter';
+export const FORM_NAME = 'userForm'
+export const USERNAME = 'username'
+export const EMAIL = 'email'
+export const INVITE = 'inviteUser'
+export const EXTERNAL_AUTH = 'externalAuth'
+export const PASSWORD = 'password'
+export const REPEAT_PASSWORD = 'repeatPassword'
+export const SURNAME = 'surname'
+export const FIRST_NAME = 'firstName'
+export const OPEN_ID = 'openId'
+export const LDAP_ID = 'ldapId'
+export const PHONE_NUMBER = 'phoneNumber'
+export const INTERFACE_LANGUAGE = 'interfaceLanguage'
+export const DATABASE_LANGUAGE = 'databaseLanguage'
+export const ASSIGNED_ROLES = 'userRoles'
+export const DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS = 'organisationUnits'
+export const DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS = 'dataViewOrganisationUnits'
+export const TEI_SEARCH_ORG_UNITS = 'teiSearchOrganisationUnits'
+export const ASSIGNED_USER_GROUPS = 'userGroups'
+export const DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS =
+    'catCogsDimensionConstraints'
+export const WHATS_APP = 'whatsApp'
+export const FACEBOOK_MESSENGER = 'facebookMessenger'
+export const SKYPE = 'skype'
+export const TELEGRAM = 'telegram'
+export const TWITTER = 'twitter'
 
 export const USER_PROPS = [
     SURNAME,
@@ -77,7 +78,7 @@ export const USER_PROPS = [
     DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS,
     ASSIGNED_USER_GROUPS,
     TEI_SEARCH_ORG_UNITS,
-];
+]
 
 export const USER_CRED_PROPS = [
     USERNAME,
@@ -87,16 +88,16 @@ export const USER_CRED_PROPS = [
     LDAP_ID,
     ASSIGNED_ROLES,
     DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
-];
+]
 
-export const ALWAYS_REQUIRED = 'ALWAYS_REQUIRED';
-export const INVITE_REQUIRED = 'INVITE_REQUIRED';
-export const CREATE_REQUIRED = 'CREATE_REQUIRED';
+export const ALWAYS_REQUIRED = 'ALWAYS_REQUIRED'
+export const INVITE_REQUIRED = 'INVITE_REQUIRED'
+export const CREATE_REQUIRED = 'CREATE_REQUIRED'
 
-export const USE_DB_LOCALE = 'use_db_locale';
+export const USE_DB_LOCALE = 'use_db_locale'
 
-export const SET_PASSWORD = 'SET_PASSWORD';
-export const INVITE_USER = 'INVITE_USER';
+export const SET_PASSWORD = 'SET_PASSWORD'
+export const INVITE_USER = 'INVITE_USER'
 
 const BASE_CAPTION = {
     label: i18n.t(
@@ -109,7 +110,7 @@ const BASE_CAPTION = {
         fontStyle: 'italic',
         fontSize: '0.9rem',
     },
-};
+}
 
 export const INVITE_FIELDS = [
     {
@@ -132,7 +133,7 @@ export const INVITE_FIELDS = [
             },
         },
     },
-];
+]
 
 export const BASE_FIELDS = [
     {
@@ -262,7 +263,7 @@ export const BASE_FIELDS = [
         ...BASE_CAPTION,
         name: 'org_unit_info_1',
     },
-];
+]
 
 export const ADDITIONAL_FIELDS = [
     {
@@ -287,12 +288,15 @@ export const ADDITIONAL_FIELDS = [
     {
         name: DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
         fieldRenderer: renderSearchableGroupEditor,
-        initialItemsSelector: user => analyticsDimensionsRestrictionsSelector(user),
+        initialItemsSelector: user =>
+            analyticsDimensionsRestrictionsSelector(user),
         availableItemsQuery: 'getAvailableDataAnalyticsDimensionRestrictions',
         availableItemsLabel: i18n.t(
             'Available dimension restrictions for data analytics'
         ),
-        assignedItemsLabel: i18n.t('Selected dimension restrictions for data analytics'),
+        assignedItemsLabel: i18n.t(
+            'Selected dimension restrictions for data analytics'
+        ),
         returnModelsOnUpdate: true,
     },
-];
+]

@@ -1,4 +1,4 @@
-import i18n from '@dhis2/d2-i18n';
+import i18n from '@dhis2/d2-i18n'
 
 const BASE_FIELDS = [
     {
@@ -9,7 +9,7 @@ const BASE_FIELDS = [
         key: 'id',
         label: i18n.t('ID'),
     },
-];
+]
 
 export const USER_PROFILE = [
     ...BASE_FIELDS,
@@ -89,7 +89,7 @@ export const USER_PROFILE = [
         nestedPropselector: ['userRoles'],
         parseArrayAsCommaDelimitedString: 'displayName',
     },
-];
+]
 
 export const USER_ROLE_DETAILS = [
     ...BASE_FIELDS,
@@ -98,7 +98,7 @@ export const USER_ROLE_DETAILS = [
         label: i18n.t('Members'),
         count: true,
     },
-];
+]
 export const USER_GROUP_DETAILS = [
     ...BASE_FIELDS,
     {
@@ -106,4 +106,4 @@ export const USER_GROUP_DETAILS = [
         label: i18n.t('Number of users'),
         count: true,
     },
-];
+]

@@ -2,7 +2,7 @@ import {
     CURRENT_USER_REQUESTED,
     CURRENT_USER_RECEIVED,
     CURRENT_USER_ERRORED,
-} from '../constants/actionTypes';
+} from '../constants/actionTypes'
 
 /**
  * Reducer to control the current user state, initialized from the sectionLoader,
@@ -18,13 +18,13 @@ import {
 const currentUserReducer = (state = null, { type, payload }) => {
     switch (type) {
         case CURRENT_USER_REQUESTED:
-            return null;
+            return null
         case CURRENT_USER_RECEIVED:
         case CURRENT_USER_ERRORED:
-            return payload;
+            return payload
         default:
-            return state;
+            return state
     }
-};
+}
 
-export default currentUserReducer;
+export default currentUserReducer

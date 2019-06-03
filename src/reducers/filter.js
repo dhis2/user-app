@@ -1,5 +1,5 @@
-import { FILTER_UPDATED, FILTER_RESET } from '../constants/actionTypes';
-import { LIST_FILTER as DEFAULT_FILTER } from '../constants/defaults';
+import { FILTER_UPDATED, FILTER_RESET } from '../constants/actionTypes'
+import { LIST_FILTER as DEFAULT_FILTER } from '../constants/defaults'
 
 /**
  * Reducer to control the filter state that is used to GET filtered lists
@@ -21,16 +21,16 @@ import { LIST_FILTER as DEFAULT_FILTER } from '../constants/defaults';
 const filterReducer = (state = DEFAULT_FILTER, { type, payload }) => {
     switch (type) {
         case FILTER_UPDATED:
-            const { updateKey, updateValue } = payload;
+            const { updateKey, updateValue } = payload
             return {
                 ...state,
                 [updateKey]: updateValue,
-            };
+            }
         case FILTER_RESET:
-            return { ...DEFAULT_FILTER };
+            return { ...DEFAULT_FILTER }
         default:
-            return state;
+            return state
     }
-};
+}
 
-export default filterReducer;
+export default filterReducer

@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Paper, CircularProgress } from 'material-ui';
-import i18n from '@dhis2/d2-i18n';
-import Heading from 'd2-ui/lib/headings/Heading.component';
-import AuthorityGroup from './AuthorityGroup';
-import AuthorityItem from './AuthorityItem';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { Paper, CircularProgress } from 'material-ui'
+import i18n from '@dhis2/d2-i18n'
+import Heading from 'd2-ui/lib/headings/Heading.component'
+import AuthorityGroup from './AuthorityGroup'
+import AuthorityItem from './AuthorityItem'
 
-const FLUSH_COUNT = 7;
-const FLUSH_INTERVAL = 10;
+const FLUSH_COUNT = 7
+const FLUSH_INTERVAL = 10
 
 /**
  * Renders a logical authority section. Within the section it can either render rows with `AuthorityGroups` for metadata,
@@ -16,20 +16,20 @@ const FLUSH_INTERVAL = 10;
  */
 class AuthoritySection extends Component {
     constructor(props) {
-        super(props);
-        this.state = { renderedItems: null };
-        this.appendInterval = null;
+        super(props)
+        this.state = { renderedItems: null }
+        this.appendInterval = null
     }
 
     componentWillReceiveProps(newProps) {
         if (newProps.authSection.items.length) {
-            this.setState({ renderedItems: null });
-            this.createBatchedRenderInterval(newProps.authSection.items);
+            this.setState({ renderedItems: null })
+            this.createBatchedRenderInterval(newProps.authSection.items)
         }
     }
 
     componentWillUnmount() {
-        clearInterval(this.appendInterval);
+        clearInterval(this.appendInterval)
     }
 
     /**
@@ -38,30 +38,35 @@ class AuthoritySection extends Component {
      * @param {Array} items - The authorities to render
      */
     createBatchedRenderInterval(items) {
-        let currSliceEnd = 0;
+        let currSliceEnd = 0
         this.appendInterval = setInterval(() => {
-            const currItems = this.state.renderedItems || [];
-            const reachedEnd = currSliceEnd + FLUSH_COUNT > items.length;
-            const sliceEnd = reachedEnd ? items.length : currSliceEnd + FLUSH_COUNT;
-            const newItems = items.slice(currSliceEnd, sliceEnd);
-            const renderedItems = [...currItems, ...newItems];
+            const currItems = this.state.renderedItems || []
+            const reachedEnd = currSliceEnd + FLUSH_COUNT > items.length
+            const sliceEnd = reachedEnd
+                ? items.length
+                : currSliceEnd + FLUSH_COUNT
+            const newItems = items.slice(currSliceEnd, sliceEnd)
+            const renderedItems = [...currItems, ...newItems]
 
-            currSliceEnd = sliceEnd;
+            currSliceEnd = sliceEnd
 
             if (renderedItems.length === items.length) {
-                clearInterval(this.appendInterval);
+                clearInterval(this.appendInterval)
             }
 
-            this.setState({ renderedItems });
-        }, FLUSH_INTERVAL);
+            this.setState({ renderedItems })
+        }, FLUSH_INTERVAL)
     }
 
     renderAuthRow = (authSubject, index) => {
-        const { shouldSelect, onAuthChange } = this.context;
+        const { shouldSelect, onAuthChange } = this.context
         return (
             <tr key={`row-${index}`}>
                 {authSubject.items ? (
-                    <AuthorityGroup items={authSubject.items} name={authSubject.name} />
+                    <AuthorityGroup
+                        items={authSubject.items}
+                        name={authSubject.name}
+                    />
                 ) : (
                     <AuthorityItem
                         authSubject={authSubject}
@@ -71,8 +76,8 @@ class AuthoritySection extends Component {
                     />
                 )}
             </tr>
-        );
-    };
+        )
+    }
 
     renderLoaderRow() {
         return (
@@ -81,40 +86,40 @@ class AuthoritySection extends Component {
                     <CircularProgress size={24} />
                 </td>
             </tr>
-        );
+        )
     }
 
     renderInfoRow(errorMsg) {
-        let className = 'authority-editor__placeholder-cell';
-        let msg = i18n.t('No matches found');
+        let className = 'authority-editor__placeholder-cell'
+        let msg = i18n.t('No matches found')
 
         if (errorMsg) {
-            className += '--error';
-            msg = errorMsg;
+            className += '--error'
+            msg = errorMsg
         }
 
         return (
             <tr>
                 <td className={className}>{msg}</td>
             </tr>
-        );
+        )
     }
 
     renderContent(authSection) {
-        const { renderedItems } = this.state;
+        const { renderedItems } = this.state
         if (!authSection.items || !renderedItems) {
-            return this.renderLoaderRow();
+            return this.renderLoaderRow()
         }
 
         if (typeof authSection.items === 'string') {
-            return this.renderInfoRow(authSection.items);
+            return this.renderInfoRow(authSection.items)
         }
 
         if (authSection.items.length === 0) {
-            return this.renderInfoRow();
+            return this.renderInfoRow()
         }
 
-        return this.state.renderedItems.map(this.renderAuthRow);
+        return this.state.renderedItems.map(this.renderAuthRow)
     }
 
     renderTableHead({ headers }) {
@@ -126,22 +131,25 @@ class AuthoritySection extends Component {
                     ))}
                 </tr>
             </thead>
-        );
+        )
     }
 
     render() {
-        const { sectionKey, authSection } = this.props;
-        let wrapperClassName = `authority-editor__auth-group ${sectionKey}`;
+        const { sectionKey, authSection } = this.props
+        let wrapperClassName = `authority-editor__auth-group ${sectionKey}`
         if (authSection.items && authSection.items.length > 11) {
-            wrapperClassName += ' scrollable';
+            wrapperClassName += ' scrollable'
         }
 
-        let tableClassName = 'authority-editor__auth-group-table';
-        tableClassName += ` columns-${authSection.headers.length}`;
+        let tableClassName = 'authority-editor__auth-group-table'
+        tableClassName += ` columns-${authSection.headers.length}`
 
         return (
             <Paper className={wrapperClassName}>
-                <Heading level={6} className="authority-editor__auth-group-header">
+                <Heading
+                    level={6}
+                    className="authority-editor__auth-group-header"
+                >
                     {authSection.name}
                 </Heading>
                 <table className={tableClassName}>
@@ -149,18 +157,18 @@ class AuthoritySection extends Component {
                     <tbody>{this.renderContent(authSection)}</tbody>
                 </table>
             </Paper>
-        );
+        )
     }
 }
 
 AuthoritySection.propTypes = {
     sectionKey: PropTypes.string.isRequired,
     authSection: PropTypes.object.isRequired,
-};
+}
 
 AuthoritySection.contextTypes = {
     shouldSelect: PropTypes.func.isRequired,
     onAuthChange: PropTypes.func.isRequired,
-};
+}
 
-export default AuthoritySection;
+export default AuthoritySection

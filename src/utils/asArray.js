@@ -12,9 +12,9 @@
  */
 const asArray = input => {
     if (!input) {
-        return [];
+        return []
     }
-    return typeof input.toArray === 'function' ? input.toArray() : input;
-};
+    return typeof input.toArray === 'function' ? input.toArray() : input
+}
 
-export default asArray;
+export default asArray

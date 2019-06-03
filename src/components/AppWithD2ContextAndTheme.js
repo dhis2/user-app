@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import PropTypes from 'prop-types';
-import theme from '../theme';
+import React, { Component } from 'react'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import PropTypes from 'prop-types'
+import theme from '../theme'
 
 /**
  * Component that adds d2 to the context and applies the dhis2 theme
@@ -12,20 +12,22 @@ import theme from '../theme';
 class AppWithD2ContextAndTheme extends Component {
     getChildContext = () => ({
         d2: this.props.d2,
-    });
+    })
 
     render = () => (
-        <MuiThemeProvider muiTheme={theme}>{this.props.children}</MuiThemeProvider>
-    );
+        <MuiThemeProvider muiTheme={theme}>
+            {this.props.children}
+        </MuiThemeProvider>
+    )
 }
 
 AppWithD2ContextAndTheme.childContextTypes = {
     d2: PropTypes.object,
-};
+}
 
 AppWithD2ContextAndTheme.propTypes = {
     d2: PropTypes.object.isRequired,
     children: PropTypes.object.isRequired,
-};
+}
 
-export default AppWithD2ContextAndTheme;
+export default AppWithD2ContextAndTheme

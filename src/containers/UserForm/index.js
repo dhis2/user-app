@@ -1,2 +1,2 @@
-import UserForm from './UserForm';
-export default UserForm;
+import UserForm from './UserForm'
+export default UserForm

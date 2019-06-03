@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import i18n from '@dhis2/d2-i18n';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import PropTypes from 'prop-types'
+import i18n from '@dhis2/d2-i18n'
+import { Link } from 'react-router-dom'
 
 const style = {
     width: '100%',
     textAlign: 'center',
     padding: '1.5rem 1.5rem 1rem',
-};
+}
 /**
  * Will display when no matching route was found.
  * Renders text and the pathname that is in the URL after the `/#`
@@ -22,10 +22,10 @@ const PageNotFound = ({ location }) => (
         </h3>
         <Link to="/"> {i18n.t('Go back home')}</Link>
     </div>
-);
+)
 
 PageNotFound.propTypes = {
     location: PropTypes.object.isRequired,
-};
+}
 
-export default PageNotFound;
+export default PageNotFound

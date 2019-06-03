@@ -1,14 +1,14 @@
-import React from 'react';
-import { USER } from '../../constants/entityTypes';
-import List from '../../components/List';
-import i18n from '@dhis2/d2-i18n';
+import React from 'react'
+import { USER } from '../../constants/entityTypes'
+import List from '../../components/List'
+import i18n from '@dhis2/d2-i18n'
 
 import {
     userContextMenuActions,
     userContextMenuIcons,
     isUserContextActionAllowed,
-} from './UserContextMenuActions';
-import UserFilter from './UserFilter';
+} from './UserContextMenuActions'
+import UserFilter from './UserFilter'
 
 /**
  * Container component that renders a List component with correct properties for displaying a list of Users
@@ -27,6 +27,6 @@ const UserList = () => (
         newItemPath={'/users/new'}
         className="user-list"
     />
-);
+)
 
-export default UserList;
+export default UserList

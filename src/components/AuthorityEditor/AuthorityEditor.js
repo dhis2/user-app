@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import i18n from '@dhis2/d2-i18n';
-import './style.css';
-import Heading from 'd2-ui/lib/headings/Heading.component';
-import makeTrashable from 'trashable';
-import createHumanErrorMessage from '../../utils/createHumanErrorMessage';
-import api from '../../api';
-import AuthorityFilter from './AuthorityFilter';
-import FilteredAuthoritySections from './FilteredAuthoritySections';
-import { EMPTY_GROUPED_AUTHORITIES } from './utils/groupAuthorities';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import i18n from '@dhis2/d2-i18n'
+import './style.css'
+import Heading from 'd2-ui/lib/headings/Heading.component'
+import makeTrashable from 'trashable'
+import createHumanErrorMessage from '../../utils/createHumanErrorMessage'
+import api from '../../api'
+import AuthorityFilter from './AuthorityFilter'
+import FilteredAuthoritySections from './FilteredAuthoritySections'
+import { EMPTY_GROUPED_AUTHORITIES } from './utils/groupAuthorities'
 
 /**
  * This is the parent component of the authorities section in the RoleForm.
@@ -16,16 +16,16 @@ import { EMPTY_GROUPED_AUTHORITIES } from './utils/groupAuthorities';
  */
 class AuthorityEditor extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             allGroupedAuthorities: EMPTY_GROUPED_AUTHORITIES,
-        };
+        }
         // This lookup may be updated without triggering re-renders
         this.selectedItemsLookup = props.initiallySelected.reduce(
             (lookup, item) => lookup.set(item, true),
             new Map()
-        );
-        this.groupedAuthoritiesPromise = null;
+        )
+        this.groupedAuthoritiesPromise = null
     }
 
     getChildContext() {
@@ -33,61 +33,65 @@ class AuthorityEditor extends Component {
             shouldSelect: this.shouldSelect,
             onAuthChange: this.onAuthChange,
             selectedItemsLookup: this.selectedItemsLookup,
-        };
+        }
     }
 
     async componentDidMount() {
-        this.groupedAuthoritiesPromise = makeTrashable(api.getGroupedAuthorities());
+        this.groupedAuthoritiesPromise = makeTrashable(
+            api.getGroupedAuthorities()
+        )
         try {
-            const allGroupedAuthorities = await this.groupedAuthoritiesPromise;
-            this.setState({ allGroupedAuthorities });
+            const allGroupedAuthorities = await this.groupedAuthoritiesPromise
+            this.setState({ allGroupedAuthorities })
         } catch (error) {
-            this.handleAuthorityFetchError(error);
+            this.handleAuthorityFetchError(error)
         }
     }
 
     componentWillUnmount() {
-        this.groupedAuthoritiesPromise.trash();
+        this.groupedAuthoritiesPromise.trash()
     }
 
     handleAuthorityFetchError(error) {
         const errorMsg = createHumanErrorMessage(
             error,
             i18n.t('There was a problem retreiving the available authorities.')
-        );
-        const allGroupedAuthorities = Object.keys(EMPTY_GROUPED_AUTHORITIES).reduce(
-            (total, key) => {
-                total[key] = { ...EMPTY_GROUPED_AUTHORITIES[key], items: errorMsg };
-                return total;
-            },
-            {}
-        );
-        this.setState({ allGroupedAuthorities });
+        )
+        const allGroupedAuthorities = Object.keys(
+            EMPTY_GROUPED_AUTHORITIES
+        ).reduce((total, key) => {
+            total[key] = { ...EMPTY_GROUPED_AUTHORITIES[key], items: errorMsg }
+            return total
+        }, {})
+        this.setState({ allGroupedAuthorities })
     }
 
     getChangedProperties(newObject, oldObject) {
         return Object.keys(newObject).reduce((changes, key) => {
             if (newObject[key] !== oldObject[key]) {
-                changes.push(key);
+                changes.push(key)
             }
-            return changes;
-        }, []);
+            return changes
+        }, [])
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        const propChanges = this.getChangedProperties(nextProps, this.props);
-        const stateChanges = this.getChangedProperties(nextState, this.state);
-        const allChanges = [...propChanges, ...stateChanges];
+        const propChanges = this.getChangedProperties(nextProps, this.props)
+        const stateChanges = this.getChangedProperties(nextState, this.state)
+        const allChanges = [...propChanges, ...stateChanges]
 
-        return allChanges.length > 0 && allChanges.includes('allGroupedAuthorities');
+        return (
+            allChanges.length > 0 &&
+            allChanges.includes('allGroupedAuthorities')
+        )
     }
 
     onFilterChange = (searchStr, selectedOnly) => {
         // Here we directly call a method on a child component instead of
         // letting state changes trigger full re-render. This is to prevent the TextField
         // from being blocked whilst typing.
-        this.filteredAuthSections.updateFilter(searchStr, selectedOnly);
-    };
+        this.filteredAuthSections.updateFilter(searchStr, selectedOnly)
+    }
 
     /**
      * Responds to checkbox changes. Will also notify redux-form Field components if onChange and onBlur handlers were passed
@@ -96,26 +100,26 @@ class AuthorityEditor extends Component {
      * @method
      */
     onAuthChange = (id, value) => {
-        const { reduxFormOnBlur, reduxFormOnChange } = this.props;
-        let authorityIds = [];
+        const { reduxFormOnBlur, reduxFormOnChange } = this.props
+        const authorityIds = []
 
-        this.selectedItemsLookup.set(id, value);
+        this.selectedItemsLookup.set(id, value)
 
         this.selectedItemsLookup.forEach((value, key) => {
             if (value) {
-                authorityIds.push(key);
+                authorityIds.push(key)
             }
-        });
-        reduxFormOnChange && reduxFormOnChange(authorityIds);
-        reduxFormOnBlur && reduxFormOnBlur();
-    };
+        })
+        reduxFormOnChange && reduxFormOnChange(authorityIds)
+        reduxFormOnBlur && reduxFormOnBlur()
+    }
 
     shouldSelect = id => {
-        return Boolean(this.selectedItemsLookup.get(id));
-    };
+        return Boolean(this.selectedItemsLookup.get(id))
+    }
 
     render() {
-        const { allGroupedAuthorities } = this.state;
+        const { allGroupedAuthorities } = this.state
 
         return (
             <div className="authority-editor">
@@ -125,12 +129,12 @@ class AuthorityEditor extends Component {
                 <AuthorityFilter onFilterChange={this.onFilterChange} />
                 <FilteredAuthoritySections
                     ref={comp => {
-                        this.filteredAuthSections = comp;
+                        this.filteredAuthSections = comp
                     }}
                     allGroupedAuthorities={allGroupedAuthorities}
                 />
             </div>
-        );
+        )
     }
 }
 
@@ -138,16 +142,16 @@ AuthorityEditor.propTypes = {
     initiallySelected: PropTypes.array,
     reduxFormOnChange: PropTypes.func,
     reduxFormOnBlur: PropTypes.func,
-};
+}
 
 AuthorityEditor.defaultProps = {
     initiallySelected: [],
-};
+}
 
 AuthorityEditor.childContextTypes = {
     shouldSelect: PropTypes.func.isRequired,
     onAuthChange: PropTypes.func.isRequired,
     selectedItemsLookup: PropTypes.object.isRequired,
-};
+}
 
-export default AuthorityEditor;
+export default AuthorityEditor

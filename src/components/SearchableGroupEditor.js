@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import GroupEditor from 'd2-ui/lib/group-editor/GroupEditor.component';
-import Store from 'd2-ui/lib/store/Store';
-import PropTypes from 'prop-types';
-import { red500 } from 'material-ui/styles/colors';
-import TextField from 'material-ui/TextField/TextField';
-import Heading from 'd2-ui/lib/headings/Heading.component';
-import asArray from '../utils/asArray';
-import ErrorMessage from './ErrorMessage';
-import createHumanErrorMessage from '../utils/createHumanErrorMessage';
-import i18n from '@dhis2/d2-i18n';
+import React, { Component } from 'react'
+import GroupEditor from 'd2-ui/lib/group-editor/GroupEditor.component'
+import Store from 'd2-ui/lib/store/Store'
+import PropTypes from 'prop-types'
+import { red500 } from 'material-ui/styles/colors'
+import TextField from 'material-ui/TextField/TextField'
+import Heading from 'd2-ui/lib/headings/Heading.component'
+import asArray from '../utils/asArray'
+import ErrorMessage from './ErrorMessage'
+import createHumanErrorMessage from '../utils/createHumanErrorMessage'
+import i18n from '@dhis2/d2-i18n'
 
 const styles = {
     outerWrap: {
@@ -33,7 +33,7 @@ const styles = {
         fontSize: '0.8rem',
         marginLeft: '0.8rem',
     },
-};
+}
 
 /**
  * A component that renders the d2-ui GroupEditor with a search input above it.
@@ -42,92 +42,98 @@ const styles = {
  */
 class SearchableGroupEditor extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             itemStore: Store.create(),
             assignedItemStore: Store.create(),
             filterText: '',
             fetchErrorMsg: null,
-        };
+        }
     }
 
     async componentDidMount() {
         try {
-            const availableItems = await this.props.availableItemsQuery();
-            this.availableItemsReceivedHandler(availableItems);
+            const availableItems = await this.props.availableItemsQuery()
+            this.availableItemsReceivedHandler(availableItems)
         } catch (error) {
             const fetchErrorMsg = createHumanErrorMessage(
                 error,
                 i18n.t('Could not load available items')
-            );
-            this.setState({ fetchErrorMsg });
+            )
+            this.setState({ fetchErrorMsg })
         }
     }
 
     availableItemsReceivedHandler = response => {
         // On update we want to be able to return an array of IDs or models
-        const { initiallyAssignedItems, returnModelsOnUpdate } = this.props;
-        const { itemStore, assignedItemStore } = this.state;
+        const { initiallyAssignedItems, returnModelsOnUpdate } = this.props
+        const { itemStore, assignedItemStore } = this.state
 
         if (returnModelsOnUpdate) {
-            this.modelLookup = new Map();
+            this.modelLookup = new Map()
         }
 
-        const assignedItems = asArray(initiallyAssignedItems).map(({ id }) => id);
+        const assignedItems = asArray(initiallyAssignedItems).map(
+            ({ id }) => id
+        )
         const availableItems = asArray(response).map(item => {
             if (returnModelsOnUpdate) {
-                this.modelLookup.set(item.id, item);
+                this.modelLookup.set(item.id, item)
             }
-            const text = item.displayName || item.name;
+            const text = item.displayName || item.name
             return {
                 value: item.id,
                 text: text,
-            };
-        });
+            }
+        })
 
-        itemStore.setState(availableItems);
-        assignedItemStore.setState(assignedItems);
-    };
+        itemStore.setState(availableItems)
+        assignedItemStore.setState(assignedItems)
+    }
 
     onAssignItems = items => {
-        const { assignedItemStore } = this.state;
-        const assigned = assignedItemStore.state.concat(items);
+        const { assignedItemStore } = this.state
+        const assigned = assignedItemStore.state.concat(items)
 
-        return this.update(assigned);
-    };
+        return this.update(assigned)
+    }
 
     onRemoveItems = items => {
-        const { assignedItemStore } = this.state;
+        const { assignedItemStore } = this.state
         const assigned = assignedItemStore.state.filter(
             item => items.indexOf(item) === -1
-        );
+        )
 
-        return this.update(assigned);
-    };
+        return this.update(assigned)
+    }
 
     update(assignedItemIds) {
-        const { onChange, returnModelsOnUpdate, onBlur } = this.props;
-        const { assignedItemStore } = this.state;
+        const { onChange, returnModelsOnUpdate, onBlur } = this.props
+        const { assignedItemStore } = this.state
         const assignedItems = returnModelsOnUpdate
             ? assignedItemIds.map(id => this.modelLookup.get(id))
-            : assignedItemIds;
+            : assignedItemIds
 
-        assignedItemStore.setState(assignedItemIds);
-        onChange(assignedItems);
+        assignedItemStore.setState(assignedItemIds)
+        onChange(assignedItems)
         // Also call onBlur if this is available. In a redux-form the component will be 'touched' by it
-        onBlur && onBlur();
-        return Promise.resolve();
+        onBlur && onBlur()
+        return Promise.resolve()
     }
 
     updateFilterText = event => {
-        this.setState({ filterText: event.target.value });
-    };
+        this.setState({ filterText: event.target.value })
+    }
 
     renderHeader() {
-        const { availableItemsHeader, assignedItemsHeader, errorText } = this.props;
+        const {
+            availableItemsHeader,
+            assignedItemsHeader,
+            errorText,
+        } = this.props
         const assignedStyle = errorText
             ? { ...styles.header, ...styles.error }
-            : styles.header;
+            : styles.header
 
         return (
             <div style={styles.headerWrap}>
@@ -137,10 +143,12 @@ class SearchableGroupEditor extends Component {
                 <div style={styles.headerSpacer} />
                 <Heading level={4} style={assignedStyle}>
                     {assignedItemsHeader}
-                    {errorText ? <span style={styles.errorText}>{errorText}</span> : null}
+                    {errorText ? (
+                        <span style={styles.errorText}>{errorText}</span>
+                    ) : null}
                 </Heading>
             </div>
-        );
+        )
     }
 
     renderSearchInput() {
@@ -154,14 +162,26 @@ class SearchableGroupEditor extends Component {
                 hintText={i18n.t('Filter available and selected items')}
                 style={{ marginTop: '-16px' }}
             />
-        );
+        )
     }
     renderGroupEditor() {
-        const { itemStore, assignedItemStore, filterText, fetchErrorMsg } = this.state;
+        const {
+            itemStore,
+            assignedItemStore,
+            filterText,
+            fetchErrorMsg,
+        } = this.state
 
         if (fetchErrorMsg) {
-            const introText = i18n.t('There was a problem displaying the GroupEditor');
-            return <ErrorMessage introText={introText} errorMessage={fetchErrorMsg} />;
+            const introText = i18n.t(
+                'There was a problem displaying the GroupEditor'
+            )
+            return (
+                <ErrorMessage
+                    introText={introText}
+                    errorMessage={fetchErrorMsg}
+                />
+            )
         }
 
         return (
@@ -173,7 +193,7 @@ class SearchableGroupEditor extends Component {
                 height={250}
                 filterText={filterText}
             />
-        );
+        )
     }
 
     render() {
@@ -183,7 +203,7 @@ class SearchableGroupEditor extends Component {
                 {this.renderSearchInput()}
                 {this.renderGroupEditor()}
             </div>
-        );
+        )
     }
 }
 
@@ -199,6 +219,6 @@ SearchableGroupEditor.propTypes = {
     returnModelsOnUpdate: PropTypes.bool,
     errorText: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     onBlur: PropTypes.func,
-};
+}
 
-export default SearchableGroupEditor;
+export default SearchableGroupEditor

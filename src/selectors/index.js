@@ -2,8 +2,9 @@
  * A collection of selector functions that return derived state slices. Results are memoized where possible.
  * @module selectors
  */
-import _ from '../constants/lodash';
-import i18n from '@dhis2/d2-i18n';
+import memoize from 'lodash.memoize'
+import isUndefined from 'lodash.isundefined'
+import i18n from '@dhis2/d2-i18n'
 import {
     USER_PROPS,
     USER_CRED_PROPS,
@@ -14,34 +15,34 @@ import {
     DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
     DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
     SET_PASSWORD,
-} from '../containers/UserForm/config';
-import { FIELDS as USER_GROUP_FIELDS } from '../containers/GroupForm/config';
-import asArray from '../utils/asArray';
-import getNestedProp from '../utils/getNestedProp';
+} from '../containers/UserForm/config'
+import { FIELDS as USER_GROUP_FIELDS } from '../containers/GroupForm/config'
+import asArray from '../utils/asArray'
+import getNestedProp from '../utils/getNestedProp'
 
 /**
  * @param {Object} pager - A d2 Pager instance
  * @returns {Object} The d2 Pager instance with an appended 'currentlyShown' property
  * @function
  */
-export const pagerSelector = _.memoize(pager => {
+export const pagerSelector = memoize(pager => {
     if (pager === null) {
-        return pager;
+        return pager
     }
     const {
         total,
         pageCount,
         page,
         query: { pageSize },
-    } = pager;
+    } = pager
     const pageCalculationValue =
-        total - (total - (pageCount - (pageCount - page)) * pageSize);
-    const startItem = 1 + pageCalculationValue - pageSize;
-    const endItem = pageCalculationValue;
+        total - (total - (pageCount - (pageCount - page)) * pageSize)
+    const startItem = 1 + pageCalculationValue - pageSize
+    const endItem = pageCalculationValue
 
-    pager.currentlyShown = `${startItem} - ${endItem > total ? total : endItem}`;
-    return pager;
-});
+    pager.currentlyShown = `${startItem} - ${endItem > total ? total : endItem}`
+    return pager
+})
 
 /**
  * @param {Object} list - A d2 list ModelCollection instance
@@ -51,53 +52,57 @@ export const pagerSelector = _.memoize(pager => {
  */
 export const listSelector = (list, groupMemberships) => {
     if (!list || typeof list === 'string') {
-        return list;
+        return list
     }
 
-    const listType = list.modelDefinition.name;
-    return list.toArray().map(item => listMappings[listType](item, groupMemberships));
-};
+    const listType = list.modelDefinition.name
+    return list
+        .toArray()
+        .map(item => listMappings[listType](item, groupMemberships))
+}
 
 const listMappings = {
     user: item => {
-        item.userName = item.userCredentials.username;
-        item.disabled = item.userCredentials.disabled;
-        item.lastLogin = item.userCredentials.lastLogin;
-        return item;
+        item.userName = item.userCredentials.username
+        item.disabled = item.userCredentials.disabled
+        item.lastLogin = item.userCredentials.lastLogin
+        return item
     },
     userRole: item => item,
     userGroup: (item, groupMemberships) => {
-        item.currentUserIsMember = Boolean(groupMemberships.get(item.id));
-        return item;
+        item.currentUserIsMember = Boolean(groupMemberships.get(item.id))
+        return item
     },
-};
+}
 
 /**
  * @param {Object} orgUnits - an array of d2 organisation unit instances
  * @returns {String} Either a comma delimited list of organisation unit names, or a count of selected organisation units phrase
  * @function
  */
-export const orgUnitsAsStringSelector = _.memoize(orgUnits => {
+export const orgUnitsAsStringSelector = memoize(orgUnits => {
     return orgUnits.length < 3
         ? orgUnits.map(unit => unit.displayName).join(', ')
-        : i18n.t('{{count}} selected', { count: orgUnits.length });
-});
+        : i18n.t('{{count}} selected', { count: orgUnits.length })
+})
 
 const addInitialValueFrom = (sourceObject, initialValues, propName) => {
     if (propName === DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS) {
         initialValues[propName] = [
             ...sourceObject.catDimensionConstraints,
             ...sourceObject.cogsDimensionConstraints,
-        ];
+        ]
     } else if (
-        (sourceObject[propName] && !_.isUndefined(sourceObject[propName].size)) ||
+        (sourceObject[propName] && !isUndefined(sourceObject[propName].size)) ||
         Array.isArray(sourceObject[propName])
     ) {
-        initialValues[propName] = asArray(sourceObject[propName]).map(({ id }) => id);
+        initialValues[propName] = asArray(sourceObject[propName]).map(
+            ({ id }) => id
+        )
     } else {
-        initialValues[propName] = sourceObject[propName];
+        initialValues[propName] = sourceObject[propName]
     }
-};
+}
 
 /**
  * Produces initial values for redux form
@@ -106,45 +111,53 @@ const addInitialValueFrom = (sourceObject, initialValues, propName) => {
  * @returns {Object} Initial values for the redux form wrapping the UserForm component
  * @function
  */
-export const userFormInitialValuesSelector = _.memoize(
+export const userFormInitialValuesSelector = memoize(
     (user, locales, attributeFields) => {
         const initialValues = {
             [INVITE]: SET_PASSWORD,
-        };
+        }
 
         if (user.id) {
             USER_PROPS.forEach(propName => {
-                addInitialValueFrom(user, initialValues, propName);
-            });
+                addInitialValueFrom(user, initialValues, propName)
+            })
 
             USER_CRED_PROPS.forEach(propName => {
-                addInitialValueFrom(user.userCredentials, initialValues, propName);
-            });
+                addInitialValueFrom(
+                    user.userCredentials,
+                    initialValues,
+                    propName
+                )
+            })
 
-            attributeFields.forEach(field => (initialValues[field.name] = field.value));
+            attributeFields.forEach(
+                field => (initialValues[field.name] = field.value)
+            )
         }
 
         // 'en' is a fallback for systems that have no default system UI locale specified
-        initialValues[INTERFACE_LANGUAGE] = locales.ui.selected || 'en';
-        initialValues[DATABASE_LANGUAGE] = locales.db.selected;
+        initialValues[INTERFACE_LANGUAGE] = locales.ui.selected || 'en'
+        initialValues[DATABASE_LANGUAGE] = locales.db.selected
 
-        return initialValues;
+        return initialValues
     }
-);
+)
 
-export const userGroupFormInitialValuesSelector = _.memoize(
+export const userGroupFormInitialValuesSelector = memoize(
     (userGroup, attributeFields) => {
-        const initialValues = {};
+        const initialValues = {}
 
         USER_GROUP_FIELDS.forEach(field => {
-            addInitialValueFrom(userGroup, initialValues, field.name);
-        });
+            addInitialValueFrom(userGroup, initialValues, field.name)
+        })
 
-        attributeFields.forEach(field => (initialValues[field.name] = field.value));
+        attributeFields.forEach(
+            field => (initialValues[field.name] = field.value)
+        )
 
-        return initialValues;
+        return initialValues
     }
-);
+)
 
 /**
  * Used to combine cat and cog dimension restrictions into a single array
@@ -152,15 +165,15 @@ export const userGroupFormInitialValuesSelector = _.memoize(
  * @returns {Object} An array of cat and cog IDs
  * @function
  */
-export const analyticsDimensionsRestrictionsSelector = _.memoize(user => {
+export const analyticsDimensionsRestrictionsSelector = memoize(user => {
     const catConstraints = asArray(
         getNestedProp('userCredentials.catDimensionConstraints', user)
-    );
+    )
     const cogsConstraints = asArray(
         getNestedProp('userCredentials.cogsDimensionConstraints', user)
-    );
-    return [...catConstraints, ...cogsConstraints];
-});
+    )
+    return [...catConstraints, ...cogsConstraints]
+})
 
 /**
  * A short item is a basic version of state.currentItem, derived from a list.
@@ -171,12 +184,12 @@ export const analyticsDimensionsRestrictionsSelector = _.memoize(user => {
  * @returns {Object} A d2 model instance containing only a few basic properties
  * @function
  */
-export const shortItemSelector = _.memoize((id, list) => {
+export const shortItemSelector = memoize((id, list) => {
     if (!list || !id) {
-        return null;
+        return null
     }
-    return list.get(id);
-});
+    return list.get(id)
+})
 
 /**
  * Organisation unit trees should have different roots depending on the context.
@@ -186,21 +199,22 @@ export const shortItemSelector = _.memoize((id, list) => {
  * @function
  */
 export const orgUnitRootsSelector = (orgUnitType, currentUser) => {
-    const systemOrgRoots = currentUser.systemOrganisationUnitRoots;
-    const requestedOrgUnitRoots = currentUser[orgUnitType];
-    const fallBackOrgUnitRoots = currentUser[DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS];
+    const systemOrgRoots = currentUser.systemOrganisationUnitRoots
+    const requestedOrgUnitRoots = currentUser[orgUnitType]
+    const fallBackOrgUnitRoots =
+        currentUser[DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS]
 
-    let orgUnitRoots = null;
+    let orgUnitRoots = null
     if (currentUser.authorities.has('ALL')) {
-        orgUnitRoots = systemOrgRoots;
+        orgUnitRoots = systemOrgRoots
     } else if (requestedOrgUnitRoots.size === 0) {
-        orgUnitRoots = fallBackOrgUnitRoots.toArray();
+        orgUnitRoots = fallBackOrgUnitRoots.toArray()
     } else if (fallBackOrgUnitRoots.size > 0) {
-        orgUnitRoots = fallBackOrgUnitRoots.toArray();
+        orgUnitRoots = fallBackOrgUnitRoots.toArray()
     }
 
-    return orgUnitRoots;
-};
+    return orgUnitRoots
+}
 
 /**
  * The redux form `formValueSelector` was returning incorrect values,
@@ -210,10 +224,10 @@ export const orgUnitRootsSelector = (orgUnitType, currentUser) => {
  * @function
  */
 export const inviteUserValueSelector = formState => {
-    const fields = formState && formState.registeredFields;
-    const values = formState && formState.values;
-    const isRenderedField = Boolean(fields && fields[INVITE]);
-    const fieldValue = isRenderedField && values && values[INVITE];
+    const fields = formState && formState.registeredFields
+    const values = formState && formState.values
+    const isRenderedField = Boolean(fields && fields[INVITE])
+    const fieldValue = isRenderedField && values && values[INVITE]
 
-    return fieldValue === INVITE_USER;
-};
+    return fieldValue === INVITE_USER
+}

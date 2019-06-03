@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import _ from '../../constants/lodash';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import endsWith from 'lodash.endswith'
 
-import AuthorityItem from './AuthorityItem';
-import HighlightableText from './HighlightableText';
-import { PUBLIC_ADD_SUFFIX, PRIVATE_ADD_SUFFIX } from './utils/groupAuthorities';
+import AuthorityItem from './AuthorityItem'
+import HighlightableText from './HighlightableText'
+import { PUBLIC_ADD_SUFFIX, PRIVATE_ADD_SUFFIX } from './utils/groupAuthorities'
 
 /**
  * A metadata authority group, which renders an array of 5 table cells.
@@ -12,36 +12,38 @@ import { PUBLIC_ADD_SUFFIX, PRIVATE_ADD_SUFFIX } from './utils/groupAuthorities'
  */
 class AuthorityGroup extends Component {
     onAuthGroupChanged = (id, value) => {
-        this.context.onAuthChange(id, value);
+        this.context.onAuthChange(id, value)
 
         if (this.isPublicAdd(id)) {
             // Force rerender on entire group when public add changes
-            this.forceUpdate();
+            this.forceUpdate()
         }
-    };
+    }
 
     isPublicAdd(id) {
-        return _.endsWith(id, PUBLIC_ADD_SUFFIX);
+        return endsWith(id, PUBLIC_ADD_SUFFIX)
     }
 
     isPrivateAdd(id) {
-        return _.endsWith(id, PRIVATE_ADD_SUFFIX);
+        return endsWith(id, PRIVATE_ADD_SUFFIX)
     }
 
     render() {
-        const { name, items } = this.props;
-        const { shouldSelect, searchChunks } = this.context;
-        let publicAddSelected;
+        const { name, items } = this.props
+        const { shouldSelect, searchChunks } = this.context
+        let publicAddSelected
 
         return items.reduce(
             (authGroup, authSubject, index) => {
-                const isPublicAdd = this.isPublicAdd(authSubject.id);
-                const isPrivateAdd = this.isPrivateAdd(authSubject.id);
-                const implicitSelect = Boolean(publicAddSelected && isPrivateAdd);
-                const selected = shouldSelect(authSubject.id) || implicitSelect;
+                const isPublicAdd = this.isPublicAdd(authSubject.id)
+                const isPrivateAdd = this.isPrivateAdd(authSubject.id)
+                const implicitSelect = Boolean(
+                    publicAddSelected && isPrivateAdd
+                )
+                const selected = shouldSelect(authSubject.id) || implicitSelect
 
                 if (isPublicAdd) {
-                    publicAddSelected = selected;
+                    publicAddSelected = selected
                 }
 
                 authGroup.push(
@@ -53,27 +55,30 @@ class AuthorityGroup extends Component {
                         disabled={implicitSelect}
                         onCheckedCallBack={this.onAuthGroupChanged}
                     />
-                );
-                return authGroup;
+                )
+                return authGroup
             },
             [
                 <td key={'group-label'}>
-                    <HighlightableText text={name} searchChunks={searchChunks} />
+                    <HighlightableText
+                        text={name}
+                        searchChunks={searchChunks}
+                    />
                 </td>,
             ]
-        );
+        )
     }
 }
 
 AuthorityGroup.propTypes = {
     items: PropTypes.array.isRequired,
     name: PropTypes.string.isRequired,
-};
+}
 
 AuthorityGroup.contextTypes = {
     shouldSelect: PropTypes.func.isRequired,
     onAuthChange: PropTypes.func.isRequired,
     searchChunks: PropTypes.array,
-};
+}
 
-export default AuthorityGroup;
+export default AuthorityGroup

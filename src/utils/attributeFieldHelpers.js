@@ -1,10 +1,20 @@
-import i18n from '@dhis2/d2-i18n';
-import { renderTextField, renderCheckbox, renderSelectField } from './fieldRenderers';
-import { number, integer, positiveInteger, negativeInteger, date } from './validators';
-import browserHasDateInputSupport from './browserHasDateInputSupport';
+import i18n from '@dhis2/d2-i18n'
+import {
+    renderTextField,
+    renderCheckbox,
+    renderSelectField,
+} from './fieldRenderers'
+import {
+    number,
+    integer,
+    positiveInteger,
+    negativeInteger,
+    date,
+} from './validators'
+import browserHasDateInputSupport from './browserHasDateInputSupport'
 
-export const USER_ATTRIBUTE_FIELD_PREFIX = 'userAttibute_';
-export const NO_VALUE_OPTION = 'no_value';
+export const USER_ATTRIBUTE_FIELD_PREFIX = 'userAttibute_'
+export const NO_VALUE_OPTION = 'no_value'
 /**************************************************************************
     Attributes can be either based on an optionSet, or based on a valueType.
     Attributes based on optionSets are supported.
@@ -39,36 +49,40 @@ export const NO_VALUE_OPTION = 'no_value';
 export function generateAttributeFields(attributes, userAttributeValues) {
     return attributes.map(attribute =>
         generateAttributeField(attribute, userAttributeValues)
-    );
+    )
 }
 
-export function addUniqueAttributesToAsyncBlurFields(attributeFields, asyncBlurFields) {
+export function addUniqueAttributesToAsyncBlurFields(
+    attributeFields,
+    asyncBlurFields
+) {
     attributeFields.forEach(({ shouldBeUnique, name }) => {
         if (shouldBeUnique) {
             // It seems hacky to push to props, but seems to be the way to do it:
             // https://github.com/erikras/redux-form/issues/708#issuecomment-191446641
-            asyncBlurFields.push(name);
+            asyncBlurFields.push(name)
         }
-    });
+    })
 }
 
 export function parseAttributeValues(values, attributeFields) {
     const fieldTypeLookup = attributeFields.reduce(
         (lookup, { attributeId, valueType }) => {
-            lookup[attributeId] = valueType;
-            return lookup;
+            lookup[attributeId] = valueType
+            return lookup
         },
         {}
-    );
+    )
 
     return Object.keys(values).reduce((attributeValues, key) => {
-        const isUserAttribute = key.indexOf(USER_ATTRIBUTE_FIELD_PREFIX) !== -1;
+        const isUserAttribute = key.indexOf(USER_ATTRIBUTE_FIELD_PREFIX) !== -1
 
         if (isUserAttribute) {
-            const id = key.replace(USER_ATTRIBUTE_FIELD_PREFIX, '');
-            const value = values[key];
-            const isClearedTrueOnlyField = fieldTypeLookup[id] === 'TRUE_ONLY' && !value;
-            const isClearedOptionalDropDown = value === NO_VALUE_OPTION;
+            const id = key.replace(USER_ATTRIBUTE_FIELD_PREFIX, '')
+            const value = values[key]
+            const isClearedTrueOnlyField =
+                fieldTypeLookup[id] === 'TRUE_ONLY' && !value
+            const isClearedOptionalDropDown = value === NO_VALUE_OPTION
 
             if (!isClearedTrueOnlyField && !isClearedOptionalDropDown) {
                 attributeValues.push({
@@ -76,11 +90,11 @@ export function parseAttributeValues(values, attributeFields) {
                     attribute: {
                         id: id,
                     },
-                });
+                })
             }
         }
-        return attributeValues;
-    }, []);
+        return attributeValues
+    }, [])
 }
 
 const valueTypeMapping = {
@@ -137,7 +151,7 @@ const valueTypeMapping = {
         fieldRenderer: renderTextField,
         fieldValidators: [negativeInteger],
     },
-};
+}
 
 function generateAttributeField(
     { id, valueType, displayName, mandatory, unique, optionSet },
@@ -145,9 +159,11 @@ function generateAttributeField(
 ) {
     const userAttribute =
         userAttributeValues &&
-        userAttributeValues.find(attributeValue => attributeValue.attribute.id === id);
+        userAttributeValues.find(
+            attributeValue => attributeValue.attribute.id === id
+        )
 
-    const valueTypeProps = getValueTypeProps(valueType, optionSet, mandatory);
+    const valueTypeProps = getValueTypeProps(valueType, optionSet, mandatory)
 
     return {
         name: USER_ATTRIBUTE_FIELD_PREFIX + id,
@@ -159,7 +175,7 @@ function generateAttributeField(
         value: (userAttribute && userAttribute.value) || null,
         valueType,
         ...valueTypeProps,
-    };
+    }
 }
 
 function getValueTypeProps(valueType, optionSet, mandatory) {
@@ -176,7 +192,7 @@ function getValueTypeProps(valueType, optionSet, mandatory) {
           }
         : // Use valueTypeMapping.TEXT as fallback field renderer.
           // This way all attributes will always be editable, albeit not necesarrily enforcing the correct formatting
-          valueTypeMapping[valueType] || valueTypeMapping.TEXT;
+          valueTypeMapping[valueType] || valueTypeMapping.TEXT
 
     // Optional dropdown fields need a way to be cleared, so we create an empty option
     if (
@@ -190,8 +206,8 @@ function getValueTypeProps(valueType, optionSet, mandatory) {
                 label: i18n.t('<No value>'),
             },
             ...valueTypeProps.props.options,
-        ];
+        ]
     }
 
-    return valueTypeProps;
+    return valueTypeProps
 }

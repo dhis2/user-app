@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import i18n from '@dhis2/d2-i18n';
-import { Checkbox } from 'material-ui';
-import DropDown from 'd2-ui/lib/form-fields/DropDown.component';
-import { updateFilter, getList } from '../../actions';
-import OrganisationUnitInput from '../../components/OrganisationUnitInput';
-import SearchFilter from '../../components/SearchFilter';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import i18n from '@dhis2/d2-i18n'
+import { Checkbox } from 'material-ui'
+import DropDown from 'd2-ui/lib/form-fields/DropDown.component'
+import { updateFilter, getList } from '../../actions'
+import OrganisationUnitInput from '../../components/OrganisationUnitInput'
+import SearchFilter from '../../components/SearchFilter'
 import {
     INACTIVE_MONTHS,
     INVITATION_STATUS,
     SELF_REGISTERED,
-} from '../../constants/filterFieldNames';
+} from '../../constants/filterFieldNames'
 
 const style = {
     float: 'left',
     marginRight: '1rem',
-};
+}
 
 const selfRegisteredStyle = {
     ...style,
@@ -25,7 +25,7 @@ const selfRegisteredStyle = {
     width: '182px',
     paddingTop: '37px',
     height: '35px',
-};
+}
 
 /**
  * Renders a SearchFilter, OrganisationUnitInput, dropdowns for inactive months and invitation status, and a checkbox for self registration.
@@ -33,26 +33,27 @@ const selfRegisteredStyle = {
  */
 class UserFilter extends Component {
     onFilterChange = (fieldName, newValue) => {
-        const { getList, entityType, updateFilter, filter } = this.props;
+        const { getList, entityType, updateFilter, filter } = this.props
 
         if (filter[fieldName] === newValue) {
-            return;
+            return
         }
 
-        updateFilter(fieldName, newValue);
-        getList(entityType);
-    };
+        updateFilter(fieldName, newValue)
+        getList(entityType)
+    }
 
     createInactiveMonthsOptions() {
-        const month = i18n.t('month');
-        const months = i18n.t('months');
+        const month = i18n.t('month')
+        const months = i18n.t('months')
         return Array(12)
             .fill()
             .map((_, index) => {
-                const id = index + 1;
-                const displayName = id === 1 ? `${id} ${month}` : `${id} ${months}`;
-                return { id, displayName };
-            });
+                const id = index + 1
+                const displayName =
+                    id === 1 ? `${id} ${month}` : `${id} ${months}`
+                return { id, displayName }
+            })
     }
 
     renderDropDown(config) {
@@ -60,8 +61,8 @@ class UserFilter extends Component {
             ...config,
             includeEmpty: true,
             emptyLabel: i18n.t('<No value>'),
-        };
-        return <DropDown {...mergedConfig} />;
+        }
+        return <DropDown {...mergedConfig} />
     }
 
     renderInactiveMonthsFilter() {
@@ -69,11 +70,12 @@ class UserFilter extends Component {
             menuItems: this.createInactiveMonthsOptions(),
             floatingLabelText: i18n.t('Inactivity'),
             value: this.props.filter.inactiveMonths,
-            onChange: event => this.onFilterChange(INACTIVE_MONTHS, event.target.value),
+            onChange: event =>
+                this.onFilterChange(INACTIVE_MONTHS, event.target.value),
             style: { ...style, width: '132px' },
-        };
+        }
 
-        return this.renderDropDown(dropDownConfig);
+        return this.renderDropDown(dropDownConfig)
     }
 
     renderInvitationStatusFilter() {
@@ -84,31 +86,34 @@ class UserFilter extends Component {
             ],
             floatingLabelText: i18n.t('Invitations'),
             value: this.props.filter.invitationStatus,
-            onChange: event => this.onFilterChange(INVITATION_STATUS, event.target.value),
+            onChange: event =>
+                this.onFilterChange(INVITATION_STATUS, event.target.value),
             style: { ...style, width: '172px' },
-        };
+        }
 
-        return this.renderDropDown(dropDownConfig);
+        return this.renderDropDown(dropDownConfig)
     }
 
     renderSelfRegisteredFilter() {
-        const value = this.props.filter.selfRegistered;
-        const baseClassName = 'data-table__filter-bar__checkbox';
-        const checkedClassName = `${baseClassName}--checked`;
+        const value = this.props.filter.selfRegistered
+        const baseClassName = 'data-table__filter-bar__checkbox'
+        const checkedClassName = `${baseClassName}--checked`
 
         return (
             <Checkbox
                 value={value}
-                onCheck={(event, value) => this.onFilterChange(SELF_REGISTERED, value)}
+                onCheck={(event, value) =>
+                    this.onFilterChange(SELF_REGISTERED, value)
+                }
                 label={i18n.t('Self registrations')}
                 className={value ? checkedClassName : baseClassName}
                 style={selfRegisteredStyle}
             />
-        );
+        )
     }
 
     render() {
-        const { entityType } = this.props;
+        const { entityType } = this.props
         return (
             <div>
                 <SearchFilter entityType={entityType} />
@@ -117,7 +122,7 @@ class UserFilter extends Component {
                 {this.renderInvitationStatusFilter()}
                 {this.renderSelfRegisteredFilter()}
             </div>
-        );
+        )
     }
 }
 
@@ -126,15 +131,18 @@ UserFilter.propTypes = {
     getList: PropTypes.func.isRequired,
     updateFilter: PropTypes.func.isRequired,
     entityType: PropTypes.string.isRequired,
-};
+}
 
 const mapStateToProps = state => {
     return {
         filter: state.filter,
-    };
-};
+    }
+}
 
-export default connect(mapStateToProps, {
-    updateFilter,
-    getList,
-})(UserFilter);
+export default connect(
+    mapStateToProps,
+    {
+        updateFilter,
+        getList,
+    }
+)(UserFilter)

@@ -1,38 +1,40 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Field, reduxForm, formValueSelector } from 'redux-form';
-import RaisedButton from 'material-ui/RaisedButton';
-import FlatButton from 'material-ui/FlatButton';
-import CircularProgress from 'material-ui/CircularProgress';
-import HardwareKeyboardArrowUp from 'material-ui/svg-icons/hardware/keyboard-arrow-up';
-import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down';
-import i18n from '@dhis2/d2-i18n';
-import makeTrashable from 'trashable';
-import navigateTo from '../../utils/navigateTo';
-import createHumanErrorMessage from '../../utils/createHumanErrorMessage';
-import detectCurrentUserChanges from '../../utils/detectCurrentUserChanges';
-import asArray from '../../utils/asArray';
-import getNestedProp from '../../utils/getNestedProp';
-import api from '../../api';
-import { userFormInitialValuesSelector } from '../../selectors';
-import { clearItem, getList, showSnackbar } from '../../actions';
-import { USER } from '../../constants/entityTypes';
-import * as CONFIG from './config';
-import collectValidators from './collectValidators';
-import { inviteUserValueSelector } from '../../selectors';
-import { asyncValidatorSwitch } from '../../utils/validatorsAsync';
+/* eslint-disable max-params */
+
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { Field, reduxForm, formValueSelector } from 'redux-form'
+import RaisedButton from 'material-ui/RaisedButton'
+import FlatButton from 'material-ui/FlatButton'
+import CircularProgress from 'material-ui/CircularProgress'
+import HardwareKeyboardArrowUp from 'material-ui/svg-icons/hardware/keyboard-arrow-up'
+import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down'
+import i18n from '@dhis2/d2-i18n'
+import makeTrashable from 'trashable'
+import navigateTo from '../../utils/navigateTo'
+import createHumanErrorMessage from '../../utils/createHumanErrorMessage'
+import detectCurrentUserChanges from '../../utils/detectCurrentUserChanges'
+import asArray from '../../utils/asArray'
+import getNestedProp from '../../utils/getNestedProp'
+import api from '../../api'
+import { userFormInitialValuesSelector } from '../../selectors'
+import { clearItem, getList, showSnackbar } from '../../actions'
+import { USER } from '../../constants/entityTypes'
+import * as CONFIG from './config'
+import collectValidators from './collectValidators'
+import { inviteUserValueSelector } from '../../selectors'
+import { asyncValidatorSwitch } from '../../utils/validatorsAsync'
 import {
     generateAttributeFields,
     addUniqueAttributesToAsyncBlurFields,
-} from '../../utils/attributeFieldHelpers';
+} from '../../utils/attributeFieldHelpers'
 import {
     renderTextField,
     renderText,
     renderSearchableOrgUnitTree,
     renderSearchableGroupEditor,
     renderSelectField,
-} from '../../utils/fieldRenderers';
+} from '../../utils/fieldRenderers'
 
 /**
  * Container component that is controlled by redux-form. When mounting, it will fetch available and selected locales.
@@ -41,64 +43,68 @@ import {
  */
 class UserForm extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             showMore: false,
             locales: null,
             attributeFields: null,
-        };
-        this.trashableAttributesPromise = null;
-        this.trashableLocalePromise = null;
+        }
+        this.trashableAttributesPromise = null
+        this.trashableLocalePromise = null
     }
 
     async componentDidMount() {
-        const { user, showSnackbar, initialize } = this.props;
-        const username = user.id ? user.userCredentials.username : null;
+        const { user, showSnackbar, initialize } = this.props
+        const username = user.id ? user.userCredentials.username : null
 
         this.trashableLocalePromise = makeTrashable(
             api.getSelectedAndAvailableLocales(username)
-        );
-        this.trashableAttributesPromise = makeTrashable(api.getAttributes(USER));
+        )
+        this.trashableAttributesPromise = makeTrashable(api.getAttributes(USER))
 
         try {
-            const locales = await this.trashableLocalePromise;
-            const attributes = await this.trashableAttributesPromise;
+            const locales = await this.trashableLocalePromise
+            const attributes = await this.trashableAttributesPromise
             const attributeFields = generateAttributeFields(
                 attributes,
                 user.attributeValues
-            );
+            )
             addUniqueAttributesToAsyncBlurFields(
                 attributeFields,
                 this.props.asyncBlurFields
-            );
-            this.setState({ locales, attributeFields });
-            initialize(userFormInitialValuesSelector(user, locales, attributeFields));
+            )
+            this.setState({ locales, attributeFields })
+            initialize(
+                userFormInitialValuesSelector(user, locales, attributeFields)
+            )
         } catch (error) {
-            console.error(error);
+            console.error(error)
             showSnackbar({
                 message: createHumanErrorMessage(
                     error,
-                    i18n.t('Could not load the user data. Please refresh the page.')
+                    i18n.t(
+                        'Could not load the user data. Please refresh the page.'
+                    )
                 ),
-            });
+            })
         }
     }
 
     componentWillUnmount() {
-        this.trashableLocalePromise.trash();
-        this.trashableAttributesPromise.trash();
+        this.trashableLocalePromise.trash()
+        this.trashableAttributesPromise.trash()
     }
 
     toggleShowMore = () => {
         this.setState({
             showMore: !this.state.showMore,
-        });
-    };
+        })
+    }
 
     handleSubmit = async (values, _, props) => {
-        const { user, inviteUser, showSnackbar, clearItem, getList } = props;
-        const initialUiLocale = this.state.locales.ui.selected;
-        const initialDbLocale = this.state.locales.db.selected;
+        const { user, inviteUser, showSnackbar, clearItem, getList } = props
+        const initialUiLocale = this.state.locales.ui.selected
+        const initialDbLocale = this.state.locales.db.selected
 
         try {
             await api.saveOrInviteUser(
@@ -108,38 +114,40 @@ class UserForm extends Component {
                 initialUiLocale,
                 initialDbLocale,
                 this.state.attributeFields
-            );
+            )
             const msg = i18n.t('User "{{displayName}}" saved successfully', {
                 displayName: `${values.firstName} ${values.surname}`,
-            });
-            showSnackbar({ message: msg });
-            clearItem();
-            getList(USER);
-            this.backToList();
-            detectCurrentUserChanges(user);
+            })
+            showSnackbar({ message: msg })
+            clearItem()
+            getList(USER)
+            this.backToList()
+            detectCurrentUserChanges(user)
         } catch (error) {
-            console.error(error);
+            console.error(error)
             showSnackbar({
                 message: createHumanErrorMessage(
                     error,
                     i18n.t('There was a problem saving the user.')
                 ),
-            });
+            })
         }
-    };
+    }
 
     backToList = () => {
-        navigateTo('/users');
-    };
+        navigateTo('/users')
+    }
 
     getLabelText(label, user, isRequiredField) {
-        const { inviteUser } = this.props;
+        const { inviteUser } = this.props
         return isRequiredField === CONFIG.ALWAYS_REQUIRED ||
             (inviteUser && isRequiredField === CONFIG.INVITE_REQUIRED) ||
-            (isRequiredField === CONFIG.CREATE_REQUIRED && !user.id && !inviteUser) ||
+            (isRequiredField === CONFIG.CREATE_REQUIRED &&
+                !user.id &&
+                !inviteUser) ||
             (typeof isRequiredField === 'boolean' && isRequiredField)
             ? `${label} *`
-            : label;
+            : label
     }
 
     prepareGroupEditor(conf, fieldConfig, user, isRequiredField) {
@@ -147,38 +155,41 @@ class UserForm extends Component {
             conf.assignedItemsLabel,
             user,
             isRequiredField
-        );
-        conf.availableItemsQuery = api[conf.availableItemsQuery];
-        conf.initialValues = fieldConfig.initialItemsSelector(user);
+        )
+        conf.availableItemsQuery = api[conf.availableItemsQuery]
+        conf.initialValues = fieldConfig.initialItemsSelector(user)
     }
 
     exludeField(fieldName) {
-        const { user, inviteUser, externalAuthOnly } = this.props;
-        const systemCanEmail = this.context.d2.system.systemInfo.emailConfigured;
+        const { user, inviteUser, externalAuthOnly } = this.props
+        const systemCanEmail = this.context.d2.system.systemInfo.emailConfigured
 
         if ((!systemCanEmail || user.id) && fieldName === CONFIG.INVITE) {
-            return true;
+            return true
         }
 
         if (
             (inviteUser || externalAuthOnly) &&
-            (fieldName === CONFIG.PASSWORD || fieldName === CONFIG.REPEAT_PASSWORD)
+            (fieldName === CONFIG.PASSWORD ||
+                fieldName === CONFIG.REPEAT_PASSWORD)
         ) {
-            return true;
+            return true
         }
 
         if (
             inviteUser &&
-            [CONFIG.EXTERNAL_AUTH, CONFIG.OPEN_ID, CONFIG.LDAP_ID].includes(fieldName)
+            [CONFIG.EXTERNAL_AUTH, CONFIG.OPEN_ID, CONFIG.LDAP_ID].includes(
+                fieldName
+            )
         ) {
-            return true;
+            return true
         }
 
-        return false;
+        return false
     }
 
     renderFields(fields) {
-        const { user } = this.props;
+        const { user } = this.props
 
         return fields.reduce((filteredFields, fieldConfig) => {
             const {
@@ -192,38 +203,43 @@ class UserForm extends Component {
                 fieldValidators,
                 valueType,
                 ...conf
-            } = fieldConfig;
-            const labelText = this.getLabelText(label, user, isRequiredField);
+            } = fieldConfig
+            const labelText = this.getLabelText(label, user, isRequiredField)
 
             if (this.exludeField(name)) {
-                return filteredFields;
+                return filteredFields
             }
 
             if (fieldRenderer === renderText) {
-                filteredFields.push(renderText(fieldConfig));
-                return filteredFields;
+                filteredFields.push(renderText(fieldConfig))
+                return filteredFields
             }
 
             switch (fieldRenderer) {
                 case renderTextField:
                     if (!conf.hintText) {
-                        conf.hintText = label;
+                        conf.hintText = label
                     }
-                    conf.disabled = Boolean(name === CONFIG.USERNAME && user.id);
-                    break;
+                    conf.disabled = Boolean(name === CONFIG.USERNAME && user.id)
+                    break
                 case renderSearchableOrgUnitTree:
-                    conf.initialValues = asArray(user[fieldConfig.name]);
-                    break;
+                    conf.initialValues = asArray(user[fieldConfig.name])
+                    break
                 case renderSearchableGroupEditor:
-                    this.prepareGroupEditor(conf, fieldConfig, user, isRequiredField);
-                    break;
+                    this.prepareGroupEditor(
+                        conf,
+                        fieldConfig,
+                        user,
+                        isRequiredField
+                    )
+                    break
                 case renderSelectField:
                     conf.options = fieldConfig.optionsSelector
                         ? getNestedProp(fieldConfig.optionsSelector, this.state)
-                        : fieldConfig.options;
-                    break;
+                        : fieldConfig.options
+                    break
                 default:
-                    break;
+                    break
             }
 
             conf.validate = collectValidators(
@@ -232,7 +248,7 @@ class UserForm extends Component {
                 isRequiredField,
                 isAttributeField,
                 fieldValidators
-            );
+            )
 
             filteredFields.push(
                 <Field
@@ -242,43 +258,43 @@ class UserForm extends Component {
                     label={labelText}
                     {...conf}
                 />
-            );
-            return filteredFields;
-        }, []);
+            )
+            return filteredFields
+        }, [])
     }
 
     renderCreateOrInviteField() {
-        return this.renderFields(CONFIG.INVITE_FIELDS);
+        return this.renderFields(CONFIG.INVITE_FIELDS)
     }
 
     renderAttributeFields() {
-        return this.renderFields(this.state.attributeFields);
+        return this.renderFields(this.state.attributeFields)
     }
 
     renderBaseFields() {
-        return this.renderFields(CONFIG.BASE_FIELDS);
+        return this.renderFields(CONFIG.BASE_FIELDS)
     }
 
     renderAdditionalFields(showMore) {
         if (!showMore) {
-            return null;
+            return null
         }
         return (
             <div style={CONFIG.STYLES.additionalFieldsWrap}>
                 {this.renderFields(CONFIG.ADDITIONAL_FIELDS)}
             </div>
-        );
+        )
     }
 
     renderToggler(showMore) {
         const togglerText = showMore
             ? i18n.t('Show fewer options')
-            : i18n.t('Show more options');
+            : i18n.t('Show more options')
         const icon = showMore ? (
             <HardwareKeyboardArrowUp />
         ) : (
             <HardwareKeyboardArrowDown />
-        );
+        )
 
         return (
             <div style={CONFIG.STYLES.togglerWrap}>
@@ -289,7 +305,7 @@ class UserForm extends Component {
                     icon={icon}
                 />
             </div>
-        );
+        )
     }
 
     render() {
@@ -300,19 +316,20 @@ class UserForm extends Component {
             pristine,
             valid,
             inviteUser,
-        } = this.props;
-        const { showMore, locales } = this.state;
+        } = this.props
+        const { showMore, locales } = this.state
         const disableSubmit = Boolean(
             submitting || asyncValidating || pristine || !valid
-        );
-        const submitText = inviteUser === true ? i18n.t('Send invite') : i18n.t('Save');
+        )
+        const submitText =
+            inviteUser === true ? i18n.t('Send invite') : i18n.t('Save')
 
         if (!locales) {
             return (
                 <div style={CONFIG.STYLES.loaderWrap}>
                     <CircularProgress />
                 </div>
-            );
+            )
         }
 
         return (
@@ -338,7 +355,7 @@ class UserForm extends Component {
                     </div>
                 </form>
             </main>
-        );
+        )
     }
 }
 
@@ -350,7 +367,8 @@ UserForm.propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     change: PropTypes.func.isRequired,
     initialize: PropTypes.func.isRequired,
-    asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]).isRequired,
+    asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+        .isRequired,
     pristine: PropTypes.bool.isRequired,
     submitting: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired,
@@ -358,13 +376,13 @@ UserForm.propTypes = {
     inviteUser: PropTypes.bool.isRequired,
     externalAuthOnly: PropTypes.bool.isRequired,
     asyncBlurFields: PropTypes.arrayOf(PropTypes.string),
-};
+}
 
 UserForm.contextTypes = {
     d2: PropTypes.object.isRequired,
-};
+}
 
-const selector = formValueSelector(CONFIG.FORM_NAME);
+const selector = formValueSelector(CONFIG.FORM_NAME)
 const mapStateToProps = state => {
     return {
         user: state.currentItem,
@@ -372,17 +390,20 @@ const mapStateToProps = state => {
             state.currentUser[CONFIG.DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS],
         inviteUser: inviteUserValueSelector(state.form[CONFIG.FORM_NAME]),
         externalAuthOnly: Boolean(selector(state, CONFIG.EXTERNAL_AUTH)),
-    };
-};
+    }
+}
 
 const ReduxFormWrappedUserForm = reduxForm({
     form: CONFIG.FORM_NAME,
     asyncValidate: asyncValidatorSwitch,
     asyncBlurFields: [CONFIG.USERNAME],
-})(UserForm);
+})(UserForm)
 
-export default connect(mapStateToProps, {
-    clearItem,
-    showSnackbar,
-    getList,
-})(ReduxFormWrappedUserForm);
+export default connect(
+    mapStateToProps,
+    {
+        clearItem,
+        showSnackbar,
+        getList,
+    }
+)(ReduxFormWrappedUserForm)

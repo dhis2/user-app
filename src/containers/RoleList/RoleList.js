@@ -1,13 +1,13 @@
-import React from 'react';
-import i18n from '@dhis2/d2-i18n';
-import { USER_ROLE } from '../../constants/entityTypes';
-import List from '../../components/List';
+import React from 'react'
+import i18n from '@dhis2/d2-i18n'
+import { USER_ROLE } from '../../constants/entityTypes'
+import List from '../../components/List'
 import {
     roleContextMenuActions,
     roleContextMenuIcons,
     isRoleContextActionAllowed,
-} from './RoleContextMenuActions';
-import SearchFilter from '../../components/SearchFilter';
+} from './RoleContextMenuActions'
+import SearchFilter from '../../components/SearchFilter'
 
 /**
  * Container component that renders a List component with correct properties for displaying a list of UserRoles
@@ -26,6 +26,6 @@ const RoleList = () => (
         newItemPath={'/user-roles/new'}
         className={'role-list'}
     />
-);
+)
 
-export default RoleList;
+export default RoleList

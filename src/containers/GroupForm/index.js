@@ -1,2 +1,2 @@
-import GroupForm from './GroupForm';
-export default GroupForm;
+import GroupForm from './GroupForm'
+export default GroupForm

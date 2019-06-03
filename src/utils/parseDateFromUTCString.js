@@ -1,4 +1,4 @@
-import api from '../api';
+import api from '../api'
 
 /**
  * Receives a full UTC data string and return a formatted version according to the user's locale
@@ -9,21 +9,23 @@ import api from '../api';
  * @function
  */
 const parseDateFromUTCString = (utcString, includeTime) => {
-    const d2 = api.getD2();
-    const locale = d2.currentUser.userSettings.settings.keyUiLocale;
-    const date = new Date(utcString);
+    const d2 = api.getD2()
+    const locale = d2.currentUser.userSettings.settings.keyUiLocale
+    const date = new Date(utcString)
     const dateOptions = {
         day: 'numeric',
         month: 'long',
         year: 'numeric',
-    };
+    }
     const timeOptions = {
         hour: '2-digit',
         minute: '2-digit',
-    };
-    const options = includeTime ? { ...dateOptions, ...timeOptions } : dateOptions;
+    }
+    const options = includeTime
+        ? { ...dateOptions, ...timeOptions }
+        : dateOptions
 
-    return new Intl.DateTimeFormat(locale, options).format(date);
-};
+    return new Intl.DateTimeFormat(locale, options).format(date)
+}
 
-export default parseDateFromUTCString;
+export default parseDateFromUTCString

@@ -1,9 +1,13 @@
-import { LIST_REQUESTED, LIST_RECEIVED, LIST_ERRORED } from '../constants/actionTypes';
+import {
+    LIST_REQUESTED,
+    LIST_RECEIVED,
+    LIST_ERRORED,
+} from '../constants/actionTypes'
 
 const initialState = {
     type: null,
     items: null,
-};
+}
 
 /**
  * Reducer to control the list state
@@ -26,22 +30,22 @@ const listReducer = (state = initialState, { type, payload }) => {
             return {
                 type: payload,
                 items: null,
-            };
+            }
         case LIST_RECEIVED:
             return state.type === payload.type
                 ? {
                       type: payload.type,
                       items: payload.items,
                   }
-                : state;
+                : state
         case LIST_ERRORED:
             return {
                 type: null,
                 items: payload.message,
-            };
+            }
         default:
-            return state;
+            return state
     }
-};
+}
 
-export default listReducer;
+export default listReducer

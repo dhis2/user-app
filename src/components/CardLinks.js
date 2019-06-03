@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import i18n from '@dhis2/d2-i18n';
-import Card from 'material-ui/Card/Card';
-import CardHeader from 'material-ui/Card/CardHeader';
-import CardText from 'material-ui/Card/CardText';
-import CardActions from 'material-ui/Card/CardActions';
-import IconButton from 'material-ui/IconButton/IconButton';
-import navigateTo from '../utils/navigateTo';
-import { SECTIONS } from '../constants/routeConfig';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import i18n from '@dhis2/d2-i18n'
+import Card from 'material-ui/Card/Card'
+import CardHeader from 'material-ui/Card/CardHeader'
+import CardText from 'material-ui/Card/CardText'
+import CardActions from 'material-ui/Card/CardActions'
+import IconButton from 'material-ui/IconButton/IconButton'
+import navigateTo from '../utils/navigateTo'
+import { SECTIONS } from '../constants/routeConfig'
 
 const cardStyle = {
     padding: '0',
@@ -15,7 +15,7 @@ const cardStyle = {
     marginTop: '1rem',
     float: 'left',
     width: '230px',
-};
+}
 
 const headerStyle = {
     padding: '1rem',
@@ -23,16 +23,16 @@ const headerStyle = {
     borderBottom: '1px solid #ddd',
     cursor: 'pointer',
     fontWeight: 'bold',
-};
+}
 
 const textStyle = {
     height: '85px',
     padding: '.5rem 1rem',
-};
+}
 
 const actionStyle = {
     textAlign: 'right',
-};
+}
 
 /**
  * Conditionally renders cards representing the different sections present in the user-app
@@ -40,8 +40,8 @@ const actionStyle = {
  */
 class CardLinks extends Component {
     renderActionButtons(card, canList, canCreate) {
-        const actionButtons = [];
-        const createPath = `${card.path}/new`;
+        const actionButtons = []
+        const createPath = `${card.path}/new`
 
         if (canCreate) {
             actionButtons.push(
@@ -54,7 +54,7 @@ class CardLinks extends Component {
                 >
                     &#xE145;
                 </IconButton>
-            );
+            )
         }
 
         if (canList) {
@@ -68,22 +68,22 @@ class CardLinks extends Component {
                 >
                     &#xE8EF;
                 </IconButton>
-            );
+            )
         }
 
-        return actionButtons;
+        return actionButtons
     }
 
     renderCard = (card, index) => {
-        const { currentUser, models } = this.context.d2;
+        const { currentUser, models } = this.context.d2
         // Based on input from Lars:
         // "you should hide menu items for which the user has no "add" or "delete" authority"
-        const canCreate = currentUser.canCreate(models[card.entityType]);
-        const canDelete = currentUser.canDelete(models[card.entityType]);
-        const canList = canCreate || canDelete;
+        const canCreate = currentUser.canCreate(models[card.entityType])
+        const canDelete = currentUser.canDelete(models[card.entityType])
+        const canList = canCreate || canDelete
 
         if (!canList) {
-            return null;
+            return null
         }
 
         return (
@@ -98,11 +98,11 @@ class CardLinks extends Component {
                     {this.renderActionButtons(card, canList, canCreate)}
                 </CardActions>
             </Card>
-        );
-    };
+        )
+    }
 
     render() {
-        const cards = SECTIONS.map(this.renderCard);
+        const cards = SECTIONS.map(this.renderCard)
 
         if (cards.length === 0) {
             return (
@@ -111,15 +111,15 @@ class CardLinks extends Component {
                         'You do not have access to any section of the DHIS 2 User Management App'
                     )}
                 </div>
-            );
+            )
         }
 
-        return cards;
+        return cards
     }
 }
 
 CardLinks.contextTypes = {
     d2: PropTypes.object,
-};
+}
 
-export default CardLinks;
+export default CardLinks

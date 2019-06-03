@@ -1,5 +1,8 @@
-import { SHOW_SHARING_DIALOG, HIDE_SHARING_DIALOG } from '../../constants/actionTypes';
-import { INITIAL_SHARING_STATE } from '../../constants/defaults';
+import {
+    SHOW_SHARING_DIALOG,
+    HIDE_SHARING_DIALOG,
+} from '../../constants/actionTypes'
+import { INITIAL_SHARING_STATE } from '../../constants/defaults'
 
 /**
  * Reducer to show / hide the SharingDialogContainer
@@ -20,12 +23,12 @@ const sharingReducer = (state = INITIAL_SHARING_STATE, { type, payload }) => {
             return {
                 show: true,
                 ...payload,
-            };
+            }
         case HIDE_SHARING_DIALOG:
-            return { ...INITIAL_SHARING_STATE };
+            return { ...INITIAL_SHARING_STATE }
         default:
-            return state;
+            return state
     }
-};
+}
 
-export default sharingReducer;
+export default sharingReducer

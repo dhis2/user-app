@@ -5,7 +5,7 @@ export const USER_LIST = [
     'access',
     'userCredentials[username,disabled,lastLogin,twoFA]',
     'teiSearchOrganisationUnits[id,path]',
-];
+]
 export const USER_GROUP_LIST = [
     'displayName',
     'id',
@@ -13,8 +13,8 @@ export const USER_GROUP_LIST = [
     'user[displayName,id]',
     'publicAccess',
     'userGroupAccesses',
-];
-export const USER_ROLE_LIST = [...USER_GROUP_LIST, 'description'];
+]
+export const USER_ROLE_LIST = [...USER_GROUP_LIST, 'description']
 
 // DETAILS
 export const USER_DETAILS = [
@@ -31,7 +31,7 @@ export const USER_DETAILS = [
     'skype',
     'telegram',
     'twitter',
-];
+]
 
 export const USER_ROLE_DETAILS = [
     'id',
@@ -41,7 +41,7 @@ export const USER_ROLE_DETAILS = [
     'users',
     'description',
     'authorities',
-];
+]
 
 export const USER_GROUP_DETAILS = [
     'id',
@@ -52,7 +52,7 @@ export const USER_GROUP_DETAILS = [
     'users',
     'managedGroups',
     'attributeValues',
-];
+]
 
 export const CURRENT_USER_ORG_UNITS_FIELDS = {
     fields: [
@@ -60,18 +60,18 @@ export const CURRENT_USER_ORG_UNITS_FIELDS = {
         'dataViewOrganisationUnits[id,path,displayName,children::isNotEmpty]',
         'teiSearchOrganisationUnits[id,path,displayName,children::isNotEmpty]',
     ],
-};
+}
 
 export const ORG_UNITS_QUERY_CONFIG = {
     paging: false,
     // userDataViewFallback: true
     fields: ['id', 'path', 'displayName', 'children::isNotEmpty', 'ancestors'],
-};
+}
 
 export const USER_GROUP_QUERY_CONFIG = {
     paging: false,
     fields: ['id', 'displayName'],
-};
+}
 
 const FIELDS = {
     USER_LIST,
@@ -80,5 +80,5 @@ const FIELDS = {
     USER_DETAILS,
     USER_GROUP_DETAILS,
     USER_ROLE_DETAILS,
-};
-export default FIELDS;
+}
+export default FIELDS

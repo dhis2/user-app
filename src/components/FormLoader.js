@@ -1,18 +1,19 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Paper, CircularProgress } from 'material-ui';
-import { connect } from 'react-redux';
-import { getItem, initNewItem } from '../actions';
-import { USER, USER_GROUP, USER_ROLE } from '../constants/entityTypes';
-import Heading from 'd2-ui/lib/headings/Heading.component';
-import IconLink from './IconLink';
-import i18n from '@dhis2/d2-i18n';
-import _ from '../constants/lodash';
-import ErrorMessage from './ErrorMessage';
-import RoleForm from '../containers/RoleForm';
-import GroupForm from '../containers/GroupForm';
-import UserForm from '../containers/UserForm';
-import { shortItemSelector } from '../selectors';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { Paper, CircularProgress } from 'material-ui'
+import { connect } from 'react-redux'
+import { getItem, initNewItem } from '../actions'
+import { USER, USER_GROUP, USER_ROLE } from '../constants/entityTypes'
+import Heading from 'd2-ui/lib/headings/Heading.component'
+import IconLink from './IconLink'
+import i18n from '@dhis2/d2-i18n'
+import kebabCase from 'lodash.kebabcase'
+import capitalize from 'lodash.capitalize'
+import ErrorMessage from './ErrorMessage'
+import RoleForm from '../containers/RoleForm'
+import GroupForm from '../containers/GroupForm'
+import UserForm from '../containers/UserForm'
+import { shortItemSelector } from '../selectors'
 
 const styles = {
     main: {
@@ -25,7 +26,7 @@ const styles = {
     paper: {
         padding: '2rem 5rem 4rem',
     },
-};
+}
 
 class FormLoader extends Component {
     componentDidMount() {
@@ -37,31 +38,33 @@ class FormLoader extends Component {
             getItem,
             initNewItem,
             entityType,
-        } = this.props;
+        } = this.props
         if (id && !(item && item.id === id)) {
-            getItem(entityType, id);
+            getItem(entityType, id)
         } else if (!id) {
-            initNewItem(entityType);
+            initNewItem(entityType)
         }
-        this.formNotFoundErrorMsg = i18n.t('There was an error getting the form:');
+        this.formNotFoundErrorMsg = i18n.t(
+            'There was an error getting the form:'
+        )
     }
 
     renderForm() {
-        const { entityType } = this.props;
+        const { entityType } = this.props
         switch (entityType) {
             case USER:
-                return <UserForm />;
+                return <UserForm />
             case USER_ROLE:
-                return <RoleForm />;
+                return <RoleForm />
             case USER_GROUP:
-                return <GroupForm />;
+                return <GroupForm />
             default:
                 return (
                     <ErrorMessage
                         introText={this.formNotFoundErrorMsg}
                         errorMessage={''}
                     />
-                );
+                )
         }
     }
 
@@ -73,17 +76,19 @@ class FormLoader extends Component {
             item,
             shortItem,
             entityType,
-        } = this.props;
-        const baseItem = item && item.id === id ? item : shortItem;
+        } = this.props
+        const baseItem = item && item.id === id ? item : shortItem
         const entityTxt = baseItem
             ? baseItem.modelDefinition.displayName
-            : _.capitalize(entityType);
-        const displayName = baseItem ? baseItem.displayName : '';
-        const updateMsg = `${i18n.t('Update')} ${entityTxt}: ${displayName}`;
-        const createMsg = `${i18n.t('Create new')} ${entityTxt}`;
-        const msg = id ? updateMsg : createMsg;
-        const link = baseItem ? `/${_.kebabCase(baseItem.modelDefinition.plural)}` : null;
-        const linkTooltip = `${i18n.t('Back to')} ${entityTxt}s`;
+            : capitalize(entityType)
+        const displayName = baseItem ? baseItem.displayName : ''
+        const updateMsg = `${i18n.t('Update')} ${entityTxt}: ${displayName}`
+        const createMsg = `${i18n.t('Create new')} ${entityTxt}`
+        const msg = id ? updateMsg : createMsg
+        const link = baseItem
+            ? `/${kebabCase(baseItem.modelDefinition.plural)}`
+            : null
+        const linkTooltip = `${i18n.t('Back to')} ${entityTxt}s`
 
         return (
             <Heading style={styles.heading}>
@@ -95,7 +100,7 @@ class FormLoader extends Component {
                 />
                 {msg}
             </Heading>
-        );
+        )
     }
 
     renderContent() {
@@ -104,12 +109,15 @@ class FormLoader extends Component {
                 params: { id },
             },
             item,
-        } = this.props;
+        } = this.props
 
         if (typeof item === 'string') {
             return (
-                <ErrorMessage introText={this.formNotFoundErrorMsg} errorMessage={item} />
-            );
+                <ErrorMessage
+                    introText={this.formNotFoundErrorMsg}
+                    errorMessage={item}
+                />
+            )
         }
 
         if (!item || (item && item.id !== id)) {
@@ -117,10 +125,10 @@ class FormLoader extends Component {
                 <div style={{ textAlign: 'center', paddingTop: '2rem' }}>
                     <CircularProgress />
                 </div>
-            );
+            )
         }
 
-        return this.renderForm();
+        return this.renderForm()
     }
 
     render() {
@@ -129,7 +137,7 @@ class FormLoader extends Component {
                 {this.renderHeader()}
                 <Paper style={styles.paper}>{this.renderContent()}</Paper>
             </main>
-        );
+        )
     }
 }
 
@@ -140,17 +148,20 @@ FormLoader.propTypes = {
     shortItem: PropTypes.object,
     getItem: PropTypes.func.isRequired,
     initNewItem: PropTypes.func.isRequired,
-};
+}
 
 const mapStateToProps = (state, props) => {
     return {
         item: state.currentItem,
         // shortItem is available when navigating from a list but not after refesh
         shortItem: shortItemSelector(props.match.params.id, state.list.items),
-    };
-};
+    }
+}
 
-export default connect(mapStateToProps, {
-    getItem,
-    initNewItem,
-})(FormLoader);
+export default connect(
+    mapStateToProps,
+    {
+        getItem,
+        initNewItem,
+    }
+)(FormLoader)

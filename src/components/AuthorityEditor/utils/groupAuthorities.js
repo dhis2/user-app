@@ -1,7 +1,9 @@
 /** @module AuthorityEditor/utils/groupAuthorities */
-import i18n from '@dhis2/d2-i18n';
-import _ from '../../../constants/lodash';
-import nameLookup from './authorityGroupNames';
+import i18n from '@dhis2/d2-i18n'
+import startsWith from 'lodash.startswith'
+import endsWith from 'lodash.endswith'
+import sortBy from 'lodash.sortby'
+import nameLookup from './authorityGroupNames'
 
 // The next 3 constants are exported so they can be used by the AuthorityEditor component
 
@@ -38,16 +40,16 @@ export const EMPTY_GROUPED_AUTHORITIES = {
         items: null,
         headers: ['Name'],
     },
-};
+}
 
 // Suffixes and prefixes
-export const PUBLIC_ADD_SUFFIX = '_PUBLIC_ADD';
-export const PRIVATE_ADD_SUFFIX = '_PRIVATE_ADD';
+export const PUBLIC_ADD_SUFFIX = '_PUBLIC_ADD'
+export const PRIVATE_ADD_SUFFIX = '_PRIVATE_ADD'
 
-const ADD_SUFFIX = '_ADD';
-const DELETE_SUFFIX = '_DELETE';
-const EXTERNAL_ACCESS_SUFFIX = '_EXTERNAL';
-const APP_AUTH_PREFIX = 'M_';
+const ADD_SUFFIX = '_ADD'
+const DELETE_SUFFIX = '_DELETE'
+const EXTERNAL_ACCESS_SUFFIX = '_EXTERNAL'
+const APP_AUTH_PREFIX = 'M_'
 
 // Suffix groups for lookups and group construction
 const ALL_METADATA_SUFFIXES = [
@@ -56,16 +58,16 @@ const ALL_METADATA_SUFFIXES = [
     ADD_SUFFIX,
     DELETE_SUFFIX,
     EXTERNAL_ACCESS_SUFFIX,
-];
+]
 
 // Blueprints for creating implicit options and empty cells
 const EMPTY_GROUP_ITEM = {
     id: null,
     empty: true,
-};
+}
 const IMPLICIT_GROUP_ITEM = {
     implicit: true,
-};
+}
 
 // Metadata with implicit add and delete
 const AUTHS_WITH_IMPLICIT_ADD_PRIVATE_AND_DELETE = new Set([
@@ -75,7 +77,7 @@ const AUTHS_WITH_IMPLICIT_ADD_PRIVATE_AND_DELETE = new Set([
     'F_EVENTREPORT_PUBLIC_ADD',
     'F_MAP_PUBLIC_ADD',
     'F_REPORTTABLE_PUBLIC_ADD',
-]);
+])
 
 const AUTHORITY_GROUPS = {
     tracker: new Set([
@@ -128,7 +130,7 @@ const AUTHORITY_GROUPS = {
         'F_MOBILE_SENDSMS',
         'F_OAUTH2_CLIENT_MANAGE',
     ]),
-};
+}
 
 /**
  * This function receives an array of authorities and reduces this into an object that is grouped into
@@ -142,54 +144,53 @@ const AUTHORITY_GROUPS = {
 const groupAuthorities = authorities => {
     // A lookup map that can be used to verify the existence of a particular authority ID in linear time
     const lookup = authorities.reduce((lookup, auth) => {
-        lookup.set(auth.id, auth);
-        return lookup;
-    }, new Map());
+        lookup.set(auth.id, auth)
+        return lookup
+    }, new Map())
 
     // The initial state of items in EMPTY_GROUPED_AUTHORITIES is null, which makes the authority sections render a loader
     // but the accumulator object passed into the reduce function below expects items to be empty arrays
-    const emptyGroupedAuthorities = Object.keys(EMPTY_GROUPED_AUTHORITIES).reduce(
-        (groupedBase, key) => {
-            groupedBase[key] = { ...EMPTY_GROUPED_AUTHORITIES[key], items: [] };
-            return groupedBase;
-        },
-        {}
-    );
+    const emptyGroupedAuthorities = Object.keys(
+        EMPTY_GROUPED_AUTHORITIES
+    ).reduce((groupedBase, key) => {
+        groupedBase[key] = { ...EMPTY_GROUPED_AUTHORITIES[key], items: [] }
+        return groupedBase
+    }, {})
 
     // Append items to the groupedAuthorities accumulator and return the accumulated object
     const groupedAuthories = authorities.reduce((groupedAuthorities, auth) => {
-        if (_.startsWith(auth.id, APP_AUTH_PREFIX)) {
+        if (startsWith(auth.id, APP_AUTH_PREFIX)) {
             // Group under apps
-            groupedAuthorities.apps.items.push(auth);
-            lookup.delete(auth.id);
+            groupedAuthorities.apps.items.push(auth)
+            lookup.delete(auth.id)
         } else if (hasNoGroupSuffix(auth)) {
             // Group under specified key-value section
-            addToAuthoritySection(auth, groupedAuthorities, lookup);
+            addToAuthoritySection(auth, groupedAuthorities, lookup)
         } else {
-            const metadataGroup = createMetadataGroup(auth, lookup);
+            const metadataGroup = createMetadataGroup(auth, lookup)
 
             if (metadataGroup) {
                 // If any type of metadata group was created add it to the metadata items list
-                groupedAuthorities.metadata.items.push(metadataGroup);
+                groupedAuthorities.metadata.items.push(metadataGroup)
             } else if (lookup.get(auth.id)) {
                 // If no metadata group was created, we are dealing with and authority which had a metadata suffix,
                 // but actually was not a metadata authority
-                addToAuthoritySection(auth, groupedAuthorities, lookup);
+                addToAuthoritySection(auth, groupedAuthorities, lookup)
             }
         }
-        return groupedAuthorities;
-    }, emptyGroupedAuthorities);
+        return groupedAuthorities
+    }, emptyGroupedAuthorities)
 
-    return sortGroupedAuthorities(groupedAuthories);
-};
+    return sortGroupedAuthorities(groupedAuthories)
+}
 
 const sortGroupedAuthorities = groupedAuthories => {
     Object.keys(groupedAuthories).forEach(key => {
-        const group = groupedAuthories[key];
-        group.items = _.sortBy(group.items, 'name');
-    });
-    return groupedAuthories;
-};
+        const group = groupedAuthories[key]
+        group.items = sortBy(group.items, 'name')
+    })
+    return groupedAuthories
+}
 
 /**
  * Checks if a given authority contains any group suffixes
@@ -197,8 +198,8 @@ const sortGroupedAuthorities = groupedAuthories => {
  * @return {Boolean} - True if no group suffix was found in the auth id
  */
 const hasNoGroupSuffix = auth => {
-    return !ALL_METADATA_SUFFIXES.some(suffix => _.endsWith(auth.id, suffix));
-};
+    return !ALL_METADATA_SUFFIXES.some(suffix => endsWith(auth.id, suffix))
+}
 
 /**
  * Receives an authority item and creates an authority metadata group based on suffixes
@@ -210,54 +211,56 @@ const hasNoGroupSuffix = auth => {
 const createMetadataGroup = (auth, lookup) => {
     // Exit if authority is no longer in the lookup
     if (!lookup.get(auth.id)) {
-        return null;
+        return null
     }
 
     // The suffix of the the incoming authority, i.e. "F_CATEGORY_COMBO_DELETE" => "_DELETE"
-    const authSuffix = ALL_METADATA_SUFFIXES.find(suffix => _.endsWith(auth.id, suffix));
+    const authSuffix = ALL_METADATA_SUFFIXES.find(suffix =>
+        endsWith(auth.id, suffix)
+    )
     // The authority baseName, i.e. "F_CATEGORY_COMBO_DELETE" => "F_CATEGORY_COMBO"
-    const baseName = auth.id.replace(authSuffix, '');
+    const baseName = auth.id.replace(authSuffix, '')
 
     // Some metadata authorities distinguish between PUBLIC_ADD and PRIVATE_ADD
     // Others only have a _ADD version which equates to PUBLIC_ADD and PRIVATE_ADD may be left empty
-    const genericAdd = lookup.get(baseName + ADD_SUFFIX);
+    const genericAdd = lookup.get(baseName + ADD_SUFFIX)
 
     // Some metadata authorities have an external access authority version. If not present this may be left empty
-    const externalAccess = lookup.get(baseName + EXTERNAL_ACCESS_SUFFIX);
+    const externalAccess = lookup.get(baseName + EXTERNAL_ACCESS_SUFFIX)
 
     // Some authorities do not have _ADD_PRIVATE and _DELETE siblings in the authority list
     // however, they do belong to the metadata section. If a role is granted ADD_PUBLIC rights it is also allowed
     // to ADD_PRIVATE and DELETE implicitly
     const hasImplicitAddPrivateAndDelete = AUTHS_WITH_IMPLICIT_ADD_PRIVATE_AND_DELETE.has(
         baseName + PUBLIC_ADD_SUFFIX
-    );
+    )
 
     // Set each authority item for the current authority group
-    const publicAddAuth = genericAdd || lookup.get(baseName + PUBLIC_ADD_SUFFIX);
+    const publicAddAuth = genericAdd || lookup.get(baseName + PUBLIC_ADD_SUFFIX)
     const privateAddAuth = genericAdd
         ? EMPTY_GROUP_ITEM
         : hasImplicitAddPrivateAndDelete
-            ? IMPLICIT_GROUP_ITEM
-            : lookup.get(baseName + PRIVATE_ADD_SUFFIX);
+        ? IMPLICIT_GROUP_ITEM
+        : lookup.get(baseName + PRIVATE_ADD_SUFFIX)
     const deleteAuth = hasImplicitAddPrivateAndDelete
         ? IMPLICIT_GROUP_ITEM
-        : lookup.get(baseName + DELETE_SUFFIX);
-    const externalAccessAuth = externalAccess || EMPTY_GROUP_ITEM;
+        : lookup.get(baseName + DELETE_SUFFIX)
+    const externalAccessAuth = externalAccess || EMPTY_GROUP_ITEM
 
     // If any of these variable are undefined, the authority in question has an ID with a metadata suffix,
     // but is not actually a metadata authority. I.e. "F_ENROLLMENT_CASCADE_DELETE"
     if (!publicAddAuth || !privateAddAuth || !deleteAuth) {
-        return null;
+        return null
     }
 
     // Delete from lookup to prevent double entries
-    ALL_METADATA_SUFFIXES.forEach(suffix => lookup.delete(baseName + suffix));
+    ALL_METADATA_SUFFIXES.forEach(suffix => lookup.delete(baseName + suffix))
 
     return {
         name: nameLookup.get(baseName) || baseName,
         items: [publicAddAuth, privateAddAuth, deleteAuth, externalAccessAuth],
-    };
-};
+    }
+}
 
 /**
  * Assigns non-app, non-metadata authorities to the correct section. If it cannot find a correct section it will be assigned to 'system'
@@ -269,14 +272,14 @@ const addToAuthoritySection = (auth, groupedAuthorities, lookup) => {
     const groupKey =
         Object.keys(AUTHORITY_GROUPS).find(groupKey =>
             AUTHORITY_GROUPS[groupKey].has(auth.id)
-        ) || 'system';
+        ) || 'system'
 
     if (auth.id === 'ALL') {
-        auth.name = nameLookup.get(auth.id);
+        auth.name = nameLookup.get(auth.id)
     }
 
-    groupedAuthorities[groupKey].items.push(auth);
-    lookup.delete(auth.id);
-};
+    groupedAuthorities[groupKey].items.push(auth)
+    lookup.delete(auth.id)
+}
 
-export default groupAuthorities;
+export default groupAuthorities

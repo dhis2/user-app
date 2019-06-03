@@ -1,5 +1,5 @@
-import { SHOW_DIALOG, HIDE_DIALOG } from '../../constants/actionTypes';
-import { INITIAL_DIALOG_STATE } from '../../constants/defaults';
+import { SHOW_DIALOG, HIDE_DIALOG } from '../../constants/actionTypes'
+import { INITIAL_DIALOG_STATE } from '../../constants/defaults'
 
 /**
  * Reducer to show / hide the DialogContainer
@@ -20,12 +20,12 @@ const dialogReducer = (state = INITIAL_DIALOG_STATE, { type, payload }) => {
             return {
                 show: true,
                 ...payload,
-            };
+            }
         case HIDE_DIALOG:
-            return { ...INITIAL_DIALOG_STATE };
+            return { ...INITIAL_DIALOG_STATE }
         default:
-            return state;
+            return state
     }
-};
+}
 
-export default dialogReducer;
+export default dialogReducer

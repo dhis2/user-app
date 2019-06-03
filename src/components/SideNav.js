@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { withRouter } from 'react-router';
-import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { withRouter } from 'react-router'
+import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component'
 
 const style = {
     display: 'flex',
     flex: '0 0 320px',
-};
+}
 
 /**
  * Renders the sidebar containing the available sections.
@@ -15,23 +15,25 @@ const style = {
  */
 class SideNav extends Component {
     changeSectionHandler = key => {
-        const { sections, history } = this.props;
-        const section = sections.find(section => section.key === key);
+        const { sections, history } = this.props
+        const section = sections.find(section => section.key === key)
 
-        history.push(section.path);
-    };
+        history.push(section.path)
+    }
 
     render() {
         const {
             sections,
             location: { pathname },
-        } = this.props;
-        const sectionForPath = sections.find(section => section.path === pathname);
-        const onLandingPage = pathname === '/';
-        const sectionKey = sectionForPath ? sectionForPath.key : null;
+        } = this.props
+        const sectionForPath = sections.find(
+            section => section.path === pathname
+        )
+        const onLandingPage = pathname === '/'
+        const sectionKey = sectionForPath ? sectionForPath.key : null
 
         if (!sectionForPath && !onLandingPage) {
-            return null;
+            return null
         }
 
         return (
@@ -42,7 +44,7 @@ class SideNav extends Component {
                     currentSection={sectionKey}
                 />
             </div>
-        );
+        )
     }
 }
 
@@ -52,6 +54,6 @@ SideNav.propTypes = {
     location: PropTypes.shape({
         pathname: PropTypes.string.isRequired,
     }),
-};
+}
 
-export default withRouter(SideNav);
+export default withRouter(SideNav)

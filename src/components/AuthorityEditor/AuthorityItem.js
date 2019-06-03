@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Checkbox } from 'material-ui';
-import HighlightableText from './HighlightableText';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { Checkbox } from 'material-ui'
+import HighlightableText from './HighlightableText'
 
 /**
  * Renders a single authority cell. This can be an empty cell, or a checkbox with or without a label.
@@ -10,36 +10,38 @@ import HighlightableText from './HighlightableText';
  */
 class AuthorityItem extends Component {
     constructor(props) {
-        super(props);
-        this.state = { selected: props.selected };
+        super(props)
+        this.state = { selected: props.selected }
     }
 
     onChecked = (_, value) => {
         const {
             authSubject: { id },
             onCheckedCallBack,
-        } = this.props;
-        this.setState({ selected: value });
-        onCheckedCallBack(id, value);
-    };
+        } = this.props
+        this.setState({ selected: value })
+        onCheckedCallBack(id, value)
+    }
 
     componentWillReceiveProps(newProps) {
         if (newProps.selected !== this.state.selected) {
-            this.setState({ selected: newProps.selected });
+            this.setState({ selected: newProps.selected })
         }
     }
 
     render() {
-        const { authSubject, withLabel, disabled } = this.props;
-        const { searchChunks } = this.context;
-        const { name, empty, implicit } = authSubject;
-        const baseClassName = 'authority-editor__auth-checkbox';
-        const className = withLabel ? baseClassName : `${baseClassName}--without-label`;
+        const { authSubject, withLabel, disabled } = this.props
+        const { searchChunks } = this.context
+        const { name, empty, implicit } = authSubject
+        const baseClassName = 'authority-editor__auth-checkbox'
+        const className = withLabel
+            ? baseClassName
+            : `${baseClassName}--without-label`
         const label = withLabel ? (
             <HighlightableText text={name} searchChunks={searchChunks} />
         ) : (
             ''
-        );
+        )
 
         return (
             <td>
@@ -55,7 +57,7 @@ class AuthorityItem extends Component {
                     <div className="authority-editor__empty-cell" />
                 )}
             </td>
-        );
+        )
     }
 }
 
@@ -70,10 +72,10 @@ AuthorityItem.propTypes = {
     onCheckedCallBack: PropTypes.func.isRequired,
     selected: PropTypes.bool.isRequired,
     disabled: PropTypes.bool,
-};
+}
 
 AuthorityItem.contextTypes = {
     searchChunks: PropTypes.array,
-};
+}
 
-export default AuthorityItem;
+export default AuthorityItem

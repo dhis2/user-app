@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import TextField from 'material-ui/TextField';
-import ActionOpenInNew from 'material-ui/svg-icons/action/open-in-new';
-import PropTypes from 'prop-types';
-import i18n from '@dhis2/d2-i18n';
-import { showDialog, hideDialog } from '../actions';
-import OrganisationUnitFilter from './OrganisationUnitFilter';
-import { orgUnitsAsStringSelector } from '../selectors';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import TextField from 'material-ui/TextField'
+import ActionOpenInNew from 'material-ui/svg-icons/action/open-in-new'
+import PropTypes from 'prop-types'
+import i18n from '@dhis2/d2-i18n'
+import { showDialog, hideDialog } from '../actions'
+import OrganisationUnitFilter from './OrganisationUnitFilter'
+import { orgUnitsAsStringSelector } from '../selectors'
 
 const styles = {
     wrap: {
@@ -39,7 +39,7 @@ const styles = {
         overflow: 'hidden',
         textOverflow: 'ellipsis',
     },
-};
+}
 
 /**
  * Part of the UserFilter. This component renders the displayNames of the organisation units that have been set in the filter state.
@@ -47,12 +47,12 @@ const styles = {
  */
 class OrganisationUnitInput extends Component {
     focusOrgUnitInput = () => {
-        this.refs.orgUnitInput.focus();
-    };
+        this.refs.orgUnitInput.focus()
+    }
 
     showOrgTreeInDialog = () => {
-        const { showDialog, hideDialog } = this.props;
-        const content = <OrganisationUnitFilter />;
+        const { showDialog, hideDialog } = this.props
+        const content = <OrganisationUnitFilter />
         const props = {
             onRequestClose: hideDialog,
             title: i18n.t('Select an organisation unit'),
@@ -62,12 +62,12 @@ class OrganisationUnitInput extends Component {
                 // The actual height is determined by a scrollbox inside the filter component
                 minHeight: '100vh',
             },
-        };
-        showDialog(content, props);
-    };
+        }
+        showDialog(content, props)
+    }
 
     render() {
-        const { organisationUnits } = this.props;
+        const { organisationUnits } = this.props
         return (
             <div style={styles.wrap} onClick={this.focusOrgUnitInput}>
                 <ActionOpenInNew style={styles.icon} />
@@ -80,7 +80,7 @@ class OrganisationUnitInput extends Component {
                     inputStyle={styles.input}
                 />
             </div>
-        );
+        )
     }
 }
 
@@ -88,13 +88,16 @@ OrganisationUnitInput.propTypes = {
     organisationUnits: PropTypes.string.isRequired,
     showDialog: PropTypes.func.isRequired,
     hideDialog: PropTypes.func.isRequired,
-};
+}
 
 const mapStateToProps = state => ({
     organisationUnits: orgUnitsAsStringSelector(state.filter.organisationUnits),
-});
+})
 
-export default connect(mapStateToProps, {
-    showDialog,
-    hideDialog,
-})(OrganisationUnitInput);
+export default connect(
+    mapStateToProps,
+    {
+        showDialog,
+        hideDialog,
+    }
+)(OrganisationUnitInput)

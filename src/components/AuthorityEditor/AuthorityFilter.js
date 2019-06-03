@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import i18n from '@dhis2/d2-i18n';
-import { TextField, Checkbox } from 'material-ui';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import i18n from '@dhis2/d2-i18n'
+import { TextField, Checkbox } from 'material-ui'
 
 /**
  * Renders a TextField and Checkbox above the AuthoritySections.
@@ -10,23 +10,23 @@ import { TextField, Checkbox } from 'material-ui';
  */
 class AuthorityFilter extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             searchStr: '',
             selectedOnly: false,
-        };
+        }
     }
 
     onSelectedOnlyChange = (_, value) => {
-        this.setState({ selectedOnly: value });
-        this.props.onFilterChange(this.state.searchStr, value);
-    };
+        this.setState({ selectedOnly: value })
+        this.props.onFilterChange(this.state.searchStr, value)
+    }
 
     onSearchStrChange = event => {
-        const value = event.target.value;
-        this.setState({ searchStr: value });
-        this.props.onFilterChange(value, this.state.selectedOnly);
-    };
+        const value = event.target.value
+        this.setState({ searchStr: value })
+        this.props.onFilterChange(value, this.state.selectedOnly)
+    }
 
     render() {
         return (
@@ -45,12 +45,12 @@ class AuthorityFilter extends Component {
                     style={{ width: '300px' }}
                 />
             </div>
-        );
+        )
     }
 }
 
 AuthorityFilter.propTypes = {
     onFilterChange: PropTypes.func.isRequired,
-};
+}
 
-export default AuthorityFilter;
+export default AuthorityFilter

@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import i18n from '@dhis2/d2-i18n';
-import TextField from 'material-ui/TextField/TextField';
-import Checkbox from 'material-ui/Checkbox/Checkbox';
-import SelectField from 'material-ui/SelectField/SelectField';
-import MenuItem from 'material-ui/MenuItem';
-import SearchableGroupEditor from '../components/SearchableGroupEditor';
-import SearchableOrgUnitTree from '../components/SearchableOrgUnitTree';
-import { orange500 } from 'material-ui/styles/colors';
-import AuthorityEditor from '../components/AuthorityEditor';
+import React from 'react'
+import PropTypes from 'prop-types'
+import i18n from '@dhis2/d2-i18n'
+import TextField from 'material-ui/TextField/TextField'
+import Checkbox from 'material-ui/Checkbox/Checkbox'
+import SelectField from 'material-ui/SelectField/SelectField'
+import MenuItem from 'material-ui/MenuItem'
+import SearchableGroupEditor from '../components/SearchableGroupEditor'
+import SearchableOrgUnitTree from '../components/SearchableOrgUnitTree'
+import { orange500 } from 'material-ui/styles/colors'
+import AuthorityEditor from '../components/AuthorityEditor'
 
 const styles = {
     checkbox: {
@@ -18,7 +18,7 @@ const styles = {
     warning: {
         color: orange500,
     },
-};
+}
 
 /**
  * Helper functions used as "component" props for redux-form Field components.
@@ -31,10 +31,12 @@ export const renderTextField = ({
     meta: { touched, error, asyncValidating },
     ...other
 }) => {
-    const errorText = asyncValidating ? i18n.t('Validating...') : touched && error;
+    const errorText = asyncValidating
+        ? i18n.t('Validating...')
+        : touched && error
 
     if (asyncValidating) {
-        other.errorStyle = styles.warning;
+        other.errorStyle = styles.warning
     }
 
     return (
@@ -46,19 +48,19 @@ export const renderTextField = ({
             {...other}
             {...input}
         />
-    );
-};
+    )
+}
 
 export const renderAuthorityEditor = ({ input }) => {
-    const initiallySelected = input.value === '' ? [] : input.value;
+    const initiallySelected = input.value === '' ? [] : input.value
     return (
         <AuthorityEditor
             initiallySelected={initiallySelected}
             reduxFormOnChange={input.onChange}
             reduxFormOnBlur={input.onBlur}
         />
-    );
-};
+    )
+}
 
 export const renderCheckbox = ({ input, label }) => {
     return (
@@ -69,8 +71,8 @@ export const renderCheckbox = ({ input, label }) => {
             {...input}
             style={styles.checkbox}
         />
-    );
-};
+    )
+}
 
 export const renderSelectField = ({
     input,
@@ -79,8 +81,10 @@ export const renderSelectField = ({
     options,
     style,
 }) => {
-    const errorText = asyncValidating ? i18n.t('Validating...') : touched && error;
-    const errorStyle = asyncValidating ? styles.warning : undefined;
+    const errorText = asyncValidating
+        ? i18n.t('Validating...')
+        : touched && error
+    const errorStyle = asyncValidating ? styles.warning : undefined
 
     return (
         <SelectField
@@ -88,10 +92,10 @@ export const renderSelectField = ({
             fullWidth={true}
             {...input}
             onChange={(event, index, value) => {
-                input.onChange(value);
+                input.onChange(value)
                 // Trigger onBlur after a value is selected, in order to trigger
                 // a validator to run if the SelectField is in the asyncBlurFields list
-                setTimeout(() => input.onBlur(value), 1);
+                setTimeout(() => input.onBlur(value), 1)
             }}
             style={style}
             errorText={errorText}
@@ -101,8 +105,8 @@ export const renderSelectField = ({
                 <MenuItem key={`option_${i}`} value={id} primaryText={label} />
             ))}
         </SelectField>
-    );
-};
+    )
+}
 
 export const renderSearchableGroupEditor = ({
     input,
@@ -124,8 +128,8 @@ export const renderSearchableGroupEditor = ({
             errorText={touched && error}
             {...other}
         />
-    );
-};
+    )
+}
 
 export const renderSearchableOrgUnitTree = ({
     input,
@@ -142,16 +146,16 @@ export const renderSearchableOrgUnitTree = ({
             headerText={label}
             orgUnitType={orgUnitType}
         />
-    );
-};
+    )
+}
 
 export const renderText = ({ name, label, style }) => {
     return (
         <p key={name} style={style}>
             {label}
         </p>
-    );
-};
+    )
+}
 
 const sharedPropTypes = {
     input: PropTypes.object.isRequired,
@@ -160,16 +164,16 @@ const sharedPropTypes = {
         touched: PropTypes.bool.isRequired,
         error: PropTypes.string,
     }),
-};
+}
 
-renderTextField.propTypes = sharedPropTypes;
+renderTextField.propTypes = sharedPropTypes
 
-renderCheckbox.propTypes = sharedPropTypes;
+renderCheckbox.propTypes = sharedPropTypes
 
 renderSelectField.propTypes = {
     ...sharedPropTypes,
     options: PropTypes.array.isRequired,
-};
+}
 
 renderSearchableGroupEditor.propTypes = {
     ...sharedPropTypes,
@@ -177,21 +181,21 @@ renderSearchableGroupEditor.propTypes = {
     availableItemsLabel: PropTypes.string,
     assignedItemsLabel: PropTypes.string,
     initialValues: PropTypes.array.isRequired,
-};
+}
 
 renderSearchableOrgUnitTree.propTypes = {
     ...sharedPropTypes,
     wrapperStyle: PropTypes.object,
     initialValues: PropTypes.array.isRequired,
-};
+}
 
 renderAuthorityEditor.propTypes = {
     ...sharedPropTypes,
     initialValues: PropTypes.array,
-};
+}
 
 renderText.propTypes = {
     label: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     style: PropTypes.object.isRequired,
-};
+}

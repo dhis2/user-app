@@ -1,2 +1,2 @@
-import RoleForm from './RoleForm';
-export default RoleForm;
+import RoleForm from './RoleForm'
+export default RoleForm

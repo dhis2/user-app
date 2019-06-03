@@ -1,2 +1,2 @@
-import GroupList from './GroupList';
-export default GroupList;
+import GroupList from './GroupList'
+export default GroupList

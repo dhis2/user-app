@@ -1,7 +1,7 @@
-import store from '../store';
-import api from '../api';
-import { refreshCurrentUser as refresh } from '../actions';
-import { USER, USER_ROLE, USER_GROUP } from '../constants/entityTypes';
+import store from '../store'
+import api from '../api'
+import { refreshCurrentUser as refresh } from '../actions'
+import { USER, USER_ROLE, USER_GROUP } from '../constants/entityTypes'
 
 /**
  * This function can be called after users/ userRoles/ urserGroups have been updated or deleted.
@@ -22,31 +22,31 @@ import { USER, USER_ROLE, USER_GROUP } from '../constants/entityTypes';
  * @function
  */
 const detectCurrentUserChanges = (model, disable) => {
-    const { currentUser } = store.getState();
-    const entityType = model.modelDefinition.name;
+    const { currentUser } = store.getState()
+    const entityType = model.modelDefinition.name
 
     if (entityType === USER && model.id === currentUser.id) {
-        disable ? logout() : refreshCurrentUser();
+        disable ? logout() : refreshCurrentUser()
     }
 
     if (entityType === USER_ROLE && currentUser.userRoles.get(model.id)) {
-        refreshCurrentUser();
+        refreshCurrentUser()
     }
 
     if (entityType === USER_GROUP && currentUser.userGroups.get(model.id)) {
-        refreshCurrentUser();
+        refreshCurrentUser()
     }
-};
+}
 
 const refreshCurrentUser = () => {
-    store.dispatch(refresh());
-};
+    store.dispatch(refresh())
+}
 
 const logout = () => {
-    const contextPath = api.getContextPath();
-    const logoutSuffix = '/dhis-web-commons-security/logout.action';
-    const logoutUrl = contextPath + logoutSuffix;
-    window.location.assign(logoutUrl);
-};
+    const contextPath = api.getContextPath()
+    const logoutSuffix = '/dhis-web-commons-security/logout.action'
+    const logoutUrl = contextPath + logoutSuffix
+    window.location.assign(logoutUrl)
+}
 
-export default detectCurrentUserChanges;
+export default detectCurrentUserChanges

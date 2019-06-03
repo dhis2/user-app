@@ -1,4 +1,4 @@
-import i18n from '@dhis2/d2-i18n';
+import i18n from '@dhis2/d2-i18n'
 /**
  * It is preffered to show the error message from the server it is a 401-499 code
  * @param {Object} error - The error object
@@ -9,7 +9,9 @@ import i18n from '@dhis2/d2-i18n';
  * @memberof module:utils
  * @function
  */
-const fallBackDefault = i18n.t('Something went wrong when processing your request.');
+const fallBackDefault = i18n.t(
+    'Something went wrong when processing your request.'
+)
 
 const createHumanErrorMessage = (
     { message, messages, httpStatusCode },
@@ -17,13 +19,13 @@ const createHumanErrorMessage = (
 ) => {
     const useMessage =
         (httpStatusCode && httpStatusCode >= 400 && httpStatusCode < 500) ||
-        (!httpStatusCode && messages && messages.length > 0);
+        (!httpStatusCode && messages && messages.length > 0)
 
     if (!message && messages && messages.length > 0) {
-        message = messages.map(({ message }) => message).join(', ');
+        message = messages.map(({ message }) => message).join(', ')
     }
 
-    return useMessage ? message : fallbackMsg;
-};
+    return useMessage ? message : fallbackMsg
+}
 
-export default createHumanErrorMessage;
+export default createHumanErrorMessage

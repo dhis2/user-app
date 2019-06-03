@@ -1,4 +1,4 @@
-import i18n from '@dhis2/d2-i18n';
+import i18n from '@dhis2/d2-i18n'
 
 export default new Map([
     ['ALL', i18n.t('All (Full authority)')],
@@ -63,4 +63,4 @@ export default new Map([
     ['F_VALIDATIONRULE', i18n.t('Validation Rule')],
     ['F_PREDICTORGROUP', i18n.t('Data predictor group')],
     ['F_SKIP_DATA_IMPORT_AUDIT', i18n.t('Skip data import audit')],
-]);
+])

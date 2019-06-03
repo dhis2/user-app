@@ -1,11 +1,14 @@
-import { renderTextField, renderAuthorityEditor } from '../../utils/fieldRenderers';
-import i18n from '@dhis2/d2-i18n';
+import {
+    renderTextField,
+    renderAuthorityEditor,
+} from '../../utils/fieldRenderers'
+import i18n from '@dhis2/d2-i18n'
 
-export const NAME = 'name';
-export const DESCRIPTION = 'description';
-export const AUTHORITIES = 'authorities';
+export const NAME = 'name'
+export const DESCRIPTION = 'description'
+export const AUTHORITIES = 'authorities'
 
-export const ROLE_PROPS = [NAME, DESCRIPTION, AUTHORITIES];
+export const ROLE_PROPS = [NAME, DESCRIPTION, AUTHORITIES]
 
 export const FIELDS = [
     {
@@ -24,4 +27,4 @@ export const FIELDS = [
         label: i18n.t('Authorities'),
         fieldRenderer: renderAuthorityEditor,
     },
-];
+]

@@ -1,14 +1,14 @@
-import React from 'react';
-import UserList from '../containers/UserList';
-import FormLoader from '../components/FormLoader';
-import UserProfile from '../containers/UserProfile';
-import PageNotFound from '../components/PageNotFound';
-import CardLinks from '../components/CardLinks';
-import RoleList from '../containers/RoleList';
-import RoleDetails from '../containers/RoleDetails';
-import GroupList from '../containers/GroupList';
-import GroupDetails from '../containers/GroupDetails';
-import { USER, USER_ROLE, USER_GROUP } from './entityTypes';
+import React from 'react'
+import UserList from '../containers/UserList'
+import FormLoader from '../components/FormLoader'
+import UserProfile from '../containers/UserProfile'
+import PageNotFound from '../components/PageNotFound'
+import CardLinks from '../components/CardLinks'
+import RoleList from '../containers/RoleList'
+import RoleDetails from '../containers/RoleDetails'
+import GroupList from '../containers/GroupList'
+import GroupDetails from '../containers/GroupDetails'
+import { USER, USER_ROLE, USER_GROUP } from './entityTypes'
 
 const USER_SECTION = {
     key: 'user_section',
@@ -18,7 +18,7 @@ const USER_SECTION = {
     description: 'Create, modify, view and delete Users',
     component: UserList,
     entityType: USER,
-};
+}
 const USER_ROLE_SECTION = {
     key: 'user_role_section',
     label: 'User role',
@@ -27,7 +27,7 @@ const USER_ROLE_SECTION = {
     description: 'Create, modify, view and delete User Roles',
     component: RoleList,
     entityType: USER_ROLE,
-};
+}
 const USER_GROUP_SECTION = {
     key: 'user_group_section',
     label: 'User group',
@@ -36,9 +36,9 @@ const USER_GROUP_SECTION = {
     description: 'Create, modify, view and delete User Groups',
     component: GroupList,
     entityType: USER_GROUP,
-};
+}
 
-export const SECTIONS = [USER_SECTION, USER_ROLE_SECTION, USER_GROUP_SECTION];
+export const SECTIONS = [USER_SECTION, USER_ROLE_SECTION, USER_GROUP_SECTION]
 
 // Label property is used in sidebar, so routes without a label will be omitted
 const ROUTE_CONFIG = [
@@ -112,5 +112,5 @@ const ROUTE_CONFIG = [
         key: 'not_found',
         component: PageNotFound,
     },
-];
-export default ROUTE_CONFIG;
+]
+export default ROUTE_CONFIG

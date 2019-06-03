@@ -1,4 +1,4 @@
-import history from './history';
+import history from './history'
 /**
  * Pushed new routes to the hashHistory object.
  * Can be used to imperatively trigger route changes in the Router.
@@ -7,7 +7,7 @@ import history from './history';
  * @function
  */
 const navigateTo = path => {
-    history.push(path);
-};
+    history.push(path)
+}
 
-export default navigateTo;
+export default navigateTo

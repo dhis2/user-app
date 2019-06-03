@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const style = {
     clear: 'both',
@@ -8,7 +8,7 @@ const style = {
     padding: '1.5rem 1.5rem 1rem',
     fontSize: '1rem',
     width: '100%',
-};
+}
 
 /**
  * A simple component that can display an error message
@@ -19,11 +19,11 @@ const ErrorMessage = ({ introText, errorMessage }) => (
         {introText}
         <pre>{errorMessage}</pre>
     </div>
-);
+)
 
 ErrorMessage.propTypes = {
     introText: PropTypes.string.isRequired,
     errorMessage: PropTypes.string.isRequired,
-};
+}
 
-export default ErrorMessage;
+export default ErrorMessage
