@@ -70,8 +70,10 @@
   "greenkeeper": {
     "ignore": [
       "@dhis2/d2-ui-sharing-dialog",
-      "d2",
       "d2-ui",
+      "d2",
+      "react-redux",
+      "redux-form",
       "rxjs"
     ]
   }
