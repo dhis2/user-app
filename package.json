@@ -36,7 +36,7 @@
     "lodash.snakecase": "^4.1.1",
     "lodash.sortby": "^4.7.0",
     "lodash.startswith": "^4.2.1",
-    "material-design-icons-iconfont": "^4.0.5",
+    "material-design-icons-iconfont": "^5.0.1",
     "material-ui": "^0.20.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -66,5 +66,13 @@
       "commit-msg": "d2-style commit check",
       "pre-commit": "d2-style js apply"
     }
+  },
+  "greenkeeper": {
+    "ignore": [
+      "@dhis2/d2-ui-sharing-dialog",
+      "d2",
+      "d2-ui",
+      "rxjs"
+    ]
   }
 }
