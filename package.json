@@ -36,16 +36,16 @@
     "lodash.snakecase": "^4.1.1",
     "lodash.sortby": "^4.7.0",
     "lodash.startswith": "^4.2.1",
-    "material-design-icons-iconfont": "^4.0.5",
+    "material-design-icons-iconfont": "^5.0.1",
     "material-ui": "^0.20.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-highlight-words": "^0.11.0",
+    "react-highlight-words": "^0.16.0",
     "react-redux": "^5.0.6",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
-    "redux": "^3.7.2",
+    "redux": "^4.0.1",
     "redux-form": "^7.4.2",
     "redux-thunk": "^2.2.0",
     "rxjs": "^5.5.6",
@@ -66,5 +66,15 @@
       "commit-msg": "d2-style commit check",
       "pre-commit": "d2-style js apply"
     }
+  },
+  "greenkeeper": {
+    "ignore": [
+      "@dhis2/d2-ui-sharing-dialog",
+      "d2-ui",
+      "d2",
+      "react-redux",
+      "redux-form",
+      "rxjs"
+    ]
   }
 }
