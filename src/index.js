@@ -16,7 +16,7 @@ const { REACT_APP_DHIS2_BASE_URL } = process.env
  * @function
  */
 
-const setupD2 = () => {
+const setupD2 = async () => {
     const initConfig = {
         baseUrl: `${REACT_APP_DHIS2_BASE_URL}/api/`,
         schemas: [
@@ -28,9 +28,12 @@ const setupD2 = () => {
         ],
     }
 
-    return getUserSettings()
-        .then(configI18n)
-        .then(({ i18n }) => init({ ...initConfig, i18n }))
+    const d2 = await init(initConfig)
+    const userSettings = await getUserSettings()
+
+    configI18n(userSettings)
+    
+    return d2
 }
 
 /**
@@ -49,7 +52,6 @@ const configI18n = userSettings => {
     }
     sources.add('i18n/i18n_module_en.properties')
     i18n.changeLanguage(uiLocale)
-    return config
 }
 
 /**
