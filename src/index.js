@@ -32,7 +32,7 @@ const setupD2 = async () => {
     const userSettings = await getUserSettings()
 
     configI18n(userSettings)
-    
+
     return d2
 }
 
