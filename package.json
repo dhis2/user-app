@@ -53,7 +53,7 @@
     "typeface-roboto": "^0.0.54"
   },
   "devDependencies": {
-    "@dhis2/cli-style": "^3.2.2",
+    "@dhis2/cli-style": "^3.3.4",
     "@dhis2/d2-i18n-extract": "^1.0.6",
     "@dhis2/d2-i18n-generate": "^1.0.18",
     "husky": "^2.3.0",
