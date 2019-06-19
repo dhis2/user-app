@@ -18,7 +18,7 @@
     "documentation": "rimraf build && jsdoc -c jsdoc.json"
   },
   "dependencies": {
-    "@dhis2/d2-i18n": "^1.0.3",
+    "@dhis2/d2-i18n": "^1.0.5",
     "@dhis2/d2-ui-sharing-dialog": "^5.3.0",
     "@dhis2/ui": "^1.0.0-beta.14",
     "d2": "31.0.1",
