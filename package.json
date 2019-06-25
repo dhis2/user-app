@@ -3,7 +3,6 @@
   "version": "31.0.0",
   "description": "DHIS2 User app",
   "private": true,
-  "license": "BSD-3-Clause",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
