@@ -1,0 +1,1737 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-11T14:22:05.956Z\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 2.0.0b3\n"
+
+msgid "User management"
+msgstr "Управление пользователем"
+
+msgid "Use database locale / no translation"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Enter search term"
+msgstr ""
+
+msgid "Please enter at least {{ minCharCount }} characters"
+msgstr ""
+
+msgid "No matches found"
+msgstr ""
+
+msgid "There was a problem retreiving your search results"
+msgstr ""
+
+msgid "There was a problem retreiving the available authorities."
+msgstr ""
+
+msgid "Authorities"
+msgstr "Полномочия"
+
+#, fuzzy
+msgid "Selected authorities only"
+msgstr "Выбранные роли"
+
+msgid "All (Full authority)"
+msgstr ""
+
+msgid "Analytics Table Hook"
+msgstr ""
+
+#, fuzzy
+msgid "Attribute"
+msgstr "Удалить атрибут"
+
+msgid "Category Combo"
+msgstr ""
+
+msgid "Category"
+msgstr ""
+
+#, fuzzy
+msgid "Category Option"
+msgstr "Удалить группу опций категории"
+
+#, fuzzy
+msgid "Category Option Group"
+msgstr "Удалить группу опций категории"
+
+#, fuzzy
+msgid "Category Option Group Set"
+msgstr "Удалить набор групп опций категории"
+
+msgid "Chart"
+msgstr ""
+
+msgid "Color Set"
+msgstr ""
+
+#, fuzzy
+msgid "Constant"
+msgstr "Добавить постоянную"
+
+#, fuzzy
+msgid "Dashboard"
+msgstr "Смотреть модуль информационной панели"
+
+#, fuzzy
+msgid "Data Element Group Sets"
+msgstr "Удалить наборы групп элементов данных"
+
+#, fuzzy
+msgid "Data Element Groups"
+msgstr "Удалить группы элементов данных"
+
+#, fuzzy
+msgid "Data Element"
+msgstr "Удалить элемент данных"
+
+#, fuzzy
+msgid "Min/max rule"
+msgstr "Удалить правило Мин/макс"
+
+#, fuzzy
+msgid "Data Set"
+msgstr "Наборы данных"
+
+#, fuzzy
+msgid "Data Value"
+msgstr "Удалить значение данных"
+
+#, fuzzy
+msgid "Document"
+msgstr "Удалить документ"
+
+#, fuzzy
+msgid "Event Chart"
+msgstr "Удалить диаграмму"
+
+#, fuzzy
+msgid "Event Report"
+msgstr "Удалить отчет"
+
+#, fuzzy
+msgid "External Map Layer"
+msgstr "Удалить слой внешний карты"
+
+#, fuzzy
+msgid "Indicator Group Sets"
+msgstr "Удалить наборы групп индикаторов"
+
+#, fuzzy
+msgid "Indicator Group"
+msgstr "Удалить группу индикаторов"
+
+#, fuzzy
+msgid "Indicator Type"
+msgstr "Удалить тип индикатора"
+
+#, fuzzy
+msgid "Indicator"
+msgstr "Удалить индикатор"
+
+#, fuzzy
+msgid "Legend Set"
+msgstr "Удалить набор легенд"
+
+msgid "Map"
+msgstr ""
+
+#, fuzzy
+msgid "Min-Max Data Element"
+msgstr "Удалить элемент данных"
+
+#, fuzzy
+msgid "Option Group Set"
+msgstr "Удалить набор групп опций"
+
+#, fuzzy
+msgid "Option Group"
+msgstr "Удалить группу опций"
+
+#, fuzzy
+msgid "Option Set"
+msgstr "Добавить набор опций"
+
+#, fuzzy
+msgid "Organisation Unit"
+msgstr "Организация"
+
+#, fuzzy
+msgid "Organisation Unit Group Set"
+msgstr "Добавить набор групп организационных единиц"
+
+#, fuzzy
+msgid "Organisation Unit Group"
+msgstr "Удалить группу организаций"
+
+#, fuzzy
+msgid "Predictor"
+msgstr "Запустить блок прогноза"
+
+#, fuzzy
+msgid "Program Stage"
+msgstr "Удалить стадию программы"
+
+#, fuzzy
+msgid "Program"
+msgstr "Программы"
+
+#, fuzzy
+msgid "Program Indicator"
+msgstr "Удалить индикатор программы"
+
+#, fuzzy
+msgid "Program Indicator Group"
+msgstr "Удалить группу индикаторов программ"
+
+#, fuzzy
+msgid "Program Rule"
+msgstr "Добавить правило программы"
+
+#, fuzzy
+msgid "Program Tracked Entity Attribute Group"
+msgstr "Удалить группу атрибутов программ отслеживаемого объекта"
+
+#, fuzzy
+msgid "Push Analysis"
+msgstr "Удалить push-анализ"
+
+#, fuzzy
+msgid "Relationship Type"
+msgstr "Добавить тип связи"
+
+#, fuzzy
+msgid "Report Table"
+msgstr "Удалить отчетную таблицу"
+
+#, fuzzy
+msgid "Report"
+msgstr "Просмотреть отчет"
+
+#, fuzzy
+msgid "Section"
+msgstr "Действие"
+
+#, fuzzy
+msgid "SQL View"
+msgstr "Добавить SQL представление"
+
+#, fuzzy
+msgid "Tracked Entity"
+msgstr "Удалить отслеживаемый объект"
+
+#, fuzzy
+msgid "Tracked Entity Attribute"
+msgstr "Просмотр атрибута отслеживаемого объекта"
+
+#, fuzzy
+msgid "Tracked Entity Data Value"
+msgstr "Удалить значение данных отслеживаемого объекта"
+
+#, fuzzy
+msgid "Tracked Entity Instance"
+msgstr "Сформировать список экземпляров отслеживаемого объекта"
+
+msgid "User Group"
+msgstr "Группа пользователей"
+
+msgid "User Role"
+msgstr "Уровень доступа"
+
+msgid "User"
+msgstr "Пользователь"
+
+#, fuzzy
+msgid "Validation Rule Group"
+msgstr "Добавить группы правил проверки"
+
+#, fuzzy
+msgid "Validation Rule"
+msgstr "Удалить правило проверки"
+
+#, fuzzy
+msgid "Data predictor group"
+msgstr "Добавить блок прогнозирования данных"
+
+msgid "Skip data import audit"
+msgstr ""
+
+msgid "Apps"
+msgstr ""
+
+msgid "Tracker"
+msgstr ""
+
+#, fuzzy
+msgid "Import-Export"
+msgstr "Смотреть модуль Импорта-экспорта"
+
+msgid "System"
+msgstr ""
+
+msgid "Add"
+msgstr ""
+
+msgid "list"
+msgstr ""
+
+msgid "You do not have access to any section of the DHIS 2 User Management App"
+msgstr ""
+
+msgid "Send message"
+msgstr "Отправить сообщение"
+
+#, fuzzy
+msgid "Update"
+msgstr "Обновить пользователя"
+
+#, fuzzy
+msgid "Create new"
+msgstr "Создать нового пользователя"
+
+msgid "Back to"
+msgstr ""
+
+msgid "You are not allowed to edit"
+msgstr ""
+
+msgid "Confirm"
+msgstr ""
+
+msgid "There was an error fetching the list"
+msgstr ""
+
+#, fuzzy
+msgid "Select an organisation unit"
+msgstr "Поиск организационных единиц"
+
+msgid "Organisation unit"
+msgstr "Организация"
+
+msgid "Page not found."
+msgstr ""
+
+msgid "No match for"
+msgstr ""
+
+msgid "Go back home"
+msgstr ""
+
+msgid "User \"{{displayName}}\" replicated successfuly"
+msgstr ""
+
+msgid "There was a problem replicating the user"
+msgstr ""
+
+msgid "Username"
+msgstr "Имя пользователя"
+
+#, fuzzy
+msgid "Username for new user"
+msgstr "Создать нового пользователя"
+
+msgid "Password"
+msgstr "Пароль"
+
+#, fuzzy
+msgid "Password for new user"
+msgstr "Изменить пароль для пользователей."
+
+msgid "Replicate"
+msgstr "Дублировать"
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Search by name"
+msgstr ""
+
+msgid "Could not load available items"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Filter available and selected items"
+msgstr ""
+
+msgid "There was a problem displaying the GroupEditor"
+msgstr ""
+
+msgid "Apply"
+msgstr ""
+
+msgid "Clear all"
+msgstr ""
+
+msgid "There was an error loading the current user"
+msgstr ""
+
+msgid "You do not have authorities to see users, user roles or user groups"
+msgstr ""
+
+#, fuzzy
+msgid "Display name"
+msgstr "Имя"
+
+msgid "ID"
+msgstr ""
+
+msgid "Last login"
+msgstr "Последняя регистрация/вход"
+
+msgid "Created"
+msgstr "Создано"
+
+#, fuzzy
+msgid "Surname"
+msgstr "Имя пользователя"
+
+msgid "First name"
+msgstr "Имя"
+
+msgid "Introduction"
+msgstr ""
+
+msgid "Job title"
+msgstr ""
+
+msgid "Works at"
+msgstr ""
+
+#, fuzzy
+msgid "Education"
+msgstr "Действие"
+
+msgid "Interests"
+msgstr ""
+
+msgid "Nationality"
+msgstr ""
+
+msgid "Birthday"
+msgstr ""
+
+msgid "Gender"
+msgstr ""
+
+msgid "Speaks"
+msgstr ""
+
+msgid "E-mail"
+msgstr ""
+
+msgid "Mobile phone number"
+msgstr ""
+
+#, fuzzy
+msgid "Organisations units"
+msgstr "Организация"
+
+#, fuzzy
+msgid "User roles"
+msgstr "Уровень доступа"
+
+msgid "Members"
+msgstr "Члены"
+
+msgid "Number of users"
+msgstr "Количество пользователей"
+
+msgid "Could not load the user group data. Please refresh the page."
+msgstr ""
+
+msgid "User group \"{{displayName}}\" saved successfully"
+msgstr ""
+
+msgid "There was a problem saving the user group."
+msgstr ""
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Name"
+msgstr ""
+
+msgid "Code"
+msgstr ""
+
+msgid "Available users"
+msgstr "Доступные пользователи"
+
+msgid "Group members"
+msgstr "Участники группы"
+
+msgid "Available user groups"
+msgstr "Доступные группы пользователей"
+
+msgid "Managed user groups"
+msgstr "Управляемые группы пользователей"
+
+msgid "You left group"
+msgstr ""
+
+#, fuzzy
+msgid "You joined group"
+msgstr "Присоединиться к группе"
+
+msgid "There was a problem updating your group membership"
+msgstr ""
+
+#, fuzzy
+msgid "User Group Management"
+msgstr "Управление пользовательской группой"
+
+msgid "User role \"{{displayName}}\" saved successfully"
+msgstr ""
+
+#, fuzzy
+msgid "There was a problem saving the user role."
+msgstr "С данным уровнем доступа связаны пользователи."
+
+msgid "Description"
+msgstr ""
+
+#, fuzzy
+msgid "User Role Management"
+msgstr "Управление уровнем доступа"
+
+msgid "Could not load the user data. Please refresh the page."
+msgstr ""
+
+msgid "User \"{{displayName}}\" saved successfully"
+msgstr ""
+
+msgid "There was a problem saving the user."
+msgstr ""
+
+msgid "Show fewer options"
+msgstr "Показать меньше опций"
+
+msgid "Show more options"
+msgstr "Показать больше опций"
+
+#, fuzzy
+msgid "Send invite"
+msgstr "Отправить приглашение"
+
+msgid ""
+"Selecting an organisation unit provides access to all units in the sub-"
+"hierarchy"
+msgstr ""
+"Выбор организационной единицы обеспечивает доступ ко всем единицам, "
+"находящимся ниже в иерархии"
+
+#, fuzzy
+msgid "Create account or email invitation"
+msgstr "Создать учетную запись с данными пользователя"
+
+#, fuzzy
+msgid "External authentication only (OpenID or LDAP)"
+msgstr "Только внешняя аутентификация"
+
+msgid "Retype password"
+msgstr "Еще раз наберите пароль"
+
+msgid "OpenID"
+msgstr ""
+
+msgid "LDAP identifier"
+msgstr "Идентификатор LDAP"
+
+msgid "WhatsApp"
+msgstr ""
+
+msgid "Facebook Messenger"
+msgstr ""
+
+msgid "Skype"
+msgstr ""
+
+#, fuzzy
+msgid "Telegram"
+msgstr "Удалить программу"
+
+msgid "Twitter"
+msgstr ""
+
+msgid "Interface language"
+msgstr ""
+
+msgid "Database language"
+msgstr ""
+
+msgid "Available roles"
+msgstr "Доступные роли"
+
+msgid "Selected roles"
+msgstr "Выбранные роли"
+
+msgid "Data capture and maintenance organisation units"
+msgstr "Сбор данных и тех. поддержка организационных единиц"
+
+#, fuzzy
+msgid "Data output and analytic organisation units"
+msgstr "Организационные единицы вывод данных и анализа "
+
+#, fuzzy
+msgid "Search Organisation Units"
+msgstr "Поиск организационных единиц"
+
+#, fuzzy
+msgid "Selected user groups"
+msgstr "Выбранные группы пользователей"
+
+msgid "Available dimension restrictions for data analytics"
+msgstr "Доступные ограничения размерности для анализа данных"
+
+msgid "Selected dimension restrictions for data analytics"
+msgstr "Выбранные ограничения размерности для анализа данных"
+
+msgid "Replicate user"
+msgstr "Дублировать пользователя"
+
+#, fuzzy
+msgid "Are you sure you want to disable two factor authentication for"
+msgstr "Вы уверены, что хотите удалить данного пользователя?"
+
+msgid "Succesfully disabled two factor authentication for"
+msgstr ""
+
+msgid "There was a problem updating two factor authentication"
+msgstr ""
+
+#, fuzzy
+msgid "Are you sure you want to disable"
+msgstr "Вы уверены, что хотите удалить данного пользователя?"
+
+#, fuzzy
+msgid "Are you sure you want to enable"
+msgstr "Вы уверены, что хотите удалить данного пользователя?"
+
+msgid "sucessfully disabled"
+msgstr ""
+
+msgid "successfully enabled"
+msgstr ""
+
+msgid "There was a problem updating the enabled state"
+msgstr ""
+
+msgid "month"
+msgstr "Месяц"
+
+msgid "months"
+msgstr "Месяцы"
+
+msgid "<No value>"
+msgstr ""
+
+#, fuzzy
+msgid "Inactivity"
+msgstr "Отображать по неактивности"
+
+msgid "All invitations"
+msgstr "Все приглашения"
+
+msgid "Expired invitations"
+msgstr "Просроченные приглашения"
+
+#, fuzzy
+msgid "Invitations"
+msgstr "Приглашение отправлено"
+
+#, fuzzy
+msgid "Self registrations"
+msgstr "Показать саморегистрации"
+
+#, fuzzy
+msgid "User Management"
+msgstr "Управление пользователем"
+
+msgid "{{count}} selected"
+msgid_plural "{{count}} selected"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "Something went wrong when processing your request."
+msgstr ""
+
+msgid "Validating..."
+msgstr ""
+
+#, fuzzy
+msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
+msgstr "Вы уверены, что хотите удалить уровень доступа?"
+
+msgid "{{type}} \"{{displayName}}\" removed successfully"
+msgstr ""
+
+msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
+msgstr ""
+
+msgid "Exceeds maximum character limit of 50"
+msgstr ""
+
+msgid "Please enter a valid date with the following format yyyy-mm-dd"
+msgstr ""
+
+msgid "Please provide a valid email address"
+msgstr ""
+
+msgid "Value should be an integer"
+msgstr ""
+
+msgid "Value should be a nagative integer"
+msgstr ""
+
+msgid "Value should be a number"
+msgstr ""
+
+msgid "Value should be a positive integer"
+msgstr ""
+
+msgid "Passwords do not match"
+msgstr ""
+
+msgid "This field is required"
+msgstr ""
+
+msgid "This field is required. Please select at least one"
+msgstr ""
+
+msgid "A username should be at least 2 characters long"
+msgstr ""
+
+msgid "Username may not exceed 140 characters"
+msgstr ""
+
+msgid "Please provide a valid international phone number (+0123456789)"
+msgstr ""
+
+msgid "Password should be at least 8 characters long"
+msgstr ""
+
+msgid "Password should be no longer than 34 characters"
+msgstr ""
+
+msgid "Password should contain at least one lowercase letter"
+msgstr ""
+
+msgid "Password should contain at least one UPPERCASE letter"
+msgstr ""
+
+msgid "Password should contain at least one number"
+msgstr ""
+
+msgid "Password should have at least one special character"
+msgstr ""
+
+msgid "Username already taken"
+msgstr ""
+
+msgid "There was a problem whilst checking the availability of this username"
+msgstr ""
+
+msgid "{{fieldDisplayName}} is already taken"
+msgstr ""
+
+msgid "Could not verify if this {{fieldDisplayName}} is unique"
+msgstr ""
+
+msgid "Attribute value needs to be unique, value already taken."
+msgstr ""
+
+msgid "There was a problem checking if this attribute value is unique"
+msgstr ""
+
+#~ msgid "See API Module"
+#~ msgstr "Смотреть модуль ИПП"
+
+#~ msgid "See Export Data Mart module"
+#~ msgstr "Смотреть модуль экспорта витрины данных"
+
+#~ msgid "See Maintenance module"
+#~ msgstr "См. модуль Эксплуатации"
+
+#~ msgid "See Data Set Maintenance module"
+#~ msgstr "Смотреть модуль содержания набора данных"
+
+#~ msgid "See Organisation Unit Maintenance module"
+#~ msgstr "Смотреть модуль содержания организации"
+
+#~ msgid "See User Maintenance module"
+#~ msgstr "Смотреть модуль содержания пользователя"
+
+#~ msgid "See Data Administration module"
+#~ msgstr "Смортреть модуль администрирования данных"
+
+#~ msgid "See Settings module"
+#~ msgstr "См. модуль Настроек"
+
+#~ msgid "See Data Entry module"
+#~ msgstr "Смотреть модуль вводе данных"
+
+#~ msgid "See Data Mart module"
+#~ msgstr "Смотреть модуль витрины данных"
+
+#~ msgid "See Validation Rule module"
+#~ msgstr "Смотреть модуль правила проверки"
+
+#~ msgctxt "M_dhis-web-gis"
+#~ msgid "See GIS module"
+#~ msgstr "Смотреть модуль ГИС"
+
+#~ msgid "See Report module"
+#~ msgstr "Смотреть модуль отчета"
+
+#~ msgid "See Dashboard integration module"
+#~ msgstr "Смотреть модуль интеграции информационной панели"
+
+#~ msgid "See Messaging module"
+#~ msgstr "См. модуль Сообщения"
+
+#~ msgid "See Line-listing DataEntry module"
+#~ msgstr "Смотреть модуль перечневого ввода данных"
+
+#~ msgid "See NRHM Reports module"
+#~ msgstr "Смотреть модуль отчета NRHM"
+
+#~ msgid "See Validation Analysis module"
+#~ msgstr "Смотреть модуль анализа проверки"
+
+#~ msgid "See Excel Report module"
+#~ msgstr "Смотреть модуль отчета Excel"
+
+#~ msgid "See Individual Records"
+#~ msgstr "Смотреть индивидуальные отчеты"
+
+#~ msgid "See Tracked Entity And Programs module"
+#~ msgstr "См. модуль Отслеживаемых объектов и Программ"
+
+#~ msgctxt "M_dhis-web-mapping"
+#~ msgid "See GIS module"
+#~ msgstr "Смотреть модуль ГИС"
+
+#~ msgid "See Event Reports module"
+#~ msgstr "См. модуль Отчетов о событиях"
+
+#~ msgid "See App Management module"
+#~ msgstr "См. модуль Управления Приложениями"
+
+#~ msgid "See Usage Analytics module"
+#~ msgstr "См. модуль Аналитики Использования"
+
+#~ msgid "See Light module"
+#~ msgstr "Смотреть легкий модуль"
+
+#~ msgid "See Smartphone module"
+#~ msgstr "Смотреть модуль сммартфона"
+
+#~ msgid "See Data Visualizer module"
+#~ msgstr "Смотреть модуль визуализатора данных"
+
+#~ msgid "See Mobile Maintenance module"
+#~ msgstr "Смотреть модуль содержания мольного устройства"
+
+#~ msgid "See Pivot Table module"
+#~ msgstr "Смотреть модуль сводной таблицы"
+
+#~ msgid "See SMS module"
+#~ msgstr "Смотреть модуль СМС"
+
+#~ msgid "See Event Capture module"
+#~ msgstr "См. модуль Сбора Событий"
+
+#~ msgid "See Tracker Capture module"
+#~ msgstr "См. модуль сбора трекера"
+
+#~ msgid "See Event Visualizer module"
+#~ msgstr "См. модуль визуализатора событий"
+
+#~ msgid "See Browser Cache Cleaner module"
+#~ msgstr "См. модуль очистки кэша браузера"
+
+#~ msgid "See Translations module"
+#~ msgstr "См. модуль переводов"
+
+#~ msgid "Add/Update Concept"
+#~ msgstr "Добавить концепцию"
+
+#~ msgid "Metadata sync"
+#~ msgstr "Синхронизация метаданных"
+
+#~ msgid "Delete Concept"
+#~ msgstr "Удалить концепцию"
+
+#~ msgid "Concept Management"
+#~ msgstr "Управление концепцией"
+
+#~ msgid "Add/Update Constant"
+#~ msgstr "Добавить постоянную"
+
+#~ msgid "Delete Constant"
+#~ msgstr "Удалить константу"
+
+#~ msgid "Constant Management"
+#~ msgstr "Управление постоянной"
+
+#~ msgid "Data Admin Locking"
+#~ msgstr "Блокирование админ данных"
+
+#~ msgid "Data Admin UnLocking"
+#~ msgstr "Разблокирование админ данных"
+
+#~ msgid "Add/Update Public Data Element"
+#~ msgstr "Добавить публичный элемент данных"
+
+#~ msgid "Add/Update Private Data Element"
+#~ msgstr "Добавить личный элемент данных"
+
+#~ msgid "Add/Update Public Data Element Category"
+#~ msgstr "Добавить/Обновить категорию элементов общедоступных данных"
+
+#~ msgid "Add/Update Private Data Element Category"
+#~ msgstr "Добавить/обновить категорию элементов личных данных"
+
+#~ msgid "Delete Data Element Category"
+#~ msgstr "Удалить категорию элементов данных"
+
+#~ msgid "Add/Update Public Data Element Category Option"
+#~ msgstr "Добавить/Обновить опцию категории элементов общедоступных данных"
+
+#~ msgid "Add/Update Private Data Element Category Option"
+#~ msgstr "Добавить/Обновить опцию категории элементов личных данных"
+
+#~ msgid "Delete Data Element Category Option"
+#~ msgstr "Удалить опцию категории элемента данных"
+
+#~ msgid "Add/Update Public Data Element Category Combo"
+#~ msgstr ""
+#~ "Добавить/Обновить комбинированные категории элементов общедоступных данных"
+
+#~ msgid "Add/Update Private Data Element Category Combo"
+#~ msgstr "Добавить/Обновить комбинированные категории элементов личных данных"
+
+#~ msgid "Delete Data Element Category Combo"
+#~ msgstr "Удалить комбинированные категории элемента данных"
+
+#~ msgid "Add/Update Public Category Option Group"
+#~ msgstr "Добавить/Обновить общедоступную группу опций категории"
+
+#~ msgid "Add/Update Private Category Option Group"
+#~ msgstr "Добавить/Обновить персональную группу опций категории"
+
+#~ msgid "Add/Update Public Category Option Group Set"
+#~ msgstr "Добавить/Обновить общедоступный набор групп опций категории"
+
+#~ msgid "Add/Update Private Category Option Group Set"
+#~ msgstr "Добавить/Обновить персональный набор групп опций категории"
+
+#~ msgid "Add/Update Public Data Element Groups"
+#~ msgstr "Добавить публичные группы элементов данных"
+
+#~ msgid "Add/Update Private Data Element Groups"
+#~ msgstr "Добавить личные группы элементов данных"
+
+#~ msgid "Add/Update Public Data Element Group Sets"
+#~ msgstr "Добавить публичные наборы групп элементов данных"
+
+#~ msgid "Add/Update Private Data Element Group Sets"
+#~ msgstr "Добавить личные наборы групп элементов данных"
+
+#~ msgid "Add/Update Min/max rule"
+#~ msgstr "Добавить правило Мин/макс"
+
+#~ msgid "Add/Update Public Data Set"
+#~ msgstr "Добавить публичный набор данных"
+
+#~ msgid "Add/Update Private Data Set"
+#~ msgstr "Добавить личный набор данных"
+
+#~ msgid "Delete Data Set"
+#~ msgstr "Удалить набор данных"
+
+#~ msgid "Change order in Data Set"
+#~ msgstr "Изменить порядок в наборе данных"
+
+#~ msgid "Lock Data Set"
+#~ msgstr "Заблокировать набор данных"
+
+#~ msgid "Add/Update Section"
+#~ msgstr "Добавить раздел"
+
+#~ msgid "Delete Section"
+#~ msgstr "Удалить раздел"
+
+#~ msgid "Add/Update Data Value"
+#~ msgstr "Добавить значение данных"
+
+#~ msgid "Add/Update Public Indicator"
+#~ msgstr "Добавить публичный индикатор"
+
+#~ msgid "Add/Update Private Indicator"
+#~ msgstr "Добавить личный индикатор"
+
+#~ msgid "Add/Update Indicator Type"
+#~ msgstr "Добавить тип индикатора"
+
+#~ msgid "Add/Update Public Indicator Group"
+#~ msgstr "Добавить публичную группу индикаторов"
+
+#~ msgid "Add/Update Private Indicator Group"
+#~ msgstr "Добавить личную группу индикаторов"
+
+#~ msgid "Add/Update Public Indicator Group Sets"
+#~ msgstr "Добавить публичные наборы групп индикаторов"
+
+#~ msgid "Add/Update Private Indicator Group Sets"
+#~ msgstr "Добавить личные наборы групп индикаторов"
+
+#~ msgid "Add/Update Organisation Unit"
+#~ msgstr "Добавить организацию"
+
+#~ msgid "Delete Organisation Unit"
+#~ msgstr "Удалить организацию"
+
+#~ msgid "Move Organisation Unit"
+#~ msgstr "Переместить организацию"
+
+#~ msgid "Add/Update Public Organisation Unit Group"
+#~ msgstr "Добавить группу организаций"
+
+#~ msgid "Add/Update Private Organisation Unit Group"
+#~ msgstr "Добавить/Обновить личную группу организационных единиц"
+
+#~ msgid "Add/Update Public Organisation Unit Group Set"
+#~ msgstr "Добавить набор групп организаций"
+
+#~ msgid "Add/Update Private Organisation Unit Group Set"
+#~ msgstr "Добавить/Обновить личный набор групп организационных единиц"
+
+#~ msgid "Delete Organisation Unit Group Set"
+#~ msgstr "Удалить набор групп организаций"
+
+#~ msgid "Update Organisation Unit Level"
+#~ msgstr "Обновить уровень организации"
+
+#~ msgid "Add/Update Public User Role"
+#~ msgstr "Добавить уровень доступа"
+
+#~ msgid "Add/Update Private User Role"
+#~ msgstr "Добавить/Обновить роль частного пользователя"
+
+#~ msgid "Delete User Role"
+#~ msgstr "Удалить уровень доступа"
+
+#~ msgid "List User Roles"
+#~ msgstr "Составить перечень уровней доступа"
+
+#~ msgid "Add/Update Public User Group"
+#~ msgstr "Добавить публичную группу пользователей"
+
+#~ msgid "Add/Update Private User Group"
+#~ msgstr "Добавить личную группу пользователей"
+
+#~ msgid "Delete User Group"
+#~ msgstr "Удалить группу пользователей"
+
+#~ msgid "List User Groups"
+#~ msgstr "Составить перечень группы пользователей"
+
+#~ msgid "Add/Update User Group Managing Relationships"
+#~ msgstr "Добавить/Обновить отношения управления групп пользователей"
+
+#~ msgid "View User Group Managing Relationships"
+#~ msgstr "Просмотреть отношения управления групп пользователей"
+
+#~ msgid "Add/Remove Members In Read-Only User Groups"
+#~ msgstr ""
+#~ "Добавить/Удалить участников в группах пользователей с правами только для "
+#~ "чтения"
+
+#~ msgid "Add/Update User"
+#~ msgstr "Добавить пользователя"
+
+#~ msgid "Delete User"
+#~ msgstr "Удалить пользователя"
+
+#~ msgid "View User"
+#~ msgstr "Просмотр пользователя"
+
+#~ msgid "Add/Update User Within Managed Group"
+#~ msgstr "Добавить/Обновить пользователя в управляемой группе"
+
+#~ msgid "Delete User Within Managed Group"
+#~ msgstr "Удалить пользователя в управляемой группе"
+
+#~ msgid "View User Within Managed Group"
+#~ msgstr "Просмотреть пользователя в управляемой группе"
+
+#~ msgid "Add/Update Public Validation Rule"
+#~ msgstr "Добавить/Обновить общедоступное правило проверки"
+
+#~ msgid "Add/Update Private Validation Rule"
+#~ msgstr "Добавить/Обновить персональное правило проверки"
+
+#~ msgid "Add/Update Public Validation Rule Group"
+#~ msgstr "Добавить группу правила проверки"
+
+#~ msgid "Add/Update Private Validation Rule Group"
+#~ msgstr "Добавить/Обновить группу персонального правила проверки"
+
+#~ msgid "Delete Validation Rule Group"
+#~ msgstr "Удалить группу правила проверки"
+
+#~ msgid "Change GIS Configuration"
+#~ msgstr "Изменить конфигурацию ГИС"
+
+#~ msgid "Add/Update Public Report"
+#~ msgstr "Добавить публичный отчет"
+
+#~ msgid "Add/Update Private Report"
+#~ msgstr "Добавить личный отчет"
+
+#~ msgid "Add/Update Public Report Table"
+#~ msgstr "Добавить публичную отчетную таблицу"
+
+#~ msgid "Report Table External Access"
+#~ msgstr "Внешний доступ к отчетной таблице"
+
+#~ msgid "Add/Update Public Chart"
+#~ msgstr "Добавить публичную диаграмму"
+
+#~ msgid "Add/Update Public Dashboard"
+#~ msgstr "Добавить/Обновить публичную информационную панель"
+
+#~ msgid "Chart External Access"
+#~ msgstr "Внешний доступ к диаграмме"
+
+#~ msgid "Add/Update Chart"
+#~ msgstr "Добавить диаграмму"
+
+#~ msgid "Add/Update Public Document"
+#~ msgstr "Добавить публичный документ"
+
+#~ msgid "Add/Update Private Document"
+#~ msgstr "Добавить личный документ"
+
+#~ msgid "Create and download backup"
+#~ msgstr "Создать и загрузить сохраненную версию"
+
+#~ msgid "Excel Reporting Administration"
+#~ msgstr "Администрирование отчетности Excel"
+
+#~ msgid "Delete Relationship Type"
+#~ msgstr "Удалить тип связи"
+
+#~ msgid "Update Relationship Type"
+#~ msgstr "Обновить тип связи"
+
+#~ msgid "Organisation Unit Registration"
+#~ msgstr "Регистрация организации"
+
+#~ msgid "Update data predictor"
+#~ msgstr "Обновить блок прогнозирования данных"
+
+#~ msgid "Delete data predictor"
+#~ msgstr "Удалить блок прогнозирования данных"
+
+#~ msgid "Remove Empty Tracked Entity Events"
+#~ msgstr "Удалить пустые события отслеживаемых объектов "
+
+#~ msgid "View and Search Tracked Entity Attributes and Identifiers"
+#~ msgstr "Просмотр и поиск атрибутов отслеживаемых объектов и идентификаторов"
+
+#~ msgid "Add/Update Tracked Entity Attributes"
+#~ msgstr "Добавить/Обновить атрибуты отслеживаемого объекта"
+
+#~ msgid "Add/Update Public Tracked Entity Attribute"
+#~ msgstr "Добавить/Обновить атрибут общедоступного отслеживаемого объекта"
+
+#~ msgid "Add/Update Private Tracked Entity Attribute"
+#~ msgstr "Добавить/Обновить атрибут персонального отслеживаемого объекта"
+
+#~ msgid "Delete Tracked Entity Attribute"
+#~ msgstr "Удалить атрибут отслеживаемого объекта"
+
+#~ msgid "Add Tracked Entity Attribute Value"
+#~ msgstr "Добавить значение атрибута отслеживаемого объекта"
+
+#~ msgid "Add/Update Public Program Indicator"
+#~ msgstr "Public Добавить индикатор программы"
+
+#~ msgid "Add/Update Private Program Indicator"
+#~ msgstr "Private Добавить индикатор программы"
+
+#~ msgid "Change Tracked Entity Instance Location"
+#~ msgstr "Изменить расположение экземпляра отслеживаемого объекта"
+
+#~ msgid "Tracked Entity Form Management"
+#~ msgstr "Управление формами отслеживаемого объекта"
+
+#~ msgid "Add Tracked Entity Form"
+#~ msgstr "Добавить форму отслеживаемого объекта"
+
+#~ msgid "Delete Tracked Entity Form"
+#~ msgstr "Удалить форму отслеживаемого объекта"
+
+#~ msgid "Program Event Management"
+#~ msgstr "Управление событиями программы"
+
+#~ msgid "Delete Program Enrollment"
+#~ msgstr "Удалить включение в программу"
+
+#~ msgid "Program Tracking Management"
+#~ msgstr "Управление отслеживанием программы"
+
+#~ msgid "Add/Update Public Program"
+#~ msgstr "Добавить публичную программу"
+
+#~ msgid "Add/Update Private Program"
+#~ msgstr "Добавить личную программу"
+
+#~ msgid "Manage Program Validation"
+#~ msgstr "Управлять проверкой программы"
+
+#~ msgid "Add/Update Program Stage"
+#~ msgstr "Добавить стадию программы"
+
+#~ msgid "Program Stage Section Management"
+#~ msgstr "Управление разделом стадии программы"
+
+#~ msgid "Add/Update Program Stage Section"
+#~ msgstr "Добавить раздел стадии программы"
+
+#~ msgid "Delete Program Stage Section"
+#~ msgstr "Удалить раздел стадии программы"
+
+#~ msgid "Add/Update Program Attribute"
+#~ msgstr "Добавить атрибут программы"
+
+#~ msgid "Delete Program Attribute"
+#~ msgstr "Удалить атрибут программы"
+
+#~ msgid "Add/Update Tracked Entity"
+#~ msgstr "Добавить/Обновить отслеживаемый объект"
+
+#~ msgid "Update Tracked Entity Attribute"
+#~ msgstr "Обновить атрибут отслеживаемого объекта"
+
+#~ msgid "Add/Update Tracked Entity Data Value"
+#~ msgstr "Добавить/Обновить значение данных отслеживаемого объекта"
+
+#~ msgid "Add/Update Tracked Entity Instance"
+#~ msgstr "Добавить/Обновить экземпляр отслеживаемого объекта"
+
+#~ msgid "Delete Tracked Entity Instance"
+#~ msgstr "Удалить экземпляр отслеживаемого объекта"
+
+#~ msgid "Search Tracked Entity Instance"
+#~ msgstr "Поиск экземпляра отслеживаемого объекта"
+
+#~ msgid "Search Tracked Entity Instance in All Org Units"
+#~ msgstr ""
+#~ "Поиск экземпляра отслеживаемого объекта во всех организационных единицах"
+
+#~ msgid "Load Tracked Entity Instance History"
+#~ msgstr "Загрузить историю экземпляра отслеживаемого объекта"
+
+#~ msgid "Tracked Entity Instance Dashboard"
+#~ msgstr "Информационная панель экземпляра отслеживаемого объекта"
+
+#~ msgid "Change Location of Tracked Entity Instance"
+#~ msgstr "Изменить расположение экземпляра отслеживаемого объекта"
+
+#~ msgid "Add Tracked Entity Instance Comment"
+#~ msgstr "Добавить комментарий экземпляра отслеживаемого объекта"
+
+#~ msgid "Delete Tracked Entity Instance Comment"
+#~ msgstr "Удалить комментарий экземпляра отслеживаемого объекта"
+
+#~ msgid "Manage Program Indicators"
+#~ msgstr "Управлять индикаторами программы"
+
+#~ msgid "Add/Update Public Program Indicator Group"
+#~ msgstr "Добавить/Обновить группу общедоступных индикаторов программ"
+
+#~ msgid "Add/Update Private Program Indicator Group"
+#~ msgstr "Добавить/Обновить группу персональных индикаторов программ"
+
+#~ msgid "Add/Update Program Tracked Entity Attribute Group"
+#~ msgstr "Добавить/Обновить группу атрибутов программ отслеживаемого объекта"
+
+#~ msgid "Add/Update Push Analysis"
+#~ msgstr "Добавить/Обновить push-анализ"
+
+#~ msgid "View Program Stage Completeness Report"
+#~ msgstr "Просмотреть Отчет о завершении стадии программы"
+
+#~ msgid "Scheduling send messages"
+#~ msgstr "Планировать отправку сообщений"
+
+#~ msgid "Scheduling case aggregate query builder"
+#~ msgstr "Планирование конструктора запросов по аггрегированным историям"
+
+#~ msgid "Search Activity Plan"
+#~ msgstr "Поиск плана действий"
+
+#~ msgid "Export Activity Plan to XLS file"
+#~ msgstr "Экпортировать план действий в файл XLS"
+
+#~ msgid "Generate Activity Plans"
+#~ msgstr "Генерировать планы действий"
+
+#~ msgid "Generate Program Summary Report"
+#~ msgstr "Генерировать сводный отчет по программе"
+
+#~ msgid "Generate Program Statistics Report"
+#~ msgstr "Генерировать статистический отчет по программе"
+
+#~ msgid "Generate Tracked Entity Tabular report"
+#~ msgstr "Генерировать табличный отчет по лицу"
+
+#~ msgid "Tracked Entity Aggregation"
+#~ msgstr "Агрегирование отслеживаемых объектов"
+
+#~ msgid "Tracked Entity Instance Management"
+#~ msgstr "Управление экземплярами отслеживаемого объекта"
+
+#~ msgid "Multiple Individual Data Entry"
+#~ msgstr "Ввод множественных индивидуальных данных"
+
+#~ msgid "Single Event With Registration Data Entry"
+#~ msgstr "Ввод данных одиночного события с регистрацией"
+
+#~ msgid "Single Event Without Registration Data Entry"
+#~ msgstr "Ввод данных одиночного события без регистрации"
+
+#~ msgid "Program Enrollment"
+#~ msgstr "Включение в программу"
+
+#~ msgid "Program Un-enrollment"
+#~ msgstr "Отмена включения в программу"
+
+#~ msgid "Delete Tracked Entity Instance Visit"
+#~ msgstr "Удалить посещение лица"
+
+#~ msgid "Search events with registration"
+#~ msgstr "Поиск событий с регистрацией"
+
+#~ msgid "Search events without registration"
+#~ msgstr "Поиск событий без регистрации"
+
+#~ msgid "Tracked Entity Relationship Management"
+#~ msgstr "Управление связями лица"
+
+#~ msgid "Add Tracked Entity Relationship"
+#~ msgstr "Добавить отношения отслеживаемого объекта"
+
+#~ msgid "Delete Tracked Entity Relationship"
+#~ msgstr "Удалить отношения отслеживаемого объекта"
+
+#~ msgid "Change system settings"
+#~ msgstr "Изменить настройки системы"
+
+#~ msgid "Copy Excel Item"
+#~ msgstr "Копировать объект Excel"
+
+#~ msgid "Delete Excel Template"
+#~ msgstr "Удалить шаблоны Excel"
+
+#~ msgid "List Excel Template"
+#~ msgstr "Перечислить шаблоны Excel"
+
+#~ msgid "Upload Excel Template"
+#~ msgstr "Обновить шаблон Excel"
+
+#~ msgid "Rename Excel Template file"
+#~ msgstr "Переименовать шаблон Excel файла"
+
+#~ msgid "Delete Tracked Entity Attribute Value"
+#~ msgstr "Удалить значение атрибута отслеживаемого объекта"
+
+#~ msgid "Administrate GIS"
+#~ msgstr "Администрирование ГИС"
+
+#~ msgid "Add/Update Legend"
+#~ msgstr "Добавить/Обновить легенду"
+
+#~ msgid "Delete Legend"
+#~ msgstr "Удалить легенду"
+
+#~ msgid "Add/Update Public Legend Set"
+#~ msgstr "Добавить/Обновить общедоступный набор легенд"
+
+#~ msgid "Add/Update Private Legend Set"
+#~ msgstr "Добавить/Обновить персональный набор легенд"
+
+#~ msgid "Add Public Map"
+#~ msgstr "Добавить публичную карту"
+
+#~ msgid "Map External Access"
+#~ msgstr "Внешний доступ к карте"
+
+#~ msgctxt "F_DATAMART_ADMIN"
+#~ msgid "Administrate data mart"
+#~ msgstr "Витрина административных данных"
+
+#~ msgid "Scheduling Administration"
+#~ msgstr "Планирование администрирования"
+
+#~ msgid "Add/Update Public SQL View"
+#~ msgstr "Добавить просмотр Sql"
+
+#~ msgid "Add/Update Private SQL View"
+#~ msgstr "Добавить/Обновить персональное SQL представление"
+
+#~ msgid "Delete SQL View"
+#~ msgstr "Удалить просмотр Sql"
+
+#~ msgid "Execute SQL View"
+#~ msgstr "Выполнить просмотр Sql"
+
+#~ msgid "SQL View Management"
+#~ msgstr "Управление просмотром Sql"
+
+#~ msgid "SQL View External Access"
+#~ msgstr "Внешний доступ к SQL представлению"
+
+#~ msgid "Add/Update Validation Criteria"
+#~ msgstr "Добавить критерии проверки"
+
+#~ msgid "Delete Validation Criteria"
+#~ msgstr "Удалить критерии проверки"
+
+#~ msgid "Add/Update Predictor"
+#~ msgstr "Добавить/Обновить блок прогноза"
+
+#~ msgid "Delete Predictor"
+#~ msgstr "Удалить блок прогноза"
+
+#~ msgid "Add/Update Attribute"
+#~ msgstr "Добавить/Обновить атрибут"
+
+#~ msgid "Add/Update Public Option Set"
+#~ msgstr "Добавить общедоступный набор опций"
+
+#~ msgid "Add/Update Private Option Set"
+#~ msgstr "Добавить персональный набор опций"
+
+#~ msgid "Delete Option Set"
+#~ msgstr "Удалить набор опций"
+
+#~ msgid "Add/Update Public Option Group"
+#~ msgstr "Добавить/Обновить общедоступную группу опций"
+
+#~ msgid "Add/Update Private Option Group"
+#~ msgstr "Добавить/Обновить персональную группу опций"
+
+#~ msgid "Add/Update Public Option Group Set"
+#~ msgstr "Добавить/Обновить общедоступный набор групп опций"
+
+#~ msgid "Add/Update Private Option Group Set"
+#~ msgstr "Добавить/Обновить персональный набор групп опций"
+
+#~ msgid "Option Set Management"
+#~ msgstr "Управление набором опций"
+
+#~ msgctxt "F_DATA_MART_ADMIN"
+#~ msgid "Administrate data mart"
+#~ msgstr "Витрина административных данных"
+
+#~ msgid "Send SMS"
+#~ msgstr "Отправить СМС"
+
+#~ msgid "Set mobile settings"
+#~ msgstr "Установить мобильные настройки"
+
+#~ msgid "Delete SMS"
+#~ msgstr "Удалить СМС"
+
+#~ msgid "Perform maintenance tasks"
+#~ msgstr "Выполнить задачи поддержки"
+
+#~ msgid "Prune organisation units"
+#~ msgstr "Обрезать организации"
+
+#~ msgid "Merge organisation units"
+#~ msgstr "Объединить организации"
+
+#~ msgid "Eliminate duplicate data elements"
+#~ msgstr "Уничтожить дубликаты элементов данных"
+
+#~ msgid "Generate min-max values"
+#~ msgstr "Генерировать мин-макс значения"
+
+#~ msgid "Archive data"
+#~ msgstr "Архивировать данные"
+
+#~ msgid "Manage integration routes"
+#~ msgstr "Управлять маршрутами интеграции"
+
+#~ msgid "Import data"
+#~ msgstr "Импортировать данные"
+
+#~ msgid "Import events"
+#~ msgstr "Импорт событий"
+
+#~ msgid "Import from other systems"
+#~ msgstr "Импорт из других систем"
+
+#~ msgid "Import GML"
+#~ msgstr "Импорт GML"
+
+#~ msgid "Export data"
+#~ msgstr "Экспортировать данные"
+
+#~ msgid "Export events"
+#~ msgstr "Экспорт событий"
+
+#~ msgid "Import meta-Data"
+#~ msgstr "Импортировать мета данные"
+
+#~ msgid "Export meta-Data"
+#~ msgstr "Экспортировать мета данные"
+
+#~ msgid "Approve data"
+#~ msgstr "Утвердить данные"
+
+#~ msgid "Approve data at lower levels"
+#~ msgstr "Утвердить данные на более низких уровнях"
+
+#~ msgid "Accept data at lower levels"
+#~ msgstr "Принять данные на более низких уровнях"
+
+#~ msgid "View data browser"
+#~ msgstr "Просмотреть браузер данных"
+
+#~ msgid "Run validation"
+#~ msgstr "Запустить проверку"
+
+#~ msgid "View program tracking"
+#~ msgstr "Просмотреть отслеживание программы"
+
+#~ msgid "Add Locale"
+#~ msgstr "Добавить локаль"
+
+#~ msgid "Delete Locale"
+#~ msgstr "Удалить локаль"
+
+#~ msgid "Manage Tracked Entities"
+#~ msgstr "Управление отслеживаемыми объектами"
+
+#~ msgid "Update Tracked Entities"
+#~ msgstr "Обновление отслеживаемых объектов"
+
+#~ msgid "Insert custom Javascript and CSS"
+#~ msgstr "Вставить пользовательский блок Javascript и CSS"
+
+#~ msgid "View unapproved data"
+#~ msgstr "Просмотреть неутвержденные данные"
+
+#~ msgid "Manage Program Rule"
+#~ msgstr "Управление правилами программы"
+
+#~ msgid "Update Program Rule"
+#~ msgstr "Обновить правило программы"
+
+#~ msgid "Administer program dashboard configuration"
+#~ msgstr "Администрирование конфигурацией информационной панели программы"
+
+#~ msgid "Manage OAuth2 Client"
+#~ msgstr "Управление клиентом OAuth2"
+
+#~ msgid "Manage Feedback Messages"
+#~ msgstr "Управление сообщениями обратной связи"
+
+#~ msgid "Add/Update Public External Map Layer"
+#~ msgstr "Добавить/Обновить слой общедоступной внешний карты"
+
+#~ msgid "Add/Update Private External Map Layer"
+#~ msgstr "Добавить/Обновить слой персональной внешний карты"
+
+#~ msgid "View event analytics"
+#~ msgstr "Просмотреть аналитику событий"
+
+#~ msgid "Add Facility"
+#~ msgstr "Добавить учреждение"
+
+#~ msgid "Update Facility"
+#~ msgstr "Обновить учреждение"
+
+#~ msgid "Delete Facility"
+#~ msgstr "Удалить учреждение"
+
+#~ msgid "Email invitation to create account"
+#~ msgstr "Email приглашение на создания учетной записи"
+
+#~ msgid "Fullname"
+#~ msgstr "Полное имя/ФИО"
+
+#~ msgid "Role"
+#~ msgstr "Роль"
+
+#~ msgid "Self Registered User"
+#~ msgstr "Самостоятельно зарегистрировавшийся пользователь"
+
+#~ msgid "User by Organisation Unit"
+#~ msgstr "Пользователь по организации"
+
+#~ msgid "Change"
+#~ msgstr "Изменить"
+
+#~ msgid "The username is already used, please specify a different username"
+#~ msgstr ""
+#~ "Это имя пользователя уже используется, пожалуйста, уточните другое имя "
+#~ "пользователя"
+
+#~ msgid "The OpenID is already used, please specify a different OpenID"
+#~ msgstr "OpenID уже используется, пожалуйста, укажите другой OpenID"
+
+#~ msgid "The name is already in use, please specify a different name"
+#~ msgstr "Имя используется"
+
+#~ msgid "Everything is OK"
+#~ msgstr "Все нормально"
+
+#~ msgid "Roles"
+#~ msgstr "Роли"
+
+#~ msgid "Unit"
+#~ msgstr "Отдел"
+
+#~ msgid "Available User Groups"
+#~ msgstr "Доступные группы пользователей"
+
+#~ msgid "Adding role failed"
+#~ msgstr "Не удалось добавить уровень доступа"
+
+#~ msgid "Update user role"
+#~ msgstr "Обновить уровень доступа"
+
+#~ msgid "Create new user role"
+#~ msgstr "Создать новый уровень доступа"
+
+#~ msgid ""
+#~ "Create, modify, delete and view all users. A user is associated with user "
+#~ "roles and an organisation unit."
+#~ msgstr ""
+#~ "Создать, модифицировать, удалить и просмотреть всех пользователей. "
+#~ "Пользователь ассоциируется с уровнями доступа и организацией."
+
+#~ msgid ""
+#~ "Create, modify, view and delete users which are assigned to a given "
+#~ "organisation unit."
+#~ msgstr ""
+#~ "Создать, модифицировать, просмотреть и удалить пользователей, "
+#~ "закрепленных за данной организацией."
+
+#~ msgid ""
+#~ "Create, modify, view and delete user roles. A user role has a set of "
+#~ "authorities in the system."
+#~ msgstr ""
+#~ "Создать, модифицировать, просмотреть и удалить уровни доступа. Уровень "
+#~ "доступа имеет набор полномочий/авторизации в системе."
+
+#~ msgid ""
+#~ "View and manage users who have self-registered for a personal user "
+#~ "account in the system."
+#~ msgstr ""
+#~ "Просмотреть и управлять пользователями, которые самостоятельно "
+#~ "зарегистрировали личную учетную запись в системе."
+
+#~ msgid "Can not remove the last superuser."
+#~ msgstr "Невозможно удалить последнего супер пользователя."
+
+#~ msgid "Can not remove the last superuser role."
+#~ msgstr "Невозможно удалить последний супер уровень доступа."
+
+#~ msgid "Delete Current User"
+#~ msgstr "Удалить текущего пользователя"
+
+#~ msgid "Inactive for"
+#~ msgstr "Неактивен для"
+
+#~ msgid "Select"
+#~ msgstr "Выбор"
+
+#~ msgid "Object not deleted because it is associated by objects of type"
+#~ msgstr "Объект не был удален, потому что используется другими объектами:"
+
+#~ msgid "Disabled"
+#~ msgstr "Отключено"
+
+#~ msgid "Disable"
+#~ msgstr "Отключить"
+
+#~ msgid "Enable"
+#~ msgstr "Включить"
+
+#~ msgid "User must be assigned to at least one data capture organisation unit"
+#~ msgstr ""
+#~ "Пользователь должен быть назначен как минимум одной организационной "
+#~ "единице сбора данных"
+
+#~ msgid "User must be assigned to at least one user group"
+#~ msgstr ""
+#~ "Пользователь должен быть назначен хотя бы одной группе пользователей"
+
+#~ msgid ""
+#~ "Create user groups for functionality that should work on a group of "
+#~ "users, like notifications."
+#~ msgstr ""
+#~ "Создать пользовательские группы функциональности, которые должны работать "
+#~ "на уровне группы пользователей, например как уведомления."
+
+#~ msgid "Leave group"
+#~ msgstr "Покинуть группу"
+
+#~ msgid "User group details"
+#~ msgstr "Детали группы пользователей"
+
+#~ msgid "Edit user group"
+#~ msgstr "Редактировать группу пользователей"
+
+#~ msgid "Are you sure you want to delete this user group ?"
+#~ msgstr "Вы уверены, что хотите удалить эту группу пользователей?"
+
+#~ msgid "Add user group"
+#~ msgstr "Добавить группу пользователей"
+
+#~ msgid "Show invitations"
+#~ msgstr "Показать приглашения"
+
+#~ msgid "Self-registered users"
+#~ msgstr "Самостоятельно зарегистрированные пользователи"
+
+#~ msgid "LDAP identifier in use"
+#~ msgstr "Идентификатор LDAP уже используется"
+
+#~ msgid "Assign search org units"
+#~ msgstr "Назначить поиск организационных единиц"
+
+#~ msgid "Close"
+#~ msgstr "Закрыть"
+
+#~ msgid "Success"
+#~ msgstr "Успешно"
