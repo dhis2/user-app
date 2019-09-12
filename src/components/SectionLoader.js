@@ -14,7 +14,7 @@ const style = {
     display: 'flex',
     flex: '1 1 0%',
     paddingRight: '2rem',
-    paddingTop: '1rem'
+    paddingTop: '1rem',
 };
 
 /**

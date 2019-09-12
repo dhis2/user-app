@@ -23,7 +23,7 @@ export function date(value) {
 }
 
 export function email(value) {
-    if (hasValue(value) && !EMAIL_ADDRESS_PATTERN.test(value)) {
+    if (hasValue(value) && !EMAIL_ADDRESS_PATTERN.test(value.toLowerCase())) {
         return i18n.t('Please provide a valid email address');
     }
 }
