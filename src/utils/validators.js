@@ -19,7 +19,7 @@ export function code(value) {
 }
 
 export function date(value) {
-    if (hasValue(value) && !DATE_PATTERN.test(value)) {
+    if (hasValue(value) && !DATE_PATTERN.test(value.toLowerCase())) {
         return i18n.t(
             'Please enter a valid date with the following format yyyy-mm-dd'
         )
