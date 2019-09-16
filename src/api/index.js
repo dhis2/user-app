@@ -8,7 +8,7 @@ import {
     getRestrictedOrgUnits,
     mapLocale,
     appendUsernameToDisplayName,
-    getAttributesWithValueAndId
+    getAttributesWithValueAndId,
 } from './utils';
 
 import groupAuthorities from '../components/AuthorityEditor/utils/groupAuthorities';
