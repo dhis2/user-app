@@ -125,6 +125,8 @@
     "User roles": "",
     "Members": "",
     "Number of users": "",
+    "User role": "",
+    "User group": "",
     "Could not load the user group data. Please refresh the page.": "",
     "User group \"{{displayName}}\" saved successfully": "",
     "There was a problem saving the user group.": "",
