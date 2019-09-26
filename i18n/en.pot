@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-07T11:57:11.737Z\n"
-"PO-Revision-Date: 2019-01-07T11:57:11.737Z\n"
+"POT-Creation-Date: 2019-09-26T10:23:05.190Z\n"
+"PO-Revision-Date: 2019-09-26T10:23:05.190Z\n"
 
 msgid "Use database locale / no translation"
 msgstr ""
@@ -378,6 +378,12 @@ msgid "Members"
 msgstr ""
 
 msgid "Number of users"
+msgstr ""
+
+msgid "User role"
+msgstr ""
+
+msgid "User group"
 msgstr ""
 
 msgid "Could not load the user group data. Please refresh the page."
