@@ -1,4 +1,5 @@
 import React from 'react'
+import i18n from '@dhis2/d2-i18n'
 import UserList from '../containers/UserList'
 import FormLoader from '../components/FormLoader'
 import UserProfile from '../containers/UserProfile'
@@ -12,7 +13,7 @@ import { USER, USER_ROLE, USER_GROUP } from './entityTypes'
 
 const USER_SECTION = {
     key: 'user_section',
-    label: 'Users',
+    label: i18n.t('User'),
     icon: 'person',
     path: '/users',
     description: 'Create, modify, view and delete Users',
@@ -21,7 +22,7 @@ const USER_SECTION = {
 }
 const USER_ROLE_SECTION = {
     key: 'user_role_section',
-    label: 'User role',
+    label: i18n.t('User role'),
     icon: 'folder_shared',
     path: '/user-roles',
     description: 'Create, modify, view and delete User Roles',
@@ -30,7 +31,7 @@ const USER_ROLE_SECTION = {
 }
 const USER_GROUP_SECTION = {
     key: 'user_group_section',
-    label: 'User group',
+    label: i18n.t('User group'),
     icon: 'group',
     path: '/user-groups',
     description: 'Create, modify, view and delete User Groups',
