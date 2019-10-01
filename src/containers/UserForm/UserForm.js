@@ -334,7 +334,10 @@ class UserForm extends Component {
 
         return (
             <main>
-                <form onSubmit={handleSubmit(this.handleSubmit)}>
+                <form
+                    autoComplete="off"
+                    onSubmit={handleSubmit(this.handleSubmit)}
+                >
                     {this.renderCreateOrInviteField()}
                     {this.renderBaseFields()}
                     {this.renderAttributeFields()}
