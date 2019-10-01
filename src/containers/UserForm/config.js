@@ -160,6 +160,7 @@ export const BASE_FIELDS = [
         isRequiredField: CREATE_REQUIRED,
         props: {
             type: 'password',
+            autoComplete: 'new-password',
         },
     },
     {
@@ -169,6 +170,7 @@ export const BASE_FIELDS = [
         isRequiredField: CREATE_REQUIRED,
         props: {
             type: 'password',
+            autoComplete: 'new-password',
         },
     },
     {
