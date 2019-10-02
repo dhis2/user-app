@@ -79,7 +79,7 @@ class RoleForm extends Component {
         );
         return (
             <main>
-                <form onSubmit={handleSubmit(this.saveRole)}>
+                <form autoComplete="off" onSubmit={handleSubmit(this.saveRole)}>
                     {this.renderFields()}
                     <div style={{ marginTop: '2rem' }}>
                         <RaisedButton

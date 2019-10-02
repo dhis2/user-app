@@ -65,7 +65,7 @@ class ReplicateUserForm extends Component {
         );
 
         return (
-            <form onSubmit={handleSubmit(this.replicateUser)}>
+            <form autoComplete="off" onSubmit={handleSubmit(this.replicateUser)}>
                 <Field
                     name={USERNAME}
                     component={renderTextField}
