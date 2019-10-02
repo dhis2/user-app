@@ -169,7 +169,7 @@ class GroupForm extends Component {
 
         return (
             <main>
-                <form onSubmit={handleSubmit(this.saveGroup)}>
+                <form autoComplete="off" onSubmit={handleSubmit(this.saveGroup)}>
                     {this.renderFields(FIELDS)}
                     {this.renderFields(attributeFields)}
                     <div style={{ marginTop: '2rem' }}>
