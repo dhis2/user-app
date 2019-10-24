@@ -1,18 +1,19 @@
+# Translators:
+# Viktor Varland <viktor@dhis2.org>, 2019
+# phil_dhis2, 2019
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-10 19:51+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: sv\n"
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2019-01-07T11:57:11.737Z\n"
+"PO-Revision-Date: 2019-09-02 16:26+0000\n"
+"Last-Translator: phil_dhis2, 2019\n"
+"Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 2.2.5\n"
-"X-Pootle-Path: /sv/user-app/sv.po\n"
-"X-Pootle-Revision: 29879\n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Use database locale / no translation"
 msgstr "Använd databaslokal / ingen översättning"
@@ -29,17 +30,213 @@ msgstr "Ange minst {{minCharCount}} tecken"
 msgid "No matches found"
 msgstr "Inga träffar hittades"
 
+msgid "There was a problem retreiving your search results"
+msgstr ""
+
+msgid "There was a problem retreiving the available authorities."
+msgstr ""
+
 msgid "Authorities"
 msgstr "Behörigheter"
 
 msgid "Selected authorities only"
 msgstr "Endast valda behörigheter"
 
+msgid "All (Full authority)"
+msgstr ""
+
+msgid "Analytics Table Hook"
+msgstr ""
+
+msgid "Attribute"
+msgstr ""
+
+msgid "Category Combo"
+msgstr ""
+
+msgid "Category"
+msgstr ""
+
+msgid "Category Option"
+msgstr ""
+
+msgid "Category Option Group"
+msgstr ""
+
+msgid "Category Option Group Set"
+msgstr ""
+
+msgid "Chart"
+msgstr "Diagram"
+
+msgid "Color Set"
+msgstr ""
+
+msgid "Constant"
+msgstr "Konstant"
+
+msgid "Dashboard"
+msgstr "instrumentbräda"
+
+msgid "Data Element Group Sets"
+msgstr ""
+
+msgid "Data Element Groups"
+msgstr ""
+
+msgid "Data Element"
+msgstr "Data element"
+
+msgid "Min/max rule"
+msgstr ""
+
+msgid "Data Set"
+msgstr ""
+
+msgid "Data Value"
+msgstr ""
+
+msgid "Document"
+msgstr ""
+
+msgid "Event Chart"
+msgstr ""
+
+msgid "Event Report"
+msgstr ""
+
+msgid "External Map Layer"
+msgstr ""
+
+msgid "Indicator Group Sets"
+msgstr ""
+
+msgid "Indicator Group"
+msgstr ""
+
+msgid "Indicator Type"
+msgstr ""
+
+msgid "Indicator"
+msgstr "Indikator"
+
+msgid "Legend Set"
+msgstr ""
+
+msgid "Map"
+msgstr "Karta"
+
+msgid "Min-Max Data Element"
+msgstr ""
+
+msgid "Option Group Set"
+msgstr ""
+
+msgid "Option Group"
+msgstr ""
+
+msgid "Option Set"
+msgstr ""
+
+msgid "Organisation Unit"
+msgstr "Organisationsenhet"
+
+msgid "Organisation Unit Group Set"
+msgstr ""
+
+msgid "Organisation Unit Group"
+msgstr ""
+
+msgid "Predictor"
+msgstr ""
+
+msgid "Program Stage"
+msgstr ""
+
+msgid "Program"
+msgstr "Program"
+
+msgid "Program Indicator"
+msgstr ""
+
+msgid "Program Indicator Group"
+msgstr ""
+
+msgid "Program Rule"
+msgstr ""
+
+msgid "Program Tracked Entity Attribute Group"
+msgstr ""
+
+msgid "Push Analysis"
+msgstr ""
+
+msgid "Relationship Type"
+msgstr ""
+
+msgid "Report Table"
+msgstr ""
+
+msgid "Report"
+msgstr ""
+
+msgid "Section"
+msgstr ""
+
+msgid "SQL View"
+msgstr ""
+
+msgid "Tracked Entity"
+msgstr ""
+
+msgid "Tracked Entity Attribute"
+msgstr ""
+
+msgid "Tracked Entity Data Value"
+msgstr ""
+
+msgid "Tracked Entity Instance"
+msgstr ""
+
+msgid "User Group"
+msgstr ""
+
+msgid "User Role"
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "Validation Rule Group"
+msgstr "Valideringsregelngrupp"
+
+msgid "Validation Rule"
+msgstr "Valideringsregeln"
+
+msgid "Data predictor group"
+msgstr ""
+
+msgid "Apps"
+msgstr "appar"
+
+msgid "Tracker"
+msgstr ""
+
+msgid "Import-Export"
+msgstr ""
+
+msgid "System"
+msgstr ""
+
 msgid "Add"
 msgstr "Lägg till"
 
 msgid "list"
 msgstr "list"
+
+msgid ""
+"You do not have access to any section of the DHIS 2 User Management App"
+msgstr ""
 
 msgid "Send message"
 msgstr "Skicka meddelande"
@@ -52,6 +249,15 @@ msgstr "Skapa ny"
 
 msgid "Back to"
 msgstr "Tillbaka till "
+
+msgid "You are not allowed to edit"
+msgstr ""
+
+msgid "Confirm"
+msgstr "Bekräfta"
+
+msgid "There was an error fetching the list"
+msgstr ""
 
 msgid "Select an organisation unit"
 msgstr "Välj en organisationsenhet"
@@ -68,17 +274,11 @@ msgstr "Ingen träff hittades för"
 msgid "Go back home"
 msgstr "Gå tillbaka till hem"
 
-msgid "This field is required"
-msgstr "Fältet är nödvändigt"
-
-msgid "User replicated successfuly"
-msgstr "Användaren replikerades framgångsrikt"
+msgid "User \"{{displayName}}\" replicated successfuly"
+msgstr ""
 
 msgid "There was a problem replicating the user"
 msgstr "Det gick inte att replikera användaren"
-
-msgid "Validating..."
-msgstr "Validerar..."
 
 msgid "Username"
 msgstr "Användarnamn"
@@ -101,11 +301,17 @@ msgstr "Avbryt"
 msgid "Search by name"
 msgstr "Sök på namn"
 
+msgid "Could not load available items"
+msgstr ""
+
 msgid "Filter"
 msgstr "Filtrera"
 
 msgid "Filter available and selected items"
 msgstr "Filtrera tillgängliga och valda objekt"
+
+msgid "There was a problem displaying the GroupEditor"
+msgstr ""
 
 msgid "Apply"
 msgstr "Verkställ"
@@ -113,20 +319,92 @@ msgstr "Verkställ"
 msgid "Clear all"
 msgstr "Rensa alla"
 
-msgid "User group saved successfully"
-msgstr "Användargrupp sparad"
+msgid "There was an error loading the current user"
+msgstr ""
+
+msgid "You do not have authorities to see users, user roles or user groups"
+msgstr ""
+
+msgid "Display name"
+msgstr ""
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Last login"
+msgstr ""
+
+msgid "Created"
+msgstr "Skapad"
+
+msgid "Surname"
+msgstr "Förnamn"
+
+msgid "First name"
+msgstr "Förnamn"
+
+msgid "Introduction"
+msgstr "Introduktion"
+
+msgid "Job title"
+msgstr "Titel"
+
+msgid "Works at"
+msgstr ""
+
+msgid "Education"
+msgstr "Utbildning"
+
+msgid "Interests"
+msgstr "Intressen"
+
+msgid "Nationality"
+msgstr "Nationalitet"
+
+msgid "Birthday"
+msgstr "Födelsedag"
+
+msgid "Gender"
+msgstr "Kön"
+
+msgid "Speaks"
+msgstr ""
+
+msgid "E-mail"
+msgstr "E-post"
+
+msgid "Mobile phone number"
+msgstr "Mobiltelefonnummer"
+
+msgid "Organisations units"
+msgstr ""
+
+msgid "User roles"
+msgstr "Användarroller roller~~POS=HEADCOMP"
+
+msgid "Members"
+msgstr ""
+
+msgid "Number of users"
+msgstr ""
+
+msgid "Could not load the user group data. Please refresh the page."
+msgstr ""
+
+msgid "User group \"{{displayName}}\" saved successfully"
+msgstr ""
 
 msgid "There was a problem saving the user group."
 msgstr "Det gick inte att spara användargruppen."
-
-msgid "Details"
-msgstr "Detaljer"
 
 msgid "Save"
 msgstr "Spara"
 
 msgid "Name"
 msgstr "Namn"
+
+msgid "Code"
+msgstr "Koda"
 
 msgid "Available users"
 msgstr "Tillgängliga användare"
@@ -140,29 +418,20 @@ msgstr "Tillgängliga användargrupper"
 msgid "Managed user groups"
 msgstr "Hanterad usergrupper"
 
-msgid "You joined group"
-msgstr "Du gick med i gruppen"
-
 msgid "You left group"
 msgstr "Du lämnade gruppen"
+
+msgid "You joined group"
+msgstr "Du gick med i gruppen"
 
 msgid "There was a problem updating your group membership"
 msgstr "Det gick inte att uppdatera ditt gruppmedlemskap"
 
-msgid "Are you sure you want to remove this user group?"
-msgstr "Är du säker på att du vill ta bort den här användargruppen?"
-
-msgid "User group removed succesfully"
-msgstr "Användargruppen har tagits bort"
-
-msgid "There was a problem deleting the user group"
-msgstr "Det gick inte att ta bort användargruppen"
-
 msgid "User Group Management"
 msgstr "Användargrupphantering"
 
-msgid "User role saved successfully"
-msgstr "Användarroll sparats"
+msgid "User role \"{{displayName}}\" saved successfully"
+msgstr ""
 
 msgid "There was a problem saving the user role."
 msgstr "Det gick inte att spara användarrollen."
@@ -170,23 +439,14 @@ msgstr "Det gick inte att spara användarrollen."
 msgid "Description"
 msgstr "Beskrivning"
 
-msgid "Are you sure you want to remove this user role?"
-msgstr "Är du säker på att du vill ta bort den här användarrollen?"
-
-msgid "User role removed succesfully"
-msgstr "Användarrollen har tagits bort"
-
-msgid "There was a problem deleting the user role"
-msgstr "Det gick inte att ta bort användarrollen"
-
 msgid "User Role Management"
 msgstr "Användarrollhantering"
 
 msgid "Could not load the user data. Please refresh the page."
 msgstr "Det gick inte att ladda användardata. Uppdatera sidan."
 
-msgid "User saved successfully"
-msgstr "Användaren har sparats"
+msgid "User \"{{displayName}}\" saved successfully"
+msgstr ""
 
 msgid "There was a problem saving the user."
 msgstr "Det gick inte att spara användaren."
@@ -197,13 +457,8 @@ msgstr "Visa färre alternativ"
 msgid "Show more options"
 msgstr "Visa fler alternativ"
 
-msgid "Username already taken"
-msgstr "Användarnamn redan upptaget"
-
-msgid "There was a problem whilst checking the availability of this username"
+msgid "Send invite"
 msgstr ""
-"Ett problem uppstod när du kontrollerade tillgängligheten för det här "
-"användarnamnet"
 
 msgid ""
 "Selecting an organisation unit provides access to all units in the sub-"
@@ -211,29 +466,35 @@ msgid ""
 msgstr ""
 "Val av en organisationsenhet ger tillgång till alla enheter i underhierarkin"
 
+msgid "Create account or email invitation"
+msgstr ""
+
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Endast extern autentisering (OpenID eller LDAP)"
 
 msgid "Retype password"
 msgstr "Skriv in lösenord igen:"
 
-msgid "Surname"
-msgstr "Förnamn"
+msgid "OpenID"
+msgstr "OpenID"
 
-msgid "First name"
-msgstr "Förnamn"
+msgid "LDAP identifier"
+msgstr ""
 
-msgid "E-mail"
-msgstr "E-post"
+msgid "WhatsApp"
+msgstr ""
 
-msgid "openID"
-msgstr "openID"
+msgid "Facebook Messenger"
+msgstr ""
 
-msgid "LDAP Identifier"
-msgstr "LDAP Identifierare"
+msgid "Skype"
+msgstr ""
 
-msgid "Mobile phone number"
-msgstr "Mobiltelefonnummer"
+msgid "Telegram"
+msgstr ""
+
+msgid "Twitter"
+msgstr ""
 
 msgid "Interface language"
 msgstr "Språk för användargränssnittet"
@@ -265,32 +526,29 @@ msgstr ""
 msgid "Selected dimension restrictions for data analytics"
 msgstr ""
 
-msgid "A user should have at least one User Role"
-msgstr "Användaren ska ha minst en användarroll"
-
-msgid "Passwords do not match"
-msgstr "Lösenorden stämmer inte överens"
-
-msgid "Please provide a valid email address"
-msgstr "Ange en giltig epost adress"
-
-msgid "Are you sure you want to remove this user?"
-msgstr "Är du säker på att du vill ta bort den här användaren?"
-
-msgid "User removed succesfully"
-msgstr "Användaren har tagits bort"
-
-msgid "There was a problem deleting the user"
-msgstr "Det gick inte att ta bort användaren"
-
 msgid "Replicate user"
 msgstr "Replikera användaren"
 
-msgid "successfully enabled"
-msgstr "aktiverat"
+msgid "Are you sure you want to disable two factor authentication for"
+msgstr ""
+
+msgid "Succesfully disabled two factor authentication for"
+msgstr ""
+
+msgid "There was a problem updating two factor authentication"
+msgstr ""
+
+msgid "Are you sure you want to disable"
+msgstr ""
+
+msgid "Are you sure you want to enable"
+msgstr ""
 
 msgid "sucessfully disabled"
 msgstr "inaktiverad"
+
+msgid "successfully enabled"
+msgstr "aktiverat"
 
 msgid "There was a problem updating the enabled state"
 msgstr ""
@@ -327,17 +585,74 @@ msgid_plural "{{count}} selected"
 msgstr[0] "{{count}} vald"
 msgstr[1] "{{count}} valda"
 
-msgid "Name is already taken"
-msgstr "Namnet används redan"
+msgid "Yes"
+msgstr "Ja"
 
-msgid "Could not verify if this name is unique"
-msgstr "Det gick inte att verifiera om detta namn är unikt"
+msgid "No"
+msgstr "Nej"
+
+msgid "Something went wrong when processing your request."
+msgstr ""
+
+msgid "Validating..."
+msgstr "Validerar..."
+
+msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
+msgstr ""
+
+msgid "{{type}} \"{{displayName}}\" removed successfully"
+msgstr ""
+
+msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
+msgstr ""
+
+msgid "Exceeds maximum character limit of 50"
+msgstr ""
+
+msgid "Please enter a valid date with the following format yyyy-mm-dd"
+msgstr ""
+
+msgid "Please provide a valid email address"
+msgstr "Ange en giltig epost adress"
+
+msgid "Value should be an integer"
+msgstr ""
+
+msgid "Value should be a nagative integer"
+msgstr ""
+
+msgid "Value should be a number"
+msgstr ""
+
+msgid "Value should be a positive integer"
+msgstr ""
+
+msgid "Passwords do not match"
+msgstr "Lösenorden stämmer inte överens"
+
+msgid "This field is required"
+msgstr "Fältet är nödvändigt"
+
+msgid "This field is required. Please select at least one"
+msgstr ""
+
+msgid "A username should be at least 2 characters long"
+msgstr ""
+
+msgid "Username may not exceed 140 characters"
+msgstr ""
+
+msgid "Please provide a valid international phone number (+0123456789)"
+msgstr ""
 
 msgid "Password should be at least 8 characters long"
 msgstr "Lösenordet måste vara minst 8 tecken långt."
 
 msgid "Password should be no longer than 34 characters"
 msgstr "Lösenord måste vara kortare än 34 tecken"
+
+msgid "Password should contain at least one lowercase letter"
+msgstr ""
 
 msgid "Password should contain at least one UPPERCASE letter"
 msgstr "Lösenordet ska innehålla minst en versal bokstav"
@@ -348,5 +663,22 @@ msgstr "Lösenordet måste innehålla minst en siffra"
 msgid "Password should have at least one special character"
 msgstr "Lösenordet ska ha minst ett specialtecken"
 
-msgid "Confirm"
-msgstr "Bekräfta"
+msgid "Username already taken"
+msgstr "Användarnamn redan upptaget"
+
+msgid "There was a problem whilst checking the availability of this username"
+msgstr ""
+"Ett problem uppstod när du kontrollerade tillgängligheten för det här "
+"användarnamnet"
+
+msgid "{{fieldDisplayName}} is already taken"
+msgstr ""
+
+msgid "Could not verify if this {{fieldDisplayName}} is unique"
+msgstr ""
+
+msgid "Attribute value needs to be unique, value already taken."
+msgstr ""
+
+msgid "There was a problem checking if this attribute value is unique"
+msgstr ""
