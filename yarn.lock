@@ -40,10 +40,10 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@dhis2/d2-i18n-extract@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-i18n-extract/-/d2-i18n-extract-1.0.6.tgz#cd779114911890313c0c69517a6ef8f0b7c08c15"
-  integrity sha512-iAxS1LAXGLvmEaU1qo50ZNXv1uLtnKPMlX00i8Gz5uKaLNsb8KfHbQ0inPhn/p/TVOzWHjXoTXODGNyF83VNvw==
+"@dhis2/d2-i18n-extract@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-i18n-extract/-/d2-i18n-extract-1.0.8.tgz#9d98690d522a51895c8ef3fe7136f026b0f8dacd"
+  integrity sha512-wjQ5J0v8Td12+KcQYSuuZ1tQLReXJ1gBSqkyImf2aNtLwJKERaTOjZ71da+GXdHtd6ph/DP1ezQvFDFKhBHa/A==
   dependencies:
     argparse "^1.0.10"
     i18next-conv "^6.0.0"
