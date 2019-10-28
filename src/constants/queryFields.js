@@ -28,26 +28,9 @@ export const USER_DETAILS = [
     'teiSearchOrganisationUnits[id,path]',
 ];
 
-export const USER_ROLE_DETAILS = [
-    'id',
-    'access',
-    'displayName',
-    'name',
-    'users',
-    'description',
-    'authorities',
-];
+export const USER_ROLE_DETAILS = [':owner', 'authorities', 'displayName'];
 
-export const USER_GROUP_DETAILS = [
-    'id',
-    'code',
-    'access',
-    'displayName',
-    'name',
-    'users',
-    'managedGroups',
-    'attributeValues',
-];
+export const USER_GROUP_DETAILS = [':owner', 'displayName'];
 
 export const CURRENT_USER_ORG_UNITS_FIELDS = {
     fields: [
