@@ -223,7 +223,7 @@ msgid "Tracker"
 msgstr ""
 
 msgid "Import-Export"
-msgstr ""
+msgstr "واردول-صادرول"
 
 msgid "System"
 msgstr "سیسټم"
