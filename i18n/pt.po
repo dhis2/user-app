@@ -229,7 +229,7 @@ msgid "Tracker"
 msgstr ""
 
 msgid "Import-Export"
-msgstr ""
+msgstr "Importar-Exportar"
 
 msgid "System"
 msgstr "Sistema"
@@ -293,7 +293,7 @@ msgid "Username for new user"
 msgstr ""
 
 msgid "Password"
-msgstr "Password"
+msgstr ""
 
 msgid "Password for new user"
 msgstr ""
@@ -481,7 +481,7 @@ msgid "Retype password"
 msgstr ""
 
 msgid "OpenID"
-msgstr "OpenID"
+msgstr ""
 
 msgid "LDAP identifier"
 msgstr ""
