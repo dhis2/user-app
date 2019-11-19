@@ -229,7 +229,7 @@ msgid "Tracker"
 msgstr ""
 
 msgid "Import-Export"
-msgstr ""
+msgstr "Воридот-Содирот"
 
 msgid "System"
 msgstr "Система"
