@@ -229,7 +229,7 @@ msgid "Tracker"
 msgstr ""
 
 msgid "Import-Export"
-msgstr ""
+msgstr "Importar-Exportar"
 
 msgid "System"
 msgstr "Sistema"
