@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Use database locale / no translation"
-msgstr "Use database locale / no translation"
+msgstr ""
 
 msgid "Search"
 msgstr "ຄົນຫາ"
@@ -49,13 +49,13 @@ msgid "Analytics Table Hook"
 msgstr ""
 
 msgid "Attribute"
-msgstr "Attribute"
+msgstr ""
 
 msgid "Category Combo"
 msgstr ""
 
 msgid "Category"
-msgstr "Category"
+msgstr "ລວງນອນ"
 
 msgid "Category Option"
 msgstr ""
@@ -73,7 +73,7 @@ msgid "Color Set"
 msgstr ""
 
 msgid "Constant"
-msgstr "Constant"
+msgstr ""
 
 msgid "Dashboard"
 msgstr "ຕາໜ່າງສັງລວມຂໍ້ມູນຂ່າວສານ"
@@ -151,10 +151,10 @@ msgid "Predictor"
 msgstr ""
 
 msgid "Program Stage"
-msgstr "Program Stage"
+msgstr ""
 
 msgid "Program"
-msgstr "Program"
+msgstr "ສາຍງານ"
 
 msgid "Program Indicator"
 msgstr ""
@@ -184,7 +184,7 @@ msgid "Section"
 msgstr "ພາກສວ່ນ"
 
 msgid "SQL View"
-msgstr "SQL View"
+msgstr ""
 
 msgid "Tracked Entity"
 msgstr ""
@@ -205,7 +205,7 @@ msgid "User Role"
 msgstr ""
 
 msgid "User"
-msgstr "User"
+msgstr ""
 
 msgid "Validation Rule Group"
 msgstr ""
@@ -217,13 +217,13 @@ msgid "Data predictor group"
 msgstr ""
 
 msgid "Apps"
-msgstr "Apps"
+msgstr "ແອັບ"
 
 msgid "Tracker"
-msgstr "Tracker"
+msgstr ""
 
 msgid "Import-Export"
-msgstr ""
+msgstr "ນຳຂໍ້ມູນເຂົ້າ-ອອກ"
 
 msgid "System"
 msgstr "ລະບົບ"
@@ -239,10 +239,10 @@ msgid ""
 msgstr ""
 
 msgid "Send message"
-msgstr "Send message"
+msgstr ""
 
 msgid "Update"
-msgstr "Update"
+msgstr "ປັບປຸງ"
 
 msgid "Create new"
 msgstr ""
@@ -254,7 +254,7 @@ msgid "You are not allowed to edit"
 msgstr ""
 
 msgid "Confirm"
-msgstr "Confirm"
+msgstr ""
 
 msgid "There was an error fetching the list"
 msgstr ""
@@ -296,7 +296,7 @@ msgid "Replicate"
 msgstr ""
 
 msgid "Cancel"
-msgstr "Cancel"
+msgstr "ຍົກເລີກ"
 
 msgid "Search by name"
 msgstr "ຄົ້ນຫາຈາກຊື່"
@@ -305,7 +305,7 @@ msgid "Could not load available items"
 msgstr ""
 
 msgid "Filter"
-msgstr "Filter"
+msgstr "ກັ່ນຕອງ"
 
 msgid "Filter available and selected items"
 msgstr ""
@@ -398,7 +398,7 @@ msgid "There was a problem saving the user group."
 msgstr ""
 
 msgid "Save"
-msgstr "Save"
+msgstr "ບັນທຶກ"
 
 msgid "Name"
 msgstr "ຊື່"
@@ -410,7 +410,7 @@ msgid "Available users"
 msgstr ""
 
 msgid "Group members"
-msgstr "Group members"
+msgstr "ສະມາຊິກກຸ່ມ"
 
 msgid "Available user groups"
 msgstr ""
@@ -569,10 +569,10 @@ msgid_plural "{{count}} selected"
 msgstr[0] ""
 
 msgid "Yes"
-msgstr "Yes"
+msgstr "ແມ່ນ"
 
 msgid "No"
-msgstr "No"
+msgstr "ບໍ່"
 
 msgid "Something went wrong when processing your request."
 msgstr ""
