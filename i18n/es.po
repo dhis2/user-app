@@ -52,13 +52,13 @@ msgid "Analytics Table Hook"
 msgstr ""
 
 msgid "Attribute"
-msgstr "Attribute"
+msgstr "Atributo"
 
 msgid "Category Combo"
 msgstr ""
 
 msgid "Category"
-msgstr "Category"
+msgstr "Categoría"
 
 msgid "Category Option"
 msgstr ""
@@ -151,13 +151,13 @@ msgid "Organisation Unit Group"
 msgstr ""
 
 msgid "Predictor"
-msgstr "Predictor"
+msgstr ""
 
 msgid "Program Stage"
 msgstr "Etapa de Programa"
 
 msgid "Program"
-msgstr "Program"
+msgstr "Programa"
 
 msgid "Program Indicator"
 msgstr ""
@@ -229,7 +229,7 @@ msgid "Tracker"
 msgstr ""
 
 msgid "Import-Export"
-msgstr ""
+msgstr "Importar/exportar"
 
 msgid "System"
 msgstr "Sistema"
@@ -377,7 +377,7 @@ msgid "Speaks"
 msgstr ""
 
 msgid "E-mail"
-msgstr "E-mail"
+msgstr "Correo electrónico"
 
 msgid "Mobile phone number"
 msgstr "Número de teléfono móvil"
@@ -532,7 +532,7 @@ msgid "Selected dimension restrictions for data analytics"
 msgstr ""
 
 msgid "Replicate user"
-msgstr "Replicate user"
+msgstr ""
 
 msgid "Are you sure you want to disable two factor authentication for"
 msgstr ""
