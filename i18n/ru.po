@@ -1,13 +1,13 @@
 # Translators:
-# phil_dhis2, 2019
 # Viktor Varland <viktor@dhis2.org>, 2019
+# phil_dhis2, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-03-11T14:22:05.956Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -76,7 +76,7 @@ msgid "Color Set"
 msgstr ""
 
 msgid "Constant"
-msgstr "Constant"
+msgstr "Постоянная"
 
 msgid "Dashboard"
 msgstr "Информационная панель"
@@ -151,7 +151,7 @@ msgid "Organisation Unit Group"
 msgstr ""
 
 msgid "Predictor"
-msgstr "Predictor"
+msgstr "Предиктор (прогноз)"
 
 msgid "Program Stage"
 msgstr "Стадия программы"
@@ -208,7 +208,7 @@ msgid "User Role"
 msgstr ""
 
 msgid "User"
-msgstr "User"
+msgstr "Пользователь"
 
 msgid "Validation Rule Group"
 msgstr "Группа правил проверки"
@@ -220,7 +220,7 @@ msgid "Data predictor group"
 msgstr ""
 
 msgid "Skip data import audit"
-msgstr "Skip data import audit"
+msgstr "Пропустить аудит импорта данных"
 
 msgid "Apps"
 msgstr "Приложения"
@@ -229,7 +229,7 @@ msgid "Tracker"
 msgstr "Отслеживание объектов"
 
 msgid "Import-Export"
-msgstr ""
+msgstr "Импорт-Экспорт"
 
 msgid "System"
 msgstr "Система"
@@ -245,7 +245,7 @@ msgid ""
 msgstr ""
 
 msgid "Send message"
-msgstr "Send message"
+msgstr "Отправить сообщение"
 
 msgid "Update"
 msgstr "Обновить"
@@ -335,7 +335,7 @@ msgid "Display name"
 msgstr ""
 
 msgid "ID"
-msgstr "ID"
+msgstr "Ид"
 
 msgid "Last login"
 msgstr ""
@@ -377,7 +377,7 @@ msgid "Speaks"
 msgstr ""
 
 msgid "E-mail"
-msgstr "E-mail"
+msgstr "адрес электронной почты"
 
 msgid "Mobile phone number"
 msgstr "Номер мобильного телефона"
@@ -481,7 +481,7 @@ msgid "Retype password"
 msgstr ""
 
 msgid "OpenID"
-msgstr "OpenID"
+msgstr ""
 
 msgid "LDAP identifier"
 msgstr ""
@@ -532,7 +532,7 @@ msgid "Selected dimension restrictions for data analytics"
 msgstr ""
 
 msgid "Replicate user"
-msgstr "Replicate user"
+msgstr "Дублировать пользователя"
 
 msgid "Are you sure you want to disable two factor authentication for"
 msgstr ""
