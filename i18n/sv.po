@@ -223,7 +223,7 @@ msgid "Tracker"
 msgstr ""
 
 msgid "Import-Export"
-msgstr ""
+msgstr "Import Export"
 
 msgid "System"
 msgstr ""
@@ -232,7 +232,7 @@ msgid "Add"
 msgstr "Lägg till"
 
 msgid "list"
-msgstr "list"
+msgstr ""
 
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
@@ -329,7 +329,7 @@ msgid "Display name"
 msgstr ""
 
 msgid "ID"
-msgstr "ID"
+msgstr "id"
 
 msgid "Last login"
 msgstr ""
