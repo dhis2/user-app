@@ -205,7 +205,7 @@ msgid "User Role"
 msgstr ""
 
 msgid "User"
-msgstr "User"
+msgstr ""
 
 msgid "Validation Rule Group"
 msgstr ""
@@ -239,7 +239,7 @@ msgid ""
 msgstr ""
 
 msgid "Send message"
-msgstr "Send message"
+msgstr ""
 
 msgid "Update"
 msgstr "Оновити"
@@ -475,7 +475,7 @@ msgid "Retype password"
 msgstr ""
 
 msgid "OpenID"
-msgstr "OpenID"
+msgstr ""
 
 msgid "LDAP identifier"
 msgstr ""
@@ -526,7 +526,7 @@ msgid "Selected dimension restrictions for data analytics"
 msgstr ""
 
 msgid "Replicate user"
-msgstr "Replicate user"
+msgstr ""
 
 msgid "Are you sure you want to disable two factor authentication for"
 msgstr ""
