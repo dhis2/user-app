@@ -78,6 +78,7 @@ class ReplicateUserForm extends Component {
                     label={i18n.t('Username')}
                     hintText={i18n.t('Username for new user')}
                     validate={[username]}
+                    autoComplete="new-password"
                 />
                 <Field
                     name={PASSWORD}
@@ -86,6 +87,7 @@ class ReplicateUserForm extends Component {
                     hintText={i18n.t('Password for new user')}
                     validate={[password]}
                     type="password"
+                    autoComplete="new-password"
                 />
                 <div style={{ marginTop: 16 }}>
                     <RaisedButton
