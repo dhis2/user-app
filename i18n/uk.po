@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-07T11:57:11.737Z\n"
+"POT-Creation-Date: 2019-09-26T10:23:05.190Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
@@ -386,6 +386,12 @@ msgid "Members"
 msgstr ""
 
 msgid "Number of users"
+msgstr ""
+
+msgid "User role"
+msgstr ""
+
+msgid "User group"
 msgstr ""
 
 msgid "Could not load the user group data. Please refresh the page."
