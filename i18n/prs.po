@@ -393,6 +393,12 @@ msgstr "عضو"
 msgid "Number of users"
 msgstr ""
 
+msgid "User role"
+msgstr ""
+
+msgid "User group"
+msgstr "گروپ استفاده کننده"
+
 msgid "Could not load the user group data. Please refresh the page."
 msgstr ""
 
