@@ -209,7 +209,7 @@ msgid "User Role"
 msgstr ""
 
 msgid "User"
-msgstr ""
+msgstr "Користувач"
 
 msgid "Validation Rule Group"
 msgstr ""
@@ -488,25 +488,25 @@ msgid "Retype password"
 msgstr ""
 
 msgid "OpenID"
-msgstr ""
+msgstr "OpenID"
 
 msgid "LDAP identifier"
 msgstr ""
 
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 msgid "Facebook Messenger"
-msgstr ""
+msgstr "Facebook Messenger"
 
 msgid "Skype"
-msgstr ""
+msgstr "Skype"
 
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 msgid "Interface language"
 msgstr "Мова інтерфейсу"
