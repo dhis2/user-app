@@ -60,7 +60,7 @@ const configI18n = userSettings => {
  */
 const renderAppInDOM = d2 => {
     const rootEl = document.getElementById('root')
-    render(<App d2={d2} />, rootEl)
+    render(<App d2={d2} baseUrl={REACT_APP_DHIS2_BASE_URL} />, rootEl)
 }
 
 setupD2().then(renderAppInDOM)

@@ -11,7 +11,10 @@ import SnackbarContainer from './components/SnackbarContainer'
 import DialogContainer from './components/DialogContainer'
 import SharingDialogContainer from './components/SharingDialogContainer'
 
-import HeaderBar from '@dhis2/ui/widgets/HeaderBar'
+import { Provider as RuntimeProvider } from '@dhis2/app-runtime'
+import { HeaderBar } from '@dhis2/ui-widgets'
+import { CssReset } from '@dhis2/ui-core'
+
 import i18n from '@dhis2/d2-i18n'
 
 import 'typeface-roboto'
@@ -22,22 +25,31 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css'
  * Router, SectionLoader, and various popups
  * @param {Object} props
  * @param {Object} props.d2 - The d2 instance to pass to the Headerbar and AppWithD2ContextAndTheme
+ * @param {Object} props.baseUrl - The baseUrl for the server
  * @class
  */
-const App = ({ d2 }) => (
-    <Provider store={store}>
-        <AppWithD2ContextAndTheme d2={d2}>
-            <div>
-                <HeaderBar appName={i18n.t('User management')} />
-                <Router history={history} hashType={'noslash'}>
-                    <SectionLoader />
-                </Router>
-                <SnackbarContainer />
-                <DialogContainer />
-                <SharingDialogContainer />
-            </div>
-        </AppWithD2ContextAndTheme>
-    </Provider>
+const App = ({ d2, baseUrl }) => (
+    <RuntimeProvider
+        config={{
+            baseUrl,
+            apiVersion: '33',
+        }}
+    >
+        <Provider store={store}>
+            <AppWithD2ContextAndTheme d2={d2}>
+                <div>
+                    <CssReset />
+                    <HeaderBar appName={i18n.t('User management')} />
+                    <Router history={history} hashType={'noslash'}>
+                        <SectionLoader />
+                    </Router>
+                    <SnackbarContainer />
+                    <DialogContainer />
+                    <SharingDialogContainer />
+                </div>
+            </AppWithD2ContextAndTheme>
+        </Provider>
+    </RuntimeProvider>
 )
 
 App.propTypes = {
