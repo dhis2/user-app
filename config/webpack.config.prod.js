@@ -157,6 +157,14 @@ module.exports = {
                             compact: true,
                         },
                     },
+                    {
+                        test: /\.js$/,
+                        include: /node_modules\/@dhis2/,
+                        loader: 'babel-loader',
+                        options: {
+                            compact: true,
+                        },
+                    },
                     // The notation here is somewhat confusing.
                     // "postcss" loader applies autoprefixer to our CSS.
                     // "css" loader resolves paths in CSS and adds assets as dependencies.

@@ -68,7 +68,7 @@ const configI18n = userSettings => {
  */
 const renderAppInDOM = d2 => {
     const rootEl = document.getElementById('root');
-    render(<UserApp d2={d2} />, rootEl);
+    render(<UserApp d2={d2} baseUrl={d2.system.systemInfo.contextPath} />, rootEl);
 };
 
 setupD2()
