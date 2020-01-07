@@ -27,6 +27,7 @@ import './booleanValueRenderer'
 const styles = {
     dataTableWrap: {
         flex: 1,
+        marginBottom: '4rem',
     },
     clearBoth: {
         clear: 'both',
