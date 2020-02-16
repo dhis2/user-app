@@ -1,13 +1,14 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2019
 # phil_dhis2, 2019
+# easylin <lin_xd@126.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-03-11T14:22:05.956Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,64 +17,64 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "User management"
-msgstr ""
+msgstr "用户管理"
 
 msgid "Use database locale / no translation"
-msgstr ""
+msgstr "使用数据库方言/不翻译"
 
 msgid "Search"
 msgstr "搜索"
 
 msgid "Enter search term"
-msgstr ""
+msgstr "输入搜索词汇"
 
 msgid "Please enter at least {{ minCharCount }} characters"
-msgstr ""
+msgstr "请输入至少 {{ minCharCount }}个字符"
 
 msgid "No matches found"
-msgstr ""
+msgstr "没有发现匹配的"
 
 msgid "There was a problem retreiving your search results"
-msgstr ""
+msgstr "提取搜索结果发生错误"
 
 msgid "There was a problem retreiving the available authorities."
-msgstr ""
+msgstr "授权"
 
 msgid "Authorities"
-msgstr ""
+msgstr "授权"
 
 msgid "Selected authorities only"
-msgstr ""
+msgstr "仅选择的授权"
 
 msgid "All (Full authority)"
-msgstr ""
+msgstr "所有（完全授权）"
 
 msgid "Analytics Table Hook"
-msgstr ""
+msgstr "分析表钩子"
 
 msgid "Attribute"
 msgstr "属性"
 
 msgid "Category Combo"
-msgstr ""
+msgstr "分类组合"
 
 msgid "Category"
 msgstr "分类"
 
 msgid "Category Option"
-msgstr ""
+msgstr "分类选项"
 
 msgid "Category Option Group"
-msgstr ""
+msgstr "分类选项组"
 
 msgid "Category Option Group Set"
-msgstr ""
+msgstr "分类选项组集"
 
 msgid "Chart"
 msgstr "图表"
 
 msgid "Color Set"
-msgstr ""
+msgstr "颜色集"
 
 msgid "Constant"
 msgstr "常数"
@@ -82,76 +83,76 @@ msgid "Dashboard"
 msgstr "状态面板"
 
 msgid "Data Element Group Sets"
-msgstr ""
+msgstr "数据元组集"
 
 msgid "Data Element Groups"
-msgstr ""
+msgstr "数据元组"
 
 msgid "Data Element"
-msgstr ""
+msgstr "数据元"
 
 msgid "Min/max rule"
-msgstr ""
+msgstr "最小/最大值"
 
 msgid "Data Set"
 msgstr "数据集"
 
 msgid "Data Value"
-msgstr ""
+msgstr "数据值"
 
 msgid "Document"
-msgstr ""
+msgstr "文档"
 
 msgid "Event Chart"
-msgstr ""
+msgstr "事件图表"
 
 msgid "Event Report"
-msgstr ""
+msgstr "事件报表"
 
 msgid "External Map Layer"
-msgstr ""
+msgstr "外部图层"
 
 msgid "Indicator Group Sets"
-msgstr ""
+msgstr "指标组集"
 
 msgid "Indicator Group"
-msgstr ""
+msgstr "指标组"
 
 msgid "Indicator Type"
-msgstr ""
+msgstr "指标类型"
 
 msgid "Indicator"
 msgstr "指标"
 
 msgid "Legend Set"
-msgstr ""
+msgstr "图例集"
 
 msgid "Map"
 msgstr "地图"
 
 msgid "Min-Max Data Element"
-msgstr ""
+msgstr "最小-最大数据元"
 
 msgid "Option Group Set"
-msgstr ""
+msgstr "选项组集"
 
 msgid "Option Group"
-msgstr ""
+msgstr "选项组"
 
 msgid "Option Set"
-msgstr ""
+msgstr "选项集"
 
 msgid "Organisation Unit"
 msgstr "组织机构"
 
 msgid "Organisation Unit Group Set"
-msgstr ""
+msgstr "机构组集"
 
 msgid "Organisation Unit Group"
-msgstr ""
+msgstr "机构组"
 
 msgid "Predictor"
-msgstr ""
+msgstr "预测器"
 
 msgid "Program Stage"
 msgstr "项目阶段"
@@ -160,22 +161,22 @@ msgid "Program"
 msgstr "项目"
 
 msgid "Program Indicator"
-msgstr ""
+msgstr "项目指标"
 
 msgid "Program Indicator Group"
-msgstr ""
+msgstr "项目指标组"
 
 msgid "Program Rule"
-msgstr ""
+msgstr "项目规则"
 
 msgid "Program Tracked Entity Attribute Group"
-msgstr ""
+msgstr "项目跟踪实体属性组"
 
 msgid "Push Analysis"
-msgstr ""
+msgstr "分析推送"
 
 msgid "Relationship Type"
-msgstr ""
+msgstr "关系类型"
 
 msgid "Report Table"
 msgstr "报表表"
@@ -190,43 +191,43 @@ msgid "SQL View"
 msgstr "SQL视图"
 
 msgid "Tracked Entity"
-msgstr ""
+msgstr "跟踪实体"
 
 msgid "Tracked Entity Attribute"
-msgstr ""
+msgstr "跟踪实体属性"
 
 msgid "Tracked Entity Data Value"
-msgstr ""
+msgstr "跟踪实体数据值"
 
 msgid "Tracked Entity Instance"
-msgstr ""
+msgstr "跟踪实体实例"
 
 msgid "User Group"
 msgstr "用户组"
 
 msgid "User Role"
-msgstr ""
+msgstr "用户角色"
 
 msgid "User"
 msgstr "用户"
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "验证规则组"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "验证规则"
 
 msgid "Data predictor group"
-msgstr ""
+msgstr "数据预测器组"
 
 msgid "Skip data import audit"
-msgstr ""
+msgstr "跳过数据导入审计"
 
 msgid "Apps"
-msgstr ""
+msgstr "Apps"
 
 msgid "Tracker"
-msgstr ""
+msgstr "跟踪随风"
 
 msgid "Import-Export"
 msgstr "数据导入导出"
@@ -238,11 +239,11 @@ msgid "Add"
 msgstr "添加"
 
 msgid "list"
-msgstr ""
+msgstr "列表"
 
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
-msgstr ""
+msgstr "你没有任何权限访问DHIS2用户管理应用"
 
 msgid "Send message"
 msgstr "发生信息"
@@ -251,55 +252,55 @@ msgid "Update"
 msgstr "更新"
 
 msgid "Create new"
-msgstr ""
+msgstr "新建"
 
 msgid "Back to"
-msgstr ""
+msgstr "后退"
 
 msgid "You are not allowed to edit"
-msgstr ""
+msgstr "你不允许编辑"
 
 msgid "Confirm"
 msgstr "确认"
 
 msgid "There was an error fetching the list"
-msgstr ""
+msgstr "提取列表发生错误"
 
 msgid "Select an organisation unit"
-msgstr ""
+msgstr "选择一个机构"
 
 msgid "Organisation unit"
 msgstr "组织机构"
 
 msgid "Page not found."
-msgstr ""
+msgstr "没有页"
 
 msgid "No match for"
-msgstr ""
+msgstr "没有匹配"
 
 msgid "Go back home"
-msgstr ""
+msgstr "回到首页"
 
 msgid "User \"{{displayName}}\" replicated successfuly"
-msgstr ""
+msgstr "用户\"{{displayName}}\" r复制成功"
 
 msgid "There was a problem replicating the user"
-msgstr ""
+msgstr "复制用户出现问题"
 
 msgid "Username"
 msgstr "用户名"
 
 msgid "Username for new user"
-msgstr ""
+msgstr "新用户用户名"
 
 msgid "Password"
 msgstr "口令"
 
 msgid "Password for new user"
-msgstr ""
+msgstr "新用户口令"
 
 msgid "Replicate"
-msgstr ""
+msgstr "复制"
 
 msgid "Cancel"
 msgstr "取消"
@@ -308,37 +309,37 @@ msgid "Search by name"
 msgstr "按名称搜索"
 
 msgid "Could not load available items"
-msgstr ""
+msgstr "不能载入可用的条目"
 
 msgid "Filter"
 msgstr "过滤器"
 
 msgid "Filter available and selected items"
-msgstr ""
+msgstr "过滤器可用并选择的条目"
 
 msgid "There was a problem displaying the GroupEditor"
-msgstr ""
+msgstr "显示组编辑器有问题"
 
 msgid "Apply"
-msgstr ""
+msgstr "应用"
 
 msgid "Clear all"
-msgstr ""
+msgstr "全清除"
 
 msgid "There was an error loading the current user"
-msgstr ""
+msgstr "载入当前用户发生错误"
 
 msgid "You do not have authorities to see users, user roles or user groups"
-msgstr ""
+msgstr "你没有查看用户、用户角色和用户组的权限"
 
 msgid "Display name"
-msgstr ""
+msgstr "显示名"
 
 msgid "ID"
 msgstr "Id"
 
 msgid "Last login"
-msgstr ""
+msgstr "上次登录"
 
 msgid "Created"
 msgstr "已创建"
@@ -350,31 +351,31 @@ msgid "First name"
 msgstr "姓"
 
 msgid "Introduction"
-msgstr ""
+msgstr "介绍"
 
 msgid "Job title"
-msgstr ""
+msgstr "工作头衔"
 
 msgid "Works at"
-msgstr ""
+msgstr "工作于"
 
 msgid "Education"
-msgstr ""
+msgstr "教育"
 
 msgid "Interests"
-msgstr ""
+msgstr "兴趣"
 
 msgid "Nationality"
-msgstr ""
+msgstr "国籍"
 
 msgid "Birthday"
-msgstr ""
+msgstr "生日"
 
 msgid "Gender"
 msgstr "性别"
 
 msgid "Speaks"
-msgstr ""
+msgstr "口语"
 
 msgid "E-mail"
 msgstr "电子邮件"
@@ -383,31 +384,31 @@ msgid "Mobile phone number"
 msgstr "电话号码"
 
 msgid "Organisations units"
-msgstr ""
+msgstr "机构"
 
 msgid "User roles"
 msgstr "用户角色"
 
 msgid "Members"
-msgstr ""
+msgstr "成员"
 
 msgid "Number of users"
-msgstr ""
+msgstr "用户数量"
 
 msgid "User role"
-msgstr ""
+msgstr "用户角色"
 
 msgid "User group"
-msgstr ""
+msgstr "用户组"
 
 msgid "Could not load the user group data. Please refresh the page."
-msgstr ""
+msgstr "不能载入用户组数据"
 
 msgid "User group \"{{displayName}}\" saved successfully"
-msgstr ""
+msgstr "用户组\"{{displayName}}\" 保存成功"
 
 msgid "There was a problem saving the user group."
-msgstr ""
+msgstr "保存用户组失败"
 
 msgid "Save"
 msgstr "保存"
@@ -419,78 +420,78 @@ msgid "Code"
 msgstr "代码"
 
 msgid "Available users"
-msgstr ""
+msgstr "可用用户"
 
 msgid "Group members"
 msgstr "组成员"
 
 msgid "Available user groups"
-msgstr ""
+msgstr "可用用户组"
 
 msgid "Managed user groups"
-msgstr ""
+msgstr "管理的用户组"
 
 msgid "You left group"
-msgstr ""
+msgstr "你离开了组"
 
 msgid "You joined group"
-msgstr ""
+msgstr "你加入了组"
 
 msgid "There was a problem updating your group membership"
-msgstr ""
+msgstr "更新你的组成员失败"
 
 msgid "User Group Management"
-msgstr ""
+msgstr "用户组管理"
 
 msgid "User role \"{{displayName}}\" saved successfully"
-msgstr ""
+msgstr "用户角色\"{{displayName}}\" 保存成功"
 
 msgid "There was a problem saving the user role."
-msgstr ""
+msgstr "保存用户角色有问题"
 
 msgid "Description"
 msgstr "描述"
 
 msgid "User Role Management"
-msgstr ""
+msgstr "用户角色管理"
 
 msgid "Could not load the user data. Please refresh the page."
-msgstr ""
+msgstr "不能载入用户数据，请刷新页面"
 
 msgid "User \"{{displayName}}\" saved successfully"
-msgstr ""
+msgstr "用户\"{{displayName}}\" 保存成功"
 
 msgid "There was a problem saving the user."
-msgstr ""
+msgstr "保存用户有问题"
 
 msgid "Show fewer options"
-msgstr ""
+msgstr "显示较少选项"
 
 msgid "Show more options"
-msgstr ""
+msgstr "显示较多选项"
 
 msgid "Send invite"
-msgstr ""
+msgstr "发送邀请"
 
 msgid ""
 "Selecting an organisation unit provides access to all units in the sub-"
 "hierarchy"
-msgstr ""
+msgstr "选择一个机构假定能访问所有的下属机构"
 
 msgid "Create account or email invitation"
-msgstr ""
+msgstr "创建帐号或邮件邀请"
 
 msgid "External authentication only (OpenID or LDAP)"
-msgstr ""
+msgstr "仅仅通过外部认证（OpenIDh或LDAP）"
 
 msgid "Retype password"
-msgstr ""
+msgstr "重新输入口令"
 
 msgid "OpenID"
-msgstr ""
+msgstr "OpenID"
 
 msgid "LDAP identifier"
-msgstr ""
+msgstr "LDAP标识"
 
 msgid "WhatsApp"
 msgstr ""
@@ -502,94 +503,94 @@ msgid "Skype"
 msgstr ""
 
 msgid "Telegram"
-msgstr ""
+msgstr "电报"
 
 msgid "Twitter"
 msgstr ""
 
 msgid "Interface language"
-msgstr ""
+msgstr "接口语言"
 
 msgid "Database language"
-msgstr ""
+msgstr "数据库语言"
 
 msgid "Available roles"
-msgstr ""
+msgstr "可用角色"
 
 msgid "Selected roles"
-msgstr ""
+msgstr "选择的角色"
 
 msgid "Data capture and maintenance organisation units"
-msgstr ""
+msgstr "数据采集和机构维护"
 
 msgid "Data output and analytic organisation units"
-msgstr ""
+msgstr "数据输出和分析机构"
 
 msgid "Search Organisation Units"
-msgstr ""
+msgstr "搜索机构"
 
 msgid "Selected user groups"
-msgstr ""
+msgstr "选择的机构"
 
 msgid "Available dimension restrictions for data analytics"
-msgstr ""
+msgstr "数据分析的可用维度限制"
 
 msgid "Selected dimension restrictions for data analytics"
-msgstr ""
+msgstr "数据分析选择的维度限制i"
 
 msgid "Replicate user"
-msgstr ""
+msgstr "复制用户"
 
 msgid "Are you sure you want to disable two factor authentication for"
-msgstr ""
+msgstr "你确信关闭双因素认证"
 
 msgid "Succesfully disabled two factor authentication for"
-msgstr ""
+msgstr "关闭双因素认真成功"
 
 msgid "There was a problem updating two factor authentication"
-msgstr ""
+msgstr "更新双因素认真出现问题"
 
 msgid "Are you sure you want to disable"
-msgstr ""
+msgstr "你确信要关闭"
 
 msgid "Are you sure you want to enable"
-msgstr ""
+msgstr "你确信要激活"
 
 msgid "sucessfully disabled"
-msgstr ""
+msgstr "关闭成功"
 
 msgid "successfully enabled"
-msgstr ""
+msgstr "激活成功"
 
 msgid "There was a problem updating the enabled state"
-msgstr ""
+msgstr "更新激活状态出现问题"
 
 msgid "month"
-msgstr ""
+msgstr "月"
 
 msgid "months"
-msgstr ""
+msgstr "月份"
 
 msgid "<No value>"
 msgstr ""
 
 msgid "Inactivity"
-msgstr ""
+msgstr "不活动"
 
 msgid "All invitations"
-msgstr ""
+msgstr "所有邀请"
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "过期的邀请"
 
 msgid "Invitations"
-msgstr ""
+msgstr "邀请"
 
 msgid "Self registrations"
-msgstr ""
+msgstr "自我注册"
 
 msgid "User Management"
-msgstr ""
+msgstr "用户管理"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
@@ -605,16 +606,16 @@ msgid "Something went wrong when processing your request."
 msgstr ""
 
 msgid "Validating..."
-msgstr ""
+msgstr "验证中"
 
 msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
-msgstr ""
+msgstr "你确定要删除这个 {{type}} \"{{displayName}}\"？"
 
 msgid "{{type}} \"{{displayName}}\" removed successfully"
-msgstr ""
+msgstr " {{type}} \"{{displayName}}\"移除成功"
 
 msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
-msgstr ""
+msgstr "移除 {{type}} \"{{displayName}}\"出现问题"
 
 msgid "Exceeds maximum character limit of 50"
 msgstr ""
