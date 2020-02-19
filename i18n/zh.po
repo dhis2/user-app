@@ -624,7 +624,7 @@ msgid "Please enter a valid date with the following format yyyy-mm-dd"
 msgstr ""
 
 msgid "Please provide a valid email address"
-msgstr ""
+msgstr "有效的邮箱"
 
 msgid "Value should be an integer"
 msgstr ""
