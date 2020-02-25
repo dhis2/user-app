@@ -9,7 +9,6 @@ export default new Map([
     ['F_CATEGORY_OPTION', i18n.t('Category Option')],
     ['F_CATEGORY_OPTION_GROUP', i18n.t('Category Option Group')],
     ['F_CATEGORY_OPTION_GROUP_SET', i18n.t('Category Option Group Set')],
-    ['F_CHART', i18n.t('Chart')],
     ['F_COLOR_SET', i18n.t('Color Set')],
     ['F_CONSTANT', i18n.t('Constant')],
     ['F_DASHBOARD', i18n.t('Dashboard')],
@@ -48,7 +47,6 @@ export default new Map([
     ],
     ['F_PUSH_ANALYSIS', i18n.t('Push Analysis')],
     ['F_RELATIONSHIPTYPE', i18n.t('Relationship Type')],
-    ['F_REPORTTABLE', i18n.t('Report Table')],
     ['F_REPORT', i18n.t('Report')],
     ['F_SECTION', i18n.t('Section')],
     ['F_SQLVIEW', i18n.t('SQL View')],
@@ -63,4 +61,5 @@ export default new Map([
     ['F_VALIDATIONRULE', i18n.t('Validation Rule')],
     ['F_PREDICTORGROUP', i18n.t('Data predictor group')],
     ['F_SKIP_DATA_IMPORT_AUDIT', i18n.t('Skip data import audit')],
+    ['F_VISUALIZATION', i18n.t('Visualization')],
 ])
