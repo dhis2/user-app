@@ -78,13 +78,6 @@ const AUTHS_WITH_IMPLICIT_ADD_PRIVATE_AND_DELETE = new Set([
     'F_VISUALIZATION_PUBLIC_ADD',
 ])
 
-const DEPRECATED_AUTHS = new Set([
-    'F_CHART_PUBLIC_ADD',
-    'F_CHART_EXTERNAL',
-    'F_REPORTTABLE_PUBLIC_ADD',
-    'F_REPORTTABLE_EXTERNAL',
-])
-
 const AUTHORITY_GROUPS = {
     tracker: new Set([
         'F_PROGRAM_DASHBOARD_CONFIG_ADMIN',
@@ -150,9 +143,7 @@ const AUTHORITY_GROUPS = {
 const groupAuthorities = authorities => {
     // A lookup map that can be used to verify the existence of a particular authority ID in linear time
     const lookup = authorities.reduce((lookup, auth) => {
-        if (!DEPRECATED_AUTHS.has(auth.id)) {
-            lookup.set(auth.id, auth)
-        }
+        lookup.set(auth.id, auth)
         return lookup
     }, new Map())
 
