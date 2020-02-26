@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-09-26T10:14:31.500Z\n"
+"POT-Creation-Date: 2020-02-25T08:03:52.805Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
@@ -68,9 +68,6 @@ msgstr ""
 
 msgid "Category Option Group Set"
 msgstr ""
-
-msgid "Chart"
-msgstr "Gráfico"
 
 msgid "Color Set"
 msgstr ""
@@ -177,9 +174,6 @@ msgstr ""
 msgid "Relationship Type"
 msgstr ""
 
-msgid "Report Table"
-msgstr "Tabela de relatório"
-
 msgid "Report"
 msgstr "Relatório"
 
@@ -220,6 +214,9 @@ msgid "Data predictor group"
 msgstr ""
 
 msgid "Skip data import audit"
+msgstr ""
+
+msgid "Visualization"
 msgstr ""
 
 msgid "Apps"
