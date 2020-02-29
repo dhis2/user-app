@@ -1,13 +1,13 @@
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-02-25T08:03:52.805Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
+"PO-Revision-Date: 2020-02-28 15:08+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -52,7 +52,7 @@ msgid "Analytics Table Hook"
 msgstr ""
 
 msgid "Attribute"
-msgstr ""
+msgstr "Attribute"
 
 msgid "Category Combo"
 msgstr ""
@@ -73,7 +73,7 @@ msgid "Color Set"
 msgstr ""
 
 msgid "Constant"
-msgstr ""
+msgstr "Constant"
 
 msgid "Dashboard"
 msgstr "ຕາໜ່າງສັງລວມຂໍ້ມູນຂ່າວສານ"
@@ -91,7 +91,7 @@ msgid "Min/max rule"
 msgstr ""
 
 msgid "Data Set"
-msgstr "ແບບຟອມ (ຊຸດ​ຂໍ້​ມູນ)"
+msgstr "Data set"
 
 msgid "Data Value"
 msgstr ""
@@ -151,10 +151,10 @@ msgid "Predictor"
 msgstr ""
 
 msgid "Program Stage"
-msgstr ""
+msgstr "Program Stage"
 
 msgid "Program"
-msgstr "ສາຍງານ"
+msgstr "Program"
 
 msgid "Program Indicator"
 msgstr ""
@@ -181,7 +181,7 @@ msgid "Section"
 msgstr "ພາກສວ່ນ"
 
 msgid "SQL View"
-msgstr ""
+msgstr "SQL View"
 
 msgid "Tracked Entity"
 msgstr ""
@@ -196,13 +196,13 @@ msgid "Tracked Entity Instance"
 msgstr ""
 
 msgid "User Group"
-msgstr "User Group:"
+msgstr "User Group\\:"
 
 msgid "User Role"
 msgstr ""
 
 msgid "User"
-msgstr ""
+msgstr "User"
 
 msgid "Validation Rule Group"
 msgstr ""
@@ -223,7 +223,7 @@ msgid "Apps"
 msgstr "ແອັບ"
 
 msgid "Tracker"
-msgstr ""
+msgstr "Tracker"
 
 msgid "Import-Export"
 msgstr "ນຳຂໍ້ມູນເຂົ້າ-ອອກ"
@@ -232,7 +232,7 @@ msgid "System"
 msgstr "ລະບົບ"
 
 msgid "Add"
-msgstr "ເພີ່ມ"
+msgstr "ເພີ່່ມ"
 
 msgid "list"
 msgstr ""
@@ -242,7 +242,7 @@ msgid ""
 msgstr ""
 
 msgid "Send message"
-msgstr ""
+msgstr "Send message"
 
 msgid "Update"
 msgstr "ປັບປຸງ"
@@ -257,7 +257,7 @@ msgid "You are not allowed to edit"
 msgstr ""
 
 msgid "Confirm"
-msgstr ""
+msgstr "Confirm"
 
 msgid "There was an error fetching the list"
 msgstr ""
@@ -290,7 +290,7 @@ msgid "Username for new user"
 msgstr ""
 
 msgid "Password"
-msgstr "ລະຫັດ"
+msgstr "ລະຫັດຜ່ານ"
 
 msgid "Password for new user"
 msgstr ""
@@ -299,7 +299,7 @@ msgid "Replicate"
 msgstr ""
 
 msgid "Cancel"
-msgstr "ຍົກເລີກ"
+msgstr "Cancel"
 
 msgid "Search by name"
 msgstr "ຄົ້ນຫາຈາກຊື່"
@@ -308,7 +308,7 @@ msgid "Could not load available items"
 msgstr ""
 
 msgid "Filter"
-msgstr "ກັ່ນຕອງ"
+msgstr "Filter"
 
 msgid "Filter available and selected items"
 msgstr ""
@@ -593,10 +593,10 @@ msgid_plural "{{count}} selected"
 msgstr[0] ""
 
 msgid "Yes"
-msgstr "ແມ່ນ"
+msgstr "Yes"
 
 msgid "No"
-msgstr "ບໍ່"
+msgstr "No"
 
 msgid "Something went wrong when processing your request."
 msgstr ""
