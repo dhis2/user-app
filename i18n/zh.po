@@ -1,14 +1,14 @@
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
 # easylin <lin_xd@126.com>, 2020
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-02-25T08:03:52.805Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
+"PO-Revision-Date: 2020-02-28 15:08+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -224,7 +224,7 @@ msgid "Apps"
 msgstr "Apps"
 
 msgid "Tracker"
-msgstr "跟踪随风"
+msgstr "跟踪随访"
 
 msgid "Import-Export"
 msgstr "数据导入导出"
@@ -399,7 +399,7 @@ msgid "User group"
 msgstr "用户组"
 
 msgid "Could not load the user group data. Please refresh the page."
-msgstr "不能载入用户组数据"
+msgstr "不能载入用户组数据，请刷新页面"
 
 msgid "User group \"{{displayName}}\" saved successfully"
 msgstr "用户组\"{{displayName}}\" 保存成功"
