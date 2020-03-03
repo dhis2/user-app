@@ -1,14 +1,14 @@
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
-# Wanda <wanda@frontlineaids.org>, 2019
+# Wanda <wanda@frontlineaids.org>, 2020
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-02-25T08:03:52.805Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Wanda <wanda@frontlineaids.org>, 2019\n"
+"PO-Revision-Date: 2020-02-28 15:08+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -77,7 +77,7 @@ msgid "Constant"
 msgstr "Константа"
 
 msgid "Dashboard"
-msgstr "Інформаційна панель (дашборд)"
+msgstr "Інформаційна панель - дашборд"
 
 msgid "Data Element Group Sets"
 msgstr ""
@@ -155,7 +155,7 @@ msgid "Program Stage"
 msgstr ""
 
 msgid "Program"
-msgstr "Program"
+msgstr "Програма"
 
 msgid "Program Indicator"
 msgstr ""
@@ -221,7 +221,7 @@ msgid "Visualization"
 msgstr ""
 
 msgid "Apps"
-msgstr "Додатки"
+msgstr "Застосунки"
 
 msgid "Tracker"
 msgstr ""
@@ -243,7 +243,7 @@ msgid ""
 msgstr ""
 
 msgid "Send message"
-msgstr ""
+msgstr "Send message"
 
 msgid "Update"
 msgstr "Оновити"
