@@ -23,16 +23,16 @@ msgid "Search"
 msgstr "البحث"
 
 msgid "Enter search term"
-msgstr ""
+msgstr "أدخل مصطلح البحث"
 
 msgid "Please enter at least {{ minCharCount }} characters"
 msgstr ""
 
 msgid "No matches found"
-msgstr ""
+msgstr "لا توجد نتاج متوافقة"
 
 msgid "There was a problem retreiving your search results"
-msgstr ""
+msgstr "حدثت مشكلة في استرداد نتائج البحث"
 
 msgid "There was a problem retreiving the available authorities."
 msgstr ""
