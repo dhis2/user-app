@@ -1,13 +1,14 @@
 # Translators:
 # phil_dhis2, 2019
 # Viktor Varland <viktor@dhis2.org>, 2019
+# Hamza Assada <7amza.it@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-02-25T08:03:52.805Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 msgid "User management"
-msgstr ""
+msgstr "إدارة المستخدم"
 
 msgid "Use database locale / no translation"
 msgstr "استخدام الإعدادات المحلية لقاعدة البيانات / بدون ترجمة"
@@ -25,16 +26,16 @@ msgid "Search"
 msgstr "البحث"
 
 msgid "Enter search term"
-msgstr ""
+msgstr "أدخل مصطلح البحث"
 
 msgid "Please enter at least {{ minCharCount }} characters"
 msgstr ""
 
 msgid "No matches found"
-msgstr ""
+msgstr "لا توجد نتاج متوافقة"
 
 msgid "There was a problem retreiving your search results"
-msgstr ""
+msgstr "حدثت مشكلة في استرداد نتائج البحث"
 
 msgid "There was a problem retreiving the available authorities."
 msgstr ""
@@ -490,19 +491,19 @@ msgid "LDAP identifier"
 msgstr ""
 
 msgid "WhatsApp"
-msgstr ""
+msgstr "واتس آب"
 
 msgid "Facebook Messenger"
-msgstr ""
+msgstr "ماسنجر الفيسبوك"
 
 msgid "Skype"
-msgstr ""
+msgstr "سكايب"
 
 msgid "Telegram"
-msgstr ""
+msgstr "تلجرام"
 
 msgid "Twitter"
-msgstr ""
+msgstr "تويتر"
 
 msgid "Interface language"
 msgstr "لغة الواجهة"
@@ -625,7 +626,7 @@ msgid "Please enter a valid date with the following format yyyy-mm-dd"
 msgstr ""
 
 msgid "Please provide a valid email address"
-msgstr ""
+msgstr "من فضلك ادخل صيغة بريد الكتروني سليمة"
 
 msgid "Value should be an integer"
 msgstr ""
