@@ -3,13 +3,14 @@
 # mrwine <matthieu@pinard.no>, 2019
 # Viktor Varland <viktor@dhis2.org>, 2019
 # phil_dhis2, 2019
+# Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-02-25T08:03:52.805Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,7 +31,7 @@ msgid "Enter search term"
 msgstr ""
 
 msgid "Please enter at least {{ minCharCount }} characters"
-msgstr ""
+msgstr "Veuillez saisir au moins {{ minCharCount }} caractères"
 
 msgid "No matches found"
 msgstr ""
@@ -57,19 +58,19 @@ msgid "Attribute"
 msgstr "Attribut"
 
 msgid "Category Combo"
-msgstr ""
+msgstr "La combo de catégories"
 
 msgid "Category"
 msgstr "Catégorie"
 
 msgid "Category Option"
-msgstr ""
+msgstr "Options de catégorie"
 
 msgid "Category Option Group"
-msgstr ""
+msgstr "Groupe d'options de catégorie"
 
 msgid "Category Option Group Set"
-msgstr ""
+msgstr "Category Option Group Set"
 
 msgid "Color Set"
 msgstr ""
@@ -81,7 +82,7 @@ msgid "Dashboard"
 msgstr "Tableau de bord"
 
 msgid "Data Element Group Sets"
-msgstr ""
+msgstr "Ensembles de groupes d'éléments de données"
 
 msgid "Data Element Groups"
 msgstr "Groupes d'éléments de données"
@@ -90,40 +91,40 @@ msgid "Data Element"
 msgstr "Élément de donnée"
 
 msgid "Min/max rule"
-msgstr ""
+msgstr "Règle de min / max"
 
 msgid "Data Set"
 msgstr "Ensemble de données"
 
 msgid "Data Value"
-msgstr ""
+msgstr "Valeur de données"
 
 msgid "Document"
 msgstr "Document"
 
 msgid "Event Chart"
-msgstr ""
+msgstr "Tableau d'événements"
 
 msgid "Event Report"
-msgstr ""
+msgstr "Rapport d'évènements"
 
 msgid "External Map Layer"
 msgstr ""
 
 msgid "Indicator Group Sets"
-msgstr ""
+msgstr "Ensembles de groupes d'indicateurs"
 
 msgid "Indicator Group"
 msgstr "Groupe d'indicateurs"
 
 msgid "Indicator Type"
-msgstr ""
+msgstr "Type d'indicateur"
 
 msgid "Indicator"
 msgstr "Indicateur"
 
 msgid "Legend Set"
-msgstr ""
+msgstr "Jeu de légende"
 
 msgid "Map"
 msgstr "Carte"
@@ -132,22 +133,22 @@ msgid "Min-Max Data Element"
 msgstr ""
 
 msgid "Option Group Set"
-msgstr ""
+msgstr "Ensemble de groupes d'options"
 
 msgid "Option Group"
-msgstr ""
+msgstr "Groupe d'options"
 
 msgid "Option Set"
-msgstr ""
+msgstr "Ensemble d'options"
 
 msgid "Organisation Unit"
 msgstr "Unité d'organisation"
 
 msgid "Organisation Unit Group Set"
-msgstr ""
+msgstr "Ensemble de groupes d'unités d'organisation"
 
 msgid "Organisation Unit Group"
-msgstr ""
+msgstr "Groupe d'Unités d'Organisation"
 
 msgid "Predictor"
 msgstr ""
@@ -165,7 +166,7 @@ msgid "Program Indicator Group"
 msgstr ""
 
 msgid "Program Rule"
-msgstr ""
+msgstr "Règles de Programme"
 
 msgid "Program Tracked Entity Attribute Group"
 msgstr ""
@@ -174,43 +175,43 @@ msgid "Push Analysis"
 msgstr ""
 
 msgid "Relationship Type"
-msgstr ""
+msgstr "Type de relation"
 
 msgid "Report"
 msgstr "Rapport"
 
 msgid "Section"
-msgstr ""
+msgstr "Section"
 
 msgid "SQL View"
 msgstr "Vue SQL"
 
 msgid "Tracked Entity"
-msgstr ""
+msgstr "Entité suivie"
 
 msgid "Tracked Entity Attribute"
-msgstr ""
+msgstr "Attribut d'entité suivie"
 
 msgid "Tracked Entity Data Value"
 msgstr ""
 
 msgid "Tracked Entity Instance"
-msgstr ""
+msgstr "Instance d'entité suivie"
 
 msgid "User Group"
 msgstr "Groupe d'utilisateur:"
 
 msgid "User Role"
-msgstr ""
+msgstr "Rôle d'utilisateur"
 
 msgid "User"
 msgstr "Utilisateur"
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "Groupe de règles de validation"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Règle de validation"
 
 msgid "Data predictor group"
 msgstr ""
@@ -225,7 +226,7 @@ msgid "Apps"
 msgstr "Applications"
 
 msgid "Tracker"
-msgstr ""
+msgstr "Tracker"
 
 msgid "Import-Export"
 msgstr "Importer-Exporter"
@@ -237,7 +238,7 @@ msgid "Add"
 msgstr "Ajouter"
 
 msgid "list"
-msgstr ""
+msgstr "liste"
 
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
@@ -250,10 +251,10 @@ msgid "Update"
 msgstr "Mettre à jour"
 
 msgid "Create new"
-msgstr ""
+msgstr "Créer nouveau"
 
 msgid "Back to"
-msgstr ""
+msgstr "Retour à"
 
 msgid "You are not allowed to edit"
 msgstr ""
@@ -265,13 +266,13 @@ msgid "There was an error fetching the list"
 msgstr ""
 
 msgid "Select an organisation unit"
-msgstr ""
+msgstr "Selectionner une unité d'organisation"
 
 msgid "Organisation unit"
 msgstr "Unité d'organisation"
 
 msgid "Page not found."
-msgstr ""
+msgstr "Page non trouvée"
 
 msgid "No match for"
 msgstr ""
@@ -322,7 +323,7 @@ msgid "Apply"
 msgstr "Appliquer"
 
 msgid "Clear all"
-msgstr ""
+msgstr "Tout effacer"
 
 msgid "There was an error loading the current user"
 msgstr ""
@@ -382,7 +383,7 @@ msgid "Mobile phone number"
 msgstr "Numéro de téléphone portable"
 
 msgid "Organisations units"
-msgstr ""
+msgstr "Unités d'organisation"
 
 msgid "User roles"
 msgstr "Rôles d'utilisateur"
@@ -394,10 +395,10 @@ msgid "Number of users"
 msgstr ""
 
 msgid "User role"
-msgstr ""
+msgstr "Rôle d'utilisateur"
 
 msgid "User group"
-msgstr ""
+msgstr "Groupe d'utilisateur"
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr ""
@@ -448,7 +449,7 @@ msgid "There was a problem saving the user role."
 msgstr ""
 
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 msgid "User Role Management"
 msgstr ""
@@ -483,28 +484,28 @@ msgid "External authentication only (OpenID or LDAP)"
 msgstr ""
 
 msgid "Retype password"
-msgstr ""
+msgstr "Retapez le mot de passe"
 
 msgid "OpenID"
-msgstr "La valeur doit être un entier négatif"
+msgstr "OpenID"
 
 msgid "LDAP identifier"
 msgstr ""
 
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 msgid "Facebook Messenger"
-msgstr ""
+msgstr "Facebook Messenger"
 
 msgid "Skype"
-msgstr ""
+msgstr "Skype"
 
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 msgid "Interface language"
 msgstr "Langue de l'interface"
@@ -564,10 +565,10 @@ msgid "There was a problem updating the enabled state"
 msgstr ""
 
 msgid "month"
-msgstr ""
+msgstr "mois"
 
 msgid "months"
-msgstr ""
+msgstr "mois"
 
 msgid "<No value>"
 msgstr ""
@@ -582,10 +583,10 @@ msgid "Expired invitations"
 msgstr "Invitations périmées"
 
 msgid "Invitations"
-msgstr ""
+msgstr "Invitations"
 
 msgid "Self registrations"
-msgstr ""
+msgstr "L'auto-inscriptions"
 
 msgid "User Management"
 msgstr ""
