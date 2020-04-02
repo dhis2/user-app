@@ -29,7 +29,7 @@ msgid "Enter search term"
 msgstr "أدخل مصطلح البحث"
 
 msgid "Please enter at least {{ minCharCount }} characters"
-msgstr ""
+msgstr "يرجى إدخال {{ minCharCount }} حرف على الأقل"
 
 msgid "No matches found"
 msgstr "لا توجد نتاج متوافقة"
@@ -38,16 +38,16 @@ msgid "There was a problem retreiving your search results"
 msgstr "حدثت مشكلة في استرداد نتائج البحث"
 
 msgid "There was a problem retreiving the available authorities."
-msgstr ""
+msgstr "حدثت مشكلة في استرداد السلطات المتاحة."
 
 msgid "Authorities"
-msgstr ""
+msgstr "السلطات"
 
 msgid "Selected authorities only"
-msgstr ""
+msgstr "السلطات المختارة فقط"
 
 msgid "All (Full authority)"
-msgstr ""
+msgstr "الكل (صلاحية كاملة)"
 
 msgid "Analytics Table Hook"
 msgstr ""
@@ -92,7 +92,7 @@ msgid "Data Element"
 msgstr "عنصر البيانات"
 
 msgid "Min/max rule"
-msgstr ""
+msgstr "أعلى/أقل قيمة"
 
 msgid "Data Set"
 msgstr "حزمة البيانات"
@@ -104,22 +104,22 @@ msgid "Document"
 msgstr "المستند"
 
 msgid "Event Chart"
-msgstr ""
+msgstr "المخطط البياني للأحداث"
 
 msgid "Event Report"
-msgstr ""
+msgstr "تقارير الحدث"
 
 msgid "External Map Layer"
-msgstr ""
+msgstr "طبقة خريطة خارجية"
 
 msgid "Indicator Group Sets"
-msgstr ""
+msgstr "مجموعات مجموعة المؤشرات"
 
 msgid "Indicator Group"
-msgstr ""
+msgstr "مجموعة المؤشرات"
 
 msgid "Indicator Type"
-msgstr ""
+msgstr "نوع المؤشر"
 
 msgid "Indicator"
 msgstr "المؤشر"
@@ -176,7 +176,7 @@ msgid "Push Analysis"
 msgstr ""
 
 msgid "Relationship Type"
-msgstr ""
+msgstr "نوع العلاقة"
 
 msgid "Report Table"
 msgstr "جدول التقرير"
@@ -206,7 +206,7 @@ msgid "User Group"
 msgstr "مجموعة المستخدمين"
 
 msgid "User Role"
-msgstr ""
+msgstr "دور المستخدم"
 
 msgid "User"
 msgstr "المستخدم"
@@ -243,7 +243,7 @@ msgstr ""
 
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
-msgstr ""
+msgstr "ليس لديك حق الوصول إلى أي قسم في تطبيق إدارة مستخدمي الـ DHIS 2"
 
 msgid "Send message"
 msgstr "إرسال رسالة"
@@ -252,55 +252,55 @@ msgid "Update"
 msgstr "تحديث"
 
 msgid "Create new"
-msgstr ""
+msgstr "إنشاء جديد"
 
 msgid "Back to"
-msgstr ""
+msgstr "العودة لـ "
 
 msgid "You are not allowed to edit"
-msgstr ""
+msgstr "لا يسمح لك بالتعديل"
 
 msgid "Confirm"
 msgstr "تأكيد"
 
 msgid "There was an error fetching the list"
-msgstr ""
+msgstr "حدث خطأ أثناء جلب القائمة"
 
 msgid "Select an organisation unit"
-msgstr ""
+msgstr "إختر وحدة تنظيمية"
 
 msgid "Organisation unit"
 msgstr "الوحدة التنظيمية"
 
 msgid "Page not found."
-msgstr ""
+msgstr "لم يتم إيجاد الصفحة"
 
 msgid "No match for"
 msgstr ""
 
 msgid "Go back home"
-msgstr ""
+msgstr "العودة للصفحة الرئيسة"
 
 msgid "User \"{{displayName}}\" replicated successfuly"
 msgstr ""
 
 msgid "There was a problem replicating the user"
-msgstr ""
+msgstr "حدثت مشكلة في نسخ المستخدم"
 
 msgid "Username"
 msgstr "اسم المستخدم"
 
 msgid "Username for new user"
-msgstr ""
+msgstr "اسم المستخدم للمستخدم الجديد"
 
 msgid "Password"
 msgstr "كلمة المرور"
 
 msgid "Password for new user"
-msgstr ""
+msgstr "كلمة السر للمستخدم الجديد"
 
 msgid "Replicate"
-msgstr ""
+msgstr "إنشاء نسخة"
 
 msgid "Cancel"
 msgstr "إلغاء"
@@ -309,13 +309,13 @@ msgid "Search by name"
 msgstr "البحث باستخدام الاسم"
 
 msgid "Could not load available items"
-msgstr ""
+msgstr "تعذر تحميل العناصر المتاحة"
 
 msgid "Filter"
 msgstr "عامل التصفية"
 
 msgid "Filter available and selected items"
-msgstr ""
+msgstr "تصفية العناصر المتاحة والمختارة"
 
 msgid "There was a problem displaying the GroupEditor"
 msgstr ""
@@ -324,22 +324,23 @@ msgid "Apply"
 msgstr ""
 
 msgid "Clear all"
-msgstr ""
+msgstr "تنظيف الكل"
 
 msgid "There was an error loading the current user"
-msgstr ""
+msgstr "حدث خطأ أثناء تحميل المستخدم الحالي"
 
 msgid "You do not have authorities to see users, user roles or user groups"
 msgstr ""
+"ليس لديك سلطات لرؤية المستخدمين أو أدوار المستخدمين أو مجموعات المستخدمين"
 
 msgid "Display name"
-msgstr ""
+msgstr "إسم العرض"
 
 msgid "ID"
 msgstr "المعرف"
 
 msgid "Last login"
-msgstr ""
+msgstr "آخر عملية تسجيل دخول"
 
 msgid "Created"
 msgstr "تم الإنشاء"
@@ -357,7 +358,7 @@ msgid "Job title"
 msgstr "المسمى الوظيفي"
 
 msgid "Works at"
-msgstr ""
+msgstr "يعمل في"
 
 msgid "Education"
 msgstr "التعليم"
@@ -384,7 +385,7 @@ msgid "Mobile phone number"
 msgstr "رقم الهاتف الجوال"
 
 msgid "Organisations units"
-msgstr ""
+msgstr "الوحدات التنظيمية"
 
 msgid "User roles"
 msgstr "أدوار المستخدمين"
@@ -393,22 +394,22 @@ msgid "Members"
 msgstr "الأعضاء"
 
 msgid "Number of users"
-msgstr ""
+msgstr "عدد المستخدمين"
 
 msgid "User role"
-msgstr ""
+msgstr "دور المستخدم"
 
 msgid "User group"
 msgstr "مجموعة المستخدمين"
 
 msgid "Could not load the user group data. Please refresh the page."
-msgstr ""
+msgstr "تعذر تحميل بيانات مجموعة المستخدم. يرجى تحديث الصفحة."
 
 msgid "User group \"{{displayName}}\" saved successfully"
-msgstr ""
+msgstr "تم حفظ مجموعة المستخدم \"{{displayName}}\" بنجاح"
 
 msgid "There was a problem saving the user group."
-msgstr ""
+msgstr "حدثت مشكلة في حفظ مجموعة المستخدمين."
 
 msgid "Save"
 msgstr "حفظ"
@@ -420,49 +421,49 @@ msgid "Code"
 msgstr "الرمز"
 
 msgid "Available users"
-msgstr ""
+msgstr "المستخدمون المتاحون"
 
 msgid "Group members"
 msgstr "أعضاء المجموعة"
 
 msgid "Available user groups"
-msgstr ""
+msgstr "مجموعات المستخدم المتاحة"
 
 msgid "Managed user groups"
-msgstr ""
+msgstr "مجموعات المستخدمين التي سيتم إدارتها"
 
 msgid "You left group"
-msgstr ""
+msgstr "لقد غادرت المجموعة"
 
 msgid "You joined group"
-msgstr ""
+msgstr "لقد انضممت إلى المجموعة"
 
 msgid "There was a problem updating your group membership"
-msgstr ""
+msgstr "حدثت مشكلة أثناء تحديث عضويتك للمجموعة"
 
 msgid "User Group Management"
-msgstr ""
+msgstr "إدارة مجموعة المستخدم"
 
 msgid "User role \"{{displayName}}\" saved successfully"
-msgstr ""
+msgstr "تم حفظ دور المستخدم \"{{displayName}}\" بنجاح"
 
 msgid "There was a problem saving the user role."
-msgstr ""
+msgstr "حدثت مشكلة أثناء حفظ دور المستخدم."
 
 msgid "Description"
 msgstr "الوصف"
 
 msgid "User Role Management"
-msgstr ""
+msgstr "إدارة دور المستخدم"
 
 msgid "Could not load the user data. Please refresh the page."
-msgstr ""
+msgstr "تعذر تحميل بيانات المستخدم. يرجى تحديث الصفحة."
 
 msgid "User \"{{displayName}}\" saved successfully"
-msgstr ""
+msgstr "تم حفظ المستخدم \"{{displayName}}\" بنجاح"
 
 msgid "There was a problem saving the user."
-msgstr ""
+msgstr "حدثت مشكلة في حفظ المستخدم."
 
 msgid "Show fewer options"
 msgstr "إظهار خيارات أقل"
@@ -471,21 +472,22 @@ msgid "Show more options"
 msgstr "إظهار المزيد من الخيارات"
 
 msgid "Send invite"
-msgstr ""
+msgstr "إرسال دعوة"
 
 msgid ""
 "Selecting an organisation unit provides access to all units in the sub-"
 "hierarchy"
 msgstr ""
+"يتيح تحديد وحدة تنظيمية الوصول إلى جميع الوحدات في التسلسل الهرمي الفرعي"
 
 msgid "Create account or email invitation"
-msgstr ""
+msgstr "إنشاء حساب أو دعوة بالبريد الإلكتروني"
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr ""
 
 msgid "Retype password"
-msgstr ""
+msgstr "إعد كتابة كلمة السر"
 
 msgid "OpenID"
 msgstr "فتح الهوية"
@@ -515,82 +517,82 @@ msgid "Database language"
 msgstr "لغة قاعدة البيانات"
 
 msgid "Available roles"
-msgstr ""
+msgstr "الأدوار المتاحة"
 
 msgid "Selected roles"
-msgstr ""
+msgstr "الأدوار المختارة"
 
 msgid "Data capture and maintenance organisation units"
-msgstr ""
+msgstr "ادخال البيانات وصيانة الوحدات التنظيمية"
 
 msgid "Data output and analytic organisation units"
-msgstr ""
+msgstr "استخراج البيانات والتحليلات عن الوحدات التنظيمية"
 
 msgid "Search Organisation Units"
-msgstr ""
+msgstr "امكانية البحث عن الوحدات التنظيمية"
 
 msgid "Selected user groups"
-msgstr ""
+msgstr "مجموعات المستخدمين المحددة"
 
 msgid "Available dimension restrictions for data analytics"
-msgstr ""
+msgstr "قيود الأبعاد المتاحة لتحليلات البيانات"
 
 msgid "Selected dimension restrictions for data analytics"
-msgstr ""
+msgstr "قيود الأبعاد المختارة لتحليلات البيانات"
 
 msgid "Replicate user"
-msgstr ""
+msgstr "إنشاء نسخة من المستخدم"
 
 msgid "Are you sure you want to disable two factor authentication for"
-msgstr ""
+msgstr "هل أنت متأكد من أنك تريد تعطيل المصادقة الثنائية لـ"
 
 msgid "Succesfully disabled two factor authentication for"
-msgstr ""
+msgstr "تم تعطيل المصادقة الثنائية لـ"
 
 msgid "There was a problem updating two factor authentication"
-msgstr ""
+msgstr "حدثت مشكلة في تحديث المصادقة الثنائية"
 
 msgid "Are you sure you want to disable"
-msgstr ""
+msgstr "هل أنت متأكد بإنك تريد تعطيل"
 
 msgid "Are you sure you want to enable"
-msgstr ""
+msgstr "هل أنت متأكد بإنك تريد تمكين"
 
 msgid "sucessfully disabled"
-msgstr ""
+msgstr "تم التعطيل بنجاح"
 
 msgid "successfully enabled"
-msgstr ""
+msgstr "تم التفعيل بنجاح"
 
 msgid "There was a problem updating the enabled state"
-msgstr ""
+msgstr "حدثت مشكلة في تحديث حالة التمكين"
 
 msgid "month"
-msgstr ""
+msgstr "شهر"
 
 msgid "months"
-msgstr ""
+msgstr "أشهر"
 
 msgid "<No value>"
 msgstr "<لا توجد قيمة>"
 
 msgid "Inactivity"
-msgstr ""
+msgstr "غير نشيط"
 
 msgid "All invitations"
-msgstr ""
+msgstr "كل الدعوات"
 
 msgid "Expired invitations"
 msgstr "الدعوات منتهية الصلاحية"
 
 msgid "Invitations"
-msgstr ""
+msgstr "الدعوات"
 
 msgid "Self registrations"
-msgstr ""
+msgstr "تسجيل ذاتي"
 
 msgid "User Management"
-msgstr ""
+msgstr "إدارة المستخدم"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
@@ -608,10 +610,10 @@ msgid "No"
 msgstr "لا"
 
 msgid "Something went wrong when processing your request."
-msgstr ""
+msgstr "حدث خطأ ما أثناء معالجة طلبك."
 
 msgid "Validating..."
-msgstr ""
+msgstr "يتم التحقق..."
 
 msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
 msgstr ""
@@ -620,79 +622,79 @@ msgid "{{type}} \"{{displayName}}\" removed successfully"
 msgstr ""
 
 msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
-msgstr ""
+msgstr "حدثت مشكلة في إزالة {{type}} \"{{displayName}}\"؟"
 
 msgid "Exceeds maximum character limit of 50"
-msgstr ""
+msgstr "تجاوز الحد الأقصى لعدد الأحرف المسموح به وهو 50"
 
 msgid "Please enter a valid date with the following format yyyy-mm-dd"
-msgstr ""
+msgstr "يرجى إدخال تاريخ صالح بالتنسيق التالي yyyy-mm-dd"
 
 msgid "Please provide a valid email address"
 msgstr "من فضلك ادخل صيغة بريد الكتروني سليمة"
 
 msgid "Value should be an integer"
-msgstr ""
+msgstr "يجب أن تكون القيمة عدداً صحيحاً"
 
 msgid "Value should be a nagative integer"
-msgstr ""
+msgstr "يجب أن تكون القيمة عدداً صحيحاً سالباً"
 
 msgid "Value should be a number"
-msgstr ""
+msgstr "يجب أن تكون القيمة رقماً"
 
 msgid "Value should be a positive integer"
-msgstr ""
+msgstr "يجب أن تكون القيمة عدداً صحيحاً موجباً"
 
 msgid "Passwords do not match"
-msgstr ""
+msgstr "عدم تطابق كلمتي السر"
 
 msgid "This field is required"
 msgstr "هذا الحقل مطلوب"
 
 msgid "This field is required. Please select at least one"
-msgstr ""
+msgstr "هذه الخانة مطلوبه. يرجى تحديد واحد على الأقل"
 
 msgid "A username should be at least 2 characters long"
-msgstr ""
+msgstr "يجب أن يتكون اسم المستخدم من حرفين على الأقل"
 
 msgid "Username may not exceed 140 characters"
-msgstr ""
+msgstr "يجب ألا يتجاوز اسم المستخدم 140 حرفًا"
 
 msgid "Please provide a valid international phone number (+0123456789)"
-msgstr ""
+msgstr "يرجى تقديم رقم هاتف دولي صالح (+0123456789)"
 
 msgid "Password should be at least 8 characters long"
-msgstr ""
+msgstr "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل"
 
 msgid "Password should be no longer than 34 characters"
-msgstr ""
+msgstr "يجب ألا تزيد كلمة المرور عن 34 حرفًا"
 
 msgid "Password should contain at least one lowercase letter"
-msgstr ""
+msgstr "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل"
 
 msgid "Password should contain at least one UPPERCASE letter"
-msgstr ""
+msgstr "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل"
 
 msgid "Password should contain at least one number"
-msgstr ""
+msgstr "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل"
 
 msgid "Password should have at least one special character"
-msgstr ""
+msgstr "يجب أن تحتوي كلمة المرور على رمز واحد على الأقل"
 
 msgid "Username already taken"
-msgstr ""
+msgstr "الاسم مستخدم من قبل"
 
 msgid "There was a problem whilst checking the availability of this username"
-msgstr ""
+msgstr "حدثت مشكلة أثناء التحقق من توفر اسم المستخدم هذا"
 
 msgid "{{fieldDisplayName}} is already taken"
-msgstr ""
+msgstr "{{fieldDisplayName}} مع مستخدم آخر"
 
 msgid "Could not verify if this {{fieldDisplayName}} is unique"
-msgstr ""
+msgstr "تعذر التحقق ما إ"
 
 msgid "Attribute value needs to be unique, value already taken."
-msgstr ""
+msgstr "يجب أن تكون قيمة السمة فريدة ، القيمة مأخوذة مسبقاً."
 
 msgid "There was a problem checking if this attribute value is unique"
-msgstr ""
+msgstr "حدثت مشكلة في التحقق مما إذا كانت قيمة هذه السمة فريدة"
