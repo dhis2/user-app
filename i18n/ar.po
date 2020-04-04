@@ -122,7 +122,7 @@ msgid "Indicator"
 msgstr "المؤشر"
 
 msgid "Legend Set"
-msgstr ""
+msgstr "مجموعة مفاتيح إيضاحية"
 
 msgid "Map"
 msgstr "الخريطة"
@@ -137,7 +137,7 @@ msgid "Option Group"
 msgstr ""
 
 msgid "Option Set"
-msgstr ""
+msgstr "مجموعة خيارات"
 
 msgid "Organisation Unit"
 msgstr "الوحدة التنظيمية"
@@ -158,10 +158,10 @@ msgid "Program"
 msgstr "البرنامج"
 
 msgid "Program Indicator"
-msgstr ""
+msgstr "مؤشر برنامج"
 
 msgid "Program Indicator Group"
-msgstr ""
+msgstr "مجموعة مؤشرات برنامج"
 
 msgid "Program Rule"
 msgstr ""
@@ -188,13 +188,13 @@ msgid "SQL View"
 msgstr "منظور SQL"
 
 msgid "Tracked Entity"
-msgstr ""
+msgstr "كيان متتبع"
 
 msgid "Tracked Entity Attribute"
-msgstr ""
+msgstr "خاصية كيان متتبع"
 
 msgid "Tracked Entity Data Value"
-msgstr ""
+msgstr "قيمة بيانات كيان متتبع"
 
 msgid "Tracked Entity Instance"
 msgstr ""
@@ -233,7 +233,7 @@ msgid "Add"
 msgstr "إضافة"
 
 msgid "list"
-msgstr ""
+msgstr "قائمة"
 
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
@@ -270,13 +270,13 @@ msgid "Page not found."
 msgstr "لم يتم إيجاد الصفحة"
 
 msgid "No match for"
-msgstr ""
+msgstr "لا يوجد تطابق لـ "
 
 msgid "Go back home"
 msgstr "العودة للصفحة الرئيسة"
 
 msgid "User \"{{displayName}}\" replicated successfuly"
-msgstr ""
+msgstr "تم نسخ المستخدم \"{{displayName}}\" بنجاح"
 
 msgid "There was a problem replicating the user"
 msgstr "حدثت مشكلة في نسخ المستخدم"
@@ -595,10 +595,10 @@ msgid "Validating..."
 msgstr "يتم التحقق..."
 
 msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
-msgstr ""
+msgstr "هل أنت متأكد من أنك تريد إزالة {{type}} \"{{displayName}}\"؟"
 
 msgid "{{type}} \"{{displayName}}\" removed successfully"
-msgstr ""
+msgstr "تم حذف {{type}} \"{{displayName}}\" بنجاح"
 
 msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
 msgstr "حدثت مشكلة في إزالة {{type}} \"{{displayName}}\"؟"
