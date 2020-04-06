@@ -152,7 +152,7 @@ export const parseUserSaveData = (values, user, inviteUser, attributeFields) => 
     // This is only required when editing users, because new users can't have such properties
     if (!isNewUser) {
         for (const ownedPropName of userModelOwnedProperties) {
-            if (user[ownedPropName] && !data[ownedPropName]) {
+            if (user[ownedPropName] && !(ownedPropName in data)) {
                 data[ownedPropName] = user[ownedPropName];
             }
         }
