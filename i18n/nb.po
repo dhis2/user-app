@@ -1,0 +1,693 @@
+# Translators:
+# Karoline Tufte Lien <karoline@dhis2.org>, 2020
+# Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2019-09-26T10:23:05.190Z\n"
+"PO-Revision-Date: 2019-09-02 16:26+0000\n"
+"Last-Translator: Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020\n"
+"Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nb\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Use database locale / no translation"
+msgstr "Bruk databasespråket / ingen oversettelse"
+
+msgid "Search"
+msgstr "Søk"
+
+msgid "Enter search term"
+msgstr "Skriv inn søkeord"
+
+msgid "Please enter at least {{ minCharCount }} characters"
+msgstr "Skriv inn minst {{ minCharCount }} tegn"
+
+msgid "No matches found"
+msgstr "Ingen treff funnet"
+
+msgid "There was a problem retreiving your search results"
+msgstr "Det oppsto et problem med å hente søkeresultatene dine"
+
+msgid "There was a problem retreiving the available authorities."
+msgstr "Det oppstod et problem med å hente de tilgjengelige myndighetene."
+
+msgid "Authorities"
+msgstr "Rettigheter"
+
+msgid "Selected authorities only"
+msgstr "Bare valgte rettigheter"
+
+msgid "All (Full authority)"
+msgstr "Alle (Fulle rettigheter)"
+
+msgid "Analytics Table Hook"
+msgstr ""
+
+msgid "Attribute"
+msgstr "Egenskap"
+
+msgid "Category Combo"
+msgstr "Kategorikombo"
+
+msgid "Category"
+msgstr "Kategori"
+
+msgid "Category Option"
+msgstr "Kategorialternativ"
+
+msgid "Category Option Group"
+msgstr "Kategorialternativgruppe"
+
+msgid "Category Option Group Set"
+msgstr "Kategorialternativgruppesett"
+
+msgid "Chart"
+msgstr ""
+
+msgid "Color Set"
+msgstr "Fargesett"
+
+msgid "Constant"
+msgstr "Konstant"
+
+msgid "Dashboard"
+msgstr "Dashbord"
+
+msgid "Data Element Group Sets"
+msgstr "Dataelementgruppesett"
+
+msgid "Data Element Groups"
+msgstr "Dataelementgrupper"
+
+msgid "Data Element"
+msgstr "Dataelementer"
+
+msgid "Min/max rule"
+msgstr "Min/Max regel"
+
+msgid "Data Set"
+msgstr "Datasett"
+
+msgid "Data Value"
+msgstr "Dataverdi"
+
+msgid "Document"
+msgstr "Dokument"
+
+msgid "Event Chart"
+msgstr "Hendelseskart"
+
+msgid "Event Report"
+msgstr "Hendelsesrapport"
+
+msgid "External Map Layer"
+msgstr ""
+
+msgid "Indicator Group Sets"
+msgstr "Indikatorgruppesett"
+
+msgid "Indicator Group"
+msgstr "Indikatorgruppe"
+
+msgid "Indicator Type"
+msgstr "Indikatortype"
+
+msgid "Indicator"
+msgstr "Indikator"
+
+msgid "Legend Set"
+msgstr ""
+
+msgid "Map"
+msgstr "Kart"
+
+msgid "Min-Max Data Element"
+msgstr "Min-Max Dataelement"
+
+msgid "Option Group Set"
+msgstr "Valggruppesett"
+
+msgid "Option Group"
+msgstr "Valggruppe"
+
+msgid "Option Set"
+msgstr "Valgsett"
+
+msgid "Organisation Unit"
+msgstr "Organisasjonsenhet"
+
+msgid "Organisation Unit Group Set"
+msgstr "Organisasjonsenhetgruppesett"
+
+msgid "Organisation Unit Group"
+msgstr "Organisasjonsenhet gruppe"
+
+msgid "Predictor"
+msgstr "Prediktor"
+
+msgid "Program Stage"
+msgstr "Programfase"
+
+msgid "Program"
+msgstr "Program"
+
+msgid "Program Indicator"
+msgstr "Programindikator"
+
+msgid "Program Indicator Group"
+msgstr "Programindikator gruppe"
+
+msgid "Program Rule"
+msgstr "Programregel"
+
+msgid "Program Tracked Entity Attribute Group"
+msgstr "Programsporingenhet egenskap gruppe"
+
+msgid "Push Analysis"
+msgstr "Push-analyse"
+
+msgid "Relationship Type"
+msgstr "Relasjonstype"
+
+msgid "Report Table"
+msgstr ""
+
+msgid "Report"
+msgstr "Rapport"
+
+msgid "Section"
+msgstr "Seksjon"
+
+msgid "SQL View"
+msgstr "SQL visning"
+
+msgid "Tracked Entity"
+msgstr "Sporet enhet"
+
+msgid "Tracked Entity Attribute"
+msgstr "Sporet enhet egenskaper"
+
+msgid "Tracked Entity Data Value"
+msgstr "Sporet enhet dataverdi"
+
+msgid "Tracked Entity Instance"
+msgstr "Sporet enhet instans"
+
+msgid "User Group"
+msgstr "Brukergruppe"
+
+msgid "User Role"
+msgstr "Brukerrolle"
+
+msgid "User"
+msgstr "Bruker"
+
+msgid "Validation Rule Group"
+msgstr "Valideringsregel gruppe"
+
+msgid "Validation Rule"
+msgstr "Valideringsregel"
+
+msgid "Data predictor group"
+msgstr "Dataprediktorgruppe"
+
+msgid "Apps"
+msgstr "Applikasjoner"
+
+msgid "Tracker"
+msgstr "Sporing"
+
+msgid "Import-Export"
+msgstr "Importer-Eksporter"
+
+msgid "System"
+msgstr "System"
+
+msgid "Add"
+msgstr "Legg til"
+
+msgid "list"
+msgstr "Liste"
+
+msgid ""
+"You do not have access to any section of the DHIS 2 User Management App"
+msgstr ""
+"Du har ikke tilgang til noen seksjon av DHIS 2 Brukeradministrasjon "
+"Applikasjon"
+
+msgid "Send message"
+msgstr "Send melding"
+
+msgid "Update"
+msgstr "Oppdater"
+
+msgid "Create new"
+msgstr "Opprett ny"
+
+msgid "Back to"
+msgstr "Tilbake til"
+
+msgid "You are not allowed to edit"
+msgstr "Du har ikke rettigheter til å redigere"
+
+msgid "Confirm"
+msgstr "Bekreft"
+
+msgid "There was an error fetching the list"
+msgstr "Det oppsto et problem ved henting av listen"
+
+msgid "Select an organisation unit"
+msgstr "Velg en organisasjonsenhet"
+
+msgid "Organisation unit"
+msgstr "Organisasjonsenhet"
+
+msgid "Page not found."
+msgstr "Siden ble ikke funnet"
+
+msgid "No match for"
+msgstr "Ingen treff for"
+
+msgid "Go back home"
+msgstr "Gå til hjem"
+
+msgid "User \"{{displayName}}\" replicated successfuly"
+msgstr "Bruker \"{{Visningsnavn}}\" vellykket replikert"
+
+msgid "There was a problem replicating the user"
+msgstr "Det oppsto et problem ved replikering av brukeren"
+
+msgid "Username"
+msgstr "Brukernavn"
+
+msgid "Username for new user"
+msgstr "Brukernavn for ny bruker"
+
+msgid "Password"
+msgstr "Passord"
+
+msgid "Password for new user"
+msgstr "Passord for ny bruker"
+
+msgid "Replicate"
+msgstr "Repliker"
+
+msgid "Cancel"
+msgstr "Avbryt"
+
+msgid "Search by name"
+msgstr "Søk på navn"
+
+msgid "Could not load available items"
+msgstr "Kunne ikke laste tilgjengelige elementer"
+
+msgid "Filter"
+msgstr "Filter"
+
+msgid "Filter available and selected items"
+msgstr "Filter er tilgjengelig og valgte elementer"
+
+msgid "There was a problem displaying the GroupEditor"
+msgstr "Det oppsto et problem ved visning av grupperedaktøren"
+
+msgid "Apply"
+msgstr "Bruk"
+
+msgid "Clear all"
+msgstr "Fjern alt"
+
+msgid "There was an error loading the current user"
+msgstr "Det oppsto et problem ved lasting av gjeldende bruker"
+
+msgid "You do not have authorities to see users, user roles or user groups"
+msgstr ""
+"Du har ikke rettighet til å se bruker, brukerroller eller brukergrupper"
+
+msgid "Display name"
+msgstr "Visningsnavn"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Last login"
+msgstr "Sist innlogget"
+
+msgid "Created"
+msgstr "Opprettet"
+
+msgid "Surname"
+msgstr "Mellomnavn"
+
+msgid "First name"
+msgstr "Fornavn"
+
+msgid "Introduction"
+msgstr "Introduksjon"
+
+msgid "Job title"
+msgstr "Jobtittel"
+
+msgid "Works at"
+msgstr "Jobber hos"
+
+msgid "Education"
+msgstr "Utdanning"
+
+msgid "Interests"
+msgstr "Interesser"
+
+msgid "Nationality"
+msgstr "Nasjonalitet"
+
+msgid "Birthday"
+msgstr "Fødselsdato"
+
+msgid "Gender"
+msgstr "Kjønn"
+
+msgid "Speaks"
+msgstr ""
+
+msgid "E-mail"
+msgstr "E-post"
+
+msgid "Mobile phone number"
+msgstr "Mobilnummer"
+
+msgid "Organisations units"
+msgstr "Organisasjonsenheter"
+
+msgid "User roles"
+msgstr "Brukerroller"
+
+msgid "Members"
+msgstr "Medlemmer"
+
+msgid "Number of users"
+msgstr "Antall brukere"
+
+msgid "User role"
+msgstr "Brukerrolle"
+
+msgid "User group"
+msgstr "Brukergruppe"
+
+msgid "Could not load the user group data. Please refresh the page."
+msgstr "Kunne ikke laste brukergruppe data. Oppdater siden"
+
+msgid "User group \"{{displayName}}\" saved successfully"
+msgstr "Brukergruppe \"{{VisningsNavn}}\" vellykket lagret"
+
+msgid "There was a problem saving the user group."
+msgstr "Det oppsto et problem ved lagring av brukergruppen."
+
+msgid "Save"
+msgstr "Lagre"
+
+msgid "Name"
+msgstr "Navn"
+
+msgid "Code"
+msgstr "Kode"
+
+msgid "Available users"
+msgstr "Tilgjengelige brukere"
+
+msgid "Group members"
+msgstr "Gruppemedlemmer"
+
+msgid "Available user groups"
+msgstr "Tilgjengelige brukergrupper"
+
+msgid "Managed user groups"
+msgstr "Administrerte brukergrupper"
+
+msgid "You left group"
+msgstr "Du har forlatt gruppen"
+
+msgid "You joined group"
+msgstr "Du ble med i gruppen"
+
+msgid "There was a problem updating your group membership"
+msgstr "Det oppsto et problem ved oppdatering av gruppemedlemskapet ditt"
+
+msgid "User Group Management"
+msgstr "Administrasjon av brukerroller"
+
+msgid "User role \"{{displayName}}\" saved successfully"
+msgstr "Brukerrolle \"{{VisningsNavn}}\" lagring vellykket"
+
+msgid "There was a problem saving the user role."
+msgstr "Det oppsto et problem ved lagring av brukerrollen."
+
+msgid "Description"
+msgstr "Beskrivelse"
+
+msgid "User Role Management"
+msgstr "Administrasjon av brukerroller"
+
+msgid "Could not load the user data. Please refresh the page."
+msgstr "Kunne ikke laste brukerdata. Oppdater siden."
+
+msgid "User \"{{displayName}}\" saved successfully"
+msgstr "Bruker \"{{VisningsNavn}}\" lagring vellykket"
+
+msgid "There was a problem saving the user."
+msgstr "Det oppsto et problem ved lagring av brukeren"
+
+msgid "Show fewer options"
+msgstr "Vis mindre valg"
+
+msgid "Show more options"
+msgstr "Vis flere valg"
+
+msgid "Send invite"
+msgstr "Send invitasjon"
+
+msgid ""
+"Selecting an organisation unit provides access to all units in the sub-"
+"hierarchy"
+msgstr ""
+"Valg av en organisasjonsenhet gir tilgang til alle enhetene i "
+"underkategoriene"
+
+msgid "Create account or email invitation"
+msgstr "Opprett en konto eller e-post invitasjon"
+
+msgid "External authentication only (OpenID or LDAP)"
+msgstr ""
+
+msgid "Retype password"
+msgstr "Skriv inn passordet på nytt"
+
+msgid "OpenID"
+msgstr ""
+
+msgid "LDAP identifier"
+msgstr ""
+
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+msgid "Facebook Messenger"
+msgstr "Facebook Messenger"
+
+msgid "Skype"
+msgstr "Skype"
+
+msgid "Telegram"
+msgstr ""
+
+msgid "Twitter"
+msgstr "Twitter"
+
+msgid "Interface language"
+msgstr "Grensesnittspråk"
+
+msgid "Database language"
+msgstr "Databasespråk"
+
+msgid "Available roles"
+msgstr "Tilgjengelige roller"
+
+msgid "Selected roles"
+msgstr "Valgte roller"
+
+msgid "Data capture and maintenance organisation units"
+msgstr "Organisering av datainnsamling og vedlikehold"
+
+msgid "Data output and analytic organisation units"
+msgstr "Dataproduksjon og analytiske organisasjonsenheter"
+
+msgid "Search Organisation Units"
+msgstr "Søk etter Organisasjonsenheter"
+
+msgid "Selected user groups"
+msgstr "Valgte brukergrupper"
+
+msgid "Available dimension restrictions for data analytics"
+msgstr "Tilgjengelige dimensjonsbegrensninger for dataanalyse"
+
+msgid "Selected dimension restrictions for data analytics"
+msgstr "Valgte dimensjonsbegrensninger for dataanalyse"
+
+msgid "Replicate user"
+msgstr "Repliker bruker"
+
+msgid "Are you sure you want to disable two factor authentication for"
+msgstr "Er du sikker på at du vil deaktivere tofaktorautentisering for"
+
+msgid "Succesfully disabled two factor authentication for"
+msgstr "Deaktivering av tofaktorautentisering vellykket for"
+
+msgid "There was a problem updating two factor authentication"
+msgstr "Det oppsto et problem ved oppdatering av tofaktorautentisering"
+
+msgid "Are you sure you want to disable"
+msgstr "Er du sikker på at du vil deaktivere"
+
+msgid "Are you sure you want to enable"
+msgstr "Er du sikker på at du vil aktivere"
+
+msgid "sucessfully disabled"
+msgstr "Deaktivering vellykket"
+
+msgid "successfully enabled"
+msgstr "Aktivering vellykket"
+
+msgid "There was a problem updating the enabled state"
+msgstr "Det oppsto et problem med å oppdatere den aktiverte tilstanden"
+
+msgid "month"
+msgstr "Måned"
+
+msgid "months"
+msgstr "Måneder"
+
+msgid "<No value>"
+msgstr ""
+
+msgid "Inactivity"
+msgstr "Inaktivitet"
+
+msgid "All invitations"
+msgstr "Alle invitasjoner"
+
+msgid "Expired invitations"
+msgstr "Utgåtte invitasjoner"
+
+msgid "Invitations"
+msgstr "Invitasjoner"
+
+msgid "Self registrations"
+msgstr "Selvregistreringer"
+
+msgid "User Management"
+msgstr "Brukeradministrasjon"
+
+msgid "{{count}} selected"
+msgid_plural "{{count}} selected"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nei"
+
+msgid "Something went wrong when processing your request."
+msgstr "Noe gikk galt ved behandling av forespørselen"
+
+msgid "Validating..."
+msgstr "Validerer..."
+
+msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
+msgstr "Er du sikker på at du vil fjerne {{type}} \"{{VisningsNavn}}\"?"
+
+msgid "{{type}} \"{{displayName}}\" removed successfully"
+msgstr "{{type}} \"{{VisningsNavn}}\" er fjernet"
+
+msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
+msgstr "Det oppsto et problem ved fjerning av {{type}} \"{{VisningsNavn}}\""
+
+msgid "Exceeds maximum character limit of 50"
+msgstr "Overskrider maks antall karakterer av 50"
+
+msgid "Please enter a valid date with the following format yyyy-mm-dd"
+msgstr "Vennligst fyll inn en gyldig dato med følgende format: åååå-mm-dd"
+
+msgid "Please provide a valid email address"
+msgstr "Vennligst fyll ut en gyldig e-postadresse"
+
+msgid "Value should be an integer"
+msgstr "Verdien skal være et heltall"
+
+msgid "Value should be a nagative integer"
+msgstr "Verdien skal være et negativt heltall"
+
+msgid "Value should be a number"
+msgstr "Verdien skal være et nummer"
+
+msgid "Value should be a positive integer"
+msgstr "Verdien skal være et positivt heltall"
+
+msgid "Passwords do not match"
+msgstr "Passordene matcher ikke"
+
+msgid "This field is required"
+msgstr "Dette er et påkrevd felt"
+
+msgid "This field is required. Please select at least one"
+msgstr "Dette er et påkrevd felt. Velg minst en"
+
+msgid "A username should be at least 2 characters long"
+msgstr "Brukernavn må være minst 2 karakterer langt."
+
+msgid "Username may not exceed 140 characters"
+msgstr "Brukernavn kan ikke overstige 140 karakterer"
+
+msgid "Please provide a valid international phone number (+0123456789)"
+msgstr "Vennligst oppgi et gyldig internasjonalt telefonnummer (+0123456789)"
+
+msgid "Password should be at least 8 characters long"
+msgstr "Passord må inneholde minst 8 karakterer"
+
+msgid "Password should be no longer than 34 characters"
+msgstr "Passordet kan ikke være lenger enn 34 karakterer"
+
+msgid "Password should contain at least one lowercase letter"
+msgstr "Passordet må inneholde minst en liten bokstav"
+
+msgid "Password should contain at least one UPPERCASE letter"
+msgstr "Passordet må inneholdet minst en STOR bokstav"
+
+msgid "Password should contain at least one number"
+msgstr "Passord må inneholde minst et siffer"
+
+msgid "Password should have at least one special character"
+msgstr "Passordet skal ha minst ett spesialtegn"
+
+msgid "Username already taken"
+msgstr "Dette brukernavnet er allerede brukt"
+
+msgid "There was a problem whilst checking the availability of this username"
+msgstr ""
+"Det oppsto et problem ved sjekking av tilgjengelighet av dette brukernavnet"
+
+msgid "{{fieldDisplayName}} is already taken"
+msgstr "{{FeltVisningNavn}} er allerede opptatt"
+
+msgid "Could not verify if this {{fieldDisplayName}} is unique"
+msgstr "Kunne ikke verifisere hvis dette {{FeltVisningNavn}} er unikt"
+
+msgid "Attribute value needs to be unique, value already taken."
+msgstr "Egenskap verdien må være unik, verdien er allerede opptatt"
+
+msgid "There was a problem checking if this attribute value is unique"
+msgstr "Det oppsto et problem ved sjekking om denne egenskapverdien er unik."
