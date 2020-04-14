@@ -49,7 +49,7 @@ msgid "All (Full authority)"
 msgstr "Alle (Fulle rettigheter)"
 
 msgid "Analytics Table Hook"
-msgstr ""
+msgstr "Analysetabell-krok"
 
 msgid "Attribute"
 msgstr "Egenskap"
@@ -100,7 +100,7 @@ msgid "Document"
 msgstr "Dokument"
 
 msgid "Event Chart"
-msgstr "Hendelseskart"
+msgstr "Hendelsesdiagram"
 
 msgid "Event Report"
 msgstr "Hendelsesrapport"
@@ -193,7 +193,7 @@ msgid "Tracked Entity Data Value"
 msgstr "Sporet enhet dataverdi"
 
 msgid "Tracked Entity Instance"
-msgstr "Sporet enhet instans"
+msgstr "Sporet enhetforekomst"
 
 msgid "User Group"
 msgstr "Brukergruppe"
@@ -280,7 +280,7 @@ msgid "Go back home"
 msgstr "Gå til hjem"
 
 msgid "User \"{{displayName}}\" replicated successfuly"
-msgstr "Bruker \"{{Visningsnavn}}\" vellykket replikert"
+msgstr "Bruker \"{{displayName}}\" vellykket replikert"
 
 msgid "There was a problem replicating the user"
 msgstr "Det oppsto et problem ved replikering av brukeren"
@@ -404,7 +404,7 @@ msgid "Could not load the user group data. Please refresh the page."
 msgstr "Kunne ikke laste brukergruppe data. Oppdater siden"
 
 msgid "User group \"{{displayName}}\" saved successfully"
-msgstr "Brukergruppe \"{{VisningsNavn}}\" vellykket lagret"
+msgstr "Brukergruppe \"{{displayName}}\" vellykket lagret"
 
 msgid "There was a problem saving the user group."
 msgstr "Det oppsto et problem ved lagring av brukergruppen."
@@ -443,7 +443,7 @@ msgid "User Group Management"
 msgstr "Administrasjon av brukerroller"
 
 msgid "User role \"{{displayName}}\" saved successfully"
-msgstr "Brukerrolle \"{{VisningsNavn}}\" lagring vellykket"
+msgstr "Brukerrolle \"{{displayName}}\" lagring vellykket"
 
 msgid "There was a problem saving the user role."
 msgstr "Det oppsto et problem ved lagring av brukerrollen."
@@ -458,7 +458,7 @@ msgid "Could not load the user data. Please refresh the page."
 msgstr "Kunne ikke laste brukerdata. Oppdater siden."
 
 msgid "User \"{{displayName}}\" saved successfully"
-msgstr "Bruker \"{{VisningsNavn}}\" lagring vellykket"
+msgstr "Bruker \"{{displayName}}\" lagring vellykket"
 
 msgid "There was a problem saving the user."
 msgstr "Det oppsto et problem ved lagring av brukeren"
@@ -611,13 +611,13 @@ msgid "Validating..."
 msgstr "Validerer..."
 
 msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
-msgstr "Er du sikker på at du vil fjerne {{type}} \"{{VisningsNavn}}\"?"
+msgstr "Er du sikker på at du vil fjerne {{type}} \"{{displayName}}\"?"
 
 msgid "{{type}} \"{{displayName}}\" removed successfully"
-msgstr "{{type}} \"{{VisningsNavn}}\" er fjernet"
+msgstr "{{type}} \"{{displayName}}\" er fjernet"
 
 msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
-msgstr "Det oppsto et problem ved fjerning av {{type}} \"{{VisningsNavn}}\""
+msgstr "Det oppsto et problem ved fjerning av {{type}} \"{{displayName}}\""
 
 msgid "Exceeds maximum character limit of 50"
 msgstr "Overskrider maks antall karakterer av 50"
@@ -684,10 +684,10 @@ msgstr ""
 "Det oppsto et problem ved sjekking av tilgjengelighet av dette brukernavnet"
 
 msgid "{{fieldDisplayName}} is already taken"
-msgstr "{{FeltVisningNavn}} er allerede opptatt"
+msgstr "{{fieldDisplayName}} er allerede opptatt"
 
 msgid "Could not verify if this {{fieldDisplayName}} is unique"
-msgstr "Kunne ikke verifisere hvis dette {{FeltVisningNavn}} er unikt"
+msgstr "Kunne ikke verifisere hvis dette {{fieldDisplayName}} er unikt"
 
 msgid "Attribute value needs to be unique, value already taken."
 msgstr "Egenskap verdien må være unik, verdien er allerede opptatt"
