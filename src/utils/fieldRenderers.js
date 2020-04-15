@@ -86,7 +86,8 @@ export const renderSelectField = ({
         <SelectField
             floatingLabelText={label}
             fullWidth={true}
-            {...input}
+            value={input.value}
+            name={input.name}
             onChange={(event, index, value) => {
                 input.onChange(value);
                 // Trigger onBlur after a value is selected, in order to trigger
