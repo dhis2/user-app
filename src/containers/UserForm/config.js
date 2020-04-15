@@ -230,12 +230,14 @@ export const BASE_FIELDS = [
         label: i18n.t('Interface language'),
         fieldRenderer: renderSelectField,
         optionsSelector: 'locales.ui.available',
+        isRequiredField: ALWAYS_REQUIRED,
     },
     {
         name: DATABASE_LANGUAGE,
         label: i18n.t('Database language'),
         fieldRenderer: renderSelectField,
         optionsSelector: 'locales.db.available',
+        isRequiredField: ALWAYS_REQUIRED,
     },
     {
         name: ASSIGNED_ROLES,
