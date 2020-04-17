@@ -169,7 +169,7 @@ msgid "Program Rule"
 msgstr "Programregel"
 
 msgid "Program Tracked Entity Attribute Group"
-msgstr "Programsporingenhet egenskap gruppe"
+msgstr "Programsporet enhetegenskapgruppe"
 
 msgid "Push Analysis"
 msgstr "Push-analyse"
