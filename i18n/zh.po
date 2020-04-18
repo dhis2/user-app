@@ -583,7 +583,7 @@ msgid "No"
 msgstr "否"
 
 msgid "Something went wrong when processing your request."
-msgstr ""
+msgstr "处理你的请求发生错误"
 
 msgid "Validating..."
 msgstr "验证中"
@@ -598,76 +598,76 @@ msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
 msgstr "移除 {{type}} \"{{displayName}}\"出现问题"
 
 msgid "Exceeds maximum character limit of 50"
-msgstr ""
+msgstr "超过最大50字符数量限制"
 
 msgid "Please enter a valid date with the following format yyyy-mm-dd"
-msgstr ""
+msgstr "请输入如下有效的日期：yyyy-mm-dd"
 
 msgid "Please provide a valid email address"
 msgstr "有效的邮箱"
 
 msgid "Value should be an integer"
-msgstr ""
+msgstr "值应该是整数"
 
 msgid "Value should be a nagative integer"
-msgstr ""
+msgstr "值应该是负整数"
 
 msgid "Value should be a number"
-msgstr ""
+msgstr "值应该是应该数字"
 
 msgid "Value should be a positive integer"
-msgstr ""
+msgstr "值应该是应该正整数"
 
 msgid "Passwords do not match"
-msgstr ""
+msgstr "口令不匹配"
 
 msgid "This field is required"
 msgstr "这个字段是必填的"
 
 msgid "This field is required. Please select at least one"
-msgstr ""
+msgstr "该字段必须，请至少选择应该"
 
 msgid "A username should be at least 2 characters long"
-msgstr ""
+msgstr "用户名至少两个字符"
 
 msgid "Username may not exceed 140 characters"
-msgstr ""
+msgstr "用户名不能超过140个字符"
 
 msgid "Please provide a valid international phone number (+0123456789)"
-msgstr ""
+msgstr "请提供有效的国际电话号码（+0123456789）"
 
 msgid "Password should be at least 8 characters long"
-msgstr ""
+msgstr "口令至少8个字符"
 
 msgid "Password should be no longer than 34 characters"
-msgstr ""
+msgstr "口令不能超过34字符"
 
 msgid "Password should contain at least one lowercase letter"
-msgstr ""
+msgstr "口令至少包括应该小写字母"
 
 msgid "Password should contain at least one UPPERCASE letter"
-msgstr ""
+msgstr "口令至少包括一个大写字母"
 
 msgid "Password should contain at least one number"
-msgstr ""
+msgstr "口令至少包括应该数字"
 
 msgid "Password should have at least one special character"
-msgstr ""
+msgstr "口令至少包括一个特殊字符"
 
 msgid "Username already taken"
-msgstr ""
+msgstr "用户名已经使用"
 
 msgid "There was a problem whilst checking the availability of this username"
-msgstr ""
+msgstr "检查用户名是否可以发生问题"
 
 msgid "{{fieldDisplayName}} is already taken"
-msgstr ""
+msgstr "{{fieldDisplayName}} 已经被使用"
 
 msgid "Could not verify if this {{fieldDisplayName}} is unique"
-msgstr ""
+msgstr "不能确认  {{fieldDisplayName}} 是否唯一"
 
 msgid "Attribute value needs to be unique, value already taken."
-msgstr ""
+msgstr "属性应该唯一，值已经被使用"
 
 msgid "There was a problem checking if this attribute value is unique"
-msgstr ""
+msgstr "检查属性值唯一发生问题"
