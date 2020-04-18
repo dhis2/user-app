@@ -1,29 +1,28 @@
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
+# easylin <lin_xd@126.com>, 2020
+# 晓东 林 <13981924470@126.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-03-11T14:22:05.956Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
-"Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "User management"
 msgstr ""
 
 msgid "Use database locale / no translation"
-msgstr "Utilizar lingua da Base de Dados / Sem tradução"
+msgstr ""
 
 msgid "Search"
-msgstr "Pesquisar"
+msgstr "搜索"
 
 msgid "Enter search term"
 msgstr ""
@@ -53,13 +52,13 @@ msgid "Analytics Table Hook"
 msgstr ""
 
 msgid "Attribute"
-msgstr "Atributo"
+msgstr "属性"
 
 msgid "Category Combo"
 msgstr ""
 
 msgid "Category"
-msgstr "Categoria"
+msgstr "分类"
 
 msgid "Category Option"
 msgstr ""
@@ -71,16 +70,16 @@ msgid "Category Option Group Set"
 msgstr ""
 
 msgid "Chart"
-msgstr "Gráfico"
+msgstr ""
 
 msgid "Color Set"
 msgstr ""
 
 msgid "Constant"
-msgstr "Constante"
+msgstr ""
 
 msgid "Dashboard"
-msgstr "Gráficos"
+msgstr "仪表盘"
 
 msgid "Data Element Group Sets"
 msgstr ""
@@ -95,7 +94,7 @@ msgid "Min/max rule"
 msgstr ""
 
 msgid "Data Set"
-msgstr "Ficha"
+msgstr ""
 
 msgid "Data Value"
 msgstr ""
@@ -122,13 +121,13 @@ msgid "Indicator Type"
 msgstr ""
 
 msgid "Indicator"
-msgstr "Indicador"
+msgstr ""
 
 msgid "Legend Set"
 msgstr ""
 
 msgid "Map"
-msgstr "Mapa"
+msgstr ""
 
 msgid "Min-Max Data Element"
 msgstr ""
@@ -143,7 +142,7 @@ msgid "Option Set"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr "Unidade organizacional"
+msgstr ""
 
 msgid "Organisation Unit Group Set"
 msgstr ""
@@ -155,10 +154,10 @@ msgid "Predictor"
 msgstr ""
 
 msgid "Program Stage"
-msgstr "Estágio do Programa"
+msgstr ""
 
 msgid "Program"
-msgstr "Programa"
+msgstr "项目"
 
 msgid "Program Indicator"
 msgstr ""
@@ -179,16 +178,16 @@ msgid "Relationship Type"
 msgstr ""
 
 msgid "Report Table"
-msgstr "Tabela de relatório"
+msgstr ""
 
 msgid "Report"
-msgstr "Relatório"
+msgstr "报表"
 
 msgid "Section"
-msgstr "Secção"
+msgstr "分区"
 
 msgid "SQL View"
-msgstr "Ver SQL"
+msgstr ""
 
 msgid "Tracked Entity"
 msgstr ""
@@ -203,13 +202,13 @@ msgid "Tracked Entity Instance"
 msgstr ""
 
 msgid "User Group"
-msgstr "Grupo de utilizadores\\:"
+msgstr ""
 
 msgid "User Role"
 msgstr ""
 
 msgid "User"
-msgstr "Utilizador"
+msgstr "用户"
 
 msgid "Validation Rule Group"
 msgstr ""
@@ -224,19 +223,19 @@ msgid "Skip data import audit"
 msgstr ""
 
 msgid "Apps"
-msgstr "Aplicações"
+msgstr "应用"
 
 msgid "Tracker"
 msgstr ""
 
 msgid "Import-Export"
-msgstr "Importar-Exportar"
+msgstr ""
 
 msgid "System"
-msgstr "Sistema"
+msgstr ""
 
 msgid "Add"
-msgstr "Adicionar"
+msgstr "添加"
 
 msgid "list"
 msgstr ""
@@ -246,10 +245,10 @@ msgid ""
 msgstr ""
 
 msgid "Send message"
-msgstr "Enviar mensagem"
+msgstr ""
 
 msgid "Update"
-msgstr "Actualizar"
+msgstr "更新"
 
 msgid "Create new"
 msgstr ""
@@ -261,7 +260,7 @@ msgid "You are not allowed to edit"
 msgstr ""
 
 msgid "Confirm"
-msgstr "Confirmar"
+msgstr "确认"
 
 msgid "There was an error fetching the list"
 msgstr ""
@@ -270,7 +269,7 @@ msgid "Select an organisation unit"
 msgstr ""
 
 msgid "Organisation unit"
-msgstr "Unidade organizacional"
+msgstr "机构"
 
 msgid "Page not found."
 msgstr ""
@@ -288,13 +287,13 @@ msgid "There was a problem replicating the user"
 msgstr ""
 
 msgid "Username"
-msgstr "Nome de usuário"
+msgstr "用户名"
 
 msgid "Username for new user"
 msgstr ""
 
 msgid "Password"
-msgstr "Senha"
+msgstr "口令"
 
 msgid "Password for new user"
 msgstr ""
@@ -303,16 +302,16 @@ msgid "Replicate"
 msgstr ""
 
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr "取消"
 
 msgid "Search by name"
-msgstr "Pesquisar por nome"
+msgstr "按名称搜索"
 
 msgid "Could not load available items"
 msgstr ""
 
 msgid "Filter"
-msgstr "Filtro"
+msgstr "过滤器"
 
 msgid "Filter available and selected items"
 msgstr ""
@@ -321,7 +320,7 @@ msgid "There was a problem displaying the GroupEditor"
 msgstr ""
 
 msgid "Apply"
-msgstr "Aplicar"
+msgstr "应用"
 
 msgid "Clear all"
 msgstr ""
@@ -336,58 +335,58 @@ msgid "Display name"
 msgstr ""
 
 msgid "ID"
-msgstr "Id"
+msgstr ""
 
 msgid "Last login"
 msgstr ""
 
 msgid "Created"
-msgstr "Criado"
+msgstr "创建"
 
 msgid "Surname"
-msgstr "Apelido"
+msgstr "姓"
 
 msgid "First name"
-msgstr "Primeiro nome"
+msgstr "姓"
 
 msgid "Introduction"
-msgstr "Apresentação"
+msgstr "介绍"
 
 msgid "Job title"
-msgstr "Profissão"
+msgstr "工作职位"
 
 msgid "Works at"
 msgstr ""
 
 msgid "Education"
-msgstr "Escolaridade"
+msgstr "教育"
 
 msgid "Interests"
-msgstr "Interesses"
+msgstr "兴趣"
 
 msgid "Nationality"
-msgstr "Nacionalidade"
+msgstr "国籍"
 
 msgid "Birthday"
-msgstr "Aniversário"
+msgstr "生日"
 
 msgid "Gender"
-msgstr "Sexo"
+msgstr "性别"
 
 msgid "Speaks"
 msgstr ""
 
 msgid "E-mail"
-msgstr "e-mail"
+msgstr "E-mail"
 
 msgid "Mobile phone number"
-msgstr "Número de telemóvel"
+msgstr "电话号码"
 
 msgid "Organisations units"
 msgstr ""
 
 msgid "User roles"
-msgstr "Roles de Utilizadores"
+msgstr "用户角色"
 
 msgid "Members"
 msgstr ""
@@ -411,19 +410,19 @@ msgid "There was a problem saving the user group."
 msgstr ""
 
 msgid "Save"
-msgstr "Salvar"
+msgstr "保存"
 
 msgid "Name"
-msgstr "Nome"
+msgstr "名称"
 
 msgid "Code"
-msgstr "Código"
+msgstr "代码"
 
 msgid "Available users"
 msgstr ""
 
 msgid "Group members"
-msgstr "Membros do grupo"
+msgstr ""
 
 msgid "Available user groups"
 msgstr ""
@@ -450,7 +449,7 @@ msgid "There was a problem saving the user role."
 msgstr ""
 
 msgid "Description"
-msgstr "Descrição"
+msgstr "描述"
 
 msgid "User Role Management"
 msgstr ""
@@ -488,31 +487,31 @@ msgid "Retype password"
 msgstr ""
 
 msgid "OpenID"
-msgstr ""
+msgstr "OpenID"
 
 msgid "LDAP identifier"
 msgstr ""
 
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 msgid "Facebook Messenger"
-msgstr ""
+msgstr "Facebook Messenger"
 
 msgid "Skype"
-msgstr ""
+msgstr "Skype"
 
 msgid "Telegram"
-msgstr ""
+msgstr "电报"
 
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 msgid "Interface language"
-msgstr "Idioma da interface"
+msgstr "界面语言"
 
 msgid "Database language"
-msgstr "Idioma da base de dados"
+msgstr "数据库语言"
 
 msgid "Available roles"
 msgstr ""
@@ -595,13 +594,12 @@ msgstr ""
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
 msgstr[0] ""
-msgstr[1] ""
 
 msgid "Yes"
-msgstr "Sim"
+msgstr "Yes"
 
 msgid "No"
-msgstr "Não"
+msgstr "No"
 
 msgid "Something went wrong when processing your request."
 msgstr ""
@@ -643,7 +641,7 @@ msgid "Passwords do not match"
 msgstr ""
 
 msgid "This field is required"
-msgstr "Este campo é obrigatorio"
+msgstr "这个字段是必填的"
 
 msgid "This field is required. Please select at least one"
 msgstr ""
