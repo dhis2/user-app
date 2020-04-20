@@ -130,13 +130,13 @@ msgid "Min-Max Data Element"
 msgstr "Min-Max Dataelement"
 
 msgid "Option Group Set"
-msgstr "Valggruppesett"
+msgstr "Alternativgruppesett"
 
 msgid "Option Group"
 msgstr "Valggruppe"
 
 msgid "Option Set"
-msgstr "Valgsett"
+msgstr "Alternativsett"
 
 msgid "Organisation Unit"
 msgstr "Organisasjonsenhet"
@@ -205,7 +205,7 @@ msgid "User"
 msgstr "Bruker"
 
 msgid "Validation Rule Group"
-msgstr "Valideringsregel gruppe"
+msgstr "Valideringsregelgruppe"
 
 msgid "Validation Rule"
 msgstr "Valideringsregel"
