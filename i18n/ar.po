@@ -95,7 +95,7 @@ msgid "Data Set"
 msgstr "حزمة البيانات"
 
 msgid "Data Value"
-msgstr ""
+msgstr "قيمة بيانات"
 
 msgid "Document"
 msgstr "المستند"
@@ -164,7 +164,7 @@ msgid "Program Indicator Group"
 msgstr "مجموعة مؤشرات برنامج"
 
 msgid "Program Rule"
-msgstr ""
+msgstr "قاعدة برنامج"
 
 msgid "Program Tracked Entity Attribute Group"
 msgstr ""
