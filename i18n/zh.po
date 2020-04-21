@@ -595,7 +595,7 @@ msgstr "用户管理"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
-msgstr[0] ""
+msgstr[0] "选择了{{count}} 个"
 
 msgid "Yes"
 msgstr "是"
