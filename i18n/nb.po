@@ -519,7 +519,7 @@ msgid "Selected roles"
 msgstr "Valgte roller"
 
 msgid "Data capture and maintenance organisation units"
-msgstr "Organisering av datainnsamling og vedlikehold"
+msgstr "Datainnsamlings- og vedlikeholdorganisasjonsenheter"
 
 msgid "Data output and analytic organisation units"
 msgstr "Dataproduksjon og analytiske organisasjonsenheter"
