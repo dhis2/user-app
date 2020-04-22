@@ -197,7 +197,7 @@ msgid "Tracked Entity Data Value"
 msgstr "قيمة بيانات كيان متتبع"
 
 msgid "Tracked Entity Instance"
-msgstr ""
+msgstr "نسخة الكيان المتتبع"
 
 msgid "User Group"
 msgstr "مجموعة المستخدمين"
@@ -370,7 +370,7 @@ msgid "Gender"
 msgstr "الجنس"
 
 msgid "Speaks"
-msgstr ""
+msgstr "يتحدث"
 
 msgid "E-mail"
 msgstr "البريد الإلكتروني"
@@ -478,7 +478,7 @@ msgid "Create account or email invitation"
 msgstr "إنشاء حساب أو دعوة بالبريد الإلكتروني"
 
 msgid "External authentication only (OpenID or LDAP)"
-msgstr ""
+msgstr "المصادقة الخارجية فقط (OpenID أو LDAP)"
 
 msgid "Retype password"
 msgstr "إعد كتابة كلمة السر"
