@@ -119,11 +119,11 @@ export const INVITE_FIELDS = [
         options: [
             {
                 id: SET_PASSWORD,
-                label: 'Create account with user details',
+                label: i18n.t('Create account with user details'),
             },
             {
                 id: INVITE_USER,
-                label: 'Email invitation to create account',
+                label: i18n.t('Email invitation to create account'),
             },
         ],
         props: {
