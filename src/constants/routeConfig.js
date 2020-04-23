@@ -16,7 +16,7 @@ const USER_SECTION = {
     label: i18n.t('User'),
     icon: 'person',
     path: '/users',
-    description: 'Create, modify, view and delete Users',
+    description: i18n.t('Create, modify, view and delete Users'),
     component: UserList,
     entityType: USER,
 };
@@ -25,7 +25,7 @@ const USER_ROLE_SECTION = {
     label: i18n.t('User role'),
     icon: 'folder_shared',
     path: '/user-roles',
-    description: 'Create, modify, view and delete User Roles',
+    description: i18n.t('Create, modify, view and delete User Roles'),
     component: RoleList,
     entityType: USER_ROLE,
 };
@@ -34,7 +34,7 @@ const USER_GROUP_SECTION = {
     label: i18n.t('User group'),
     icon: 'group',
     path: '/user-groups',
-    description: 'Create, modify, view and delete User Groups',
+    description: i18n.t('Create, modify, view and delete User Groups'),
     component: GroupList,
     entityType: USER_GROUP,
 };
