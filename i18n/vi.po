@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-11T14:22:05.956Z\n"
+"POT-Creation-Date: 2020-04-23T14:23:39.918Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -394,11 +394,20 @@ msgstr "Thành viên"
 msgid "Number of users"
 msgstr ""
 
+msgid "Create, modify, view and delete Users"
+msgstr ""
+
 msgid "User role"
+msgstr ""
+
+msgid "Create, modify, view and delete User Roles"
 msgstr ""
 
 msgid "User group"
 msgstr "Nhóm Người Dùng"
+
+msgid "Create, modify, view and delete User Groups"
+msgstr ""
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr ""
@@ -478,6 +487,12 @@ msgid ""
 msgstr ""
 
 msgid "Create account or email invitation"
+msgstr ""
+
+msgid "Create account with user details"
+msgstr ""
+
+msgid "Email invitation to create account"
 msgstr ""
 
 msgid "External authentication only (OpenID or LDAP)"
