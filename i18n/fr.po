@@ -1,7 +1,7 @@
 # 
 # Translators:
 # Bram Piot <bram.piot@gmail.com>, 2019
-# mrwine <matthieu@pinard.no>, 2019
+# Matthieu Pinard <matthieu@pinard.no>, 2019
 # Viktor Varland <viktor@dhis2.org>, 2019
 # phil_dhis2, 2019
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
@@ -628,13 +628,13 @@ msgid "Please provide a valid email address"
 msgstr "Veuillez saisir une adresse email valide"
 
 msgid "Value should be an integer"
-msgstr ""
+msgstr "La valeur doit être un entier"
 
 msgid "Value should be a nagative integer"
-msgstr ""
+msgstr "La valeur doit être un entier négatif"
 
 msgid "Value should be a number"
-msgstr ""
+msgstr "La valeur doit être un nombre"
 
 msgid "Value should be a positive integer"
 msgstr ""
