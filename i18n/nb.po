@@ -50,7 +50,7 @@ msgid "Analytics Table Hook"
 msgstr "Analysetabell-krok"
 
 msgid "Attribute"
-msgstr "Egenskap"
+msgstr "Attributt"
 
 msgid "Category Combo"
 msgstr "Kategorikombo"
@@ -167,7 +167,7 @@ msgid "Program Rule"
 msgstr "Programregel"
 
 msgid "Program Tracked Entity Attribute Group"
-msgstr "Programsporet enhetegenskapgruppe"
+msgstr "Programsporet enhetattributtgruppe"
 
 msgid "Push Analysis"
 msgstr "Push-analyse"
@@ -191,7 +191,7 @@ msgid "Tracked Entity"
 msgstr "Sporet enhet"
 
 msgid "Tracked Entity Attribute"
-msgstr "Sporet enhet egenskaper"
+msgstr "Sporet enhetattributt"
 
 msgid "Tracked Entity Data Value"
 msgstr "Sporet enhet dataverdi"
@@ -688,7 +688,7 @@ msgid "Could not verify if this {{fieldDisplayName}} is unique"
 msgstr "Kunne ikke verifisere hvis dette {{fieldDisplayName}} er unikt"
 
 msgid "Attribute value needs to be unique, value already taken."
-msgstr "Egenskap verdien må være unik, verdien er allerede opptatt"
+msgstr "Attributtverdien må være unik, verdien er allerede opptatt"
 
 msgid "There was a problem checking if this attribute value is unique"
-msgstr "Det oppsto et problem ved sjekking om denne egenskapverdien er unik."
+msgstr "Det oppsto et problem ved sjekking om denne attributtverdien er unik."
