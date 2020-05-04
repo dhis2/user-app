@@ -221,7 +221,7 @@ msgid "Apps"
 msgstr "Applikasjoner"
 
 msgid "Tracker"
-msgstr "Sporing"
+msgstr "Tracker"
 
 msgid "Import-Export"
 msgstr "Importer-Eksporter"
