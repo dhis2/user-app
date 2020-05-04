@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-02-25T08:03:52.805Z\n"
+"POT-Creation-Date: 2020-05-04T14:35:36.050Z\n"
 "PO-Revision-Date: 2020-02-28 15:08+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -392,11 +392,20 @@ msgstr "成员"
 msgid "Number of users"
 msgstr "用户数量"
 
+msgid "Create, modify, view and delete Users"
+msgstr ""
+
 msgid "User role"
 msgstr "用户角色"
 
+msgid "Create, modify, view and delete User Roles"
+msgstr ""
+
 msgid "User group"
 msgstr "用户组"
+
+msgid "Create, modify, view and delete User Groups"
+msgstr ""
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr "不能载入用户组数据，请刷新页面"
@@ -477,6 +486,12 @@ msgstr "选择一个机构假定能访问所有的下属机构"
 
 msgid "Create account or email invitation"
 msgstr "创建帐号或邮件邀请"
+
+msgid "Create account with user details"
+msgstr ""
+
+msgid "Email invitation to create account"
+msgstr ""
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "仅仅通过外部认证（OpenIDh或LDAP）"
