@@ -66,7 +66,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "d2-style commit check",
-      "pre-commit": "d2-style js apply"
+      "pre-commit": "d2-style js apply && npm run localize && git add :/i18n"
     }
   },
   "greenkeeper": {
