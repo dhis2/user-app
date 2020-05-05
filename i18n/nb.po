@@ -399,19 +399,19 @@ msgid "Number of users"
 msgstr "Antall brukere"
 
 msgid "Create, modify, view and delete Users"
-msgstr ""
+msgstr "Opprett, endre, vis og slett brukere"
 
 msgid "User role"
 msgstr "Brukerrolle"
 
 msgid "Create, modify, view and delete User Roles"
-msgstr ""
+msgstr "Opprett, endre, vis og slett brukerrroller"
 
 msgid "User group"
 msgstr "Brukergruppe"
 
 msgid "Create, modify, view and delete User Groups"
-msgstr ""
+msgstr "Opprett, endre, vis og slett brukergrupper"
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr "Kunne ikke laste brukergruppe data. Oppdater siden"
@@ -496,10 +496,10 @@ msgid "Create account or email invitation"
 msgstr "Opprett en konto eller e-post invitasjon"
 
 msgid "Create account with user details"
-msgstr ""
+msgstr "Opprett konto med brukerinformasjon"
 
 msgid "Email invitation to create account"
-msgstr ""
+msgstr "Send invitasjon på e-post om å opprette konto"
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Bare ekstern autentisering (OpenID eller LDAP)"
