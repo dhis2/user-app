@@ -1,61 +1,18 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Paper, CircularProgress } from 'material-ui'
+import { Paper, CircularProgress, Checkbox } from 'material-ui'
 import i18n from '@dhis2/d2-i18n'
 import Heading from 'd2-ui/lib/headings/Heading.component'
 import AuthorityGroup from './AuthorityGroup'
 import AuthorityItem from './AuthorityItem'
 
-const FLUSH_COUNT = 7
-const FLUSH_INTERVAL = 10
-
 /**
  * Renders a logical authority section. Within the section it can either render rows with `AuthorityGroups` for metadata,
- * or `AuthorityItems` for other types of authorities. This component renders a lot MUI checkboxes which would cause the UI to hang
- * if they were all rendered in one cycle. To prevent this UI lag, it uses batched rendering.
  */
 class AuthoritySection extends Component {
-    constructor(props) {
-        super(props)
-        this.state = { renderedItems: null }
-        this.appendInterval = null
-    }
-
-    componentWillReceiveProps(newProps) {
-        if (newProps.authSection.items.length) {
-            this.setState({ renderedItems: null })
-            this.createBatchedRenderInterval(newProps.authSection.items)
-        }
-    }
-
-    componentWillUnmount() {
-        clearInterval(this.appendInterval)
-    }
-
-    /**
-     * Will receives a (long) array of authorities and gradually populates the state.renderedItems with these.
-     * By decreasing the `FLUSH_COUNT` and/or increasing the `FLUSH_INTERVAL` the rendering will become slower but the UI will be more responsive.
-     * @param {Array} items - The authorities to render
-     */
-    createBatchedRenderInterval(items) {
-        let currSliceEnd = 0
-        this.appendInterval = setInterval(() => {
-            const currItems = this.state.renderedItems || []
-            const reachedEnd = currSliceEnd + FLUSH_COUNT > items.length
-            const sliceEnd = reachedEnd
-                ? items.length
-                : currSliceEnd + FLUSH_COUNT
-            const newItems = items.slice(currSliceEnd, sliceEnd)
-            const renderedItems = [...currItems, ...newItems]
-
-            currSliceEnd = sliceEnd
-
-            if (renderedItems.length === items.length) {
-                clearInterval(this.appendInterval)
-            }
-
-            this.setState({ renderedItems })
-        }, FLUSH_INTERVAL)
+    onTableHeadCheck = (_event, value) => {
+        const ids = this.props.authSection.items.map(({ id }) => id)
+        this.context.onAuthChange(ids, value)
     }
 
     renderAuthRow = (authSubject, index) => {
@@ -106,8 +63,7 @@ class AuthoritySection extends Component {
     }
 
     renderContent(authSection) {
-        const { renderedItems } = this.state
-        if (!authSection.items || !renderedItems) {
+        if (!authSection.items) {
             return this.renderLoaderRow()
         }
 
@@ -119,15 +75,32 @@ class AuthoritySection extends Component {
             return this.renderInfoRow()
         }
 
-        return this.state.renderedItems.map(this.renderAuthRow)
+        return authSection.items.map(this.renderAuthRow)
     }
 
-    renderTableHead({ headers }) {
+    renderTableHead({ headers, name, items }) {
+        const allItemsSelected =
+            name !== 'Metadata' &&
+            Array.isArray(items) &&
+            items.length > 0 &&
+            items.every(({ id }) => this.context.shouldSelect(id))
+
         return (
             <thead>
                 <tr>
                     {headers.map((header, index) => (
-                        <th key={`header-${index}`}>{header}</th>
+                        <th key={`header-${index}`}>
+                            {name !== 'Metadata' && index === 0 ? (
+                                <Checkbox
+                                    className="authority-editor__auth-checkbox"
+                                    label={header}
+                                    onCheck={this.onTableHeadCheck}
+                                    checked={allItemsSelected}
+                                />
+                            ) : (
+                                header
+                            )}
+                        </th>
                     ))}
                 </tr>
             </thead>
