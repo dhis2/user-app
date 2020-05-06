@@ -11,7 +11,7 @@ import GroupList from '../containers/GroupList'
 import GroupDetails from '../containers/GroupDetails'
 import { USER, USER_ROLE, USER_GROUP } from './entityTypes'
 
-const USER_SECTION = {
+const getUserSection = () => ({
     key: 'user_section',
     label: i18n.t('User'),
     icon: 'person',
@@ -19,8 +19,8 @@ const USER_SECTION = {
     description: i18n.t('Create, modify, view and delete Users'),
     component: UserList,
     entityType: USER,
-}
-const USER_ROLE_SECTION = {
+})
+const getUserRoleSection = () => ({
     key: 'user_role_section',
     label: i18n.t('User role'),
     icon: 'folder_shared',
@@ -28,8 +28,8 @@ const USER_ROLE_SECTION = {
     description: i18n.t('Create, modify, view and delete User Roles'),
     component: RoleList,
     entityType: USER_ROLE,
-}
-const USER_GROUP_SECTION = {
+})
+const getUserGroupSection = () => ({
     key: 'user_group_section',
     label: i18n.t('User group'),
     icon: 'group',
@@ -37,12 +37,10 @@ const USER_GROUP_SECTION = {
     description: i18n.t('Create, modify, view and delete User Groups'),
     component: GroupList,
     entityType: USER_GROUP,
-}
-
-export const SECTIONS = [USER_SECTION, USER_ROLE_SECTION, USER_GROUP_SECTION]
+})
 
 // Label property is used in sidebar, so routes without a label will be omitted
-const ROUTE_CONFIG = [
+const createRouteConfig = () => [
     // USER
     {
         key: 'user_new_view',
@@ -62,7 +60,7 @@ const ROUTE_CONFIG = [
         component: UserProfile,
         entityType: USER,
     },
-    USER_SECTION,
+    getUserSection(),
     // ROLE
     {
         key: 'user_role_new_view',
@@ -82,7 +80,7 @@ const ROUTE_CONFIG = [
         component: RoleDetails,
         entityType: USER_ROLE,
     },
-    USER_ROLE_SECTION,
+    getUserRoleSection(),
     // GROUP
     {
         key: 'user_group_new_view',
@@ -102,7 +100,7 @@ const ROUTE_CONFIG = [
         component: GroupDetails,
         entityType: USER_GROUP,
     },
-    USER_GROUP_SECTION,
+    getUserGroupSection(),
     // Other
     {
         key: 'landing_page',
@@ -114,4 +112,27 @@ const ROUTE_CONFIG = [
         component: PageNotFound,
     },
 ]
-export default ROUTE_CONFIG
+
+export const getSections = (() => {
+    let sections = null
+    return () => {
+        if (!sections) {
+            sections = [
+                getUserSection(),
+                getUserRoleSection(),
+                getUserGroupSection(),
+            ]
+        }
+        return sections
+    }
+})()
+
+export default (() => {
+    let routeConfig = null
+    return () => {
+        if (!routeConfig) {
+            routeConfig = createRouteConfig()
+        }
+        return routeConfig
+    }
+})()

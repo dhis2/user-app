@@ -9,7 +9,7 @@ import navigateTo from '../../utils/navigateTo'
 import { asyncValidateUniqueness } from '../../utils/validatorsAsync'
 import { required } from '../../utils/validators'
 import { clearItem, showSnackbar, getList } from '../../actions'
-import { NAME, DESCRIPTION, AUTHORITIES, FIELDS } from './config'
+import { NAME, DESCRIPTION, AUTHORITIES, getFields } from './config'
 import { USER_ROLE } from '../../constants/entityTypes'
 import detectCurrentUserChanges from '../../utils/detectCurrentUserChanges'
 import createHumanErrorMessage from '../../utils/createHumanErrorMessage'
@@ -19,6 +19,8 @@ import createHumanErrorMessage from '../../utils/createHumanErrorMessage'
  * When valid it will save on submit and show relevant snackbar message.
  */
 class RoleForm extends Component {
+    fields = getFields()
+
     saveRole = async (values, _, props) => {
         const { role, showSnackbar, clearItem, getList } = props
         const data = {
@@ -56,7 +58,7 @@ class RoleForm extends Component {
     }
 
     renderFields() {
-        return FIELDS.map(fieldConfig => {
+        return this.fields.map(fieldConfig => {
             const {
                 name,
                 fieldRenderer,
