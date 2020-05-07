@@ -87,7 +87,7 @@ msgid "Data Element Groups"
 msgstr ""
 
 msgid "Data Element"
-msgstr ""
+msgstr "Phần tử dữ liệu"
 
 msgid "Min/max rule"
 msgstr ""
@@ -210,10 +210,10 @@ msgid "User"
 msgstr "Người dùng"
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "Nhóm luật hợp lệ"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Quy tắc hợp lệ"
 
 msgid "Data predictor group"
 msgstr ""
@@ -295,7 +295,7 @@ msgid "Password for new user"
 msgstr ""
 
 msgid "Replicate"
-msgstr ""
+msgstr "Nhân rộng"
 
 msgid "Cancel"
 msgstr "Hủy"
@@ -328,13 +328,13 @@ msgid "You do not have authorities to see users, user roles or user groups"
 msgstr ""
 
 msgid "Display name"
-msgstr ""
+msgstr "Tên hiển thị"
 
 msgid "ID"
 msgstr "Định danh"
 
 msgid "Last login"
-msgstr ""
+msgstr "Đăng nhập lần cuối"
 
 msgid "Created"
 msgstr "Đã tạo"
@@ -370,7 +370,7 @@ msgid "Gender"
 msgstr "Giới tính"
 
 msgid "Speaks"
-msgstr ""
+msgstr "Ngôn ngữ"
 
 msgid "E-mail"
 msgstr "Thư điện tử"
