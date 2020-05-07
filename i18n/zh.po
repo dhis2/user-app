@@ -395,19 +395,19 @@ msgid "Number of users"
 msgstr "用户数量"
 
 msgid "Create, modify, view and delete Users"
-msgstr ""
+msgstr "创建、修改、查看和删除用户"
 
 msgid "User role"
 msgstr "用户角色"
 
 msgid "Create, modify, view and delete User Roles"
-msgstr ""
+msgstr "创建、修改、查看和删除用户角色"
 
 msgid "User group"
 msgstr "用户组"
 
 msgid "Create, modify, view and delete User Groups"
-msgstr ""
+msgstr "创建、修改、查看和删除用户"
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr "不能载入用户组数据，请刷新页面"
@@ -490,10 +490,10 @@ msgid "Create account or email invitation"
 msgstr "创建帐号或邮件邀请"
 
 msgid "Create account with user details"
-msgstr ""
+msgstr "创建用户详情的账号"
 
 msgid "Email invitation to create account"
-msgstr ""
+msgstr "邮件邀请创建账号"
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "仅仅通过外部认证（OpenIDh或LDAP）"
