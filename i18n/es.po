@@ -3,13 +3,14 @@
 # ericbp <ericbarredap@gmail.com>, 2020
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
+# William Aviles <waviles@clintonhealthaccess.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-04T14:35:36.050Z\n"
 "PO-Revision-Date: 2020-02-28 15:08+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Last-Translator: William Aviles <waviles@clintonhealthaccess.org>, 2020\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -298,7 +299,7 @@ msgid "Password for new user"
 msgstr ""
 
 msgid "Replicate"
-msgstr ""
+msgstr "Replicar"
 
 msgid "Cancel"
 msgstr "Cancelar"
@@ -337,7 +338,7 @@ msgid "ID"
 msgstr "Identificador"
 
 msgid "Last login"
-msgstr ""
+msgstr "Último ingreso"
 
 msgid "Created"
 msgstr "Creado"
@@ -373,7 +374,7 @@ msgid "Gender"
 msgstr "Sexo"
 
 msgid "Speaks"
-msgstr ""
+msgstr "Habla"
 
 msgid "E-mail"
 msgstr "Correo electrónico"
