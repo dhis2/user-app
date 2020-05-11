@@ -11,7 +11,14 @@ import { asyncValidatorSwitch } from '../../utils/validatorsAsync'
 import { renderSearchableGroupEditor } from '../../utils/fieldRenderers'
 import createHumanErrorMessage from '../../utils/createHumanErrorMessage'
 import { clearItem, showSnackbar, getList } from '../../actions'
-import { FORM_NAME, NAME, CODE, USERS, MANAGED_GROUPS, FIELDS } from './config'
+import {
+    FORM_NAME,
+    NAME,
+    CODE,
+    USERS,
+    MANAGED_GROUPS,
+    getFields,
+} from './config'
 import { userGroupFormInitialValuesSelector } from '../../selectors'
 import { USER_GROUP } from '../../constants/entityTypes'
 import detectCurrentUserChanges from '../../utils/detectCurrentUserChanges'
@@ -35,6 +42,7 @@ class GroupForm extends Component {
             attributeFields: null,
         }
         this.trashableAttributesPromise = null
+        this.fields = getFields()
     }
 
     async componentDidMount() {
@@ -193,7 +201,7 @@ class GroupForm extends Component {
                     autoComplete="off"
                     onSubmit={handleSubmit(this.saveGroup)}
                 >
-                    {this.renderFields(FIELDS)}
+                    {this.renderFields(this.fields)}
                     {this.renderFields(attributeFields)}
                     <div style={{ marginTop: '2rem' }}>
                         <RaisedButton
