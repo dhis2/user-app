@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-05-04T13:32:28.331Z\n"
-"PO-Revision-Date: 2020-05-04T13:32:28.331Z\n"
+"POT-Creation-Date: 2020-05-11T14:57:14.928Z\n"
+"PO-Revision-Date: 2020-05-11T14:57:14.928Z\n"
 
 msgid "User management"
 msgstr ""
@@ -231,6 +231,15 @@ msgid "list"
 msgstr ""
 
 msgid "You do not have access to any section of the DHIS 2 User Management App"
+msgstr ""
+
+msgid "Edit user"
+msgstr ""
+
+msgid "Edit user group"
+msgstr ""
+
+msgid "Edit user role"
 msgstr ""
 
 msgid "Send message"
