@@ -16,7 +16,7 @@ import {
     DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
     SET_PASSWORD,
 } from '../containers/UserForm/config'
-import { FIELDS as USER_GROUP_FIELDS } from '../containers/GroupForm/config'
+import { getFields as getUserGroupFields } from '../containers/GroupForm/config'
 import asArray from '../utils/asArray'
 import getNestedProp from '../utils/getNestedProp'
 
@@ -147,7 +147,7 @@ export const userGroupFormInitialValuesSelector = memoize(
     (userGroup, attributeFields) => {
         const initialValues = {}
 
-        USER_GROUP_FIELDS.forEach(field => {
+        getUserGroupFields().forEach(field => {
             addInitialValueFrom(userGroup, initialValues, field.name)
         })
 
