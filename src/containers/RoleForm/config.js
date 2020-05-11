@@ -7,7 +7,7 @@ export const AUTHORITIES = 'authorities';
 
 export const ROLE_PROPS = [NAME, DESCRIPTION, AUTHORITIES];
 
-export const FIELDS = [
+export const getFields = () => [
     {
         name: NAME,
         label: i18n.t('Name'),

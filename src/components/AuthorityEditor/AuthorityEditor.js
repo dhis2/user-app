@@ -8,7 +8,7 @@ import createHumanErrorMessage from '../../utils/createHumanErrorMessage';
 import api from '../../api';
 import AuthorityFilter from './AuthorityFilter';
 import FilteredAuthoritySections from './FilteredAuthoritySections';
-import { EMPTY_GROUPED_AUTHORITIES } from './utils/groupAuthorities';
+import { getEmptyGroupedAuthorities } from './utils/groupAuthorities';
 
 /**
  * This is the parent component of the authorities section in the RoleForm.
@@ -18,7 +18,7 @@ class AuthorityEditor extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            allGroupedAuthorities: EMPTY_GROUPED_AUTHORITIES,
+            allGroupedAuthorities: getEmptyGroupedAuthorities(),
         };
         // This lookup may be updated without triggering re-renders
         this.selectedItemsLookup = props.initiallySelected.reduce(
@@ -55,9 +55,12 @@ class AuthorityEditor extends Component {
             error,
             i18n.t('There was a problem retreiving the available authorities.')
         );
-        const allGroupedAuthorities = Object.keys(EMPTY_GROUPED_AUTHORITIES).reduce(
+        const allGroupedAuthorities = Object.keys(getEmptyGroupedAuthorities()).reduce(
             (total, key) => {
-                total[key] = { ...EMPTY_GROUPED_AUTHORITIES[key], items: errorMsg };
+                total[key] = {
+                    ...getEmptyGroupedAuthorities()[key],
+                    items: errorMsg,
+                };
                 return total;
             },
             {}

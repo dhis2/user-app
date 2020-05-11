@@ -6,7 +6,7 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 import { initCurrentUser } from '../actions';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import ErrorMessage from './ErrorMessage';
-import ROUTE_CONFIG from '../constants/routeConfig';
+import getRouteConfig from '../constants/routeConfig';
 import SideNav from './SideNav';
 import navigateTo from '../utils/navigateTo';
 
@@ -62,7 +62,7 @@ class SectionLoader extends Component {
     setRouteConfig(currentUser) {
         this.routeConfig = !currentUser
             ? null
-            : ROUTE_CONFIG.reduce(
+            : getRouteConfig().reduce(
                   (routeConfig, configItem) => {
                       let { routes, sections } = routeConfig;
                       if (this.userHasAuthorities(configItem, currentUser)) {

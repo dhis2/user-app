@@ -1,12 +1,9 @@
 /** @module AuthorityEditor/utils/groupAuthorities */
 import i18n from '@dhis2/d2-i18n';
 import _ from '../../../constants/lodash';
-import nameLookup from './authorityGroupNames';
+import getNameLookup from './authorityGroupNames';
 
-// The next 3 constants are exported so they can be used by the AuthorityEditor component
-
-// The target object to which the allAuths array will be mapped
-export const EMPTY_GROUPED_AUTHORITIES = {
+const createEmptyGroupedAuthorities = () => ({
     metadata: {
         name: 'Metadata',
         items: null,
@@ -38,7 +35,20 @@ export const EMPTY_GROUPED_AUTHORITIES = {
         items: null,
         headers: ['Name'],
     },
-};
+});
+
+// The next 3 constants are exported so they can be used by the AuthorityEditor component
+
+// The target object to which the allAuths array will be mapped
+export const getEmptyGroupedAuthorities = (() => {
+    let emptyGroupedAuthorities = null;
+    return () => {
+        if (!emptyGroupedAuthorities) {
+            emptyGroupedAuthorities = createEmptyGroupedAuthorities();
+        }
+        return emptyGroupedAuthorities;
+    };
+})();
 
 // Suffixes and prefixes
 export const PUBLIC_ADD_SUFFIX = '_PUBLIC_ADD';
@@ -146,11 +156,11 @@ const groupAuthorities = authorities => {
         return lookup;
     }, new Map());
 
-    // The initial state of items in EMPTY_GROUPED_AUTHORITIES is null, which makes the authority sections render a loader
+    // The initial state of items in emptyGroupedAuthorities is null, which makes the authority sections render a loader
     // but the accumulator object passed into the reduce function below expects items to be empty arrays
-    const emptyGroupedAuthorities = Object.keys(EMPTY_GROUPED_AUTHORITIES).reduce(
+    const emptyGroupedAuthorities = Object.keys(getEmptyGroupedAuthorities()).reduce(
         (groupedBase, key) => {
-            groupedBase[key] = { ...EMPTY_GROUPED_AUTHORITIES[key], items: [] };
+            groupedBase[key] = { ...getEmptyGroupedAuthorities()[key], items: [] };
             return groupedBase;
         },
         {}
@@ -254,7 +264,7 @@ const createMetadataGroup = (auth, lookup) => {
     ALL_METADATA_SUFFIXES.forEach(suffix => lookup.delete(baseName + suffix));
 
     return {
-        name: nameLookup.get(baseName) || baseName,
+        name: getNameLookup().get(baseName) || baseName,
         items: [publicAddAuth, privateAddAuth, deleteAuth, externalAccessAuth],
     };
 };
@@ -272,7 +282,7 @@ const addToAuthoritySection = (auth, groupedAuthorities, lookup) => {
         ) || 'system';
 
     if (auth.id === 'ALL') {
-        auth.name = nameLookup.get(auth.id);
+        auth.name = getNameLookup().get(auth.id);
     }
 
     groupedAuthorities[groupKey].items.push(auth);

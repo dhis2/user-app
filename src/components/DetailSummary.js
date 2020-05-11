@@ -1,3 +1,5 @@
+/* eslint-disable max-params */
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Paper } from 'material-ui';
@@ -13,7 +15,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import ImageEdit from 'material-ui/svg-icons/image/edit';
 import ContentSend from 'material-ui/svg-icons/content/send';
 import { Link } from 'react-router-dom';
-import { USER } from '../constants/entityTypes';
+import { USER, USER_GROUP, USER_ROLE } from '../constants/entityTypes';
 import { connect } from 'react-redux';
 import { getItem } from '../actions';
 
@@ -51,6 +53,19 @@ class DetailSummary extends Component {
     componentDidMount() {
         const { baseName, routeId, getItem } = this.props;
         getItem(baseName, routeId);
+    }
+
+    getLabelForEntity(baseName) {
+        switch (baseName) {
+            case USER:
+                return i18n.t('Edit user');
+            case USER_GROUP:
+                return i18n.t('Edit user group');
+            case USER_ROLE:
+                return i18n.t('Edit user role');
+            default:
+                return '';
+        }
     }
 
     /**
@@ -151,7 +166,7 @@ class DetailSummary extends Component {
             baseRoute = `/${_.kebabCase(plural)}`,
             backTooltip = i18n.t(`Back to ${plural}`),
             editLink = `${baseRoute}/edit/${id}`,
-            editTooltip = i18n.t(`Edit ${baseName}`);
+            editLabel = this.getLabelForEntity(baseName);
 
         return (
             <main style={styles.main}>
@@ -162,7 +177,7 @@ class DetailSummary extends Component {
                     {access.update ? (
                         <RaisedButton
                             style={styles.raisedButton}
-                            label={editTooltip}
+                            label={editLabel}
                             primary={true}
                             containerElement={<Link to={editLink} />}
                             icon={<ImageEdit />}

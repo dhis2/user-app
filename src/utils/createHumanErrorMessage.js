@@ -9,12 +9,10 @@ import i18n from '@dhis2/d2-i18n';
  * @memberof module:utils
  * @function
  */
-const fallBackDefault = i18n.t('Something went wrong when processing your request.');
 
-const createHumanErrorMessage = (
-    { message, messages, httpStatusCode },
-    fallbackMsg = fallBackDefault
-) => {
+const createHumanErrorMessage = ({ message, messages, httpStatusCode }, fallbackMsg) => {
+    const fallback =
+        fallbackMsg || i18n.t('Something went wrong when processing your request.');
     const useMessage =
         (httpStatusCode && httpStatusCode >= 400 && httpStatusCode < 500) ||
         (!httpStatusCode && messages && messages.length > 0);
@@ -23,7 +21,7 @@ const createHumanErrorMessage = (
         message = messages.map(({ message }) => message).join(', ');
     }
 
-    return useMessage ? message : fallbackMsg;
+    return useMessage ? message : fallback;
 };
 
 export default createHumanErrorMessage;
