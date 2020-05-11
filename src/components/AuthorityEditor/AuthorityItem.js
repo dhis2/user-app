@@ -9,24 +9,12 @@ import HighlightableText from './HighlightableText'
  * Depending on state this checkbox can be disabled or selected.
  */
 class AuthorityItem extends Component {
-    constructor(props) {
-        super(props)
-        this.state = { selected: props.selected }
-    }
-
     onChecked = (_, value) => {
         const {
             authSubject: { id },
             onCheckedCallBack,
         } = this.props
-        this.setState({ selected: value })
-        onCheckedCallBack(id, value)
-    }
-
-    componentWillReceiveProps(newProps) {
-        if (newProps.selected !== this.state.selected) {
-            this.setState({ selected: newProps.selected })
-        }
+        onCheckedCallBack([id], value)
     }
 
     render() {
@@ -50,7 +38,7 @@ class AuthorityItem extends Component {
                         onCheck={this.onChecked}
                         label={label}
                         className={className}
-                        checked={this.state.selected || Boolean(implicit)}
+                        checked={this.props.selected || Boolean(implicit)}
                         disabled={implicit || disabled}
                     />
                 ) : (
