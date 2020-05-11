@@ -130,6 +130,7 @@ export const renderSearchableGroupEditor = ({
 
 export const renderSearchableOrgUnitTree = ({
     input,
+    meta: { touched, error },
     label,
     wrapperStyle,
     initialValues,
@@ -142,6 +143,8 @@ export const renderSearchableOrgUnitTree = ({
             wrapperStyle={wrapperStyle}
             headerText={label}
             orgUnitType={orgUnitType}
+            errorText={touched && error}
+            onBlur={input.onBlur}
         />
     );
 };

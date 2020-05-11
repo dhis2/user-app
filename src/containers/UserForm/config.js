@@ -251,6 +251,7 @@ export const BASE_FIELDS = [
     {
         name: DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
         label: i18n.t('Data capture and maintenance organisation units'),
+        isRequiredField: ALWAYS_REQUIRED,
         orgUnitType: DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
         fieldRenderer: renderSearchableOrgUnitTree,
         wrapperStyle: { ...STYLES.orgUnitTree, paddingRight: '60px' },
