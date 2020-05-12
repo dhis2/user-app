@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-04-23T14:23:39.918Z\n"
+"POT-Creation-Date: 2020-05-11T15:36:45.447Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -71,9 +71,6 @@ msgstr "分类选项组"
 
 msgid "Category Option Group Set"
 msgstr "分类选项组集"
-
-msgid "Chart"
-msgstr "图表"
 
 msgid "Color Set"
 msgstr "颜色集"
@@ -180,9 +177,6 @@ msgstr "分析推送"
 msgid "Relationship Type"
 msgstr "关系类型"
 
-msgid "Report Table"
-msgstr "报表表"
-
 msgid "Report"
 msgstr "报表"
 
@@ -225,6 +219,9 @@ msgstr "数据预测器组"
 msgid "Skip data import audit"
 msgstr "跳过数据导入审计"
 
+msgid "Visualization"
+msgstr "可视化"
+
 msgid "Apps"
 msgstr "Apps"
 
@@ -246,6 +243,15 @@ msgstr "列表"
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
 msgstr "你没有任何权限访问DHIS2用户管理应用"
+
+msgid "Edit user"
+msgstr ""
+
+msgid "Edit user group"
+msgstr ""
+
+msgid "Edit user role"
+msgstr ""
 
 msgid "Send message"
 msgstr "发生信息"
