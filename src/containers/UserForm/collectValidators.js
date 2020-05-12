@@ -12,6 +12,7 @@ import {
 const validatorLookup = {
     ...validators,
     userRoles: validators.requiredArray,
+    organisationUnits: validators.requiredArray,
 };
 
 // When creating a user, a password is required, because there is no step to create

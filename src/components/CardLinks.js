@@ -7,7 +7,7 @@ import CardText from 'material-ui/Card/CardText';
 import CardActions from 'material-ui/Card/CardActions';
 import IconButton from 'material-ui/IconButton/IconButton';
 import navigateTo from '../utils/navigateTo';
-import { SECTIONS } from '../constants/routeConfig';
+import { getSections } from '../constants/routeConfig';
 
 const cardStyle = {
     padding: '0',
@@ -102,7 +102,7 @@ class CardLinks extends Component {
     };
 
     render() {
-        const cards = SECTIONS.map(this.renderCard);
+        const cards = getSections().map(this.renderCard);
 
         if (cards.length === 0) {
             return (

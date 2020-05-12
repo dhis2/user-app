@@ -98,7 +98,7 @@ export const USE_DB_LOCALE = 'use_db_locale';
 export const SET_PASSWORD = 'SET_PASSWORD';
 export const INVITE_USER = 'INVITE_USER';
 
-const BASE_CAPTION = {
+const getBaseCaption = () => ({
     label: i18n.t(
         'Selecting an organisation unit provides access to all units in the sub-hierarchy'
     ),
@@ -109,9 +109,9 @@ const BASE_CAPTION = {
         fontStyle: 'italic',
         fontSize: '0.9rem',
     },
-};
+});
 
-export const INVITE_FIELDS = [
+export const getInviteFields = () => [
     {
         name: INVITE,
         label: i18n.t('Create account or email invitation'),
@@ -134,7 +134,7 @@ export const INVITE_FIELDS = [
     },
 ];
 
-export const BASE_FIELDS = [
+export const getBaseFields = () => [
     {
         name: USERNAME,
         label: i18n.t('Username'),
@@ -251,6 +251,7 @@ export const BASE_FIELDS = [
     {
         name: DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
         label: i18n.t('Data capture and maintenance organisation units'),
+        isRequiredField: ALWAYS_REQUIRED,
         orgUnitType: DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
         fieldRenderer: renderSearchableOrgUnitTree,
         wrapperStyle: { ...STYLES.orgUnitTree, paddingRight: '60px' },
@@ -263,12 +264,12 @@ export const BASE_FIELDS = [
         wrapperStyle: { ...STYLES.orgUnitTree, paddingLeft: '60px' },
     },
     {
-        ...BASE_CAPTION,
+        ...getBaseCaption(),
         name: 'org_unit_info_1',
     },
 ];
 
-export const ADDITIONAL_FIELDS = [
+export const getAdditionalFields = () => [
     {
         name: TEI_SEARCH_ORG_UNITS,
         label: i18n.t('Search Organisation Units'),
@@ -277,7 +278,7 @@ export const ADDITIONAL_FIELDS = [
         wrapperStyle: { ...STYLES.orgUnitTree, paddingRight: '60px' },
     },
     {
-        ...BASE_CAPTION,
+        ...getBaseCaption(),
         name: 'org_unit_info_2',
     },
     {

@@ -83,7 +83,7 @@ export function parseAttributeValues(values, attributeFields) {
     }, []);
 }
 
-const valueTypeMapping = {
+const createValueTypeMapping = () => ({
     OPTION_SET: {
         fieldRenderer: renderSelectField,
     },
@@ -137,7 +137,17 @@ const valueTypeMapping = {
         fieldRenderer: renderTextField,
         fieldValidators: [negativeInteger],
     },
-};
+});
+
+const getValueTypeMapping = (() => {
+    let valueTypeMapping = null;
+    return () => {
+        if (!valueTypeMapping) {
+            valueTypeMapping = createValueTypeMapping();
+        }
+        return valueTypeMapping;
+    };
+})();
 
 function generateAttributeField(
     { id, valueType, displayName, mandatory, unique, optionSet },
@@ -163,6 +173,7 @@ function generateAttributeField(
 }
 
 function getValueTypeProps(valueType, optionSet, mandatory) {
+    const valueTypeMapping = getValueTypeMapping();
     // Attributes based on an option-set have TEXT as their valueType but need to render a select/dropdown with the options
     const valueTypeProps = optionSet
         ? {

@@ -49,6 +49,9 @@ class UserForm extends Component {
         };
         this.trashableAttributesPromise = null;
         this.trashableLocalePromise = null;
+        this.inviteFields = CONFIG.getInviteFields();
+        this.baseFields = CONFIG.getBaseFields();
+        this.additionalFields = CONFIG.getAdditionalFields();
     }
 
     async componentDidMount() {
@@ -248,7 +251,7 @@ class UserForm extends Component {
     }
 
     renderCreateOrInviteField() {
-        return this.renderFields(CONFIG.INVITE_FIELDS);
+        return this.renderFields(this.inviteFields);
     }
 
     renderAttributeFields() {
@@ -256,7 +259,7 @@ class UserForm extends Component {
     }
 
     renderBaseFields() {
-        return this.renderFields(CONFIG.BASE_FIELDS);
+        return this.renderFields(this.baseFields);
     }
 
     renderAdditionalFields(showMore) {
@@ -265,7 +268,7 @@ class UserForm extends Component {
         }
         return (
             <div style={CONFIG.STYLES.additionalFieldsWrap}>
-                {this.renderFields(CONFIG.ADDITIONAL_FIELDS)}
+                {this.renderFields(this.additionalFields)}
             </div>
         );
     }
