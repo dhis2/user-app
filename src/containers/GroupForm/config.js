@@ -20,7 +20,7 @@ export const STYLES = {
     },
 }
 
-export const FIELDS = [
+export const getFields = () => [
     {
         name: NAME,
         label: i18n.t('Name'),

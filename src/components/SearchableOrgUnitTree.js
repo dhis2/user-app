@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import OrgUnitTreeMultipleRoots from 'd2-ui/lib/org-unit-tree/OrgUnitTreeMultipleRoots.component'
 import Paper from 'material-ui/Paper'
 import CircularProgress from 'material-ui/CircularProgress'
+import { red500 } from 'material-ui/styles/colors'
 import AsyncAutoComplete from './AsyncAutoComplete'
 import RaisedButton from 'material-ui/RaisedButton'
 import Heading from 'd2-ui/lib/headings/Heading.component'
@@ -45,6 +46,13 @@ const styles = {
         paddingBottom: 0,
         fontSize: '1.2rem',
         marginBottom: '-16px',
+    },
+    headerError: {
+        color: red500,
+    },
+    errorText: {
+        fontSize: '0.8rem',
+        marginLeft: '0.8rem',
     },
 }
 
@@ -89,7 +97,7 @@ class SearchableOrgUnitTree extends Component {
     }
 
     update(selectedOrgUnits, initiallyExpanded) {
-        const { onChange } = this.props
+        const { onChange, onBlur } = this.props
         const updateObject = initiallyExpanded
             ? { selectedOrgUnits, initiallyExpanded }
             : { selectedOrgUnits }
@@ -99,6 +107,8 @@ class SearchableOrgUnitTree extends Component {
         }
 
         this.setState(updateObject)
+        // Also call onBlur if this is available. In a redux-form the component will be 'touched' by it
+        onBlur && onBlur()
     }
 
     toggleSelectedOrgUnits = (_, orgUnit) => {
@@ -148,6 +158,7 @@ class SearchableOrgUnitTree extends Component {
             orgUnitType,
             headerText,
             wrapperStyle,
+            errorText,
         } = this.props
         const selected = selectedOrgUnits.map(unit => unit.path)
         const autoCompleteProps = {
@@ -155,12 +166,18 @@ class SearchableOrgUnitTree extends Component {
             hintText: i18n.t('Enter search term'),
             fullWidth: true,
         }
+        const headerStyle = errorText
+            ? { ...styles.header, ...styles.headerError }
+            : styles.header
 
         return (
             <div style={{ ...styles.wrapper, ...wrapperStyle }}>
                 {headerText ? (
-                    <Heading level={4} style={styles.header}>
+                    <Heading level={4} style={headerStyle}>
                         {headerText}
+                        {errorText && (
+                            <span style={styles.errorText}>{errorText}</span>
+                        )}
                     </Heading>
                 ) : null}
                 <AsyncAutoComplete
@@ -215,10 +232,12 @@ SearchableOrgUnitTree.propTypes = {
     roots: PropTypes.array,
     selectedOrgUnits: PropTypes.array.isRequired,
     orgUnitType: PropTypes.string.isRequired,
+    errorText: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     headerText: PropTypes.string,
     wrapperStyle: PropTypes.object,
     confirmSelection: PropTypes.func,
     onChange: PropTypes.func,
+    onBlur: PropTypes.func,
     cancel: PropTypes.func,
 }
 
