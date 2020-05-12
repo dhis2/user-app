@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-04-23T14:23:39.918Z\n"
+"POT-Creation-Date: 2020-05-11T15:36:45.447Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -70,9 +70,6 @@ msgstr ""
 
 msgid "Category Option Group Set"
 msgstr ""
-
-msgid "Chart"
-msgstr "المخطط البياني"
 
 msgid "Color Set"
 msgstr ""
@@ -179,9 +176,6 @@ msgstr ""
 msgid "Relationship Type"
 msgstr "نوع العلاقة"
 
-msgid "Report Table"
-msgstr "جدول التقرير"
-
 msgid "Report"
 msgstr "التقرير"
 
@@ -224,6 +218,9 @@ msgstr ""
 msgid "Skip data import audit"
 msgstr "تخطي تدقيق استيراد البيانات"
 
+msgid "Visualization"
+msgstr "التخطيط البياني"
+
 msgid "Apps"
 msgstr "التطبيقات"
 
@@ -245,6 +242,15 @@ msgstr "قائمة"
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
 msgstr "ليس لديك حق الوصول إلى أي قسم في تطبيق إدارة مستخدمي الـ DHIS 2"
+
+msgid "Edit user"
+msgstr "تعديل المستخدم"
+
+msgid "Edit user group"
+msgstr "تعديل مجموعة المستخدم"
+
+msgid "Edit user role"
+msgstr "تعديل دور المستخدم"
 
 msgid "Send message"
 msgstr "إرسال رسالة"
@@ -398,7 +404,7 @@ msgid "Number of users"
 msgstr "عدد المستخدمين"
 
 msgid "Create, modify, view and delete Users"
-msgstr ""
+msgstr "إنشاء، تعديل، استعراض و حذف المستخدمين"
 
 msgid "User role"
 msgstr "دور المستخدم"

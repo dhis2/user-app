@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-04-23T14:23:39.918Z\n"
+"POT-Creation-Date: 2020-05-11T15:36:45.447Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
+"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -69,9 +69,6 @@ msgstr "Kategorialternativgruppe"
 
 msgid "Category Option Group Set"
 msgstr "Kategorialternativgruppesett"
-
-msgid "Chart"
-msgstr "Diagram"
 
 msgid "Color Set"
 msgstr "Fargesett"
@@ -178,9 +175,6 @@ msgstr "Push-analyse"
 msgid "Relationship Type"
 msgstr "Relasjonstype"
 
-msgid "Report Table"
-msgstr "Rapporttabell"
-
 msgid "Report"
 msgstr "Rapport"
 
@@ -223,6 +217,9 @@ msgstr "Dataprediktorgruppe"
 msgid "Skip data import audit"
 msgstr "Hopp over revisjon av dataimport"
 
+msgid "Visualization"
+msgstr "Visualisering"
+
 msgid "Apps"
 msgstr "Applikasjoner"
 
@@ -246,6 +243,15 @@ msgid ""
 msgstr ""
 "Du har ikke tilgang til noen seksjon av DHIS 2 Brukeradministrasjon "
 "Applikasjon"
+
+msgid "Edit user"
+msgstr "Rediger bruker"
+
+msgid "Edit user group"
+msgstr "Rediger brukergruppe"
+
+msgid "Edit user role"
+msgstr "Rediger brukerrolle"
 
 msgid "Send message"
 msgstr "Send melding"
