@@ -41,13 +41,13 @@ const baseState = {
     errorStyle: styles.error.info,
 }
 
-const defaultAutoCompleteProps = {
+const getDefaultAutoCompleteProps = () => ({
     floatingLabelText: i18n.t('Search'),
     hintText: i18n.t('Enter search term'),
     fullWidth: true,
     type: 'search',
     filter: () => true,
-}
+})
 
 /**
  * Generic component that renders a MUI AutoComplete. It can execute an async query and show a list of results.
@@ -137,7 +137,7 @@ class AsyncAutoComplete extends Component {
     render() {
         const { autoCompleteProps } = this.props
         const mergedAutoCompleteProps = {
-            ...defaultAutoCompleteProps,
+            ...getDefaultAutoCompleteProps(),
             ...autoCompleteProps,
         }
         const {

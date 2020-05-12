@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 
-const BASE_FIELDS = [
+const getBaseFields = () => [
     {
         key: 'displayName',
         label: i18n.t('Display name'),
@@ -11,8 +11,8 @@ const BASE_FIELDS = [
     },
 ]
 
-export const USER_PROFILE = [
-    ...BASE_FIELDS,
+export const getUserProfile = () => [
+    ...getBaseFields(),
     {
         key: 'userCredentials',
         nestedPropselector: ['lastLogin'],
@@ -91,16 +91,16 @@ export const USER_PROFILE = [
     },
 ]
 
-export const USER_ROLE_DETAILS = [
-    ...BASE_FIELDS,
+export const getUserRoleDetails = () => [
+    ...getBaseFields(),
     {
         key: 'users',
         label: i18n.t('Members'),
         count: true,
     },
 ]
-export const USER_GROUP_DETAILS = [
-    ...BASE_FIELDS,
+export const getUserGroupDetails = () => [
+    ...getBaseFields(),
     {
         key: 'users',
         label: i18n.t('Number of users'),

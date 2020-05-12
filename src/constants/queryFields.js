@@ -33,9 +33,14 @@ export const USER_DETAILS = [
     'twitter',
 ]
 
-export const USER_ROLE_DETAILS = [':owner', 'authorities', 'displayName']
+export const USER_ROLE_DETAILS = [
+    ':owner',
+    'access',
+    'authorities',
+    'displayName',
+]
 
-export const USER_GROUP_DETAILS = [':owner', 'displayName']
+export const USER_GROUP_DETAILS = [':owner', 'access', 'displayName']
 
 export const CURRENT_USER_ORG_UNITS_FIELDS = {
     fields: [

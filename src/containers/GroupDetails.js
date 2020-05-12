@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { USER_GROUP } from '../constants/entityTypes'
 import DetailSummary from '../components/DetailSummary'
-import { USER_GROUP_DETAILS } from '../constants/detailFieldConfigs'
+import { getUserGroupDetails } from '../constants/detailFieldConfigs'
 
 /** Renders a DetailSummary for a UserGroup instance
  * @class
@@ -14,7 +14,7 @@ const GroupDetails = ({
 }) => (
     <DetailSummary
         routeId={id}
-        config={USER_GROUP_DETAILS}
+        config={getUserGroupDetails()}
         baseName={USER_GROUP}
     />
 )
