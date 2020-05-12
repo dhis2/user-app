@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-05-04T13:40:21.831Z\n"
+"POT-Creation-Date: 2020-05-11T15:36:45.447Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/hisp-uio/teams/100509/pt_BR/)\n"
@@ -69,9 +69,6 @@ msgstr ""
 
 msgid "Category Option Group Set"
 msgstr ""
-
-msgid "Chart"
-msgstr "Gráfico"
 
 msgid "Color Set"
 msgstr ""
@@ -178,9 +175,6 @@ msgstr ""
 msgid "Relationship Type"
 msgstr ""
 
-msgid "Report Table"
-msgstr "Tabela de relatório"
-
 msgid "Report"
 msgstr "Relatório"
 
@@ -223,6 +217,9 @@ msgstr ""
 msgid "Skip data import audit"
 msgstr ""
 
+msgid "Visualization"
+msgstr ""
+
 msgid "Apps"
 msgstr ""
 
@@ -243,6 +240,15 @@ msgstr ""
 
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
+msgstr ""
+
+msgid "Edit user"
+msgstr ""
+
+msgid "Edit user group"
+msgstr ""
+
+msgid "Edit user role"
 msgstr ""
 
 msgid "Send message"

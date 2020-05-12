@@ -1,15 +1,15 @@
 # 
 # Translators:
 # Matthieu Pinard <matthieu@pinard.no>, 2019
-# Bram Piot <bram.piot@gmail.com>, 2019
 # Viktor Varland <viktor@dhis2.org>, 2019
+# Bram Piot <bram.piot@gmail.com>, 2019
 # phil_dhis2, 2019
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-05-04T13:40:21.831Z\n"
+"POT-Creation-Date: 2020-05-11T15:36:45.447Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -72,9 +72,6 @@ msgstr "Groupe d'options de catégorie"
 
 msgid "Category Option Group Set"
 msgstr "Category Option Group Set"
-
-msgid "Chart"
-msgstr "Graphique"
 
 msgid "Color Set"
 msgstr ""
@@ -181,9 +178,6 @@ msgstr ""
 msgid "Relationship Type"
 msgstr "Type de relation"
 
-msgid "Report Table"
-msgstr "Tableau de rapport"
-
 msgid "Report"
 msgstr "Rapport"
 
@@ -226,6 +220,9 @@ msgstr ""
 msgid "Skip data import audit"
 msgstr ""
 
+msgid "Visualization"
+msgstr ""
+
 msgid "Apps"
 msgstr "Applications"
 
@@ -246,6 +243,15 @@ msgstr "liste"
 
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
+msgstr ""
+
+msgid "Edit user"
+msgstr ""
+
+msgid "Edit user group"
+msgstr ""
+
+msgid "Edit user role"
 msgstr ""
 
 msgid "Send message"
