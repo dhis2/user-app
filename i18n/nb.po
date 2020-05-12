@@ -1,6 +1,6 @@
 # 
 # Translators:
-# Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2020
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # 
 msgid ""
@@ -245,13 +245,13 @@ msgstr ""
 "Applikasjon"
 
 msgid "Edit user"
-msgstr ""
+msgstr "Rediger bruker"
 
 msgid "Edit user group"
-msgstr ""
+msgstr "Rediger brukergruppe"
 
 msgid "Edit user role"
-msgstr ""
+msgstr "Rediger brukerrolle"
 
 msgid "Send message"
 msgstr "Send melding"

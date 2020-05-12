@@ -45,7 +45,7 @@ msgid "Authorities"
 msgstr "الصلاحيات"
 
 msgid "Selected authorities only"
-msgstr "السلطات المختارة فقط"
+msgstr "الصلاحيات المختارة فقط"
 
 msgid "All (Full authority)"
 msgstr "الكل (صلاحية كاملة)"
@@ -244,7 +244,7 @@ msgid ""
 msgstr "ليس لديك حق الوصول إلى أي قسم في تطبيق إدارة مستخدمي الـ DHIS 2"
 
 msgid "Edit user"
-msgstr ""
+msgstr "تعديل المستخدم"
 
 msgid "Edit user group"
 msgstr ""
@@ -395,7 +395,7 @@ msgid "Organisations units"
 msgstr "الوحدات التنظيمية"
 
 msgid "User roles"
-msgstr "أدوار المستخدمين"
+msgstr "أدوار المستخدم"
 
 msgid "Members"
 msgstr "الأعضاء"
@@ -404,7 +404,7 @@ msgid "Number of users"
 msgstr "عدد المستخدمين"
 
 msgid "Create, modify, view and delete Users"
-msgstr ""
+msgstr "إنشاء، تعديل، استعراض و حذف المستخدمين"
 
 msgid "User role"
 msgstr "دور المستخدم"
