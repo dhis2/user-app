@@ -42,10 +42,10 @@ msgid "There was a problem retreiving the available authorities."
 msgstr "حدثت مشكلة في استرداد السلطات المتاحة."
 
 msgid "Authorities"
-msgstr "السلطات"
+msgstr "الصلاحيات"
 
 msgid "Selected authorities only"
-msgstr "السلطات المختارة فقط"
+msgstr "الصلاحيات المختارة فقط"
 
 msgid "All (Full authority)"
 msgstr "الكل (صلاحية كاملة)"
@@ -54,7 +54,7 @@ msgid "Analytics Table Hook"
 msgstr ""
 
 msgid "Attribute"
-msgstr "الخاصية"
+msgstr "السمة"
 
 msgid "Category Combo"
 msgstr ""
@@ -150,7 +150,7 @@ msgid "Organisation Unit Group"
 msgstr "مجموعة الوحدات التنظيمية"
 
 msgid "Predictor"
-msgstr "أداة التنبؤ"
+msgstr ""
 
 msgid "Program Stage"
 msgstr "مرحلة البرنامج"
@@ -207,10 +207,10 @@ msgid "User"
 msgstr "المستخدم"
 
 msgid "Validation Rule Group"
-msgstr "مجموعة قواعد التحقق"
+msgstr "مجموعة قواعد التحقق من الصحة"
 
 msgid "Validation Rule"
-msgstr "قاعدة التحقق"
+msgstr "قاعدة تحقق من الصحة"
 
 msgid "Data predictor group"
 msgstr ""
@@ -228,7 +228,7 @@ msgid "Tracker"
 msgstr "التتبع"
 
 msgid "Import-Export"
-msgstr "استيراد  تصدير"
+msgstr "استيراد-تصدير"
 
 msgid "System"
 msgstr "نظام"
@@ -389,13 +389,13 @@ msgid "E-mail"
 msgstr "البريد الإلكتروني"
 
 msgid "Mobile phone number"
-msgstr "رقم الهاتف الجوال"
+msgstr "رقم الجوال"
 
 msgid "Organisations units"
 msgstr "الوحدات التنظيمية"
 
 msgid "User roles"
-msgstr "اطوار المستخدم"
+msgstr "أدوار المستخدم"
 
 msgid "Members"
 msgstr "الأعضاء"
@@ -410,13 +410,13 @@ msgid "User role"
 msgstr "دور المستخدم"
 
 msgid "Create, modify, view and delete User Roles"
-msgstr ""
+msgstr "إنشاء، تعديل، استعراض و حذف أدوار المستخدم"
 
 msgid "User group"
 msgstr "مجموعة المستخدمين"
 
 msgid "Create, modify, view and delete User Groups"
-msgstr ""
+msgstr "إنشاء، تعديل، استعراض و حذف مجموعات المستخدم"
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr "تعذر تحميل بيانات مجموعة المستخدم. يرجى تحديث الصفحة."
@@ -500,10 +500,10 @@ msgid "Create account or email invitation"
 msgstr "إنشاء حساب أو دعوة بالبريد الإلكتروني"
 
 msgid "Create account with user details"
-msgstr ""
+msgstr "إنشاء حساب مع تفاصيل المستخدم"
 
 msgid "Email invitation to create account"
-msgstr ""
+msgstr "دعوة بالبريد الإلكتروني لإنشاء حساب"
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "المصادقة الخارجية فقط (OpenID أو LDAP)"
@@ -512,7 +512,7 @@ msgid "Retype password"
 msgstr "إعد كتابة كلمة السر"
 
 msgid "OpenID"
-msgstr "فتح الهوية"
+msgstr ""
 
 msgid "LDAP identifier"
 msgstr ""
@@ -596,7 +596,7 @@ msgid "months"
 msgstr "أشهر"
 
 msgid "<No value>"
-msgstr "<لا توجد قيمة>"
+msgstr ""
 
 msgid "Inactivity"
 msgstr "غير نشيط"
