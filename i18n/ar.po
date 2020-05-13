@@ -410,13 +410,13 @@ msgid "User role"
 msgstr "دور المستخدم"
 
 msgid "Create, modify, view and delete User Roles"
-msgstr ""
+msgstr "إنشاء، تعديل، استعراض و حذف أدوار المستخدم"
 
 msgid "User group"
 msgstr "مجموعة المستخدمين"
 
 msgid "Create, modify, view and delete User Groups"
-msgstr ""
+msgstr "إنشاء، تعديل، استعراض و حذف مجموعات المستخدم"
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr "تعذر تحميل بيانات مجموعة المستخدم. يرجى تحديث الصفحة."
@@ -500,10 +500,10 @@ msgid "Create account or email invitation"
 msgstr "إنشاء حساب أو دعوة بالبريد الإلكتروني"
 
 msgid "Create account with user details"
-msgstr ""
+msgstr "إنشاء حساب مع تفاصيل المستخدم"
 
 msgid "Email invitation to create account"
-msgstr ""
+msgstr "دعوة بالبريد الإلكتروني لإنشاء حساب"
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "المصادقة الخارجية فقط (OpenID أو LDAP)"
