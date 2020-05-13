@@ -228,7 +228,7 @@ msgid "Tracker"
 msgstr "التتبع"
 
 msgid "Import-Export"
-msgstr "استيراد  تصدير"
+msgstr "استيراد-تصدير"
 
 msgid "System"
 msgstr "نظام"
@@ -410,13 +410,13 @@ msgid "User role"
 msgstr "دور المستخدم"
 
 msgid "Create, modify, view and delete User Roles"
-msgstr ""
+msgstr "إنشاء، تعديل، استعراض و حذف أدوار المستخدم"
 
 msgid "User group"
 msgstr "مجموعة المستخدمين"
 
 msgid "Create, modify, view and delete User Groups"
-msgstr ""
+msgstr "إنشاء، تعديل، استعراض و حذف مجموعات المستخدم"
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr "تعذر تحميل بيانات مجموعة المستخدم. يرجى تحديث الصفحة."
@@ -500,10 +500,10 @@ msgid "Create account or email invitation"
 msgstr "إنشاء حساب أو دعوة بالبريد الإلكتروني"
 
 msgid "Create account with user details"
-msgstr ""
+msgstr "إنشاء حساب مع تفاصيل المستخدم"
 
 msgid "Email invitation to create account"
-msgstr ""
+msgstr "دعوة بالبريد الإلكتروني لإنشاء حساب"
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "المصادقة الخارجية فقط (OpenID أو LDAP)"
@@ -512,7 +512,7 @@ msgid "Retype password"
 msgstr "إعد كتابة كلمة السر"
 
 msgid "OpenID"
-msgstr "فتح الهوية"
+msgstr ""
 
 msgid "LDAP identifier"
 msgstr ""
@@ -677,7 +677,7 @@ msgid "This field is required. Please select at least one"
 msgstr "هذه الخانة مطلوبه. يرجى تحديد واحد على الأقل"
 
 msgid "A username should be at least 2 characters long"
-msgstr "يجب أن يتكون اسم المستخدم من حرفين على الأقل"
+msgstr "يجب أن يتكون اسم المستخدم على الأقل من 2 حرفين"
 
 msgid "Username may not exceed 140 characters"
 msgstr "يجب ألا يتجاوز اسم المستخدم 140 حرفًا"
