@@ -102,10 +102,10 @@ msgid "Document"
 msgstr ""
 
 msgid "Event Chart"
-msgstr ""
+msgstr "Gráfico de Eventos"
 
 msgid "Event Report"
-msgstr ""
+msgstr "Relatório de Evento"
 
 msgid "External Map Layer"
 msgstr ""
