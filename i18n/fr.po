@@ -5,13 +5,14 @@
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-11T14:57:14.928Z\n"
 "PO-Revision-Date: 2020-02-28 15:08+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "User management"
-msgstr ""
+msgstr "Gestion des utilisateurs"
 
 msgid "Use database locale / no translation"
 msgstr "Utiliser la localisation de la base de donnée/ pas de traduction"
@@ -29,28 +30,32 @@ msgid "Search"
 msgstr "Chercher"
 
 msgid "Enter search term"
-msgstr ""
+msgstr "Entrez le terme de recherche"
 
 msgid "Please enter at least {{ minCharCount }} characters"
 msgstr "Veuillez saisir au moins {{ minCharCount }} caractères"
 
 msgid "No matches found"
-msgstr ""
+msgstr "Aucun résultat"
 
 msgid "There was a problem retreiving your search results"
 msgstr ""
+"Un problème est survenu lors de la récupération des résultats de votre "
+"recherche"
 
 msgid "There was a problem retreiving the available authorities."
 msgstr ""
+"Un problème est survenu lors de la récupération des autorisations "
+"disponibles."
 
 msgid "Authorities"
-msgstr ""
+msgstr "Autorités"
 
 msgid "Selected authorities only"
-msgstr ""
+msgstr "Autorités sélectionnées uniquement"
 
 msgid "All (Full authority)"
-msgstr ""
+msgstr "Tout (Pleine autorité)"
 
 msgid "Analytics Table Hook"
 msgstr ""
@@ -74,7 +79,7 @@ msgid "Category Option Group Set"
 msgstr "Category Option Group Set"
 
 msgid "Color Set"
-msgstr ""
+msgstr "Jeu de Couleurs"
 
 msgid "Constant"
 msgstr "Constante"
@@ -152,7 +157,7 @@ msgid "Organisation Unit Group"
 msgstr "Groupe d'Unités d'Organisation"
 
 msgid "Predictor"
-msgstr ""
+msgstr "Prédicteur"
 
 msgid "Program Stage"
 msgstr "Etape de programme"
@@ -161,7 +166,7 @@ msgid "Program"
 msgstr "Programme"
 
 msgid "Program Indicator"
-msgstr ""
+msgstr "Indicateur de Programme"
 
 msgid "Program Indicator Group"
 msgstr ""
