@@ -512,7 +512,7 @@ msgid "Retype password"
 msgstr "إعد كتابة كلمة السر"
 
 msgid "OpenID"
-msgstr ""
+msgstr "OpenID"
 
 msgid "LDAP identifier"
 msgstr ""
