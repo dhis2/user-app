@@ -55,7 +55,7 @@ msgid "All (Full authority)"
 msgstr "Tout (Pleine autorité)"
 
 msgid "Analytics Table Hook"
-msgstr ""
+msgstr "Crochet de Tables Analytiques"
 
 msgid "Attribute"
 msgstr "Attribut"
@@ -115,7 +115,7 @@ msgid "Event Report"
 msgstr "Rapport d'évènements"
 
 msgid "External Map Layer"
-msgstr ""
+msgstr "Couche de Carte Externe"
 
 msgid "Indicator Group Sets"
 msgstr "Ensembles de groupes d'indicateurs"
@@ -136,7 +136,7 @@ msgid "Map"
 msgstr "Carte"
 
 msgid "Min-Max Data Element"
-msgstr ""
+msgstr "Élément de Données Min-Max"
 
 msgid "Option Group Set"
 msgstr "Ensemble de groupes d'options"
@@ -169,7 +169,7 @@ msgid "Program Indicator"
 msgstr "Indicateur de Programme"
 
 msgid "Program Indicator Group"
-msgstr ""
+msgstr "Groupe d'indicateurs de pPogramme"
 
 msgid "Program Rule"
 msgstr "Règles de Programme"
