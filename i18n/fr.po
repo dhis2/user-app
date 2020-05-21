@@ -178,7 +178,7 @@ msgid "Program Tracked Entity Attribute Group"
 msgstr ""
 
 msgid "Push Analysis"
-msgstr ""
+msgstr "Analyse Pousser "
 
 msgid "Relationship Type"
 msgstr "Type de relation"
