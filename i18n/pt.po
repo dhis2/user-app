@@ -2,6 +2,7 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2019
 # phil_dhis2, 2019
+# Ge Joao <gsimango@saudigitus.org>, 2020
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # 
 msgid ""
@@ -24,55 +25,55 @@ msgid "Search"
 msgstr "Pesquisar"
 
 msgid "Enter search term"
-msgstr ""
+msgstr "Digite o termo de pesquisa"
 
 msgid "Please enter at least {{ minCharCount }} characters"
-msgstr ""
+msgstr "Digite pelo menos {{minCharCount}} caracteres"
 
 msgid "No matches found"
-msgstr ""
+msgstr "Nenhuma equivalência encontrada"
 
 msgid "There was a problem retreiving your search results"
-msgstr ""
+msgstr "Ocorreu um problema ao recuperar seus resultados de pesquisa"
 
 msgid "There was a problem retreiving the available authorities."
-msgstr ""
+msgstr "Ocorreu um problema ao recuperar as autoridades disponíveis."
 
 msgid "Authorities"
-msgstr ""
+msgstr "Autoridades"
 
 msgid "Selected authorities only"
-msgstr ""
+msgstr "Somente autoridades selecionadas"
 
 msgid "All (Full authority)"
-msgstr ""
+msgstr "Tudo (Autoridade total)"
 
 msgid "Analytics Table Hook"
-msgstr ""
+msgstr "Gancho da tabelas analíticas"
 
 msgid "Attribute"
 msgstr "Atributo"
 
 msgid "Category Combo"
-msgstr ""
+msgstr "Combinação de categoria"
 
 msgid "Category"
 msgstr "Categoria"
 
 msgid "Category Option"
-msgstr ""
+msgstr "Opção de categoria"
 
 msgid "Category Option Group"
-msgstr ""
+msgstr "Grupo de opções de categoria"
 
 msgid "Category Option Group Set"
-msgstr ""
+msgstr "Conjunto de grupos de opções de categoria"
 
 msgid "Chart"
 msgstr "Gráfico"
 
 msgid "Color Set"
-msgstr ""
+msgstr "Conjunto de cores"
 
 msgid "Constant"
 msgstr "Constante"
@@ -81,25 +82,25 @@ msgid "Dashboard"
 msgstr "Gráficos"
 
 msgid "Data Element Group Sets"
-msgstr ""
+msgstr "Conjuntos de grupos de elementos de dados"
 
 msgid "Data Element Groups"
-msgstr ""
+msgstr "Grupos de elementos de dados"
 
 msgid "Data Element"
-msgstr ""
+msgstr "Elemento de dados"
 
 msgid "Min/max rule"
-msgstr ""
+msgstr "Min/max regra"
 
 msgid "Data Set"
 msgstr "Ficha"
 
 msgid "Data Value"
-msgstr ""
+msgstr "Valor dos dados"
 
 msgid "Document"
-msgstr ""
+msgstr "Documento"
 
 msgid "Event Chart"
 msgstr "Gráfico de Eventos"
@@ -108,49 +109,49 @@ msgid "Event Report"
 msgstr "Relatório de Evento"
 
 msgid "External Map Layer"
-msgstr ""
+msgstr "Camada de mapa externo"
 
 msgid "Indicator Group Sets"
-msgstr ""
+msgstr "Conjuntos de grupos de indicadores"
 
 msgid "Indicator Group"
-msgstr ""
+msgstr "Grupo de Indicadores"
 
 msgid "Indicator Type"
-msgstr ""
+msgstr "Tipo de indicador"
 
 msgid "Indicator"
 msgstr "Indicador"
 
 msgid "Legend Set"
-msgstr ""
+msgstr "Conjunto da legenda"
 
 msgid "Map"
 msgstr "Mapa"
 
 msgid "Min-Max Data Element"
-msgstr ""
+msgstr "MIn-Max Elemento de dados"
 
 msgid "Option Group Set"
-msgstr ""
+msgstr "Conjunto de grupos de opções"
 
 msgid "Option Group"
-msgstr ""
+msgstr "Grupo de opções"
 
 msgid "Option Set"
-msgstr ""
+msgstr "Conjunto de opções"
 
 msgid "Organisation Unit"
 msgstr "Unidade organizacional"
 
 msgid "Organisation Unit Group Set"
-msgstr ""
+msgstr "Conjunto de grupos de unidades da organização"
 
 msgid "Organisation Unit Group"
-msgstr ""
+msgstr "Grupo de unidades de organização"
 
 msgid "Predictor"
-msgstr ""
+msgstr "Preditor"
 
 msgid "Program Stage"
 msgstr "Estágio do Programa"
@@ -159,22 +160,22 @@ msgid "Program"
 msgstr "Programa"
 
 msgid "Program Indicator"
-msgstr ""
+msgstr "Indicador de programa"
 
 msgid "Program Indicator Group"
-msgstr ""
+msgstr "Grupo de Indicadores do Programa"
 
 msgid "Program Rule"
-msgstr ""
+msgstr "Regra do programa"
 
 msgid "Program Tracked Entity Attribute Group"
-msgstr ""
+msgstr "Grupo de atributos da entidade rastreada pelo programa"
 
 msgid "Push Analysis"
-msgstr ""
+msgstr "Análise de envio"
 
 msgid "Relationship Type"
-msgstr ""
+msgstr "Tipo de Relação"
 
 msgid "Report Table"
 msgstr "Tabela de relatório"
@@ -189,40 +190,40 @@ msgid "SQL View"
 msgstr "Ver SQL"
 
 msgid "Tracked Entity"
-msgstr ""
+msgstr "Entidade Rastreada"
 
 msgid "Tracked Entity Attribute"
-msgstr ""
+msgstr "Atributo da entidade rastreada"
 
 msgid "Tracked Entity Data Value"
-msgstr ""
+msgstr "Valor dos dados da entidade rastreada"
 
 msgid "Tracked Entity Instance"
-msgstr ""
+msgstr "Instância da entidade rastreada"
 
 msgid "User Group"
 msgstr "Grupo de utilizadores\\:"
 
 msgid "User Role"
-msgstr ""
+msgstr "Regras de utilizador"
 
 msgid "User"
 msgstr "Utilizador"
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "Grupo de Regras de Validação"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Regra de validação"
 
 msgid "Data predictor group"
-msgstr ""
+msgstr "Grupo de previsão de dados"
 
 msgid "Apps"
 msgstr "Aplicações"
 
 msgid "Tracker"
-msgstr ""
+msgstr "Rastreador"
 
 msgid "Import-Export"
 msgstr "Importar-Exportar"
@@ -234,11 +235,13 @@ msgid "Add"
 msgstr "Adicionar"
 
 msgid "list"
-msgstr ""
+msgstr "lista"
 
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
 msgstr ""
+"Você não tem acesso a nenhuma secção do aplicativo DHIS 2 Aplicativo de "
+"Gerenciamento"
 
 msgid "Send message"
 msgstr "Enviar mensagem"
@@ -247,55 +250,55 @@ msgid "Update"
 msgstr "Actualizar"
 
 msgid "Create new"
-msgstr ""
+msgstr "Crie um novo"
 
 msgid "Back to"
-msgstr ""
+msgstr "De volta a"
 
 msgid "You are not allowed to edit"
-msgstr ""
+msgstr "Você não tem permissão para editar"
 
 msgid "Confirm"
 msgstr "Confirmar"
 
 msgid "There was an error fetching the list"
-msgstr ""
+msgstr "Ocorreu um erro ao buscar a lista"
 
 msgid "Select an organisation unit"
-msgstr ""
+msgstr "Selecione uma unidade organizacional"
 
 msgid "Organisation unit"
 msgstr "Unidade organizacional"
 
 msgid "Page not found."
-msgstr ""
+msgstr "Página não encontrada."
 
 msgid "No match for"
-msgstr ""
+msgstr "Não há correspondência para"
 
 msgid "Go back home"
-msgstr ""
+msgstr "Volto para casa"
 
 msgid "User \"{{displayName}}\" replicated successfuly"
-msgstr ""
+msgstr "O utilizador \"{{displayName}}\" replicou com sucesso"
 
 msgid "There was a problem replicating the user"
-msgstr ""
+msgstr "Ocorreu um problema ao replicar o usuário"
 
 msgid "Username"
 msgstr "Nome de usuário"
 
 msgid "Username for new user"
-msgstr ""
+msgstr "Nome de usuário para novo usuário"
 
 msgid "Password"
 msgstr "Senha"
 
 msgid "Password for new user"
-msgstr ""
+msgstr "Senha para novo usuário"
 
 msgid "Replicate"
-msgstr ""
+msgstr "Replicar"
 
 msgid "Cancel"
 msgstr "Cancelar"
@@ -304,37 +307,39 @@ msgid "Search by name"
 msgstr "Pesquisar por nome"
 
 msgid "Could not load available items"
-msgstr ""
+msgstr "Não foi possível carregar os itens disponíveis"
 
 msgid "Filter"
 msgstr "Filtro"
 
 msgid "Filter available and selected items"
-msgstr ""
+msgstr "Filtrar itens disponíveis e selecionados"
 
 msgid "There was a problem displaying the GroupEditor"
-msgstr ""
+msgstr "Ocorreu um problema ao exibir o EditordeGrupo"
 
 msgid "Apply"
 msgstr "Aplicar"
 
 msgid "Clear all"
-msgstr ""
+msgstr "Limpar tudo"
 
 msgid "There was an error loading the current user"
-msgstr ""
+msgstr "Ocorreu um erro ao carregar o usuário atual"
 
 msgid "You do not have authorities to see users, user roles or user groups"
 msgstr ""
+"Você não tem autoridades para ver usuários, funções do usuário ou grupos de "
+"usuários"
 
 msgid "Display name"
-msgstr ""
+msgstr "Nome em Exibição"
 
 msgid "ID"
 msgstr "Id"
 
 msgid "Last login"
-msgstr ""
+msgstr "Última entrada"
 
 msgid "Created"
 msgstr "Criado"
@@ -352,7 +357,7 @@ msgid "Job title"
 msgstr "Profissão"
 
 msgid "Works at"
-msgstr ""
+msgstr "Trabalha em"
 
 msgid "Education"
 msgstr "Escolaridade"
@@ -370,7 +375,7 @@ msgid "Gender"
 msgstr "Sexo"
 
 msgid "Speaks"
-msgstr ""
+msgstr "Fala"
 
 msgid "E-mail"
 msgstr "e-mail"
@@ -379,31 +384,33 @@ msgid "Mobile phone number"
 msgstr "Número de telemóvel"
 
 msgid "Organisations units"
-msgstr ""
+msgstr "Unidades organizacionais "
 
 msgid "User roles"
 msgstr "Roles de Utilizadores"
 
 msgid "Members"
-msgstr ""
+msgstr "Membros"
 
 msgid "Number of users"
-msgstr ""
+msgstr "Número de usuários"
 
 msgid "User role"
-msgstr ""
+msgstr "Papel do usuário"
 
 msgid "User group"
-msgstr ""
+msgstr "Grupo de usuários"
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr ""
+"Não foi possível carregar os dados do grupo de usuários. Por favor atualize "
+"a página."
 
 msgid "User group \"{{displayName}}\" saved successfully"
-msgstr ""
+msgstr "Grupo de utilizadores \"{{displayName}}\" salvo com sucesso"
 
 msgid "There was a problem saving the user group."
-msgstr ""
+msgstr "Ocorreu um problema ao salvar o grupo de usuários."
 
 msgid "Save"
 msgstr "Salvar"
@@ -415,78 +422,81 @@ msgid "Code"
 msgstr "Código"
 
 msgid "Available users"
-msgstr ""
+msgstr "Usuários disponíveis"
 
 msgid "Group members"
 msgstr "Membros do grupo"
 
 msgid "Available user groups"
-msgstr ""
+msgstr "Grupos de usuários disponíveis"
 
 msgid "Managed user groups"
-msgstr ""
+msgstr "Grupos de usuários gerenciados"
 
 msgid "You left group"
-msgstr ""
+msgstr "Você saiu do grupo"
 
 msgid "You joined group"
-msgstr ""
+msgstr "Você entrou no grupo"
 
 msgid "There was a problem updating your group membership"
-msgstr ""
+msgstr "Ocorreu um problema ao atualizar a associação ao seu grupo"
 
 msgid "User Group Management"
-msgstr ""
+msgstr "Gestão de grupo de usuários"
 
 msgid "User role \"{{displayName}}\" saved successfully"
-msgstr ""
+msgstr " Função de usuário \"{{displayName}}\" salvo com sucesso"
 
 msgid "There was a problem saving the user role."
-msgstr ""
+msgstr "Ocorreu um problema ao salvar a função de usuário."
 
 msgid "Description"
 msgstr "Descrição"
 
 msgid "User Role Management"
-msgstr ""
+msgstr "Gestão de Função de Usuário"
 
 msgid "Could not load the user data. Please refresh the page."
 msgstr ""
+"Não foi possível carregar os dados do usuário. Por favor atualize a página."
 
 msgid "User \"{{displayName}}\" saved successfully"
-msgstr ""
+msgstr "Usuário \"{{NomedeUsuário}}\" salvo com sucesso"
 
 msgid "There was a problem saving the user."
-msgstr ""
+msgstr "Ocorreu um problema ao salvar o usuário."
 
 msgid "Show fewer options"
-msgstr ""
+msgstr "Mostrar poucas opções"
 
 msgid "Show more options"
-msgstr ""
+msgstr "Mostrar mais opções"
 
 msgid "Send invite"
-msgstr ""
+msgstr "Enviar convite "
 
 msgid ""
 "Selecting an organisation unit provides access to all units in the sub-"
 "hierarchy"
 msgstr ""
+"A selecção de uma unidade organizacional fornece acesso a todas as unidades "
+"na sub-hierarquia"
 
 msgid "Create account or email invitation"
-msgstr ""
+msgstr "Criar conta ou convite por email"
 
 msgid "External authentication only (OpenID or LDAP)"
-msgstr ""
+msgstr "Somente autenticação externa (OpenID ou LDAP)"
 
 msgid "Retype password"
-msgstr ""
+msgstr "Redigite a senha"
 
 msgid "OpenID"
-msgstr ""
+msgstr "OpenID"
 
 msgid "LDAP identifier"
-msgstr ""
+msgstr "identificador LDAP"
 
 msgid "Interface language"
 msgstr "Idioma da interface"
@@ -495,82 +505,83 @@ msgid "Database language"
 msgstr "Idioma da base de dados"
 
 msgid "Available roles"
-msgstr ""
+msgstr "Funções disponíveis"
 
 msgid "Selected roles"
-msgstr ""
+msgstr "Funções selecionadas"
 
 msgid "Data capture and maintenance organisation units"
-msgstr ""
+msgstr "Unidades organizacionais de captura e manutenção de dados"
 
 msgid "Data output and analytic organisation units"
 msgstr ""
 
 msgid "Search Organisation Units"
-msgstr ""
+msgstr "Pesquisar Unidades da Organização"
 
 msgid "Selected user groups"
-msgstr ""
+msgstr "Grupos de usuários selecionados"
 
 msgid "Available dimension restrictions for data analytics"
-msgstr ""
+msgstr "Restrições de dimensão disponíveis para análise de dados"
 
 msgid "Selected dimension restrictions for data analytics"
-msgstr ""
+msgstr "Restrições de dimensão selecionadas para análise de dados"
 
 msgid "Replicate user"
-msgstr ""
+msgstr "Replicar usuário"
 
 msgid "Are you sure you want to disable two factor authentication for"
 msgstr ""
+"Tem certeza de que deseja desativar a autenticação de dois fatores para"
 
 msgid "Succesfully disabled two factor authentication for"
-msgstr ""
+msgstr "Desativado com êxito a autenticação de dois fatores para"
 
 msgid "There was a problem updating two factor authentication"
-msgstr ""
+msgstr "Ocorreu um problema ao atualizar a autenticação de dois fatores"
 
 msgid "Are you sure you want to disable"
-msgstr ""
+msgstr "Tem certeza de que deseja desativar"
 
 msgid "Are you sure you want to enable"
-msgstr ""
+msgstr "Tem certeza de que deseja ativar"
 
 msgid "sucessfully disabled"
-msgstr ""
+msgstr "desativado com sucesso"
 
 msgid "successfully enabled"
-msgstr ""
+msgstr "successfully enabled"
 
 msgid "There was a problem updating the enabled state"
-msgstr ""
+msgstr "Ocorreu um problema ao atualizar o estado ativado"
 
 msgid "month"
-msgstr ""
+msgstr "mês"
 
 msgid "months"
-msgstr ""
+msgstr "meses"
 
 msgid "<No value>"
-msgstr ""
+msgstr "<No value>"
 
 msgid "Inactivity"
-msgstr ""
+msgstr "Inatividade"
 
 msgid "All invitations"
-msgstr ""
+msgstr "Todos os convites"
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "Convites expirados"
 
 msgid "Invitations"
-msgstr ""
+msgstr "Convites"
 
 msgid "Self registrations"
-msgstr ""
+msgstr "Auto-registros"
 
 msgid "User Management"
-msgstr ""
+msgstr "Gestão de usuários"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
@@ -584,91 +595,93 @@ msgid "No"
 msgstr "Não"
 
 msgid "Something went wrong when processing your request."
-msgstr ""
+msgstr "Ocorreu um erro ao processar sua solicitação."
 
 msgid "Validating..."
-msgstr ""
+msgstr "Validando..."
 
 msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
-msgstr ""
+msgstr "Tem certeza de que deseja remover o {{type}} \"{{displayName}}\"?"
 
 msgid "{{type}} \"{{displayName}}\" removed successfully"
-msgstr ""
+msgstr "{{type}} \"{{displayName}}\" removido com sucesso"
 
 msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
-msgstr ""
+msgstr "Ocorreu um problema ao remover {{type}} \"{{displayName}}\"?"
 
 msgid "Exceeds maximum character limit of 50"
-msgstr ""
+msgstr "Exceeds maximum character limit of 50"
 
 msgid "Please enter a valid date with the following format yyyy-mm-dd"
-msgstr ""
+msgstr "Por favor digite uma data válida com o seguinte formato aaaa-mm-dd"
 
 msgid "Please provide a valid email address"
-msgstr ""
+msgstr "Por favor forneça um endereço de e-mail válido"
 
 msgid "Value should be an integer"
-msgstr ""
+msgstr "Valor deve ser um número inteiro"
 
 msgid "Value should be a nagative integer"
-msgstr ""
+msgstr "O valor deve ser um número inteiro negativo"
 
 msgid "Value should be a number"
-msgstr ""
+msgstr "O valor deve ser um número"
 
 msgid "Value should be a positive integer"
-msgstr ""
+msgstr "O valor deve ser um número inteiro positivo"
 
 msgid "Passwords do not match"
-msgstr ""
+msgstr "As senhas não coincidem"
 
 msgid "This field is required"
 msgstr "Este campo é obrigatorio"
 
 msgid "This field is required. Please select at least one"
-msgstr ""
+msgstr "Este campo é obrigatório. Por favor selecione pelo menos um."
 
 msgid "A username should be at least 2 characters long"
-msgstr ""
+msgstr "Um nome de usuário deve ter pelo menos 2 caracteres"
 
 msgid "Username may not exceed 140 characters"
-msgstr ""
+msgstr "O nome de usuário não pode exceder 140 caracteres"
 
 msgid "Please provide a valid international phone number (+0123456789)"
 msgstr ""
+"Por favor forneça um número de telefone internacional válido (+0123456789)"
 
 msgid "Password should be at least 8 characters long"
-msgstr ""
+msgstr "A senha deve ter pelo menos 8 caracteres"
 
 msgid "Password should be no longer than 34 characters"
-msgstr ""
+msgstr "A senha não deve ter mais que 34 caracteres"
 
 msgid "Password should contain at least one lowercase letter"
-msgstr ""
+msgstr "A senha deve conter pelo menos uma letra minúscula"
 
 msgid "Password should contain at least one UPPERCASE letter"
-msgstr ""
+msgstr "A senha deve conter pelo menos uma letra MAIÚSCULA"
 
 msgid "Password should contain at least one number"
-msgstr ""
+msgstr "A senha deve conter pelo menos um número"
 
 msgid "Password should have at least one special character"
-msgstr ""
+msgstr "A senha deve ter pelo menos um caractere especial"
 
 msgid "Username already taken"
-msgstr ""
+msgstr "Nome de usuário já utilizado"
 
 msgid "There was a problem whilst checking the availability of this username"
 msgstr ""
+"Ocorreu um problema ao verificar a disponibilidade desse nome de usuário"
 
 msgid "{{fieldDisplayName}} is already taken"
-msgstr ""
+msgstr "{{fieldDisplayName}} já está tomado"
 
 msgid "Could not verify if this {{fieldDisplayName}} is unique"
-msgstr ""
+msgstr "Não foi possível verificar se isso {{fieldDisplayName}} é único"
 
 msgid "Attribute value needs to be unique, value already taken."
-msgstr ""
+msgstr "O valor do atributo precisa ser exclusivo, valor já utilizado."
 
 msgid "There was a problem checking if this attribute value is unique"
-msgstr ""
+msgstr "Ocorreu um problema ao verificar se este valor de atributo é único"
