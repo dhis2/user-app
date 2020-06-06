@@ -595,31 +595,31 @@ msgid "There was a problem updating the enabled state"
 msgstr ""
 
 msgid "month"
-msgstr ""
+msgstr "mes"
 
 msgid "months"
-msgstr ""
+msgstr "meses"
 
 msgid "<No value>"
-msgstr ""
+msgstr "<No value>"
 
 msgid "Inactivity"
-msgstr ""
+msgstr "Inactividad"
 
 msgid "All invitations"
-msgstr ""
+msgstr "Todas las invitaciones"
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "Invitaciones caducadas"
 
 msgid "Invitations"
-msgstr ""
+msgstr "Invitaciones"
 
 msgid "Self registrations"
 msgstr ""
 
 msgid "User Management"
-msgstr ""
+msgstr "Administración de usuarios"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
