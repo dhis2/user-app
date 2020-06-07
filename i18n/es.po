@@ -64,10 +64,10 @@ msgid "Category Option"
 msgstr "Opción de categoría"
 
 msgid "Category Option Group"
-msgstr ""
+msgstr "Grupo de opciones de categoría"
 
 msgid "Category Option Group Set"
-msgstr ""
+msgstr "Grupo de opciones de categoría establecido"
 
 msgid "Chart"
 msgstr "Grafico"
@@ -145,7 +145,7 @@ msgid "Organisation Unit"
 msgstr "Unidad Organizativa"
 
 msgid "Organisation Unit Group Set"
-msgstr ""
+msgstr "Grupo de unidad organizativa establecida"
 
 msgid "Organisation Unit Group"
 msgstr "Grupo de Unidad Organizativa"
@@ -169,10 +169,10 @@ msgid "Program Rule"
 msgstr "Regla del programa"
 
 msgid "Program Tracked Entity Attribute Group"
-msgstr ""
+msgstr "Grupo de atributos de entidad con rastreo de programa"
 
 msgid "Push Analysis"
-msgstr ""
+msgstr "Análisis de Empuje"
 
 msgid "Relationship Type"
 msgstr "Tipo de relación"
@@ -274,10 +274,10 @@ msgid "Page not found."
 msgstr "Page not found."
 
 msgid "No match for"
-msgstr ""
+msgstr "No hay coincidencia para"
 
 msgid "Go back home"
-msgstr ""
+msgstr "Regresar a casa"
 
 msgid "User \"{{displayName}}\" replicated successfuly"
 msgstr "Usuario \"{{displayName}}\" replicado con éxito"
@@ -329,6 +329,8 @@ msgstr "Se produjo un error al cargar el usuario actual"
 
 msgid "You do not have authorities to see users, user roles or user groups"
 msgstr ""
+"No tienes autoridades para ver usuarios, roles del usuario o grupos de "
+"usuarios"
 
 msgid "Display name"
 msgstr "Mostrar nombre"
@@ -478,6 +480,8 @@ msgid ""
 "Selecting an organisation unit provides access to all units in the sub-"
 "hierarchy"
 msgstr ""
+"La selección de una unidad organizativa proporciona acceso a todas las "
+"unidades en la sub-jerarquía"
 
 msgid "Create account or email invitation"
 msgstr "Crear cuenta o invitación por correo electrónico"
@@ -507,10 +511,10 @@ msgid "Selected roles"
 msgstr "Roles seleccionados"
 
 msgid "Data capture and maintenance organisation units"
-msgstr ""
+msgstr "Unidades de organización de captura y mantenimiento de datos"
 
 msgid "Data output and analytic organisation units"
-msgstr ""
+msgstr "Unidades de organización analítica y salida de datos "
 
 msgid "Search Organisation Units"
 msgstr "Buscar Unidades Organizativas"
@@ -550,7 +554,7 @@ msgid "successfully enabled"
 msgstr "habilitado con éxito"
 
 msgid "There was a problem updating the enabled state"
-msgstr ""
+msgstr "Hubo un problema al actualizar el estado habilitado"
 
 msgid "month"
 msgstr "mes"
@@ -574,7 +578,7 @@ msgid "Invitations"
 msgstr "Invitaciones"
 
 msgid "Self registrations"
-msgstr ""
+msgstr "Autoinscripciones"
 
 msgid "User Management"
 msgstr "Administración de usuarios"
@@ -591,43 +595,43 @@ msgid "No"
 msgstr "No"
 
 msgid "Something went wrong when processing your request."
-msgstr ""
+msgstr "Algo salió mal al procesar su solicitud."
 
 msgid "Validating..."
-msgstr ""
+msgstr "Validando..."
 
 msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
-msgstr ""
+msgstr "¿Estás seguro de que quieres eliminar el {{type}} \"{{displayName}}\"?"
 
 msgid "{{type}} \"{{displayName}}\" removed successfully"
-msgstr ""
+msgstr "{{type}} \"{{displayName}}\" eliminado exitosamente"
 
 msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
-msgstr ""
+msgstr "¿Hubo un problema al eliminar {{type}} \"{{displayName}}\"?"
 
 msgid "Exceeds maximum character limit of 50"
-msgstr ""
+msgstr "Supera el límite máximo de caracteres de 50"
 
 msgid "Please enter a valid date with the following format yyyy-mm-dd"
-msgstr ""
+msgstr "Ingrese una fecha válida con el siguiente formato aaaa-mm-dd"
 
 msgid "Please provide a valid email address"
-msgstr ""
+msgstr "Por favor ingrese una dirección de correo electrónico válida"
 
 msgid "Value should be an integer"
-msgstr ""
+msgstr "El valor debe ser un entero"
 
 msgid "Value should be a nagative integer"
-msgstr ""
+msgstr "El valor debe ser un entero negativo"
 
 msgid "Value should be a number"
-msgstr ""
+msgstr "El valor debe ser un número"
 
 msgid "Value should be a positive integer"
-msgstr ""
+msgstr "El valor debe ser un entero positivo"
 
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Las contraseñas no coinciden"
 
 msgid "This field is required"
 msgstr "Se requiere éste campo"
