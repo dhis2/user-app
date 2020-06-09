@@ -511,6 +511,8 @@ msgid ""
 "Selecting an organisation unit provides access to all units in the sub-"
 "hierarchy"
 msgstr ""
+"La sélection d'une unité d'organisation donne accès à toutes les unités dans"
+" la sous-hiérarchie"
 
 msgid "Create account or email invitation"
 msgstr "Créer un compte ou une invitation par e-mail"
