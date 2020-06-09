@@ -628,8 +628,8 @@ msgstr "Administración de usuarios"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{{count}} selecionado"
+msgstr[1] "{{count}} seleccionado"
 
 msgid "Yes"
 msgstr "Sí"
