@@ -11,7 +11,7 @@ import SnackbarContainer from './components/SnackbarContainer'
 import DialogContainer from './components/DialogContainer'
 import SharingDialogContainer from './components/SharingDialogContainer'
 
-import { Provider as RuntimeProvider } from '@dhis2/app-runtime'
+import { DataProvider } from '@dhis2/app-runtime'
 import { HeaderBar } from '@dhis2/ui-widgets'
 import { CssReset } from '@dhis2/ui-core'
 
@@ -29,12 +29,7 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css'
  * @class
  */
 const App = ({ d2, baseUrl }) => (
-    <RuntimeProvider
-        config={{
-            baseUrl,
-            apiVersion: '33',
-        }}
-    >
+    <DataProvider baseUrl={baseUrl} apiVersion="33">
         <Provider store={store}>
             <AppWithD2ContextAndTheme d2={d2}>
                 <div>
@@ -49,7 +44,7 @@ const App = ({ d2, baseUrl }) => (
                 </div>
             </AppWithD2ContextAndTheme>
         </Provider>
-    </RuntimeProvider>
+    </DataProvider>
 )
 
 App.propTypes = {
