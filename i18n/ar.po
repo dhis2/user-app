@@ -316,7 +316,7 @@ msgid "There was a problem displaying the GroupEditor"
 msgstr ""
 
 msgid "Apply"
-msgstr ""
+msgstr "تطبيق"
 
 msgid "Clear all"
 msgstr "تنظيف الكل"
