@@ -21,6 +21,7 @@ const AppWrapper = () => {
                 'organisationUnit',
             ],
         },
+        i18nRoot: './d2i18n',
         onInitialized: d2 => {
             api.init(d2)
         },
