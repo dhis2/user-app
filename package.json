@@ -4,9 +4,9 @@
   "description": "DHIS2 User app",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "d2-app-scripts start",
+    "build": "d2-app-scripts build",
+    "test": "d2-app-scripts test",
     "eject": "react-scripts eject",
     "lint:style": "d2-style js check --all",
     "prestart": "npm run localize",
@@ -17,7 +17,7 @@
     "documentation": "rimraf build && jsdoc -c jsdoc.json"
   },
   "dependencies": {
-    "@dhis2/app-runtime": "^2.0.4",
+    "@dhis2/app-runtime": "^2.2.2",
     "@dhis2/d2-i18n": "^1.0.6",
     "@dhis2/d2-ui-sharing-dialog": "^5.3.0",
     "@dhis2/ui-core": "^4.1.2",
