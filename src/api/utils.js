@@ -5,7 +5,7 @@
  * @module Api/utils
  */
 
-import { generateUid } from 'd2/lib/uid'
+import { generateUid } from 'd2'
 import snakeCase from 'lodash.snakecase'
 import isUndefined from 'lodash.isundefined'
 import store from '../store'

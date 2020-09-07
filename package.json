@@ -18,14 +18,19 @@
   },
   "dependencies": {
     "@dhis2/app-runtime": "^2.2.2",
+    "@dhis2/app-runtime-adapter-d2": "^1.0.1",
     "@dhis2/d2-i18n": "^1.0.6",
+    "@dhis2/d2-ui-app": "^2.0.0",
+    "@dhis2/d2-ui-core": "^5.3.0",
+    "@dhis2/d2-ui-forms": "^5.3.0",
+    "@dhis2/d2-ui-group-editor": "^7.0.5",
+    "@dhis2/d2-ui-org-unit-tree": "^5.3.0",
     "@dhis2/d2-ui-sharing-dialog": "^5.3.0",
+    "@dhis2/d2-ui-table": "^5.3.0",
     "@dhis2/ui-core": "^4.1.2",
     "@dhis2/ui-widgets": "^5.0.1",
-    "d2": "31.0.1",
-    "d2-ui": "^29.0.35",
-    "d2-utilizr": "^0.2.15",
-    "d3-color": "^1.0.3",
+    "d2": "^31.7.0",
+    "d3-color": "^1.2.0",
     "lodash.capitalize": "^4.2.1",
     "lodash.debounce": "^4.0.8",
     "lodash.defer": "^4.1.0",
@@ -66,18 +71,18 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "d2-style commit check",
-      "pre-commit": "d2-style js apply && npm run localize && git add :/i18n"
+        "commit-msg": "d2-style commit check",
+        "pre-commit": "d2-style js apply && npm run localize && git add :/i18n"
     }
   },
   "greenkeeper": {
     "ignore": [
-      "@dhis2/d2-ui-sharing-dialog",
-      "d2-ui",
-      "d2",
-      "react-redux",
-      "redux-form",
-      "rxjs"
+        "@dhis2/d2-ui-sharing-dialog",
+        "d2-ui",
+        "d2",
+        "react-redux",
+        "redux-form",
+        "rxjs"
     ]
   }
 }

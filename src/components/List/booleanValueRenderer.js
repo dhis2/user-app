@@ -7,7 +7,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import CheckIcon from 'material-ui/svg-icons/navigation/check'
-import { addValueRenderer } from 'd2-ui/lib/data-table/data-value/valueRenderers'
+import { addValueRenderer } from '@dhis2/d2-ui-table'
 
 /**
  * Defines behavior for the DataTable when receiving boolean values
