@@ -1,6 +1,5 @@
 /* eslint-disable max-params */
 
-import { getInstance } from 'd2/lib/d2'
 import i18n from '@dhis2/d2-i18n'
 import {
     getQueryFields,
