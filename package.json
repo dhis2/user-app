@@ -55,6 +55,7 @@
     "typeface-roboto": "^0.0.75"
   },
   "devDependencies": {
+    "@dhis2/cli-app-scripts": "^5.1.0",
     "@dhis2/cli-style": "^3.2.2",
     "@dhis2/d2-i18n-extract": "^1.0.8",
     "@dhis2/d2-i18n-generate": "^1.1.1",
