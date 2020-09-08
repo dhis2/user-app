@@ -201,10 +201,7 @@ class UserForm extends Component {
                 label,
                 isRequiredField,
                 isAttributeField,
-                shouldBeUnique,
-                attributeId,
                 fieldValidators,
-                valueType,
                 ...conf
             } = fieldConfig
             const labelText = this.getLabelText(label, user, isRequiredField)
@@ -366,22 +363,22 @@ class UserForm extends Component {
 }
 
 UserForm.propTypes = {
-    user: PropTypes.object.isRequired,
-    getList: PropTypes.func.isRequired,
-    clearItem: PropTypes.func.isRequired,
-    showSnackbar: PropTypes.func.isRequired,
-    handleSubmit: PropTypes.func.isRequired,
-    change: PropTypes.func.isRequired,
-    initialize: PropTypes.func.isRequired,
     asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
         .isRequired,
-    pristine: PropTypes.bool.isRequired,
-    submitting: PropTypes.bool.isRequired,
-    valid: PropTypes.bool.isRequired,
-    fallbackOrgUnits: PropTypes.object,
-    inviteUser: PropTypes.bool.isRequired,
+    change: PropTypes.func.isRequired,
+    clearItem: PropTypes.func.isRequired,
     externalAuthOnly: PropTypes.bool.isRequired,
+    getList: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    initialize: PropTypes.func.isRequired,
+    inviteUser: PropTypes.bool.isRequired,
+    pristine: PropTypes.bool.isRequired,
+    showSnackbar: PropTypes.func.isRequired,
+    submitting: PropTypes.bool.isRequired,
+    user: PropTypes.object.isRequired,
+    valid: PropTypes.bool.isRequired,
     asyncBlurFields: PropTypes.arrayOf(PropTypes.string),
+    fallbackOrgUnits: PropTypes.object,
 }
 
 UserForm.contextTypes = {
@@ -405,11 +402,8 @@ const ReduxFormWrappedUserForm = reduxForm({
     asyncBlurFields: [CONFIG.USERNAME],
 })(UserForm)
 
-export default connect(
-    mapStateToProps,
-    {
-        clearItem,
-        showSnackbar,
-        getList,
-    }
-)(ReduxFormWrappedUserForm)
+export default connect(mapStateToProps, {
+    clearItem,
+    showSnackbar,
+    getList,
+})(ReduxFormWrappedUserForm)

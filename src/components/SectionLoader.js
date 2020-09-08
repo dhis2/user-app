@@ -90,7 +90,9 @@ class SectionLoader extends Component {
     }
 
     renderRoutes(routes) {
-        return routes.map(section => <Route exact strict {...section} />)
+        return routes.map(section => (
+            <Route key={section.key} exact strict {...section} />
+        ))
     }
 
     renderContent() {
@@ -139,15 +141,13 @@ SectionLoader.contextTypes = {
 SectionLoader.propTypes = {
     initCurrentUser: PropTypes.func.isRequired,
     currentUser: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    location: PropTypes.shape({ pathname: PropTypes.string }),
 }
 
 const mapStateToProps = ({ currentUser }) => ({ currentUser })
 
 export default withRouter(
-    connect(
-        mapStateToProps,
-        {
-            initCurrentUser,
-        }
-    )(SectionLoader)
+    connect(mapStateToProps, {
+        initCurrentUser,
+    })(SectionLoader)
 )

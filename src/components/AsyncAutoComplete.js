@@ -165,12 +165,12 @@ class AsyncAutoComplete extends Component {
 }
 
 AsyncAutoComplete.propTypes = {
-    queryDebounceTime: PropTypes.number,
-    minCharLength: PropTypes.number,
     query: PropTypes.func.isRequired,
-    queryParam: PropTypes.any,
     selectHandler: PropTypes.func.isRequired,
     autoCompleteProps: PropTypes.object,
+    minCharLength: PropTypes.number,
+    queryDebounceTime: PropTypes.number,
+    queryParam: PropTypes.any,
 }
 
 AsyncAutoComplete.defaultProps = {

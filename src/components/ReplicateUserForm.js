@@ -108,16 +108,15 @@ class ReplicateUserForm extends Component {
 }
 
 ReplicateUserForm.propTypes = {
-    user: PropTypes.object.isRequired,
-    hideDialog: PropTypes.func.isRequired,
     getList: PropTypes.func.isRequired,
-    showSnackbar: PropTypes.func.isRequired,
-    formState: PropTypes.object,
-    asyncValidating: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-    pristine: PropTypes.bool.isRequired,
-    submitting: PropTypes.bool.isRequired,
-    valid: PropTypes.bool.isRequired,
     handleSubmit: PropTypes.func.isRequired,
+    hideDialog: PropTypes.func.isRequired,
+    pristine: PropTypes.bool.isRequired,
+    showSnackbar: PropTypes.func.isRequired,
+    submitting: PropTypes.bool.isRequired,
+    user: PropTypes.object.isRequired,
+    valid: PropTypes.bool.isRequired,
+    asyncValidating: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
 }
 
 const mapStateToProps = state => ({ formState: state.form[FORM_NAME] })
@@ -128,12 +127,9 @@ const ReduxFormWrapped = reduxForm({
     asyncBlurFields: [USERNAME],
 })(ReplicateUserForm)
 
-export default connect(
-    mapStateToProps,
-    {
-        getList,
-        hideDialog,
-        showSnackbar,
-        hideSnackbar,
-    }
-)(ReduxFormWrapped)
+export default connect(mapStateToProps, {
+    getList,
+    hideDialog,
+    showSnackbar,
+    hideSnackbar,
+})(ReduxFormWrapped)

@@ -207,16 +207,16 @@ class SearchableGroupEditor extends Component {
 }
 
 SearchableGroupEditor.propTypes = {
+    assignedItemsHeader: PropTypes.string.isRequired,
+    availableItemsHeader: PropTypes.string.isRequired,
     availableItemsQuery: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
+    errorText: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     initiallyAssignedItems: PropTypes.oneOfType([
         PropTypes.object.isRequired,
         PropTypes.array.isRequired,
     ]),
-    onChange: PropTypes.func.isRequired,
-    availableItemsHeader: PropTypes.string.isRequired,
-    assignedItemsHeader: PropTypes.string.isRequired,
     returnModelsOnUpdate: PropTypes.bool,
-    errorText: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     onBlur: PropTypes.func,
 }
 

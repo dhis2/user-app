@@ -49,8 +49,8 @@ class SideNav extends Component {
 }
 
 SideNav.propTypes = {
-    sections: PropTypes.array.isRequired,
     history: PropTypes.object.isRequired,
+    sections: PropTypes.array.isRequired,
     location: PropTypes.shape({
         pathname: PropTypes.string.isRequired,
     }),

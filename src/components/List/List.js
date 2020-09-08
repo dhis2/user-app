@@ -140,7 +140,7 @@ class List extends Component {
     }
 
     renderHeaderBar() {
-        const { FilterComponent, entityType } = this.props
+        const { filterComponent: FilterComponent, entityType } = this.props
         return (
             <div className="data-table__filter-bar" style={styles.filterBar}>
                 <div style={styles.headerBarPagination}>
@@ -206,26 +206,26 @@ class List extends Component {
 }
 
 List.propTypes = {
-    items: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
-    pager: PropTypes.object,
-    sectionName: PropTypes.string.isRequired,
-    getList: PropTypes.func.isRequired,
-    incrementPage: PropTypes.func.isRequired,
-    decrementPage: PropTypes.func.isRequired,
-    resetPager: PropTypes.func.isRequired,
-    resetFilter: PropTypes.func.isRequired,
-    showSnackbar: PropTypes.func.isRequired,
-    hideSnackbar: PropTypes.func.isRequired,
-    entityType: PropTypes.string.isRequired,
-    newItemPath: PropTypes.string.isRequired,
-    listType: PropTypes.string,
-    FilterComponent: PropTypes.func.isRequired,
     columns: PropTypes.arrayOf(String).isRequired,
-    primaryAction: PropTypes.func.isRequired,
     contextMenuActions: PropTypes.object.isRequired,
     contextMenuIcons: PropTypes.object.isRequired,
+    decrementPage: PropTypes.func.isRequired,
+    entityType: PropTypes.string.isRequired,
+    filterComponent: PropTypes.func.isRequired,
+    getList: PropTypes.func.isRequired,
+    hideSnackbar: PropTypes.func.isRequired,
+    incrementPage: PropTypes.func.isRequired,
     isContextActionAllowed: PropTypes.func.isRequired,
+    newItemPath: PropTypes.string.isRequired,
+    primaryAction: PropTypes.func.isRequired,
+    resetFilter: PropTypes.func.isRequired,
+    resetPager: PropTypes.func.isRequired,
+    sectionName: PropTypes.string.isRequired,
+    showSnackbar: PropTypes.func.isRequired,
     className: PropTypes.string,
+    items: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
+    listType: PropTypes.string,
+    pager: PropTypes.object,
 }
 
 List.defaultProps = {
@@ -240,15 +240,12 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(
-    mapStateToProps,
-    {
-        getList,
-        resetFilter,
-        resetPager,
-        incrementPage,
-        decrementPage,
-        showSnackbar,
-        hideSnackbar,
-    }
-)(List)
+export default connect(mapStateToProps, {
+    getList,
+    resetFilter,
+    resetPager,
+    incrementPage,
+    decrementPage,
+    showSnackbar,
+    hideSnackbar,
+})(List)

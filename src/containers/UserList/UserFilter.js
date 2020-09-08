@@ -127,10 +127,10 @@ class UserFilter extends Component {
 }
 
 UserFilter.propTypes = {
+    entityType: PropTypes.string.isRequired,
     filter: PropTypes.object.isRequired,
     getList: PropTypes.func.isRequired,
     updateFilter: PropTypes.func.isRequired,
-    entityType: PropTypes.string.isRequired,
 }
 
 const mapStateToProps = state => {
@@ -139,10 +139,7 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(
-    mapStateToProps,
-    {
-        updateFilter,
-        getList,
-    }
-)(UserFilter)
+export default connect(mapStateToProps, {
+    updateFilter,
+    getList,
+})(UserFilter)

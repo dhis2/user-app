@@ -46,8 +46,10 @@ const styles = {
  * If 3 or more units are selected in the filter, only the length of this array will be displayed.
  */
 class OrganisationUnitInput extends Component {
+    inputRef = React.createRef()
+
     focusOrgUnitInput = () => {
-        this.refs.orgUnitInput.focus()
+        this.inputRef.current.orgUnitInput.focus()
     }
 
     showOrgTreeInDialog = () => {
@@ -72,7 +74,7 @@ class OrganisationUnitInput extends Component {
             <div style={styles.wrap} onClick={this.focusOrgUnitInput}>
                 <ActionOpenInNew style={styles.icon} />
                 <TextField
-                    ref="orgUnitInput"
+                    ref={this.inputRef}
                     style={styles.textField}
                     floatingLabelText={i18n.t('Organisation unit')}
                     onFocus={this.showOrgTreeInDialog}
@@ -85,19 +87,16 @@ class OrganisationUnitInput extends Component {
 }
 
 OrganisationUnitInput.propTypes = {
+    hideDialog: PropTypes.func.isRequired,
     organisationUnits: PropTypes.string.isRequired,
     showDialog: PropTypes.func.isRequired,
-    hideDialog: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => ({
     organisationUnits: orgUnitsAsStringSelector(state.filter.organisationUnits),
 })
 
-export default connect(
-    mapStateToProps,
-    {
-        showDialog,
-        hideDialog,
-    }
-)(OrganisationUnitInput)
+export default connect(mapStateToProps, {
+    showDialog,
+    hideDialog,
+})(OrganisationUnitInput)

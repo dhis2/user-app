@@ -135,10 +135,7 @@ class GroupForm extends Component {
                 label,
                 isRequiredField,
                 isAttributeField,
-                shouldBeUnique,
-                attributeId,
                 fieldValidators,
-                valueType,
                 ...conf
             } = fieldConfig
             const suffix = isRequiredField ? ' *' : ''
@@ -223,17 +220,18 @@ class GroupForm extends Component {
 }
 
 GroupForm.propTypes = {
-    asyncBlurFields: PropTypes.arrayOf(PropTypes.string),
-    showSnackbar: PropTypes.func.isRequired,
-    clearItem: PropTypes.func.isRequired,
-    getList: PropTypes.func.isRequired,
-    handleSubmit: PropTypes.func.isRequired,
-    group: PropTypes.object.isRequired,
     asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
         .isRequired,
+    clearItem: PropTypes.func.isRequired,
+    getList: PropTypes.func.isRequired,
+    group: PropTypes.object.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
     pristine: PropTypes.bool.isRequired,
+    showSnackbar: PropTypes.func.isRequired,
     submitting: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired,
+    asyncBlurFields: PropTypes.arrayOf(PropTypes.string),
+    initialize: PropTypes.func,
 }
 
 const mapStateToProps = state => ({
@@ -246,11 +244,8 @@ const ReduxFormWrappedGroupForm = reduxForm({
     asyncBlurFields: [NAME, CODE],
 })(GroupForm)
 
-export default connect(
-    mapStateToProps,
-    {
-        clearItem,
-        showSnackbar,
-        getList,
-    }
-)(ReduxFormWrappedGroupForm)
+export default connect(mapStateToProps, {
+    clearItem,
+    showSnackbar,
+    getList,
+})(ReduxFormWrappedGroupForm)

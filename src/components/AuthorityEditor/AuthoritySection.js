@@ -135,8 +135,8 @@ class AuthoritySection extends Component {
 }
 
 AuthoritySection.propTypes = {
-    sectionKey: PropTypes.string.isRequired,
     authSection: PropTypes.object.isRequired,
+    sectionKey: PropTypes.string.isRequired,
 }
 
 AuthoritySection.contextTypes = {

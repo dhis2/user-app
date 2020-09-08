@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import List from '../../components/List'
 import i18n from '@dhis2/d2-i18n'
@@ -19,7 +18,7 @@ class GroupList extends Component {
         return (
             <List
                 entityType={USER_GROUP}
-                FilterComponent={SearchFilter}
+                filterComponent={SearchFilter}
                 columns={['displayName', 'currentUserIsMember']}
                 primaryAction={groupContextMenuActions.edit}
                 contextMenuActions={groupContextMenuActions}
@@ -31,13 +30,6 @@ class GroupList extends Component {
             />
         )
     }
-}
-
-GroupList.propTypes = {
-    match: PropTypes.object.isRequired,
-    location: PropTypes.object.isRequired,
-    history: PropTypes.object.isRequired,
-    groupMemberships: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = state => {

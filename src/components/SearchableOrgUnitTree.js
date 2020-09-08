@@ -229,16 +229,16 @@ class SearchableOrgUnitTree extends Component {
 }
 
 SearchableOrgUnitTree.propTypes = {
-    roots: PropTypes.array,
-    selectedOrgUnits: PropTypes.array.isRequired,
     orgUnitType: PropTypes.string.isRequired,
+    selectedOrgUnits: PropTypes.array.isRequired,
+    cancel: PropTypes.func,
+    confirmSelection: PropTypes.func,
     errorText: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     headerText: PropTypes.string,
+    roots: PropTypes.array,
     wrapperStyle: PropTypes.object,
-    confirmSelection: PropTypes.func,
-    onChange: PropTypes.func,
     onBlur: PropTypes.func,
-    cancel: PropTypes.func,
+    onChange: PropTypes.func,
 }
 
 const mapStateToProps = (state, props) => {

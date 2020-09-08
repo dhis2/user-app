@@ -16,7 +16,7 @@ import SearchFilter from '../../components/SearchFilter'
 const RoleList = () => (
     <List
         entityType={USER_ROLE}
-        FilterComponent={SearchFilter}
+        filterComponent={SearchFilter}
         columns={['displayName', 'description']}
         primaryAction={roleContextMenuActions.edit}
         contextMenuActions={roleContextMenuActions}

@@ -26,8 +26,8 @@ AppWithD2ContextAndTheme.childContextTypes = {
 }
 
 AppWithD2ContextAndTheme.propTypes = {
-    d2: PropTypes.object.isRequired,
     children: PropTypes.object.isRequired,
+    d2: PropTypes.object.isRequired,
 }
 
 export default AppWithD2ContextAndTheme

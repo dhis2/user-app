@@ -126,7 +126,6 @@ class AuthorityEditor extends Component {
 AuthorityEditor.propTypes = {
     initiallySelected: PropTypes.array,
     reduxFormOnChange: PropTypes.func,
-    reduxFormOnBlur: PropTypes.func,
 }
 
 AuthorityEditor.defaultProps = {

@@ -18,7 +18,7 @@ const UserList = () => (
     <List
         entityType={USER}
         columns={['displayName', 'userName', 'lastLogin', 'disabled']}
-        FilterComponent={UserFilter}
+        filterComponent={UserFilter}
         primaryAction={userContextMenuActions.edit}
         contextMenuActions={userContextMenuActions}
         contextMenuIcons={userContextMenuIcons}

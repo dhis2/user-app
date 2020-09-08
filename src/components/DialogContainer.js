@@ -14,8 +14,8 @@ const DialogContainer = ({ open, dialogProps, content }) => (
 )
 
 DialogContainer.propTypes = {
-    open: PropTypes.bool.isRequired,
     dialogProps: PropTypes.object.isRequired,
+    open: PropTypes.bool.isRequired,
     content: PropTypes.object,
 }
 

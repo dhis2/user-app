@@ -142,12 +142,12 @@ class FormLoader extends Component {
 }
 
 FormLoader.propTypes = {
-    match: PropTypes.object.isRequired,
     entityType: PropTypes.string.isRequired,
-    item: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    shortItem: PropTypes.object,
     getItem: PropTypes.func.isRequired,
     initNewItem: PropTypes.func.isRequired,
+    match: PropTypes.object.isRequired,
+    item: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    shortItem: PropTypes.object,
 }
 
 const mapStateToProps = (state, props) => {
@@ -158,10 +158,7 @@ const mapStateToProps = (state, props) => {
     }
 }
 
-export default connect(
-    mapStateToProps,
-    {
-        getItem,
-        initNewItem,
-    }
-)(FormLoader)
+export default connect(mapStateToProps, {
+    getItem,
+    initNewItem,
+})(FormLoader)

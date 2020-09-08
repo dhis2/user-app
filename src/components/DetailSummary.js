@@ -1,5 +1,3 @@
-/* eslint-disable max-params */
-
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Paper } from 'material-ui'
@@ -209,20 +207,17 @@ class DetailSummary extends Component {
 }
 
 DetailSummary.propTypes = {
-    summaryObject: PropTypes.object,
-    routeId: PropTypes.string.isRequired,
-    config: PropTypes.array.isRequired,
     baseName: PropTypes.string.isRequired,
+    config: PropTypes.array.isRequired,
     getItem: PropTypes.func.isRequired,
+    routeId: PropTypes.string.isRequired,
+    summaryObject: PropTypes.object,
 }
 
 const mapStateToProps = state => ({
     summaryObject: state.currentItem,
 })
 
-export default connect(
-    mapStateToProps,
-    {
-        getItem,
-    }
-)(DetailSummary)
+export default connect(mapStateToProps, {
+    getItem,
+})(DetailSummary)

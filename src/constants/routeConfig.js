@@ -45,12 +45,14 @@ const createRouteConfig = () => [
     {
         key: 'user_new_view',
         path: '/users/new',
+        /* eslint-disable-next-line react/display-name */
         render: props => <FormLoader entityType={USER} {...props} />,
         entityType: USER,
     },
     {
         key: 'user_edit_view',
         path: '/users/edit/:id',
+        /* eslint-disable-next-line react/display-name */
         render: props => <FormLoader entityType={USER} {...props} />,
         entityType: USER,
     },
@@ -65,12 +67,14 @@ const createRouteConfig = () => [
     {
         key: 'user_role_new_view',
         path: '/user-roles/new',
+        /* eslint-disable-next-line react/display-name */
         render: props => <FormLoader entityType={USER_ROLE} {...props} />,
         entityType: USER_ROLE,
     },
     {
         key: 'user_role_edit_view',
         path: '/user-roles/edit/:id',
+        /* eslint-disable-next-line react/display-name */
         render: props => <FormLoader entityType={USER_ROLE} {...props} />,
         entityType: USER_ROLE,
     },
@@ -85,12 +89,14 @@ const createRouteConfig = () => [
     {
         key: 'user_group_new_view',
         path: '/user-groups/new',
+        /* eslint-disable-next-line react/display-name */
         render: props => <FormLoader entityType={USER_GROUP} {...props} />,
         entityType: USER_GROUP,
     },
     {
         key: 'user_group_edit_view',
         path: '/user-groups/edit/:id',
+        /* eslint-disable-next-line react/display-name */
         render: props => <FormLoader entityType={USER_GROUP} {...props} />,
         entityType: USER_GROUP,
     },

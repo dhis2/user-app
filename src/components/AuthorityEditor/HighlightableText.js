@@ -28,8 +28,8 @@ const HighlightableText = ({ text, searchChunks }) => {
 }
 
 HighlightableText.propTypes = {
-    text: PropTypes.string,
     searchChunks: PropTypes.array,
+    text: PropTypes.string,
 }
 
 export default HighlightableText
