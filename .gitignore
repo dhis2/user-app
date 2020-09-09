@@ -24,6 +24,5 @@ src/locales
 docs
 
 # DHIS2 Platform
-node_modules
 .d2
 build
