@@ -44,7 +44,7 @@
         "lodash.snakecase": "^4.1.1",
         "lodash.sortby": "^4.7.0",
         "lodash.startswith": "^4.2.1",
-        "material-design-icons-iconfont": "^5.0.1",
+        "material-design-icons-iconfont": "^6.1.0",
         "material-ui": "^0.20.0",
         "react-highlight-words": "^0.16.0",
         "react-redux": "^5.0.6",
