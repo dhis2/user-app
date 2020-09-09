@@ -9,6 +9,7 @@ import AppWithD2ContextAndTheme from './components/AppWithD2ContextAndTheme'
 
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import './styles/styles.css'
+import { CircularProgress } from 'material-ui'
 
 const AppWrapper = () => {
     const { d2 } = useD2({
@@ -28,7 +29,13 @@ const AppWrapper = () => {
     })
 
     if (!d2) {
-        return null
+        return (
+            <AppWithD2ContextAndTheme>
+                <div className="page-loader-wrap">
+                    <CircularProgress size={48} />
+                </div>
+            </AppWithD2ContextAndTheme>
+        )
     }
 
     return (
