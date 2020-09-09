@@ -9,9 +9,7 @@ import DialogContainer from './components/DialogContainer'
 import SharingDialogContainer from './components/SharingDialogContainer'
 
 /**
- * Main Component. Renders a AppWithD2ContextAndTheme wrapped in a Provider containing the HeaderBar,
- * Router, SectionLoader, and various popups
- * @param {Object} props
+ * Main Component
  * @class
  */
 const App = () => (
