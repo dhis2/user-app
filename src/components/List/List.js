@@ -4,12 +4,8 @@ import i18n from '@dhis2/d2-i18n'
 import { connect } from 'react-redux'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
-import DataTable from 'd2-ui/lib/data-table/DataTable.component'
-import Pagination from 'd2-ui/lib/pagination/Pagination.component'
-import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component'
-import Heading from 'd2-ui/lib/headings/Heading.component'
-import 'd2-ui/lib/css/DataTable.css'
-import 'd2-ui/lib/css/Pagination.css'
+import DataTable from '@dhis2/d2-ui-table'
+import { LoadingMask, Heading, Pagination } from '@dhis2/d2-ui-core'
 import navigateTo from '../../utils/navigateTo'
 import { listSelector, pagerSelector } from '../../selectors'
 import {
@@ -23,6 +19,8 @@ import {
 } from '../../actions'
 import ErrorMessage from '../ErrorMessage'
 import './booleanValueRenderer'
+import '@dhis2/d2-ui-core/css/Table.css'
+import '@dhis2/d2-ui-core/css/Pagination.css'
 
 const styles = {
     dataTableWrap: {
@@ -142,7 +140,7 @@ class List extends Component {
     }
 
     renderHeaderBar() {
-        const { FilterComponent, entityType } = this.props
+        const { filterComponent: FilterComponent, entityType } = this.props
         return (
             <div className="data-table__filter-bar" style={styles.filterBar}>
                 <div style={styles.headerBarPagination}>
@@ -208,26 +206,26 @@ class List extends Component {
 }
 
 List.propTypes = {
-    items: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
-    pager: PropTypes.object,
-    sectionName: PropTypes.string.isRequired,
-    getList: PropTypes.func.isRequired,
-    incrementPage: PropTypes.func.isRequired,
-    decrementPage: PropTypes.func.isRequired,
-    resetPager: PropTypes.func.isRequired,
-    resetFilter: PropTypes.func.isRequired,
-    showSnackbar: PropTypes.func.isRequired,
-    hideSnackbar: PropTypes.func.isRequired,
-    entityType: PropTypes.string.isRequired,
-    newItemPath: PropTypes.string.isRequired,
-    listType: PropTypes.string,
-    FilterComponent: PropTypes.func.isRequired,
     columns: PropTypes.arrayOf(String).isRequired,
-    primaryAction: PropTypes.func.isRequired,
     contextMenuActions: PropTypes.object.isRequired,
     contextMenuIcons: PropTypes.object.isRequired,
+    decrementPage: PropTypes.func.isRequired,
+    entityType: PropTypes.string.isRequired,
+    filterComponent: PropTypes.func.isRequired,
+    getList: PropTypes.func.isRequired,
+    hideSnackbar: PropTypes.func.isRequired,
+    incrementPage: PropTypes.func.isRequired,
     isContextActionAllowed: PropTypes.func.isRequired,
+    newItemPath: PropTypes.string.isRequired,
+    primaryAction: PropTypes.func.isRequired,
+    resetFilter: PropTypes.func.isRequired,
+    resetPager: PropTypes.func.isRequired,
+    sectionName: PropTypes.string.isRequired,
+    showSnackbar: PropTypes.func.isRequired,
     className: PropTypes.string,
+    items: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
+    listType: PropTypes.string,
+    pager: PropTypes.object,
 }
 
 List.defaultProps = {
@@ -242,15 +240,12 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(
-    mapStateToProps,
-    {
-        getList,
-        resetFilter,
-        resetPager,
-        incrementPage,
-        decrementPage,
-        showSnackbar,
-        hideSnackbar,
-    }
-)(List)
+export default connect(mapStateToProps, {
+    getList,
+    resetFilter,
+    resetPager,
+    incrementPage,
+    decrementPage,
+    showSnackbar,
+    hideSnackbar,
+})(List)

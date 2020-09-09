@@ -22,10 +22,10 @@ const SharingDialogContainer = ({ open, id, type, hideSharingDialog }) => {
 }
 
 SharingDialogContainer.propTypes = {
+    hideSharingDialog: PropTypes.func.isRequired,
     open: PropTypes.bool.isRequired,
     id: PropTypes.string,
     type: PropTypes.string,
-    hideSharingDialog: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => ({
@@ -34,9 +34,6 @@ const mapStateToProps = state => ({
     type: state.popups.sharing.type,
 })
 
-export default connect(
-    mapStateToProps,
-    {
-        hideSharingDialog,
-    }
-)(SharingDialogContainer)
+export default connect(mapStateToProps, {
+    hideSharingDialog,
+})(SharingDialogContainer)

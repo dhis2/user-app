@@ -1,6 +1,5 @@
 /* eslint-disable max-params */
 
-import { getInstance } from 'd2/lib/d2'
 import i18n from '@dhis2/d2-i18n'
 import {
     getQueryFields,
@@ -33,18 +32,16 @@ import {
 class Api {
     /**
      * On instantiation d2 and the d2-api instance are attached to the this scope, so they are easily accessible by its members.
-     * @constructor
      */
-    constructor() {
-        getInstance().then(d2 => {
-            this.d2 = d2
-            this.d2Api = d2.Api.getApi()
-            // In development you can access d2 and d2Api via the console
-            if (process.env.NODE_ENV === 'development') {
-                window.d2 = this.d2
-                window.d2Api = this.d2Api
-            }
-        })
+
+    init(d2) {
+        this.d2 = d2
+        this.d2Api = d2.Api.getApi()
+        // In development you can access d2 and d2Api via the console
+        if (process.env.NODE_ENV === 'development') {
+            window.d2 = this.d2
+            window.d2Api = this.d2Api
+        }
     }
 
     /**************************
@@ -434,5 +431,4 @@ class Api {
         return this.d2Api[method](url)
     }
 }
-const api = new Api()
-export default api
+export default new Api()

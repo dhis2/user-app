@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { withRouter } from 'react-router'
-import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component'
+import { Sidebar } from '@dhis2/d2-ui-core'
 
 const style = {
     display: 'flex',
@@ -49,8 +49,8 @@ class SideNav extends Component {
 }
 
 SideNav.propTypes = {
-    sections: PropTypes.array.isRequired,
     history: PropTypes.object.isRequired,
+    sections: PropTypes.array.isRequired,
     location: PropTypes.shape({
         pathname: PropTypes.string.isRequired,
     }),

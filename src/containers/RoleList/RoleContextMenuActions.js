@@ -3,7 +3,7 @@
  * Contains definitions for menu item visibility, individual menu item actions, icons and names.
  * @module containers/RoleList/RoleContextMenuActions
  */
-import Action from 'd2-ui/lib/action/Action'
+import { Action } from '@dhis2/d2-ui-core'
 import navigateTo from '../../utils/navigateTo'
 import { USER_ROLE } from '../../constants/entityTypes'
 import { deleteModel, openSharingSettings } from '../../utils/sharedActions'

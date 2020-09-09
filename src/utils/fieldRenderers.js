@@ -166,6 +166,7 @@ const sharedPropTypes = {
     label: PropTypes.string,
     meta: PropTypes.shape({
         touched: PropTypes.bool.isRequired,
+        asyncValidating: PropTypes.bool,
         error: PropTypes.string,
     }),
 }
@@ -182,20 +183,19 @@ renderSelectField.propTypes = {
 renderSearchableGroupEditor.propTypes = {
     ...sharedPropTypes,
     availableItemsQuery: PropTypes.func.isRequired,
-    availableItemsLabel: PropTypes.string,
-    assignedItemsLabel: PropTypes.string,
     initialValues: PropTypes.array.isRequired,
+    assignedItemsLabel: PropTypes.string,
+    availableItemsLabel: PropTypes.string,
 }
 
 renderSearchableOrgUnitTree.propTypes = {
     ...sharedPropTypes,
-    wrapperStyle: PropTypes.object,
     initialValues: PropTypes.array.isRequired,
+    wrapperStyle: PropTypes.object,
 }
 
 renderAuthorityEditor.propTypes = {
     ...sharedPropTypes,
-    initialValues: PropTypes.array,
 }
 
 renderText.propTypes = {

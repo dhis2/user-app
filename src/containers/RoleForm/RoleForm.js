@@ -118,15 +118,15 @@ class RoleForm extends Component {
 }
 
 RoleForm.propTypes = {
-    showSnackbar: PropTypes.func.isRequired,
+    asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+        .isRequired,
     clearItem: PropTypes.func.isRequired,
     getList: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     initialValues: PropTypes.object.isRequired,
-    role: PropTypes.object.isRequired,
-    asyncValidating: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
-        .isRequired,
     pristine: PropTypes.bool.isRequired,
+    role: PropTypes.object.isRequired,
+    showSnackbar: PropTypes.func.isRequired,
     submitting: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired,
 }
@@ -146,11 +146,8 @@ const ReduxFormWrappedRoleForm = reduxForm({
     asyncBlurFields: [NAME],
 })(RoleForm)
 
-export default connect(
-    mapStateToProps,
-    {
-        clearItem,
-        showSnackbar,
-        getList,
-    }
-)(ReduxFormWrappedRoleForm)
+export default connect(mapStateToProps, {
+    clearItem,
+    showSnackbar,
+    getList,
+})(ReduxFormWrappedRoleForm)

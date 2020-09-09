@@ -54,9 +54,9 @@ class SearchFilter extends Component {
 }
 
 SearchFilter.propTypes = {
+    entityType: PropTypes.string.isRequired,
     filter: PropTypes.object.isRequired,
     getList: PropTypes.func.isRequired,
-    entityType: PropTypes.string.isRequired,
     updateFilter: PropTypes.func.isRequired,
 }
 
@@ -66,10 +66,7 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(
-    mapStateToProps,
-    {
-        getList,
-        updateFilter,
-    }
-)(SearchFilter)
+export default connect(mapStateToProps, {
+    getList,
+    updateFilter,
+})(SearchFilter)

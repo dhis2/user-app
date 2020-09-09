@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import './style.css'
-import Heading from 'd2-ui/lib/headings/Heading.component'
+import { Heading } from '@dhis2/d2-ui-core'
 import makeTrashable from 'trashable'
 import createHumanErrorMessage from '../../utils/createHumanErrorMessage'
 import api from '../../api'
@@ -126,7 +126,6 @@ class AuthorityEditor extends Component {
 AuthorityEditor.propTypes = {
     initiallySelected: PropTypes.array,
     reduxFormOnChange: PropTypes.func,
-    reduxFormOnBlur: PropTypes.func,
 }
 
 AuthorityEditor.defaultProps = {

@@ -18,9 +18,9 @@ const IconLink = ({ to, tooltip, icon }) => {
 }
 
 IconLink.propTypes = {
-    to: PropTypes.string,
-    tooltip: PropTypes.string.isRequired,
     icon: PropTypes.string.isRequired,
+    tooltip: PropTypes.string.isRequired,
+    to: PropTypes.string,
 }
 
 export default IconLink

@@ -4,7 +4,7 @@ import i18n from '@dhis2/d2-i18n'
 import { connect } from 'react-redux'
 import { Switch, Route, withRouter } from 'react-router-dom'
 import { initCurrentUser } from '../actions'
-import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component'
+import { LoadingMask } from '@dhis2/d2-ui-core'
 import ErrorMessage from './ErrorMessage'
 import getRouteConfig from '../constants/routeConfig'
 import SideNav from './SideNav'
@@ -90,7 +90,9 @@ class SectionLoader extends Component {
     }
 
     renderRoutes(routes) {
-        return routes.map(section => <Route exact strict {...section} />)
+        return routes.map(section => (
+            <Route key={section.key} exact strict {...section} />
+        ))
     }
 
     renderContent() {
@@ -139,15 +141,13 @@ SectionLoader.contextTypes = {
 SectionLoader.propTypes = {
     initCurrentUser: PropTypes.func.isRequired,
     currentUser: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    location: PropTypes.shape({ pathname: PropTypes.string }),
 }
 
 const mapStateToProps = ({ currentUser }) => ({ currentUser })
 
 export default withRouter(
-    connect(
-        mapStateToProps,
-        {
-            initCurrentUser,
-        }
-    )(SectionLoader)
+    connect(mapStateToProps, {
+        initCurrentUser,
+    })(SectionLoader)
 )

@@ -21,10 +21,9 @@ import { LIST_FILTER as DEFAULT_FILTER } from '../constants/defaults'
 const filterReducer = (state = DEFAULT_FILTER, { type, payload }) => {
     switch (type) {
         case FILTER_UPDATED:
-            const { updateKey, updateValue } = payload
             return {
                 ...state,
-                [updateKey]: updateValue,
+                [payload.updateKey]: payload.updateValue,
             }
         case FILTER_RESET:
             return { ...DEFAULT_FILTER }

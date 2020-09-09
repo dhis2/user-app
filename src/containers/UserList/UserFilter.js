@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import i18n from '@dhis2/d2-i18n'
 import { Checkbox } from 'material-ui'
-import DropDown from 'd2-ui/lib/form-fields/DropDown.component'
+import { DropDown } from '@dhis2/d2-ui-core'
 import { updateFilter, getList } from '../../actions'
 import OrganisationUnitInput from '../../components/OrganisationUnitInput'
 import SearchFilter from '../../components/SearchFilter'
@@ -127,10 +127,10 @@ class UserFilter extends Component {
 }
 
 UserFilter.propTypes = {
+    entityType: PropTypes.string.isRequired,
     filter: PropTypes.object.isRequired,
     getList: PropTypes.func.isRequired,
     updateFilter: PropTypes.func.isRequired,
-    entityType: PropTypes.string.isRequired,
 }
 
 const mapStateToProps = state => {
@@ -139,10 +139,7 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(
-    mapStateToProps,
-    {
-        updateFilter,
-        getList,
-    }
-)(UserFilter)
+export default connect(mapStateToProps, {
+    updateFilter,
+    getList,
+})(UserFilter)

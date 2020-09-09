@@ -51,14 +51,14 @@ class AuthorityItem extends Component {
 
 AuthorityItem.propTypes = {
     authSubject: PropTypes.shape({
-        name: PropTypes.string,
-        id: PropTypes.string,
         empty: PropTypes.bool,
+        id: PropTypes.string,
         implicit: PropTypes.bool,
+        name: PropTypes.string,
     }).isRequired,
+    selected: PropTypes.bool.isRequired,
     withLabel: PropTypes.bool.isRequired,
     onCheckedCallBack: PropTypes.func.isRequired,
-    selected: PropTypes.bool.isRequired,
     disabled: PropTypes.bool,
 }
 

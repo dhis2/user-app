@@ -6,7 +6,7 @@
 
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import Action from 'd2-ui/lib/action/Action'
+import { Action } from '@dhis2/d2-ui-core'
 import navigateTo from '../../utils/navigateTo'
 import store from '../../store'
 import api from '../../api'

@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import OrgUnitTreeMultipleRoots from 'd2-ui/lib/org-unit-tree/OrgUnitTreeMultipleRoots.component'
+import { OrgUnitTreeMultipleRoots } from '@dhis2/d2-ui-org-unit-tree'
 import Paper from 'material-ui/Paper'
 import CircularProgress from 'material-ui/CircularProgress'
 import { red500 } from 'material-ui/styles/colors'
 import AsyncAutoComplete from './AsyncAutoComplete'
 import RaisedButton from 'material-ui/RaisedButton'
-import Heading from 'd2-ui/lib/headings/Heading.component'
+import { Heading } from '@dhis2/d2-ui-core'
 import i18n from '@dhis2/d2-i18n'
 import defer from 'lodash.defer'
 import PropTypes from 'prop-types'
@@ -229,16 +229,16 @@ class SearchableOrgUnitTree extends Component {
 }
 
 SearchableOrgUnitTree.propTypes = {
-    roots: PropTypes.array,
-    selectedOrgUnits: PropTypes.array.isRequired,
     orgUnitType: PropTypes.string.isRequired,
+    selectedOrgUnits: PropTypes.array.isRequired,
+    cancel: PropTypes.func,
+    confirmSelection: PropTypes.func,
     errorText: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     headerText: PropTypes.string,
+    roots: PropTypes.array,
     wrapperStyle: PropTypes.object,
-    confirmSelection: PropTypes.func,
-    onChange: PropTypes.func,
     onBlur: PropTypes.func,
-    cancel: PropTypes.func,
+    onChange: PropTypes.func,
 }
 
 const mapStateToProps = (state, props) => {

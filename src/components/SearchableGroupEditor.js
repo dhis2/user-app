@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import GroupEditor from 'd2-ui/lib/group-editor/GroupEditor.component'
-import Store from 'd2-ui/lib/store/Store'
+import { GroupEditor } from '@dhis2/d2-ui-group-editor'
+import { Store, Heading } from '@dhis2/d2-ui-core'
 import PropTypes from 'prop-types'
 import { red500 } from 'material-ui/styles/colors'
 import TextField from 'material-ui/TextField/TextField'
-import Heading from 'd2-ui/lib/headings/Heading.component'
 import asArray from '../utils/asArray'
 import ErrorMessage from './ErrorMessage'
 import createHumanErrorMessage from '../utils/createHumanErrorMessage'
@@ -208,16 +207,16 @@ class SearchableGroupEditor extends Component {
 }
 
 SearchableGroupEditor.propTypes = {
+    assignedItemsHeader: PropTypes.string.isRequired,
+    availableItemsHeader: PropTypes.string.isRequired,
     availableItemsQuery: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
+    errorText: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     initiallyAssignedItems: PropTypes.oneOfType([
         PropTypes.object.isRequired,
         PropTypes.array.isRequired,
     ]),
-    onChange: PropTypes.func.isRequired,
-    availableItemsHeader: PropTypes.string.isRequired,
-    assignedItemsHeader: PropTypes.string.isRequired,
     returnModelsOnUpdate: PropTypes.bool,
-    errorText: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     onBlur: PropTypes.func,
 }
 

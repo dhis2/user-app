@@ -21,9 +21,9 @@ const SnackbarContainer = ({ open, snackbarProps, hideSnackbar }) => {
 }
 
 SnackbarContainer.propTypes = {
+    hideSnackbar: PropTypes.func.isRequired,
     open: PropTypes.bool.isRequired,
     snackbarProps: PropTypes.object.isRequired,
-    hideSnackbar: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => ({
@@ -31,9 +31,6 @@ const mapStateToProps = state => ({
     snackbarProps: state.popups.snackbar.props,
 })
 
-export default connect(
-    mapStateToProps,
-    {
-        hideSnackbar,
-    }
-)(SnackbarContainer)
+export default connect(mapStateToProps, {
+    hideSnackbar,
+})(SnackbarContainer)

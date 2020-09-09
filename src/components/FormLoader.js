@@ -4,7 +4,7 @@ import { Paper, CircularProgress } from 'material-ui'
 import { connect } from 'react-redux'
 import { getItem, initNewItem } from '../actions'
 import { USER, USER_GROUP, USER_ROLE } from '../constants/entityTypes'
-import Heading from 'd2-ui/lib/headings/Heading.component'
+import { Heading } from '@dhis2/d2-ui-core'
 import IconLink from './IconLink'
 import i18n from '@dhis2/d2-i18n'
 import kebabCase from 'lodash.kebabcase'
@@ -142,12 +142,12 @@ class FormLoader extends Component {
 }
 
 FormLoader.propTypes = {
-    match: PropTypes.object.isRequired,
     entityType: PropTypes.string.isRequired,
-    item: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    shortItem: PropTypes.object,
     getItem: PropTypes.func.isRequired,
     initNewItem: PropTypes.func.isRequired,
+    match: PropTypes.object.isRequired,
+    item: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    shortItem: PropTypes.object,
 }
 
 const mapStateToProps = (state, props) => {
@@ -158,10 +158,7 @@ const mapStateToProps = (state, props) => {
     }
 }
 
-export default connect(
-    mapStateToProps,
-    {
-        getItem,
-        initNewItem,
-    }
-)(FormLoader)
+export default connect(mapStateToProps, {
+    getItem,
+    initNewItem,
+})(FormLoader)

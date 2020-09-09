@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Paper, CircularProgress, Checkbox } from 'material-ui'
 import i18n from '@dhis2/d2-i18n'
-import Heading from 'd2-ui/lib/headings/Heading.component'
+import { Heading } from '@dhis2/d2-ui-core'
 import AuthorityGroup from './AuthorityGroup'
 import AuthorityItem from './AuthorityItem'
 
@@ -135,8 +135,8 @@ class AuthoritySection extends Component {
 }
 
 AuthoritySection.propTypes = {
-    sectionKey: PropTypes.string.isRequired,
     authSection: PropTypes.object.isRequired,
+    sectionKey: PropTypes.string.isRequired,
 }
 
 AuthoritySection.contextTypes = {
