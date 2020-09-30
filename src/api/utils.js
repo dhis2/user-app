@@ -5,7 +5,6 @@
  * @module Api/utils
  */
 
-import { generateUid } from 'd2'
 import snakeCase from 'lodash.snakecase'
 import isUndefined from 'lodash.isundefined'
 import store from '../store'
@@ -119,19 +118,23 @@ export const parseUserSaveData = (
     attributeFields
 ) => {
     const isNewUser = !user.id
-    const userId = user.id || generateUid()
-    const userCredId =
-        (user.userCredentials && user.userCredentials.id) || generateUid()
     const userModelOwnedProperties = user.modelDefinition.getOwnedPropertyNames()
-    const data = {
-        id: userId,
-        userCredentials: {
-            id: userCredId,
-            userInfo: { id: userId },
-            cogsDimensionConstraints: [],
-            catDimensionConstraints: [],
-        },
-    }
+    const data = isNewUser
+        ? {
+              userCredentials: {
+                  cogsDimensionConstraints: [],
+                  catDimensionConstraints: [],
+              },
+          }
+        : {
+              id: user.id,
+              userCredentials: {
+                  id: user.userCredentials && user.userCredentials.id,
+                  userInfo: { id: user.id },
+                  cogsDimensionConstraints: [],
+                  catDimensionConstraints: [],
+              },
+          }
     const cred = data.userCredentials
 
     // catCogsDimensionConstraints are combined into a single input component,
