@@ -1,29 +1,28 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2020
+# Ibatov <ibatovk@who.int>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-11T15:36:45.447Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: phil_dhis2, 2020\n"
-"Language-Team: Burmese (https://www.transifex.com/hisp-uio/teams/100509/my/)\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2020\n"
+"Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: my\n"
+"Language: uz@Cyrl\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "User management"
 msgstr ""
 
 msgid "Use database locale / no translation"
-msgstr "အချက်အလက်များဖြည့်သွင်းခြင်းကိုမူရင်းဘာသာစကားဖြင့်သာသုံးပါ"
+msgstr ""
 
 msgid "Search"
-msgstr ""
+msgstr "Излаш"
 
 msgid "Enter search term"
 msgstr ""
@@ -53,13 +52,13 @@ msgid "Analytics Table Hook"
 msgstr ""
 
 msgid "Attribute"
-msgstr "Attribute"
+msgstr ""
 
 msgid "Category Combo"
 msgstr ""
 
 msgid "Category"
-msgstr "category"
+msgstr "Категория"
 
 msgid "Category Option"
 msgstr ""
@@ -74,10 +73,10 @@ msgid "Color Set"
 msgstr ""
 
 msgid "Constant"
-msgstr "ကိန်းသေ"
+msgstr ""
 
 msgid "Dashboard"
-msgstr "အချက်အလက်များလေ့လာဆန်းစစ်ခြင်း"
+msgstr "Бошқарув панели"
 
 msgid "Data Element Group Sets"
 msgstr ""
@@ -92,7 +91,7 @@ msgid "Min/max rule"
 msgstr ""
 
 msgid "Data Set"
-msgstr "Data အစု"
+msgstr ""
 
 msgid "Data Value"
 msgstr ""
@@ -101,10 +100,10 @@ msgid "Document"
 msgstr ""
 
 msgid "Event Chart"
-msgstr ""
+msgstr "Ҳодиса Диаграмма"
 
 msgid "Event Report"
-msgstr ""
+msgstr "Ҳодиса Ҳисобот"
 
 msgid "External Map Layer"
 msgstr ""
@@ -119,13 +118,13 @@ msgid "Indicator Type"
 msgstr ""
 
 msgid "Indicator"
-msgstr "indicator"
+msgstr "Индикатор"
 
 msgid "Legend Set"
 msgstr ""
 
 msgid "Map"
-msgstr ""
+msgstr "Харита"
 
 msgid "Min-Max Data Element"
 msgstr ""
@@ -137,10 +136,10 @@ msgid "Option Group"
 msgstr ""
 
 msgid "Option Set"
-msgstr ""
+msgstr "Вариантлар тўплами"
 
 msgid "Organisation Unit"
-msgstr "အဖွဲ့အစည်းယူနစ်"
+msgstr "Ташкилий бирлик"
 
 msgid "Organisation Unit Group Set"
 msgstr ""
@@ -149,13 +148,13 @@ msgid "Organisation Unit Group"
 msgstr ""
 
 msgid "Predictor"
-msgstr "Predictor"
+msgstr ""
 
 msgid "Program Stage"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Программа"
 
 msgid "Program Indicator"
 msgstr ""
@@ -176,13 +175,13 @@ msgid "Relationship Type"
 msgstr ""
 
 msgid "Report"
-msgstr ""
+msgstr "Ҳисобот"
 
 msgid "Section"
-msgstr "အခန်း/ ကဏ္ဍ"
+msgstr ""
 
 msgid "SQL View"
-msgstr "Sql View"
+msgstr ""
 
 msgid "Tracked Entity"
 msgstr ""
@@ -197,7 +196,7 @@ msgid "Tracked Entity Instance"
 msgstr ""
 
 msgid "User Group"
-msgstr "User Group:"
+msgstr ""
 
 msgid "User Role"
 msgstr ""
@@ -221,19 +220,19 @@ msgid "Visualization"
 msgstr ""
 
 msgid "Apps"
-msgstr ""
+msgstr "Илова"
 
 msgid "Tracker"
-msgstr ""
+msgstr "Кузатув"
 
 msgid "Import-Export"
-msgstr "အသွင်းအထုတ်ပြုလုပ်ခြင်း"
+msgstr ""
 
 msgid "System"
-msgstr "စနစ်"
+msgstr "Тизим"
 
 msgid "Add"
-msgstr "ထပ်ထည့်သည်"
+msgstr "Қўшиш"
 
 msgid "list"
 msgstr ""
@@ -252,10 +251,10 @@ msgid "Edit user role"
 msgstr ""
 
 msgid "Send message"
-msgstr "messagae ပို့ပါ။"
+msgstr ""
 
 msgid "Update"
-msgstr "‌နောက်ဆုံးသတင်းကိုရစေခြင်း"
+msgstr "Янгилаш"
 
 msgid "Create new"
 msgstr ""
@@ -267,7 +266,7 @@ msgid "You are not allowed to edit"
 msgstr ""
 
 msgid "Confirm"
-msgstr ""
+msgstr "Тасдиқланг"
 
 msgid "There was an error fetching the list"
 msgstr ""
@@ -276,7 +275,7 @@ msgid "Select an organisation unit"
 msgstr ""
 
 msgid "Organisation unit"
-msgstr "အဖွဲ့အစည်းယူနစ်"
+msgstr "Ташкилий бирлик"
 
 msgid "Page not found."
 msgstr ""
@@ -294,13 +293,13 @@ msgid "There was a problem replicating the user"
 msgstr ""
 
 msgid "Username"
-msgstr "အသုံးပြုသူအမည်"
+msgstr "Фойдаланувчи исми"
 
 msgid "Username for new user"
 msgstr ""
 
 msgid "Password"
-msgstr "လျှို့ဝှက်နံပါတ်"
+msgstr "Парол"
 
 msgid "Password for new user"
 msgstr ""
@@ -309,16 +308,16 @@ msgid "Replicate"
 msgstr ""
 
 msgid "Cancel"
-msgstr "ပယ်ဖျက်သည်"
+msgstr "Бекор қилиш"
 
 msgid "Search by name"
-msgstr ""
+msgstr "Исми орқали излаш"
 
 msgid "Could not load available items"
 msgstr ""
 
 msgid "Filter"
-msgstr "ရှာဖွေထုတ်သည်"
+msgstr "Фильтр"
 
 msgid "Filter available and selected items"
 msgstr ""
@@ -342,58 +341,58 @@ msgid "Display name"
 msgstr ""
 
 msgid "ID"
-msgstr "အိုင်ဒီ"
+msgstr "ID"
 
 msgid "Last login"
 msgstr ""
 
 msgid "Created"
-msgstr ""
+msgstr "Яратилди"
 
 msgid "Surname"
-msgstr "မျိုးရိုးအမည်"
+msgstr "Фамилия"
 
 msgid "First name"
-msgstr "ပထမအမည်"
+msgstr "Исм"
 
 msgid "Introduction"
-msgstr "မိတ်ဆက်ခြင်း"
+msgstr "Таништириш"
 
 msgid "Job title"
-msgstr "အလုပ်အကိုင်ခေါင်းစဉ်"
+msgstr "Лавозим"
 
 msgid "Works at"
 msgstr ""
 
 msgid "Education"
-msgstr "ပညာအရည်အချင်း"
+msgstr "Маълумоти"
 
 msgid "Interests"
-msgstr "စိတ်ဝင်စားမှုများ"
+msgstr "Қизиқиши"
 
 msgid "Nationality"
-msgstr "နိုင်ငံသား"
+msgstr "Миллати"
 
 msgid "Birthday"
-msgstr "‌မွေးနေ့"
+msgstr "Тугилган кун"
 
 msgid "Gender"
-msgstr "လိင်"
+msgstr "Жинси"
 
 msgid "Speaks"
 msgstr ""
 
 msgid "E-mail"
-msgstr "အီးမေးလ်"
+msgstr "Электрон почта"
 
 msgid "Mobile phone number"
-msgstr "မိုဘိုင်းလ်ဖုန်းနံပါတ်"
+msgstr "Мобил телефон рақами"
 
 msgid "Organisations units"
 msgstr ""
 
 msgid "User roles"
-msgstr "အသုံးပြုသူအဆင့်"
+msgstr "Фойдаланувчи роллари"
 
 msgid "Members"
 msgstr ""
@@ -426,19 +425,19 @@ msgid "There was a problem saving the user group."
 msgstr ""
 
 msgid "Save"
-msgstr "သိမ်းဆည်းသည်"
+msgstr "Сақлаш"
 
 msgid "Name"
-msgstr "အမည်"
+msgstr "Исми"
 
 msgid "Code"
-msgstr "ကုဒ်"
+msgstr "Код"
 
 msgid "Available users"
 msgstr ""
 
 msgid "Group members"
-msgstr "အုပ်စု အသင်းဝင်းများ"
+msgstr ""
 
 msgid "Available user groups"
 msgstr ""
@@ -465,7 +464,7 @@ msgid "There was a problem saving the user role."
 msgstr ""
 
 msgid "Description"
-msgstr "ဖော်ပြချက်"
+msgstr "Тавсиф"
 
 msgid "User Role Management"
 msgstr ""
@@ -480,10 +479,10 @@ msgid "There was a problem saving the user."
 msgstr ""
 
 msgid "Show fewer options"
-msgstr ""
+msgstr "Камроқ вариантларни кўрсатиш"
 
 msgid "Show more options"
-msgstr ""
+msgstr "Кўпроқ вариантларни кўрсатиш"
 
 msgid "Send invite"
 msgstr ""
@@ -509,7 +508,7 @@ msgid "Retype password"
 msgstr ""
 
 msgid "OpenID"
-msgstr ""
+msgstr "Кириш ID си"
 
 msgid "LDAP identifier"
 msgstr ""
@@ -530,10 +529,10 @@ msgid "Twitter"
 msgstr ""
 
 msgid "Interface language"
-msgstr "အချက်အလက်များဖြည့်သွင်းရာတွင်သုံးသောဘာသာစကား"
+msgstr "Интерфейс тили"
 
 msgid "Database language"
-msgstr "Database တွင်သုံးသောဘာသာစကား"
+msgstr "Маълумотлар базаси тили"
 
 msgid "Available roles"
 msgstr ""
@@ -587,7 +586,7 @@ msgid "There was a problem updating the enabled state"
 msgstr ""
 
 msgid "month"
-msgstr ""
+msgstr "ой"
 
 msgid "months"
 msgstr ""
@@ -618,13 +617,13 @@ msgid_plural "{{count}} selected"
 msgstr[0] ""
 
 msgid "Yes"
-msgstr "Yes"
+msgstr "Ҳа"
 
 msgid "No"
-msgstr "Nr"
+msgstr "Йўқ"
 
 msgid "Something went wrong when processing your request."
-msgstr ""
+msgstr "Сўровингиз кўриб чиқилишида хатолик юз берди."
 
 msgid "Validating..."
 msgstr ""
