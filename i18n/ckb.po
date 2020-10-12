@@ -1,29 +1,30 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2020
+# phil_dhis2, 2019
+# KRG HIS <antonia.bezenchek@informa.pro>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-11T15:36:45.447Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: phil_dhis2, 2020\n"
-"Language-Team: Burmese (https://www.transifex.com/hisp-uio/teams/100509/my/)\n"
+"Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2020\n"
+"Language-Team: Central Kurdish (https://www.transifex.com/hisp-uio/teams/100509/ckb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: my\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ckb\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "User management"
 msgstr ""
 
 msgid "Use database locale / no translation"
-msgstr "အချက်အလက်များဖြည့်သွင်းခြင်းကိုမူရင်းဘာသာစကားဖြင့်သာသုံးပါ"
+msgstr ""
 
 msgid "Search"
-msgstr ""
+msgstr "طةران"
 
 msgid "Enter search term"
 msgstr ""
@@ -53,13 +54,13 @@ msgid "Analytics Table Hook"
 msgstr ""
 
 msgid "Attribute"
-msgstr "Attribute"
+msgstr ""
 
 msgid "Category Combo"
 msgstr ""
 
 msgid "Category"
-msgstr "category"
+msgstr ""
 
 msgid "Category Option"
 msgstr ""
@@ -74,10 +75,10 @@ msgid "Color Set"
 msgstr ""
 
 msgid "Constant"
-msgstr "ကိန်းသေ"
+msgstr ""
 
 msgid "Dashboard"
-msgstr "အချက်အလက်များလေ့လာဆန်းစစ်ခြင်း"
+msgstr "شيتةل كردني داتا"
 
 msgid "Data Element Group Sets"
 msgstr ""
@@ -92,7 +93,7 @@ msgid "Min/max rule"
 msgstr ""
 
 msgid "Data Set"
-msgstr "Data အစု"
+msgstr ""
 
 msgid "Data Value"
 msgstr ""
@@ -119,7 +120,7 @@ msgid "Indicator Type"
 msgstr ""
 
 msgid "Indicator"
-msgstr "indicator"
+msgstr ""
 
 msgid "Legend Set"
 msgstr ""
@@ -140,7 +141,7 @@ msgid "Option Set"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr "အဖွဲ့အစည်းယူနစ်"
+msgstr "یەکەی ڕێخکڕاو"
 
 msgid "Organisation Unit Group Set"
 msgstr ""
@@ -149,13 +150,13 @@ msgid "Organisation Unit Group"
 msgstr ""
 
 msgid "Predictor"
-msgstr "Predictor"
+msgstr ""
 
 msgid "Program Stage"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "بةرنامة"
 
 msgid "Program Indicator"
 msgstr ""
@@ -179,10 +180,10 @@ msgid "Report"
 msgstr ""
 
 msgid "Section"
-msgstr "အခန်း/ ကဏ္ဍ"
+msgstr "بةش"
 
 msgid "SQL View"
-msgstr "Sql View"
+msgstr ""
 
 msgid "Tracked Entity"
 msgstr ""
@@ -197,7 +198,7 @@ msgid "Tracked Entity Instance"
 msgstr ""
 
 msgid "User Group"
-msgstr "User Group:"
+msgstr ""
 
 msgid "User Role"
 msgstr ""
@@ -227,13 +228,13 @@ msgid "Tracker"
 msgstr ""
 
 msgid "Import-Export"
-msgstr "အသွင်းအထုတ်ပြုလုပ်ခြင်း"
+msgstr "داخل كردن- وةركرتن"
 
 msgid "System"
-msgstr "စနစ်"
+msgstr ""
 
 msgid "Add"
-msgstr "ထပ်ထည့်သည်"
+msgstr ""
 
 msgid "list"
 msgstr ""
@@ -252,10 +253,10 @@ msgid "Edit user role"
 msgstr ""
 
 msgid "Send message"
-msgstr "messagae ပို့ပါ။"
+msgstr ""
 
 msgid "Update"
-msgstr "‌နောက်ဆုံးသတင်းကိုရစေခြင်း"
+msgstr "نويَ كردنةوة"
 
 msgid "Create new"
 msgstr ""
@@ -267,7 +268,7 @@ msgid "You are not allowed to edit"
 msgstr ""
 
 msgid "Confirm"
-msgstr ""
+msgstr "دووپاتکردنەوە"
 
 msgid "There was an error fetching the list"
 msgstr ""
@@ -276,7 +277,7 @@ msgid "Select an organisation unit"
 msgstr ""
 
 msgid "Organisation unit"
-msgstr "အဖွဲ့အစည်းယူနစ်"
+msgstr "يةكةي ريكخراو"
 
 msgid "Page not found."
 msgstr ""
@@ -294,13 +295,13 @@ msgid "There was a problem replicating the user"
 msgstr ""
 
 msgid "Username"
-msgstr "အသုံးပြုသူအမည်"
+msgstr ""
 
 msgid "Username for new user"
 msgstr ""
 
 msgid "Password"
-msgstr "လျှို့ဝှက်နံပါတ်"
+msgstr ""
 
 msgid "Password for new user"
 msgstr ""
@@ -309,7 +310,7 @@ msgid "Replicate"
 msgstr ""
 
 msgid "Cancel"
-msgstr "ပယ်ဖျက်သည်"
+msgstr "لابردن"
 
 msgid "Search by name"
 msgstr ""
@@ -318,7 +319,7 @@ msgid "Could not load available items"
 msgstr ""
 
 msgid "Filter"
-msgstr "ရှာဖွေထုတ်သည်"
+msgstr ""
 
 msgid "Filter available and selected items"
 msgstr ""
@@ -342,7 +343,7 @@ msgid "Display name"
 msgstr ""
 
 msgid "ID"
-msgstr "အိုင်ဒီ"
+msgstr ""
 
 msgid "Last login"
 msgstr ""
@@ -351,49 +352,49 @@ msgid "Created"
 msgstr ""
 
 msgid "Surname"
-msgstr "မျိုးရိုးအမည်"
+msgstr ""
 
 msgid "First name"
-msgstr "ပထမအမည်"
+msgstr ""
 
 msgid "Introduction"
-msgstr "မိတ်ဆက်ခြင်း"
+msgstr ""
 
 msgid "Job title"
-msgstr "အလုပ်အကိုင်ခေါင်းစဉ်"
+msgstr ""
 
 msgid "Works at"
 msgstr ""
 
 msgid "Education"
-msgstr "ပညာအရည်အချင်း"
+msgstr ""
 
 msgid "Interests"
-msgstr "စိတ်ဝင်စားမှုများ"
+msgstr ""
 
 msgid "Nationality"
-msgstr "နိုင်ငံသား"
+msgstr ""
 
 msgid "Birthday"
-msgstr "‌မွေးနေ့"
+msgstr ""
 
 msgid "Gender"
-msgstr "လိင်"
+msgstr ""
 
 msgid "Speaks"
 msgstr ""
 
 msgid "E-mail"
-msgstr "အီးမေးလ်"
+msgstr ""
 
 msgid "Mobile phone number"
-msgstr "မိုဘိုင်းလ်ဖုန်းနံပါတ်"
+msgstr ""
 
 msgid "Organisations units"
 msgstr ""
 
 msgid "User roles"
-msgstr "အသုံးပြုသူအဆင့်"
+msgstr ""
 
 msgid "Members"
 msgstr ""
@@ -426,19 +427,19 @@ msgid "There was a problem saving the user group."
 msgstr ""
 
 msgid "Save"
-msgstr "သိမ်းဆည်းသည်"
+msgstr "خةزن كردن"
 
 msgid "Name"
-msgstr "အမည်"
+msgstr ""
 
 msgid "Code"
-msgstr "ကုဒ်"
+msgstr ""
 
 msgid "Available users"
 msgstr ""
 
 msgid "Group members"
-msgstr "အုပ်စု အသင်းဝင်းများ"
+msgstr ""
 
 msgid "Available user groups"
 msgstr ""
@@ -465,7 +466,7 @@ msgid "There was a problem saving the user role."
 msgstr ""
 
 msgid "Description"
-msgstr "ဖော်ပြချက်"
+msgstr ""
 
 msgid "User Role Management"
 msgstr ""
@@ -530,10 +531,10 @@ msgid "Twitter"
 msgstr ""
 
 msgid "Interface language"
-msgstr "အချက်အလက်များဖြည့်သွင်းရာတွင်သုံးသောဘာသာစကား"
+msgstr ""
 
 msgid "Database language"
-msgstr "Database တွင်သုံးသောဘာသာစကား"
+msgstr ""
 
 msgid "Available roles"
 msgstr ""
@@ -616,12 +617,13 @@ msgstr ""
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
 msgstr[0] ""
+msgstr[1] ""
 
 msgid "Yes"
-msgstr "Yes"
+msgstr "ەڵێ"
 
 msgid "No"
-msgstr "Nr"
+msgstr "نەخێر"
 
 msgid "Something went wrong when processing your request."
 msgstr ""
@@ -645,7 +647,7 @@ msgid "Please enter a valid date with the following format yyyy-mm-dd"
 msgstr ""
 
 msgid "Please provide a valid email address"
-msgstr ""
+msgstr "تکایە ئیمەیڵێکی درووست بنووسە"
 
 msgid "Value should be an integer"
 msgstr ""
