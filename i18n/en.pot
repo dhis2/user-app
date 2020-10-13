@@ -5,13 +5,13 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-05-11T14:57:14.928Z\n"
-"PO-Revision-Date: 2020-05-11T14:57:14.928Z\n"
-
-msgid "User management"
-msgstr ""
+"POT-Creation-Date: 2020-10-13T10:20:03.180Z\n"
+"PO-Revision-Date: 2020-10-13T10:20:03.180Z\n"
 
 msgid "Use database locale / no translation"
+msgstr ""
+
+msgid "User management"
 msgstr ""
 
 msgid "Search"
@@ -212,6 +212,12 @@ msgstr ""
 msgid "Visualization"
 msgstr ""
 
+msgid "Approval Validation Rule"
+msgstr ""
+
+msgid "Data Elements By Organisation Unit"
+msgstr ""
+
 msgid "Apps"
 msgstr ""
 
@@ -302,9 +308,6 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-msgid "Search by name"
-msgstr ""
-
 msgid "Could not load available items"
 msgstr ""
 
@@ -321,6 +324,9 @@ msgid "Apply"
 msgstr ""
 
 msgid "Clear all"
+msgstr ""
+
+msgid "Search by name"
 msgstr ""
 
 msgid "There was an error loading the current user"
@@ -407,18 +413,6 @@ msgstr ""
 msgid "Create, modify, view and delete User Groups"
 msgstr ""
 
-msgid "Could not load the user group data. Please refresh the page."
-msgstr ""
-
-msgid "User group \"{{displayName}}\" saved successfully"
-msgstr ""
-
-msgid "There was a problem saving the user group."
-msgstr ""
-
-msgid "Save"
-msgstr ""
-
 msgid "Name"
 msgstr ""
 
@@ -437,6 +431,18 @@ msgstr ""
 msgid "Managed user groups"
 msgstr ""
 
+msgid "Could not load the user group data. Please refresh the page."
+msgstr ""
+
+msgid "User group \"{{displayName}}\" saved successfully"
+msgstr ""
+
+msgid "There was a problem saving the user group."
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
 msgid "You left group"
 msgstr ""
 
@@ -449,34 +455,16 @@ msgstr ""
 msgid "User Group Management"
 msgstr ""
 
+msgid "Description"
+msgstr ""
+
 msgid "User role \"{{displayName}}\" saved successfully"
 msgstr ""
 
 msgid "There was a problem saving the user role."
 msgstr ""
 
-msgid "Description"
-msgstr ""
-
 msgid "User Role Management"
-msgstr ""
-
-msgid "Could not load the user data. Please refresh the page."
-msgstr ""
-
-msgid "User \"{{displayName}}\" saved successfully"
-msgstr ""
-
-msgid "There was a problem saving the user."
-msgstr ""
-
-msgid "Show fewer options"
-msgstr ""
-
-msgid "Show more options"
-msgstr ""
-
-msgid "Send invite"
 msgstr ""
 
 msgid ""
@@ -548,6 +536,24 @@ msgid "Available dimension restrictions for data analytics"
 msgstr ""
 
 msgid "Selected dimension restrictions for data analytics"
+msgstr ""
+
+msgid "Could not load the user data. Please refresh the page."
+msgstr ""
+
+msgid "User \"{{displayName}}\" saved successfully"
+msgstr ""
+
+msgid "There was a problem saving the user."
+msgstr ""
+
+msgid "Show fewer options"
+msgstr ""
+
+msgid "Show more options"
+msgstr ""
+
+msgid "Send invite"
 msgstr ""
 
 msgid "Replicate user"

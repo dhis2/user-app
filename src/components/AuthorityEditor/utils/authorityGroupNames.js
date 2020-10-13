@@ -63,6 +63,11 @@ const createNameLookup = () => {
         ['F_PREDICTORGROUP', i18n.t('Data predictor group')],
         ['F_SKIP_DATA_IMPORT_AUDIT', i18n.t('Skip data import audit')],
         ['F_VISUALIZATION', i18n.t('Visualization')],
+        ['F_APPROVAL_VALIDATIONRULE', i18n.t('Approval Validation Rule')],
+        [
+            'F_DATAELEMENTS_BY_ORGANISATIONUNIT',
+            i18n.t('Data Elements By Organisation Unit'),
+        ],
     ])
 }
 
