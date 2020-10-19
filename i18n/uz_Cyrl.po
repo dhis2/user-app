@@ -178,7 +178,7 @@ msgid "Report"
 msgstr "Ҳисобот"
 
 msgid "Section"
-msgstr ""
+msgstr "Бўлим"
 
 msgid "SQL View"
 msgstr ""
@@ -226,7 +226,7 @@ msgid "Tracker"
 msgstr "Кузатув"
 
 msgid "Import-Export"
-msgstr ""
+msgstr "импорт-Экспорт"
 
 msgid "System"
 msgstr "Тизим"
