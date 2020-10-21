@@ -620,7 +620,7 @@ msgid "Passwords do not match"
 msgstr ""
 
 msgid "This field is required"
-msgstr ""
+msgstr "Ушбу қатор тўлдирилиши шарт"
 
 msgid "This field is required. Please select at least one"
 msgstr ""
