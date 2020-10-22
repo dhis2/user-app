@@ -193,7 +193,7 @@ msgid "Tracked Entity Instance"
 msgstr ""
 
 msgid "User Group"
-msgstr ""
+msgstr "Фойдаланувчи Гуруҳи"
 
 msgid "User Role"
 msgstr ""
