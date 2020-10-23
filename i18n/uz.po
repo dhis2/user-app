@@ -1,0 +1,710 @@
+# 
+# Translators:
+# Ibatov <ibatovk@who.int>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-09-07T13:38:29.494Z\n"
+"PO-Revision-Date: 2019-09-02 16:26+0000\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2020\n"
+"Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uz@Cyrl\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Use database locale / no translation"
+msgstr ""
+
+msgid "Search"
+msgstr "Излаш"
+
+msgid "Enter search term"
+msgstr ""
+
+msgid "Please enter at least {{ minCharCount }} characters"
+msgstr ""
+
+msgid "No matches found"
+msgstr ""
+
+msgid "There was a problem retreiving your search results"
+msgstr ""
+
+msgid "There was a problem retreiving the available authorities."
+msgstr ""
+
+msgid "Authorities"
+msgstr ""
+
+msgid "Selected authorities only"
+msgstr ""
+
+msgid "All (Full authority)"
+msgstr ""
+
+msgid "Analytics Table Hook"
+msgstr ""
+
+msgid "Attribute"
+msgstr ""
+
+msgid "Category Combo"
+msgstr ""
+
+msgid "Category"
+msgstr "Категория"
+
+msgid "Category Option"
+msgstr ""
+
+msgid "Category Option Group"
+msgstr ""
+
+msgid "Category Option Group Set"
+msgstr ""
+
+msgid "Color Set"
+msgstr ""
+
+msgid "Constant"
+msgstr ""
+
+msgid "Dashboard"
+msgstr "Бошқарув панели"
+
+msgid "Data Element Group Sets"
+msgstr ""
+
+msgid "Data Element Groups"
+msgstr ""
+
+msgid "Data Element"
+msgstr ""
+
+msgid "Min/max rule"
+msgstr ""
+
+msgid "Data Set"
+msgstr "Маълумотлар тўплами"
+
+msgid "Data Value"
+msgstr ""
+
+msgid "Document"
+msgstr ""
+
+msgid "Event Chart"
+msgstr "Ҳодиса Диаграмма"
+
+msgid "Event Report"
+msgstr "Ҳодиса Ҳисобот"
+
+msgid "External Map Layer"
+msgstr ""
+
+msgid "Indicator Group Sets"
+msgstr ""
+
+msgid "Indicator Group"
+msgstr ""
+
+msgid "Indicator Type"
+msgstr ""
+
+msgid "Indicator"
+msgstr "Индикатор"
+
+msgid "Legend Set"
+msgstr ""
+
+msgid "Map"
+msgstr "Харита"
+
+msgid "Min-Max Data Element"
+msgstr ""
+
+msgid "Option Group Set"
+msgstr ""
+
+msgid "Option Group"
+msgstr ""
+
+msgid "Option Set"
+msgstr "Вариантлар тўплами"
+
+msgid "Organisation Unit"
+msgstr "Ташкилий Бўлим"
+
+msgid "Organisation Unit Group Set"
+msgstr ""
+
+msgid "Organisation Unit Group"
+msgstr ""
+
+msgid "Predictor"
+msgstr ""
+
+msgid "Program Stage"
+msgstr ""
+
+msgid "Program"
+msgstr "Программа"
+
+msgid "Program Indicator"
+msgstr ""
+
+msgid "Program Indicator Group"
+msgstr ""
+
+msgid "Program Rule"
+msgstr ""
+
+msgid "Program Tracked Entity Attribute Group"
+msgstr ""
+
+msgid "Push Analysis"
+msgstr ""
+
+msgid "Relationship Type"
+msgstr ""
+
+msgid "Report"
+msgstr "Ҳисобот"
+
+msgid "Section"
+msgstr "Бўлим"
+
+msgid "SQL View"
+msgstr ""
+
+msgid "Tracked Entity"
+msgstr ""
+
+msgid "Tracked Entity Attribute"
+msgstr ""
+
+msgid "Tracked Entity Data Value"
+msgstr ""
+
+msgid "Tracked Entity Instance"
+msgstr ""
+
+msgid "User Group"
+msgstr "Фойдаланувчи Гуруҳи"
+
+msgid "User Role"
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "Validation Rule Group"
+msgstr ""
+
+msgid "Validation Rule"
+msgstr ""
+
+msgid "Data predictor group"
+msgstr ""
+
+msgid "Skip data import audit"
+msgstr ""
+
+msgid "Visualization"
+msgstr ""
+
+msgid "Apps"
+msgstr "Илова"
+
+msgid "Tracker"
+msgstr "Кузатув"
+
+msgid "Import-Export"
+msgstr "импорт-Экспорт"
+
+msgid "System"
+msgstr "Тизим"
+
+msgid "Add"
+msgstr "Қўшиш"
+
+msgid "list"
+msgstr ""
+
+msgid ""
+"You do not have access to any section of the DHIS 2 User Management App"
+msgstr ""
+
+msgid "Edit user"
+msgstr ""
+
+msgid "Edit user group"
+msgstr ""
+
+msgid "Edit user role"
+msgstr ""
+
+msgid "Send message"
+msgstr ""
+
+msgid "Update"
+msgstr "Янгилаш"
+
+msgid "Create new"
+msgstr ""
+
+msgid "Back to"
+msgstr ""
+
+msgid "You are not allowed to edit"
+msgstr ""
+
+msgid "Confirm"
+msgstr "Тасдиқланг"
+
+msgid "There was an error fetching the list"
+msgstr ""
+
+msgid "Select an organisation unit"
+msgstr ""
+
+msgid "Organisation unit"
+msgstr "Ташкилий бирлик"
+
+msgid "Page not found."
+msgstr ""
+
+msgid "No match for"
+msgstr ""
+
+msgid "Go back home"
+msgstr ""
+
+msgid "User \"{{displayName}}\" replicated successfuly"
+msgstr ""
+
+msgid "There was a problem replicating the user"
+msgstr ""
+
+msgid "Username"
+msgstr "Фойдаланувчи исми"
+
+msgid "Username for new user"
+msgstr ""
+
+msgid "Password"
+msgstr "Парол"
+
+msgid "Password for new user"
+msgstr ""
+
+msgid "Replicate"
+msgstr ""
+
+msgid "Cancel"
+msgstr "Бекор қилиш"
+
+msgid "Search by name"
+msgstr "Исми орқали излаш"
+
+msgid "Could not load available items"
+msgstr ""
+
+msgid "Filter"
+msgstr "Фильтр"
+
+msgid "Filter available and selected items"
+msgstr ""
+
+msgid "There was a problem displaying the GroupEditor"
+msgstr ""
+
+msgid "Apply"
+msgstr ""
+
+msgid "Clear all"
+msgstr ""
+
+msgid "There was an error loading the current user"
+msgstr ""
+
+msgid "You do not have authorities to see users, user roles or user groups"
+msgstr ""
+
+msgid "Display name"
+msgstr ""
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Last login"
+msgstr ""
+
+msgid "Created"
+msgstr "Яратилди"
+
+msgid "Surname"
+msgstr "Фамилия"
+
+msgid "First name"
+msgstr "Исм"
+
+msgid "Introduction"
+msgstr "Таништириш"
+
+msgid "Job title"
+msgstr "Лавозим"
+
+msgid "Works at"
+msgstr ""
+
+msgid "Education"
+msgstr "Маълумоти"
+
+msgid "Interests"
+msgstr "Қизиқиши"
+
+msgid "Nationality"
+msgstr "Миллати"
+
+msgid "Birthday"
+msgstr "Тугилган кун"
+
+msgid "Gender"
+msgstr "Жинси"
+
+msgid "Speaks"
+msgstr ""
+
+msgid "E-mail"
+msgstr "Электрон почта"
+
+msgid "Mobile phone number"
+msgstr "Мобил телефон рақами"
+
+msgid "Organisations units"
+msgstr ""
+
+msgid "User roles"
+msgstr "Фойдаланувчи роллари"
+
+msgid "Members"
+msgstr ""
+
+msgid "Number of users"
+msgstr ""
+
+msgid "Create, modify, view and delete Users"
+msgstr ""
+
+msgid "User role"
+msgstr ""
+
+msgid "Create, modify, view and delete User Roles"
+msgstr ""
+
+msgid "User group"
+msgstr ""
+
+msgid "Create, modify, view and delete User Groups"
+msgstr ""
+
+msgid "Could not load the user group data. Please refresh the page."
+msgstr ""
+
+msgid "User group \"{{displayName}}\" saved successfully"
+msgstr ""
+
+msgid "There was a problem saving the user group."
+msgstr ""
+
+msgid "Save"
+msgstr "Сақлаш"
+
+msgid "Name"
+msgstr "Исми"
+
+msgid "Code"
+msgstr "Код"
+
+msgid "Available users"
+msgstr ""
+
+msgid "Group members"
+msgstr ""
+
+msgid "Available user groups"
+msgstr ""
+
+msgid "Managed user groups"
+msgstr ""
+
+msgid "You left group"
+msgstr ""
+
+msgid "You joined group"
+msgstr ""
+
+msgid "There was a problem updating your group membership"
+msgstr ""
+
+msgid "User Group Management"
+msgstr ""
+
+msgid "User role \"{{displayName}}\" saved successfully"
+msgstr ""
+
+msgid "There was a problem saving the user role."
+msgstr ""
+
+msgid "Description"
+msgstr "Тавсиф"
+
+msgid "User Role Management"
+msgstr ""
+
+msgid "Could not load the user data. Please refresh the page."
+msgstr ""
+
+msgid "User \"{{displayName}}\" saved successfully"
+msgstr ""
+
+msgid "There was a problem saving the user."
+msgstr ""
+
+msgid "Show fewer options"
+msgstr "Камроқ вариантларни кўрсатиш"
+
+msgid "Show more options"
+msgstr "Кўпроқ вариантларни кўрсатиш"
+
+msgid "Send invite"
+msgstr ""
+
+msgid ""
+"Selecting an organisation unit provides access to all units in the sub-"
+"hierarchy"
+msgstr ""
+
+msgid "Create account or email invitation"
+msgstr ""
+
+msgid "Create account with user details"
+msgstr ""
+
+msgid "Email invitation to create account"
+msgstr ""
+
+msgid "External authentication only (OpenID or LDAP)"
+msgstr ""
+
+msgid "Retype password"
+msgstr ""
+
+msgid "OpenID"
+msgstr "Кириш ID си"
+
+msgid "LDAP identifier"
+msgstr ""
+
+msgid "WhatsApp"
+msgstr ""
+
+msgid "Facebook Messenger"
+msgstr ""
+
+msgid "Skype"
+msgstr ""
+
+msgid "Telegram"
+msgstr ""
+
+msgid "Twitter"
+msgstr ""
+
+msgid "Interface language"
+msgstr "Интерфейс тили"
+
+msgid "Database language"
+msgstr "Маълумотлар базаси тили"
+
+msgid "Available roles"
+msgstr ""
+
+msgid "Selected roles"
+msgstr ""
+
+msgid "Data capture and maintenance organisation units"
+msgstr ""
+
+msgid "Data output and analytic organisation units"
+msgstr ""
+
+msgid "Search Organisation Units"
+msgstr ""
+
+msgid "Selected user groups"
+msgstr ""
+
+msgid "Available dimension restrictions for data analytics"
+msgstr ""
+
+msgid "Selected dimension restrictions for data analytics"
+msgstr ""
+
+msgid "Replicate user"
+msgstr ""
+
+msgid "Are you sure you want to disable two factor authentication for"
+msgstr ""
+
+msgid "Succesfully disabled two factor authentication for"
+msgstr ""
+
+msgid "There was a problem updating two factor authentication"
+msgstr ""
+
+msgid "Are you sure you want to disable"
+msgstr ""
+
+msgid "Are you sure you want to enable"
+msgstr ""
+
+msgid "sucessfully disabled"
+msgstr ""
+
+msgid "successfully enabled"
+msgstr ""
+
+msgid "There was a problem updating the enabled state"
+msgstr ""
+
+msgid "month"
+msgstr "ой"
+
+msgid "months"
+msgstr ""
+
+msgid "<No value>"
+msgstr ""
+
+msgid "Inactivity"
+msgstr ""
+
+msgid "All invitations"
+msgstr ""
+
+msgid "Expired invitations"
+msgstr ""
+
+msgid "Invitations"
+msgstr ""
+
+msgid "Self registrations"
+msgstr ""
+
+msgid "User Management"
+msgstr ""
+
+msgid "{{count}} selected"
+msgid_plural "{{count}} selected"
+msgstr[0] ""
+
+msgid "Yes"
+msgstr "Ҳа"
+
+msgid "No"
+msgstr "Йўқ"
+
+msgid "Something went wrong when processing your request."
+msgstr "Сўровингиз кўриб чиқилишида хатолик юз берди."
+
+msgid "Validating..."
+msgstr ""
+
+msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
+msgstr ""
+
+msgid "{{type}} \"{{displayName}}\" removed successfully"
+msgstr ""
+
+msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
+msgstr ""
+
+msgid "Exceeds maximum character limit of 50"
+msgstr ""
+
+msgid "Please enter a valid date with the following format yyyy-mm-dd"
+msgstr ""
+
+msgid "Please provide a valid email address"
+msgstr ""
+
+msgid "Value should be an integer"
+msgstr ""
+
+msgid "Value should be a nagative integer"
+msgstr ""
+
+msgid "Value should be a number"
+msgstr ""
+
+msgid "Value should be a positive integer"
+msgstr ""
+
+msgid "Passwords do not match"
+msgstr ""
+
+msgid "This field is required"
+msgstr "Ушбу қатор тўлдирилиши шарт"
+
+msgid "This field is required. Please select at least one"
+msgstr ""
+
+msgid "A username should be at least 2 characters long"
+msgstr ""
+
+msgid "Username may not exceed 140 characters"
+msgstr ""
+
+msgid "Please provide a valid international phone number (+0123456789)"
+msgstr ""
+
+msgid "Password should be at least 8 characters long"
+msgstr ""
+
+msgid "Password should be no longer than 34 characters"
+msgstr ""
+
+msgid "Password should contain at least one lowercase letter"
+msgstr ""
+
+msgid "Password should contain at least one UPPERCASE letter"
+msgstr ""
+
+msgid "Password should contain at least one number"
+msgstr ""
+
+msgid "Password should have at least one special character"
+msgstr ""
+
+msgid "Username already taken"
+msgstr ""
+
+msgid "There was a problem whilst checking the availability of this username"
+msgstr ""
+
+msgid "{{fieldDisplayName}} is already taken"
+msgstr ""
+
+msgid "Could not verify if this {{fieldDisplayName}} is unique"
+msgstr ""
+
+msgid "Attribute value needs to be unique, value already taken."
+msgstr ""
+
+msgid "There was a problem checking if this attribute value is unique"
+msgstr ""
