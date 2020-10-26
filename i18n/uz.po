@@ -52,7 +52,7 @@ msgid "Analytics Table Hook"
 msgstr ""
 
 msgid "Attribute"
-msgstr ""
+msgstr "Атрибут"
 
 msgid "Category Combo"
 msgstr ""
@@ -139,7 +139,7 @@ msgid "Option Set"
 msgstr "Вариантлар тўплами"
 
 msgid "Organisation Unit"
-msgstr "Ташкилий бирлик"
+msgstr "Ташкилий бўлим"
 
 msgid "Organisation Unit Group Set"
 msgstr ""
@@ -202,7 +202,7 @@ msgid "User Role"
 msgstr ""
 
 msgid "User"
-msgstr ""
+msgstr "Фойдаланувчи"
 
 msgid "Validation Rule Group"
 msgstr ""
@@ -326,7 +326,7 @@ msgid "There was a problem displaying the GroupEditor"
 msgstr ""
 
 msgid "Apply"
-msgstr ""
+msgstr "Мурожаат қилиш"
 
 msgid "Clear all"
 msgstr ""
@@ -514,19 +514,19 @@ msgid "LDAP identifier"
 msgstr ""
 
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 msgid "Facebook Messenger"
-msgstr ""
+msgstr "Facebook Messenger"
 
 msgid "Skype"
-msgstr ""
+msgstr "Skype"
 
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 msgid "Twitter"
-msgstr ""
+msgstr "Telegram"
 
 msgid "Interface language"
 msgstr "Интерфейс тили"
