@@ -1,25 +1,25 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2020
+# Jiří Podhorecký, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-09-26T10:23:05.190Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2020\n"
-"Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
+"Last-Translator: Jiří Podhorecký, 2020\n"
+"Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uz@Cyrl\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: cs\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 msgid "Use database locale / no translation"
 msgstr ""
 
 msgid "Search"
-msgstr "Излаш"
+msgstr ""
 
 msgid "Enter search term"
 msgstr ""
@@ -49,13 +49,13 @@ msgid "Analytics Table Hook"
 msgstr ""
 
 msgid "Attribute"
-msgstr "Атрибут"
+msgstr ""
 
 msgid "Category Combo"
 msgstr ""
 
 msgid "Category"
-msgstr "Категория"
+msgstr "Kategorie"
 
 msgid "Category Option"
 msgstr ""
@@ -67,7 +67,7 @@ msgid "Category Option Group Set"
 msgstr ""
 
 msgid "Chart"
-msgstr "Диаграмма"
+msgstr ""
 
 msgid "Color Set"
 msgstr ""
@@ -76,7 +76,7 @@ msgid "Constant"
 msgstr ""
 
 msgid "Dashboard"
-msgstr "Бошқарув панели"
+msgstr ""
 
 msgid "Data Element Group Sets"
 msgstr ""
@@ -91,7 +91,7 @@ msgid "Min/max rule"
 msgstr ""
 
 msgid "Data Set"
-msgstr "Маълумотлар тўплами"
+msgstr "Datová sada"
 
 msgid "Data Value"
 msgstr ""
@@ -100,10 +100,10 @@ msgid "Document"
 msgstr ""
 
 msgid "Event Chart"
-msgstr "Ҳодиса Диаграмма"
+msgstr ""
 
 msgid "Event Report"
-msgstr "Ҳодиса Ҳисобот"
+msgstr ""
 
 msgid "External Map Layer"
 msgstr ""
@@ -118,13 +118,13 @@ msgid "Indicator Type"
 msgstr ""
 
 msgid "Indicator"
-msgstr "Индикатор"
+msgstr ""
 
 msgid "Legend Set"
 msgstr ""
 
 msgid "Map"
-msgstr "Харита"
+msgstr ""
 
 msgid "Min-Max Data Element"
 msgstr ""
@@ -136,10 +136,10 @@ msgid "Option Group"
 msgstr ""
 
 msgid "Option Set"
-msgstr "Вариантлар тўплами"
+msgstr ""
 
 msgid "Organisation Unit"
-msgstr "Ташкилий бирлик"
+msgstr "Organizační jednotka"
 
 msgid "Organisation Unit Group Set"
 msgstr ""
@@ -151,10 +151,10 @@ msgid "Predictor"
 msgstr ""
 
 msgid "Program Stage"
-msgstr "Дастур Босқичи"
+msgstr ""
 
 msgid "Program"
-msgstr "Программа"
+msgstr ""
 
 msgid "Program Indicator"
 msgstr ""
@@ -175,13 +175,13 @@ msgid "Relationship Type"
 msgstr ""
 
 msgid "Report Table"
-msgstr "Ҳисобот жадвали"
+msgstr ""
 
 msgid "Report"
-msgstr "Ҳисобот"
+msgstr ""
 
 msgid "Section"
-msgstr "Бўлим"
+msgstr "Sekce"
 
 msgid "SQL View"
 msgstr ""
@@ -199,13 +199,13 @@ msgid "Tracked Entity Instance"
 msgstr ""
 
 msgid "User Group"
-msgstr "Фойдаланувчи Гуруҳи"
+msgstr ""
 
 msgid "User Role"
 msgstr ""
 
 msgid "User"
-msgstr "Фойдаланувчи"
+msgstr ""
 
 msgid "Validation Rule Group"
 msgstr ""
@@ -217,19 +217,19 @@ msgid "Data predictor group"
 msgstr ""
 
 msgid "Apps"
-msgstr "Илова"
+msgstr ""
 
 msgid "Tracker"
-msgstr "Кузатув"
+msgstr ""
 
 msgid "Import-Export"
-msgstr "импорт-Экспорт"
+msgstr ""
 
 msgid "System"
-msgstr "Тизим"
+msgstr ""
 
 msgid "Add"
-msgstr "Қўшиш"
+msgstr ""
 
 msgid "list"
 msgstr ""
@@ -242,7 +242,7 @@ msgid "Send message"
 msgstr ""
 
 msgid "Update"
-msgstr "Янгилаш"
+msgstr "Aktualizovat"
 
 msgid "Create new"
 msgstr ""
@@ -254,7 +254,7 @@ msgid "You are not allowed to edit"
 msgstr ""
 
 msgid "Confirm"
-msgstr "Тасдиқланг"
+msgstr ""
 
 msgid "There was an error fetching the list"
 msgstr ""
@@ -263,7 +263,7 @@ msgid "Select an organisation unit"
 msgstr ""
 
 msgid "Organisation unit"
-msgstr "Ташкилий бирлик"
+msgstr ""
 
 msgid "Page not found."
 msgstr ""
@@ -281,13 +281,13 @@ msgid "There was a problem replicating the user"
 msgstr ""
 
 msgid "Username"
-msgstr "Фойдаланувчи исми"
+msgstr ""
 
 msgid "Username for new user"
 msgstr ""
 
 msgid "Password"
-msgstr "Парол"
+msgstr ""
 
 msgid "Password for new user"
 msgstr ""
@@ -296,16 +296,16 @@ msgid "Replicate"
 msgstr ""
 
 msgid "Cancel"
-msgstr "Бекор қилиш"
+msgstr ""
 
 msgid "Search by name"
-msgstr "Исми орқали излаш"
+msgstr ""
 
 msgid "Could not load available items"
 msgstr ""
 
 msgid "Filter"
-msgstr "Фильтр"
+msgstr ""
 
 msgid "Filter available and selected items"
 msgstr ""
@@ -314,7 +314,7 @@ msgid "There was a problem displaying the GroupEditor"
 msgstr ""
 
 msgid "Apply"
-msgstr "Мурожаат қилиш"
+msgstr ""
 
 msgid "Clear all"
 msgstr ""
@@ -329,58 +329,58 @@ msgid "Display name"
 msgstr ""
 
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 msgid "Last login"
 msgstr ""
 
 msgid "Created"
-msgstr "Яратилди"
+msgstr ""
 
 msgid "Surname"
-msgstr "Фамилия"
+msgstr ""
 
 msgid "First name"
-msgstr "Исм"
+msgstr ""
 
 msgid "Introduction"
-msgstr "Таништириш"
+msgstr ""
 
 msgid "Job title"
-msgstr "Лавозим"
+msgstr "Pracovní pozice"
 
 msgid "Works at"
 msgstr ""
 
 msgid "Education"
-msgstr "Маълумоти"
+msgstr ""
 
 msgid "Interests"
-msgstr "Қизиқиши"
+msgstr ""
 
 msgid "Nationality"
-msgstr "Миллати"
+msgstr ""
 
 msgid "Birthday"
-msgstr "Тугилган кун"
+msgstr ""
 
 msgid "Gender"
-msgstr "Жинси"
+msgstr ""
 
 msgid "Speaks"
 msgstr ""
 
 msgid "E-mail"
-msgstr "Электрон почта"
+msgstr ""
 
 msgid "Mobile phone number"
-msgstr "Мобил телефон рақами"
+msgstr ""
 
 msgid "Organisations units"
 msgstr ""
 
 msgid "User roles"
-msgstr "Фойдаланувчи роллари"
+msgstr "Uživatelské role"
 
 msgid "Members"
 msgstr ""
@@ -404,13 +404,13 @@ msgid "There was a problem saving the user group."
 msgstr ""
 
 msgid "Save"
-msgstr "Сақлаш"
+msgstr "Uložit"
 
 msgid "Name"
-msgstr "Исми"
+msgstr ""
 
 msgid "Code"
-msgstr "Код"
+msgstr ""
 
 msgid "Available users"
 msgstr ""
@@ -443,7 +443,7 @@ msgid "There was a problem saving the user role."
 msgstr ""
 
 msgid "Description"
-msgstr "Тавсиф"
+msgstr ""
 
 msgid "User Role Management"
 msgstr ""
@@ -458,10 +458,10 @@ msgid "There was a problem saving the user."
 msgstr ""
 
 msgid "Show fewer options"
-msgstr "Камроқ вариантларни кўрсатиш"
+msgstr ""
 
 msgid "Show more options"
-msgstr "Кўпроқ вариантларни кўрсатиш"
+msgstr ""
 
 msgid "Send invite"
 msgstr ""
@@ -481,31 +481,31 @@ msgid "Retype password"
 msgstr ""
 
 msgid "OpenID"
-msgstr "Кириш ID си"
+msgstr ""
 
 msgid "LDAP identifier"
 msgstr ""
 
 msgid "WhatsApp"
-msgstr "WhatsApp"
+msgstr ""
 
 msgid "Facebook Messenger"
-msgstr "Facebook Messenger"
+msgstr ""
 
 msgid "Skype"
-msgstr "Skype"
+msgstr ""
 
 msgid "Telegram"
-msgstr "Telegram"
+msgstr ""
 
 msgid "Twitter"
-msgstr "Telegram"
+msgstr ""
 
 msgid "Interface language"
-msgstr "Интерфейс тили"
+msgstr ""
 
 msgid "Database language"
-msgstr "Маълумотлар базаси тили"
+msgstr ""
 
 msgid "Available roles"
 msgstr ""
@@ -559,7 +559,7 @@ msgid "There was a problem updating the enabled state"
 msgstr ""
 
 msgid "month"
-msgstr "ой"
+msgstr ""
 
 msgid "months"
 msgstr ""
@@ -588,15 +588,18 @@ msgstr ""
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
 msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 msgid "Yes"
-msgstr "Ҳа"
+msgstr "Ano"
 
 msgid "No"
-msgstr "Йўқ"
+msgstr ""
 
 msgid "Something went wrong when processing your request."
-msgstr "Сўровингиз кўриб чиқилишида хатолик юз берди."
+msgstr ""
 
 msgid "Validating..."
 msgstr ""
@@ -635,7 +638,7 @@ msgid "Passwords do not match"
 msgstr ""
 
 msgid "This field is required"
-msgstr "Ушбу қатор тўлдирилиши шарт"
+msgstr ""
 
 msgid "This field is required. Please select at least one"
 msgstr ""
