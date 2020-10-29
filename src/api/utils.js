@@ -225,12 +225,13 @@ export const getRestrictedOrgUnits = (orgUnits, orgUnitType) => {
     })
 }
 
-export const appendUsernameToDisplayName = userModelCollection => {
-    userModelCollection.forEach(user => {
-        user.displayName += ` (${user.userCredentials.username})`
+export const appendUsernameToDisplayName = userModelCollection =>
+    userModelCollection.toArray().map(userModel => {
+        const username = userModel.userCredentials.username
+        const user = userModel.toJSON()
+        user.displayName += ` (${username})`
+        return user
     })
-    return userModelCollection
-}
 
 export const parse200Error = response => {
     const messages = []
