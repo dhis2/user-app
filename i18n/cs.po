@@ -305,7 +305,7 @@ msgid "Replicate"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušit"
 
 msgid "Search by name"
 msgstr ""
@@ -338,7 +338,7 @@ msgid "Display name"
 msgstr ""
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid "Last login"
 msgstr ""
