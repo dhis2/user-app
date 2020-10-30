@@ -299,7 +299,7 @@ msgid "Username for new user"
 msgstr ""
 
 msgid "Password"
-msgstr ""
+msgstr "Heslo"
 
 msgid "Password for new user"
 msgstr ""
@@ -377,7 +377,7 @@ msgid "Birthday"
 msgstr ""
 
 msgid "Gender"
-msgstr ""
+msgstr "pohlaví"
 
 msgid "Speaks"
 msgstr ""
