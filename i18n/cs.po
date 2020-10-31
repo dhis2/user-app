@@ -19,7 +19,7 @@ msgid "Use database locale / no translation"
 msgstr ""
 
 msgid "Search"
-msgstr ""
+msgstr "Hledat"
 
 msgid "Enter search term"
 msgstr ""
@@ -151,7 +151,7 @@ msgid "Program Stage"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Program"
 
 msgid "Program Indicator"
 msgstr ""
@@ -314,7 +314,7 @@ msgid "Could not load available items"
 msgstr ""
 
 msgid "Filter"
-msgstr ""
+msgstr "Filtr"
 
 msgid "Filter available and selected items"
 msgstr ""
