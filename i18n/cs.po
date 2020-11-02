@@ -76,7 +76,7 @@ msgid "Constant"
 msgstr ""
 
 msgid "Dashboard"
-msgstr ""
+msgstr "Ovládací panel"
 
 msgid "Data Element Group Sets"
 msgstr ""
