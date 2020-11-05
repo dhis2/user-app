@@ -620,7 +620,7 @@ msgid "Yes"
 msgstr "Ano"
 
 msgid "No"
-msgstr ""
+msgstr "Ne"
 
 msgid "Something went wrong when processing your request."
 msgstr ""
