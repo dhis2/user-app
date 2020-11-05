@@ -73,7 +73,7 @@ msgid "Color Set"
 msgstr ""
 
 msgid "Constant"
-msgstr ""
+msgstr "Доимий (константа)"
 
 msgid "Dashboard"
 msgstr "Бошқарув панели"
@@ -85,7 +85,7 @@ msgid "Data Element Groups"
 msgstr ""
 
 msgid "Data Element"
-msgstr ""
+msgstr "Маълумотлар элементи"
 
 msgid "Min/max rule"
 msgstr ""
@@ -148,7 +148,7 @@ msgid "Organisation Unit Group"
 msgstr ""
 
 msgid "Predictor"
-msgstr ""
+msgstr "Башоратчи"
 
 msgid "Program Stage"
 msgstr "Дастур Босқичи"
@@ -205,10 +205,10 @@ msgid "User"
 msgstr "Фойдаланувчи"
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "Текширув гуруҳи қоидалари"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Тасдиқлаш Қоидаси"
 
 msgid "Data predictor group"
 msgstr ""
