@@ -136,7 +136,7 @@ msgid "Option Group"
 msgstr ""
 
 msgid "Option Set"
-msgstr ""
+msgstr "Sada voleb"
 
 msgid "Organisation Unit"
 msgstr "Organizační jednotka"
@@ -335,7 +335,7 @@ msgid "Last login"
 msgstr ""
 
 msgid "Created"
-msgstr ""
+msgstr "Vytvořeno"
 
 msgid "Surname"
 msgstr ""
@@ -410,7 +410,7 @@ msgid "Name"
 msgstr "Název"
 
 msgid "Code"
-msgstr ""
+msgstr "Kód"
 
 msgid "Available users"
 msgstr ""
