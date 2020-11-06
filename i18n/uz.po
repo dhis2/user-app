@@ -305,7 +305,7 @@ msgid "Password for new user"
 msgstr ""
 
 msgid "Replicate"
-msgstr ""
+msgstr "Кўпайтириш"
 
 msgid "Cancel"
 msgstr "Бекор қилиш"
@@ -338,13 +338,13 @@ msgid "You do not have authorities to see users, user roles or user groups"
 msgstr ""
 
 msgid "Display name"
-msgstr ""
+msgstr "Дисплей номи"
 
 msgid "ID"
 msgstr "ID"
 
 msgid "Last login"
-msgstr ""
+msgstr "Охирги кириш"
 
 msgid "Created"
 msgstr "Яратилди"
@@ -380,7 +380,7 @@ msgid "Gender"
 msgstr "Жинси"
 
 msgid "Speaks"
-msgstr ""
+msgstr "Гапиради"
 
 msgid "E-mail"
 msgstr "Электрон почта"
