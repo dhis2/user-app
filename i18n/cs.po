@@ -220,7 +220,7 @@ msgid "Apps"
 msgstr ""
 
 msgid "Tracker"
-msgstr ""
+msgstr "Trasovač"
 
 msgid "Import-Export"
 msgstr ""
@@ -290,7 +290,7 @@ msgid "There was a problem replicating the user"
 msgstr ""
 
 msgid "Username"
-msgstr ""
+msgstr "Uživatelské jméno"
 
 msgid "Username for new user"
 msgstr ""
@@ -380,7 +380,7 @@ msgid "Speaks"
 msgstr ""
 
 msgid "E-mail"
-msgstr ""
+msgstr "E-mail"
 
 msgid "Mobile phone number"
 msgstr ""
