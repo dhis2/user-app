@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 msgid "Use database locale / no translation"
-msgstr ""
+msgstr "Použijte národní prostředí databáze / žádný překlad"
 
 msgid "Search"
 msgstr "Hledat"
@@ -31,7 +31,7 @@ msgid "No matches found"
 msgstr ""
 
 msgid "There was a problem retreiving your search results"
-msgstr ""
+msgstr "Při načítání výsledků vyhledávání došlo k problému"
 
 msgid "There was a problem retreiving the available authorities."
 msgstr ""
@@ -157,7 +157,7 @@ msgid "Program Indicator"
 msgstr ""
 
 msgid "Program Indicator Group"
-msgstr ""
+msgstr "Skupina indikátorů programu"
 
 msgid "Program Rule"
 msgstr ""
@@ -196,7 +196,7 @@ msgid "User Group"
 msgstr ""
 
 msgid "User Role"
-msgstr ""
+msgstr "Role uživatele"
 
 msgid "User"
 msgstr ""
@@ -263,10 +263,10 @@ msgid "You are not allowed to edit"
 msgstr ""
 
 msgid "Confirm"
-msgstr ""
+msgstr "Potvrdit"
 
 msgid "There was an error fetching the list"
-msgstr ""
+msgstr "Při načítání seznamu došlo k chybě"
 
 msgid "Select an organisation unit"
 msgstr ""
@@ -302,7 +302,7 @@ msgid "Password for new user"
 msgstr ""
 
 msgid "Replicate"
-msgstr ""
+msgstr "Replikovat"
 
 msgid "Cancel"
 msgstr "Zrušit"
@@ -446,7 +446,7 @@ msgid "You left group"
 msgstr ""
 
 msgid "You joined group"
-msgstr ""
+msgstr "Připojili jste se ke skupině"
 
 msgid "There was a problem updating your group membership"
 msgstr ""
@@ -559,7 +559,7 @@ msgid "Replicate user"
 msgstr ""
 
 msgid "Are you sure you want to disable two factor authentication for"
-msgstr ""
+msgstr "Opravdu chcete deaktivovat dvoufaktorové ověřování pro"
 
 msgid "Succesfully disabled two factor authentication for"
 msgstr ""
@@ -644,7 +644,7 @@ msgid "Please enter a valid date with the following format yyyy-mm-dd"
 msgstr ""
 
 msgid "Please provide a valid email address"
-msgstr ""
+msgstr "Uveďte platnou e-mailovou adresu"
 
 msgid "Value should be an integer"
 msgstr ""
@@ -674,7 +674,7 @@ msgid "Username may not exceed 140 characters"
 msgstr ""
 
 msgid "Please provide a valid international phone number (+0123456789)"
-msgstr ""
+msgstr "Uveďte platné mezinárodní telefonní číslo (+0123456789)"
 
 msgid "Password should be at least 8 characters long"
 msgstr ""
@@ -698,7 +698,7 @@ msgid "Username already taken"
 msgstr ""
 
 msgid "There was a problem whilst checking the availability of this username"
-msgstr ""
+msgstr "Při kontrole dostupnosti tohoto uživatelského jména došlo k problému"
 
 msgid "{{fieldDisplayName}} is already taken"
 msgstr ""
