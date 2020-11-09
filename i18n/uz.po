@@ -239,7 +239,7 @@ msgid ""
 msgstr ""
 
 msgid "Send message"
-msgstr ""
+msgstr "Хабар юбориш"
 
 msgid "Update"
 msgstr "Янгилаш"
@@ -532,7 +532,7 @@ msgid "Selected dimension restrictions for data analytics"
 msgstr ""
 
 msgid "Replicate user"
-msgstr ""
+msgstr "Фойдаланувчини репликация қилиш"
 
 msgid "Are you sure you want to disable two factor authentication for"
 msgstr ""
