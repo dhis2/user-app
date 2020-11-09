@@ -73,7 +73,7 @@ msgid "Color Set"
 msgstr ""
 
 msgid "Constant"
-msgstr ""
+msgstr "Konstantní"
 
 msgid "Dashboard"
 msgstr "Ovládací panel"
@@ -118,7 +118,7 @@ msgid "Indicator Type"
 msgstr ""
 
 msgid "Indicator"
-msgstr ""
+msgstr "Indikátor"
 
 msgid "Legend Set"
 msgstr ""
@@ -181,7 +181,7 @@ msgid "Section"
 msgstr "Sekce"
 
 msgid "SQL View"
-msgstr ""
+msgstr "Zobrazení SQL"
 
 msgid "Tracked Entity"
 msgstr ""
@@ -193,7 +193,7 @@ msgid "Tracked Entity Data Value"
 msgstr ""
 
 msgid "Tracked Entity Instance"
-msgstr ""
+msgstr "Trasovaná entita Instance "
 
 msgid "User Group"
 msgstr ""
@@ -220,7 +220,7 @@ msgid "Visualization"
 msgstr ""
 
 msgid "Apps"
-msgstr ""
+msgstr "Aplikace"
 
 msgid "Tracker"
 msgstr "Trasovač"
@@ -229,7 +229,7 @@ msgid "Import-Export"
 msgstr ""
 
 msgid "System"
-msgstr ""
+msgstr "Systém"
 
 msgid "Add"
 msgstr ""
@@ -443,7 +443,7 @@ msgid "Available user groups"
 msgstr ""
 
 msgid "Managed user groups"
-msgstr ""
+msgstr "Spravované skupiny uživatelů"
 
 msgid "You left group"
 msgstr ""
@@ -479,10 +479,10 @@ msgid "There was a problem saving the user."
 msgstr ""
 
 msgid "Show fewer options"
-msgstr ""
+msgstr "Zobrazit méně možností"
 
 msgid "Show more options"
-msgstr ""
+msgstr "Zobrazit více možností"
 
 msgid "Send invite"
 msgstr ""
@@ -541,7 +541,7 @@ msgid "Selected roles"
 msgstr ""
 
 msgid "Data capture and maintenance organisation units"
-msgstr ""
+msgstr "Organizační jednotky pro sběr a údržbu dat"
 
 msgid "Data output and analytic organisation units"
 msgstr ""
@@ -586,7 +586,7 @@ msgid "There was a problem updating the enabled state"
 msgstr ""
 
 msgid "month"
-msgstr ""
+msgstr "Měsíc"
 
 msgid "months"
 msgstr ""
