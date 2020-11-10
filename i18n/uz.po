@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Use database locale / no translation"
-msgstr ""
+msgstr "Маълумотлар базасидан фойдаланинг Локал/Таржима бўлмаганда"
 
 msgid "Search"
 msgstr "Излаш"
