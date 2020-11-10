@@ -100,10 +100,10 @@ msgid "Document"
 msgstr ""
 
 msgid "Event Chart"
-msgstr ""
+msgstr "Graf událostí"
 
 msgid "Event Report"
-msgstr ""
+msgstr "Zpráva o události"
 
 msgid "External Map Layer"
 msgstr ""
@@ -124,7 +124,7 @@ msgid "Legend Set"
 msgstr ""
 
 msgid "Map"
-msgstr ""
+msgstr "Mapa"
 
 msgid "Min-Max Data Element"
 msgstr ""
@@ -229,7 +229,7 @@ msgid "System"
 msgstr "Systém"
 
 msgid "Add"
-msgstr ""
+msgstr "Přidat"
 
 msgid "list"
 msgstr ""
@@ -314,7 +314,7 @@ msgid "There was a problem displaying the GroupEditor"
 msgstr ""
 
 msgid "Apply"
-msgstr ""
+msgstr "Aplikovat"
 
 msgid "Clear all"
 msgstr ""
@@ -338,13 +338,13 @@ msgid "Created"
 msgstr "Vytvořeno"
 
 msgid "Surname"
-msgstr ""
+msgstr "Příjmení"
 
 msgid "First name"
 msgstr ""
 
 msgid "Introduction"
-msgstr ""
+msgstr "Úvod"
 
 msgid "Job title"
 msgstr "Pracovní pozice"
@@ -356,7 +356,7 @@ msgid "Education"
 msgstr ""
 
 msgid "Interests"
-msgstr ""
+msgstr "Zájmy"
 
 msgid "Nationality"
 msgstr ""
@@ -505,7 +505,7 @@ msgid "Interface language"
 msgstr ""
 
 msgid "Database language"
-msgstr ""
+msgstr "Jazyk databáze"
 
 msgid "Available roles"
 msgstr ""
@@ -599,7 +599,7 @@ msgid "No"
 msgstr "Ne"
 
 msgid "Something went wrong when processing your request."
-msgstr ""
+msgstr "Při zpracování vašeho požadavku se něco pokazilo."
 
 msgid "Validating..."
 msgstr ""
