@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Use database locale / no translation"
-msgstr ""
+msgstr "Маълумотлар базасидан фойдаланинг Локал/Таржима бўлмаганда"
 
 msgid "Search"
 msgstr "Излаш"
@@ -211,7 +211,7 @@ msgid "Data predictor group"
 msgstr ""
 
 msgid "Skip data import audit"
-msgstr ""
+msgstr "Маълумотлар импорти аудитини ўтказиб юборинг"
 
 msgid "Visualization"
 msgstr ""
