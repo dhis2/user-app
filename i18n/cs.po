@@ -85,7 +85,7 @@ msgid "Data Element Groups"
 msgstr ""
 
 msgid "Data Element"
-msgstr ""
+msgstr "Datový prvek"
 
 msgid "Min/max rule"
 msgstr ""
@@ -205,10 +205,10 @@ msgid "User"
 msgstr ""
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "Skupina pravidel ověření"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Pravidlo ověření"
 
 msgid "Data predictor group"
 msgstr ""
