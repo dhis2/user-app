@@ -142,7 +142,7 @@ msgid "Organisation Unit Group Set"
 msgstr ""
 
 msgid "Organisation Unit Group"
-msgstr ""
+msgstr "Skupina organizačních jednotek"
 
 msgid "Predictor"
 msgstr ""
@@ -598,7 +598,7 @@ msgid "All invitations"
 msgstr ""
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "Vypršené Pozvánky"
 
 msgid "Invitations"
 msgstr ""
