@@ -25,7 +25,7 @@ msgid "Enter search term"
 msgstr "Zadejte hledaný výraz"
 
 msgid "Please enter at least {{ minCharCount }} characters"
-msgstr ""
+msgstr "Zadejte alespoň {{ minCharCount }} znaků"
 
 msgid "No matches found"
 msgstr "Nenalezeny žádné shody"
@@ -37,7 +37,7 @@ msgid "There was a problem retreiving the available authorities."
 msgstr "Při získávání dostupných autorit došlo k problému."
 
 msgid "Authorities"
-msgstr ""
+msgstr "Autority"
 
 msgid "Selected authorities only"
 msgstr "Pouze vybrané orgány"
@@ -46,7 +46,7 @@ msgid "All (Full authority)"
 msgstr "Vše (plné oprávnění)"
 
 msgid "Analytics Table Hook"
-msgstr ""
+msgstr "Hook Analytické tabulky "
 
 msgid "Attribute"
 msgstr "Atribut"
@@ -61,10 +61,10 @@ msgid "Category Option"
 msgstr "Možnost kategorie"
 
 msgid "Category Option Group"
-msgstr ""
+msgstr "Skupina možností kategorie"
 
 msgid "Category Option Group Set"
-msgstr ""
+msgstr "Sada skupin možností kategorie"
 
 msgid "Chart"
 msgstr "Schéma"
@@ -79,16 +79,16 @@ msgid "Dashboard"
 msgstr "Ovládací panel"
 
 msgid "Data Element Group Sets"
-msgstr ""
+msgstr "Sady skupin datových prvků"
 
 msgid "Data Element Groups"
-msgstr ""
+msgstr "Skupiny datových prvků"
 
 msgid "Data Element"
 msgstr "Datový prvek"
 
 msgid "Min/max rule"
-msgstr ""
+msgstr "Pravidlo min./max"
 
 msgid "Data Set"
 msgstr "Datová sada"
@@ -112,7 +112,7 @@ msgid "Indicator Group Sets"
 msgstr "Sady skupin indikátorů"
 
 msgid "Indicator Group"
-msgstr ""
+msgstr "Skupina indikátorů"
 
 msgid "Indicator Type"
 msgstr "Typ indikátoru"
@@ -133,7 +133,7 @@ msgid "Option Group Set"
 msgstr "Možnosti Sady skupin"
 
 msgid "Option Group"
-msgstr ""
+msgstr "Možnosti Skupiny"
 
 msgid "Option Set"
 msgstr "Sada voleb"
@@ -169,7 +169,7 @@ msgid "Program Tracked Entity Attribute Group"
 msgstr "Programování skupiny atributů sledované entity"
 
 msgid "Push Analysis"
-msgstr ""
+msgstr "Analýza push"
 
 msgid "Relationship Type"
 msgstr "Typ vztahu"
@@ -190,7 +190,7 @@ msgid "Tracked Entity"
 msgstr "Sledovaná entita"
 
 msgid "Tracked Entity Attribute"
-msgstr ""
+msgstr "Atribut trasované entity"
 
 msgid "Tracked Entity Data Value"
 msgstr "Hodnota dat trasované entity"
@@ -223,7 +223,7 @@ msgid "Tracker"
 msgstr "Trasovač"
 
 msgid "Import-Export"
-msgstr ""
+msgstr "Import-Export"
 
 msgid "System"
 msgstr "Systém"
@@ -239,16 +239,16 @@ msgid ""
 msgstr "Nemáte přístup k žádné části aplikace Správa uživatelů DHIS 2"
 
 msgid "Send message"
-msgstr ""
+msgstr "Poslat zprávu"
 
 msgid "Update"
 msgstr "Aktualizovat"
 
 msgid "Create new"
-msgstr ""
+msgstr "Vytvořit nový"
 
 msgid "Back to"
-msgstr ""
+msgstr "Zpět k"
 
 msgid "You are not allowed to edit"
 msgstr "Nemáte dovoleno provádět úpravy"
@@ -269,16 +269,16 @@ msgid "Page not found."
 msgstr "Stránka nenalezena."
 
 msgid "No match for"
-msgstr ""
+msgstr "Žádná shoda pro"
 
 msgid "Go back home"
-msgstr ""
+msgstr "Zpět na domovskou stranu"
 
 msgid "User \"{{displayName}}\" replicated successfuly"
 msgstr "Uživatel \"{{displayName}}\" se úspěšně replikoval"
 
 msgid "There was a problem replicating the user"
-msgstr ""
+msgstr "Při replikaci uživatele došlo k potížím"
 
 msgid "Username"
 msgstr "Uživatelské jméno"
@@ -290,7 +290,7 @@ msgid "Password"
 msgstr "Heslo"
 
 msgid "Password for new user"
-msgstr ""
+msgstr "Heslo pro nového uživatele"
 
 msgid "Replicate"
 msgstr "Replikovat"
@@ -308,10 +308,10 @@ msgid "Filter"
 msgstr "Filtr"
 
 msgid "Filter available and selected items"
-msgstr ""
+msgstr "Filtrovat dostupné a vybrané položky"
 
 msgid "There was a problem displaying the GroupEditor"
-msgstr ""
+msgstr "Při zobrazování GroupEditoru došlo k problému"
 
 msgid "Apply"
 msgstr "Aplikovat"
@@ -387,13 +387,13 @@ msgid "Members"
 msgstr "Členové"
 
 msgid "Number of users"
-msgstr ""
+msgstr "počet uživatelů"
 
 msgid "User role"
-msgstr ""
+msgstr "Role uživatele"
 
 msgid "User group"
-msgstr ""
+msgstr "Uživatelská skupina"
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr "Nelze načíst data skupiny uživatelů. Obnovte stránku."
@@ -414,7 +414,7 @@ msgid "Code"
 msgstr "Kód"
 
 msgid "Available users"
-msgstr ""
+msgstr "Dostupní uživatelé"
 
 msgid "Group members"
 msgstr "Členové skupiny"
@@ -438,7 +438,7 @@ msgid "User Group Management"
 msgstr "Správa skupiny uživatelů"
 
 msgid "User role \"{{displayName}}\" saved successfully"
-msgstr ""
+msgstr "Uživatelská role \"{{displayName}}\"  byla úspěšně uložena"
 
 msgid "There was a problem saving the user role."
 msgstr "Při ukládání uživatelské role došlo k problému."
@@ -447,7 +447,7 @@ msgid "Description"
 msgstr "Popis"
 
 msgid "User Role Management"
-msgstr ""
+msgstr "Správa rolí uživatelů"
 
 msgid "Could not load the user data. Please refresh the page."
 msgstr "Nelze načíst uživatelská data. Obnovte stránku."
@@ -456,7 +456,7 @@ msgid "User \"{{displayName}}\" saved successfully"
 msgstr "Uživatel \"{{displayName}}\" byl úspěšně uložen"
 
 msgid "There was a problem saving the user."
-msgstr ""
+msgstr "Při ukládání uživatele došlo k problému."
 
 msgid "Show fewer options"
 msgstr "Zobrazit méně možností"
@@ -465,7 +465,7 @@ msgid "Show more options"
 msgstr "Zobrazit více možností"
 
 msgid "Send invite"
-msgstr ""
+msgstr "Poslat pozvánku"
 
 msgid ""
 "Selecting an organisation unit provides access to all units in the sub-"
@@ -481,7 +481,7 @@ msgid "External authentication only (OpenID or LDAP)"
 msgstr "Pouze externí ověřování (OpenID nebo LDAP)"
 
 msgid "Retype password"
-msgstr ""
+msgstr "Zadejte heslo znovu"
 
 msgid "OpenID"
 msgstr "OpenID"
@@ -520,7 +520,7 @@ msgid "Data capture and maintenance organisation units"
 msgstr "Organizační jednotky pro sběr a údržbu dat"
 
 msgid "Data output and analytic organisation units"
-msgstr ""
+msgstr "Datové výstupy a analytika organizační jednotky"
 
 msgid "Search Organisation Units"
 msgstr "Hledat v organizačních jednotkách"
@@ -532,10 +532,10 @@ msgid "Available dimension restrictions for data analytics"
 msgstr "Dostupná omezení dimenze pro analýzu dat"
 
 msgid "Selected dimension restrictions for data analytics"
-msgstr ""
+msgstr "Vybraná omezení dimenze pro analýzu dat"
 
 msgid "Replicate user"
-msgstr ""
+msgstr "Replikovat uživatele"
 
 msgid "Are you sure you want to disable two factor authentication for"
 msgstr "Opravdu chcete deaktivovat dvoufaktorové ověřování pro"
@@ -547,10 +547,10 @@ msgid "There was a problem updating two factor authentication"
 msgstr "Při aktualizaci dvoufaktorového ověřování došlo k problému"
 
 msgid "Are you sure you want to disable"
-msgstr ""
+msgstr "Opravdu chcete zakázat"
 
 msgid "Are you sure you want to enable"
-msgstr ""
+msgstr "Opravdu to chcete povolit"
 
 msgid "sucessfully disabled"
 msgstr "úspěšně deaktivován"
@@ -568,13 +568,13 @@ msgid "months"
 msgstr "měsíce"
 
 msgid "<No value>"
-msgstr ""
+msgstr "<No value>"
 
 msgid "Inactivity"
 msgstr "Nečinnost"
 
 msgid "All invitations"
-msgstr ""
+msgstr "Všechny pozvánky"
 
 msgid "Expired invitations"
 msgstr "Vypršené Pozvánky"
@@ -586,14 +586,14 @@ msgid "Self registrations"
 msgstr "Vlastní registrace"
 
 msgid "User Management"
-msgstr ""
+msgstr "Správa uživatelů"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Vybráno {{count}}"
+msgstr[1] "Vybráno {{count}}"
+msgstr[2] "Vybráno {{count}}"
+msgstr[3] "Vybráno {{count}}"
 
 msgid "Yes"
 msgstr "Ano"
@@ -605,28 +605,28 @@ msgid "Something went wrong when processing your request."
 msgstr "Při zpracování vašeho požadavku se něco pokazilo."
 
 msgid "Validating..."
-msgstr ""
+msgstr "Ověřování ..."
 
 msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
 msgstr "Opravdu chcete odebrat {{type}} \"{{displayName}}\"?"
 
 msgid "{{type}} \"{{displayName}}\" removed successfully"
-msgstr ""
+msgstr "{{type}} \"{{displayName}}\" úspěšně odstraněn"
 
 msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
-msgstr ""
+msgstr "Při odstraňování položky {{type}} \"{{displayName}}\" došlo k problému?"
 
 msgid "Exceeds maximum character limit of 50"
-msgstr ""
+msgstr "Překračuje maximální počet znaků 50"
 
 msgid "Please enter a valid date with the following format yyyy-mm-dd"
-msgstr ""
+msgstr "Zadejte prosím platné datum v následujícím formátu rrrr-mm-dd"
 
 msgid "Please provide a valid email address"
 msgstr "Uveďte platnou e-mailovou adresu"
 
 msgid "Value should be an integer"
-msgstr ""
+msgstr "Hodnota by měla být celé číslo"
 
 msgid "Value should be a nagative integer"
 msgstr "Hodnota by měla být nagativní celé číslo"
@@ -638,13 +638,13 @@ msgid "Value should be a positive integer"
 msgstr "Hodnota by měla být kladné celé číslo"
 
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Hesla se neshodují"
 
 msgid "This field is required"
 msgstr "Toto pole je povinné"
 
 msgid "This field is required. Please select at least one"
-msgstr ""
+msgstr "Toto pole je povinné. Vyberte alespoň jednu"
 
 msgid "A username should be at least 2 characters long"
 msgstr "Uživatelské jméno by mělo mít alespoň 2 znaky"
@@ -656,19 +656,19 @@ msgid "Please provide a valid international phone number (+0123456789)"
 msgstr "Uveďte platné mezinárodní telefonní číslo (+0123456789)"
 
 msgid "Password should be at least 8 characters long"
-msgstr ""
+msgstr "Heslo by mělo mít alespoň 8 znaků"
 
 msgid "Password should be no longer than 34 characters"
-msgstr ""
+msgstr "Heslo by nemělo být delší než 34 znaků"
 
 msgid "Password should contain at least one lowercase letter"
 msgstr "Heslo by mělo obsahovat alespoň jedno malé písmeno"
 
 msgid "Password should contain at least one UPPERCASE letter"
-msgstr ""
+msgstr "Heslo by mělo obsahovat alespoň jedno VELKÉ písmeno"
 
 msgid "Password should contain at least one number"
-msgstr ""
+msgstr "Heslo by mělo obsahovat alespoň jedno číslo"
 
 msgid "Password should have at least one special character"
 msgstr "Heslo by mělo mít alespoň jeden speciální znak"
@@ -683,7 +683,7 @@ msgid "{{fieldDisplayName}} is already taken"
 msgstr "{{fieldDisplayName}} je již obsazeno"
 
 msgid "Could not verify if this {{fieldDisplayName}} is unique"
-msgstr ""
+msgstr "Nelze ověřit, zda je toto {{fieldDisplayName}} jedinečné"
 
 msgid "Attribute value needs to be unique, value already taken."
 msgstr "Hodnota atributu musí být jedinečná, hodnota již přijata."
