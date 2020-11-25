@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "User management"
-msgstr ""
+msgstr "Фойдаланувчи бошқаруви"
 
 msgid "Use database locale / no translation"
 msgstr "Маълумотлар базасидан фойдаланинг Локал/Таржима бўлмаганда"
@@ -25,52 +25,52 @@ msgid "Search"
 msgstr "Излаш"
 
 msgid "Enter search term"
-msgstr ""
+msgstr "Қидирув сўзини киритинг"
 
 msgid "Please enter at least {{ minCharCount }} characters"
-msgstr ""
+msgstr "Камида  {{ minCharCount }} та белгини киритинг"
 
 msgid "No matches found"
-msgstr ""
+msgstr "Ҳеч нарса топилмади"
 
 msgid "There was a problem retreiving your search results"
-msgstr ""
+msgstr "Қидирув натижалари чиқариб олишда муаммо юз берди"
 
 msgid "There was a problem retreiving the available authorities."
-msgstr ""
+msgstr "Мавжуд ваколатларни чақириб олишда муаммо юзага келди."
 
 msgid "Authorities"
-msgstr ""
+msgstr "Ҳокимият"
 
 msgid "Selected authorities only"
-msgstr ""
+msgstr "Фақат танланган авторизациялар учун"
 
 msgid "All (Full authority)"
-msgstr ""
+msgstr "Барчаси (Тўлиқ ваколатлар)"
 
 msgid "Analytics Table Hook"
-msgstr ""
+msgstr "Аналитик жадваллар таҳлилчиси"
 
 msgid "Attribute"
 msgstr "Атрибут"
 
 msgid "Category Combo"
-msgstr ""
+msgstr "Категория Комбо"
 
 msgid "Category"
 msgstr "Категория"
 
 msgid "Category Option"
-msgstr ""
+msgstr "Категория варианти"
 
 msgid "Category Option Group"
-msgstr ""
+msgstr "Категория Варианти Гуруҳи"
 
 msgid "Category Option Group Set"
-msgstr ""
+msgstr "Категория Вариантлари Гуруҳ Тўплами"
 
 msgid "Color Set"
-msgstr ""
+msgstr "Ранглар Тўплами"
 
 msgid "Constant"
 msgstr "Доимий (константа)"
@@ -79,25 +79,25 @@ msgid "Dashboard"
 msgstr "Бошқарув панели"
 
 msgid "Data Element Group Sets"
-msgstr ""
+msgstr "Маълумотлар Элементи гуруҳи Тўпламлари"
 
 msgid "Data Element Groups"
-msgstr ""
+msgstr "Маълумотлар Элементи Гуруҳлари"
 
 msgid "Data Element"
 msgstr "Маълумотлар элементи"
 
 msgid "Min/max rule"
-msgstr ""
+msgstr "Минимал/максимал қоидалар"
 
 msgid "Data Set"
 msgstr "Маълумотлар тўплами"
 
 msgid "Data Value"
-msgstr ""
+msgstr "Маълумотлар Қиймати"
 
 msgid "Document"
-msgstr ""
+msgstr "Ҳужжат"
 
 msgid "Event Chart"
 msgstr "Ҳодиса Диаграмма"
@@ -106,34 +106,34 @@ msgid "Event Report"
 msgstr "Ҳодиса Ҳисобот"
 
 msgid "External Map Layer"
-msgstr ""
+msgstr "Харита ташқи қавати"
 
 msgid "Indicator Group Sets"
-msgstr ""
+msgstr "Индикатор Гуруҳи Тўпламлари"
 
 msgid "Indicator Group"
-msgstr ""
+msgstr "Индикатор Гуруҳи"
 
 msgid "Indicator Type"
-msgstr ""
+msgstr "Индикатор Тури"
 
 msgid "Indicator"
 msgstr "Индикатор"
 
 msgid "Legend Set"
-msgstr ""
+msgstr "Таърифлар Тўплами"
 
 msgid "Map"
 msgstr "Харита"
 
 msgid "Min-Max Data Element"
-msgstr ""
+msgstr "Минимум-Максимум Маълумот Элементи"
 
 msgid "Option Group Set"
-msgstr ""
+msgstr "Вариантлар Гуруҳи Тўплами"
 
 msgid "Option Group"
-msgstr ""
+msgstr "Вариантлар Гуруҳи"
 
 msgid "Option Set"
 msgstr "Вариантлар тўплами"
@@ -142,10 +142,10 @@ msgid "Organisation Unit"
 msgstr "Ташкилий бўлим"
 
 msgid "Organisation Unit Group Set"
-msgstr ""
+msgstr "Ташкилий Бўлим Гуруҳи Тўплами"
 
 msgid "Organisation Unit Group"
-msgstr ""
+msgstr "Ташкилий Бўлим Гуруҳи"
 
 msgid "Predictor"
 msgstr "Башоратчи"
@@ -157,22 +157,22 @@ msgid "Program"
 msgstr "Программа"
 
 msgid "Program Indicator"
-msgstr ""
+msgstr "Дастур Индикатори"
 
 msgid "Program Indicator Group"
-msgstr ""
+msgstr "Дастур Индикаторлари Гуруҳи"
 
 msgid "Program Rule"
-msgstr ""
+msgstr "Дастур Қоидаси"
 
 msgid "Program Tracked Entity Attribute Group"
-msgstr ""
+msgstr "Дастур Кузатувидаги Шахс Атрибутлари"
 
 msgid "Push Analysis"
-msgstr ""
+msgstr "Push-Таҳлил"
 
 msgid "Relationship Type"
-msgstr ""
+msgstr "Ўзаро алоқалар Тури"
 
 msgid "Report"
 msgstr "Ҳисобот"
@@ -181,25 +181,25 @@ msgid "Section"
 msgstr "Бўлим"
 
 msgid "SQL View"
-msgstr ""
+msgstr "SQL Кўриб чиқиш"
 
 msgid "Tracked Entity"
-msgstr ""
+msgstr "Кузатув Объекти"
 
 msgid "Tracked Entity Attribute"
-msgstr ""
+msgstr "Кузатув Объекти Атрибути"
 
 msgid "Tracked Entity Data Value"
-msgstr ""
+msgstr "Кузатувдаги Шахс Маълумоти Қиймати"
 
 msgid "Tracked Entity Instance"
-msgstr ""
+msgstr "Кузатилаётган Объект Намунаси"
 
 msgid "User Group"
 msgstr "Фойдаланувчи Гуруҳи"
 
 msgid "User Role"
-msgstr ""
+msgstr "Фойдаланувчи Роли"
 
 msgid "User"
 msgstr "Фойдаланувчи"
@@ -211,13 +211,13 @@ msgid "Validation Rule"
 msgstr "Тасдиқлаш Қоидаси"
 
 msgid "Data predictor group"
-msgstr ""
+msgstr "Маълумотларни олдиндан айта олиш гуруҳи"
 
 msgid "Skip data import audit"
 msgstr "Маълумотлар импорти аудитини ўтказиб юборинг"
 
 msgid "Visualization"
-msgstr ""
+msgstr "Визуализация"
 
 msgid "Apps"
 msgstr "Илова"
@@ -235,20 +235,22 @@ msgid "Add"
 msgstr "Қўшиш"
 
 msgid "list"
-msgstr ""
+msgstr "рўйхат"
 
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
 msgstr ""
+"DHIS2 Фойдаланувчи Бошқариш Иловаси ҳеч бир секциясига кириш ҳуқуқига эга "
+"эмассиз"
 
 msgid "Edit user"
-msgstr ""
+msgstr "Фойдаланувчини таҳрир қилиш"
 
 msgid "Edit user group"
-msgstr ""
+msgstr "Фойдаланувчи гуруҳини таҳрир қилиш"
 
 msgid "Edit user role"
-msgstr ""
+msgstr "Фойдаланувчи ролини таҳрир қилиш"
 
 msgid "Send message"
 msgstr "Хабар юбориш"
@@ -257,52 +259,52 @@ msgid "Update"
 msgstr "Янгилаш"
 
 msgid "Create new"
-msgstr ""
+msgstr "Янгисини яратиш"
 
 msgid "Back to"
-msgstr ""
+msgstr "...га қараб орқага қайтиш "
 
 msgid "You are not allowed to edit"
-msgstr ""
+msgstr "Сизга таҳрир қилиш учун рухсат "
 
 msgid "Confirm"
 msgstr "Тасдиқланг"
 
 msgid "There was an error fetching the list"
-msgstr ""
+msgstr "Рўйхатни юклашда хатолик юз берди"
 
 msgid "Select an organisation unit"
-msgstr ""
+msgstr "Ташкилий бўлимни танланг"
 
 msgid "Organisation unit"
 msgstr "Ташкилий бирлик"
 
 msgid "Page not found."
-msgstr ""
+msgstr "Саҳифа топилмади."
 
 msgid "No match for"
-msgstr ""
+msgstr "учун тўғри келмайди"
 
 msgid "Go back home"
-msgstr ""
+msgstr "Уйга қайтиш"
 
 msgid "User \"{{displayName}}\" replicated successfuly"
-msgstr ""
+msgstr "\"{{displayName}}\" фойдаланувчи муваффақиятли такрорланди"
 
 msgid "There was a problem replicating the user"
-msgstr ""
+msgstr "Фойдаланувчини такрорлашда муамма юз берди"
 
 msgid "Username"
 msgstr "Фойдаланувчи исми"
 
 msgid "Username for new user"
-msgstr ""
+msgstr "Янги фойдаланувчи учун ФойдаланувчиНоми"
 
 msgid "Password"
 msgstr "Парол"
 
 msgid "Password for new user"
-msgstr ""
+msgstr "Янги фодаланувчи учун пароль"
 
 msgid "Replicate"
 msgstr "Кўпайтириш"
@@ -314,28 +316,30 @@ msgid "Search by name"
 msgstr "Исми орқали излаш"
 
 msgid "Could not load available items"
-msgstr ""
+msgstr "Мавжуд элементлар юкланмади"
 
 msgid "Filter"
 msgstr "Фильтр"
 
 msgid "Filter available and selected items"
-msgstr ""
+msgstr "Мавжуд ва танланган элементлар бўйича фильтрланг"
 
 msgid "There was a problem displaying the GroupEditor"
-msgstr ""
+msgstr "Таҳрирчилар Гуруҳини кўрсатишда муаммо юз берди "
 
 msgid "Apply"
 msgstr "Мурожаат қилиш"
 
 msgid "Clear all"
-msgstr ""
+msgstr "барчасини тозалаш"
 
 msgid "There was an error loading the current user"
-msgstr ""
+msgstr "Жорий фойдаланувчини юклашда хатолик юз берди"
 
 msgid "You do not have authorities to see users, user roles or user groups"
 msgstr ""
+"Сизда фойдаланувчиларни, фойдаланувчи ролларини ёки фойдаланувчи гуруҳларини"
+" кўриш ваколати мавжуд эмас"
 
 msgid "Display name"
 msgstr "Дисплей номи"
@@ -362,7 +366,7 @@ msgid "Job title"
 msgstr "Лавозим"
 
 msgid "Works at"
-msgstr ""
+msgstr "...да ишлайди"
 
 msgid "Education"
 msgstr "Маълумоти"
@@ -389,40 +393,42 @@ msgid "Mobile phone number"
 msgstr "Мобил телефон рақами"
 
 msgid "Organisations units"
-msgstr ""
+msgstr "Ташкилий бўлимлар"
 
 msgid "User roles"
 msgstr "Фойдаланувчи роллари"
 
 msgid "Members"
-msgstr ""
+msgstr "Аъзолар"
 
 msgid "Number of users"
-msgstr ""
+msgstr "Фойдаланувчилар сони"
 
 msgid "Create, modify, view and delete Users"
-msgstr ""
+msgstr "Фойдаланувчиларни яратиш, ўзгартириш, кўриш ва ўчириш"
 
 msgid "User role"
-msgstr ""
+msgstr "Фойдаланувчи роли"
 
 msgid "Create, modify, view and delete User Roles"
-msgstr ""
+msgstr "Фойдаланувчи ролларни яратиш, ўзгартириш, кўриш ва ўчириш"
 
 msgid "User group"
-msgstr ""
+msgstr "Фойдаланувчи гуруҳи"
 
 msgid "Create, modify, view and delete User Groups"
-msgstr ""
+msgstr "Фойдаланувчи Гуруҳларини яратиш, ўзгартириш, кўриш ва ўчириш"
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr ""
+"Фойдаланувчи гуруҳи маълумотларини юклаб бўлмади. Илтимос, саҳифани "
+"янгиланг."
 
 msgid "User group \"{{displayName}}\" saved successfully"
-msgstr ""
+msgstr "\"{{displayName}}\" фойдаланувчи гуруҳи муваффақиятли сақланди"
 
 msgid "There was a problem saving the user group."
-msgstr ""
+msgstr "Фойдаланувчи гуруҳини сақлашда муаммо юз берди"
 
 msgid "Save"
 msgstr "Сақлаш"
@@ -434,49 +440,50 @@ msgid "Code"
 msgstr "Код"
 
 msgid "Available users"
-msgstr ""
+msgstr "Мавжуд фойдаланувчилар"
 
 msgid "Group members"
-msgstr ""
+msgstr "Мавжуд фойдаланувчи гуруҳлари"
 
 msgid "Available user groups"
-msgstr ""
+msgstr "Мавжуд фойдаланувчи гуруҳлари"
 
 msgid "Managed user groups"
-msgstr ""
+msgstr "Фойдаланувчиларнинг бошқариладиган гуруҳлари"
 
 msgid "You left group"
-msgstr ""
+msgstr "Сиз гуруҳдан чиқдингиз"
 
 msgid "You joined group"
-msgstr ""
+msgstr "Сиз гуруҳга қўшилдингиз"
 
 msgid "There was a problem updating your group membership"
-msgstr ""
+msgstr "Сизнинг гуруҳингиз аъзоларини янгилашда муаммо юз берди"
 
 msgid "User Group Management"
-msgstr ""
+msgstr "Фойдаланувчи Гуруҳи Бошқаруви"
 
 msgid "User role \"{{displayName}}\" saved successfully"
-msgstr ""
+msgstr "\"{{displayName}}\" фойдаланувчи роли муваффақиятли сақланди"
 
 msgid "There was a problem saving the user role."
-msgstr ""
+msgstr "Фойдаланувчи ролини сақлашда муаммо юз берди."
 
 msgid "Description"
 msgstr "Тавсиф"
 
 msgid "User Role Management"
-msgstr ""
+msgstr "Фойдаланувчи Роли Бошқаруви"
 
 msgid "Could not load the user data. Please refresh the page."
 msgstr ""
+"Фойдаланувчи маълумотларини юклаб бўлмади. Илтимос, саҳифани янгиланг."
 
 msgid "User \"{{displayName}}\" saved successfully"
-msgstr ""
+msgstr "\"{{displayName}}\" фойдаланувчи муваффақиятли сақланди"
 
 msgid "There was a problem saving the user."
-msgstr ""
+msgstr "Фойдаланувчини сақлашда муаммо юз берди."
 
 msgid "Show fewer options"
 msgstr "Камроқ вариантларни кўрсатиш"
@@ -485,33 +492,35 @@ msgid "Show more options"
 msgstr "Кўпроқ вариантларни кўрсатиш"
 
 msgid "Send invite"
-msgstr ""
+msgstr "Таклифномани юборинг"
 
 msgid ""
 "Selecting an organisation unit provides access to all units in the sub-"
 "hierarchy"
 msgstr ""
+"Ташкилий бўлимни танлаш, иерархияда асисида барча қуйи ташкилий бўлимларга "
+"кириш рухсатини беради"
 
 msgid "Create account or email invitation"
-msgstr ""
+msgstr "Аккаунт яратинг ёки е-почта орқали таклифнома юборинг"
 
 msgid "Create account with user details"
-msgstr ""
+msgstr "Фойдаланувчи деталлари асосида аккаунт яратинг"
 
 msgid "Email invitation to create account"
-msgstr ""
+msgstr "Аккаунт яратиш учун е-почта таклифномасини юборинг"
 
 msgid "External authentication only (OpenID or LDAP)"
-msgstr ""
+msgstr "Ташқи авторизация фақатгина (OpenID ёки LDAP) орқали"
 
 msgid "Retype password"
-msgstr ""
+msgstr "Паролни қайта киритинг"
 
 msgid "OpenID"
 msgstr "Кириш ID си"
 
 msgid "LDAP identifier"
-msgstr ""
+msgstr "LDAP идентификатор"
 
 msgid "WhatsApp"
 msgstr "WhatsApp"
@@ -535,86 +544,90 @@ msgid "Database language"
 msgstr "Маълумотлар базаси тили"
 
 msgid "Available roles"
-msgstr ""
+msgstr "Мавжуд роллар"
 
 msgid "Selected roles"
-msgstr ""
+msgstr "Танланган роллар"
 
 msgid "Data capture and maintenance organisation units"
 msgstr ""
+"Маълумотларни сақлаш ва техник хизмат кўрсатишни ташкил қилиш бўлинмаларива "
 
 msgid "Data output and analytic organisation units"
-msgstr ""
+msgstr "Маълумотларни чиқариб олиш ва аналитикани ташкил этиш бўлинмалари"
 
 msgid "Search Organisation Units"
-msgstr ""
+msgstr "Ташкилий Бирликларни Қидириш"
 
 msgid "Selected user groups"
-msgstr ""
+msgstr "Танланган фойдаланувчилар гуруҳлари"
 
 msgid "Available dimension restrictions for data analytics"
-msgstr ""
+msgstr "Маълумотларни таҳлил қилиш учун мавжуд злчов чекловлари"
 
 msgid "Selected dimension restrictions for data analytics"
-msgstr ""
+msgstr "Маълумотларни таҳлил қилиш учун танланган ўлчов чекловлари"
 
 msgid "Replicate user"
 msgstr "Фойдаланувчини репликация қилиш"
 
 msgid "Are you sure you want to disable two factor authentication for"
 msgstr ""
+"Ҳақиқатдан ҳам ушбу учун икки факторли аутентификацияни ўчирмоқчимисиз"
 
 msgid "Succesfully disabled two factor authentication for"
 msgstr ""
+"Ушбу учун икки факторли аутентиификацияни ўчириш муваффақиятли амалга "
+"оширилди"
 
 msgid "There was a problem updating two factor authentication"
-msgstr ""
+msgstr "Икки факторли аутентификация ҳни янгилашда муаммо юз берди"
 
 msgid "Are you sure you want to disable"
-msgstr ""
+msgstr "Ҳақиқатдан ҳам ўчириб қўймоқчимисиз"
 
 msgid "Are you sure you want to enable"
-msgstr ""
+msgstr "Ҳақиқатдан ҳам ёқиб қўймоқчимисиз"
 
 msgid "sucessfully disabled"
-msgstr ""
+msgstr "муваффақиятли ўчириб қўйилди"
 
 msgid "successfully enabled"
-msgstr ""
+msgstr "муваффақиятли ёқиб қўйилди"
 
 msgid "There was a problem updating the enabled state"
-msgstr ""
+msgstr "Ёқилган ҳолатни янгилашда муамма юз берди"
 
 msgid "month"
 msgstr "ой"
 
 msgid "months"
-msgstr ""
+msgstr "ойлар"
 
 msgid "<No value>"
 msgstr ""
 
 msgid "Inactivity"
-msgstr ""
+msgstr "ҳаракатсизлик"
 
 msgid "All invitations"
-msgstr ""
+msgstr "Барча таклифномалар"
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "Муддати ўтган таклифномалар"
 
 msgid "Invitations"
-msgstr ""
+msgstr "Таклифномалар"
 
 msgid "Self registrations"
-msgstr ""
+msgstr "Мустақил ўз-ўзини қайд этиш"
 
 msgid "User Management"
-msgstr ""
+msgstr "Фойдаланувчи Бошқариш"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
-msgstr[0] ""
+msgstr[0] "{{count}}  танланган"
 
 msgid "Yes"
 msgstr "Ҳа"
@@ -626,88 +639,90 @@ msgid "Something went wrong when processing your request."
 msgstr "Сўровингиз кўриб чиқилишида хатолик юз берди."
 
 msgid "Validating..."
-msgstr ""
+msgstr "Тасдиқланмоқда..."
 
 msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
 msgstr ""
+"Ҳақиқатдан ҳам {{type}} \"{{displayName}}\" элементларни олиб "
+"ташламоқчимисиз?"
 
 msgid "{{type}} \"{{displayName}}\" removed successfully"
-msgstr ""
+msgstr "{{type}} \"{{displayName}}\" муваффақиятли олиб ташланди"
 
 msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
-msgstr ""
+msgstr "{{type}} \"{{displayName}}\" олиб ташлашда муаммо юз бердими?"
 
 msgid "Exceeds maximum character limit of 50"
-msgstr ""
+msgstr "Белгилар максимал сони 50 тадан ошган"
 
 msgid "Please enter a valid date with the following format yyyy-mm-dd"
-msgstr ""
+msgstr "Санани тўғри форматда киритинг: кун-ой-йил"
 
 msgid "Please provide a valid email address"
-msgstr ""
+msgstr "Илтимос, амалдаги е-почта манзилини кўрсатинг"
 
 msgid "Value should be an integer"
-msgstr ""
+msgstr "Қиймат бутун сон бўлиши лозим"
 
 msgid "Value should be a nagative integer"
-msgstr ""
+msgstr "Қиймат бутун манфий сон бўлиши лозим"
 
 msgid "Value should be a number"
-msgstr ""
+msgstr "Қиймат рақам бўлиши лозим"
 
 msgid "Value should be a positive integer"
-msgstr ""
+msgstr "Қиймат бутун мусбат сон бўлиши лозим"
 
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Пароллар мос келмади"
 
 msgid "This field is required"
 msgstr "Ушбу қатор тўлдирилиши шарт"
 
 msgid "This field is required. Please select at least one"
-msgstr ""
+msgstr "Ушбу майдон тўлдирилиши шарт. Илтимос, камида биттасини танланг"
 
 msgid "A username should be at least 2 characters long"
-msgstr ""
+msgstr "ФойдаланувчиНоми камида икки белгидан иборат бўлиши шарт"
 
 msgid "Username may not exceed 140 characters"
-msgstr ""
+msgstr "ФойдаланувчиНоми кўпи билан 140 белгидан ошмаслиги лозим"
 
 msgid "Please provide a valid international phone number (+0123456789)"
-msgstr ""
+msgstr "Илтимос, халқаро телефон рақами форматида кўрсатинг (+0123456789)"
 
 msgid "Password should be at least 8 characters long"
-msgstr ""
+msgstr "Пароль камида 8 та белгидан иборат бўлиши лозим"
 
 msgid "Password should be no longer than 34 characters"
-msgstr ""
+msgstr "Пароль 34 та белгидан ошмаслиги лозим"
 
 msgid "Password should contain at least one lowercase letter"
-msgstr ""
+msgstr "Пароль таркибида камида 1 та кичик ҳарф бўлиши лозим"
 
 msgid "Password should contain at least one UPPERCASE letter"
-msgstr ""
+msgstr "Пароль таркибида камида 1 та БОШ ҳарф бўлиши лозим"
 
 msgid "Password should contain at least one number"
-msgstr ""
+msgstr "Пароль таркибида камида 1 та рақам бўлиши лозим"
 
 msgid "Password should have at least one special character"
-msgstr ""
+msgstr "Пароль таркибида камида 1 та махсус белги бўлиши лозим"
 
 msgid "Username already taken"
-msgstr ""
+msgstr "Фойдаланувчи номи аллақочон олинган"
 
 msgid "There was a problem whilst checking the availability of this username"
-msgstr ""
+msgstr "Ушбу фойдаланувчи номини текширишда муаммо юзага келди"
 
 msgid "{{fieldDisplayName}} is already taken"
-msgstr ""
+msgstr "{{fieldDisplayName}} аллақачон олинган"
 
 msgid "Could not verify if this {{fieldDisplayName}} is unique"
-msgstr ""
+msgstr "Ушбу {{fieldDisplayName}} ноёблигини текшириб бўлмади"
 
 msgid "Attribute value needs to be unique, value already taken."
-msgstr ""
+msgstr "Атрибут қиймати ноёб бўлиши лозим, қиймат аллақачон қабул қилинган."
 
 msgid "There was a problem checking if this attribute value is unique"
-msgstr ""
+msgstr "Ушбу атрибут қийматини текширишда муаммо юзага келди."
