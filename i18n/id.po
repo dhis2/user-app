@@ -1,29 +1,30 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2020
+# phil_dhis2, 2019
+# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-11T15:36:45.447Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: phil_dhis2, 2020\n"
-"Language-Team: Burmese (https://www.transifex.com/hisp-uio/teams/100509/my/)\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: my\n"
+"Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "User management"
 msgstr ""
 
 msgid "Use database locale / no translation"
-msgstr "အချက်အလက်များဖြည့်သွင်းခြင်းကိုမူရင်းဘာသာစကားဖြင့်သာသုံးပါ"
+msgstr ""
 
 msgid "Search"
-msgstr ""
+msgstr "Pencarian"
 
 msgid "Enter search term"
 msgstr ""
@@ -53,13 +54,13 @@ msgid "Analytics Table Hook"
 msgstr ""
 
 msgid "Attribute"
-msgstr "Attribute"
+msgstr "Atribut"
 
 msgid "Category Combo"
 msgstr ""
 
 msgid "Category"
-msgstr "category"
+msgstr "Kategori"
 
 msgid "Category Option"
 msgstr ""
@@ -74,10 +75,10 @@ msgid "Color Set"
 msgstr ""
 
 msgid "Constant"
-msgstr "ကိန်းသေ"
+msgstr "Konstan"
 
 msgid "Dashboard"
-msgstr "အချက်အလက်များလေ့လာဆန်းစစ်ခြင်း"
+msgstr "Dashboard"
 
 msgid "Data Element Group Sets"
 msgstr ""
@@ -86,13 +87,13 @@ msgid "Data Element Groups"
 msgstr ""
 
 msgid "Data Element"
-msgstr ""
+msgstr "Data Elemen"
 
 msgid "Min/max rule"
 msgstr ""
 
 msgid "Data Set"
-msgstr "Data အစု"
+msgstr "Data Set"
 
 msgid "Data Value"
 msgstr ""
@@ -119,13 +120,13 @@ msgid "Indicator Type"
 msgstr ""
 
 msgid "Indicator"
-msgstr "indicator"
+msgstr "indikator"
 
 msgid "Legend Set"
 msgstr ""
 
 msgid "Map"
-msgstr ""
+msgstr "peta"
 
 msgid "Min-Max Data Element"
 msgstr ""
@@ -140,7 +141,7 @@ msgid "Option Set"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr "အဖွဲ့အစည်းယူနစ်"
+msgstr "Unit Organisasi"
 
 msgid "Organisation Unit Group Set"
 msgstr ""
@@ -149,13 +150,13 @@ msgid "Organisation Unit Group"
 msgstr ""
 
 msgid "Predictor"
-msgstr "Predictor"
+msgstr ""
 
 msgid "Program Stage"
-msgstr ""
+msgstr "Tahapan program"
 
 msgid "Program"
-msgstr ""
+msgstr "Program"
 
 msgid "Program Indicator"
 msgstr ""
@@ -176,13 +177,13 @@ msgid "Relationship Type"
 msgstr ""
 
 msgid "Report"
-msgstr ""
+msgstr "Laporan"
 
 msgid "Section"
-msgstr "အခန်း/ ကဏ္ဍ"
+msgstr ""
 
 msgid "SQL View"
-msgstr "Sql View"
+msgstr ""
 
 msgid "Tracked Entity"
 msgstr ""
@@ -197,7 +198,7 @@ msgid "Tracked Entity Instance"
 msgstr ""
 
 msgid "User Group"
-msgstr "User Group:"
+msgstr "Grup user"
 
 msgid "User Role"
 msgstr ""
@@ -206,10 +207,10 @@ msgid "User"
 msgstr ""
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "Grup Aturan Validasi"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Aturan validasi"
 
 msgid "Data predictor group"
 msgstr ""
@@ -224,16 +225,16 @@ msgid "Apps"
 msgstr ""
 
 msgid "Tracker"
-msgstr ""
+msgstr "Tracker"
 
 msgid "Import-Export"
-msgstr "အသွင်းအထုတ်ပြုလုပ်ခြင်း"
+msgstr ""
 
 msgid "System"
-msgstr "စနစ်"
+msgstr "Sistem"
 
 msgid "Add"
-msgstr "ထပ်ထည့်သည်"
+msgstr "Tambah"
 
 msgid "list"
 msgstr ""
@@ -252,10 +253,10 @@ msgid "Edit user role"
 msgstr ""
 
 msgid "Send message"
-msgstr "messagae ပို့ပါ။"
+msgstr "Kirim pesan"
 
 msgid "Update"
-msgstr "‌နောက်ဆုံးသတင်းကိုရစေခြင်း"
+msgstr "perbarui"
 
 msgid "Create new"
 msgstr ""
@@ -267,7 +268,7 @@ msgid "You are not allowed to edit"
 msgstr ""
 
 msgid "Confirm"
-msgstr ""
+msgstr "Konfirmasi"
 
 msgid "There was an error fetching the list"
 msgstr ""
@@ -276,7 +277,7 @@ msgid "Select an organisation unit"
 msgstr ""
 
 msgid "Organisation unit"
-msgstr "အဖွဲ့အစည်းယူနစ်"
+msgstr "Unit organisasi"
 
 msgid "Page not found."
 msgstr ""
@@ -294,13 +295,13 @@ msgid "There was a problem replicating the user"
 msgstr ""
 
 msgid "Username"
-msgstr "အသုံးပြုသူအမည်"
+msgstr "User name"
 
 msgid "Username for new user"
 msgstr ""
 
 msgid "Password"
-msgstr "လျှို့ဝှက်နံပါတ်"
+msgstr "Password"
 
 msgid "Password for new user"
 msgstr ""
@@ -309,16 +310,16 @@ msgid "Replicate"
 msgstr ""
 
 msgid "Cancel"
-msgstr "ပယ်ဖျက်သည်"
+msgstr "batal"
 
 msgid "Search by name"
-msgstr ""
+msgstr "Cari berdasarkan nama"
 
 msgid "Could not load available items"
 msgstr ""
 
 msgid "Filter"
-msgstr "ရှာဖွေထုတ်သည်"
+msgstr "Saring"
 
 msgid "Filter available and selected items"
 msgstr ""
@@ -342,58 +343,58 @@ msgid "Display name"
 msgstr ""
 
 msgid "ID"
-msgstr "အိုင်ဒီ"
+msgstr ""
 
 msgid "Last login"
 msgstr ""
 
 msgid "Created"
-msgstr ""
+msgstr "Dibuat"
 
 msgid "Surname"
-msgstr "မျိုးရိုးအမည်"
+msgstr ""
 
 msgid "First name"
-msgstr "ပထမအမည်"
+msgstr ""
 
 msgid "Introduction"
-msgstr "မိတ်ဆက်ခြင်း"
+msgstr ""
 
 msgid "Job title"
-msgstr "အလုပ်အကိုင်ခေါင်းစဉ်"
+msgstr ""
 
 msgid "Works at"
 msgstr ""
 
 msgid "Education"
-msgstr "ပညာအရည်အချင်း"
+msgstr ""
 
 msgid "Interests"
-msgstr "စိတ်ဝင်စားမှုများ"
+msgstr ""
 
 msgid "Nationality"
-msgstr "နိုင်ငံသား"
+msgstr ""
 
 msgid "Birthday"
-msgstr "‌မွေးနေ့"
+msgstr ""
 
 msgid "Gender"
-msgstr "လိင်"
+msgstr ""
 
 msgid "Speaks"
 msgstr ""
 
 msgid "E-mail"
-msgstr "အီးမေးလ်"
+msgstr ""
 
 msgid "Mobile phone number"
-msgstr "မိုဘိုင်းလ်ဖုန်းနံပါတ်"
+msgstr ""
 
 msgid "Organisations units"
 msgstr ""
 
 msgid "User roles"
-msgstr "အသုံးပြုသူအဆင့်"
+msgstr ""
 
 msgid "Members"
 msgstr ""
@@ -426,19 +427,19 @@ msgid "There was a problem saving the user group."
 msgstr ""
 
 msgid "Save"
-msgstr "သိမ်းဆည်းသည်"
+msgstr "Simpan"
 
 msgid "Name"
-msgstr "အမည်"
+msgstr "Nama"
 
 msgid "Code"
-msgstr "ကုဒ်"
+msgstr "Kode"
 
 msgid "Available users"
 msgstr ""
 
 msgid "Group members"
-msgstr "အုပ်စု အသင်းဝင်းများ"
+msgstr "Anggota kelompok"
 
 msgid "Available user groups"
 msgstr ""
@@ -465,7 +466,7 @@ msgid "There was a problem saving the user role."
 msgstr ""
 
 msgid "Description"
-msgstr "ဖော်ပြချက်"
+msgstr "Deskripsi"
 
 msgid "User Role Management"
 msgstr ""
@@ -480,10 +481,10 @@ msgid "There was a problem saving the user."
 msgstr ""
 
 msgid "Show fewer options"
-msgstr ""
+msgstr "Tampilkan sedikit pilihan"
 
 msgid "Show more options"
-msgstr ""
+msgstr "Tampilkan banyak pilihan"
 
 msgid "Send invite"
 msgstr ""
@@ -530,10 +531,10 @@ msgid "Twitter"
 msgstr ""
 
 msgid "Interface language"
-msgstr "အချက်အလက်များဖြည့်သွင်းရာတွင်သုံးသောဘာသာစကား"
+msgstr ""
 
 msgid "Database language"
-msgstr "Database တွင်သုံးသောဘာသာစကား"
+msgstr ""
 
 msgid "Available roles"
 msgstr ""
@@ -602,7 +603,7 @@ msgid "All invitations"
 msgstr ""
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "Undangan sudah tidak berlaku"
 
 msgid "Invitations"
 msgstr ""
@@ -618,10 +619,10 @@ msgid_plural "{{count}} selected"
 msgstr[0] ""
 
 msgid "Yes"
-msgstr "Yes"
+msgstr "Ya"
 
 msgid "No"
-msgstr "Nr"
+msgstr "Tidak"
 
 msgid "Something went wrong when processing your request."
 msgstr ""
@@ -663,7 +664,7 @@ msgid "Passwords do not match"
 msgstr ""
 
 msgid "This field is required"
-msgstr ""
+msgstr "Kolom ini sudah terisi"
 
 msgid "This field is required. Please select at least one"
 msgstr ""
