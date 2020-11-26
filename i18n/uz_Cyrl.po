@@ -1,27 +1,25 @@
 # 
 # Translators:
-# phil_dhis2, 2019
-# Viktor Varland <viktor@dhis2.org>, 2019
-# Ulanbek Abakirov <ulans@mail.ru>, 2020
+# Ibatov <ibatovk@who.int>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-09-26T10:23:05.190Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Ulanbek Abakirov <ulans@mail.ru>, 2020\n"
-"Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2020\n"
+"Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Language: uz@Cyrl\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Use database locale / no translation"
-msgstr "Использовать язык базы данных/без перевода"
+msgstr ""
 
 msgid "Search"
-msgstr "Поиск"
+msgstr "Излаш"
 
 msgid "Enter search term"
 msgstr ""
@@ -51,7 +49,7 @@ msgid "Analytics Table Hook"
 msgstr ""
 
 msgid "Attribute"
-msgstr "Атрибут"
+msgstr ""
 
 msgid "Category Combo"
 msgstr ""
@@ -75,10 +73,10 @@ msgid "Color Set"
 msgstr ""
 
 msgid "Constant"
-msgstr "Постоянная"
+msgstr ""
 
 msgid "Dashboard"
-msgstr "Информационная панель"
+msgstr "Бошқарув панели"
 
 msgid "Data Element Group Sets"
 msgstr ""
@@ -87,25 +85,25 @@ msgid "Data Element Groups"
 msgstr ""
 
 msgid "Data Element"
-msgstr "Элемент данных"
+msgstr ""
 
 msgid "Min/max rule"
 msgstr ""
 
 msgid "Data Set"
-msgstr "Набор данных"
+msgstr "Маълумотлар тўплами"
 
 msgid "Data Value"
 msgstr ""
 
 msgid "Document"
-msgstr "Документ"
+msgstr ""
 
 msgid "Event Chart"
-msgstr ""
+msgstr "Ҳодиса Диаграмма"
 
 msgid "Event Report"
-msgstr ""
+msgstr "Ҳодиса Ҳисобот"
 
 msgid "External Map Layer"
 msgstr ""
@@ -126,7 +124,7 @@ msgid "Legend Set"
 msgstr ""
 
 msgid "Map"
-msgstr "Карты"
+msgstr "Харита"
 
 msgid "Min-Max Data Element"
 msgstr ""
@@ -138,10 +136,10 @@ msgid "Option Group"
 msgstr ""
 
 msgid "Option Set"
-msgstr "Набор опций"
+msgstr "Вариантлар тўплами"
 
 msgid "Organisation Unit"
-msgstr "Организация"
+msgstr "Ташкилий бирлик"
 
 msgid "Organisation Unit Group Set"
 msgstr ""
@@ -150,10 +148,10 @@ msgid "Organisation Unit Group"
 msgstr ""
 
 msgid "Predictor"
-msgstr "Предиктор (прогноз)"
+msgstr ""
 
 msgid "Program Stage"
-msgstr "Стадия программы"
+msgstr ""
 
 msgid "Program"
 msgstr "Программа"
@@ -177,16 +175,16 @@ msgid "Relationship Type"
 msgstr ""
 
 msgid "Report Table"
-msgstr "Отчетные таблицы"
+msgstr "Ҳисобот жадвали"
 
 msgid "Report"
-msgstr "Отчет"
+msgstr "Ҳисобот"
 
 msgid "Section"
-msgstr "Раздел"
+msgstr "Бўлим"
 
 msgid "SQL View"
-msgstr "SQL вид"
+msgstr ""
 
 msgid "Tracked Entity"
 msgstr ""
@@ -201,37 +199,37 @@ msgid "Tracked Entity Instance"
 msgstr ""
 
 msgid "User Group"
-msgstr "Группа пользователей:"
+msgstr "Фойдаланувчи Гуруҳи"
 
 msgid "User Role"
 msgstr ""
 
 msgid "User"
-msgstr "Пользователь"
+msgstr ""
 
 msgid "Validation Rule Group"
-msgstr "Группа правил проверки"
+msgstr ""
 
 msgid "Validation Rule"
-msgstr "Правило проверки"
+msgstr ""
 
 msgid "Data predictor group"
 msgstr ""
 
 msgid "Apps"
-msgstr "Приложения"
+msgstr "Илова"
 
 msgid "Tracker"
-msgstr "Отслеживание объектов"
+msgstr "Кузатув"
 
 msgid "Import-Export"
-msgstr "Импорт-Экспорт"
+msgstr "импорт-Экспорт"
 
 msgid "System"
-msgstr "Система"
+msgstr "Тизим"
 
 msgid "Add"
-msgstr "Добавить"
+msgstr "Қўшиш"
 
 msgid "list"
 msgstr ""
@@ -241,10 +239,10 @@ msgid ""
 msgstr ""
 
 msgid "Send message"
-msgstr "Отправить сообщение"
+msgstr ""
 
 msgid "Update"
-msgstr "Обновить"
+msgstr "Янгилаш"
 
 msgid "Create new"
 msgstr ""
@@ -256,7 +254,7 @@ msgid "You are not allowed to edit"
 msgstr ""
 
 msgid "Confirm"
-msgstr "Подтвердить"
+msgstr "Тасдиқланг"
 
 msgid "There was an error fetching the list"
 msgstr ""
@@ -265,7 +263,7 @@ msgid "Select an organisation unit"
 msgstr ""
 
 msgid "Organisation unit"
-msgstr "Организационная единица"
+msgstr "Ташкилий бирлик"
 
 msgid "Page not found."
 msgstr ""
@@ -283,13 +281,13 @@ msgid "There was a problem replicating the user"
 msgstr ""
 
 msgid "Username"
-msgstr "Имя пользователя"
+msgstr "Фойдаланувчи исми"
 
 msgid "Username for new user"
 msgstr ""
 
 msgid "Password"
-msgstr "Пароль"
+msgstr "Парол"
 
 msgid "Password for new user"
 msgstr ""
@@ -298,10 +296,10 @@ msgid "Replicate"
 msgstr ""
 
 msgid "Cancel"
-msgstr "Отмена"
+msgstr "Бекор қилиш"
 
 msgid "Search by name"
-msgstr "Поиск по имени"
+msgstr "Исми орқали излаш"
 
 msgid "Could not load available items"
 msgstr ""
@@ -316,7 +314,7 @@ msgid "There was a problem displaying the GroupEditor"
 msgstr ""
 
 msgid "Apply"
-msgstr "Применить"
+msgstr ""
 
 msgid "Clear all"
 msgstr ""
@@ -331,61 +329,61 @@ msgid "Display name"
 msgstr ""
 
 msgid "ID"
-msgstr "Ид"
+msgstr "ID"
 
 msgid "Last login"
 msgstr ""
 
 msgid "Created"
-msgstr "Создано"
+msgstr "Яратилди"
 
 msgid "Surname"
 msgstr "Фамилия"
 
 msgid "First name"
-msgstr "Имя"
+msgstr "Исм"
 
 msgid "Introduction"
-msgstr "Представление"
+msgstr "Таништириш"
 
 msgid "Job title"
-msgstr "Специальность"
+msgstr "Лавозим"
 
 msgid "Works at"
 msgstr ""
 
 msgid "Education"
-msgstr "Образование"
+msgstr "Маълумоти"
 
 msgid "Interests"
-msgstr "Интересы"
+msgstr "Қизиқиши"
 
 msgid "Nationality"
-msgstr "Национальность"
+msgstr "Миллати"
 
 msgid "Birthday"
-msgstr "День рождения"
+msgstr "Тугилган кун"
 
 msgid "Gender"
-msgstr "Пол"
+msgstr "Жинси"
 
 msgid "Speaks"
 msgstr ""
 
 msgid "E-mail"
-msgstr "адрес электронной почты"
+msgstr "Электрон почта"
 
 msgid "Mobile phone number"
-msgstr "Номер мобильного телефона"
+msgstr "Мобил телефон рақами"
 
 msgid "Organisations units"
 msgstr ""
 
 msgid "User roles"
-msgstr "Уровень доступа"
+msgstr "Фойдаланувчи роллари"
 
 msgid "Members"
-msgstr "Члены"
+msgstr ""
 
 msgid "Number of users"
 msgstr ""
@@ -394,7 +392,7 @@ msgid "User role"
 msgstr ""
 
 msgid "User group"
-msgstr "Группа пользователей"
+msgstr ""
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr ""
@@ -406,10 +404,10 @@ msgid "There was a problem saving the user group."
 msgstr ""
 
 msgid "Save"
-msgstr "Сохранить"
+msgstr "Сақлаш"
 
 msgid "Name"
-msgstr "Название"
+msgstr "Исми"
 
 msgid "Code"
 msgstr "Код"
@@ -418,7 +416,7 @@ msgid "Available users"
 msgstr ""
 
 msgid "Group members"
-msgstr "Члены группы"
+msgstr ""
 
 msgid "Available user groups"
 msgstr ""
@@ -445,7 +443,7 @@ msgid "There was a problem saving the user role."
 msgstr ""
 
 msgid "Description"
-msgstr "Описание"
+msgstr "Тавсиф"
 
 msgid "User Role Management"
 msgstr ""
@@ -460,10 +458,10 @@ msgid "There was a problem saving the user."
 msgstr ""
 
 msgid "Show fewer options"
-msgstr "Показать меньше опций"
+msgstr "Камроқ вариантларни кўрсатиш"
 
 msgid "Show more options"
-msgstr "Показать больше опций"
+msgstr "Кўпроқ вариантларни кўрсатиш"
 
 msgid "Send invite"
 msgstr ""
@@ -483,7 +481,7 @@ msgid "Retype password"
 msgstr ""
 
 msgid "OpenID"
-msgstr ""
+msgstr "Кириш ID си"
 
 msgid "LDAP identifier"
 msgstr ""
@@ -504,10 +502,10 @@ msgid "Twitter"
 msgstr ""
 
 msgid "Interface language"
-msgstr "Язык интерфейса"
+msgstr "Интерфейс тили"
 
 msgid "Database language"
-msgstr "Язык базы данных"
+msgstr "Маълумотлар базаси тили"
 
 msgid "Available roles"
 msgstr ""
@@ -534,7 +532,7 @@ msgid "Selected dimension restrictions for data analytics"
 msgstr ""
 
 msgid "Replicate user"
-msgstr "Дублировать пользователя"
+msgstr ""
 
 msgid "Are you sure you want to disable two factor authentication for"
 msgstr ""
@@ -561,13 +559,13 @@ msgid "There was a problem updating the enabled state"
 msgstr ""
 
 msgid "month"
-msgstr ""
+msgstr "ой"
 
 msgid "months"
 msgstr ""
 
 msgid "<No value>"
-msgstr "<Нет значения>"
+msgstr ""
 
 msgid "Inactivity"
 msgstr ""
@@ -576,7 +574,7 @@ msgid "All invitations"
 msgstr ""
 
 msgid "Expired invitations"
-msgstr "Просроченные приглашения"
+msgstr ""
 
 msgid "Invitations"
 msgstr ""
@@ -590,18 +588,15 @@ msgstr ""
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
 msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
 
 msgid "Yes"
-msgstr "Да"
+msgstr "Ҳа"
 
 msgid "No"
-msgstr "Нет"
+msgstr "Йўқ"
 
 msgid "Something went wrong when processing your request."
-msgstr ""
+msgstr "Сўровингиз кўриб чиқилишида хатолик юз берди."
 
 msgid "Validating..."
 msgstr ""
@@ -622,7 +617,7 @@ msgid "Please enter a valid date with the following format yyyy-mm-dd"
 msgstr ""
 
 msgid "Please provide a valid email address"
-msgstr "Введите правильный адрес электронной почты"
+msgstr ""
 
 msgid "Value should be an integer"
 msgstr ""
@@ -640,7 +635,7 @@ msgid "Passwords do not match"
 msgstr ""
 
 msgid "This field is required"
-msgstr "Это поле обязательно к заполнению"
+msgstr "Ушбу қатор тўлдирилиши шарт"
 
 msgid "This field is required. Please select at least one"
 msgstr ""
