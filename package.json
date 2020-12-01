@@ -8,7 +8,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint:style": "d2-style js check --all",
+    "lint": "d2-style js check --all",
     "prestart": "npm run localize",
     "prebuild": "npm run localize",
     "pretest": "npm run localize",
