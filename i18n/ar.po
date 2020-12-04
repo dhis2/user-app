@@ -325,7 +325,7 @@ msgid "Filter available and selected items"
 msgstr "تصفية العناصر المتاحة والمختارة"
 
 msgid "There was a problem displaying the GroupEditor"
-msgstr ""
+msgstr "حدثت مشكلة في عرض GroupEditor"
 
 msgid "Apply"
 msgstr "تطبيق"
@@ -515,7 +515,7 @@ msgid "OpenID"
 msgstr "OpenID"
 
 msgid "LDAP identifier"
-msgstr ""
+msgstr "معرف LDAP"
 
 msgid "WhatsApp"
 msgstr "واتس آب"
