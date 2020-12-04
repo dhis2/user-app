@@ -602,7 +602,7 @@ msgid "months"
 msgstr "ойлар"
 
 msgid "<No value>"
-msgstr ""
+msgstr "<No value>"
 
 msgid "Inactivity"
 msgstr "ҳаракатсизлик"
