@@ -301,7 +301,7 @@ msgid "Username for new user"
 msgstr "Янги фойдаланувчи учун ФойдаланувчиНоми"
 
 msgid "Password"
-msgstr "Парол"
+msgstr "Пароль"
 
 msgid "Password for new user"
 msgstr "Янги фодаланувчи учун пароль"
