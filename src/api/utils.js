@@ -133,6 +133,8 @@ export const parseUserSaveData = (
                   userInfo: { id: user.id },
                   cogsDimensionConstraints: [],
                   catDimensionConstraints: [],
+                  disabled:
+                      user.userCredentials && user.userCredentials.disabled,
               },
           }
     const cred = data.userCredentials
