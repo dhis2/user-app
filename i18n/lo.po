@@ -1,14 +1,15 @@
 # 
 # Translators:
-# phil_dhis2, 2019
 # Viktor Varland <viktor@dhis2.org>, 2020
+# Somkhit Bouavong <bouavongk@gmail.com>, 2020
+# phil_dhis2, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-11T14:57:14.928Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"PO-Revision-Date: 2020-12-22 22:18+0000\n"
+"Last-Translator: phil_dhis2, 2020\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -77,7 +78,7 @@ msgid "Constant"
 msgstr "Constant"
 
 msgid "Dashboard"
-msgstr "ຕາໜ່າງສັງລວມຂໍ້ມູນຂ່າວສານ"
+msgstr "ກະດານຂ່າວ"
 
 msgid "Data Element Group Sets"
 msgstr ""
@@ -92,7 +93,7 @@ msgid "Min/max rule"
 msgstr ""
 
 msgid "Data Set"
-msgstr "ແບບຟອມ (ຊຸດ​ຂໍ້​ມູນ)"
+msgstr "Data set"
 
 msgid "Data Value"
 msgstr ""
@@ -155,7 +156,7 @@ msgid "Program Stage"
 msgstr "Program Stage"
 
 msgid "Program"
-msgstr "ສາຍງານ"
+msgstr "Program"
 
 msgid "Program Indicator"
 msgstr ""
@@ -197,7 +198,7 @@ msgid "Tracked Entity Instance"
 msgstr ""
 
 msgid "User Group"
-msgstr "User Group:"
+msgstr "User Group\\:"
 
 msgid "User Role"
 msgstr ""
@@ -233,7 +234,7 @@ msgid "System"
 msgstr "ລະບົບ"
 
 msgid "Add"
-msgstr "ເພີ່ມ"
+msgstr "ເພີ່່ມ"
 
 msgid "list"
 msgstr ""
@@ -300,7 +301,7 @@ msgid "Username for new user"
 msgstr ""
 
 msgid "Password"
-msgstr "ລະຫັດ"
+msgstr "ລະຫັດຜ່ານ"
 
 msgid "Password for new user"
 msgstr ""
@@ -309,7 +310,7 @@ msgid "Replicate"
 msgstr ""
 
 msgid "Cancel"
-msgstr "ຍົກເລີກ"
+msgstr "Cancel"
 
 msgid "Search by name"
 msgstr "ຄົ້ນຫາຈາກຊື່"
@@ -318,7 +319,7 @@ msgid "Could not load available items"
 msgstr ""
 
 msgid "Filter"
-msgstr "ກັ່ນຕອງ"
+msgstr "Filter"
 
 msgid "Filter available and selected items"
 msgstr ""
@@ -618,10 +619,10 @@ msgid_plural "{{count}} selected"
 msgstr[0] ""
 
 msgid "Yes"
-msgstr "ແມ່ນ"
+msgstr "Yes"
 
 msgid "No"
-msgstr "ບໍ່"
+msgstr "No"
 
 msgid "Something went wrong when processing your request."
 msgstr ""
