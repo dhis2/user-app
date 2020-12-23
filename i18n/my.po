@@ -1,13 +1,14 @@
+# 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
+# Viktor Varland <viktor@dhis2.org>, 2020
+# phil_dhis2, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-11T14:22:05.956Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
+"POT-Creation-Date: 2020-05-11T14:57:14.928Z\n"
+"PO-Revision-Date: 2020-12-22 22:18+0000\n"
+"Last-Translator: phil_dhis2, 2020\n"
 "Language-Team: Burmese (https://www.transifex.com/hisp-uio/teams/100509/my/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -69,9 +70,6 @@ msgstr ""
 msgid "Category Option Group Set"
 msgstr ""
 
-msgid "Chart"
-msgstr "Chart"
-
 msgid "Color Set"
 msgstr ""
 
@@ -79,7 +77,7 @@ msgid "Constant"
 msgstr "ကိန်းသေ"
 
 msgid "Dashboard"
-msgstr "Dashboard"
+msgstr "အချက်အလက်များလေ့လာဆန်းစစ်ခြင်း"
 
 msgid "Data Element Group Sets"
 msgstr ""
@@ -177,11 +175,8 @@ msgstr ""
 msgid "Relationship Type"
 msgstr ""
 
-msgid "Report Table"
-msgstr "Report Table"
-
 msgid "Report"
-msgstr "Report"
+msgstr ""
 
 msgid "Section"
 msgstr "အခန်း/ ကဏ္ဍ"
@@ -202,7 +197,7 @@ msgid "Tracked Entity Instance"
 msgstr ""
 
 msgid "User Group"
-msgstr "User Group:"
+msgstr "User Group\\:"
 
 msgid "User Role"
 msgstr ""
@@ -222,14 +217,17 @@ msgstr ""
 msgid "Skip data import audit"
 msgstr ""
 
+msgid "Visualization"
+msgstr ""
+
 msgid "Apps"
-msgstr "Apps"
+msgstr ""
 
 msgid "Tracker"
 msgstr ""
 
 msgid "Import-Export"
-msgstr ""
+msgstr "အသွင်းအထုတ်ပြုလုပ်ခြင်း"
 
 msgid "System"
 msgstr "စနစ်"
@@ -242,6 +240,15 @@ msgstr ""
 
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
+msgstr ""
+
+msgid "Edit user"
+msgstr ""
+
+msgid "Edit user group"
+msgstr ""
+
+msgid "Edit user role"
 msgstr ""
 
 msgid "Send message"
@@ -394,6 +401,21 @@ msgstr ""
 msgid "Number of users"
 msgstr ""
 
+msgid "Create, modify, view and delete Users"
+msgstr ""
+
+msgid "User role"
+msgstr ""
+
+msgid "Create, modify, view and delete User Roles"
+msgstr ""
+
+msgid "User group"
+msgstr ""
+
+msgid "Create, modify, view and delete User Groups"
+msgstr ""
+
 msgid "Could not load the user group data. Please refresh the page."
 msgstr ""
 
@@ -474,6 +496,12 @@ msgstr ""
 msgid "Create account or email invitation"
 msgstr ""
 
+msgid "Create account with user details"
+msgstr ""
+
+msgid "Email invitation to create account"
+msgstr ""
+
 msgid "External authentication only (OpenID or LDAP)"
 msgstr ""
 
@@ -481,7 +509,7 @@ msgid "Retype password"
 msgstr ""
 
 msgid "OpenID"
-msgstr "OpenID"
+msgstr ""
 
 msgid "LDAP identifier"
 msgstr ""
@@ -590,7 +618,7 @@ msgid_plural "{{count}} selected"
 msgstr[0] ""
 
 msgid "Yes"
-msgstr "Yes"
+msgstr "မှန်"
 
 msgid "No"
 msgstr "No"
