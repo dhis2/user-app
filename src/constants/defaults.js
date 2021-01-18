@@ -6,7 +6,7 @@ export const LIST_FILTER = {
     inactiveMonths: null, // Number
     selfRegistered: false, // Bool
     invitationStatus: null, // 'all' || 'expired',
-    organisationUnits: [],
+    organisationUnits: [], // Array
 }
 
 export const INITIAL_SNACKBAR_STATE = {
