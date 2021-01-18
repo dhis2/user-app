@@ -40,6 +40,7 @@ export const STYLES = {
 export const FORM_NAME = 'userForm'
 export const USERNAME = 'username'
 export const EMAIL = 'email'
+export const DISABLED = 'disabled'
 export const INVITE = 'inviteUser'
 export const EXTERNAL_AUTH = 'externalAuth'
 export const PASSWORD = 'password'
@@ -82,6 +83,7 @@ export const USER_PROPS = [
 
 export const USER_CRED_PROPS = [
     USERNAME,
+    DISABLED,
     EXTERNAL_AUTH,
     PASSWORD,
     OPEN_ID,
@@ -151,6 +153,11 @@ export const getBaseFields = () => [
     {
         name: EXTERNAL_AUTH,
         label: i18n.t('External authentication only (OpenID or LDAP)'),
+        fieldRenderer: renderCheckbox,
+    },
+    {
+        name: DISABLED,
+        label: i18n.t('Disabled'),
         fieldRenderer: renderCheckbox,
     },
     {
