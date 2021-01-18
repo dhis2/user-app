@@ -1,3 +1,12 @@
+## [1.0.6](https://github.com/dhis2/user-app/compare/v1.0.5...v1.0.6) (2021-01-18)
+
+
+### Bug Fixes
+
+* **user:** add disabled field to user form ([db15f0e](https://github.com/dhis2/user-app/commit/db15f0ef8d4e5bc8f5fdefbf3b7c5e4862d6675c))
+* add checkbox in UI for disabled status (DHIS2-7940) ([f9b51ae](https://github.com/dhis2/user-app/commit/f9b51ae4190d1a7643e27a08357d079eb9c7ecc8))
+* maintain disabled status upon save of user (DHIS2-7940) ([9c4f0c7](https://github.com/dhis2/user-app/commit/9c4f0c78a4d7e0a597e104871173f0a61fce1e3c))
+
 ## [1.0.5](https://github.com/dhis2/user-app/compare/v1.0.4...v1.0.5) (2021-01-18)
 
 
