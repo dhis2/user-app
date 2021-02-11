@@ -351,16 +351,25 @@ class Api {
         return this.d2.currentUser
     }
 
+    getCurrentUserGroupsAndRoles = () => {
+        return this.d2Api
+            .get('me', {
+                fields: 'userGroups[id],userCredentials[userRoles[id]]',
+            })
+            .then(res => ({
+                userGroupIds: res.userGroups.map(({ id }) => id),
+                userRoleIds: res.userCredentials.userRoles.map(({ id }) => id),
+            }))
+    }
+
     initCurrentUser = () => {
         return Promise.all([
-            this.d2.currentUser.getUserGroups(),
-            this.d2.currentUser.getUserRoles(),
+            this.getCurrentUserGroupsAndRoles(),
             this.getCurrentUserOrgUnits(),
             this.getSystemOrgUnitRoots(),
         ]).then(
             ([
-                userGroups,
-                userRoles,
+                { userGroupIds, userRoleIds },
                 {
                     organisationUnits,
                     dataViewOrganisationUnits,
@@ -369,8 +378,8 @@ class Api {
                 systemOrganisationUnitRoots,
             ]) => {
                 return Object.assign(this.d2.currentUser, {
-                    userGroups,
-                    userRoles,
+                    userGroupIds,
+                    userRoleIds,
                     organisationUnits,
                     dataViewOrganisationUnits,
                     teiSearchOrganisationUnits,
@@ -385,9 +394,9 @@ class Api {
             .constructor
         const meFields = [
             ':all',
-            'organisationUnits[id]',
-            'userGroups[id]',
-            'userCredentials[:all,!user,userRoles[id]',
+            '!userGroups',
+            '!organisationUnits',
+            'userCredentials[:all,!user,!userRoles]',
         ]
         const models = this.d2.models
 
