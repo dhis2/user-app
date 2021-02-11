@@ -3,14 +3,14 @@
 # Viktor Varland <viktor@dhis2.org>, 2019
 # phil_dhis2, 2020
 # William Aviles <waviles@clintonhealthaccess.org>, 2020
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-07T13:38:29.494Z\n"
+"POT-Creation-Date: 2021-02-11T14:12:34.322Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -512,6 +512,9 @@ msgstr "Invitación por correo electrónico para crear una cuenta"
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Solo autenticación externa (OpenID o LDAP)"
+
+msgid "Disabled"
+msgstr "Inhabilitar"
 
 msgid "Retype password"
 msgstr "Vuelva a escribir la contraseña"
