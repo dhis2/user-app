@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 import List from '../../components/List'
 import i18n from '@dhis2/d2-i18n'
 import {
@@ -37,13 +36,6 @@ GroupList.propTypes = {
     match: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
-    groupMemberships: PropTypes.object.isRequired,
 }
 
-const mapStateToProps = state => {
-    return {
-        groupMemberships: state.currentUser.userGroups,
-    }
-}
-
-export default connect(mapStateToProps)(GroupList)
+export default GroupList
