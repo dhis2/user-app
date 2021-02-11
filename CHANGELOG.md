@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/dhis2/user-app/compare/v1.0.8...v1.0.9) (2021-02-11)
+
+
+### Bug Fixes
+
+* don't fetch unpaged members of current user groups (DHIS2-10377) ([#672](https://github.com/dhis2/user-app/issues/672)) ([bdff1ba](https://github.com/dhis2/user-app/commit/bdff1ba29c05e8e447c42645abdee540f3d8d140))
+
 ## [1.0.8](https://github.com/dhis2/user-app/compare/v1.0.7...v1.0.8) (2021-02-01)
 
 
