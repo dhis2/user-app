@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import List from '../../components/List'
 import i18n from '@dhis2/d2-i18n'
 import {
@@ -32,10 +31,4 @@ class GroupList extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        groupMemberships: state.currentUser.userGroups,
-    }
-}
-
-export default connect(mapStateToProps)(GroupList)
+export default GroupList

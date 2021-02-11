@@ -70,7 +70,7 @@ const listMappings = {
     },
     userRole: item => item,
     userGroup: (item, groupMemberships) => {
-        item.currentUserIsMember = Boolean(groupMemberships.get(item.id))
+        item.currentUserIsMember = groupMemberships.includes(item.id)
         return item
     },
 }
