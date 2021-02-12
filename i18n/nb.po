@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Caroline Hesthagen Holen <caroline@devotta.no>, 2020
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-07T13:38:29.494Z\n"
+"POT-Creation-Date: 2021-02-11T14:12:34.322Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
+"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2021\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -506,6 +506,9 @@ msgstr "Send invitasjon på e-post om å opprette konto"
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Bare ekstern autentisering (OpenID eller LDAP)"
+
+msgid "Disabled"
+msgstr "Deaktivert"
 
 msgid "Retype password"
 msgstr "Skriv inn passordet på nytt"

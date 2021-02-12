@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-07T13:38:29.494Z\n"
+"POT-Creation-Date: 2021-02-11T14:12:34.322Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2020\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -507,6 +507,9 @@ msgstr "Email mời tạo tài khoản"
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Chỉ xác thực bên ngoài (OpenID hoặc LDAP)"
+
+msgid "Disabled"
+msgstr ""
 
 msgid "Retype password"
 msgstr "Gõ lại mật khẩu"
