@@ -29,11 +29,17 @@ const detectCurrentUserChanges = (model, disable) => {
         disable ? logout() : refreshCurrentUser()
     }
 
-    if (entityType === USER_ROLE && currentUser.userRoles.get(model.id)) {
+    if (
+        entityType === USER_ROLE &&
+        currentUser.userRoleIds.includes(model.id)
+    ) {
         refreshCurrentUser()
     }
 
-    if (entityType === USER_GROUP && currentUser.userGroups.get(model.id)) {
+    if (
+        entityType === USER_GROUP &&
+        currentUser.userGroupIds.includes(model.id)
+    ) {
         refreshCurrentUser()
     }
 }
