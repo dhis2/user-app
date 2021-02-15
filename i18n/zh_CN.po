@@ -505,6 +505,9 @@ msgstr "邮件邀请创建账号"
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "仅仅通过外部认证（OpenIDh或LDAP）"
 
+msgid "Disabled"
+msgstr ""
+
 msgid "Retype password"
 msgstr "重新输入口令"
 

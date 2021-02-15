@@ -507,6 +507,9 @@ msgstr "E-mailová pozvánka k vytvoření účtu"
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Pouze externí ověřování (OpenID nebo LDAP)"
 
+msgid "Disabled"
+msgstr "Zakázáno"
+
 msgid "Retype password"
 msgstr "Zadejte heslo znovu"
 

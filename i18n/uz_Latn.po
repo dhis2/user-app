@@ -514,6 +514,9 @@ msgstr "Аkkaunt yaratish uchun ye-pochta taklifnomasini yuboring"
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Tashqi avtorizatsiya faqatgina (OpenID yoki LDAP) orqali"
 
+msgid "Disabled"
+msgstr ""
+
 msgid "Retype password"
 msgstr "Parolni qayta kiriting"
 
