@@ -237,7 +237,7 @@ List.defaultProps = {
 const mapStateToProps = state => {
     return {
         listType: state.list.type,
-        items: listSelector(state.list.items, state.currentUser.userGroups),
+        items: listSelector(state.list.items, state.currentUser.userGroupIds),
         pager: pagerSelector(state.pager),
     }
 }
