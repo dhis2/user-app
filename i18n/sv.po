@@ -506,6 +506,9 @@ msgstr ""
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Endast extern autentisering (OpenID eller LDAP)"
 
+msgid "Disabled"
+msgstr ""
+
 msgid "Retype password"
 msgstr "Skriv in lösenord igen:"
 

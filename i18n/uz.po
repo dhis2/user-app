@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2020
+# Ibatov <ibatovk@who.int>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-11T14:57:14.928Z\n"
 "PO-Revision-Date: 2020-02-28 15:08+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2020\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -512,6 +512,9 @@ msgstr "Аккаунт яратиш учун е-почта таклифнома�
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Ташқи авторизация фақатгина (OpenID ёки LDAP) орқали"
+
+msgid "Disabled"
+msgstr "Ўчириб қўйилган"
 
 msgid "Retype password"
 msgstr "Паролни қайта киритинг"

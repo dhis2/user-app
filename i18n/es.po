@@ -517,6 +517,9 @@ msgstr "Invitación por correo electrónico para crear una cuenta"
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Solo autenticación externa (OpenID o LDAP)"
 
+msgid "Disabled"
+msgstr ""
+
 msgid "Retype password"
 msgstr "Vuelva a escribir la contraseña"
 
