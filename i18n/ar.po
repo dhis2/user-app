@@ -509,7 +509,7 @@ msgid "External authentication only (OpenID or LDAP)"
 msgstr "المصادقة الخارجية فقط (OpenID أو LDAP)"
 
 msgid "Disabled"
-msgstr ""
+msgstr "معطل"
 
 msgid "Retype password"
 msgstr "إعد كتابة كلمة السر"
