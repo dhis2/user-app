@@ -12,6 +12,7 @@ import {
     parse200Error,
     getAttributesWithValueAndId,
 } from './utils'
+import { PAGE_SIZE as DEFAULT_PAGE_SIZE } from '../constants/defaults'
 
 import groupAuthorities from '../components/AuthorityEditor/utils/groupAuthorities'
 
@@ -110,19 +111,40 @@ class Api {
             .then(orgUnits => getRestrictedOrgUnits(orgUnits, orgUnitType))
     }
 
-    getAvailableUserRoles = () => {
+    getAvailableUserRoles = (page, filterStr) => {
         const data = {
             canIssue: true,
             fields: ['id', 'displayName'],
-            paging: false,
+            paging: true,
+            pageSize: DEFAULT_PAGE_SIZE,
+            page,
         }
-        return this.d2.models.userRoles.list(data)
+
+        if (filterStr) {
+            data.filter = `identifiable:token:${filterStr}`
+        }
+
+        return this.d2Api
+            .get('userRoles', data)
+            .then(({ userRoles, pager }) => ({ pager, items: userRoles }))
     }
 
-    getAvailableDataAnalyticsDimensionRestrictions = () => {
+    getAvailableDataAnalyticsDimensionRestrictions = (page, filterStr) => {
         const url = '/dimensions/constraints'
-        const data = { fields: ['id', 'name', 'dimensionType'], paging: false }
-        return this.d2Api.get(url, data).then(({ dimensions }) => dimensions)
+        const data = {
+            fields: ['id', 'name', 'dimensionType'],
+            paging: true,
+            pageSize: DEFAULT_PAGE_SIZE,
+            page,
+        }
+
+        if (filterStr) {
+            data.filter = `identifiable:token:${filterStr}`
+        }
+
+        return this.d2Api
+            .get(url, data)
+            .then(({ pager, dimensions }) => ({ pager, items: dimensions }))
     }
 
     updateDisabledState = (id, disabled) => {
@@ -301,18 +323,43 @@ class Api {
      ***** USER GROUPS ********
      **************************/
 
-    getManagedUsers = () => {
+    getManagedUsers = (page, filterStr) => {
         const data = {
             fields: ['id', 'displayName', 'userCredentials[username]'],
-            paging: false,
+            paging: true,
+            pageSize: DEFAULT_PAGE_SIZE,
+            page,
         }
-        return this.d2.models.user.list(data).then(appendUsernameToDisplayName)
+
+        if (filterStr) {
+            data.filter = `identifiable:token:${filterStr}`
+        }
+
+        return this.d2Api.get('users', data).then(({ users, pager }) => ({
+            items: users.map(appendUsernameToDisplayName),
+            pager,
+        }))
     }
 
     // Also used by GroupForm
-    getAvailableUserGroups = () => {
-        const data = { fields: ['id', 'displayName'], paging: false }
-        return this.d2.models.userGroups.list(data)
+    getAvailableUserGroups = (page, filterStr) => {
+        const data = {
+            fields: ['id', 'displayName'],
+            paging: true,
+            pageSize: DEFAULT_PAGE_SIZE,
+            page,
+        }
+
+        if (filterStr) {
+            data.filter = `identifiable:token:${filterStr}`
+        }
+
+        return this.d2Api
+            .get('userGroups', data)
+            .then(({ pager, userGroups }) => ({
+                pager,
+                items: userGroups,
+            }))
     }
 
     /**************************

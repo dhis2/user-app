@@ -40,7 +40,15 @@ export const USER_ROLE_DETAILS = [
     'displayName',
 ]
 
-export const USER_GROUP_DETAILS = [':owner', 'access', 'displayName']
+export const USER_GROUP_DETAILS = [
+    ':owner',
+    'access',
+    'displayName',
+    // NOTE: this only works in v35 and up
+    // in <= v34 username is in `userCredentials[username]`
+    'users[id,displayName,username]',
+    'managedGroups[id,displayName]',
+]
 
 export const CURRENT_USER_ORG_UNITS_FIELDS = {
     fields: [
