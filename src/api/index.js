@@ -393,7 +393,6 @@ class Api {
         }, {})
         const isUpdate = !!data.id
 
-        console.log(data)
         if (isUpdate) {
             return this.d2Api.update(`userGroups/${data.id}`, data)
         }
