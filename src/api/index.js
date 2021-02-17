@@ -26,6 +26,7 @@ import {
     DATABASE_LANGUAGE,
     USE_DB_LOCALE,
 } from '../containers/UserForm/config'
+import { USER_GROUP } from '../constants/entityTypes'
 
 /**
  * The Api class exposes all necessary functions to get the required data from the DHIS2 web api.
@@ -71,7 +72,25 @@ class Api {
 
     getItem = (entityName, id) => {
         const data = { fields: getQueryFields(entityName, true) }
+        if (entityName === USER_GROUP) {
+            return this.getUserGroupItem(entityName, id, data)
+        }
         return this.d2.models[entityName].get(id, data)
+    }
+
+    getUserGroupItem = (entityName, id, data) => {
+        const modelDefinition = this.d2.models[entityName]
+        const url = `userGroups/${id}`
+        return this.d2Api.get(url, data).then(response => {
+            return {
+                ...response,
+                users: response.users.map(user => ({
+                    id: user.id,
+                    displayName: `${user.displayName} (${user.username})`,
+                })),
+                modelDefinition,
+            }
+        })
     }
 
     genericFind = (entityName, propertyName, value) => {
@@ -360,6 +379,25 @@ class Api {
                 pager,
                 items: userGroups,
             }))
+    }
+
+    saveUserGroup(dataWithModelDefinition) {
+        // We appended the modeldefinition to the group because it is needed
+        // by the sectionheader, but this is not a serialisable object and also
+        // not required for the POST/PUT call.
+        const data = Object.keys(dataWithModelDefinition).reduce((acc, key) => {
+            if (key !== 'modelDefinition') {
+                acc[key] = dataWithModelDefinition[key]
+            }
+            return acc
+        }, {})
+        const isUpdate = !!data.id
+
+        console.log(data)
+        if (isUpdate) {
+            return this.d2Api.update(`userGroups/${data.id}`, data)
+        }
+        return this.d2Api.post('userGroups', data)
     }
 
     /**************************

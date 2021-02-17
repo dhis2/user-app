@@ -349,8 +349,7 @@ class SearchableGroupEditor extends Component {
                 assignedItemStore={assignedItemStore}
                 onAssignItems={this.onAssignItems}
                 onRemoveItems={this.onRemoveItems}
-                // height={250}
-                height={80}
+                height={250}
             />
         )
     }

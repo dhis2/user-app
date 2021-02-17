@@ -100,7 +100,8 @@ class GroupForm extends Component {
         )
 
         try {
-            await group.save()
+            const data = group.toJSON ? group.toJSON() : group
+            await api.saveUserGroup(data)
             const msg = i18n.t(
                 'User group "{{displayName}}" saved successfully',
                 {
@@ -113,6 +114,7 @@ class GroupForm extends Component {
             this.backToList()
             detectCurrentUserChanges(group)
         } catch (error) {
+            console.error(error)
             showSnackbar({
                 message: createHumanErrorMessage(
                     error,
