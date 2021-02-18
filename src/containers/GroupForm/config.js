@@ -1,4 +1,5 @@
 import {
+    renderText,
     renderTextField,
     renderSearchableGroupEditor,
 } from '../../utils/fieldRenderers'
@@ -7,11 +8,10 @@ import i18n from '@dhis2/d2-i18n'
 
 export const FORM_NAME = 'groupForm'
 export const NAME = 'name'
-export const USERS = 'users'
 export const CODE = 'code'
 export const MANAGED_GROUPS = 'managedGroups'
 
-export const GROUP_PROPS = [NAME, CODE, USERS, MANAGED_GROUPS]
+export const GROUP_PROPS = [NAME, CODE, MANAGED_GROUPS]
 
 export const STYLES = {
     loaderWrap: {
@@ -33,13 +33,16 @@ export const getFields = () => [
         fieldRenderer: renderTextField,
     },
     {
-        name: USERS,
-        fieldRenderer: renderSearchableGroupEditor,
-        isRequiredField: true,
-        initialItemsSelector: group => asArray(group[USERS]),
-        availableItemsQuery: 'getManagedUsers',
-        availableItemsLabel: i18n.t('Available users'),
-        assignedItemsLabel: i18n.t('Group members'),
+        name: 'manage_users_info',
+        fieldRenderer: renderText,
+        label: i18n.t(
+            'You can assign users to this user group in the user section.'
+        ),
+        style: {
+            border: '3px solid #2c6693',
+            backgroundColor: '#d2e5f4',
+            padding: 12,
+        },
     },
     {
         name: MANAGED_GROUPS,

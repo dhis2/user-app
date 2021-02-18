@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-02-11T14:12:34.322Z\n"
-"PO-Revision-Date: 2021-02-11T14:12:34.322Z\n"
+"POT-Creation-Date: 2021-02-18T14:57:42.088Z\n"
+"PO-Revision-Date: 2021-02-18T14:57:42.088Z\n"
 
 msgid "Use database locale / no translation"
 msgstr ""
@@ -422,10 +422,7 @@ msgstr ""
 msgid "Code"
 msgstr ""
 
-msgid "Available users"
-msgstr ""
-
-msgid "Group members"
+msgid "You can assign users to this user group in the user section."
 msgstr ""
 
 msgid "Available user groups"
