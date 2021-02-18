@@ -38,6 +38,7 @@ export const USER_ROLE_DETAILS = [
     'access',
     'authorities',
     'displayName',
+    '!users',
 ]
 
 export const USER_GROUP_DETAILS = [':owner', 'access', 'displayName']
