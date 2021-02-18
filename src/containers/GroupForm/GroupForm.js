@@ -8,17 +8,13 @@ import CircularProgress from 'material-ui/CircularProgress'
 import makeTrashable from 'trashable'
 import navigateTo from '../../utils/navigateTo'
 import { asyncValidatorSwitch } from '../../utils/validatorsAsync'
-import { renderSearchableGroupEditor } from '../../utils/fieldRenderers'
+import {
+    renderSearchableGroupEditor,
+    renderText,
+} from '../../utils/fieldRenderers'
 import createHumanErrorMessage from '../../utils/createHumanErrorMessage'
 import { clearItem, showSnackbar, getList } from '../../actions'
-import {
-    FORM_NAME,
-    NAME,
-    CODE,
-    USERS,
-    MANAGED_GROUPS,
-    getFields,
-} from './config'
+import { FORM_NAME, NAME, CODE, MANAGED_GROUPS, getFields } from './config'
 import { userGroupFormInitialValuesSelector } from '../../selectors'
 import { USER_GROUP } from '../../constants/entityTypes'
 import detectCurrentUserChanges from '../../utils/detectCurrentUserChanges'
@@ -90,7 +86,6 @@ class GroupForm extends Component {
 
         group[NAME] = values[NAME]
         group[CODE] = values[CODE]
-        group[USERS] = values[USERS].map(this.createIdValueObject)
         group[MANAGED_GROUPS] = values[MANAGED_GROUPS].map(
             this.createIdValueObject
         )
@@ -100,7 +95,7 @@ class GroupForm extends Component {
         )
 
         try {
-            await group.save()
+            await api.saveUserGroup(group.toJSON())
             const msg = i18n.t(
                 'User group "{{displayName}}" saved successfully',
                 {
@@ -144,6 +139,10 @@ class GroupForm extends Component {
             const suffix = isRequiredField ? ' *' : ''
             const labelText = label + suffix
             const validators = []
+
+            if (fieldRenderer === renderText) {
+                return renderText(fieldConfig)
+            }
 
             if (fieldRenderer === renderSearchableGroupEditor) {
                 conf.availableItemsQuery = api[conf.availableItemsQuery]

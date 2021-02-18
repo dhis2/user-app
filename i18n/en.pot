@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-05-11T14:57:14.928Z\n"
-"PO-Revision-Date: 2020-05-11T14:57:14.928Z\n"
+"POT-Creation-Date: 2021-02-19T07:37:38.233Z\n"
+"PO-Revision-Date: 2021-02-19T07:37:38.233Z\n"
 
 msgid "User management"
 msgstr ""
@@ -425,10 +425,7 @@ msgstr ""
 msgid "Code"
 msgstr ""
 
-msgid "Available users"
-msgstr ""
-
-msgid "Group members"
+msgid "You can assign users to this user group in the user section."
 msgstr ""
 
 msgid "Available user groups"
@@ -494,9 +491,6 @@ msgid "Email invitation to create account"
 msgstr ""
 
 msgid "External authentication only (OpenID or LDAP)"
-msgstr ""
-
-msgid "Disabled"
 msgstr ""
 
 msgid "Retype password"
