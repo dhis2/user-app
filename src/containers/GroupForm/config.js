@@ -36,11 +36,11 @@ export const getFields = () => [
         name: 'manage_users_info',
         fieldRenderer: renderText,
         label: i18n.t(
-            'You can assign users to this user group in the user section.'
+            'To add a user to this group, go to the User section and edit the user group settings for a specific user.'
         ),
         style: {
-            border: '3px solid #2c6693',
-            backgroundColor: '#d2e5f4',
+            border: '1px solid #bdbdbd',
+            backgroundColor: '#e5e5e5',
             padding: 12,
         },
     },
