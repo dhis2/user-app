@@ -1,3 +1,12 @@
+## [1.0.13](https://github.com/dhis2/user-app/compare/v1.0.12...v1.0.13) (2021-02-19)
+
+
+### Bug Fixes
+
+* exclude users from group queries, not role queries ([9ae39ca](https://github.com/dhis2/user-app/commit/9ae39ca81dc3519e309fb1d8d9709531383dfaf6))
+* **user-group:** remove users field from form to prevent app freezing ([48af65c](https://github.com/dhis2/user-app/commit/48af65c41cc25eadb724d9de8e2406728cd9aac5))
+* **user-groups:** exclude users field when getting user-group details ([1d6eaef](https://github.com/dhis2/user-app/commit/1d6eaeff7a5d938ce5fb4fd0a29c9e35ba6265c2))
+
 ## [1.0.12](https://github.com/dhis2/user-app/compare/v1.0.11...v1.0.12) (2021-02-15)
 
 
