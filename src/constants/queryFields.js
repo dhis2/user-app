@@ -38,10 +38,9 @@ export const USER_ROLE_DETAILS = [
     'access',
     'authorities',
     'displayName',
-    '!users',
 ]
 
-export const USER_GROUP_DETAILS = [':owner', 'access', 'displayName']
+export const USER_GROUP_DETAILS = [':owner', 'access', 'displayName', '!users']
 
 export const CURRENT_USER_ORG_UNITS_FIELDS = {
     fields: [
