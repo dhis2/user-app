@@ -1,7 +1,7 @@
 /* eslint-disable max-params */
 
-import { required, requiredArray, code } from '../../utils/validators'
-import { USERS, NAME, CODE } from './config'
+import { required, code } from '../../utils/validators'
+import { NAME, CODE } from './config'
 
 export default function collectValidators(
     props,
@@ -15,10 +15,6 @@ export default function collectValidators(
 
     if (name === NAME) {
         validatorsToApply.push(required)
-    }
-
-    if (name === USERS) {
-        validatorsToApply.push(requiredArray)
     }
 
     if (name === CODE) {
