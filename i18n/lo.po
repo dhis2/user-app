@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-11T14:12:34.322Z\n"
+"POT-Creation-Date: 2021-02-19T11:14:25.649Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
@@ -431,11 +431,10 @@ msgstr "ຊື່"
 msgid "Code"
 msgstr "ລະຫັດ"
 
-msgid "Available users"
+msgid ""
+"To add a user to this group, go to the User section and edit the user group "
+"settings for a specific user."
 msgstr ""
-
-msgid "Group members"
-msgstr "ສະມາຊິກກຸ່ມ"
 
 msgid "Available user groups"
 msgstr ""
