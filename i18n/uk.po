@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-11T14:12:34.322Z\n"
+"POT-Creation-Date: 2021-02-19T11:14:25.649Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: phil_dhis2, 2020\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
@@ -432,10 +432,9 @@ msgstr "Ім'я"
 msgid "Code"
 msgstr "Код"
 
-msgid "Available users"
-msgstr ""
-
-msgid "Group members"
+msgid ""
+"To add a user to this group, go to the User section and edit the user group "
+"settings for a specific user."
 msgstr ""
 
 msgid "Available user groups"
