@@ -8,7 +8,6 @@ import {
     parseLocaleUrl,
     getRestrictedOrgUnits,
     mapLocale,
-    appendUsernameToDisplayName,
     parse200Error,
     getAttributesWithValueAndId,
 } from './utils'
@@ -25,6 +24,7 @@ import {
     DATABASE_LANGUAGE,
     USE_DB_LOCALE,
 } from '../containers/UserForm/config'
+import { PAGE_SIZE as DEFAULT_PAGE_SIZE } from '../constants/defaults'
 
 /**
  * The Api class exposes all necessary functions to get the required data from the DHIS2 web api.
@@ -311,12 +311,26 @@ class Api {
         return this.d2Api.post('/userGroups', data)
     }
 
-    getManagedUsers = () => {
+    getUserGroupUsers = (page, filter) => {
         const data = {
+            paging: true,
+            page,
+            pageSize: DEFAULT_PAGE_SIZE,
             fields: ['id', 'displayName', 'userCredentials[username]'],
-            paging: false,
         }
-        return this.d2.models.user.list(data).then(appendUsernameToDisplayName)
+
+        if (Array.isArray(filter) && filter.length > 0) {
+            data.filter = filter
+        }
+
+        return this.d2Api.get('users', data)
+    }
+
+    updateUserGroupMembership = (groupId, userIds, isMemberMode) => {
+        const payloadObjectKey = isMemberMode ? 'deletions' : 'additions'
+        return this.d2Api.post(`userGroups/${groupId}/users`, {
+            [payloadObjectKey]: userIds.map(id => ({ id })),
+        })
     }
 
     // Also used by GroupForm

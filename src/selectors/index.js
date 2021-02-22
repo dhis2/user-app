@@ -21,30 +21,6 @@ import asArray from '../utils/asArray'
 import getNestedProp from '../utils/getNestedProp'
 
 /**
- * @param {Object} pager - A d2 Pager instance
- * @returns {Object} The d2 Pager instance with an appended 'currentlyShown' property
- * @function
- */
-export const pagerSelector = memoize(pager => {
-    if (pager === null) {
-        return pager
-    }
-    const {
-        total,
-        pageCount,
-        page,
-        query: { pageSize },
-    } = pager
-    const pageCalculationValue =
-        total - (total - (pageCount - (pageCount - page)) * pageSize)
-    const startItem = 1 + pageCalculationValue - pageSize
-    const endItem = pageCalculationValue
-
-    pager.currentlyShown = `${startItem} - ${endItem > total ? total : endItem}`
-    return pager
-})
-
-/**
  * @param {Object} list - A d2 list ModelCollection instance
  * @param {Object} [groupMemberships] - An array of groupMembership IDs (userGroup only)
  * @returns {Array} An array of d2 model instances with properties appended for use in the List component

@@ -11,7 +11,7 @@ import kebabCase from 'lodash.kebabcase'
 import capitalize from 'lodash.capitalize'
 import ErrorMessage from './ErrorMessage'
 import RoleForm from '../containers/RoleForm'
-import GroupForm from '../containers/GroupForm'
+import GroupFormRouter from '../containers/GroupForm'
 import UserForm from '../containers/UserForm'
 import { shortItemSelector } from '../selectors'
 
@@ -57,7 +57,7 @@ class FormLoader extends Component {
             case USER_ROLE:
                 return <RoleForm />
             case USER_GROUP:
-                return <GroupForm />
+                return <GroupFormRouter />
             default:
                 return (
                     <ErrorMessage
@@ -135,7 +135,9 @@ class FormLoader extends Component {
         return (
             <main style={styles.main}>
                 {this.renderHeader()}
-                <Paper style={styles.paper}>{this.renderContent()}</Paper>
+                <Paper style={this.props.unPadded ? null : styles.paper}>
+                    {this.renderContent()}
+                </Paper>
             </main>
         )
     }
@@ -148,6 +150,7 @@ FormLoader.propTypes = {
     match: PropTypes.object.isRequired,
     item: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     shortItem: PropTypes.object,
+    unPadded: PropTypes.bool,
 }
 
 const mapStateToProps = (state, props) => {

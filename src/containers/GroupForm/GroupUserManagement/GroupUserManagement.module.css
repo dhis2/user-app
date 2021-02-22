@@ -1,0 +1,31 @@
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.left {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+.right {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    padding-bottom: 8px;
+}
+
+.right :global(.data-table-pager--buttons) {
+    margin: 0;
+    display: flex;
+    height: 36px;
+    align-items: center;
+    margin-left: 16px;
+}
+.right :global(.data-table-pager--page-info),
+.right :global(.material-icons) {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}

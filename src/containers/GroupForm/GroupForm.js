@@ -83,6 +83,7 @@ class GroupForm extends Component {
 
     saveGroup = async (values, _, props) => {
         const { group, showSnackbar, clearItem, getList } = props
+        const isCreateMode = !group.id
 
         group[NAME] = values[NAME]
         group[CODE] = values[CODE]
@@ -95,7 +96,7 @@ class GroupForm extends Component {
         )
 
         try {
-            await api.saveUserGroup(group.toJSON())
+            const result = await api.saveUserGroup(group.toJSON())
             const msg = i18n.t(
                 'User group "{{displayName}}" saved successfully',
                 {
@@ -103,9 +104,15 @@ class GroupForm extends Component {
                 }
             )
             showSnackbar({ message: msg })
-            clearItem()
-            getList(USER_GROUP)
-            this.backToList()
+            if (isCreateMode) {
+                const createdId = result.response.uid
+                navigateTo(`/user-groups/edit/${createdId}/users`)
+            } else {
+                clearItem()
+                getList(USER_GROUP)
+                this.backToList()
+            }
+
             detectCurrentUserChanges(group)
         } catch (error) {
             showSnackbar({

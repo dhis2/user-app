@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    margin-top: 24px;
+    flex-direction: column;
+    border: 1px solid #bdbdbd;
+}
+.addition {
+    display: flex;
+    padding: 24px;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+}
+.tablebody > :global(tr) > :global(td) {
+    background-color: white !important;
+}
+.noCheckBox > :global(th:first-child) {
+    display: none !important;
+}

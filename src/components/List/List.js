@@ -5,9 +5,9 @@ import { connect } from 'react-redux'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 import DataTable from '@dhis2/d2-ui-table'
-import { LoadingMask, Heading, Pagination } from '@dhis2/d2-ui-core'
+import { LoadingMask, Heading } from '@dhis2/d2-ui-core'
 import navigateTo from '../../utils/navigateTo'
-import { listSelector, pagerSelector } from '../../selectors'
+import { listSelector } from '../../selectors'
 import {
     getList,
     resetFilter,
@@ -21,6 +21,7 @@ import ErrorMessage from '../ErrorMessage'
 import './booleanValueRenderer'
 import '@dhis2/d2-ui-core/css/Table.css'
 import '@dhis2/d2-ui-core/css/Pagination.css'
+import Pagination from '../Pagination.js'
 
 const styles = {
     dataTableWrap: {
@@ -42,9 +43,6 @@ const styles = {
     headerBarFilterWrap: {
         display: 'table',
         marginRight: '230px',
-    },
-    pagination: {
-        userSelect: 'none',
     },
 }
 
@@ -95,57 +93,11 @@ class List extends Component {
         }
     }
 
-    getPagerConfig(pager) {
-        if (!pager) {
-            return {
-                page: null,
-                pageCount: null,
-                total: null,
-                currentlyShown: null,
-            }
-        }
-        return pager
-    }
-
-    renderPagination() {
-        const { pager, items, incrementPage, decrementPage } = this.props
-        const { page, pageCount, total, currentlyShown } = this.getPagerConfig(
-            pager
-        )
-        const shouldHide =
-            !items || items.length === 0 || typeof items === 'string'
-        const style = shouldHide
-            ? { ...styles.pagination, visibility: 'hidden' }
-            : styles.pagination
-        const paginationProps = {
-            hasNextPage: () =>
-                page && items && items.length && page < pageCount,
-            hasPreviousPage: () => page && items && items.length && page > 1,
-            onNextPageClick: () => {
-                incrementPage(pager)
-            },
-            onPreviousPageClick: () => {
-                decrementPage(pager)
-            },
-            total,
-            currentlyShown,
-            style,
-        }
-
-        return (
-            <div style={style}>
-                <Pagination {...paginationProps} />
-            </div>
-        )
-    }
-
-    renderHeaderBar() {
+    renderHeaderBar(pagination) {
         const { filterComponent: FilterComponent, entityType } = this.props
         return (
             <div className="data-table__filter-bar" style={styles.filterBar}>
-                <div style={styles.headerBarPagination}>
-                    {this.renderPagination()}
-                </div>
+                <div style={styles.headerBarPagination}>{pagination}</div>
                 <div style={styles.headerBarFilterWrap}>
                     <FilterComponent entityType={entityType} />
                 </div>
@@ -187,13 +139,29 @@ class List extends Component {
     }
 
     render() {
-        const { sectionName, newItemPath, className } = this.props
+        const {
+            sectionName,
+            newItemPath,
+            className,
+            pager,
+            incrementPage,
+            decrementPage,
+        } = this.props
+
+        const pagination = (
+            <Pagination
+                decrementPage={decrementPage}
+                incrementPage={incrementPage}
+                pager={pager || undefined}
+            />
+        )
+
         return (
             <div style={styles.dataTableWrap} className={className}>
                 <Heading>{sectionName}</Heading>
-                {this.renderHeaderBar()}
+                {this.renderHeaderBar(pagination)}
                 {this.renderDataTable()}
-                {this.renderPagination()}
+                {pagination}
                 <FloatingActionButton
                     className="entity-list__add-new-entity"
                     onClick={() => navigateTo(newItemPath)}
@@ -236,7 +204,7 @@ const mapStateToProps = state => {
     return {
         listType: state.list.type,
         items: listSelector(state.list.items, state.currentUser.userGroupIds),
-        pager: pagerSelector(state.pager),
+        pager: state.pager,
     }
 }
 

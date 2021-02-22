@@ -91,7 +91,12 @@ class SectionLoader extends Component {
 
     renderRoutes(routes) {
         return routes.map(section => (
-            <Route key={section.key} exact strict {...section} />
+            <Route
+                key={section.key}
+                exact={!section.hasNestedRoutes}
+                strict
+                {...section}
+            />
         ))
     }
 

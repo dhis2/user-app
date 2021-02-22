@@ -97,8 +97,11 @@ const createRouteConfig = () => [
         key: 'user_group_edit_view',
         path: '/user-groups/edit/:id',
         /* eslint-disable-next-line react/display-name */
-        render: props => <FormLoader entityType={USER_GROUP} {...props} />,
+        render: props => (
+            <FormLoader unPadded entityType={USER_GROUP} {...props} />
+        ),
         entityType: USER_GROUP,
+        hasNestedRoutes: true,
     },
     {
         key: 'user_group_details_view',
