@@ -1703,10 +1703,21 @@
     lodash "^4.17.10"
     material-ui "^0.20.0"
 
-"@dhis2/d2-ui-core@7.0.5", "@dhis2/d2-ui-core@^7.0.5":
+"@dhis2/d2-ui-core@7.0.5":
   version "7.0.5"
   resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-core/-/d2-ui-core-7.0.5.tgz#bfedb815ebc0edb2901c0b1f4b59a856e9d18c34"
   integrity sha512-ALK1vVe1yE+4mPnBBIdVNi3aAG7yVeLHjxAcEX/1XvCfK0CKnGas2I8K+KcxZMB0FHBr4+hzKzP4NkE4b+a4gQ==
+  dependencies:
+    babel-runtime "^6.26.0"
+    d2 "~31.7"
+    lodash "^4.17.10"
+    material-ui "^0.20.0"
+    rxjs "^5.5.7"
+
+"@dhis2/d2-ui-core@7.1.4", "@dhis2/d2-ui-core@^7.0.5":
+  version "7.1.4"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-core/-/d2-ui-core-7.1.4.tgz#e9b16abe6fdea2b5ae5c988145adda6c160996e8"
+  integrity sha512-gnviQotFIcPc0quTeUZVfJiZAT60un+yp77baf6ghBiRrnph3GAm2dU0GYxPkTkIp/EGnSalY9g3yjxVo/sToQ==
   dependencies:
     babel-runtime "^6.26.0"
     d2 "~31.7"
@@ -1750,12 +1761,12 @@
     recompose "^0.26.0"
     rxjs "^5.5.7"
 
-"@dhis2/d2-ui-org-unit-tree@^7.0.5":
-  version "7.0.5"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-org-unit-tree/-/d2-ui-org-unit-tree-7.0.5.tgz#07c8ee3041679d0f2aea21d1155a30db25476072"
-  integrity sha512-HJIy/rrrsONBjVyk0NxsTw9VBXiQu67d3tFM6rd65mBeokANLpWtFk4iGiiifECniX3c6D/NiyX5Ap2iqBIHPg==
+"@dhis2/d2-ui-org-unit-tree@^7.1.4":
+  version "7.1.4"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-org-unit-tree/-/d2-ui-org-unit-tree-7.1.4.tgz#236fb99be83f3d8fe6ebb4768d0f443ee7e40536"
+  integrity sha512-xFO53ITtbakzWiy9lp5otJoReBnprYC4mKW9ZP2xXxTXAS2gUlcaelbOkZ72pGxiP3pJPccacP7TVo8xvOHtQQ==
   dependencies:
-    "@dhis2/d2-ui-core" "7.0.5"
+    "@dhis2/d2-ui-core" "7.1.4"
     "@material-ui/core" "^3.3.1"
     babel-runtime "^6.26.0"
     prop-types "^15.5.10"
