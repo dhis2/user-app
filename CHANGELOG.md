@@ -1,3 +1,10 @@
+## [1.0.16](https://github.com/dhis2/user-app/compare/v1.0.15...v1.0.16) (2021-02-23)
+
+
+### Bug Fixes
+
+* **user:** change OpenID field label to OIDC mapping value ([5b72b15](https://github.com/dhis2/user-app/commit/5b72b15fdc1b2658c9e73970d6ed672a9b56673e))
+
 ## [1.0.15](https://github.com/dhis2/user-app/compare/v1.0.14...v1.0.15) (2021-02-21)
 
 
