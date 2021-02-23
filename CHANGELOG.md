@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/dhis2/user-app/compare/v1.0.16...v1.1.0) (2021-02-23)
+
+
+### Features
+
+* **user form:** add account expiry date field (edit & new) ([5e710c0](https://github.com/dhis2/user-app/commit/5e710c0a9c6fc4b308cff1260f18e9ff73f560e3))
+
 ## [1.0.16](https://github.com/dhis2/user-app/compare/v1.0.15...v1.0.16) (2021-02-23)
 
 
