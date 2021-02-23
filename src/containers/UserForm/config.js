@@ -194,7 +194,7 @@ export const getBaseFields = () => [
     },
     {
         name: OPEN_ID,
-        label: i18n.t('OpenID'),
+        label: i18n.t('OIDC mapping value'),
         fieldRenderer: renderTextField,
     },
     {
