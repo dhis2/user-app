@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-19T11:14:25.649Z\n"
+"POT-Creation-Date: 2021-02-23T10:36:35.285Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
@@ -501,14 +501,17 @@ msgstr ""
 msgid "External authentication only (OpenID or LDAP)"
 msgstr ""
 
+msgid "Expire date"
+msgstr ""
+
 msgid "Disabled"
 msgstr "Disabled"
 
 msgid "Retype password"
 msgstr ""
 
-msgid "OpenID"
-msgstr "ໄອດີ"
+msgid "OIDC mapping value"
+msgstr ""
 
 msgid "LDAP identifier"
 msgstr ""

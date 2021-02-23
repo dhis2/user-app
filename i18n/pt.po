@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-19T11:14:25.649Z\n"
+"POT-Creation-Date: 2021-02-23T10:36:35.285Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2021\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
@@ -512,14 +512,17 @@ msgstr "Convite por email para criar conta"
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Somente autenticação externa (OpenID ou LDAP)"
 
+msgid "Expire date"
+msgstr ""
+
 msgid "Disabled"
 msgstr "Desabilitar"
 
 msgid "Retype password"
 msgstr "Redigite a senha"
 
-msgid "OpenID"
-msgstr "OpenID"
+msgid "OIDC mapping value"
+msgstr ""
 
 msgid "LDAP identifier"
 msgstr "identificador LDAP"

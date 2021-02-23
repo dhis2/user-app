@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-19T11:14:25.649Z\n"
+"POT-Creation-Date: 2021-02-23T10:36:35.285Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -522,14 +522,17 @@ msgstr "Invitation par e-mail pour créer un compte"
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Authentification externe uniquement (OpenID ou LDAP)"
 
+msgid "Expire date"
+msgstr ""
+
 msgid "Disabled"
 msgstr "Désactivé"
 
 msgid "Retype password"
 msgstr "Retapez le mot de passe"
 
-msgid "OpenID"
-msgstr "OpenID"
+msgid "OIDC mapping value"
+msgstr ""
 
 msgid "LDAP identifier"
 msgstr "Identifiant LDAP"
