@@ -24,7 +24,7 @@ export const USER_DETAILS = [
     'userGroups',
     'organisationUnits[id,displayName,path]',
     'dataViewOrganisationUnits[id,displayName,path]',
-    'userCredentials[id,username,lastLogin,externalAuth,userRoles[id,displayName],cogsDimensionConstraints[id,displayName,dimensionType],catDimensionConstraints[id,displayName,dimensionType],openId,ldapId,disabled]',
+    'userCredentials[id,username,accountExpiry,lastLogin,externalAuth,userRoles[id,displayName],cogsDimensionConstraints[id,displayName,dimensionType],catDimensionConstraints[id,displayName,dimensionType],openId,ldapId,disabled]',
     'teiSearchOrganisationUnits[id,path]',
     'whatsApp',
     'facebookMessenger',

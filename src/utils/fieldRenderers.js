@@ -20,6 +20,58 @@ const styles = {
     },
 }
 
+export const renderDateField = ({ input, meta, label, ...other }) => {
+    const { asyncValidating, touched, error } = meta
+
+    const errorText = asyncValidating
+        ? i18n.t('Validating...')
+        : touched && error
+
+    if (asyncValidating) {
+        other.errorStyle = styles.warning
+    }
+
+    return (
+        <div style={{ marginTop: 20 }}>
+            <label
+                htmlFor={input.name}
+                style={{
+                    display: 'block',
+                    color: 'rgba(0, 0, 0, 0.3)',
+                    fontSize: 16 * 0.75,
+                    lineHeight: `${22 * 0.75}px`,
+                }}
+            >
+                {label}
+            </label>
+
+            <div style={{ marginTop: -10 }}>
+                <TextField
+                    {...input}
+                    {...other}
+                    type="date"
+                    inputWidth="200px"
+                    errorText={errorText}
+                />
+            </div>
+        </div>
+    )
+}
+
+renderDateField.propTypes = {
+    input: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        value: PropTypes.string.isRequired,
+        onChange: PropTypes.func.isRequired,
+    }).isRequired,
+    label: PropTypes.string.isRequired,
+    meta: PropTypes.shape({
+        asyncValidating: PropTypes.bool,
+        error: PropTypes.string,
+        touched: PropTypes.bool,
+    }).isRequired,
+}
+
 /**
  * Helper functions used as "component" props for redux-form Field components.
  * @name fieldRenderers

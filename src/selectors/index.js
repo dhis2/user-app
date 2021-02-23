@@ -14,6 +14,7 @@ import {
     INVITE_USER,
     DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
     DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
+    EXPIRE_DATE,
     SET_PASSWORD,
 } from '../containers/UserForm/config'
 import { getFields as getUserGroupFields } from '../containers/GroupForm/config'
@@ -65,6 +66,7 @@ const listMappings = {
     user: item => {
         item.userName = item.userCredentials.username
         item.disabled = item.userCredentials.disabled
+        item.accountExpiry = item.userCredentials.accountExpiry
         item.lastLogin = item.userCredentials.lastLogin
         return item
     },
@@ -86,8 +88,20 @@ export const orgUnitsAsStringSelector = memoize(orgUnits => {
         : i18n.t('{{count}} selected', { count: orgUnits.length })
 })
 
+const jsDateToISO8601 = date =>
+    `${date.getFullYear().toString()}-${(date.getMonth() + 1)
+        .toString()
+        .padStart(2, 0)}-${date
+        .getDate()
+        .toString()
+        .padStart(2, 0)}`
+
 const addInitialValueFrom = (sourceObject, initialValues, propName) => {
-    if (propName === DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS) {
+    if (propName === EXPIRE_DATE) {
+        const expiryDate = new Date(sourceObject[propName])
+        const formattedDate = jsDateToISO8601(expiryDate)
+        initialValues[propName] = formattedDate
+    } else if (propName === DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS) {
         initialValues[propName] = [
             ...sourceObject.catDimensionConstraints,
             ...sourceObject.cogsDimensionConstraints,
