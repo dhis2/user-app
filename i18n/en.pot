@@ -492,6 +492,9 @@ msgstr ""
 msgid "External authentication only (OpenID or LDAP)"
 msgstr ""
 
+msgid "Expire date"
+msgstr ""
+
 msgid "Disabled"
 msgstr ""
 

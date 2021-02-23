@@ -5,6 +5,7 @@ import getNestedProp from '../../utils/getNestedProp'
 import { analyticsDimensionsRestrictionsSelector } from '../../selectors'
 import {
     renderTextField,
+    renderDateField,
     renderCheckbox,
     renderSelectField,
     renderSearchableGroupEditor,
@@ -40,6 +41,7 @@ export const STYLES = {
 export const FORM_NAME = 'userForm'
 export const USERNAME = 'username'
 export const EMAIL = 'email'
+export const EXPIRE_DATE = 'accountExpiry'
 export const DISABLED = 'disabled'
 export const INVITE = 'inviteUser'
 export const EXTERNAL_AUTH = 'externalAuth'
@@ -84,6 +86,7 @@ export const USER_PROPS = [
 export const USER_CRED_PROPS = [
     USERNAME,
     DISABLED,
+    EXPIRE_DATE,
     EXTERNAL_AUTH,
     PASSWORD,
     OPEN_ID,
@@ -154,6 +157,11 @@ export const getBaseFields = () => [
         name: EXTERNAL_AUTH,
         label: i18n.t('External authentication only (OpenID or LDAP)'),
         fieldRenderer: renderCheckbox,
+    },
+    {
+        name: EXPIRE_DATE,
+        label: i18n.t('Account expiration date'),
+        fieldRenderer: renderDateField,
     },
     {
         name: DISABLED,

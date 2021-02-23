@@ -20,6 +20,7 @@ import {
     USER_CRED_PROPS,
     DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
     DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
+    EXPIRE_DATE,
     PASSWORD,
     REPEAT_PASSWORD,
     EXTERNAL_AUTH,
@@ -155,6 +156,11 @@ export const parseUserSaveData = (
     USER_CRED_PROPS.forEach(propName =>
         addValueAsProp(cred, values[propName], propName)
     )
+
+    // See https://jira.dhis2.org/browse/DHIS2-10569
+    if (!cred[EXPIRE_DATE] && typeof cred[EXPIRE_DATE] !== 'undefined') {
+        delete cred[EXPIRE_DATE]
+    }
 
     data.attributeValues = parseAttributeValues(values, attributeFields)
 
