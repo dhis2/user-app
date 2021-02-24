@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-19T11:14:25.649Z\n"
+"POT-Creation-Date: 2021-02-23T10:36:35.285Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -509,14 +509,17 @@ msgstr "Аккаунт яратиш учун е-почта таклифнома�
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Ташқи авторизация фақатгина (OpenID ёки LDAP) орқали"
 
+msgid "Expire date"
+msgstr ""
+
 msgid "Disabled"
 msgstr "Ўчириб қўйилган"
 
 msgid "Retype password"
 msgstr "Паролни қайта киритинг"
 
-msgid "OpenID"
-msgstr "Кириш ID си"
+msgid "OIDC mapping value"
+msgstr ""
 
 msgid "LDAP identifier"
 msgstr "LDAP идентификатор"

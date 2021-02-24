@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-19T11:14:25.649Z\n"
+"POT-Creation-Date: 2021-02-23T10:36:35.285Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: trendspotter, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -505,14 +505,17 @@ msgstr "E-mailová pozvánka k vytvoření účtu"
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Pouze externí ověřování (OpenID nebo LDAP)"
 
+msgid "Expire date"
+msgstr ""
+
 msgid "Disabled"
 msgstr "Zakázáno"
 
 msgid "Retype password"
 msgstr "Zadejte heslo znovu"
 
-msgid "OpenID"
-msgstr "OpenID"
+msgid "OIDC mapping value"
+msgstr ""
 
 msgid "LDAP identifier"
 msgstr "Identifikátor LDAP"
