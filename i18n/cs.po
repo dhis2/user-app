@@ -506,7 +506,7 @@ msgid "External authentication only (OpenID or LDAP)"
 msgstr "Pouze externí ověřování (OpenID nebo LDAP)"
 
 msgid "Expire date"
-msgstr ""
+msgstr "Datum vypršení"
 
 msgid "Disabled"
 msgstr "Zakázáno"
@@ -515,7 +515,7 @@ msgid "Retype password"
 msgstr "Zadejte heslo znovu"
 
 msgid "OIDC mapping value"
-msgstr ""
+msgstr "Hodnota mapování OIDC"
 
 msgid "LDAP identifier"
 msgstr "Identifikátor LDAP"
