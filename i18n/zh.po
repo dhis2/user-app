@@ -2,15 +2,15 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2019
 # phil_dhis2, 2019
-# easylin <lin_xd@126.com>, 2020
 # 晓东 林 <13981924470@126.com>, 2021
+# easylin <lin_xd@126.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-23T10:36:35.285Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2021\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -436,7 +436,7 @@ msgstr "代码"
 msgid ""
 "To add a user to this group, go to the User section and edit the user group "
 "settings for a specific user."
-msgstr ""
+msgstr "要将用户添加到该组，请转到“用户”部分并编辑特定用户的用户组设置。"
 
 msgid "Available user groups"
 msgstr "可用用户组"
@@ -504,7 +504,7 @@ msgid "External authentication only (OpenID or LDAP)"
 msgstr "仅仅通过外部认证（OpenIDh或LDAP）"
 
 msgid "Expire date"
-msgstr ""
+msgstr "到期日期"
 
 msgid "Disabled"
 msgstr "关闭"
@@ -513,7 +513,7 @@ msgid "Retype password"
 msgstr "重新输入口令"
 
 msgid "OIDC mapping value"
-msgstr ""
+msgstr "OIDC映射值"
 
 msgid "LDAP identifier"
 msgstr "LDAP标识"
