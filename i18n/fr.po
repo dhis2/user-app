@@ -2,17 +2,17 @@
 # Translators:
 # Bram Piot <bram.piot@gmail.com>, 2019
 # Matthieu Pinard <matthieu@pinard.no>, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
 # phil_dhis2, 2019
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
-# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-23T10:36:35.285Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -166,7 +166,7 @@ msgid "Program Indicator"
 msgstr "Indicateur de Programme"
 
 msgid "Program Indicator Group"
-msgstr "Groupe d'indicateurs de Programme"
+msgstr "Groupe d'indicateurs de pPogramme"
 
 msgid "Program Rule"
 msgstr "Règles de Programme"
@@ -220,10 +220,10 @@ msgid "Data predictor group"
 msgstr "Groupe de prédicteur de données"
 
 msgid "Skip data import audit"
-msgstr "Sauter l'audit d'importation de données"
+msgstr ""
 
 msgid "Visualization"
-msgstr "Visualisation"
+msgstr ""
 
 msgid "Apps"
 msgstr "Applications"
@@ -250,13 +250,13 @@ msgstr ""
 "utilisateurs"
 
 msgid "Edit user"
-msgstr "Modifier l'utilisateur"
+msgstr ""
 
 msgid "Edit user group"
-msgstr "Modifier le groupe d'utilisateurs"
+msgstr ""
 
 msgid "Edit user role"
-msgstr "Modifier le rôle utilisateur"
+msgstr ""
 
 msgid "Send message"
 msgstr "Envoyer Message"
@@ -411,19 +411,19 @@ msgid "Number of users"
 msgstr "Nombre d'utilisateurs"
 
 msgid "Create, modify, view and delete Users"
-msgstr "Créer, modifier, afficher et supprimer des utilisateurs"
+msgstr ""
 
 msgid "User role"
 msgstr "Rôle d'utilisateur"
 
 msgid "Create, modify, view and delete User Roles"
-msgstr "Créer, modifier, afficher et supprimer des rôles d'utilisateur"
+msgstr ""
 
 msgid "User group"
 msgstr "Groupe d'utilisateur"
 
 msgid "Create, modify, view and delete User Groups"
-msgstr "Créer, modifier, afficher et supprimer des groupes d'utilisateurs"
+msgstr ""
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr ""
@@ -514,10 +514,10 @@ msgid "Create account or email invitation"
 msgstr "Créer un compte ou une invitation par e-mail"
 
 msgid "Create account with user details"
-msgstr "Créer un compte avec les détails de l'utilisateur"
+msgstr ""
 
 msgid "Email invitation to create account"
-msgstr "Invitation par e-mail pour créer un compte"
+msgstr ""
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Authentification externe uniquement (OpenID ou LDAP)"
@@ -526,7 +526,7 @@ msgid "Expire date"
 msgstr ""
 
 msgid "Disabled"
-msgstr "Désactivé"
+msgstr ""
 
 msgid "Retype password"
 msgstr "Retapez le mot de passe"
@@ -538,19 +538,19 @@ msgid "LDAP identifier"
 msgstr "Identifiant LDAP"
 
 msgid "WhatsApp"
-msgstr "WhatsApp"
+msgstr ""
 
 msgid "Facebook Messenger"
-msgstr "Facebook Messenger"
+msgstr ""
 
 msgid "Skype"
-msgstr "Skype"
+msgstr ""
 
 msgid "Telegram"
-msgstr "Telegram"
+msgstr ""
 
 msgid "Twitter"
-msgstr "Twitter"
+msgstr ""
 
 msgid "Interface language"
 msgstr "Langue de l'interface"
@@ -565,7 +565,7 @@ msgid "Selected roles"
 msgstr "Rôles sélectionnés"
 
 msgid "Data capture and maintenance organisation units"
-msgstr "Capture et de la maintenance des données aux unités d'organisation"
+msgstr "Unités d'organisation de la capture et de la maintenance des données"
 
 msgid "Data output and analytic organisation units"
 msgstr "Sortie de données et unités d'organisation analytique"
@@ -641,8 +641,8 @@ msgstr "Gestion des utilisateurs"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
-msgstr[0] "{{compter}} choisi"
-msgstr[1] "{{compter}} choisi"
+msgstr[0] "{{count}} choisi"
+msgstr[1] "{{count}} choisi"
 
 msgid "Yes"
 msgstr "Oui"

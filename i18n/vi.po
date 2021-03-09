@@ -1,15 +1,15 @@
 # 
 # Translators:
 # phil_dhis2, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
 # Mai Nguyen <thanhmai.jica@gmail.com>, 2020
-# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-23T10:36:35.285Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2020\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -213,10 +213,10 @@ msgid "Data predictor group"
 msgstr "Nhóm chỉ báo dữ liệu"
 
 msgid "Skip data import audit"
-msgstr "Bỏ qua kiểm tra nhận dữ liệu"
+msgstr ""
 
 msgid "Visualization"
-msgstr "Trực quan hóa"
+msgstr ""
 
 msgid "Apps"
 msgstr "Ứng dụng"
@@ -243,13 +243,13 @@ msgstr ""
 "dùng DHIS 2"
 
 msgid "Edit user"
-msgstr "Chỉnh sửa người dùng"
+msgstr ""
 
 msgid "Edit user group"
-msgstr "Chỉnh sửa nhóm người dùng"
+msgstr ""
 
 msgid "Edit user role"
-msgstr "Chỉnh sửa quyền người dùng"
+msgstr ""
 
 msgid "Send message"
 msgstr "Gửi tin"
@@ -403,19 +403,19 @@ msgid "Number of users"
 msgstr "Số người dùng"
 
 msgid "Create, modify, view and delete Users"
-msgstr "Tạo, sửa đổi, xem và xóa người dùng"
+msgstr ""
 
 msgid "User role"
 msgstr "Quyền người dùng"
 
 msgid "Create, modify, view and delete User Roles"
-msgstr "Tạo, sửa đổi, xem và xóa quyền người dùng"
+msgstr ""
 
 msgid "User group"
 msgstr "Nhóm Người Dùng"
 
 msgid "Create, modify, view and delete User Groups"
-msgstr "Tạo, sửa đổi, xem và xóa nhóm người dùng"
+msgstr ""
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr "Không thể tải dữ liệu nhóm người dùng. Vui lòng làm mới trang"
@@ -459,7 +459,7 @@ msgid "User Group Management"
 msgstr "Quản lý nhóm người dùng"
 
 msgid "User role \"{{displayName}}\" saved successfully"
-msgstr "Đã lưu thành công quyền người dùng \"{{Tên hiển thị}}\""
+msgstr "Đã lưu thành công vai trò người dùng \"{{Tên hiển thị}}\""
 
 msgid "There was a problem saving the user role."
 msgstr "Đã xảy ra sự cố khi lưu quyền người dùng"
@@ -499,10 +499,10 @@ msgid "Create account or email invitation"
 msgstr "Tạo tài khoản hoặc lời mời qua email"
 
 msgid "Create account with user details"
-msgstr "Tạo tài khoản với chi tiết người dùng"
+msgstr ""
 
 msgid "Email invitation to create account"
-msgstr "Email mời tạo tài khoản"
+msgstr ""
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Chỉ xác thực bên ngoài (OpenID hoặc LDAP)"
@@ -511,7 +511,7 @@ msgid "Expire date"
 msgstr ""
 
 msgid "Disabled"
-msgstr "Tắt"
+msgstr ""
 
 msgid "Retype password"
 msgstr "Gõ lại mật khẩu"
@@ -523,19 +523,19 @@ msgid "LDAP identifier"
 msgstr "Định danh LDAP"
 
 msgid "WhatsApp"
-msgstr "WhatsApp"
+msgstr ""
 
 msgid "Facebook Messenger"
-msgstr "Facebook Messenger"
+msgstr ""
 
 msgid "Skype"
-msgstr "Skype"
+msgstr ""
 
 msgid "Telegram"
-msgstr "Telegram"
+msgstr ""
 
 msgid "Twitter"
-msgstr "Twitter"
+msgstr ""
 
 msgid "Interface language"
 msgstr "Ngôn ngữ giao diện"
@@ -623,7 +623,7 @@ msgstr "Quản lý người dùng"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
-msgstr[0] "{{số lượng}} đã chọn"
+msgstr[0] "Đã chọn {{đếm}}"
 
 msgid "Yes"
 msgstr "Có"

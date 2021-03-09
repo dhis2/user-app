@@ -2,7 +2,7 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2019
 # phil_dhis2, 2019
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # Ge Joao <gsimango@saudigitus.org>, 2021
 # 
 msgid ""
@@ -121,7 +121,7 @@ msgid "Indicator"
 msgstr "Indicador"
 
 msgid "Legend Set"
-msgstr "Conjunto de legendas"
+msgstr "Conjunto da legenda"
 
 msgid "Map"
 msgstr "Mapa"
@@ -157,7 +157,7 @@ msgid "Program"
 msgstr "Programa"
 
 msgid "Program Indicator"
-msgstr "Indicador do programa"
+msgstr "Indicador de programa"
 
 msgid "Program Indicator Group"
 msgstr "Grupo de Indicadores do Programa"
@@ -345,7 +345,7 @@ msgid "Display name"
 msgstr "Nome em Exibição"
 
 msgid "ID"
-msgstr "ID"
+msgstr "Id"
 
 msgid "Last login"
 msgstr "Última entrada"
@@ -408,7 +408,7 @@ msgid "Create, modify, view and delete Users"
 msgstr "Criar, modificar, visualizar e excluir Usuários"
 
 msgid "User role"
-msgstr "Função de usuário"
+msgstr "Papel do usuário"
 
 msgid "Create, modify, view and delete User Roles"
 msgstr "Criar, modificar, visualizar e excluir Funções do usuário"
@@ -479,7 +479,7 @@ msgstr ""
 "Não foi possível carregar os dados do usuário. Por favor atualize a página."
 
 msgid "User \"{{displayName}}\" saved successfully"
-msgstr "Usuário \"{{displayName}}\" salvo com sucesso"
+msgstr "Usuário \"{{NomedeUsuário}}\" salvo com sucesso"
 
 msgid "There was a problem saving the user."
 msgstr "Ocorreu um problema ao salvar o usuário."
@@ -595,7 +595,7 @@ msgid "sucessfully disabled"
 msgstr "desativado com sucesso"
 
 msgid "successfully enabled"
-msgstr "ativado com sucesso"
+msgstr "successfully enabled"
 
 msgid "There was a problem updating the enabled state"
 msgstr "Ocorreu um problema ao atualizar o estado ativado"
@@ -666,7 +666,7 @@ msgid "Value should be an integer"
 msgstr "Valor deve ser um número inteiro"
 
 msgid "Value should be a nagative integer"
-msgstr "O valor deve ser um número inteiro nagativo"
+msgstr "O valor deve ser um número inteiro negativo"
 
 msgid "Value should be a number"
 msgstr "O valor deve ser um número"
@@ -681,7 +681,7 @@ msgid "This field is required"
 msgstr "Este campo é obrigatorio"
 
 msgid "This field is required. Please select at least one"
-msgstr "Este campo é obrigatório. Por favor, selecione pelo menos um"
+msgstr "Este campo é obrigatório. Por favor selecione pelo menos um."
 
 msgid "A username should be at least 2 characters long"
 msgstr "Um nome de usuário deve ter pelo menos 2 caracteres"

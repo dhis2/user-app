@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Caroline Hesthagen Holen <caroline@devotta.no>, 2021
-# Karoline Tufte Lien <karoline@dhis2.org>, 2021
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2020
+# Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-23T10:36:35.285Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2021\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,10 +32,10 @@ msgid "No matches found"
 msgstr "Ingen treff funnet"
 
 msgid "There was a problem retreiving your search results"
-msgstr "Det oppstod et problem med å hente søkeresultatene dine"
+msgstr "Det oppsto et problem med å hente søkeresultatene dine"
 
 msgid "There was a problem retreiving the available authorities."
-msgstr "Det oppstod et problem med å hente de tilgjengelige rettighetene."
+msgstr "Det oppstod et problem med å hente de tilgjengelige myndighetene."
 
 msgid "Authorities"
 msgstr "Rettigheter"
@@ -131,7 +131,7 @@ msgid "Option Group Set"
 msgstr "Alternativgruppesett"
 
 msgid "Option Group"
-msgstr "Alternativgruppe"
+msgstr "Valggruppe"
 
 msgid "Option Set"
 msgstr "Alternativsett"
@@ -143,7 +143,7 @@ msgid "Organisation Unit Group Set"
 msgstr "Organisasjonsenhetgruppesett"
 
 msgid "Organisation Unit Group"
-msgstr "Organisasjonsenhetgruppe"
+msgstr "Organisasjonsenhet gruppe"
 
 msgid "Predictor"
 msgstr "Prediktor"
@@ -188,10 +188,10 @@ msgid "Tracked Entity Attribute"
 msgstr "Sporet enhetattributt"
 
 msgid "Tracked Entity Data Value"
-msgstr "Sporet enhetdataverdi"
+msgstr "Sporet enhet dataverdi"
 
 msgid "Tracked Entity Instance"
-msgstr "Sporet enhetforekomst"
+msgstr "Sporet enhet instans"
 
 msgid "User Group"
 msgstr "Brukergruppe"
@@ -212,10 +212,10 @@ msgid "Data predictor group"
 msgstr "Dataprediktorgruppe"
 
 msgid "Skip data import audit"
-msgstr "Hopp over revisjon av dataimport"
+msgstr ""
 
 msgid "Visualization"
-msgstr "Visualisering"
+msgstr ""
 
 msgid "Apps"
 msgstr "Applikasjoner"
@@ -242,13 +242,13 @@ msgstr ""
 "Applikasjon"
 
 msgid "Edit user"
-msgstr "Rediger bruker"
+msgstr ""
 
 msgid "Edit user group"
-msgstr "Rediger brukergruppe"
+msgstr ""
 
 msgid "Edit user role"
-msgstr "Rediger brukerrolle"
+msgstr ""
 
 msgid "Send message"
 msgstr "Send melding"
@@ -402,19 +402,19 @@ msgid "Number of users"
 msgstr "Antall brukere"
 
 msgid "Create, modify, view and delete Users"
-msgstr "Opprett, endre, vis og slett brukere"
+msgstr ""
 
 msgid "User role"
 msgstr "Brukerrolle"
 
 msgid "Create, modify, view and delete User Roles"
-msgstr "Opprett, endre, vis og slett brukerrroller"
+msgstr ""
 
 msgid "User group"
 msgstr "Brukergruppe"
 
 msgid "Create, modify, view and delete User Groups"
-msgstr "Opprett, endre, vis og slett brukergrupper"
+msgstr ""
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr "Kunne ikke laste brukergruppe data. Oppdater siden"
@@ -438,8 +438,6 @@ msgid ""
 "To add a user to this group, go to the User section and edit the user group "
 "settings for a specific user."
 msgstr ""
-"For å legge til en bruker i denne gruppen, gå til brukerdelen og rediger "
-"innstillingene for brukergruppen for en bestemt bruker."
 
 msgid "Available user groups"
 msgstr "Tilgjengelige brukergrupper"
@@ -500,43 +498,43 @@ msgid "Create account or email invitation"
 msgstr "Opprett en konto eller e-post invitasjon"
 
 msgid "Create account with user details"
-msgstr "Opprett konto med brukerinformasjon"
+msgstr ""
 
 msgid "Email invitation to create account"
-msgstr "Send invitasjon på e-post om å opprette konto"
+msgstr ""
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Bare ekstern autentisering (OpenID eller LDAP)"
 
 msgid "Expire date"
-msgstr "Utløpsdato"
+msgstr ""
 
 msgid "Disabled"
-msgstr "Deaktivert"
+msgstr ""
 
 msgid "Retype password"
 msgstr "Skriv inn passordet på nytt"
 
 msgid "OIDC mapping value"
-msgstr "OIDC kartleggingsverdi"
+msgstr ""
 
 msgid "LDAP identifier"
 msgstr "LDAP-ID"
 
 msgid "WhatsApp"
-msgstr "WhatsApp"
+msgstr ""
 
 msgid "Facebook Messenger"
-msgstr "Facebook Messenger"
+msgstr ""
 
 msgid "Skype"
-msgstr "Skype"
+msgstr ""
 
 msgid "Telegram"
-msgstr "Telegram"
+msgstr ""
 
 msgid "Twitter"
-msgstr "Twitter"
+msgstr ""
 
 msgid "Interface language"
 msgstr "Grensesnittspråk"
@@ -713,7 +711,7 @@ msgstr ""
 "Det oppsto et problem ved sjekking av tilgjengelighet av dette brukernavnet"
 
 msgid "{{fieldDisplayName}} is already taken"
-msgstr "{{fieldDisplayName}} er allerede opptatt"
+msgstr "{{FieldDisplayName}} er allerede opptatt"
 
 msgid "Could not verify if this {{fieldDisplayName}} is unique"
 msgstr "Kunne ikke verifisere hvis dette {{FieldDisplayName}} er unikt"
