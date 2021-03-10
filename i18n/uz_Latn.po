@@ -211,10 +211,10 @@ msgid "Data predictor group"
 msgstr "Maʼlumotlarni oldindan ayta olish guruhi"
 
 msgid "Skip data import audit"
-msgstr ""
+msgstr "Maʼlumotlar importi auditini oʼtkazib yuboring"
 
 msgid "Visualization"
-msgstr ""
+msgstr "Vizualizatsiya"
 
 msgid "Apps"
 msgstr "Ilova"
@@ -241,13 +241,13 @@ msgstr ""
 " ega emassiz"
 
 msgid "Edit user"
-msgstr ""
+msgstr "Foydalanuvchini tahrir qilish"
 
 msgid "Edit user group"
-msgstr ""
+msgstr "Foydalanuvchi guruhini tahrir qilish"
 
 msgid "Edit user role"
-msgstr ""
+msgstr "Foydalanuvchi rolini tahrir qilish"
 
 msgid "Send message"
 msgstr "Xabar yuborish"
@@ -402,19 +402,20 @@ msgid "Number of users"
 msgstr "Foydalanuvchilar soni"
 
 msgid "Create, modify, view and delete Users"
-msgstr ""
+msgstr "Foydalanuvchilarni yaratish, oʼzgartirish, koʼrish va oʼchirish"
 
 msgid "User role"
 msgstr ""
 
 msgid "Create, modify, view and delete User Roles"
-msgstr ""
+msgstr "Foydalanuvchi Rollarini yaratish, oʼzgartirish, koʼrish va oʼchirish"
 
 msgid "User group"
 msgstr ""
 
 msgid "Create, modify, view and delete User Groups"
 msgstr ""
+"Foydalanuvchi Guruhlarini yaratish, oʼzgartirish, koʼrish va oʼchirish"
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr ""
@@ -501,10 +502,10 @@ msgid "Create account or email invitation"
 msgstr "Аkkaunt yarating yoki ye-pochta orqali taklifnoma yuboring"
 
 msgid "Create account with user details"
-msgstr ""
+msgstr "Foydalanuvchi detallari asosida akkaunt yarating"
 
 msgid "Email invitation to create account"
-msgstr ""
+msgstr "Аkkaunt yaratish uchun ye-pochta taklifnomasini yuboring"
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Tashqi avtorizatsiya faqatgina (OpenID yoki LDAP) orqali"
@@ -513,7 +514,7 @@ msgid "Expire date"
 msgstr ""
 
 msgid "Disabled"
-msgstr ""
+msgstr "Oʼchirib qoʼyilgan"
 
 msgid "Retype password"
 msgstr "Parolni qayta kiriting"
@@ -525,19 +526,19 @@ msgid "LDAP identifier"
 msgstr "LDAP identifikator"
 
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 msgid "Facebook Messenger"
-msgstr ""
+msgstr "Facebook Messenger"
 
 msgid "Skype"
-msgstr ""
+msgstr "Skype"
 
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 msgid "Twitter"
-msgstr ""
+msgstr "Telegram"
 
 msgid "Interface language"
 msgstr "Interfeys tili"

@@ -2,17 +2,17 @@
 # Translators:
 # Bram Piot <bram.piot@gmail.com>, 2019
 # Matthieu Pinard <matthieu@pinard.no>, 2019
-# Viktor Varland <viktor@dhis2.org>, 2019
 # phil_dhis2, 2019
-# Karoline Tufte Lien <karoline@dhis2.org>, 2020
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2021
+# Karoline Tufte Lien <karoline@dhis2.org>, 2021
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-23T10:36:35.285Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -220,10 +220,10 @@ msgid "Data predictor group"
 msgstr "Groupe de prédicteur de données"
 
 msgid "Skip data import audit"
-msgstr ""
+msgstr "Sauter l'audit d'importation de données"
 
 msgid "Visualization"
-msgstr ""
+msgstr "Visualisation"
 
 msgid "Apps"
 msgstr "Applications"
@@ -250,13 +250,13 @@ msgstr ""
 "utilisateurs"
 
 msgid "Edit user"
-msgstr ""
+msgstr "Modifier l'utilisateur"
 
 msgid "Edit user group"
-msgstr ""
+msgstr "Modifier le groupe d'utilisateurs"
 
 msgid "Edit user role"
-msgstr ""
+msgstr "Modifier le rôle utilisateur"
 
 msgid "Send message"
 msgstr "Envoyer Message"
@@ -411,19 +411,19 @@ msgid "Number of users"
 msgstr "Nombre d'utilisateurs"
 
 msgid "Create, modify, view and delete Users"
-msgstr ""
+msgstr "Créer, modifier, afficher et supprimer des utilisateurs"
 
 msgid "User role"
 msgstr "Rôle d'utilisateur"
 
 msgid "Create, modify, view and delete User Roles"
-msgstr ""
+msgstr "Créer, modifier, afficher et supprimer des rôles d'utilisateur"
 
 msgid "User group"
 msgstr "Groupe d'utilisateur"
 
 msgid "Create, modify, view and delete User Groups"
-msgstr ""
+msgstr "Créer, modifier, afficher et supprimer des groupes d'utilisateurs"
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr ""
@@ -514,10 +514,10 @@ msgid "Create account or email invitation"
 msgstr "Créer un compte ou une invitation par e-mail"
 
 msgid "Create account with user details"
-msgstr ""
+msgstr "Créer un compte avec les détails de l'utilisateur"
 
 msgid "Email invitation to create account"
-msgstr ""
+msgstr "Invitation par e-mail pour créer un compte"
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Authentification externe uniquement (OpenID ou LDAP)"
@@ -526,7 +526,7 @@ msgid "Expire date"
 msgstr ""
 
 msgid "Disabled"
-msgstr ""
+msgstr "Désactivé"
 
 msgid "Retype password"
 msgstr "Retapez le mot de passe"
@@ -538,19 +538,19 @@ msgid "LDAP identifier"
 msgstr "Identifiant LDAP"
 
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 msgid "Facebook Messenger"
-msgstr ""
+msgstr "Facebook Messenger"
 
 msgid "Skype"
-msgstr ""
+msgstr "Skype"
 
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 msgid "Interface language"
 msgstr "Langue de l'interface"

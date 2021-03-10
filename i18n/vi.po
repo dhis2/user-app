@@ -1,15 +1,15 @@
 # 
 # Translators:
 # phil_dhis2, 2019
-# Viktor Varland <viktor@dhis2.org>, 2019
-# Mai Nguyen <thanhmai.jica@gmail.com>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2021
+# Mai Nguyen <thanhmai.jica@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-23T10:36:35.285Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2020\n"
+"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2021\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -213,10 +213,10 @@ msgid "Data predictor group"
 msgstr "Nhóm chỉ báo dữ liệu"
 
 msgid "Skip data import audit"
-msgstr ""
+msgstr "Bỏ qua kiểm tra nhận dữ liệu"
 
 msgid "Visualization"
-msgstr ""
+msgstr "Trực quan hóa"
 
 msgid "Apps"
 msgstr "Ứng dụng"
@@ -243,13 +243,13 @@ msgstr ""
 "dùng DHIS 2"
 
 msgid "Edit user"
-msgstr ""
+msgstr "Chỉnh sửa người dùng"
 
 msgid "Edit user group"
-msgstr ""
+msgstr "Chỉnh sửa nhóm người dùng"
 
 msgid "Edit user role"
-msgstr ""
+msgstr "Chỉnh sửa quyền người dùng"
 
 msgid "Send message"
 msgstr "Gửi tin"
@@ -403,19 +403,19 @@ msgid "Number of users"
 msgstr "Số người dùng"
 
 msgid "Create, modify, view and delete Users"
-msgstr ""
+msgstr "Tạo, sửa đổi, xem và xóa người dùng"
 
 msgid "User role"
 msgstr "Quyền người dùng"
 
 msgid "Create, modify, view and delete User Roles"
-msgstr ""
+msgstr "Tạo, sửa đổi, xem và xóa quyền người dùng"
 
 msgid "User group"
 msgstr "Nhóm Người Dùng"
 
 msgid "Create, modify, view and delete User Groups"
-msgstr ""
+msgstr "Tạo, sửa đổi, xem và xóa nhóm người dùng"
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr "Không thể tải dữ liệu nhóm người dùng. Vui lòng làm mới trang"
@@ -499,10 +499,10 @@ msgid "Create account or email invitation"
 msgstr "Tạo tài khoản hoặc lời mời qua email"
 
 msgid "Create account with user details"
-msgstr ""
+msgstr "Tạo tài khoản với chi tiết người dùng"
 
 msgid "Email invitation to create account"
-msgstr ""
+msgstr "Email mời tạo tài khoản"
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Chỉ xác thực bên ngoài (OpenID hoặc LDAP)"
@@ -511,7 +511,7 @@ msgid "Expire date"
 msgstr ""
 
 msgid "Disabled"
-msgstr ""
+msgstr "Tắt"
 
 msgid "Retype password"
 msgstr "Gõ lại mật khẩu"
@@ -523,19 +523,19 @@ msgid "LDAP identifier"
 msgstr "Định danh LDAP"
 
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 msgid "Facebook Messenger"
-msgstr ""
+msgstr "Facebook Messenger"
 
 msgid "Skype"
-msgstr ""
+msgstr "Skype"
 
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 msgid "Interface language"
 msgstr "Ngôn ngữ giao diện"

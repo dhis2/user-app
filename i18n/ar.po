@@ -1,15 +1,15 @@
 # 
 # Translators:
 # phil_dhis2, 2019
-# Viktor Varland <viktor@dhis2.org>, 2019
-# Hamza Assada <7amza.it@gmail.com>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2021
+# Hamza Assada <7amza.it@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-23T10:36:35.285Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
+"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2021\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -213,10 +213,10 @@ msgid "Data predictor group"
 msgstr ""
 
 msgid "Skip data import audit"
-msgstr ""
+msgstr "تخطي تدقيق استيراد البيانات"
 
 msgid "Visualization"
-msgstr ""
+msgstr "التخطيط البياني"
 
 msgid "Apps"
 msgstr "التطبيقات"
@@ -241,13 +241,13 @@ msgid ""
 msgstr "ليس لديك حق الوصول إلى أي قسم في تطبيق إدارة مستخدمي الـ DHIS 2"
 
 msgid "Edit user"
-msgstr ""
+msgstr "تعديل المستخدم"
 
 msgid "Edit user group"
-msgstr ""
+msgstr "تعديل مجموعة المستخدم"
 
 msgid "Edit user role"
-msgstr ""
+msgstr "تعديل دور المستخدم"
 
 msgid "Send message"
 msgstr "إرسال رسالة"
@@ -401,19 +401,19 @@ msgid "Number of users"
 msgstr "عدد المستخدمين"
 
 msgid "Create, modify, view and delete Users"
-msgstr ""
+msgstr "إنشاء، تعديل، استعراض و حذف المستخدمين"
 
 msgid "User role"
 msgstr "دور المستخدم"
 
 msgid "Create, modify, view and delete User Roles"
-msgstr ""
+msgstr "إنشاء، تعديل، استعراض و حذف أدوار المستخدم"
 
 msgid "User group"
 msgstr "مجموعة المستخدمين"
 
 msgid "Create, modify, view and delete User Groups"
-msgstr ""
+msgstr "إنشاء، تعديل، استعراض و حذف مجموعات المستخدم"
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr "تعذر تحميل بيانات مجموعة المستخدم. يرجى تحديث الصفحة."
@@ -496,10 +496,10 @@ msgid "Create account or email invitation"
 msgstr "إنشاء حساب أو دعوة بالبريد الإلكتروني"
 
 msgid "Create account with user details"
-msgstr ""
+msgstr "إنشاء حساب مع تفاصيل المستخدم"
 
 msgid "Email invitation to create account"
-msgstr ""
+msgstr "دعوة بالبريد الإلكتروني لإنشاء حساب"
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "المصادقة الخارجية فقط (OpenID أو LDAP)"
@@ -508,7 +508,7 @@ msgid "Expire date"
 msgstr ""
 
 msgid "Disabled"
-msgstr ""
+msgstr "معطل"
 
 msgid "Retype password"
 msgstr "إعد كتابة كلمة السر"
@@ -520,19 +520,19 @@ msgid "LDAP identifier"
 msgstr "معرف LDAP"
 
 msgid "WhatsApp"
-msgstr ""
+msgstr "واتس آب"
 
 msgid "Facebook Messenger"
-msgstr ""
+msgstr "ماسنجر الفيسبوك"
 
 msgid "Skype"
-msgstr ""
+msgstr "سكايب"
 
 msgid "Telegram"
-msgstr ""
+msgstr "تلجرام"
 
 msgid "Twitter"
-msgstr ""
+msgstr "تويتر"
 
 msgid "Interface language"
 msgstr "لغة الواجهة"
