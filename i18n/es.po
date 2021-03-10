@@ -3,14 +3,14 @@
 # Viktor Varland <viktor@dhis2.org>, 2019
 # phil_dhis2, 2020
 # William Aviles <waviles@clintonhealthaccess.org>, 2020
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-23T10:36:35.285Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -214,10 +214,10 @@ msgid "Data predictor group"
 msgstr "Grupo predictor de datos"
 
 msgid "Skip data import audit"
-msgstr "Omitir revisión de importación de datos"
+msgstr ""
 
 msgid "Visualization"
-msgstr "Visualización"
+msgstr ""
 
 msgid "Apps"
 msgstr "Aplicaciones"
@@ -240,17 +240,17 @@ msgstr "lista"
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
 msgstr ""
-"No tiene acceso a ninguna sección de la Aplicación de Gestión de Usuarios "
+"No tiene acceso a ninguna sección de la Aplicación de gestión de usuarios "
 "DHIS 2"
 
 msgid "Edit user"
-msgstr "Editar usuario"
+msgstr ""
 
 msgid "Edit user group"
-msgstr "Editar grupo de usuarios"
+msgstr ""
 
 msgid "Edit user role"
-msgstr "Editar rol de usuario"
+msgstr ""
 
 msgid "Send message"
 msgstr "Enviar mensaje"
@@ -405,19 +405,19 @@ msgid "Number of users"
 msgstr "Número de usuarios"
 
 msgid "Create, modify, view and delete Users"
-msgstr "Crear, modificar, ver y eliminar Usuarios"
+msgstr ""
 
 msgid "User role"
 msgstr "Rol del usuario"
 
 msgid "Create, modify, view and delete User Roles"
-msgstr "Crear, modificar, ver y eliminar Roles del Usuario"
+msgstr ""
 
 msgid "User group"
 msgstr "Grupo de usuario"
 
 msgid "Create, modify, view and delete User Groups"
-msgstr "Crear, modificar, ver y eliminar Grupos de Usuarios"
+msgstr ""
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr ""
@@ -504,10 +504,10 @@ msgid "Create account or email invitation"
 msgstr "Crear cuenta o invitación por correo electrónico"
 
 msgid "Create account with user details"
-msgstr "Crear cuenta con detalles de usuario"
+msgstr ""
 
 msgid "Email invitation to create account"
-msgstr "Invitación por correo electrónico para crear una cuenta"
+msgstr ""
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Solo autenticación externa (OpenID o LDAP)"
@@ -516,7 +516,7 @@ msgid "Expire date"
 msgstr ""
 
 msgid "Disabled"
-msgstr "Inhabilitar"
+msgstr ""
 
 msgid "Retype password"
 msgstr "Vuelva a escribir la contraseña"
@@ -528,19 +528,19 @@ msgid "LDAP identifier"
 msgstr "identificador LDAP"
 
 msgid "WhatsApp"
-msgstr "WhatsApp"
+msgstr ""
 
 msgid "Facebook Messenger"
-msgstr "Facebook Messenger"
+msgstr ""
 
 msgid "Skype"
-msgstr "Skype"
+msgstr ""
 
 msgid "Telegram"
-msgstr "Telegram"
+msgstr ""
 
 msgid "Twitter"
-msgstr "Twitter"
+msgstr ""
 
 msgid "Interface language"
 msgstr "Idioma de la interfaz"
@@ -586,7 +586,7 @@ msgid "There was a problem updating two factor authentication"
 msgstr "Hubo un problema al actualizar la autenticación de dos factores"
 
 msgid "Are you sure you want to disable"
-msgstr "¿Estás seguro de que deseas inhabilitar?"
+msgstr "¿Estás seguro de que deseas desactivar?"
 
 msgid "Are you sure you want to enable"
 msgstr "¿Estás seguro de que quieres habilitar?"
@@ -687,7 +687,7 @@ msgid "A username should be at least 2 characters long"
 msgstr "Un nombre de usuario debe tener al menos 2 caracteres."
 
 msgid "Username may not exceed 140 characters"
-msgstr "El nombre de usuario no puede superar los 140 caracteres"
+msgstr "El nombre de usuario no puede superar los 140 caracteres."
 
 msgid "Please provide a valid international phone number (+0123456789)"
 msgstr ""
@@ -710,7 +710,7 @@ msgid "Password should contain at least one number"
 msgstr "La contraseña debe contener al menos un número"
 
 msgid "Password should have at least one special character"
-msgstr "La contraseña debe tener al menos un caracter especial"
+msgstr "La contraseña debe tener al menos un carácter especial"
 
 msgid "Username already taken"
 msgstr "Nombre de usuario ya tomado"
