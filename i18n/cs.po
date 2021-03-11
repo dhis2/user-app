@@ -1,13 +1,13 @@
 # 
 # Translators:
-# trendspotter, 2020
+# trendspotter, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-23T10:36:35.285Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: trendspotter, 2020\n"
+"Last-Translator: trendspotter, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -211,10 +211,10 @@ msgid "Data predictor group"
 msgstr "Skupina prediktorů dat"
 
 msgid "Skip data import audit"
-msgstr ""
+msgstr "Přeskočit audit importu dat"
 
 msgid "Visualization"
-msgstr ""
+msgstr "Vizualizace"
 
 msgid "Apps"
 msgstr "Aplikace"
@@ -239,13 +239,13 @@ msgid ""
 msgstr "Nemáte přístup k žádné části aplikace Správa uživatelů DHIS 2"
 
 msgid "Edit user"
-msgstr ""
+msgstr "Upravit uživatele"
 
 msgid "Edit user group"
-msgstr ""
+msgstr "Upravit skupinu uživatelů"
 
 msgid "Edit user role"
-msgstr ""
+msgstr "Upravit uživatelskou roli"
 
 msgid "Send message"
 msgstr "Poslat zprávu"
@@ -399,19 +399,19 @@ msgid "Number of users"
 msgstr "počet uživatelů"
 
 msgid "Create, modify, view and delete Users"
-msgstr ""
+msgstr "Vytvářejte, upravujte, zobrazujte a mazejte uživatele"
 
 msgid "User role"
 msgstr "Role uživatele"
 
 msgid "Create, modify, view and delete User Roles"
-msgstr ""
+msgstr "Vytvářejte, upravujte, zobrazujte a mazejte uživatelské role"
 
 msgid "User group"
 msgstr "Uživatelská skupina"
 
 msgid "Create, modify, view and delete User Groups"
-msgstr ""
+msgstr "Vytvářejte, upravujte, prohlížejte a mazejte skupiny uživatelů"
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr "Nelze načíst data skupiny uživatelů. Obnovte stránku."
@@ -435,6 +435,8 @@ msgid ""
 "To add a user to this group, go to the User section and edit the user group "
 "settings for a specific user."
 msgstr ""
+"Chcete-li přidat uživatele do této skupiny, přejděte do části Uživatel a "
+"upravte nastavení skupiny uživatelů pro konkrétního uživatele."
 
 msgid "Available user groups"
 msgstr "Dostupné skupiny uživatelů"
@@ -495,43 +497,43 @@ msgid "Create account or email invitation"
 msgstr "Vytvořte účet nebo e-mailovou pozvánku"
 
 msgid "Create account with user details"
-msgstr ""
+msgstr "Vytvořte účet s podrobnostmi uživatele"
 
 msgid "Email invitation to create account"
-msgstr ""
+msgstr "E-mailová pozvánka k vytvoření účtu"
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Pouze externí ověřování (OpenID nebo LDAP)"
 
 msgid "Expire date"
-msgstr ""
+msgstr "Datum vypršení"
 
 msgid "Disabled"
-msgstr ""
+msgstr "Zakázáno"
 
 msgid "Retype password"
 msgstr "Zadejte heslo znovu"
 
 msgid "OIDC mapping value"
-msgstr ""
+msgstr "Hodnota mapování OIDC"
 
 msgid "LDAP identifier"
 msgstr "Identifikátor LDAP"
 
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 msgid "Facebook Messenger"
-msgstr ""
+msgstr "Facebook Messenger"
 
 msgid "Skype"
-msgstr ""
+msgstr "Skype"
 
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 msgid "Interface language"
 msgstr "Jazyk rozhraní"
