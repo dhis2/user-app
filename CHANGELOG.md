@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/dhis2/user-app/compare/v1.1.5...v1.1.6) (2021-03-11)
+
+
+### Bug Fixes
+
+* **deps:** upgrade deps to enable treeshaking and headerbar fixes ([71a8c2f](https://github.com/dhis2/user-app/commit/71a8c2f99615274f02fc160e4a7a8f123dc9f59f))
+
 ## [1.1.5](https://github.com/dhis2/user-app/compare/v1.1.4...v1.1.5) (2021-03-01)
 
 
