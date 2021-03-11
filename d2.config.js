@@ -6,7 +6,7 @@ const config = {
     description:
         'An application for managing users, user-groups and user-roles',
     entryPoints: {
-        app: './src/AppWrapper',
+        app: './src/AppWrapper.js',
     },
 }
 
