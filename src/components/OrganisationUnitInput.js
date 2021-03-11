@@ -1,12 +1,12 @@
+import i18n from '@dhis2/d2-i18n'
+import ActionOpenInNew from 'material-ui/svg-icons/action/open-in-new'
+import TextField from 'material-ui/TextField'
+import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import TextField from 'material-ui/TextField'
-import ActionOpenInNew from 'material-ui/svg-icons/action/open-in-new'
-import PropTypes from 'prop-types'
-import i18n from '@dhis2/d2-i18n'
 import { showDialog, hideDialog } from '../actions'
-import OrganisationUnitFilter from './OrganisationUnitFilter'
 import { orgUnitsAsStringSelector } from '../selectors'
+import OrganisationUnitFilter from './OrganisationUnitFilter'
 
 const styles = {
     wrap: {

@@ -1,10 +1,10 @@
+import i18n from '@dhis2/d2-i18n'
+import asArray from '../../utils/asArray'
 import {
     renderText,
     renderTextField,
     renderSearchableGroupEditor,
 } from '../../utils/fieldRenderers'
-import asArray from '../../utils/asArray'
-import i18n from '@dhis2/d2-i18n'
 
 export const FORM_NAME = 'groupForm'
 export const NAME = 'name'

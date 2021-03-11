@@ -1,8 +1,8 @@
 /** @module AuthorityEditor/utils/groupAuthorities */
 import i18n from '@dhis2/d2-i18n'
-import startsWith from 'lodash.startswith'
 import endsWith from 'lodash.endswith'
 import sortBy from 'lodash.sortby'
+import startsWith from 'lodash.startswith'
 import getNameLookup from './authorityGroupNames'
 
 const createEmptyGroupedAuthorities = () => ({

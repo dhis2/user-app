@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import isEqual from 'lodash.isequal'
-import { USER } from '../constants/entityTypes'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { updateFilter, hideDialog, getList } from '../actions'
 import SearchableOrgUnitTree from '../components/SearchableOrgUnitTree'
+import { USER } from '../constants/entityTypes'
 import { TEI_SEARCH_ORG_UNITS } from '../containers/UserForm/config'
 
 /**

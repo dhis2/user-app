@@ -1,12 +1,12 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux'
-import ReduxThunk from 'redux-thunk'
-import logger from 'redux-logger'
 import { reducer as formReducer } from 'redux-form'
-import listReducer from './reducers/list'
-import filterReducer from './reducers/filter'
-import pagerReducer from './reducers/pager'
+import logger from 'redux-logger'
+import ReduxThunk from 'redux-thunk'
 import currentItemReducer from './reducers/currentItem'
 import currentUserReducer from './reducers/currentUser'
+import filterReducer from './reducers/filter'
+import listReducer from './reducers/list'
+import pagerReducer from './reducers/pager'
 import popupsReducer from './reducers/popups/'
 
 const middlewares = [ReduxThunk]

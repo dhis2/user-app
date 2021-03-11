@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import debounce from 'lodash.debounce'
-import filterAuthorities from './utils/filterAuthorities'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import AuthoritySection from './AuthoritySection'
+import filterAuthorities from './utils/filterAuthorities'
 
 /**
  * Component responsible for providing the `AuthoritySections` with filtered authority lists.

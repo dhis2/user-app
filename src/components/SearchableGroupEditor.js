@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import { GroupEditor } from '@dhis2/d2-ui-group-editor'
+import i18n from '@dhis2/d2-i18n'
 import { Store, Heading } from '@dhis2/d2-ui-core'
-import PropTypes from 'prop-types'
+import { GroupEditor } from '@dhis2/d2-ui-group-editor'
 import { red500 } from 'material-ui/styles/colors'
 import TextField from 'material-ui/TextField/TextField'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import asArray from '../utils/asArray'
-import ErrorMessage from './ErrorMessage'
 import createHumanErrorMessage from '../utils/createHumanErrorMessage'
-import i18n from '@dhis2/d2-i18n'
+import ErrorMessage from './ErrorMessage'
 
 const styles = {
     outerWrap: {

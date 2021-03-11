@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { Paper, CircularProgress, Checkbox } from 'material-ui'
 import i18n from '@dhis2/d2-i18n'
 import { Heading } from '@dhis2/d2-ui-core'
+import { Paper, CircularProgress, Checkbox } from 'material-ui'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import AuthorityGroup from './AuthorityGroup'
 import AuthorityItem from './AuthorityItem'
 

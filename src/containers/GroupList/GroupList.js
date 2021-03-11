@@ -1,13 +1,13 @@
+import i18n from '@dhis2/d2-i18n'
 import React, { Component } from 'react'
 import List from '../../components/List'
-import i18n from '@dhis2/d2-i18n'
+import SearchFilter from '../../components/SearchFilter'
+import { USER_GROUP } from '../../constants/entityTypes'
 import {
     isGroupContextActionAllowed,
     groupContextMenuIcons,
     groupContextMenuActions,
 } from './GroupContextMenuActions'
-import { USER_GROUP } from '../../constants/entityTypes'
-import SearchFilter from '../../components/SearchFilter'
 
 /**
  * Container component that renders a List component with correct properties for displaying a list of UserGroups
