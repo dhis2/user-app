@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 import i18n from '@dhis2/d2-i18n'
-import TextField from 'material-ui/TextField/TextField'
 import debounce from 'lodash.debounce'
+import TextField from 'material-ui/TextField/TextField'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { updateFilter, getList } from '../actions'
 import { QUERY } from '../constants/filterFieldNames'
 

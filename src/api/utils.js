@@ -5,16 +5,14 @@
  * @module Api/utils
  */
 
-import snakeCase from 'lodash.snakecase'
 import isUndefined from 'lodash.isundefined'
-import store from '../store'
+import snakeCase from 'lodash.snakecase'
 import {
     PAGE as DEFAULT_PAGE,
     PAGE_SIZE as DEFAULT_PAGE_SIZE,
 } from '../constants/defaults'
-
+import { USER } from '../constants/entityTypes'
 import FIELDS from '../constants/queryFields'
-
 import {
     USER_PROPS,
     USER_CRED_PROPS,
@@ -25,8 +23,7 @@ import {
     REPEAT_PASSWORD,
     EXTERNAL_AUTH,
 } from '../containers/UserForm/config'
-
-import { USER } from '../constants/entityTypes'
+import store from '../store'
 import { parseAttributeValues } from '../utils/attributeFieldHelpers'
 
 /**

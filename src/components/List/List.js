@@ -1,13 +1,11 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { connect } from 'react-redux'
+import { LoadingMask, Heading, Pagination } from '@dhis2/d2-ui-core'
+import DataTable from '@dhis2/d2-ui-table'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
-import DataTable from '@dhis2/d2-ui-table'
-import { LoadingMask, Heading, Pagination } from '@dhis2/d2-ui-core'
-import navigateTo from '../../utils/navigateTo'
-import { listSelector, pagerSelector } from '../../selectors'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import {
     getList,
     resetFilter,
@@ -17,6 +15,8 @@ import {
     showSnackbar,
     hideSnackbar,
 } from '../../actions'
+import { listSelector, pagerSelector } from '../../selectors'
+import navigateTo from '../../utils/navigateTo'
 import ErrorMessage from '../ErrorMessage'
 import './booleanValueRenderer'
 import '@dhis2/d2-ui-core/css/Table.css'

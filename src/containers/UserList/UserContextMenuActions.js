@@ -4,14 +4,9 @@
  * @module containers/UserList/UserContextMenuActions
  */
 
-import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { Action } from '@dhis2/d2-ui-core'
-import navigateTo from '../../utils/navigateTo'
-import store from '../../store'
-import api from '../../api'
-import { deleteModel } from '../../utils/sharedActions'
-import { USER } from '../../constants/entityTypes'
+import React from 'react'
 import {
     showDialog,
     hideDialog,
@@ -19,9 +14,14 @@ import {
     hideSnackbar,
     getList,
 } from '../../actions'
+import api from '../../api'
 import ReplicateUserForm from '../../components/ReplicateUserForm'
+import { USER } from '../../constants/entityTypes'
+import store from '../../store'
 import createHumanErrorMessage from '../../utils/createHumanErrorMessage'
 import detectCurrentUserChanges from '../../utils/detectCurrentUserChanges'
+import navigateTo from '../../utils/navigateTo'
+import { deleteModel } from '../../utils/sharedActions'
 
 const profile = 'profile'
 const edit = 'edit'

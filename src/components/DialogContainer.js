@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 import Dialog from 'material-ui/Dialog'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { connect } from 'react-redux'
 
 /**
  * A thin wrapper around the MUI Dialog component so it can easily be controlled by redux state

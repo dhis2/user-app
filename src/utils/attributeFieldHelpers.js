@@ -1,4 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
+import browserHasDateInputSupport from './browserHasDateInputSupport'
 import {
     renderTextField,
     renderCheckbox,
@@ -11,7 +12,6 @@ import {
     negativeInteger,
     date,
 } from './validators'
-import browserHasDateInputSupport from './browserHasDateInputSupport'
 
 export const USER_ATTRIBUTE_FIELD_PREFIX = 'userAttibute_'
 export const NO_VALUE_OPTION = 'no_value'

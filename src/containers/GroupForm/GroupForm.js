@@ -1,31 +1,31 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 import i18n from '@dhis2/d2-i18n'
-import { Field, reduxForm } from 'redux-form'
-import RaisedButton from 'material-ui/RaisedButton'
 import CircularProgress from 'material-ui/CircularProgress'
+import RaisedButton from 'material-ui/RaisedButton'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Field, reduxForm } from 'redux-form'
 import makeTrashable from 'trashable'
-import navigateTo from '../../utils/navigateTo'
-import { asyncValidatorSwitch } from '../../utils/validatorsAsync'
-import {
-    renderSearchableGroupEditor,
-    renderText,
-} from '../../utils/fieldRenderers'
-import createHumanErrorMessage from '../../utils/createHumanErrorMessage'
 import { clearItem, showSnackbar, getList } from '../../actions'
-import { FORM_NAME, NAME, CODE, MANAGED_GROUPS, getFields } from './config'
-import { userGroupFormInitialValuesSelector } from '../../selectors'
+import api from '../../api'
 import { USER_GROUP } from '../../constants/entityTypes'
-import detectCurrentUserChanges from '../../utils/detectCurrentUserChanges'
+import { userGroupFormInitialValuesSelector } from '../../selectors'
 import {
     generateAttributeFields,
     parseAttributeValues,
     addUniqueAttributesToAsyncBlurFields,
 } from '../../utils/attributeFieldHelpers'
-import * as CONFIG from './config'
+import createHumanErrorMessage from '../../utils/createHumanErrorMessage'
+import detectCurrentUserChanges from '../../utils/detectCurrentUserChanges'
+import {
+    renderSearchableGroupEditor,
+    renderText,
+} from '../../utils/fieldRenderers'
+import navigateTo from '../../utils/navigateTo'
+import { asyncValidatorSwitch } from '../../utils/validatorsAsync'
 import collectValidators from './collectValidators'
-import api from '../../api'
+import { FORM_NAME, NAME, CODE, MANAGED_GROUPS, getFields } from './config'
+import * as CONFIG from './config'
 
 /**
  * Container component that is controlled by redux-form. It renders an array of fields and validates their input.
