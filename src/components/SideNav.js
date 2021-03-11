@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { withRouter } from 'react-router'
 import { Sidebar } from '@dhis2/d2-ui-core'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import { withRouter } from 'react-router'
 
 const style = {
     display: 'flex',

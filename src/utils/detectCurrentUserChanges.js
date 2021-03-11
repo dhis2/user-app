@@ -1,7 +1,7 @@
-import store from '../store'
-import api from '../api'
 import { refreshCurrentUser as refresh } from '../actions'
+import api from '../api'
 import { USER, USER_ROLE, USER_GROUP } from '../constants/entityTypes'
+import store from '../store'
 
 /**
  * This function can be called after users/ userRoles/ urserGroups have been updated or deleted.

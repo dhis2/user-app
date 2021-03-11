@@ -1,8 +1,8 @@
+import i18n from '@dhis2/d2-i18n'
 import {
     renderTextField,
     renderAuthorityEditor,
 } from '../../utils/fieldRenderers'
-import i18n from '@dhis2/d2-i18n'
 
 export const NAME = 'name'
 export const DESCRIPTION = 'description'

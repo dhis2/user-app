@@ -4,10 +4,10 @@
  * @module List/booleanValueRenderer
  */
 
-import React from 'react'
-import PropTypes from 'prop-types'
-import CheckIcon from 'material-ui/svg-icons/navigation/check'
 import { addValueRenderer } from '@dhis2/d2-ui-table/data-value/valueRenderers'
+import CheckIcon from 'material-ui/svg-icons/navigation/check'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 /**
  * Defines behavior for the DataTable when receiving boolean values

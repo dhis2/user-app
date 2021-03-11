@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import Card from 'material-ui/Card/Card'
+import CardActions from 'material-ui/Card/CardActions'
 import CardHeader from 'material-ui/Card/CardHeader'
 import CardText from 'material-ui/Card/CardText'
-import CardActions from 'material-ui/Card/CardActions'
 import IconButton from 'material-ui/IconButton/IconButton'
-import navigateTo from '../utils/navigateTo'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import { getSections } from '../constants/routeConfig'
+import navigateTo from '../utils/navigateTo'
 
 const cardStyle = {
     padding: '0',

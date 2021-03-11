@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { Checkbox } from 'material-ui'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import HighlightableText from './HighlightableText'
 
 /**

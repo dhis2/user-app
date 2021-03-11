@@ -4,8 +4,8 @@
  * @module containers/RoleList/RoleContextMenuActions
  */
 import { Action } from '@dhis2/d2-ui-core'
-import navigateTo from '../../utils/navigateTo'
 import { USER_ROLE } from '../../constants/entityTypes'
+import navigateTo from '../../utils/navigateTo'
 import { deleteModel, openSharingSettings } from '../../utils/sharedActions'
 
 const show_details = 'show_details'

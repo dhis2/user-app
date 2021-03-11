@@ -1,8 +1,8 @@
-import React from 'react'
 import PropTypes from 'prop-types'
-import { USER_GROUP } from '../constants/entityTypes'
+import React from 'react'
 import DetailSummary from '../components/DetailSummary'
 import { getUserGroupDetails } from '../constants/detailFieldConfigs'
+import { USER_GROUP } from '../constants/entityTypes'
 
 /** Renders a DetailSummary for a UserGroup instance
  * @class

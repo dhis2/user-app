@@ -1,9 +1,9 @@
 import SharingDialog from '@dhis2/d2-ui-sharing-dialog'
-import React from 'react'
 import PropTypes from 'prop-types'
+import React from 'react'
 import { connect } from 'react-redux'
-import api from '../api'
 import { hideSharingDialog } from '../actions'
+import api from '../api'
 
 /**
  * A small wrapper around the d2-ui SharingDialog so it can easily be controlled by state
