@@ -2,9 +2,10 @@
  * A collection of selector functions that return derived state slices. Results are memoized where possible.
  * @module selectors
  */
-import memoize from 'lodash.memoize'
-import isUndefined from 'lodash.isundefined'
 import i18n from '@dhis2/d2-i18n'
+import isUndefined from 'lodash.isundefined'
+import memoize from 'lodash.memoize'
+import { getFields as getUserGroupFields } from '../containers/GroupForm/config'
 import {
     USER_PROPS,
     USER_CRED_PROPS,
@@ -17,7 +18,6 @@ import {
     EXPIRE_DATE,
     SET_PASSWORD,
 } from '../containers/UserForm/config'
-import { getFields as getUserGroupFields } from '../containers/GroupForm/config'
 import asArray from '../utils/asArray'
 import getNestedProp from '../utils/getNestedProp'
 
@@ -91,10 +91,7 @@ export const orgUnitsAsStringSelector = memoize(orgUnits => {
 const jsDateToISO8601 = date =>
     `${date.getFullYear().toString()}-${(date.getMonth() + 1)
         .toString()
-        .padStart(2, 0)}-${date
-        .getDate()
-        .toString()
-        .padStart(2, 0)}`
+        .padStart(2, 0)}-${date.getDate().toString().padStart(2, 0)}`
 
 const addInitialValueFrom = (sourceObject, initialValues, propName) => {
     if (propName === EXPIRE_DATE) {

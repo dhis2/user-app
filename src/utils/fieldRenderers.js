@@ -1,14 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import TextField from 'material-ui/TextField/TextField'
 import Checkbox from 'material-ui/Checkbox/Checkbox'
-import SelectField from 'material-ui/SelectField/SelectField'
 import MenuItem from 'material-ui/MenuItem'
+import SelectField from 'material-ui/SelectField/SelectField'
+import { orange500 } from 'material-ui/styles/colors'
+import TextField from 'material-ui/TextField/TextField'
+import PropTypes from 'prop-types'
+import React from 'react'
+import AuthorityEditor from '../components/AuthorityEditor'
 import SearchableGroupEditor from '../components/SearchableGroupEditor'
 import SearchableOrgUnitTree from '../components/SearchableOrgUnitTree'
-import { orange500 } from 'material-ui/styles/colors'
-import AuthorityEditor from '../components/AuthorityEditor'
 
 const styles = {
     checkbox: {

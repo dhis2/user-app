@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import theme from '../theme'
 
 /**

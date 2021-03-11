@@ -5,9 +5,9 @@
  * @module actions
  */
 
+import api from '../api'
 import * as ACTIONS from '../constants/actionTypes'
 import { PAGE as DEFAULT_PAGE } from '../constants/defaults'
-import api from '../api'
 
 /**
  * Convenience function for creating a redux action

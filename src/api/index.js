@@ -1,6 +1,16 @@
 /* eslint-disable max-params */
 
 import i18n from '@dhis2/d2-i18n'
+import groupAuthorities from '../components/AuthorityEditor/utils/groupAuthorities'
+import {
+    ORG_UNITS_QUERY_CONFIG,
+    CURRENT_USER_ORG_UNITS_FIELDS,
+} from '../constants/queryFields'
+import {
+    INTERFACE_LANGUAGE,
+    DATABASE_LANGUAGE,
+    USE_DB_LOCALE,
+} from '../containers/UserForm/config'
 import {
     getQueryFields,
     createListRequestData,
@@ -12,19 +22,6 @@ import {
     parse200Error,
     getAttributesWithValueAndId,
 } from './utils'
-
-import groupAuthorities from '../components/AuthorityEditor/utils/groupAuthorities'
-
-import {
-    ORG_UNITS_QUERY_CONFIG,
-    CURRENT_USER_ORG_UNITS_FIELDS,
-} from '../constants/queryFields'
-
-import {
-    INTERFACE_LANGUAGE,
-    DATABASE_LANGUAGE,
-    USE_DB_LOCALE,
-} from '../containers/UserForm/config'
 
 /**
  * The Api class exposes all necessary functions to get the required data from the DHIS2 web api.

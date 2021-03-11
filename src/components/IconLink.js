@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 import IconButton from 'material-ui/IconButton'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 /**
  * A component that renders a React-Router Link with an MUI IconButton inside it

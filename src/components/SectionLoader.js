@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
+import { LoadingMask } from '@dhis2/d2-ui-core'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Switch, Route, withRouter } from 'react-router-dom'
 import { initCurrentUser } from '../actions'
-import { LoadingMask } from '@dhis2/d2-ui-core'
-import ErrorMessage from './ErrorMessage'
 import getRouteConfig from '../constants/routeConfig'
-import SideNav from './SideNav'
 import navigateTo from '../utils/navigateTo'
+import ErrorMessage from './ErrorMessage'
+import SideNav from './SideNav'
 
 const style = {
     display: 'flex',

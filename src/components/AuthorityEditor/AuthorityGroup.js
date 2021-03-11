@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import endsWith from 'lodash.endswith'
-
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import AuthorityItem from './AuthorityItem'
 import HighlightableText from './HighlightableText'
 import { PUBLIC_ADD_SUFFIX, PRIVATE_ADD_SUFFIX } from './utils/groupAuthorities'

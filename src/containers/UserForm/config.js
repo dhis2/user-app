@@ -1,8 +1,7 @@
-import { blue600 } from 'material-ui/styles/colors'
-import asArray from '../../utils/asArray'
 import i18n from '@dhis2/d2-i18n'
-import getNestedProp from '../../utils/getNestedProp'
+import { blue600 } from 'material-ui/styles/colors'
 import { analyticsDimensionsRestrictionsSelector } from '../../selectors'
+import asArray from '../../utils/asArray'
 import {
     renderTextField,
     renderDateField,
@@ -12,6 +11,7 @@ import {
     renderSearchableOrgUnitTree,
     renderText,
 } from '../../utils/fieldRenderers'
+import getNestedProp from '../../utils/getNestedProp'
 
 export const STYLES = {
     loaderWrap: {
