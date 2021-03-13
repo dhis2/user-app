@@ -504,7 +504,7 @@ msgid "External authentication only (OpenID or LDAP)"
 msgstr "仅仅通过外部认证（OpenIDh或LDAP）"
 
 msgid "Account expiration date"
-msgstr ""
+msgstr "帐户到期日期"
 
 msgid "Disabled"
 msgstr "关闭"
