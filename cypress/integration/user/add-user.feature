@@ -1,6 +1,6 @@
 Feature: A user can be added
 
-    Scenario: A new user with reuired fields is created
+    Scenario: A new user with required fields is created
         Given the implementer is on the add user page
         When the implementer enters only the required information
         And submits the form

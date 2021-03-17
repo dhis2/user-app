@@ -1,6 +1,6 @@
 Feature: A user role can be added
 
-    Scenario: A new user role with reuired fields is created
+    Scenario: A new user role with required fields is created
         Given the implementer is on the add user role page
         When the implementer enters only the required information
         And submits the form

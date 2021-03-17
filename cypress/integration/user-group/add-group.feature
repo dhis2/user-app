@@ -1,6 +1,6 @@
 Feature: A user group can be added
 
-    Scenario: A new user group with reuired fields is created
+    Scenario: A new user group with required fields is created
         Given the implementer is on the add user group page
         When the implementer enters only the required information
         And submits the form
