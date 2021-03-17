@@ -3,9 +3,9 @@ Feature: A user group can be edited
     # input fields
     Scenario Outline: A <input> is added to an user group
         Given a user group without <input> exists
-        And the implementer is editing that user group
-        When the implementer enters a new value into the <input> field
-        And the implementer submits the form
+        And the user-manager is editing that user group
+        When the user-manager enters a new value into the <input> field
+        And the user-manager submits the form
         Then the user group should be saved with the new value
 
         Examples:
@@ -15,9 +15,9 @@ Feature: A user group can be edited
     # input fields
     Scenario Outline: A <input> is edited on an user group
         Given a user group without <input> exists
-        And the implementer is editing that user group
-        When the implementer enters a new value into the <input> field
-        And the implementer submits the form
+        And the user-manager is editing that user group
+        When the user-manager enters a new value into the <input> field
+        And the user-manager submits the form
         Then the user group should be saved with the new value
 
         Examples:
@@ -28,9 +28,9 @@ Feature: A user group can be edited
     # Multiselect, Transfer & org unit tree inputs
     Scenario Outline: An additional <option> is added to an user group
         Given a user group exists
-        And the implementer is editing that user group
-        When the implementer adds a new value to the <option> field
-        And the implementer submits the form
+        And the user-manager is editing that user group
+        When the user-manager adds a new value to the <option> field
+        And the user-manager submits the form
         Then the user group should be saved with the additional option
 
         Examples:
@@ -42,9 +42,9 @@ Feature: A user group can be edited
     # Should work with both required and optional fields
     Scenario Outline: An additional <option> is removed from an user group
         Given a user group exists with multiple values in the <option> field
-        And the implementer is editing that user group
-        When the implementer removes an additional value from the <option> field
-        And the implementer submits the form
+        And the user-manager is editing that user group
+        When the user-manager removes an additional value from the <option> field
+        And the user-manager submits the form
         Then the user group should be saved without the removed value
 
         Examples:
@@ -56,9 +56,9 @@ Feature: A user group can be edited
     # Should work with optional fields
     Scenario Outline: The last selection of <option> is removed from an user group
         Given a user group exists with a single value in the <option> field
-        And the implementer is editing that user group
-        When the implementer removes the last value from the <option> field
-        And the implementer submits the form
+        And the user-manager is editing that user group
+        When the user-manager removes the last value from the <option> field
+        And the user-manager submits the form
         Then the user group should be saved without the removed value
 
         Examples:

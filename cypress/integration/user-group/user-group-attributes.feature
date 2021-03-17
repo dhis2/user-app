@@ -7,8 +7,8 @@ Feature: A user group can have attributes
         Given an attribute of value type <type> that applies to user groups exists
         And a user group exists
         And that user group does not have a value for the attribute
-        And a implementer edits that user group
-        When the implementer enters a value for the attribute
+        And a user-manager edits that user group
+        When the user-manager enters a value for the attribute
         And saves the user group
         Then the user group should be updated with the new attribute value
 
@@ -28,8 +28,8 @@ Feature: A user group can have attributes
         Given an attribute of value type <type> that applies to user groups exists
         And a user group exists
         And that user group has a value for the attribute
-        And a implementer edits that user group
-        When the implementer enters a different value for the attribute
+        And a user-manager edits that user group
+        When the user-manager enters a different value for the attribute
         And saves the user group
         Then the user group should be updated with the new attribute value
 
@@ -49,8 +49,8 @@ Feature: A user group can have attributes
         Given an attribute of value type <type> that applies to user groups exists
         And a user group exists
         And that user group has a value for the attribute
-        And a implementer edits that user group
-        When the implementer removes the value of the attribute
+        And a user-manager edits that user group
+        When the user-manager removes the value of the attribute
         And saves the user group
         Then the user group should be updated without a value for the new attribute
 
@@ -70,8 +70,8 @@ Feature: A user group can have attributes
         Given an attribute with an option set that applies to user groups exists
         And a user group exists
         And that user group does not have a value for the attribute
-        And a implementer edits that user group
-        When the implementer selects a value for the attribute
+        And a user-manager edits that user group
+        When the user-manager selects a value for the attribute
         And saves the user group
         Then the user group should be updated with the new attribute value
 
@@ -79,8 +79,8 @@ Feature: A user group can have attributes
         Given an attribute of value type <type> that applies to user groups exists
         And a user group exists
         And that user group has a value for the attribute
-        And a implementer edits that user group
-        When the implementer enters a different value for the attribute
+        And a user-manager edits that user group
+        When the user-manager enters a different value for the attribute
         And saves the user group
         Then the user group should be updated with the new attribute value
 
@@ -88,7 +88,7 @@ Feature: A user group can have attributes
         Given an attribute of value type <type> that applies to user groups exists
         And a user group exists
         And that user group has a value for the attribute
-        And a implementer edits that user group
-        When the implementer removes the value of the attribute
+        And a user-manager edits that user group
+        When the user-manager removes the value of the attribute
         And saves the user group
         Then the user group should be updated without a value for the new attribute
