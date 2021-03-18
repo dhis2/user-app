@@ -94,7 +94,7 @@ const jsDateToISO8601 = date =>
         .padStart(2, 0)}-${date.getDate().toString().padStart(2, 0)}`
 
 const addInitialValueFrom = (sourceObject, initialValues, propName) => {
-    if (propName === EXPIRE_DATE) {
+    if (propName === EXPIRE_DATE && sourceObject[propName]) {
         const expiryDate = new Date(sourceObject[propName])
         const formattedDate = jsDateToISO8601(expiryDate)
         initialValues[propName] = formattedDate
