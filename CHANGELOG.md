@@ -1,3 +1,10 @@
+## [1.1.9](https://github.com/dhis2/user-app/compare/v1.1.8...v1.1.9) (2021-03-19)
+
+
+### Bug Fixes
+
+* **expiry date:** do not parse empty initial state to date ([c68a4ca](https://github.com/dhis2/user-app/commit/c68a4ca20a329f53798aa5b684151bd283088e49))
+
 ## [1.1.8](https://github.com/dhis2/user-app/compare/v1.1.7...v1.1.8) (2021-03-13)
 
 
