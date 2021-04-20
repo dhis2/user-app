@@ -8,6 +8,7 @@ import AppWithD2ContextAndTheme from './components/AppWithD2ContextAndTheme'
 import store from './store'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import './styles/styles.css'
+import './locales/index.js'
 
 const AppWrapper = () => {
     const { d2 } = useD2({
