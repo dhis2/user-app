@@ -1,3 +1,11 @@
+## [1.1.11](https://github.com/dhis2/user-app/compare/v1.1.10...v1.1.11) (2021-04-20)
+
+
+### Bug Fixes
+
+* **i18n:** allow unresolved import on generated file ([c85e264](https://github.com/dhis2/user-app/commit/c85e2647ec5285c6863e2782351fed0290fdd3b7))
+* **i18n:** ensure resources are added by importing from index ([fce4b93](https://github.com/dhis2/user-app/commit/fce4b93a1948a627b90ba67f0ef5c36c44292d7d))
+
 ## [1.1.10](https://github.com/dhis2/user-app/compare/v1.1.9...v1.1.10) (2021-03-27)
 
 
