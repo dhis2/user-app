@@ -1,0 +1,33 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  target-branch: master
+  versioning-strategy: increase
+  ignore:
+  - dependency-name: "@dhis2/d2-ui-org-unit-tree"
+    versions:
+    - 7.1.3
+    - 7.1.4
+    - 7.1.5
+    - 7.1.6
+    - 7.1.8
+  - dependency-name: y18n
+    versions:
+    - 4.0.1
+  - dependency-name: rxjs
+    versions:
+    - 6.6.3
+    - 6.6.6
+  - dependency-name: redux
+    versions:
+    - 4.0.5
+  - dependency-name: lodash-es
+    versions:
+    - 4.17.20
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
