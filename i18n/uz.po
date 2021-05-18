@@ -440,6 +440,8 @@ msgid ""
 "To add a user to this group, go to the User section and edit the user group "
 "settings for a specific user."
 msgstr ""
+"Бу гуруҳга фойдаланувчини қўшиш учун, \"Фойдаланувчи\" бўлимига ўтинг ва "
+"муайян фойдаланувчи учун гуруҳ фойдаланувчилари созламаларини таҳрирланг"
 
 msgid "Available user groups"
 msgstr "Мавжуд фойдаланувчи гуруҳлари"
@@ -510,7 +512,7 @@ msgid "External authentication only (OpenID or LDAP)"
 msgstr "Ташқи авторизация фақатгина (OpenID ёки LDAP) орқали"
 
 msgid "Account expiration date"
-msgstr ""
+msgstr "Аккаунт амал қилиш муддати"
 
 msgid "Disabled"
 msgstr "Ўчириб қўйилган"
@@ -519,7 +521,7 @@ msgid "Retype password"
 msgstr "Паролни қайта киритинг"
 
 msgid "OIDC mapping value"
-msgstr ""
+msgstr "OIDC хариталаш қийматлари"
 
 msgid "LDAP identifier"
 msgstr "LDAP идентификатор"
