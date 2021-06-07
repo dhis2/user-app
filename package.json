@@ -31,7 +31,7 @@
         "@dhis2/d2-ui-table": "^7.0.5",
         "@dhis2/ui": "^6.5.4",
         "d2": "^31.7.0",
-        "d3-color": "^1.2.0",
+        "d3-color": "^3.0.1",
         "lodash.capitalize": "^4.2.1",
         "lodash.debounce": "^4.0.8",
         "lodash.defer": "^4.1.0",
