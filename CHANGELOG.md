@@ -1,3 +1,10 @@
+## [1.1.17](https://github.com/dhis2/user-app/compare/v1.1.16...v1.1.17) (2021-07-06)
+
+
+### Bug Fixes
+
+* bump cli-app-scripts to 7.1.0 ([#784](https://github.com/dhis2/user-app/issues/784)) ([e7085ea](https://github.com/dhis2/user-app/commit/e7085eacde3c9d9c8d1c3306cb5f216f0f6c39c0))
+
 ## [1.1.16](https://github.com/dhis2/user-app/compare/v1.1.15...v1.1.16) (2021-06-30)
 
 
