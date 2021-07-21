@@ -223,7 +223,7 @@ msgid "Apps"
 msgstr "Apps"
 
 msgid "Tracker"
-msgstr "跟踪随风"
+msgstr "跟踪随访"
 
 msgid "Import-Export"
 msgstr "数据导入导出"
