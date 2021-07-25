@@ -135,8 +135,6 @@ class Api {
     }
 
     getSelectedAndAvailableLocales = username => {
-        username = username ? encodeURIComponent(username) : null
-
         const useDbLocaleOption = {
             id: USE_DB_LOCALE,
             label: i18n.t('Use database locale / no translation'),
@@ -145,6 +143,7 @@ class Api {
         const dbLocales = this.d2Api.get('/locales/db')
         const uiLocales = this.d2Api.get('/locales/ui')
 
+        // As of d2 v31.3.0, d2Api handles URI encoding
         const uiLocale = username
             ? this.d2Api.get(`/userSettings/keyUiLocale?user=${username}`)
             : this.d2.system.settings.get('keyUiLocale')
@@ -258,7 +257,7 @@ class Api {
             }
 
             const localePromises = []
-            const username = encodeURIComponent(values.username)
+            const username = values.username
 
             // Add follow-up request for setting uiLocale if needed
             const uiLocale = values[INTERFACE_LANGUAGE]
