@@ -1,3 +1,10 @@
+## [1.1.19](https://github.com/dhis2/user-app/compare/v1.1.18...v1.1.19) (2021-07-26)
+
+
+### Bug Fixes
+
+* leave URI encoding to d2 API ([#790](https://github.com/dhis2/user-app/issues/790)) ([756a243](https://github.com/dhis2/user-app/commit/756a2432b78dd5910dfc21b108344ccaab23feb8))
+
 ## [1.1.18](https://github.com/dhis2/user-app/compare/v1.1.17...v1.1.18) (2021-07-21)
 
 
