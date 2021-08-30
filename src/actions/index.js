@@ -122,6 +122,15 @@ export const refreshCurrentUser = () => dispatch => {
     )
 }
 
+export const resetUserPassword = id => async () => {
+    try {
+        await api.resetUserPassword(id)
+        // TODO: dispatch hideDialog
+    } catch (error) {
+        // TODO: show snackbar
+    }
+}
+
 /*****************
  * PLAIN ACTIONS *
  *****************/

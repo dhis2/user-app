@@ -11,11 +11,13 @@ import {
     showDialog,
     hideDialog,
     showSnackbar,
+    resetUserPassword,
     hideSnackbar,
     getList,
 } from '../../actions'
 import api from '../../api'
 import ReplicateUserForm from '../../components/ReplicateUserForm'
+import ResetPassword from '../../components/ResetPassword'
 import { USER } from '../../constants/entityTypes'
 import store from '../../store'
 import createHumanErrorMessage from '../../utils/createHumanErrorMessage'
@@ -27,6 +29,7 @@ const profile = 'profile'
 const edit = 'edit'
 const remove = 'remove'
 const replicate = 'replicate'
+const reset = 'reset'
 const disable = 'disable'
 const enable = 'enable'
 const disable_2fa = 'disable_2fa'
@@ -61,6 +64,14 @@ export const isUserContextActionAllowed = (model, action) => {
             return (
                 access.update && currentUser.authorities.has('F_REPLICATE_USER')
             )
+        case reset:
+            return (
+                access.update &&
+                (currentUser.authorities.has('F_USER_ADD') ||
+                    currentUser.authorities.has(
+                        'F_USER_ADD_WITHIN_MANAGED_GROUP'
+                    ))
+            )
         case disable:
             return access.update && !disabled
         case enable:
@@ -77,6 +88,8 @@ export const userContextMenuIcons = {
     [edit]: 'edit',
     [remove]: 'delete',
     [replicate]: 'content_copy',
+    // TODO: find appropriate icon
+    [reset]: 'content_copy',
     [disable]: 'block',
     [enable]: 'playlist_add_check',
     [disable_2fa]: 'phonelink_erase',
@@ -87,6 +100,7 @@ export const userContextMenuActions = Action.createActionsFromNames([
     edit,
     remove,
     replicate,
+    reset,
     disable,
     enable,
     disable_2fa,
@@ -115,6 +129,18 @@ userContextMenuActions.replicate.subscribe(({ data: user }) => {
         title: i18n.t('Replicate user'),
     }
     store.dispatch(showDialog(content, props))
+})
+
+userContextMenuActions.reset.subscribe(({ data }) => {
+    const onCancel = () => store.dispatch(hideDialog())
+    const onConfirm = () => store.dispatch(resetUserPassword(data.id))
+    const content = <ResetPassword onCancel={onCancel} onConfirm={onConfirm} />
+    const dialogProps = {
+        onRequestClose: () => store.dispatch(hideDialog()),
+        title: i18n.t('Reset user password'),
+    }
+
+    store.dispatch(showDialog(content, dialogProps))
 })
 
 userContextMenuActions.disable.subscribe(({ data }) => {
