@@ -122,13 +122,10 @@ export const refreshCurrentUser = () => dispatch => {
     )
 }
 
-export const resetUserPassword = id => async () => {
-    try {
-        await api.resetUserPassword(id)
-        // TODO: dispatch hideDialog
-    } catch (error) {
-        // TODO: show snackbar
-    }
+export const resetUserPassword = id => () => {
+    return api.resetUserPassword(id).catch(() => {
+        // TODO: notify user of the error
+    })
 }
 
 /*****************

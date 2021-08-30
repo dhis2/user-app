@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-08-30T15:14:05.748Z\n"
-"PO-Revision-Date: 2021-08-30T15:14:05.748Z\n"
+"POT-Creation-Date: 2021-08-30T15:33:20.170Z\n"
+"PO-Revision-Date: 2021-08-30T15:33:20.170Z\n"
 
 msgid "Use database locale / no translation"
 msgstr "Use database locale / no translation"
@@ -299,16 +299,6 @@ msgstr "Replicate"
 msgid "Cancel"
 msgstr "Cancel"
 
-msgid ""
-"This will reset the user password. The user will receive an email with a "
-"link they can use to reset their account password."
-msgstr ""
-"This will reset the user password. The user will receive an email with a "
-"link they can use to reset their account password."
-
-msgid "Reset user password"
-msgstr "Reset user password"
-
 msgid "Search by name"
 msgstr "Search by name"
 
@@ -568,6 +558,9 @@ msgstr "Selected dimension restrictions for data analytics"
 
 msgid "Replicate user"
 msgstr "Replicate user"
+
+msgid "Are you sure you want to reset {{userName}}'s password?"
+msgstr "Are you sure you want to reset {{userName}}'s password?"
 
 msgid "Are you sure you want to disable two factor authentication for"
 msgstr "Are you sure you want to disable two factor authentication for"
