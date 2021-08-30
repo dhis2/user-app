@@ -17,7 +17,6 @@ import {
 } from '../../actions'
 import api from '../../api'
 import ReplicateUserForm from '../../components/ReplicateUserForm'
-import ResetPassword from '../../components/ResetPassword'
 import { USER } from '../../constants/entityTypes'
 import store from '../../store'
 import createHumanErrorMessage from '../../utils/createHumanErrorMessage'
@@ -132,15 +131,17 @@ userContextMenuActions.replicate.subscribe(({ data: user }) => {
 })
 
 userContextMenuActions.reset.subscribe(({ data }) => {
-    const onCancel = () => store.dispatch(hideDialog())
-    const onConfirm = () => store.dispatch(resetUserPassword(data.id))
-    const content = <ResetPassword onCancel={onCancel} onConfirm={onConfirm} />
-    const dialogProps = {
-        onRequestClose: () => store.dispatch(hideDialog()),
-        title: i18n.t('Reset user password?'),
+    const snackbarProps = {
+        message: i18n.t(
+            `Are you sure you want to reset {{userName}}'s password?`,
+            { userName: data.displayName }
+        ),
+        action: i18n.t('Confirm'),
+        autoHideDuration: null,
+        onActionClick: () => store.dispatch(resetUserPassword(data.id)),
     }
 
-    store.dispatch(showDialog(content, dialogProps))
+    store.dispatch(showSnackbar(snackbarProps))
 })
 
 userContextMenuActions.disable.subscribe(({ data }) => {
