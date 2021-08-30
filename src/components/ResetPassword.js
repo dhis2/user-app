@@ -12,6 +12,11 @@ class ResetPassword extends Component {
 
         return (
             <div>
+                <p style={{ marginTop: '0px', marginBottom: '16px' }}>
+                    {i18n.t(
+                        'This will reset the user password. If you confirm, the user will receive an email with a link they can use to reset their account password.'
+                    )}
+                </p>
                 <RaisedButton
                     label={i18n.t('Reset user password')}
                     type="button"

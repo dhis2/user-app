@@ -137,7 +137,7 @@ userContextMenuActions.reset.subscribe(({ data }) => {
     const content = <ResetPassword onCancel={onCancel} onConfirm={onConfirm} />
     const dialogProps = {
         onRequestClose: () => store.dispatch(hideDialog()),
-        title: i18n.t('Reset user password'),
+        title: i18n.t('Reset user password?'),
     }
 
     store.dispatch(showDialog(content, dialogProps))
