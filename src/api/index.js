@@ -88,6 +88,11 @@ class Api {
         return this.d2Api.post(url, data)
     }
 
+    resetUserPassword = id => {
+        const url = `/users/${id}/reset`
+        return this.d2Api.post(url)
+    }
+
     /**
      * Fetches organisation units matching the query string from the server.
      * Once the results are returned they are filtered client-side

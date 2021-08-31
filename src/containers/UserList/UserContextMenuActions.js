@@ -11,6 +11,7 @@ import {
     showDialog,
     hideDialog,
     showSnackbar,
+    resetUserPassword,
     hideSnackbar,
     getList,
 } from '../../actions'
@@ -27,6 +28,7 @@ const profile = 'profile'
 const edit = 'edit'
 const remove = 'remove'
 const replicate = 'replicate'
+const reset_password = 'reset_password'
 const disable = 'disable'
 const enable = 'enable'
 const disable_2fa = 'disable_2fa'
@@ -61,6 +63,14 @@ export const isUserContextActionAllowed = (model, action) => {
             return (
                 access.update && currentUser.authorities.has('F_REPLICATE_USER')
             )
+        case reset_password:
+            return (
+                access.update &&
+                (currentUser.authorities.has('F_USER_ADD') ||
+                    currentUser.authorities.has(
+                        'F_USER_ADD_WITHIN_MANAGED_GROUP'
+                    ))
+            )
         case disable:
             return access.update && !disabled
         case enable:
@@ -77,6 +87,7 @@ export const userContextMenuIcons = {
     [edit]: 'edit',
     [remove]: 'delete',
     [replicate]: 'content_copy',
+    [reset_password]: 'vpn_key',
     [disable]: 'block',
     [enable]: 'playlist_add_check',
     [disable_2fa]: 'phonelink_erase',
@@ -87,6 +98,7 @@ export const userContextMenuActions = Action.createActionsFromNames([
     edit,
     remove,
     replicate,
+    reset_password,
     disable,
     enable,
     disable_2fa,
@@ -115,6 +127,23 @@ userContextMenuActions.replicate.subscribe(({ data: user }) => {
         title: i18n.t('Replicate user'),
     }
     store.dispatch(showDialog(content, props))
+})
+
+userContextMenuActions.reset_password.subscribe(({ data }) => {
+    const snackbarProps = {
+        message: i18n.t(
+            `Are you sure you want to reset {{-userName}}'s password?`,
+            { userName: data.displayName }
+        ),
+        action: i18n.t('Confirm'),
+        autoHideDuration: null,
+        onActionClick: () => {
+            store.dispatch(resetUserPassword(data.id))
+            store.dispatch(hideSnackbar())
+        },
+    }
+
+    store.dispatch(showSnackbar(snackbarProps))
 })
 
 userContextMenuActions.disable.subscribe(({ data }) => {
