@@ -5,6 +5,7 @@
  * @module actions
  */
 
+import i18n from '@dhis2/d2-i18n'
 import api from '../api'
 import * as ACTIONS from '../constants/actionTypes'
 import { PAGE as DEFAULT_PAGE } from '../constants/defaults'
@@ -122,10 +123,14 @@ export const refreshCurrentUser = () => dispatch => {
     )
 }
 
-export const resetUserPassword = id => () => {
-    return api.resetUserPassword(id).catch(() => {
-        // TODO: notify user of the error
-    })
+export const resetUserPassword = id => dispatch => {
+    const message = i18n.t(
+        'Could not reset user password. Make sure you have the appropriate permissions.'
+    )
+
+    return api
+        .resetUserPassword(id)
+        .catch(() => dispatch(showSnackbar({ message })))
 }
 
 /*****************

@@ -137,7 +137,10 @@ userContextMenuActions.reset_password.subscribe(({ data }) => {
         ),
         action: i18n.t('Confirm'),
         autoHideDuration: null,
-        onActionClick: () => store.dispatch(resetUserPassword(data.id)),
+        onActionClick: () => {
+            store.dispatch(resetUserPassword(data.id))
+            store.dispatch(hideSnackbar())
+        },
     }
 
     store.dispatch(showSnackbar(snackbarProps))
