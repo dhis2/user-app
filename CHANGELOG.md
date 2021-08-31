@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/dhis2/user-app/compare/v1.1.21...v1.2.0) (2021-08-31)
+
+
+### Features
+
+* **reset-password:** allow resetting password via context menu ([#805](https://github.com/dhis2/user-app/issues/805)) ([d5fb507](https://github.com/dhis2/user-app/commit/d5fb5072d844eacf771d59ce52f36632b0f1ffca))
+
 ## [1.1.21](https://github.com/dhis2/user-app/compare/v1.1.20...v1.1.21) (2021-08-31)
 
 
