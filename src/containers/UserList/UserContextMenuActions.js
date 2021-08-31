@@ -132,7 +132,7 @@ userContextMenuActions.replicate.subscribe(({ data: user }) => {
 userContextMenuActions.reset_password.subscribe(({ data }) => {
     const snackbarProps = {
         message: i18n.t(
-            `Are you sure you want to reset {{userName}}'s password?`,
+            `Are you sure you want to reset {{-userName}}'s password?`,
             { userName: data.displayName }
         ),
         action: i18n.t('Confirm'),
