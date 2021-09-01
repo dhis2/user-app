@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-11T14:08:46.110Z\n"
+"POT-Creation-Date: 2021-08-31T08:08:40.317Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -565,6 +565,9 @@ msgstr "数据分析选择的维度限制i"
 
 msgid "Replicate user"
 msgstr "复制用户"
+
+msgid "Are you sure you want to reset {{-userName}}'s password?"
+msgstr ""
 
 msgid "Are you sure you want to disable two factor authentication for"
 msgstr "你确信关闭双因素认证"

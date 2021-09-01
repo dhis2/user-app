@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-11T14:08:46.110Z\n"
+"POT-Creation-Date: 2021-08-31T08:08:40.317Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2021\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -570,6 +570,9 @@ msgstr "Valgte dimensjonsbegrensninger for dataanalyse"
 
 msgid "Replicate user"
 msgstr "Repliker bruker"
+
+msgid "Are you sure you want to reset {{-userName}}'s password?"
+msgstr ""
 
 msgid "Are you sure you want to disable two factor authentication for"
 msgstr "Er du sikker på at du vil deaktivere tofaktorautentisering for"
