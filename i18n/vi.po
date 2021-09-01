@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-11T14:08:46.110Z\n"
+"POT-Creation-Date: 2021-08-31T08:08:40.317Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -569,6 +569,9 @@ msgstr "Các hạn chế về chiều đã chọn để phân tích dữ liệu"
 
 msgid "Replicate user"
 msgstr "Tái tạo tài khoản"
+
+msgid "Are you sure you want to reset {{-userName}}'s password?"
+msgstr ""
 
 msgid "Are you sure you want to disable two factor authentication for"
 msgstr "Bạn có chắc chắn muốn tắt xác thực hai yếu tố "
