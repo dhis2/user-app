@@ -567,7 +567,7 @@ msgid "Replicate user"
 msgstr "复制用户"
 
 msgid "Are you sure you want to reset {{-userName}}'s password?"
-msgstr ""
+msgstr "您确定要重置 {{-userName}} 的密码吗？"
 
 msgid "Are you sure you want to disable two factor authentication for"
 msgstr "你确信关闭双因素认证"
