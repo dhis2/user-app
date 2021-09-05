@@ -569,7 +569,7 @@ msgid "Replicate user"
 msgstr "Replikovat uživatele"
 
 msgid "Are you sure you want to reset {{-userName}}'s password?"
-msgstr ""
+msgstr "Opravdu chcete resetovat heslo uživatele {{-userName}}?"
 
 msgid "Are you sure you want to disable two factor authentication for"
 msgstr "Opravdu chcete deaktivovat dvoufaktorové ověřování pro"
