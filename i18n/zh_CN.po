@@ -1,14 +1,14 @@
 # 
 # Translators:
-# 晓东 林 <13981924470@126.com>, 2020
 # easylin <lin_xd@126.com>, 2021
+# 晓东 林 <13981924470@126.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-31T08:08:40.317Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2021\n"
+"PO-Revision-Date: 2021-09-04 00:49+0000\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -74,7 +74,7 @@ msgid "Constant"
 msgstr "常数"
 
 msgid "Dashboard"
-msgstr "仪表盘"
+msgstr "状态面板"
 
 msgid "Data Element Group Sets"
 msgstr "数据元组集"
@@ -176,7 +176,7 @@ msgid "Report"
 msgstr "报表"
 
 msgid "Section"
-msgstr "分区"
+msgstr "分段"
 
 msgid "SQL View"
 msgstr "SQL视图"
@@ -218,10 +218,10 @@ msgid "Visualization"
 msgstr "可视化"
 
 msgid "Apps"
-msgstr "应用"
+msgstr "Apps"
 
 msgid "Tracker"
-msgstr "跟踪随访"
+msgstr "随访"
 
 msgid "Import-Export"
 msgstr "数据导入导出"
@@ -315,7 +315,7 @@ msgid "Could not load available items"
 msgstr "不能载入可用的条目"
 
 msgid "Filter"
-msgstr "过滤器"
+msgstr "筛选"
 
 msgid "Filter available and selected items"
 msgstr "过滤器可用并选择的条目"
@@ -345,7 +345,7 @@ msgid "Last login"
 msgstr "上次登录"
 
 msgid "Created"
-msgstr "创建"
+msgstr "已创建"
 
 msgid "Surname"
 msgstr "姓"
@@ -357,7 +357,7 @@ msgid "Introduction"
 msgstr "介绍"
 
 msgid "Job title"
-msgstr "工作职位"
+msgstr "工作头衔"
 
 msgid "Works at"
 msgstr "工作于"
@@ -381,7 +381,7 @@ msgid "Speaks"
 msgstr "口语"
 
 msgid "E-mail"
-msgstr "E-mail"
+msgstr "电子邮件"
 
 msgid "Mobile phone number"
 msgstr "电话号码"
@@ -408,7 +408,7 @@ msgid "Create, modify, view and delete User Roles"
 msgstr "创建、修改、查看和删除用户角色"
 
 msgid "User group"
-msgstr "用户组"
+msgstr "User组"
 
 msgid "Create, modify, view and delete User Groups"
 msgstr "创建、修改、查看和删除用户"
@@ -532,7 +532,7 @@ msgid "Twitter"
 msgstr "Twitter"
 
 msgid "Interface language"
-msgstr "界面语言"
+msgstr "接口语言"
 
 msgid "Database language"
 msgstr "数据库语言"
@@ -620,13 +620,13 @@ msgstr "用户管理"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
-msgstr[0] "已经选择{{count}} 个"
+msgstr[0] ""
 
 msgid "Yes"
-msgstr "Yes"
+msgstr "是"
 
 msgid "No"
-msgstr "No"
+msgstr "否"
 
 msgid "Something went wrong when processing your request."
 msgstr "处理你的请求发生错误"
