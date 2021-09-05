@@ -1,7 +1,7 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
+# phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
 # 晓东 林 <13981924470@126.com>, 2021
 # easylin <lin_xd@126.com>, 2021
 # 
@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-31T08:08:40.317Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
+"PO-Revision-Date: 2021-09-04 00:49+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Use database locale / no translation"
-msgstr "使用数据库方言/不翻译"
+msgstr "使用数据库方言/无翻译"
 
 msgid "Search"
 msgstr "搜索"
@@ -76,7 +76,7 @@ msgid "Constant"
 msgstr "常数"
 
 msgid "Dashboard"
-msgstr "状态面板"
+msgstr "仪表盘"
 
 msgid "Data Element Group Sets"
 msgstr "数据元组集"
@@ -97,7 +97,7 @@ msgid "Data Value"
 msgstr "数据值"
 
 msgid "Document"
-msgstr "文档"
+msgstr "Document"
 
 msgid "Event Chart"
 msgstr "事件图表"
@@ -148,7 +148,7 @@ msgid "Organisation Unit Group"
 msgstr "机构组"
 
 msgid "Predictor"
-msgstr "预测器"
+msgstr "预报"
 
 msgid "Program Stage"
 msgstr "项目阶段"
@@ -178,7 +178,7 @@ msgid "Report"
 msgstr "报表"
 
 msgid "Section"
-msgstr "分段"
+msgstr "分区"
 
 msgid "SQL View"
 msgstr "SQL视图"
@@ -220,7 +220,7 @@ msgid "Visualization"
 msgstr "可视化"
 
 msgid "Apps"
-msgstr "Apps"
+msgstr "应用"
 
 msgid "Tracker"
 msgstr "跟踪随访"
@@ -275,7 +275,7 @@ msgid "Select an organisation unit"
 msgstr "选择一个机构"
 
 msgid "Organisation unit"
-msgstr "组织机构"
+msgstr "机构"
 
 msgid "Page not found."
 msgstr "没有页"
@@ -329,7 +329,7 @@ msgid "Apply"
 msgstr "应用"
 
 msgid "Clear all"
-msgstr "全清除"
+msgstr "清除全部"
 
 msgid "There was an error loading the current user"
 msgstr "载入当前用户发生错误"
@@ -341,7 +341,7 @@ msgid "Display name"
 msgstr "显示名"
 
 msgid "ID"
-msgstr "Id"
+msgstr "ID"
 
 msgid "Last login"
 msgstr "上次登录"
@@ -359,7 +359,7 @@ msgid "Introduction"
 msgstr "介绍"
 
 msgid "Job title"
-msgstr "工作头衔"
+msgstr "职称"
 
 msgid "Works at"
 msgstr "工作于"
@@ -383,7 +383,7 @@ msgid "Speaks"
 msgstr "口语"
 
 msgid "E-mail"
-msgstr "电子邮件"
+msgstr "E-mail"
 
 msgid "Mobile phone number"
 msgstr "电话号码"
@@ -410,13 +410,13 @@ msgid "Create, modify, view and delete User Roles"
 msgstr "创建、修改、查看和删除用户角色"
 
 msgid "User group"
-msgstr "用户组"
+msgstr "User组"
 
 msgid "Create, modify, view and delete User Groups"
 msgstr "创建、修改、查看和删除用户"
 
 msgid "Could not load the user group data. Please refresh the page."
-msgstr "不能载入用户组数据"
+msgstr "不能载入用户组数据，请刷新页面"
 
 msgid "User group \"{{displayName}}\" saved successfully"
 msgstr "用户组\"{{displayName}}\" 保存成功"
@@ -478,10 +478,10 @@ msgid "There was a problem saving the user."
 msgstr "保存用户有问题"
 
 msgid "Show fewer options"
-msgstr "显示较少选项"
+msgstr "显示较少的选项"
 
 msgid "Show more options"
-msgstr "显示较多选项"
+msgstr "显示更多选项"
 
 msgid "Send invite"
 msgstr "发送邀请"
@@ -534,7 +534,7 @@ msgid "Twitter"
 msgstr "Twitter"
 
 msgid "Interface language"
-msgstr "接口语言"
+msgstr "界面语言"
 
 msgid "Database language"
 msgstr "数据库语言"
@@ -567,7 +567,7 @@ msgid "Replicate user"
 msgstr "复制用户"
 
 msgid "Are you sure you want to reset {{-userName}}'s password?"
-msgstr ""
+msgstr "您确定要重置 {{-userName}} 的密码吗？"
 
 msgid "Are you sure you want to disable two factor authentication for"
 msgstr "你确信关闭双因素认证"
@@ -609,7 +609,7 @@ msgid "All invitations"
 msgstr "所有邀请"
 
 msgid "Expired invitations"
-msgstr "过期的邀请"
+msgstr "过期邀请"
 
 msgid "Invitations"
 msgstr "邀请"
@@ -622,13 +622,13 @@ msgstr "用户管理"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
-msgstr[0] "{{count}} 个已经选择"
+msgstr[0] "{{count}} 个已选择"
 
 msgid "Yes"
-msgstr "是"
+msgstr "是的"
 
 msgid "No"
-msgstr "否"
+msgstr "不"
 
 msgid "Something went wrong when processing your request."
 msgstr "处理你的请求发生错误"
@@ -673,7 +673,7 @@ msgid "This field is required"
 msgstr "这个字段是必填的"
 
 msgid "This field is required. Please select at least one"
-msgstr "该字段必须，请至少选择应该"
+msgstr "该字段必须，请至少选择一个"
 
 msgid "A username should be at least 2 characters long"
 msgstr "用户名至少两个字符"

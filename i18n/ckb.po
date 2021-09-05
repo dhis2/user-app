@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
-# KRG HIS <antonia.bezenchek@informa.pro>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2021
+# phil_dhis2, 2021
+# KRG HIS <antonia.bezenchek@informa.pro>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-31T08:08:40.317Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2020\n"
+"PO-Revision-Date: 2021-09-04 00:49+0000\n"
+"Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2021\n"
 "Language-Team: Central Kurdish (https://www.transifex.com/hisp-uio/teams/100509/ckb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +21,7 @@ msgid "Use database locale / no translation"
 msgstr ""
 
 msgid "Search"
-msgstr "طةران"
+msgstr "گەڕان"
 
 msgid "Enter search term"
 msgstr ""
@@ -153,7 +153,7 @@ msgid "Program Stage"
 msgstr ""
 
 msgid "Program"
-msgstr "بةرنامة"
+msgstr "پرۆگرام"
 
 msgid "Program Indicator"
 msgstr ""
@@ -253,7 +253,7 @@ msgid "Send message"
 msgstr ""
 
 msgid "Update"
-msgstr "نويَ كردنةوة"
+msgstr "نوێ کردنەوە"
 
 msgid "Create new"
 msgstr ""
@@ -424,7 +424,7 @@ msgid "There was a problem saving the user group."
 msgstr ""
 
 msgid "Save"
-msgstr "خةزن كردن"
+msgstr "تۆمارکردن"
 
 msgid "Name"
 msgstr ""
@@ -625,7 +625,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 msgid "Yes"
-msgstr "ەڵێ"
+msgstr "بەڵێ"
 
 msgid "No"
 msgstr "نەخێر"

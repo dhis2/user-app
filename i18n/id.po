@@ -1,17 +1,18 @@
 # 
 # Translators:
-# phil_dhis2, 2019
-# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021
+# Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2021
+# phil_dhis2, 2021
 # Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2021
+# Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021
+# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-31T08:08:40.317Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2021\n"
+"PO-Revision-Date: 2021-09-04 00:49+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -119,13 +120,13 @@ msgid "Indicator Type"
 msgstr ""
 
 msgid "Indicator"
-msgstr "indikator"
+msgstr "Indikator"
 
 msgid "Legend Set"
 msgstr ""
 
 msgid "Map"
-msgstr "peta"
+msgstr "Peta"
 
 msgid "Min-Max Data Element"
 msgstr ""
@@ -255,7 +256,7 @@ msgid "Send message"
 msgstr "Kirim pesan"
 
 msgid "Update"
-msgstr "perbarui"
+msgstr "Perbarui"
 
 msgid "Create new"
 msgstr ""
@@ -294,13 +295,13 @@ msgid "There was a problem replicating the user"
 msgstr ""
 
 msgid "Username"
-msgstr "User name"
+msgstr "Nama pengguna"
 
 msgid "Username for new user"
 msgstr ""
 
 msgid "Password"
-msgstr "Password"
+msgstr "Sandi"
 
 msgid "Password for new user"
 msgstr ""
@@ -309,7 +310,7 @@ msgid "Replicate"
 msgstr ""
 
 msgid "Cancel"
-msgstr "batal"
+msgstr "Batal"
 
 msgid "Search by name"
 msgstr "Cari berdasarkan nama"
@@ -626,7 +627,7 @@ msgid_plural "{{count}} selected"
 msgstr[0] ""
 
 msgid "Yes"
-msgstr "Ya"
+msgstr "Iya"
 
 msgid "No"
 msgstr "Tidak"
@@ -671,7 +672,7 @@ msgid "Passwords do not match"
 msgstr ""
 
 msgid "This field is required"
-msgstr "Kolom ini sudah terisi"
+msgstr "Kolom ini harus terisi"
 
 msgid "This field is required. Please select at least one"
 msgstr ""

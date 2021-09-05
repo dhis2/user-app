@@ -1,16 +1,19 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2020
-# William Aviles <waviles@clintonhealthaccess.org>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2021
+# ericbp <ericbarredap@gmail.com>, 2021
+# Sergio Valenzuela <sergio.valenzuela@ehas.org>, 2021
+# William Aviles <waviles@clintonhealthaccess.org>, 2021
+# phil_dhis2, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
+# drprabhjot, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-31T08:08:40.317Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021\n"
+"PO-Revision-Date: 2021-09-04 00:49+0000\n"
+"Last-Translator: drprabhjot, 2021\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -313,7 +316,7 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 msgid "Search by name"
-msgstr "Buscar por nombre"
+msgstr "Búsqueda por nombre"
 
 msgid "Could not load available items"
 msgstr "No se pudieron cargar los elementos disponibles"
@@ -632,8 +635,8 @@ msgstr "Administración de usuarios"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
-msgstr[0] "{{count}} seleccionado"
-msgstr[1] "{{count}} seleccionado"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Yes"
 msgstr "Sí"
@@ -663,7 +666,7 @@ msgid "Please enter a valid date with the following format yyyy-mm-dd"
 msgstr "Ingrese una fecha válida con el siguiente formato aaaa-mm-dd"
 
 msgid "Please provide a valid email address"
-msgstr "Por favor ingrese una dirección de correo electrónico válida"
+msgstr "Por favor proporcione un correo electrónico válido"
 
 msgid "Value should be an integer"
 msgstr "El valor debe ser un entero"
@@ -698,7 +701,7 @@ msgstr ""
 "(+0123456789)"
 
 msgid "Password should be at least 8 characters long"
-msgstr "La contraseña debe tener al menos 8 caracteres."
+msgstr "La contraseña debe tener al menos 8 caracteres"
 
 msgid "Password should be no longer than 34 characters"
 msgstr "La contraseña no debe tener más de 34 caracteres"
@@ -713,7 +716,7 @@ msgid "Password should contain at least one number"
 msgstr "La contraseña debe contener al menos un número"
 
 msgid "Password should have at least one special character"
-msgstr "La contraseña debe tener al menos un caracter especial"
+msgstr "La contraseña debe tener al menos un carácter especial"
 
 msgid "Username already taken"
 msgstr "Nombre de usuario ya tomado"

@@ -1,15 +1,15 @@
 # 
 # Translators:
-# phil_dhis2, 2019
-# Hamza Assada <7amza.it@gmail.com>, 2020
+# phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
+# Hamza Assada <7amza.it@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-31T08:08:40.317Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"PO-Revision-Date: 2021-09-04 00:49+0000\n"
+"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2021\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +21,7 @@ msgid "Use database locale / no translation"
 msgstr "استخدام الإعدادات المحلية لقاعدة البيانات / بدون ترجمة"
 
 msgid "Search"
-msgstr "البحث"
+msgstr "بحث"
 
 msgid "Enter search term"
 msgstr "أدخل مصطلح البحث"
@@ -51,7 +51,7 @@ msgid "Analytics Table Hook"
 msgstr ""
 
 msgid "Attribute"
-msgstr "الخاصية"
+msgstr "السمة"
 
 msgid "Category Combo"
 msgstr ""
@@ -177,7 +177,7 @@ msgid "Report"
 msgstr "التقرير"
 
 msgid "Section"
-msgstr "القسم"
+msgstr "قسم"
 
 msgid "SQL View"
 msgstr "منظور SQL"
@@ -204,10 +204,10 @@ msgid "User"
 msgstr "المستخدم"
 
 msgid "Validation Rule Group"
-msgstr "مجموعة قواعد التحقق"
+msgstr "مجموعة قواعد التحقق من الصحة"
 
 msgid "Validation Rule"
-msgstr "قاعدة التحقق"
+msgstr "قاعدة تحقق من الصحة"
 
 msgid "Data predictor group"
 msgstr ""
@@ -222,10 +222,10 @@ msgid "Apps"
 msgstr "التطبيقات"
 
 msgid "Tracker"
-msgstr "التتبع"
+msgstr "المتتبع"
 
 msgid "Import-Export"
-msgstr "استيراد  تصدير"
+msgstr "استيراد-تصدير"
 
 msgid "System"
 msgstr "نظام"
@@ -341,7 +341,7 @@ msgid "Display name"
 msgstr "إسم العرض"
 
 msgid "ID"
-msgstr "المعرف"
+msgstr "ID"
 
 msgid "Last login"
 msgstr "آخر عملية تسجيل دخول"
@@ -386,13 +386,13 @@ msgid "E-mail"
 msgstr "البريد الإلكتروني"
 
 msgid "Mobile phone number"
-msgstr "رقم الهاتف الجوال"
+msgstr "رقم الجوال"
 
 msgid "Organisations units"
 msgstr "الوحدات التنظيمية"
 
 msgid "User roles"
-msgstr "أدوار المستخدم"
+msgstr "ادوار المستخدم"
 
 msgid "Members"
 msgstr "الأعضاء"
@@ -428,10 +428,10 @@ msgid "Save"
 msgstr "حفظ"
 
 msgid "Name"
-msgstr "الاسم"
+msgstr "الإسم"
 
 msgid "Code"
-msgstr "الرمز"
+msgstr "الكود"
 
 msgid ""
 "To add a user to this group, go to the User section and edit the user group "
@@ -601,7 +601,7 @@ msgid "months"
 msgstr "أشهر"
 
 msgid "<No value>"
-msgstr "<لا توجد قيمة>"
+msgstr "<No value>"
 
 msgid "Inactivity"
 msgstr "غير نشيط"
@@ -623,12 +623,12 @@ msgstr "إدارة المستخدم"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
-msgstr[0] "تم تحديد {{count}}"
-msgstr[1] "تم تحديد {{count}}"
-msgstr[2] "تم تحديد {{count}}"
-msgstr[3] "تم تحديد {{count}}"
-msgstr[4] "تم تحديد {{count}}"
-msgstr[5] "تم تحديد {{count}}"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 msgid "Yes"
 msgstr "نعم"
@@ -658,7 +658,7 @@ msgid "Please enter a valid date with the following format yyyy-mm-dd"
 msgstr "يرجى إدخال تاريخ صالح بالتنسيق التالي yyyy-mm-dd"
 
 msgid "Please provide a valid email address"
-msgstr "من فضلك ادخل صيغة بريد الكتروني سليمة"
+msgstr "يرجى ادخال صيغة بريد الكتروني سليمة"
 
 msgid "Value should be an integer"
 msgstr "يجب أن تكون القيمة عدداً صحيحاً"
@@ -682,7 +682,7 @@ msgid "This field is required. Please select at least one"
 msgstr "هذه الخانة مطلوبه. يرجى تحديد واحد على الأقل"
 
 msgid "A username should be at least 2 characters long"
-msgstr "يجب أن يتكون اسم المستخدم على الأقل من حرفين"
+msgstr "يجب أن يتكون اسم المستخدم على الأقل من 2 حرفين"
 
 msgid "Username may not exceed 140 characters"
 msgstr "يجب ألا يتجاوز اسم المستخدم 140 حرفًا"
