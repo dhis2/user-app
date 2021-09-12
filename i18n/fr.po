@@ -6,13 +6,14 @@
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Karoline Tufte Lien <karoline@dhis2.org>, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
+# Yao Selom Saka <ysaka@hispwca.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-03-11T14:08:46.110Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021\n"
+"Last-Translator: Yao Selom Saka <ysaka@hispwca.org>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -450,6 +451,9 @@ msgid ""
 "To add a user to this group, go to the User section and edit the user group "
 "settings for a specific user."
 msgstr ""
+"Pour ajouter un utilisateur à ce groupe, allez dans la section Utilisateur "
+"et modifiez les paramètres du groupe d'utilisateurs pour un utilisateur "
+"donné."
 
 msgid "Available user groups"
 msgstr "Groupes d'utilisateurs disponibles"
@@ -523,7 +527,7 @@ msgid "External authentication only (OpenID or LDAP)"
 msgstr "Authentification externe uniquement (OpenID ou LDAP)"
 
 msgid "Account expiration date"
-msgstr ""
+msgstr "Date d'expiration du compte"
 
 msgid "Disabled"
 msgstr "Désactivé"
