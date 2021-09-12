@@ -6,15 +6,15 @@
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Karoline Tufte Lien <karoline@dhis2.org>, 2021
 # Bram Piot <bram.piot@gmail.com>, 2021
-# Yao Selom Saka <ysaka@hispwca.org>, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
+# Yao Selom Saka <ysaka@hispwca.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-31T08:08:40.317Z\n"
 "PO-Revision-Date: 2021-09-04 00:49+0000\n"
-"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021\n"
+"Last-Translator: Yao Selom Saka <ysaka@hispwca.org>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "Use database locale / no translation"
-msgstr "Utiliser la localisation de la base de donnée/ pas de traduction"
+msgstr "Utiliser la localisation de la base de données/ pas de traduction"
 
 msgid "Search"
 msgstr "Chercher"
@@ -48,13 +48,13 @@ msgstr ""
 "disponibles."
 
 msgid "Authorities"
-msgstr "Autorités"
+msgstr "Autorisations"
 
 msgid "Selected authorities only"
-msgstr "Autorités sélectionnées uniquement"
+msgstr "Autorisations sélectionnées uniquement"
 
 msgid "All (Full authority)"
-msgstr "Tout (Pleine autorité)"
+msgstr "Tout (Pleine autorisation)"
 
 msgid "Analytics Table Hook"
 msgstr "Crochet de Tables Analytiques"
@@ -75,7 +75,7 @@ msgid "Category Option Group"
 msgstr "Groupe d'options de catégorie"
 
 msgid "Category Option Group Set"
-msgstr "Category Option Group Set"
+msgstr "Ensemble de groupes d'options de catégorie"
 
 msgid "Color Set"
 msgstr "Jeu de Couleurs"
@@ -204,7 +204,7 @@ msgid "Tracked Entity Instance"
 msgstr "Instance d'entité suivie"
 
 msgid "User Group"
-msgstr "Groupe d'utilisateurs\\:"
+msgstr "Groupe d'utilisateurs"
 
 msgid "User Role"
 msgstr "Rôle d'utilisateur"
@@ -222,7 +222,7 @@ msgid "Data predictor group"
 msgstr "Groupe de prédicteur de données"
 
 msgid "Skip data import audit"
-msgstr "Sauter l'audit d'importation de données"
+msgstr "Ignorer l'audit d'importation de données"
 
 msgid "Visualization"
 msgstr "Visualisation"
@@ -288,7 +288,7 @@ msgid "Organisation unit"
 msgstr "Unité d'organisation"
 
 msgid "Page not found."
-msgstr "Page non trouvée"
+msgstr "Page non trouvée."
 
 msgid "No match for"
 msgstr "Pas de correspondance pour"
@@ -315,7 +315,7 @@ msgid "Password for new user"
 msgstr "Mot de passe pour nouvel utilisateur"
 
 msgid "Replicate"
-msgstr "Replier"
+msgstr "Répliquer"
 
 msgid "Cancel"
 msgstr "Annuler"
@@ -353,7 +353,7 @@ msgid "Display name"
 msgstr "Afficher un nom"
 
 msgid "ID"
-msgstr "Id"
+msgstr "ID"
 
 msgid "Last login"
 msgstr "Dernière connexion"
@@ -422,7 +422,7 @@ msgid "Create, modify, view and delete User Roles"
 msgstr "Créer, modifier, afficher et supprimer des rôles d'utilisateur"
 
 msgid "User group"
-msgstr "Groupe d'utilisateur"
+msgstr "Groupe d'utilisateurs"
 
 msgid "Create, modify, view and delete User Groups"
 msgstr "Créer, modifier, afficher et supprimer des groupes d'utilisateurs"
@@ -452,6 +452,9 @@ msgid ""
 "To add a user to this group, go to the User section and edit the user group "
 "settings for a specific user."
 msgstr ""
+"Pour ajouter un utilisateur à ce groupe, allez dans la section Utilisateur "
+"et modifiez les paramètres du groupe d'utilisateurs pour un utilisateur "
+"donné."
 
 msgid "Available user groups"
 msgstr "Groupes d'utilisateurs disponibles"
@@ -484,7 +487,7 @@ msgid "Description"
 msgstr "Description"
 
 msgid "User Role Management"
-msgstr "Gestion des rôles utilisateur"
+msgstr "Gestion des rôles d'utilisateur"
 
 msgid "Could not load the user data. Please refresh the page."
 msgstr ""
@@ -525,7 +528,7 @@ msgid "External authentication only (OpenID or LDAP)"
 msgstr "Authentification externe uniquement (OpenID ou LDAP)"
 
 msgid "Account expiration date"
-msgstr ""
+msgstr "Date d'expiration du compte"
 
 msgid "Disabled"
 msgstr "Désactivé"
@@ -589,6 +592,8 @@ msgstr "Répliquer l'utilisateur"
 
 msgid "Are you sure you want to reset {{-userName}}'s password?"
 msgstr ""
+"Êtes-vous sûr de vouloir réinitialiser le mot de passe de "
+"{{-nomd'utilisateur}} ?"
 
 msgid "Are you sure you want to disable two factor authentication for"
 msgstr ""
@@ -639,7 +644,7 @@ msgid "Invitations"
 msgstr "Invitations"
 
 msgid "Self registrations"
-msgstr "L'auto-inscriptions"
+msgstr "Auto-inscriptions"
 
 msgid "User Management"
 msgstr "Gestion des utilisateurs"
