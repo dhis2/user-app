@@ -1,8 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { Store, Heading } from '@dhis2/d2-ui-core'
-import { GroupEditor } from '@dhis2/d2-ui-group-editor'
-import { red500 } from 'material-ui/styles/colors'
-import TextField from 'material-ui/TextField/TextField'
+import { Field, Transfer } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import asArray from '../utils/asArray'
@@ -10,28 +7,17 @@ import createHumanErrorMessage from '../utils/createHumanErrorMessage'
 import ErrorMessage from './ErrorMessage'
 
 const styles = {
-    outerWrap: {
-        paddingTop: 0,
-        paddingBottom: '2.5rem',
+    transferHeader: {
+        margin: '12px 0',
+        fontWeight: 'normal',
     },
-    headerWrap: {
-        display: 'flex',
-    },
-    headerSpacer: {
-        flex: '0 0 120px',
-    },
-    header: {
-        flex: '1 0 120px',
-        paddingBottom: 0,
-        fontSize: '1.2rem',
-    },
-    error: {
-        color: red500,
-    },
-    errorText: {
-        fontSize: '0.8rem',
-        marginLeft: '0.8rem',
-    },
+}
+
+const Header = ({ children }) => (
+    <h4 style={styles.transferHeader}>{children}</h4>
+)
+Header.propTypes = {
+    children: PropTypes.node,
 }
 
 /**
@@ -43,165 +29,99 @@ class SearchableGroupEditor extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            itemStore: Store.create(),
-            assignedItemStore: Store.create(),
-            filterText: '',
+            loading: true,
+            availableItems: [],
+            selected: [],
             fetchErrorMsg: null,
         }
     }
 
     async componentDidMount() {
         try {
-            const availableItems = await this.props.availableItemsQuery()
-            this.availableItemsReceivedHandler(availableItems)
+            const {
+                availableItemsQuery,
+                initiallyAssignedItems,
+                returnModelsOnUpdate,
+            } = this.props
+            const response = await availableItemsQuery()
+
+            if (returnModelsOnUpdate) {
+                this.modelLookup = new Map()
+            }
+
+            const selected = asArray(initiallyAssignedItems).map(({ id }) => id)
+            const availableItems = asArray(response).map(item => {
+                if (returnModelsOnUpdate) {
+                    this.modelLookup.set(item.id, item)
+                }
+                const label = item.displayName || item.name
+                return {
+                    label,
+                    value: item.id,
+                }
+            })
+
+            this.setState({ availableItems, selected, loading: false })
         } catch (error) {
             const fetchErrorMsg = createHumanErrorMessage(
                 error,
                 i18n.t('Could not load available items')
             )
-            this.setState({ fetchErrorMsg })
+            this.setState({ fetchErrorMsg, loading: false })
         }
     }
 
-    availableItemsReceivedHandler = response => {
-        // On update we want to be able to return an array of IDs or models
-        const { initiallyAssignedItems, returnModelsOnUpdate } = this.props
-        const { itemStore, assignedItemStore } = this.state
-
-        if (returnModelsOnUpdate) {
-            this.modelLookup = new Map()
-        }
-
-        const assignedItems = asArray(initiallyAssignedItems).map(
-            ({ id }) => id
-        )
-        const availableItems = asArray(response).map(item => {
-            if (returnModelsOnUpdate) {
-                this.modelLookup.set(item.id, item)
-            }
-            const text = item.displayName || item.name
-            return {
-                value: item.id,
-                text: text,
-            }
-        })
-
-        itemStore.setState(availableItems)
-        assignedItemStore.setState(assignedItems)
-    }
-
-    onAssignItems = items => {
-        const { assignedItemStore } = this.state
-        const assigned = assignedItemStore.state.concat(items)
-
-        return this.update(assigned)
-    }
-
-    onRemoveItems = items => {
-        const { assignedItemStore } = this.state
-        const assigned = assignedItemStore.state.filter(
-            item => items.indexOf(item) === -1
-        )
-
-        return this.update(assigned)
-    }
-
-    update(assignedItemIds) {
-        const { onChange, returnModelsOnUpdate, onBlur } = this.props
-        const { assignedItemStore } = this.state
+    onChange = ({ selected }) => {
+        const { returnModelsOnUpdate, onBlur } = this.props
         const assignedItems = returnModelsOnUpdate
-            ? assignedItemIds.map(id => this.modelLookup.get(id))
-            : assignedItemIds
+            ? selected.map(id => this.modelLookup.get(id))
+            : selected
 
-        assignedItemStore.setState(assignedItemIds)
-        onChange(assignedItems)
+        this.props.onChange(assignedItems)
         // Also call onBlur if this is available. In a redux-form the component will be 'touched' by it
         onBlur && onBlur()
+        this.setState({ selected })
         return Promise.resolve()
     }
 
-    updateFilterText = event => {
-        this.setState({ filterText: event.target.value })
-    }
-
-    renderHeader() {
+    render() {
+        const { availableItems, selected, loading } = this.state
         const {
             availableItemsHeader,
             assignedItemsHeader,
             errorText,
         } = this.props
-        const assignedStyle = errorText
-            ? { ...styles.header, ...styles.error }
-            : styles.header
 
-        return (
-            <div style={styles.headerWrap}>
-                <Heading level={4} style={styles.header}>
-                    {availableItemsHeader}
-                </Heading>
-                <div style={styles.headerSpacer} />
-                <Heading level={4} style={assignedStyle}>
-                    {assignedItemsHeader}
-                    {errorText ? (
-                        <span style={styles.errorText}>{errorText}</span>
-                    ) : null}
-                </Heading>
-            </div>
-        )
-    }
-
-    renderSearchInput() {
-        return (
-            <TextField
-                fullWidth={true}
-                type="search"
-                onChange={this.updateFilterText}
-                value={this.state.filterText}
-                floatingLabelText={i18n.t('Filter')}
-                hintText={i18n.t('Filter available and selected items')}
-                style={{ marginTop: '-16px' }}
-            />
-        )
-    }
-    renderGroupEditor() {
-        const {
-            itemStore,
-            assignedItemStore,
-            filterText,
-            fetchErrorMsg,
-        } = this.state
-
-        if (fetchErrorMsg) {
-            const introText = i18n.t(
-                'There was a problem displaying the GroupEditor'
-            )
+        if (this.state.fetchErrorMsg) {
             return (
                 <ErrorMessage
-                    introText={introText}
-                    errorMessage={fetchErrorMsg}
+                    introText={i18n.t(
+                        'There was a problem displaying the GroupEditor'
+                    )}
+                    errorMessage={this.state.fetchErrorMsg}
                 />
             )
         }
 
         return (
-            <GroupEditor
-                itemStore={itemStore}
-                assignedItemStore={assignedItemStore}
-                onAssignItems={this.onAssignItems}
-                onRemoveItems={this.onRemoveItems}
-                height={250}
-                filterText={filterText}
-            />
-        )
-    }
-
-    render() {
-        return (
-            <div style={styles.outerWrap}>
-                {this.renderHeader()}
-                {this.renderSearchInput()}
-                {this.renderGroupEditor()}
-            </div>
+            <Field error={!!errorText} validationText={errorText || ''}>
+                <Transfer
+                    filterable
+                    filterablePicked
+                    filterPlaceholder={i18n.t('Filter available options')}
+                    filterPlaceholderPicked={i18n.t('Filter selected options')}
+                    leftHeader={<Header>{availableItemsHeader}</Header>}
+                    rightHeader={<Header>{assignedItemsHeader}</Header>}
+                    options={availableItems}
+                    loading={loading}
+                    loadingPicked={loading}
+                    selected={selected}
+                    optionsWidth="calc(100% - 48px)"
+                    selectedWidth="calc(100% - 48px)"
+                    height="400px"
+                    onChange={this.onChange}
+                />
+            </Field>
         )
     }
 }

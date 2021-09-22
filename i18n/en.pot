@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-09-21T14:42:30.647Z\n"
-"PO-Revision-Date: 2021-09-21T14:42:30.647Z\n"
+"POT-Creation-Date: 2021-09-22T12:45:45.736Z\n"
+"PO-Revision-Date: 2021-09-22T12:45:45.736Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -312,14 +312,14 @@ msgstr "Search by name"
 msgid "Could not load available items"
 msgstr "Could not load available items"
 
-msgid "Filter"
-msgstr "Filter"
-
-msgid "Filter available and selected items"
-msgstr "Filter available and selected items"
-
 msgid "There was a problem displaying the GroupEditor"
 msgstr "There was a problem displaying the GroupEditor"
+
+msgid "Filter available options"
+msgstr "Filter available options"
+
+msgid "Filter selected options"
+msgstr "Filter selected options"
 
 msgid "Apply"
 msgstr "Apply"
