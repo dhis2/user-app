@@ -240,9 +240,10 @@ const createMetadataGroup = (auth, lookup) => {
     // Some authorities do not have _ADD_PRIVATE and _DELETE siblings in the authority list
     // however, they do belong to the metadata section. If a role is granted ADD_PUBLIC rights it is also allowed
     // to ADD_PRIVATE and DELETE implicitly
-    const hasImplicitAddPrivateAndDelete = AUTHS_WITH_IMPLICIT_ADD_PRIVATE_AND_DELETE.has(
-        baseName + PUBLIC_ADD_SUFFIX
-    )
+    const hasImplicitAddPrivateAndDelete =
+        AUTHS_WITH_IMPLICIT_ADD_PRIVATE_AND_DELETE.has(
+            baseName + PUBLIC_ADD_SUFFIX
+        )
 
     // Set each authority item for the current authority group
     const publicAddAuth = genericAdd || lookup.get(baseName + PUBLIC_ADD_SUFFIX)

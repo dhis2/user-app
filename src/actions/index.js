@@ -32,7 +32,9 @@ const createAction = (type, payload) => ({ type, payload })
  * @function
  */
 const createListActionSequence = async (dispatch, promise, type, silent) => {
-    if (!silent) dispatch(createAction(ACTIONS.LIST_REQUESTED, type))
+    if (!silent) {
+        dispatch(createAction(ACTIONS.LIST_REQUESTED, type))
+    }
 
     try {
         const items = await promise

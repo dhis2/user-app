@@ -86,11 +86,8 @@ class SearchableGroupEditor extends Component {
 
     render() {
         const { availableItems, selected, loading } = this.state
-        const {
-            availableItemsHeader,
-            assignedItemsHeader,
-            errorText,
-        } = this.props
+        const { availableItemsHeader, assignedItemsHeader, errorText } =
+            this.props
 
         if (this.state.fetchErrorMsg) {
             return (

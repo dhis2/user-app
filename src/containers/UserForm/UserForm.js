@@ -14,8 +14,10 @@ import makeTrashable from 'trashable'
 import { clearItem, getList, showSnackbar } from '../../actions'
 import api from '../../api'
 import { USER } from '../../constants/entityTypes'
-import { userFormInitialValuesSelector } from '../../selectors'
-import { inviteUserValueSelector } from '../../selectors'
+import {
+    userFormInitialValuesSelector,
+    inviteUserValueSelector,
+} from '../../selectors'
 import asArray from '../../utils/asArray'
 import {
     generateAttributeFields,
