@@ -1,4 +1,4 @@
-import { Checkbox } from 'material-ui'
+import { Checkbox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import HighlightableText from './HighlightableText'
@@ -9,12 +9,12 @@ import HighlightableText from './HighlightableText'
  * Depending on state this checkbox can be disabled or selected.
  */
 class AuthorityItem extends Component {
-    onChecked = (_, value) => {
+    onChecked = ({ checked }) => {
         const {
             authSubject: { id },
             onCheckedCallBack,
         } = this.props
-        onCheckedCallBack([id], value)
+        onCheckedCallBack([id], checked)
     }
 
     render() {
@@ -35,7 +35,7 @@ class AuthorityItem extends Component {
             <td>
                 {!empty ? (
                     <Checkbox
-                        onCheck={this.onChecked}
+                        onChange={this.onChecked}
                         label={label}
                         className={className}
                         checked={this.props.selected || Boolean(implicit)}

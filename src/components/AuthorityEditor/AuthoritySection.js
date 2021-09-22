@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { Heading } from '@dhis2/d2-ui-core'
-import { Paper, CircularProgress, Checkbox } from 'material-ui'
+import { Card, CenteredContent, Checkbox, CircularLoader } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import AuthorityGroup from './AuthorityGroup'
@@ -10,9 +10,9 @@ import AuthorityItem from './AuthorityItem'
  * Renders a logical authority section. Within the section it can either render rows with `AuthorityGroups` for metadata,
  */
 class AuthoritySection extends Component {
-    onTableHeadCheck = (_event, value) => {
+    onTableHeadCheck = ({ checked }) => {
         const ids = this.props.authSection.items.map(({ id }) => id)
-        this.context.onAuthChange(ids, value)
+        this.context.onAuthChange(ids, checked)
     }
 
     renderAuthRow = (authSubject, index) => {
@@ -40,7 +40,9 @@ class AuthoritySection extends Component {
         return (
             <tr>
                 <td className="authority-editor__placeholder-cell">
-                    <CircularProgress size={24} />
+                    <CenteredContent>
+                        <CircularLoader small />
+                    </CenteredContent>
                 </td>
             </tr>
         )
@@ -94,7 +96,7 @@ class AuthoritySection extends Component {
                                 <Checkbox
                                     className="authority-editor__auth-checkbox"
                                     label={header}
-                                    onCheck={this.onTableHeadCheck}
+                                    onChange={this.onTableHeadCheck}
                                     checked={allItemsSelected}
                                 />
                             ) : (
@@ -118,7 +120,7 @@ class AuthoritySection extends Component {
         tableClassName += ` columns-${authSection.headers.length}`
 
         return (
-            <Paper className={wrapperClassName}>
+            <Card className={wrapperClassName}>
                 <Heading
                     level={6}
                     className="authority-editor__auth-group-header"
@@ -129,7 +131,7 @@ class AuthoritySection extends Component {
                     {this.renderTableHead(authSection)}
                     <tbody>{this.renderContent(authSection)}</tbody>
                 </table>
-            </Paper>
+            </Card>
         )
     }
 }
