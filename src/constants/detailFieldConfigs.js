@@ -25,12 +25,12 @@ export const getUserProfile = () => [
         parseDate: true,
     },
     {
-        key: 'surname',
-        label: i18n.t('Surname'),
-    },
-    {
         key: 'firstName',
         label: i18n.t('First name'),
+    },
+    {
+        key: 'surname',
+        label: i18n.t('Last name'),
     },
     {
         key: 'introduction',
