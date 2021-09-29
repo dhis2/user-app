@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-09-28T15:10:38.753Z\n"
-"PO-Revision-Date: 2021-09-28T15:10:38.753Z\n"
+"POT-Creation-Date: 2021-09-29T10:20:40.732Z\n"
+"PO-Revision-Date: 2021-09-29T10:20:40.732Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -216,6 +216,24 @@ msgstr "Skip data import audit"
 msgid "Visualization"
 msgstr "Visualization"
 
+msgid "Metadata"
+msgstr "Metadata"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Add/Update Public"
+msgstr "Add/Update Public"
+
+msgid "Add/Update Private"
+msgstr "Add/Update Private"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "External access"
+msgstr "External access"
+
 msgid "Apps"
 msgstr "Apps"
 
@@ -422,9 +440,6 @@ msgstr "There was a problem saving the user group."
 
 msgid "Save"
 msgstr "Save"
-
-msgid "Name"
-msgstr "Name"
 
 msgid "Code"
 msgstr "Code"

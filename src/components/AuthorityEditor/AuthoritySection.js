@@ -10,8 +10,22 @@ import AuthorityItem from './AuthorityItem'
  * Renders a logical authority section. Within the section it can either render rows with `AuthorityGroups` for metadata,
  */
 class AuthoritySection extends Component {
-    onTableHeadCheck = (_event, value) => {
-        const ids = this.props.authSection.items.map(({ id }) => id)
+    itemsForMetadataHeader = header => {
+        if (this.props.authSection.items === null) {
+            return []
+        }
+
+        const headerIndex = this.props.authSection.headers.indexOf(header)
+        return this.props.authSection.items
+            .map(({ items }) => items[headerIndex - 1])
+            .filter(item => !item.empty)
+    }
+
+    onTableHeadCheck = ({ header, value }) => {
+        const ids =
+            this.props.authSection.id === 'METADATA'
+                ? this.itemsForMetadataHeader(header).map(item => item.id)
+                : this.props.authSection.items.map(({ id }) => id)
         this.context.onAuthChange(ids, value)
     }
 
@@ -78,9 +92,8 @@ class AuthoritySection extends Component {
         return authSection.items.map(this.renderAuthRow)
     }
 
-    renderTableHead({ headers, name, items }) {
-        const allItemsSelected =
-            name !== 'Metadata' &&
+    renderTableHead({ id, headers, items }) {
+        const allItemsSelected = items =>
             Array.isArray(items) &&
             items.length > 0 &&
             items.every(({ id }) => this.context.shouldSelect(id))
@@ -90,12 +103,23 @@ class AuthoritySection extends Component {
                 <tr>
                     {headers.map((header, index) => (
                         <th key={`header-${index}`}>
-                            {((id === 'METADATA' && index !== 0) || (id !== 'METADATA' && index === 0)) ? (
+                            {(id === 'METADATA' && index !== 0) ||
+                            (id !== 'METADATA' && index === 0) ? (
                                 <Checkbox
                                     className="authority-editor__auth-checkbox"
                                     label={header}
-                                    onCheck={this.onTableHeadCheck}
-                                    checked={allItemsSelected}
+                                    onCheck={(_event, value) =>
+                                        this.onTableHeadCheck({ header, value })
+                                    }
+                                    checked={
+                                        id === 'METADATA'
+                                            ? allItemsSelected(
+                                                  this.itemsForMetadataHeader(
+                                                      header
+                                                  )
+                                              )
+                                            : allItemsSelected(items)
+                                    }
                                 />
                             ) : (
                                 header
