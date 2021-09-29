@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/dhis2/user-app/compare/v1.2.4...v1.2.5) (2021-09-29)
+
+
+### Bug Fixes
+
+* rename 'surname' field to 'last name' and show after 'first name' field ([6bc2046](https://github.com/dhis2/user-app/commit/6bc2046443d6d7f8d180253ebdb608e4f34ccb8b))
+
 ## [1.2.4](https://github.com/dhis2/user-app/compare/v1.2.3...v1.2.4) (2021-09-12)
 
 
