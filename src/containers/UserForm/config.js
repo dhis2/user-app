@@ -189,14 +189,14 @@ export const getBaseFields = () => [
         },
     },
     {
-        name: SURNAME,
-        label: i18n.t('Surname'),
+        name: FIRST_NAME,
+        label: i18n.t('First name'),
         isRequiredField: ALWAYS_REQUIRED,
         fieldRenderer: renderTextField,
     },
     {
-        name: FIRST_NAME,
-        label: i18n.t('First name'),
+        name: SURNAME,
+        label: i18n.t('Last name'),
         isRequiredField: ALWAYS_REQUIRED,
         fieldRenderer: renderTextField,
     },
