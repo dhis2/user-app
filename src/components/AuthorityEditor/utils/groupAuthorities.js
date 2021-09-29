@@ -7,35 +7,36 @@ import getNameLookup from './authorityGroupNames'
 
 const createEmptyGroupedAuthorities = () => ({
     metadata: {
-        name: 'Metadata',
+        id: 'METADATA',
+        name: i18n.t('Metadata'),
         items: null,
         headers: [
-            'Name',
-            'Add/Update Public',
-            'Add/Update Private',
-            'Delete',
-            'External access',
+            i18n.t('Name'),
+            i18n.t('Add/Update Public'),
+            i18n.t('Add/Update Private'),
+            i18n.t('Delete'),
+            i18n.t('External access'),
         ],
     },
     apps: {
         name: i18n.t('Apps'),
         items: null,
-        headers: ['Name'],
+        headers: [i18n.t('Name')],
     },
     tracker: {
         name: i18n.t('Tracker'),
         items: null,
-        headers: ['Name'],
+        headers: [i18n.t('Name')],
     },
     importExport: {
         name: i18n.t('Import-Export'),
         items: null,
-        headers: ['Name'],
+        headers: [i18n.t('Name')],
     },
     system: {
         name: i18n.t('System'),
         items: null,
-        headers: ['Name'],
+        headers: [i18n.t('Name')],
     },
 })
 

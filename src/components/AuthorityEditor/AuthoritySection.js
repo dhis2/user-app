@@ -90,7 +90,7 @@ class AuthoritySection extends Component {
                 <tr>
                     {headers.map((header, index) => (
                         <th key={`header-${index}`}>
-                            {name !== 'Metadata' && index === 0 ? (
+                            {((id === 'METADATA' && index !== 0) || (id !== 'METADATA' && index === 0)) ? (
                                 <Checkbox
                                     className="authority-editor__auth-checkbox"
                                     label={header}
