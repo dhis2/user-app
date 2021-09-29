@@ -1,10 +1,22 @@
 import i18n from '@dhis2/d2-i18n'
 import { Heading } from '@dhis2/d2-ui-core'
-import { Paper, CircularProgress, Checkbox } from 'material-ui'
+import {
+    Card,
+    CircularLoader,
+    CheckboxField,
+    NoticeBox,
+    DataTable,
+    DataTableHead,
+    DataTableRow,
+    DataTableColumnHeader,
+    DataTableCell,
+    DataTableBody,
+} from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import AuthorityGroup from './AuthorityGroup'
 import AuthorityItem from './AuthorityItem'
+import styles from './AuthoritySection.module.css'
 
 /**
  * Renders a logical authority section. Within the section it can either render rows with `AuthorityGroups` for metadata,
@@ -32,7 +44,7 @@ class AuthoritySection extends Component {
     renderAuthRow = (authSubject, index) => {
         const { shouldSelect, onAuthChange } = this.context
         return (
-            <tr key={`row-${index}`}>
+            <DataTableRow key={`row-${index}`}>
                 {authSubject.items ? (
                     <AuthorityGroup
                         items={authSubject.items}
@@ -46,33 +58,31 @@ class AuthoritySection extends Component {
                         onCheckedCallBack={onAuthChange}
                     />
                 )}
-            </tr>
+            </DataTableRow>
         )
     }
 
     renderLoaderRow() {
         return (
-            <tr>
-                <td className="authority-editor__placeholder-cell">
-                    <CircularProgress size={24} />
-                </td>
-            </tr>
+            <DataTableRow>
+                <DataTableCell>
+                    <CircularLoader small />
+                </DataTableCell>
+            </DataTableRow>
         )
     }
 
     renderInfoRow(errorMsg) {
-        let className = 'authority-editor__placeholder-cell'
-        let msg = i18n.t('No matches found')
-
-        if (errorMsg) {
-            className += '--error'
-            msg = errorMsg
-        }
-
         return (
-            <tr>
-                <td className={className}>{msg}</td>
-            </tr>
+            <DataTableRow>
+                <DataTableCell>
+                    {errorMsg ? (
+                        <NoticeBox error>{errorMsg}</NoticeBox>
+                    ) : (
+                        <NoticeBox>{i18n.t('No matches found')}</NoticeBox>
+                    )}
+                </DataTableCell>
+            </DataTableRow>
         )
     }
 
@@ -99,17 +109,24 @@ class AuthoritySection extends Component {
             items.every(({ id }) => this.context.shouldSelect(id))
 
         return (
-            <thead>
-                <tr>
+            <DataTableHead>
+                <DataTableRow>
                     {headers.map((header, index) => (
-                        <th key={`header-${index}`}>
+                        <DataTableColumnHeader
+                            key={`header-${index}`}
+                            fixed
+                            top="0"
+                        >
                             {(id === 'METADATA' && index !== 0) ||
                             (id !== 'METADATA' && index === 0) ? (
-                                <Checkbox
-                                    className="authority-editor__auth-checkbox"
+                                <CheckboxField
+                                    dense
                                     label={header}
-                                    onCheck={(_event, value) =>
-                                        this.onTableHeadCheck({ header, value })
+                                    onChange={({ checked }) =>
+                                        this.onTableHeadCheck({
+                                            header,
+                                            value: checked,
+                                        })
                                     }
                                     checked={
                                         id === 'METADATA'
@@ -124,43 +141,43 @@ class AuthoritySection extends Component {
                             ) : (
                                 header
                             )}
-                        </th>
+                        </DataTableColumnHeader>
                     ))}
-                </tr>
-            </thead>
+                </DataTableRow>
+            </DataTableHead>
         )
     }
 
     render() {
-        const { sectionKey, authSection } = this.props
-        let wrapperClassName = `authority-editor__auth-group ${sectionKey}`
-        if (authSection.items && authSection.items.length > 11) {
-            wrapperClassName += ' scrollable'
-        }
-
-        let tableClassName = 'authority-editor__auth-group-table'
-        tableClassName += ` columns-${authSection.headers.length}`
+        const { authSection } = this.props
 
         return (
-            <Paper className={wrapperClassName}>
+            <Card
+                className={
+                    authSection.id === 'METADATA'
+                        ? styles.metadata
+                        : styles.section
+                }
+            >
                 <Heading
                     level={6}
                     className="authority-editor__auth-group-header"
                 >
                     {authSection.name}
                 </Heading>
-                <table className={tableClassName}>
+                <DataTable scrollHeight="375px">
                     {this.renderTableHead(authSection)}
-                    <tbody>{this.renderContent(authSection)}</tbody>
-                </table>
-            </Paper>
+                    <DataTableBody>
+                        {this.renderContent(authSection)}
+                    </DataTableBody>
+                </DataTable>
+            </Card>
         )
     }
 }
 
 AuthoritySection.propTypes = {
     authSection: PropTypes.object.isRequired,
-    sectionKey: PropTypes.string.isRequired,
 }
 
 AuthoritySection.contextTypes = {

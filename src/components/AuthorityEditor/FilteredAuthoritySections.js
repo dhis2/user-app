@@ -65,7 +65,6 @@ class FilteredAuthoritySections extends Component {
                     return (
                         <AuthoritySection
                             key={key}
-                            sectionKey={key}
                             authSection={filteredAuthorities[key]}
                         />
                     )

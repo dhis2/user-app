@@ -1,4 +1,4 @@
-import { Checkbox } from 'material-ui'
+import { CheckboxField, DataTableCell } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import HighlightableText from './HighlightableText'
@@ -9,22 +9,18 @@ import HighlightableText from './HighlightableText'
  * Depending on state this checkbox can be disabled or selected.
  */
 class AuthorityItem extends Component {
-    onChecked = (_, value) => {
+    onChecked = ({ checked }) => {
         const {
             authSubject: { id },
             onCheckedCallBack,
         } = this.props
-        onCheckedCallBack([id], value)
+        onCheckedCallBack([id], checked)
     }
 
     render() {
         const { authSubject, withLabel, disabled } = this.props
         const { searchChunks } = this.context
         const { name, empty, implicit } = authSubject
-        const baseClassName = 'authority-editor__auth-checkbox'
-        const className = withLabel
-            ? baseClassName
-            : `${baseClassName}--without-label`
         const label = withLabel ? (
             <HighlightableText text={name} searchChunks={searchChunks} />
         ) : (
@@ -32,19 +28,17 @@ class AuthorityItem extends Component {
         )
 
         return (
-            <td>
-                {!empty ? (
-                    <Checkbox
+            <DataTableCell>
+                {!empty && (
+                    <CheckboxField
+                        dense
                         onCheck={this.onChecked}
                         label={label}
-                        className={className}
                         checked={this.props.selected || Boolean(implicit)}
                         disabled={implicit || disabled}
                     />
-                ) : (
-                    <div className="authority-editor__empty-cell" />
                 )}
-            </td>
+            </DataTableCell>
         )
     }
 }

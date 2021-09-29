@@ -19,7 +19,7 @@
         "documentation": "rimraf build && jsdoc -c jsdoc.json"
     },
     "dependencies": {
-        "@dhis2/app-runtime": "^2.8.0",
+        "@dhis2/app-runtime": "^2.11.1",
         "@dhis2/app-runtime-adapter-d2": "^1.0.1",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/d2-ui-app": "^2.0.0",
@@ -29,7 +29,7 @@
         "@dhis2/d2-ui-org-unit-tree": "^7.0.5",
         "@dhis2/d2-ui-sharing-dialog": "^7.0.5",
         "@dhis2/d2-ui-table": "^7.0.5",
-        "@dhis2/ui": "^6.5.4",
+        "@dhis2/ui": "6.21.0",
         "d2": "^31.7.0",
         "d3-color": "^1.2.0",
         "lodash.capitalize": "^4.2.1",

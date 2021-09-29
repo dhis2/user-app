@@ -1,3 +1,4 @@
+import { DataTableCell } from '@dhis2/ui'
 import endsWith from 'lodash.endswith'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
@@ -58,12 +59,12 @@ class AuthorityGroup extends Component {
                 return authGroup
             },
             [
-                <td key={'group-label'}>
+                <DataTableCell key="group-label">
                     <HighlightableText
                         text={name}
                         searchChunks={searchChunks}
                     />
-                </td>,
+                </DataTableCell>,
             ]
         )
     }
