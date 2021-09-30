@@ -1,21 +1,26 @@
 # 
 # Translators:
-# phil_dhis2, 2019
 # Mai Nguyen <thanhmai.jica@gmail.com>, 2020
 # Viktor Varland <viktor@dhis2.org>, 2021
+# phil_dhis2, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-08-31T08:08:40.317Z\n"
+"POT-Creation-Date: 2021-09-28T15:10:38.753Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid ""
+"Could not reset user password. Make sure you have the appropriate "
+"permissions."
+msgstr ""
 
 msgid "Use database locale / no translation"
 msgstr "Dùng cơ sở dữ liệu địa phương/Không biên dịch"
@@ -351,11 +356,11 @@ msgstr "Đăng nhập lần cuối"
 msgid "Created"
 msgstr "Đã tạo"
 
-msgid "Surname"
-msgstr "Họ"
-
 msgid "First name"
 msgstr "Tên"
+
+msgid "Last name"
+msgstr "Tên họ"
 
 msgid "Introduction"
 msgstr "Giới thiệu"
