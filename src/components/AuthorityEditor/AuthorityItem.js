@@ -18,9 +18,9 @@ class AuthorityItem extends Component {
     }
 
     render() {
-        const { authSubject, withLabel, disabled } = this.props
+        const { authSubject, withLabel } = this.props
         const { searchChunks } = this.context
-        const { name, empty, implicit } = authSubject
+        const { name, empty, selected, implicitlySelected } = authSubject
         const label = withLabel ? (
             <HighlightableText text={name} searchChunks={searchChunks} />
         ) : (
@@ -34,8 +34,8 @@ class AuthorityItem extends Component {
                         dense
                         onChange={this.handleChecked}
                         label={label}
-                        checked={this.props.selected || Boolean(implicit)}
-                        disabled={implicit || disabled}
+                        checked={selected}
+                        disabled={implicitlySelected}
                     />
                 )}
             </DataTableCell>
@@ -47,13 +47,12 @@ AuthorityItem.propTypes = {
     authSubject: PropTypes.shape({
         empty: PropTypes.bool,
         id: PropTypes.string,
-        implicit: PropTypes.bool,
+        implicitlySelected: PropTypes.bool,
         name: PropTypes.string,
+        selected: PropTypes.bool,
     }).isRequired,
-    selected: PropTypes.bool.isRequired,
     withLabel: PropTypes.bool.isRequired,
     onCheckedCallBack: PropTypes.func.isRequired,
-    disabled: PropTypes.bool,
 }
 
 AuthorityItem.contextTypes = {

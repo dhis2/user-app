@@ -17,45 +17,47 @@ import React, { Component } from 'react'
 import AuthorityGroup from './AuthorityGroup'
 import AuthorityItem from './AuthorityItem'
 import styles from './AuthoritySection.module.css'
+import { isPublicAdd, isPrivateAdd } from './utils/groupAuthorities'
 
 /**
  * Renders a logical authority section. Within the section it can either render rows with `AuthorityGroups` for metadata,
  */
 class AuthoritySection extends Component {
-    itemsForMetadataHeader = header => {
-        if (this.props.authSection.items === null) {
+    itemsForMetadataHeader = (items, header) => {
+        const headerIndex = this.props.authSection.headers.indexOf(header)
+        if (items === null || headerIndex === 0) {
             return []
         }
 
-        const headerIndex = this.props.authSection.headers.indexOf(header)
-        return this.props.authSection.items
+        return items
             .map(({ items }) => items[headerIndex - 1])
             .filter(item => !item.empty)
     }
 
-    onTableHeadCheck = ({ header, value }) => {
+    onTableHeadCheck = ({ authSection, header, value }) => {
         const ids =
-            this.props.authSection.id === 'METADATA'
-                ? this.itemsForMetadataHeader(header).map(item => item.id)
-                : this.props.authSection.items.map(({ id }) => id)
-        this.context.onAuthChange(ids, value)
+            authSection.id === 'METADATA'
+                ? this.itemsForMetadataHeader(authSection.items, header).map(
+                      item => item.id
+                  )
+                : authSection.items.map(({ id }) => id)
+        this.onAuthChange(ids, value)
     }
 
     renderAuthRow = (authSubject, index) => {
-        const { shouldSelect, onAuthChange } = this.context
         return (
             <DataTableRow key={`row-${index}`}>
                 {authSubject.items ? (
                     <AuthorityGroup
                         items={authSubject.items}
                         name={authSubject.name}
+                        onAuthChange={this.onAuthChange}
                     />
                 ) : (
                     <AuthorityItem
                         authSubject={authSubject}
                         withLabel={true}
-                        selected={shouldSelect(authSubject.id)}
-                        onCheckedCallBack={onAuthChange}
+                        onCheckedCallBack={this.onAuthChange}
                     />
                 )}
             </DataTableRow>
@@ -102,54 +104,114 @@ class AuthoritySection extends Component {
         return authSection.items.map(this.renderAuthRow)
     }
 
-    renderTableHead({ id, headers, items }) {
+    renderTableHead(authSection) {
+        const isMetadata = authSection.id === 'METADATA'
         const allItemsSelected = items =>
             Array.isArray(items) &&
             items.length > 0 &&
-            items.every(({ id }) => this.context.shouldSelect(id))
+            items.every(({ selected, empty }) => selected || empty)
+        const allItemsImplicitlySelected = items =>
+            allItemsSelected(items) &&
+            items.every(
+                ({ implicitlySelected, empty }) => implicitlySelected || empty
+            )
 
         return (
             <DataTableHead>
                 <DataTableRow>
-                    {headers.map((header, index) => (
-                        <DataTableColumnHeader
-                            key={`header-${index}`}
-                            fixed
-                            top="0"
-                        >
-                            {(id === 'METADATA' && index !== 0) ||
-                            (id !== 'METADATA' && index === 0) ? (
-                                <CheckboxField
-                                    dense
-                                    label={header}
-                                    onChange={({ checked }) =>
-                                        this.onTableHeadCheck({
-                                            header,
-                                            value: checked,
-                                        })
-                                    }
-                                    checked={
-                                        id === 'METADATA'
-                                            ? allItemsSelected(
-                                                  this.itemsForMetadataHeader(
-                                                      header
-                                                  )
-                                              )
-                                            : allItemsSelected(items)
-                                    }
-                                />
-                            ) : (
-                                header
-                            )}
-                        </DataTableColumnHeader>
-                    ))}
+                    {authSection.headers.map((header, index) => {
+                        const items = isMetadata
+                            ? this.itemsForMetadataHeader(
+                                  authSection.items,
+                                  header
+                              )
+                            : authSection.items
+
+                        return (
+                            <DataTableColumnHeader
+                                key={`header-${index}`}
+                                fixed
+                                top="0"
+                            >
+                                {(isMetadata && index !== 0) ||
+                                (!isMetadata && index === 0) ? (
+                                    <CheckboxField
+                                        dense
+                                        label={header}
+                                        onChange={({ checked }) =>
+                                            this.onTableHeadCheck({
+                                                authSection,
+                                                header,
+                                                value: checked,
+                                            })
+                                        }
+                                        checked={allItemsSelected(items)}
+                                        disabled={
+                                            isMetadata &&
+                                            allItemsImplicitlySelected(items)
+                                        }
+                                    />
+                                ) : (
+                                    header
+                                )}
+                            </DataTableColumnHeader>
+                        )
+                    })}
                 </DataTableRow>
             </DataTableHead>
         )
     }
 
+    onAuthChange = (ids, value) => {
+        if (typeof ids === 'string') {
+            ids = [ids]
+        }
+
+        this.context.onAuthChange(ids, value)
+
+        if (ids.some(isPublicAdd)) {
+            // Force rerender when a public add changes
+            this.forceUpdate()
+        }
+    }
+
+    itemsWithSelected = () => {
+        const itemsWithSelected = authSection => {
+            let publicAddSelected
+
+            return authSection.items.map(authSubject => {
+                const implicitlySelected =
+                    (publicAddSelected && isPrivateAdd(authSubject.id)) ||
+                    authSubject.implicit
+                const selected =
+                    this.context.shouldSelect(authSubject.id) ||
+                    implicitlySelected
+
+                if (isPublicAdd(authSubject.id)) {
+                    publicAddSelected = selected
+                }
+
+                return {
+                    ...authSubject,
+                    items: authSubject.items && itemsWithSelected(authSubject),
+                    selected,
+                    implicitlySelected,
+                }
+            })
+        }
+
+        if (Array.isArray(this.props.authSection.items)) {
+            return itemsWithSelected(this.props.authSection)
+        }
+        return this.props.authSection.items
+    }
+
     render() {
-        const { authSection } = this.props
+        const items = this.itemsWithSelected()
+        const authSection = {
+            ...this.props.authSection,
+            items,
+        }
 
         return (
             <Card

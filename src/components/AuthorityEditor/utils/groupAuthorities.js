@@ -57,6 +57,9 @@ export const getEmptyGroupedAuthorities = (() => {
 export const PUBLIC_ADD_SUFFIX = '_PUBLIC_ADD'
 export const PRIVATE_ADD_SUFFIX = '_PRIVATE_ADD'
 
+export const isPublicAdd = id => endsWith(id, PUBLIC_ADD_SUFFIX)
+export const isPrivateAdd = id => endsWith(id, PRIVATE_ADD_SUFFIX)
+
 const ADD_SUFFIX = '_ADD'
 const DELETE_SUFFIX = '_DELETE'
 const EXTERNAL_ACCESS_SUFFIX = '_EXTERNAL'
