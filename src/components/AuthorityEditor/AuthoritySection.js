@@ -4,7 +4,6 @@ import {
     Card,
     CircularLoader,
     CheckboxField,
-    NoticeBox,
     DataTable,
     DataTableHead,
     DataTableRow,
@@ -77,13 +76,13 @@ class AuthoritySection extends Component {
     renderInfoRow(errorMsg) {
         return (
             <DataTableRow>
-                <DataTableCell>
-                    {errorMsg ? (
-                        <NoticeBox error>{errorMsg}</NoticeBox>
-                    ) : (
-                        <NoticeBox>{i18n.t('No matches found')}</NoticeBox>
-                    )}
-                </DataTableCell>
+                {errorMsg ? (
+                    <DataTableCell error>{errorMsg}</DataTableCell>
+                ) : (
+                    <DataTableCell muted>
+                        {i18n.t('No matches found')}
+                    </DataTableCell>
+                )}
             </DataTableRow>
         )
     }
