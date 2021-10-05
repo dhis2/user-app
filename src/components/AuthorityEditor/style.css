@@ -47,10 +47,6 @@
     }
 }
 
-.authority-editor__auth-group-header {
-    padding-left: 0.8rem !important;
-}
-
 /* Scrollable tables */
 .authority-editor__auth-group-table {
     width: 100%;

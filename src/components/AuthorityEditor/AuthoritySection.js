@@ -1,9 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
-import { Heading } from '@dhis2/d2-ui-core'
 import {
-    Card,
     CircularLoader,
     CheckboxField,
+    DataTableToolbar,
     DataTable,
     DataTableHead,
     DataTableRow,
@@ -213,26 +212,25 @@ class AuthoritySection extends Component {
         }
 
         return (
-            <Card
+            <div
                 className={
                     authSection.id === 'METADATA'
                         ? styles.metadata
                         : styles.section
                 }
             >
-                <Heading
-                    level={6}
-                    className="authority-editor__auth-group-header"
-                >
-                    {authSection.name}
-                </Heading>
+                <DataTableToolbar>
+                    <h2 className={styles.authSectionHeader}>
+                        {authSection.name}
+                    </h2>
+                </DataTableToolbar>
                 <DataTable scrollHeight="375px">
                     {this.renderTableHead(authSection)}
                     <DataTableBody>
                         {this.renderContent(authSection)}
                     </DataTableBody>
                 </DataTable>
-            </Card>
+            </div>
         )
     }
 }
