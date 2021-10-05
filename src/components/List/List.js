@@ -109,9 +109,8 @@ class List extends Component {
 
     renderPagination() {
         const { pager, items, incrementPage, decrementPage } = this.props
-        const { page, pageCount, total, currentlyShown } = this.getPagerConfig(
-            pager
-        )
+        const { page, pageCount, total, currentlyShown } =
+            this.getPagerConfig(pager)
         const shouldHide =
             !items || items.length === 0 || typeof items === 'string'
         const style = shouldHide

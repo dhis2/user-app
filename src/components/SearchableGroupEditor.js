@@ -125,11 +125,8 @@ class SearchableGroupEditor extends Component {
     }
 
     renderHeader() {
-        const {
-            availableItemsHeader,
-            assignedItemsHeader,
-            errorText,
-        } = this.props
+        const { availableItemsHeader, assignedItemsHeader, errorText } =
+            this.props
         const assignedStyle = errorText
             ? { ...styles.header, ...styles.error }
             : styles.header
@@ -164,12 +161,8 @@ class SearchableGroupEditor extends Component {
         )
     }
     renderGroupEditor() {
-        const {
-            itemStore,
-            assignedItemStore,
-            filterText,
-            fetchErrorMsg,
-        } = this.state
+        const { itemStore, assignedItemStore, filterText, fetchErrorMsg } =
+            this.state
 
         if (fetchErrorMsg) {
             const introText = i18n.t(

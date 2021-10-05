@@ -146,11 +146,8 @@ class SearchableOrgUnitTree extends Component {
     }
 
     render() {
-        const {
-            selectedOrgUnits,
-            initiallyExpanded,
-            orgUnitFilter,
-        } = this.state
+        const { selectedOrgUnits, initiallyExpanded, orgUnitFilter } =
+            this.state
         const {
             roots,
             confirmSelection,
