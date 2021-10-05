@@ -217,11 +217,12 @@ class Api {
 
                     // If users are returned, this can still include records with the SAME value
                     // on ANOTHER attribute. So we have to filter on the current value and attributeId
-                    const attributesWithValueAndId = getAttributesWithValueAndId(
-                        userCollection,
-                        value,
-                        attributeId
-                    )
+                    const attributesWithValueAndId =
+                        getAttributesWithValueAndId(
+                            userCollection,
+                            value,
+                            attributeId
+                        )
 
                     return attributesWithValueAndId.length === 0
                 })
@@ -401,8 +402,9 @@ class Api {
     }
 
     refreshCurrentUser = () => {
-        const CurrentUserClass = Object.getPrototypeOf(this.d2.currentUser)
-            .constructor
+        const CurrentUserClass = Object.getPrototypeOf(
+            this.d2.currentUser
+        ).constructor
         const meFields = [
             ':all',
             '!userGroups',

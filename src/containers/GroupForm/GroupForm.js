@@ -171,13 +171,8 @@ class GroupForm extends Component {
     }
 
     render() {
-        const {
-            handleSubmit,
-            submitting,
-            asyncValidating,
-            pristine,
-            valid,
-        } = this.props
+        const { handleSubmit, submitting, asyncValidating, pristine, valid } =
+            this.props
         const { attributeFields } = this.state
         const disableSubmit = Boolean(
             submitting || asyncValidating || pristine || !valid

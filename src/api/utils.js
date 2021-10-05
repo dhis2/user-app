@@ -79,10 +79,18 @@ export const createListRequestData = (
         requestData.includeChildren = true
     }
 
-    if (query) requestData.query = query
-    if (inactiveMonths) requestData.inactiveMonths = inactiveMonths
-    if (selfRegistered) requestData.selfRegistered = selfRegistered
-    if (invitationStatus) requestData.invitationStatus = invitationStatus
+    if (query) {
+        requestData.query = query
+    }
+    if (inactiveMonths) {
+        requestData.inactiveMonths = inactiveMonths
+    }
+    if (selfRegistered) {
+        requestData.selfRegistered = selfRegistered
+    }
+    if (invitationStatus) {
+        requestData.invitationStatus = invitationStatus
+    }
 
     if (organisationUnits.length) {
         const ids = organisationUnits.map(unit => unit.id).join()
@@ -116,7 +124,8 @@ export const parseUserSaveData = (
     attributeFields
 ) => {
     const isNewUser = !user.id
-    const userModelOwnedProperties = user.modelDefinition.getOwnedPropertyNames()
+    const userModelOwnedProperties =
+        user.modelDefinition.getOwnedPropertyNames()
     const data = isNewUser
         ? {
               userCredentials: {

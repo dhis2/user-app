@@ -14,12 +14,8 @@ import { TEI_SEARCH_ORG_UNITS } from '../containers/UserForm/config'
  */
 class OrganisationUnitFilter extends Component {
     applyFilter = newSelectedOrgUnits => {
-        const {
-            updateFilter,
-            hideDialog,
-            getList,
-            selectedOrgUnits,
-        } = this.props
+        const { updateFilter, hideDialog, getList, selectedOrgUnits } =
+            this.props
 
         if (!isEqual(newSelectedOrgUnits, selectedOrgUnits)) {
             updateFilter('organisationUnits', newSelectedOrgUnits)
