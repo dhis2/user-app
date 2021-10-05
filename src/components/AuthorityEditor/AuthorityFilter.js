@@ -1,5 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { TextField, Checkbox } from 'material-ui'
+import { InputField, CheckboxField } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 
@@ -17,13 +17,12 @@ class AuthorityFilter extends Component {
         }
     }
 
-    onSelectedOnlyChange = (_, value) => {
-        this.setState({ selectedOnly: value })
-        this.props.onFilterChange(this.state.searchStr, value)
+    onSelectedOnlyChange = ({ checked }) => {
+        this.setState({ selectedOnly: checked })
+        this.props.onFilterChange(this.state.searchStr, checked)
     }
 
-    onSearchStrChange = event => {
-        const value = event.target.value
+    onSearchStrChange = ({ value }) => {
         this.setState({ searchStr: value })
         this.props.onFilterChange(value, this.state.selectedOnly)
     }
@@ -31,17 +30,18 @@ class AuthorityFilter extends Component {
     render() {
         return (
             <div className="authority-editor__filterbar">
-                <TextField
+                <InputField
                     className="authority-editor__filter-text-input search-input"
-                    floatingLabelText={i18n.t('Search')}
+                    label={i18n.t('Search')}
                     onChange={this.onSearchStrChange}
                     type="search"
+                    value={this.state.searchStr}
                 />
-                <Checkbox
+                <CheckboxField
                     className="authority-editor__filter-checkbox"
                     label={i18n.t('Selected authorities only')}
                     checked={this.state.selectedOnly}
-                    onCheck={this.onSelectedOnlyChange}
+                    onChange={this.onSelectedOnlyChange}
                     style={{ width: '300px' }}
                 />
             </div>

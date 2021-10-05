@@ -87,11 +87,14 @@
     overflow-x: hidden;
 }
 
-.authority-editor__auth-group:not(.scrollable) .authority-editor__auth-group-table {
+.authority-editor__auth-group:not(.scrollable)
+    .authority-editor__auth-group-table {
     border-color: transparent;
 }
 
-.authority-editor__auth-group:not(.scrollable) .authority-editor__auth-group-table tbody {
+.authority-editor__auth-group:not(.scrollable)
+    .authority-editor__auth-group-table
+    tbody {
     min-height: calc(375px - 101px);
 }
 
@@ -168,37 +171,22 @@
     color: #f44336;
 }
 
-/* Centered Checkboxes */
-.authority-editor__auth-checkbox,
+/* Checkboxes */
+.authority-editor__auth-checkbox {
+    font-size: 14px !important;
+}
+.authority-editor__auth-checkbox > .icon,
+.authority-editor__auth-checkbox--without-label > .icon {
+    outline-offset: -2px !important;
+    outline-width: 2px !important;
+}
+
 .authority-editor__auth-checkbox--without-label {
-    padding-top: 4px !important;
-    padding-bottom: 4px !important;
-    display: block !important;
+    justify-content: center !important;
 }
 
-.authority-editor__auth-checkbox,
-.authority-editor__auth-checkbox--without-label,
-.authority-editor__auth-checkbox label {
-    line-height: 16px !important;
-}
-
-.authority-editor__auth-checkbox > div > div,
-.authority-editor__auth-checkbox--without-label > div > div,
-.authority-editor__auth-checkbox > div > div svg,
-.authority-editor__auth-checkbox--without-label > div > div svg {
-    width: 16px !important;
-    height: 16px !important;
-}
-.authority-editor__auth-checkbox > div > div span,
-.authority-editor__auth-checkbox--without-label > div > div span {
-    top: -8px !important;
-    left: -8px !important;
-}
-
-.authority-editor__auth-checkbox--without-label > div {
-    width: 16px !important;
-    margin-left: auto;
-    margin-right: auto;
+.authority-editor__auth-checkbox--without-label > .icon {
+    margin: 0 !important;
 }
 
 .authority-editor__empty-cell {
@@ -213,6 +201,8 @@
 }
 .authority-editor__filter-text-input {
     float: left;
+    width: calc(100% - 250px);
+    max-width: 400px;
 }
 .authority-editor__filter-checkbox {
     float: left;
