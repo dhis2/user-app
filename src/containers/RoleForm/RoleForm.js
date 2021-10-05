@@ -59,13 +59,8 @@ class RoleForm extends Component {
 
     renderFields() {
         return this.fields.map(fieldConfig => {
-            const {
-                name,
-                fieldRenderer,
-                label,
-                isRequiredField,
-                ...conf
-            } = fieldConfig
+            const { name, fieldRenderer, label, isRequiredField, ...conf } =
+                fieldConfig
             const suffix = isRequiredField ? ' *' : ''
             const labelText = label + suffix
             const validators = name === NAME ? [required] : []
@@ -84,13 +79,8 @@ class RoleForm extends Component {
     }
 
     render = () => {
-        const {
-            handleSubmit,
-            submitting,
-            asyncValidating,
-            pristine,
-            valid,
-        } = this.props
+        const { handleSubmit, submitting, asyncValidating, pristine, valid } =
+            this.props
         const disableSubmit = Boolean(
             submitting || asyncValidating || pristine || !valid
         )

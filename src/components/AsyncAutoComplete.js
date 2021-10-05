@@ -140,12 +140,8 @@ class AsyncAutoComplete extends Component {
             ...getDefaultAutoCompleteProps(),
             ...autoCompleteProps,
         }
-        const {
-            filteredItems,
-            searchWarning,
-            errorStyle,
-            autoCompleteText,
-        } = this.state
+        const { filteredItems, searchWarning, errorStyle, autoCompleteText } =
+            this.state
         const marginBottom = searchWarning ? 0 : 28
         const mergedProps = {
             ...mergedAutoCompleteProps,
