@@ -1,6 +1,6 @@
 {
     "name": "user-app",
-    "version": "1.2.4",
+    "version": "1.2.8",
     "description": "DHIS2 User app",
     "license": "BSD-3-Clause",
     "private": true,
@@ -8,10 +8,9 @@
         "build": "d2-app-scripts build",
         "start": "d2-app-scripts start",
         "test": "d2-app-scripts test",
-        "lint": "d2-style check",
-        "lint:staged": "d2-style check --staged",
-        "format": "d2-style apply",
-        "format:staged": "d2-style apply --staged",
+        "format": "yarn d2-style apply",
+        "format:staged": "yarn d2-style apply --staged",
+        "lint": "yarn d2-style check",
         "documentation": "rimraf build && jsdoc -c jsdoc.json"
     },
     "dependencies": {

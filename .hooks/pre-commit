@@ -2,4 +2,3 @@
 . "$(dirname "$0")/_/husky.sh"
 
 yarn d2-style check --staged
-yarn d2-style apply --staged
