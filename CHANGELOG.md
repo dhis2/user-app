@@ -1,3 +1,31 @@
+## [1.2.8](https://github.com/dhis2/user-app/compare/v1.2.7...v1.2.8) (2021-10-02)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([7577d76](https://github.com/dhis2/user-app/commit/7577d760b08c0d9d645d30a455436feb19a63139))
+
+## [1.2.7](https://github.com/dhis2/user-app/compare/v1.2.6...v1.2.7) (2021-10-01)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([c145f10](https://github.com/dhis2/user-app/commit/c145f104c3e2cfd06a8b2f9d1791847d8c214000))
+
+## [1.2.6](https://github.com/dhis2/user-app/compare/v1.2.5...v1.2.6) (2021-09-30)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([b5680bf](https://github.com/dhis2/user-app/commit/b5680bf10b9fd337f008445a7cde1cc7d2b3d980))
+
+## [1.2.5](https://github.com/dhis2/user-app/compare/v1.2.4...v1.2.5) (2021-09-29)
+
+
+### Bug Fixes
+
+* rename 'surname' field to 'last name' and show after 'first name' field ([6bc2046](https://github.com/dhis2/user-app/commit/6bc2046443d6d7f8d180253ebdb608e4f34ccb8b))
+
 ## [1.2.4](https://github.com/dhis2/user-app/compare/v1.2.3...v1.2.4) (2021-09-12)
 
 

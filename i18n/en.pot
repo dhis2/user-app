@@ -216,6 +216,24 @@ msgstr "Skip data import audit"
 msgid "Visualization"
 msgstr "Visualization"
 
+msgid "Metadata"
+msgstr "Metadata"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Add/Update Public"
+msgstr "Add/Update Public"
+
+msgid "Add/Update Private"
+msgstr "Add/Update Private"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "External access"
+msgstr "External access"
+
 msgid "Apps"
 msgstr "Apps"
 
@@ -345,11 +363,11 @@ msgstr "Last login"
 msgid "Created"
 msgstr "Created"
 
-msgid "Surname"
-msgstr "Surname"
-
 msgid "First name"
 msgstr "First name"
+
+msgid "Last name"
+msgstr "Last name"
 
 msgid "Introduction"
 msgstr "Introduction"
@@ -422,9 +440,6 @@ msgstr "There was a problem saving the user group."
 
 msgid "Save"
 msgstr "Save"
-
-msgid "Name"
-msgstr "Name"
 
 msgid "Code"
 msgstr "Code"

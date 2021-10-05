@@ -14,7 +14,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 1.5rem;
 }
+
 .authority-editor__auth-group {
     flex: 1 0 300px;
     min-width: calc(50% - 0.75rem);
