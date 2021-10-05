@@ -1,4 +1,4 @@
-import { Checkbox } from 'material-ui'
+import { CheckboxField, DataTableCell } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import HighlightableText from './HighlightableText'
@@ -9,22 +9,18 @@ import HighlightableText from './HighlightableText'
  * Depending on state this checkbox can be disabled or selected.
  */
 class AuthorityItem extends Component {
-    onChecked = (_, value) => {
+    handleChecked = ({ checked }) => {
         const {
             authSubject: { id },
             onCheckedCallBack,
         } = this.props
-        onCheckedCallBack([id], value)
+        onCheckedCallBack([id], checked)
     }
 
     render() {
-        const { authSubject, withLabel, disabled } = this.props
+        const { authSubject, withLabel } = this.props
         const { searchChunks } = this.context
-        const { name, empty, implicit } = authSubject
-        const baseClassName = 'authority-editor__auth-checkbox'
-        const className = withLabel
-            ? baseClassName
-            : `${baseClassName}--without-label`
+        const { name, empty, selected, implicitlySelected } = authSubject
         const label = withLabel ? (
             <HighlightableText text={name} searchChunks={searchChunks} />
         ) : (
@@ -32,19 +28,17 @@ class AuthorityItem extends Component {
         )
 
         return (
-            <td>
-                {!empty ? (
-                    <Checkbox
-                        onCheck={this.onChecked}
+            <DataTableCell>
+                {!empty && (
+                    <CheckboxField
+                        dense
+                        onChange={this.handleChecked}
                         label={label}
-                        className={className}
-                        checked={this.props.selected || Boolean(implicit)}
-                        disabled={implicit || disabled}
+                        checked={selected}
+                        disabled={implicitlySelected}
                     />
-                ) : (
-                    <div className="authority-editor__empty-cell" />
                 )}
-            </td>
+            </DataTableCell>
         )
     }
 }
@@ -53,13 +47,12 @@ AuthorityItem.propTypes = {
     authSubject: PropTypes.shape({
         empty: PropTypes.bool,
         id: PropTypes.string,
-        implicit: PropTypes.bool,
+        implicitlySelected: PropTypes.bool,
         name: PropTypes.string,
+        selected: PropTypes.bool,
     }).isRequired,
-    selected: PropTypes.bool.isRequired,
     withLabel: PropTypes.bool.isRequired,
     onCheckedCallBack: PropTypes.func.isRequired,
-    disabled: PropTypes.bool,
 }
 
 AuthorityItem.contextTypes = {

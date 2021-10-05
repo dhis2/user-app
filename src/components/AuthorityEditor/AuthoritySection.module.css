@@ -1,0 +1,9 @@
+@media (min-width: 960px) {
+    .section {
+        width: calc(50% - 1.5rem / 2) !important;
+    }
+}
+
+.metadata {
+    width: 100% !important;
+}
