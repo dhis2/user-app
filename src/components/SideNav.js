@@ -30,10 +30,6 @@ class SideNav extends Component {
             sectionKey = 'HOME'
         }
 
-        if (!sectionForPath && !onLandingPage) {
-            return null
-        }
-
         return (
             <Sidebar
                 sections={sections}
