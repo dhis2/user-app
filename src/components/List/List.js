@@ -21,32 +21,7 @@ import ErrorMessage from '../ErrorMessage'
 import './booleanValueRenderer'
 import '@dhis2/d2-ui-core/css/Table.css'
 import '@dhis2/d2-ui-core/css/Pagination.css'
-
-const styles = {
-    dataTableWrap: {
-        flex: 1,
-        marginBottom: '4rem',
-    },
-    clearBoth: {
-        clear: 'both',
-    },
-    filterBar: {
-        display: 'table',
-        marginBottom: '1rem',
-        width: '100%',
-    },
-    headerBarPagination: {
-        float: 'right',
-        marginTop: '14px',
-    },
-    headerBarFilterWrap: {
-        display: 'table',
-        marginRight: '230px',
-    },
-    pagination: {
-        userSelect: 'none',
-    },
-}
+import styles from './List.module.css'
 
 /**
  * Generic component that fetches list data, and displays this in a DataTable with paging and filtering
@@ -113,9 +88,7 @@ class List extends Component {
             this.getPagerConfig(pager)
         const shouldHide =
             !items || items.length === 0 || typeof items === 'string'
-        const style = shouldHide
-            ? { ...styles.pagination, visibility: 'hidden' }
-            : styles.pagination
+        const style = shouldHide ? { visibility: 'hidden' } : {}
         const paginationProps = {
             hasNextPage: () =>
                 page && items && items.length && page < pageCount,
@@ -141,13 +114,8 @@ class List extends Component {
     renderHeaderBar() {
         const { filterComponent: FilterComponent, entityType } = this.props
         return (
-            <div className="data-table__filter-bar" style={styles.filterBar}>
-                <div style={styles.headerBarPagination}>
-                    {this.renderPagination()}
-                </div>
-                <div style={styles.headerBarFilterWrap}>
-                    <FilterComponent entityType={entityType} />
-                </div>
+            <div className={styles.headerBar}>
+                <FilterComponent entityType={entityType} />
             </div>
         )
     }
@@ -171,7 +139,7 @@ class List extends Component {
         }
 
         if (items.length === 0) {
-            return <div style={styles.clearBoth}>No results found.</div>
+            return <div>No results found.</div>
         }
         return (
             <DataTable
@@ -188,7 +156,7 @@ class List extends Component {
     render() {
         const { sectionName, newItemPath, className } = this.props
         return (
-            <div style={styles.dataTableWrap} className={className}>
+            <div className={styles.dataTableWrap + ' ' + className}>
                 <Heading>{sectionName}</Heading>
                 {this.renderHeaderBar()}
                 {this.renderDataTable()}
