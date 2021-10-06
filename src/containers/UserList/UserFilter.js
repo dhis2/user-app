@@ -1,31 +1,16 @@
 import i18n from '@dhis2/d2-i18n'
-import { DropDown } from '@dhis2/d2-ui-core'
-import { Checkbox } from 'material-ui'
+import { CheckboxField, SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { updateFilter, getList } from '../../actions'
-import OrganisationUnitInput from '../../components/OrganisationUnitInput'
 import SearchFilter from '../../components/SearchFilter'
 import {
     INACTIVE_MONTHS,
     INVITATION_STATUS,
     SELF_REGISTERED,
 } from '../../constants/filterFieldNames'
-
-const style = {
-    float: 'left',
-    marginRight: '1rem',
-}
-
-const selfRegisteredStyle = {
-    ...style,
-    display: 'inline-block',
-    float: 'left',
-    width: '182px',
-    paddingTop: '37px',
-    height: '35px',
-}
+import OrganisationUnitInput from './OrganisationUnitInput'
 
 /**
  * Renders a SearchFilter, OrganisationUnitInput, dropdowns for inactive months and invitation status, and a checkbox for self registration.
@@ -43,71 +28,68 @@ class UserFilter extends Component {
         getList(entityType)
     }
 
-    createInactiveMonthsOptions() {
-        const month = i18n.t('month')
-        const months = i18n.t('months')
-        return Array(12)
+    renderInactiveMonthsFilter() {
+        const options = Array(12)
             .fill()
             .map((_, index) => {
-                const id = index + 1
+                const months = index + 1
                 const displayName =
-                    id === 1 ? `${id} ${month}` : `${id} ${months}`
-                return { id, displayName }
+                    months === 1
+                        ? i18n.t('1 month')
+                        : i18n.t('{{months}} months', { months })
+                return { months, displayName }
             })
-    }
 
-    renderDropDown(config) {
-        const mergedConfig = {
-            ...config,
-            includeEmpty: true,
-            emptyLabel: i18n.t('<No value>'),
-        }
-        return <DropDown {...mergedConfig} />
-    }
-
-    renderInactiveMonthsFilter() {
-        const dropDownConfig = {
-            menuItems: this.createInactiveMonthsOptions(),
-            floatingLabelText: i18n.t('Inactivity'),
-            value: this.props.filter.inactiveMonths,
-            onChange: event =>
-                this.onFilterChange(INACTIVE_MONTHS, event.target.value),
-            style: { ...style, width: '132px' },
-        }
-
-        return this.renderDropDown(dropDownConfig)
+        return (
+            <SingleSelectField
+                clearable
+                label={i18n.t('Inactivity')}
+                onChange={({ selected }) =>
+                    this.onFilterChange(INACTIVE_MONTHS, selected)
+                }
+                selected={this.props.filter.inactiveMonths}
+            >
+                {options.map(({ months, displayName }) => (
+                    <SingleSelectOption
+                        key={months}
+                        label={displayName}
+                        value={String(months)}
+                    />
+                ))}
+            </SingleSelectField>
+        )
     }
 
     renderInvitationStatusFilter() {
-        const dropDownConfig = {
-            menuItems: [
-                { id: 'all', displayName: i18n.t('All invitations') },
-                { id: 'expired', displayName: i18n.t('Expired invitations') },
-            ],
-            floatingLabelText: i18n.t('Invitations'),
-            value: this.props.filter.invitationStatus,
-            onChange: event =>
-                this.onFilterChange(INVITATION_STATUS, event.target.value),
-            style: { ...style, width: '172px' },
-        }
-
-        return this.renderDropDown(dropDownConfig)
+        return (
+            <SingleSelectField
+                clearable
+                label={i18n.t('Invitations')}
+                onChange={({ selected }) =>
+                    this.onFilterChange(INVITATION_STATUS, selected)
+                }
+                selected={this.props.filter.invitationStatus}
+            >
+                <SingleSelectOption
+                    label={i18n.t('All invitations')}
+                    value="all"
+                />
+                <SingleSelectOption
+                    label={i18n.t('Expired invitations')}
+                    value="expired"
+                />
+            </SingleSelectField>
+        )
     }
 
     renderSelfRegisteredFilter() {
-        const value = this.props.filter.selfRegistered
-        const baseClassName = 'data-table__filter-bar__checkbox'
-        const checkedClassName = `${baseClassName}--checked`
-
         return (
-            <Checkbox
-                value={value}
-                onCheck={(event, value) =>
-                    this.onFilterChange(SELF_REGISTERED, value)
+            <CheckboxField
+                checked={this.props.filter.selfRegistered}
+                onChange={({ checked }) =>
+                    this.onFilterChange(SELF_REGISTERED, checked)
                 }
                 label={i18n.t('Self registrations')}
-                className={value ? checkedClassName : baseClassName}
-                style={selfRegisteredStyle}
             />
         )
     }

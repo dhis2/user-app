@@ -2,10 +2,10 @@ import isEqual from 'lodash.isequal'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { updateFilter, hideDialog, getList } from '../actions'
-import SearchableOrgUnitTree from '../components/SearchableOrgUnitTree'
-import { USER } from '../constants/entityTypes'
-import { TEI_SEARCH_ORG_UNITS } from '../containers/UserForm/config'
+import { updateFilter, hideDialog, getList } from '../../actions'
+import SearchableOrgUnitTree from '../../components/SearchableOrgUnitTree'
+import { USER } from '../../constants/entityTypes'
+import { TEI_SEARCH_ORG_UNITS } from '../UserForm/config'
 
 /**
  * Displayed inside of a Dialog and displayed by clicking the OrganisationUnitInput.
