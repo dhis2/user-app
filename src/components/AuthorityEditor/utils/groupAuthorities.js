@@ -7,35 +7,36 @@ import getNameLookup from './authorityGroupNames'
 
 const createEmptyGroupedAuthorities = () => ({
     metadata: {
-        name: 'Metadata',
+        id: 'METADATA',
+        name: i18n.t('Metadata'),
         items: null,
         headers: [
-            'Name',
-            'Add/Update Public',
-            'Add/Update Private',
-            'Delete',
-            'External access',
+            i18n.t('Name'),
+            i18n.t('Add/Update Public'),
+            i18n.t('Add/Update Private'),
+            i18n.t('Delete'),
+            i18n.t('External access'),
         ],
     },
     apps: {
         name: i18n.t('Apps'),
         items: null,
-        headers: ['Name'],
+        headers: [i18n.t('Name')],
     },
     tracker: {
         name: i18n.t('Tracker'),
         items: null,
-        headers: ['Name'],
+        headers: [i18n.t('Name')],
     },
     importExport: {
         name: i18n.t('Import-Export'),
         items: null,
-        headers: ['Name'],
+        headers: [i18n.t('Name')],
     },
     system: {
         name: i18n.t('System'),
         items: null,
-        headers: ['Name'],
+        headers: [i18n.t('Name')],
     },
 })
 
@@ -55,6 +56,9 @@ export const getEmptyGroupedAuthorities = (() => {
 // Suffixes and prefixes
 export const PUBLIC_ADD_SUFFIX = '_PUBLIC_ADD'
 export const PRIVATE_ADD_SUFFIX = '_PRIVATE_ADD'
+
+export const isPublicAdd = id => endsWith(id, PUBLIC_ADD_SUFFIX)
+export const isPrivateAdd = id => endsWith(id, PRIVATE_ADD_SUFFIX)
 
 const ADD_SUFFIX = '_ADD'
 const DELETE_SUFFIX = '_DELETE'
