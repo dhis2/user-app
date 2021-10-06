@@ -1,0 +1,14 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+    gap: 1em;
+}
+
+.selfRegistrations {
+    align-self: flex-end;
+}
+
+.singleSelect {
+    min-width: 200px;
+}

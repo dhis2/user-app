@@ -11,6 +11,7 @@ import {
     SELF_REGISTERED,
 } from '../../constants/filterFieldNames'
 import OrganisationUnitInput from './OrganisationUnitInput'
+import styles from './UserFilter.module.css'
 
 /**
  * Renders a SearchFilter, OrganisationUnitInput, dropdowns for inactive months and invitation status, and a checkbox for self registration.
@@ -48,6 +49,8 @@ class UserFilter extends Component {
                     this.onFilterChange(INACTIVE_MONTHS, selected)
                 }
                 selected={this.props.filter.inactiveMonths}
+                className={styles.singleSelect}
+                dense
             >
                 {options.map(({ months, displayName }) => (
                     <SingleSelectOption
@@ -69,6 +72,8 @@ class UserFilter extends Component {
                     this.onFilterChange(INVITATION_STATUS, selected)
                 }
                 selected={this.props.filter.invitationStatus}
+                className={styles.singleSelect}
+                dense
             >
                 <SingleSelectOption
                     label={i18n.t('All invitations')}
@@ -85,24 +90,28 @@ class UserFilter extends Component {
     renderSelfRegisteredFilter() {
         return (
             <CheckboxField
+                label={i18n.t('Self registrations')}
                 checked={this.props.filter.selfRegistered}
                 onChange={({ checked }) =>
                     this.onFilterChange(SELF_REGISTERED, checked)
                 }
-                label={i18n.t('Self registrations')}
+                className={styles.selfRegistrations}
             />
         )
     }
 
     render() {
-        const { entityType } = this.props
         return (
             <div>
-                <SearchFilter entityType={entityType} />
-                <OrganisationUnitInput />
-                {this.renderInactiveMonthsFilter()}
-                {this.renderInvitationStatusFilter()}
-                {this.renderSelfRegisteredFilter()}
+                <div className={styles.row}>
+                    <SearchFilter entityType={this.props.entityType} />
+                    <OrganisationUnitInput />
+                </div>
+                <div className={styles.row}>
+                    {this.renderInactiveMonthsFilter()}
+                    {this.renderInvitationStatusFilter()}
+                    {this.renderSelfRegisteredFilter()}
+                </div>
             </div>
         )
     }
