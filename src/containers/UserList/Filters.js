@@ -6,6 +6,7 @@ import {
     SingleSelectOption,
     Button,
 } from '@dhis2/ui'
+import classnames from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './Filters.module.css'
@@ -90,7 +91,17 @@ const Filters = ({
             className={styles.input}
             dense
         />
-        <Button small onClick={onClear}>
+        <Button
+            className={classnames({
+                [styles.hidden]:
+                    !query &&
+                    !inactiveMonths &&
+                    !invitationStatus &&
+                    !selfRegistered,
+            })}
+            small
+            onClick={onClear}
+        >
             {i18n.t('Clear filters')}
         </Button>
     </div>

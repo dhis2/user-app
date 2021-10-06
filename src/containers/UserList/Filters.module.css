@@ -9,3 +9,7 @@
 .input {
     min-width: 200px;
 }
+
+.hidden {
+    visibility: hidden;
+}
