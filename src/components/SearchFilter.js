@@ -26,7 +26,7 @@ const SearchFilter = ({ entityType, getList, query, updateQuery }) => {
     return (
         <InputField
             className={styles.input}
-            label={i18n.t('Search by name')}
+            placeholder={i18n.t('Search by name')}
             value={localQueryStr}
             onChange={handleQueryChange}
             dense

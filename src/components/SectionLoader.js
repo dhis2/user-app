@@ -10,11 +10,15 @@ import navigateTo from '../utils/navigateTo'
 import ErrorMessage from './ErrorMessage'
 import SideNav from './SideNav'
 
-const style = {
-    display: 'grid',
-    gridTemplateColumns: '320px 1fr',
-    height: '100%',
-    paddingRight: '2rem',
+const styles = {
+    container: {
+        display: 'grid',
+        gridTemplateColumns: '320px 1fr',
+        height: '100%',
+    },
+    content: {
+        padding: 16,
+    },
 }
 
 /**
@@ -126,7 +130,7 @@ class SectionLoader extends Component {
         return (
             <>
                 <SideNav key="sidenav" sections={sections} />
-                <div>
+                <div style={styles.content}>
                     <Switch key="routeswitch">
                         {this.renderRoutes(routes)}
                     </Switch>
@@ -136,7 +140,7 @@ class SectionLoader extends Component {
     }
 
     render() {
-        return <main style={style}>{this.renderContent()}</main>
+        return <main style={styles.container}>{this.renderContent()}</main>
     }
 }
 

@@ -1,5 +1,5 @@
 import { useD2 } from '@dhis2/app-runtime-adapter-d2'
-import { CircularProgress } from 'material-ui'
+import { CenteredContent, CircularLoader, CssVariables } from '@dhis2/ui'
 import React from 'react'
 import { Provider } from 'react-redux'
 import api from './api'
@@ -29,20 +29,21 @@ const AppWrapper = () => {
 
     if (!d2) {
         return (
-            <AppWithD2ContextAndTheme>
-                <div className="page-loader-wrap">
-                    <CircularProgress size={48} />
-                </div>
-            </AppWithD2ContextAndTheme>
+            <CenteredContent>
+                <CircularLoader />
+            </CenteredContent>
         )
     }
 
     return (
-        <Provider store={store}>
-            <AppWithD2ContextAndTheme d2={d2}>
-                <App />
-            </AppWithD2ContextAndTheme>
-        </Provider>
+        <>
+            <CssVariables spacers colors />
+            <Provider store={store}>
+                <AppWithD2ContextAndTheme d2={d2}>
+                    <App />
+                </AppWithD2ContextAndTheme>
+            </Provider>
+        </>
     )
 }
 

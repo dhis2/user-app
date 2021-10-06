@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-10-06T09:02:54.441Z\n"
-"PO-Revision-Date: 2021-10-06T09:02:54.441Z\n"
+"POT-Creation-Date: 2021-10-06T14:59:23.882Z\n"
+"PO-Revision-Date: 2021-10-06T14:59:23.882Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -557,6 +557,30 @@ msgstr "Available dimension restrictions for data analytics"
 msgid "Selected dimension restrictions for data analytics"
 msgstr "Selected dimension restrictions for data analytics"
 
+msgid "1 month"
+msgstr "1 month"
+
+msgid "{{months}} months"
+msgstr "{{months}} months"
+
+msgid "Time inactive"
+msgstr "Time inactive"
+
+msgid "Invitation"
+msgstr "Invitation"
+
+msgid "All invitations"
+msgstr "All invitations"
+
+msgid "Expired invitations"
+msgstr "Expired invitations"
+
+msgid "Show self-registrations"
+msgstr "Show self-registrations"
+
+msgid "Clear filters"
+msgstr "Clear filters"
+
 msgid "Select an organisation unit"
 msgstr "Select an organisation unit"
 
@@ -596,29 +620,23 @@ msgstr "successfully enabled"
 msgid "There was a problem updating the enabled state"
 msgstr "There was a problem updating the enabled state"
 
-msgid "1 month"
-msgstr "1 month"
-
-msgid "{{months}} months"
-msgstr "{{months}} months"
-
-msgid "Inactivity"
-msgstr "Inactivity"
-
-msgid "Invitations"
-msgstr "Invitations"
-
-msgid "All invitations"
-msgstr "All invitations"
-
-msgid "Expired invitations"
-msgstr "Expired invitations"
-
-msgid "Self registrations"
-msgstr "Self registrations"
-
 msgid "User Management"
 msgstr "User Management"
+
+msgid "New"
+msgstr "New"
+
+msgid "Error loading users"
+msgstr "Error loading users"
+
+msgid "No results found"
+msgstr "No results found"
+
+msgid "Account disabled?"
+msgstr "Account disabled?"
+
+msgid "Actions"
+msgstr "Actions"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
