@@ -11,10 +11,10 @@ import ErrorMessage from './ErrorMessage'
 import SideNav from './SideNav'
 
 const style = {
-    display: 'flex',
-    flex: '1 1 0%',
+    display: 'grid',
+    gridTemplateColumns: '320px 1fr',
+    height: '100%',
     paddingRight: '2rem',
-    paddingTop: '1rem',
 }
 
 /**
@@ -123,10 +123,16 @@ class SectionLoader extends Component {
             return <ErrorMessage introText={introText} errorMessage="" />
         }
 
-        return [
-            <SideNav key="sidenav" sections={sections} />,
-            <Switch key="routeswitch">{this.renderRoutes(routes)}</Switch>,
-        ]
+        return (
+            <>
+                <SideNav key="sidenav" sections={sections} />
+                <div>
+                    <Switch key="routeswitch">
+                        {this.renderRoutes(routes)}
+                    </Switch>
+                </div>
+            </>
+        )
     }
 
     render() {

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-09-28T15:10:38.753Z\n"
-"PO-Revision-Date: 2021-09-28T15:10:38.753Z\n"
+"POT-Creation-Date: 2021-10-06T09:02:54.441Z\n"
+"PO-Revision-Date: 2021-10-06T09:02:54.441Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -266,12 +266,6 @@ msgstr "Confirm"
 
 msgid "There was an error fetching the list"
 msgstr "There was an error fetching the list"
-
-msgid "Select an organisation unit"
-msgstr "Select an organisation unit"
-
-msgid "Organisation unit"
-msgstr "Organisation unit"
 
 msgid "Page not found."
 msgstr "Page not found."
@@ -563,6 +557,15 @@ msgstr "Available dimension restrictions for data analytics"
 msgid "Selected dimension restrictions for data analytics"
 msgstr "Selected dimension restrictions for data analytics"
 
+msgid "Select an organisation unit"
+msgstr "Select an organisation unit"
+
+msgid "Organisation unit"
+msgstr "Organisation unit"
+
+msgid "Select organisation unit"
+msgstr "Select organisation unit"
+
 msgid "Replicate user"
 msgstr "Replicate user"
 
@@ -593,26 +596,23 @@ msgstr "successfully enabled"
 msgid "There was a problem updating the enabled state"
 msgstr "There was a problem updating the enabled state"
 
-msgid "month"
-msgstr "month"
+msgid "1 month"
+msgstr "1 month"
 
-msgid "months"
-msgstr "months"
-
-msgid "<No value>"
-msgstr "<No value>"
+msgid "{{months}} months"
+msgstr "{{months}} months"
 
 msgid "Inactivity"
 msgstr "Inactivity"
+
+msgid "Invitations"
+msgstr "Invitations"
 
 msgid "All invitations"
 msgstr "All invitations"
 
 msgid "Expired invitations"
 msgstr "Expired invitations"
-
-msgid "Invitations"
-msgstr "Invitations"
 
 msgid "Self registrations"
 msgstr "Self registrations"
@@ -630,6 +630,9 @@ msgstr "Yes"
 
 msgid "No"
 msgstr "No"
+
+msgid "<No value>"
+msgstr "<No value>"
 
 msgid "Something went wrong when processing your request."
 msgstr "Something went wrong when processing your request."

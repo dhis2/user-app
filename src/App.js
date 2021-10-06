@@ -11,14 +11,14 @@ import history from './utils/history'
  * @class
  */
 const App = () => (
-    <div>
+    <>
         <Router history={history} hashType={'noslash'}>
             <SectionLoader />
         </Router>
         <SnackbarContainer />
         <DialogContainer />
         <SharingDialogContainer />
-    </div>
+    </>
 )
 
 export default App

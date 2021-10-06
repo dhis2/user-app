@@ -3,11 +3,6 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 
-const style = {
-    display: 'flex',
-    flex: '0 0 320px',
-}
-
 /**
  * Renders the sidebar containing the available sections.
  * If its on a path/route that doesn't match any section it will render null.
@@ -30,20 +25,21 @@ class SideNav extends Component {
             section => section.path === pathname
         )
         const onLandingPage = pathname === '/'
-        const sectionKey = sectionForPath ? sectionForPath.key : null
+        let sectionKey = sectionForPath ? sectionForPath.key : null
+        if (onLandingPage) {
+            sectionKey = 'HOME'
+        }
 
         if (!sectionForPath && !onLandingPage) {
             return null
         }
 
         return (
-            <div style={style}>
-                <Sidebar
-                    sections={sections}
-                    onChangeSection={this.changeSectionHandler}
-                    currentSection={sectionKey}
-                />
-            </div>
+            <Sidebar
+                sections={sections}
+                onChangeSection={this.changeSectionHandler}
+                currentSection={sectionKey}
+            />
         )
     }
 }
