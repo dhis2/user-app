@@ -1,4 +1,5 @@
 import { useD2 } from '@dhis2/app-runtime-adapter-d2'
+import { CssVariables } from '@dhis2/ui'
 import { CircularProgress } from 'material-ui'
 import React from 'react'
 import { Provider } from 'react-redux'
@@ -40,6 +41,7 @@ const AppWrapper = () => {
     return (
         <Provider store={store}>
             <AppWithD2ContextAndTheme d2={d2}>
+                <CssVariables spacers colors theme />
                 <App />
             </AppWithD2ContextAndTheme>
         </Provider>
