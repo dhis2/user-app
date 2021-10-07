@@ -18,6 +18,8 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import navigateTo from '../../../utils/navigateTo'
+import DisableModal from './Modals/DisableModal'
+import EnableModal from './Modals/EnableModal'
 import ReplicateModal from './Modals/ReplicateModal'
 import ResetPasswordModal from './Modals/ResetPasswordModal'
 
@@ -48,10 +50,10 @@ const ContextMenu = ({
         setCurrentModal(() => ResetPasswordModal)
     }
     const handleShowDisableModal = () => {
-        // TODO
+        setCurrentModal(() => DisableModal)
     }
     const handleShowEnableModal = () => {
-        // TODO
+        setCurrentModal(() => EnableModal)
     }
     const handleShowDisable2FaModal = () => {
         // TODO

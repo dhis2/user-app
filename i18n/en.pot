@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-10-07T15:15:20.194Z\n"
-"PO-Revision-Date: 2021-10-07T15:15:20.194Z\n"
+"POT-Creation-Date: 2021-10-07T15:30:00.068Z\n"
+"PO-Revision-Date: 2021-10-07T15:30:00.068Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -566,6 +566,39 @@ msgstr "Disable Two Factor Authentication"
 msgid "Delete"
 msgstr "Delete"
 
+msgid "User \"{{- name}}\" disabled successfuly"
+msgstr "User \"{{- name}}\" disabled successfuly"
+
+msgid "There was an error disabling the user: {{- error}}"
+msgstr "There was an error disabling the user: {{- error}}"
+
+msgid "Disable user {{- name}}"
+msgstr "Disable user {{- name}}"
+
+msgid "Are you sure you want to disable {{- name}}?"
+msgstr "Are you sure you want to disable {{- name}}?"
+
+msgid "No, cancel"
+msgstr "No, cancel"
+
+msgid "Yes, disable"
+msgstr "Yes, disable"
+
+msgid "User \"{{- name}}\" enabled successfuly"
+msgstr "User \"{{- name}}\" enabled successfuly"
+
+msgid "There was an error enabling the user: {{- error}}"
+msgstr "There was an error enabling the user: {{- error}}"
+
+msgid "Enable user {{- name}}"
+msgstr "Enable user {{- name}}"
+
+msgid "Are you sure you want to enable {{- name}}?"
+msgstr "Are you sure you want to enable {{- name}}?"
+
+msgid "Yes, enable"
+msgstr "Yes, enable"
+
 msgid "User \"{{- name}}\" replicated successfuly"
 msgstr "User \"{{- name}}\" replicated successfuly"
 
@@ -602,9 +635,6 @@ msgstr "Reset password of user {{- name}}"
 
 msgid "Are you sure you want to reset {{- name}}'s password?"
 msgstr "Are you sure you want to reset {{- name}}'s password?"
-
-msgid "No, cancel"
-msgstr "No, cancel"
 
 msgid "Yes, reset"
 msgstr "Yes, reset"
