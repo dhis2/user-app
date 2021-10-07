@@ -1,6 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
 import {
-    colors,
     CenteredContent,
     CircularLoader,
     NoticeBox,
@@ -10,50 +9,57 @@ import {
     DataTableRow,
     DataTableCell,
     DataTableColumnHeader,
-    Button,
-    IconMore24,
 } from '@dhis2/ui'
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import React from 'react'
 import navigateTo from '../../utils/navigateTo'
+import ContextMenuButton from './ContextMenuButton'
 import styles from './UserTable.module.css'
+
+const InfoWrapper = ({ children }) => (
+    <DataTable>
+        <DataTableBody>
+            <DataTableRow>
+                <DataTableCell colSpan="5">
+                    <div className={styles.infoWrapper}>{children}</div>
+                </DataTableCell>
+            </DataTableRow>
+        </DataTableBody>
+    </DataTable>
+)
+
+InfoWrapper.propTypes = {
+    children: PropTypes.node.isRequired,
+}
 
 const UserTable = ({ loading, error, users }) => {
     if (loading) {
         return (
-            <DataTable>
-                <CenteredContent className={styles.infoWrapper}>
+            <InfoWrapper>
+                <CenteredContent>
                     <CircularLoader />
                 </CenteredContent>
-            </DataTable>
+            </InfoWrapper>
         )
     }
 
     if (error) {
         return (
-            <DataTable>
-                <div className={styles.infoWrapper}>
-                    <NoticeBox error title={i18n.t('Error loading users')}>
-                        {error.message}
-                    </NoticeBox>
-                </div>
-            </DataTable>
+            <InfoWrapper>
+                <NoticeBox error title={i18n.t('Error loading users')}>
+                    {error.message}
+                </NoticeBox>
+            </InfoWrapper>
         )
     }
 
     if (users.length === 0) {
         return (
-            <DataTable>
-                <p className={styles.infoWrapper}>
-                    {i18n.t('No results found')}
-                </p>
-            </DataTable>
+            <InfoWrapper>
+                <p>{i18n.t('No results found')}</p>
+            </InfoWrapper>
         )
-    }
-
-    const createCellOnClickHandler = userId => () => {
-        navigateTo(`/users/edit/${userId}`)
     }
 
     return (
@@ -78,35 +84,39 @@ const UserTable = ({ loading, error, users }) => {
                 </DataTableRow>
             </DataTableHead>
             <DataTableBody>
-                {users.map(({ id, displayName, userCredentials }) => (
-                    <DataTableRow key={id}>
-                        <DataTableCell onClick={createCellOnClickHandler(id)}>
-                            {displayName}
-                        </DataTableCell>
-                        <DataTableCell onClick={createCellOnClickHandler(id)}>
-                            {userCredentials.username}
-                        </DataTableCell>
-                        <DataTableCell onClick={createCellOnClickHandler(id)}>
-                            {userCredentials.lastLogin && (
-                                <span title={userCredentials.lastLogin}>
-                                    {moment(
-                                        userCredentials.lastLogin
-                                    ).fromNow()}
-                                </span>
-                            )}
-                        </DataTableCell>
-                        <DataTableCell onClick={createCellOnClickHandler(id)}>
-                            {userCredentials.disabled && i18n.t('Disabled')}
-                        </DataTableCell>
-                        <DataTableCell>
-                            <Button
-                                small
-                                secondary
-                                icon={<IconMore24 color={colors.grey600} />}
-                            ></Button>
-                        </DataTableCell>
-                    </DataTableRow>
-                ))}
+                {users.map(user => {
+                    const { id, displayName, access, userCredentials } = user
+                    const { username, lastLogin, disabled } = userCredentials
+                    const handleClick = () => {
+                        if (access.update) {
+                            navigateTo(`/users/edit/${id}`)
+                        }
+                    }
+
+                    return (
+                        <DataTableRow key={id}>
+                            <DataTableCell onClick={handleClick}>
+                                {displayName}
+                            </DataTableCell>
+                            <DataTableCell onClick={handleClick}>
+                                {username}
+                            </DataTableCell>
+                            <DataTableCell onClick={handleClick}>
+                                {lastLogin && (
+                                    <span title={lastLogin}>
+                                        {moment(lastLogin).fromNow()}
+                                    </span>
+                                )}
+                            </DataTableCell>
+                            <DataTableCell onClick={handleClick}>
+                                {disabled && i18n.t('Disabled')}
+                            </DataTableCell>
+                            <DataTableCell>
+                                <ContextMenuButton user={user} />
+                            </DataTableCell>
+                        </DataTableRow>
+                    )
+                })}
             </DataTableBody>
         </DataTable>
     )

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-10-06T14:59:23.882Z\n"
-"PO-Revision-Date: 2021-10-06T14:59:23.882Z\n"
+"POT-Creation-Date: 2021-10-07T10:25:28.764Z\n"
+"PO-Revision-Date: 2021-10-07T10:25:28.764Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -556,6 +556,27 @@ msgstr "Available dimension restrictions for data analytics"
 
 msgid "Selected dimension restrictions for data analytics"
 msgstr "Selected dimension restrictions for data analytics"
+
+msgid "Profile"
+msgstr "Profile"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Reset password"
+msgstr "Reset password"
+
+msgid "Disable"
+msgstr "Disable"
+
+msgid "Enable"
+msgstr "Enable"
+
+msgid "Disable Two Factor Authentication"
+msgstr "Disable Two Factor Authentication"
+
+msgid "Delete"
+msgstr "Delete"
 
 msgid "1 month"
 msgstr "1 month"

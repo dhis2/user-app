@@ -10,11 +10,6 @@ import {
 import React, { useState, useEffect } from 'react'
 import { useDebounce } from 'use-debounce'
 import navigateTo from '../../utils/navigateTo'
-// import {
-//     userContextMenuActions,
-//     userContextMenuIcons,
-//     isUserContextActionAllowed,
-// } from './UserContextMenuActions'
 import Filters from './Filters'
 import styles from './UserList.module.css'
 import UserTable from './UserTable'
@@ -50,10 +45,6 @@ const usersQuery = {
     },
 }
 
-/**
- * Container component that renders a List component with correct properties for displaying a list of Users
- * @class
- */
 const UserList = () => {
     const { called, loading, error, data, refetch } = useDataQuery(usersQuery, {
         lazy: true,
