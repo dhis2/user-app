@@ -17,13 +17,11 @@ import {
     USER_PROPS,
     USER_CRED_PROPS,
     DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
-    DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
     EXPIRE_DATE,
     PASSWORD,
     REPEAT_PASSWORD,
     EXTERNAL_AUTH,
 } from '../containers/UserForm/config'
-import store from '../store'
 import { parseAttributeValues } from '../utils/attributeFieldHelpers'
 
 /**
@@ -201,40 +199,6 @@ export const mapLocale = ({ locale, name }) => {
         id: locale,
         label: name,
     }
-}
-
-/**
- * When querying the server for organisation units that match a certain query string, the server returns all units from the system root.
- * However, the current user should only be able to see organisation units that he has access to.
- * @param {Object} orgUnits - A d2 ModelCollection instance of organisation units which has been filtered on the server by a query string
- * @param {*} orgUnitType - The type of organisation unit that should be used to restrict the results by
- * @returns {Array} - An filtered array of d2 models only including organisation units that the current user has access to
- * @function
- */
-export const getRestrictedOrgUnits = (orgUnits, orgUnitType) => {
-    const { currentUser } = store.getState()
-
-    // Superuser can always see all org units
-    if (currentUser.authorities.has('ALL')) {
-        return orgUnits.toArray()
-    }
-
-    // Try the requested orgUnitType first and use currentUser.organisationUnits as fallback
-    const availableOrgUnits =
-        currentUser[orgUnitType].size > 0
-            ? currentUser[orgUnitType]
-            : currentUser[DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS]
-
-    return orgUnits.toArray().filter(unit => {
-        const isAvailableUnit = Boolean(availableOrgUnits.get(unit.id))
-        const hasAvailableAncestor =
-            !isAvailableUnit &&
-            unit.ancestors
-                .toArray()
-                .some(ancestor => Boolean(availableOrgUnits.get(ancestor.id)))
-
-        return isAvailableUnit || hasAvailableAncestor
-    })
 }
 
 export const appendUsernameToDisplayName = userModelCollection =>

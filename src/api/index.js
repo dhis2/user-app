@@ -2,10 +2,7 @@
 
 import i18n from '@dhis2/d2-i18n'
 import groupAuthorities from '../components/AuthorityEditor/utils/groupAuthorities'
-import {
-    ORG_UNITS_QUERY_CONFIG,
-    CURRENT_USER_ORG_UNITS_FIELDS,
-} from '../constants/queryFields'
+import { CURRENT_USER_ORG_UNITS_FIELDS } from '../constants/queryFields'
 import {
     INTERFACE_LANGUAGE,
     DATABASE_LANGUAGE,
@@ -16,7 +13,6 @@ import {
     createListRequestData,
     parseUserSaveData,
     parseLocaleUrl,
-    getRestrictedOrgUnits,
     mapLocale,
     appendUsernameToDisplayName,
     parse200Error,
@@ -91,25 +87,6 @@ class Api {
     resetUserPassword = id => {
         const url = `/users/${id}/reset`
         return this.d2Api.post(url)
-    }
-
-    /**
-     * Fetches organisation units matching the query string from the server.
-     * Once the results are returned they are filtered client-side
-     * to only contain organisation units available to the current user.
-     * Used by SearchableOrgUnitTree in UserForm and UserList.
-     * @param {String} query - They search string to let the server query on
-     * @param {String} orgUnitType - The type of organisation unit to use for client side filtering
-     * @returns {Array} A filtered array of organisation units
-     */
-    queryOrgUnits = (query, orgUnitType) => {
-        const listConfig = {
-            ...ORG_UNITS_QUERY_CONFIG,
-            query,
-        }
-        return this.d2.models.organisationUnits
-            .list(listConfig)
-            .then(orgUnits => getRestrictedOrgUnits(orgUnits, orgUnitType))
     }
 
     getAvailableUserRoles = () => {

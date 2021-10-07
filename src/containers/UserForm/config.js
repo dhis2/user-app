@@ -21,12 +21,6 @@ export const STYLES = {
     toggler: {
         color: blue600,
     },
-    orgUnitTree: {
-        width: 'calc(50% - 60px)',
-        float: 'left',
-        minHeight: '100px',
-        maxHeight: '1200px',
-    },
     togglerWrap: {
         clear: 'both',
         paddingTop: '1.2rem',
@@ -270,14 +264,14 @@ export const getBaseFields = () => [
         isRequiredField: ALWAYS_REQUIRED,
         orgUnitType: DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
         fieldRenderer: renderSearchableOrgUnitTree,
-        wrapperStyle: { ...STYLES.orgUnitTree, paddingRight: '60px' },
+        side: 'left',
     },
     {
         name: DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS,
         label: i18n.t('Data output and analytic organisation units'),
         orgUnitType: DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS,
         fieldRenderer: renderSearchableOrgUnitTree,
-        wrapperStyle: { ...STYLES.orgUnitTree, paddingLeft: '60px' },
+        side: 'right',
     },
     {
         ...getBaseCaption(),
@@ -291,7 +285,7 @@ export const getAdditionalFields = () => [
         label: i18n.t('Search Organisation Units'),
         orgUnitType: TEI_SEARCH_ORG_UNITS,
         fieldRenderer: renderSearchableOrgUnitTree,
-        wrapperStyle: { ...STYLES.orgUnitTree, paddingRight: '60px' },
+        side: 'left',
     },
     {
         ...getBaseCaption(),

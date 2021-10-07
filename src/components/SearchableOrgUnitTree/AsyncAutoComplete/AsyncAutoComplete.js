@@ -1,0 +1,88 @@
+import i18n from '@dhis2/d2-i18n'
+import { InputField, Menu, MenuItem, Popper, Layer, Card } from '@dhis2/ui'
+import PropTypes from 'prop-types'
+import React, { useState, useRef } from 'react'
+import styles from './AsyncAutoComplete.module.css'
+import { PAGE_SIZE } from './constants.js'
+import getRefineSearchLabel from './getRefineSearchLabel.js'
+import getValidationText from './getValidationText.js'
+import useOrgUnitSearchResults from './useOrgUnitSearchResults.js'
+
+const AsyncAutoComplete = ({ selectHandler, orgUnitType }) => {
+    const inputRef = useRef(null)
+    const inputEl = inputRef.current?.querySelector('input')
+    const [searchText, setSearchText] = useState('')
+    const {
+        fetching,
+        error,
+        organisationUnits,
+        totalSearchResultCount,
+        clear,
+    } = useOrgUnitSearchResults({ searchText, orgUnitType })
+    const validationText = getValidationText({
+        searchText,
+        organisationUnits,
+        error,
+    })
+    const selectOrgUnit = orgUnit => {
+        setSearchText('')
+        clear()
+        selectHandler(orgUnit)
+    }
+
+    return (
+        <>
+            <div className={styles.inputWrap} ref={inputRef}>
+                <InputField
+                    error={!!error}
+                    loading={fetching}
+                    label={i18n.t('Search')}
+                    onChange={({ value }) => setSearchText(value)}
+                    placeholder={i18n.t('Enter search term')}
+                    validationText={validationText}
+                    value={searchText}
+                />
+            </div>
+
+            {organisationUnits.length > 0 && (
+                <Layer onClick={clear}>
+                    <Popper placement="bottom-start" reference={inputEl}>
+                        <Card>
+                            <div className={styles.scrollBox}>
+                                <Menu dense>
+                                    {organisationUnits.map(orgUnit => (
+                                        <MenuItem
+                                            key={orgUnit.id}
+                                            label={orgUnit.displayName}
+                                            onClick={() =>
+                                                selectOrgUnit(orgUnit)
+                                            }
+                                        />
+                                    ))}
+                                    {totalSearchResultCount > PAGE_SIZE && (
+                                        <MenuItem
+                                            className={
+                                                styles.refineSearchWarning
+                                            }
+                                            disabled
+                                            label={getRefineSearchLabel(
+                                                totalSearchResultCount
+                                            )}
+                                        />
+                                    )}
+                                </Menu>
+                            </div>
+                        </Card>
+                    </Popper>
+                </Layer>
+            )}
+        </>
+    )
+}
+
+AsyncAutoComplete.propTypes = {
+    orgUnitType: PropTypes.string.isRequired,
+    selectHandler: PropTypes.func.isRequired,
+}
+
+export default AsyncAutoComplete
