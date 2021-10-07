@@ -1,9 +1,4 @@
-/**
- * Defines the UserList context menu for current user on a given UserUser model instance.
- * Contains definitions for menu item visibility, individual menu item actions, icons and names.
- * @module containers/UserList/UserContextMenuActions
- */
-
+/*
 import i18n from '@dhis2/d2-i18n'
 import { Action } from '@dhis2/d2-ui-core'
 import React from 'react'
@@ -32,85 +27,6 @@ const reset_password = 'reset_password'
 const disable = 'disable'
 const enable = 'enable'
 const disable_2fa = 'disable_2fa'
-
-/**
- * Determines whether a specific user action should be visible for current user and given a User Model instance
- * @param {Object} model - d2 User model instance
- * @param {String} action - Action name
- * @returns {Boolean} - Action visibility
- * @function
- */
-export const isUserContextActionAllowed = (model, action) => {
-    const { currentUser } = store.getState()
-
-    if (!model) {
-        return false
-    }
-
-    const {
-        access,
-        userCredentials: { disabled, twoFA },
-    } = model
-
-    switch (action) {
-        case profile:
-            return access.read
-        case edit:
-            return access.update
-        case remove:
-            return currentUser.id !== model.id && access.delete
-        case replicate:
-            return (
-                access.update && currentUser.authorities.has('F_REPLICATE_USER')
-            )
-        case reset_password:
-            return (
-                access.update &&
-                (currentUser.authorities.has('F_USER_ADD') ||
-                    currentUser.authorities.has(
-                        'F_USER_ADD_WITHIN_MANAGED_GROUP'
-                    ))
-            )
-        case disable:
-            return access.update && !disabled
-        case enable:
-            return access.update && disabled
-        case disable_2fa:
-            return access.update && twoFA
-        default:
-            return true
-    }
-}
-
-export const userContextMenuIcons = {
-    [profile]: 'account_circle',
-    [edit]: 'edit',
-    [remove]: 'delete',
-    [replicate]: 'content_copy',
-    [reset_password]: 'vpn_key',
-    [disable]: 'block',
-    [enable]: 'playlist_add_check',
-    [disable_2fa]: 'phonelink_erase',
-}
-
-export const userContextMenuActions = Action.createActionsFromNames([
-    profile,
-    edit,
-    remove,
-    replicate,
-    reset_password,
-    disable,
-    enable,
-    disable_2fa,
-])
-
-userContextMenuActions.profile.subscribe(({ data: { id } }) => {
-    navigateTo(`/users/view/${id}`)
-})
-
-userContextMenuActions.edit.subscribe(({ data: { id } }) => {
-    navigateTo(`/users/edit/${id}`)
-})
 
 userContextMenuActions.remove.subscribe(({ data: user }) => {
     const params = {
@@ -236,3 +152,4 @@ const onDisableConfirm = async (model, shouldDisable) => {
         )
     }
 }
+*/

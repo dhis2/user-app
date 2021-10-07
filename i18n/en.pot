@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-10-07T10:25:28.764Z\n"
-"PO-Revision-Date: 2021-10-07T10:25:28.764Z\n"
+"POT-Creation-Date: 2021-10-07T11:56:11.760Z\n"
+"PO-Revision-Date: 2021-10-07T11:56:11.760Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -276,30 +276,6 @@ msgstr "No match for"
 msgid "Go back home"
 msgstr "Go back home"
 
-msgid "User \"{{displayName}}\" replicated successfuly"
-msgstr "User \"{{displayName}}\" replicated successfuly"
-
-msgid "There was a problem replicating the user"
-msgstr "There was a problem replicating the user"
-
-msgid "Username"
-msgstr "Username"
-
-msgid "Username for new user"
-msgstr "Username for new user"
-
-msgid "Password"
-msgstr "Password"
-
-msgid "Password for new user"
-msgstr "Password for new user"
-
-msgid "Replicate"
-msgstr "Replicate"
-
-msgid "Cancel"
-msgstr "Cancel"
-
 msgid "Search by name"
 msgstr "Search by name"
 
@@ -320,6 +296,9 @@ msgstr "Apply"
 
 msgid "Clear all"
 msgstr "Clear all"
+
+msgid "Cancel"
+msgstr "Cancel"
 
 msgid "There was an error loading the current user"
 msgstr "There was an error loading the current user"
@@ -494,6 +473,9 @@ msgstr "Create account with user details"
 msgid "Email invitation to create account"
 msgstr "Email invitation to create account"
 
+msgid "Username"
+msgstr "Username"
+
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "External authentication only (OpenID or LDAP)"
 
@@ -502,6 +484,9 @@ msgstr "Account expiration date"
 
 msgid "Disabled"
 msgstr "Disabled"
+
+msgid "Password"
+msgstr "Password"
 
 msgid "Retype password"
 msgstr "Retype password"
@@ -563,6 +548,9 @@ msgstr "Profile"
 msgid "Edit"
 msgstr "Edit"
 
+msgid "Replicate"
+msgstr "Replicate"
+
 msgid "Reset password"
 msgstr "Reset password"
 
@@ -577,6 +565,51 @@ msgstr "Disable Two Factor Authentication"
 
 msgid "Delete"
 msgstr "Delete"
+
+msgid "User \"{{displayName}}\" replicated successfuly"
+msgstr "User \"{{displayName}}\" replicated successfuly"
+
+msgid "There was an error replicating the user: {{- error}}"
+msgstr "There was an error replicating the user: {{- error}}"
+
+msgid "Replicate user {{- name}}"
+msgstr "Replicate user {{- name}}"
+
+msgid "Username for new user"
+msgstr "Username for new user"
+
+msgid "Password for new user"
+msgstr "Password for new user"
+
+msgid "Replicate user"
+msgstr "Replicate user"
+
+msgid "Are you sure you want to reset {{-userName}}'s password?"
+msgstr "Are you sure you want to reset {{-userName}}'s password?"
+
+msgid "Are you sure you want to disable two factor authentication for"
+msgstr "Are you sure you want to disable two factor authentication for"
+
+msgid "Succesfully disabled two factor authentication for"
+msgstr "Succesfully disabled two factor authentication for"
+
+msgid "There was a problem updating two factor authentication"
+msgstr "There was a problem updating two factor authentication"
+
+msgid "Are you sure you want to disable"
+msgstr "Are you sure you want to disable"
+
+msgid "Are you sure you want to enable"
+msgstr "Are you sure you want to enable"
+
+msgid "sucessfully disabled"
+msgstr "sucessfully disabled"
+
+msgid "successfully enabled"
+msgstr "successfully enabled"
+
+msgid "There was a problem updating the enabled state"
+msgstr "There was a problem updating the enabled state"
 
 msgid "1 month"
 msgstr "1 month"
@@ -610,36 +643,6 @@ msgstr "Organisation unit"
 
 msgid "Select organisation unit"
 msgstr "Select organisation unit"
-
-msgid "Replicate user"
-msgstr "Replicate user"
-
-msgid "Are you sure you want to reset {{-userName}}'s password?"
-msgstr "Are you sure you want to reset {{-userName}}'s password?"
-
-msgid "Are you sure you want to disable two factor authentication for"
-msgstr "Are you sure you want to disable two factor authentication for"
-
-msgid "Succesfully disabled two factor authentication for"
-msgstr "Succesfully disabled two factor authentication for"
-
-msgid "There was a problem updating two factor authentication"
-msgstr "There was a problem updating two factor authentication"
-
-msgid "Are you sure you want to disable"
-msgstr "Are you sure you want to disable"
-
-msgid "Are you sure you want to enable"
-msgstr "Are you sure you want to enable"
-
-msgid "sucessfully disabled"
-msgstr "sucessfully disabled"
-
-msgid "successfully enabled"
-msgstr "successfully enabled"
-
-msgid "There was a problem updating the enabled state"
-msgstr "There was a problem updating the enabled state"
 
 msgid "User Management"
 msgstr "User Management"

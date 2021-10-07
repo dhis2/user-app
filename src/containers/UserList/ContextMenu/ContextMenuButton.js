@@ -4,7 +4,7 @@ import React, { useRef, useState } from 'react'
 import ContextMenu from './ContextMenu'
 import styles from './ContextMenuButton.module.css'
 
-const ContextMenuButton = ({ user }) => {
+const ContextMenuButton = ({ user, refetchUsers }) => {
     const ref = useRef()
     const [visible, setVisible] = useState(false)
 
@@ -20,6 +20,7 @@ const ContextMenuButton = ({ user }) => {
                 <ContextMenu
                     anchorRef={ref}
                     user={user}
+                    refetchUsers={refetchUsers}
                     onClose={() => setVisible(false)}
                 />
             )}
@@ -28,6 +29,7 @@ const ContextMenuButton = ({ user }) => {
 }
 
 ContextMenuButton.propTypes = {
+    refetchUsers: PropTypes.func.isRequired,
     user: PropTypes.object.isRequired,
 }
 

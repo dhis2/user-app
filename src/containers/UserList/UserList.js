@@ -56,8 +56,7 @@ const UserList = () => {
     const [inactiveMonths, setInactiveMonths] = useState()
     const [invitationStatus, setInvitationStatus] = useState()
     const [selfRegistered, setSelfRegistered] = useState(false)
-
-    useEffect(() => {
+    const refetchUsers = () => {
         refetch({
             page,
             pageSize,
@@ -66,6 +65,10 @@ const UserList = () => {
             invitationStatus,
             selfRegistered,
         })
+    }
+
+    useEffect(() => {
+        refetchUsers()
     }, [
         page,
         pageSize,
@@ -108,6 +111,7 @@ const UserList = () => {
                 loading={!called || loading}
                 error={error}
                 users={data && data.users.users}
+                refetch={refetchUsers}
             />
             {data && data.users.users.length > 0 && (
                 <DataTableToolbar position="bottom">

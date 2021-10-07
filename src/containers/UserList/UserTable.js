@@ -14,7 +14,7 @@ import moment from 'moment'
 import PropTypes from 'prop-types'
 import React from 'react'
 import navigateTo from '../../utils/navigateTo'
-import ContextMenuButton from './ContextMenuButton'
+import ContextMenuButton from './ContextMenu/ContextMenuButton'
 import styles from './UserTable.module.css'
 
 const InfoWrapper = ({ children }) => (
@@ -33,7 +33,7 @@ InfoWrapper.propTypes = {
     children: PropTypes.node.isRequired,
 }
 
-const UserTable = ({ loading, error, users }) => {
+const UserTable = ({ loading, error, users, refetch }) => {
     if (loading) {
         return (
             <InfoWrapper>
@@ -112,7 +112,10 @@ const UserTable = ({ loading, error, users }) => {
                                 {disabled && i18n.t('Disabled')}
                             </DataTableCell>
                             <DataTableCell>
-                                <ContextMenuButton user={user} />
+                                <ContextMenuButton
+                                    user={user}
+                                    refetchUsers={refetch}
+                                />
                             </DataTableCell>
                         </DataTableRow>
                     )
@@ -123,6 +126,7 @@ const UserTable = ({ loading, error, users }) => {
 }
 
 UserTable.propTypes = {
+    refetch: PropTypes.func.isRequired,
     error: PropTypes.object,
     loading: PropTypes.bool,
     users: PropTypes.arrayOf(PropTypes.object.isRequired),
