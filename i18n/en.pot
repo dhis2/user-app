@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-10-07T11:56:11.760Z\n"
-"PO-Revision-Date: 2021-10-07T11:56:11.760Z\n"
+"POT-Creation-Date: 2021-10-07T15:15:20.194Z\n"
+"PO-Revision-Date: 2021-10-07T15:15:20.194Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -566,8 +566,8 @@ msgstr "Disable Two Factor Authentication"
 msgid "Delete"
 msgstr "Delete"
 
-msgid "User \"{{displayName}}\" replicated successfuly"
-msgstr "User \"{{displayName}}\" replicated successfuly"
+msgid "User \"{{- name}}\" replicated successfuly"
+msgstr "User \"{{- name}}\" replicated successfuly"
 
 msgid "There was an error replicating the user: {{- error}}"
 msgstr "There was an error replicating the user: {{- error}}"
@@ -581,11 +581,33 @@ msgstr "Username for new user"
 msgid "Password for new user"
 msgstr "Password for new user"
 
+msgid ""
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
+msgstr ""
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
+
 msgid "Replicate user"
 msgstr "Replicate user"
 
-msgid "Are you sure you want to reset {{-userName}}'s password?"
-msgstr "Are you sure you want to reset {{-userName}}'s password?"
+msgid "Password of user \"{{- name}}\" reset successfuly"
+msgstr "Password of user \"{{- name}}\" reset successfuly"
+
+msgid "There was an error resetting the password: {{- error}}"
+msgstr "There was an error resetting the password: {{- error}}"
+
+msgid "Reset password of user {{- name}}"
+msgstr "Reset password of user {{- name}}"
+
+msgid "Are you sure you want to reset {{- name}}'s password?"
+msgstr "Are you sure you want to reset {{- name}}'s password?"
+
+msgid "No, cancel"
+msgstr "No, cancel"
+
+msgid "Yes, reset"
+msgstr "Yes, reset"
 
 msgid "Are you sure you want to disable two factor authentication for"
 msgstr "Are you sure you want to disable two factor authentication for"

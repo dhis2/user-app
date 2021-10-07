@@ -19,6 +19,7 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import navigateTo from '../../../utils/navigateTo'
 import ReplicateModal from './Modals/ReplicateModal'
+import ResetPasswordModal from './Modals/ResetPasswordModal'
 
 const ContextMenu = ({
     currentUser,
@@ -27,7 +28,7 @@ const ContextMenu = ({
     refetchUsers,
     onClose,
 }) => {
-    const [currentModal, setCurrentModal] = useState(null)
+    const [CurrentModal, setCurrentModal] = useState(null)
     const {
         access,
         userCredentials: { disabled, twoFA },
@@ -41,10 +42,10 @@ const ContextMenu = ({
     const canDelete = currentUser.id !== user.id && access.delete
 
     const handleShowReplicateModal = () => {
-        setCurrentModal('REPLICATE')
+        setCurrentModal(() => ReplicateModal)
     }
     const handleShowResetPasswordModal = () => {
-        // TODO
+        setCurrentModal(() => ResetPasswordModal)
     }
     const handleShowDisableModal = () => {
         // TODO
@@ -143,8 +144,8 @@ const ContextMenu = ({
                     </FlyoutMenu>
                 </Popper>
             </Layer>
-            {currentModal === 'REPLICATE' && (
-                <ReplicateModal
+            {CurrentModal && (
+                <CurrentModal
                     user={user}
                     refetchUsers={refetchUsers}
                     onClose={handleModalClose}

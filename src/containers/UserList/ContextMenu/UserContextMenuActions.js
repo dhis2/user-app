@@ -11,7 +11,6 @@ import {
     getList,
 } from '../../actions'
 import api from '../../api'
-import ReplicateUserForm from '../../components/ReplicateUserForm'
 import { USER } from '../../constants/entityTypes'
 import store from '../../store'
 import createHumanErrorMessage from '../../utils/createHumanErrorMessage'
@@ -22,7 +21,6 @@ import { deleteModel } from '../../utils/sharedActions'
 const profile = 'profile'
 const edit = 'edit'
 const remove = 'remove'
-const replicate = 'replicate'
 const reset_password = 'reset_password'
 const disable = 'disable'
 const enable = 'enable'
@@ -34,32 +32,6 @@ userContextMenuActions.remove.subscribe(({ data: user }) => {
         entityType: USER,
     }
     deleteModel(params)
-})
-
-userContextMenuActions.replicate.subscribe(({ data: user }) => {
-    const content = <ReplicateUserForm user={user} />
-    const props = {
-        onRequestClose: () => store.dispatch(hideDialog()),
-        title: i18n.t('Replicate user'),
-    }
-    store.dispatch(showDialog(content, props))
-})
-
-userContextMenuActions.reset_password.subscribe(({ data }) => {
-    const snackbarProps = {
-        message: i18n.t(
-            `Are you sure you want to reset {{-userName}}'s password?`,
-            { userName: data.displayName }
-        ),
-        action: i18n.t('Confirm'),
-        autoHideDuration: null,
-        onActionClick: () => {
-            store.dispatch(resetUserPassword(data.id))
-            store.dispatch(hideSnackbar())
-        },
-    }
-
-    store.dispatch(showSnackbar(snackbarProps))
 })
 
 userContextMenuActions.disable.subscribe(({ data }) => {

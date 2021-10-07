@@ -20,8 +20,8 @@ const ReplicateModal = ({ user, refetchUsers, onClose }) => {
     const engine = useDataEngine()
     const [loading, setLoading] = useState(false)
     const successAlert = useAlert(
-        i18n.t('User "{{displayName}}" replicated successfuly', {
-            displayName: user.displayName,
+        i18n.t('User "{{- name}}" replicated successfuly', {
+            name: user.displayName,
         }),
         {
             success: true,
@@ -96,12 +96,12 @@ const ReplicateModal = ({ user, refetchUsers, onClose }) => {
                         </ModalContent>
                         <ModalActions>
                             <ButtonStrip end>
-                                <Button onClick={onClose} secondary>
+                                <Button secondary onClick={onClose}>
                                     {i18n.t('Cancel')}
                                 </Button>
                                 <Button
-                                    onClick={handleSubmit}
                                     primary
+                                    onClick={handleSubmit}
                                     disabled={!valid}
                                     loading={loading}
                                 >
