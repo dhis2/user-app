@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-10-07T15:30:00.068Z\n"
-"PO-Revision-Date: 2021-10-07T15:30:00.068Z\n"
+"POT-Creation-Date: 2021-10-07T16:18:15.980Z\n"
+"PO-Revision-Date: 2021-10-07T16:18:15.980Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -566,6 +566,39 @@ msgstr "Disable Two Factor Authentication"
 msgid "Delete"
 msgstr "Delete"
 
+msgid "Deleted \"{{- name}}\" successfuly"
+msgstr "Deleted \"{{- name}}\" successfuly"
+
+msgid "There was an error deleting the user: {{- error}}"
+msgstr "There was an error deleting the user: {{- error}}"
+
+msgid "Delete user {{- name}}"
+msgstr "Delete user {{- name}}"
+
+msgid "Are you sure you want to delete {{- name}}?"
+msgstr "Are you sure you want to delete {{- name}}?"
+
+msgid "No, cancel"
+msgstr "No, cancel"
+
+msgid "Yes, delete"
+msgstr "Yes, delete"
+
+msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
+msgstr "Disabled two factor authentication for \"{{- name}}\" successfuly"
+
+msgid "There was an error disabling two factor authentication: {{- error}}"
+msgstr "There was an error disabling two factor authentication: {{- error}}"
+
+msgid "Disable two factor authentication for user {{- name}}"
+msgstr "Disable two factor authentication for user {{- name}}"
+
+msgid "Are you sure you want to disable two factor authentication for {{- name}}?"
+msgstr "Are you sure you want to disable two factor authentication for {{- name}}?"
+
+msgid "Yes, disable two factor authentication"
+msgstr "Yes, disable two factor authentication"
+
 msgid "User \"{{- name}}\" disabled successfuly"
 msgstr "User \"{{- name}}\" disabled successfuly"
 
@@ -577,9 +610,6 @@ msgstr "Disable user {{- name}}"
 
 msgid "Are you sure you want to disable {{- name}}?"
 msgstr "Are you sure you want to disable {{- name}}?"
-
-msgid "No, cancel"
-msgstr "No, cancel"
 
 msgid "Yes, disable"
 msgstr "Yes, disable"
@@ -638,30 +668,6 @@ msgstr "Are you sure you want to reset {{- name}}'s password?"
 
 msgid "Yes, reset"
 msgstr "Yes, reset"
-
-msgid "Are you sure you want to disable two factor authentication for"
-msgstr "Are you sure you want to disable two factor authentication for"
-
-msgid "Succesfully disabled two factor authentication for"
-msgstr "Succesfully disabled two factor authentication for"
-
-msgid "There was a problem updating two factor authentication"
-msgstr "There was a problem updating two factor authentication"
-
-msgid "Are you sure you want to disable"
-msgstr "Are you sure you want to disable"
-
-msgid "Are you sure you want to enable"
-msgstr "Are you sure you want to enable"
-
-msgid "sucessfully disabled"
-msgstr "sucessfully disabled"
-
-msgid "successfully enabled"
-msgstr "successfully enabled"
-
-msgid "There was a problem updating the enabled state"
-msgstr "There was a problem updating the enabled state"
 
 msgid "1 month"
 msgstr "1 month"
