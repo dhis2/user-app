@@ -1,6 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
 import { LoadingMask, Heading, Pagination } from '@dhis2/d2-ui-core'
 import DataTable from '@dhis2/d2-ui-table'
+import classnames from 'classnames'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 import PropTypes from 'prop-types'
@@ -156,7 +157,7 @@ class List extends Component {
     render() {
         const { sectionName, newItemPath, className } = this.props
         return (
-            <div className={styles.dataTableWrap + ' ' + className}>
+            <div className={classnames(styles.dataTableWrap, className)}>
                 <Heading>{sectionName}</Heading>
                 {this.renderHeaderBar()}
                 {this.renderDataTable()}
