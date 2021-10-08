@@ -25,6 +25,19 @@ import EnableModal from './Modals/EnableModal'
 import ReplicateModal from './Modals/ReplicateModal'
 import ResetPasswordModal from './Modals/ResetPasswordModal'
 
+const useCurrentModal = () => {
+    const [CurrentModal, setCurrentModal] = useState()
+
+    return [
+        CurrentModal,
+        Modal => {
+            // As setState supports functional updates, we can't pass functional
+            // components directly
+            setCurrentModal(() => Modal)
+        },
+    ]
+}
+
 const ContextMenu = ({
     currentUser,
     user,
@@ -32,7 +45,7 @@ const ContextMenu = ({
     refetchUsers,
     onClose,
 }) => {
-    const [CurrentModal, setCurrentModal] = useState(null)
+    const [CurrentModal, setCurrentModal] = useCurrentModal()
     const {
         access,
         userCredentials: { disabled, twoFA },
@@ -44,28 +57,6 @@ const ContextMenu = ({
         (currentUser.authorities.has('F_USER_ADD') ||
             currentUser.authorities.has('F_USER_ADD_WITHIN_MANAGED_GROUP'))
     const canDelete = currentUser.id !== user.id && access.delete
-
-    const handleShowReplicateModal = () => {
-        setCurrentModal(() => ReplicateModal)
-    }
-    const handleShowResetPasswordModal = () => {
-        setCurrentModal(() => ResetPasswordModal)
-    }
-    const handleShowDisableModal = () => {
-        setCurrentModal(() => DisableModal)
-    }
-    const handleShowEnableModal = () => {
-        setCurrentModal(() => EnableModal)
-    }
-    const handleShowDisable2FaModal = () => {
-        setCurrentModal(() => Disable2FaModal)
-    }
-    const handleShowDeleteModal = () => {
-        setCurrentModal(() => DeleteModal)
-    }
-    const handleModalClose = () => {
-        setCurrentModal(null)
-    }
 
     return (
         <>
@@ -96,7 +87,7 @@ const ContextMenu = ({
                             <MenuItem
                                 label={i18n.t('Replicate')}
                                 icon={<IconCopy16 color={colors.grey600} />}
-                                onClick={handleShowReplicateModal}
+                                onClick={() => setCurrentModal(ReplicateModal)}
                                 dense
                             />
                         )}
@@ -104,7 +95,9 @@ const ContextMenu = ({
                             <MenuItem
                                 label={i18n.t('Reset password')}
                                 icon={<IconLock16 color={colors.grey600} />}
-                                onClick={handleShowResetPasswordModal}
+                                onClick={() =>
+                                    setCurrentModal(ResetPasswordModal)
+                                }
                                 dense
                             />
                         )}
@@ -112,7 +105,7 @@ const ContextMenu = ({
                             <MenuItem
                                 label={i18n.t('Disable')}
                                 icon={<IconBlock16 color={colors.grey600} />}
-                                onClick={handleShowDisableModal}
+                                onClick={() => setCurrentModal(DisableModal)}
                                 dense
                             />
                         )}
@@ -122,7 +115,7 @@ const ContextMenu = ({
                                 icon={
                                     <IconCheckmark16 color={colors.grey600} />
                                 }
-                                onClick={handleShowEnableModal}
+                                onClick={() => setCurrentModal(EnableModal)}
                                 dense
                             />
                         )}
@@ -132,7 +125,7 @@ const ContextMenu = ({
                                     'Disable Two Factor Authentication'
                                 )}
                                 icon={<IconLockOpen16 color={colors.grey600} />}
-                                onClick={handleShowDisable2FaModal}
+                                onClick={() => setCurrentModal(Disable2FaModal)}
                                 dense
                             />
                         )}
@@ -140,7 +133,7 @@ const ContextMenu = ({
                             <MenuItem
                                 label={i18n.t('Delete')}
                                 icon={<IconDelete16 color={colors.red600} />}
-                                onClick={handleShowDeleteModal}
+                                onClick={() => setCurrentModal(DeleteModal)}
                                 destructive
                                 dense
                             />
@@ -152,7 +145,7 @@ const ContextMenu = ({
                 <CurrentModal
                     user={user}
                     refetchUsers={refetchUsers}
-                    onClose={handleModalClose}
+                    onClose={() => setCurrentModal(null)}
                 />
             )}
         </>
