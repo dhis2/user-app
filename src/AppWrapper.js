@@ -37,12 +37,14 @@ const AppWrapper = () => {
     }
 
     return (
-        <Provider store={store}>
-            <AppWithD2ContextAndTheme d2={d2}>
-                <CssVariables spacers colors theme />
-                <App />
-            </AppWithD2ContextAndTheme>
-        </Provider>
+        <>
+            <CssVariables spacers colors theme />
+            <Provider store={store}>
+                <AppWithD2ContextAndTheme d2={d2}>
+                    <App />
+                </AppWithD2ContextAndTheme>
+            </Provider>
+        </>
     )
 }
 
