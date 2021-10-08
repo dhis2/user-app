@@ -1,3 +1,5 @@
+import './locales/index.js'
+
 import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import { CenteredContent, CircularLoader, CssVariables } from '@dhis2/ui'
 import React from 'react'
@@ -8,7 +10,6 @@ import AppWithD2ContextAndTheme from './components/AppWithD2ContextAndTheme'
 import store from './store'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import './styles/styles.css'
-import './locales/index.js'
 
 const AppWrapper = () => {
     const { d2 } = useD2({
