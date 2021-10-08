@@ -18,32 +18,28 @@ const mutation = {
 }
 
 const DeleteModal = ({ user, refetchUsers, onClose }) => {
-    const successAlert = useAlert(
-        i18n.t('Deleted "{{- name}}" successfuly', {
-            name: user.displayName,
-        }),
-        {
-            success: true,
-        }
-    )
-    const errorAlert = useAlert(
-        ({ error }) =>
-            i18n.t('There was an error deleting the user: {{- error}}', {
-                error: error.message,
-                nsSeparator: '-:-',
-            }),
-        {
-            critical: true,
-        }
+    const { show: showAlert } = useAlert(
+        ({ message }) => message,
+        ({ isError }) => (isError ? { critical: true } : { success: true })
     )
     const [deleteUser, { loading }] = useDataMutation(mutation, {
         onComplete: () => {
+            const message = i18n.t('Deleted "{{- name}}" successfully', {
+                name: user.displayName,
+            })
+            showAlert({ message })
             refetchUsers()
-            successAlert.show()
             onClose()
         },
         onError: error => {
-            errorAlert.show({ error })
+            const message = i18n.t(
+                'There was an error deleting the user: {{- error}}',
+                {
+                    error: error.message,
+                    nsSeparator: '-:-',
+                }
+            )
+            showAlert({ message, isError: true })
         },
     })
 

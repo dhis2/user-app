@@ -14,46 +14,37 @@ import React, { useState } from 'react'
 const DisableModal = ({ user, refetchUsers, onClose }) => {
     const engine = useDataEngine()
     const [loading, setLoading] = useState(false)
-    const successAlert = useAlert(
-        i18n.t('User "{{- name}}" disabled successfuly', {
-            name: user.displayName,
-        }),
-        {
-            success: true,
-        }
-    )
-    const errorAlert = useAlert(
-        ({ error }) =>
-            i18n.t('There was an error disabling the user: {{- error}}', {
-                error: error.message,
-                nsSeparator: '-:-',
-            }),
-        {
-            critical: true,
-        }
+    const { show: showAlert } = useAlert(
+        ({ message }) => message,
+        ({ isError }) => (isError ? { critical: true } : { success: true })
     )
 
-    const handleDisable = () => {
+    const handleDisable = async () => {
         setLoading(true)
-        engine.mutate(
-            {
+        try {
+            await engine.mutate({
                 resource: `users/${user.id}`,
                 type: 'update',
                 partial: true,
                 data: { userCredentials: { disabled: true } },
-            },
-            {
-                onComplete: () => {
-                    refetchUsers()
-                    successAlert.show()
-                    onClose()
-                },
-                onError: error => {
-                    setLoading(false)
-                    errorAlert.show({ error })
-                },
-            }
-        )
+            })
+            const message = i18n.t('User "{{- name}}" disabled successfuly', {
+                name: user.displayName,
+            })
+            showAlert({ message })
+            refetchUsers()
+            onClose()
+        } catch (error) {
+            setLoading(false)
+            const message = i18n.t(
+                'There was an error disabling the user: {{- error}}',
+                {
+                    error: error.message,
+                    nsSeparator: '-:-',
+                }
+            )
+            showAlert({ message, isError: true })
+        }
     }
 
     return (

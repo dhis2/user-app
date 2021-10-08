@@ -13,51 +13,39 @@ import {
     dhis2Password,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './ReplicateModal.module.css'
 
 const ReplicateModal = ({ user, refetchUsers, onClose }) => {
     const engine = useDataEngine()
-    const [loading, setLoading] = useState(false)
-    const successAlert = useAlert(
-        i18n.t('User "{{- name}}" replicated successfuly', {
-            name: user.displayName,
-        }),
-        {
-            success: true,
-        }
-    )
-    const errorAlert = useAlert(
-        ({ error }) =>
-            i18n.t('There was an error replicating the user: {{- error}}', {
-                error: error.message,
-                nsSeparator: '-:-',
-            }),
-        {
-            critical: true,
-        }
+    const { show: showAlert } = useAlert(
+        ({ message }) => message,
+        ({ isError }) => (isError ? { critical: true } : { success: true })
     )
 
-    const handleReplicate = ({ username, password }) => {
-        setLoading(true)
-        engine.mutate(
-            {
+    const handleReplicate = async ({ username, password }) => {
+        try {
+            await engine.mutate({
                 resource: `users/${user.id}/replica`,
                 type: 'create',
                 data: { username, password },
-            },
-            {
-                onComplete: () => {
-                    successAlert.show()
-                    refetchUsers()
-                    onClose()
-                },
-                onError: error => {
-                    setLoading(false)
-                    errorAlert.show({ error })
-                },
-            }
-        )
+            })
+            const message = i18n.t('User "{{- name}}" replicated successfuly', {
+                name: user.displayName,
+            })
+            showAlert({ message })
+            refetchUsers()
+            onClose()
+        } catch (error) {
+            const message = i18n.t(
+                'There was an error replicating the user: {{- error}}',
+                {
+                    error: error.message,
+                    nsSeparator: '-:-',
+                }
+            )
+            showAlert({ message, isError: true })
+        }
     }
 
     return (
@@ -68,8 +56,8 @@ const ReplicateModal = ({ user, refetchUsers, onClose }) => {
                 })}
             </ModalTitle>
             <ReactFinalForm.Form onSubmit={handleReplicate}>
-                {({ handleSubmit, valid }) => (
-                    <>
+                {({ handleSubmit, valid, submitting }) => (
+                    <form onSubmit={handleSubmit}>
                         <ModalContent>
                             <ReactFinalForm.Field
                                 name="username"
@@ -101,15 +89,15 @@ const ReplicateModal = ({ user, refetchUsers, onClose }) => {
                                 </Button>
                                 <Button
                                     primary
-                                    onClick={handleSubmit}
+                                    type="submit"
                                     disabled={!valid}
-                                    loading={loading}
+                                    loading={submitting}
                                 >
                                     {i18n.t('Replicate user')}
                                 </Button>
                             </ButtonStrip>
                         </ModalActions>
-                    </>
+                    </form>
                 )}
             </ReactFinalForm.Form>
         </Modal>

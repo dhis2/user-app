@@ -14,43 +14,37 @@ import React, { useState } from 'react'
 const ResetPasswordModal = ({ user, onClose }) => {
     const engine = useDataEngine()
     const [loading, setLoading] = useState(false)
-    const successAlert = useAlert(
-        i18n.t('Password of user "{{- name}}" reset successfuly', {
-            name: user.displayName,
-        }),
-        {
-            success: true,
-        }
-    )
-    const errorAlert = useAlert(
-        ({ error }) =>
-            i18n.t('There was an error resetting the password: {{- error}}', {
-                error: error.message,
-                nsSeparator: '-:-',
-            }),
-        {
-            critical: true,
-        }
+    const { show: showAlert } = useAlert(
+        ({ message }) => message,
+        ({ isError }) => (isError ? { critical: true } : { success: true })
     )
 
-    const handleReset = () => {
+    const handleReset = async () => {
         setLoading(true)
-        engine.mutate(
-            {
+        try {
+            await engine.mutate({
                 resource: `users/${user.id}/reset`,
                 type: 'create',
-            },
-            {
-                onComplete: () => {
-                    successAlert.show()
-                    onClose()
-                },
-                onError: error => {
-                    setLoading(false)
-                    errorAlert.show({ error })
-                },
-            }
-        )
+            })
+            const message = i18n.t(
+                'Password of user "{{- name}}" reset successfuly',
+                {
+                    name: user.displayName,
+                }
+            )
+            showAlert({ message })
+            onClose()
+        } catch (error) {
+            setLoading(false)
+            const message = i18n.t(
+                'There was an error resetting the password: {{- error}}',
+                {
+                    error: error.message,
+                    nsSeparator: '-:-',
+                }
+            )
+            showAlert({ message, isError: true })
+        }
     }
 
     return (

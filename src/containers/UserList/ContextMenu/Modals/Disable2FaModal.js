@@ -14,52 +14,40 @@ import React, { useState } from 'react'
 const Disable2FaModal = ({ user, refetchUsers, onClose }) => {
     const engine = useDataEngine()
     const [loading, setLoading] = useState(false)
-    const successAlert = useAlert(
-        i18n.t(
-            'Disabled two factor authentication for "{{- name}}" successfuly',
-            {
-                name: user.displayName,
-            }
-        ),
-        {
-            success: true,
-        }
+    const { show: showAlert } = useAlert(
+        ({ message }) => message,
+        ({ isError }) => (isError ? { critical: true } : { success: true })
     )
-    const errorAlert = useAlert(
-        ({ error }) =>
-            i18n.t(
+
+    const handleDisable2Fa = async () => {
+        setLoading(true)
+        try {
+            await engine.mutate({
+                resource: `users/${user.id}`,
+                type: 'update',
+                partial: true,
+                data: { userCredentials: { twoFA: false } },
+            })
+            const message = i18n.t(
+                'Disabled two factor authentication for "{{- name}}" successfuly',
+                {
+                    name: user.displayName,
+                }
+            )
+            showAlert({ message })
+            refetchUsers()
+            onClose()
+        } catch (error) {
+            setLoading(false)
+            const message = i18n.t(
                 'There was an error disabling two factor authentication: {{- error}}',
                 {
                     error: error.message,
                     nsSeparator: '-:-',
                 }
-            ),
-        {
-            critical: true,
+            )
+            showAlert({ message, isError: true })
         }
-    )
-
-    const handleDisable2Fa = () => {
-        setLoading(true)
-        engine.mutate(
-            {
-                resource: `users/${user.id}`,
-                type: 'update',
-                partial: true,
-                data: { userCredentials: { twoFA: false } },
-            },
-            {
-                onComplete: () => {
-                    refetchUsers()
-                    successAlert.show()
-                    onClose()
-                },
-                onError: error => {
-                    setLoading(false)
-                    errorAlert.show({ error })
-                },
-            }
-        )
     }
 
     return (
