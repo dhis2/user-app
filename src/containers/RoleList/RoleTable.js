@@ -66,6 +66,8 @@ const RoleTable = ({ loading, error, roles, refetch }) => {
                     const handleClick = () => {
                         if (access.update) {
                             navigateTo(`/user-roles/edit/${id}`)
+                        } else if (access.read) {
+                            navigateTo(`/user-roles/view/${id}`)
                         }
                     }
 

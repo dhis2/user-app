@@ -64,7 +64,11 @@ const DeleteModal = ({ role, refetchRoles, onClose }) => {
                     <Button secondary onClick={onClose}>
                         {i18n.t('No, cancel')}
                     </Button>
-                    <Button primary loading={loading} onClick={handleDelete}>
+                    <Button
+                        destructive
+                        loading={loading}
+                        onClick={handleDelete}
+                    >
                         {i18n.t('Yes, delete')}
                     </Button>
                 </ButtonStrip>

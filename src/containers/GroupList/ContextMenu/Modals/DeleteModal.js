@@ -12,28 +12,28 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 const mutation = {
-    resource: 'users',
+    resource: 'userGroups',
     type: 'delete',
     id: ({ id }) => id,
 }
 
-const DeleteModal = ({ user, refetchUsers, onClose }) => {
+const DeleteModal = ({ group, refetchGroups, onClose }) => {
     const { show: showAlert } = useAlert(
         ({ message }) => message,
         ({ isError }) => (isError ? { critical: true } : { success: true })
     )
-    const [deleteUser, { loading }] = useDataMutation(mutation, {
+    const [deleteGroup, { loading }] = useDataMutation(mutation, {
         onComplete: () => {
             const message = i18n.t('Deleted "{{- name}}" successfully', {
-                name: user.displayName,
+                name: group.displayName,
             })
             showAlert({ message })
-            refetchUsers()
+            refetchGroups()
             onClose()
         },
         onError: error => {
             const message = i18n.t(
-                'There was an error deleting the user: {{- error}}',
+                'There was an error deleting the user group: {{- error}}',
                 {
                     error: error.message,
                     nsSeparator: '-:-',
@@ -44,19 +44,19 @@ const DeleteModal = ({ user, refetchUsers, onClose }) => {
     })
 
     const handleDelete = () => {
-        deleteUser({ id: user.id })
+        deleteGroup({ id: group.id })
     }
 
     return (
         <Modal>
             <ModalTitle>
-                {i18n.t('Delete user {{- name}}', {
-                    name: user.displayName,
+                {i18n.t('Delete user group {{- name}}', {
+                    name: group.displayName,
                 })}
             </ModalTitle>
             <ModalContent>
                 {i18n.t(`Are you sure you want to delete {{- name}}?`, {
-                    name: user.displayName,
+                    name: group.displayName,
                 })}
             </ModalContent>
             <ModalActions>
@@ -78,8 +78,11 @@ const DeleteModal = ({ user, refetchUsers, onClose }) => {
 }
 
 DeleteModal.propTypes = {
-    refetchUsers: PropTypes.func.isRequired,
-    user: PropTypes.object.isRequired,
+    group: PropTypes.shape({
+        displayName: PropTypes.string.isRequired,
+        id: PropTypes.string.isRequired,
+    }).isRequired,
+    refetchGroups: PropTypes.func.isRequired,
     onClose: PropTypes.func.isRequired,
 }
 

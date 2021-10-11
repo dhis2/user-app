@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-10-11T13:38:56.474Z\n"
-"PO-Revision-Date: 2021-10-11T13:38:56.474Z\n"
+"POT-Creation-Date: 2021-10-11T15:48:41.816Z\n"
+"PO-Revision-Date: 2021-10-11T15:48:41.816Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -415,6 +415,57 @@ msgstr "Available user groups"
 msgid "Managed user groups"
 msgstr "Managed user groups"
 
+msgid "Show details"
+msgstr "Show details"
+
+msgid "Sharing settings"
+msgstr "Sharing settings"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Join group"
+msgstr "Join group"
+
+msgid "Leave group"
+msgstr "Leave group"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "Deleted \"{{- name}}\" successfully"
+msgstr "Deleted \"{{- name}}\" successfully"
+
+msgid "There was an error deleting the user group: {{- error}}"
+msgstr "There was an error deleting the user group: {{- error}}"
+
+msgid "Delete user group {{- name}}"
+msgstr "Delete user group {{- name}}"
+
+msgid "Are you sure you want to delete {{- name}}?"
+msgstr "Are you sure you want to delete {{- name}}?"
+
+msgid "No, cancel"
+msgstr "No, cancel"
+
+msgid "Yes, delete"
+msgstr "Yes, delete"
+
+msgid "User group \"{{- name}}\" joined successfuly"
+msgstr "User group \"{{- name}}\" joined successfuly"
+
+msgid "There was an error joining the user group: {{- error}}"
+msgstr "There was an error joining the user group: {{- error}}"
+
+msgid "Join user group {{- name}}"
+msgstr "Join user group {{- name}}"
+
+msgid "Are you sure you want to join {{- name}}?"
+msgstr "Are you sure you want to join {{- name}}?"
+
+msgid "Yes, join"
+msgstr "Yes, join"
+
 msgid "You left group"
 msgstr "You left group"
 
@@ -427,6 +478,24 @@ msgstr "There was a problem updating your group membership"
 msgid "User Group Management"
 msgstr "User Group Management"
 
+msgid "New"
+msgstr "New"
+
+msgid "Error loading user groups"
+msgstr "Error loading user groups"
+
+msgid "No results found"
+msgstr "No results found"
+
+msgid "Member?"
+msgstr "Member?"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Member"
+msgstr "Member"
+
 msgid "User role \"{{displayName}}\" saved successfully"
 msgstr "User role \"{{displayName}}\" saved successfully"
 
@@ -436,50 +505,17 @@ msgstr "There was a problem saving the user role."
 msgid "Description"
 msgstr "Description"
 
-msgid "Show details"
-msgstr "Show details"
-
-msgid "Sharing settings"
-msgstr "Sharing settings"
-
-msgid "Edit"
-msgstr "Edit"
-
-msgid "Delete"
-msgstr "Delete"
-
-msgid "Deleted \"{{- name}}\" successfully"
-msgstr "Deleted \"{{- name}}\" successfully"
-
 msgid "There was an error deleting the user role: {{- error}}"
 msgstr "There was an error deleting the user role: {{- error}}"
 
 msgid "Delete user role {{- name}}"
 msgstr "Delete user role {{- name}}"
 
-msgid "Are you sure you want to delete {{- name}}?"
-msgstr "Are you sure you want to delete {{- name}}?"
-
-msgid "No, cancel"
-msgstr "No, cancel"
-
-msgid "Yes, delete"
-msgstr "Yes, delete"
-
 msgid "User Role Management"
 msgstr "User Role Management"
 
-msgid "New"
-msgstr "New"
-
 msgid "Error loading user roles"
 msgstr "Error loading user roles"
-
-msgid "No results found"
-msgstr "No results found"
-
-msgid "Actions"
-msgstr "Actions"
 
 msgid "Could not load the user data. Please refresh the page."
 msgstr "Could not load the user data. Please refresh the page."

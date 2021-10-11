@@ -35,7 +35,7 @@ const rolesQuery = {
     },
 }
 
-const UserList = () => {
+const RoleList = () => {
     const { called, loading, error, data, refetch } = useDataQuery(rolesQuery, {
         lazy: true,
     })
@@ -88,4 +88,4 @@ const UserList = () => {
     )
 }
 
-export default UserList
+export default RoleList

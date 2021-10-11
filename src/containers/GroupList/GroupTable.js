@@ -10,17 +10,17 @@ import {
     DataTableCell,
     DataTableColumnHeader,
 } from '@dhis2/ui'
-import moment from 'moment'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { connect } from 'react-redux'
 import DataTableInfoWrapper from '../../components/DataTableInfoWrapper'
 import navigateTo from '../../utils/navigateTo'
 import ContextMenuButton from './ContextMenu/ContextMenuButton'
 
-const UserTable = ({ loading, error, users, refetch }) => {
+const GroupTable = ({ loading, error, groups, refetch, currentUser }) => {
     if (loading) {
         return (
-            <DataTableInfoWrapper columns={5}>
+            <DataTableInfoWrapper columns={3}>
                 <CenteredContent>
                     <CircularLoader />
                 </CenteredContent>
@@ -30,17 +30,17 @@ const UserTable = ({ loading, error, users, refetch }) => {
 
     if (error) {
         return (
-            <DataTableInfoWrapper columns={5}>
-                <NoticeBox error title={i18n.t('Error loading users')}>
+            <DataTableInfoWrapper columns={3}>
+                <NoticeBox error title={i18n.t('Error loading user groups')}>
                     {error.message}
                 </NoticeBox>
             </DataTableInfoWrapper>
         )
     }
 
-    if (users.length === 0) {
+    if (groups.length === 0) {
         return (
-            <DataTableInfoWrapper columns={5}>
+            <DataTableInfoWrapper columns={3}>
                 <p>{i18n.t('No results found')}</p>
             </DataTableInfoWrapper>
         )
@@ -54,13 +54,7 @@ const UserTable = ({ loading, error, users, refetch }) => {
                         {i18n.t('Display name')}
                     </DataTableColumnHeader>
                     <DataTableColumnHeader>
-                        {i18n.t('Username')}
-                    </DataTableColumnHeader>
-                    <DataTableColumnHeader>
-                        {i18n.t('Last login')}
-                    </DataTableColumnHeader>
-                    <DataTableColumnHeader>
-                        {i18n.t('Account disabled?')}
+                        {i18n.t('Member?')}
                     </DataTableColumnHeader>
                     <DataTableColumnHeader>
                         {i18n.t('Actions')}
@@ -68,14 +62,13 @@ const UserTable = ({ loading, error, users, refetch }) => {
                 </DataTableRow>
             </DataTableHead>
             <DataTableBody>
-                {users.map(user => {
-                    const { id, displayName, access, userCredentials } = user
-                    const { username, lastLogin, disabled } = userCredentials
+                {groups.map(group => {
+                    const { id, displayName, access } = group
                     const handleClick = () => {
                         if (access.update) {
-                            navigateTo(`/users/edit/${id}`)
+                            navigateTo(`/user-groups/edit/${id}`)
                         } else if (access.read) {
-                            navigateTo(`/users/view/${id}`)
+                            navigateTo(`/user-groups/view/${id}`)
                         }
                     }
 
@@ -85,22 +78,13 @@ const UserTable = ({ loading, error, users, refetch }) => {
                                 {displayName}
                             </DataTableCell>
                             <DataTableCell onClick={handleClick}>
-                                {username}
-                            </DataTableCell>
-                            <DataTableCell onClick={handleClick}>
-                                {lastLogin && (
-                                    <span title={lastLogin}>
-                                        {moment(lastLogin).fromNow()}
-                                    </span>
-                                )}
-                            </DataTableCell>
-                            <DataTableCell onClick={handleClick}>
-                                {disabled && i18n.t('Disabled')}
+                                {currentUser.userGroupIds.includes(id) &&
+                                    i18n.t('Member')}
                             </DataTableCell>
                             <DataTableCell>
                                 <ContextMenuButton
-                                    user={user}
-                                    refetchUsers={refetch}
+                                    group={group}
+                                    refetchGroups={refetch}
                                 />
                             </DataTableCell>
                         </DataTableRow>
@@ -111,11 +95,16 @@ const UserTable = ({ loading, error, users, refetch }) => {
     )
 }
 
-UserTable.propTypes = {
+GroupTable.propTypes = {
+    currentUser: PropTypes.shape({
+        userGroupIds: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    }).isRequired,
     refetch: PropTypes.func.isRequired,
     error: PropTypes.object,
+    groups: PropTypes.arrayOf(PropTypes.object.isRequired),
     loading: PropTypes.bool,
-    users: PropTypes.arrayOf(PropTypes.object.isRequired),
 }
 
-export default UserTable
+const mapStateToProps = ({ currentUser }) => ({ currentUser })
+
+export default connect(mapStateToProps)(GroupTable)
