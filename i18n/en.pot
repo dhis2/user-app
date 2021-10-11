@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-10-08T10:52:34.864Z\n"
-"PO-Revision-Date: 2021-10-08T10:52:34.864Z\n"
+"POT-Creation-Date: 2021-10-11T10:56:51.761Z\n"
+"PO-Revision-Date: 2021-10-11T10:56:51.761Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -436,8 +436,23 @@ msgstr "There was a problem saving the user role."
 msgid "Description"
 msgstr "Description"
 
+msgid "Show details"
+msgstr "Show details"
+
 msgid "User Role Management"
 msgstr "User Role Management"
+
+msgid "New"
+msgstr "New"
+
+msgid "Error loading user roles"
+msgstr "Error loading user roles"
+
+msgid "No results found"
+msgstr "No results found"
+
+msgid "Actions"
+msgstr "Actions"
 
 msgid "Could not load the user data. Please refresh the page."
 msgstr "Could not load the user data. Please refresh the page."
@@ -705,20 +720,11 @@ msgstr "Select organisation unit"
 msgid "User Management"
 msgstr "User Management"
 
-msgid "New"
-msgstr "New"
-
 msgid "Error loading users"
 msgstr "Error loading users"
 
-msgid "No results found"
-msgstr "No results found"
-
 msgid "Account disabled?"
 msgstr "Account disabled?"
-
-msgid "Actions"
-msgstr "Actions"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"

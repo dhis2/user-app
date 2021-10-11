@@ -1,31 +1,91 @@
+import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import React from 'react'
-import List from '../../components/List'
-import SearchFilter from '../../components/SearchFilter'
-import { USER_ROLE } from '../../constants/entityTypes'
 import {
-    roleContextMenuActions,
-    roleContextMenuIcons,
-    isRoleContextActionAllowed,
-} from './RoleContextMenuActions'
+    colors,
+    Pagination,
+    Button,
+    IconAdd24,
+    DataTableToolbar,
+} from '@dhis2/ui'
+import React, { useState, useEffect } from 'react'
+import { useDebounce } from 'use-debounce'
+import SearchFilter from '../../components/SearchFilter'
+import navigateTo from '../../utils/navigateTo'
+import styles from './RoleList.module.css'
+import RoleTable from './RoleTable'
 
-/**
- * Container component that renders a List component with correct properties for displaying a list of UserRoles
- * @class
- */
-const RoleList = () => (
-    <List
-        entityType={USER_ROLE}
-        filterComponent={SearchFilter}
-        columns={['displayName', 'description']}
-        primaryAction={roleContextMenuActions.edit}
-        contextMenuActions={roleContextMenuActions}
-        contextMenuIcons={roleContextMenuIcons}
-        isContextActionAllowed={isRoleContextActionAllowed}
-        sectionName={i18n.t('User Role Management')}
-        newItemPath={'/user-roles/new'}
-        className={'role-list'}
-    />
-)
+const rolesQuery = {
+    roles: {
+        resource: 'userRoles',
+        params: ({ page, pageSize, query }) => ({
+            fields: [
+                'id',
+                'displayName',
+                'access',
+                'user[id,displayName]',
+                'publicAccess',
+                'userGroupAccesses',
+                'description',
+            ],
+            order: 'name:asc',
+            page,
+            pageSize,
+            query,
+        }),
+    },
+}
 
-export default RoleList
+const UserList = () => {
+    const { called, loading, error, data, refetch } = useDataQuery(rolesQuery, {
+        lazy: true,
+    })
+    const [page, setPage] = useState(1)
+    const [pageSize, setPageSize] = useState(50)
+    const [query, setQuery] = useState('')
+    const [debouncedQuery] = useDebounce(query, 375)
+    const refetchRoles = () => {
+        refetch({
+            page,
+            pageSize,
+            query: debouncedQuery,
+        })
+    }
+
+    useEffect(() => {
+        refetchRoles()
+    }, [page, pageSize, debouncedQuery])
+
+    return (
+        <>
+            <h2>{i18n.t('User Role Management')}</h2>
+            <SearchFilter value={query} onChange={setQuery} />
+            <DataTableToolbar>
+                <Button
+                    small
+                    icon={<IconAdd24 color={colors.grey600} />}
+                    onClick={() => navigateTo('/user-roles/new')}
+                >
+                    {i18n.t('New')}
+                </Button>
+            </DataTableToolbar>
+            <RoleTable
+                loading={!called || loading}
+                error={error}
+                roles={data && data.roles.userRoles}
+                refetch={refetchRoles}
+            />
+            {data && data.roles.userRoles.length > 0 && (
+                <DataTableToolbar position="bottom">
+                    <Pagination
+                        className={styles.pagination}
+                        onPageChange={setPage}
+                        onPageSizeChange={setPageSize}
+                        {...data.roles.pager}
+                    />
+                </DataTableToolbar>
+            )}
+        </>
+    )
+}
+
+export default UserList

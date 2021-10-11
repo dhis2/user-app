@@ -10,17 +10,16 @@ import {
     DataTableCell,
     DataTableColumnHeader,
 } from '@dhis2/ui'
-import moment from 'moment'
 import PropTypes from 'prop-types'
 import React from 'react'
 import DataTableInfoWrapper from '../../components/DataTableInfoWrapper'
 import navigateTo from '../../utils/navigateTo'
 import ContextMenuButton from './ContextMenu/ContextMenuButton'
 
-const UserTable = ({ loading, error, users, refetch }) => {
+const RoleTable = ({ loading, error, roles, refetch }) => {
     if (loading) {
         return (
-            <DataTableInfoWrapper columns={5}>
+            <DataTableInfoWrapper columns={3}>
                 <CenteredContent>
                     <CircularLoader />
                 </CenteredContent>
@@ -30,17 +29,17 @@ const UserTable = ({ loading, error, users, refetch }) => {
 
     if (error) {
         return (
-            <DataTableInfoWrapper columns={5}>
-                <NoticeBox error title={i18n.t('Error loading users')}>
+            <DataTableInfoWrapper columns={3}>
+                <NoticeBox error title={i18n.t('Error loading user roles')}>
                     {error.message}
                 </NoticeBox>
             </DataTableInfoWrapper>
         )
     }
 
-    if (users.length === 0) {
+    if (roles.length === 0) {
         return (
-            <DataTableInfoWrapper columns={5}>
+            <DataTableInfoWrapper columns={3}>
                 <p>{i18n.t('No results found')}</p>
             </DataTableInfoWrapper>
         )
@@ -54,13 +53,7 @@ const UserTable = ({ loading, error, users, refetch }) => {
                         {i18n.t('Display name')}
                     </DataTableColumnHeader>
                     <DataTableColumnHeader>
-                        {i18n.t('Username')}
-                    </DataTableColumnHeader>
-                    <DataTableColumnHeader>
-                        {i18n.t('Last login')}
-                    </DataTableColumnHeader>
-                    <DataTableColumnHeader>
-                        {i18n.t('Account disabled?')}
+                        {i18n.t('Description')}
                     </DataTableColumnHeader>
                     <DataTableColumnHeader>
                         {i18n.t('Actions')}
@@ -68,12 +61,11 @@ const UserTable = ({ loading, error, users, refetch }) => {
                 </DataTableRow>
             </DataTableHead>
             <DataTableBody>
-                {users.map(user => {
-                    const { id, displayName, access, userCredentials } = user
-                    const { username, lastLogin, disabled } = userCredentials
+                {roles.map(role => {
+                    const { id, displayName, access, description } = role
                     const handleClick = () => {
                         if (access.update) {
-                            navigateTo(`/users/edit/${id}`)
+                            navigateTo(`/user-roles/edit/${id}`)
                         }
                     }
 
@@ -83,22 +75,12 @@ const UserTable = ({ loading, error, users, refetch }) => {
                                 {displayName}
                             </DataTableCell>
                             <DataTableCell onClick={handleClick}>
-                                {username}
-                            </DataTableCell>
-                            <DataTableCell onClick={handleClick}>
-                                {lastLogin && (
-                                    <span title={lastLogin}>
-                                        {moment(lastLogin).fromNow()}
-                                    </span>
-                                )}
-                            </DataTableCell>
-                            <DataTableCell onClick={handleClick}>
-                                {disabled && i18n.t('Disabled')}
+                                {description}
                             </DataTableCell>
                             <DataTableCell>
                                 <ContextMenuButton
-                                    user={user}
-                                    refetchUsers={refetch}
+                                    role={role}
+                                    refetchRoles={refetch}
                                 />
                             </DataTableCell>
                         </DataTableRow>
@@ -109,11 +91,11 @@ const UserTable = ({ loading, error, users, refetch }) => {
     )
 }
 
-UserTable.propTypes = {
+RoleTable.propTypes = {
     refetch: PropTypes.func.isRequired,
     error: PropTypes.object,
     loading: PropTypes.bool,
-    users: PropTypes.arrayOf(PropTypes.object.isRequired),
+    roles: PropTypes.arrayOf(PropTypes.object.isRequired),
 }
 
-export default UserTable
+export default RoleTable
