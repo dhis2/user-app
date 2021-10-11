@@ -5,11 +5,16 @@ import {
     FlyoutMenu,
     MenuItem,
     IconInfo16,
+    IconShare16,
+    IconEdit16,
+    IconDelete16,
     colors,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import navigateTo from '../../../utils/navigateTo'
+import DeleteModal from './Modals/DeleteModal'
+import SharingSettingsModal from './Modals/SharingSettingsModal'
 
 const useCurrentModal = () => {
     const [CurrentModal, setCurrentModal] = useState()
@@ -43,6 +48,35 @@ const ContextMenu = ({ role, anchorRef, refetchRoles, onClose }) => {
                                 dense
                             />
                         )}
+                        {access.manage && (
+                            <MenuItem
+                                label={i18n.t('Sharing settings')}
+                                icon={<IconShare16 color={colors.grey600} />}
+                                onClick={() =>
+                                    setCurrentModal(SharingSettingsModal)
+                                }
+                                dense
+                            />
+                        )}
+                        {access.update && (
+                            <MenuItem
+                                label={i18n.t('Edit')}
+                                icon={<IconEdit16 color={colors.grey600} />}
+                                onClick={() =>
+                                    navigateTo(`/user-roles/edit/${role.id}`)
+                                }
+                                dense
+                            />
+                        )}
+                        {access.delete && (
+                            <MenuItem
+                                label={i18n.t('Delete')}
+                                icon={<IconDelete16 color={colors.red600} />}
+                                onClick={() => setCurrentModal(DeleteModal)}
+                                destructive
+                                dense
+                            />
+                        )}
                     </FlyoutMenu>
                 </Popper>
             </Layer>
@@ -63,6 +97,7 @@ ContextMenu.propTypes = {
     role: PropTypes.shape({
         access: PropTypes.shape({
             delete: PropTypes.bool.isRequired,
+            manage: PropTypes.bool.isRequired,
             read: PropTypes.bool.isRequired,
             update: PropTypes.bool.isRequired,
         }).isRequired,
