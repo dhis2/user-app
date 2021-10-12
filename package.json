@@ -24,6 +24,7 @@
         "@dhis2/d2-ui-org-unit-tree": "^7.0.5",
         "@dhis2/d2-ui-sharing-dialog": "^7.0.5",
         "@dhis2/d2-ui-table": "^7.0.5",
+        "@dhis2/ui": "^7.2.8",
         "classnames": "^2.3.1",
         "d2": "^31.7.0",
         "d3-color": "^1.2.0",
