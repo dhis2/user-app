@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-10-11T15:48:41.816Z\n"
-"PO-Revision-Date: 2021-10-11T15:48:41.816Z\n"
+"POT-Creation-Date: 2021-10-12T10:46:20.753Z\n"
+"PO-Revision-Date: 2021-10-12T10:46:20.753Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -451,8 +451,8 @@ msgstr "No, cancel"
 msgid "Yes, delete"
 msgstr "Yes, delete"
 
-msgid "User group \"{{- name}}\" joined successfuly"
-msgstr "User group \"{{- name}}\" joined successfuly"
+msgid "Joined user group \"{{- name}}\" successfuly"
+msgstr "Joined user group \"{{- name}}\" successfuly"
 
 msgid "There was an error joining the user group: {{- error}}"
 msgstr "There was an error joining the user group: {{- error}}"
@@ -465,6 +465,21 @@ msgstr "Are you sure you want to join {{- name}}?"
 
 msgid "Yes, join"
 msgstr "Yes, join"
+
+msgid "Left user group \"{{- name}}\" successfuly"
+msgstr "Left user group \"{{- name}}\" successfuly"
+
+msgid "There was an error leaving the user group: {{- error}}"
+msgstr "There was an error leaving the user group: {{- error}}"
+
+msgid "Leave user group {{- name}}"
+msgstr "Leave user group {{- name}}"
+
+msgid "Are you sure you want to leave {{- name}}?"
+msgstr "Are you sure you want to leave {{- name}}?"
+
+msgid "Yes, leave"
+msgstr "Yes, leave"
 
 msgid "You left group"
 msgstr "You left group"

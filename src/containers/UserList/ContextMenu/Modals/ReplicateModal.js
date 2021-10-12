@@ -1,4 +1,4 @@
-import { useDataEngine, useAlert } from '@dhis2/app-runtime'
+import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     Modal,
@@ -14,14 +14,12 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { useFetchAlert } from '../../../../hooks/useFetchAlert'
 import styles from './ReplicateModal.module.css'
 
 const ReplicateModal = ({ user, refetchUsers, onClose }) => {
     const engine = useDataEngine()
-    const { show: showAlert } = useAlert(
-        ({ message }) => message,
-        ({ isError }) => (isError ? { critical: true } : { success: true })
-    )
+    const { showSuccess, showError } = useFetchAlert()
 
     const handleReplicate = async ({ username, password }) => {
         try {
@@ -33,7 +31,7 @@ const ReplicateModal = ({ user, refetchUsers, onClose }) => {
             const message = i18n.t('User "{{- name}}" replicated successfuly', {
                 name: user.displayName,
             })
-            showAlert({ message })
+            showSuccess(message)
             refetchUsers()
             onClose()
         } catch (error) {
@@ -44,7 +42,7 @@ const ReplicateModal = ({ user, refetchUsers, onClose }) => {
                     nsSeparator: '-:-',
                 }
             )
-            showAlert({ message, isError: true })
+            showError(message)
         }
     }
 

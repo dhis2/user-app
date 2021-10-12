@@ -1,4 +1,4 @@
-import { useDataEngine, useAlert } from '@dhis2/app-runtime'
+import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     Modal,
@@ -10,14 +10,12 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
+import { useFetchAlert } from '../../../../hooks/useFetchAlert'
 
 const DisableModal = ({ user, refetchUsers, onClose }) => {
     const engine = useDataEngine()
     const [loading, setLoading] = useState(false)
-    const { show: showAlert } = useAlert(
-        ({ message }) => message,
-        ({ isError }) => (isError ? { critical: true } : { success: true })
-    )
+    const { showSuccess, showError } = useFetchAlert()
 
     const handleDisable = async () => {
         setLoading(true)
@@ -31,7 +29,7 @@ const DisableModal = ({ user, refetchUsers, onClose }) => {
             const message = i18n.t('User "{{- name}}" disabled successfuly', {
                 name: user.displayName,
             })
-            showAlert({ message })
+            showSuccess(message)
             refetchUsers()
             onClose()
         } catch (error) {
@@ -43,7 +41,7 @@ const DisableModal = ({ user, refetchUsers, onClose }) => {
                     nsSeparator: '-:-',
                 }
             )
-            showAlert({ message, isError: true })
+            showError(message)
         }
     }
 

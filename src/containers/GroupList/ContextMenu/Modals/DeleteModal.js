@@ -1,4 +1,4 @@
-import { useDataMutation, useAlert } from '@dhis2/app-runtime'
+import { useDataMutation } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     Modal,
@@ -10,6 +10,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { useFetchAlert } from '../../../../hooks/useFetchAlert'
 
 const mutation = {
     resource: 'userGroups',
@@ -18,16 +19,13 @@ const mutation = {
 }
 
 const DeleteModal = ({ group, refetchGroups, onClose }) => {
-    const { show: showAlert } = useAlert(
-        ({ message }) => message,
-        ({ isError }) => (isError ? { critical: true } : { success: true })
-    )
+    const { showSuccess, showError } = useFetchAlert()
     const [deleteGroup, { loading }] = useDataMutation(mutation, {
         onComplete: () => {
             const message = i18n.t('Deleted "{{- name}}" successfully', {
                 name: group.displayName,
             })
-            showAlert({ message })
+            showSuccess(message)
             refetchGroups()
             onClose()
         },
@@ -39,7 +37,7 @@ const DeleteModal = ({ group, refetchGroups, onClose }) => {
                     nsSeparator: '-:-',
                 }
             )
-            showAlert({ message, isError: true })
+            showError(message)
         },
     })
 

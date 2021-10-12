@@ -1,4 +1,4 @@
-import { useDataEngine, useAlert } from '@dhis2/app-runtime'
+import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     Modal,
@@ -10,14 +10,12 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
+import { useFetchAlert } from '../../../../hooks/useFetchAlert'
 
 const ResetPasswordModal = ({ user, onClose }) => {
     const engine = useDataEngine()
     const [loading, setLoading] = useState(false)
-    const { show: showAlert } = useAlert(
-        ({ message }) => message,
-        ({ isError }) => (isError ? { critical: true } : { success: true })
-    )
+    const { showSuccess, showError } = useFetchAlert()
 
     const handleReset = async () => {
         setLoading(true)
@@ -32,7 +30,7 @@ const ResetPasswordModal = ({ user, onClose }) => {
                     name: user.displayName,
                 }
             )
-            showAlert({ message })
+            showSuccess(message)
             onClose()
         } catch (error) {
             setLoading(false)
@@ -43,7 +41,7 @@ const ResetPasswordModal = ({ user, onClose }) => {
                     nsSeparator: '-:-',
                 }
             )
-            showAlert({ message, isError: true })
+            showError(message)
         }
     }
 
