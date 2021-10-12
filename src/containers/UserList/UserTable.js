@@ -17,7 +17,14 @@ import DataTableInfoWrapper from '../../components/DataTableInfoWrapper'
 import navigateTo from '../../utils/navigateTo'
 import ContextMenuButton from './ContextMenu/ContextMenuButton'
 
-const UserTable = ({ loading, error, users, refetch }) => {
+const UserTable = ({
+    loading,
+    error,
+    users,
+    refetch,
+    nameSortDirection,
+    onNameSortDirectionToggle,
+}) => {
     if (loading) {
         return (
             <DataTableInfoWrapper columns={5}>
@@ -50,7 +57,10 @@ const UserTable = ({ loading, error, users, refetch }) => {
         <DataTable>
             <DataTableHead>
                 <DataTableRow>
-                    <DataTableColumnHeader>
+                    <DataTableColumnHeader
+                        sortDirection={nameSortDirection}
+                        onSortIconClick={onNameSortDirectionToggle}
+                    >
                         {i18n.t('Display name')}
                     </DataTableColumnHeader>
                     <DataTableColumnHeader>
@@ -112,7 +122,9 @@ const UserTable = ({ loading, error, users, refetch }) => {
 }
 
 UserTable.propTypes = {
+    nameSortDirection: PropTypes.string.isRequired,
     refetch: PropTypes.func.isRequired,
+    onNameSortDirectionToggle: PropTypes.func.isRequired,
     error: PropTypes.object,
     loading: PropTypes.bool,
     users: PropTypes.arrayOf(PropTypes.object.isRequired),

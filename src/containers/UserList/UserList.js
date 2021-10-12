@@ -24,6 +24,7 @@ const usersQuery = {
             inactiveMonths,
             invitationStatus,
             selfRegistered,
+            nameSortDirection,
         }) => ({
             fields: [
                 'id',
@@ -32,7 +33,10 @@ const usersQuery = {
                 'userCredentials[username,disabled,lastLogin,twoFA]',
                 'teiSearchOrganisationUnits[id,path]',
             ],
-            order: ['firstName:asc', 'surname:asc'],
+            order: [
+                `firstName:${nameSortDirection}`,
+                `surname:${nameSortDirection}`,
+            ],
             userOrgUnits: true,
             includeChildren: true,
             page,
@@ -49,6 +53,7 @@ const UserList = () => {
     const { called, loading, error, data, refetch } = useDataQuery(usersQuery, {
         lazy: true,
     })
+    // TODO: Store in URL query params in order to have shareable links
     const [page, setPage] = useState(1)
     const [pageSize, setPageSize] = useState(50)
     const [query, setQuery] = useState('')
@@ -56,6 +61,7 @@ const UserList = () => {
     const [inactiveMonths, setInactiveMonths] = useState()
     const [invitationStatus, setInvitationStatus] = useState()
     const [selfRegistered, setSelfRegistered] = useState(false)
+    const [nameSortDirection, setNameSortDirection] = useState('asc')
     const refetchUsers = () => {
         refetch({
             page,
@@ -64,6 +70,7 @@ const UserList = () => {
             inactiveMonths,
             invitationStatus,
             selfRegistered,
+            nameSortDirection,
         })
     }
 
@@ -76,13 +83,23 @@ const UserList = () => {
         inactiveMonths,
         invitationStatus,
         selfRegistered,
+        nameSortDirection,
     ])
 
     const handleFiltersClear = () => {
         setQuery('')
         setInactiveMonths()
         setInvitationStatus()
+        setNameSortDirection('asc')
     }
+    const handleNameSortDirectionToggle = () =>
+        setNameSortDirection(sortDirection => {
+            if (sortDirection === 'asc') {
+                return 'desc'
+            } else {
+                return 'asc'
+            }
+        })
 
     return (
         <>
@@ -112,6 +129,8 @@ const UserList = () => {
                 error={error}
                 users={data && data.users.users}
                 refetch={refetchUsers}
+                nameSortDirection={nameSortDirection}
+                onNameSortDirectionToggle={handleNameSortDirectionToggle}
             />
             {data && data.users.users.length > 0 && (
                 <DataTableToolbar position="bottom">
