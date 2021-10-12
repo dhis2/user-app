@@ -1,33 +1,28 @@
 /* eslint-disable max-params */
 
-import React, { Component } from 'react'
+import i18n from '@dhis2/d2-i18n'
+import CircularProgress from 'material-ui/CircularProgress'
+import FlatButton from 'material-ui/FlatButton'
+import RaisedButton from 'material-ui/RaisedButton'
+import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down'
+import HardwareKeyboardArrowUp from 'material-ui/svg-icons/hardware/keyboard-arrow-up'
 import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Field, reduxForm, formValueSelector } from 'redux-form'
-import RaisedButton from 'material-ui/RaisedButton'
-import FlatButton from 'material-ui/FlatButton'
-import CircularProgress from 'material-ui/CircularProgress'
-import HardwareKeyboardArrowUp from 'material-ui/svg-icons/hardware/keyboard-arrow-up'
-import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down'
-import i18n from '@dhis2/d2-i18n'
 import makeTrashable from 'trashable'
-import navigateTo from '../../utils/navigateTo'
-import createHumanErrorMessage from '../../utils/createHumanErrorMessage'
-import detectCurrentUserChanges from '../../utils/detectCurrentUserChanges'
-import asArray from '../../utils/asArray'
-import getNestedProp from '../../utils/getNestedProp'
-import api from '../../api'
-import { userFormInitialValuesSelector } from '../../selectors'
 import { clearItem, getList, showSnackbar } from '../../actions'
+import api from '../../api'
 import { USER } from '../../constants/entityTypes'
-import * as CONFIG from './config'
-import collectValidators from './collectValidators'
+import { userFormInitialValuesSelector } from '../../selectors'
 import { inviteUserValueSelector } from '../../selectors'
-import { asyncValidatorSwitch } from '../../utils/validatorsAsync'
+import asArray from '../../utils/asArray'
 import {
     generateAttributeFields,
     addUniqueAttributesToAsyncBlurFields,
 } from '../../utils/attributeFieldHelpers'
+import createHumanErrorMessage from '../../utils/createHumanErrorMessage'
+import detectCurrentUserChanges from '../../utils/detectCurrentUserChanges'
 import {
     renderTextField,
     renderText,
@@ -35,6 +30,11 @@ import {
     renderSearchableGroupEditor,
     renderSelectField,
 } from '../../utils/fieldRenderers'
+import getNestedProp from '../../utils/getNestedProp'
+import navigateTo from '../../utils/navigateTo'
+import { asyncValidatorSwitch } from '../../utils/validatorsAsync'
+import collectValidators from './collectValidators'
+import * as CONFIG from './config'
 
 /**
  * Container component that is controlled by redux-form. When mounting, it will fetch available and selected locales.

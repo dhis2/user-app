@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-23T10:36:35.285Z\n"
+"POT-Creation-Date: 2021-09-28T15:10:38.753Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -14,6 +14,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uz@Cyrl\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid ""
+"Could not reset user password. Make sure you have the appropriate "
+"permissions."
+msgstr ""
 
 msgid "Use database locale / no translation"
 msgstr "Маълумотлар базасидан фойдаланинг Локал/Таржима бўлмаганда"
@@ -350,11 +355,11 @@ msgstr "Охирги кириш"
 msgid "Created"
 msgstr "Яратилди"
 
-msgid "Surname"
-msgstr "Фамилия"
-
 msgid "First name"
 msgstr "Исм"
+
+msgid "Last name"
+msgstr "Фамилияси"
 
 msgid "Introduction"
 msgstr "Таништириш"
@@ -440,6 +445,8 @@ msgid ""
 "To add a user to this group, go to the User section and edit the user group "
 "settings for a specific user."
 msgstr ""
+"Бу гуруҳга фойдаланувчини қўшиш учун, \"Фойдаланувчи\" бўлимига ўтинг ва "
+"муайян фойдаланувчи учун гуруҳ фойдаланувчилари созламаларини таҳрирланг"
 
 msgid "Available user groups"
 msgstr "Мавжуд фойдаланувчи гуруҳлари"
@@ -509,8 +516,8 @@ msgstr "Аккаунт яратиш учун е-почта таклифнома�
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Ташқи авторизация фақатгина (OpenID ёки LDAP) орқали"
 
-msgid "Expire date"
-msgstr ""
+msgid "Account expiration date"
+msgstr "Аккаунт амал қилиш муддати"
 
 msgid "Disabled"
 msgstr "Ўчириб қўйилган"
@@ -519,7 +526,7 @@ msgid "Retype password"
 msgstr "Паролни қайта киритинг"
 
 msgid "OIDC mapping value"
-msgstr ""
+msgstr "OIDC хариталаш қийматлари"
 
 msgid "LDAP identifier"
 msgstr "LDAP идентификатор"
@@ -572,6 +579,9 @@ msgstr "Маълумотларни таҳлил қилиш учун танлан
 
 msgid "Replicate user"
 msgstr "Фойдаланувчини репликация қилиш"
+
+msgid "Are you sure you want to reset {{-userName}}'s password?"
+msgstr ""
 
 msgid "Are you sure you want to disable two factor authentication for"
 msgstr ""

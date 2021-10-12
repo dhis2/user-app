@@ -1,12 +1,10 @@
 import React from 'react'
-
 import { Router } from 'react-router-dom'
-
-import history from './utils/history'
-import SectionLoader from './components/SectionLoader'
-import SnackbarContainer from './components/SnackbarContainer'
 import DialogContainer from './components/DialogContainer'
+import SectionLoader from './components/SectionLoader'
 import SharingDialogContainer from './components/SharingDialogContainer'
+import SnackbarContainer from './components/SnackbarContainer'
+import history from './utils/history'
 
 /**
  * Main Component

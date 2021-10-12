@@ -1,15 +1,15 @@
-import React from 'react'
 import { useD2 } from '@dhis2/app-runtime-adapter-d2'
+import { CircularProgress } from 'material-ui'
+import React from 'react'
 import { Provider } from 'react-redux'
-
 import api from './api'
 import App from './App'
-import store from './store'
 import AppWithD2ContextAndTheme from './components/AppWithD2ContextAndTheme'
-
+import store from './store'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import './styles/styles.css'
-import { CircularProgress } from 'material-ui'
+/* eslint-disable import/no-unresolved */
+import './locales/index.js'
 
 const AppWrapper = () => {
     const { d2 } = useD2({

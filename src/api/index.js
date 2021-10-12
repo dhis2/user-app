@@ -1,6 +1,16 @@
 /* eslint-disable max-params */
 
 import i18n from '@dhis2/d2-i18n'
+import groupAuthorities from '../components/AuthorityEditor/utils/groupAuthorities'
+import {
+    ORG_UNITS_QUERY_CONFIG,
+    CURRENT_USER_ORG_UNITS_FIELDS,
+} from '../constants/queryFields'
+import {
+    INTERFACE_LANGUAGE,
+    DATABASE_LANGUAGE,
+    USE_DB_LOCALE,
+} from '../containers/UserForm/config'
 import {
     getQueryFields,
     createListRequestData,
@@ -12,19 +22,6 @@ import {
     parse200Error,
     getAttributesWithValueAndId,
 } from './utils'
-
-import groupAuthorities from '../components/AuthorityEditor/utils/groupAuthorities'
-
-import {
-    ORG_UNITS_QUERY_CONFIG,
-    CURRENT_USER_ORG_UNITS_FIELDS,
-} from '../constants/queryFields'
-
-import {
-    INTERFACE_LANGUAGE,
-    DATABASE_LANGUAGE,
-    USE_DB_LOCALE,
-} from '../containers/UserForm/config'
 
 /**
  * The Api class exposes all necessary functions to get the required data from the DHIS2 web api.
@@ -91,6 +88,11 @@ class Api {
         return this.d2Api.post(url, data)
     }
 
+    resetUserPassword = id => {
+        const url = `/users/${id}/reset`
+        return this.d2Api.post(url)
+    }
+
     /**
      * Fetches organisation units matching the query string from the server.
      * Once the results are returned they are filtered client-side
@@ -138,8 +140,6 @@ class Api {
     }
 
     getSelectedAndAvailableLocales = username => {
-        username = username ? encodeURIComponent(username) : null
-
         const useDbLocaleOption = {
             id: USE_DB_LOCALE,
             label: i18n.t('Use database locale / no translation'),
@@ -148,6 +148,7 @@ class Api {
         const dbLocales = this.d2Api.get('/locales/db')
         const uiLocales = this.d2Api.get('/locales/ui')
 
+        // As of d2 v31.3.0, d2Api handles URI encoding
         const uiLocale = username
             ? this.d2Api.get(`/userSettings/keyUiLocale?user=${username}`)
             : this.d2.system.settings.get('keyUiLocale')
@@ -261,7 +262,7 @@ class Api {
             }
 
             const localePromises = []
-            const username = encodeURIComponent(values.username)
+            const username = values.username
 
             // Add follow-up request for setting uiLocale if needed
             const uiLocale = values[INTERFACE_LANGUAGE]

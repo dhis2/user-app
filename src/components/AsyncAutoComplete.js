@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import CircularProgress from 'material-ui/CircularProgress'
+import i18n from '@dhis2/d2-i18n'
+import debounce from 'lodash.debounce'
 import AutoComplete from 'material-ui/AutoComplete'
+import CircularProgress from 'material-ui/CircularProgress'
 import MenuItem from 'material-ui/MenuItem'
 import { orange500, blue500, red500 } from 'material-ui/styles/colors'
-import i18n from '@dhis2/d2-i18n'
-import makeTrashable from 'trashable'
-import createHumanErrorMessage from '../utils/createHumanErrorMessage'
-import debounce from 'lodash.debounce'
 import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import makeTrashable from 'trashable'
 import asArray from '../utils/asArray'
+import createHumanErrorMessage from '../utils/createHumanErrorMessage'
 
 const styles = {
     error: {

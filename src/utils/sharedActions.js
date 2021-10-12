@@ -1,15 +1,15 @@
 /* eslint-disable max-params */
 
-import store from '../store'
+import i18n from '@dhis2/d2-i18n'
 import {
     getList,
     showSnackbar,
     hideSnackbar,
     showSharingDialog,
 } from '../actions'
+import store from '../store'
 import createHumanErrorMessage from './createHumanErrorMessage'
 import detectCurrentUserChanges from './detectCurrentUserChanges'
-import i18n from '@dhis2/d2-i18n'
 
 export const deleteModel = ({ model, entityType }) => {
     const interpolator = {

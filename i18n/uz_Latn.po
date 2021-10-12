@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-23T10:36:35.285Z\n"
+"POT-Creation-Date: 2021-09-28T15:10:38.753Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
 "Language-Team: Uzbek (Latin) (https://www.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
@@ -14,6 +14,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uz@Latn\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid ""
+"Could not reset user password. Make sure you have the appropriate "
+"permissions."
+msgstr ""
 
 msgid "Use database locale / no translation"
 msgstr "Maʼlumotlar bazasidan foydalaning Lokal/Tarjima boʼlmaganda"
@@ -350,11 +355,11 @@ msgstr "Oxirgi kirish"
 msgid "Created"
 msgstr "Yaratilgan"
 
-msgid "Surname"
-msgstr "Familiya"
-
 msgid "First name"
 msgstr "Ism"
+
+msgid "Last name"
+msgstr "Familiyasi"
 
 msgid "Introduction"
 msgstr "Tanishtirish"
@@ -510,7 +515,7 @@ msgstr "Аkkaunt yaratish uchun ye-pochta taklifnomasini yuboring"
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "Tashqi avtorizatsiya faqatgina (OpenID yoki LDAP) orqali"
 
-msgid "Expire date"
+msgid "Account expiration date"
 msgstr ""
 
 msgid "Disabled"
@@ -575,6 +580,9 @@ msgstr "Maʼlumotlarni tahlil qilish uchun tanlangan oʼlchov cheklovlari"
 
 msgid "Replicate user"
 msgstr "Foydalanuvchini replikatsiya qilish"
+
+msgid "Are you sure you want to reset {{-userName}}'s password?"
+msgstr ""
 
 msgid "Are you sure you want to disable two factor authentication for"
 msgstr ""

@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-23T10:36:35.285Z\n"
+"POT-Creation-Date: 2021-09-28T15:10:38.753Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -17,6 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid ""
+"Could not reset user password. Make sure you have the appropriate "
+"permissions."
+msgstr "无法重置用户密码。确保您拥有适当的权限。"
 
 msgid "Use database locale / no translation"
 msgstr "使用数据库方言/不翻译"
@@ -223,7 +228,7 @@ msgid "Apps"
 msgstr "Apps"
 
 msgid "Tracker"
-msgstr "跟踪随风"
+msgstr "跟踪随访"
 
 msgid "Import-Export"
 msgstr "数据导入导出"
@@ -349,10 +354,10 @@ msgstr "上次登录"
 msgid "Created"
 msgstr "已创建"
 
-msgid "Surname"
+msgid "First name"
 msgstr "姓"
 
-msgid "First name"
+msgid "Last name"
 msgstr "姓"
 
 msgid "Introduction"
@@ -503,8 +508,8 @@ msgstr "邮件邀请创建账号"
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "仅仅通过外部认证（OpenIDh或LDAP）"
 
-msgid "Expire date"
-msgstr "到期日期"
+msgid "Account expiration date"
+msgstr "帐户到期日期"
 
 msgid "Disabled"
 msgstr "关闭"
@@ -565,6 +570,9 @@ msgstr "数据分析选择的维度限制i"
 
 msgid "Replicate user"
 msgstr "复制用户"
+
+msgid "Are you sure you want to reset {{-userName}}'s password?"
+msgstr "您确定要重置 {{-userName}} 的密码吗？"
 
 msgid "Are you sure you want to disable two factor authentication for"
 msgstr "你确信关闭双因素认证"

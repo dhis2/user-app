@@ -3,15 +3,15 @@
 import i18n from '@dhis2/d2-i18n'
 import capitalize from 'lodash.capitalize'
 import api from '../api'
+import { FORM_NAME as REPLICATE_USER_FORM } from '../components/ReplicateUserForm'
 import { USER, USER_GROUP } from '../constants/entityTypes'
-import { USER_ATTRIBUTE_FIELD_PREFIX } from './attributeFieldHelpers'
-import { USERNAME, FORM_NAME as USER_FORM } from '../containers/UserForm/config'
 import {
     CODE,
     NAME,
     FORM_NAME as GROUP_FORM,
 } from '../containers/GroupForm/config'
-import { FORM_NAME as REPLICATE_USER_FORM } from '../components/ReplicateUserForm'
+import { USERNAME, FORM_NAME as USER_FORM } from '../containers/UserForm/config'
+import { USER_ATTRIBUTE_FIELD_PREFIX } from './attributeFieldHelpers'
 import createHumanErrorMessage from './createHumanErrorMessage'
 
 export async function asyncValidatorSwitch(values, _, props, blurredField) {

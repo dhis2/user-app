@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { TextField, Checkbox } from 'material-ui'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 
 /**
  * Renders a TextField and Checkbox above the AuthoritySections.

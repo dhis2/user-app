@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-23T10:36:35.285Z\n"
+"POT-Creation-Date: 2021-09-28T15:10:38.753Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
 "Language-Team: Bengali (https://www.transifex.com/hisp-uio/teams/100509/bn/)\n"
@@ -14,6 +14,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: bn\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid ""
+"Could not reset user password. Make sure you have the appropriate "
+"permissions."
+msgstr ""
 
 msgid "Use database locale / no translation"
 msgstr ""
@@ -346,10 +351,10 @@ msgstr ""
 msgid "Created"
 msgstr ""
 
-msgid "Surname"
+msgid "First name"
 msgstr ""
 
-msgid "First name"
+msgid "Last name"
 msgstr ""
 
 msgid "Introduction"
@@ -500,7 +505,7 @@ msgstr ""
 msgid "External authentication only (OpenID or LDAP)"
 msgstr ""
 
-msgid "Expire date"
+msgid "Account expiration date"
 msgstr ""
 
 msgid "Disabled"
@@ -561,6 +566,9 @@ msgid "Selected dimension restrictions for data analytics"
 msgstr ""
 
 msgid "Replicate user"
+msgstr ""
+
+msgid "Are you sure you want to reset {{-userName}}'s password?"
 msgstr ""
 
 msgid "Are you sure you want to disable two factor authentication for"

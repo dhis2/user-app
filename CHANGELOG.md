@@ -1,3 +1,186 @@
+## [1.2.9](https://github.com/dhis2/user-app/compare/v1.2.8...v1.2.9) (2021-10-08)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([fb1f63a](https://github.com/dhis2/user-app/commit/fb1f63a41620af57555efbbce9702c9778ff510a))
+
+## [1.2.8](https://github.com/dhis2/user-app/compare/v1.2.7...v1.2.8) (2021-10-02)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([7577d76](https://github.com/dhis2/user-app/commit/7577d760b08c0d9d645d30a455436feb19a63139))
+
+## [1.2.7](https://github.com/dhis2/user-app/compare/v1.2.6...v1.2.7) (2021-10-01)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([c145f10](https://github.com/dhis2/user-app/commit/c145f104c3e2cfd06a8b2f9d1791847d8c214000))
+
+## [1.2.6](https://github.com/dhis2/user-app/compare/v1.2.5...v1.2.6) (2021-09-30)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([b5680bf](https://github.com/dhis2/user-app/commit/b5680bf10b9fd337f008445a7cde1cc7d2b3d980))
+
+## [1.2.5](https://github.com/dhis2/user-app/compare/v1.2.4...v1.2.5) (2021-09-29)
+
+
+### Bug Fixes
+
+* rename 'surname' field to 'last name' and show after 'first name' field ([6bc2046](https://github.com/dhis2/user-app/commit/6bc2046443d6d7f8d180253ebdb608e4f34ccb8b))
+
+## [1.2.4](https://github.com/dhis2/user-app/compare/v1.2.3...v1.2.4) (2021-09-12)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6c1c5b5](https://github.com/dhis2/user-app/commit/6c1c5b5e463e921a416d0874706292347fed75db))
+
+## [1.2.3](https://github.com/dhis2/user-app/compare/v1.2.2...v1.2.3) (2021-09-05)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([d68a48a](https://github.com/dhis2/user-app/commit/d68a48a356457ab9b0437a534fe85df4d0356dbd))
+
+## [1.2.2](https://github.com/dhis2/user-app/compare/v1.2.1...v1.2.2) (2021-09-04)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([cd73b95](https://github.com/dhis2/user-app/commit/cd73b95249b3cba4235f544d64b88405f92fd555))
+
+## [1.2.1](https://github.com/dhis2/user-app/compare/v1.2.0...v1.2.1) (2021-09-01)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([63dab6f](https://github.com/dhis2/user-app/commit/63dab6f2eff73037fcc1ee885189b671aa68c71e))
+
+# [1.2.0](https://github.com/dhis2/user-app/compare/v1.1.21...v1.2.0) (2021-08-31)
+
+
+### Features
+
+* **reset-password:** allow resetting password via context menu ([#805](https://github.com/dhis2/user-app/issues/805)) ([d5fb507](https://github.com/dhis2/user-app/commit/d5fb5072d844eacf771d59ce52f36632b0f1ffca))
+
+## [1.1.21](https://github.com/dhis2/user-app/compare/v1.1.20...v1.1.21) (2021-08-31)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([995df0e](https://github.com/dhis2/user-app/commit/995df0e1218332ebcde9c6a0822082fa0ccf03f5))
+
+## [1.1.20](https://github.com/dhis2/user-app/compare/v1.1.19...v1.1.20) (2021-08-12)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([fb14a8e](https://github.com/dhis2/user-app/commit/fb14a8e5db59f7416af88c82b8cfbde4c1981a88))
+
+## [1.1.19](https://github.com/dhis2/user-app/compare/v1.1.18...v1.1.19) (2021-07-26)
+
+
+### Bug Fixes
+
+* leave URI encoding to d2 API ([#790](https://github.com/dhis2/user-app/issues/790)) ([756a243](https://github.com/dhis2/user-app/commit/756a2432b78dd5910dfc21b108344ccaab23feb8))
+
+## [1.1.18](https://github.com/dhis2/user-app/compare/v1.1.17...v1.1.18) (2021-07-21)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([b9d70b2](https://github.com/dhis2/user-app/commit/b9d70b252717264863177dad66c1ff7648363dc6))
+
+## [1.1.17](https://github.com/dhis2/user-app/compare/v1.1.16...v1.1.17) (2021-07-06)
+
+
+### Bug Fixes
+
+* bump cli-app-scripts to 7.1.0 ([#784](https://github.com/dhis2/user-app/issues/784)) ([e7085ea](https://github.com/dhis2/user-app/commit/e7085eacde3c9d9c8d1c3306cb5f216f0f6c39c0))
+
+## [1.1.16](https://github.com/dhis2/user-app/compare/v1.1.15...v1.1.16) (2021-06-30)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([4ec2ff2](https://github.com/dhis2/user-app/commit/4ec2ff27149dcb7d15231707164fcfc893af72d3))
+
+## [1.1.15](https://github.com/dhis2/user-app/compare/v1.1.14...v1.1.15) (2021-06-29)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([336641e](https://github.com/dhis2/user-app/commit/336641e79cfdfb9716ea74455112a8f884e3cac9))
+
+## [1.1.14](https://github.com/dhis2/user-app/compare/v1.1.13...v1.1.14) (2021-06-25)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([d19050a](https://github.com/dhis2/user-app/commit/d19050ab0bfd60a5737064e59db3f3322dbba903))
+
+## [1.1.13](https://github.com/dhis2/user-app/compare/v1.1.12...v1.1.13) (2021-06-08)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([4b27c92](https://github.com/dhis2/user-app/commit/4b27c927ecc5384e4b9ede67e64ffb2ebbf57bd0))
+
+## [1.1.12](https://github.com/dhis2/user-app/compare/v1.1.11...v1.1.12) (2021-05-18)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([599cb3a](https://github.com/dhis2/user-app/commit/599cb3a6e54294b030ab4360ed13bca0425b94ef))
+
+## [1.1.11](https://github.com/dhis2/user-app/compare/v1.1.10...v1.1.11) (2021-04-20)
+
+
+### Bug Fixes
+
+* **i18n:** allow unresolved import on generated file ([c85e264](https://github.com/dhis2/user-app/commit/c85e2647ec5285c6863e2782351fed0290fdd3b7))
+* **i18n:** ensure resources are added by importing from index ([fce4b93](https://github.com/dhis2/user-app/commit/fce4b93a1948a627b90ba67f0ef5c36c44292d7d))
+
+## [1.1.10](https://github.com/dhis2/user-app/compare/v1.1.9...v1.1.10) (2021-03-27)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([84dd701](https://github.com/dhis2/user-app/commit/84dd701a235118d7575ee69db90971aca12efbf4))
+
+## [1.1.9](https://github.com/dhis2/user-app/compare/v1.1.8...v1.1.9) (2021-03-19)
+
+
+### Bug Fixes
+
+* **expiry date:** do not parse empty initial state to date ([c68a4ca](https://github.com/dhis2/user-app/commit/c68a4ca20a329f53798aa5b684151bd283088e49))
+
+## [1.1.8](https://github.com/dhis2/user-app/compare/v1.1.7...v1.1.8) (2021-03-13)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([e3e87cd](https://github.com/dhis2/user-app/commit/e3e87cd7add40fd9b528c4ac67d6b1ad9ce12687))
+
+## [1.1.7](https://github.com/dhis2/user-app/compare/v1.1.6...v1.1.7) (2021-03-12)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([0f35858](https://github.com/dhis2/user-app/commit/0f3585800865c4568b971341b28a081b203821f1))
+
+## [1.1.6](https://github.com/dhis2/user-app/compare/v1.1.5...v1.1.6) (2021-03-11)
+
+
+### Bug Fixes
+
+* **deps:** upgrade deps to enable treeshaking and headerbar fixes ([71a8c2f](https://github.com/dhis2/user-app/commit/71a8c2f99615274f02fc160e4a7a8f123dc9f59f))
+
 ## [1.1.5](https://github.com/dhis2/user-app/compare/v1.1.4...v1.1.5) (2021-03-01)
 
 

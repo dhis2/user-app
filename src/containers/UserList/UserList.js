@@ -1,8 +1,7 @@
-import React from 'react'
-import { USER } from '../../constants/entityTypes'
-import List from '../../components/List'
 import i18n from '@dhis2/d2-i18n'
-
+import React from 'react'
+import List from '../../components/List'
+import { USER } from '../../constants/entityTypes'
 import {
     userContextMenuActions,
     userContextMenuIcons,
