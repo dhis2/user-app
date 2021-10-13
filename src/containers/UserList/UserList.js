@@ -53,6 +53,8 @@ const UserList = () => {
     const { called, loading, error, data, refetch } = useDataQuery(usersQuery, {
         lazy: true,
     })
+    const users = data?.users
+    const [prevUsers, setPrevUsers] = useState()
     // TODO: Store in URL query params in order to have shareable links
     const [page, setPage] = useState(1)
     const [pageSize, setPageSize] = useState(50)
@@ -63,6 +65,7 @@ const UserList = () => {
     const [selfRegistered, setSelfRegistered] = useState(false)
     const [nameSortDirection, setNameSortDirection] = useState('asc')
     const refetchUsers = () => {
+        setPrevUsers(users)
         refetch({
             page,
             pageSize,
@@ -127,18 +130,21 @@ const UserList = () => {
             <UserTable
                 loading={!called || loading}
                 error={error}
-                users={data && data.users.users}
+                users={users?.users}
+                prevUsers={prevUsers?.users}
                 refetch={refetchUsers}
                 nameSortDirection={nameSortDirection}
                 onNameSortDirectionToggle={handleNameSortDirectionToggle}
             />
-            {data && data.users.users.length > 0 && (
+            {(loading
+                ? prevUsers?.users.length > 0
+                : users?.users.length > 0) && (
                 <DataTableToolbar position="bottom">
                     <Pagination
                         className={styles.pagination}
                         onPageChange={setPage}
                         onPageSizeChange={setPageSize}
-                        {...data.users.pager}
+                        {...(loading ? prevUsers.pager : users.pager)}
                     />
                 </DataTableToolbar>
             )}

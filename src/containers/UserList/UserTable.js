@@ -21,11 +21,12 @@ const UserTable = ({
     loading,
     error,
     users,
+    prevUsers,
     refetch,
     nameSortDirection,
     onNameSortDirectionToggle,
 }) => {
-    if (loading) {
+    if (loading && !prevUsers) {
         return (
             <DataTableInfoWrapper columns={5}>
                 <CenteredContent>
@@ -35,7 +36,7 @@ const UserTable = ({
         )
     }
 
-    if (error) {
+    if (!loading && error) {
         return (
             <DataTableInfoWrapper columns={5}>
                 <NoticeBox error title={i18n.t('Error loading users')}>
@@ -45,7 +46,7 @@ const UserTable = ({
         )
     }
 
-    if (users.length === 0) {
+    if (!loading && users.length === 0) {
         return (
             <DataTableInfoWrapper columns={5}>
                 <p>{i18n.t('No results found')}</p>
@@ -77,8 +78,8 @@ const UserTable = ({
                     </DataTableColumnHeader>
                 </DataTableRow>
             </DataTableHead>
-            <DataTableBody>
-                {users.map(user => {
+            <DataTableBody loading={loading}>
+                {(users || prevUsers).map(user => {
                     const { id, displayName, access, userCredentials } = user
                     const { username, lastLogin, disabled } = userCredentials
                     const handleClick = () => {
@@ -127,6 +128,7 @@ UserTable.propTypes = {
     onNameSortDirectionToggle: PropTypes.func.isRequired,
     error: PropTypes.object,
     loading: PropTypes.bool,
+    prevUsers: PropTypes.arrayOf(PropTypes.object.isRequired),
     users: PropTypes.arrayOf(PropTypes.object.isRequired),
 }
 
