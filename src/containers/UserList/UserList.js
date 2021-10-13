@@ -11,6 +11,7 @@ import React, { useState, useEffect } from 'react'
 import { useDebounce } from 'use-debounce'
 import navigateTo from '../../utils/navigateTo'
 import Filters from './Filters'
+import { useFilters } from './useFilters'
 import styles from './UserList.module.css'
 import UserTable from './UserTable'
 
@@ -55,15 +56,24 @@ const UserList = () => {
     })
     const users = data?.users
     const [prevUsers, setPrevUsers] = useState()
-    // TODO: Store in URL query params in order to have shareable links
-    const [page, setPage] = useState(1)
-    const [pageSize, setPageSize] = useState(50)
-    const [query, setQuery] = useState('')
+    const {
+        page,
+        setPage,
+        pageSize,
+        setPageSize,
+        query,
+        setQuery,
+        inactiveMonths,
+        setInactiveMonths,
+        invitationStatus,
+        setInvitationStatus,
+        selfRegistered,
+        setSelfRegistered,
+        nameSortDirection,
+        setNameSortDirection,
+        clearFilters,
+    } = useFilters()
     const [debouncedQuery] = useDebounce(query, 375)
-    const [inactiveMonths, setInactiveMonths] = useState()
-    const [invitationStatus, setInvitationStatus] = useState()
-    const [selfRegistered, setSelfRegistered] = useState(false)
-    const [nameSortDirection, setNameSortDirection] = useState('asc')
     const refetchUsers = () => {
         setPrevUsers(users)
         refetch({
@@ -89,21 +99,6 @@ const UserList = () => {
         nameSortDirection,
     ])
 
-    const handleFiltersClear = () => {
-        setQuery('')
-        setInactiveMonths()
-        setInvitationStatus()
-        setNameSortDirection('asc')
-    }
-    const handleNameSortDirectionToggle = () =>
-        setNameSortDirection(sortDirection => {
-            if (sortDirection === 'asc') {
-                return 'desc'
-            } else {
-                return 'asc'
-            }
-        })
-
     return (
         <>
             <h2>{i18n.t('User Management')}</h2>
@@ -116,7 +111,7 @@ const UserList = () => {
                 onInvitationStatusChange={setInvitationStatus}
                 selfRegistered={selfRegistered}
                 onSelfRegisteredChange={setSelfRegistered}
-                onClear={handleFiltersClear}
+                onClear={clearFilters}
             />
             <DataTableToolbar>
                 <Button
@@ -134,7 +129,11 @@ const UserList = () => {
                 prevUsers={prevUsers?.users}
                 refetch={refetchUsers}
                 nameSortDirection={nameSortDirection}
-                onNameSortDirectionToggle={handleNameSortDirectionToggle}
+                onNameSortDirectionToggle={() => {
+                    setNameSortDirection(
+                        nameSortDirection === 'asc' ? 'desc' : 'asc'
+                    )
+                }}
             />
             {(loading
                 ? prevUsers?.users.length > 0
