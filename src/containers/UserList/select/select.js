@@ -216,10 +216,6 @@ Select.defaultProps = {
 Select.propTypes = {
     input: PropTypes.element.isRequired,
     menu: PropTypes.element.isRequired,
-    selected: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.arrayOf(PropTypes.string),
-    ]).isRequired,
     children: PropTypes.node,
     className: PropTypes.string,
     dataTest: PropTypes.string,
@@ -228,6 +224,11 @@ Select.propTypes = {
     error: sharedPropTypes.statusPropType,
     initialFocus: PropTypes.bool,
     maxHeight: PropTypes.string,
+    // TODO: restore isRequired
+    selected: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.arrayOf(PropTypes.string),
+    ]),
     tabIndex: PropTypes.string,
     valid: sharedPropTypes.statusPropType,
     warning: sharedPropTypes.statusPropType,

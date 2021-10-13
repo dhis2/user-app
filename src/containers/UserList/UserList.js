@@ -142,9 +142,11 @@ const UserList = () => {
                 <DataTableToolbar position="bottom">
                     <Pagination
                         className={styles.pagination}
-                        onPageChange={setPage}
-                        onPageSizeChange={setPageSize}
                         {...(loading ? prevUsers.pager : users.pager)}
+                        page={page}
+                        onPageChange={setPage}
+                        pageSize={pageSize}
+                        onPageSizeChange={setPageSize}
                     />
                 </DataTableToolbar>
             )}

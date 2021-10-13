@@ -81,9 +81,11 @@ const GroupList = () => {
                 <DataTableToolbar position="bottom">
                     <Pagination
                         className={styles.pagination}
-                        onPageChange={setPage}
-                        onPageSizeChange={setPageSize}
                         {...data.groups.pager}
+                        page={page}
+                        onPageChange={setPage}
+                        pageSize={pageSize}
+                        onPageSizeChange={setPageSize}
                     />
                 </DataTableToolbar>
             )}

@@ -78,9 +78,11 @@ const RoleList = () => {
                 <DataTableToolbar position="bottom">
                     <Pagination
                         className={styles.pagination}
-                        onPageChange={setPage}
-                        onPageSizeChange={setPageSize}
                         {...data.roles.pager}
+                        page={page}
+                        onPageChange={setPage}
+                        pageSize={pageSize}
+                        onPageSizeChange={setPageSize}
                     />
                 </DataTableToolbar>
             )}
