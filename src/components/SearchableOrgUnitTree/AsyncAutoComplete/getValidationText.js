@@ -2,7 +2,16 @@ import i18n from '@dhis2/d2-i18n'
 import createHumanErrorMessage from '../../../utils/createHumanErrorMessage'
 import { MIN_CHAR_LENGTH } from './constants.js'
 
-const getValidationText = ({ searchText, organisationUnits, error }) => {
+const getValidationText = ({
+    error,
+    fetching,
+    organisationUnits,
+    searchText,
+}) => {
+    if (fetching || searchText.length === 0) {
+        return ''
+    }
+
     if (error) {
         console.error(error)
         return createHumanErrorMessage(
@@ -11,7 +20,7 @@ const getValidationText = ({ searchText, organisationUnits, error }) => {
         )
     }
 
-    if (searchText.length > 0 && searchText.length < MIN_CHAR_LENGTH) {
+    if (searchText.length < MIN_CHAR_LENGTH) {
         return i18n.t('Please enter at least {{ minCharLength }} characters', {
             minCharLength: MIN_CHAR_LENGTH,
         })
