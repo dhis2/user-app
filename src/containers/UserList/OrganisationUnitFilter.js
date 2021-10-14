@@ -30,7 +30,7 @@ class OrganisationUnitFilter extends Component {
         return (
             <SearchableOrgUnitTree
                 orgUnitType={TEI_SEARCH_ORG_UNITS}
-                selectedOrgUnits={selectedOrgUnits}
+                initiallySelected={selectedOrgUnits}
                 confirmSelection={this.applyFilter}
                 cancel={hideDialog}
             />

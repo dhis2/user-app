@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-10-14T10:34:50.861Z\n"
-"PO-Revision-Date: 2021-10-14T10:34:50.861Z\n"
+"POT-Creation-Date: 2021-10-14T11:13:53.621Z\n"
+"PO-Revision-Date: 2021-10-14T11:13:53.621Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -18,29 +18,20 @@ msgstr ""
 msgid "Use database locale / no translation"
 msgstr "Use database locale / no translation"
 
-msgid "Search"
-msgstr "Search"
-
-msgid "Enter search term"
-msgstr "Enter search term"
-
-msgid "Please enter at least {{ minCharCount }} characters"
-msgstr "Please enter at least {{ minCharCount }} characters"
-
-msgid "No matches found"
-msgstr "No matches found"
-
-msgid "There was a problem retreiving your search results"
-msgstr "There was a problem retreiving your search results"
-
 msgid "There was a problem retreiving the available authorities."
 msgstr "There was a problem retreiving the available authorities."
 
 msgid "Authorities"
 msgstr "Authorities"
 
+msgid "Search"
+msgstr "Search"
+
 msgid "Selected authorities only"
 msgstr "Selected authorities only"
+
+msgid "No matches found"
+msgstr "No matches found"
 
 msgid "All (Full authority)"
 msgstr "All (Full authority)"
@@ -308,6 +299,22 @@ msgstr "Filter available options"
 
 msgid "Filter selected options"
 msgstr "Filter selected options"
+
+msgid "Enter search term"
+msgstr "Enter search term"
+
+msgid ""
+"Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
+"please refine your search to see more."
+msgstr ""
+"Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
+"please refine your search to see more."
+
+msgid "There was a problem retreiving your search results"
+msgstr "There was a problem retreiving your search results"
+
+msgid "Please enter at least {{ minCharLength }} characters"
+msgstr "Please enter at least {{ minCharLength }} characters"
 
 msgid "Apply"
 msgstr "Apply"

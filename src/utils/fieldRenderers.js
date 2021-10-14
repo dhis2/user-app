@@ -10,6 +10,14 @@ import AuthorityEditor from '../components/AuthorityEditor'
 import SearchableGroupEditor from '../components/SearchableGroupEditor'
 import SearchableOrgUnitTree from '../components/SearchableOrgUnitTree'
 
+/**
+ * TODOS
+ * - re-implement AuthorityEditor UI - DONE
+ * - re-implement SearchableGroupEditor UI - DONE
+ * - re-implement SearchableOrgUnitTree UI - NOTE also used in OrganisationUnitFilter
+ * - re-implement all fieldRenderers
+ */
+
 const styles = {
     checkbox: {
         marginTop: '32px',
@@ -188,15 +196,15 @@ export const renderSearchableOrgUnitTree = ({
     input,
     meta: { touched, error },
     label,
-    wrapperStyle,
+    side,
     initialValues,
     orgUnitType,
 }) => {
     return (
         <SearchableOrgUnitTree
-            selectedOrgUnits={initialValues}
+            initiallySelected={initialValues}
             onChange={input.onChange}
-            wrapperStyle={wrapperStyle}
+            side={side}
             headerText={label}
             orgUnitType={orgUnitType}
             errorText={touched && error}
@@ -243,7 +251,7 @@ renderSearchableGroupEditor.propTypes = {
 renderSearchableOrgUnitTree.propTypes = {
     ...sharedPropTypes,
     initialValues: PropTypes.array.isRequired,
-    wrapperStyle: PropTypes.object,
+    side: PropTypes.oneOf(['left', 'right']),
 }
 
 renderAuthorityEditor.propTypes = {
