@@ -2,3 +2,7 @@
     min-width: 100px;
     margin-right: var(--spacers-dp8);
 }
+
+.orgUnitTree {
+    width: 100%;
+}

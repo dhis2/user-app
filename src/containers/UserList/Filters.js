@@ -10,7 +10,7 @@ import classnames from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './Filters.module.css'
-import OrganisationUnitInput from './OrganisationUnitInput'
+import OrganisationUnitFilter from './OrganisationUnitFilter'
 
 const InactiveMonthsFilter = ({ inactiveMonths, onInactiveMonthsChange }) => {
     const options = Array(12)
@@ -68,7 +68,7 @@ const Filters = ({
             dense
         />
         {/* TODO: Pass selected organisation units */}
-        <OrganisationUnitInput />
+        <OrganisationUnitFilter />
         <InactiveMonthsFilter
             inactiveMonths={inactiveMonths}
             onInactiveMonthsChange={onInactiveMonthsChange}

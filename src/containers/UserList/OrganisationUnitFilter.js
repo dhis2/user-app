@@ -1,56 +1,43 @@
-import isEqual from 'lodash.isequal'
+import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { updateFilter, hideDialog, getList } from '../../actions'
+import React from 'react'
 import SearchableOrgUnitTree from '../../components/SearchableOrgUnitTree'
-import { USER } from '../../constants/entityTypes'
 import { TEI_SEARCH_ORG_UNITS } from '../UserForm/config'
+import classes from './OrganisationUnitFilter.module.css'
+import { Select } from './select'
+import { Input } from './single-select/input'
 
-/**
- * Displayed inside of a Dialog and displayed by clicking the OrganisationUnitInput.
- * This component renders a SearchableOrgUnitTree and lets a user select one or more organisation units.
- * When this selection is applied the filter state is updated.
- */
-class OrganisationUnitFilter extends Component {
-    applyFilter = newSelectedOrgUnits => {
-        const { updateFilter, hideDialog, getList, selectedOrgUnits } =
-            this.props
-
-        if (!isEqual(newSelectedOrgUnits, selectedOrgUnits)) {
-            updateFilter('organisationUnits', newSelectedOrgUnits)
-            getList(USER)
-        }
-
-        hideDialog()
-    }
-
-    render() {
-        const { selectedOrgUnits, hideDialog } = this.props
-        return (
-            <SearchableOrgUnitTree
-                orgUnitType={TEI_SEARCH_ORG_UNITS}
-                initiallySelected={selectedOrgUnits}
-                confirmSelection={this.applyFilter}
-                cancel={hideDialog}
-            />
-        )
-    }
-}
+const OrganisationUnitFilter = ({
+    selectedOrgUnits = [],
+    onSelectedOrgUnitsChange = () => {},
+}) => (
+    <div className={classes.rootInput}>
+        <Select
+            input={<Input prefix={i18n.t('Org.unit')} />}
+            menu={
+                <SearchableOrgUnitTree
+                    className={classes.orgUnitTree}
+                    orgUnitType={TEI_SEARCH_ORG_UNITS}
+                    initiallySelected={selectedOrgUnits}
+                    confirmSelection={onSelectedOrgUnitsChange}
+                    dense
+                />
+            }
+            maxHeight="350px"
+            dense
+        />
+    </div>
+)
 
 OrganisationUnitFilter.propTypes = {
-    getList: PropTypes.func.isRequired,
-    hideDialog: PropTypes.func.isRequired,
-    selectedOrgUnits: PropTypes.array.isRequired,
-    updateFilter: PropTypes.func.isRequired,
+    selectedOrgUnits: PropTypes.arrayOf(
+        PropTypes.shape({
+            displayName: PropTypes.string.isRequired,
+            id: PropTypes.string.isRequired,
+            path: PropTypes.string.isRequired,
+        }).isRequired
+    ).isRequired,
+    onSelectedOrgUnitsChange: PropTypes.func.isRequired,
 }
 
-const mapStateToProps = state => ({
-    selectedOrgUnits: state.filter.organisationUnits,
-})
-
-export default connect(mapStateToProps, {
-    updateFilter,
-    hideDialog,
-    getList,
-})(OrganisationUnitFilter)
+export default OrganisationUnitFilter

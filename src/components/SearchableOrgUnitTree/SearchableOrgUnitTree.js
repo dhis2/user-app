@@ -5,6 +5,7 @@ import {
     Button,
     ButtonStrip,
     Field,
+    Divider,
 } from '@dhis2/ui'
 import cx from 'classnames'
 import defer from 'lodash.defer'
@@ -25,13 +26,14 @@ import classes from './SearchableOrgUnitTree.module.css'
  * It has been made compliant with redux form
  */
 const SearchableOrgUnitTree = ({
+    className,
     orgUnitType,
     initiallySelected,
-    cancel,
     confirmSelection,
     errorText,
     headerText,
     side,
+    dense,
     onBlur,
     onChange,
 }) => {
@@ -117,23 +119,34 @@ const SearchableOrgUnitTree = ({
     }
 
     return (
-        <div className={cx(classes.wrapper, classes[side])}>
+        <div className={cx(classes.wrapper, classes[side], className)}>
             <Field error={!!errorText} validationText={errorText || ''}>
-                {headerText && <h4 className={classes.header}>{headerText}</h4>}
-                <AsyncAutoComplete
-                    query={api.queryOrgUnits}
-                    orgUnitType={orgUnitType}
-                    selectHandler={selectAndShowFilteredOrgUnit}
-                />
-                <div className={classes.scrollBox}>
-                    <OrganisationUnitTree
-                        roots={roots.map(({ id }) => id)}
-                        onChange={toggleSelectedOrgUnits}
-                        selected={selectedOrgUnits.map(({ path }) => path)}
-                        expanded={expanded}
-                        handleExpand={handleExpand}
-                        handleCollapse={handleCollapse}
-                    />
+                {/* Without `display: grid`, AsyncAutoComplete takes up too much vertical space */}
+                <div className={classes.grid}>
+                    <div className={classes.header}>
+                        {headerText && (
+                            <h4 className={classes.headerText}>{headerText}</h4>
+                        )}
+                        <AsyncAutoComplete
+                            query={api.queryOrgUnits}
+                            orgUnitType={orgUnitType}
+                            selectHandler={selectAndShowFilteredOrgUnit}
+                            dense={dense}
+                        />
+                    </div>
+
+                    <Divider margin="0" />
+
+                    <div className={classes.scrollBox}>
+                        <OrganisationUnitTree
+                            roots={roots.map(({ id }) => id)}
+                            onChange={toggleSelectedOrgUnits}
+                            selected={selectedOrgUnits.map(({ path }) => path)}
+                            expanded={expanded}
+                            handleExpand={handleExpand}
+                            handleCollapse={handleCollapse}
+                        />
+                    </div>
                 </div>
             </Field>
             {confirmSelection && (
@@ -149,7 +162,6 @@ const SearchableOrgUnitTree = ({
                         <Button onClick={clearSelection} disabled={!roots}>
                             {i18n.t('Clear all')}
                         </Button>
-                        <Button onClick={cancel}>{i18n.t('Cancel')}</Button>
                     </ButtonStrip>
                 </div>
             )}
@@ -158,10 +170,17 @@ const SearchableOrgUnitTree = ({
 }
 
 SearchableOrgUnitTree.propTypes = {
-    initiallySelected: PropTypes.array.isRequired,
+    initiallySelected: PropTypes.arrayOf(
+        PropTypes.shape({
+            displayName: PropTypes.string.isRequired,
+            id: PropTypes.string.isRequired,
+            path: PropTypes.string.isRequired,
+        }).isRequired
+    ).isRequired,
     orgUnitType: PropTypes.string.isRequired,
-    cancel: PropTypes.func,
+    className: PropTypes.string,
     confirmSelection: PropTypes.func,
+    dense: PropTypes.bool,
     errorText: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     headerText: PropTypes.string,
     side: PropTypes.oneOf(['left', 'right']),

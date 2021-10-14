@@ -18,7 +18,6 @@ import IconLink from './IconLink'
 const styles = {
     main: {
         width: '100%',
-        paddingLeft: '2rem',
     },
     heading: {
         paddingBottom: '1rem',
