@@ -20,14 +20,19 @@ const AsyncAutoComplete = ({ selectHandler, orgUnitType }) => {
         clear,
     } = useOrgUnitSearchResults({ searchText, orgUnitType })
     const validationText = getValidationText({
-        searchText,
-        organisationUnits,
         error,
+        fetching,
+        organisationUnits,
+        searchText,
     })
     const selectOrgUnit = orgUnit => {
         setSearchText('')
         clear()
         selectHandler(orgUnit)
+    }
+    const onBackdropClick = () => {
+        setSearchText('')
+        clear()
     }
 
     return (
@@ -45,7 +50,7 @@ const AsyncAutoComplete = ({ selectHandler, orgUnitType }) => {
             </div>
 
             {organisationUnits.length > 0 && (
-                <Layer onClick={clear}>
+                <Layer onClick={onBackdropClick}>
                     <Popper placement="bottom-start" reference={inputEl}>
                         <Card>
                             <div className={styles.scrollBox}>
