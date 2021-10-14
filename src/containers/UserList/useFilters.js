@@ -33,6 +33,9 @@ export const useFilters = () => {
         withDefault(StringParam, 'asc')
     )
 
+    const withPushIn = setFn => value => {
+        setFn(value, 'pushIn')
+    }
     const clearPager = () => {
         setPage()
         setPageSize()
@@ -44,9 +47,9 @@ export const useFilters = () => {
 
     return {
         page,
-        setPage,
+        setPage: withPushIn(setPage),
         pageSize,
-        setPageSize,
+        setPageSize: withPushIn(setPageSize),
         query,
         setQuery: withClearPager(setQuery),
         inactiveMonths,
