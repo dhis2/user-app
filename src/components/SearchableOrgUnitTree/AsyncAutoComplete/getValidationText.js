@@ -7,8 +7,9 @@ const getValidationText = ({
     fetching,
     organisationUnits,
     searchText,
+    waiting,
 }) => {
-    if (fetching || searchText.length === 0) {
+    if (fetching || waiting || searchText.length === 0) {
         return ''
     }
 

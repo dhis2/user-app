@@ -13,17 +13,19 @@ const AsyncAutoComplete = ({ selectHandler, orgUnitType }) => {
     const inputEl = inputRef.current?.querySelector('input')
     const [searchText, setSearchText] = useState('')
     const {
-        fetching,
+        clear,
         error,
+        fetching,
         organisationUnits,
         totalSearchResultCount,
-        clear,
+        waiting,
     } = useOrgUnitSearchResults({ searchText, orgUnitType })
     const validationText = getValidationText({
         error,
         fetching,
         organisationUnits,
         searchText,
+        waiting,
     })
     const selectOrgUnit = orgUnit => {
         setSearchText('')

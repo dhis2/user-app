@@ -24,13 +24,16 @@ const query = {
 
 const useOrgUnitSearchResults = ({ searchText, orgUnitType }) => {
     const [organisationUnits, setOrganisationUnits] = useState([])
+    const [waiting, setWaiting] = useState(false)
     const { refetch, fetching, error, data } = useDataQuery(query, {
         lazy: true,
     })
+
     const debouncedRefetchRef = useRef(debounce(refetch, DEBOUNCE_TIME))
 
     useEffect(() => {
         if (searchText.length >= MIN_CHAR_LENGTH) {
+            setWaiting(true)
             debouncedRefetchRef.current({ searchText })
         }
     }, [searchText, orgUnitType])
@@ -46,12 +49,19 @@ const useOrgUnitSearchResults = ({ searchText, orgUnitType }) => {
         )
     }, [data])
 
+    useEffect(() => {
+        if (fetching && waiting) {
+            setWaiting(false)
+        }
+    }, [fetching])
+
     return {
-        fetching,
+        clear: () => setOrganisationUnits([]),
         error,
+        fetching,
         organisationUnits,
         totalSearchResultCount: data?.organisationUnits.pager.total,
-        clear: () => setOrganisationUnits([]),
+        waiting,
     }
 }
 
