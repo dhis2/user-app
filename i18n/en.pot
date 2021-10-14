@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-10-12T11:09:00.901Z\n"
-"PO-Revision-Date: 2021-10-12T11:09:00.901Z\n"
+"POT-Creation-Date: 2021-10-14T10:34:50.861Z\n"
+"PO-Revision-Date: 2021-10-14T10:34:50.861Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -216,6 +216,24 @@ msgstr "Skip data import audit"
 msgid "Visualization"
 msgstr "Visualization"
 
+msgid "Metadata"
+msgstr "Metadata"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Add/Update Public"
+msgstr "Add/Update Public"
+
+msgid "Add/Update Private"
+msgstr "Add/Update Private"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "External access"
+msgstr "External access"
+
 msgid "Apps"
 msgstr "Apps"
 
@@ -282,14 +300,14 @@ msgstr "Search by name"
 msgid "Could not load available items"
 msgstr "Could not load available items"
 
-msgid "Filter"
-msgstr "Filter"
-
-msgid "Filter available and selected items"
-msgstr "Filter available and selected items"
-
 msgid "There was a problem displaying the GroupEditor"
 msgstr "There was a problem displaying the GroupEditor"
+
+msgid "Filter available options"
+msgstr "Filter available options"
+
+msgid "Filter selected options"
+msgstr "Filter selected options"
 
 msgid "Apply"
 msgstr "Apply"
@@ -396,9 +414,6 @@ msgstr "There was a problem saving the user group."
 msgid "Save"
 msgstr "Save"
 
-msgid "Name"
-msgstr "Name"
-
 msgid "Code"
 msgstr "Code"
 
@@ -429,9 +444,6 @@ msgstr "Join group"
 
 msgid "Leave group"
 msgstr "Leave group"
-
-msgid "Delete"
-msgstr "Delete"
 
 msgid "Deleted \"{{- name}}\" successfully"
 msgstr "Deleted \"{{- name}}\" successfully"
@@ -480,15 +492,6 @@ msgstr "Are you sure you want to leave {{- name}}?"
 
 msgid "Yes, leave"
 msgstr "Yes, leave"
-
-msgid "You left group"
-msgstr "You left group"
-
-msgid "You joined group"
-msgstr "You joined group"
-
-msgid "There was a problem updating your group membership"
-msgstr "There was a problem updating your group membership"
 
 msgid "User Group Management"
 msgstr "User Group Management"
@@ -799,15 +802,6 @@ msgstr "Something went wrong when processing your request."
 
 msgid "Validating..."
 msgstr "Validating..."
-
-msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
-msgstr "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
-
-msgid "{{type}} \"{{displayName}}\" removed successfully"
-msgstr "{{type}} \"{{displayName}}\" removed successfully"
-
-msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
-msgstr "There was a problem removing {{type}} \"{{displayName}}\"?"
 
 msgid "Exceeds maximum character limit of 50"
 msgstr "Exceeds maximum character limit of 50"
