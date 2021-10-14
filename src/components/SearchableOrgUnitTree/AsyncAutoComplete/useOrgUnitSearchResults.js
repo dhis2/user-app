@@ -4,8 +4,6 @@ import { useState, useEffect, useRef } from 'react'
 import { PAGE_SIZE, MIN_CHAR_LENGTH, DEBOUNCE_TIME } from './constants.js'
 import { getRestrictedOrgUnits } from './getRestrictedOrgUnits.js'
 
-PAGE_SIZE
-
 const query = {
     organisationUnits: {
         resource: 'organisationUnits',
