@@ -14,7 +14,6 @@ import {
     INVITE,
     INVITE_USER,
     DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
-    DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
     EXPIRE_DATE,
     SET_PASSWORD,
 } from '../containers/UserForm/config'
@@ -201,31 +200,6 @@ export const shortItemSelector = memoize((id, list) => {
     }
     return list.get(id)
 })
-
-/**
- * Organisation unit trees should have different roots depending on the context.
- * @param {String} orgUnitType - The type orgUnits to return
- * @param {Object} currentUser - state.currentUser
- * @returns {Array|null} The roots of the organisation unit tree to be displayed
- * @function
- */
-export const orgUnitRootsSelector = (orgUnitType, currentUser) => {
-    const systemOrgRoots = currentUser.systemOrganisationUnitRoots
-    const requestedOrgUnitRoots = currentUser[orgUnitType]
-    const fallBackOrgUnitRoots =
-        currentUser[DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS]
-
-    let orgUnitRoots = null
-    if (currentUser.authorities.has('ALL')) {
-        orgUnitRoots = systemOrgRoots
-    } else if (requestedOrgUnitRoots.size === 0) {
-        orgUnitRoots = fallBackOrgUnitRoots.toArray()
-    } else if (fallBackOrgUnitRoots.size > 0) {
-        orgUnitRoots = fallBackOrgUnitRoots.toArray()
-    }
-
-    return orgUnitRoots
-}
 
 /**
  * The redux form `formValueSelector` was returning incorrect values,

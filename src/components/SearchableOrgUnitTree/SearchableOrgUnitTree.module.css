@@ -1,0 +1,42 @@
+.heading {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.87);
+    padding: 16px 0px 0px;
+    margin: 0px 0px -16px;
+}
+
+.wrapper {
+    display: inline-block;
+    border: 1px solid var(--colors-grey400);
+    border-radius: 3px;
+    padding: 0 var(--spacers-dp12);
+}
+
+.wrapper.left,
+.wrapper.right {
+    float: left;
+    margin-top: var(--spacers-dp8);
+    margin-bottom: var(--spacers-dp8);
+    width: calc(50% - var(--spacers-dp24));
+}
+
+.wrapper.left {
+    margin-right: var(--spacers-dp24);
+}
+
+.wrapper.right {
+    margin-left: var(--spacers-dp24);
+}
+
+.scrollBox {
+    max-height: calc(60vh - 154px);
+    min-height: calc(300px - 154px);
+    overflow-y: auto;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.buttonStrip {
+    padding-bottom: var(--spacers-dp8);
+}

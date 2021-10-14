@@ -28,6 +28,10 @@ import { FORM_NAME, NAME, CODE, MANAGED_GROUPS, getFields } from './config'
 import * as CONFIG from './config'
 
 /**
+ * Only replace UI, nothing else
+ */
+
+/**
  * Container component that is controlled by redux-form. It renders an array of fields and validates their input.
  * When valid it will save on submit and show relevant snackbar message.
  */

@@ -49,7 +49,7 @@ class OrganisationUnitInput extends Component {
     inputRef = React.createRef()
 
     focusOrgUnitInput = () => {
-        this.inputRef.current.orgUnitInput.focus()
+        this.inputRef.current.focus()
     }
 
     showOrgTreeInDialog = () => {
