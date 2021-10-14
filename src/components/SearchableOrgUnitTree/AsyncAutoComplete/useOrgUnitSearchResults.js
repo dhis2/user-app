@@ -15,7 +15,7 @@ const query = {
                 'children::isNotEmpty',
                 'ancestors',
             ],
-            filter: `identifiable:token:${searchText}`,
+            filter: `name:$ilike:${searchText}`,
             paging: true,
             pageSize: PAGE_SIZE,
         }),
