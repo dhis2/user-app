@@ -13,6 +13,7 @@ import SearchFilter from '../../components/SearchFilter'
 import navigateTo from '../../utils/navigateTo'
 import styles from './GroupList.module.css'
 import GroupTable from './GroupTable'
+import { useFilters } from './useFilters.js'
 
 const groupsQuery = {
     groups: {
@@ -42,11 +43,13 @@ const GroupList = () => {
             lazy: true,
         }
     )
-    const [page, setPage] = useState(1)
-    const [pageSize, setPageSize] = useState(50)
-    const [query, setQuery] = useState('')
+    const groups = data?.groups
+    const [prevGroups, setPrevGroups] = useState()
+    const { page, setPage, pageSize, setPageSize, query, setQuery } =
+        useFilters()
     const [debouncedQuery] = useDebounce(query, 375)
     const refetchGroups = () => {
+        setPrevGroups(groups)
         refetch({
             page,
             pageSize,
@@ -74,14 +77,16 @@ const GroupList = () => {
             <GroupTable
                 loading={!called || loading}
                 error={error}
-                groups={data && data.groups.userGroups}
+                groups={groups?.userGroups || prevGroups?.userGroups}
                 refetch={refetchGroups}
             />
-            {data && data.groups.userGroups.length > 0 && (
+            {(loading
+                ? prevGroups?.userGroups.length > 0
+                : groups?.userGroups.length > 0) && (
                 <DataTableToolbar position="bottom">
                     <Pagination
                         className={styles.pagination}
-                        {...data.groups.pager}
+                        {...(loading ? prevGroups.pager : groups.pager)}
                         page={page}
                         onPageChange={setPage}
                         pageSize={pageSize}

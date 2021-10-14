@@ -125,8 +125,7 @@ const UserList = () => {
             <UserTable
                 loading={!called || loading}
                 error={error}
-                users={users?.users}
-                prevUsers={prevUsers?.users}
+                users={users?.users || prevUsers?.users}
                 refetch={refetchUsers}
                 nameSortDirection={nameSortDirection}
                 onNameSortDirectionToggle={() => {

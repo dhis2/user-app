@@ -13,6 +13,7 @@ import SearchFilter from '../../components/SearchFilter'
 import navigateTo from '../../utils/navigateTo'
 import styles from './RoleList.module.css'
 import RoleTable from './RoleTable'
+import { useFilters } from './useFilters'
 
 const rolesQuery = {
     roles: {
@@ -39,11 +40,13 @@ const RoleList = () => {
     const { called, loading, error, data, refetch } = useDataQuery(rolesQuery, {
         lazy: true,
     })
-    const [page, setPage] = useState(1)
-    const [pageSize, setPageSize] = useState(50)
-    const [query, setQuery] = useState('')
+    const roles = data?.roles
+    const [prevRoles, setPrevRoles] = useState()
+    const { page, setPage, pageSize, setPageSize, query, setQuery } =
+        useFilters()
     const [debouncedQuery] = useDebounce(query, 375)
     const refetchRoles = () => {
+        setPrevRoles(roles)
         refetch({
             page,
             pageSize,
@@ -71,14 +74,16 @@ const RoleList = () => {
             <RoleTable
                 loading={!called || loading}
                 error={error}
-                roles={data && data.roles.userRoles}
+                roles={roles?.userRoles || prevRoles?.userRoles}
                 refetch={refetchRoles}
             />
-            {data && data.roles.userRoles.length > 0 && (
+            {(loading
+                ? prevRoles?.userRoles.length > 0
+                : roles?.userRoles.length > 0) && (
                 <DataTableToolbar position="bottom">
                     <Pagination
                         className={styles.pagination}
-                        {...data.roles.pager}
+                        {...(loading ? prevRoles.pager : roles.pager)}
                         page={page}
                         onPageChange={setPage}
                         pageSize={pageSize}

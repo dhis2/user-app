@@ -21,12 +21,11 @@ const UserTable = ({
     loading,
     error,
     users,
-    prevUsers,
     refetch,
     nameSortDirection,
     onNameSortDirectionToggle,
 }) => {
-    if (loading && !prevUsers) {
+    if (loading && !users) {
         return (
             <DataTableInfoWrapper columns={5}>
                 <CenteredContent>
@@ -79,7 +78,7 @@ const UserTable = ({
                 </DataTableRow>
             </DataTableHead>
             <DataTableBody loading={loading}>
-                {(users || prevUsers).map(user => {
+                {users.map(user => {
                     const { id, displayName, access, userCredentials } = user
                     const { username, lastLogin, disabled } = userCredentials
                     const handleClick = () => {
@@ -128,7 +127,6 @@ UserTable.propTypes = {
     onNameSortDirectionToggle: PropTypes.func.isRequired,
     error: PropTypes.object,
     loading: PropTypes.bool,
-    prevUsers: PropTypes.arrayOf(PropTypes.object.isRequired),
     users: PropTypes.arrayOf(PropTypes.object.isRequired),
 }
 

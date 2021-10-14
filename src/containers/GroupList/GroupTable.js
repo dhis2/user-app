@@ -18,7 +18,7 @@ import navigateTo from '../../utils/navigateTo'
 import ContextMenuButton from './ContextMenu/ContextMenuButton'
 
 const GroupTable = ({ loading, error, groups, refetch, currentUser }) => {
-    if (loading) {
+    if (loading && !groups) {
         return (
             <DataTableInfoWrapper columns={3}>
                 <CenteredContent>
@@ -28,7 +28,7 @@ const GroupTable = ({ loading, error, groups, refetch, currentUser }) => {
         )
     }
 
-    if (error) {
+    if (!loading && error) {
         return (
             <DataTableInfoWrapper columns={3}>
                 <NoticeBox error title={i18n.t('Error loading user groups')}>
@@ -38,7 +38,7 @@ const GroupTable = ({ loading, error, groups, refetch, currentUser }) => {
         )
     }
 
-    if (groups.length === 0) {
+    if (!loading && groups.length === 0) {
         return (
             <DataTableInfoWrapper columns={3}>
                 <p>{i18n.t('No results found')}</p>
@@ -61,7 +61,7 @@ const GroupTable = ({ loading, error, groups, refetch, currentUser }) => {
                     </DataTableColumnHeader>
                 </DataTableRow>
             </DataTableHead>
-            <DataTableBody>
+            <DataTableBody loading={loading}>
                 {groups.map(group => {
                     const { id, displayName, access } = group
                     const handleClick = () => {

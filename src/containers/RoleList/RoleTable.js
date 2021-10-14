@@ -17,7 +17,7 @@ import navigateTo from '../../utils/navigateTo'
 import ContextMenuButton from './ContextMenu/ContextMenuButton'
 
 const RoleTable = ({ loading, error, roles, refetch }) => {
-    if (loading) {
+    if (loading && !roles) {
         return (
             <DataTableInfoWrapper columns={3}>
                 <CenteredContent>
@@ -27,7 +27,7 @@ const RoleTable = ({ loading, error, roles, refetch }) => {
         )
     }
 
-    if (error) {
+    if (!loading && error) {
         return (
             <DataTableInfoWrapper columns={3}>
                 <NoticeBox error title={i18n.t('Error loading user roles')}>
@@ -37,7 +37,7 @@ const RoleTable = ({ loading, error, roles, refetch }) => {
         )
     }
 
-    if (roles.length === 0) {
+    if (!loading && roles.length === 0) {
         return (
             <DataTableInfoWrapper columns={3}>
                 <p>{i18n.t('No results found')}</p>
@@ -60,7 +60,7 @@ const RoleTable = ({ loading, error, roles, refetch }) => {
                     </DataTableColumnHeader>
                 </DataTableRow>
             </DataTableHead>
-            <DataTableBody>
+            <DataTableBody loading={loading}>
                 {roles.map(role => {
                     const { id, displayName, access, description } = role
                     const handleClick = () => {
