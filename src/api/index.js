@@ -89,21 +89,6 @@ class Api {
         return this.d2Api.post(url)
     }
 
-    getAvailableUserRoles = () => {
-        const data = {
-            canIssue: true,
-            fields: ['id', 'displayName'],
-            paging: false,
-        }
-        return this.d2.models.userRoles.list(data)
-    }
-
-    getAvailableDataAnalyticsDimensionRestrictions = () => {
-        const url = '/dimensions/constraints'
-        const data = { fields: ['id', 'name', 'dimensionType'], paging: false }
-        return this.d2Api.get(url, data).then(({ dimensions }) => dimensions)
-    }
-
     updateDisabledState = (id, disabled) => {
         const url = `/users/${id}`
         const data = { userCredentials: { disabled: disabled } }
@@ -296,12 +281,6 @@ class Api {
             paging: false,
         }
         return this.d2.models.user.list(data).then(appendUsernameToDisplayName)
-    }
-
-    // Also used by GroupForm
-    getAvailableUserGroups = () => {
-        const data = { fields: ['id', 'displayName'], paging: false }
-        return this.d2.models.userGroups.list(data)
     }
 
     /**************************
