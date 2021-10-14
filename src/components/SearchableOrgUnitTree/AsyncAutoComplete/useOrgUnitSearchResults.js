@@ -39,21 +39,23 @@ const useOrgUnitSearchResults = ({ searchText, orgUnitType }) => {
     }, [searchText, orgUnitType])
 
     useEffect(() => {
-        setOrganisationUnits(
-            data
-                ? getRestrictedOrgUnits(
-                      data.organisationUnits.organisationUnits,
-                      orgUnitType
-                  )
-                : []
-        )
-    }, [data])
-
-    useEffect(() => {
         if (fetching && waiting) {
             setWaiting(false)
         }
-    }, [fetching])
+
+        if (!fetching && data) {
+            setOrganisationUnits(
+                getRestrictedOrgUnits(
+                    data.organisationUnits.organisationUnits,
+                    orgUnitType
+                )
+            )
+        }
+
+        if (!fetching && !data) {
+            setOrganisationUnits([])
+        }
+    }, [data, fetching])
 
     return {
         clear: () => setOrganisationUnits([]),
