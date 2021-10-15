@@ -3,28 +3,41 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import SearchableOrgUnitTree from '../../components/SearchableOrgUnitTree'
 import { TEI_SEARCH_ORG_UNITS } from '../UserForm/config'
-import classes from './OrganisationUnitFilter.module.css'
+import styles from './OrganisationUnitFilter.module.css'
 import { Select } from './select'
 import { Input } from './single-select/input'
+
+const formatList = items => {
+    // Wrap Intl.ListFormat in try/catch as DHIS2 locales are not always ISO 639 compliant
+    try {
+        const formatter = new Intl.ListFormat(i18n.language, {
+            style: 'long',
+            type: 'conjunction',
+        })
+        return formatter.format(items)
+    } catch (error) {
+        return items.join(', ')
+    }
+}
 
 const OrganisationUnitFilter = ({
     organisationUnits,
     onOrganisationUnitsChange,
 }) => (
-    <div className={classes.rootInput}>
-        {/* TODO: support RTL languages */}
+    <div className={styles.rootInput}>
         <Select
             input={
                 <Input
                     prefix={i18n.t('Org.unit')}
-                    value={organisationUnits
-                        .map(({ displayName }) => displayName)
-                        .join(', ')}
+                    value={formatList(
+                        organisationUnits.map(({ displayName }) => displayName)
+                    )}
+                    valueClassName={styles.inputValue}
                 />
             }
             menu={
                 <SearchableOrgUnitTree
-                    className={classes.orgUnitTree}
+                    className={styles.orgUnitTree}
                     orgUnitType={TEI_SEARCH_ORG_UNITS}
                     initiallySelected={organisationUnits}
                     confirmSelection={onOrganisationUnitsChange}

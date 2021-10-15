@@ -4,10 +4,17 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { InputPrefix } from '../select/index.js'
 
-const Input = ({ dataTest, prefix, className, inputMaxHeight, value }) => (
+const Input = ({
+    dataTest,
+    prefix,
+    className,
+    valueClassName,
+    inputMaxHeight,
+    value,
+}) => (
     <div className={cx('root', className)}>
         <InputPrefix prefix={prefix} dataTest={`${dataTest}-prefix`} />
-        <span>{value}</span>
+        <span className={valueClassName}>{value}</span>
 
         <style jsx>{`
             .root {
@@ -37,11 +44,12 @@ Input.defaultProps = {
 }
 
 Input.propTypes = {
+    prefix: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
     className: PropTypes.string,
     dataTest: PropTypes.string,
     inputMaxHeight: PropTypes.string,
-    prefix: PropTypes.string,
-    value: PropTypes.string,
+    valueClassName: PropTypes.string,
 }
 
 export { Input }
