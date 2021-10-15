@@ -60,7 +60,7 @@ const RoleList = () => {
 
     return (
         <>
-            <h2>{i18n.t('User Role Management')}</h2>
+            <h2 className={styles.header}>{i18n.t('User Role Management')}</h2>
             <SearchFilter value={query} onChange={setQuery} />
             <DataTableToolbar>
                 <Button

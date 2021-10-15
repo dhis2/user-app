@@ -26,6 +26,7 @@ const usersQuery = {
             invitationStatus,
             selfRegistered,
             nameSortDirection,
+            organisationUnits,
         }) => ({
             fields: [
                 'id',
@@ -46,6 +47,12 @@ const usersQuery = {
             inactiveMonths,
             invitationStatus,
             selfRegistered,
+            filter:
+                organisationUnits.length > 0
+                    ? `organisationUnits.id:in:[${organisationUnits.map(
+                          ({ id }) => id
+                      )}]`
+                    : undefined,
         }),
     },
 }
@@ -71,6 +78,8 @@ const UserList = () => {
         setSelfRegistered,
         nameSortDirection,
         setNameSortDirection,
+        organisationUnits,
+        setOrganisationUnits,
         clearFilters,
     } = useFilters()
     const [debouncedQuery] = useDebounce(query, 375)
@@ -84,6 +93,7 @@ const UserList = () => {
             invitationStatus,
             selfRegistered,
             nameSortDirection,
+            organisationUnits,
         })
     }
 
@@ -97,11 +107,12 @@ const UserList = () => {
         invitationStatus,
         selfRegistered,
         nameSortDirection,
+        organisationUnits,
     ])
 
     return (
         <>
-            <h2>{i18n.t('User Management')}</h2>
+            <h2 className={styles.header}>{i18n.t('User Management')}</h2>
             <Filters
                 query={query}
                 onQueryChange={setQuery}
@@ -111,6 +122,8 @@ const UserList = () => {
                 onInvitationStatusChange={setInvitationStatus}
                 selfRegistered={selfRegistered}
                 onSelfRegisteredChange={setSelfRegistered}
+                organisationUnits={organisationUnits}
+                onOrganisationUnitsChange={setOrganisationUnits}
                 onClear={clearFilters}
             />
             <DataTableToolbar>

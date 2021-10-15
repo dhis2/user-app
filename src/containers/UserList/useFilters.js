@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
     withDefault,
     StringParam,
@@ -32,6 +33,7 @@ export const useFilters = () => {
         'nameSortDirection',
         withDefault(StringParam, 'asc')
     )
+    const [organisationUnits, setOrganisationUnits] = useState([])
 
     const withPushIn = setFn => value => {
         setFn(value, 'pushIn')
@@ -60,11 +62,14 @@ export const useFilters = () => {
         setSelfRegistered: withClearPager(setSelfRegistered),
         nameSortDirection,
         setNameSortDirection: withClearPager(setNameSortDirection),
+        organisationUnits,
+        setOrganisationUnits: withClearPager(setOrganisationUnits),
         clearFilters: () => {
             setQuery()
             setInactiveMonths()
             setInvitationStatus()
             setNameSortDirection()
+            setOrganisationUnits([])
         },
     }
 }

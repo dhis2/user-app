@@ -8,18 +8,26 @@ import { Select } from './select'
 import { Input } from './single-select/input'
 
 const OrganisationUnitFilter = ({
-    selectedOrgUnits = [],
-    onSelectedOrgUnitsChange = () => {},
+    organisationUnits,
+    onOrganisationUnitsChange,
 }) => (
     <div className={classes.rootInput}>
+        {/* TODO: support RTL languages */}
         <Select
-            input={<Input prefix={i18n.t('Org.unit')} />}
+            input={
+                <Input
+                    prefix={i18n.t('Org.unit')}
+                    value={organisationUnits
+                        .map(({ displayName }) => displayName)
+                        .join(', ')}
+                />
+            }
             menu={
                 <SearchableOrgUnitTree
                     className={classes.orgUnitTree}
                     orgUnitType={TEI_SEARCH_ORG_UNITS}
-                    initiallySelected={selectedOrgUnits}
-                    confirmSelection={onSelectedOrgUnitsChange}
+                    initiallySelected={organisationUnits}
+                    confirmSelection={onOrganisationUnitsChange}
                     dense
                 />
             }
@@ -30,14 +38,14 @@ const OrganisationUnitFilter = ({
 )
 
 OrganisationUnitFilter.propTypes = {
-    selectedOrgUnits: PropTypes.arrayOf(
+    organisationUnits: PropTypes.arrayOf(
         PropTypes.shape({
             displayName: PropTypes.string.isRequired,
             id: PropTypes.string.isRequired,
             path: PropTypes.string.isRequired,
         }).isRequired
     ).isRequired,
-    onSelectedOrgUnitsChange: PropTypes.func.isRequired,
+    onOrganisationUnitsChange: PropTypes.func.isRequired,
 }
 
 export default OrganisationUnitFilter

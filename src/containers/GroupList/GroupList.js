@@ -63,7 +63,7 @@ const GroupList = () => {
 
     return (
         <>
-            <h2>{i18n.t('User Group Management')}</h2>
+            <h2 className={styles.header}>{i18n.t('User Group Management')}</h2>
             <SearchFilter value={query} onChange={setQuery} />
             <DataTableToolbar>
                 <Button

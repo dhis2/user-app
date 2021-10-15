@@ -57,6 +57,8 @@ const Filters = ({
     onInvitationStatusChange,
     selfRegistered,
     onSelfRegisteredChange,
+    organisationUnits,
+    onOrganisationUnitsChange,
     onClear,
 }) => (
     <div className={styles.container}>
@@ -67,8 +69,10 @@ const Filters = ({
             className={styles.input}
             dense
         />
-        {/* TODO: Pass selected organisation units */}
-        <OrganisationUnitFilter />
+        <OrganisationUnitFilter
+            organisationUnits={organisationUnits}
+            onOrganisationUnitsChange={onOrganisationUnitsChange}
+        />
         <InactiveMonthsFilter
             inactiveMonths={inactiveMonths}
             onInactiveMonthsChange={onInactiveMonthsChange}
@@ -99,7 +103,8 @@ const Filters = ({
                     !query &&
                     !inactiveMonths &&
                     !invitationStatus &&
-                    !selfRegistered,
+                    !selfRegistered &&
+                    organisationUnits.length === 0,
             })}
             small
             onClick={onClear}
@@ -110,9 +115,11 @@ const Filters = ({
 )
 
 Filters.propTypes = {
+    organisationUnits: PropTypes.array.isRequired,
     onClear: PropTypes.func.isRequired,
     onInactiveMonthsChange: PropTypes.func.isRequired,
     onInvitationStatusChange: PropTypes.func.isRequired,
+    onOrganisationUnitsChange: PropTypes.func.isRequired,
     onQueryChange: PropTypes.func.isRequired,
     onSelfRegisteredChange: PropTypes.func.isRequired,
     inactiveMonths: PropTypes.string,
