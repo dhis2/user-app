@@ -95,7 +95,7 @@ const SearchableOrgUnitTree = ({
                       ...selectedOrgUnits.slice(orgUnitIndex + 1),
                   ]
 
-        update(nextOrgUnits, [])
+        update(nextOrgUnits)
     }
 
     const selectAndShowFilteredOrgUnit = orgUnit => {
