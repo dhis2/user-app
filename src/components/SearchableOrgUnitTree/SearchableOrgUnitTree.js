@@ -115,7 +115,7 @@ const SearchableOrgUnitTree = ({
     const clearSelection = () => {
         update([])
         // TODO: see if we can get rid of defer
-        defer(() => confirmSelection(selectedOrgUnits))
+        defer(() => confirmSelection([]))
     }
 
     return (
