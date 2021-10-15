@@ -56,6 +56,7 @@ const ContextMenu = ({
         access.update &&
         (currentUser.authorities.has('F_USER_ADD') ||
             currentUser.authorities.has('F_USER_ADD_WITHIN_MANAGED_GROUP'))
+    const canDisable = currentUser.id !== user.id && access.update && !disabled
     const canDelete = currentUser.id !== user.id && access.delete
 
     return (
@@ -101,7 +102,7 @@ const ContextMenu = ({
                                 dense
                             />
                         )}
-                        {access.update && !disabled && (
+                        {canDisable && (
                             <MenuItem
                                 label={i18n.t('Disable')}
                                 icon={<IconBlock16 color={colors.grey600} />}
