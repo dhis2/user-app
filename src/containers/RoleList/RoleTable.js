@@ -109,7 +109,17 @@ RoleTable.propTypes = {
     onNameSortDirectionToggle: PropTypes.func.isRequired,
     error: PropTypes.object,
     loading: PropTypes.bool,
-    roles: PropTypes.arrayOf(PropTypes.object.isRequired),
+    roles: PropTypes.arrayOf(
+        PropTypes.shape({
+            access: PropTypes.shape({
+                read: PropTypes.bool.isRequired,
+                update: PropTypes.bool.isRequired,
+            }).isRequired,
+            description: PropTypes.string.isRequired,
+            displayName: PropTypes.string.isRequired,
+            id: PropTypes.string.isRequired,
+        }).isRequired
+    ),
 }
 
 export default RoleTable
