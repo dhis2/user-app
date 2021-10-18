@@ -114,7 +114,16 @@ GroupTable.propTypes = {
     refetch: PropTypes.func.isRequired,
     onNameSortDirectionToggle: PropTypes.func.isRequired,
     error: PropTypes.object,
-    groups: PropTypes.arrayOf(PropTypes.object.isRequired),
+    groups: PropTypes.arrayOf(
+        PropTypes.shape({
+            access: PropTypes.shape({
+                read: PropTypes.bool.isRequired,
+                update: PropTypes.bool.isRequired,
+            }).isRequired,
+            displayName: PropTypes.string.isRequired,
+            id: PropTypes.string.isRequired,
+        }).isRequired
+    ),
     loading: PropTypes.bool,
 }
 
