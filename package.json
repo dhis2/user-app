@@ -25,10 +25,6 @@
         "@dhis2/d2-ui-sharing-dialog": "^7.0.5",
         "@dhis2/d2-ui-table": "^7.0.5",
         "@dhis2/ui": "^7.4.1",
-        "@testing-library/jest-dom": "^5.14.1",
-        "@testing-library/react": "^12.1.2",
-        "@testing-library/react-hooks": "^7.0.2",
-        "@testing-library/user-event": "^13.4.1",
         "classnames": "^2.3.1",
         "d2": "^31.7.0",
         "d3-color": "^1.2.0",
@@ -62,6 +58,10 @@
         "@dhis2/cli-app-scripts": "^8.0.1",
         "@dhis2/cli-style": "^9.2.2",
         "jsdoc": "^3.6.2",
-        "redux-logger": "^3.0.6"
+        "redux-logger": "^3.0.6",
+        "@testing-library/jest-dom": "^5.14.1",
+        "@testing-library/react": "^12.1.2",
+        "@testing-library/react-hooks": "^7.0.2",
+        "@testing-library/user-event": "^13.4.1"
     }
 }
