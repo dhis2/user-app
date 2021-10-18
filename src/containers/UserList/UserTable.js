@@ -122,12 +122,26 @@ const UserTable = ({
 }
 
 UserTable.propTypes = {
-    nameSortDirection: PropTypes.string.isRequired,
+    nameSortDirection: PropTypes.oneOf(['asc', 'desc']).isRequired,
     refetch: PropTypes.func.isRequired,
     onNameSortDirectionToggle: PropTypes.func.isRequired,
-    error: PropTypes.object,
+    error: PropTypes.instanceOf(Error),
     loading: PropTypes.bool,
-    users: PropTypes.arrayOf(PropTypes.object.isRequired),
+    users: PropTypes.arrayOf(
+        PropTypes.shape({
+            access: PropTypes.shape({
+                read: PropTypes.bool.isRequired,
+                update: PropTypes.bool.isRequired,
+            }).isRequired,
+            displayName: PropTypes.string.isRequired,
+            id: PropTypes.string.isRequired,
+            userCredentials: PropTypes.shape({
+                disabled: PropTypes.bool.isRequired,
+                username: PropTypes.string.isRequired,
+                lastLogin: PropTypes.string,
+            }).isRequired,
+        }).isRequired
+    ),
 }
 
 export default UserTable

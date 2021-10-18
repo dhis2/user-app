@@ -61,7 +61,9 @@ export const useFilters = () => {
         selfRegistered,
         setSelfRegistered: withClearPager(setSelfRegistered),
         nameSortDirection,
-        setNameSortDirection: withClearPager(setNameSortDirection),
+        toggleNameSortDirection: withClearPager(() => {
+            setNameSortDirection(nameSortDirection === 'asc' ? 'desc' : 'asc')
+        }),
         organisationUnits,
         setOrganisationUnits: withClearPager(setOrganisationUnits),
         clearFilters: () => {

@@ -3,6 +3,8 @@ import {
     useQueryParam as _useQueryParam,
 } from 'use-query-params'
 
+// A default update type of 'replaceIn' instead of 'pushIn' is more useful for
+// this app's use cases
 const defaultUpdateType = 'replaceIn'
 
 export const useQueryParams = config => {

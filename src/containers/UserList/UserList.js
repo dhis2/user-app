@@ -77,7 +77,7 @@ const UserList = () => {
         selfRegistered,
         setSelfRegistered,
         nameSortDirection,
-        setNameSortDirection,
+        toggleNameSortDirection,
         organisationUnits,
         setOrganisationUnits,
         clearFilters,
@@ -141,11 +141,7 @@ const UserList = () => {
                 users={users?.users || prevUsers?.users}
                 refetch={refetchUsers}
                 nameSortDirection={nameSortDirection}
-                onNameSortDirectionToggle={() => {
-                    setNameSortDirection(
-                        nameSortDirection === 'asc' ? 'desc' : 'asc'
-                    )
-                }}
+                onNameSortDirectionToggle={toggleNameSortDirection}
             />
             {(loading
                 ? prevUsers?.users.length > 0
