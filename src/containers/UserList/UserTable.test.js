@@ -1,4 +1,5 @@
 import { render, screen, within } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import moment from 'moment'
 import React from 'react'
 import UserTable from './UserTable'
@@ -134,5 +135,54 @@ describe('<UserTable>', () => {
                 ).not.toBeInTheDocument()
             }
         })
+    })
+
+    it('allows sorting of users by name/username', () => {
+        const users = [
+            {
+                id: 'user-1',
+                displayName: 'User One',
+                access: {
+                    read: true,
+                    update: true,
+                },
+                userCredentials: {
+                    username: 'user1',
+                    lastLogin: '2021-10-15T12:34:56Z',
+                    disabled: false,
+                },
+            },
+            {
+                id: 'user-2',
+                displayName: 'Another User',
+                access: {
+                    read: true,
+                    update: true,
+                },
+                userCredentials: {
+                    username: 'user2',
+                    lastLogin: '2021-09-14T12:34:56Z',
+                    disabled: true,
+                },
+            },
+        ]
+
+        const toggleNameSortDirection = jest.fn()
+        render(
+            <UserTable
+                loading={false}
+                users={users}
+                refetch={() => {}}
+                nameSortDirection="asc"
+                onNameSortDirectionToggle={toggleNameSortDirection}
+            />
+        )
+
+        userEvent.click(
+            within(
+                screen.getByRole('columnheader', { name: 'Display name' })
+            ).getByRole('button')
+        )
+        expect(toggleNameSortDirection).toHaveBeenCalled()
     })
 })
