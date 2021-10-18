@@ -1,22 +1,19 @@
 import { useState } from 'react'
+import { withDefault, StringParam, BooleanParam } from 'use-query-params'
 import {
-    withDefault,
-    StringParam,
-    NumberParam,
-    BooleanParam,
-} from 'use-query-params'
-import { useQueryParam } from '../../hooks/useQueryParams'
+    useQueryParam,
+    usePagerQueryParams,
+    useNameSortDirectionQueryParam,
+} from '../../hooks/useQueryParams'
 
 export const useFilters = () => {
-    const [page, setPage] = useQueryParam('page', withDefault(NumberParam, 1))
-    const [pageSize, setPageSize] = useQueryParam(
-        'pageSize',
-        withDefault(NumberParam, 50)
-    )
+    const { page, setPage, pageSize, setPageSize, withClearPager } =
+        usePagerQueryParams()
     const [query, setQuery] = useQueryParam(
         'query',
         withDefault(StringParam, '')
     )
+    const [organisationUnits, setOrganisationUnits] = useState([])
     const [inactiveMonths, setInactiveMonths] = useQueryParam(
         'inactiveMonths',
         StringParam
@@ -29,31 +26,18 @@ export const useFilters = () => {
         'selfRegistered',
         withDefault(BooleanParam, false)
     )
-    const [nameSortDirection, setNameSortDirection] = useQueryParam(
-        'nameSortDirection',
-        withDefault(StringParam, 'asc')
-    )
-    const [organisationUnits, setOrganisationUnits] = useState([])
-
-    const withPushIn = setFn => value => {
-        setFn(value, 'pushIn')
-    }
-    const clearPager = () => {
-        setPage()
-        setPageSize()
-    }
-    const withClearPager = setFn => value => {
-        clearPager()
-        setFn(value)
-    }
+    const { nameSortDirection, toggleNameSortDirection } =
+        useNameSortDirectionQueryParam()
 
     return {
         page,
-        setPage: withPushIn(setPage),
+        setPage,
         pageSize,
-        setPageSize: withPushIn(setPageSize),
+        setPageSize,
         query,
         setQuery: withClearPager(setQuery),
+        organisationUnits,
+        setOrganisationUnits: withClearPager(setOrganisationUnits),
         inactiveMonths,
         setInactiveMonths: withClearPager(setInactiveMonths),
         invitationStatus,
@@ -61,17 +45,12 @@ export const useFilters = () => {
         selfRegistered,
         setSelfRegistered: withClearPager(setSelfRegistered),
         nameSortDirection,
-        toggleNameSortDirection: withClearPager(() => {
-            setNameSortDirection(nameSortDirection === 'asc' ? 'desc' : 'asc')
-        }),
-        organisationUnits,
-        setOrganisationUnits: withClearPager(setOrganisationUnits),
+        toggleNameSortDirection: withClearPager(toggleNameSortDirection),
         clearFilters: () => {
             setQuery()
+            setOrganisationUnits([])
             setInactiveMonths()
             setInvitationStatus()
-            setNameSortDirection()
-            setOrganisationUnits([])
         },
     }
 }

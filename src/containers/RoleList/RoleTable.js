@@ -16,7 +16,14 @@ import DataTableInfoWrapper from '../../components/DataTableInfoWrapper'
 import navigateTo from '../../utils/navigateTo'
 import ContextMenuButton from './ContextMenu/ContextMenuButton'
 
-const RoleTable = ({ loading, error, roles, refetch }) => {
+const RoleTable = ({
+    loading,
+    error,
+    roles,
+    refetch,
+    nameSortDirection,
+    onNameSortDirectionToggle,
+}) => {
     if (loading && !roles) {
         return (
             <DataTableInfoWrapper columns={3}>
@@ -49,7 +56,10 @@ const RoleTable = ({ loading, error, roles, refetch }) => {
         <DataTable>
             <DataTableHead>
                 <DataTableRow>
-                    <DataTableColumnHeader>
+                    <DataTableColumnHeader
+                        sortDirection={nameSortDirection}
+                        onSortIconClick={onNameSortDirectionToggle}
+                    >
                         {i18n.t('Display name')}
                     </DataTableColumnHeader>
                     <DataTableColumnHeader>
@@ -94,7 +104,9 @@ const RoleTable = ({ loading, error, roles, refetch }) => {
 }
 
 RoleTable.propTypes = {
+    nameSortDirection: PropTypes.string.isRequired,
     refetch: PropTypes.func.isRequired,
+    onNameSortDirectionToggle: PropTypes.func.isRequired,
     error: PropTypes.object,
     loading: PropTypes.bool,
     roles: PropTypes.arrayOf(PropTypes.object.isRequired),

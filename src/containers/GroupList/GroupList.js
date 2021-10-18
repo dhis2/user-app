@@ -18,7 +18,7 @@ import { useFilters } from './useFilters.js'
 const groupsQuery = {
     groups: {
         resource: 'userGroups',
-        params: ({ page, pageSize, query }) => ({
+        params: ({ page, pageSize, query, nameSortDirection }) => ({
             fields: [
                 'id',
                 'displayName',
@@ -27,7 +27,7 @@ const groupsQuery = {
                 'publicAccess',
                 'userGroupAccesses',
             ],
-            order: 'name:asc',
+            order: `name:${nameSortDirection}`,
             page,
             pageSize,
             // Passing empty query modifies sorting behaviour
@@ -45,8 +45,16 @@ const GroupList = () => {
     )
     const groups = data?.groups
     const [prevGroups, setPrevGroups] = useState()
-    const { page, setPage, pageSize, setPageSize, query, setQuery } =
-        useFilters()
+    const {
+        page,
+        setPage,
+        pageSize,
+        setPageSize,
+        query,
+        setQuery,
+        nameSortDirection,
+        toggleNameSortDirection,
+    } = useFilters()
     const [debouncedQuery] = useDebounce(query, 375)
     const refetchGroups = () => {
         setPrevGroups(groups)
@@ -54,12 +62,13 @@ const GroupList = () => {
             page,
             pageSize,
             query: debouncedQuery,
+            nameSortDirection,
         })
     }
 
     useEffect(() => {
         refetchGroups()
-    }, [page, pageSize, debouncedQuery])
+    }, [page, pageSize, debouncedQuery, nameSortDirection])
 
     return (
         <>
@@ -79,6 +88,8 @@ const GroupList = () => {
                 error={error}
                 groups={groups?.userGroups || prevGroups?.userGroups}
                 refetch={refetchGroups}
+                nameSortDirection={nameSortDirection}
+                onNameSortDirectionToggle={toggleNameSortDirection}
             />
             {(loading
                 ? prevGroups?.userGroups.length > 0

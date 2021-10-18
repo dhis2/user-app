@@ -18,7 +18,7 @@ import { useFilters } from './useFilters'
 const rolesQuery = {
     roles: {
         resource: 'userRoles',
-        params: ({ page, pageSize, query }) => ({
+        params: ({ page, pageSize, query, nameSortDirection }) => ({
             fields: [
                 'id',
                 'displayName',
@@ -28,10 +28,11 @@ const rolesQuery = {
                 'userGroupAccesses',
                 'description',
             ],
-            order: 'name:asc',
+            order: `name:${nameSortDirection}`,
             page,
             pageSize,
-            query,
+            // Passing empty query modifies sorting behaviour
+            query: query === '' ? undefined : query,
         }),
     },
 }
@@ -42,8 +43,16 @@ const RoleList = () => {
     })
     const roles = data?.roles
     const [prevRoles, setPrevRoles] = useState()
-    const { page, setPage, pageSize, setPageSize, query, setQuery } =
-        useFilters()
+    const {
+        page,
+        setPage,
+        pageSize,
+        setPageSize,
+        query,
+        setQuery,
+        nameSortDirection,
+        toggleNameSortDirection,
+    } = useFilters()
     const [debouncedQuery] = useDebounce(query, 375)
     const refetchRoles = () => {
         setPrevRoles(roles)
@@ -51,12 +60,13 @@ const RoleList = () => {
             page,
             pageSize,
             query: debouncedQuery,
+            nameSortDirection,
         })
     }
 
     useEffect(() => {
         refetchRoles()
-    }, [page, pageSize, debouncedQuery])
+    }, [page, pageSize, debouncedQuery, nameSortDirection])
 
     return (
         <>
@@ -76,6 +86,8 @@ const RoleList = () => {
                 error={error}
                 roles={roles?.userRoles || prevRoles?.userRoles}
                 refetch={refetchRoles}
+                nameSortDirection={nameSortDirection}
+                onNameSortDirectionToggle={toggleNameSortDirection}
             />
             {(loading
                 ? prevRoles?.userRoles.length > 0

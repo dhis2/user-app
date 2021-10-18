@@ -1,34 +1,28 @@
-import { withDefault, StringParam, NumberParam } from 'use-query-params'
-import { useQueryParam } from '../../hooks/useQueryParams'
+import { withDefault, StringParam } from 'use-query-params'
+import {
+    useQueryParam,
+    usePagerQueryParams,
+    useNameSortDirectionQueryParam,
+} from '../../hooks/useQueryParams'
 
 export const useFilters = () => {
-    const [page, setPage] = useQueryParam('page', withDefault(NumberParam, 1))
-    const [pageSize, setPageSize] = useQueryParam(
-        'pageSize',
-        withDefault(NumberParam, 50)
-    )
+    const { page, setPage, pageSize, setPageSize, withClearPager } =
+        usePagerQueryParams()
     const [query, setQuery] = useQueryParam(
         'query',
         withDefault(StringParam, '')
     )
-
-    const withPushIn = setFn => value => {
-        setFn(value, 'pushIn')
-    }
-    const clearPager = () => {
-        setPage()
-        setPageSize()
-    }
+    const { nameSortDirection, toggleNameSortDirection } =
+        useNameSortDirectionQueryParam()
 
     return {
         page,
-        setPage: withPushIn(setPage),
+        setPage,
         pageSize,
-        setPageSize: withPushIn(setPageSize),
+        setPageSize,
         query,
-        setQuery: query => {
-            clearPager()
-            setQuery(query)
-        },
+        setQuery: withClearPager(setQuery),
+        nameSortDirection,
+        toggleNameSortDirection: withClearPager(toggleNameSortDirection),
     }
 }

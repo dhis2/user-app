@@ -17,7 +17,15 @@ import DataTableInfoWrapper from '../../components/DataTableInfoWrapper'
 import navigateTo from '../../utils/navigateTo'
 import ContextMenuButton from './ContextMenu/ContextMenuButton'
 
-const GroupTable = ({ loading, error, groups, refetch, currentUser }) => {
+const GroupTable = ({
+    loading,
+    error,
+    groups,
+    refetch,
+    currentUser,
+    nameSortDirection,
+    onNameSortDirectionToggle,
+}) => {
     if (loading && !groups) {
         return (
             <DataTableInfoWrapper columns={3}>
@@ -50,7 +58,10 @@ const GroupTable = ({ loading, error, groups, refetch, currentUser }) => {
         <DataTable>
             <DataTableHead>
                 <DataTableRow>
-                    <DataTableColumnHeader>
+                    <DataTableColumnHeader
+                        sortDirection={nameSortDirection}
+                        onSortIconClick={onNameSortDirectionToggle}
+                    >
                         {i18n.t('Display name')}
                     </DataTableColumnHeader>
                     <DataTableColumnHeader>
@@ -99,7 +110,9 @@ GroupTable.propTypes = {
     currentUser: PropTypes.shape({
         userGroupIds: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
     }).isRequired,
+    nameSortDirection: PropTypes.oneOf(['asc', 'desc']).isRequired,
     refetch: PropTypes.func.isRequired,
+    onNameSortDirectionToggle: PropTypes.func.isRequired,
     error: PropTypes.object,
     groups: PropTypes.arrayOf(PropTypes.object.isRequired),
     loading: PropTypes.bool,

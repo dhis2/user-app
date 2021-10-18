@@ -13,7 +13,6 @@ const SearchFilter = ({ value, onChange }) => (
         placeholder={i18n.t('Search by name')}
         value={value}
         onChange={({ value }) => onChange(value)}
-        clearable
         dense
     />
 )
