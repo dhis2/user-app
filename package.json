@@ -7,11 +7,15 @@
     "scripts": {
         "build": "d2-app-scripts build",
         "start": "d2-app-scripts start",
-        "test": "d2-app-scripts test",
         "format": "yarn d2-style apply",
         "format:staged": "yarn d2-style apply --staged",
         "lint": "yarn d2-style check",
-        "documentation": "rimraf build && jsdoc -c jsdoc.json"
+        "documentation": "rimraf build && jsdoc -c jsdoc.json",
+        "start:nobrowser": "BROWSER=none d2-app-scripts start",
+        "test": "d2-app-scripts test",
+        "cypress:capture": "start-server-and-test 'yarn start:nobrowser' http://localhost:3000 'yarn cypress run --env dhis2ApiVersion=37,networkMode=capture'",
+        "cypress:stub": "start-server-and-test 'yarn start:nobrowser' http://localhost:3000 'yarn cypress run --env dhis2ApiVersion=37,networkMode=stub'",
+        "cypress:live": "start-server-and-test 'yarn start:nobrowser' http://localhost:3000 'yarn cypress open --env networkMode=live'"
     },
     "dependencies": {
         "@dhis2/app-runtime": "^3.2.0",
@@ -53,7 +57,12 @@
     "devDependencies": {
         "@dhis2/cli-app-scripts": "^8.0.1",
         "@dhis2/cli-style": "^9.2.2",
+        "@dhis2/cypress-commands": "^8.0.4",
+        "@dhis2/cypress-plugins": "^8.0.4",
+        "cypress": "^8.6.0",
+        "cypress-cucumber-preprocessor": "^4.3.0",
         "jsdoc": "^3.6.2",
-        "redux-logger": "^3.0.6"
+        "redux-logger": "^3.0.6",
+        "start-server-and-test": "^1.14.0"
     }
 }
