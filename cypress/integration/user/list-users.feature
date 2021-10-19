@@ -9,7 +9,7 @@ Feature: Users can be listed
         Given enough users exist to show a second page
         And the user-manager navigated to the user list view
         When the user-manager opens the next page
-        Then user user should see the second page of all users
+        Then the user-manager should see the second page of all users
 
     Scenario: A user list item contains the user display name
         Given at least one user exists
