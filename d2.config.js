@@ -8,6 +8,7 @@ const config = {
     entryPoints: {
         app: './src/AppWrapper.js',
     },
+    minDHIS2Version: '2.38',
 }
 
 module.exports = config
