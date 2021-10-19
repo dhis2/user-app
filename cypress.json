@@ -1,0 +1,21 @@
+{
+    "baseUrl": "http://localhost:3000",
+    "video": false,
+    "projectId": "48zztu",
+    "experimentalInteractiveRunEvents": true,
+    "env": {
+        "dhis2BaseUrl": "https://debug.dhis2.org/dev",
+        "dhis2Username": "admin",
+        "dhis2Password": "district",
+        "dhis2DataTestPrefix": "",
+        "networkMode": "live",
+        "dhis2ApiVersion": "37"
+    },
+    "testFiles": "**/*.feature",
+    "ignoreTestFiles": [
+        "**/homepage/*.feature",
+        "**/user/*.feature",
+        "**/user-group/*.feature",
+        "**/user-role/*.feature"
+    ]
+}

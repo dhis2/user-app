@@ -26,3 +26,6 @@ docs
 # DHIS2 Platform
 .d2
 build
+
+# Cypress
+cypress.env.json
