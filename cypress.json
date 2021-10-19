@@ -1,0 +1,14 @@
+{
+    "baseUrl": "http://localhost:3000",
+    "video": false,
+    "experimentalInteractiveRunEvents": true,
+    "env": {
+        "dhis2BaseUrl": "https://debug.dhis2.org/dev",
+        "dhis2Username": "admin",
+        "dhis2Password": "district",
+        "dhis2DataTestPrefix": "",
+        "networkMode": "live",
+        "dhis2ApiVersion": "37"
+    },
+    "testFiles": "**/*.feature"
+}
