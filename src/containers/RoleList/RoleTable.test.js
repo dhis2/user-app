@@ -40,6 +40,23 @@ describe('<RoleTable>', () => {
         ).toHaveTextContent(errorMessage)
     })
 
+    it('shows a message if there were no results', () => {
+        render(
+            <RoleTable
+                loading={false}
+                error={undefined}
+                roles={[]}
+                refetch={() => {}}
+                nameSortDirection="asc"
+                onNameSortDirectionToggle={() => {}}
+            />
+        )
+
+        expect(
+            screen.getByRole('row', { name: 'No results found' })
+        ).toBeInTheDocument()
+    })
+
     it('renders a DataTable with header and body once users have loaded', () => {
         const roles = [
             {

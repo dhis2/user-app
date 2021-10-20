@@ -54,6 +54,23 @@ describe('<GroupTable>', () => {
         ).toHaveTextContent(errorMessage)
     })
 
+    it('shows a message if there were no results', () => {
+        render(
+            <GroupTable
+                loading={false}
+                error={undefined}
+                groups={[]}
+                refetch={() => {}}
+                nameSortDirection="asc"
+                onNameSortDirectionToggle={() => {}}
+            />
+        )
+
+        expect(
+            screen.getByRole('row', { name: 'No results found' })
+        ).toBeInTheDocument()
+    })
+
     it('renders a DataTable with header and body once users have loaded', () => {
         const groups = [
             {
