@@ -1,7 +1,7 @@
 /* eslint-disable max-params */
 
 import i18n from '@dhis2/d2-i18n'
-import groupAuthorities from '../components/AuthorityEditor/utils/groupAuthorities'
+import { groupAuthorities } from '../components/AuthorityEditor/useAuthorities/groupAuthorities.js'
 import { CURRENT_USER_ORG_UNITS_FIELDS } from '../constants/queryFields'
 import {
     INTERFACE_LANGUAGE,
@@ -288,6 +288,7 @@ class Api {
      **************************/
 
     // TODO: A proper API endpoint will be made available for this call once ALL struts apps
+    // TODO: REMOVE NOW
     // have been ported to React. Once this is done we need to update this method.
     getGroupedAuthorities = () => {
         if (this.groupedAuths) {

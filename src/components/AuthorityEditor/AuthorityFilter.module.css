@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+.input {
+    width: calc(100% - 250px);
+    max-width: 400px;
+}
+.checkbox {
+    padding-top: 2.2rem;
+    margin-left: 2rem;
+}
