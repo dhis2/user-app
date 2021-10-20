@@ -21,7 +21,7 @@ import {
     renderSearchableGroupEditor,
     renderText,
 } from '../../utils/fieldRenderers'
-import navigateTo from '../../utils/navigateTo'
+import history from '../../utils/history'
 import { asyncValidatorSwitch } from '../../utils/validatorsAsync'
 import collectValidators from './collectValidators'
 import { FORM_NAME, NAME, CODE, MANAGED_GROUPS, getFields } from './config'
@@ -122,7 +122,7 @@ class GroupForm extends Component {
     }
 
     backToList = () => {
-        navigateTo('/user-groups')
+        history.goBack()
     }
 
     renderFields(fields) {

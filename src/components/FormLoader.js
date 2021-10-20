@@ -1,7 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { Heading } from '@dhis2/d2-ui-core'
 import capitalize from 'lodash.capitalize'
-import kebabCase from 'lodash.kebabcase'
 import { Paper, CircularProgress } from 'material-ui'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
@@ -13,7 +12,6 @@ import RoleForm from '../containers/RoleForm'
 import UserForm from '../containers/UserForm'
 import { shortItemSelector } from '../selectors'
 import ErrorMessage from './ErrorMessage'
-import IconLink from './IconLink'
 
 const styles = {
     main: {
@@ -84,22 +82,8 @@ class FormLoader extends Component {
         const updateMsg = `${i18n.t('Update')} ${entityTxt}: ${displayName}`
         const createMsg = `${i18n.t('Create new')} ${entityTxt}`
         const msg = id ? updateMsg : createMsg
-        const link = baseItem
-            ? `/${kebabCase(baseItem.modelDefinition.plural)}`
-            : null
-        const linkTooltip = `${i18n.t('Back to')} ${entityTxt}s`
 
-        return (
-            <Heading style={styles.heading}>
-                <IconLink
-                    to={link}
-                    tooltip={linkTooltip}
-                    disabled={Boolean(link)}
-                    icon="arrow_back"
-                />
-                {msg}
-            </Heading>
-        )
+        return <Heading style={styles.heading}>{msg}</Heading>
     }
 
     renderContent() {

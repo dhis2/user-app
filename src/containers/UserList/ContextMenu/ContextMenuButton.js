@@ -15,6 +15,7 @@ const ContextMenuButton = ({ user, refetchUsers }) => {
                 secondary
                 icon={<IconMore24 color={colors.grey600} />}
                 onClick={() => setVisible(true)}
+                dataTest="context-menu-button"
             ></Button>
             {visible && (
                 <ContextMenu

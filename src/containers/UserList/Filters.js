@@ -31,6 +31,7 @@ const InactiveMonthsFilter = ({ inactiveMonths, onInactiveMonthsChange }) => {
             onChange={({ selected }) => onInactiveMonthsChange(selected)}
             className={styles.input}
             dense
+            dataTest="user-filter-time-inactive"
         >
             {options.map(({ displayName, months }) => (
                 <SingleSelectOption
@@ -68,6 +69,7 @@ const Filters = ({
             onChange={({ value }) => onQueryChange(value)}
             className={styles.input}
             dense
+            dataTest="user-filter-name"
         />
         <OrganisationUnitFilter
             organisationUnits={organisationUnits}
