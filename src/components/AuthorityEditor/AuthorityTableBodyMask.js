@@ -5,6 +5,7 @@ import {
     DataTableCell,
     CenteredContent,
 } from '@dhis2/ui'
+import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 import createHumanErrorMessage from '../../utils/createHumanErrorMessage'
@@ -24,7 +25,7 @@ const AuthorityTableBodyMask = ({
                     colSpan={colSpan}
                     muted={!loading && noMatches}
                     error={!loading && error}
-                    className={loading ? styles.fullHeight : undefined}
+                    className={cx({ [styles.fullHeight]: loading })}
                     staticStyle
                     align="center"
                 >
