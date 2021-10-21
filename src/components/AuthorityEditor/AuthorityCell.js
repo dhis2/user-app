@@ -1,6 +1,8 @@
 import { CheckboxField, DataTableCell } from '@dhis2/ui'
+import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
+import styles from './AuthorityCell.module.css'
 import { HighlightableText } from './HighlightableText'
 
 const AuthorityCell = ({
@@ -29,6 +31,7 @@ const AuthorityCell = ({
                 checked={selected}
                 disabled={implicitlySelected}
                 value={id}
+                className={cx({ [styles.centered]: !label })}
             />
         )}
     </DataTableCell>
