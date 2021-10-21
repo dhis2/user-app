@@ -8,41 +8,42 @@ import {
 import PropTypes from 'prop-types'
 import React from 'react'
 import createHumanErrorMessage from '../../utils/createHumanErrorMessage'
+import styles from './AuthorityTableBodyMask.module.css'
 
-const AuthorityTableBodyMask = ({ children, loading, error, noMatches }) => {
-    if (loading) {
+const AuthorityTableBodyMask = ({
+    children,
+    loading,
+    error,
+    noMatches,
+    colSpan,
+}) => {
+    if (loading || error || noMatches) {
         return (
             <DataTableRow>
-                <DataTableCell>
-                    <CenteredContent>
-                        <CircularLoader small />
-                    </CenteredContent>
-                </DataTableCell>
-            </DataTableRow>
-        )
-    }
-
-    if (!loading && error) {
-        return (
-            <DataTableRow>
-                <DataTableCell error>
-                    {createHumanErrorMessage(
-                        error,
-                        i18n.t(
-                            'There was a problem retreiving the available authorities.'
-                        )
+                <DataTableCell
+                    colSpan={colSpan}
+                    muted={!loading && noMatches}
+                    error={!loading && error}
+                    className={loading ? styles.fullHeight : undefined}
+                    staticStyle
+                    align="center"
+                >
+                    {loading && (
+                        <CenteredContent>
+                            <CircularLoader />
+                        </CenteredContent>
                     )}
-                </DataTableCell>
-                )
-            </DataTableRow>
-        )
-    }
 
-    if (!loading && noMatches) {
-        return (
-            <DataTableRow>
-                <DataTableCell muted>
-                    {i18n.t('No matches found')}
+                    {!loading &&
+                        error &&
+                        createHumanErrorMessage(
+                            error,
+                            i18n.t(
+                                'There was a problem retreiving the available authorities.'
+                            )
+                        )}
+
+                    {!loading && noMatches && i18n.t('No matches found')}
                 </DataTableCell>
             </DataTableRow>
         )
@@ -53,6 +54,7 @@ const AuthorityTableBodyMask = ({ children, loading, error, noMatches }) => {
 
 AuthorityTableBodyMask.propTypes = {
     children: PropTypes.node.isRequired,
+    colSpan: PropTypes.string,
     error: PropTypes.any,
     loading: PropTypes.bool,
     noMatches: PropTypes.bool,
