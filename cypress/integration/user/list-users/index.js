@@ -1,7 +1,13 @@
 import '../common'
 import { Given, Then, When } from 'cypress-cucumber-preprocessor/steps'
 
-Given('enough users exist to show a second page', () => {})
+Given(
+    'enough users exist to show a second page and the user-manager navigated to the user list view',
+    () => {
+        cy.visit('/#/users?pageSize=5')
+        cy.wait(500)
+    }
+)
 
 Then('the user-manager should see the first page of all users', () => {
     cy.getWithDataTest('{dhis2-uiwidgets-pagination-summary}').contains(

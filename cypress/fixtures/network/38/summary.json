@@ -1,0 +1,12 @@
+{
+    "count": 111,
+    "totalResponseSize": 217242,
+    "duplicates": 63,
+    "nonDeterministicResponses": 7,
+    "apiVersion": "38",
+    "fixtureFiles": [
+        "static_resources.json",
+        "users_can_be_listed.json",
+        "the_user_list_can_be_searched.json"
+    ]
+}
