@@ -16,36 +16,36 @@ const matchesSearchChunks = (item, searchChunks) => {
     })
 }
 
-const matchesFilterSelectedOnly = (item, filterSelectedOnly, selectedSet) => {
+const matchesFilterSelectedOnly = (item, filterSelectedOnly, isSelected) => {
     if (!filterSelectedOnly) {
         return true
     }
 
     if (Array.isArray(item.items)) {
-        return item.items.some(subItem => selectedSet.has(subItem.id))
+        return item.items.some(subItem => isSelected(subItem.id))
     } else {
-        return selectedSet.has(item.id)
+        return isSelected(item.id)
     }
 }
 
 /**
  * Filters a list of all available authorities based on a search string and filterSelectedOnly flag
- * @param {Object} allAuthorities - A nested object in which all authorities have been grouped in a logical way
- * @param {Object} selectedSet - A Set of selected authority IDs
+ * @param {Object} allGroupedAuthorities - A nested object in which all authorities have been grouped in a logical way
+ * @param {Object} isSelected - A function to check selection with
  * @param {Array} searchChunks - A search string that has been split into an array by spaces
  * @param {Boolean} filterSelectedOnly - Flag for only allowing selected items
- * @returns {Object} An object with the same structure as `allAuthorities` but containing filtered arrays of authorities
+ * @returns {Object} An object with the same structure as `allGroupedAuthorities` but containing filtered arrays of authorities
  */
 const filterAuthorities = ({
-    allAuthorities,
-    selectedSet,
+    allGroupedAuthorities,
+    isSelected,
     searchChunks,
     filterSelectedOnly,
 }) => {
     if (!searchChunks && !filterSelectedOnly) {
-        return allAuthorities
+        return allGroupedAuthorities
     }
-    return Object.entries(allAuthorities).reduce(
+    return Object.entries(allGroupedAuthorities).reduce(
         (filtered, [sectionId, section]) => {
             const filteredItems = section.items.filter(
                 item =>
@@ -53,7 +53,7 @@ const filterAuthorities = ({
                     matchesFilterSelectedOnly(
                         item,
                         filterSelectedOnly,
-                        selectedSet
+                        isSelected
                     )
             )
             filtered[sectionId] = { ...section, items: filteredItems }

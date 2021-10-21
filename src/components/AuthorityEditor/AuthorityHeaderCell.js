@@ -1,29 +1,20 @@
 import { CheckboxField, DataTableColumnHeader } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useSelectionContext } from './useAuthorities/AuthoritySelectionContext'
 
-const AuthorityHeaderCell = ({
-    header,
-    items,
-    selected,
-    setSelected,
-    disabled,
-}) => {
-    const allSelected = items.every(({ selected }) => selected)
+const AuthorityHeaderCell = ({ header, items, disabled }) => {
+    const { areAllSelected, updateAuthorities } = useSelectionContext()
+    const authorityIds = items.map(({ id }) => id)
+    const [checked, setChecked] = useState(areAllSelected(authorityIds))
     const toggleAll = ({ checked }) => {
-        if (checked) {
-            const selectedWithItems = Array.from(
-                new Set([...selected, ...items.map(({ id }) => id)])
-            )
-            setSelected(selectedWithItems)
-        } else {
-            const itemSet = new Set(items.map(({ id }) => id))
-            const selectedWithoutItems = selected.filter(
-                authId => !itemSet.has(authId)
-            )
-            setSelected(selectedWithoutItems)
-        }
+        updateAuthorities(authorityIds, checked)
+        setChecked(checked)
     }
+
+    useEffect(() => {
+        setChecked(areAllSelected(items.map(({ id }) => id)))
+    }, [items])
 
     return (
         <DataTableColumnHeader fixed top="0">
@@ -31,7 +22,7 @@ const AuthorityHeaderCell = ({
                 dense
                 label={header}
                 onChange={toggleAll}
-                checked={allSelected && !disabled}
+                checked={checked}
                 disabled={disabled}
             />
         </DataTableColumnHeader>
@@ -41,8 +32,6 @@ const AuthorityHeaderCell = ({
 AuthorityHeaderCell.propTypes = {
     header: PropTypes.string.isRequired,
     items: PropTypes.array.isRequired,
-    selected: PropTypes.array.isRequired,
-    setSelected: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
 }
 

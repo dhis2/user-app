@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react'
 import { EMPTY_AUTHORITY_SECTIONS } from './constants'
 import { filterAuthorities } from './filterAuthorities'
 import { groupAuthorities } from './groupAuthorities.js'
-import { selectAuthorities } from './selectAuthorities'
+import { makeAuthoritySelectionManager } from './makeAuthoritySelectionManager'
 
 const query = {
     authorities: {
@@ -14,53 +14,71 @@ const query = {
     },
 }
 export const useAuthorities = ({
-    selected,
+    initiallySelected,
     filterString,
     filterSelectedOnly,
     reduxFormOnChange,
 }) => {
-    const allAuthoritiesRef = useRef(null)
+    const allGroupedAuthoritiesRef = useRef(null)
+    const authoritySelectionManagerRef = useRef(
+        makeAuthoritySelectionManager(initiallySelected, reduxFormOnChange)
+    )
     const [searchChunks, setSearchChunks] = useState(null)
     const [authorities, setAuthorities] = useState(EMPTY_AUTHORITY_SECTIONS)
     const { loading, error, data } = useDataQuery(query)
 
     useEffect(() => {
-        const newSearchChunks = filterString
-            ? filterString.toLowerCase().split(' ')
-            : null
-
         if (data) {
-            if (!allAuthoritiesRef.current) {
-                allAuthoritiesRef.current = groupAuthorities(
-                    data.authorities.systemAuthorities
-                )
+            const { systemAuthorities } = data.authorities
+
+            if (!authoritySelectionManagerRef.current.isEmpty()) {
+                authoritySelectionManagerRef.current.populate(systemAuthorities)
             }
 
-            const selectedSet = new Set(selected)
-            const filteredAuthorities = filterAuthorities({
-                allAuthorities: allAuthoritiesRef.current,
-                selectedSet,
-                searchChunks: newSearchChunks,
-                filterSelectedOnly,
-            })
-            const selectedFilteredAuthorities = selectAuthorities({
-                authorities: filteredAuthorities,
-                selectedSet,
-            })
+            if (!allGroupedAuthoritiesRef.current) {
+                allGroupedAuthoritiesRef.current =
+                    groupAuthorities(systemAuthorities)
 
-            setSearchChunks(newSearchChunks)
-            setAuthorities(selectedFilteredAuthorities)
+                console.log(allGroupedAuthoritiesRef.current)
+            }
+
+            setAuthorities(
+                filterAuthorities({
+                    allGroupedAuthorities: allGroupedAuthoritiesRef.current,
+                    isSelected: authoritySelectionManagerRef.current.isSelected,
+                    searchChunks: null,
+                    filterSelectedOnly: false,
+                })
+            )
         }
-    }, [data, selected, filterString, filterSelectedOnly])
+    }, [data])
 
     useEffect(() => {
-        reduxFormOnChange(selected)
-    }, [selected])
+        if (
+            !authoritySelectionManagerRef.current.isEmpty() &&
+            allGroupedAuthoritiesRef.current
+        ) {
+            const newSearchChunks = filterString
+                ? filterString.toLowerCase().split(' ')
+                : null
+
+            setSearchChunks(newSearchChunks)
+            setAuthorities(
+                filterAuthorities({
+                    allGroupedAuthorities: allGroupedAuthoritiesRef.current,
+                    isSelected: authoritySelectionManagerRef.current.isSelected,
+                    searchChunks: newSearchChunks,
+                    filterSelectedOnly,
+                })
+            )
+        }
+    }, [filterString, filterSelectedOnly])
 
     return {
         loading,
         error,
         authorities,
         searchChunks,
+        authoritySelectionManager: authoritySelectionManagerRef.current,
     }
 }

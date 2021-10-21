@@ -4,7 +4,7 @@ import React from 'react'
 import { AuthorityCell } from './AuthorityCell'
 import { HighlightableText } from './HighlightableText'
 
-const AuthorityMetadataCells = ({ name, items, onChange, searchChunks }) => (
+const AuthorityMetadataCells = ({ name, items, searchChunks }) => (
     <>
         <DataTableCell>
             <HighlightableText text={name} searchChunks={searchChunks} />
@@ -14,11 +14,9 @@ const AuthorityMetadataCells = ({ name, items, onChange, searchChunks }) => (
                 key={item.id || index}
                 empty={item.empty}
                 id={item.id}
-                implicitlySelected={item.implicitlySelected}
                 name={item.name}
+                implicit={item.implicit}
                 searchChunks={searchChunks}
-                selected={item.selected}
-                onChange={onChange}
             />
         ))}
     </>
@@ -27,7 +25,6 @@ const AuthorityMetadataCells = ({ name, items, onChange, searchChunks }) => (
 AuthorityMetadataCells.propTypes = {
     items: PropTypes.array.isRequired,
     name: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired,
     searchChunks: PropTypes.arrayOf(PropTypes.string),
 }
 
