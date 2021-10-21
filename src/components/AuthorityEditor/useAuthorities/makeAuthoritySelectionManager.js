@@ -34,7 +34,6 @@ const makeAuthoritySelectionManager = (
     }
 
     const updateAuthority = (id, selected /*, skipFormUpdate*/) => {
-        console.log(id)
         const authority = authoritiesMap.get(id)
         authority.selected = selected
         authority.setSelected(selected)

@@ -41,8 +41,6 @@ const AuthorityMetadataHeaderCells = ({ items, headers, disabled }) => {
         setColumnsState(computeColumnsState())
     }, [items])
 
-    console.log(columnsState)
-
     return headers.map((header, index) => (
         <DataTableColumnHeader fixed top="0" key={header}>
             {index === 0 ? (

@@ -38,8 +38,6 @@ export const useAuthorities = ({
             if (!allGroupedAuthoritiesRef.current) {
                 allGroupedAuthoritiesRef.current =
                     groupAuthorities(systemAuthorities)
-
-                console.log(allGroupedAuthoritiesRef.current)
             }
 
             setAuthorities(
