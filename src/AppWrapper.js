@@ -1,3 +1,5 @@
+import './locales/index.js'
+
 import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import { CssVariables } from '@dhis2/ui'
 import { CircularProgress } from 'material-ui'
@@ -9,7 +11,6 @@ import AppWithD2ContextAndTheme from './components/AppWithD2ContextAndTheme'
 import store from './store'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import './styles/styles.css'
-import './locales/index.js'
 
 const AppWrapper = () => {
     const { d2 } = useD2({
