@@ -1,4 +1,5 @@
 import { useDataQuery } from '@dhis2/app-runtime'
+import debounce from 'lodash.debounce'
 import { useState, useEffect, useRef } from 'react'
 import { EMPTY_AUTHORITY_SECTIONS } from './constants'
 import { filterAuthorities } from './filterAuthorities'
@@ -26,6 +27,23 @@ export const useAuthorities = ({
     const [searchChunks, setSearchChunks] = useState(null)
     const [authorities, setAuthorities] = useState(EMPTY_AUTHORITY_SECTIONS)
     const { loading, error, data } = useDataQuery(query)
+    const debouncedFilterUpdateRef = useRef(
+        debounce((filterString, filterSelectedOnly) => {
+            const newSearchChunks = filterString
+                ? filterString.toLowerCase().split(' ')
+                : null
+
+            setSearchChunks(newSearchChunks)
+            setAuthorities(
+                filterAuthorities({
+                    allGroupedAuthorities: allGroupedAuthoritiesRef.current,
+                    isSelected: authoritySelectionManagerRef.current.isSelected,
+                    searchChunks: newSearchChunks,
+                    filterSelectedOnly,
+                })
+            )
+        }, 350)
+    )
 
     useEffect(() => {
         if (data) {
@@ -56,19 +74,7 @@ export const useAuthorities = ({
             !authoritySelectionManagerRef.current.isEmpty() &&
             allGroupedAuthoritiesRef.current
         ) {
-            const newSearchChunks = filterString
-                ? filterString.toLowerCase().split(' ')
-                : null
-
-            setSearchChunks(newSearchChunks)
-            setAuthorities(
-                filterAuthorities({
-                    allGroupedAuthorities: allGroupedAuthoritiesRef.current,
-                    isSelected: authoritySelectionManagerRef.current.isSelected,
-                    searchChunks: newSearchChunks,
-                    filterSelectedOnly,
-                })
-            )
+            debouncedFilterUpdateRef.current(filterString, filterSelectedOnly)
         }
     }, [filterString, filterSelectedOnly])
 
