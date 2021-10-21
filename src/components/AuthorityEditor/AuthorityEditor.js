@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { useState, memo } from 'react'
+import React, { useState } from 'react'
 import styles from './AuthorityEditor.module.css'
 import { AuthorityFilter } from './AuthorityFilter'
 import { AuthorityTable } from './AuthorityTable'
@@ -58,11 +58,4 @@ AuthorityEditor.propTypes = {
     reduxFormOnChange: PropTypes.func,
 }
 
-const MemoizedAuthorityEditor = memo(
-    AuthorityEditor,
-    (/*prevProps, nextProps*/) => {
-        return true
-    }
-)
-
-export { MemoizedAuthorityEditor as AuthorityEditor }
+export { AuthorityEditor }

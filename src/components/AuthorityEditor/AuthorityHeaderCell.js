@@ -5,10 +5,12 @@ import { useSelectionContext } from './useAuthorities/AuthoritySelectionContext'
 
 const AuthorityHeaderCell = ({ header, items, disabled }) => {
     const { areAllSelected, updateAuthorities } = useSelectionContext()
-    const authorityIds = items.map(({ id }) => id)
-    const [checked, setChecked] = useState(areAllSelected(authorityIds))
+    const [checked, setChecked] = useState(false)
     const toggleAll = ({ checked }) => {
-        updateAuthorities(authorityIds, checked)
+        updateAuthorities(
+            items.map(({ id }) => id),
+            checked
+        )
         setChecked(checked)
     }
 

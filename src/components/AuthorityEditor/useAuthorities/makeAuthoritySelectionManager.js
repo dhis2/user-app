@@ -6,17 +6,17 @@ export const convertPublicAddIdToPrivate = id =>
     id.replace(PUBLIC_ADD_SUFFIX, PRIVATE_ADD_SUFFIX)
 
 const makeAuthoritySelectionManager = (
-    initiallySelected
-    // reduxFormOnChange
+    initiallySelected,
+    reduxFormOnChange
 ) => {
     const authoritiesMap = new Map()
 
     const isEmpty = () => authoritiesMap.size === 0
 
-    // const getSelectionArray = authoritiesMap
-    //     .values()
-    //     .filter(({ selected }) => selected)
-    //     .map(({ id }) => id)
+    const getSelectionArray = () =>
+        Array.from(authoritiesMap.values())
+            .filter(({ selected }) => selected)
+            .map(({ id }) => id)
 
     const registerStateSetters = (id, setSelected, setImplicitlySelected) => {
         const authority = authoritiesMap.get(id)
@@ -33,10 +33,10 @@ const makeAuthoritySelectionManager = (
         }
     }
 
-    const updateAuthority = (id, selected /*, skipFormUpdate*/) => {
-        const authority = authoritiesMap.get(id)
+    const updateAuthority = (id, selected, skipFormUpdate) => {
+        const authority = authoritiesMap.get(id) || authoritiesMap.set(id, {})
         authority.selected = selected
-        authority.setSelected(selected)
+        authority.setSelected?.(selected)
 
         // Update implicitlySelected state for public/private add pairs
         if (isPublicAdd(id)) {
@@ -45,18 +45,18 @@ const makeAuthoritySelectionManager = (
             )
             if (privateAddAuthority) {
                 privateAddAuthority.implicitlySelected = selected
-                privateAddAuthority.setImplicitlySelected(selected)
+                privateAddAuthority.setImplicitlySelected?.(selected)
             }
         }
 
-        // !skipFormUpdate && reduxFormOnChange(getSelectionArray())
+        !skipFormUpdate && reduxFormOnChange(getSelectionArray())
     }
 
     const updateAuthorities = (ids, selected) => {
         ids.forEach(id => {
             updateAuthority(id, selected, true)
         })
-        // reduxFormOnChange(getSelectionArray())
+        reduxFormOnChange(getSelectionArray())
     }
 
     const isSelected = id => !!authoritiesMap.get(id)?.selected

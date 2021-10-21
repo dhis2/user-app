@@ -49,7 +49,7 @@ export const useAuthorities = ({
         if (data) {
             const { systemAuthorities } = data.authorities
 
-            if (!authoritySelectionManagerRef.current.isEmpty()) {
+            if (authoritySelectionManagerRef.current.isEmpty()) {
                 authoritySelectionManagerRef.current.populate(systemAuthorities)
             }
 

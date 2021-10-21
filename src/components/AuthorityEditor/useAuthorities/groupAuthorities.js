@@ -162,4 +162,26 @@ const groupAuthorities = authorities => {
     return sortGroupedAuthorities(groupedAuthories)
 }
 
-export { groupAuthorities }
+/*
+ * This is needed when navigating from the list to the form,
+ * because the function is called several times under these
+ * conditions. This results in dupliocate items. I am unsure why
+ * this is happening, but at least this does fix it.
+ * TODO: hopefully this can be removed after further refactoring
+ * the user-role form. In theory we should just be able to
+ * directly use `groupAuthorities`.
+ */
+const createGroupAutoritiesWithCachedReturnValue = () => {
+    let cachedResult
+    return authorities => {
+        if (!cachedResult) {
+            cachedResult = groupAuthorities(authorities)
+        }
+        return cachedResult
+    }
+}
+
+const groupAutoritiesWithCachedReturnValue =
+    createGroupAutoritiesWithCachedReturnValue()
+
+export { groupAutoritiesWithCachedReturnValue as groupAuthorities }
