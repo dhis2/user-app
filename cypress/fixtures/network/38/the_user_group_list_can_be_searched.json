@@ -1,7 +1,7 @@
 [
     {
         "path": "/api/38/systemSettings/helpPageLink",
-        "featureName": "The user list can be searched",
+        "featureName": "The user group list can be searched",
         "static": false,
         "count": 2,
         "nonDeterministic": false,
@@ -33,7 +33,7 @@
     },
     {
         "path": "/api/38/schemas/userRole?fields=apiEndpoint%2Cname%2CdisplayName%2Cauthorities%2Csingular%2Cplural%2Cshareable%2Cmetadata%2Cklass%2CidentifiableObject%2Ctranslatable%2Cproperties%5Bhref%2Cwritable%2Ccollection%2CcollectionName%2Cname%2CpropertyType%2Cpersisted%2Crequired%2Cmin%2Cmax%2Cordered%2Cunique%2Cconstants%2Cowner%2CitemPropertyType%2CtranslationKey%2CembeddedObject%5D",
-        "featureName": "The user list can be searched",
+        "featureName": "The user group list can be searched",
         "static": false,
         "count": 2,
         "nonDeterministic": false,
@@ -64,7 +64,7 @@
     },
     {
         "path": "/api/38/schemas/user?fields=apiEndpoint%2Cname%2CdisplayName%2Cauthorities%2Csingular%2Cplural%2Cshareable%2Cmetadata%2Cklass%2CidentifiableObject%2Ctranslatable%2Cproperties%5Bhref%2Cwritable%2Ccollection%2CcollectionName%2Cname%2CpropertyType%2Cpersisted%2Crequired%2Cmin%2Cmax%2Cordered%2Cunique%2Cconstants%2Cowner%2CitemPropertyType%2CtranslationKey%2CembeddedObject%5D",
-        "featureName": "The user list can be searched",
+        "featureName": "The user group list can be searched",
         "static": false,
         "count": 2,
         "nonDeterministic": false,
@@ -94,70 +94,8 @@
         }
     },
     {
-        "path": "/api/38/schemas/userCredentials?fields=apiEndpoint%2Cname%2CdisplayName%2Cauthorities%2Csingular%2Cplural%2Cshareable%2Cmetadata%2Cklass%2CidentifiableObject%2Ctranslatable%2Cproperties%5Bhref%2Cwritable%2Ccollection%2CcollectionName%2Cname%2CpropertyType%2Cpersisted%2Crequired%2Cmin%2Cmax%2Cordered%2Cunique%2Cconstants%2Cowner%2CitemPropertyType%2CtranslationKey%2CembeddedObject%5D",
-        "featureName": "The user list can be searched",
-        "static": false,
-        "count": 2,
-        "nonDeterministic": false,
-        "method": "GET",
-        "requestBody": "",
-        "requestHeaders": {
-            "host": "localhost:8080",
-            "proxy-connection": "keep-alive",
-            "accept": "*/*",
-            "origin": "http://localhost:3000",
-            "sec-fetch-site": "same-site",
-            "sec-fetch-mode": "cors"
-        },
-        "statusCode": 200,
-        "responseBody": "{\"klass\":\"org.hisp.dhis.user.UserCredentials\",\"shareable\":false,\"translatable\":false,\"metadata\":false,\"identifiableObject\":true,\"plural\":\"userCredentials\",\"displayName\":\"User Credentials\",\"name\":\"userCredentials\",\"singular\":\"userCredentials\",\"authorities\":[],\"properties\":[{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"TEXT\",\"required\":false,\"writable\":true,\"collectionName\":\"favorites\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"favorite\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"DATE\",\"unique\":false,\"name\":\"lastLogin\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"REFERENCE\",\"unique\":false,\"name\":\"userInfo\",\"href\":\"/schemas/user\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":50,\"collection\":false,\"required\":false,\"writable\":true,\"min\":0,\"embeddedObject\":false,\"propertyType\":\"IDENTIFIER\",\"unique\":true,\"name\":\"code\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":false,\"required\":false,\"writable\":true,\"min\":0,\"embeddedObject\":true,\"propertyType\":\"COMPLEX\",\"unique\":false,\"name\":\"access\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"max\":2147483647,\"collection\":false,\"required\":false,\"writable\":true,\"min\":0,\"embeddedObject\":false,\"propertyType\":\"TEXT\",\"unique\":true,\"name\":\"openId\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":false,\"embeddedObject\":false,\"propertyType\":\"TEXT\",\"unique\":false,\"name\":\"displayName\",\"persisted\":false},{\"owner\":false,\"ordered\":false,\"max\":8,\"collection\":false,\"required\":false,\"writable\":true,\"min\":8,\"embeddedObject\":false,\"propertyType\":\"TEXT\",\"unique\":false,\"name\":\"publicAccess\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"BOOLEAN\",\"unique\":false,\"name\":\"externalAuth\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"REFERENCE\",\"required\":false,\"writable\":true,\"collectionName\":\"cogsDimensionConstraints\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"cogsDimensionConstraint\",\"href\":\"/schemas/categoryOptionGroupSet\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"DATE\",\"unique\":false,\"name\":\"accountExpiry\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"REFERENCE\",\"required\":false,\"writable\":true,\"collectionName\":\"catDimensionConstraints\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"catDimensionConstraint\",\"href\":\"/schemas/category\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"BOOLEAN\",\"unique\":false,\"name\":\"externalAccess\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"DATE\",\"unique\":false,\"name\":\"lastUpdated\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":60,\"collection\":false,\"required\":false,\"writable\":true,\"min\":8,\"embeddedObject\":false,\"propertyType\":\"PASSWORD\",\"unique\":false,\"name\":\"password\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"COMPLEX\",\"required\":false,\"writable\":true,\"collectionName\":\"translations\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"translation\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"max\":2147483647,\"collection\":false,\"required\":false,\"writable\":true,\"min\":0,\"embeddedObject\":false,\"propertyType\":\"TEXT\",\"unique\":true,\"name\":\"ldapId\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"BOOLEAN\",\"unique\":false,\"name\":\"disabled\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":11,\"collection\":false,\"required\":false,\"writable\":true,\"min\":11,\"embeddedObject\":false,\"propertyType\":\"IDENTIFIER\",\"unique\":true,\"name\":\"id\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":false,\"required\":false,\"writable\":true,\"min\":0,\"embeddedObject\":false,\"propertyType\":\"URL\",\"unique\":false,\"name\":\"href\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"BOOLEAN\",\"unique\":false,\"name\":\"twoFA\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"DATE\",\"unique\":false,\"name\":\"passwordLastUpdated\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"REFERENCE\",\"unique\":false,\"name\":\"lastUpdatedBy\",\"href\":\"/schemas/user\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"COMPLEX\",\"required\":false,\"writable\":true,\"collectionName\":\"userGroupAccesses\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"userGroupAccess\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"BOOLEAN\",\"unique\":false,\"name\":\"invitation\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"DATE\",\"unique\":false,\"name\":\"created\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"COMPLEX\",\"required\":false,\"writable\":true,\"collectionName\":\"attributeValues\",\"min\":0,\"embeddedObject\":true,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"attributeValue\",\"persisted\":false},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":false,\"required\":false,\"writable\":true,\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COMPLEX\",\"unique\":false,\"name\":\"sharing\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"BOOLEAN\",\"unique\":false,\"name\":\"selfRegistered\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"REFERENCE\",\"required\":false,\"writable\":true,\"collectionName\":\"userRoles\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"userRole\",\"href\":\"/schemas/userRole\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"REFERENCE\",\"unique\":false,\"name\":\"createdBy\",\"href\":\"/schemas/user\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"COMPLEX\",\"required\":false,\"writable\":true,\"collectionName\":\"userAccesses\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"userAccess\",\"persisted\":false},{\"owner\":false,\"ordered\":false,\"max\":2147483647,\"collection\":false,\"required\":false,\"writable\":true,\"min\":1,\"embeddedObject\":false,\"propertyType\":\"TEXT\",\"unique\":false,\"name\":\"name\",\"persisted\":false},{\"owner\":false,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"REFERENCE\",\"unique\":false,\"name\":\"user\",\"href\":\"/schemas/user\",\"persisted\":false},{\"owner\":false,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":false,\"embeddedObject\":false,\"propertyType\":\"BOOLEAN\",\"unique\":false,\"name\":\"favorite\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"max\":255,\"collection\":false,\"required\":true,\"writable\":true,\"min\":0,\"embeddedObject\":false,\"propertyType\":\"TEXT\",\"unique\":true,\"name\":\"username\",\"persisted\":true}]}",
-        "responseSize": 8328,
-        "responseHeaders": {
-            "access-control-allow-credentials": "true",
-            "access-control-allow-origin": "http://localhost:3000",
-            "vary": "Origin",
-            "access-control-expose-headers": "ETag, Location",
-            "x-content-type-options": "nosniff",
-            "x-xss-protection": "1; mode=block",
-            "x-frame-options": "SAMEORIGIN",
-            "content-type": "application/json;charset=UTF-8",
-            "connection": "keep-alive"
-        }
-    },
-    {
-        "path": "/api/38/schemas/userGroup?fields=apiEndpoint%2Cname%2CdisplayName%2Cauthorities%2Csingular%2Cplural%2Cshareable%2Cmetadata%2Cklass%2CidentifiableObject%2Ctranslatable%2Cproperties%5Bhref%2Cwritable%2Ccollection%2CcollectionName%2Cname%2CpropertyType%2Cpersisted%2Crequired%2Cmin%2Cmax%2Cordered%2Cunique%2Cconstants%2Cowner%2CitemPropertyType%2CtranslationKey%2CembeddedObject%5D",
-        "featureName": "The user list can be searched",
-        "static": false,
-        "count": 2,
-        "nonDeterministic": false,
-        "method": "GET",
-        "requestBody": "",
-        "requestHeaders": {
-            "host": "localhost:8080",
-            "proxy-connection": "keep-alive",
-            "accept": "*/*",
-            "origin": "http://localhost:3000",
-            "sec-fetch-site": "same-site",
-            "sec-fetch-mode": "cors"
-        },
-        "statusCode": 200,
-        "responseBody": "{\"klass\":\"org.hisp.dhis.user.UserGroup\",\"shareable\":true,\"translatable\":true,\"metadata\":true,\"identifiableObject\":true,\"apiEndpoint\":\"/userGroups\",\"plural\":\"userGroups\",\"displayName\":\"User Group\",\"name\":\"userGroup\",\"singular\":\"userGroup\",\"authorities\":[{\"type\":\"CREATE_PUBLIC\",\"authorities\":[\"F_USERGROUP_PUBLIC_ADD\"]},{\"type\":\"CREATE_PRIVATE\",\"authorities\":[\"F_USERGROUP_PRIVATE_ADD\"]},{\"type\":\"DELETE\",\"authorities\":[\"F_USERGROUP_DELETE\"]}],\"properties\":[{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"TEXT\",\"required\":false,\"writable\":true,\"collectionName\":\"favorites\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"favorite\",\"persisted\":false},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":false,\"required\":false,\"writable\":true,\"min\":0,\"embeddedObject\":true,\"propertyType\":\"COMPLEX\",\"unique\":false,\"name\":\"access\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"max\":50,\"collection\":false,\"required\":false,\"writable\":true,\"min\":0,\"embeddedObject\":false,\"propertyType\":\"IDENTIFIER\",\"unique\":true,\"name\":\"code\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":false,\"embeddedObject\":false,\"propertyType\":\"TEXT\",\"unique\":false,\"name\":\"displayName\",\"persisted\":false},{\"owner\":false,\"ordered\":false,\"max\":8,\"collection\":false,\"required\":false,\"writable\":true,\"min\":8,\"embeddedObject\":false,\"propertyType\":\"TEXT\",\"unique\":false,\"name\":\"publicAccess\",\"persisted\":false},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"REFERENCE\",\"required\":false,\"writable\":true,\"collectionName\":\"managedByGroups\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"managedByGroup\",\"href\":\"/schemas/userGroup\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"BOOLEAN\",\"unique\":false,\"name\":\"externalAccess\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"DATE\",\"unique\":false,\"name\":\"lastUpdated\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":255,\"collection\":true,\"itemPropertyType\":\"COMPLEX\",\"required\":false,\"writable\":true,\"collectionName\":\"translations\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"translation\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":false,\"required\":false,\"writable\":true,\"min\":0,\"embeddedObject\":false,\"propertyType\":\"URL\",\"unique\":false,\"name\":\"href\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"max\":11,\"collection\":false,\"required\":false,\"writable\":true,\"min\":11,\"embeddedObject\":false,\"propertyType\":\"IDENTIFIER\",\"unique\":true,\"name\":\"id\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"REFERENCE\",\"unique\":false,\"name\":\"lastUpdatedBy\",\"href\":\"/schemas/user\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"COMPLEX\",\"required\":false,\"writable\":true,\"collectionName\":\"userGroupAccesses\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"userGroupAccess\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"DATE\",\"unique\":false,\"name\":\"created\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":255,\"collection\":true,\"itemPropertyType\":\"COMPLEX\",\"required\":false,\"writable\":true,\"collectionName\":\"attributeValues\",\"min\":0,\"embeddedObject\":true,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"attributeValue\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":255,\"collection\":false,\"required\":false,\"writable\":true,\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COMPLEX\",\"unique\":false,\"name\":\"sharing\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"REFERENCE\",\"required\":false,\"writable\":true,\"collectionName\":\"users\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"user\",\"href\":\"/schemas/user\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"REFERENCE\",\"required\":false,\"writable\":true,\"collectionName\":\"managedGroups\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"managedGroup\",\"href\":\"/schemas/userGroup\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"REFERENCE\",\"unique\":false,\"name\":\"createdBy\",\"href\":\"/schemas/user\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"COMPLEX\",\"required\":false,\"writable\":true,\"collectionName\":\"userAccesses\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"userAccess\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"translationKey\":\"NAME\",\"max\":230,\"collection\":false,\"required\":true,\"writable\":true,\"min\":1,\"embeddedObject\":false,\"propertyType\":\"TEXT\",\"unique\":false,\"name\":\"name\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"REFERENCE\",\"unique\":false,\"name\":\"user\",\"href\":\"/schemas/user\",\"persisted\":false},{\"owner\":false,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":false,\"embeddedObject\":false,\"propertyType\":\"BOOLEAN\",\"unique\":false,\"name\":\"favorite\",\"persisted\":false}]}",
-        "responseSize": 5935,
-        "responseHeaders": {
-            "access-control-allow-credentials": "true",
-            "access-control-allow-origin": "http://localhost:3000",
-            "vary": "Origin",
-            "access-control-expose-headers": "ETag, Location",
-            "x-content-type-options": "nosniff",
-            "x-xss-protection": "1; mode=block",
-            "x-frame-options": "SAMEORIGIN",
-            "content-type": "application/json;charset=UTF-8",
-            "connection": "keep-alive"
-        }
-    },
-    {
         "path": "/api/38/attributes?fields=%3Aall%2CoptionSet%5B%3Aall%2Coptions%5B%3Aall%5D%5D&paging=false",
-        "featureName": "The user list can be searched",
+        "featureName": "The user group list can be searched",
         "static": false,
         "count": 2,
         "nonDeterministic": false,
@@ -188,8 +126,70 @@
         }
     },
     {
+        "path": "/api/38/schemas/userCredentials?fields=apiEndpoint%2Cname%2CdisplayName%2Cauthorities%2Csingular%2Cplural%2Cshareable%2Cmetadata%2Cklass%2CidentifiableObject%2Ctranslatable%2Cproperties%5Bhref%2Cwritable%2Ccollection%2CcollectionName%2Cname%2CpropertyType%2Cpersisted%2Crequired%2Cmin%2Cmax%2Cordered%2Cunique%2Cconstants%2Cowner%2CitemPropertyType%2CtranslationKey%2CembeddedObject%5D",
+        "featureName": "The user group list can be searched",
+        "static": false,
+        "count": 2,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "*/*",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"klass\":\"org.hisp.dhis.user.UserCredentials\",\"shareable\":false,\"translatable\":false,\"metadata\":false,\"identifiableObject\":true,\"plural\":\"userCredentials\",\"displayName\":\"User Credentials\",\"name\":\"userCredentials\",\"singular\":\"userCredentials\",\"authorities\":[],\"properties\":[{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"TEXT\",\"required\":false,\"writable\":true,\"collectionName\":\"favorites\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"favorite\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"DATE\",\"unique\":false,\"name\":\"lastLogin\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"REFERENCE\",\"unique\":false,\"name\":\"userInfo\",\"href\":\"/schemas/user\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":50,\"collection\":false,\"required\":false,\"writable\":true,\"min\":0,\"embeddedObject\":false,\"propertyType\":\"IDENTIFIER\",\"unique\":true,\"name\":\"code\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":false,\"required\":false,\"writable\":true,\"min\":0,\"embeddedObject\":true,\"propertyType\":\"COMPLEX\",\"unique\":false,\"name\":\"access\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"max\":2147483647,\"collection\":false,\"required\":false,\"writable\":true,\"min\":0,\"embeddedObject\":false,\"propertyType\":\"TEXT\",\"unique\":true,\"name\":\"openId\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":false,\"embeddedObject\":false,\"propertyType\":\"TEXT\",\"unique\":false,\"name\":\"displayName\",\"persisted\":false},{\"owner\":false,\"ordered\":false,\"max\":8,\"collection\":false,\"required\":false,\"writable\":true,\"min\":8,\"embeddedObject\":false,\"propertyType\":\"TEXT\",\"unique\":false,\"name\":\"publicAccess\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"BOOLEAN\",\"unique\":false,\"name\":\"externalAuth\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"REFERENCE\",\"required\":false,\"writable\":true,\"collectionName\":\"cogsDimensionConstraints\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"cogsDimensionConstraint\",\"href\":\"/schemas/categoryOptionGroupSet\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"DATE\",\"unique\":false,\"name\":\"accountExpiry\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"REFERENCE\",\"required\":false,\"writable\":true,\"collectionName\":\"catDimensionConstraints\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"catDimensionConstraint\",\"href\":\"/schemas/category\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"BOOLEAN\",\"unique\":false,\"name\":\"externalAccess\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"DATE\",\"unique\":false,\"name\":\"lastUpdated\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":60,\"collection\":false,\"required\":false,\"writable\":true,\"min\":8,\"embeddedObject\":false,\"propertyType\":\"PASSWORD\",\"unique\":false,\"name\":\"password\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"COMPLEX\",\"required\":false,\"writable\":true,\"collectionName\":\"translations\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"translation\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"max\":2147483647,\"collection\":false,\"required\":false,\"writable\":true,\"min\":0,\"embeddedObject\":false,\"propertyType\":\"TEXT\",\"unique\":true,\"name\":\"ldapId\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"BOOLEAN\",\"unique\":false,\"name\":\"disabled\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":11,\"collection\":false,\"required\":false,\"writable\":true,\"min\":11,\"embeddedObject\":false,\"propertyType\":\"IDENTIFIER\",\"unique\":true,\"name\":\"id\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":false,\"required\":false,\"writable\":true,\"min\":0,\"embeddedObject\":false,\"propertyType\":\"URL\",\"unique\":false,\"name\":\"href\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"BOOLEAN\",\"unique\":false,\"name\":\"twoFA\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"DATE\",\"unique\":false,\"name\":\"passwordLastUpdated\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"REFERENCE\",\"unique\":false,\"name\":\"lastUpdatedBy\",\"href\":\"/schemas/user\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"COMPLEX\",\"required\":false,\"writable\":true,\"collectionName\":\"userGroupAccesses\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"userGroupAccess\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"BOOLEAN\",\"unique\":false,\"name\":\"invitation\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"DATE\",\"unique\":false,\"name\":\"created\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"COMPLEX\",\"required\":false,\"writable\":true,\"collectionName\":\"attributeValues\",\"min\":0,\"embeddedObject\":true,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"attributeValue\",\"persisted\":false},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":false,\"required\":false,\"writable\":true,\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COMPLEX\",\"unique\":false,\"name\":\"sharing\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"BOOLEAN\",\"unique\":false,\"name\":\"selfRegistered\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"REFERENCE\",\"required\":false,\"writable\":true,\"collectionName\":\"userRoles\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"userRole\",\"href\":\"/schemas/userRole\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"REFERENCE\",\"unique\":false,\"name\":\"createdBy\",\"href\":\"/schemas/user\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"COMPLEX\",\"required\":false,\"writable\":true,\"collectionName\":\"userAccesses\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"userAccess\",\"persisted\":false},{\"owner\":false,\"ordered\":false,\"max\":2147483647,\"collection\":false,\"required\":false,\"writable\":true,\"min\":1,\"embeddedObject\":false,\"propertyType\":\"TEXT\",\"unique\":false,\"name\":\"name\",\"persisted\":false},{\"owner\":false,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"REFERENCE\",\"unique\":false,\"name\":\"user\",\"href\":\"/schemas/user\",\"persisted\":false},{\"owner\":false,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":false,\"embeddedObject\":false,\"propertyType\":\"BOOLEAN\",\"unique\":false,\"name\":\"favorite\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"max\":255,\"collection\":false,\"required\":true,\"writable\":true,\"min\":0,\"embeddedObject\":false,\"propertyType\":\"TEXT\",\"unique\":true,\"name\":\"username\",\"persisted\":true}]}",
+        "responseSize": 8328,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block",
+            "x-frame-options": "SAMEORIGIN",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
+        "path": "/api/38/schemas/userGroup?fields=apiEndpoint%2Cname%2CdisplayName%2Cauthorities%2Csingular%2Cplural%2Cshareable%2Cmetadata%2Cklass%2CidentifiableObject%2Ctranslatable%2Cproperties%5Bhref%2Cwritable%2Ccollection%2CcollectionName%2Cname%2CpropertyType%2Cpersisted%2Crequired%2Cmin%2Cmax%2Cordered%2Cunique%2Cconstants%2Cowner%2CitemPropertyType%2CtranslationKey%2CembeddedObject%5D",
+        "featureName": "The user group list can be searched",
+        "static": false,
+        "count": 2,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "*/*",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"klass\":\"org.hisp.dhis.user.UserGroup\",\"shareable\":true,\"translatable\":true,\"metadata\":true,\"identifiableObject\":true,\"apiEndpoint\":\"/userGroups\",\"plural\":\"userGroups\",\"displayName\":\"User Group\",\"name\":\"userGroup\",\"singular\":\"userGroup\",\"authorities\":[{\"type\":\"CREATE_PUBLIC\",\"authorities\":[\"F_USERGROUP_PUBLIC_ADD\"]},{\"type\":\"CREATE_PRIVATE\",\"authorities\":[\"F_USERGROUP_PRIVATE_ADD\"]},{\"type\":\"DELETE\",\"authorities\":[\"F_USERGROUP_DELETE\"]}],\"properties\":[{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"TEXT\",\"required\":false,\"writable\":true,\"collectionName\":\"favorites\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"favorite\",\"persisted\":false},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":false,\"required\":false,\"writable\":true,\"min\":0,\"embeddedObject\":true,\"propertyType\":\"COMPLEX\",\"unique\":false,\"name\":\"access\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"max\":50,\"collection\":false,\"required\":false,\"writable\":true,\"min\":0,\"embeddedObject\":false,\"propertyType\":\"IDENTIFIER\",\"unique\":true,\"name\":\"code\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":false,\"embeddedObject\":false,\"propertyType\":\"TEXT\",\"unique\":false,\"name\":\"displayName\",\"persisted\":false},{\"owner\":false,\"ordered\":false,\"max\":8,\"collection\":false,\"required\":false,\"writable\":true,\"min\":8,\"embeddedObject\":false,\"propertyType\":\"TEXT\",\"unique\":false,\"name\":\"publicAccess\",\"persisted\":false},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"REFERENCE\",\"required\":false,\"writable\":true,\"collectionName\":\"managedByGroups\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"managedByGroup\",\"href\":\"/schemas/userGroup\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"BOOLEAN\",\"unique\":false,\"name\":\"externalAccess\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"DATE\",\"unique\":false,\"name\":\"lastUpdated\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":255,\"collection\":true,\"itemPropertyType\":\"COMPLEX\",\"required\":false,\"writable\":true,\"collectionName\":\"translations\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"translation\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":false,\"required\":false,\"writable\":true,\"min\":0,\"embeddedObject\":false,\"propertyType\":\"URL\",\"unique\":false,\"name\":\"href\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"max\":11,\"collection\":false,\"required\":false,\"writable\":true,\"min\":11,\"embeddedObject\":false,\"propertyType\":\"IDENTIFIER\",\"unique\":true,\"name\":\"id\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"REFERENCE\",\"unique\":false,\"name\":\"lastUpdatedBy\",\"href\":\"/schemas/user\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"COMPLEX\",\"required\":false,\"writable\":true,\"collectionName\":\"userGroupAccesses\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"userGroupAccess\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"DATE\",\"unique\":false,\"name\":\"created\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":255,\"collection\":true,\"itemPropertyType\":\"COMPLEX\",\"required\":false,\"writable\":true,\"collectionName\":\"attributeValues\",\"min\":0,\"embeddedObject\":true,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"attributeValue\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":255,\"collection\":false,\"required\":false,\"writable\":true,\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COMPLEX\",\"unique\":false,\"name\":\"sharing\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"REFERENCE\",\"required\":false,\"writable\":true,\"collectionName\":\"users\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"user\",\"href\":\"/schemas/user\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"REFERENCE\",\"required\":false,\"writable\":true,\"collectionName\":\"managedGroups\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"managedGroup\",\"href\":\"/schemas/userGroup\",\"persisted\":true},{\"owner\":true,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"REFERENCE\",\"unique\":false,\"name\":\"createdBy\",\"href\":\"/schemas/user\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"max\":1.7976931348623157e+308,\"collection\":true,\"itemPropertyType\":\"COMPLEX\",\"required\":false,\"writable\":true,\"collectionName\":\"userAccesses\",\"min\":0,\"embeddedObject\":false,\"propertyType\":\"COLLECTION\",\"unique\":false,\"name\":\"userAccess\",\"persisted\":false},{\"owner\":true,\"ordered\":false,\"translationKey\":\"NAME\",\"max\":230,\"collection\":false,\"required\":true,\"writable\":true,\"min\":1,\"embeddedObject\":false,\"propertyType\":\"TEXT\",\"unique\":false,\"name\":\"name\",\"persisted\":true},{\"owner\":false,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":true,\"embeddedObject\":false,\"propertyType\":\"REFERENCE\",\"unique\":false,\"name\":\"user\",\"href\":\"/schemas/user\",\"persisted\":false},{\"owner\":false,\"ordered\":false,\"collection\":false,\"required\":false,\"writable\":false,\"embeddedObject\":false,\"propertyType\":\"BOOLEAN\",\"unique\":false,\"name\":\"favorite\",\"persisted\":false}]}",
+        "responseSize": 5935,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block",
+            "x-frame-options": "SAMEORIGIN",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive"
+        }
+    },
+    {
         "path": "/api/38/schemas/organisationUnit?fields=apiEndpoint%2Cname%2CdisplayName%2Cauthorities%2Csingular%2Cplural%2Cshareable%2Cmetadata%2Cklass%2CidentifiableObject%2Ctranslatable%2Cproperties%5Bhref%2Cwritable%2Ccollection%2CcollectionName%2Cname%2CpropertyType%2Cpersisted%2Crequired%2Cmin%2Cmax%2Cordered%2Cunique%2Cconstants%2Cowner%2CitemPropertyType%2CtranslationKey%2CembeddedObject%5D",
-        "featureName": "The user list can be searched",
+        "featureName": "The user group list can be searched",
         "static": false,
         "count": 2,
         "nonDeterministic": false,
@@ -220,7 +220,7 @@
     },
     {
         "path": "/api/38/me/authorization",
-        "featureName": "The user list can be searched",
+        "featureName": "The user group list can be searched",
         "static": false,
         "count": 2,
         "nonDeterministic": false,
@@ -252,7 +252,7 @@
     },
     {
         "path": "/api/38/apps",
-        "featureName": "The user list can be searched",
+        "featureName": "The user group list can be searched",
         "static": false,
         "count": 2,
         "nonDeterministic": false,
@@ -283,7 +283,7 @@
     },
     {
         "path": "/api/38/organisationUnits?fields=id%2Cpath%2CdisplayName%2Cchildren%3A%3AisNotEmpty&paging=false&level=1",
-        "featureName": "The user list can be searched",
+        "featureName": "The user group list can be searched",
         "static": false,
         "count": 2,
         "nonDeterministic": false,
@@ -315,7 +315,7 @@
     },
     {
         "path": "/api/38/schemas?fields=name%2CdataShareable",
-        "featureName": "The user list can be searched",
+        "featureName": "The user group list can be searched",
         "static": false,
         "count": 2,
         "nonDeterministic": false,
@@ -346,7 +346,7 @@
     },
     {
         "path": "/api/38/users/xE7jOejl9FI?fields=organisationUnits%5Bid%2Cpath%2CdisplayName%2Cchildren%3A%3AisNotEmpty%5D%2CdataViewOrganisationUnits%5Bid%2Cpath%2CdisplayName%2Cchildren%3A%3AisNotEmpty%5D%2CteiSearchOrganisationUnits%5Bid%2Cpath%2CdisplayName%2Cchildren%3A%3AisNotEmpty%5D",
-        "featureName": "The user list can be searched",
+        "featureName": "The user group list can be searched",
         "static": false,
         "count": 2,
         "nonDeterministic": false,
@@ -377,8 +377,8 @@
         }
     },
     {
-        "path": "/api/38/users?fields=id,displayName,access,userCredentials%5Busername%2Cdisabled%2ClastLogin%2CtwoFA%5D,teiSearchOrganisationUnits%5Bid%2Cpath%5D&order=firstName%3Aasc,surname%3Aasc&userOrgUnits=true&includeChildren=true&page=1&pageSize=50&query=&selfRegistered=false",
-        "featureName": "The user list can be searched",
+        "path": "/api/38/userGroups?fields=id,displayName,access,user%5Bid%2CdisplayName%5D,publicAccess,userGroupAccesses&order=name%3Aasc&page=1&pageSize=50",
+        "featureName": "The user group list can be searched",
         "static": false,
         "count": 2,
         "nonDeterministic": false,
@@ -393,8 +393,8 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"pager\":{\"page\":1,\"pageCount\":1,\"total\":19,\"pageSize\":50},\"users\":[{\"id\":\"oXD88WWSQpR\",\"displayName\":\"Alain Traore\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"userCredentials\":{\"lastLogin\":\"2013-12-30T17:16:43.235\",\"disabled\":false,\"twoFA\":false,\"username\":\"traore\"},\"teiSearchOrganisationUnits\":[]},{\"id\":\"NOOF56dveaZ\",\"displayName\":\"Bombali District\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"userCredentials\":{\"lastLogin\":\"2014-09-28T23:19:34.514\",\"disabled\":false,\"twoFA\":false,\"username\":\"bombali\"},\"teiSearchOrganisationUnits\":[]},{\"id\":\"I9fMsY4pRKk\",\"displayName\":\"Didier Konan\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"userCredentials\":{\"lastLogin\":\"2019-04-29T16:13:04.047\",\"disabled\":false,\"twoFA\":false,\"username\":\"konan\"},\"teiSearchOrganisationUnits\":[]},{\"id\":\"cddnwKV2gm9\",\"displayName\":\"Donor User\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"userCredentials\":{\"lastLogin\":\"2014-04-08T21:27:06.659\",\"disabled\":false,\"twoFA\":false,\"username\":\"donor\"},\"teiSearchOrganisationUnits\":[]},{\"id\":\"rWLrZL8rP3K\",\"displayName\":\"Guest User\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"userCredentials\":{\"lastLogin\":\"2014-10-07T22:17:43.434\",\"disabled\":false,\"twoFA\":false,\"username\":\"guest\"},\"teiSearchOrganisationUnits\":[]},{\"id\":\"DXyJmlo9rge\",\"displayName\":\"John Barnes\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"userCredentials\":{\"lastLogin\":\"2015-03-31T13:39:21.777\",\"disabled\":false,\"twoFA\":false,\"username\":\"android\"},\"teiSearchOrganisationUnits\":[]},{\"id\":\"N3PZBUlN8vq\",\"displayName\":\"John Kamara\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"userCredentials\":{\"lastLogin\":\"2016-08-05T19:17:01.991\",\"disabled\":false,\"twoFA\":false,\"username\":\"district\"},\"teiSearchOrganisationUnits\":[]},{\"id\":\"xE7jOejl9FI\",\"displayName\":\"John Traore\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"userCredentials\":{\"lastLogin\":\"2021-10-21T12:03:04.653\",\"disabled\":false,\"twoFA\":false,\"username\":\"admin\"},\"teiSearchOrganisationUnits\":[]},{\"id\":\"UgDpalMTGDr\",\"displayName\":\"Kanu Nwankwo\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"userCredentials\":{\"lastLogin\":\"2013-03-11T17:56:37.940\",\"disabled\":false,\"twoFA\":false,\"username\":\"nwankwo\"},\"teiSearchOrganisationUnits\":[]},{\"id\":\"OYLGMiazHtW\",\"displayName\":\"Kevin Boateng\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"userCredentials\":{\"lastLogin\":\"2016-08-02T10:14:10.457\",\"disabled\":false,\"twoFA\":false,\"username\":\"boateng\"},\"teiSearchOrganisationUnits\":[]},{\"id\":\"qDNQJROsrzY\",\"displayName\":\"Portal User\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"userCredentials\":{\"lastLogin\":\"2014-05-23T14:39:29.149\",\"disabled\":false,\"twoFA\":false,\"username\":\"portal\"},\"teiSearchOrganisationUnits\":[]},{\"id\":\"ObaborECU7w\",\"displayName\":\"Roger Milla\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"userCredentials\":{\"lastLogin\":\"2013-03-21T16:52:01.129\",\"disabled\":false,\"twoFA\":false,\"username\":\"milla\"},\"teiSearchOrganisationUnits\":[]},{\"id\":\"Onf73mPD6sL\",\"displayName\":\"Seydou Keita\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"userCredentials\":{\"lastLogin\":\"2016-06-28T11:14:25.503\",\"disabled\":false,\"twoFA\":false,\"username\":\"keita\"},\"teiSearchOrganisationUnits\":[]},{\"id\":\"awtnYWiVEd5\",\"displayName\":\"Suleimane Diawara\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"userCredentials\":{\"lastLogin\":\"2013-03-19T14:36:11.685\",\"disabled\":false,\"twoFA\":false,\"username\":\"diawara\"},\"teiSearchOrganisationUnits\":[]},{\"id\":\"QqvaU7JjkUV\",\"displayName\":\"Thomas Nkono\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"userCredentials\":{\"lastLogin\":\"2015-03-12T10:33:57.932\",\"disabled\":false,\"twoFA\":false,\"username\":\"nkono\"},\"teiSearchOrganisationUnits\":[]},{\"id\":\"GOLswS44mh8\",\"displayName\":\"Tom Wakiki\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"userCredentials\":{\"lastLogin\":\"2020-09-10T10:54:04.852\",\"disabled\":false,\"twoFA\":false,\"username\":\"system\"},\"teiSearchOrganisationUnits\":[]},{\"id\":\"AIK2aQOJIbj\",\"displayName\":\"Tracker demo User\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"userCredentials\":{\"lastLogin\":\"2019-09-27T00:19:40.029\",\"disabled\":false,\"twoFA\":false,\"username\":\"tracker\"},\"teiSearchOrganisationUnits\":[]},{\"id\":\"PhzytPW3g2J\",\"displayName\":\"User Mobile\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"userCredentials\":{\"lastLogin\":\"2013-11-12T14:48:55.892\",\"disabled\":false,\"twoFA\":false,\"username\":\"mobile\"},\"teiSearchOrganisationUnits\":[]},{\"id\":\"yI9qQfuM7Xd\",\"displayName\":\"Yaya Toure\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"userCredentials\":{\"lastLogin\":\"2013-11-13T13:25:16.704\",\"disabled\":false,\"twoFA\":false,\"username\":\"toure\"},\"teiSearchOrganisationUnits\":[]}]}",
-        "responseSize": 5561,
+        "responseBody": "{\"pager\":{\"page\":1,\"pageCount\":1,\"total\":31,\"pageSize\":50},\"userGroups\":[{\"id\":\"wl5cDMuUhmF\",\"displayName\":\"Administrators\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"vAvEltyXGbD\",\"displayName\":\"Africare HQ\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"ZoHNWQajIoe\",\"displayName\":\"Bo District M&E officers\",\"publicAccess\":\"r-------\",\"access\":{\"read\":true,\"update\":false,\"externalize\":false,\"delete\":false,\"write\":false,\"manage\":false},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"th4S6ovwcr8\",\"displayName\":\"Bonthe District M&E Officers\",\"publicAccess\":\"r-------\",\"access\":{\"read\":true,\"update\":false,\"externalize\":false,\"delete\":false,\"write\":false,\"manage\":false},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"wAAA1agEHin\",\"displayName\":\"Cape Town University Research Group\",\"publicAccess\":\"r-------\",\"access\":{\"read\":true,\"update\":false,\"externalize\":false,\"delete\":false,\"write\":false,\"manage\":false},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"GogLpGmkL0g\",\"displayName\":\"_DATASET_Child Health Program Manager\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"tH0GcNZZ1vW\",\"displayName\":\"_DATASET_Data entry clerk\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"John Traore\",\"id\":\"xE7jOejl9FI\"},\"userGroupAccesses\":[]},{\"id\":\"w900PX10L7O\",\"displayName\":\"_DATASET_M and E Officer\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"B6JNeAQ6akX\",\"displayName\":\"_DATASET_Superuser\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"zz6XckBrLlj\",\"displayName\":\"_DATASET_System administrator (ALL)\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"qlEhuAA77gc\",\"displayName\":\"EPI Stock Completeness Notification Recipients\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"John Traore\",\"id\":\"xE7jOejl9FI\"},\"userGroupAccesses\":[]},{\"id\":\"ZrsVF7IJ93y\",\"displayName\":\"Family Health Partner\",\"publicAccess\":\"r-------\",\"access\":{\"read\":true,\"update\":false,\"externalize\":false,\"delete\":false,\"write\":false,\"manage\":false},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"sZRhXMPbcWc\",\"displayName\":\"Family Planning Program Coordinators\",\"publicAccess\":\"r-------\",\"access\":{\"read\":true,\"update\":false,\"externalize\":false,\"delete\":false,\"write\":false,\"manage\":false},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"QYrzIjSfI8z\",\"displayName\":\"Feedback Message Recipients\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"John Traore\",\"id\":\"xE7jOejl9FI\"},\"userGroupAccesses\":[]},{\"id\":\"Rg8wusV7QYi\",\"displayName\":\"HIV Program Coordinators\",\"publicAccess\":\"r-------\",\"access\":{\"read\":true,\"update\":false,\"externalize\":false,\"delete\":false,\"write\":false,\"manage\":false},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"YCPJDwzbe8T\",\"displayName\":\"Kenya staff\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"jvrEwEJ2yZn\",\"displayName\":\"Malaria program\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"k3xzluFKVyw\",\"displayName\":\"Nairobi University Research Group\",\"publicAccess\":\"r-------\",\"access\":{\"read\":true,\"update\":false,\"externalize\":false,\"delete\":false,\"write\":false,\"manage\":false},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"GZSvMCVowAx\",\"displayName\":\"Partner for Health International\",\"publicAccess\":\"r-------\",\"access\":{\"read\":true,\"update\":false,\"externalize\":false,\"delete\":false,\"write\":false,\"manage\":false},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"M1Qre0247G3\",\"displayName\":\"_PROGRAM_Antenatal care program\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"John Traore\",\"id\":\"xE7jOejl9FI\"},\"userGroupAccesses\":[]},{\"id\":\"H9XnHoWRKCg\",\"displayName\":\"_PROGRAM_Child Health Tracker\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"NTC8GjJ7p8P\",\"displayName\":\"_PROGRAM_Inpatient program\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"vRoAruMnNpB\",\"displayName\":\"_PROGRAM_MNCH / PNC (Adult Woman) program\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"John Traore\",\"id\":\"xE7jOejl9FI\"},\"userGroupAccesses\":[]},{\"id\":\"gXpmQO6eEOo\",\"displayName\":\"_PROGRAM_Superuser\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"pBnkuih0c1K\",\"displayName\":\"_PROGRAM_System administrator (ALL)\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"Kk12LkEWtXp\",\"displayName\":\"_PROGRAM_TB program\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"z1gNAf2zUxZ\",\"displayName\":\"_PROGRAM_WHO MCH program\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"John Traore\",\"id\":\"xE7jOejl9FI\"},\"userGroupAccesses\":[]},{\"id\":\"lFHP5lLkzVr\",\"displayName\":\"System administrators\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"hj0nnsVsPLU\",\"displayName\":\"TB Program Coordinators\",\"publicAccess\":\"r-------\",\"access\":{\"read\":true,\"update\":false,\"externalize\":false,\"delete\":false,\"write\":false,\"manage\":false},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"L4XTzgbdza3\",\"displayName\":\"Wakiki\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"Iqfwd3j2qe5\",\"displayName\":\"World Health Program\",\"publicAccess\":\"r-------\",\"access\":{\"read\":true,\"update\":false,\"externalize\":false,\"delete\":false,\"write\":false,\"manage\":false},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]}]}",
+        "responseSize": 8297,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
             "access-control-allow-origin": "http://localhost:3000",
@@ -409,10 +409,10 @@
         }
     },
     {
-        "path": "/api/38/users?fields=id,displayName,access,userCredentials%5Busername%2Cdisabled%2ClastLogin%2CtwoFA%5D,teiSearchOrganisationUnits%5Bid%2Cpath%5D&order=firstName%3Aasc,surname%3Aasc&userOrgUnits=true&includeChildren=true&page=1&pageSize=50&query=admin&selfRegistered=false",
-        "featureName": "The user list can be searched",
+        "path": "/api/38/userGroups?fields=id,displayName,access,user%5Bid%2CdisplayName%5D,publicAccess,userGroupAccesses&order=name%3Aasc&page=1&pageSize=50&query=admin",
+        "featureName": "The user group list can be searched",
         "static": false,
-        "count": 1,
+        "count": 2,
         "nonDeterministic": false,
         "method": "GET",
         "requestBody": "",
@@ -425,8 +425,8 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"pager\":{\"page\":1,\"pageCount\":1,\"total\":1,\"pageSize\":50},\"users\":[{\"id\":\"xE7jOejl9FI\",\"displayName\":\"John Traore\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"userCredentials\":{\"lastLogin\":\"2021-10-21T12:03:04.653\",\"disabled\":false,\"twoFA\":false,\"username\":\"admin\"},\"teiSearchOrganisationUnits\":[]}]}",
-        "responseSize": 355,
+        "responseBody": "{\"pager\":{\"page\":1,\"pageCount\":1,\"total\":4,\"pageSize\":50},\"userGroups\":[{\"id\":\"zz6XckBrLlj\",\"displayName\":\"_DATASET_System administrator (ALL)\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"pBnkuih0c1K\",\"displayName\":\"_PROGRAM_System administrator (ALL)\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"wl5cDMuUhmF\",\"displayName\":\"Administrators\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]},{\"id\":\"lFHP5lLkzVr\",\"displayName\":\"System administrators\",\"publicAccess\":\"rw------\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"user\":{\"displayName\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\"},\"userGroupAccesses\":[]}]}",
+        "responseSize": 1138,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
             "access-control-allow-origin": "http://localhost:3000",
@@ -441,8 +441,8 @@
         }
     },
     {
-        "path": "/api/38/users/oXD88WWSQpR?fields=%3Aowner%2Caccess%2CdisplayName%2CuserGroups%2CorganisationUnits%5Bid%2CdisplayName%2Cpath%5D%2CdataViewOrganisationUnits%5Bid%2CdisplayName%2Cpath%5D%2CuserCredentials%5Bid%2Cusername%2CaccountExpiry%2ClastLogin%2CexternalAuth%2CuserRoles%5Bid%2CdisplayName%5D%2CcogsDimensionConstraints%5Bid%2CdisplayName%2CdimensionType%5D%2CcatDimensionConstraints%5Bid%2CdisplayName%2CdimensionType%5D%2CopenId%2CldapId%2Cdisabled%5D%2CteiSearchOrganisationUnits%5Bid%2Cpath%5D%2CwhatsApp%2CfacebookMessenger%2Cskype%2Ctelegram%2Ctwitter",
-        "featureName": "The user list can be searched",
+        "path": "/api/38/userGroups/wl5cDMuUhmF?fields=%3Aowner%2Caccess%2CdisplayName%2C!users",
+        "featureName": "The user group list can be searched",
         "static": false,
         "count": 1,
         "nonDeterministic": false,
@@ -457,8 +457,8 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"lastUpdated\":\"2018-03-09T23:06:54.509\",\"id\":\"oXD88WWSQpR\",\"created\":\"2013-03-11T17:51:41.232\",\"displayName\":\"Alain Traore\",\"surname\":\"Traore\",\"firstName\":\"Alain\",\"phoneNumber\":\"\",\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"userCredentials\":{\"id\":\"cUIWYret8UV\",\"lastLogin\":\"2013-12-30T17:16:43.235\",\"externalAuth\":false,\"disabled\":false,\"username\":\"traore\",\"userRoles\":[{\"id\":\"Ufph3mGRmMo\",\"displayName\":\"Superuser\"}],\"cogsDimensionConstraints\":[],\"catDimensionConstraints\":[]},\"teiSearchOrganisationUnits\":[],\"organisationUnits\":[{\"id\":\"ImspTQPwCqd\",\"path\":\"/ImspTQPwCqd\",\"displayName\":\"Sierra Leone\"}],\"dataViewOrganisationUnits\":[{\"id\":\"ImspTQPwCqd\",\"path\":\"/ImspTQPwCqd\",\"displayName\":\"Sierra Leone\"}],\"attributeValues\":[],\"userGroups\":[{\"id\":\"B6JNeAQ6akX\"},{\"id\":\"GZSvMCVowAx\"},{\"id\":\"Iqfwd3j2qe5\"},{\"id\":\"gXpmQO6eEOo\"}]}",
-        "responseSize": 882,
+        "responseBody": "{\"created\":\"2014-08-14T15:11:01.383\",\"lastUpdated\":\"2017-01-19T14:41:44.926\",\"name\":\"Administrators\",\"id\":\"wl5cDMuUhmF\",\"displayName\":\"Administrators\",\"sharing\":{\"owner\":\"GOLswS44mh8\",\"external\":false,\"users\":{},\"userGroups\":{},\"public\":\"rw------\"},\"access\":{\"read\":true,\"update\":true,\"externalize\":false,\"delete\":true,\"write\":true,\"manage\":true},\"createdBy\":{\"displayName\":\"Tom Wakiki\",\"name\":\"Tom Wakiki\",\"id\":\"GOLswS44mh8\",\"username\":\"system\"},\"attributeValues\":[],\"managedGroups\":[],\"translations\":[]}",
+        "responseSize": 505,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
             "access-control-allow-origin": "http://localhost:3000",
@@ -473,70 +473,8 @@
         }
     },
     {
-        "path": "/api/38/locales/db",
-        "featureName": "The user list can be searched",
-        "static": false,
-        "count": 1,
-        "nonDeterministic": false,
-        "method": "GET",
-        "requestBody": "",
-        "requestHeaders": {
-            "host": "localhost:8080",
-            "proxy-connection": "keep-alive",
-            "accept": "*/*",
-            "origin": "http://localhost:3000",
-            "sec-fetch-site": "same-site",
-            "sec-fetch-mode": "cors"
-        },
-        "statusCode": 200,
-        "responseBody": "[{\"locale\":\"af\",\"name\":\"Afrikaans\"},{\"locale\":\"am\",\"name\":\"Amharic\"},{\"locale\":\"ar\",\"name\":\"Arabic\"},{\"locale\":\"bi\",\"name\":\"Bislama\"},{\"locale\":\"my\",\"name\":\"Burmese\"},{\"locale\":\"zh\",\"name\":\"Chinese\"},{\"locale\":\"nl\",\"name\":\"Dutch\"},{\"locale\":\"dz\",\"name\":\"Dzongkha\"},{\"locale\":\"en\",\"name\":\"English\"},{\"locale\":\"en_BW\",\"name\":\"English (Botswana)\"},{\"locale\":\"en_KH\",\"name\":\"English (Cambodia)\"},{\"locale\":\"en_TZ\",\"name\":\"English (Tanzania)\"},{\"locale\":\"en_UG\",\"name\":\"English (Uganda)\"},{\"locale\":\"fr\",\"name\":\"French\"},{\"locale\":\"fr_SN\",\"name\":\"French (Senegal)\"},{\"locale\":\"fr_SN\",\"name\":\"French (Senegal)\"},{\"locale\":\"de\",\"name\":\"German\"},{\"locale\":\"gu\",\"name\":\"Gujarati\"},{\"locale\":\"hi\",\"name\":\"Hindi\"},{\"locale\":\"in\",\"name\":\"Indonesian\"},{\"locale\":\"it\",\"name\":\"Italian\"},{\"locale\":\"km\",\"name\":\"Khmer\"},{\"locale\":\"rw\",\"name\":\"Kinyarwanda\"},{\"locale\":\"lo\",\"name\":\"Lao\"},{\"locale\":\"ne\",\"name\":\"Nepali\"},{\"locale\":\"no\",\"name\":\"Norwegian\"},{\"locale\":\"ps\",\"name\":\"Pashto\"},{\"locale\":\"fa\",\"name\":\"Persian\"},{\"locale\":\"pt\",\"name\":\"Portuguese\"},{\"locale\":\"ru\",\"name\":\"Russian\"},{\"locale\":\"es\",\"name\":\"Spanish\"},{\"locale\":\"es_GT\",\"name\":\"Spanish (Guatemala)\"},{\"locale\":\"es_MX\",\"name\":\"Spanish (Mexico)\"},{\"locale\":\"sw\",\"name\":\"Swahili\"},{\"locale\":\"tg\",\"name\":\"Tajik\"},{\"locale\":\"vi\",\"name\":\"Vietnamese\"}]",
-        "responseSize": 1296,
-        "responseHeaders": {
-            "access-control-allow-credentials": "true",
-            "access-control-allow-origin": "http://localhost:3000",
-            "vary": "Origin",
-            "access-control-expose-headers": "ETag, Location",
-            "x-content-type-options": "nosniff",
-            "x-xss-protection": "1; mode=block",
-            "x-frame-options": "SAMEORIGIN",
-            "content-type": "application/json;charset=UTF-8",
-            "connection": "keep-alive"
-        }
-    },
-    {
-        "path": "/api/38/locales/ui",
-        "featureName": "The user list can be searched",
-        "static": false,
-        "count": 1,
-        "nonDeterministic": false,
-        "method": "GET",
-        "requestBody": "",
-        "requestHeaders": {
-            "host": "localhost:8080",
-            "proxy-connection": "keep-alive",
-            "accept": "*/*",
-            "origin": "http://localhost:3000",
-            "sec-fetch-site": "same-site",
-            "sec-fetch-mode": "cors"
-        },
-        "statusCode": 200,
-        "responseBody": "[{\"locale\":\"ar\",\"name\":\"Arabic\"},{\"locale\":\"ar_EG\",\"name\":\"Arabic (Egypt)\"},{\"locale\":\"ar_IQ\",\"name\":\"Arabic (Iraq)\"},{\"locale\":\"ar_SD\",\"name\":\"Arabic (Sudan)\"},{\"locale\":\"bn\",\"name\":\"Bangla\"},{\"locale\":\"bi\",\"name\":\"Bislama\"},{\"locale\":\"my\",\"name\":\"Burmese\"},{\"locale\":\"zh\",\"name\":\"Chinese\"},{\"locale\":\"zh_CN\",\"name\":\"Chinese (China)\"},{\"locale\":\"cs\",\"name\":\"Czech\"},{\"locale\":\"da\",\"name\":\"Danish\"},{\"locale\":\"nl\",\"name\":\"Dutch\"},{\"locale\":\"en\",\"name\":\"English\"},{\"locale\":\"fr\",\"name\":\"French\"},{\"locale\":\"in\",\"name\":\"Indonesian\"},{\"locale\":\"in_ID\",\"name\":\"Indonesian (Indonesia)\"},{\"locale\":\"km\",\"name\":\"Khmer\"},{\"locale\":\"rw\",\"name\":\"Kinyarwanda\"},{\"locale\":\"lo\",\"name\":\"Lao\"},{\"locale\":\"mn\",\"name\":\"Mongolian\"},{\"locale\":\"ne\",\"name\":\"Nepali\"},{\"locale\":\"nb\",\"name\":\"Norwegian Bokmål\"},{\"locale\":\"ps\",\"name\":\"Pashto\"},{\"locale\":\"pt\",\"name\":\"Portuguese\"},{\"locale\":\"pt_BR\",\"name\":\"Portuguese (Brazil)\"},{\"locale\":\"ru\",\"name\":\"Russian\"},{\"locale\":\"es\",\"name\":\"Spanish\"},{\"locale\":\"sv\",\"name\":\"Swedish\"},{\"locale\":\"tg\",\"name\":\"Tajik\"},{\"locale\":\"tet\",\"name\":\"Tetum\"},{\"locale\":\"uk\",\"name\":\"Ukrainian\"},{\"locale\":\"ur\",\"name\":\"Urdu\"},{\"locale\":\"uz\",\"name\":\"Uzbek\"},{\"locale\":\"vi\",\"name\":\"Vietnamese\"},{\"locale\":\"ckb\",\"name\":\"ckb\"},{\"locale\":\"prs\",\"name\":\"prs\"}]",
-        "responseSize": 1259,
-        "responseHeaders": {
-            "access-control-allow-credentials": "true",
-            "access-control-allow-origin": "http://localhost:3000",
-            "vary": "Origin",
-            "access-control-expose-headers": "ETag, Location",
-            "x-content-type-options": "nosniff",
-            "x-xss-protection": "1; mode=block",
-            "x-frame-options": "SAMEORIGIN",
-            "content-type": "application/json;charset=UTF-8",
-            "connection": "keep-alive"
-        }
-    },
-    {
-        "path": "/api/38/attributes?fields=id%2CdisplayName%2Cmandatory%2Cunique%2CvalueType%2CoptionSet%5Boptions%5Bid%2CdisplayName%5D%5D&filter=userAttribute%3Aeq%3Atrue&paging=false",
-        "featureName": "The user list can be searched",
+        "path": "/api/38/attributes?fields=id%2CdisplayName%2Cmandatory%2Cunique%2CvalueType%2CoptionSet%5Boptions%5Bid%2CdisplayName%5D%5D&filter=userGroupAttribute%3Aeq%3Atrue&paging=false",
+        "featureName": "The user group list can be searched",
         "static": false,
         "count": 1,
         "nonDeterministic": false,
@@ -567,8 +505,8 @@
         }
     },
     {
-        "path": "/api/38/userSettings/keyUiLocale?user=traore",
-        "featureName": "The user list can be searched",
+        "path": "/api/38/userGroups?fields=id%2CdisplayName&paging=false",
+        "featureName": "The user group list can be searched",
         "static": false,
         "count": 1,
         "nonDeterministic": false,
@@ -583,104 +521,8 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "\"en\"",
-        "responseSize": 4,
-        "responseHeaders": {
-            "access-control-allow-credentials": "true",
-            "access-control-allow-origin": "http://localhost:3000",
-            "vary": "Origin",
-            "access-control-expose-headers": "ETag, Location",
-            "cache-control": "no-cache, private",
-            "x-content-type-options": "nosniff",
-            "x-xss-protection": "1; mode=block",
-            "x-frame-options": "SAMEORIGIN",
-            "content-type": "application/json;charset=UTF-8",
-            "connection": "keep-alive"
-        }
-    },
-    {
-        "path": "/api/38/userSettings/keyDbLocale?user=traore",
-        "featureName": "The user list can be searched",
-        "static": false,
-        "count": 1,
-        "nonDeterministic": false,
-        "method": "GET",
-        "requestBody": "",
-        "requestHeaders": {
-            "host": "localhost:8080",
-            "proxy-connection": "keep-alive",
-            "accept": "*/*",
-            "origin": "http://localhost:3000",
-            "sec-fetch-site": "same-site",
-            "sec-fetch-mode": "cors"
-        },
-        "statusCode": 200,
-        "responseBody": "null",
-        "responseSize": 4,
-        "responseHeaders": {
-            "access-control-allow-credentials": "true",
-            "access-control-allow-origin": "http://localhost:3000",
-            "vary": "Origin",
-            "access-control-expose-headers": "ETag, Location",
-            "cache-control": "no-cache, private",
-            "x-content-type-options": "nosniff",
-            "x-xss-protection": "1; mode=block",
-            "x-frame-options": "SAMEORIGIN",
-            "content-type": "application/json;charset=UTF-8",
-            "connection": "keep-alive"
-        }
-    },
-    {
-        "path": "/api/38/userRoles?fields=id%2CdisplayName&canIssue=true&paging=false",
-        "featureName": "The user list can be searched",
-        "static": false,
-        "count": 1,
-        "nonDeterministic": false,
-        "method": "GET",
-        "requestBody": "",
-        "requestHeaders": {
-            "host": "localhost:8080",
-            "proxy-connection": "keep-alive",
-            "accept": "*/*",
-            "origin": "http://localhost:3000",
-            "sec-fetch-site": "same-site",
-            "sec-fetch-mode": "cors"
-        },
-        "statusCode": 200,
-        "responseBody": "{\"userRoles\":[{\"id\":\"UYXOT4A7JMI\",\"displayName\":\"Antenatal care program\"},{\"id\":\"Ql6Gew7eaX6\",\"displayName\":\"Child Health Program Manager\"},{\"id\":\"TMK9CMZ2V98\",\"displayName\":\"Child Health Tracker\"},{\"id\":\"Euq3XfEIEbx\",\"displayName\":\"Data entry clerk\"},{\"id\":\"txB7vu1w2Pr\",\"displayName\":\"Facility tracker\"},{\"id\":\"XS0dNzuZmfH\",\"displayName\":\"Guest\"},{\"id\":\"DRdaVRtwmG5\",\"displayName\":\"Inpatient program\"},{\"id\":\"jRWSNIHdKww\",\"displayName\":\"M and E Officer\"},{\"id\":\"aNk5AyC7ydy\",\"displayName\":\"MNCH / PNC (Adult Woman) program\"},{\"id\":\"Ufph3mGRmMo\",\"displayName\":\"Superuser\"},{\"id\":\"cUlTcejWree\",\"displayName\":\"TB program\"},{\"id\":\"xJZBzAHI88H\",\"displayName\":\"User manager\"},{\"id\":\"Pqoy4DLOdMK\",\"displayName\":\"WHO MCH program\"}]}",
-        "responseSize": 726,
-        "responseHeaders": {
-            "access-control-allow-credentials": "true",
-            "access-control-allow-origin": "http://localhost:3000",
-            "vary": "Origin",
-            "access-control-expose-headers": "ETag, Location",
-            "cache-control": "no-cache, private",
-            "x-content-type-options": "nosniff",
-            "x-xss-protection": "1; mode=block",
-            "x-frame-options": "SAMEORIGIN",
-            "content-type": "application/json;charset=UTF-8",
-            "connection": "keep-alive"
-        }
-    },
-    {
-        "path": "/api/38/organisationUnits/ImspTQPwCqd?fields=displayName,path,id&paging=false",
-        "featureName": "The user list can be searched",
-        "static": false,
-        "count": 1,
-        "nonDeterministic": false,
-        "method": "GET",
-        "requestBody": "",
-        "requestHeaders": {
-            "host": "localhost:8080",
-            "proxy-connection": "keep-alive",
-            "accept": "application/json",
-            "origin": "http://localhost:3000",
-            "sec-fetch-site": "same-site",
-            "sec-fetch-mode": "cors"
-        },
-        "statusCode": 200,
-        "responseBody": "{\"id\":\"ImspTQPwCqd\",\"path\":\"/ImspTQPwCqd\",\"displayName\":\"Sierra Leone\"}",
-        "responseSize": 71,
+        "responseBody": "{\"userGroups\":[{\"id\":\"wl5cDMuUhmF\",\"displayName\":\"Administrators\"},{\"id\":\"vAvEltyXGbD\",\"displayName\":\"Africare HQ\"},{\"id\":\"ZoHNWQajIoe\",\"displayName\":\"Bo District M&E officers\"},{\"id\":\"th4S6ovwcr8\",\"displayName\":\"Bonthe District M&E Officers\"},{\"id\":\"wAAA1agEHin\",\"displayName\":\"Cape Town University Research Group\"},{\"id\":\"GogLpGmkL0g\",\"displayName\":\"_DATASET_Child Health Program Manager\"},{\"id\":\"tH0GcNZZ1vW\",\"displayName\":\"_DATASET_Data entry clerk\"},{\"id\":\"w900PX10L7O\",\"displayName\":\"_DATASET_M and E Officer\"},{\"id\":\"B6JNeAQ6akX\",\"displayName\":\"_DATASET_Superuser\"},{\"id\":\"zz6XckBrLlj\",\"displayName\":\"_DATASET_System administrator (ALL)\"},{\"id\":\"qlEhuAA77gc\",\"displayName\":\"EPI Stock Completeness Notification Recipients\"},{\"id\":\"ZrsVF7IJ93y\",\"displayName\":\"Family Health Partner\"},{\"id\":\"sZRhXMPbcWc\",\"displayName\":\"Family Planning Program Coordinators\"},{\"id\":\"QYrzIjSfI8z\",\"displayName\":\"Feedback Message Recipients\"},{\"id\":\"Rg8wusV7QYi\",\"displayName\":\"HIV Program Coordinators\"},{\"id\":\"YCPJDwzbe8T\",\"displayName\":\"Kenya staff\"},{\"id\":\"jvrEwEJ2yZn\",\"displayName\":\"Malaria program\"},{\"id\":\"k3xzluFKVyw\",\"displayName\":\"Nairobi University Research Group\"},{\"id\":\"GZSvMCVowAx\",\"displayName\":\"Partner for Health International\"},{\"id\":\"M1Qre0247G3\",\"displayName\":\"_PROGRAM_Antenatal care program\"},{\"id\":\"H9XnHoWRKCg\",\"displayName\":\"_PROGRAM_Child Health Tracker\"},{\"id\":\"NTC8GjJ7p8P\",\"displayName\":\"_PROGRAM_Inpatient program\"},{\"id\":\"vRoAruMnNpB\",\"displayName\":\"_PROGRAM_MNCH / PNC (Adult Woman) program\"},{\"id\":\"gXpmQO6eEOo\",\"displayName\":\"_PROGRAM_Superuser\"},{\"id\":\"pBnkuih0c1K\",\"displayName\":\"_PROGRAM_System administrator (ALL)\"},{\"id\":\"Kk12LkEWtXp\",\"displayName\":\"_PROGRAM_TB program\"},{\"id\":\"z1gNAf2zUxZ\",\"displayName\":\"_PROGRAM_WHO MCH program\"},{\"id\":\"lFHP5lLkzVr\",\"displayName\":\"System administrators\"},{\"id\":\"hj0nnsVsPLU\",\"displayName\":\"TB Program Coordinators\"},{\"id\":\"L4XTzgbdza3\",\"displayName\":\"Wakiki\"},{\"id\":\"Iqfwd3j2qe5\",\"displayName\":\"World Health Program\"}]}",
+        "responseSize": 1983,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
             "access-control-allow-origin": "http://localhost:3000",

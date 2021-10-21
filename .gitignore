@@ -29,3 +29,4 @@ build
 
 # Cypress
 cypress.env.json
+cypress/screenshots
