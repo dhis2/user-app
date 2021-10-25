@@ -1,9 +1,11 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import debounce from 'lodash.debounce'
 import { useState, useEffect, useRef } from 'react'
-import { EMPTY_AUTHORITY_SECTIONS } from './constants'
 import { filterAuthorities } from './filterAuthorities'
-import { groupAuthorities } from './groupAuthorities.js'
+import {
+    groupAuthorities,
+    getEmptyAuthorityGroups,
+} from './groupAuthorities.js'
 import { makeAuthoritySelectionManager } from './makeAuthoritySelectionManager'
 
 const query = {
@@ -25,8 +27,8 @@ export const useAuthorities = ({
         makeAuthoritySelectionManager(initiallySelected, reduxFormOnChange)
     )
     const [searchChunks, setSearchChunks] = useState(null)
-    const [authorities, setAuthorities] = useState(EMPTY_AUTHORITY_SECTIONS)
-    const { loading, error, data } = useDataQuery(query)
+    const [authorities, setAuthorities] = useState(getEmptyAuthorityGroups())
+    const { fetching: loading, error, data } = useDataQuery(query)
     const debouncedFilterUpdateRef = useRef(
         debounce((filterString, filterSelectedOnly) => {
             const newSearchChunks = filterString
@@ -46,7 +48,7 @@ export const useAuthorities = ({
     )
 
     useEffect(() => {
-        if (data) {
+        if (data && !loading) {
             const { systemAuthorities } = data.authorities
 
             if (authoritySelectionManagerRef.current.isEmpty()) {
@@ -77,6 +79,16 @@ export const useAuthorities = ({
             debouncedFilterUpdateRef.current(filterString, filterSelectedOnly)
         }
     }, [filterString, filterSelectedOnly])
+
+    useEffect(
+        () => () => {
+            debouncedFilterUpdateRef.current.cancel()
+            allGroupedAuthoritiesRef.current = null
+            authoritySelectionManagerRef.current = null
+            debouncedFilterUpdateRef.current = null
+        },
+        []
+    )
 
     return {
         loading,

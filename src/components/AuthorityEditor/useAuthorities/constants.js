@@ -157,7 +157,6 @@ export const EMPTY_AUTHORITY_SECTIONS = {
     metadata: {
         id: METADATA,
         name: i18n.t('Metadata'),
-        items: [],
         headers: [
             i18n.t('Name'),
             i18n.t('Add/Update Public'),
@@ -168,22 +167,18 @@ export const EMPTY_AUTHORITY_SECTIONS = {
     },
     apps: {
         name: i18n.t('Apps'),
-        items: [],
         headers: [i18n.t('Name')],
     },
     tracker: {
         name: i18n.t('Tracker'),
-        items: [],
         headers: [i18n.t('Name')],
     },
     importExport: {
         name: i18n.t('Import-Export'),
-        items: [],
         headers: [i18n.t('Name')],
     },
     system: {
         name: i18n.t('System'),
-        items: [],
         headers: [i18n.t('Name')],
     },
 }

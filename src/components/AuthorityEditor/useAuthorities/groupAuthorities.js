@@ -17,6 +17,15 @@ import {
     EMPTY_AUTHORITY_SECTIONS,
 } from './constants.js'
 
+const getEmptyAuthorityGroups = () =>
+    Object.entries(EMPTY_AUTHORITY_SECTIONS).reduce((acc, [key, value]) => {
+        acc[key] = {
+            ...value,
+            items: [],
+        }
+        return acc
+    }, {})
+
 const sortGroupedAuthorities = groupedAuthories => {
     Object.keys(groupedAuthories).forEach(key => {
         const group = groupedAuthories[key]
@@ -133,33 +142,30 @@ const groupAuthorities = authorities => {
     }, new Map())
 
     // Append items to the groupedAuthorities accumulator and return the accumulated object
-    const groupedAuthories = authorities.reduce(
-        (groupedAuthorities, auth) => {
-            if (startsWith(auth.id, APP_AUTH_PREFIX)) {
-                // Group under apps
-                groupedAuthorities.apps.items.push(auth)
-                lookup.delete(auth.id)
-            } else if (hasNoGroupSuffix(auth)) {
-                // Group under specified key-value section
-                addToAuthoritySection(auth, groupedAuthorities, lookup)
-            } else {
-                const metadataGroup = createMetadataGroup(auth, lookup)
+    const groupedAuthorities = authorities.reduce((acc, auth) => {
+        if (startsWith(auth.id, APP_AUTH_PREFIX)) {
+            // Group under apps
+            acc.apps.items.push(auth)
+            lookup.delete(auth.id)
+        } else if (hasNoGroupSuffix(auth)) {
+            // Group under specified key-value section
+            addToAuthoritySection(auth, acc, lookup)
+        } else {
+            const metadataGroup = createMetadataGroup(auth, lookup)
 
-                if (metadataGroup) {
-                    // If any type of metadata group was created add it to the metadata items list
-                    groupedAuthorities.metadata.items.push(metadataGroup)
-                } else if (lookup.get(auth.id)) {
-                    // If no metadata group was created, we are dealing with and authority which had a metadata suffix,
-                    // but actually was not a metadata authority
-                    addToAuthoritySection(auth, groupedAuthorities, lookup)
-                }
+            if (metadataGroup) {
+                // If any type of metadata group was created add it to the metadata items list
+                acc.metadata.items.push(metadataGroup)
+            } else if (lookup.get(auth.id)) {
+                // If no metadata group was created, we are dealing with and authority which had a metadata suffix,
+                // but actually was not a metadata authority
+                addToAuthoritySection(auth, acc, lookup)
             }
-            return groupedAuthorities
-        },
-        { ...EMPTY_AUTHORITY_SECTIONS }
-    )
+        }
+        return acc
+    }, getEmptyAuthorityGroups())
 
-    return sortGroupedAuthorities(groupedAuthories)
+    return sortGroupedAuthorities(groupedAuthorities)
 }
 
-export { groupAuthorities }
+export { groupAuthorities, getEmptyAuthorityGroups }
