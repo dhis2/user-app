@@ -1,7 +1,6 @@
 /* eslint-disable max-params */
 
 import i18n from '@dhis2/d2-i18n'
-import { groupAuthorities } from '../components/AuthorityEditor/useAuthorities/groupAuthorities.js'
 import { CURRENT_USER_ORG_UNITS_FIELDS } from '../constants/queryFields'
 import {
     INTERFACE_LANGUAGE,
@@ -286,21 +285,6 @@ class Api {
     /**************************
      ****** USER ROLES ********
      **************************/
-
-    // TODO: A proper API endpoint will be made available for this call once ALL struts apps
-    // TODO: REMOVE NOW
-    // have been ported to React. Once this is done we need to update this method.
-    getGroupedAuthorities = () => {
-        if (this.groupedAuths) {
-            // Return cached version if available
-            return Promise.resolve(this.groupedAuths)
-        }
-        const url = `${this.getContextPath()}/dhis-web-commons/security/getSystemAuthorities.action`
-        return this.d2Api.request('GET', url).then(({ systemAuthorities }) => {
-            // Store on instance for subsequent requests
-            return (this.groupedAuths = groupAuthorities(systemAuthorities))
-        })
-    }
 
     // Calling role.save() would result in an error in d2 because d2 expects you always want to
     // save { id: <ID> } objects but authorities should be saved as a plain JSON array
