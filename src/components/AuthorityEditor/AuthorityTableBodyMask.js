@@ -23,28 +23,26 @@ const AuthorityTableBodyMask = ({
             <DataTableRow>
                 <DataTableCell
                     colSpan={colSpan}
-                    muted={!loading && noMatches}
-                    error={!loading && error}
+                    muted={!loading && !error && noMatches}
+                    error={!loading && !!error}
                     className={cx({ [styles.fullHeight]: loading })}
                     staticStyle
                     align="center"
                 >
-                    {loading && (
+                    {loading ? (
                         <CenteredContent>
                             <CircularLoader />
                         </CenteredContent>
-                    )}
-
-                    {!loading &&
-                        error &&
+                    ) : error ? (
                         createHumanErrorMessage(
                             error,
                             i18n.t(
                                 'There was a problem retreiving the available authorities.'
                             )
-                        )}
-
-                    {!loading && noMatches && i18n.t('No matches found')}
+                        )
+                    ) : (
+                        i18n.t('No matches found')
+                    )}
                 </DataTableCell>
             </DataTableRow>
         )

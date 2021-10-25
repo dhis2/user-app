@@ -55,6 +55,7 @@ const AuthorityTable = ({
                     loading={loading}
                     error={error}
                     noMatches={items.length === 0}
+                    colSpan={String(headers.length)}
                 >
                     {items.map((item, index) => (
                         <DataTableRow key={item.id || index}>
