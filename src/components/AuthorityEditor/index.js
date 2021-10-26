@@ -1,2 +1,2 @@
-import AuthorityEditor from './AuthorityEditor'
+import { AuthorityEditor } from './AuthorityEditor'
 export default AuthorityEditor

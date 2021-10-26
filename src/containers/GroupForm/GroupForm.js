@@ -146,7 +146,6 @@ class GroupForm extends Component {
             }
 
             if (fieldRenderer === renderSearchableGroupEditor) {
-                conf.availableItemsQuery = api[conf.availableItemsQuery]
                 if (isRequiredField) {
                     conf.assignedItemsLabel += ' *'
                 }
