@@ -1,30 +1,17 @@
 import { CheckboxField, DataTableColumnHeader } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState, useEffect } from 'react'
-import { useSelectionContext } from './useAuthorities/AuthoritySelectionContext'
+import React from 'react'
+import { useColumnSelectionState } from './useAuthorities/useColumnSelectionState'
 
-const AuthorityHeaderCell = ({ header, items, disabled }) => {
-    const { areAllSelected, updateAuthorities } = useSelectionContext()
-    const [checked, setChecked] = useState(false)
-    const toggleAll = ({ checked }) => {
-        updateAuthorities(
-            items.map(({ id }) => id),
-            checked
-        )
-        setChecked(checked)
-    }
-
-    useEffect(() => {
-        setChecked(areAllSelected(items.map(({ id }) => id)))
-    }, [items])
-
+const AuthorityHeaderCell = ({ header, disabled, sectionId }) => {
+    const { selected, onChange } = useColumnSelectionState(sectionId)
     return (
         <DataTableColumnHeader fixed top="0">
             <CheckboxField
                 dense
                 label={header}
-                onChange={toggleAll}
-                checked={checked}
+                onChange={onChange}
+                checked={selected}
                 disabled={disabled}
             />
         </DataTableColumnHeader>
@@ -33,7 +20,7 @@ const AuthorityHeaderCell = ({ header, items, disabled }) => {
 
 AuthorityHeaderCell.propTypes = {
     header: PropTypes.string.isRequired,
-    items: PropTypes.array.isRequired,
+    sectionId: PropTypes.string.isRequired,
     disabled: PropTypes.bool,
 }
 

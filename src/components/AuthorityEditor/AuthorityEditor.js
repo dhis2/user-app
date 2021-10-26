@@ -4,7 +4,6 @@ import styles from './AuthorityEditor.module.css'
 import { AuthorityFilter } from './AuthorityFilter'
 import { AuthorityTable } from './AuthorityTable'
 import { AuthoritySelectionContext } from './useAuthorities/AuthoritySelectionContext'
-import { METADATA } from './useAuthorities/constants'
 import { useAuthorities } from './useAuthorities/index.js'
 
 const AuthorityEditor = ({ initiallySelected, reduxFormOnChange }) => {
@@ -42,9 +41,9 @@ const AuthorityEditor = ({ initiallySelected, reduxFormOnChange }) => {
                             items={authSection.items}
                             key={key}
                             loading={loading}
-                            metadata={authSection.id === METADATA}
                             name={authSection.name}
                             searchChunks={searchChunks}
+                            sectionId={key}
                         />
                     ))}
                 </AuthoritySelectionContext.Provider>

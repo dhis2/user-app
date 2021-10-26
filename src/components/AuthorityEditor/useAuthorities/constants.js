@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 
-export const METADATA = 'METADATA'
+export const METADATA = 'metadata'
 
 export const AUTHORITY_GROUP_NAMES = {
     ALL: i18n.t('All (Full authority)'),

@@ -1,38 +1,22 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext } from 'react'
 
 const defaultFn = () => {
     throw new Error('Authority Selection Context has not been initialized')
 }
 
 const AuthoritySelectionContext = createContext({
-    registerStateSetters: defaultFn,
-    updateAuthority: defaultFn,
-    updateAuthorities: defaultFn,
-    isSelected: defaultFn,
-    isImplicitlySelected: defaultFn,
-    areAllSelected: defaultFn,
-    populate: defaultFn,
     isEmpty: defaultFn,
+    isImplicitlySelected: defaultFn,
+    isSelected: defaultFn,
+    isColumnSelected: defaultFn,
+    populate: defaultFn,
+    registerColumnHeaderStateSetters: defaultFn,
+    registerStateSetters: defaultFn,
+    toggleAuthority: defaultFn,
+    toggleColumnHeader: defaultFn,
+    updateColumnHeaders: defaultFn,
 })
 
 const useSelectionContext = () => useContext(AuthoritySelectionContext)
 
-const useSelectionState = id => {
-    const {
-        isSelected,
-        isImplicitlySelected,
-        registerStateSetters,
-        updateAuthority,
-    } = useSelectionContext()
-    const [selected, setSelected] = useState(isSelected(id))
-    const [implicitlySelected, setImplicitlySelected] = useState(
-        isImplicitlySelected(id)
-    )
-    const onChange = ({ checked }) => updateAuthority(id, checked)
-
-    registerStateSetters(id, setSelected, setImplicitlySelected)
-
-    return { selected, implicitlySelected, onChange }
-}
-
-export { AuthoritySelectionContext, useSelectionContext, useSelectionState }
+export { AuthoritySelectionContext, useSelectionContext }

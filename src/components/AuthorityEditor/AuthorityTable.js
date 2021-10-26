@@ -14,75 +14,80 @@ import { AuthorityMetadataCells } from './AuthorityMetadataCells'
 import { AuthorityMetadataHeaderCells } from './AuthorityMetadataHeaderCells'
 import styles from './AuthorityTable.module.css'
 import { AuthorityTableBodyMask } from './AuthorityTableBodyMask'
+import { METADATA } from './useAuthorities/constants'
 
 const AuthorityTable = ({
     headers,
     items,
     name,
+    sectionId,
     error,
     loading,
-    metadata,
     searchChunks,
-}) => (
-    <div
-        className={cx(styles.tableContainer, {
-            [styles.metadata]: metadata,
-        })}
-    >
-        <DataTableToolbar>
-            <h2 className={styles.toolbarHeader}>{name}</h2>
-        </DataTableToolbar>
-        <DataTable scrollHeight="375px">
-            <DataTableHead>
-                <DataTableRow>
-                    {metadata ? (
-                        <AuthorityMetadataHeaderCells
-                            items={items}
-                            headers={headers}
-                            disabled={items.length === 0 || loading}
-                        />
-                    ) : (
-                        <AuthorityHeaderCell
-                            items={items}
-                            header={headers[0]}
-                            disabled={items.length === 0 || loading}
-                        />
-                    )}
-                </DataTableRow>
-            </DataTableHead>
-            <DataTableBody>
-                <AuthorityTableBodyMask
-                    loading={loading}
-                    error={error}
-                    noMatches={items.length === 0}
-                    colSpan={String(headers.length)}
-                >
-                    {items.map((item, index) => (
-                        <DataTableRow key={item.id || index}>
-                            {metadata ? (
-                                <AuthorityMetadataCells
-                                    items={item.items}
-                                    name={item.name}
-                                    searchChunks={searchChunks}
-                                />
-                            ) : (
-                                <AuthorityCell
-                                    empty={item.empty}
-                                    id={item.id}
-                                    implicit={item.implicit}
-                                    label
-                                    name={item.name}
-                                    searchChunks={searchChunks}
-                                />
-                            )}
-                        </DataTableRow>
-                    ))}
-                </AuthorityTableBodyMask>
-            </DataTableBody>
-        </DataTable>
-    </div>
-)
+}) => {
+    const isMetaData = sectionId === METADATA
 
+    return (
+        <div
+            className={cx(styles.tableContainer, {
+                [styles.metadata]: isMetaData,
+            })}
+        >
+            <DataTableToolbar>
+                <h2 className={styles.toolbarHeader}>{name}</h2>
+            </DataTableToolbar>
+            <DataTable scrollHeight="375px">
+                <DataTableHead>
+                    <DataTableRow>
+                        {isMetaData ? (
+                            <AuthorityMetadataHeaderCells
+                                headers={headers}
+                                disabled={items.length === 0 || loading}
+                            />
+                        ) : (
+                            <AuthorityHeaderCell
+                                items={items}
+                                header={headers[0]}
+                                disabled={items.length === 0 || loading}
+                                sectionId={sectionId}
+                            />
+                        )}
+                    </DataTableRow>
+                </DataTableHead>
+                <DataTableBody>
+                    <AuthorityTableBodyMask
+                        loading={loading}
+                        error={error}
+                        noMatches={items.length === 0}
+                        colSpan={String(headers.length)}
+                    >
+                        {items.map((item, index) => (
+                            <DataTableRow key={item.id || index}>
+                                {isMetaData ? (
+                                    <AuthorityMetadataCells
+                                        items={item.items}
+                                        name={item.name}
+                                        searchChunks={searchChunks}
+                                    />
+                                ) : (
+                                    <AuthorityCell
+                                        empty={item.empty}
+                                        id={item.id}
+                                        implicit={item.implicit}
+                                        label
+                                        name={item.name}
+                                        searchChunks={searchChunks}
+                                        sectionId={sectionId}
+                                    />
+                                )}
+                            </DataTableRow>
+                        ))}
+                    </AuthorityTableBodyMask>
+                </DataTableBody>
+            </DataTable>
+        </div>
+    )
+}
 AuthorityTable.propTypes = {
     items: PropTypes.arrayOf(
         PropTypes.shape({
@@ -91,10 +96,10 @@ AuthorityTable.propTypes = {
         })
     ).isRequired,
     name: PropTypes.string.isRequired,
+    sectionId: PropTypes.string.isRequired,
     error: PropTypes.any,
     headers: PropTypes.arrayOf(PropTypes.string),
     loading: PropTypes.bool,
-    metadata: PropTypes.bool,
     searchChunks: PropTypes.arrayOf(PropTypes.string),
 }
 

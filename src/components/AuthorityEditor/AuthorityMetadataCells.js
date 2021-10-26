@@ -1,8 +1,9 @@
 import { DataTableCell } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { memo } from 'react'
 import { AuthorityCell } from './AuthorityCell'
 import { HighlightableText } from './HighlightableText'
+import { METADATA } from './useAuthorities/constants'
 
 const AuthorityMetadataCells = ({ name, items, searchChunks }) => (
     <>
@@ -13,6 +14,7 @@ const AuthorityMetadataCells = ({ name, items, searchChunks }) => (
             <AuthorityCell
                 key={item.id || index}
                 empty={item.empty}
+                sectionId={`${METADATA}_${index}`}
                 id={item.id}
                 name={item.name}
                 implicit={item.implicit}
@@ -28,4 +30,6 @@ AuthorityMetadataCells.propTypes = {
     searchChunks: PropTypes.arrayOf(PropTypes.string),
 }
 
-export { AuthorityMetadataCells }
+const MemoizedAuthorityMetadataCells = memo(AuthorityMetadataCells)
+
+export { MemoizedAuthorityMetadataCells as AuthorityMetadataCells }

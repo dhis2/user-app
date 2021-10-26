@@ -22,10 +22,12 @@ export const useAuthorities = ({
     filterSelectedOnly,
     reduxFormOnChange,
 }) => {
+    const [ready, setReady] = useState(false)
     const allGroupedAuthoritiesRef = useRef(null)
     const authoritySelectionManagerRef = useRef(
         makeAuthoritySelectionManager(initiallySelected, reduxFormOnChange)
     )
+    // const columnSelectionManagerRef = useRef(null)
     const [searchChunks, setSearchChunks] = useState(null)
     const [authorities, setAuthorities] = useState(getEmptyAuthorityGroups())
     const { fetching: loading, error, data } = useDataQuery(query)
@@ -51,13 +53,16 @@ export const useAuthorities = ({
         if (data && !loading) {
             const { systemAuthorities } = data.authorities
 
-            if (authoritySelectionManagerRef.current.isEmpty()) {
-                authoritySelectionManagerRef.current.populate(systemAuthorities)
-            }
-
             if (!allGroupedAuthoritiesRef.current) {
                 allGroupedAuthoritiesRef.current =
                     groupAuthorities(systemAuthorities)
+            }
+
+            if (authoritySelectionManagerRef.current.isEmpty()) {
+                authoritySelectionManagerRef.current.populate(
+                    systemAuthorities,
+                    allGroupedAuthoritiesRef.current
+                )
             }
 
             setAuthorities(
@@ -68,6 +73,7 @@ export const useAuthorities = ({
                     filterSelectedOnly: false,
                 })
             )
+            setReady(true)
         }
     }, [data])
 
@@ -91,7 +97,7 @@ export const useAuthorities = ({
     )
 
     return {
-        loading,
+        loading: loading || !ready,
         error,
         authorities,
         searchChunks,

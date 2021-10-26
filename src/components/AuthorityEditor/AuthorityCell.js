@@ -1,13 +1,24 @@
 import { CheckboxField, DataTableCell } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { memo } from 'react'
 import styles from './AuthorityCell.module.css'
 import { HighlightableText } from './HighlightableText'
-import { useSelectionState } from './useAuthorities/AuthoritySelectionContext'
+import { useSelectionState } from './useAuthorities/useSelectionState'
 
-const AuthorityCell = ({ empty, id, label, name, implicit, searchChunks }) => {
-    const { selected, implicitlySelected, onChange } = useSelectionState(id)
+const AuthorityCell = ({
+    empty,
+    id,
+    implicit,
+    label,
+    name,
+    searchChunks,
+    sectionId,
+}) => {
+    const { selected, implicitlySelected, onChange } = useSelectionState(
+        id,
+        sectionId
+    )
 
     return (
         <DataTableCell>
@@ -40,6 +51,9 @@ AuthorityCell.propTypes = {
     label: PropTypes.bool,
     name: PropTypes.string,
     searchChunks: PropTypes.arrayOf(PropTypes.string),
+    sectionId: PropTypes.string,
 }
 
-export { AuthorityCell }
+const MemoizedAuthorityCell = memo(AuthorityCell)
+
+export { MemoizedAuthorityCell as AuthorityCell }
