@@ -14,7 +14,6 @@ const AuthoritySelectionContext = createContext({
     registerStateSetters: defaultFn,
     toggleAuthority: defaultFn,
     toggleColumnHeader: defaultFn,
-    updateColumnHeaders: defaultFn,
 })
 
 const useSelectionContext = () => useContext(AuthoritySelectionContext)

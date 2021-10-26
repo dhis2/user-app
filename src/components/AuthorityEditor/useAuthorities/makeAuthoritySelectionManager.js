@@ -187,7 +187,6 @@ const makeAuthoritySelectionManager = (
         registerStateSetters,
         toggleAuthority,
         toggleColumnHeader,
-        updateColumnHeaders,
     }
 }
 
