@@ -135,7 +135,7 @@ const addToAuthoritySection = (auth, groupedAuthorities, lookup) => {
  * @returns {Object} - The grouped authorities object
  */
 const groupAuthorities = authorities => {
-    // A lookup map that can be used to verify the existence of a particular authority ID in linear time
+    // A lookup map that can be used to verify the existence of a particular authority ID in constant time
     const lookup = authorities.reduce((lookup, auth) => {
         lookup.set(auth.id, auth)
         return lookup
