@@ -1,0 +1,7 @@
+.centered label {
+    justify-content: center !important;
+}
+
+.centered label .icon {
+    margin: 0 !important;
+}

@@ -1,18 +1,17 @@
-.section {
+.tableContainer {
     width: 100%;
 }
 
 @media (min-width: 960px) {
-    .section {
+    .tableContainer {
         width: calc(50% - 1.5rem / 2);
+    }
+    .tableContainer.metadata {
+        width: 100%;
     }
 }
 
-.metadata {
-    width: 100%;
-}
-
-.authSectionHeader {
+.toolbarHeader {
     margin: 0;
     font-weight: 500;
     font-size: 18px;

@@ -161,7 +161,6 @@ class UserForm extends Component {
             user,
             isRequiredField
         )
-        conf.availableItemsQuery = api[conf.availableItemsQuery]
         conf.initialValues = fieldConfig.initialItemsSelector(user)
     }
 

@@ -18,7 +18,7 @@ import getInitiallyExpandedUnits from './getInitiallyExpandedUnits.js'
 import getInitiallySelectedUnits from './getInitiallySelectedUnits.js'
 import getOrgUnitRoots from './getOrgUnitRoots.js'
 import removeLastPathSegment from './removeLastPathSegment.js'
-import classes from './SearchableOrgUnitTree.module.css'
+import styles from './SearchableOrgUnitTree.module.css'
 
 /**
  * Renders a @dhis2/ui OrganisationUnitTree with an AsyncAutoComplete above it and a button strip below
@@ -119,13 +119,13 @@ const SearchableOrgUnitTree = ({
     }
 
     return (
-        <div className={cx(classes.wrapper, classes[side], className)}>
+        <div className={cx(styles.wrapper, styles[side], className)}>
             <Field error={!!errorText} validationText={errorText || ''}>
                 {/* Without `display: grid`, AsyncAutoComplete takes up too much vertical space */}
-                <div className={classes.grid}>
-                    <div className={classes.header}>
+                <div className={styles.grid}>
+                    <div className={styles.header}>
                         {headerText && (
-                            <h4 className={classes.headerText}>{headerText}</h4>
+                            <h4 className={styles.headerText}>{headerText}</h4>
                         )}
                         <AsyncAutoComplete
                             query={api.queryOrgUnits}
@@ -137,7 +137,7 @@ const SearchableOrgUnitTree = ({
 
                     <Divider margin="0" />
 
-                    <div className={classes.scrollBox}>
+                    <div className={styles.scrollBox}>
                         <OrganisationUnitTree
                             roots={roots.map(({ id }) => id)}
                             onChange={toggleSelectedOrgUnits}
@@ -150,7 +150,7 @@ const SearchableOrgUnitTree = ({
                 </div>
             </Field>
             {confirmSelection && (
-                <div className={classes.buttonStrip}>
+                <div className={styles.buttonStrip}>
                     <ButtonStrip>
                         <Button
                             primary={true}

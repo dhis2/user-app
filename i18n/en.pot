@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-10-20T13:15:54.351Z\n"
-"PO-Revision-Date: 2021-10-20T13:15:54.351Z\n"
+"POT-Creation-Date: 2021-10-26T13:49:06.785Z\n"
+"PO-Revision-Date: 2021-10-26T13:49:06.785Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -18,17 +18,14 @@ msgstr ""
 msgid "Use database locale / no translation"
 msgstr "Use database locale / no translation"
 
-msgid "There was a problem retreiving the available authorities."
-msgstr "There was a problem retreiving the available authorities."
-
-msgid "Authorities"
-msgstr "Authorities"
-
 msgid "Search"
 msgstr "Search"
 
 msgid "Selected authorities only"
 msgstr "Selected authorities only"
+
+msgid "There was a problem retrieving the available authorities."
+msgstr "There was a problem retrieving the available authorities."
 
 msgid "No matches found"
 msgstr "No matches found"
@@ -526,6 +523,9 @@ msgstr "There was a problem saving the user role."
 
 msgid "Description"
 msgstr "Description"
+
+msgid "Authorities"
+msgstr "Authorities"
 
 msgid "There was an error deleting the user role: {{- error}}"
 msgstr "There was an error deleting the user role: {{- error}}"
