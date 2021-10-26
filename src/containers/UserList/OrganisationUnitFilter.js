@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useRef } from 'react'
 import SearchableOrgUnitTree from '../../components/SearchableOrgUnitTree'
 import { TEI_SEARCH_ORG_UNITS } from '../UserForm/config'
 import styles from './OrganisationUnitFilter.module.css'
@@ -23,32 +23,42 @@ const formatList = items => {
 const OrganisationUnitFilter = ({
     organisationUnits,
     onOrganisationUnitsChange,
-}) => (
-    <div className={styles.rootInput}>
-        <Select
-            input={
-                <Input
-                    prefix={i18n.t('Org.unit')}
-                    value={formatList(
-                        organisationUnits.map(({ displayName }) => displayName)
-                    )}
-                    valueClassName={styles.inputValue}
-                />
-            }
-            menu={
-                <SearchableOrgUnitTree
-                    className={styles.orgUnitTree}
-                    orgUnitType={TEI_SEARCH_ORG_UNITS}
-                    initiallySelected={organisationUnits}
-                    confirmSelection={onOrganisationUnitsChange}
-                    dense
-                />
-            }
-            maxHeight="350px"
-            dense
-        />
-    </div>
-)
+}) => {
+    const selectRef = useRef()
+
+    return (
+        <div className={styles.rootInput}>
+            <Select
+                ref={selectRef}
+                input={
+                    <Input
+                        prefix={i18n.t('Org.unit')}
+                        value={formatList(
+                            organisationUnits.map(
+                                ({ displayName }) => displayName
+                            )
+                        )}
+                        valueClassName={styles.inputValue}
+                    />
+                }
+                menu={
+                    <SearchableOrgUnitTree
+                        className={styles.orgUnitTree}
+                        orgUnitType={TEI_SEARCH_ORG_UNITS}
+                        initiallySelected={organisationUnits}
+                        confirmSelection={selectedOrgUnits => {
+                            onOrganisationUnitsChange(selectedOrgUnits)
+                            selectRef.current.handleClose()
+                        }}
+                        dense
+                    />
+                }
+                maxHeight="350px"
+                dense
+            />
+        </div>
+    )
+}
 
 OrganisationUnitFilter.propTypes = {
     organisationUnits: PropTypes.arrayOf(
