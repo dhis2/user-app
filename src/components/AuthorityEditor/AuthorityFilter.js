@@ -28,7 +28,6 @@ const AuthorityFilter = ({
             label={i18n.t('Selected authorities only')}
             checked={filterSelectedOnly}
             onChange={({ checked }) => setFilterSelectedOnly(checked)}
-            style={{ width: '300px' }}
         />
     </div>
 )
