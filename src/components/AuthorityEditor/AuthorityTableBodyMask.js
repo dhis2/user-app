@@ -37,7 +37,7 @@ const AuthorityTableBodyMask = ({
                         createHumanErrorMessage(
                             error,
                             i18n.t(
-                                'There was a problem retreiving the available authorities.'
+                                'There was a problem retrieving the available authorities.'
                             )
                         )
                     ) : (
