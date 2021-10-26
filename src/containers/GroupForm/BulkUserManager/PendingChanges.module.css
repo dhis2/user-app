@@ -1,0 +1,30 @@
+
+.pendingChangesRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--colors-grey200);
+    border: 1px solid var(--colors-grey200);
+    padding: var(--spacers-dp8);
+}
+
+.pendingAddRow {
+    composes: pendingChangesRow;
+    background-color: var(--colors-green050);
+}
+
+.pendingRemoveRow {
+    composes: pendingChangesRow;
+    background-color: var(--colors-red050);
+}
+
+.pendingChangesCount {
+    font-weight: 500;
+    color: var(--colors-grey800);
+}
+
+.pendingChangeSummary {
+    display: flex;
+    align-items: center;
+    gap: var(--spacers-dp12);
+}

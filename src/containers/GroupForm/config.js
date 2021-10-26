@@ -1,10 +1,10 @@
 import i18n from '@dhis2/d2-i18n'
 import asArray from '../../utils/asArray'
 import {
-    renderText,
     renderTextField,
     renderSearchableGroupEditor,
 } from '../../utils/fieldRenderers'
+import BulkUserManager from './BulkUserManager/BulkUserManager'
 
 export const FORM_NAME = 'groupForm'
 export const NAME = 'name'
@@ -34,15 +34,7 @@ export const getFields = () => [
     },
     {
         name: 'manage_users_info',
-        fieldRenderer: renderText,
-        label: i18n.t(
-            'To add a user to this group, go to the User section and edit the user group settings for a specific user.'
-        ),
-        style: {
-            border: '1px solid #bdbdbd',
-            backgroundColor: '#e5e5e5',
-            padding: 12,
-        },
+        component: BulkUserManager,
     },
     {
         name: MANAGED_GROUPS,

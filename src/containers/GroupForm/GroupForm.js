@@ -128,6 +128,11 @@ class GroupForm extends Component {
     renderFields(fields) {
         const { group } = this.props
         return fields.map(fieldConfig => {
+            if (fieldConfig.component) {
+                const Component = fieldConfig.component
+                return <Component groupId={this.props.group.id} />
+            }
+
             const {
                 name,
                 fieldRenderer,
