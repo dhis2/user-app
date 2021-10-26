@@ -2,6 +2,7 @@ import i18n from '@dhis2/d2-i18n'
 
 export const METADATA = 'metadata'
 
+// Group names for metadata table and ALL authority
 export const AUTHORITY_GROUP_NAMES = {
     ALL: i18n.t('All (Full authority)'),
     F_ANALYTICSTABLEHOOK: i18n.t('Analytics Table Hook'),
@@ -102,19 +103,27 @@ export const AUTHS_WITH_IMPLICIT_ADD_PRIVATE_AND_DELETE = new Set([
 
 export const AUTHORITY_GROUPS = {
     tracker: new Set([
+        'ACTION_TRACKER_CREATE_ACTION',
+        'ACTION_TRACKER_CREATE_PROGRESS',
+        'ACTION_TRACKER_DELETE_ACTION',
+        'ACTION_TRACKER_EDIT_ACTION',
+        'ACTION_TRACKER_EDIT_PROGRESS',
+        'F_ENROLLMENT_CASCADE_DELETE',
+        'F_IGNORE_TRACKER_REQUIRED_VALUE_VALIDATION',
         'F_PROGRAM_DASHBOARD_CONFIG_ADMIN',
-        'F_PROGRAM_ENROLLMENT',
         'F_PROGRAM_ENROLLMENT_READ',
+        'F_PROGRAM_ENROLLMENT',
+        'F_PROGRAM_RULE_MANAGEMENT',
         'F_PROGRAM_UNENROLLMENT',
         'F_TEI_CASCADE_DELETE',
         'F_TRACKED_ENTITY_DATAVALUE_READ',
-        'F_TRACKED_ENTITY_INSTANCE_SEARCH',
         'F_TRACKED_ENTITY_INSTANCE_SEARCH_IN_ALL_ORGUNITS',
+        'F_TRACKED_ENTITY_INSTANCE_SEARCH',
+        'F_TRACKED_ENTITY_MERGE',
         'F_TRACKED_ENTITY_UPDATE',
+        'F_TRACKER_IMPORTER_EXPERIMENTAL',
         'F_UNCOMPLETE_EVENT',
         'F_VIEW_EVENT_ANALYTICS',
-        'F_PROGRAM_RULE_MANAGEMENT',
-        'F_ENROLLMENT_CASCADE_DELETE',
     ]),
     importExport: new Set([
         'F_EXPORT_DATA',
