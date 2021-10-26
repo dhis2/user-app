@@ -17,7 +17,7 @@ import getInitiallyExpandedUnits from './getInitiallyExpandedUnits.js'
 import getInitiallySelectedUnits from './getInitiallySelectedUnits.js'
 import getOrgUnitRoots from './getOrgUnitRoots.js'
 import removeLastPathSegment from './removeLastPathSegment.js'
-import classes from './SearchableOrgUnitTree.module.css'
+import styles from './SearchableOrgUnitTree.module.css'
 
 /**
  * Renders a @dhis2/ui OrganisationUnitTree with an AsyncAutoComplete above it and a button strip below
@@ -117,15 +117,15 @@ const SearchableOrgUnitTree = ({
     }
 
     return (
-        <div className={cx(classes.wrapper, classes[side])}>
+        <div className={cx(styles.wrapper, styles[side])}>
             <Field error={!!errorText} validationText={errorText || ''}>
-                {headerText && <h4 className={classes.header}>{headerText}</h4>}
+                {headerText && <h4 className={styles.header}>{headerText}</h4>}
                 <AsyncAutoComplete
                     query={api.queryOrgUnits}
                     orgUnitType={orgUnitType}
                     selectHandler={selectAndShowFilteredOrgUnit}
                 />
-                <div className={classes.scrollBox}>
+                <div className={styles.scrollBox}>
                     <OrganisationUnitTree
                         roots={roots.map(({ id }) => id)}
                         onChange={toggleSelectedOrgUnits}
@@ -137,7 +137,7 @@ const SearchableOrgUnitTree = ({
                 </div>
             </Field>
             {confirmSelection && (
-                <div className={classes.buttonStrip}>
+                <div className={styles.buttonStrip}>
                     <ButtonStrip>
                         <Button
                             primary={true}
