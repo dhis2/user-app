@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-10-26T13:49:06.785Z\n"
-"PO-Revision-Date: 2021-10-26T13:49:06.785Z\n"
+"POT-Creation-Date: 2021-10-27T12:24:59.644Z\n"
+"PO-Revision-Date: 2021-10-27T12:24:59.644Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -260,15 +260,6 @@ msgstr "Update"
 
 msgid "Create new"
 msgstr "Create new"
-
-msgid "You are not allowed to edit"
-msgstr "You are not allowed to edit"
-
-msgid "Confirm"
-msgstr "Confirm"
-
-msgid "There was an error fetching the list"
-msgstr "There was an error fetching the list"
 
 msgid "Page not found."
 msgstr "Page not found."
