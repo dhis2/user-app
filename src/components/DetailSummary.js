@@ -99,6 +99,7 @@ class DetailSummary extends Component {
             } = field
             let { label } = field
 
+            // TODO: Handle label translation properly
             label = i18n.t(label)
             let value = summaryObject[key]
 
@@ -155,6 +156,7 @@ class DetailSummary extends Component {
         }
 
         if (typeof summaryObject === 'string') {
+            // TODO: use interpolation correctly
             const errorText = i18n.t(
                 `There was an error fetching the ${baseName}`
             )
