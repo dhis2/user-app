@@ -22,7 +22,6 @@ export const useAuthorities = ({
     filterSelectedOnly,
     reduxFormOnChange,
 }) => {
-    const [ready, setReady] = useState(false)
     const allGroupedAuthoritiesRef = useRef(null)
     const authoritySelectionManagerRef = useRef(
         makeAuthoritySelectionManager(initiallySelected, reduxFormOnChange)
@@ -73,7 +72,6 @@ export const useAuthorities = ({
                     filterSelectedOnly: false,
                 })
             )
-            setReady(true)
         }
     }, [data])
 
@@ -97,7 +95,7 @@ export const useAuthorities = ({
     )
 
     return {
-        loading: loading || !ready,
+        loading: loading,
         error,
         authorities,
         searchChunks,
