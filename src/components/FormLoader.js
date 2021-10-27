@@ -1,7 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
-import { Heading } from '@dhis2/d2-ui-core'
+import { CircularLoader, CenteredContent } from '@dhis2/ui'
 import capitalize from 'lodash.capitalize'
-import { Paper, CircularProgress } from 'material-ui'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
@@ -12,18 +11,7 @@ import RoleForm from '../containers/RoleForm'
 import UserForm from '../containers/UserForm'
 import { shortItemSelector } from '../selectors'
 import ErrorMessage from './ErrorMessage'
-
-const styles = {
-    main: {
-        width: '100%',
-    },
-    heading: {
-        paddingBottom: '1rem',
-    },
-    paper: {
-        padding: '2rem 5rem 4rem',
-    },
-}
+import styles from './FormLoader.module.css'
 
 class FormLoader extends Component {
     componentDidMount() {
@@ -83,7 +71,7 @@ class FormLoader extends Component {
         const createMsg = `${i18n.t('Create new')} ${entityTxt}`
         const msg = id ? updateMsg : createMsg
 
-        return <Heading style={styles.heading}>{msg}</Heading>
+        return <h2 className={styles.heading}>{msg}</h2>
     }
 
     renderContent() {
@@ -105,9 +93,9 @@ class FormLoader extends Component {
 
         if (!item || (item && item.id !== id)) {
             return (
-                <div style={{ textAlign: 'center', paddingTop: '2rem' }}>
-                    <CircularProgress />
-                </div>
+                <CenteredContent>
+                    <CircularLoader />
+                </CenteredContent>
             )
         }
 
@@ -116,9 +104,9 @@ class FormLoader extends Component {
 
     render() {
         return (
-            <main style={styles.main}>
+            <main className={styles.container}>
                 {this.renderHeader()}
-                <Paper style={styles.paper}>{this.renderContent()}</Paper>
+                {this.renderContent()}
             </main>
         )
     }
