@@ -254,7 +254,16 @@ export const getBaseFields = () => [
         isRequiredField: ALWAYS_REQUIRED,
         initialItemsSelector: user =>
             asArray(getNestedProp('userCredentials.userRoles', user) || []),
-        availableItemsQuery: 'getAvailableUserRoles',
+        availableItemsQuery: {
+            availableItems: {
+                resource: 'userRoles',
+                params: {
+                    canIssue: true,
+                    fields: ['id', 'displayName'],
+                    paging: false,
+                },
+            },
+        },
         availableItemsLabel: i18n.t('Available roles'),
         assignedItemsLabel: i18n.t('Selected roles'),
     },
@@ -295,7 +304,15 @@ export const getAdditionalFields = () => [
         name: ASSIGNED_USER_GROUPS,
         fieldRenderer: renderSearchableGroupEditor,
         initialItemsSelector: user => asArray(user.userGroups) || [],
-        availableItemsQuery: 'getAvailableUserGroups',
+        availableItemsQuery: {
+            availableItems: {
+                resource: 'userGroups',
+                params: {
+                    fields: ['id', 'displayName'],
+                    paging: false,
+                },
+            },
+        },
         availableItemsLabel: i18n.t('Available user groups'),
         assignedItemsLabel: i18n.t('Selected user groups'),
     },
@@ -304,7 +321,15 @@ export const getAdditionalFields = () => [
         fieldRenderer: renderSearchableGroupEditor,
         initialItemsSelector: user =>
             analyticsDimensionsRestrictionsSelector(user),
-        availableItemsQuery: 'getAvailableDataAnalyticsDimensionRestrictions',
+        availableItemsQuery: {
+            availableItems: {
+                resource: 'dimensions/constraints',
+                params: {
+                    fields: ['id', 'name', 'dimensionType'],
+                    paging: false,
+                },
+            },
+        },
         availableItemsLabel: i18n.t(
             'Available dimension restrictions for data analytics'
         ),

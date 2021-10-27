@@ -40,7 +40,15 @@ export const getFields = () => [
         name: MANAGED_GROUPS,
         fieldRenderer: renderSearchableGroupEditor,
         initialItemsSelector: group => asArray(group[MANAGED_GROUPS]),
-        availableItemsQuery: 'getAvailableUserGroups',
+        availableItemsQuery: {
+            availableItems: {
+                resource: 'userGroups',
+                params: {
+                    fields: ['id', 'displayName'],
+                    paging: false,
+                },
+            },
+        },
         availableItemsLabel: i18n.t('Available user groups'),
         assignedItemsLabel: i18n.t('Managed user groups'),
     },
