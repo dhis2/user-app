@@ -30,7 +30,10 @@ class FormLoader extends Component {
             initNewItem(entityType)
         }
         this.formNotFoundErrorMsg = i18n.t(
-            'There was an error getting the form:'
+            'There was an error getting the form:',
+            {
+                nsSeparator: '-:-',
+            }
         )
     }
 
