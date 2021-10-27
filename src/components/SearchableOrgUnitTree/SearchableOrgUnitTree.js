@@ -156,10 +156,15 @@ const SearchableOrgUnitTree = ({
                             primary={true}
                             onClick={applySelection}
                             disabled={!roots}
+                            small
                         >
                             {i18n.t('Apply')}
                         </Button>
-                        <Button onClick={clearSelection} disabled={!roots}>
+                        <Button
+                            onClick={clearSelection}
+                            disabled={!roots}
+                            small
+                        >
                             {i18n.t('Clear all')}
                         </Button>
                     </ButtonStrip>
