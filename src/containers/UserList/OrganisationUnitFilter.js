@@ -53,7 +53,7 @@ const OrganisationUnitFilter = ({
                         dense
                     />
                 }
-                maxHeight="400px"
+                maxHeight="100%"
                 dense
             />
         </div>
