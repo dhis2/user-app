@@ -69,7 +69,7 @@ const JoinModal = ({
             </ModalContent>
             <ModalActions>
                 <ButtonStrip end>
-                    <Button secondary onClick={onClose}>
+                    <Button secondary onClick={onClose} disabled={loading}>
                         {i18n.t('No, cancel')}
                     </Button>
                     <Button primary loading={loading} onClick={handleJoin}>

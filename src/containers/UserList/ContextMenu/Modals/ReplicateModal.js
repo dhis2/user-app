@@ -82,7 +82,11 @@ const ReplicateModal = ({ user, refetchUsers, onClose }) => {
                         </ModalContent>
                         <ModalActions>
                             <ButtonStrip end>
-                                <Button secondary onClick={onClose}>
+                                <Button
+                                    secondary
+                                    onClick={onClose}
+                                    disabled={submitting}
+                                >
                                     {i18n.t('Cancel')}
                                 </Button>
                                 <Button
