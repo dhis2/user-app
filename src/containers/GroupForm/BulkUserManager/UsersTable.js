@@ -10,16 +10,24 @@ import {
     InputField,
     Checkbox,
     Button,
+    Pagination,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const UsersTable = ({ mode, toggleAll, toggleSelected }) => (
+const UsersTable = ({
+    mode,
+    users,
+    pager,
+    onPageChange,
+    toggleAll,
+    toggleSelected,
+}) => (
     <div>
         <DataTableToolbar>
             <InputField
                 placeholder={
-                    mode === 'VIEW_AND_REMOVE'
+                    mode === 'MEMBERS'
                         ? i18n.t('Search for a user in this group')
                         : i18n.t('Search for a user to add')
                 }
@@ -45,32 +53,48 @@ const UsersTable = ({ mode, toggleAll, toggleSelected }) => (
                 </DataTableRow>
             </DataTableHead>
             <DataTableBody>
-                <DataTableRow>
-                    <DataTableCell width="48px">
-                        <Checkbox onChange={toggleSelected} value="user-1" />
-                    </DataTableCell>
-                    <DataTableCell>Some username</DataTableCell>
-                    <DataTableCell>Some display name</DataTableCell>
-                    <DataTableCell>
-                        <Button secondary small>
-                            {mode === 'VIEW_AND_REMOVE'
-                                ? i18n.t('Remove from group')
-                                : i18n.t('Add to group')}
-                        </Button>
-                    </DataTableCell>
-                </DataTableRow>
+                {users.map(({ id, username, name }) => (
+                    <DataTableRow key={id}>
+                        <DataTableCell width="48px">
+                            <Checkbox onChange={toggleSelected} value={id} />
+                        </DataTableCell>
+                        <DataTableCell>{username}</DataTableCell>
+                        <DataTableCell>{name}</DataTableCell>
+                        <DataTableCell>
+                            <Button secondary small>
+                                {mode === 'MEMBERS'
+                                    ? i18n.t('Remove from group')
+                                    : i18n.t('Add to group')}
+                            </Button>
+                        </DataTableCell>
+                    </DataTableRow>
+                ))}
             </DataTableBody>
         </DataTable>
         <DataTableToolbar position="bottom">
-            Pagination goes here
+            <Pagination {...pager} onPageChange={onPageChange} />
         </DataTableToolbar>
     </div>
 )
 
 UsersTable.propTypes = {
-    mode: PropTypes.oneOf(['VIEW_AND_REMOVE', 'ADD']).isRequired,
+    mode: PropTypes.oneOf(['MEMBERS', 'NON_MEMBERS']).isRequired,
+    pager: PropTypes.shape({
+        page: PropTypes.number.isRequired,
+        pageCount: PropTypes.number.isRequired,
+        pageSize: PropTypes.number.isRequired,
+        total: PropTypes.number.isRequired,
+    }).isRequired,
     toggleAll: PropTypes.func.isRequired,
     toggleSelected: PropTypes.func.isRequired,
+    users: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+            username: PropTypes.string.isRequired,
+        }).isRequired
+    ).isRequired,
+    onPageChange: PropTypes.func.isRequired,
 }
 
 export default UsersTable
