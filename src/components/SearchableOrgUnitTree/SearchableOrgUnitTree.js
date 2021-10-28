@@ -5,6 +5,7 @@ import {
     Button,
     ButtonStrip,
     Field,
+    Divider,
 } from '@dhis2/ui'
 import cx from 'classnames'
 import defer from 'lodash.defer'
@@ -17,7 +18,7 @@ import getInitiallyExpandedUnits from './getInitiallyExpandedUnits.js'
 import getInitiallySelectedUnits from './getInitiallySelectedUnits.js'
 import getOrgUnitRoots from './getOrgUnitRoots.js'
 import removeLastPathSegment from './removeLastPathSegment.js'
-import classes from './SearchableOrgUnitTree.module.css'
+import styles from './SearchableOrgUnitTree.module.css'
 
 /**
  * Renders a @dhis2/ui OrganisationUnitTree with an AsyncAutoComplete above it and a button strip below
@@ -25,13 +26,14 @@ import classes from './SearchableOrgUnitTree.module.css'
  * It has been made compliant with redux form
  */
 const SearchableOrgUnitTree = ({
+    className,
     orgUnitType,
     initiallySelected,
-    cancel,
     confirmSelection,
     errorText,
     headerText,
     side,
+    dense,
     onBlur,
     onChange,
 }) => {
@@ -93,7 +95,7 @@ const SearchableOrgUnitTree = ({
                       ...selectedOrgUnits.slice(orgUnitIndex + 1),
                   ]
 
-        update(nextOrgUnits, [])
+        update(nextOrgUnits)
     }
 
     const selectAndShowFilteredOrgUnit = orgUnit => {
@@ -113,43 +115,58 @@ const SearchableOrgUnitTree = ({
     const clearSelection = () => {
         update([])
         // TODO: see if we can get rid of defer
-        defer(() => confirmSelection(selectedOrgUnits))
+        defer(() => confirmSelection([]))
     }
 
     return (
-        <div className={cx(classes.wrapper, classes[side])}>
+        <div className={cx(styles.wrapper, styles[side], className)}>
             <Field error={!!errorText} validationText={errorText || ''}>
-                {headerText && <h4 className={classes.header}>{headerText}</h4>}
-                <AsyncAutoComplete
-                    query={api.queryOrgUnits}
-                    orgUnitType={orgUnitType}
-                    selectHandler={selectAndShowFilteredOrgUnit}
-                />
-                <div className={classes.scrollBox}>
-                    <OrganisationUnitTree
-                        roots={roots.map(({ id }) => id)}
-                        onChange={toggleSelectedOrgUnits}
-                        selected={selectedOrgUnits.map(({ path }) => path)}
-                        expanded={expanded}
-                        handleExpand={handleExpand}
-                        handleCollapse={handleCollapse}
-                    />
+                {/* Without `display: grid`, AsyncAutoComplete takes up too much vertical space */}
+                <div className={styles.grid}>
+                    <div className={styles.header}>
+                        {headerText && (
+                            <h4 className={styles.headerText}>{headerText}</h4>
+                        )}
+                        <AsyncAutoComplete
+                            query={api.queryOrgUnits}
+                            orgUnitType={orgUnitType}
+                            selectHandler={selectAndShowFilteredOrgUnit}
+                            dense={dense}
+                        />
+                    </div>
+
+                    <Divider margin="0" />
+
+                    <div className={styles.scrollBox}>
+                        <OrganisationUnitTree
+                            roots={roots.map(({ id }) => id)}
+                            onChange={toggleSelectedOrgUnits}
+                            selected={selectedOrgUnits.map(({ path }) => path)}
+                            expanded={expanded}
+                            handleExpand={handleExpand}
+                            handleCollapse={handleCollapse}
+                        />
+                    </div>
                 </div>
             </Field>
             {confirmSelection && (
-                <div className={classes.buttonStrip}>
+                <div className={styles.buttonStrip}>
                     <ButtonStrip>
                         <Button
                             primary={true}
                             onClick={applySelection}
                             disabled={!roots}
+                            small
                         >
                             {i18n.t('Apply')}
                         </Button>
-                        <Button onClick={clearSelection} disabled={!roots}>
+                        <Button
+                            onClick={clearSelection}
+                            disabled={!roots}
+                            small
+                        >
                             {i18n.t('Clear all')}
                         </Button>
-                        <Button onClick={cancel}>{i18n.t('Cancel')}</Button>
                     </ButtonStrip>
                 </div>
             )}
@@ -158,10 +175,17 @@ const SearchableOrgUnitTree = ({
 }
 
 SearchableOrgUnitTree.propTypes = {
-    initiallySelected: PropTypes.array.isRequired,
+    initiallySelected: PropTypes.arrayOf(
+        PropTypes.shape({
+            displayName: PropTypes.string.isRequired,
+            id: PropTypes.string.isRequired,
+            path: PropTypes.string.isRequired,
+        }).isRequired
+    ).isRequired,
     orgUnitType: PropTypes.string.isRequired,
-    cancel: PropTypes.func,
+    className: PropTypes.string,
     confirmSelection: PropTypes.func,
+    dense: PropTypes.bool,
     errorText: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     headerText: PropTypes.string,
     side: PropTypes.oneOf(['left', 'right']),

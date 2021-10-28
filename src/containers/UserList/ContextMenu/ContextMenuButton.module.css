@@ -1,0 +1,4 @@
+.container {
+    /* Improves alignment of flyoutmenu */
+    display: inline-block;
+}

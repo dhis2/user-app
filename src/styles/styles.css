@@ -1,5 +1,5 @@
 body {
-    background-color: #f3f3f3;
+    background-color: #fbfcfd;
     font-family: Roboto, sans-serif;
     padding: 0;
     margin: 0;
@@ -12,23 +12,10 @@ body {
     font-family: Roboto, sans-serif;
 }
 
-.data-table__filter-bar__checkbox label,
-.data-table__filter-bar__checkbox--checked label,
 .authority-editor__filter-checkbox label {
     font-size: 16px;
 }
 
-.data-table__filter-bar .data-table-pager--buttons {
-    margin: 8px 0;
-}
-
-.data-table__filter-bar__checkbox label {
-    color: rgba(0, 0, 0, 0.3) !important;
-}
-
-.data-table__filter-bar__checkbox svg {
-    fill: rgba(0, 0, 0, 0.3) !important;
-}
 .entity-list__add-new-entity {
     position: fixed;
     right: 1.5rem;

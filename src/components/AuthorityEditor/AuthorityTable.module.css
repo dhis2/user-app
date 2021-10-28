@@ -1,0 +1,18 @@
+.tableContainer {
+    width: 100%;
+}
+
+@media (min-width: 960px) {
+    .tableContainer {
+        width: calc(50% - 1.5rem / 2);
+    }
+    .tableContainer.metadata {
+        width: 100%;
+    }
+}
+
+.toolbarHeader {
+    margin: 0;
+    font-weight: 500;
+    font-size: 18px;
+}

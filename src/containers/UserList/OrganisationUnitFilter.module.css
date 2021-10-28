@@ -1,0 +1,15 @@
+.rootInput {
+    min-width: 100px;
+    margin-right: var(--spacers-dp8);
+}
+
+.inputValue {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.orgUnitTree {
+    width: 100%;
+}

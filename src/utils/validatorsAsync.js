@@ -3,7 +3,6 @@
 import i18n from '@dhis2/d2-i18n'
 import capitalize from 'lodash.capitalize'
 import api from '../api'
-import { FORM_NAME as REPLICATE_USER_FORM } from '../components/ReplicateUserForm'
 import { USER, USER_GROUP } from '../constants/entityTypes'
 import {
     CODE,
@@ -85,8 +84,7 @@ async function asyncSingleFieldValidator(
 
 async function getUserNameError(values, props) {
     const newUserName = values[USERNAME]
-    const editingExistingUser =
-        props.form !== REPLICATE_USER_FORM && props.user && props.user.id
+    const editingExistingUser = props.user && props.user.id
 
     if (!newUserName || editingExistingUser) {
         return Promise.resolve()

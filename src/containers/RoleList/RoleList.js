@@ -1,31 +1,110 @@
+import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import React from 'react'
-import List from '../../components/List'
-import SearchFilter from '../../components/SearchFilter'
-import { USER_ROLE } from '../../constants/entityTypes'
 import {
-    roleContextMenuActions,
-    roleContextMenuIcons,
-    isRoleContextActionAllowed,
-} from './RoleContextMenuActions'
+    colors,
+    Pagination,
+    Button,
+    IconAdd24,
+    DataTableToolbar,
+} from '@dhis2/ui'
+import React, { useState, useEffect } from 'react'
+import { useDebounce } from 'use-debounce'
+import SearchFilter from '../../components/SearchFilter'
+import navigateTo from '../../utils/navigateTo'
+import styles from './RoleList.module.css'
+import RoleTable from './RoleTable'
+import { useFilters } from './useFilters'
 
-/**
- * Container component that renders a List component with correct properties for displaying a list of UserRoles
- * @class
- */
-const RoleList = () => (
-    <List
-        entityType={USER_ROLE}
-        filterComponent={SearchFilter}
-        columns={['displayName', 'description']}
-        primaryAction={roleContextMenuActions.edit}
-        contextMenuActions={roleContextMenuActions}
-        contextMenuIcons={roleContextMenuIcons}
-        isContextActionAllowed={isRoleContextActionAllowed}
-        sectionName={i18n.t('User Role Management')}
-        newItemPath={'/user-roles/new'}
-        className={'role-list'}
-    />
-)
+const rolesQuery = {
+    roles: {
+        resource: 'userRoles',
+        params: ({ page, pageSize, query, nameSortDirection }) => ({
+            fields: [
+                'id',
+                'displayName',
+                'access',
+                'user[id,displayName]',
+                'publicAccess',
+                'userGroupAccesses',
+                'description',
+            ],
+            order: `name:${nameSortDirection}`,
+            page,
+            pageSize,
+            // Passing empty query modifies sorting behaviour
+            query: query === '' ? undefined : query,
+        }),
+    },
+}
+
+const RoleList = () => {
+    const { called, loading, error, data, refetch } = useDataQuery(rolesQuery, {
+        lazy: true,
+    })
+    const roles = data?.roles
+    const [prevRoles, setPrevRoles] = useState()
+    const {
+        page,
+        setPage,
+        pageSize,
+        setPageSize,
+        query,
+        setQuery,
+        nameSortDirection,
+        toggleNameSortDirection,
+    } = useFilters()
+    const [debouncedQuery] = useDebounce(query, 375)
+    const refetchRoles = () => {
+        setPrevRoles(roles)
+        refetch({
+            page,
+            pageSize,
+            query: debouncedQuery,
+            nameSortDirection,
+        })
+    }
+
+    useEffect(() => {
+        refetchRoles()
+    }, [page, pageSize, debouncedQuery, nameSortDirection])
+
+    return (
+        <>
+            <h2 className={styles.header}>{i18n.t('User Role Management')}</h2>
+            <SearchFilter value={query} onChange={setQuery} />
+            <DataTableToolbar>
+                <Button
+                    small
+                    icon={<IconAdd24 color={colors.grey600} />}
+                    onClick={() => navigateTo('/user-roles/new')}
+                >
+                    {i18n.t('New')}
+                </Button>
+            </DataTableToolbar>
+            <RoleTable
+                loading={!called || loading}
+                error={error}
+                roles={roles?.userRoles || prevRoles?.userRoles}
+                refetch={refetchRoles}
+                nameSortDirection={nameSortDirection}
+                onNameSortDirectionToggle={toggleNameSortDirection}
+            />
+            {(loading
+                ? prevRoles?.userRoles.length > 0
+                : roles?.userRoles.length > 0) && (
+                <DataTableToolbar position="bottom">
+                    <Pagination
+                        className={styles.pagination}
+                        {...(loading ? prevRoles.pager : roles.pager)}
+                        page={page}
+                        onPageChange={setPage}
+                        pageSize={pageSize}
+                        onPageSizeChange={setPageSize}
+                    />
+                </DataTableToolbar>
+            )}
+        </>
+    )
+}
 
 export default RoleList

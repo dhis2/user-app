@@ -9,7 +9,7 @@ import api from '../../api'
 import { USER_ROLE } from '../../constants/entityTypes'
 import createHumanErrorMessage from '../../utils/createHumanErrorMessage'
 import detectCurrentUserChanges from '../../utils/detectCurrentUserChanges'
-import navigateTo from '../../utils/navigateTo'
+import history from '../../utils/history'
 import { required } from '../../utils/validators'
 import { asyncValidateUniqueness } from '../../utils/validatorsAsync'
 import { NAME, DESCRIPTION, AUTHORITIES, getFields } from './config'
@@ -54,7 +54,7 @@ class RoleForm extends Component {
     }
 
     backToList = () => {
-        navigateTo('/user-roles')
+        history.goBack()
     }
 
     renderFields() {
