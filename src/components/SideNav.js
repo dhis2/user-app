@@ -32,6 +32,10 @@ NavItem.propTypes = {
  * This is because when a form or the CardLinks are displayed, the sidebar should not show.
  */
 const SideNav = ({ sections }) => {
+    if (!sections.length) {
+        return null
+    }
+
     return (
         <nav
             // See http://web-accessibility.carnegiemuseums.org/code/navigation/
