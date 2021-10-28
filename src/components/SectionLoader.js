@@ -8,18 +8,8 @@ import { initCurrentUser } from '../actions'
 import getRouteConfig from '../constants/routeConfig'
 import navigateTo from '../utils/navigateTo'
 import ErrorMessage from './ErrorMessage'
+import styles from './SectionLoader.module.css'
 import SideNav from './SideNav'
-
-const styles = {
-    container: {
-        display: 'grid',
-        gridTemplateColumns: '320px 1fr',
-        height: '100%',
-    },
-    content: {
-        padding: 16,
-    },
-}
 
 /**
  * This component prepares the user-app sections and routes based on the current user's authorities
@@ -131,7 +121,7 @@ class SectionLoader extends Component {
         return (
             <>
                 <SideNav key="sidenav" sections={sections} />
-                <div style={styles.content}>
+                <div className={styles.content}>
                     <Switch key="routeswitch">
                         {this.renderRoutes(routes)}
                     </Switch>
@@ -141,7 +131,7 @@ class SectionLoader extends Component {
     }
 
     render() {
-        return <main style={styles.container}>{this.renderContent()}</main>
+        return <main className={styles.container}>{this.renderContent()}</main>
     }
 }
 

@@ -2,6 +2,7 @@ import { Menu, MenuItem } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory, useRouteMatch } from 'react-router-dom'
+import styles from './SideNav.module.css'
 
 const NavItem = ({ path, label }) => {
     const history = useHistory()
@@ -17,6 +18,7 @@ const NavItem = ({ path, label }) => {
             active={active}
             onClick={() => history.push(path)}
             label={label}
+            className={styles.navItem}
         />
     )
 }
@@ -41,6 +43,7 @@ const SideNav = ({ sections }) => {
             // See http://web-accessibility.carnegiemuseums.org/code/navigation/
             role="nav"
             aria-label="Main Navigation"
+            className={styles.nav}
         >
             <Menu>
                 {sections.map(({ path, label }) => {
