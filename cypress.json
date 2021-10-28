@@ -12,7 +12,5 @@
         "dhis2ApiVersion": "38"
     },
     "testFiles": "**/*.feature",
-    "ignoreTestFiles": [
-        "**/*-wip/*.feature"
-    ]
+    "ignoreTestFiles": ["**/*-wip/*.feature"]
 }
