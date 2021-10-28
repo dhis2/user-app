@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacers-dp8);
+}
+
+.input {
+    min-width: 180px;
+}
+
+.hidden {
+    visibility: hidden;
+}

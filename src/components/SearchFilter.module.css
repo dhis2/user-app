@@ -1,0 +1,4 @@
+.input {
+    max-width: 250px;
+    margin-bottom: var(--spacers-dp8);
+}

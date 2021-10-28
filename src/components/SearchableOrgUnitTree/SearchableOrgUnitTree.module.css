@@ -1,16 +1,25 @@
-.heading {
-    font-size: 1.2rem;
-    font-weight: 300;
+.horizontalPadding {
+    padding: 0 var(--spacers-dp12);
+}
+
+.grid {
+    display: grid;
+}
+
+.header {
+    composes: horizontalPadding;
+}
+
+.headerText {
+    font-weight: normal;
     color: rgba(0, 0, 0, 0.87);
-    padding: 16px 0px 0px;
-    margin: 0px 0px -16px;
+    margin: 12px 0px;
 }
 
 .wrapper {
     display: inline-block;
     border: 1px solid var(--colors-grey400);
     border-radius: 3px;
-    padding: 0 var(--spacers-dp12);
 }
 
 .wrapper.left,
@@ -38,5 +47,7 @@
 }
 
 .buttonStrip {
+    padding-top: var(--spacers-dp4);
     padding-bottom: var(--spacers-dp8);
+    composes: horizontalPadding;
 }

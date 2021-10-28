@@ -92,7 +92,7 @@ const SearchableGroupEditor = ({
 SearchableGroupEditor.propTypes = {
     assignedItemsHeader: PropTypes.string.isRequired,
     availableItemsHeader: PropTypes.string.isRequired,
-    availableItemsQuery: PropTypes.func.isRequired,
+    availableItemsQuery: PropTypes.object.isRequired,
     onChange: PropTypes.func.isRequired,
     errorText: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     initiallyAssignedItems: PropTypes.oneOfType([

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-10-27T14:32:37.026Z\n"
-"PO-Revision-Date: 2021-10-27T14:32:37.026Z\n"
+"POT-Creation-Date: 2021-10-28T15:11:18.394Z\n"
+"PO-Revision-Date: 2021-10-28T15:11:18.394Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -255,29 +255,14 @@ msgstr "Edit user role"
 msgid "Send message"
 msgstr "Send message"
 
+msgid "There was an error getting the form:"
+msgstr "There was an error getting the form:"
+
 msgid "Update"
 msgstr "Update"
 
 msgid "Create new"
 msgstr "Create new"
-
-msgid "Back to"
-msgstr "Back to"
-
-msgid "You are not allowed to edit"
-msgstr "You are not allowed to edit"
-
-msgid "Confirm"
-msgstr "Confirm"
-
-msgid "There was an error fetching the list"
-msgstr "There was an error fetching the list"
-
-msgid "Select an organisation unit"
-msgstr "Select an organisation unit"
-
-msgid "Organisation unit"
-msgstr "Organisation unit"
 
 msgid "Page not found."
 msgstr "Page not found."
@@ -287,30 +272,6 @@ msgstr "No match for"
 
 msgid "Go back home"
 msgstr "Go back home"
-
-msgid "User \"{{displayName}}\" replicated successfuly"
-msgstr "User \"{{displayName}}\" replicated successfuly"
-
-msgid "There was a problem replicating the user"
-msgstr "There was a problem replicating the user"
-
-msgid "Username"
-msgstr "Username"
-
-msgid "Username for new user"
-msgstr "Username for new user"
-
-msgid "Password"
-msgstr "Password"
-
-msgid "Password for new user"
-msgstr "Password for new user"
-
-msgid "Replicate"
-msgstr "Replicate"
-
-msgid "Cancel"
-msgstr "Cancel"
 
 msgid "Search by name"
 msgstr "Search by name"
@@ -448,11 +409,17 @@ msgstr "{{pendingChanges}} pending changes"
 msgid "Cancel all"
 msgstr "Cancel all"
 
+msgid "Cancel"
+msgstr "Cancel"
+
 msgid "Search for a user in this group"
 msgstr "Search for a user in this group"
 
 msgid "Search for a user to add"
 msgstr "Search for a user to add"
+
+msgid "Username"
+msgstr "Username"
 
 msgid "Action"
 msgstr "Action"
@@ -484,17 +451,89 @@ msgstr "Available user groups"
 msgid "Managed user groups"
 msgstr "Managed user groups"
 
-msgid "You left group"
-msgstr "You left group"
+msgid "Show details"
+msgstr "Show details"
 
-msgid "You joined group"
-msgstr "You joined group"
+msgid "Sharing settings"
+msgstr "Sharing settings"
 
-msgid "There was a problem updating your group membership"
-msgstr "There was a problem updating your group membership"
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Join group"
+msgstr "Join group"
+
+msgid "Leave group"
+msgstr "Leave group"
+
+msgid "Deleted \"{{- name}}\" successfully"
+msgstr "Deleted \"{{- name}}\" successfully"
+
+msgid "There was an error deleting the user group: {{- error}}"
+msgstr "There was an error deleting the user group: {{- error}}"
+
+msgid "Delete user group {{- name}}"
+msgstr "Delete user group {{- name}}"
+
+msgid "Are you sure you want to delete {{- name}}?"
+msgstr "Are you sure you want to delete {{- name}}?"
+
+msgid "No, cancel"
+msgstr "No, cancel"
+
+msgid "Yes, delete"
+msgstr "Yes, delete"
+
+msgid "Joined user group \"{{- name}}\" successfuly"
+msgstr "Joined user group \"{{- name}}\" successfuly"
+
+msgid "There was an error joining the user group: {{- error}}"
+msgstr "There was an error joining the user group: {{- error}}"
+
+msgid "Join user group {{- name}}"
+msgstr "Join user group {{- name}}"
+
+msgid "Are you sure you want to join {{- name}}?"
+msgstr "Are you sure you want to join {{- name}}?"
+
+msgid "Yes, join"
+msgstr "Yes, join"
+
+msgid "Left user group \"{{- name}}\" successfuly"
+msgstr "Left user group \"{{- name}}\" successfuly"
+
+msgid "There was an error leaving the user group: {{- error}}"
+msgstr "There was an error leaving the user group: {{- error}}"
+
+msgid "Leave user group {{- name}}"
+msgstr "Leave user group {{- name}}"
+
+msgid "Are you sure you want to leave {{- name}}?"
+msgstr "Are you sure you want to leave {{- name}}?"
+
+msgid "Yes, leave"
+msgstr "Yes, leave"
 
 msgid "User Group Management"
 msgstr "User Group Management"
+
+msgid "New"
+msgstr "New"
+
+msgid "Error loading user groups"
+msgstr "Error loading user groups"
+
+msgid "No results found"
+msgstr "No results found"
+
+msgid "Member?"
+msgstr "Member?"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Member"
+msgstr "Member"
 
 msgid "User role \"{{displayName}}\" saved successfully"
 msgstr "User role \"{{displayName}}\" saved successfully"
@@ -508,8 +547,17 @@ msgstr "Description"
 msgid "Authorities"
 msgstr "Authorities"
 
+msgid "There was an error deleting the user role: {{- error}}"
+msgstr "There was an error deleting the user role: {{- error}}"
+
+msgid "Delete user role {{- name}}"
+msgstr "Delete user role {{- name}}"
+
 msgid "User Role Management"
 msgstr "User Role Management"
+
+msgid "Error loading user roles"
+msgstr "Error loading user roles"
 
 msgid "Could not load the user data. Please refresh the page."
 msgstr "Could not load the user data. Please refresh the page."
@@ -553,6 +601,9 @@ msgstr "Account expiration date"
 
 msgid "Disabled"
 msgstr "Disabled"
+
+msgid "Password"
+msgstr "Password"
 
 msgid "Retype password"
 msgstr "Retype password"
@@ -608,47 +659,126 @@ msgstr "Available dimension restrictions for data analytics"
 msgid "Selected dimension restrictions for data analytics"
 msgstr "Selected dimension restrictions for data analytics"
 
+msgid "Profile"
+msgstr "Profile"
+
+msgid "Replicate"
+msgstr "Replicate"
+
+msgid "Reset password"
+msgstr "Reset password"
+
+msgid "Disable"
+msgstr "Disable"
+
+msgid "Enable"
+msgstr "Enable"
+
+msgid "Disable Two Factor Authentication"
+msgstr "Disable Two Factor Authentication"
+
+msgid "There was an error deleting the user: {{- error}}"
+msgstr "There was an error deleting the user: {{- error}}"
+
+msgid "Delete user {{- name}}"
+msgstr "Delete user {{- name}}"
+
+msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
+msgstr "Disabled two factor authentication for \"{{- name}}\" successfuly"
+
+msgid "There was an error disabling two factor authentication: {{- error}}"
+msgstr "There was an error disabling two factor authentication: {{- error}}"
+
+msgid "Disable two factor authentication for user {{- name}}"
+msgstr "Disable two factor authentication for user {{- name}}"
+
+msgid "Are you sure you want to disable two factor authentication for {{- name}}?"
+msgstr "Are you sure you want to disable two factor authentication for {{- name}}?"
+
+msgid "Yes, disable two factor authentication"
+msgstr "Yes, disable two factor authentication"
+
+msgid "User \"{{- name}}\" disabled successfuly"
+msgstr "User \"{{- name}}\" disabled successfuly"
+
+msgid "There was an error disabling the user: {{- error}}"
+msgstr "There was an error disabling the user: {{- error}}"
+
+msgid "Disable user {{- name}}"
+msgstr "Disable user {{- name}}"
+
+msgid "Are you sure you want to disable {{- name}}?"
+msgstr "Are you sure you want to disable {{- name}}?"
+
+msgid "Yes, disable"
+msgstr "Yes, disable"
+
+msgid "User \"{{- name}}\" enabled successfuly"
+msgstr "User \"{{- name}}\" enabled successfuly"
+
+msgid "There was an error enabling the user: {{- error}}"
+msgstr "There was an error enabling the user: {{- error}}"
+
+msgid "Enable user {{- name}}"
+msgstr "Enable user {{- name}}"
+
+msgid "Are you sure you want to enable {{- name}}?"
+msgstr "Are you sure you want to enable {{- name}}?"
+
+msgid "Yes, enable"
+msgstr "Yes, enable"
+
+msgid "User \"{{- name}}\" replicated successfuly"
+msgstr "User \"{{- name}}\" replicated successfuly"
+
+msgid "There was an error replicating the user: {{- error}}"
+msgstr "There was an error replicating the user: {{- error}}"
+
+msgid "Replicate user {{- name}}"
+msgstr "Replicate user {{- name}}"
+
+msgid "Username for new user"
+msgstr "Username for new user"
+
+msgid "Password for new user"
+msgstr "Password for new user"
+
+msgid ""
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
+msgstr ""
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
+
 msgid "Replicate user"
 msgstr "Replicate user"
 
-msgid "Are you sure you want to reset {{-userName}}'s password?"
-msgstr "Are you sure you want to reset {{-userName}}'s password?"
+msgid "Password of user \"{{- name}}\" reset successfuly"
+msgstr "Password of user \"{{- name}}\" reset successfuly"
 
-msgid "Are you sure you want to disable two factor authentication for"
-msgstr "Are you sure you want to disable two factor authentication for"
+msgid "There was an error resetting the password: {{- error}}"
+msgstr "There was an error resetting the password: {{- error}}"
 
-msgid "Succesfully disabled two factor authentication for"
-msgstr "Succesfully disabled two factor authentication for"
+msgid "Reset password of user {{- name}}"
+msgstr "Reset password of user {{- name}}"
 
-msgid "There was a problem updating two factor authentication"
-msgstr "There was a problem updating two factor authentication"
+msgid "Are you sure you want to reset {{- name}}'s password?"
+msgstr "Are you sure you want to reset {{- name}}'s password?"
 
-msgid "Are you sure you want to disable"
-msgstr "Are you sure you want to disable"
+msgid "Yes, reset"
+msgstr "Yes, reset"
 
-msgid "Are you sure you want to enable"
-msgstr "Are you sure you want to enable"
+msgid "1 month"
+msgstr "1 month"
 
-msgid "sucessfully disabled"
-msgstr "sucessfully disabled"
+msgid "{{months}} months"
+msgstr "{{months}} months"
 
-msgid "successfully enabled"
-msgstr "successfully enabled"
+msgid "Time inactive"
+msgstr "Time inactive"
 
-msgid "There was a problem updating the enabled state"
-msgstr "There was a problem updating the enabled state"
-
-msgid "month"
-msgstr "month"
-
-msgid "months"
-msgstr "months"
-
-msgid "<No value>"
-msgstr "<No value>"
-
-msgid "Inactivity"
-msgstr "Inactivity"
+msgid "Invitation"
+msgstr "Invitation"
 
 msgid "All invitations"
 msgstr "All invitations"
@@ -656,14 +786,23 @@ msgstr "All invitations"
 msgid "Expired invitations"
 msgstr "Expired invitations"
 
-msgid "Invitations"
-msgstr "Invitations"
+msgid "Show self-registrations"
+msgstr "Show self-registrations"
 
-msgid "Self registrations"
-msgstr "Self registrations"
+msgid "Clear filters"
+msgstr "Clear filters"
+
+msgid "Org.unit"
+msgstr "Org.unit"
 
 msgid "User Management"
 msgstr "User Management"
+
+msgid "Error loading users"
+msgstr "Error loading users"
+
+msgid "Account disabled?"
+msgstr "Account disabled?"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
@@ -676,20 +815,14 @@ msgstr "Yes"
 msgid "No"
 msgstr "No"
 
+msgid "<No value>"
+msgstr "<No value>"
+
 msgid "Something went wrong when processing your request."
 msgstr "Something went wrong when processing your request."
 
 msgid "Validating..."
 msgstr "Validating..."
-
-msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
-msgstr "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
-
-msgid "{{type}} \"{{displayName}}\" removed successfully"
-msgstr "{{type}} \"{{displayName}}\" removed successfully"
-
-msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
-msgstr "There was a problem removing {{type}} \"{{displayName}}\"?"
 
 msgid "Exceeds maximum character limit of 50"
 msgstr "Exceeds maximum character limit of 50"

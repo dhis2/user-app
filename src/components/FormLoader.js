@@ -1,8 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
-import { Heading } from '@dhis2/d2-ui-core'
+import { CircularLoader, CenteredContent } from '@dhis2/ui'
 import capitalize from 'lodash.capitalize'
-import kebabCase from 'lodash.kebabcase'
-import { Paper, CircularProgress } from 'material-ui'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
@@ -13,20 +11,7 @@ import RoleForm from '../containers/RoleForm'
 import UserForm from '../containers/UserForm'
 import { shortItemSelector } from '../selectors'
 import ErrorMessage from './ErrorMessage'
-import IconLink from './IconLink'
-
-const styles = {
-    main: {
-        width: '100%',
-        paddingLeft: '2rem',
-    },
-    heading: {
-        paddingBottom: '1rem',
-    },
-    paper: {
-        padding: '2rem 5rem 4rem',
-    },
-}
+import styles from './FormLoader.module.css'
 
 class FormLoader extends Component {
     componentDidMount() {
@@ -45,7 +30,10 @@ class FormLoader extends Component {
             initNewItem(entityType)
         }
         this.formNotFoundErrorMsg = i18n.t(
-            'There was an error getting the form:'
+            'There was an error getting the form:',
+            {
+                nsSeparator: '-:-',
+            }
         )
     }
 
@@ -85,22 +73,8 @@ class FormLoader extends Component {
         const updateMsg = `${i18n.t('Update')} ${entityTxt}: ${displayName}`
         const createMsg = `${i18n.t('Create new')} ${entityTxt}`
         const msg = id ? updateMsg : createMsg
-        const link = baseItem
-            ? `/${kebabCase(baseItem.modelDefinition.plural)}`
-            : null
-        const linkTooltip = `${i18n.t('Back to')} ${entityTxt}s`
 
-        return (
-            <Heading style={styles.heading}>
-                <IconLink
-                    to={link}
-                    tooltip={linkTooltip}
-                    disabled={Boolean(link)}
-                    icon="arrow_back"
-                />
-                {msg}
-            </Heading>
-        )
+        return <h2 className={styles.heading}>{msg}</h2>
     }
 
     renderContent() {
@@ -122,9 +96,9 @@ class FormLoader extends Component {
 
         if (!item || (item && item.id !== id)) {
             return (
-                <div style={{ textAlign: 'center', paddingTop: '2rem' }}>
-                    <CircularProgress />
-                </div>
+                <CenteredContent>
+                    <CircularLoader />
+                </CenteredContent>
             )
         }
 
@@ -133,9 +107,9 @@ class FormLoader extends Component {
 
     render() {
         return (
-            <main style={styles.main}>
+            <main className={styles.container}>
                 {this.renderHeader()}
-                <Paper style={styles.paper}>{this.renderContent()}</Paper>
+                {this.renderContent()}
             </main>
         )
     }

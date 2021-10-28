@@ -33,7 +33,7 @@ import {
     renderSelectField,
 } from '../../utils/fieldRenderers'
 import getNestedProp from '../../utils/getNestedProp'
-import navigateTo from '../../utils/navigateTo'
+import history from '../../utils/history'
 import { asyncValidatorSwitch } from '../../utils/validatorsAsync'
 import collectValidators from './collectValidators'
 import * as CONFIG from './config'
@@ -140,7 +140,7 @@ class UserForm extends Component {
     }
 
     backToList = () => {
-        navigateTo('/users')
+        history.goBack()
     }
 
     getLabelText(label, user, isRequiredField) {
