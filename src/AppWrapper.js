@@ -1,6 +1,7 @@
+import './locales/index.js'
+
 import { useD2 } from '@dhis2/app-runtime-adapter-d2'
-import { CssVariables } from '@dhis2/ui'
-import { CircularProgress } from 'material-ui'
+import { CenteredContent, CircularLoader, CssVariables } from '@dhis2/ui'
 import React from 'react'
 import { Provider } from 'react-redux'
 import api from './api'
@@ -9,7 +10,6 @@ import AppWithD2ContextAndTheme from './components/AppWithD2ContextAndTheme'
 import store from './store'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import './styles/styles.css'
-import './locales/index.js'
 
 const AppWrapper = () => {
     const { d2 } = useD2({
@@ -30,21 +30,21 @@ const AppWrapper = () => {
 
     if (!d2) {
         return (
-            <AppWithD2ContextAndTheme>
-                <div className="page-loader-wrap">
-                    <CircularProgress size={48} />
-                </div>
-            </AppWithD2ContextAndTheme>
+            <CenteredContent>
+                <CircularLoader />
+            </CenteredContent>
         )
     }
 
     return (
-        <Provider store={store}>
-            <AppWithD2ContextAndTheme d2={d2}>
-                <CssVariables spacers colors theme />
-                <App />
-            </AppWithD2ContextAndTheme>
-        </Provider>
+        <>
+            <CssVariables spacers colors theme />
+            <Provider store={store}>
+                <AppWithD2ContextAndTheme d2={d2}>
+                    <App />
+                </AppWithD2ContextAndTheme>
+            </Provider>
+        </>
     )
 }
 
