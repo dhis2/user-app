@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-10-28T15:11:18.394Z\n"
-"PO-Revision-Date: 2021-10-28T15:11:18.394Z\n"
+"POT-Creation-Date: 2021-10-29T09:56:41.778Z\n"
+"PO-Revision-Date: 2021-10-29T09:56:41.778Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -403,6 +403,18 @@ msgstr "View and remove users from group"
 msgid "Add users to group"
 msgstr "Add users to group"
 
+msgid "Search for a user in this group"
+msgstr "Search for a user in this group"
+
+msgid "Search for a user to add"
+msgstr "Search for a user to add"
+
+msgid "Remove from group"
+msgstr "Remove from group"
+
+msgid "Add to group"
+msgstr "Add to group"
+
 msgid "{{pendingChanges}} pending changes"
 msgstr "{{pendingChanges}} pending changes"
 
@@ -412,23 +424,17 @@ msgstr "Cancel all"
 msgid "Cancel"
 msgstr "Cancel"
 
-msgid "Search for a user in this group"
-msgstr "Search for a user in this group"
+msgid "Error loading users"
+msgstr "Error loading users"
 
-msgid "Search for a user to add"
-msgstr "Search for a user to add"
+msgid "No results found"
+msgstr "No results found"
 
 msgid "Username"
 msgstr "Username"
 
 msgid "Action"
 msgstr "Action"
-
-msgid "Remove from group"
-msgstr "Remove from group"
-
-msgid "Add to group"
-msgstr "Add to group"
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr "Could not load the user group data. Please refresh the page."
@@ -522,9 +528,6 @@ msgstr "New"
 
 msgid "Error loading user groups"
 msgstr "Error loading user groups"
-
-msgid "No results found"
-msgstr "No results found"
 
 msgid "Member?"
 msgstr "Member?"
@@ -797,9 +800,6 @@ msgstr "Org.unit"
 
 msgid "User Management"
 msgstr "User Management"
-
-msgid "Error loading users"
-msgstr "Error loading users"
 
 msgid "Account disabled?"
 msgstr "Account disabled?"

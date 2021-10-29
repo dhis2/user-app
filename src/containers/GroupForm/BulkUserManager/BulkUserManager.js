@@ -1,87 +1,15 @@
-import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
+import { DataTableToolbar, InputField, Pagination } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState, useMemo, useEffect } from 'react'
+import React, { useState } from 'react'
 import styles from './BulkUserManager.module.css'
 import PendingChanges from './PendingChanges'
-import UsersTable from './UsersTable'
-
-const useUsers = ({ groupId, mode }) => {
-    // Use useMemo to silence warnings from useDataQuery about dynamic queries
-    const queries = useMemo(() => {
-        const resource = `userGroups/${groupId}/users/gist`
-        const params = {
-            fields: [
-                'id',
-                'username',
-                // TODO: switch to 'name' once https://github.com/dhis2/dhis2-core/pull/9126 is merged
-                'firstName',
-                'surname',
-            ],
-            total: true,
-        }
-
-        return {
-            members: {
-                users: {
-                    resource,
-                    params: ({ page }) => ({
-                        ...params,
-                        page,
-                    }),
-                },
-            },
-            nonMembers: {
-                users: {
-                    resource,
-                    params: ({ page }) => ({
-                        ...params,
-                        page,
-                        inverse: true,
-                    }),
-                },
-            },
-        }
-    }, [groupId])
-    const [membersPage, setMembersPage] = useState(1)
-    const [nonMembersPage, setNonMembersPage] = useState(1)
-    const membersDataQuery = useDataQuery(queries.members, { lazy: true })
-    const nonMembersDataQuery = useDataQuery(queries.nonMembers, { lazy: true })
-
-    useEffect(() => {
-        if (mode === 'MEMBERS') {
-            membersDataQuery.refetch({ page: membersPage })
-        } else {
-            nonMembersDataQuery.refetch({ page: nonMembersPage })
-        }
-    }, [mode, membersPage, nonMembersPage])
-
-    const { loading, error, data } =
-        mode === 'MEMBERS' ? membersDataQuery : nonMembersDataQuery
-    const [page, setPage] =
-        mode === 'MEMBERS'
-            ? [membersPage, setMembersPage]
-            : [nonMembersPage, setNonMembersPage]
-
-    return {
-        loading,
-        error,
-        // TODO: remove map once https://github.com/dhis2/dhis2-core/pull/9126 is merged
-        users: data?.users.users.map(({ id, firstName, surname }) => ({
-            id,
-            name: `${firstName} ${surname}`,
-        })),
-        pager: {
-            ...data?.users.pager,
-            page,
-        },
-        setPage,
-    }
-}
+import UserTable from './UserTable'
+import { useUsers } from './useUsers'
 
 const BulkUserManager = ({ groupId }) => {
     const [mode, setMode] = useState('MEMBERS')
-    const { loading, error, users, pager, setPage } = useUsers({
+    const { loading, error, users, prevUsers, pager, setPage } = useUsers({
         groupId,
         mode,
     })
@@ -117,14 +45,59 @@ const BulkUserManager = ({ groupId }) => {
                 </button>
             </div>
             <div className={styles.grid}>
-                <UsersTable
-                    mode={mode}
-                    users={users}
-                    pager={pager}
-                    onPageChange={setPage}
-                    toggleAll={toggleAll}
-                    toggleSelected={toggleSelected}
-                />
+                <div>
+                    <DataTableToolbar>
+                        <InputField
+                            placeholder={
+                                mode === 'MEMBERS'
+                                    ? i18n.t('Search for a user in this group')
+                                    : i18n.t('Search for a user to add')
+                            }
+                            inputWidth="300px"
+                            disabled={loading || !!error}
+                            dense
+                        />
+                    </DataTableToolbar>
+                    <UserTable
+                        actionLabel={
+                            mode === 'MEMBERS'
+                                ? i18n.t('Remove from group')
+                                : i18n.t('Add to group')
+                        }
+                        loading={loading}
+                        error={error}
+                        users={users || prevUsers}
+                        toggleAll={toggleAll}
+                        toggleSelected={toggleSelected}
+                    />
+                    <DataTableToolbar position="bottom">
+                        {(loading
+                            ? prevUsers?.length > 0
+                            : users?.length > 0) && (
+                            <Pagination
+                                className={styles.pagination}
+                                {...pager}
+                                onPageChange={setPage}
+                                pageSummaryText={({
+                                    firstItem,
+                                    lastItem,
+                                    total,
+                                }) =>
+                                    i18n.t(
+                                        'Users {{firstItem}}-{{lastItem}} of {{total}}',
+                                        {
+                                            firstItem,
+                                            lastItem,
+                                            total,
+                                        }
+                                    )
+                                }
+                                hidePageSelect
+                                hidePageSizeSelect
+                            />
+                        )}
+                    </DataTableToolbar>
+                </div>
                 <PendingChanges />
             </div>
         </div>

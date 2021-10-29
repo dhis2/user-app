@@ -1,40 +1,58 @@
 import i18n from '@dhis2/d2-i18n'
 import {
-    DataTableToolbar,
     DataTable,
     DataTableHead,
     DataTableRow,
     DataTableColumnHeader,
     DataTableBody,
     DataTableCell,
-    InputField,
+    CenteredContent,
+    CircularLoader,
+    NoticeBox,
     Checkbox,
     Button,
-    Pagination,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
+import DataTableInfoWrapper from '../../../components/DataTableInfoWrapper'
 
-const UsersTable = ({
-    mode,
+const UserTable = ({
+    loading,
+    error,
     users,
-    pager,
-    onPageChange,
+    actionLabel,
     toggleAll,
     toggleSelected,
-}) => (
-    <div>
-        <DataTableToolbar>
-            <InputField
-                placeholder={
-                    mode === 'MEMBERS'
-                        ? i18n.t('Search for a user in this group')
-                        : i18n.t('Search for a user to add')
-                }
-                inputWidth="300px"
-                dense
-            />
-        </DataTableToolbar>
+}) => {
+    if (loading && !users) {
+        return (
+            <DataTableInfoWrapper columns={4}>
+                <CenteredContent>
+                    <CircularLoader />
+                </CenteredContent>
+            </DataTableInfoWrapper>
+        )
+    }
+
+    if (!loading && error) {
+        return (
+            <DataTableInfoWrapper columns={4}>
+                <NoticeBox error title={i18n.t('Error loading users')}>
+                    {error.message}
+                </NoticeBox>
+            </DataTableInfoWrapper>
+        )
+    }
+
+    if (!loading && users.length === 0) {
+        return (
+            <DataTableInfoWrapper columns={4}>
+                <p>{i18n.t('No results found')}</p>
+            </DataTableInfoWrapper>
+        )
+    }
+
+    return (
         <DataTable>
             <DataTableHead>
                 <DataTableRow>
@@ -52,49 +70,44 @@ const UsersTable = ({
                     </DataTableColumnHeader>
                 </DataTableRow>
             </DataTableHead>
-            <DataTableBody>
-                {users.map(({ id, username, name }) => (
+            <DataTableBody loading={loading}>
+                {users.map(({ id, username, firstName, surname }) => (
                     <DataTableRow key={id}>
                         <DataTableCell width="48px">
                             <Checkbox onChange={toggleSelected} value={id} />
                         </DataTableCell>
                         <DataTableCell>{username}</DataTableCell>
-                        <DataTableCell>{name}</DataTableCell>
+                        <DataTableCell>{`${firstName} ${surname}`}</DataTableCell>
                         <DataTableCell>
                             <Button secondary small>
-                                {mode === 'MEMBERS'
-                                    ? i18n.t('Remove from group')
-                                    : i18n.t('Add to group')}
+                                {actionLabel}
                             </Button>
                         </DataTableCell>
                     </DataTableRow>
                 ))}
             </DataTableBody>
         </DataTable>
-        <DataTableToolbar position="bottom">
-            <Pagination {...pager} onPageChange={onPageChange} />
-        </DataTableToolbar>
-    </div>
-)
-
-UsersTable.propTypes = {
-    mode: PropTypes.oneOf(['MEMBERS', 'NON_MEMBERS']).isRequired,
-    pager: PropTypes.shape({
-        page: PropTypes.number.isRequired,
-        pageCount: PropTypes.number.isRequired,
-        pageSize: PropTypes.number.isRequired,
-        total: PropTypes.number.isRequired,
-    }).isRequired,
-    toggleAll: PropTypes.func.isRequired,
-    toggleSelected: PropTypes.func.isRequired,
-    users: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired,
-            username: PropTypes.string.isRequired,
-        }).isRequired
-    ).isRequired,
-    onPageChange: PropTypes.func.isRequired,
+    )
 }
 
-export default UsersTable
+UserTable.propTypes = {
+    actionLabel: PropTypes.string.isRequired,
+    loading: PropTypes.bool.isRequired,
+    toggleAll: PropTypes.func.isRequired,
+    toggleSelected: PropTypes.func.isRequired,
+    error: PropTypes.instanceOf(Error),
+    users: PropTypes.arrayOf(
+        PropTypes.shape({
+            /* eslint-disable react/sort-prop-types */
+            // TODO: switch to 'name' once https://github.com/dhis2/dhis2-core/pull/9126 is merged
+            // name: PropTypes.string.isRequired,
+            // username: PropTypes.string.isRequired,
+            firstName: PropTypes.string.isRequired,
+            surname: PropTypes.string.isRequired,
+
+            id: PropTypes.string.isRequired,
+        }).isRequired
+    ),
+}
+
+export default UserTable

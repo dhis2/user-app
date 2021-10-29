@@ -242,7 +242,7 @@ renderSelectField.propTypes = {
 
 renderSearchableGroupEditor.propTypes = {
     ...sharedPropTypes,
-    availableItemsQuery: PropTypes.func.isRequired,
+    availableItemsQuery: PropTypes.object.isRequired,
     initialValues: PropTypes.array.isRequired,
     assignedItemsLabel: PropTypes.string,
     availableItemsLabel: PropTypes.string,
