@@ -5,7 +5,6 @@ import {
     DataTableRow,
     DataTableColumnHeader,
     DataTableBody,
-    DataTableCell,
     CenteredContent,
     CircularLoader,
     NoticeBox,
@@ -14,13 +13,16 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import DataTableInfoWrapper from '../../../components/DataTableInfoWrapper'
+import DataTableInfoWrapper from '../../../../components/DataTableInfoWrapper'
+import UserTableRow from './UserTableRow'
 
 const UserTable = ({
     loading,
     error,
     users,
     actionLabel,
+    onActionClick,
+    pendingChanges,
     toggleAll,
     toggleSelected,
 }) => {
@@ -57,7 +59,7 @@ const UserTable = ({
             <DataTableHead>
                 <DataTableRow>
                     <DataTableColumnHeader width="48px">
-                        <Checkbox onChange={toggleAll} />
+                        <Checkbox onChange={toggleAll} disabled={loading} />
                     </DataTableColumnHeader>
                     <DataTableColumnHeader>
                         {i18n.t('Username')}
@@ -71,20 +73,30 @@ const UserTable = ({
                 </DataTableRow>
             </DataTableHead>
             <DataTableBody loading={loading}>
-                {users.map(({ id, username, firstName, surname }) => (
-                    <DataTableRow key={id}>
-                        <DataTableCell width="48px">
-                            <Checkbox onChange={toggleSelected} value={id} />
-                        </DataTableCell>
-                        <DataTableCell>{username}</DataTableCell>
-                        <DataTableCell>{`${firstName} ${surname}`}</DataTableCell>
-                        <DataTableCell>
-                            <Button secondary small>
-                                {actionLabel}
-                            </Button>
-                        </DataTableCell>
-                    </DataTableRow>
-                ))}
+                {users.map(user => {
+                    const pendingChange = pendingChanges.get(user.id)
+
+                    return (
+                        <UserTableRow
+                            key={user.id}
+                            user={user}
+                            actionButton={
+                                <Button
+                                    secondary
+                                    small
+                                    onClick={() => onActionClick(user)}
+                                >
+                                    {actionLabel}
+                                </Button>
+                            }
+                            pendingChangeAction={pendingChange?.action}
+                            onPendingChangeCancel={() =>
+                                pendingChanges.cancel(pendingChange)
+                            }
+                            toggleSelected={toggleSelected}
+                        />
+                    )
+                })}
             </DataTableBody>
         </DataTable>
     )
@@ -93,19 +105,19 @@ const UserTable = ({
 UserTable.propTypes = {
     actionLabel: PropTypes.string.isRequired,
     loading: PropTypes.bool.isRequired,
+    pendingChanges: PropTypes.shape({
+        cancel: PropTypes.func.isRequired,
+        get: PropTypes.func.isRequired,
+    }).isRequired,
     toggleAll: PropTypes.func.isRequired,
     toggleSelected: PropTypes.func.isRequired,
+    onActionClick: PropTypes.func.isRequired,
     error: PropTypes.instanceOf(Error),
     users: PropTypes.arrayOf(
         PropTypes.shape({
-            /* eslint-disable react/sort-prop-types */
-            // TODO: switch to 'name' once https://github.com/dhis2/dhis2-core/pull/9126 is merged
-            // name: PropTypes.string.isRequired,
-            // username: PropTypes.string.isRequired,
-            firstName: PropTypes.string.isRequired,
-            surname: PropTypes.string.isRequired,
-
             id: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+            username: PropTypes.string.isRequired,
         }).isRequired
     ),
 }

@@ -1,6 +1,18 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import { useState, useMemo, useEffect } from 'react'
 
+// XXX: remove once backend supports name and username
+// See https://github.com/dhis2/dhis2-core/pull/9126 is merged
+const fixUsers = users => {
+    if (users) {
+        return users.map(user => ({
+            id: user.id,
+            name: `${user.firstName} ${user.surname}`,
+            username: user.id.slice(0, 4),
+        }))
+    }
+}
+
 export const useUsers = ({ groupId, mode }) => {
     // Use useMemo to silence warnings from useDataQuery about dynamic queries
     const queries = useMemo(() => {
@@ -63,12 +75,12 @@ export const useUsers = ({ groupId, mode }) => {
         mode === 'MEMBERS'
             ? [membersPage, setMembersPage]
             : [nonMembersPage, setNonMembersPage]
+    const prevUsers = mode === 'MEMBERS' ? prevMembers : prevNonMembers
 
     return {
         loading: !called || loading,
         error,
-        users: data?.users.users,
-        prevUsers: mode === 'MEMBERS' ? prevMembers : prevNonMembers,
+        users: fixUsers(data?.users.users || prevUsers),
         pager: {
             ...data?.users.pager,
             page,

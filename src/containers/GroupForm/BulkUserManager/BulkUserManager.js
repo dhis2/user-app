@@ -3,16 +3,20 @@ import { DataTableToolbar, InputField, Pagination } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import styles from './BulkUserManager.module.css'
+import ModeButtons from './ModeButtons'
 import PendingChanges from './PendingChanges'
+import { usePendingChanges } from './usePendingChanges'
 import UserTable from './UserTable'
 import { useUsers } from './useUsers'
 
 const BulkUserManager = ({ groupId }) => {
     const [mode, setMode] = useState('MEMBERS')
-    const { loading, error, users, prevUsers, pager, setPage } = useUsers({
+    const { loading, error, users, pager, setPage } = useUsers({
         groupId,
         mode,
     })
+    const pendingChanges = usePendingChanges()
+    const showPagination = !loading && !error && users.length > 0
 
     const toggleAll = () => {}
     const toggleSelected = () => {}
@@ -20,30 +24,7 @@ const BulkUserManager = ({ groupId }) => {
     return (
         <div className={styles.container}>
             <h2>{i18n.t('Users')}</h2>
-            <div className={styles.modeButtons}>
-                <button
-                    type="button"
-                    className={
-                        mode === 'MEMBERS'
-                            ? styles.selectedModeButton
-                            : styles.modeButton
-                    }
-                    onClick={() => setMode('MEMBERS')}
-                >
-                    {i18n.t('View and remove users from group')}
-                </button>
-                <button
-                    type="button"
-                    className={
-                        mode === 'NON_MEMBERS'
-                            ? styles.selectedModeButton
-                            : styles.modeButton
-                    }
-                    onClick={() => setMode('NON_MEMBERS')}
-                >
-                    {i18n.t('Add users to group')}
-                </button>
-            </div>
+            <ModeButtons mode={mode} onModeChange={setMode} />
             <div className={styles.grid}>
                 <div>
                     <DataTableToolbar>
@@ -59,21 +40,27 @@ const BulkUserManager = ({ groupId }) => {
                         />
                     </DataTableToolbar>
                     <UserTable
+                        loading={loading}
+                        error={error}
+                        users={users}
                         actionLabel={
                             mode === 'MEMBERS'
                                 ? i18n.t('Remove from group')
                                 : i18n.t('Add to group')
                         }
-                        loading={loading}
-                        error={error}
-                        users={users || prevUsers}
+                        onActionClick={user => {
+                            if (mode === 'MEMBERS') {
+                                pendingChanges.remove(user)
+                            } else {
+                                pendingChanges.add(user)
+                            }
+                        }}
+                        pendingChanges={pendingChanges}
                         toggleAll={toggleAll}
                         toggleSelected={toggleSelected}
                     />
-                    <DataTableToolbar position="bottom">
-                        {(loading
-                            ? prevUsers?.length > 0
-                            : users?.length > 0) && (
+                    {showPagination && (
+                        <DataTableToolbar position="bottom">
                             <Pagination
                                 className={styles.pagination}
                                 {...pager}
@@ -95,10 +82,12 @@ const BulkUserManager = ({ groupId }) => {
                                 hidePageSelect
                                 hidePageSizeSelect
                             />
-                        )}
-                    </DataTableToolbar>
+                        </DataTableToolbar>
+                    )}
                 </div>
-                <PendingChanges />
+                <div>
+                    <PendingChanges pendingChanges={pendingChanges} />
+                </div>
             </div>
         </div>
     )
