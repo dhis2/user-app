@@ -8,7 +8,7 @@ const fixUsers = users => {
         return users.map(user => ({
             id: user.id,
             name: `${user.firstName} ${user.surname}`,
-            username: user.id.slice(0, 4),
+            username: user.userCredentials.username,
         }))
     }
 }
@@ -20,8 +20,9 @@ export const useUsers = ({ groupId, mode }) => {
         const params = {
             fields: [
                 'id',
-                // TODO: needs backend support
-                // 'username',
+                // TODO: switch to 'username~from(userCredentials.username)'
+                // once https://github.com/dhis2/dhis2-core/pull/9126 is merged
+                'userCredentials[username]',
                 // TODO: switch to 'name' once https://github.com/dhis2/dhis2-core/pull/9126 is merged
                 'firstName',
                 'surname',

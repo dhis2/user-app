@@ -2,9 +2,6 @@ import { useState } from 'react'
 
 export const usePendingChanges = () => {
     const [pendingChanges, setPendingChanges] = useState([])
-    console.log({
-        pendingChanges,
-    })
 
     return {
         size: pendingChanges.length,
