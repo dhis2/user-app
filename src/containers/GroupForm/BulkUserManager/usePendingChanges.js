@@ -1,37 +1,54 @@
 import { useState } from 'react'
 
-export const usePendingChanges = () => {
-    const [pendingChanges, setPendingChanges] = useState([])
+const useMap = () => {
+    const [map, setMap] = useState(new Map())
 
     return {
-        size: pendingChanges.length,
-        map: fn => pendingChanges.map(fn),
-        get: userId => pendingChanges.find(change => change.userId === userId),
+        set: (key, value) => {
+            setMap(map => {
+                const newMap = new Map(map)
+                newMap.set(key, value)
+                return newMap
+            })
+        },
+        get: (key, value) => map.get(key, value),
+        delete: key => {
+            setMap(map => {
+                const newMap = new Map(map)
+                newMap.delete(key)
+                return newMap
+            })
+        },
+        clear: () => setMap(new Map()),
+        values: () => map.values(),
+        size: map.size,
+    }
+}
+
+export const usePendingChanges = () => {
+    const pendingChanges = useMap()
+
+    return {
+        size: pendingChanges.size,
+        map: fn => Array.from(pendingChanges.values()).map(fn),
+        get: userId => pendingChanges.get(userId),
         add: user => {
-            setPendingChanges([
-                ...pendingChanges,
-                {
-                    action: 'ADD',
-                    userId: user.id,
-                    username: user.username,
-                },
-            ])
+            pendingChanges.set(user.id, {
+                action: 'ADD',
+                userId: user.id,
+                username: user.username,
+            })
         },
         remove: user => {
-            setPendingChanges([
-                ...pendingChanges,
-                {
-                    action: 'REMOVE',
-                    userId: user.id,
-                    username: user.username,
-                },
-            ])
+            pendingChanges.set(user.id, {
+                action: 'REMOVE',
+                userId: user.id,
+                username: user.username,
+            })
         },
         cancel: pendingChange => {
-            setPendingChanges(
-                pendingChanges.filter(c => c.userId !== pendingChange.userId)
-            )
+            pendingChanges.delete(pendingChange.userId)
         },
-        cancelAll: () => setPendingChanges([]),
+        cancelAll: pendingChanges.clear,
     }
 }

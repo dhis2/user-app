@@ -9,6 +9,19 @@
     gap: var(--spacers-dp8);
 }
 
+.topbar {
+    display: flex;
+    align-items: center;
+    gap: var(--spacers-dp12);
+    /* Height of search input is greater than height of small button */
+    min-height: 60px;
+}
+
+.selectionSummary {
+    font-size: 14px;
+    font-weight: 500;
+}
+
 .pagination {
     margin-left: auto;
 }

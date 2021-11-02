@@ -1,5 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { DataTableToolbar, InputField, Pagination } from '@dhis2/ui'
+import { DataTableToolbar, InputField, Pagination, Button } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import styles from './BulkUserManager.module.css'
@@ -35,19 +35,68 @@ const BulkUserManager = ({ groupId }) => {
             <ModeButtons mode={mode} onModeChange={setMode} />
             <div className={styles.grid}>
                 <div>
-                    <DataTableToolbar>
-                        <InputField
-                            placeholder={
-                                mode === 'MEMBERS'
-                                    ? i18n.t('Search for a user in this group')
-                                    : i18n.t('Search for a user to add')
-                            }
-                            value={filter}
-                            onChange={({ value }) => setFilter(value)}
-                            inputWidth="300px"
-                            disabled={loading}
-                            dense
-                        />
+                    <DataTableToolbar className={styles.topbar}>
+                        {selected.size > 0 ? (
+                            <>
+                                <span className={styles.selectionSummary}>
+                                    {/* TODO: handle pluralisation */}
+                                    {i18n.t(
+                                        '{{selectedCount}} of {{total}} users selected',
+                                        {
+                                            selectedCount: selected.size,
+                                            total: pager.total,
+                                        }
+                                    )}
+                                </span>
+                                <Button
+                                    small
+                                    secondary
+                                    onClick={() => {
+                                        const selectedUsers = users.filter(
+                                            ({ id }) => selected.has(id)
+                                        )
+                                        selectedUsers.forEach(user => {
+                                            if (mode === 'MEMBERS') {
+                                                pendingChanges.remove(user)
+                                            } else {
+                                                pendingChanges.add(user)
+                                            }
+                                        })
+                                    }}
+                                >
+                                    {/* TODO: handle pluralisation */}
+                                    {mode === 'MEMBERS'
+                                        ? i18n.t(
+                                              'Remove {{selectedCount}} users',
+                                              {
+                                                  selectedCount: selected.size,
+                                              }
+                                          )
+                                        : i18n.t(
+                                              'Add {{selectedCount}} users',
+                                              {
+                                                  selectedCount: selected.size,
+                                              }
+                                          )}
+                                </Button>
+                            </>
+                        ) : (
+                            <InputField
+                                placeholder={
+                                    mode === 'MEMBERS'
+                                        ? i18n.t(
+                                              'Search for a user in this group'
+                                          )
+                                        : i18n.t('Search for a user to add')
+                                }
+                                value={filter}
+                                onChange={({ value }) => setFilter(value)}
+                                inputWidth="300px"
+                                disabled={loading}
+                                type="search"
+                                dense
+                            />
+                        )}
                     </DataTableToolbar>
                     <UserTable
                         loading={loading}
