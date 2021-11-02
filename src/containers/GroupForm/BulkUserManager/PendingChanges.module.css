@@ -1,3 +1,7 @@
+.scrollbox {
+    max-height: 600px;
+    overflow-y: auto;
+}
 
 .pendingChangesRow {
     display: flex;

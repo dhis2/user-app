@@ -20,36 +20,38 @@ const PendingChanges = ({ pendingChanges }) => (
                 </Button>
             )}
         </div>
-        {pendingChanges.map(pendingChange => {
-            const { action, userId, username } = pendingChange
+        <div className={styles.scrollbox}>
+            {pendingChanges.map(pendingChange => {
+                const { action, userId, username } = pendingChange
 
-            return (
-                <div
-                    key={userId}
-                    className={
-                        action === 'ADD'
-                            ? styles.pendingAddRow
-                            : styles.pendingRemoveRow
-                    }
-                >
-                    <span className={styles.pendingChangeSummary}>
-                        {action === 'ADD' ? (
-                            <IconAdd16 color={colors.green700} />
-                        ) : (
-                            <IconCross16 color={colors.red700} />
-                        )}
-                        {username}
-                    </span>
-                    <Button
-                        secondary
-                        small
-                        onClick={() => pendingChanges.cancel(pendingChange)}
+                return (
+                    <div
+                        key={userId}
+                        className={
+                            action === 'ADD'
+                                ? styles.pendingAddRow
+                                : styles.pendingRemoveRow
+                        }
                     >
-                        {i18n.t('Cancel')}
-                    </Button>
-                </div>
-            )
-        })}
+                        <span className={styles.pendingChangeSummary}>
+                            {action === 'ADD' ? (
+                                <IconAdd16 color={colors.green700} />
+                            ) : (
+                                <IconCross16 color={colors.red700} />
+                            )}
+                            {username}
+                        </span>
+                        <Button
+                            secondary
+                            small
+                            onClick={() => pendingChanges.cancel(pendingChange)}
+                        >
+                            {i18n.t('Cancel')}
+                        </Button>
+                    </div>
+                )
+            })}
+        </div>
     </>
 )
 
