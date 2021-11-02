@@ -20,6 +20,8 @@ const BulkUserManager = ({ groupId }) => {
         selected,
         toggleSelected,
         toggleAllSelected,
+        filter,
+        setFilter,
     } = useUsers({
         groupId,
         mode,
@@ -40,8 +42,10 @@ const BulkUserManager = ({ groupId }) => {
                                     ? i18n.t('Search for a user in this group')
                                     : i18n.t('Search for a user to add')
                             }
+                            value={filter}
+                            onChange={({ value }) => setFilter(value)}
                             inputWidth="300px"
-                            disabled={loading || !!error}
+                            disabled={loading}
                             dense
                         />
                     </DataTableToolbar>
