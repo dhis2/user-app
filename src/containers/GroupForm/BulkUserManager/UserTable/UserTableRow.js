@@ -54,11 +54,12 @@ const UserTableRow = ({
     pendingChangeAction,
     onPendingChangeCancel,
     actionButton,
-    toggleSelected,
+    selected,
+    onToggleSelected,
 }) => (
-    <DataTableRow key={user.id} className={getRowClass(pendingChangeAction)}>
+    <DataTableRow className={getRowClass(pendingChangeAction)}>
         <DataTableCell width="48px">
-            <Checkbox onChange={toggleSelected} value={user.id} />
+            <Checkbox checked={selected} onChange={onToggleSelected} />
         </DataTableCell>
         <DataTableCell>{user.username}</DataTableCell>
         <DataTableCell>{user.name}</DataTableCell>
@@ -77,13 +78,13 @@ const UserTableRow = ({
 
 UserTableRow.propTypes = {
     actionButton: PropTypes.element.isRequired,
-    toggleSelected: PropTypes.func.isRequired,
+    selected: PropTypes.bool.isRequired,
     user: PropTypes.shape({
-        id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         username: PropTypes.string.isRequired,
     }).isRequired,
     onPendingChangeCancel: PropTypes.func.isRequired,
+    onToggleSelected: PropTypes.func.isRequired,
     pendingChangeAction: PropTypes.oneOf(['ADD', 'REMOVE']),
 }
 

@@ -23,8 +23,9 @@ const UserTable = ({
     actionLabel,
     onActionClick,
     pendingChanges,
-    toggleAll,
-    toggleSelected,
+    selected,
+    onToggleSelected,
+    onToggleAllSelected,
 }) => {
     if (loading && !users) {
         return (
@@ -54,12 +55,22 @@ const UserTable = ({
         )
     }
 
+    const selectedUsers = users.filter(({ id }) => selected.has(id))
+
     return (
         <DataTable>
             <DataTableHead>
                 <DataTableRow>
                     <DataTableColumnHeader width="48px">
-                        <Checkbox onChange={toggleAll} disabled={loading} />
+                        <Checkbox
+                            checked={selectedUsers.length === users.length}
+                            indeterminate={
+                                selectedUsers.length > 0 &&
+                                selectedUsers.length < users.length
+                            }
+                            onChange={onToggleAllSelected}
+                            disabled={loading}
+                        />
                     </DataTableColumnHeader>
                     <DataTableColumnHeader>
                         {i18n.t('Username')}
@@ -93,7 +104,8 @@ const UserTable = ({
                             onPendingChangeCancel={() =>
                                 pendingChanges.cancel(pendingChange)
                             }
-                            toggleSelected={toggleSelected}
+                            selected={selected.has(user.id)}
+                            onToggleSelected={() => onToggleSelected(user.id)}
                         />
                     )
                 })}
@@ -109,9 +121,10 @@ UserTable.propTypes = {
         cancel: PropTypes.func.isRequired,
         get: PropTypes.func.isRequired,
     }).isRequired,
-    toggleAll: PropTypes.func.isRequired,
-    toggleSelected: PropTypes.func.isRequired,
+    selected: PropTypes.instanceOf(Set).isRequired,
     onActionClick: PropTypes.func.isRequired,
+    onToggleAllSelected: PropTypes.func.isRequired,
+    onToggleSelected: PropTypes.func.isRequired,
     error: PropTypes.instanceOf(Error),
     users: PropTypes.arrayOf(
         PropTypes.shape({

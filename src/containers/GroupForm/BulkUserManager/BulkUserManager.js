@@ -11,15 +11,21 @@ import { useUsers } from './useUsers'
 
 const BulkUserManager = ({ groupId }) => {
     const [mode, setMode] = useState('MEMBERS')
-    const { loading, error, users, pager, setPage } = useUsers({
+    const {
+        loading,
+        error,
+        users,
+        pager,
+        setPage,
+        selected,
+        toggleSelected,
+        toggleAllSelected,
+    } = useUsers({
         groupId,
         mode,
     })
     const pendingChanges = usePendingChanges()
     const showPagination = !loading && !error && users.length > 0
-
-    const toggleAll = () => {}
-    const toggleSelected = () => {}
 
     return (
         <div className={styles.container}>
@@ -56,8 +62,9 @@ const BulkUserManager = ({ groupId }) => {
                             }
                         }}
                         pendingChanges={pendingChanges}
-                        toggleAll={toggleAll}
-                        toggleSelected={toggleSelected}
+                        selected={selected}
+                        onToggleSelected={toggleSelected}
+                        onToggleAllSelected={toggleAllSelected}
                     />
                     {showPagination && (
                         <DataTableToolbar position="bottom">

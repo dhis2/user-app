@@ -59,6 +59,8 @@ export const useUsers = ({ groupId, mode }) => {
     const [prevNonMembers, setPrevNonMembers] = useState()
     const [membersPage, setMembersPage] = useState(1)
     const [nonMembersPage, setNonMembersPage] = useState(1)
+    const [selectedMembers, setSelectedMembers] = useState(new Set())
+    const [selectedNonMembers, setSelectedNonMembers] = useState(new Set())
 
     useEffect(() => {
         if (mode === 'MEMBERS') {
@@ -72,20 +74,42 @@ export const useUsers = ({ groupId, mode }) => {
 
     const { called, loading, error, data } =
         mode === 'MEMBERS' ? membersDataQuery : nonMembersDataQuery
+    const prevUsers = mode === 'MEMBERS' ? prevMembers : prevNonMembers
+    const users = fixUsers(data?.users.users || prevUsers)
     const [page, setPage] =
         mode === 'MEMBERS'
             ? [membersPage, setMembersPage]
             : [nonMembersPage, setNonMembersPage]
-    const prevUsers = mode === 'MEMBERS' ? prevMembers : prevNonMembers
+    const [selected, setSelected] =
+        mode === 'MEMBERS'
+            ? [selectedMembers, setSelectedMembers]
+            : [selectedNonMembers, setSelectedNonMembers]
 
     return {
         loading: !called || loading,
         error,
-        users: fixUsers(data?.users.users || prevUsers),
+        users,
         pager: {
             ...data?.users.pager,
             page,
         },
         setPage,
+        selected,
+        toggleSelected: userId => {
+            const newSelected = new Set(selected)
+            if (selected.has(userId)) {
+                newSelected.delete(userId)
+            } else {
+                newSelected.add(userId)
+            }
+            setSelected(newSelected)
+        },
+        toggleAllSelected: () => {
+            if (selected.size > 0) {
+                setSelected(new Set())
+            } else {
+                setSelected(new Set(users.map(({ id }) => id)))
+            }
+        },
     }
 }
