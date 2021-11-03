@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-11-02T15:38:34.229Z\n"
-"PO-Revision-Date: 2021-11-02T15:38:34.229Z\n"
+"POT-Creation-Date: 2021-11-02T17:06:25.930Z\n"
+"PO-Revision-Date: 2021-11-02T17:06:25.930Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -397,21 +397,6 @@ msgstr "Create, modify, view and delete User Groups"
 msgid "Users"
 msgstr "Users"
 
-msgid "{{selectedCount}} of {{total}} users selected"
-msgstr "{{selectedCount}} of {{total}} users selected"
-
-msgid "Remove {{selectedCount}} users"
-msgstr "Remove {{selectedCount}} users"
-
-msgid "Add {{selectedCount}} users"
-msgstr "Add {{selectedCount}} users"
-
-msgid "Search for a user in this group"
-msgstr "Search for a user in this group"
-
-msgid "Search for a user to add"
-msgstr "Search for a user to add"
-
 msgid "Remove from group"
 msgstr "Remove from group"
 
@@ -438,6 +423,30 @@ msgstr "Cancel all"
 
 msgid "Cancel"
 msgstr "Cancel"
+
+msgid "Search for a user in this group"
+msgstr "Search for a user in this group"
+
+msgid "Search for a user to add"
+msgstr "Search for a user to add"
+
+msgid "1 of 1 user selected"
+msgstr "1 of 1 user selected"
+
+msgid "{{selectedCount}} of {{totalUsers}} users selected"
+msgstr "{{selectedCount}} of {{totalUsers}} users selected"
+
+msgid "Remove 1 user"
+msgstr "Remove 1 user"
+
+msgid "Remove {{selectedCount}} users"
+msgstr "Remove {{selectedCount}} users"
+
+msgid "Add 1 user"
+msgstr "Add 1 user"
+
+msgid "Add {{selectedCount}} users"
+msgstr "Add {{selectedCount}} users"
 
 msgid "Error loading users"
 msgstr "Error loading users"
