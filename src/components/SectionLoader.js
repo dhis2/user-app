@@ -66,6 +66,7 @@ class SectionLoader extends Component {
     }
 
     setRouteConfig(currentUser) {
+        // Only show menu items for which the user has either the "add" or "delete" authority
         this.routeConfig = !currentUser
             ? null
             : getRouteConfig().reduce(

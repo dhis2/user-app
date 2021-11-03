@@ -1,10 +1,10 @@
 import i18n from '@dhis2/d2-i18n'
 import React from 'react'
-import CardLinks from '../components/CardLinks'
 import FormLoader from '../components/FormLoader'
 import PageNotFound from '../components/PageNotFound'
 import GroupDetails from '../containers/GroupDetails'
 import GroupList from '../containers/GroupList'
+import Home from '../containers/Home'
 import RoleDetails from '../containers/RoleDetails'
 import RoleList from '../containers/RoleList'
 import UserList from '../containers/UserList'
@@ -105,7 +105,7 @@ const createRouteConfig = () => [
     {
         key: 'landing_page',
         path: '/',
-        component: CardLinks,
+        component: Home,
     },
     {
         key: 'not_found',
