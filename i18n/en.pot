@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-10-27T13:21:41.362Z\n"
-"PO-Revision-Date: 2021-10-27T13:21:41.362Z\n"
+"POT-Creation-Date: 2021-10-28T08:38:25.790Z\n"
+"PO-Revision-Date: 2021-10-28T08:38:25.790Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -233,15 +233,6 @@ msgstr "Import-Export"
 
 msgid "System"
 msgstr "System"
-
-msgid "Add"
-msgstr "Add"
-
-msgid "list"
-msgstr "list"
-
-msgid "You do not have access to any section of the DHIS 2 User Management App"
-msgstr "You do not have access to any section of the DHIS 2 User Management App"
 
 msgid "Edit user"
 msgstr "Edit user"
@@ -508,6 +499,18 @@ msgstr "Actions"
 
 msgid "Member"
 msgstr "Member"
+
+msgid "Insufficient permissions"
+msgstr "Insufficient permissions"
+
+msgid "You do not have access to any section of the DHIS 2 User Management App"
+msgstr "You do not have access to any section of the DHIS 2 User Management App"
+
+msgid "List"
+msgstr "List"
+
+msgid "Add"
+msgstr "Add"
 
 msgid "User role \"{{displayName}}\" saved successfully"
 msgstr "User role \"{{displayName}}\" saved successfully"
