@@ -12,5 +12,7 @@
         "dhis2ApiVersion": "38"
     },
     "testFiles": "**/*.feature",
-    "ignoreTestFiles": ["**/*-wip/*.feature"]
+    "ignoreTestFiles": ["**/*-wip/*.feature"],
+    "defaultCommandTimeout": 10000,
+    "requestTimeout": 10000
 }
