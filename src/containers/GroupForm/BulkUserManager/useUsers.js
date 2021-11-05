@@ -14,14 +14,21 @@ export const useUsers = ({ groupId, mode }) => {
             pageSize: 10,
             rootJunction: 'OR',
         }
-        const makeFilter = filter => {
-            const filterFields = [
-                'firstName',
-                'surname',
-                'userCredentials.username',
-            ]
-            return filterFields.map(field => `${field}:ilike:${filter}`)
-        }
+        // The gist API does not support filtering by full name, so we must
+        // split the filter into space-separated parts and filter by those parts
+        const makeFilter = filter =>
+            filter.split(' ').flatMap(part => {
+                if (part === '') {
+                    return []
+                }
+
+                const filterFields = [
+                    'firstName',
+                    'surname',
+                    'userCredentials.username',
+                ]
+                return filterFields.map(field => `${field}:ilike:${part}`)
+            })
 
         return {
             members: {

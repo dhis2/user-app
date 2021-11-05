@@ -84,8 +84,8 @@ TopBar.propTypes = {
         remove: PropTypes.func.isRequired,
     }).isRequired,
     selectedUsers: PropTypes.array.isRequired,
-    totalUsers: PropTypes.number.isRequired,
     onFilterChange: PropTypes.func.isRequired,
+    totalUsers: PropTypes.number,
 }
 
 export default TopBar
