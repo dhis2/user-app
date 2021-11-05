@@ -96,6 +96,7 @@ const UserTable = ({
                                     secondary
                                     small
                                     onClick={() => onActionClick(user)}
+                                    disabled={loading}
                                 >
                                     {actionLabel}
                                 </Button>
