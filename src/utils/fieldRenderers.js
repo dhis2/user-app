@@ -58,7 +58,6 @@ export const renderDateField = ({ input, meta, label, ...other }) => {
                     {...input}
                     {...other}
                     type="date"
-                    inputWidth="200px"
                     errorText={errorText}
                 />
             </div>
