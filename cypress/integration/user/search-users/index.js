@@ -5,7 +5,7 @@ const NAME_SEARCH_QUERY = 'admin'
 
 When('the user-manager searches the list by entering a name', () => {
     cy.getWithDataTest('{user-filter-name}').type(NAME_SEARCH_QUERY)
-    cy.wait(1000)
+    cy.get('[data-test="dhis2-uicore-tablebody"] [data-test="dhis2-uicore-datatablerow"]').should('have.length', 1)
 })
 
 Then(
@@ -25,10 +25,12 @@ When('the user-manager chooses an inactivity time', () => {
 
 Given('the user-manager filtered the list', () => {
     cy.getWithDataTest('{user-filter-name}').type(NAME_SEARCH_QUERY)
+    cy.get('[data-test="dhis2-uicore-tablebody"] [data-test="dhis2-uicore-datatablerow"]').should('have.length', 1)
 })
 
 When('the user-manager edits one of the displayed users', () => {
-    cy.getWithDataTest('{context-menu-button}').first().click()
+    cy.getWithDataTest('{context-menu-button}').first().should('be.visible').click()
+    cy.getWithDataTest('{dhis2-uicore-menu}').should('be.visible')
     cy.getWithDataTest('{dhis2-uicore-menu}').contains('Edit').click()
     cy.findByRole('heading', { name: /^Update User:/ }).should('exist')
 })

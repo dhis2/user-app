@@ -4,6 +4,22 @@ Given('the user-manager is on the homepage', () => {
     cy.visit('/')
 })
 
+When('the user-manager clicks on the user list icon of the user tile', () => {
+    cy
+        .findByRole('heading', { name: 'User' })
+        .parents('[data-test="dhis2-uicore-card"]')
+        .findByRole('button', { name: 'List' })
+        .click()
+})
+
+When('the user-manager clicks on the add user icon of the user tile', () => {
+    cy
+        .findByRole('heading', { name: 'User' })
+        .parents('[data-test="dhis2-uicore-card"]')
+        .findByRole('button', { name: 'Add' })
+        .click()
+})
+
 When(
     'the user-manager clicks on the add user group icon of the user group tile',
     () => {
@@ -14,14 +30,6 @@ When(
             .click()
     }
 )
-
-When('the user-manager clicks on the add user icon of the user tile', () => {
-    cy
-        .findByRole('heading', { name: 'User' })
-        .parents('[data-test="dhis2-uicore-card"]')
-        .findByRole('button', { name: 'Add' })
-        .click()
-})
 
 When(
     'the user-manager clicks on the add user role icon of the user role tile',
@@ -45,14 +53,6 @@ When(
     }
 )
 
-When('the user-manager clicks on the user list icon of the user tile', () => {
-    cy
-        .findByRole('heading', { name: 'User' })
-        .parents('[data-test="dhis2-uicore-card"]')
-        .findByRole('button', { name: 'List' })
-        .click()
-})
-
 When(
     'the user-manager clicks on the user role list icon of the user role tile',
     () => {
@@ -64,8 +64,14 @@ When(
     }
 )
 
+Then('the user-manager should be redirected to the user list page', () => {
+    cy.url().should('match', /[/]users/)
+    cy.findByRole('nav').should('exist')
+})
+
 Then('the user-manager should be redirected to the add user form page', () => {
     cy.url().should('match', /[/]users[/]new/)
+    cy.get('form').should('exist')
 })
 
 Then(
@@ -88,10 +94,6 @@ Then(
         cy.url().should('match', /[/]user-groups/)
     }
 )
-
-Then('the user-manager should be redirected to the user list page', () => {
-    cy.url().should('match', /[/]users/)
-})
 
 Then('the user-manager should be redirected to the user role list page', () => {
     cy.url().should('match', /[/]user-roles/)
