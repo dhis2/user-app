@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-11-03T16:10:07.549Z\n"
-"PO-Revision-Date: 2021-11-03T16:10:07.549Z\n"
+"POT-Creation-Date: 2021-11-05T15:33:29.517Z\n"
+"PO-Revision-Date: 2021-11-05T15:33:29.517Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -388,6 +388,12 @@ msgstr "Create, modify, view and delete User Groups"
 msgid "Users"
 msgstr "Users"
 
+msgid "There aren't any users in this group yet"
+msgstr "There aren't any users in this group yet"
+
+msgid "No results found"
+msgstr "No results found"
+
 msgid "Remove from group"
 msgstr "Remove from group"
 
@@ -441,9 +447,6 @@ msgstr "Add {{selectedCount}} users"
 
 msgid "Error loading users"
 msgstr "Error loading users"
-
-msgid "No results found"
-msgstr "No results found"
 
 msgid "Username"
 msgstr "Username"

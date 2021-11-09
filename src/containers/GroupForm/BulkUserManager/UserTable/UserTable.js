@@ -20,6 +20,7 @@ const UserTable = ({
     loading,
     error,
     users,
+    noResultsMessage,
     actionLabel,
     onActionClick,
     pendingChanges,
@@ -50,7 +51,7 @@ const UserTable = ({
     if (!loading && users.length === 0) {
         return (
             <DataTableInfoWrapper columns={4}>
-                <p>{i18n.t('No results found')}</p>
+                <p>{noResultsMessage}</p>
             </DataTableInfoWrapper>
         )
     }
@@ -118,6 +119,7 @@ const UserTable = ({
 UserTable.propTypes = {
     actionLabel: PropTypes.string.isRequired,
     loading: PropTypes.bool.isRequired,
+    noResultsMessage: PropTypes.string.isRequired,
     pendingChanges: PropTypes.shape({
         cancel: PropTypes.func.isRequired,
         get: PropTypes.func.isRequired,

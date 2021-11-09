@@ -53,6 +53,13 @@ const BulkUserManager = ({ groupId }) => {
                         loading={loading}
                         error={error}
                         users={users}
+                        noResultsMessage={
+                            mode === 'MEMBERS' && filter === ''
+                                ? i18n.t(
+                                      `There aren't any users in this group yet`
+                                  )
+                                : i18n.t('No results found')
+                        }
                         actionLabel={
                             mode === 'MEMBERS'
                                 ? i18n.t('Remove from group')
