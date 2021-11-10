@@ -1,0 +1,9 @@
+.container {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    height: 100%;
+}
+
+.content {
+    padding: 16px;
+}

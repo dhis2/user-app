@@ -1,0 +1,11 @@
+.nav {
+    background: var(--colors-grey200);
+}
+
+li.navItem {
+    background: inherit;
+}
+
+li.navItem:hover {
+    background: var(--colors-grey300);
+}
