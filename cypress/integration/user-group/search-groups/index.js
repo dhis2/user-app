@@ -5,7 +5,9 @@ const NAME_SEARCH_QUERY = 'admin'
 
 When('the user-manager searches the list by entering a name', () => {
     cy.getWithDataTest('{search-filter}').type(NAME_SEARCH_QUERY)
-    cy.wait(1000)
+    cy.get(
+        '[data-test="dhis2-uicore-tablebody"] [data-test="dhis2-uicore-datatablerow"]'
+    ).should('have.length', 4)
 })
 
 Then(
@@ -21,6 +23,9 @@ Then(
 
 Given('the user-manager filtered the list', () => {
     cy.getWithDataTest('{search-filter}').type(NAME_SEARCH_QUERY)
+    cy.get(
+        '[data-test="dhis2-uicore-tablebody"] [data-test="dhis2-uicore-datatablerow"]'
+    ).should('have.length', 4)
 })
 
 When('the user-manager edits one of the displayed user groups', () => {

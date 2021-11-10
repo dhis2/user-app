@@ -1,51 +1,66 @@
-import { Sidebar } from '@dhis2/d2-ui-core'
+import { Menu, MenuItem } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
-import { withRouter } from 'react-router'
+import React from 'react'
+import { useHistory, useRouteMatch } from 'react-router-dom'
+import styles from './SideNav.module.css'
+
+const NavItem = ({ path, label }) => {
+    const history = useHistory()
+    const match = useRouteMatch(path)
+    const active = match?.isExact
+
+    return (
+        <MenuItem
+            // Has no effect until the component supports arbitrary attributes,
+            // but I put it here so we don't forget.
+            // See https://www.aditus.io/aria/aria-current/
+            aria-current={active ? 'page' : undefined}
+            active={active}
+            onClick={() => history.push(path)}
+            label={label}
+            className={styles.navItem}
+        />
+    )
+}
+
+NavItem.propTypes = {
+    label: PropTypes.string.isRequired,
+    path: PropTypes.string.isRequired,
+}
 
 /**
  * Renders the sidebar containing the available sections.
  * If its on a path/route that doesn't match any section it will render null.
  * This is because when a form or the CardLinks are displayed, the sidebar should not show.
  */
-class SideNav extends Component {
-    changeSectionHandler = key => {
-        const { sections, history } = this.props
-        const section = sections.find(section => section.key === key)
-
-        history.push(section.path)
+const SideNav = ({ sections }) => {
+    if (!sections.length) {
+        return null
     }
 
-    render() {
-        const {
-            sections,
-            location: { pathname },
-        } = this.props
-        const sectionForPath = sections.find(
-            section => section.path === pathname
-        )
-        const onLandingPage = pathname === '/'
-        let sectionKey = sectionForPath ? sectionForPath.key : null
-        if (onLandingPage) {
-            sectionKey = 'HOME'
-        }
-
-        return (
-            <Sidebar
-                sections={sections}
-                onChangeSection={this.changeSectionHandler}
-                currentSection={sectionKey}
-            />
-        )
-    }
+    return (
+        <nav
+            // See http://web-accessibility.carnegiemuseums.org/code/navigation/
+            role="nav"
+            aria-label="Main Navigation"
+            className={styles.nav}
+        >
+            <Menu>
+                {sections.map(({ path, label }) => {
+                    return <NavItem key={path} path={path} label={label} />
+                })}
+            </Menu>
+        </nav>
+    )
 }
 
 SideNav.propTypes = {
-    history: PropTypes.object.isRequired,
-    sections: PropTypes.array.isRequired,
-    location: PropTypes.shape({
-        pathname: PropTypes.string.isRequired,
-    }),
+    sections: PropTypes.arrayOf(
+        PropTypes.shape({
+            label: PropTypes.string.isRequired,
+            path: PropTypes.string.isRequired,
+        })
+    ).isRequired,
 }
 
-export default withRouter(SideNav)
+export default SideNav
