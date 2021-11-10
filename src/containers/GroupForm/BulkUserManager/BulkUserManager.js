@@ -1,9 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
-import { DataTableToolbar, Pagination } from '@dhis2/ui'
+import { DataTableToolbar, Pagination, SegmentedControl } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import styles from './BulkUserManager.module.css'
-import ModeButtons from './ModeButtons'
 import PendingChanges from './PendingChanges'
 import TopBar from './TopBar'
 import { usePendingChanges } from './usePendingChanges'
@@ -33,7 +32,20 @@ const BulkUserManager = ({ groupId }) => {
     return (
         <div className={styles.container}>
             <h2>{i18n.t('Users')}</h2>
-            <ModeButtons mode={mode} onModeChange={setMode} />
+            <SegmentedControl
+                selected={mode}
+                options={[
+                    {
+                        label: i18n.t('View and remove users from group'),
+                        value: 'MEMBERS',
+                    },
+                    {
+                        label: i18n.t('Add users to group'),
+                        value: 'NON_MEMBERS',
+                    },
+                ]}
+                onChange={({ value }) => setMode(value)}
+            />
             <div className={styles.grid}>
                 <div>
                     <DataTableToolbar className={styles.topbar}>
