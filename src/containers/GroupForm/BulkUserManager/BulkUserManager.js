@@ -3,11 +3,11 @@ import { DataTableToolbar, Pagination, SegmentedControl } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import styles from './BulkUserManager.module.css'
+import { usePendingChanges } from './hooks/usePendingChanges'
+import { useUsers } from './hooks/useUsers'
 import PendingChanges from './PendingChanges'
 import TopBar from './TopBar'
-import { usePendingChanges } from './usePendingChanges'
 import UserTable from './UserTable'
-import { useUsers } from './useUsers'
 
 const BulkUserManager = ({ groupId }) => {
     const [mode, setMode] = useState('MEMBERS')

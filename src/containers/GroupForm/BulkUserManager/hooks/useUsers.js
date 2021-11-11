@@ -1,6 +1,7 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import { useState, useMemo, useEffect } from 'react'
 import { useDebounce } from 'use-debounce'
+import { useSet } from './useSet'
 
 const FILTER_DEBOUNCE = 375
 
@@ -60,8 +61,8 @@ export const useUsers = ({ groupId, mode }) => {
     const [prevNonMembers, setPrevNonMembers] = useState()
     const [membersPage, setMembersPage] = useState(1)
     const [nonMembersPage, setNonMembersPage] = useState(1)
-    const [selectedMembers, setSelectedMembers] = useState(new Set())
-    const [selectedNonMembers, setSelectedNonMembers] = useState(new Set())
+    const selectedMembers = useSet()
+    const selectedNonMembers = useSet()
     const [membersFilter, setMembersFilter] = useState('')
     const [nonMembersFilter, setNonMembersFilter] = useState('')
     const [debouncedMembersFilter] = useDebounce(membersFilter, FILTER_DEBOUNCE)
@@ -100,10 +101,7 @@ export const useUsers = ({ groupId, mode }) => {
         mode === 'MEMBERS'
             ? [membersPage, setMembersPage]
             : [nonMembersPage, setNonMembersPage]
-    const [selected, setSelected] =
-        mode === 'MEMBERS'
-            ? [selectedMembers, setSelectedMembers]
-            : [selectedNonMembers, setSelectedNonMembers]
+    const selected = mode === 'MEMBERS' ? selectedMembers : selectedNonMembers
     const [filter, setFilter] =
         mode === 'MEMBERS'
             ? [membersFilter, setMembersFilter]
@@ -120,19 +118,18 @@ export const useUsers = ({ groupId, mode }) => {
         setPage,
         selected,
         toggleSelected: userId => {
-            const newSelected = new Set(selected)
             if (selected.has(userId)) {
-                newSelected.delete(userId)
+                selected.delete(userId)
             } else {
-                newSelected.add(userId)
+                selected.add(userId)
             }
-            setSelected(newSelected)
         },
         toggleAllSelected: () => {
-            if (selected.size > 0) {
-                setSelected(new Set())
+            const userIds = users.map(({ id }) => id)
+            if (userIds.some(userId => selected.has(userId))) {
+                userIds.forEach(selected.delete)
             } else {
-                setSelected(new Set(users.map(({ id }) => id)))
+                userIds.forEach(selected.add)
             }
         },
         filter,
