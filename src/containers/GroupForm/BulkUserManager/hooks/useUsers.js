@@ -13,23 +13,38 @@ export const useUsers = ({ groupId, mode }) => {
             fields: ['id', 'name', 'userCredentials.username~rename(username)'],
             total: true,
             pageSize: 10,
-            rootJunction: 'OR',
         }
-        // The gist API does not support filtering by full name, so we must
-        // split the filter into space-separated parts and filter by those parts
-        const makeFilter = filter =>
-            filter.split(' ').flatMap(part => {
-                if (part === '') {
-                    return []
-                }
 
-                const filterFields = [
-                    'firstName',
-                    'surname',
-                    'userCredentials.username',
-                ]
-                return filterFields.map(field => `${field}:ilike:${part}`)
-            })
+        // The gist API does not support filtering by full name, so we must
+        // split the filter into space-separated tokens and filter by those
+        // tokens. A filter group is created for each token, with filters within
+        // each group being combined with a logical OR and the groups being
+        // combined with a logical AND.
+        const getFilterParams = filterQuery => {
+            const filterTokens = filterQuery.split(' ')
+            let filter = undefined
+            if (filterQuery !== '') {
+                filter = filterTokens.flatMap((token, index) => {
+                    if (token === '') {
+                        return []
+                    }
+
+                    const filterFields = [
+                        'firstName',
+                        'surname',
+                        'userCredentials.username',
+                    ]
+                    return filterFields.map(
+                        field => `${index}:${field}:ilike:${token}`
+                    )
+                })
+            }
+
+            return {
+                rootJunction: filterTokens.length === 1 ? 'OR' : 'AND',
+                filter,
+            }
+        }
 
         return {
             members: {
@@ -37,8 +52,8 @@ export const useUsers = ({ groupId, mode }) => {
                     resource,
                     params: ({ page, filter }) => ({
                         ...params,
+                        ...getFilterParams(filter),
                         page,
-                        filter: filter !== '' ? makeFilter(filter) : undefined,
                     }),
                 },
             },
@@ -47,8 +62,8 @@ export const useUsers = ({ groupId, mode }) => {
                     resource,
                     params: ({ page, filter }) => ({
                         ...params,
+                        ...getFilterParams(filter),
                         page,
-                        filter: filter !== '' ? makeFilter(filter) : undefined,
                         inverse: true,
                     }),
                 },
