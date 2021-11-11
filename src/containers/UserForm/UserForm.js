@@ -379,7 +379,6 @@ UserForm.propTypes = {
     user: PropTypes.object.isRequired,
     valid: PropTypes.bool.isRequired,
     asyncBlurFields: PropTypes.arrayOf(PropTypes.string),
-    fallbackOrgUnits: PropTypes.object,
 }
 
 UserForm.contextTypes = {
@@ -390,8 +389,6 @@ const selector = formValueSelector(CONFIG.FORM_NAME)
 const mapStateToProps = state => {
     return {
         user: state.currentItem,
-        fallbackOrgUnits:
-            state.currentUser[CONFIG.DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS],
         inviteUser: inviteUserValueSelector(state.form[CONFIG.FORM_NAME]),
         externalAuthOnly: Boolean(selector(state, CONFIG.EXTERNAL_AUTH)),
     }
