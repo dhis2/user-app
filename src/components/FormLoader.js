@@ -8,7 +8,6 @@ import { getItem, initNewItem } from '../actions'
 import { USER, USER_GROUP, USER_ROLE } from '../constants/entityTypes'
 import GroupForm from '../containers/GroupForm'
 import RoleForm from '../containers/RoleForm'
-import UserForm from '../containers/UserForm'
 import { shortItemSelector } from '../selectors'
 import ErrorMessage from './ErrorMessage'
 import styles from './FormLoader.module.css'
@@ -40,8 +39,6 @@ class FormLoader extends Component {
     renderForm() {
         const { entityType } = this.props
         switch (entityType) {
-            case USER:
-                return <UserForm />
             case USER_ROLE:
                 return <RoleForm />
             case USER_GROUP:

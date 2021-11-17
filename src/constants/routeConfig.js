@@ -9,6 +9,8 @@ import RoleDetails from '../containers/RoleDetails'
 import RoleList from '../containers/RoleList'
 import UserList from '../containers/UserList'
 import UserProfile from '../containers/UserProfile'
+import CreateUser from '../pages/CreateUser'
+import EditUser from '../pages/EditUser'
 import { USER, USER_ROLE, USER_GROUP } from './entityTypes'
 
 const getUserSection = () => ({
@@ -45,13 +47,13 @@ const createRouteConfig = () => [
     {
         key: 'user_new_view',
         path: '/users/new',
-        render: props => <FormLoader entityType={USER} {...props} />,
+        render: () => <CreateUser />,
         entityType: USER,
     },
     {
         key: 'user_edit_view',
         path: '/users/edit/:id',
-        render: props => <FormLoader entityType={USER} {...props} />,
+        render: ({ match }) => <EditUser userId={match.params.id} />,
         entityType: USER,
     },
     {
