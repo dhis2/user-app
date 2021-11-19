@@ -1,113 +1,199 @@
-import React, { useEffect } from 'react'
+import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
+import {
+    CenteredContent,
+    CircularLoader,
+    NoticeBox,
+    composeValidators,
+    hasValue,
+    dhis2Username,
+    dhis2Password,
+    email,
+} from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import { ReactFinalForm, InputFieldFF, SingleSelectFieldFF, composeValidators, hasValue, email, ButtonStrip, Button } from '@dhis2/ui'
+import React from 'react'
 import { useHistory } from 'react-router-dom'
+import Form, {
+    FormSection,
+    TextField,
+    SingleSelectField,
+    CheckboxField,
+} from './Form'
+
+const query = {
+    interfaceLanguages: {
+        resource: 'locales/ui',
+    },
+    databaseLanguages: {
+        resource: 'locales/db',
+    },
+}
+
+const optionsFromLanguages = languages =>
+    languages.map(({ name, locale }) => ({
+        label: name,
+        value: locale,
+    }))
+
+const createRepeatPasswordValidator = password => repeatPassword => {
+    if (password !== repeatPassword) {
+        return i18n.t('Passwords do not match')
+    }
+}
 
 const UserForm = ({
     submitButtonLabel,
     onSubmit,
     user,
-    interfaceLanguages,
     userInterfaceLanguage,
-    databaseLanguages,
-    userDatabaseLanguage
+    userDatabaseLanguage,
 }) => {
+    const { loading, error, data } = useDataQuery(query)
     const history = useHistory()
 
+    if (loading) {
+        return (
+            <CenteredContent>
+                <CircularLoader />
+            </CenteredContent>
+        )
+    }
+
+    if (error) {
+        return (
+            <NoticeBox error title={i18n.t('Error fetching languages')}>
+                {i18n.t(
+                    'There was an error fetching interface and database languages.'
+                )}
+            </NoticeBox>
+        )
+    }
+
+    const { interfaceLanguages, databaseLanguages } = data
+
+    // TODO: implement 'invite user' fields (and hide appropriate fields when selected)
+
     return (
-        <ReactFinalForm.Form onSubmit={onSubmit}>
-            {({ handleSubmit, valid, values, submitting }) => (
-                <form onSubmit={handleSubmit}>
-                    <h3>{i18n.t('Basic information')}</h3>
-                    <ReactFinalForm.Field
-                        required
-                        name="username"
-                        label={i18n.t('Username')}
-                        component={InputFieldFF}
-                        initialValue={user?.displayName}
-                        validate={hasValue}
-                    />
-                    <ReactFinalForm.Field
-                        name="email"
-                        label={i18n.t('Email address')}
-                        component={InputFieldFF}
-                        initialValue={user?.email}
-                        validate={composeValidators(hasValue, email)}
-                    />
-                    <ReactFinalForm.Field
-                        required
-                        name="firstName"
-                        label={i18n.t('First name')}
-                        component={InputFieldFF}
-                        initialValue={user?.firstName}
-                        validate={hasValue}
-                    />
-                    <ReactFinalForm.Field
-                        required
-                        name="surname"
-                        label={i18n.t('Last name')}
-                        component={InputFieldFF}
-                        initialValue={user?.surname}
-                        validate={hasValue}
-                    />
-                    <ReactFinalForm.Field
-                        required
-                        name="interfaceLanguage"
-                        label={i18n.t('Interface language')}
-                        component={SingleSelectFieldFF}
-                        initialValue={userInterfaceLanguage}
-                        options={interfaceLanguages.map(({ name, locale }) => ({
-                            label: name,
-                            value: locale,
-                        }))}
-                        validate={hasValue}
-                    />
-                    <ReactFinalForm.Field
-                        required
-                        name="databaseLanguage"
-                        label={i18n.t('Database language')}
-                        component={SingleSelectFieldFF}
-                        initialValue={userDatabaseLanguage}
-                        options={(
-                            [
-                                { label: i18n.t('Use database locale / no translation'), value: 'USE_DB_LOCALE' },
-                                ...databaseLanguages.map(({ name, locale }) => ({
-                                    label: name,
-                                    value: locale,
-                                }))
-                            ]
+        <Form
+            submitButtonLabel={submitButtonLabel}
+            onSubmit={onSubmit}
+            onCancel={() => history.push('/users')}
+        >
+            {({ values }) => (
+                <>
+                    <FormSection title={i18n.t('Basic information')}>
+                        <TextField
+                            required
+                            name="username"
+                            label={i18n.t('Username')}
+                            initialValue={user?.userCredentials.username}
+                            autoComplete="new-password"
+                            validate={composeValidators(
+                                hasValue,
+                                dhis2Username
+                            )}
+                        />
+                        <TextField
+                            name="email"
+                            label={i18n.t('Email address')}
+                            initialValue={user?.email}
+                            validate={composeValidators(hasValue, email)}
+                        />
+                        <TextField
+                            required
+                            name="firstName"
+                            label={i18n.t('First name')}
+                            initialValue={user?.firstName}
+                            validate={hasValue}
+                        />
+                        <TextField
+                            required
+                            name="surname"
+                            label={i18n.t('Last name')}
+                            initialValue={user?.surname}
+                            validate={hasValue}
+                        />
+                        <SingleSelectField
+                            required
+                            name="interfaceLanguage"
+                            label={i18n.t('Interface language')}
+                            initialValue={userInterfaceLanguage}
+                            options={optionsFromLanguages(interfaceLanguages)}
+                            validate={hasValue}
+                        />
+                        <SingleSelectField
+                            required
+                            name="databaseLanguage"
+                            label={i18n.t('Database language')}
+                            initialValue={
+                                userDatabaseLanguage || 'USE_DB_LOCALE'
+                            }
+                            options={[
+                                {
+                                    label: i18n.t(
+                                        'Use database locale / no translation'
+                                    ),
+                                    value: 'USE_DB_LOCALE',
+                                },
+                                optionsFromLanguages(databaseLanguages),
+                            ]}
+                            validate={hasValue}
+                        />
+                        <CheckboxField
+                            name="disabled"
+                            label={i18n.t('Disable this user account')}
+                            initialValue={user?.userCredentials.disabled}
+                        />
+                    </FormSection>
+                    <FormSection
+                        title={i18n.t('Security')}
+                        description={i18n.t(
+                            'Settings for how this user can log in.'
                         )}
-                        validate={hasValue}
-                    />
-                    <ButtonStrip>
-                        <Button primary type="submit" onClick={handleSubmit}>
-                            {submitButtonLabel}
-                        </Button>
-                        <Button onClick={() => history.push('/users')}>
-                            {i18n.t('Cancel without saving')}
-                        </Button>
-                    </ButtonStrip>
-                </form>
+                    >
+                        <TextField
+                            required
+                            name="password"
+                            label={i18n.t('Password')}
+                            type="password"
+                            initialValue=""
+                            autoComplete="new-password"
+                            validate={composeValidators(
+                                hasValue,
+                                dhis2Password
+                            )}
+                        />
+                        <TextField
+                            required
+                            name="repeatPassword"
+                            label={i18n.t('Retype password')}
+                            type="password"
+                            initialValue=""
+                            autoComplete="new-password"
+                            validate={composeValidators(
+                                hasValue,
+                                createRepeatPasswordValidator(values.password)
+                            )}
+                        />
+                    </FormSection>
+                </>
             )}
-        </ReactFinalForm.Form>
+        </Form>
     )
 }
 
-const localesPropType = PropTypes.arrayOf(PropTypes.shape({
-    locale: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-}).isRequired)
-
 UserForm.propTypes = {
-    databaseLanguages: localesPropType.isRequired,
-    interfaceLanguages: localesPropType.isRequired,
     submitButtonLabel: PropTypes.string.isRequired,
     userInterfaceLanguage: PropTypes.string.isRequired,
     onSubmit: PropTypes.func.isRequired,
     user: PropTypes.shape({
-        displayName: PropTypes.string.isRequired,
-        // id: PropTypes.string.isRequired,
+        firstName: PropTypes.string.isRequired,
+        surname: PropTypes.string.isRequired,
+        userCredentials: PropTypes.shape({
+            disabled: PropTypes.bool.isRequired,
+            username: PropTypes.string.isRequired,
+        }).isRequired,
+        email: PropTypes.string,
     }),
     userDatabaseLanguage: PropTypes.string,
 }

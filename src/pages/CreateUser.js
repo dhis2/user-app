@@ -1,18 +1,12 @@
-import React from 'react'
-import i18n from '@dhis2/d2-i18n'
 import { useDataQuery } from '@dhis2/app-runtime'
-import UserForm from '../components/UserForm'
+import i18n from '@dhis2/d2-i18n'
 import { CenteredContent, CircularLoader, NoticeBox } from '@dhis2/ui'
+import React from 'react'
+import UserForm from '../components/UserForm'
 
 const query = {
-    interfaceLanguages: {
-        resource: 'locales/ui'
-    },
-    databaseLanguages: {
-        resource: 'locales/db'
-    },
     userInterfaceLanguage: {
-        resource: 'systemSettings/keyUiLocale'
+        resource: 'systemSettings/keyUiLocale',
     },
 }
 
@@ -29,13 +23,17 @@ const CreateUser = () => {
 
     if (error) {
         return (
-            <NoticeBox error={i18n.t('Error fetching languages')}>
-                {i18n.t('There was an error fetching interface and database languages.')}
+            <NoticeBox
+                error
+                title={i18n.t('Error fetching interface language')}
+            >
+                {i18n.t(
+                    'There was an error fetching the default interface language.'
+                )}
             </NoticeBox>
         )
     }
 
-    const { interfaceLanguages, databaseLanguages, userInterfaceLanguage } = data
     const handleSubmit = () => {
         throw new Error('TODO')
     }
@@ -45,9 +43,7 @@ const CreateUser = () => {
             <h2>{i18n.t('New user')}</h2>
             <UserForm
                 submitButtonLabel={i18n.t('Create user')}
-                interfaceLanguages={interfaceLanguages}
-                userInterfaceLanguage={userInterfaceLanguage}
-                databaseLanguages={databaseLanguages}
+                userInterfaceLanguage={data.userInterfaceLanguage.keyUiLocale}
                 onSubmit={handleSubmit}
             />
         </>

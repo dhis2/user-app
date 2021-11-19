@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-10-28T08:38:25.790Z\n"
-"PO-Revision-Date: 2021-10-28T08:38:25.790Z\n"
+"POT-Creation-Date: 2021-11-19T13:35:33.083Z\n"
+"PO-Revision-Date: 2021-11-19T13:35:33.083Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -246,6 +246,9 @@ msgstr "Edit user role"
 msgid "Send message"
 msgstr "Send message"
 
+msgid "Cancel without saving"
+msgstr "Cancel without saving"
+
 msgid "There was an error getting the form:"
 msgstr "There was an error getting the form:"
 
@@ -307,6 +310,51 @@ msgstr "There was an error loading the current user"
 msgid "You do not have authorities to see users, user roles or user groups"
 msgstr "You do not have authorities to see users, user roles or user groups"
 
+msgid "Passwords do not match"
+msgstr "Passwords do not match"
+
+msgid "Error fetching languages"
+msgstr "Error fetching languages"
+
+msgid "There was an error fetching interface and database languages."
+msgstr "There was an error fetching interface and database languages."
+
+msgid "Basic information"
+msgstr "Basic information"
+
+msgid "Username"
+msgstr "Username"
+
+msgid "Email address"
+msgstr "Email address"
+
+msgid "First name"
+msgstr "First name"
+
+msgid "Last name"
+msgstr "Last name"
+
+msgid "Interface language"
+msgstr "Interface language"
+
+msgid "Database language"
+msgstr "Database language"
+
+msgid "Disable this user account"
+msgstr "Disable this user account"
+
+msgid "Security"
+msgstr "Security"
+
+msgid "Settings for how this user can log in."
+msgstr "Settings for how this user can log in."
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Retype password"
+msgstr "Retype password"
+
 msgid "Display name"
 msgstr "Display name"
 
@@ -318,12 +366,6 @@ msgstr "Last login"
 
 msgid "Created"
 msgstr "Created"
-
-msgid "First name"
-msgstr "First name"
-
-msgid "Last name"
-msgstr "Last name"
 
 msgid "Introduction"
 msgstr "Introduction"
@@ -570,9 +612,6 @@ msgstr "Create account with user details"
 msgid "Email invitation to create account"
 msgstr "Email invitation to create account"
 
-msgid "Username"
-msgstr "Username"
-
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "External authentication only (OpenID or LDAP)"
 
@@ -581,12 +620,6 @@ msgstr "Account expiration date"
 
 msgid "Disabled"
 msgstr "Disabled"
-
-msgid "Password"
-msgstr "Password"
-
-msgid "Retype password"
-msgstr "Retype password"
 
 msgid "OIDC mapping value"
 msgstr "OIDC mapping value"
@@ -608,12 +641,6 @@ msgstr "Telegram"
 
 msgid "Twitter"
 msgstr "Twitter"
-
-msgid "Interface language"
-msgstr "Interface language"
-
-msgid "Database language"
-msgstr "Database language"
 
 msgid "Available roles"
 msgstr "Available roles"
@@ -784,6 +811,24 @@ msgstr "Error loading users"
 msgid "Account disabled?"
 msgstr "Account disabled?"
 
+msgid "Error fetching interface language"
+msgstr "Error fetching interface language"
+
+msgid "There was an error fetching the default interface language."
+msgstr "There was an error fetching the default interface language."
+
+msgid "New user"
+msgstr "New user"
+
+msgid "Create user"
+msgstr "Create user"
+
+msgid "Error fetching user"
+msgstr "Error fetching user"
+
+msgid "There was an error fetching this user."
+msgstr "There was an error fetching this user."
+
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
 msgstr[0] "{{count}} selected"
@@ -824,9 +869,6 @@ msgstr "Value should be a number"
 
 msgid "Value should be a positive integer"
 msgstr "Value should be a positive integer"
-
-msgid "Passwords do not match"
-msgstr "Passwords do not match"
 
 msgid "This field is required"
 msgstr "This field is required"

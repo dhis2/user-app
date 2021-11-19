@@ -1,0 +1,38 @@
+.form {
+    background: white;
+    border: 2px solid var(--colors-grey300);
+    padding: var(--spacers-dp16);
+}
+
+.section {
+    margin-bottom: var(--spacers-dp24);
+}
+
+.sectionHeader {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--colors-grey800);
+    margin: 0;
+    margin-bottom: var(--spacers-dp4);
+}
+
+.sectionDescription {
+    font-size: 14px;
+    color: var(--colors-grey800);
+    margin-top: 0;
+    margin-bottom: var(--spacers-dp4);
+}
+
+.field {
+    margin-top: var(--spacers-dp12);
+}
+
+.textField {
+    composes: field;
+    max-width: 488px;
+}
+
+.singleSelectField {
+    composes: field;
+    max-width: 330px;
+}
