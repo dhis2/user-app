@@ -43,6 +43,7 @@
         "lodash.snakecase": "^4.1.1",
         "lodash.sortby": "^4.7.0",
         "lodash.startswith": "^4.2.1",
+        "lodash.uniqby": "^4.7.0",
         "material-design-icons-iconfont": "^5.0.1",
         "material-ui": "^0.20.0",
         "query-string": "^7.0.1",

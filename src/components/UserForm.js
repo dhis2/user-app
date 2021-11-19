@@ -1,4 +1,4 @@
-import { useDataQuery } from '@dhis2/app-runtime'
+import { useDataQuery, useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     CenteredContent,
@@ -10,6 +10,7 @@ import {
     dhis2Password,
     email,
 } from '@dhis2/ui'
+import uniqBy from 'lodash.uniqby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
@@ -31,10 +32,14 @@ const query = {
 }
 
 const optionsFromLanguages = languages =>
-    languages.map(({ name, locale }) => ({
-        label: name,
-        value: locale,
-    }))
+    // It is possible for the server to return duplicate entries for database locales
+    uniqBy(
+        languages.map(({ name, locale }) => ({
+            label: name,
+            value: locale,
+        })),
+        'value'
+    )
 
 const createRepeatPasswordValidator = password => repeatPassword => {
     if (password !== repeatPassword) {
@@ -49,6 +54,9 @@ const UserForm = ({
     userInterfaceLanguage,
     userDatabaseLanguage,
 }) => {
+    const {
+        systemInfo: { emailConfigured },
+    } = useConfig()
     const { loading, error, data } = useDataQuery(query)
     const history = useHistory()
 
@@ -71,9 +79,6 @@ const UserForm = ({
     }
 
     const { interfaceLanguages, databaseLanguages } = data
-
-    // TODO
-    const emailConfigured = true
 
     return (
         <Form
@@ -150,6 +155,7 @@ const UserForm = ({
                             name="interfaceLanguage"
                             label={i18n.t('Interface language')}
                             initialValue={userInterfaceLanguage}
+                            filterable
                             options={optionsFromLanguages(interfaceLanguages)}
                             validate={hasValue}
                         />
@@ -160,6 +166,7 @@ const UserForm = ({
                             initialValue={
                                 userDatabaseLanguage || 'USE_DB_LOCALE'
                             }
+                            filterable
                             options={[
                                 {
                                     label: i18n.t(
@@ -167,7 +174,7 @@ const UserForm = ({
                                     ),
                                     value: 'USE_DB_LOCALE',
                                 },
-                                optionsFromLanguages(databaseLanguages),
+                                ...optionsFromLanguages(databaseLanguages),
                             ]}
                             validate={hasValue}
                         />

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-11-19T13:35:33.083Z\n"
-"PO-Revision-Date: 2021-11-19T13:35:33.083Z\n"
+"POT-Creation-Date: 2021-11-19T17:12:24.715Z\n"
+"PO-Revision-Date: 2021-11-19T17:12:24.715Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -319,6 +319,18 @@ msgstr "Error fetching languages"
 msgid "There was an error fetching interface and database languages."
 msgstr "There was an error fetching interface and database languages."
 
+msgid "Invite user"
+msgstr "Invite user"
+
+msgid "Create account or email invitation"
+msgstr "Create account or email invitation"
+
+msgid "Create account with user details"
+msgstr "Create account with user details"
+
+msgid "Email invitation to create account"
+msgstr "Email invitation to create account"
+
 msgid "Basic information"
 msgstr "Basic information"
 
@@ -352,8 +364,44 @@ msgstr "Settings for how this user can log in."
 msgid "Password"
 msgstr "Password"
 
+msgid "Minimum 8 characters, one uppercase and lowercase letter and one number"
+msgstr "Minimum 8 characters, one uppercase and lowercase letter and one number"
+
 msgid "Retype password"
 msgstr "Retype password"
+
+msgid "OIDC mapping value"
+msgstr "OIDC mapping value"
+
+msgid "OpenID Connect mapping claim for your identity platform"
+msgstr "OpenID Connect mapping claim for your identity platform"
+
+msgid "LDAP identifier"
+msgstr "LDAP identifier"
+
+msgid "External authentication only (OpenID / LDAP)"
+msgstr "External authentication only (OpenID / LDAP)"
+
+msgid "Contact details"
+msgstr "Contact details"
+
+msgid "Mobile phone number"
+msgstr "Mobile phone number"
+
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+msgid "Facebook Messenger"
+msgstr "Facebook Messenger"
+
+msgid "Skype"
+msgstr "Skype"
+
+msgid "Telegram"
+msgstr "Telegram"
+
+msgid "Twitter"
+msgstr "Twitter"
 
 msgid "Display name"
 msgstr "Display name"
@@ -396,9 +444,6 @@ msgstr "Speaks"
 
 msgid "E-mail"
 msgstr "E-mail"
-
-msgid "Mobile phone number"
-msgstr "Mobile phone number"
 
 msgid "Organisations units"
 msgstr "Organisations units"
@@ -603,15 +648,6 @@ msgstr ""
 "Selecting an organisation unit provides access to all units in the "
 "sub-hierarchy"
 
-msgid "Create account or email invitation"
-msgstr "Create account or email invitation"
-
-msgid "Create account with user details"
-msgstr "Create account with user details"
-
-msgid "Email invitation to create account"
-msgstr "Email invitation to create account"
-
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "External authentication only (OpenID or LDAP)"
 
@@ -620,27 +656,6 @@ msgstr "Account expiration date"
 
 msgid "Disabled"
 msgstr "Disabled"
-
-msgid "OIDC mapping value"
-msgstr "OIDC mapping value"
-
-msgid "LDAP identifier"
-msgstr "LDAP identifier"
-
-msgid "WhatsApp"
-msgstr "WhatsApp"
-
-msgid "Facebook Messenger"
-msgstr "Facebook Messenger"
-
-msgid "Skype"
-msgstr "Skype"
-
-msgid "Telegram"
-msgstr "Telegram"
-
-msgid "Twitter"
-msgstr "Twitter"
 
 msgid "Available roles"
 msgstr "Available roles"
