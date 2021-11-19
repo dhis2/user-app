@@ -72,7 +72,8 @@ const UserForm = ({
 
     const { interfaceLanguages, databaseLanguages } = data
 
-    // TODO: implement 'invite user' fields (and hide appropriate fields when selected)
+    // TODO
+    const emailConfigured = true
 
     return (
         <Form
@@ -82,6 +83,31 @@ const UserForm = ({
         >
             {({ values }) => (
                 <>
+                    {!user && emailConfigured && (
+                        <FormSection title={i18n.t('Invite user')}>
+                            <SingleSelectField
+                                name="inviteUser"
+                                label={i18n.t(
+                                    'Create account or email invitation'
+                                )}
+                                initialValue="SET_PASSWORD"
+                                options={[
+                                    {
+                                        label: i18n.t(
+                                            'Create account with user details'
+                                        ),
+                                        value: 'SET_PASSWORD',
+                                    },
+                                    {
+                                        label: i18n.t(
+                                            'Email invitation to create account'
+                                        ),
+                                        value: 'INVITE_USER',
+                                    },
+                                ]}
+                            />
+                        </FormSection>
+                    )}
                     <FormSection title={i18n.t('Basic information')}>
                         <TextField
                             required
@@ -95,10 +121,15 @@ const UserForm = ({
                             )}
                         />
                         <TextField
+                            required={values.inviteUser === 'INVITE_USER'}
                             name="email"
                             label={i18n.t('Email address')}
                             initialValue={user?.email}
-                            validate={composeValidators(hasValue, email)}
+                            validate={
+                                values.inviteUser
+                                    ? composeValidators(hasValue, email)
+                                    : email
+                            }
                         />
                         <TextField
                             required
@@ -146,77 +177,81 @@ const UserForm = ({
                             initialValue={user?.userCredentials.disabled}
                         />
                     </FormSection>
-                    <FormSection
-                        title={i18n.t('Security')}
-                        description={i18n.t(
-                            'Settings for how this user can log in.'
-                        )}
-                    >
-                        {!values.externalAuth && (
-                            <>
-                                <PasswordField
-                                    required={!user}
-                                    name="password"
-                                    label={i18n.t('Password')}
-                                    helpText={i18n.t(
-                                        'Minimum 8 characters, one uppercase and lowercase letter and one number'
-                                    )}
-                                    initialValue=""
-                                    autoComplete="new-password"
-                                    validate={
-                                        user
-                                            ? dhis2Password
-                                            : composeValidators(
-                                                  hasValue,
-                                                  dhis2Password
-                                              )
-                                    }
-                                />
-                                {/* TODO: rename label to 'Repeat password' (need to update transifex key) */}
-                                <PasswordField
-                                    required={!user}
-                                    name="repeatPassword"
-                                    label={i18n.t('Retype password')}
-                                    initialValue=""
-                                    autoComplete="new-password"
-                                    validate={
-                                        user
-                                            ? createRepeatPasswordValidator(
-                                                  values.password
-                                              )
-                                            : composeValidators(
-                                                  hasValue,
-                                                  createRepeatPasswordValidator(
+                    {values.inviteUser !== 'INVITE_USER' && (
+                        <FormSection
+                            title={i18n.t('Security')}
+                            description={i18n.t(
+                                'Settings for how this user can log in.'
+                            )}
+                        >
+                            {!values.externalAuth && (
+                                <>
+                                    <PasswordField
+                                        required={!user}
+                                        name="password"
+                                        label={i18n.t('Password')}
+                                        helpText={i18n.t(
+                                            'Minimum 8 characters, one uppercase and lowercase letter and one number'
+                                        )}
+                                        initialValue=""
+                                        autoComplete="new-password"
+                                        validate={
+                                            user
+                                                ? dhis2Password
+                                                : composeValidators(
+                                                      hasValue,
+                                                      dhis2Password
+                                                  )
+                                        }
+                                    />
+                                    {/* TODO: rename label to 'Repeat password' (need to update transifex key) */}
+                                    <PasswordField
+                                        required={!user}
+                                        name="repeatPassword"
+                                        label={i18n.t('Retype password')}
+                                        initialValue=""
+                                        autoComplete="new-password"
+                                        validate={
+                                            user
+                                                ? createRepeatPasswordValidator(
                                                       values.password
                                                   )
-                                              )
-                                    }
-                                />
-                            </>
-                        )}
-                        <TextField
-                            name="openId"
-                            label={i18n.t('OIDC mapping value')}
-                            helpText={i18n.t(
-                                'OpenID Connect mapping claim for your identity platform'
+                                                : composeValidators(
+                                                      hasValue,
+                                                      createRepeatPasswordValidator(
+                                                          values.password
+                                                      )
+                                                  )
+                                        }
+                                    />
+                                </>
                             )}
-                            initialValue=""
-                            autoComplete="off"
-                        />
-                        <TextField
-                            name="ldapId"
-                            label={i18n.t('LDAP identifier')}
-                            initialValue=""
-                            autoComplete="off"
-                        />
-                        <CheckboxField
-                            name="externalAuth"
-                            label={i18n.t(
-                                'External authentication only (OpenID / LDAP)'
-                            )}
-                            initialValue={user?.userCredentials.externalAuth}
-                        />
-                    </FormSection>
+                            <TextField
+                                name="openId"
+                                label={i18n.t('OIDC mapping value')}
+                                helpText={i18n.t(
+                                    'OpenID Connect mapping claim for your identity platform'
+                                )}
+                                initialValue=""
+                                autoComplete="off"
+                            />
+                            <TextField
+                                name="ldapId"
+                                label={i18n.t('LDAP identifier')}
+                                initialValue=""
+                                autoComplete="off"
+                            />
+                            <CheckboxField
+                                name="externalAuth"
+                                label={i18n.t(
+                                    'External authentication only (OpenID / LDAP)'
+                                )}
+                                initialValue={
+                                    user?.userCredentials.externalAuth
+                                }
+                            />
+                        </FormSection>
+                    )}
                     <FormSection title={i18n.t('Contact details')}>
                         <TextField
                             name="phoneNumber"
