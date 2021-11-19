@@ -21,6 +21,7 @@ import Form, {
     SingleSelectField,
     CheckboxField,
 } from './Form'
+import styles from './UserForm.module.css'
 
 const query = {
     interfaceLanguages: {
@@ -290,6 +291,23 @@ const UserForm = ({
                             label={i18n.t('Twitter')}
                             initialValue={user?.twitter}
                         />
+                    </FormSection>
+                    <FormSection
+                        title={i18n.t('Organisation unit access')}
+                        description={i18n.t(
+                            'Customise the organisation units this user has access to for searching, capturing and managing data.'
+                        )}
+                    >
+                        <NoticeBox
+                            title={i18n.t(
+                                'Organisation unit selections are recursive'
+                            )}
+                            className={styles.organisationUnitsNoticeBox}
+                        >
+                            {i18n.t(
+                                'Selecting a unit gives access to all units in its sub-hierarchy.'
+                            )}
+                        </NoticeBox>
                     </FormSection>
                 </>
             )}

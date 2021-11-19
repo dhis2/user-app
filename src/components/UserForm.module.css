@@ -1,0 +1,4 @@
+.organisationUnitsNoticeBox {
+    width: fit-content;
+    margin-top: var(--spacers-dp16);
+}
