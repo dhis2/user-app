@@ -16,6 +16,7 @@ import { useHistory } from 'react-router-dom'
 import Form, {
     FormSection,
     TextField,
+    PasswordField,
     SingleSelectField,
     CheckboxField,
 } from './Form'
@@ -151,29 +152,101 @@ const UserForm = ({
                             'Settings for how this user can log in.'
                         )}
                     >
+                        {!values.externalAuth && (
+                            <>
+                                <PasswordField
+                                    required={!user}
+                                    name="password"
+                                    label={i18n.t('Password')}
+                                    helpText={i18n.t(
+                                        'Minimum 8 characters, one uppercase and lowercase letter and one number'
+                                    )}
+                                    initialValue=""
+                                    autoComplete="new-password"
+                                    validate={
+                                        user
+                                            ? dhis2Password
+                                            : composeValidators(
+                                                  hasValue,
+                                                  dhis2Password
+                                              )
+                                    }
+                                />
+                                {/* TODO: rename label to 'Repeat password' (need to update transifex key) */}
+                                <PasswordField
+                                    required={!user}
+                                    name="repeatPassword"
+                                    label={i18n.t('Retype password')}
+                                    initialValue=""
+                                    autoComplete="new-password"
+                                    validate={
+                                        user
+                                            ? createRepeatPasswordValidator(
+                                                  values.password
+                                              )
+                                            : composeValidators(
+                                                  hasValue,
+                                                  createRepeatPasswordValidator(
+                                                      values.password
+                                                  )
+                                              )
+                                    }
+                                />
+                            </>
+                        )}
                         <TextField
-                            required
-                            name="password"
-                            label={i18n.t('Password')}
-                            type="password"
-                            initialValue=""
-                            autoComplete="new-password"
-                            validate={composeValidators(
-                                hasValue,
-                                dhis2Password
+                            name="openId"
+                            label={i18n.t('OIDC mapping value')}
+                            helpText={i18n.t(
+                                'OpenID Connect mapping claim for your identity platform'
                             )}
+                            initialValue=""
+                            autoComplete="off"
                         />
                         <TextField
-                            required
-                            name="repeatPassword"
-                            label={i18n.t('Retype password')}
-                            type="password"
+                            name="ldapId"
+                            label={i18n.t('LDAP identifier')}
                             initialValue=""
-                            autoComplete="new-password"
-                            validate={composeValidators(
-                                hasValue,
-                                createRepeatPasswordValidator(values.password)
+                            autoComplete="off"
+                        />
+                        <CheckboxField
+                            name="externalAuth"
+                            label={i18n.t(
+                                'External authentication only (OpenID / LDAP)'
                             )}
+                            initialValue={user?.userCredentials.externalAuth}
+                        />
+                    </FormSection>
+                    <FormSection title={i18n.t('Contact details')}>
+                        <TextField
+                            name="phoneNumber"
+                            label={i18n.t('Mobile phone number')}
+                            initialValue={user?.phoneNumber}
+                        />
+                        <TextField
+                            name="whatsApp"
+                            label={i18n.t('WhatsApp')}
+                            initialValue={user?.whatsApp}
+                        />
+                        <TextField
+                            name="facebookMessenger"
+                            label={i18n.t('Facebook Messenger')}
+                            initialValue={user?.facebookMessenger}
+                        />
+                        <TextField
+                            name="skype"
+                            label={i18n.t('Skype')}
+                            initialValue={user?.skype}
+                        />
+                        <TextField
+                            name="telegram"
+                            label={i18n.t('Telegram')}
+                            initialValue={user?.telegram}
+                        />
+                        <TextField
+                            name="twitter"
+                            label={i18n.t('Twitter')}
+                            initialValue={user?.twitter}
                         />
                     </FormSection>
                 </>
@@ -191,9 +264,16 @@ UserForm.propTypes = {
         surname: PropTypes.string.isRequired,
         userCredentials: PropTypes.shape({
             disabled: PropTypes.bool.isRequired,
+            externalAuth: PropTypes.bool.isRequired,
             username: PropTypes.string.isRequired,
         }).isRequired,
         email: PropTypes.string,
+        facebookMessenger: PropTypes.string,
+        phoneNumber: PropTypes.string,
+        skype: PropTypes.string,
+        telegram: PropTypes.string,
+        twitter: PropTypes.string,
+        whatsApp: PropTypes.string,
     }),
     userDatabaseLanguage: PropTypes.string,
 }

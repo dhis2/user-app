@@ -35,6 +35,15 @@ export const TextField = props => (
     />
 )
 
+export const PasswordField = props => (
+    <ReactFinalForm.Field
+        {...props}
+        className={styles.passwordField}
+        component={InputFieldFF}
+        type="password"
+    />
+)
+
 export const SingleSelectField = props => (
     <ReactFinalForm.Field
         {...props}
@@ -48,6 +57,7 @@ export const CheckboxField = props => (
         {...props}
         className={styles.field}
         component={CheckboxFieldFF}
+        type="checkbox"
     />
 )
 

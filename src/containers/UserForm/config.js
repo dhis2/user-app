@@ -43,9 +43,9 @@ export const PASSWORD = 'password' // done
 export const REPEAT_PASSWORD = 'repeatPassword' // done
 export const SURNAME = 'surname' // done
 export const FIRST_NAME = 'firstName' // done
-export const OPEN_ID = 'openId'
-export const LDAP_ID = 'ldapId'
-export const PHONE_NUMBER = 'phoneNumber'
+export const OPEN_ID = 'openId' // done
+export const LDAP_ID = 'ldapId' // done
+export const PHONE_NUMBER = 'phoneNumber' // done
 export const INTERFACE_LANGUAGE = 'interfaceLanguage' // done
 export const DATABASE_LANGUAGE = 'databaseLanguage' // done
 export const ASSIGNED_ROLES = 'userRoles'
@@ -55,11 +55,11 @@ export const TEI_SEARCH_ORG_UNITS = 'teiSearchOrganisationUnits'
 export const ASSIGNED_USER_GROUPS = 'userGroups'
 export const DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS =
     'catCogsDimensionConstraints'
-export const WHATS_APP = 'whatsApp'
-export const FACEBOOK_MESSENGER = 'facebookMessenger'
-export const SKYPE = 'skype'
-export const TELEGRAM = 'telegram'
-export const TWITTER = 'twitter'
+export const WHATS_APP = 'whatsApp' // done
+export const FACEBOOK_MESSENGER = 'facebookMessenger' // done
+export const SKYPE = 'skype' // done
+export const TELEGRAM = 'telegram' // done
+export const TWITTER = 'twitter' // done
 
 export const USER_PROPS = [
     SURNAME,
