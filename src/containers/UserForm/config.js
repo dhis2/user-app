@@ -49,9 +49,9 @@ export const PHONE_NUMBER = 'phoneNumber' // done
 export const INTERFACE_LANGUAGE = 'interfaceLanguage' // done
 export const DATABASE_LANGUAGE = 'databaseLanguage' // done
 export const ASSIGNED_ROLES = 'userRoles'
-export const DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS = 'organisationUnits'
-export const DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS = 'dataViewOrganisationUnits'
-export const TEI_SEARCH_ORG_UNITS = 'teiSearchOrganisationUnits'
+export const DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS = 'organisationUnits' // done
+export const DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS = 'dataViewOrganisationUnits' // done
+export const TEI_SEARCH_ORG_UNITS = 'teiSearchOrganisationUnits' // done
 export const ASSIGNED_USER_GROUPS = 'userGroups'
 export const DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS =
     'catCogsDimensionConstraints'

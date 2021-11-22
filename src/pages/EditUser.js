@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
-import i18n from '@dhis2/d2-i18n'
-import PropTypes from 'prop-types'
 import { useDataQuery } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
 import { CenteredContent, CircularLoader, NoticeBox } from '@dhis2/ui'
+import PropTypes from 'prop-types'
+import React, { useEffect } from 'react'
 import UserForm from '../components/UserForm'
 
 const query = {
@@ -17,21 +17,23 @@ const query = {
                 'userGroups',
                 'organisationUnits[id,displayName,path]',
                 'dataViewOrganisationUnits[id,displayName,path]',
-                'userCredentials[id,username,accountExpiry,lastLogin,externalAuth,userRoles[id,displayName],cogsDimensionConstraints[id,displayName,dimensionType],catDimensionConstraints[id,displayName,dimensionType],openId,ldapId,disabled]',
                 'teiSearchOrganisationUnits[id,path]',
+                'userCredentials[id,username,accountExpiry,lastLogin,externalAuth,userRoles[id,displayName],cogsDimensionConstraints[id,displayName,dimensionType],catDimensionConstraints[id,displayName,dimensionType],openId,ldapId,disabled]',
                 'whatsApp',
                 'facebookMessenger',
                 'skype',
                 'telegram',
-                'twitter'
-            ]
-        }
-    }
+                'twitter',
+            ],
+        },
+    },
 }
 
 const EditUser = ({ userId }) => {
     // TODO: Reload current user if ID matches userId prop
-    const { called, loading, data, error, refetch } = useDataQuery(query, { lazy: true })
+    const { called, loading, data, error, refetch } = useDataQuery(query, {
+        lazy: true,
+    })
 
     useEffect(() => {
         refetch({ id: userId })

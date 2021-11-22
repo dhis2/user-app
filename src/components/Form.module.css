@@ -36,3 +36,10 @@
     composes: field;
     max-width: 330px;
 }
+
+.transferFieldHeader {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--colors-grey800);
+    margin: var(--spacers-dp8) 0;
+}

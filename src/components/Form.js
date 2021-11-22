@@ -7,6 +7,7 @@ import {
     ButtonStrip,
     Button,
     Required,
+    Transfer,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -63,27 +64,81 @@ export const CheckboxField = props => (
     />
 )
 
-export const SearchableOrgUnitTreeField = props => (
-    <ReactFinalForm.Field
-        {...props}
-        headerText={
-            props.required ? (
-                <>
-                    {props.headerText}
-                    <Required />
-                </>
-            ) : (
-                props.headerText
-            )
-        }
-        className={styles.field}
-        component={SearchableOrgUnitTree}
-    />
+const createChangeHandler = onChange => payload => {
+    if (typeof payload === 'object' && payload.value) {
+        onChange(payload.value)
+    } else if (typeof payload === 'object' && payload.selected) {
+        onChange(payload.selected)
+    } else {
+        onChange(payload)
+    }
+}
+
+/* eslint-disable react/prop-types,no-unused-vars */
+const createFFWrapper =
+    Component =>
+    ({
+        input,
+        meta,
+        error,
+        showValidStatus,
+        valid,
+        validationText,
+        onBlur,
+        onFocus,
+        loading,
+        showLoadingStatus,
+        ...props
+    }) =>
+        <Component {...props} onChange={createChangeHandler(input.onChange)} />
+/* eslint-enable react/prop-types,no-unused-vars */
+
+const SearchableOrgUnitTreeFF = createFFWrapper(SearchableOrgUnitTree)
+
+export const SearchableOrgUnitTreeField = ({ headerText, ...props }) => (
+    <div>
+        <ReactFinalForm.Field
+            {...props}
+            headerText={
+                props.required ? (
+                    <>
+                        {headerText}
+                        <Required dataTest="required" />
+                    </>
+                ) : (
+                    headerText
+                )
+            }
+            className={styles.field}
+            component={SearchableOrgUnitTreeFF}
+        />
+    </div>
 )
 
 SearchableOrgUnitTreeField.propTypes = {
-    headerText: PropTypes.element,
+    headerText: PropTypes.node.isRequired,
     required: PropTypes.bool,
+}
+
+const TransferFF = createFFWrapper(Transfer)
+
+export const TransferField = ({ leftHeader, rightHeader, ...props }) => (
+    <ReactFinalForm.Field
+        {...props}
+        leftHeader={
+            <h3 className={styles.transferFieldHeader}>{leftHeader}</h3>
+        }
+        rightHeader={
+            <h3 className={styles.transferFieldHeader}>{rightHeader}</h3>
+        }
+        className={styles.field}
+        component={TransferFF}
+    />
+)
+
+TransferField.propTypes = {
+    leftHeader: PropTypes.string.isRequired,
+    rightHeader: PropTypes.string.isRequired,
 }
 
 const Form = ({ children, submitButtonLabel, onSubmit, onCancel }) => (

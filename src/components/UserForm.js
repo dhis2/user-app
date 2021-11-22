@@ -21,6 +21,7 @@ import Form, {
     SingleSelectField,
     CheckboxField,
     SearchableOrgUnitTreeField,
+    TransferField,
 } from './Form'
 import styles from './UserForm.module.css'
 
@@ -30,6 +31,14 @@ const query = {
     },
     databaseLanguages: {
         resource: 'locales/db',
+    },
+    userRoles: {
+        resource: 'userRoles',
+        params: {
+            fields: ['id', 'displayName'],
+            canIssue: true,
+            paging: false,
+        },
     },
 }
 
@@ -72,15 +81,17 @@ const UserForm = ({
 
     if (error) {
         return (
-            <NoticeBox error title={i18n.t('Error fetching languages')}>
-                {i18n.t(
-                    'There was an error fetching interface and database languages.'
-                )}
+            <NoticeBox error title={i18n.t('Error fetching form')}>
+                {i18n.t('There was an error fetching this form.')}
             </NoticeBox>
         )
     }
 
-    const { interfaceLanguages, databaseLanguages } = data
+    const {
+        interfaceLanguages,
+        databaseLanguages,
+        userRoles: { userRoles },
+    } = data
 
     return (
         <Form
@@ -318,6 +329,55 @@ const UserForm = ({
                                 'The organisation units that this user can enter and edit data for.'
                             )}
                             initiallySelected={user?.organisationUnits || []}
+                        />
+                        <SearchableOrgUnitTreeField
+                            name="dataViewOrganisationUnits"
+                            orgUnitType="dataViewOrganisationUnits"
+                            headerText={i18n.t('Data output and analysis')}
+                            description={i18n.t(
+                                'The organisation units that this user can export and analyse.'
+                            )}
+                            initiallySelected={
+                                user?.dataViewOrganisationUnits || []
+                            }
+                        />
+                        <SearchableOrgUnitTreeField
+                            name="teiSearchOrganisationUnits"
+                            orgUnitType="teiSearchOrganisationUnits"
+                            headerText={i18n.t('Search')}
+                            description={i18n.t(
+                                'The organisation that this user can search for and in.'
+                            )}
+                            initiallySelected={
+                                user?.teiSearchOrganisationUnits || []
+                            }
+                        />
+                    </FormSection>
+                    <FormSection
+                        title={i18n.t('Roles and groups')}
+                        description={i18n.t(
+                            'Manage what roles and groups this user is a member of.'
+                        )}
+                    >
+                        <TransferField
+                            name="userRoles"
+                            leftHeader={i18n.t('Available user roles')}
+                            rightHeader={i18n.t(
+                                'User roles this user is assigned'
+                            )}
+                            options={userRoles.map(({ displayName, id }) => ({
+                                label: displayName,
+                                value: id,
+                            }))}
+                            selected={
+                                values.userRoles ||
+                                user?.userCredentials.userRoles.map(
+                                    ({ id }) => id
+                                ) ||
+                                []
+                            }
+                            filterable
+                            filterPlaceholder={i18n.t('Filter options')}
                         />
                     </FormSection>
                 </>
