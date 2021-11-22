@@ -8,7 +8,7 @@ import getRefineSearchLabel from './getRefineSearchLabel.js'
 import getValidationText from './getValidationText.js'
 import useOrgUnitSearchResults from './useOrgUnitSearchResults.js'
 
-const AsyncAutoComplete = ({ selectHandler, orgUnitType, dense }) => {
+const AsyncAutoComplete = ({ selectHandler, orgUnitType }) => {
     const inputRef = useRef(null)
     const inputEl = inputRef.current?.querySelector('input')
     const [searchText, setSearchText] = useState('')
@@ -39,19 +39,15 @@ const AsyncAutoComplete = ({ selectHandler, orgUnitType, dense }) => {
 
     return (
         <>
-            <div
-                className={dense ? styles.inputWrapDense : styles.inputWrap}
-                ref={inputRef}
-            >
+            <div ref={inputRef} className={styles.inputWrapper}>
                 <InputField
                     error={!!error}
                     loading={fetching}
-                    label={dense ? undefined : i18n.t('Search')}
                     onChange={({ value }) => setSearchText(value)}
-                    placeholder={i18n.t('Enter search term')}
+                    placeholder={i18n.t('Search for an organisation unit')}
                     validationText={validationText}
                     value={searchText}
-                    dense={dense}
+                    dense={true}
                 />
             </div>
 
@@ -94,7 +90,6 @@ const AsyncAutoComplete = ({ selectHandler, orgUnitType, dense }) => {
 AsyncAutoComplete.propTypes = {
     orgUnitType: PropTypes.string.isRequired,
     selectHandler: PropTypes.func.isRequired,
-    dense: PropTypes.bool,
 }
 
 export default AsyncAutoComplete

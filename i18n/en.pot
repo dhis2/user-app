@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-11-19T17:12:24.715Z\n"
-"PO-Revision-Date: 2021-11-19T17:12:24.715Z\n"
+"POT-Creation-Date: 2021-11-22T09:39:27.858Z\n"
+"PO-Revision-Date: 2021-11-22T09:39:27.858Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -402,6 +402,28 @@ msgstr "Telegram"
 
 msgid "Twitter"
 msgstr "Twitter"
+
+msgid "Organisation unit access"
+msgstr "Organisation unit access"
+
+msgid ""
+"Customise the organisation units this user has access to for searching, "
+"capturing and managing data."
+msgstr ""
+"Customise the organisation units this user has access to for searching, "
+"capturing and managing data."
+
+msgid "Organisation unit selections are recursive"
+msgstr "Organisation unit selections are recursive"
+
+msgid "Selecting a unit gives access to all units in its sub-hierarchy."
+msgstr "Selecting a unit gives access to all units in its sub-hierarchy."
+
+msgid "Data capture and maintenance"
+msgstr "Data capture and maintenance"
+
+msgid "The organisation units that this user can enter and edit data for."
+msgstr "The organisation units that this user can enter and edit data for."
 
 msgid "Display name"
 msgstr "Display name"

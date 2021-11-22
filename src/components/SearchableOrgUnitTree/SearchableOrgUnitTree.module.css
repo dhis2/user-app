@@ -1,25 +1,39 @@
 .horizontalPadding {
-    padding: 0 var(--spacers-dp12);
+    padding: 0 var(--spacers-dp8);
 }
 
 .grid {
     display: grid;
 }
 
-.header {
+.header, .searchFilterWrapper {
     composes: horizontalPadding;
+    padding: var(--spacers-dp8);
 }
 
 .headerText {
-    font-weight: normal;
+    font-size: 14px;
+    font-weight: 500;
     color: rgba(0, 0, 0, 0.87);
-    margin: 12px 0px;
+    margin: 0;
+}
+
+.headerDescription {
+    font-size: 14px;
+    color: var(--colors-grey800);
+    margin: 0;
+    margin-top: var(--spacers-dp4);
+}
+
+.searchFilterWrapper {
+    background: var(--colors-grey100);
 }
 
 .wrapper {
     display: inline-block;
     border: 1px solid var(--colors-grey400);
     border-radius: 3px;
+    width: 480px;
 }
 
 .wrapper.left,
@@ -27,7 +41,6 @@
     float: left;
     margin-top: var(--spacers-dp8);
     margin-bottom: var(--spacers-dp8);
-    width: calc(50% - var(--spacers-dp24));
 }
 
 .wrapper.left {

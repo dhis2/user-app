@@ -6,10 +6,12 @@ import {
     CheckboxFieldFF,
     ButtonStrip,
     Button,
+    Required,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './Form.module.css'
+import SearchableOrgUnitTree from './SearchableOrgUnitTree'
 
 export const FormSection = ({ title, children, description }) => (
     <section className={styles.section}>
@@ -60,6 +62,29 @@ export const CheckboxField = props => (
         type="checkbox"
     />
 )
+
+export const SearchableOrgUnitTreeField = props => (
+    <ReactFinalForm.Field
+        {...props}
+        headerText={
+            props.required ? (
+                <>
+                    {props.headerText}
+                    <Required />
+                </>
+            ) : (
+                props.headerText
+            )
+        }
+        className={styles.field}
+        component={SearchableOrgUnitTree}
+    />
+)
+
+SearchableOrgUnitTreeField.propTypes = {
+    headerText: PropTypes.element,
+    required: PropTypes.bool,
+}
 
 const Form = ({ children, submitButtonLabel, onSubmit, onCancel }) => (
     <ReactFinalForm.Form onSubmit={onSubmit}>

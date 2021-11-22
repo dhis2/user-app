@@ -50,7 +50,6 @@ const OrganisationUnitFilter = ({
                             onOrganisationUnitsChange(selectedOrgUnits)
                             selectRef.current.handleClose()
                         }}
-                        dense
                     />
                 }
                 maxHeight="100%"

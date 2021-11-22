@@ -20,6 +20,7 @@ import Form, {
     PasswordField,
     SingleSelectField,
     CheckboxField,
+    SearchableOrgUnitTreeField,
 } from './Form'
 import styles from './UserForm.module.css'
 
@@ -308,6 +309,16 @@ const UserForm = ({
                                 'Selecting a unit gives access to all units in its sub-hierarchy.'
                             )}
                         </NoticeBox>
+                        <SearchableOrgUnitTreeField
+                            required
+                            name="organisationUnits"
+                            orgUnitType="organisationUnits"
+                            headerText={i18n.t('Data capture and maintenance')}
+                            description={i18n.t(
+                                'The organisation units that this user can enter and edit data for.'
+                            )}
+                            initiallySelected={user?.organisationUnits || []}
+                        />
                     </FormSection>
                 </>
             )}
@@ -321,6 +332,13 @@ UserForm.propTypes = {
     onSubmit: PropTypes.func.isRequired,
     user: PropTypes.shape({
         firstName: PropTypes.string.isRequired,
+        organisationUnits: PropTypes.arrayOf(
+            PropTypes.shape({
+                displayName: PropTypes.string.isRequired,
+                id: PropTypes.string.isRequired,
+                path: PropTypes.string.isRequired,
+            }).isRequired
+        ).isRequired,
         surname: PropTypes.string.isRequired,
         userCredentials: PropTypes.shape({
             disabled: PropTypes.bool.isRequired,
