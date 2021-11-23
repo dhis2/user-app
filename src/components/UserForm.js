@@ -40,6 +40,13 @@ const query = {
             paging: false,
         },
     },
+    userGroups: {
+        resource: 'userGroups',
+        params: {
+            fields: ['id', 'displayName'],
+            paging: false,
+        },
+    },
 }
 
 const optionsFromLanguages = languages =>
@@ -91,6 +98,7 @@ const UserForm = ({
         interfaceLanguages,
         databaseLanguages,
         userRoles: { userRoles },
+        userGroups: { userGroups },
     } = data
 
     return (
@@ -376,8 +384,22 @@ const UserForm = ({
                                 ) ||
                                 []
                             }
-                            filterable
-                            filterPlaceholder={i18n.t('Filter options')}
+                        />
+                        <TransferField
+                            name="userGroups"
+                            leftHeader={i18n.t('Available user groups')}
+                            rightHeader={i18n.t(
+                                'User groups this user is a member of'
+                            )}
+                            options={userGroups.map(({ displayName, id }) => ({
+                                label: displayName,
+                                value: id,
+                            }))}
+                            selected={
+                                values.userGroups ||
+                                user?.userGroups.map(({ id }) => id) ||
+                                []
+                            }
                         />
                     </FormSection>
                 </>
@@ -386,25 +408,41 @@ const UserForm = ({
     )
 }
 
+const OrganisationUnitsPropType = PropTypes.arrayOf(
+    PropTypes.shape({
+        displayName: PropTypes.string.isRequired,
+        id: PropTypes.string.isRequired,
+        path: PropTypes.string.isRequired,
+    }).isRequired
+)
+
 UserForm.propTypes = {
     submitButtonLabel: PropTypes.string.isRequired,
     userInterfaceLanguage: PropTypes.string.isRequired,
     onSubmit: PropTypes.func.isRequired,
     user: PropTypes.shape({
+        dataViewOrganisationUnits: OrganisationUnitsPropType.isRequired,
         firstName: PropTypes.string.isRequired,
-        organisationUnits: PropTypes.arrayOf(
-            PropTypes.shape({
-                displayName: PropTypes.string.isRequired,
-                id: PropTypes.string.isRequired,
-                path: PropTypes.string.isRequired,
-            }).isRequired
-        ).isRequired,
+        organisationUnits: OrganisationUnitsPropType.isRequired,
         surname: PropTypes.string.isRequired,
+        teiSearchOrganisationUnits: OrganisationUnitsPropType.isRequired,
         userCredentials: PropTypes.shape({
             disabled: PropTypes.bool.isRequired,
             externalAuth: PropTypes.bool.isRequired,
+            userRoles: PropTypes.arrayOf(
+                PropTypes.shape({
+                    displayName: PropTypes.string.isRequired,
+                    id: PropTypes.string.isRequired,
+                }).isRequired
+            ).isRequired,
             username: PropTypes.string.isRequired,
         }).isRequired,
+        userGroups: PropTypes.arrayOf(
+            PropTypes.shape({
+                displayName: PropTypes.string.isRequired,
+                id: PropTypes.string.isRequired,
+            }).isRequired
+        ).isRequired,
         email: PropTypes.string,
         facebookMessenger: PropTypes.string,
         phoneNumber: PropTypes.string,

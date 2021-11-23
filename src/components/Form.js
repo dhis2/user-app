@@ -125,12 +125,15 @@ const TransferFF = createFFWrapper(Transfer)
 export const TransferField = ({ leftHeader, rightHeader, ...props }) => (
     <ReactFinalForm.Field
         {...props}
+        height="320px"
         leftHeader={
             <h3 className={styles.transferFieldHeader}>{leftHeader}</h3>
         }
         rightHeader={
             <h3 className={styles.transferFieldHeader}>{rightHeader}</h3>
         }
+        filterable
+        filterPlaceholder={i18n.t('Filter options')}
         className={styles.field}
         component={TransferFF}
     />

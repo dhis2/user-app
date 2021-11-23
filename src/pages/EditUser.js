@@ -14,7 +14,7 @@ const query = {
                 ':owner',
                 'access',
                 'displayName',
-                'userGroups',
+                'userGroups[id,displayName]',
                 'organisationUnits[id,displayName,path]',
                 'dataViewOrganisationUnits[id,displayName,path]',
                 'teiSearchOrganisationUnits[id,path]',

@@ -32,13 +32,17 @@ export const STYLES = {
     },
 }
 
-export const FORM_NAME = 'userForm'
+export const ASSIGNED_USER_GROUPS = 'userGroups'
+export const DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS =
+    'catCogsDimensionConstraints'
+
+export const EXTERNAL_AUTH = 'externalAuth' // done
+export const INVITE = 'inviteUser' // done
+export const DISABLED = 'disabled' // done
+export const WHATS_APP = 'whatsApp' // done
 export const USERNAME = 'username' // done
 export const EMAIL = 'email' // done
 export const EXPIRE_DATE = 'accountExpiry'
-export const DISABLED = 'disabled'
-export const INVITE = 'inviteUser'
-export const EXTERNAL_AUTH = 'externalAuth'
 export const PASSWORD = 'password' // done
 export const REPEAT_PASSWORD = 'repeatPassword' // done
 export const SURNAME = 'surname' // done
@@ -48,18 +52,16 @@ export const LDAP_ID = 'ldapId' // done
 export const PHONE_NUMBER = 'phoneNumber' // done
 export const INTERFACE_LANGUAGE = 'interfaceLanguage' // done
 export const DATABASE_LANGUAGE = 'databaseLanguage' // done
-export const ASSIGNED_ROLES = 'userRoles'
+export const ASSIGNED_ROLES = 'userRoles' // done
 export const DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS = 'organisationUnits' // done
 export const DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS = 'dataViewOrganisationUnits' // done
 export const TEI_SEARCH_ORG_UNITS = 'teiSearchOrganisationUnits' // done
-export const ASSIGNED_USER_GROUPS = 'userGroups'
-export const DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS =
-    'catCogsDimensionConstraints'
-export const WHATS_APP = 'whatsApp' // done
 export const FACEBOOK_MESSENGER = 'facebookMessenger' // done
 export const SKYPE = 'skype' // done
 export const TELEGRAM = 'telegram' // done
 export const TWITTER = 'twitter' // done
+
+export const FORM_NAME = 'userForm'
 
 export const USER_PROPS = [
     SURNAME,
