@@ -107,6 +107,15 @@ class SectionLoader extends Component {
             return <LoadingMask />
         }
 
+        const { routes, sections } = this.routeConfig
+
+        if (sections && sections.length === 0) {
+            const introText = i18n.t(
+                'You do not have authorities to see users, user roles or user groups'
+            )
+            return <ErrorMessage introText={introText} errorMessage="" />
+        }
+
         if (typeof currentUser === 'string') {
             const introText = i18n.t(
                 'There was an error loading the current user'
@@ -117,15 +126,6 @@ class SectionLoader extends Component {
                     errorMessage={currentUser}
                 />
             )
-        }
-
-        const { routes, sections } = this.routeConfig
-
-        if (sections && sections.length === 0) {
-            const introText = i18n.t(
-                'You do not have authorities to see users, user roles or user groups'
-            )
-            return <ErrorMessage introText={introText} errorMessage="" />
         }
 
         return [
