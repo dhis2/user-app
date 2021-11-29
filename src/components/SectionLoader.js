@@ -83,6 +83,11 @@ class SectionLoader extends Component {
         if (!entityType) {
             return true
         }
+
+        // in case of error it's a string with the error-message
+        if (typeof currentUser === 'string') {
+            return false
+        }
         const { models } = this.context.d2
         const canCreate = currentUser.canCreate(models[entityType])
         const canDelete = currentUser.canDelete(models[entityType])
