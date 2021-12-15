@@ -10,7 +10,7 @@ import {
     Transfer,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useCallback } from 'react'
 import styles from './Form.module.css'
 import SearchableOrgUnitTree from './SearchableOrgUnitTree'
 
@@ -89,8 +89,13 @@ const createFFWrapper =
         loading,
         showLoadingStatus,
         ...props
-    }) =>
-        <Component {...props} onChange={createChangeHandler(input.onChange)} />
+    }) => {
+        const handleChange = useCallback(createChangeHandler(input.onChange), [
+            input.onChange,
+        ])
+        return <Component {...props} onChange={handleChange} />
+    }
+
 /* eslint-enable react/prop-types,no-unused-vars */
 
 const SearchableOrgUnitTreeFF = createFFWrapper(SearchableOrgUnitTree)

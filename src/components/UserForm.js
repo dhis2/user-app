@@ -47,6 +47,13 @@ const query = {
             paging: false,
         },
     },
+    allDimensionConstraints: {
+        resource: 'dimensions/constraints',
+        params: {
+            fields: ['id', 'name', 'dimensionType'],
+            paging: false,
+        },
+    },
 }
 
 const optionsFromLanguages = languages =>
@@ -99,6 +106,7 @@ const UserForm = ({
         databaseLanguages,
         userRoles: { userRoles },
         userGroups: { userGroups },
+        allDimensionConstraints: { dimensions: allDimensionConstraints },
     } = data
 
     return (
@@ -402,6 +410,34 @@ const UserForm = ({
                             }
                         />
                     </FormSection>
+                    <FormSection
+                        title={i18n.t('Analytics dimension restrictions')}
+                    >
+                        <TransferField
+                            name="allDimensionConstraints"
+                            leftHeader={i18n.t('Available restrictions')}
+                            rightHeader={i18n.t('Selected restrictions')}
+                            options={allDimensionConstraints.map(
+                                ({ name, id }) => ({
+                                    label: name,
+                                    value: id,
+                                })
+                            )}
+                            selected={
+                                values.allDimensionConstraints ||
+                                (user
+                                    ? []
+                                          .concat(
+                                              user.userCredentials
+                                                  .cogsDimensionConstraints,
+                                              user.userCredentials
+                                                  .catDimensionConstraints
+                                          )
+                                          .map(({ id }) => id)
+                                    : [])
+                            }
+                        />
+                    </FormSection>
                 </>
             )}
         </Form>
@@ -427,6 +463,16 @@ UserForm.propTypes = {
         surname: PropTypes.string.isRequired,
         teiSearchOrganisationUnits: OrganisationUnitsPropType.isRequired,
         userCredentials: PropTypes.shape({
+            catDimensionConstraints: PropTypes.arrayOf(
+                PropTypes.shape({
+                    id: PropTypes.string.isRequired,
+                }).isRequired
+            ).isRequired,
+            cogsDimensionConstraints: PropTypes.arrayOf(
+                PropTypes.shape({
+                    id: PropTypes.string.isRequired,
+                }).isRequired
+            ).isRequired,
             disabled: PropTypes.bool.isRequired,
             externalAuth: PropTypes.bool.isRequired,
             userRoles: PropTypes.arrayOf(

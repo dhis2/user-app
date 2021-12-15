@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-11-22T09:39:27.858Z\n"
-"PO-Revision-Date: 2021-11-22T09:39:27.858Z\n"
+"POT-Creation-Date: 2021-12-15T16:45:08.595Z\n"
+"PO-Revision-Date: 2021-12-15T16:45:08.595Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -246,6 +246,9 @@ msgstr "Edit user role"
 msgid "Send message"
 msgstr "Send message"
 
+msgid "Filter options"
+msgstr "Filter options"
+
 msgid "Cancel without saving"
 msgstr "Cancel without saving"
 
@@ -282,8 +285,8 @@ msgstr "Filter available options"
 msgid "Filter selected options"
 msgstr "Filter selected options"
 
-msgid "Enter search term"
-msgstr "Enter search term"
+msgid "Search for an organisation unit"
+msgstr "Search for an organisation unit"
 
 msgid ""
 "Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
@@ -313,11 +316,11 @@ msgstr "You do not have authorities to see users, user roles or user groups"
 msgid "Passwords do not match"
 msgstr "Passwords do not match"
 
-msgid "Error fetching languages"
-msgstr "Error fetching languages"
+msgid "Error fetching form"
+msgstr "Error fetching form"
 
-msgid "There was an error fetching interface and database languages."
-msgstr "There was an error fetching interface and database languages."
+msgid "There was an error fetching this form."
+msgstr "There was an error fetching this form."
 
 msgid "Invite user"
 msgstr "Invite user"
@@ -425,6 +428,42 @@ msgstr "Data capture and maintenance"
 msgid "The organisation units that this user can enter and edit data for."
 msgstr "The organisation units that this user can enter and edit data for."
 
+msgid "Data output and analysis"
+msgstr "Data output and analysis"
+
+msgid "The organisation units that this user can export and analyse."
+msgstr "The organisation units that this user can export and analyse."
+
+msgid "The organisation that this user can search for and in."
+msgstr "The organisation that this user can search for and in."
+
+msgid "Roles and groups"
+msgstr "Roles and groups"
+
+msgid "Manage what roles and groups this user is a member of."
+msgstr "Manage what roles and groups this user is a member of."
+
+msgid "Available user roles"
+msgstr "Available user roles"
+
+msgid "User roles this user is assigned"
+msgstr "User roles this user is assigned"
+
+msgid "Available user groups"
+msgstr "Available user groups"
+
+msgid "User groups this user is a member of"
+msgstr "User groups this user is a member of"
+
+msgid "Analytics dimension restrictions"
+msgstr "Analytics dimension restrictions"
+
+msgid "Available restrictions"
+msgstr "Available restrictions"
+
+msgid "Selected restrictions"
+msgstr "Selected restrictions"
+
 msgid "Display name"
 msgstr "Display name"
 
@@ -518,9 +557,6 @@ msgid ""
 msgstr ""
 "To add a user to this group, go to the User section and edit the user group "
 "settings for a specific user."
-
-msgid "Available user groups"
-msgstr "Available user groups"
 
 msgid "Managed user groups"
 msgstr "Managed user groups"
@@ -644,24 +680,6 @@ msgstr "User Role Management"
 
 msgid "Error loading user roles"
 msgstr "Error loading user roles"
-
-msgid "Could not load the user data. Please refresh the page."
-msgstr "Could not load the user data. Please refresh the page."
-
-msgid "User \"{{displayName}}\" saved successfully"
-msgstr "User \"{{displayName}}\" saved successfully"
-
-msgid "There was a problem saving the user."
-msgstr "There was a problem saving the user."
-
-msgid "Show fewer options"
-msgstr "Show fewer options"
-
-msgid "Show more options"
-msgstr "Show more options"
-
-msgid "Send invite"
-msgstr "Send invite"
 
 msgid ""
 "Selecting an organisation unit provides access to all units in the "

@@ -34,7 +34,7 @@ const CreateUser = () => {
         )
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         throw new Error('TODO')
     }
 

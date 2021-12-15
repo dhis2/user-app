@@ -32,10 +32,11 @@ export const STYLES = {
     },
 }
 
-export const ASSIGNED_USER_GROUPS = 'userGroups'
+// TODO
 export const DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS =
     'catCogsDimensionConstraints'
 
+export const ASSIGNED_USER_GROUPS = 'userGroups' // done
 export const EXTERNAL_AUTH = 'externalAuth' // done
 export const INVITE = 'inviteUser' // done
 export const DISABLED = 'disabled' // done

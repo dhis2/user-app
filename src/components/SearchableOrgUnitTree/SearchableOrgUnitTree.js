@@ -9,7 +9,7 @@ import {
 import cx from 'classnames'
 import defer from 'lodash.defer'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useState, useCallback, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import api from '../../api'
 import AsyncAutoComplete from './AsyncAutoComplete/index.js'
@@ -18,6 +18,12 @@ import getInitiallySelectedUnits from './getInitiallySelectedUnits.js'
 import getOrgUnitRoots from './getOrgUnitRoots.js'
 import removeLastPathSegment from './removeLastPathSegment.js'
 import styles from './SearchableOrgUnitTree.module.css'
+import { useDeepMemo } from './useDeepMemo.js'
+
+// Rendering an org unit tree can be expensive and this is particularly
+// problematic in React Final Form forms due to the fact that they rerender on
+// every input change
+const MemoedOrganisationUnitTree = React.memo(OrganisationUnitTree)
 
 /**
  * Renders a @dhis2/ui OrganisationUnitTree with an AsyncAutoComplete above it and a button strip below
@@ -48,54 +54,66 @@ const SearchableOrgUnitTree = ({
         getInitiallyExpandedUnits(initiallySelected)
     )
 
-    const handleExpand = ({ path }) => {
-        if (!expanded.includes(path)) {
-            setExpanded([...expanded, path])
-        }
-    }
+    const handleExpand = useCallback(
+        ({ path }) => {
+            if (!expanded.includes(path)) {
+                setExpanded([...expanded, path])
+            }
+        },
+        [expanded, setExpanded]
+    )
 
-    const handleCollapse = ({ path }) => {
-        const pathIndex = expanded.indexOf(path)
+    const handleCollapse = useCallback(
+        ({ path }) => {
+            const pathIndex = expanded.indexOf(path)
 
-        if (pathIndex !== -1) {
-            const updatedExpanded =
-                pathIndex === 0
-                    ? expanded.slice(1)
+            if (pathIndex !== -1) {
+                const updatedExpanded =
+                    pathIndex === 0
+                        ? expanded.slice(1)
+                        : [
+                              ...expanded.slice(0, pathIndex),
+                              ...expanded.slice(pathIndex + 1),
+                          ]
+
+                setExpanded(updatedExpanded)
+            }
+        },
+        [expanded, setExpanded]
+    )
+
+    const update = useCallback(
+        (nextOrgUnits, nextExpanded) => {
+            if (onChange) {
+                onChange(nextOrgUnits.map(unit => unit.id))
+                // Also call onBlur if this is available. In a redux-form the component will be 'touched' by it
+                onBlur && onBlur()
+            }
+
+            setSelectedOrgUnits(nextOrgUnits)
+
+            if (nextExpanded) {
+                setExpanded(nextExpanded)
+            }
+        },
+        [onChange, onBlur, setSelectedOrgUnits, setExpanded]
+    )
+
+    const toggleSelectedOrgUnits = useCallback(
+        ({ id, path, displayName }) => {
+            const orgUnitIndex = selectedOrgUnits.findIndex(u => u.id === id)
+            const nextOrgUnits =
+                orgUnitIndex === -1
+                    ? [...selectedOrgUnits, { id, path, displayName }]
                     : [
-                          ...expanded.slice(0, pathIndex),
-                          ...expanded.slice(pathIndex + 1),
+                          ...selectedOrgUnits.slice(0, orgUnitIndex),
+                          ...selectedOrgUnits.slice(orgUnitIndex + 1),
                       ]
 
-            setExpanded(updatedExpanded)
-        }
-    }
-
-    const update = (nextOrgUnits, nextExpanded) => {
-        if (onChange) {
-            onChange(nextOrgUnits.map(unit => unit.id))
-            // Also call onBlur if this is available. In a redux-form the component will be 'touched' by it
-            onBlur && onBlur()
-        }
-
-        setSelectedOrgUnits(nextOrgUnits)
-
-        if (nextExpanded) {
-            setExpanded(nextExpanded)
-        }
-    }
-
-    const toggleSelectedOrgUnits = ({ id, path, displayName }) => {
-        const orgUnitIndex = selectedOrgUnits.findIndex(u => u.id === id)
-        const nextOrgUnits =
-            orgUnitIndex === -1
-                ? [...selectedOrgUnits, { id, path, displayName }]
-                : [
-                      ...selectedOrgUnits.slice(0, orgUnitIndex),
-                      ...selectedOrgUnits.slice(orgUnitIndex + 1),
-                  ]
-
-        update(nextOrgUnits)
-    }
+            update(nextOrgUnits)
+        },
+        [selectedOrgUnits, update]
+    )
 
     const selectAndShowFilteredOrgUnit = orgUnit => {
         const nextOrgUnits = [...selectedOrgUnits, orgUnit]
@@ -116,6 +134,12 @@ const SearchableOrgUnitTree = ({
         // TODO: see if we can get rid of defer
         defer(() => confirmSelection([]))
     }
+
+    const rootIds = useDeepMemo(() => roots.map(({ id }) => id), [roots])
+    const selectedOrgUnitPaths = useMemo(
+        () => selectedOrgUnits.map(({ path }) => path),
+        [selectedOrgUnits]
+    )
 
     return (
         <div className={cx(styles.wrapper, styles[side], className)}>
@@ -138,10 +162,10 @@ const SearchableOrgUnitTree = ({
                     />
                 </div>
                 <div className={styles.scrollBox}>
-                    <OrganisationUnitTree
-                        roots={roots.map(({ id }) => id)}
+                    <MemoedOrganisationUnitTree
+                        roots={rootIds}
                         onChange={toggleSelectedOrgUnits}
-                        selected={selectedOrgUnits.map(({ path }) => path)}
+                        selected={selectedOrgUnitPaths}
                         expanded={expanded}
                         handleExpand={handleExpand}
                         handleCollapse={handleCollapse}
