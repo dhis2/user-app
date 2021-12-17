@@ -30,7 +30,7 @@ const query = {
 }
 
 const EditUser = ({ userId }) => {
-    // TODO: Reload current user if ID matches userId prop
+    // TODO: Reload current user if current user's ID matches userId prop
     const { called, loading, data, error, refetch } = useDataQuery(query, {
         lazy: true,
     })
@@ -39,7 +39,7 @@ const EditUser = ({ userId }) => {
         refetch({ id: userId })
     }, [userId])
 
-    if (userId && (!called || loading)) {
+    if (!called || loading) {
         return (
             <CenteredContent>
                 <CircularLoader />
@@ -47,7 +47,7 @@ const EditUser = ({ userId }) => {
         )
     }
 
-    if (userId && error) {
+    if (error) {
         return (
             <CenteredContent>
                 <NoticeBox error title={i18n.t('Error fetching user')}>
@@ -61,10 +61,17 @@ const EditUser = ({ userId }) => {
         throw new Error('TODO')
     }
 
+    // TODO: pass user interface language and user database language props. See
+    // `getSelectedAndAvailableLocales` method of `api/index.js` for how to get
+    // values from `userSettings` endpoint
     return (
         <>
             <h2>{i18n.t('Edit user')}</h2>
-            <UserForm user={data.user.user} onSubmit={handleSubmit} />
+            <UserForm
+                user={data.user}
+                submitButtonLabel={i18n.t('Save changes')}
+                onSubmit={handleSubmit}
+            />
         </>
     )
 }
@@ -73,4 +80,4 @@ EditUser.propTypes = {
     userId: PropTypes.string.isRequired,
 }
 
-export default UserForm
+export default EditUser
