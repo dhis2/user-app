@@ -345,6 +345,7 @@ const UserForm = ({
                                 'The organisation units that this user can enter and edit data for.'
                             )}
                             initiallySelected={user?.organisationUnits || []}
+                            validate={hasValue}
                         />
                         <SearchableOrgUnitTreeField
                             name="dataViewOrganisationUnits"

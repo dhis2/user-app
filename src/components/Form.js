@@ -8,6 +8,7 @@ import {
     Button,
     Required,
     Transfer,
+    Help,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useCallback } from 'react'
@@ -75,30 +76,35 @@ const createChangeHandler = onChange => payload => {
 }
 
 /* eslint-disable react/prop-types,no-unused-vars */
-const createFFWrapper =
-    Component =>
-    ({
-        input,
-        meta,
-        error,
-        showValidStatus,
-        valid,
-        validationText,
-        onBlur,
-        onFocus,
-        loading,
-        showLoadingStatus,
-        ...props
-    }) => {
-        const handleChange = useCallback(createChangeHandler(input.onChange), [
-            input.onChange,
-        ])
-        return <Component {...props} onChange={handleChange} />
+const SearchableOrgUnitTreeFF = ({
+    input,
+    meta,
+    ...props
+}) => {
+    if (input.name === "organisationUnits") {
+        console.log({
+            value: input.value,
+            active: meta.active,
+            error: meta.error,
+        })
     }
 
+    const handleChange = useCallback(createChangeHandler(input.onChange), [
+        input.onChange,
+    ])
+    return (
+        <div>
+            <SearchableOrgUnitTree {...props} error={meta.error} onChange={handleChange} onBlur={input.onBlur} />
+            {meta.error && (
+                <Help error>
+                    {meta.error}
+                </Help>
+            )}
+        </div>
+    )
+}
 /* eslint-enable react/prop-types,no-unused-vars */
 
-const SearchableOrgUnitTreeFF = createFFWrapper(SearchableOrgUnitTree)
 
 export const SearchableOrgUnitTreeField = ({ headerText, ...props }) => (
     <div>
@@ -125,7 +131,13 @@ SearchableOrgUnitTreeField.propTypes = {
     required: PropTypes.bool,
 }
 
-const TransferFF = createFFWrapper(Transfer)
+/* eslint-disable react/prop-types,no-unused-vars */
+const TransferFF = ({
+    input,
+    meta,
+    ...props
+}) => <Transfer {...props} onChange={createChangeHandler(input.onChange)} />
+/* eslint-enable react/prop-types,no-unused-vars */
 
 export const TransferField = ({ leftHeader, rightHeader, ...props }) => (
     <ReactFinalForm.Field
