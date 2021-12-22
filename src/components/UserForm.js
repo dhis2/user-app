@@ -117,7 +117,8 @@ const UserForm = ({
         >
             {({ values }) => (
                 <>
-                    {!user && emailConfigured && (
+                    {
+                        !user && emailConfigured /*&& (
                         <FormSection title={i18n.t('Invite user')}>
                             <SingleSelectField
                                 name="inviteUser"
@@ -141,8 +142,9 @@ const UserForm = ({
                                 ]}
                             />
                         </FormSection>
-                    )}
-                    <FormSection title={i18n.t('Basic information')}>
+                    )*/
+                    }
+                    {/*<FormSection title={i18n.t('Basic information')}>
                         <TextField
                             required
                             name="username"
@@ -212,8 +214,8 @@ const UserForm = ({
                             label={i18n.t('Disable this user account')}
                             initialValue={user?.userCredentials.disabled}
                         />
-                    </FormSection>
-                    {values.inviteUser !== 'INVITE_USER' && (
+                    </FormSection>*/}
+                    {false && values.inviteUser !== 'INVITE_USER' && (
                         <FormSection
                             title={i18n.t('Security')}
                             description={i18n.t(
@@ -288,7 +290,7 @@ const UserForm = ({
                             />
                         </FormSection>
                     )}
-                    <FormSection title={i18n.t('Contact details')}>
+                    {/*<FormSection title={i18n.t('Contact details')}>
                         <TextField
                             name="phoneNumber"
                             label={i18n.t('Mobile phone number')}
@@ -319,7 +321,7 @@ const UserForm = ({
                             label={i18n.t('Twitter')}
                             initialValue={user?.twitter}
                         />
-                    </FormSection>
+                    </FormSection>*/}
                     <FormSection
                         title={i18n.t('Organisation unit access')}
                         description={i18n.t(
@@ -370,7 +372,7 @@ const UserForm = ({
                             }
                         />
                     </FormSection>
-                    <FormSection
+                    {/*<FormSection
                         title={i18n.t('Roles and groups')}
                         description={i18n.t(
                             'Manage what roles and groups this user is a member of.'
@@ -438,7 +440,7 @@ const UserForm = ({
                                     : [])
                             }
                         />
-                    </FormSection>
+                    </FormSection>*/}
                 </>
             )}
         </Form>

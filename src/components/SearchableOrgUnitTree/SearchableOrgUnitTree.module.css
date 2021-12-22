@@ -2,10 +2,6 @@
     padding: 0 var(--spacers-dp8);
 }
 
-.grid {
-    display: grid;
-}
-
 .header, .searchFilterWrapper {
     composes: horizontalPadding;
     padding: var(--spacers-dp8);
@@ -29,26 +25,26 @@
     background: var(--colors-grey100);
 }
 
-.wrapper {
+.flexWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.errorIcon {
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin-left: var(--spacers-dp8);
+}
+
+.innerWrapper {
     display: inline-block;
     border: 1px solid var(--colors-grey400);
     border-radius: 3px;
     width: 480px;
 }
 
-.wrapper.left,
-.wrapper.right {
-    float: left;
-    margin-top: var(--spacers-dp8);
-    margin-bottom: var(--spacers-dp8);
-}
-
-.wrapper.left {
-    margin-right: var(--spacers-dp24);
-}
-
-.wrapper.right {
-    margin-left: var(--spacers-dp24);
+.innerWrapper.error {
+    border-color: var(--theme-error);
 }
 
 .scrollBox {

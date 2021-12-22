@@ -76,12 +76,8 @@ const createChangeHandler = onChange => payload => {
 }
 
 /* eslint-disable react/prop-types,no-unused-vars */
-const SearchableOrgUnitTreeFF = ({
-    input,
-    meta,
-    ...props
-}) => {
-    if (input.name === "organisationUnits") {
+const SearchableOrgUnitTreeFF = ({ input, meta, ...props }) => {
+    if (input.name === 'organisationUnits') {
         console.log({
             value: input.value,
             active: meta.active,
@@ -89,22 +85,25 @@ const SearchableOrgUnitTreeFF = ({
         })
     }
 
+    // TODO: support initialValue and use it to set initiallySelected, otherwise
+    // won't be able to update existing users without editing org units
+
     const handleChange = useCallback(createChangeHandler(input.onChange), [
         input.onChange,
     ])
     return (
         <div>
-            <SearchableOrgUnitTree {...props} error={meta.error} onChange={handleChange} onBlur={input.onBlur} />
-            {meta.error && (
-                <Help error>
-                    {meta.error}
-                </Help>
-            )}
+            <SearchableOrgUnitTree
+                {...props}
+                error={!!meta.error}
+                onChange={handleChange}
+                onBlur={input.onBlur}
+            />
+            {meta.error && <Help error>{meta.error}</Help>}
         </div>
     )
 }
 /* eslint-enable react/prop-types,no-unused-vars */
-
 
 export const SearchableOrgUnitTreeField = ({ headerText, ...props }) => (
     <div>
@@ -132,11 +131,9 @@ SearchableOrgUnitTreeField.propTypes = {
 }
 
 /* eslint-disable react/prop-types,no-unused-vars */
-const TransferFF = ({
-    input,
-    meta,
-    ...props
-}) => <Transfer {...props} onChange={createChangeHandler(input.onChange)} />
+const TransferFF = ({ input, meta, ...props }) => (
+    <Transfer {...props} onChange={createChangeHandler(input.onChange)} />
+)
 /* eslint-enable react/prop-types,no-unused-vars */
 
 export const TransferField = ({ leftHeader, rightHeader, ...props }) => (

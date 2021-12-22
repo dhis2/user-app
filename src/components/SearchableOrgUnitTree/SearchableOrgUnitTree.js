@@ -4,7 +4,8 @@ import {
     getAllExpandedOrgUnitPaths,
     Button,
     ButtonStrip,
-    Field,
+    IconErrorFilled24,
+    theme,
 } from '@dhis2/ui'
 import cx from 'classnames'
 import defer from 'lodash.defer'
@@ -35,10 +36,9 @@ const SearchableOrgUnitTree = ({
     orgUnitType,
     initiallySelected,
     confirmSelection,
-    errorText,
     headerText,
     description,
-    side,
+    error,
     onBlur,
     onChange,
 }) => {
@@ -142,55 +142,66 @@ const SearchableOrgUnitTree = ({
     )
 
     return (
-        <div className={cx(styles.wrapper, styles[side], className)}>
-            <Field error={!!errorText} validationText={errorText || ''}>
-                {headerText && (
-                    <div className={styles.header}>
-                        <h4 className={styles.headerText}>{headerText}</h4>
-                        {description && (
-                            <p className={styles.headerDescription}>
-                                {description}
-                            </p>
-                        )}
+        <div className={styles.flexWrapper}>
+            <div
+                className={cx(styles.innerWrapper, className, {
+                    [styles.error]: error,
+                })}
+            >
+                <div>
+                    {headerText && (
+                        <div className={styles.header}>
+                            <h4 className={styles.headerText}>{headerText}</h4>
+                            {description && (
+                                <p className={styles.headerDescription}>
+                                    {description}
+                                </p>
+                            )}
+                        </div>
+                    )}
+                    <div className={styles.searchFilterWrapper}>
+                        <AsyncAutoComplete
+                            query={api.queryOrgUnits}
+                            orgUnitType={orgUnitType}
+                            selectHandler={selectAndShowFilteredOrgUnit}
+                        />
+                    </div>
+                    <div className={styles.scrollBox}>
+                        <MemoedOrganisationUnitTree
+                            roots={rootIds}
+                            onChange={toggleSelectedOrgUnits}
+                            selected={selectedOrgUnitPaths}
+                            expanded={expanded}
+                            handleExpand={handleExpand}
+                            handleCollapse={handleCollapse}
+                        />
+                    </div>
+                </div>
+                {confirmSelection && (
+                    <div className={styles.buttonStrip}>
+                        <ButtonStrip>
+                            <Button
+                                primary={true}
+                                onClick={applySelection}
+                                disabled={!roots}
+                                small
+                            >
+                                {i18n.t('Apply')}
+                            </Button>
+                            <Button
+                                onClick={clearSelection}
+                                disabled={!roots}
+                                small
+                            >
+                                {i18n.t('Clear all')}
+                            </Button>
+                        </ButtonStrip>
                     </div>
                 )}
-                <div className={styles.searchFilterWrapper}>
-                    <AsyncAutoComplete
-                        query={api.queryOrgUnits}
-                        orgUnitType={orgUnitType}
-                        selectHandler={selectAndShowFilteredOrgUnit}
-                    />
-                </div>
-                <div className={styles.scrollBox}>
-                    <MemoedOrganisationUnitTree
-                        roots={rootIds}
-                        onChange={toggleSelectedOrgUnits}
-                        selected={selectedOrgUnitPaths}
-                        expanded={expanded}
-                        handleExpand={handleExpand}
-                        handleCollapse={handleCollapse}
-                    />
-                </div>
-            </Field>
-            {confirmSelection && (
-                <div className={styles.buttonStrip}>
-                    <ButtonStrip>
-                        <Button
-                            primary={true}
-                            onClick={applySelection}
-                            disabled={!roots}
-                            small
-                        >
-                            {i18n.t('Apply')}
-                        </Button>
-                        <Button
-                            onClick={clearSelection}
-                            disabled={!roots}
-                            small
-                        >
-                            {i18n.t('Clear all')}
-                        </Button>
-                    </ButtonStrip>
+            </div>
+            {error && (
+                <div className={styles.errorIcon}>
+                    <IconErrorFilled24 color={theme.error} />
                 </div>
             )}
         </div>
@@ -209,9 +220,8 @@ SearchableOrgUnitTree.propTypes = {
     className: PropTypes.string,
     confirmSelection: PropTypes.func,
     description: PropTypes.string,
-    errorText: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    error: PropTypes.bool,
     headerText: PropTypes.node,
-    side: PropTypes.oneOf(['left', 'right']),
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
 }

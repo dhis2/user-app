@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-12-15T16:45:08.595Z\n"
-"PO-Revision-Date: 2021-12-15T16:45:08.595Z\n"
+"POT-Creation-Date: 2021-12-22T09:25:18.068Z\n"
+"PO-Revision-Date: 2021-12-22T09:25:18.068Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -883,6 +883,9 @@ msgstr "Error fetching user"
 
 msgid "There was an error fetching this user."
 msgstr "There was an error fetching this user."
+
+msgid "Save changes"
+msgstr "Save changes"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
