@@ -11,7 +11,7 @@ import {
     Help,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 import styles from './Form.module.css'
 import SearchableOrgUnitTree from './SearchableOrgUnitTree'
 
@@ -75,85 +75,124 @@ const createChangeHandler = onChange => payload => {
     }
 }
 
-/* eslint-disable react/prop-types,no-unused-vars */
 const SearchableOrgUnitTreeFF = ({ input, meta, ...props }) => {
-    if (input.name === 'organisationUnits') {
-        console.log({
-            value: input.value,
-            active: meta.active,
-            error: meta.error,
-        })
-    }
-
-    // TODO: support initialValue and use it to set initiallySelected, otherwise
-    // won't be able to update existing users without editing org units
-
     const handleChange = useCallback(createChangeHandler(input.onChange), [
         input.onChange,
     ])
+    const error = meta.touched && meta.invalid ? meta.error : undefined
     return (
         <div>
             <SearchableOrgUnitTree
                 {...props}
-                error={!!meta.error}
+                error={!!error}
                 onChange={handleChange}
                 onBlur={input.onBlur}
             />
-            {meta.error && <Help error>{meta.error}</Help>}
+            {error && <Help error>{error}</Help>}
         </div>
     )
 }
-/* eslint-enable react/prop-types,no-unused-vars */
 
-export const SearchableOrgUnitTreeField = ({ headerText, ...props }) => (
-    <div>
-        <ReactFinalForm.Field
-            {...props}
-            headerText={
-                props.required ? (
-                    <>
-                        {headerText}
-                        <Required dataTest="required" />
-                    </>
-                ) : (
-                    headerText
-                )
-            }
-            className={styles.field}
-            component={SearchableOrgUnitTreeFF}
-        />
-    </div>
-)
+SearchableOrgUnitTreeFF.propTypes = {
+    input: PropTypes.shape({
+        onBlur: PropTypes.func.isRequired,
+        onChange: PropTypes.func.isRequired,
+    }).isRequired,
+    meta: PropTypes.shape({
+        invalid: PropTypes.bool.isRequired,
+        touched: PropTypes.bool.isRequired,
+        error: PropTypes.string,
+    }).isRequired,
+}
+
+export const SearchableOrgUnitTreeField = ({
+    headerText,
+    initialValue,
+    ...props
+}) => {
+    // Fixes the infinite loop rendering bug that occurs when the
+    // initial value fails shallow equal on form rerender.
+    // Issue on GitHub: https://github.com/final-form/react-final-form/issues/686
+    const [memoedInitialValue] = useState(initialValue)
+
+    return (
+        <div>
+            <ReactFinalForm.Field
+                {...props}
+                headerText={
+                    props.required ? (
+                        <>
+                            {headerText}
+                            <Required dataTest="required" />
+                        </>
+                    ) : (
+                        headerText
+                    )
+                }
+                className={styles.field}
+                component={SearchableOrgUnitTreeFF}
+                initialValue={memoedInitialValue}
+                initiallySelected={initialValue}
+            />
+        </div>
+    )
+}
 
 SearchableOrgUnitTreeField.propTypes = {
     headerText: PropTypes.node.isRequired,
+    initialValue: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
     required: PropTypes.bool,
 }
 
-/* eslint-disable react/prop-types,no-unused-vars */
+// eslint-disable-next-line no-unused-vars
 const TransferFF = ({ input, meta, ...props }) => (
-    <Transfer {...props} onChange={createChangeHandler(input.onChange)} />
-)
-/* eslint-enable react/prop-types,no-unused-vars */
-
-export const TransferField = ({ leftHeader, rightHeader, ...props }) => (
-    <ReactFinalForm.Field
+    <Transfer
         {...props}
-        height="320px"
-        leftHeader={
-            <h3 className={styles.transferFieldHeader}>{leftHeader}</h3>
-        }
-        rightHeader={
-            <h3 className={styles.transferFieldHeader}>{rightHeader}</h3>
-        }
-        filterable
-        filterPlaceholder={i18n.t('Filter options')}
-        className={styles.field}
-        component={TransferFF}
+        selected={input.value}
+        onChange={createChangeHandler(input.onChange)}
     />
 )
 
+TransferFF.propTypes = {
+    input: PropTypes.shape({
+        value: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+        onChange: PropTypes.func.isRequired,
+    }).isRequired,
+    meta: PropTypes.object.isRequired,
+}
+
+export const TransferField = ({
+    leftHeader,
+    rightHeader,
+    initialValue,
+    ...props
+}) => {
+    // Fixes the infinite loop rendering bug that occurs when the
+    // initial value fails shallow equal on form rerender.
+    // Issue on GitHub: https://github.com/final-form/react-final-form/issues/686
+    const [memoedInitialValue] = useState(initialValue)
+
+    return (
+        <ReactFinalForm.Field
+            {...props}
+            height="320px"
+            leftHeader={
+                <h3 className={styles.transferFieldHeader}>{leftHeader}</h3>
+            }
+            rightHeader={
+                <h3 className={styles.transferFieldHeader}>{rightHeader}</h3>
+            }
+            filterable
+            filterPlaceholder={i18n.t('Filter options')}
+            className={styles.field}
+            component={TransferFF}
+            initialValue={memoedInitialValue}
+        />
+    )
+}
+
 TransferField.propTypes = {
+    initialValue: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
     leftHeader: PropTypes.string.isRequired,
     rightHeader: PropTypes.string.isRequired,
 }

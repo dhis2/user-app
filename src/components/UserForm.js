@@ -72,6 +72,12 @@ const createRepeatPasswordValidator = password => repeatPassword => {
     }
 }
 
+const hasSelectionValidator = value => {
+    if (!Array.isArray(value) || value.length === 0) {
+        return i18n.t('Please provide a value')
+    }
+}
+
 const UserForm = ({
     submitButtonLabel,
     onSubmit,
@@ -117,8 +123,7 @@ const UserForm = ({
         >
             {({ values }) => (
                 <>
-                    {
-                        !user && emailConfigured /*&& (
+                    {!user && emailConfigured && (
                         <FormSection title={i18n.t('Invite user')}>
                             <SingleSelectField
                                 name="inviteUser"
@@ -142,9 +147,8 @@ const UserForm = ({
                                 ]}
                             />
                         </FormSection>
-                    )*/
-                    }
-                    {/*<FormSection title={i18n.t('Basic information')}>
+                    )}
+                    <FormSection title={i18n.t('Basic information')}>
                         <TextField
                             required
                             name="username"
@@ -214,8 +218,8 @@ const UserForm = ({
                             label={i18n.t('Disable this user account')}
                             initialValue={user?.userCredentials.disabled}
                         />
-                    </FormSection>*/}
-                    {false && values.inviteUser !== 'INVITE_USER' && (
+                    </FormSection>
+                    {values.inviteUser !== 'INVITE_USER' && (
                         <FormSection
                             title={i18n.t('Security')}
                             description={i18n.t(
@@ -290,7 +294,7 @@ const UserForm = ({
                             />
                         </FormSection>
                     )}
-                    {/*<FormSection title={i18n.t('Contact details')}>
+                    <FormSection title={i18n.t('Contact details')}>
                         <TextField
                             name="phoneNumber"
                             label={i18n.t('Mobile phone number')}
@@ -321,7 +325,7 @@ const UserForm = ({
                             label={i18n.t('Twitter')}
                             initialValue={user?.twitter}
                         />
-                    </FormSection>*/}
+                    </FormSection>
                     <FormSection
                         title={i18n.t('Organisation unit access')}
                         description={i18n.t(
@@ -346,8 +350,8 @@ const UserForm = ({
                             description={i18n.t(
                                 'The organisation units that this user can enter and edit data for.'
                             )}
-                            initiallySelected={user?.organisationUnits || []}
-                            validate={hasValue}
+                            initialValue={user?.organisationUnits || []}
+                            validate={hasSelectionValidator}
                         />
                         <SearchableOrgUnitTreeField
                             name="dataViewOrganisationUnits"
@@ -356,9 +360,7 @@ const UserForm = ({
                             description={i18n.t(
                                 'The organisation units that this user can export and analyse.'
                             )}
-                            initiallySelected={
-                                user?.dataViewOrganisationUnits || []
-                            }
+                            initialValue={user?.dataViewOrganisationUnits || []}
                         />
                         <SearchableOrgUnitTreeField
                             name="teiSearchOrganisationUnits"
@@ -367,12 +369,12 @@ const UserForm = ({
                             description={i18n.t(
                                 'The organisation that this user can search for and in.'
                             )}
-                            initiallySelected={
+                            initialValue={
                                 user?.teiSearchOrganisationUnits || []
                             }
                         />
                     </FormSection>
-                    {/*<FormSection
+                    <FormSection
                         title={i18n.t('Roles and groups')}
                         description={i18n.t(
                             'Manage what roles and groups this user is a member of.'
@@ -388,12 +390,10 @@ const UserForm = ({
                                 label: displayName,
                                 value: id,
                             }))}
-                            selected={
-                                values.userRoles ||
+                            initialValue={
                                 user?.userCredentials.userRoles.map(
                                     ({ id }) => id
-                                ) ||
-                                []
+                                ) || []
                             }
                         />
                         <TransferField
@@ -406,10 +406,8 @@ const UserForm = ({
                                 label: displayName,
                                 value: id,
                             }))}
-                            selected={
-                                values.userGroups ||
-                                user?.userGroups.map(({ id }) => id) ||
-                                []
+                            initialValue={
+                                user?.userGroups.map(({ id }) => id) || []
                             }
                         />
                     </FormSection>
@@ -426,9 +424,8 @@ const UserForm = ({
                                     value: id,
                                 })
                             )}
-                            selected={
-                                values.allDimensionConstraints ||
-                                (user
+                            initialValue={
+                                user
                                     ? []
                                           .concat(
                                               user.userCredentials
@@ -437,10 +434,10 @@ const UserForm = ({
                                                   .catDimensionConstraints
                                           )
                                           .map(({ id }) => id)
-                                    : [])
+                                    : []
                             }
                         />
-                    </FormSection>*/}
+                    </FormSection>
                 </>
             )}
         </Form>
