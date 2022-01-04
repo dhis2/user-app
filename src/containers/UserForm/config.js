@@ -1,5 +1,6 @@
+// todo: delete file
+
 import i18n from '@dhis2/d2-i18n'
-import { blue600 } from 'material-ui/styles/colors'
 import { analyticsDimensionsRestrictionsSelector } from '../../selectors'
 import asArray from '../../utils/asArray'
 import {
@@ -13,29 +14,9 @@ import {
 } from '../../utils/fieldRenderers'
 import getNestedProp from '../../utils/getNestedProp'
 
-export const STYLES = {
-    loaderWrap: {
-        paddingTop: '2rem',
-        textAlign: 'center',
-    },
-    toggler: {
-        color: blue600,
-    },
-    togglerWrap: {
-        clear: 'both',
-        paddingTop: '1.2rem',
-        marginBottom: '1.5rem',
-    },
-    additionalFieldsWrap: {
-        clear: 'both',
-        paddingTop: '1.5rem',
-    },
-}
-
-// TODO
+export const EXPIRE_DATE = 'accountExpiry' // done
 export const DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS =
-    'catCogsDimensionConstraints'
-
+    'catCogsDimensionConstraints' // done
 export const ASSIGNED_USER_GROUPS = 'userGroups' // done
 export const EXTERNAL_AUTH = 'externalAuth' // done
 export const INVITE = 'inviteUser' // done
@@ -43,7 +24,6 @@ export const DISABLED = 'disabled' // done
 export const WHATS_APP = 'whatsApp' // done
 export const USERNAME = 'username' // done
 export const EMAIL = 'email' // done
-export const EXPIRE_DATE = 'accountExpiry'
 export const PASSWORD = 'password' // done
 export const REPEAT_PASSWORD = 'repeatPassword' // done
 export const SURNAME = 'surname' // done
@@ -62,33 +42,31 @@ export const SKYPE = 'skype' // done
 export const TELEGRAM = 'telegram' // done
 export const TWITTER = 'twitter' // done
 
-export const FORM_NAME = 'userForm'
-
 export const USER_PROPS = [
-    SURNAME,
-    FIRST_NAME,
-    EMAIL,
-    PHONE_NUMBER,
-    WHATS_APP,
-    FACEBOOK_MESSENGER,
-    SKYPE,
-    TELEGRAM,
-    TWITTER,
-    DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS,
-    DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS,
-    ASSIGNED_USER_GROUPS,
-    TEI_SEARCH_ORG_UNITS,
+    SURNAME, // done
+    FIRST_NAME, // done
+    EMAIL, // done
+    PHONE_NUMBER, // done
+    WHATS_APP, // done
+    FACEBOOK_MESSENGER, // done
+    SKYPE, // done
+    TELEGRAM, // done
+    TWITTER, // done
+    DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS, // done
+    DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS, // done
+    TEI_SEARCH_ORG_UNITS, // done
+    ASSIGNED_USER_GROUPS, // done
 ]
 
 export const USER_CRED_PROPS = [
-    USERNAME,
-    DISABLED,
-    EXPIRE_DATE,
-    EXTERNAL_AUTH,
-    PASSWORD,
-    OPEN_ID,
-    LDAP_ID,
-    ASSIGNED_ROLES,
+    USERNAME, // done
+    DISABLED, // done
+    EXPIRE_DATE, // done
+    EXTERNAL_AUTH, // done
+    PASSWORD, // done
+    OPEN_ID, // done
+    LDAP_ID, // done
+    ASSIGNED_ROLES, // done
     DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS,
 ]
 

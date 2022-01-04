@@ -3,7 +3,7 @@ import i18n from '@dhis2/d2-i18n'
 import { CenteredContent, CircularLoader, NoticeBox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
-import UserForm from '../components/UserForm'
+import UserForm from '../components/UserForm/index.js'
 
 const query = {
     user: {

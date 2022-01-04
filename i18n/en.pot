@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-12-22T09:25:18.068Z\n"
-"PO-Revision-Date: 2021-12-22T09:25:18.068Z\n"
+"POT-Creation-Date: 2022-01-04T14:33:12.155Z\n"
+"PO-Revision-Date: 2022-01-04T14:33:12.155Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -313,8 +313,17 @@ msgstr "There was an error loading the current user"
 msgid "You do not have authorities to see users, user roles or user groups"
 msgstr "You do not have authorities to see users, user roles or user groups"
 
+msgid "Username already taken"
+msgstr "Username already taken"
+
+msgid "There was a problem whilst checking the availability of this username"
+msgstr "There was a problem whilst checking the availability of this username"
+
 msgid "Passwords do not match"
 msgstr "Passwords do not match"
+
+msgid "Please provide a value"
+msgstr "Please provide a value"
 
 msgid "Error fetching form"
 msgstr "Error fetching form"
@@ -372,6 +381,9 @@ msgstr "Minimum 8 characters, one uppercase and lowercase letter and one number"
 
 msgid "Retype password"
 msgstr "Retype password"
+
+msgid "Account expiration date"
+msgstr "Account expiration date"
 
 msgid "OIDC mapping value"
 msgstr "OIDC mapping value"
@@ -691,9 +703,6 @@ msgstr ""
 msgid "External authentication only (OpenID or LDAP)"
 msgstr "External authentication only (OpenID or LDAP)"
 
-msgid "Account expiration date"
-msgstr "Account expiration date"
-
 msgid "Disabled"
 msgstr "Disabled"
 
@@ -960,12 +969,6 @@ msgstr "Password should contain at least one number"
 
 msgid "Password should have at least one special character"
 msgstr "Password should have at least one special character"
-
-msgid "Username already taken"
-msgstr "Username already taken"
-
-msgid "There was a problem whilst checking the availability of this username"
-msgstr "There was a problem whilst checking the availability of this username"
 
 msgid "{{fieldDisplayName}} is already taken"
 msgstr "{{fieldDisplayName}} is already taken"

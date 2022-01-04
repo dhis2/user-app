@@ -10,7 +10,6 @@ import {
 import {
     getQueryFields,
     createListRequestData,
-    parseUserSaveData,
     parseLocaleUrl,
     mapLocale,
     appendUsernameToDisplayName,

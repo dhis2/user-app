@@ -9,7 +9,6 @@ import {
     NAME,
     FORM_NAME as GROUP_FORM,
 } from '../containers/GroupForm/config'
-import { USERNAME, FORM_NAME as USER_FORM } from '../containers/UserForm/config'
 import { USER_ATTRIBUTE_FIELD_PREFIX } from './attributeFieldHelpers'
 import createHumanErrorMessage from './createHumanErrorMessage'
 
@@ -79,34 +78,6 @@ async function asyncSingleFieldValidator(
         throw error
     } else {
         return Promise.resolve()
-    }
-}
-
-async function getUserNameError(values, props) {
-    const newUserName = values[USERNAME]
-    const editingExistingUser = props.user && props.user.id
-
-    if (!newUserName || editingExistingUser) {
-        return Promise.resolve()
-    }
-
-    try {
-        const modelCollection = await api.genericFind(
-            'users',
-            'userCredentials.username',
-            newUserName
-        )
-        if (modelCollection.size > 0) {
-            return {
-                [USERNAME]: i18n.t('Username already taken'),
-            }
-        }
-    } catch (error) {
-        return {
-            [USERNAME]: i18n.t(
-                'There was a problem whilst checking the availability of this username'
-            ),
-        }
     }
 }
 

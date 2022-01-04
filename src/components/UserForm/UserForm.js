@@ -1,4 +1,4 @@
-import { useDataQuery, useConfig } from '@dhis2/app-runtime'
+import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     CenteredContent,
@@ -10,7 +10,6 @@ import {
     dhis2Password,
     email,
 } from '@dhis2/ui'
-import uniqBy from 'lodash.uniqby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
@@ -18,53 +17,53 @@ import Form, {
     FormSection,
     TextField,
     PasswordField,
+    DateField,
     SingleSelectField,
     CheckboxField,
     SearchableOrgUnitTreeField,
     TransferField,
-} from './Form'
+} from '../Form'
+import { getUserData } from './getUserData'
+import { useFormData } from './useFormData'
 import styles from './UserForm.module.css'
 
-const query = {
-    interfaceLanguages: {
-        resource: 'locales/ui',
-    },
-    databaseLanguages: {
-        resource: 'locales/db',
-    },
-    userRoles: {
-        resource: 'userRoles',
-        params: {
-            fields: ['id', 'displayName'],
-            canIssue: true,
-            paging: false,
-        },
-    },
-    userGroups: {
-        resource: 'userGroups',
-        params: {
-            fields: ['id', 'displayName'],
-            paging: false,
-        },
-    },
-    allDimensionConstraints: {
-        resource: 'dimensions/constraints',
-        params: {
-            fields: ['id', 'name', 'dimensionType'],
-            paging: false,
-        },
-    },
-}
+// TODO
+/*
+async function getUserNameError(values, props) {
+    const newUserName = values[USERNAME]
+    const editingExistingUser = props.user && props.user.id
 
-const optionsFromLanguages = languages =>
-    // It is possible for the server to return duplicate entries for database locales
-    uniqBy(
-        languages.map(({ name, locale }) => ({
-            label: name,
-            value: locale,
-        })),
-        'value'
-    )
+    if (!newUserName || editingExistingUser) {
+        return Promise.resolve()
+    }
+
+    try {
+        const modelCollection = await api.genericFind(
+            'users',
+            'userCredentials.username',
+            newUserName
+        )
+        if (modelCollection.size > 0) {
+            return {
+                [USERNAME]: i18n.t('Username already taken'),
+            }
+        }
+    } catch (error) {
+        return {
+            [USERNAME]: i18n.t(
+                'There was a problem whilst checking the availability of this username'
+            ),
+        }
+    }
+}
+*/
+const uniqueUsernameValidator = async username => {
+    return new Promise(reject => {
+        setTimeout(() => {
+            reject('invalid username')
+        }, 1000)
+    })
+}
 
 const createRepeatPasswordValidator = password => repeatPassword => {
     if (password !== repeatPassword) {
@@ -88,8 +87,16 @@ const UserForm = ({
     const {
         systemInfo: { emailConfigured },
     } = useConfig()
-    const { loading, error, data } = useDataQuery(query)
     const history = useHistory()
+    const {
+        loading,
+        error,
+        interfaceLanguageOptions,
+        databaseLanguageOptions,
+        userRoleOptions,
+        userGroupOptions,
+        allDimensionConstraintOptions,
+    } = useFormData()
 
     if (loading) {
         return (
@@ -107,18 +114,12 @@ const UserForm = ({
         )
     }
 
-    const {
-        interfaceLanguages,
-        databaseLanguages,
-        userRoles: { userRoles },
-        userGroups: { userGroups },
-        allDimensionConstraints: { dimensions: allDimensionConstraints },
-    } = data
-
     return (
         <Form
             submitButtonLabel={submitButtonLabel}
-            onSubmit={onSubmit}
+            onSubmit={({ values }) =>
+                onSubmit({ values, userData: getUserData({ values, user }) })
+            }
             onCancel={() => history.push('/users')}
         >
             {({ values }) => (
@@ -154,10 +155,12 @@ const UserForm = ({
                             name="username"
                             label={i18n.t('Username')}
                             initialValue={user?.userCredentials.username}
+                            disabled={!!user}
                             autoComplete="new-password"
                             validate={composeValidators(
                                 hasValue,
-                                dhis2Username
+                                dhis2Username,
+                                uniqueUsernameValidator
                             )}
                         />
                         <TextField
@@ -191,7 +194,7 @@ const UserForm = ({
                             label={i18n.t('Interface language')}
                             initialValue={userInterfaceLanguage}
                             filterable
-                            options={optionsFromLanguages(interfaceLanguages)}
+                            options={interfaceLanguageOptions}
                             validate={hasValue}
                         />
                         <SingleSelectField
@@ -209,7 +212,7 @@ const UserForm = ({
                                     ),
                                     value: 'USE_DB_LOCALE',
                                 },
-                                ...optionsFromLanguages(databaseLanguages),
+                                ...databaseLanguageOptions,
                             ]}
                             validate={hasValue}
                         />
@@ -268,19 +271,26 @@ const UserForm = ({
                                     />
                                 </>
                             )}
+                            <DateField
+                                name="accountExpiry"
+                                label={i18n.t('Account expiration date')}
+                                initialValue={
+                                    user?.userCredentials.accountExpiry
+                                }
+                            />
                             <TextField
                                 name="openId"
                                 label={i18n.t('OIDC mapping value')}
                                 helpText={i18n.t(
                                     'OpenID Connect mapping claim for your identity platform'
                                 )}
-                                initialValue=""
+                                initialValue={user?.userCredentials.openId}
                                 autoComplete="off"
                             />
                             <TextField
                                 name="ldapId"
                                 label={i18n.t('LDAP identifier')}
-                                initialValue=""
+                                initialValue={user?.userCredentials.ldapId}
                                 autoComplete="off"
                             />
                             <CheckboxField
@@ -381,15 +391,13 @@ const UserForm = ({
                         )}
                     >
                         <TransferField
+                            required
                             name="userRoles"
                             leftHeader={i18n.t('Available user roles')}
                             rightHeader={i18n.t(
                                 'User roles this user is assigned'
                             )}
-                            options={userRoles.map(({ displayName, id }) => ({
-                                label: displayName,
-                                value: id,
-                            }))}
+                            options={userRoleOptions}
                             initialValue={
                                 user?.userCredentials.userRoles.map(
                                     ({ id }) => id
@@ -402,10 +410,7 @@ const UserForm = ({
                             rightHeader={i18n.t(
                                 'User groups this user is a member of'
                             )}
-                            options={userGroups.map(({ displayName, id }) => ({
-                                label: displayName,
-                                value: id,
-                            }))}
+                            options={userGroupOptions}
                             initialValue={
                                 user?.userGroups.map(({ id }) => id) || []
                             }
@@ -418,12 +423,7 @@ const UserForm = ({
                             name="allDimensionConstraints"
                             leftHeader={i18n.t('Available restrictions')}
                             rightHeader={i18n.t('Selected restrictions')}
-                            options={allDimensionConstraints.map(
-                                ({ name, id }) => ({
-                                    label: name,
-                                    value: id,
-                                })
-                            )}
+                            options={allDimensionConstraintOptions}
                             initialValue={
                                 user
                                     ? []
@@ -482,6 +482,9 @@ UserForm.propTypes = {
                 }).isRequired
             ).isRequired,
             username: PropTypes.string.isRequired,
+            accountExpiry: PropTypes.string,
+            ldapId: PropTypes.string,
+            openId: PropTypes.string,
         }).isRequired,
         userGroups: PropTypes.arrayOf(
             PropTypes.shape({

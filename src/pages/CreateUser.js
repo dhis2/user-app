@@ -1,8 +1,8 @@
-import { useDataQuery } from '@dhis2/app-runtime'
+import { useDataQuery, useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { CenteredContent, CircularLoader, NoticeBox } from '@dhis2/ui'
 import React from 'react'
-import UserForm from '../components/UserForm'
+import UserForm from '../components/UserForm/index.js'
 
 const query = {
     userInterfaceLanguage: {
@@ -11,6 +11,7 @@ const query = {
 }
 
 const CreateUser = () => {
+    const engine = useDataEngine()
     const { loading, error, data } = useDataQuery(query)
 
     if (loading) {
@@ -34,8 +35,16 @@ const CreateUser = () => {
         )
     }
 
-    const handleSubmit = async () => {
-        throw new Error('TODO')
+    const handleSubmit = async ({ values, userData }) => {
+        const inviteUser = values.inviteUser === 'INVITE_USER'
+
+        // TODO: set interface and database languages
+        // TODO: render error
+        return engine.mutate({
+            resource: inviteUser ? 'users/invite' : 'users',
+            type: 'create',
+            data: userData,
+        })
     }
 
     return (

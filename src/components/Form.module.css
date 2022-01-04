@@ -37,6 +37,11 @@
     max-width: 330px;
 }
 
+.dateField {
+    composes: field;
+    max-width: 150px;
+}
+
 .transferFieldHeader {
     font-size: 14px;
     font-weight: 500;

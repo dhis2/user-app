@@ -48,6 +48,15 @@ export const PasswordField = props => (
     />
 )
 
+export const DateField = props => (
+    <ReactFinalForm.Field
+        {...props}
+        className={styles.dateField}
+        component={InputFieldFF}
+        type="date"
+    />
+)
+
 export const SingleSelectField = props => (
     <ReactFinalForm.Field
         {...props}
