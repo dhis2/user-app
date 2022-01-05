@@ -1,4 +1,4 @@
-import { useConfig } from '@dhis2/app-runtime'
+import { useConfig, useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     CenteredContent,
@@ -10,6 +10,7 @@ import {
     dhis2Password,
     email,
 } from '@dhis2/ui'
+import keyBy from 'lodash.keyby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
@@ -27,42 +28,28 @@ import { getUserData } from './getUserData'
 import { useFormData } from './useFormData'
 import styles from './UserForm.module.css'
 
-// TODO
-/*
-async function getUserNameError(values, props) {
-    const newUserName = values[USERNAME]
-    const editingExistingUser = props.user && props.user.id
-
-    if (!newUserName || editingExistingUser) {
-        return Promise.resolve()
-    }
-
+// TODO: implement debounce (see https://codesandbox.io/s/mmywp9jl1y?file=/DebouncingValidatingField.js)
+const makeUniqueUsernameValidator = engine => async username => {
     try {
-        const modelCollection = await api.genericFind(
-            'users',
-            'userCredentials.username',
-            newUserName
-        )
-        if (modelCollection.size > 0) {
-            return {
-                [USERNAME]: i18n.t('Username already taken'),
-            }
+        const {
+            users: { users },
+        } = await engine.query({
+            users: {
+                resource: 'users',
+                params: {
+                    filter: `userCredentials.username:eq:${username}`,
+                    fields: 'id',
+                },
+            },
+        })
+        if (users.length > 0) {
+            return i18n.t('Username already taken')
         }
     } catch (error) {
-        return {
-            [USERNAME]: i18n.t(
-                'There was a problem whilst checking the availability of this username'
-            ),
-        }
+        return i18n.t(
+            'There was a problem whilst checking the availability of this username'
+        )
     }
-}
-*/
-const uniqueUsernameValidator = async username => {
-    return new Promise(reject => {
-        setTimeout(() => {
-            reject('invalid username')
-        }, 1000)
-    })
 }
 
 const createRepeatPasswordValidator = password => repeatPassword => {
@@ -88,6 +75,7 @@ const UserForm = ({
         systemInfo: { emailConfigured },
     } = useConfig()
     const history = useHistory()
+    const engine = useDataEngine()
     const {
         loading,
         error,
@@ -95,7 +83,8 @@ const UserForm = ({
         databaseLanguageOptions,
         userRoleOptions,
         userGroupOptions,
-        allDimensionConstraintOptions,
+        dimensionConstraints,
+        dimensionConstraintOptions,
     } = useFormData()
 
     if (loading) {
@@ -118,7 +107,17 @@ const UserForm = ({
         <Form
             submitButtonLabel={submitButtonLabel}
             onSubmit={({ values }) =>
-                onSubmit({ values, userData: getUserData({ values, user }) })
+                onSubmit({
+                    values,
+                    userData: getUserData({
+                        values,
+                        dimensionConstraintsById: keyBy(
+                            dimensionConstraints,
+                            'id'
+                        ),
+                        user,
+                    }),
+                })
             }
             onCancel={() => history.push('/users')}
         >
@@ -160,7 +159,7 @@ const UserForm = ({
                             validate={composeValidators(
                                 hasValue,
                                 dhis2Username,
-                                uniqueUsernameValidator
+                                makeUniqueUsernameValidator(engine)
                             )}
                         />
                         <TextField
@@ -231,44 +230,76 @@ const UserForm = ({
                         >
                             {!values.externalAuth && (
                                 <>
-                                    <PasswordField
-                                        required={!user}
-                                        name="password"
-                                        label={i18n.t('Password')}
-                                        helpText={i18n.t(
-                                            'Minimum 8 characters, one uppercase and lowercase letter and one number'
-                                        )}
-                                        initialValue=""
-                                        autoComplete="new-password"
-                                        validate={
+                                    {user && (
+                                        <CheckboxField
+                                            name="changePassword"
+                                            label={i18n.t(
+                                                'Change user password'
+                                            )}
+                                            initialValue={false}
+                                        />
+                                    )}
+                                    <div
+                                        className={
                                             user
-                                                ? dhis2Password
-                                                : composeValidators(
-                                                      hasValue,
-                                                      dhis2Password
-                                                  )
+                                                ? styles.indentedPasswordFields
+                                                : undefined
                                         }
-                                    />
-                                    {/* TODO: rename label to 'Repeat password' (need to update transifex key) */}
-                                    <PasswordField
-                                        required={!user}
-                                        name="repeatPassword"
-                                        label={i18n.t('Retype password')}
-                                        initialValue=""
-                                        autoComplete="new-password"
-                                        validate={
-                                            user
-                                                ? createRepeatPasswordValidator(
-                                                      values.password
-                                                  )
-                                                : composeValidators(
-                                                      hasValue,
-                                                      createRepeatPasswordValidator(
+                                    >
+                                        <PasswordField
+                                            required={!user}
+                                            name="password"
+                                            disabled={
+                                                user && !values.changePassword
+                                            }
+                                            label={
+                                                user
+                                                    ? i18n.t('New password')
+                                                    : i18n.t('Password')
+                                            }
+                                            helpText={i18n.t(
+                                                'Minimum 8 characters, one uppercase and lowercase letter and one number'
+                                            )}
+                                            initialValue=""
+                                            autoComplete="new-password"
+                                            validate={
+                                                user
+                                                    ? dhis2Password
+                                                    : composeValidators(
+                                                          hasValue,
+                                                          dhis2Password
+                                                      )
+                                            }
+                                        />
+                                        <PasswordField
+                                            required={!user}
+                                            name="repeatPassword"
+                                            disabled={
+                                                user && !values.changePassword
+                                            }
+                                            label={
+                                                user
+                                                    ? i18n.t(
+                                                          'Repeat new password'
+                                                      )
+                                                    : i18n.t('Repeat password')
+                                            }
+                                            initialValue=""
+                                            autoComplete="new-password"
+                                            validate={
+                                                user
+                                                    ? createRepeatPasswordValidator(
                                                           values.password
                                                       )
-                                                  )
-                                        }
-                                    />
+                                                    : composeValidators(
+                                                          hasValue,
+                                                          createRepeatPasswordValidator(
+                                                              values.password
+                                                          )
+                                                      )
+                                            }
+                                        />
+                                    </div>
                                 </>
                             )}
                             <DateField
@@ -420,10 +451,10 @@ const UserForm = ({
                         title={i18n.t('Analytics dimension restrictions')}
                     >
                         <TransferField
-                            name="allDimensionConstraints"
+                            name="dimensionConstraints"
                             leftHeader={i18n.t('Available restrictions')}
                             rightHeader={i18n.t('Selected restrictions')}
-                            options={allDimensionConstraintOptions}
+                            options={dimensionConstraintOptions}
                             initialValue={
                                 user
                                     ? []

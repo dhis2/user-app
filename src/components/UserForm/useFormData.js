@@ -23,7 +23,7 @@ const query = {
             paging: false,
         },
     },
-    allDimensionConstraints: {
+    dimensionConstraints: {
         resource: 'dimensions/constraints',
         params: {
             fields: ['id', 'name', 'dimensionType'],
@@ -60,7 +60,7 @@ export const useFormData = () => {
         databaseLanguages,
         userRoles: { userRoles },
         userGroups: { userGroups },
-        allDimensionConstraints: { dimensions: allDimensionConstraints },
+        dimensionConstraints: { dimensions: dimensionConstraints },
     } = data
 
     return {
@@ -68,6 +68,7 @@ export const useFormData = () => {
         databaseLanguageOptions: optionsFromLanguages(databaseLanguages),
         userRoleOptions: makeOptions(userRoles),
         userGroupOptions: makeOptions(userGroups),
-        allDimensionConstraintOptions: makeOptions(allDimensionConstraints),
+        dimensionConstraints,
+        dimensionConstraintOptions: makeOptions(dimensionConstraints),
     }
 }

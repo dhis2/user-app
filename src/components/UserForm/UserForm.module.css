@@ -2,3 +2,7 @@
     width: fit-content;
     margin-top: var(--spacers-dp16);
 }
+
+.indentedPasswordFields {
+    margin-left: var(--spacers-dp24);
+}

@@ -1,9 +1,4 @@
-const getConstraintIds = (constraints, dimensionType) =>
-    constraints
-        .filter(constraint => constraint.dimensionType === dimensionType)
-        .map(constraint => constraint.id)
-
-export const getUserData = ({ values, user }) => {
+export const getUserData = ({ values, dimensionConstraintsById, user }) => {
     const inviteUser = values.inviteUser === 'INVITE_USER'
     const {
         email,
@@ -20,6 +15,7 @@ export const getUserData = ({ values, user }) => {
         teiSearchOrganisationUnits,
         userGroups,
         username,
+        changePassword,
         password,
         disabled,
         accountExpiry,
@@ -27,8 +23,12 @@ export const getUserData = ({ values, user }) => {
         ldapId,
         externalAuth,
         userRoles,
-        allDimensionConstraints,
+        dimensionConstraints,
     } = values
+    const constraintsForType = dimensionType =>
+        dimensionConstraints.filter(
+            id => dimensionConstraintsById[id].dimensionType === dimensionType
+        )
 
     const userData = {
         id: user?.id,
@@ -53,7 +53,10 @@ export const getUserData = ({ values, user }) => {
 
             username,
             disabled,
-            password: !inviteUser && !externalAuth ? password : undefined,
+            password:
+                !inviteUser && !externalAuth && (!user || changePassword)
+                    ? password
+                    : undefined,
             // See https://jira.dhis2.org/browse/DHIS2-10569
             accountExpiry:
                 typeof accountExpiry === 'string' && accountExpiry !== ''
@@ -63,15 +66,10 @@ export const getUserData = ({ values, user }) => {
             ldapId,
             externalAuth,
             userRoles,
-
-            // allDimensionConstraints are combined into a single input
+            // Dimension constraints are combined into a single input
             // component, but need to be stored separately
-            catDimensionConstraints: getConstraintIds(
-                allDimensionConstraints,
-                'CATEGORY'
-            ),
-            cogsDimensionConstraints: getConstraintIds(
-                allDimensionConstraints,
+            catDimensionConstraints: constraintsForType('CATEGORY'),
+            cogsDimensionConstraints: constraintsForType(
                 'CATEGORY_OPTION_GROUP_SET'
             ),
         },

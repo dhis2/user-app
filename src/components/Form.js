@@ -189,7 +189,16 @@ export const TransferField = ({
                 <h3 className={styles.transferFieldHeader}>{leftHeader}</h3>
             }
             rightHeader={
-                <h3 className={styles.transferFieldHeader}>{rightHeader}</h3>
+                <h3 className={styles.transferFieldHeader}>
+                    {props.required ? (
+                        <>
+                            {rightHeader}
+                            <Required dataTest="required" />
+                        </>
+                    ) : (
+                        rightHeader
+                    )}
+                </h3>
             }
             filterable
             filterPlaceholder={i18n.t('Filter options')}
@@ -204,6 +213,7 @@ TransferField.propTypes = {
     initialValue: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
     leftHeader: PropTypes.string.isRequired,
     rightHeader: PropTypes.string.isRequired,
+    required: PropTypes.bool,
 }
 
 const Form = ({ children, submitButtonLabel, onSubmit, onCancel }) => (
