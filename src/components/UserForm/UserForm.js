@@ -27,46 +27,14 @@ import Form, {
 import { getUserData } from './getUserData'
 import { useFormData } from './useFormData'
 import styles from './UserForm.module.css'
-
-// TODO: implement debounce (see https://codesandbox.io/s/mmywp9jl1y?file=/DebouncingValidatingField.js)
-const makeUniqueUsernameValidator = engine => async username => {
-    try {
-        const {
-            users: { users },
-        } = await engine.query({
-            users: {
-                resource: 'users',
-                params: {
-                    filter: `userCredentials.username:eq:${username}`,
-                    fields: 'id',
-                },
-            },
-        })
-        if (users.length > 0) {
-            return i18n.t('Username already taken')
-        }
-    } catch (error) {
-        return i18n.t(
-            'There was a problem whilst checking the availability of this username'
-        )
-    }
-}
-
-const createRepeatPasswordValidator = password => repeatPassword => {
-    if (password !== repeatPassword) {
-        return i18n.t('Passwords do not match')
-    }
-}
-
-const hasSelectionValidator = value => {
-    if (!Array.isArray(value) || value.length === 0) {
-        return i18n.t('Please provide a value')
-    }
-}
+import {
+    makeUniqueUsernameValidator,
+    createRepeatPasswordValidator,
+    hasSelectionValidator,
+} from './validators'
 
 const UserForm = ({
     submitButtonLabel,
-    onSubmit,
     user,
     userInterfaceLanguage,
     userDatabaseLanguage,
@@ -103,22 +71,67 @@ const UserForm = ({
         )
     }
 
+    const handleSubmit = async ({ values }) => {
+        const userData = getUserData({
+            values,
+            dimensionConstraintsById: keyBy(dimensionConstraints, 'id'),
+            user,
+        })
+        try {
+            if (user) {
+                await engine.mutate({
+                    resource: `users/${userData.id}`,
+                    type: 'update',
+                    data: userData,
+                })
+            } else {
+                const inviteUser = values.inviteUser === 'INVITE_USER'
+                await engine.mutate({
+                    resource: inviteUser ? 'users/invite' : 'users',
+                    type: 'create',
+                    data: userData,
+                })
+            }
+
+            if (values.interfaceLanguage !== userInterfaceLanguage) {
+                await engine.mutate({
+                    resource: 'userSettings/keyUiLocale',
+                    type: 'create',
+                    params: {
+                        user: values.username,
+                        value: values.interfaceLanguage,
+                    },
+                })
+            }
+            if (values.databaseLanguage !== userDatabaseLanguage) {
+                if (values.databaseLanguage === 'USE_DB_LOCALE') {
+                    await engine.mutate({
+                        resource: 'userSettings/keyDbLocale',
+                        type: 'delete',
+                        params: {
+                            user: values.username,
+                        },
+                    })
+                } else {
+                    await engine.mutate({
+                        resource: 'userSettings/keyDbLocale',
+                        type: 'create',
+                        params: {
+                            user: values.username,
+                            value: values.databaseLanguage,
+                        },
+                    })
+                }
+            }
+        } catch (error) {
+            // TODO: render error
+        }
+    }
+
     return (
         <Form
             submitButtonLabel={submitButtonLabel}
-            onSubmit={({ values }) =>
-                onSubmit({
-                    values,
-                    userData: getUserData({
-                        values,
-                        dimensionConstraintsById: keyBy(
-                            dimensionConstraints,
-                            'id'
-                        ),
-                        user,
-                    }),
-                })
-            }
+            onSubmit={handleSubmit}
             onCancel={() => history.push('/users')}
         >
             {({ values }) => (
@@ -263,7 +276,7 @@ const UserForm = ({
                                             initialValue=""
                                             autoComplete="new-password"
                                             validate={
-                                                user
+                                                user && !values.changePassword
                                                     ? dhis2Password
                                                     : composeValidators(
                                                           hasValue,
@@ -287,7 +300,7 @@ const UserForm = ({
                                             initialValue=""
                                             autoComplete="new-password"
                                             validate={
-                                                user
+                                                user && !values.changePassword
                                                     ? createRepeatPasswordValidator(
                                                           values.password
                                                       )
@@ -485,8 +498,8 @@ const OrganisationUnitsPropType = PropTypes.arrayOf(
 
 UserForm.propTypes = {
     submitButtonLabel: PropTypes.string.isRequired,
+    userDatabaseLanguage: PropTypes.string.isRequired,
     userInterfaceLanguage: PropTypes.string.isRequired,
-    onSubmit: PropTypes.func.isRequired,
     user: PropTypes.shape({
         dataViewOrganisationUnits: OrganisationUnitsPropType.isRequired,
         firstName: PropTypes.string.isRequired,
@@ -531,7 +544,6 @@ UserForm.propTypes = {
         twitter: PropTypes.string,
         whatsApp: PropTypes.string,
     }),
-    userDatabaseLanguage: PropTypes.string,
 }
 
 export default UserForm

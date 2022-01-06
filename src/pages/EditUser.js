@@ -57,10 +57,6 @@ const EditUser = ({ userId }) => {
         )
     }
 
-    const handleSubmit = () => {
-        throw new Error('TODO')
-    }
-
     // TODO: pass user interface language and user database language props. See
     // `getSelectedAndAvailableLocales` method of `api/index.js` for how to get
     // values from `userSettings` endpoint
@@ -70,7 +66,6 @@ const EditUser = ({ userId }) => {
             <UserForm
                 user={data.user}
                 submitButtonLabel={i18n.t('Save changes')}
-                onSubmit={handleSubmit}
             />
         </>
     )
