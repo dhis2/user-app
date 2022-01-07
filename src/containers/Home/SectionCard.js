@@ -28,7 +28,7 @@ const SectionCard = ({ titleText, bodyText, actions }) => (
 SectionCard.propTypes = {
     actions: PropTypes.arrayOf(
         PropTypes.shape({
-            icon: PropTypes.element.isRequired,
+            icon: PropTypes.elementType.isRequired,
             label: PropTypes.string.isRequired,
             to: PropTypes.string.isRequired,
         }).isRequired

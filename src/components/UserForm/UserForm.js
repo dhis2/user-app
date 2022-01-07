@@ -72,6 +72,7 @@ const UserForm = ({
     }
 
     const handleSubmit = async ({ values }) => {
+        // TODO: Reload current user if current user's ID matches userId prop
         const userData = getUserData({
             values,
             dimensionConstraintsById: keyBy(dimensionConstraints, 'id'),
@@ -123,6 +124,8 @@ const UserForm = ({
                     })
                 }
             }
+
+            // TODO: send user to user list page
         } catch (error) {
             // TODO: render error
         }

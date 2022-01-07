@@ -38,9 +38,9 @@ const CreateUser = () => {
         <>
             <h2>{i18n.t('New user')}</h2>
             <UserForm
-                submitButtonLabel={i18n.t('Create user')}
                 userInterfaceLanguage={data.userInterfaceLanguage.keyUiLocale}
                 userDatabaseLanguage="USE_DB_LOCALE"
+                submitButtonLabel={i18n.t('Create user')}
             />
         </>
     )
