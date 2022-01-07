@@ -71,7 +71,7 @@ const UserForm = ({
         )
     }
 
-    const handleSubmit = async ({ values }) => {
+    const handleSubmit = async values => {
         // TODO: Reload current user if current user's ID matches userId prop
         const userData = getUserData({
             values,
@@ -501,7 +501,6 @@ const OrganisationUnitsPropType = PropTypes.arrayOf(
 
 UserForm.propTypes = {
     submitButtonLabel: PropTypes.string.isRequired,
-    userDatabaseLanguage: PropTypes.string.isRequired,
     userInterfaceLanguage: PropTypes.string.isRequired,
     user: PropTypes.shape({
         dataViewOrganisationUnits: OrganisationUnitsPropType.isRequired,
@@ -547,6 +546,7 @@ UserForm.propTypes = {
         twitter: PropTypes.string,
         whatsApp: PropTypes.string,
     }),
+    userDatabaseLanguage: PropTypes.string,
 }
 
 export default UserForm

@@ -25,10 +25,11 @@ export const getUserData = ({ values, dimensionConstraintsById, user }) => {
         userRoles,
         dimensionConstraints,
     } = values
+    const wrapIds = ids => ids.map(id => ({ id }))
     const constraintsForType = dimensionType =>
-        dimensionConstraints.filter(
+          wrapIds(dimensionConstraints.filter(
             id => dimensionConstraintsById[id].dimensionType === dimensionType
-        )
+          ))
 
     const userData = {
         id: user?.id,
@@ -42,10 +43,10 @@ export const getUserData = ({ values, dimensionConstraintsById, user }) => {
         skype,
         telegram,
         twitter,
-        organisationUnits,
-        dataViewOrganisationUnits,
-        teiSearchOrganisationUnits,
-        userGroups,
+        organisationUnits: wrapIds(organisationUnits),
+        dataViewOrganisationUnits: wrapIds(dataViewOrganisationUnits),
+        teiSearchOrganisationUnits: wrapIds(teiSearchOrganisationUnits),
+        userGroups: wrapIds(userGroups),
 
         userCredentials: {
             id: user?.userCredentials?.id,
@@ -65,7 +66,7 @@ export const getUserData = ({ values, dimensionConstraintsById, user }) => {
             openId,
             ldapId,
             externalAuth,
-            userRoles,
+            userRoles: wrapIds(userRoles),
             // Dimension constraints are combined into a single input
             // component, but need to be stored separately
             catDimensionConstraints: constraintsForType('CATEGORY'),
