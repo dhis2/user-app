@@ -23,7 +23,8 @@ import { useDeepMemo } from './useDeepMemo.js'
 
 // Rendering an org unit tree can be expensive and this is particularly
 // problematic in React Final Form forms due to the fact that they rerender on
-// every input change
+// every input change, so we use React.memo and useCallback to ensure props are
+// shallow equal on rerenders.
 const MemoedOrganisationUnitTree = React.memo(OrganisationUnitTree)
 
 /**
