@@ -105,7 +105,7 @@ const EditUser = ({ userId }) => {
             <h2>{i18n.t('Edit user')}</h2>
             <UserForm
                 user={user}
-                userInterfaceLanguage={userInterfaceLanguage}
+                userInterfaceLanguage={userInterfaceLanguage || 'en'}
                 userDatabaseLanguage={userDatabaseLanguage}
                 submitButtonLabel={i18n.t('Save changes')}
             />

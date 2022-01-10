@@ -223,7 +223,14 @@ TransferField.propTypes = {
 
 const Form = ({ children, submitButtonLabel, onSubmit, onCancel }) => (
     <ReactFinalForm.Form onSubmit={onSubmit}>
-        {({ handleSubmit, valid, pristine, values, submitting, submitError }) => (
+        {({
+            handleSubmit,
+            hasValidationErrors,
+            pristine,
+            values,
+            submitting,
+            submitError,
+        }) => (
             <form className={styles.form} onSubmit={handleSubmit}>
                 {children({ values, submitError })}
                 <ButtonStrip>
@@ -231,7 +238,7 @@ const Form = ({ children, submitButtonLabel, onSubmit, onCancel }) => (
                         primary
                         type="submit"
                         onClick={handleSubmit}
-                        disabled={!valid || pristine}
+                        disabled={hasValidationErrors || pristine}
                         loading={submitting}
                     >
                         {submitButtonLabel}

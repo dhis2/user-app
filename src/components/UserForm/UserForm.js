@@ -79,6 +79,7 @@ const UserForm = ({
             dimensionConstraintsById: keyBy(dimensionConstraints, 'id'),
             user,
         })
+
         try {
             if (user) {
                 await engine.mutate({
@@ -128,14 +129,29 @@ const UserForm = ({
 
             history.push('/users')
         } catch (error) {
-            if (error?.details?.response?.errorReports) {
-                return error.details.response.errorReports.reduce((errors, error) => {
-                    errors[error.errorProperty] = error.message
-                    return errors
-                }, {})
-            } else {
-                return { [FinalForm.FORM_ERROR]: error }
-            }
+            return (
+                error?.details?.response?.errorReports?.reduce(
+                    (errors, error) => {
+                        switch (error.errorCode) {
+                            case 'E4049':
+                                errors.username = i18n.t('Invalid username')
+                                break
+                            case 'E4027':
+                                errors.whatsApp = i18n.t(
+                                    'Invalid WhatsApp number'
+                                )
+                                break
+                            default: {
+                                const field =
+                                    error.errorProperty || FinalForm.FORM_ERROR
+                                errors[field] = error.message
+                            }
+                        }
+                        return errors
+                    },
+                    {}
+                ) || { [FinalForm.FORM_ERROR]: error }
+            )
         }
     }
 
@@ -148,7 +164,14 @@ const UserForm = ({
             {({ values, submitError }) => (
                 <>
                     {submitError && (
-                        <NoticeBox error title={user ? i18n.t('Error updating user') : i18n.t('Error creating user')}>
+                        <NoticeBox
+                            error
+                            title={
+                                user
+                                    ? i18n.t('Error updating user')
+                                    : i18n.t('Error creating user')
+                            }
+                        >
                             {error.message}
                         </NoticeBox>
                     )}
@@ -185,11 +208,15 @@ const UserForm = ({
                             initialValue={user?.userCredentials.username}
                             disabled={!!user}
                             autoComplete="new-password"
-                            validate={user ? undefined : composeValidators(
-                                hasValue,
-                                dhis2Username,
-                                makeUniqueUsernameValidator(engine)
-                            )}
+                            validate={
+                                user
+                                    ? undefined
+                                    : composeValidators(
+                                          hasValue,
+                                          dhis2Username,
+                                          makeUniqueUsernameValidator(engine)
+                                      )
+                            }
                         />
                         <TextField
                             required={values.inviteUser === 'INVITE_USER'}
@@ -463,6 +490,7 @@ const UserForm = ({
                                     ({ id }) => id
                                 ) || []
                             }
+                            validate={hasSelectionValidator}
                         />
                         <TransferField
                             name="userGroups"

@@ -89,10 +89,6 @@ export const createListRequestData = (
 
 const isSuperUser = ({ authorities }) => authorities.has('ALL')
 
-export const parseLocaleUrl = (type, username, val) => {
-    return `/userSettings/key${type}Locale?user=${username}&value=${val}`
-}
-
 export const mapLocale = ({ locale, name }) => {
     return {
         id: locale,
@@ -107,18 +103,6 @@ export const appendUsernameToDisplayName = userModelCollection =>
         user.displayName += ` (${username})`
         return user
     })
-
-export const parse200Error = response => {
-    const messages = []
-    for (const typeReport of response.typeReports) {
-        for (const objectReport of typeReport.objectReports) {
-            for (const errorReport of objectReport.errorReports) {
-                messages.push({ message: errorReport.message })
-            }
-        }
-    }
-    return { messages }
-}
 
 export const getAttributesWithValueAndId = (
     userCollection,

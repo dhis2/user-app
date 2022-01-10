@@ -1,19 +1,10 @@
 /* eslint-disable max-params */
 
-import i18n from '@dhis2/d2-i18n'
 import { CURRENT_USER_ORG_UNITS_FIELDS } from '../constants/queryFields'
-import {
-    INTERFACE_LANGUAGE,
-    DATABASE_LANGUAGE,
-    USE_DB_LOCALE,
-} from '../containers/UserForm/config'
 import {
     getQueryFields,
     createListRequestData,
-    parseLocaleUrl,
-    mapLocale,
     appendUsernameToDisplayName,
-    parse200Error,
     getAttributesWithValueAndId,
 } from './utils'
 
@@ -99,38 +90,6 @@ class Api {
         return this.d2Api.patch(url, data)
     }
 
-    getSelectedAndAvailableLocales = username => {
-        const useDbLocaleOption = {
-            id: USE_DB_LOCALE,
-            label: i18n.t('Use database locale / no translation'),
-        }
-
-        const dbLocales = this.d2Api.get('/locales/db')
-        const uiLocales = this.d2Api.get('/locales/ui')
-
-        // As of d2 v31.3.0, d2Api handles URI encoding
-        const uiLocale = username
-            ? this.d2Api.get(`/userSettings/keyUiLocale?user=${username}`)
-            : this.d2.system.settings.get('keyUiLocale')
-
-        const dbLocale = username
-            ? this.d2Api.get(`/userSettings/keyDbLocale?user=${username}`)
-            : Promise.resolve(USE_DB_LOCALE)
-
-        return Promise.all([dbLocales, uiLocales, dbLocale, uiLocale]).then(
-            ([dbLocales, uiLocales, dbLocale, uiLocale]) => ({
-                db: {
-                    available: [useDbLocaleOption, ...dbLocales.map(mapLocale)],
-                    selected: dbLocale || USE_DB_LOCALE,
-                },
-                ui: {
-                    available: uiLocales.map(mapLocale),
-                    selected: uiLocale,
-                },
-            })
-        )
-    }
-
     getAttributes(entityType) {
         return this.d2Api
             .get('attributes', {
@@ -187,76 +146,6 @@ class Api {
                     return attributesWithValueAndId.length === 0
                 })
         )
-    }
-
-    /**
-     * Will first execute a create/update user request, and if any locale values have been set will add subsequent request to update these too.
-     * @param {Object} values - Form data produced by redux-form
-     * @param {Object} user - A d2 user model instance
-     * @param {String} initialUiLocale - Locale string for the UI, i.e. 'en'
-     * @param {String} initialDbLocale - Locale string for the DB, i.e. 'fr'
-     * @returns {Promise} Promise object for the combined ajax calls to save a user
-     * @method
-     */
-    saveOrInviteUser = (
-        values,
-        user,
-        inviteUser,
-        initialUiLocale,
-        initialDbLocale,
-        attributeFields
-    ) => {
-        const userData = parseUserSaveData(
-            values,
-            user,
-            inviteUser,
-            attributeFields
-        )
-        const postUrl = inviteUser ? '/users/invite' : '/users'
-        const saveUserPromise = user.id
-            ? this.d2Api.update(`/users/${user.id}`, userData)
-            : this.d2Api.post(postUrl, userData)
-
-        return saveUserPromise.then(response => {
-            if (response.status === 'ERROR') {
-                return Promise.reject(parse200Error(response))
-            }
-
-            const localePromises = []
-            const username = values.username
-
-            // Add follow-up request for setting uiLocale if needed
-            const uiLocale = values[INTERFACE_LANGUAGE]
-            if (uiLocale !== initialUiLocale) {
-                localePromises.push(
-                    this.d2Api.post(parseLocaleUrl('Ui', username, uiLocale))
-                )
-            }
-
-            // Add follow-up request for setting dbLocale if needed
-            const dbLocale = values[DATABASE_LANGUAGE]
-            if (dbLocale !== initialDbLocale) {
-                const dbLocalePromise =
-                    dbLocale === USE_DB_LOCALE
-                        ? this.d2Api.delete(
-                              `/userSettings/keyDbLocale?user=${username}`
-                          )
-                        : this.d2Api.post(
-                              parseLocaleUrl('Db', username, dbLocale)
-                          )
-                localePromises.push(dbLocalePromise)
-            }
-
-            // Dummy follow-up request to prevent Promise.all error
-            // if neither locale fields need updating
-            if (localePromises.length === 0) {
-                localePromises.push(
-                    Promise.resolve('No locale changes detected')
-                )
-            }
-            // Updating locales after user in case the user is new
-            return Promise.all(localePromises)
-        })
     }
 
     /**************************

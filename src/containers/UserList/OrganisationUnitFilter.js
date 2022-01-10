@@ -2,7 +2,6 @@ import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React, { useRef } from 'react'
 import SearchableOrgUnitTree from '../../components/SearchableOrgUnitTree'
-import { TEI_SEARCH_ORG_UNITS } from '../UserForm/config'
 import styles from './OrganisationUnitFilter.module.css'
 import { Select } from './select'
 import { Input } from './single-select/input'
@@ -44,7 +43,7 @@ const OrganisationUnitFilter = ({
                 menu={
                     <SearchableOrgUnitTree
                         className={styles.orgUnitTree}
-                        orgUnitType={TEI_SEARCH_ORG_UNITS}
+                        orgUnitType="teiSearchOrganisationUnits"
                         initiallySelected={organisationUnits}
                         confirmSelection={selectedOrgUnits => {
                             onOrganisationUnitsChange(selectedOrgUnits)
