@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-01-06T14:46:34.014Z\n"
-"PO-Revision-Date: 2022-01-06T14:46:34.014Z\n"
+"POT-Creation-Date: 2022-01-10T10:32:49.936Z\n"
+"PO-Revision-Date: 2022-01-10T10:32:49.936Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -318,6 +318,12 @@ msgstr "Error fetching form"
 
 msgid "There was an error fetching this form."
 msgstr "There was an error fetching this form."
+
+msgid "Error updating user"
+msgstr "Error updating user"
+
+msgid "Error creating user"
+msgstr "Error creating user"
 
 msgid "Invite user"
 msgstr "Invite user"

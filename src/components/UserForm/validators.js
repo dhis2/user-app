@@ -25,7 +25,7 @@ export const makeUniqueUsernameValidator = engine => async username => {
 }
 
 export const createRepeatPasswordValidator = password => repeatPassword => {
-    if (password !== repeatPassword) {
+    if (password && password !== repeatPassword) {
         return i18n.t('Passwords do not match')
     }
 }

@@ -9,6 +9,7 @@ import {
     dhis2Username,
     dhis2Password,
     email,
+    FinalForm,
 } from '@dhis2/ui'
 import keyBy from 'lodash.keyby'
 import PropTypes from 'prop-types'
@@ -125,9 +126,16 @@ const UserForm = ({
                 }
             }
 
-            // TODO: send user to user list page
+            history.push('/users')
         } catch (error) {
-            // TODO: render error
+            if (error?.details?.response?.errorReports) {
+                return error.details.response.errorReports.reduce((errors, error) => {
+                    errors[error.errorProperty] = error.message
+                    return errors
+                }, {})
+            } else {
+                return { [FinalForm.FORM_ERROR]: error }
+            }
         }
     }
 
@@ -137,8 +145,13 @@ const UserForm = ({
             onSubmit={handleSubmit}
             onCancel={() => history.push('/users')}
         >
-            {({ values }) => (
+            {({ values, submitError }) => (
                 <>
+                    {submitError && (
+                        <NoticeBox error title={user ? i18n.t('Error updating user') : i18n.t('Error creating user')}>
+                            {error.message}
+                        </NoticeBox>
+                    )}
                     {!user && emailConfigured && (
                         <FormSection title={i18n.t('Invite user')}>
                             <SingleSelectField
@@ -172,7 +185,7 @@ const UserForm = ({
                             initialValue={user?.userCredentials.username}
                             disabled={!!user}
                             autoComplete="new-password"
-                            validate={composeValidators(
+                            validate={user ? undefined : composeValidators(
                                 hasValue,
                                 dhis2Username,
                                 makeUniqueUsernameValidator(engine)
