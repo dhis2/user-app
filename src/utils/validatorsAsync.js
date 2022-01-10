@@ -3,7 +3,7 @@
 import i18n from '@dhis2/d2-i18n'
 import capitalize from 'lodash.capitalize'
 import api from '../api'
-import { USER, USER_GROUP } from '../constants/entityTypes'
+import { USER_GROUP } from '../constants/entityTypes'
 import {
     CODE,
     NAME,
@@ -21,9 +21,7 @@ export async function asyncValidatorSwitch(values, _, props, blurredField) {
     }
 
     let newError
-    if (props.form === USER_FORM && blurredField === USERNAME) {
-        newError = await getUserNameError(values, props)
-    } else if (
+    if (
         props.form === GROUP_FORM &&
         (blurredField === CODE || blurredField === NAME)
     ) {
@@ -44,15 +42,6 @@ export async function asyncValidatorSwitch(values, _, props, blurredField) {
     } else {
         return Promise.resolve()
     }
-}
-
-export async function asyncValidateUsername(values, _, props, blurredField) {
-    return asyncSingleFieldValidator(
-        values,
-        props,
-        blurredField,
-        getUserNameError
-    )
 }
 
 export async function asyncValidateUniqueness(values, _, props, blurredField) {
@@ -142,9 +131,8 @@ async function getAttributeUniquenessError(values, props, blurredField) {
         return Promise.resolve()
     }
 
-    const entityType = props.form === USER_FORM ? USER : USER_GROUP
-    const id =
-        entityType === USER ? props.user.id || '_' : props.group.id || '_'
+    const entityType = USER_GROUP
+    const id = props.group.id || '_'
     const attributeId = blurredField.replace(USER_ATTRIBUTE_FIELD_PREFIX, '')
 
     try {
