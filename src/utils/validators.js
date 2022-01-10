@@ -1,7 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
 import { PASSWORD, REPEAT_PASSWORD } from '../containers/UserForm/config'
 
-const EMAIL_ADDRESS_PATTERN = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+// Same as used in @dhis2/ui-forms
+const EMAIL_ADDRESS_PATTERN = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i
 const INTERNATIONAL_PHONE_NUMBER_PATTERN = /^\+(?:[0-9].?){4,14}[0-9]$/
 const DATE_PATTERN = /[0-9]{4}-[0-9]{2}-[0-9]{2}/
 const LOWER_CASE_PATTERN = /^(?=.*[a-z]).+$/
