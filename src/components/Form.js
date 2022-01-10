@@ -149,7 +149,12 @@ export const SearchableOrgUnitTreeField = ({
 
 SearchableOrgUnitTreeField.propTypes = {
     headerText: PropTypes.node.isRequired,
-    initialValue: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    initialValue: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            path: PropTypes.string.isRequired,
+        }).isRequired
+    ).isRequired,
     required: PropTypes.bool,
 }
 
