@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-01-10T10:32:49.936Z\n"
-"PO-Revision-Date: 2022-01-10T10:32:49.936Z\n"
+"POT-Creation-Date: 2022-01-11T08:27:49.860Z\n"
+"PO-Revision-Date: 2022-01-11T08:27:49.860Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -14,9 +14,6 @@ msgid ""
 msgstr ""
 "Could not reset user password. Make sure you have the appropriate "
 "permissions."
-
-msgid "Use database locale / no translation"
-msgstr "Use database locale / no translation"
 
 msgid "Search"
 msgstr "Search"
@@ -319,6 +316,12 @@ msgstr "Error fetching form"
 msgid "There was an error fetching this form."
 msgstr "There was an error fetching this form."
 
+msgid "Invalid username"
+msgstr "Invalid username"
+
+msgid "Invalid WhatsApp number"
+msgstr "Invalid WhatsApp number"
+
 msgid "Error updating user"
 msgstr "Error updating user"
 
@@ -357,6 +360,9 @@ msgstr "Interface language"
 
 msgid "Database language"
 msgstr "Database language"
+
+msgid "Use database locale / no translation"
+msgstr "Use database locale / no translation"
 
 msgid "Disable this user account"
 msgstr "Disable this user account"
@@ -708,46 +714,6 @@ msgstr "User Role Management"
 msgid "Error loading user roles"
 msgstr "Error loading user roles"
 
-msgid ""
-"Selecting an organisation unit provides access to all units in the "
-"sub-hierarchy"
-msgstr ""
-"Selecting an organisation unit provides access to all units in the "
-"sub-hierarchy"
-
-msgid "External authentication only (OpenID or LDAP)"
-msgstr "External authentication only (OpenID or LDAP)"
-
-msgid "Disabled"
-msgstr "Disabled"
-
-msgid "Retype password"
-msgstr "Retype password"
-
-msgid "Available roles"
-msgstr "Available roles"
-
-msgid "Selected roles"
-msgstr "Selected roles"
-
-msgid "Data capture and maintenance organisation units"
-msgstr "Data capture and maintenance organisation units"
-
-msgid "Data output and analytic organisation units"
-msgstr "Data output and analytic organisation units"
-
-msgid "Search Organisation Units"
-msgstr "Search Organisation Units"
-
-msgid "Selected user groups"
-msgstr "Selected user groups"
-
-msgid "Available dimension restrictions for data analytics"
-msgstr "Available dimension restrictions for data analytics"
-
-msgid "Selected dimension restrictions for data analytics"
-msgstr "Selected dimension restrictions for data analytics"
-
 msgid "Profile"
 msgstr "Profile"
 
@@ -893,6 +859,9 @@ msgstr "Error loading users"
 msgid "Account disabled?"
 msgstr "Account disabled?"
 
+msgid "Disabled"
+msgstr "Disabled"
+
 msgid "Error fetching interface language"
 msgstr "Error fetching interface language"
 
@@ -940,53 +909,20 @@ msgstr "Exceeds maximum character limit of 50"
 msgid "Please enter a valid date with the following format yyyy-mm-dd"
 msgstr "Please enter a valid date with the following format yyyy-mm-dd"
 
-msgid "Please provide a valid email address"
-msgstr "Please provide a valid email address"
+msgid "This field is required"
+msgstr "This field is required"
 
 msgid "Value should be an integer"
 msgstr "Value should be an integer"
+
+msgid "Value should be a positive integer"
+msgstr "Value should be a positive integer"
 
 msgid "Value should be a nagative integer"
 msgstr "Value should be a nagative integer"
 
 msgid "Value should be a number"
 msgstr "Value should be a number"
-
-msgid "Value should be a positive integer"
-msgstr "Value should be a positive integer"
-
-msgid "This field is required"
-msgstr "This field is required"
-
-msgid "This field is required. Please select at least one"
-msgstr "This field is required. Please select at least one"
-
-msgid "A username should be at least 2 characters long"
-msgstr "A username should be at least 2 characters long"
-
-msgid "Username may not exceed 140 characters"
-msgstr "Username may not exceed 140 characters"
-
-msgid "Please provide a valid international phone number (+0123456789)"
-msgstr "Please provide a valid international phone number (+0123456789)"
-
-msgid "Password should be at least 8 characters long"
-msgstr "Password should be at least 8 characters long"
-
-msgid "Password should be no longer than 34 characters"
-msgstr "Password should be no longer than 34 characters"
-
-msgid "Password should contain at least one lowercase letter"
-msgstr "Password should contain at least one lowercase letter"
-
-msgid "Password should contain at least one UPPERCASE letter"
-msgstr "Password should contain at least one UPPERCASE letter"
-
-msgid "Password should contain at least one number"
-msgstr "Password should contain at least one number"
-
-msgid "Password should have at least one special character"
-msgstr "Password should have at least one special character"
 
 msgid "{{fieldDisplayName}} is already taken"
 msgstr "{{fieldDisplayName}} is already taken"
