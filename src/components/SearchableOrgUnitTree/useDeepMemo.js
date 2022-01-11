@@ -1,4 +1,4 @@
-import isEqual from 'lodash.isequal'
+import { isEqual } from 'lodash-es'
 import { useRef } from 'react'
 
 // Like useMemo but with deepEquality

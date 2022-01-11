@@ -1,5 +1,5 @@
 import { useDataQuery } from '@dhis2/app-runtime'
-import uniqBy from 'lodash.uniqby'
+import { uniqBy } from 'lodash-es'
 
 const query = {
     interfaceLanguages: {

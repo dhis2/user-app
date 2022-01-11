@@ -1,6 +1,4 @@
-import endsWith from 'lodash.endswith'
-import sortBy from 'lodash.sortby'
-import startsWith from 'lodash.startswith'
+import { sortBy } from 'lodash-es'
 import {
     AUTHORITY_GROUP_NAMES,
     PUBLIC_ADD_SUFFIX,
@@ -40,7 +38,7 @@ const sortGroupedAuthorities = groupedAuthories => {
  * @return {Boolean} - True if no group suffix was found in the auth id
  */
 const hasNoGroupSuffix = auth => {
-    return !ALL_METADATA_SUFFIXES.some(suffix => endsWith(auth.id, suffix))
+    return !ALL_METADATA_SUFFIXES.some(suffix => auth.id.endsWith(suffix))
 }
 
 /**
@@ -58,7 +56,7 @@ const createMetadataGroup = (auth, lookup) => {
 
     // The suffix of the the incoming authority, i.e. "F_CATEGORY_COMBO_DELETE" => "_DELETE"
     const authSuffix = ALL_METADATA_SUFFIXES.find(suffix =>
-        endsWith(auth.id, suffix)
+        auth.id.endsWith(suffix)
     )
     // The authority baseName, i.e. "F_CATEGORY_COMBO_DELETE" => "F_CATEGORY_COMBO"
     const baseName = auth.id.replace(authSuffix, '')
@@ -143,7 +141,7 @@ const groupAuthorities = authorities => {
 
     // Append items to the groupedAuthorities accumulator and return the accumulated object
     const groupedAuthorities = authorities.reduce((acc, auth) => {
-        if (startsWith(auth.id, APP_AUTH_PREFIX)) {
+        if (auth.id.startsWith(APP_AUTH_PREFIX)) {
             // Group under apps
             acc.apps.items.push(auth)
             lookup.delete(auth.id)

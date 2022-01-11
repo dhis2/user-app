@@ -1,7 +1,6 @@
-import endsWith from 'lodash.endswith'
 import { PUBLIC_ADD_SUFFIX, PRIVATE_ADD_SUFFIX, METADATA } from './constants'
 
-export const isPublicAdd = id => endsWith(id, PUBLIC_ADD_SUFFIX)
+export const isPublicAdd = id => id.endsWith(PUBLIC_ADD_SUFFIX)
 export const convertPublicAddIdToPrivate = id =>
     id.replace(PUBLIC_ADD_SUFFIX, PRIVATE_ADD_SUFFIX)
 

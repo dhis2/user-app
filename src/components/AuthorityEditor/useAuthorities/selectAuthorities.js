@@ -1,8 +1,7 @@
-import endsWith from 'lodash.endswith'
 import { PUBLIC_ADD_SUFFIX, PRIVATE_ADD_SUFFIX } from './constants'
 
-export const isPublicAdd = id => endsWith(id, PUBLIC_ADD_SUFFIX)
-export const isPrivateAdd = id => endsWith(id, PRIVATE_ADD_SUFFIX)
+export const isPublicAdd = id => id.endsWith(PUBLIC_ADD_SUFFIX)
+export const isPrivateAdd = id => id.endsWith(PRIVATE_ADD_SUFFIX)
 const selectMetaDataSubItems = (subItems, selectedSet) => {
     const hasPublicAddSelected =
         selectedSet.has(subItems[0].id) && isPublicAdd(subItems[0].id)

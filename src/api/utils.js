@@ -5,7 +5,7 @@
  * @module Api/utils
  */
 
-import snakeCase from 'lodash.snakecase'
+import { snakeCase } from 'lodash-es'
 import {
     PAGE as DEFAULT_PAGE,
     PAGE_SIZE as DEFAULT_PAGE_SIZE,

@@ -1,7 +1,7 @@
 /* eslint-disable max-params */
 
 import i18n from '@dhis2/d2-i18n'
-import capitalize from 'lodash.capitalize'
+import { capitalize } from 'lodash-es'
 import api from '../api'
 import { USER_GROUP } from '../constants/entityTypes'
 import {

@@ -8,7 +8,7 @@ import {
     theme,
 } from '@dhis2/ui'
 import cx from 'classnames'
-import defer from 'lodash.defer'
+import { defer } from 'lodash-es'
 import PropTypes from 'prop-types'
 import React, { useState, useCallback, useMemo } from 'react'
 import { useSelector } from 'react-redux'

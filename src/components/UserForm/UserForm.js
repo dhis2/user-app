@@ -11,7 +11,7 @@ import {
     email,
     FinalForm,
 } from '@dhis2/ui'
-import keyBy from 'lodash.keyby'
+import { keyBy } from 'lodash-es'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'

@@ -1,5 +1,5 @@
 import { useDataQuery } from '@dhis2/app-runtime'
-import debounce from 'lodash.debounce'
+import { debounce } from 'lodash-es'
 import { useState, useEffect, useRef } from 'react'
 import { filterAuthorities } from './filterAuthorities'
 import {

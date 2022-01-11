@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { CircularLoader, CenteredContent } from '@dhis2/ui'
-import capitalize from 'lodash.capitalize'
+import { capitalize } from 'lodash-es'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'

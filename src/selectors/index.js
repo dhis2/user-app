@@ -3,8 +3,7 @@
  * @module selectors
  */
 import i18n from '@dhis2/d2-i18n'
-import isUndefined from 'lodash.isundefined'
-import memoize from 'lodash.memoize'
+import { isUndefined, memoize } from 'lodash-es'
 import { getFields as getUserGroupFields } from '../containers/GroupForm/config'
 import asArray from '../utils/asArray'
 
