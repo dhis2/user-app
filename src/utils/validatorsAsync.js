@@ -136,12 +136,12 @@ async function getAttributeUniquenessError(values, props, blurredField) {
     const attributeId = blurredField.replace(USER_ATTRIBUTE_FIELD_PREFIX, '')
 
     try {
-        const isUnique = await api.isAttributeUnique(
+        const isUnique = await api.isAttributeUnique({
             entityType,
-            id,
+            modelId: id,
             attributeId,
-            value
-        )
+            value,
+        })
         if (!isUnique) {
             return {
                 [blurredField]: i18n.t(

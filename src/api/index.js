@@ -1,5 +1,3 @@
-/* eslint-disable max-params */
-
 import { CURRENT_USER_ORG_UNITS_FIELDS } from '../constants/queryFields'
 import {
     getQueryFields,
@@ -40,13 +38,13 @@ class Api {
 
     getList = (entityName, page, filter) => {
         const fields = getQueryFields(entityName)
-        const requestData = createListRequestData(
+        const requestData = createListRequestData({
             page,
             filter,
             fields,
             entityName,
-            this.getCurrentUser()
-        )
+            currentUser: this.getCurrentUser(),
+        })
         return this.d2.models[entityName].list(requestData)
     }
 
@@ -107,7 +105,7 @@ class Api {
             .then(resp => resp.attributes)
     }
 
-    isAttributeUnique(entityType, modelId, attributeId, value) {
+    isAttributeUnique({ entityType, modelId, attributeId, value }) {
         return (
             this.d2.models[entityType]
                 // All users/userGroups but current

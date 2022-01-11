@@ -1,5 +1,3 @@
-/* eslint-disable max-params */
-
 /**
  * This module includes helper functions used by the API class
  * @module Api/utils
@@ -38,13 +36,13 @@ export const getQueryFields = (entityName, detailFields) => {
  * @returns {Object} A valid request payload for api list calls
  * @function
  */
-export const createListRequestData = (
+export const createListRequestData = ({
     page = DEFAULT_PAGE,
     filter,
     fields,
     entityName,
-    currentUser
-) => {
+    currentUser,
+}) => {
     const {
         query,
         inactiveMonths,
