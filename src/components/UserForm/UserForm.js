@@ -543,9 +543,9 @@ const UserForm = ({
 
 const OrganisationUnitsPropType = PropTypes.arrayOf(
     PropTypes.shape({
-        displayName: PropTypes.string.isRequired,
         id: PropTypes.string.isRequired,
         path: PropTypes.string.isRequired,
+        displayName: PropTypes.string,
     }).isRequired
 )
 

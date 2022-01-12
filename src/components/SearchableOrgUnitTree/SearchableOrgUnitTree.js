@@ -212,9 +212,9 @@ const SearchableOrgUnitTree = ({
 SearchableOrgUnitTree.propTypes = {
     initiallySelected: PropTypes.arrayOf(
         PropTypes.shape({
-            displayName: PropTypes.string.isRequired,
             id: PropTypes.string.isRequired,
             path: PropTypes.string.isRequired,
+            displayName: PropTypes.string,
         }).isRequired
     ).isRequired,
     orgUnitType: PropTypes.string.isRequired,
