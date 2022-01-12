@@ -72,7 +72,11 @@ const UserForm = ({
 
     if (error) {
         return (
-            <NoticeBox error title={i18n.t('Error fetching form')} className={styles.noticeBox}>
+            <NoticeBox
+                error
+                title={i18n.t('Error fetching form')}
+                className={styles.noticeBox}
+            >
                 {i18n.t('There was an error fetching this form.')}
             </NoticeBox>
         )
