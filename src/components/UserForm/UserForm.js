@@ -12,6 +12,7 @@ import {
     FinalForm,
 } from '@dhis2/ui'
 import { keyBy } from 'lodash-es'
+import moment from 'moment'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
@@ -362,7 +363,10 @@ const UserForm = ({
                                 name="accountExpiry"
                                 label={i18n.t('Account expiration date')}
                                 initialValue={
-                                    user?.userCredentials.accountExpiry
+                                    user?.userCredentials.accountExpiry &&
+                                    moment(
+                                        user.userCredentials.accountExpiry
+                                    ).format('YYYY-MM-DD')
                                 }
                             />
                             <TextField
