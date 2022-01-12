@@ -48,3 +48,19 @@
     color: var(--colors-grey800);
     margin: var(--spacers-dp8) 0;
 }
+
+.flexCenter {
+    display: flex;
+    align-items: center;
+}
+
+.transferWrapperError {
+    border: 1px solid var(--theme-error);
+    border-radius: 3px;
+}
+
+.errorIcon {
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin-left: var(--spacers-dp8);
+}

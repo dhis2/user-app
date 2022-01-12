@@ -9,7 +9,10 @@ import {
     Required,
     Transfer,
     Help,
+    IconErrorFilled24,
+    theme,
 } from '@dhis2/ui'
+import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useState, useCallback } from 'react'
 import styles from './Form.module.css'
@@ -144,7 +147,7 @@ SearchableOrgUnitTreeField.propTypes = {
     required: PropTypes.bool,
 }
 
-const TransferFF = ({ input, meta, ...props }) => {
+const TransferFF = ({ input, meta, className, ...props }) => {
     const handleChange = useCallback(
         ({ selected }) => {
             input.onChange(selected)
@@ -156,12 +159,24 @@ const TransferFF = ({ input, meta, ...props }) => {
 
     return (
         <div>
-            <Transfer
-                {...props}
-                error={!!error}
-                selected={input.value}
-                onChange={handleChange}
-            />
+            <div className={styles.flexCenter}>
+                <div
+                    className={cx(className, {
+                        [styles.transferWrapperError]: error,
+                    })}
+                >
+                    <Transfer
+                        {...props}
+                        selected={input.value}
+                        onChange={handleChange}
+                    />
+                </div>
+                {error && (
+                    <div className={styles.errorIcon}>
+                        <IconErrorFilled24 color={theme.error} />
+                    </div>
+                )}
+            </div>
             {error && <Help error>{error}</Help>}
         </div>
     )
@@ -174,6 +189,7 @@ TransferFF.propTypes = {
         onChange: PropTypes.func.isRequired,
     }).isRequired,
     meta: PropTypes.object.isRequired,
+    className: PropTypes.string,
 }
 
 export const TransferField = ({
