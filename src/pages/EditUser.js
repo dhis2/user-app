@@ -18,7 +18,7 @@ const userQuery = {
                 'userGroups[id,displayName]',
                 'organisationUnits[id,displayName,path]',
                 'dataViewOrganisationUnits[id,displayName,path]',
-                'teiSearchOrganisationUnits[id,path]',
+                'teiSearchOrganisationUnits[id,displayName,path]',
                 'userCredentials[id,username,accountExpiry,lastLogin,externalAuth,userRoles[id,displayName],cogsDimensionConstraints[id,displayName,dimensionType],catDimensionConstraints[id,displayName,dimensionType],openId,ldapId,disabled]',
                 'whatsApp',
                 'facebookMessenger',

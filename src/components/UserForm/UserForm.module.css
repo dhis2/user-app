@@ -6,3 +6,8 @@
 .indentedPasswordFields {
     margin-left: var(--spacers-dp24);
 }
+
+.noticeBox {
+    max-width: 500px;
+    margin-bottom: var(--spacers-dp16);
+}
