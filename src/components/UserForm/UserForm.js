@@ -178,7 +178,7 @@ const UserForm = ({
                                     : i18n.t('Error creating user')
                             }
                         >
-                            {error.message}
+                            {submitError.message}
                         </NoticeBox>
                     )}
                     {!user && emailConfigured && (
