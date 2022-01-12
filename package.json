@@ -30,6 +30,7 @@
         "lodash-es": "^4.17.21",
         "material-design-icons-iconfont": "^5.0.1",
         "material-ui": "^0.20.0",
+        "p-debounce": "^4.0.0",
         "query-string": "^7.0.1",
         "react-highlight-words": "^0.16.0",
         "react-redux": "^7.2.5",

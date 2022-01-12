@@ -1,6 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
 
-// TODO: implement debounce (see https://codesandbox.io/s/mmywp9jl1y?file=/DebouncingValidatingField.js)
 export const makeUniqueUsernameValidator = engine => async username => {
     try {
         const {

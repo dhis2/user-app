@@ -13,8 +13,9 @@ import {
 } from '@dhis2/ui'
 import { keyBy } from 'lodash-es'
 import moment from 'moment'
+import pDebounce from 'p-debounce'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useCallback } from 'react'
 import { useHistory } from 'react-router-dom'
 import Form, {
     FormSection,
@@ -46,6 +47,10 @@ const UserForm = ({
     } = useConfig()
     const history = useHistory()
     const engine = useDataEngine()
+    const debouncedUniqueUsernameValidator = useCallback(
+        pDebounce(makeUniqueUsernameValidator(engine), 350),
+        []
+    )
     const {
         loading,
         error,
@@ -215,7 +220,7 @@ const UserForm = ({
                                     : composeValidators(
                                           hasValue,
                                           dhis2Username,
-                                          makeUniqueUsernameValidator(engine)
+                                          debouncedUniqueUsernameValidator
                                       )
                             }
                         />
