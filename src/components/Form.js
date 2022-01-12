@@ -74,27 +74,15 @@ export const CheckboxField = props => (
     />
 )
 
-const createChangeHandler = onChange => payload => {
-    if (typeof payload === 'object' && payload.value) {
-        onChange(payload.value)
-    } else if (typeof payload === 'object' && payload.selected) {
-        onChange(payload.selected)
-    } else {
-        onChange(payload)
-    }
-}
-
 const SearchableOrgUnitTreeFF = ({ input, meta, ...props }) => {
-    const handleChange = useCallback(createChangeHandler(input.onChange), [
-        input.onChange,
-    ])
     const error = meta.touched && meta.invalid ? meta.error : undefined
+
     return (
         <div>
             <SearchableOrgUnitTree
                 {...props}
                 error={!!error}
-                onChange={handleChange}
+                onChange={input.onChange}
                 onBlur={input.onBlur}
             />
             {error && <Help error>{error}</Help>}
@@ -125,25 +113,23 @@ export const SearchableOrgUnitTreeField = ({
     const [memoedInitialValue] = useState(initialValue)
 
     return (
-        <div>
-            <ReactFinalForm.Field
-                {...props}
-                headerText={
-                    props.required ? (
-                        <>
-                            {headerText}
-                            <Required dataTest="required" />
-                        </>
-                    ) : (
-                        headerText
-                    )
-                }
-                className={styles.field}
-                component={SearchableOrgUnitTreeFF}
-                initialValue={memoedInitialValue}
-                initiallySelected={initialValue}
-            />
-        </div>
+        <ReactFinalForm.Field
+            {...props}
+            headerText={
+                props.required ? (
+                    <>
+                        {headerText}
+                        <Required dataTest="required" />
+                    </>
+                ) : (
+                    headerText
+                )
+            }
+            className={styles.field}
+            component={SearchableOrgUnitTreeFF}
+            initialValue={memoedInitialValue}
+            initiallySelected={initialValue}
+        />
     )
 }
 
@@ -158,18 +144,33 @@ SearchableOrgUnitTreeField.propTypes = {
     required: PropTypes.bool,
 }
 
-// eslint-disable-next-line no-unused-vars
-const TransferFF = ({ input, meta, ...props }) => (
-    <Transfer
-        {...props}
-        selected={input.value}
-        onChange={createChangeHandler(input.onChange)}
-    />
-)
+const TransferFF = ({ input, meta, ...props }) => {
+    const handleChange = useCallback(
+        ({ selected }) => {
+            input.onChange(selected)
+            input.onBlur()
+        },
+        [input.onChange, input.onBlur]
+    )
+    const error = meta.touched && meta.invalid ? meta.error : undefined
+
+    return (
+        <div>
+            <Transfer
+                {...props}
+                error={!!error}
+                selected={input.value}
+                onChange={handleChange}
+            />
+            {error && <Help error>{error}</Help>}
+        </div>
+    )
+}
 
 TransferFF.propTypes = {
     input: PropTypes.shape({
         value: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+        onBlur: PropTypes.func.isRequired,
         onChange: PropTypes.func.isRequired,
     }).isRequired,
     meta: PropTypes.object.isRequired,
