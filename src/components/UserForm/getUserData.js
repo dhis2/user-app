@@ -25,11 +25,7 @@ export const getUserData = ({ values, dimensionConstraintsById, user }) => {
         userRoles,
         dimensionConstraints,
     } = values
-    const wrapIds = entities =>
-        entities.map(entity => {
-            const id = typeof entity === 'string' ? entity : entity.id
-            return { id }
-        })
+    const wrapIds = ids => ids.map(id => ({ id }))
     const constraintsForType = dimensionType =>
         wrapIds(
             dimensionConstraints.filter(

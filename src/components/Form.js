@@ -113,7 +113,7 @@ export const SearchableOrgUnitTreeField = ({
     // Fixes the infinite loop rendering bug that occurs when the
     // initial value fails shallow equal on form rerender.
     // Issue on GitHub: https://github.com/final-form/react-final-form/issues/686
-    const [memoedInitialValue] = useState(initialValue)
+    const [memoedInitialValue] = useState(initialValue.map(ou => ou.id))
 
     return (
         <ReactFinalForm.Field
