@@ -39,7 +39,7 @@ const AsyncAutoComplete = ({ selectHandler, orgUnitType }) => {
 
     return (
         <>
-            <div ref={inputRef} className={styles.inputWrapper}>
+            <div ref={inputRef}>
                 <InputField
                     error={!!error}
                     loading={fetching}

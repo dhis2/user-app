@@ -4,9 +4,7 @@
     max-width: 350px;
     overflow-y: auto;
 }
-.inputWrapper :global(.status-icon) {
-    display: none !important;
-}
+
 .refineSearchWarning {
     font-style: italic;
     text-align: center;
