@@ -4,11 +4,6 @@ import i18n from '@dhis2/d2-i18n'
 import { capitalize } from 'lodash-es'
 import api from '../api'
 import { USER_GROUP } from '../constants/entityTypes'
-import {
-    CODE,
-    NAME,
-    FORM_NAME as GROUP_FORM,
-} from '../containers/GroupForm/config'
 import { USER_ATTRIBUTE_FIELD_PREFIX } from './attributeFieldHelpers'
 import createHumanErrorMessage from './createHumanErrorMessage'
 
@@ -20,19 +15,11 @@ export async function asyncValidatorSwitch(values, _, props, blurredField) {
         return Promise.resolve()
     }
 
-    let newError
-    if (
-        props.form === GROUP_FORM &&
-        (blurredField === CODE || blurredField === NAME)
-    ) {
-        newError = await getGenericUniquenessError(values, props, blurredField)
-    } else {
-        newError = await getAttributeUniquenessError(
-            values,
-            props,
-            blurredField
-        )
-    }
+    const newError = await getAttributeUniquenessError(
+        values,
+        props,
+        blurredField
+    )
 
     const errors =
         priorErrors || newError ? { ...priorErrors, ...newError } : undefined
