@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-01-11T08:27:49.860Z\n"
-"PO-Revision-Date: 2022-01-11T08:27:49.860Z\n"
+"POT-Creation-Date: 2022-01-25T11:56:16.434Z\n"
+"PO-Revision-Date: 2022-01-25T11:56:16.434Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -246,6 +246,12 @@ msgstr "Send message"
 msgid "Filter options"
 msgstr "Filter options"
 
+msgid "Error fetching form"
+msgstr "Error fetching form"
+
+msgid "There was an error fetching this form."
+msgstr "There was an error fetching this form."
+
 msgid "Cancel without saving"
 msgstr "Cancel without saving"
 
@@ -257,6 +263,45 @@ msgstr "Update"
 
 msgid "Create new"
 msgstr "Create new"
+
+msgid "Error updating group"
+msgstr "Error updating group"
+
+msgid "Error creating group"
+msgstr "Error creating group"
+
+msgid "Basic information"
+msgstr "Basic information"
+
+msgid "Code"
+msgstr "Code"
+
+msgid "Used in analytics reports."
+msgstr "Used in analytics reports."
+
+msgid "User management"
+msgstr "User management"
+
+msgid "Add or remove users from this group."
+msgstr "Add or remove users from this group."
+
+msgid "User group management"
+msgstr "User group management"
+
+msgid "This group can manage other user groups. Add managed user groups below."
+msgstr "This group can manage other user groups. Add managed user groups below."
+
+msgid "Available user groups"
+msgstr "Available user groups"
+
+msgid "Managed user groups"
+msgstr "Managed user groups"
+
+msgid "Name is already taken"
+msgstr "Name is already taken"
+
+msgid "There was a problem whilst checking the availability of this group name"
+msgstr "There was a problem whilst checking the availability of this group name"
 
 msgid "Page not found."
 msgstr "Page not found."
@@ -310,12 +355,6 @@ msgstr "There was an error loading the current user"
 msgid "You do not have authorities to see users, user roles or user groups"
 msgstr "You do not have authorities to see users, user roles or user groups"
 
-msgid "Error fetching form"
-msgstr "Error fetching form"
-
-msgid "There was an error fetching this form."
-msgstr "There was an error fetching this form."
-
 msgid "Invalid username"
 msgstr "Invalid username"
 
@@ -339,9 +378,6 @@ msgstr "Create account with user details"
 
 msgid "Email invitation to create account"
 msgstr "Email invitation to create account"
-
-msgid "Basic information"
-msgstr "Basic information"
 
 msgid "Username"
 msgstr "Username"
@@ -470,9 +506,6 @@ msgstr "Available user roles"
 msgid "User roles this user is assigned"
 msgstr "User roles this user is assigned"
 
-msgid "Available user groups"
-msgstr "Available user groups"
-
 msgid "User groups this user is a member of"
 msgstr "User groups this user is a member of"
 
@@ -581,18 +614,12 @@ msgstr "Save"
 msgid "Cancel"
 msgstr "Cancel"
 
-msgid "Code"
-msgstr "Code"
-
 msgid ""
 "To add a user to this group, go to the User section and edit the user group "
 "settings for a specific user."
 msgstr ""
 "To add a user to this group, go to the User section and edit the user group "
 "settings for a specific user."
-
-msgid "Managed user groups"
-msgstr "Managed user groups"
 
 msgid "Show details"
 msgstr "Show details"
@@ -862,6 +889,12 @@ msgstr "Account disabled?"
 msgid "Disabled"
 msgstr "Disabled"
 
+msgid "New group"
+msgstr "New group"
+
+msgid "Create group"
+msgstr "Create group"
+
 msgid "Error fetching interface language"
 msgstr "Error fetching interface language"
 
@@ -874,14 +907,23 @@ msgstr "New user"
 msgid "Create user"
 msgstr "Create user"
 
+msgid "Error fetching group"
+msgstr "Error fetching group"
+
+msgid "There was an error fetching this group."
+msgstr "There was an error fetching this group."
+
+msgid "Edit group"
+msgstr "Edit group"
+
+msgid "Save changes"
+msgstr "Save changes"
+
 msgid "Error fetching user"
 msgstr "Error fetching user"
 
 msgid "There was an error fetching this user."
 msgstr "There was an error fetching this user."
-
-msgid "Save changes"
-msgstr "Save changes"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"

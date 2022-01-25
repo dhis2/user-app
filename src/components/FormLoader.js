@@ -5,8 +5,7 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getItem, initNewItem } from '../actions'
-import { USER_GROUP, USER_ROLE } from '../constants/entityTypes'
-import GroupForm from '../containers/GroupForm'
+import { USER_ROLE } from '../constants/entityTypes'
 import RoleForm from '../containers/RoleForm'
 import { shortItemSelector } from '../selectors'
 import ErrorMessage from './ErrorMessage'
@@ -41,8 +40,6 @@ class FormLoader extends Component {
         switch (entityType) {
             case USER_ROLE:
                 return <RoleForm />
-            case USER_GROUP:
-                return <GroupForm />
             default:
                 return (
                     <ErrorMessage

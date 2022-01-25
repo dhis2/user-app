@@ -9,7 +9,9 @@ import RoleDetails from '../containers/RoleDetails'
 import RoleList from '../containers/RoleList'
 import UserList from '../containers/UserList'
 import UserProfile from '../containers/UserProfile'
+import CreateGroup from '../pages/CreateGroup'
 import CreateUser from '../pages/CreateUser'
+import EditGroup from '../pages/EditGroup'
 import EditUser from '../pages/EditUser'
 import { USER, USER_ROLE, USER_GROUP } from './entityTypes'
 
@@ -47,7 +49,7 @@ const createRouteConfig = () => [
     {
         key: 'user_new_view',
         path: '/users/new',
-        render: () => <CreateUser />,
+        render: CreateUser,
         entityType: USER,
     },
     {
@@ -87,13 +89,13 @@ const createRouteConfig = () => [
     {
         key: 'user_group_new_view',
         path: '/user-groups/new',
-        render: props => <FormLoader entityType={USER_GROUP} {...props} />,
+        render: CreateGroup,
         entityType: USER_GROUP,
     },
     {
         key: 'user_group_edit_view',
         path: '/user-groups/edit/:id',
-        render: props => <FormLoader entityType={USER_GROUP} {...props} />,
+        render: ({ match }) => <EditGroup groupId={match.params.id} />,
         entityType: USER_GROUP,
     },
     {

@@ -1,8 +1,6 @@
 import { useConfig, useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
-    CenteredContent,
-    CircularLoader,
     NoticeBox,
     composeValidators,
     hasValue,
@@ -13,9 +11,8 @@ import {
 } from '@dhis2/ui'
 import { keyBy } from 'lodash-es'
 import moment from 'moment'
-import pDebounce from 'p-debounce'
 import PropTypes from 'prop-types'
-import React, { useCallback } from 'react'
+import React from 'react'
 import { useHistory } from 'react-router-dom'
 import Form, {
     FormSection,
@@ -31,7 +28,7 @@ import { getUserData } from './getUserData'
 import { useFormData } from './useFormData'
 import styles from './UserForm.module.css'
 import {
-    makeUniqueUsernameValidator,
+    useDebouncedUniqueUsernameValidator,
     createRepeatPasswordValidator,
     hasSelectionValidator,
 } from './validators'
@@ -47,10 +44,8 @@ const UserForm = ({
     } = useConfig()
     const history = useHistory()
     const engine = useDataEngine()
-    const debouncedUniqueUsernameValidator = useCallback(
-        pDebounce(makeUniqueUsernameValidator(engine), 350),
-        []
-    )
+    const debouncedUniqueUsernameValidator =
+        useDebouncedUniqueUsernameValidator({ engine })
     const {
         loading,
         error,
@@ -61,27 +56,6 @@ const UserForm = ({
         dimensionConstraints,
         dimensionConstraintOptions,
     } = useFormData()
-
-    if (loading) {
-        return (
-            <CenteredContent>
-                <CircularLoader />
-            </CenteredContent>
-        )
-    }
-
-    if (error) {
-        return (
-            <NoticeBox
-                error
-                title={i18n.t('Error fetching form')}
-                className={styles.noticeBox}
-            >
-                {i18n.t('There was an error fetching this form.')}
-            </NoticeBox>
-        )
-    }
-
     const handleSubmit = async values => {
         // TODO: Reload current user if current user's ID matches userId prop
         const userData = getUserData({
@@ -167,6 +141,8 @@ const UserForm = ({
 
     return (
         <Form
+            loading={loading}
+            error={error}
             submitButtonLabel={submitButtonLabel}
             onSubmit={handleSubmit}
             onCancel={() => history.push('/users')}

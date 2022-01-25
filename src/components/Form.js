@@ -1,5 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
 import {
+    CenteredContent,
+    CircularLoader,
+    NoticeBox,
     ReactFinalForm,
     InputFieldFF,
     SingleSelectFieldFF,
@@ -238,42 +241,73 @@ TransferField.propTypes = {
     required: PropTypes.bool,
 }
 
-const Form = ({ children, submitButtonLabel, onSubmit, onCancel }) => (
-    <ReactFinalForm.Form onSubmit={onSubmit}>
-        {({
-            handleSubmit,
-            hasValidationErrors,
-            pristine,
-            values,
-            submitting,
-            submitError,
-        }) => (
-            <form className={styles.form} onSubmit={handleSubmit}>
-                {children({ values, submitError })}
-                <ButtonStrip>
-                    <Button
-                        primary
-                        type="submit"
-                        onClick={handleSubmit}
-                        disabled={hasValidationErrors || pristine}
-                        loading={submitting}
-                    >
-                        {submitButtonLabel}
-                    </Button>
-                    <Button onClick={onCancel} disabled={submitting}>
-                        {i18n.t('Cancel without saving')}
-                    </Button>
-                </ButtonStrip>
-            </form>
-        )}
-    </ReactFinalForm.Form>
-)
+const Form = ({
+    loading,
+    error,
+    children,
+    submitButtonLabel,
+    onSubmit,
+    onCancel,
+}) => {
+    if (loading) {
+        return (
+            <CenteredContent>
+                <CircularLoader />
+            </CenteredContent>
+        )
+    }
+
+    if (error) {
+        return (
+            <NoticeBox
+                error
+                title={i18n.t('Error fetching form')}
+                className={styles.errorNoticeBox}
+            >
+                {i18n.t('There was an error fetching this form.')}
+            </NoticeBox>
+        )
+    }
+
+    return (
+        <ReactFinalForm.Form onSubmit={onSubmit}>
+            {({
+                handleSubmit,
+                hasValidationErrors,
+                pristine,
+                values,
+                submitting,
+                submitError,
+            }) => (
+                <form className={styles.form} onSubmit={handleSubmit}>
+                    {children({ values, submitError })}
+                    <ButtonStrip>
+                        <Button
+                            primary
+                            type="submit"
+                            onClick={handleSubmit}
+                            disabled={hasValidationErrors || pristine}
+                            loading={submitting}
+                        >
+                            {submitButtonLabel}
+                        </Button>
+                        <Button onClick={onCancel} disabled={submitting}>
+                            {i18n.t('Cancel without saving')}
+                        </Button>
+                    </ButtonStrip>
+                </form>
+            )}
+        </ReactFinalForm.Form>
+    )
+}
 
 Form.propTypes = {
     children: PropTypes.func.isRequired,
     submitButtonLabel: PropTypes.string.isRequired,
     onCancel: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
+    error: PropTypes.instanceOf(Error),
+    loading: PropTypes.bool,
 }
 
 export default Form

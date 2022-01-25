@@ -1,3 +1,5 @@
+const wrapIds = ids => ids.map(id => ({ id }))
+
 export const getUserData = ({ values, dimensionConstraintsById, user }) => {
     const inviteUser = values.inviteUser === 'INVITE_USER'
     const {
@@ -25,7 +27,6 @@ export const getUserData = ({ values, dimensionConstraintsById, user }) => {
         userRoles,
         dimensionConstraints,
     } = values
-    const wrapIds = ids => ids.map(id => ({ id }))
     const constraintsForType = dimensionType =>
         wrapIds(
             dimensionConstraints.filter(
