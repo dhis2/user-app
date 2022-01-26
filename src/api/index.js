@@ -150,16 +150,6 @@ class Api {
      ***** USER GROUPS ********
      **************************/
 
-    saveUserGroup(data) {
-        if (data.id) {
-            return this.d2Api.update(
-                `/userGroups/${data.id}?mergeMode=MERGE`,
-                data
-            )
-        }
-        return this.d2Api.post('/userGroups', data)
-    }
-
     getManagedUsers = () => {
         const data = {
             fields: ['id', 'displayName', 'userCredentials[username]'],

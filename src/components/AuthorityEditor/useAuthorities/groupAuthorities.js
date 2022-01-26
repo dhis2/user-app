@@ -25,8 +25,7 @@ const getEmptyAuthorityGroups = () =>
     }, {})
 
 const sortGroupedAuthorities = groupedAuthories => {
-    Object.keys(groupedAuthories).forEach(key => {
-        const group = groupedAuthories[key]
+    Object.values(groupedAuthories).forEach(group => {
         group.items = sortBy(group.items, 'name')
     })
     return groupedAuthories

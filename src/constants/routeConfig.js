@@ -1,6 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
 import React from 'react'
-import FormLoader from '../components/FormLoader'
 import PageNotFound from '../components/PageNotFound'
 import GroupDetails from '../containers/GroupDetails'
 import GroupList from '../containers/GroupList'
@@ -10,8 +9,10 @@ import RoleList from '../containers/RoleList'
 import UserList from '../containers/UserList'
 import UserProfile from '../containers/UserProfile'
 import CreateGroup from '../pages/CreateGroup'
+import CreateRole from '../pages/CreateRole'
 import CreateUser from '../pages/CreateUser'
 import EditGroup from '../pages/EditGroup'
+import EditRole from '../pages/EditRole'
 import EditUser from '../pages/EditUser'
 import { USER, USER_ROLE, USER_GROUP } from './entityTypes'
 
@@ -69,13 +70,13 @@ const createRouteConfig = () => [
     {
         key: 'user_role_new_view',
         path: '/user-roles/new',
-        render: props => <FormLoader entityType={USER_ROLE} {...props} />,
+        render: CreateRole,
         entityType: USER_ROLE,
     },
     {
         key: 'user_role_edit_view',
         path: '/user-roles/edit/:id',
-        render: props => <FormLoader entityType={USER_ROLE} {...props} />,
+        render: ({ match }) => <EditRole roleId={match.params.id} />,
         entityType: USER_ROLE,
     },
     {
