@@ -1,7 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
 
-export const METADATA = 'metadata'
-
 // Group names for metadata table and ALL authority
 export const AUTHORITY_GROUP_NAMES = {
     ALL: i18n.t('All (Full authority)'),
@@ -155,34 +153,4 @@ export const AUTHORITY_GROUPS = {
         'F_MOBILE_SENDSMS',
         'F_OAUTH2_CLIENT_MANAGE',
     ]),
-}
-
-export const EMPTY_AUTHORITY_SECTIONS = {
-    metadata: {
-        id: METADATA,
-        name: i18n.t('Metadata'),
-        headers: [
-            i18n.t('Name'),
-            i18n.t('Add/Update Public'),
-            i18n.t('Add/Update Private'),
-            i18n.t('Delete'),
-            i18n.t('External access'),
-        ],
-    },
-    apps: {
-        name: i18n.t('Apps'),
-        headers: [i18n.t('Name')],
-    },
-    tracker: {
-        name: i18n.t('Tracker'),
-        headers: [i18n.t('Name')],
-    },
-    importExport: {
-        name: i18n.t('Import-Export'),
-        headers: [i18n.t('Name')],
-    },
-    system: {
-        name: i18n.t('System'),
-        headers: [i18n.t('Name')],
-    },
 }

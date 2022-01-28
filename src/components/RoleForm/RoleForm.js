@@ -4,7 +4,7 @@ import { NoticeBox, composeValidators, hasValue, FinalForm } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { groupAuthorities } from '../AuthorityEditor/useAuthorities/groupAuthorities.js'
+import { groupAuthorities } from './groupAuthorities/index.js'
 import Form, { FormSection, TextField, TransferField } from '../Form'
 // import { getRoleData } from './getRoleData'
 import styles from './RoleForm.module.css'
@@ -110,7 +110,11 @@ const Role = ({ submitButtonLabel, role }) => {
                             'Set what metadata access this role has.'
                         )}
                     >
-                        <p>TODO</p>
+                        {/* TODO: make initial value a Set of the IDs of selected authorities */}
+                        <MetadataAuthoritiesTableField
+                            metadataAuthorities={metadataAuthorities}
+                            initialValue={groupedAuthorities?.metadata}
+                        />
                     </FormSection>
                     <FormSection
                         title={i18n.t('Other authorities')}

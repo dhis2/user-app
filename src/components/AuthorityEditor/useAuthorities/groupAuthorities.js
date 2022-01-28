@@ -43,7 +43,6 @@ const hasNoGroupSuffix = auth => {
 /**
  * Receives an authority item and creates an authority metadata group based on suffixes
  * @param {Object} auth - The authority to group
- * @param {Object} suffixes - The list of authority suffixes to check against
  * @param {Object} lookup - The authority lookup map
  * @return {Object} group - A metadata authority group
  */
@@ -115,7 +114,7 @@ const addToAuthoritySection = (auth, groupedAuthorities, lookup) => {
         ) || 'system'
 
     if (auth.id === 'ALL') {
-        auth.name = AUTHORITY_GROUP_NAMES[auth.id]
+        auth.name = AUTHORITY_GROUP_NAMES.ALL
     }
 
     groupedAuthorities[groupKey].items.push(auth)
@@ -154,7 +153,7 @@ const groupAuthorities = authorities => {
                 // If any type of metadata group was created add it to the metadata items list
                 acc.metadata.items.push(metadataGroup)
             } else if (lookup.get(auth.id)) {
-                // If no metadata group was created, we are dealing with and authority which had a metadata suffix,
+                // If no metadata group was created, we are dealing with an authority which had a metadata suffix,
                 // but actually was not a metadata authority
                 addToAuthoritySection(auth, acc, lookup)
             }

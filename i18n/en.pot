@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-01-26T17:17:00.397Z\n"
-"PO-Revision-Date: 2022-01-26T17:17:00.397Z\n"
+"POT-Creation-Date: 2022-01-27T10:12:23.606Z\n"
+"PO-Revision-Date: 2022-01-27T10:12:23.606Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -332,6 +332,24 @@ msgstr "Available app authorities"
 
 msgid "Selected app authorities"
 msgstr "Selected app authorities"
+
+msgid "Available tracker authorities"
+msgstr "Available tracker authorities"
+
+msgid "Selected tracker authorities"
+msgstr "Selected tracker authorities"
+
+msgid "Available import/export authorities"
+msgstr "Available import/export authorities"
+
+msgid "Selected import/export authorities"
+msgstr "Selected import/export authorities"
+
+msgid "Available system authorities"
+msgstr "Available system authorities"
+
+msgid "Selected system authorities"
+msgstr "Selected system authorities"
 
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr "There was a problem whilst checking the availability of this role name"
