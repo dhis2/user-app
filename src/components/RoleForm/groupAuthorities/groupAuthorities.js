@@ -91,41 +91,44 @@ const groupAuthorities = authorities => {
         return lookup
     }, new Map())
 
-    const groupedAuthorities = authorities.reduce((groupedAuthorities, auth) => {
-        if (auth.id === 'ALL') {
-            auth.name = i18n.t('All (Full authority)')
-        }
+    const groupedAuthorities = authorities.reduce(
+        (groupedAuthorities, auth) => {
+            if (auth.id === 'ALL') {
+                auth.name = i18n.t('All (Full authority)')
+            }
 
-        if (!lookup.has(auth.id)) {
-            // Do nothing if authority has already been removed from lookup
-        } else if (auth.id.startsWith(APP_AUTH_PREFIX)) {
-            // Group under apps
-            groupedAuthorities.apps.push(auth)
-        } else if (!hasMetadataGroupSuffix(auth.id)) {
-            const group = groupForAuthority(auth)
-            groupedAuthorities[group].push(auth)
-        } else {
-            const metadataGroup = createMetadataGroup(auth.id, lookup)
-            if (metadataGroup) {
-                groupedAuthorities.metadata.push(metadataGroup)
-            } else if (lookup.get(auth.id)) {
-                // If no metadata group was created, we are dealing with
-                // an authority which had a metadata suffix but was not actually
-                // a metadata authority
+            if (!lookup.has(auth.id)) {
+                // Do nothing if authority has already been removed from lookup
+            } else if (auth.id.startsWith(APP_AUTH_PREFIX)) {
+                // Group under apps
+                groupedAuthorities.apps.push(auth)
+            } else if (!hasMetadataGroupSuffix(auth.id)) {
                 const group = groupForAuthority(auth)
                 groupedAuthorities[group].push(auth)
+            } else {
+                const metadataGroup = createMetadataGroup(auth.id, lookup)
+                if (metadataGroup) {
+                    groupedAuthorities.metadata.push(metadataGroup)
+                } else if (lookup.get(auth.id)) {
+                    // If no metadata group was created, we are dealing with
+                    // an authority which had a metadata suffix but was not actually
+                    // a metadata authority
+                    const group = groupForAuthority(auth)
+                    groupedAuthorities[group].push(auth)
+                }
             }
-        }
 
-        lookup.delete(auth.id)
-        return groupedAuthorities
-    }, {
-        metadata: [],
-        apps: [],
-        tracker: [],
-        importExport: [],
-        system: []
-    })
+            lookup.delete(auth.id)
+            return groupedAuthorities
+        },
+        {
+            metadata: [],
+            apps: [],
+            tracker: [],
+            importExport: [],
+            system: [],
+        }
+    )
 
     return sortGroupedAuthorities(groupedAuthorities)
 }

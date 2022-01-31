@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import {
     Input,
     CheckboxField,
@@ -8,8 +6,10 @@ import {
     DataTableRow,
     DataTableColumnHeader,
     DataTableBody,
-    DataTableCell
+    DataTableCell,
 } from '@dhis2/ui'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 const ColumnHeader = ({ children }) => (
     <DataTableColumnHeader fixed top="0">
@@ -25,7 +25,7 @@ const CheckboxColumnHeader = ({
     name,
     label,
     selectedHeaders,
-    onSelectedHeadersChange
+    onSelectedHeadersChange,
 }) => (
     <ColumnHeader>
         <CheckboxField
@@ -39,7 +39,17 @@ const CheckboxColumnHeader = ({
 )
 
 // TODO: look into using React.memo
-const MetadataAuthoritiesTable = ({ metadataAuthorities, selectedAuthorities, onSelectedAuthoritiesChange, selectedHeaders, onSelectedHeadersChange, filter, onFilterChange, filterSelectedOnly, onFilterSelectedOnlyChange }) => {
+const MetadataAuthoritiesTable = ({
+    metadataAuthorities,
+    selectedAuthorities,
+    onSelectedAuthoritiesChange,
+    selectedColumns,
+    onSelectedColumnsChange,
+    filter,
+    onFilterChange,
+    filterSelectedOnly,
+    onFilterSelectedOnlyChange,
+}) => {
     return (
         <>
             <div>
@@ -59,9 +69,7 @@ const MetadataAuthoritiesTable = ({ metadataAuthorities, selectedAuthorities, on
             <DataTable scrollHeight="375px">
                 <DataTableHead>
                     <DataTableRow>
-                        <ColumnHeader>
-                            {i18n.t('Authority')}
-                        </ColumnHeader>
+                        <ColumnHeader>{i18n.t('Authority')}</ColumnHeader>
                         <CheckboxColumnHeader
                             name="addUpdatePublic"
                             label={i18n.t('Add/Update Public')}
@@ -89,7 +97,7 @@ const MetadataAuthoritiesTable = ({ metadataAuthorities, selectedAuthorities, on
                     </DataTableRow>
                 </DataTableHead>
                 <DataTableBody>
-                    {metadataAuthorities.items.map(item => (
+                    {metadataAuthorities.map(item => (
                         <DataTableRow key={item.id}>
                             <AuthorityMetadataCells
                                 items={item.items}
@@ -104,13 +112,30 @@ const MetadataAuthoritiesTable = ({ metadataAuthorities, selectedAuthorities, on
     )
 }
 
+const AuthorityPropType = PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    empty: PropTypes.bool,
+    implicit: PropTypes.bool,
+    selected: PropTypes.bool,
+})
+
 MetadataAuthoritiesTable.propTypes = {
-    // TODO: use PropTypes.shape instead of PropTypes.object
-    metadataAuthorities: PropTypes.object.isRequired,
+    metadataAuthorities: PropTypes.arrayOf(
+        PropTypes.shape({
+            addUpdatePrivate: AuthorityPropType.isRequired,
+            addUpdatePublic: AuthorityPropType.isRequired,
+            delete: AuthorityPropType.isRequired,
+            externalAccess: AuthorityPropType,
+            name: PropTypes.string.isRequired,
+        })
+    ).isRequired,
     filter: PropTypes.string.isRequired,
     filterSelectedOnly: PropTypes.bool.isRequired,
+    selectedColumns: PropTypes.instanceOf(Set).isRequired,
     onFilterChange: PropTypes.func.isRequired,
     onFilterSelectedOnlyChange: PropTypes.func.isRequired,
+    onSelectedColumnsChange: PropTypes.func.isRequired,
 }
 
 export default MetadataAuthoritiesTable

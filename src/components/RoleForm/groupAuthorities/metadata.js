@@ -1,7 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 
-// Group names for metadata table and ALL authority
-const METADATA_AUTHORITY_GROUP_NAMES = {
+const GROUP_NAMES = {
     F_ANALYTICSTABLEHOOK: i18n.t('Analytics Table Hook'),
     F_ATTRIBUTE: i18n.t('Attribute'),
     F_CATEGORY_COMBO: i18n.t('Category Combo'),
@@ -69,7 +68,7 @@ const PRIVATE_ADD_SUFFIX = '_PRIVATE_ADD'
 const ADD_SUFFIX = '_ADD'
 const DELETE_SUFFIX = '_DELETE'
 const EXTERNAL_ACCESS_SUFFIX = '_EXTERNAL'
-const ALL_METADATA_SUFFIXES = [
+const ALL_SUFFIXES = [
     PUBLIC_ADD_SUFFIX,
     PRIVATE_ADD_SUFFIX,
     ADD_SUFFIX,
@@ -77,14 +76,29 @@ const ALL_METADATA_SUFFIXES = [
     EXTERNAL_ACCESS_SUFFIX,
 ]
 
+// Metadata with implicit add and delete
+const AUTHS_WITH_IMPLICIT_ADD_PRIVATE_AND_DELETE = new Set([
+    'F_DASHBOARD_PUBLIC_ADD',
+    'F_EVENTCHART_PUBLIC_ADD',
+    'F_EVENTREPORT_PUBLIC_ADD',
+    'F_MAP_PUBLIC_ADD',
+    'F_VISUALIZATION_PUBLIC_ADD',
+])
+
+// Templates for creating implicit options and empty cells
+const EMPTY_GROUP_ITEM = {
+    empty: true,
+}
+const IMPLICIT_GROUP_ITEM = {
+    implicit: true,
+}
+
 export const hasMetadataGroupSuffix = authID =>
-    ALL_METADATA_SUFFIXES.some(suffix => authID.endsWith(suffix))
+    ALL_SUFFIXES.some(suffix => authID.endsWith(suffix))
 
 export const getMetadataAuthBaseName = authID => {
     // The suffix of the the incoming authority, i.e. "F_CATEGORY_COMBO_DELETE" => "_DELETE"
-    const authSuffix = ALL_METADATA_SUFFIXES.find(suffix =>
-        authID.endsWith(suffix)
-    )
+    const authSuffix = ALL_SUFFIXES.find(suffix => authID.endsWith(suffix))
     // The authority baseName, i.e. "F_CATEGORY_COMBO_DELETE" => "F_CATEGORY_COMBO"
     return authID.replace(new RegExp(`${authSuffix}$`), '')
 }
@@ -102,9 +116,6 @@ export const createMetadataGroup = (authID, lookup) => {
     // Others only have a _ADD version which equates to PUBLIC_ADD and PRIVATE_ADD may be left empty
     const genericAdd = lookup.get(baseName + ADD_SUFFIX)
 
-    // Some metadata authorities have an external access authority version. If not present this may be left empty
-    const externalAccess = lookup.get(baseName + EXTERNAL_ACCESS_SUFFIX)
-
     // Some authorities do not have _ADD_PRIVATE and _DELETE siblings in the authority list
     // however, they do belong to the metadata section. If a role is granted ADD_PUBLIC rights it is also allowed
     // to ADD_PRIVATE and DELETE implicitly
@@ -114,8 +125,9 @@ export const createMetadataGroup = (authID, lookup) => {
         )
 
     // Set each authority item for the current authority group
-    const publicAddAuth = genericAdd || lookup.get(baseName + PUBLIC_ADD_SUFFIX)
-    const privateAddAuth = genericAdd
+    const addUpdatePublic =
+        genericAdd || lookup.get(baseName + PUBLIC_ADD_SUFFIX)
+    const addUpdatePrivate = genericAdd
         ? EMPTY_GROUP_ITEM
         : hasImplicitAddPrivateAndDelete
         ? IMPLICIT_GROUP_ITEM
@@ -123,22 +135,26 @@ export const createMetadataGroup = (authID, lookup) => {
     const deleteAuth = hasImplicitAddPrivateAndDelete
         ? IMPLICIT_GROUP_ITEM
         : lookup.get(baseName + DELETE_SUFFIX)
-    const externalAccessAuth = externalAccess || EMPTY_GROUP_ITEM
+    // Some metadata authorities have an external access authority version. If
+    // not present this may be left empty
+    const externalAccess =
+        lookup.get(baseName + EXTERNAL_ACCESS_SUFFIX) || EMPTY_GROUP_ITEM
 
-    // If any of these variable are undefined, the authority in question has an ID with a metadata suffix,
-    // but is not actually a metadata authority. i.e. "F_ENROLLMENT_CASCADE_DELETE"
-    if (!publicAddAuth || !privateAddAuth || !deleteAuth) {
+    // If any of these variable are undefined, the authority in question has an
+    // ID with a metadata suffix, but is not actually a metadata authority.
+    // i.e. "F_ENROLLMENT_CASCADE_DELETE"
+    if (!addUpdatePublic || !addUpdatePrivate || !deleteAuth) {
         return null
     }
 
     // Delete from lookup to prevent double entries
-    ALL_METADATA_SUFFIXES.forEach(suffix => lookup.delete(baseName + suffix))
+    ALL_SUFFIXES.forEach(suffix => lookup.delete(baseName + suffix))
 
     return {
-        name: AUTHORITY_GROUP_NAMES[baseName] || baseName,
-        addUpdatePublic: publicAddAuth,
-        addUpdatePrivate: privateAddAuth,
+        name: GROUP_NAMES[baseName] || baseName,
+        addUpdatePublic,
+        addUpdatePrivate,
         delete: deleteAuth,
-        externalAccess: externalAccessAuth
+        externalAccess,
     }
 }

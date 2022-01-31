@@ -4,14 +4,14 @@ import { NoticeBox, composeValidators, hasValue, FinalForm } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { groupAuthorities } from './groupAuthorities/index.js'
 import Form, { FormSection, TextField, TransferField } from '../Form'
+import { groupAuthorities } from './groupAuthorities/index.js'
 // import { getRoleData } from './getRoleData'
 import styles from './RoleForm.module.css'
 import { useFormData } from './useFormData'
 import { useDebouncedUniqueRoleNameValidator } from './validators'
 
-const Role = ({ submitButtonLabel, role }) => {
+const RoleForm = ({ submitButtonLabel, role }) => {
     const history = useHistory()
     const engine = useDataEngine()
     const debouncedUniqueRoleNameValidator =
@@ -177,7 +177,7 @@ const Role = ({ submitButtonLabel, role }) => {
     )
 }
 
-Role.propTypes = {
+RoleForm.propTypes = {
     submitButtonLabel: PropTypes.string.isRequired,
     role: PropTypes.shape({
         authorities: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
@@ -187,4 +187,4 @@ Role.propTypes = {
     }),
 }
 
-export default Role
+export default RoleForm

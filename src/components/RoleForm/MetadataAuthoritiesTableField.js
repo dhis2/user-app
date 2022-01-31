@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
 import { ReactFinalForm } from '@dhis2/ui'
+import React, { useState } from 'react'
 import MetadataAuthoritiesTable from './MetadataAuthoritiesTable.js'
 
 const MetadataAuthoritiesTableFF = ({ input, ...props }) => {
@@ -9,9 +9,7 @@ const MetadataAuthoritiesTableFF = ({ input, ...props }) => {
         input.onChange(newValue)
     }
 
-    return (
-        <MetadataAuthoritiesTable {...props} />
-    )
+    return <MetadataAuthoritiesTable {...props} />
 }
 
 const MetadataAuthoritiesTableField = ({ initialValue, ...props }) => {
