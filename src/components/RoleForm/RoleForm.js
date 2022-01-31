@@ -1,15 +1,50 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { NoticeBox, composeValidators, hasValue, FinalForm } from '@dhis2/ui'
+import { flatMap } from 'lodash-es'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import Form, { FormSection, TextField, TransferField } from '../Form'
-import { groupAuthorities } from './groupAuthorities/index.js'
 // import { getRoleData } from './getRoleData'
+import MetadataAuthoritiesTableField from './MetadataAuthoritiesTableField'
 import styles from './RoleForm.module.css'
 import { useFormData } from './useFormData'
 import { useDebouncedUniqueRoleNameValidator } from './validators'
+
+const getRoleAuthorityIDs = ({
+    role,
+    metadataAuthorities,
+    appAuthorityOptions,
+    trackerAuthorityOptions,
+    importExportAuthorityOptions,
+    systemAuthorityOptions,
+}) => {
+    const metadataIDs = new Set(
+        flatMap(metadataAuthorities, authority => [
+            authority.addUpdatePublic.id,
+            authority.addUpdatePrivate.id,
+            authority.delete.id,
+            authority.externalAccess.id,
+        ]).filter(authID => authID !== undefined)
+    )
+    const appIDs = new Set(appAuthorityOptions.map(({ id }) => id))
+    const trackerIDs = new Set(trackerAuthorityOptions.map(({ id }) => id))
+    const importExportIDs = new Set(
+        importExportAuthorityOptions.map(({ id }) => id)
+    )
+    const systemIDs = new Set(systemAuthorityOptions.map(({ id }) => id))
+
+    return {
+        metadata: role.authorities.filter(({ id }) => metadataIDs.has(id)),
+        apps: role.authorities.filter(({ id }) => appIDs.has(id)),
+        tracker: role.authorities.filter(({ id }) => trackerIDs.has(id)),
+        importExport: role.authorities.filter(({ id }) =>
+            importExportIDs.has(id)
+        ),
+        systemIDs: role.authorities.filter(({ id }) => systemIDs.has(id)),
+    }
+}
 
 const RoleForm = ({ submitButtonLabel, role }) => {
     const history = useHistory()
@@ -25,8 +60,14 @@ const RoleForm = ({ submitButtonLabel, role }) => {
         importExportAuthorityOptions,
         systemAuthorityOptions,
     } = useFormData()
-    const groupedAuthorities =
-        role && groupAuthorities(role.authorities.map(id => ({ id })))
+    const roleAuthorityIDs = role && !loading && !error && getRoleAuthorityIDs({
+        role,
+        metadataAuthorities,
+        appAuthorityOptions,
+        trackerAuthorityOptions,
+        importExportAuthorityOptions,
+        systemAuthorityOptions,
+    })
     const handleSubmit = async values => {
         const roleData = getRoleData({ values, role })
 
@@ -110,10 +151,9 @@ const RoleForm = ({ submitButtonLabel, role }) => {
                             'Set what metadata access this role has.'
                         )}
                     >
-                        {/* TODO: make initial value a Set of the IDs of selected authorities */}
                         <MetadataAuthoritiesTableField
                             metadataAuthorities={metadataAuthorities}
-                            initialValue={groupedAuthorities?.metadata}
+                            initialValue={roleAuthorityIDs?.metadata}
                         />
                     </FormSection>
                     <FormSection
@@ -127,22 +167,14 @@ const RoleForm = ({ submitButtonLabel, role }) => {
                             leftHeader={i18n.t('Available app authorities')}
                             rightHeader={i18n.t('Selected app authorities')}
                             options={appAuthorityOptions}
-                            initialValue={
-                                groupedAuthorities?.apps.items.map(
-                                    ({ id }) => id
-                                ) || []
-                            }
+                            initialValue={roleAuthorityIDs?.apps || []}
                         />
                         <TransferField
                             name="trackerAuthorities"
                             leftHeader={i18n.t('Available tracker authorities')}
                             rightHeader={i18n.t('Selected tracker authorities')}
                             options={trackerAuthorityOptions}
-                            initialValue={
-                                groupedAuthorities?.tracker.items.map(
-                                    ({ id }) => id
-                                ) || []
-                            }
+                            initialValue={roleAuthorityIDs?.tracker || []}
                         />
                         <TransferField
                             name="importExportAuthorities"
@@ -153,22 +185,14 @@ const RoleForm = ({ submitButtonLabel, role }) => {
                                 'Selected import/export authorities'
                             )}
                             options={importExportAuthorityOptions}
-                            initialValue={
-                                groupedAuthorities?.importExport.items.map(
-                                    ({ id }) => id
-                                ) || []
-                            }
+                            initialValue={roleAuthorityIDs?.importExport || []}
                         />
                         <TransferField
                             name="systemAuthorities"
                             leftHeader={i18n.t('Available system authorities')}
                             rightHeader={i18n.t('Selected system authorities')}
                             options={systemAuthorityOptions}
-                            initialValue={
-                                groupedAuthorities?.system.items.map(
-                                    ({ id }) => id
-                                ) || []
-                            }
+                            initialValue={roleAuthorityIDs.system || []}
                         />
                     </FormSection>
                 </>

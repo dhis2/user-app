@@ -25,13 +25,13 @@ const MetadataAuthoritiesTableField = ({ initialValue, ...props }) => {
             initialValue={memoedInitialValue}
             metadataAuthorities={metadataAuthorities}
             selectedAuthorities={selectedAuthorities}
-            onSelectedAuthoritiesChange
-            selectedHeaders
-            onSelectedHeadersChange
-            filter
-            onFilterChange
-            filterSelectedOnly
-            onFilterSelectedOnlyChange
+            onSelectedAuthorityToggle={onSelectedAuthorityToggle}
+            selectedColumns={selectedColumns}
+            onSelectedColumnToggle={onSelectedColumnToggle}
+            filter={filter}
+            onFilterChange={onFilterChange}
+            filterSelectedOnly={filterSelectedOnly}
+            onFilterSelectedOnlyChange={onFilterSelectedOnlyChange}
         />
     )
 }

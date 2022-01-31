@@ -1,5 +1,7 @@
+import i18n from '@dhis2/d2-i18n'
 import {
     Input,
+    Checkbox,
     CheckboxField,
     DataTable,
     DataTableHead,
@@ -24,93 +26,156 @@ ColumnHeader.propTypes = {
 const CheckboxColumnHeader = ({
     name,
     label,
-    selectedHeaders,
-    onSelectedHeadersChange,
+    selectedColumns,
+    onSelectedColumnToggle,
 }) => (
     <ColumnHeader>
         <CheckboxField
             dense
             name={name}
             label={label}
-            checked={selectedHeaders.has(name)}
-            onChange={onSelectedHeadersChange}
+            checked={selectedColumns.has(name)}
+            onChange={() => onSelectedColumnToggle(name)}
         />
     </ColumnHeader>
 )
 
-// TODO: look into using React.memo
+CheckboxColumnHeader.propTypes = {
+    label: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    selectedColumns: PropTypes.instanceOf(Set).isRequired,
+    onSelectedColumnToggle: PropTypes.func.isRequired,
+}
+
+const AuthorityCell = ({ authority, disabled, selected, onToggle }) => (
+    <DataTableCell>
+        {!authority.empty && (
+            <Checkbox
+                dense
+                disabled={authority.implicit || disabled}
+                checked={authority.implicit || selected}
+                onChange={onToggle}
+            />
+        )}
+    </DataTableCell>
+)
+
+AuthorityCell.propTypes = {
+    authority: AuthorityPropType.isRequired,
+    selected: PropTypes.bool.isRequired,
+    onToggle: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
+}
+
 const MetadataAuthoritiesTable = ({
     metadataAuthorities,
     selectedAuthorities,
-    onSelectedAuthoritiesChange,
+    onSelectedAuthorityToggle,
     selectedColumns,
-    onSelectedColumnsChange,
+    onSelectedColumnToggle,
     filter,
     onFilterChange,
     filterSelectedOnly,
     onFilterSelectedOnlyChange,
-}) => {
-    return (
-        <>
-            <div>
-                <Input
-                    dense
-                    placeholder={i18n.t('Filter options')}
-                    value={filter}
-                    onChange={({ value }) => onFilterChange(value)}
-                />
-                <CheckboxField
-                    dense
-                    label={i18n.t('Only show selected metadata authorities')}
-                    value={filterSelectedOnly}
-                    onChange={({ value }) => onFilterSelectedOnlyChange(value)}
-                />
-            </div>
-            <DataTable scrollHeight="375px">
-                <DataTableHead>
-                    <DataTableRow>
-                        <ColumnHeader>{i18n.t('Authority')}</ColumnHeader>
-                        <CheckboxColumnHeader
-                            name="addUpdatePublic"
-                            label={i18n.t('Add/Update Public')}
-                            selectedHeaders={selectedHeaders}
-                            onSelectedHeadersChange={onSelectedHeadersChange}
+}) => (
+    <>
+        <div>
+            <Input
+                dense
+                placeholder={i18n.t('Filter options')}
+                value={filter}
+                onChange={({ value }) => onFilterChange(value)}
+            />
+            <CheckboxField
+                dense
+                label={i18n.t('Only show selected metadata authorities')}
+                value={filterSelectedOnly}
+                onChange={({ value }) => onFilterSelectedOnlyChange(value)}
+            />
+        </div>
+        <DataTable scrollHeight="375px">
+            <DataTableHead>
+                <DataTableRow>
+                    <ColumnHeader>{i18n.t('Authority')}</ColumnHeader>
+                    <CheckboxColumnHeader
+                        name="addUpdatePublic"
+                        label={i18n.t('Add/Update Public')}
+                        selectedColumns={selectedColumns}
+                        onSelectedColumnToggle={onSelectedColumnToggle}
+                    />
+                    <CheckboxColumnHeader
+                        name="addUpdatePrivate"
+                        label={i18n.t('Add/Update Private')}
+                        selectedColumns={selectedColumns}
+                        onSelectedColumnToggle={onSelectedColumnToggle}
+                    />
+                    <CheckboxColumnHeader
+                        name="delete"
+                        label={i18n.t('Delete')}
+                        selectedColumns={selectedColumns}
+                        onSelectedColumnToggle={onSelectedColumnToggle}
+                    />
+                    <CheckboxColumnHeader
+                        name="externalAccess"
+                        label={i18n.t('External access')}
+                        selectedColumns={selectedColumns}
+                        onSelectedColumnToggle={onSelectedColumnToggle}
+                    />
+                </DataTableRow>
+            </DataTableHead>
+            <DataTableBody>
+                {metadataAuthorities.map(item => (
+                    <DataTableRow key={item.id}>
+                        <DataTableCell>{item.name}</DataTableCell>
+                        <AuthorityCell
+                            authority={item.addUpdatePublic}
+                            selected={selectedAuthorities.has(
+                                item.addUpdatePublic.id
+                            )}
+                            onToggle={() =>
+                                onSelectedAuthorityToggle(
+                                    item.addUpdatePublic.id
+                                )
+                            }
                         />
-                        <CheckboxColumnHeader
-                            name="addUpdatePrivate"
-                            label={i18n.t('Add/Update Private')}
-                            selectedHeaders={selectedHeaders}
-                            onSelectedHeadersChange={onSelectedHeadersChange}
+                        <AuthorityCell
+                            authority={item.addUpdatePrivate}
+                            disabled={selectedAuthorities.has(
+                                item.addUpdatePublic.id
+                            )}
+                            selected={selectedAuthorities.has(
+                                item.addUpdatePrivate.id
+                            )}
+                            onToggle={() =>
+                                onSelectedAuthorityToggle(
+                                    item.addUpdatePrivate.id
+                                )
+                            }
                         />
-                        <CheckboxColumnHeader
-                            name="delete"
-                            label={i18n.t('Delete')}
-                            selectedHeaders={selectedHeaders}
-                            onSelectedHeadersChange={onSelectedHeadersChange}
+                        <AuthorityCell
+                            authority={item.delete}
+                            selected={selectedAuthorities.has(item.delete.id)}
+                            onToggle={() =>
+                                onSelectedAuthorityToggle(item.delete.id)
+                            }
                         />
-                        <CheckboxColumnHeader
-                            name="externalAccess"
-                            label={i18n.t('External access')}
-                            selectedHeaders={selectedHeaders}
-                            onSelectedHeadersChange={onSelectedHeadersChange}
+                        <AuthorityCell
+                            authority={item.externalAccess}
+                            selected={selectedAuthorities.has(
+                                item.externalAccess.id
+                            )}
+                            onToggle={() =>
+                                onSelectedAuthorityToggle(
+                                    item.externalAccess.id
+                                )
+                            }
                         />
                     </DataTableRow>
-                </DataTableHead>
-                <DataTableBody>
-                    {metadataAuthorities.map(item => (
-                        <DataTableRow key={item.id}>
-                            <AuthorityMetadataCells
-                                items={item.items}
-                                name={item.name}
-                                searchChunks={searchChunks}
-                            />
-                        </DataTableRow>
-                    ))}
-                </DataTableBody>
-            </DataTable>
-        </>
-    )
-}
+                ))}
+            </DataTableBody>
+        </DataTable>
+    </>
+)
 
 const AuthorityPropType = PropTypes.shape({
     id: PropTypes.string.isRequired,
@@ -121,21 +186,23 @@ const AuthorityPropType = PropTypes.shape({
 })
 
 MetadataAuthoritiesTable.propTypes = {
+    filter: PropTypes.string.isRequired,
+    filterSelectedOnly: PropTypes.bool.isRequired,
     metadataAuthorities: PropTypes.arrayOf(
         PropTypes.shape({
             addUpdatePrivate: AuthorityPropType.isRequired,
             addUpdatePublic: AuthorityPropType.isRequired,
             delete: AuthorityPropType.isRequired,
-            externalAccess: AuthorityPropType,
             name: PropTypes.string.isRequired,
+            externalAccess: AuthorityPropType,
         })
     ).isRequired,
-    filter: PropTypes.string.isRequired,
-    filterSelectedOnly: PropTypes.bool.isRequired,
+    selectedAuthorities: PropTypes.instanceOf(Set).isRequired,
     selectedColumns: PropTypes.instanceOf(Set).isRequired,
     onFilterChange: PropTypes.func.isRequired,
     onFilterSelectedOnlyChange: PropTypes.func.isRequired,
-    onSelectedColumnsChange: PropTypes.func.isRequired,
+    onSelectedAuthorityToggle: PropTypes.func.isRequired,
+    onSelectedColumnToggle: PropTypes.func.isRequired,
 }
 
 export default MetadataAuthoritiesTable

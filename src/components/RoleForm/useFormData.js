@@ -1,6 +1,6 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import { useMemo } from 'react'
-import { groupAuthorities } from '../AuthorityEditor/useAuthorities/groupAuthorities.js'
+import { groupAuthorities } from './groupAuthorities/index.js'
 
 const query = {
     authorities: {
