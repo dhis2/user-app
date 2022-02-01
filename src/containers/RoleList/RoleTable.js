@@ -115,9 +115,9 @@ RoleTable.propTypes = {
                 read: PropTypes.bool.isRequired,
                 update: PropTypes.bool.isRequired,
             }).isRequired,
-            description: PropTypes.string.isRequired,
             displayName: PropTypes.string.isRequired,
             id: PropTypes.string.isRequired,
+            description: PropTypes.string,
         }).isRequired
     ),
 }
