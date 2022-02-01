@@ -72,119 +72,123 @@ AuthorityCell.propTypes = {
     disabled: PropTypes.bool,
 }
 
-const MetadataAuthoritiesTable = ({
-    metadataAuthorities,
-    selectedAuthorities,
-    onSelectedAuthorityToggle,
-    selectedColumns,
-    onSelectedColumnToggle,
-    filter,
-    onFilterChange,
-    filterSelectedOnly,
-    onFilterSelectedOnlyChange,
-}) => (
-    <div className={styles.container}>
-        <div>
-            <Input
-                dense
-                placeholder={i18n.t('Filter options')}
-                value={filter}
-                onChange={({ value }) => onFilterChange(value)}
-            />
-            <CheckboxField
-                dense
-                label={i18n.t('Only show selected metadata authorities')}
-                checked={filterSelectedOnly}
-                onChange={({ value }) => onFilterSelectedOnlyChange(value)}
-            />
-        </div>
-        <DataTable scrollHeight="375px">
-            <DataTableHead>
-                <DataTableRow>
-                    <ColumnHeader>{i18n.t('Authority')}</ColumnHeader>
-                    <CheckboxColumnHeader
-                        name="addUpdatePublic"
-                        label={i18n.t('Add/Update Public')}
-                        selectedColumns={selectedColumns}
-                        onSelectedColumnToggle={onSelectedColumnToggle}
-                    />
-                    <CheckboxColumnHeader
-                        name="addUpdatePrivate"
-                        label={i18n.t('Add/Update Private')}
-                        selectedColumns={selectedColumns}
-                        onSelectedColumnToggle={onSelectedColumnToggle}
-                    />
-                    <CheckboxColumnHeader
-                        name="delete"
-                        label={i18n.t('Delete')}
-                        selectedColumns={selectedColumns}
-                        onSelectedColumnToggle={onSelectedColumnToggle}
-                    />
-                    <CheckboxColumnHeader
-                        name="externalAccess"
-                        label={i18n.t('External access')}
-                        selectedColumns={selectedColumns}
-                        onSelectedColumnToggle={onSelectedColumnToggle}
-                    />
-                </DataTableRow>
-            </DataTableHead>
-            <DataTableBody>
-                {metadataAuthorities.map(item => (
-                    <DataTableRow key={item.name}>
-                        <DataTableCell>{item.name}</DataTableCell>
-                        <AuthorityCell
-                            authority={item.addUpdatePublic}
-                            selected={selectedAuthorities.has(
-                                item.addUpdatePublic.id
-                            )}
-                            onToggle={() =>
-                                onSelectedAuthorityToggle(
-                                    item.addUpdatePublic.id
-                                )
-                            }
+const MetadataAuthoritiesTable = React.memo(
+    ({
+        metadataAuthorities,
+        selectedAuthorities,
+        onSelectedAuthorityToggle,
+        selectedColumns,
+        onSelectedColumnToggle,
+        filter,
+        onFilterChange,
+        filterSelectedOnly,
+        onFilterSelectedOnlyChange,
+    }) => (
+        <div className={styles.container}>
+            <div>
+                <Input
+                    dense
+                    placeholder={i18n.t('Filter options')}
+                    value={filter}
+                    onChange={({ value }) => onFilterChange(value)}
+                />
+                <CheckboxField
+                    dense
+                    label={i18n.t('Only show selected metadata authorities')}
+                    checked={filterSelectedOnly}
+                    onChange={({ value }) => onFilterSelectedOnlyChange(value)}
+                />
+            </div>
+            <DataTable scrollHeight="375px">
+                <DataTableHead>
+                    <DataTableRow>
+                        <ColumnHeader>{i18n.t('Authority')}</ColumnHeader>
+                        <CheckboxColumnHeader
+                            name="addUpdatePublic"
+                            label={i18n.t('Add/Update Public')}
+                            selectedColumns={selectedColumns}
+                            onSelectedColumnToggle={onSelectedColumnToggle}
                         />
-                        <AuthorityCell
-                            authority={item.addUpdatePrivate}
-                            disabled={selectedAuthorities.has(
-                                item.addUpdatePublic.id
-                            )}
-                            selected={
-                                selectedAuthorities.has(
-                                    item.addUpdatePublic.id
-                                ) ||
-                                selectedAuthorities.has(
-                                    item.addUpdatePrivate.id
-                                )
-                            }
-                            onToggle={() =>
-                                onSelectedAuthorityToggle(
-                                    item.addUpdatePrivate.id
-                                )
-                            }
+                        <CheckboxColumnHeader
+                            name="addUpdatePrivate"
+                            label={i18n.t('Add/Update Private')}
+                            selectedColumns={selectedColumns}
+                            onSelectedColumnToggle={onSelectedColumnToggle}
                         />
-                        <AuthorityCell
-                            authority={item.delete}
-                            selected={selectedAuthorities.has(item.delete.id)}
-                            onToggle={() =>
-                                onSelectedAuthorityToggle(item.delete.id)
-                            }
+                        <CheckboxColumnHeader
+                            name="delete"
+                            label={i18n.t('Delete')}
+                            selectedColumns={selectedColumns}
+                            onSelectedColumnToggle={onSelectedColumnToggle}
                         />
-                        <AuthorityCell
-                            authority={item.externalAccess}
-                            selected={selectedAuthorities.has(
-                                item.externalAccess.id
-                            )}
-                            onToggle={() =>
-                                onSelectedAuthorityToggle(
-                                    item.externalAccess.id
-                                )
-                            }
+                        <CheckboxColumnHeader
+                            name="externalAccess"
+                            label={i18n.t('External access')}
+                            selectedColumns={selectedColumns}
+                            onSelectedColumnToggle={onSelectedColumnToggle}
                         />
                     </DataTableRow>
-                ))}
-            </DataTableBody>
-        </DataTable>
-    </div>
+                </DataTableHead>
+                <DataTableBody>
+                    {metadataAuthorities.map(item => (
+                        <DataTableRow key={item.name}>
+                            <DataTableCell>{item.name}</DataTableCell>
+                            <AuthorityCell
+                                authority={item.addUpdatePublic}
+                                selected={selectedAuthorities.has(
+                                    item.addUpdatePublic.id
+                                )}
+                                onToggle={() =>
+                                    onSelectedAuthorityToggle(
+                                        item.addUpdatePublic.id
+                                    )
+                                }
+                            />
+                            <AuthorityCell
+                                authority={item.addUpdatePrivate}
+                                disabled={selectedAuthorities.has(
+                                    item.addUpdatePublic.id
+                                )}
+                                selected={
+                                    selectedAuthorities.has(
+                                        item.addUpdatePublic.id
+                                    ) ||
+                                    selectedAuthorities.has(
+                                        item.addUpdatePrivate.id
+                                    )
+                                }
+                                onToggle={() =>
+                                    onSelectedAuthorityToggle(
+                                        item.addUpdatePrivate.id
+                                    )
+                                }
+                            />
+                            <AuthorityCell
+                                authority={item.delete}
+                                selected={selectedAuthorities.has(
+                                    item.delete.id
+                                )}
+                                onToggle={() =>
+                                    onSelectedAuthorityToggle(item.delete.id)
+                                }
+                            />
+                            <AuthorityCell
+                                authority={item.externalAccess}
+                                selected={selectedAuthorities.has(
+                                    item.externalAccess.id
+                                )}
+                                onToggle={() =>
+                                    onSelectedAuthorityToggle(
+                                        item.externalAccess.id
+                                    )
+                                }
+                            />
+                        </DataTableRow>
+                    ))}
+                </DataTableBody>
+            </DataTable>
+        </div>
+    )
 )
 
 MetadataAuthoritiesTable.propTypes = {

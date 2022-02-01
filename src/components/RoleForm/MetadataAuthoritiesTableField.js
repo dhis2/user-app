@@ -1,6 +1,6 @@
 import { ReactFinalForm } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { MetadataAuthoritiesPropType } from './authority-prop-types'
 import MetadataAuthoritiesTable from './MetadataAuthoritiesTable'
 
@@ -38,59 +38,84 @@ export const getInitiallySelectedColumns = ({
 
 const MetadataAuthoritiesTableFF = ({
     input,
+    // Don't pass meta to MetadataAuthoritiesTable component as it invalidates React.memo
+    // eslint-disable-next-line no-unused-vars
+    meta,
     setSelectedColumns,
     ...props
 }) => {
-    const handleSelectedAuthorityToggle = id => {
-        const groupedAuthorities = groupAuthorities(props.metadataAuthorities)
-        const newSelectedAuthorities = new Set(input.value)
-        const newSelectedColumns = new Set(props.selectedColumns)
+    const handleSelectedAuthorityToggle = useCallback(
+        id => {
+            const groupedAuthorities = groupAuthorities(
+                props.metadataAuthorities
+            )
+            const newSelectedAuthorities = new Set(input.value)
+            const newSelectedColumns = new Set(props.selectedColumns)
 
-        if (newSelectedAuthorities.has(id)) {
-            newSelectedAuthorities.delete(id)
-            for (const [group, ids] of Object.entries(groupedAuthorities)) {
-                if (ids.includes(id)) {
-                    newSelectedColumns.delete(group)
-                    break
-                }
-            }
-        } else {
-            newSelectedAuthorities.add(id)
-            for (const [group, ids] of Object.entries(groupedAuthorities)) {
-                if (
-                    ids.includes(id) &&
-                    ids.every(i => newSelectedAuthorities.has(i))
-                ) {
-                    newSelectedColumns.add(group)
-                    break
-                }
-            }
-        }
-
-        setSelectedColumns(newSelectedColumns)
-        input.onChange(newSelectedAuthorities)
-    }
-
-    const handleSelectedColumnToggle = column => {
-        const groupedAuthorities = groupAuthorities(props.metadataAuthorities)
-        const newSelectedAuthorities = new Set(input.value)
-        const newSelectedColumns = new Set(props.selectedColumns)
-
-        if (newSelectedColumns.has(column)) {
-            newSelectedColumns.delete(column)
-            for (const id of groupedAuthorities[column]) {
+            if (newSelectedAuthorities.has(id)) {
                 newSelectedAuthorities.delete(id)
-            }
-        } else {
-            newSelectedColumns.add(column)
-            for (const id of groupedAuthorities[column]) {
+                for (const [group, ids] of Object.entries(groupedAuthorities)) {
+                    if (ids.includes(id)) {
+                        newSelectedColumns.delete(group)
+                        break
+                    }
+                }
+            } else {
                 newSelectedAuthorities.add(id)
+                for (const [group, ids] of Object.entries(groupedAuthorities)) {
+                    if (
+                        ids.includes(id) &&
+                        ids.every(i => newSelectedAuthorities.has(i))
+                    ) {
+                        newSelectedColumns.add(group)
+                        break
+                    }
+                }
             }
-        }
 
-        setSelectedColumns(newSelectedColumns)
-        input.onChange(newSelectedAuthorities)
-    }
+            setSelectedColumns(newSelectedColumns)
+            input.onChange(newSelectedAuthorities)
+        },
+        [
+            input.value,
+            input.onChange,
+            props.metadataAuthorities,
+            props.selectedColumns,
+            setSelectedColumns,
+        ]
+    )
+
+    const handleSelectedColumnToggle = useCallback(
+        column => {
+            const groupedAuthorities = groupAuthorities(
+                props.metadataAuthorities
+            )
+            const newSelectedAuthorities = new Set(input.value)
+            const newSelectedColumns = new Set(props.selectedColumns)
+
+            if (newSelectedColumns.has(column)) {
+                newSelectedColumns.delete(column)
+                for (const id of groupedAuthorities[column]) {
+                    newSelectedAuthorities.delete(id)
+                }
+            } else {
+                newSelectedColumns.add(column)
+                for (const id of groupedAuthorities[column]) {
+                    newSelectedAuthorities.add(id)
+                }
+            }
+
+            setSelectedColumns(newSelectedColumns)
+            input.onChange(newSelectedAuthorities)
+        },
+        [
+            input.value,
+            input.onChange,
+            props.metadataAuthorities,
+            props.selectedColumns,
+            setSelectedColumns,
+        ]
+    )
 
     return (
         <MetadataAuthoritiesTable
@@ -107,6 +132,7 @@ MetadataAuthoritiesTableFF.propTypes = {
         value: PropTypes.instanceOf(Set).isRequired,
         onChange: PropTypes.func.isRequired,
     }).isRequired,
+    meta: PropTypes.object.isRequired,
     metadataAuthorities: MetadataAuthoritiesPropType.isRequired,
     selectedColumns: PropTypes.instanceOf(Set).isRequired,
     setSelectedColumns: PropTypes.func.isRequired,
