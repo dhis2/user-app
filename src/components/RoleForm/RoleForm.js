@@ -28,21 +28,21 @@ const getRoleAuthorityIDs = ({
             authority.externalAccess.id,
         ]).filter(authID => authID !== undefined)
     )
-    const appIDs = new Set(appAuthorityOptions.map(({ id }) => id))
-    const trackerIDs = new Set(trackerAuthorityOptions.map(({ id }) => id))
-    const importExportIDs = new Set(
-        importExportAuthorityOptions.map(({ id }) => id)
+    const appIDs = new Set(appAuthorityOptions.map(({ value }) => value))
+    const trackerIDs = new Set(
+        trackerAuthorityOptions.map(({ value }) => value)
     )
-    const systemIDs = new Set(systemAuthorityOptions.map(({ id }) => id))
+    const importExportIDs = new Set(
+        importExportAuthorityOptions.map(({ value }) => value)
+    )
+    const systemIDs = new Set(systemAuthorityOptions.map(({ value }) => value))
 
     return {
-        metadata: role.authorities.filter(({ id }) => metadataIDs.has(id)),
-        apps: role.authorities.filter(({ id }) => appIDs.has(id)),
-        tracker: role.authorities.filter(({ id }) => trackerIDs.has(id)),
-        importExport: role.authorities.filter(({ id }) =>
-            importExportIDs.has(id)
-        ),
-        system: role.authorities.filter(({ id }) => systemIDs.has(id)),
+        metadata: role.authorities.filter(id => metadataIDs.has(id)),
+        apps: role.authorities.filter(id => appIDs.has(id)),
+        tracker: role.authorities.filter(id => trackerIDs.has(id)),
+        importExport: role.authorities.filter(id => importExportIDs.has(id)),
+        system: role.authorities.filter(id => systemIDs.has(id)),
     }
 }
 
