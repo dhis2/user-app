@@ -42,7 +42,7 @@ const getRoleAuthorityIDs = ({
         importExport: role.authorities.filter(({ id }) =>
             importExportIDs.has(id)
         ),
-        systemIDs: role.authorities.filter(({ id }) => systemIDs.has(id)),
+        system: role.authorities.filter(({ id }) => systemIDs.has(id)),
     }
 }
 
