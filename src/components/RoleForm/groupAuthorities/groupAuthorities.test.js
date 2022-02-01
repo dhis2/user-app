@@ -2,9 +2,7 @@ import groupAuthorities from './groupAuthorities'
 
 describe('groupAuthorities', () => {
     it('groups unknown authorities under the system group', () => {
-        const authorities = [
-            { id: 'FOO' }
-        ]
+        const authorities = [{ id: 'FOO' }]
         const groupedAuthorities = groupAuthorities(authorities)
 
         expect(groupedAuthorities.metadata).toHaveLength(0)
@@ -17,11 +15,7 @@ describe('groupAuthorities', () => {
     })
 
     it('ensures authorities are only added once to any group', () => {
-        const authorities = [
-            { id: 'FOO' },
-            { id: 'BAR' },
-            { id: 'FOO' },
-        ]
+        const authorities = [{ id: 'FOO' }, { id: 'BAR' }, { id: 'FOO' }]
         const groupedAuthorities = groupAuthorities(authorities)
 
         expect(groupedAuthorities.metadata).toHaveLength(0)
@@ -35,9 +29,7 @@ describe('groupAuthorities', () => {
     })
 
     it(`sets the name of the ALL authority to 'All (Full authority)'`, () => {
-        const authorities = [
-            { id: 'ALL' }
-        ]
+        const authorities = [{ id: 'ALL' }]
         const groupedAuthorities = groupAuthorities(authorities)
 
         expect(groupedAuthorities.system).toHaveLength(1)
@@ -46,9 +38,7 @@ describe('groupAuthorities', () => {
     })
 
     it('groups authorities with the app authority prefix M_ under the apps group', () => {
-        const authorities = [
-            { id: 'M_SOME_APP' }
-        ]
+        const authorities = [{ id: 'M_SOME_APP' }]
         const groupedAuthorities = groupAuthorities(authorities)
 
         expect(groupedAuthorities.apps).toHaveLength(1)

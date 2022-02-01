@@ -156,6 +156,7 @@ const RoleForm = ({ submitButtonLabel, role }) => {
                         )}
                     >
                         <MetadataAuthoritiesTableField
+                            name="metadataAuthorities"
                             metadataAuthorities={metadataAuthorities}
                             initialValue={roleAuthorityIDs?.metadata}
                         />

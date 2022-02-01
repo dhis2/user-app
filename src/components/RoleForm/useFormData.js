@@ -31,16 +31,12 @@ export const useFormData = () => {
 
         return {
             metadataAuthorities: groupedAuthorities.metadata,
-            appAuthorityOptions: makeOptions(groupedAuthorities.apps.items),
-            trackerAuthorityOptions: makeOptions(
-                groupedAuthorities.tracker.items
-            ),
+            appAuthorityOptions: makeOptions(groupedAuthorities.apps),
+            trackerAuthorityOptions: makeOptions(groupedAuthorities.tracker),
             importExportAuthorityOptions: makeOptions(
-                groupedAuthorities.importExport.items
+                groupedAuthorities.importExport
             ),
-            systemAuthorityOptions: makeOptions(
-                groupedAuthorities.system.items
-            ),
+            systemAuthorityOptions: makeOptions(groupedAuthorities.system),
         }
     }, [data])
 

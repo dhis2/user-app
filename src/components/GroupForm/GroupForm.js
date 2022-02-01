@@ -97,11 +97,11 @@ const GroupForm = ({ submitButtonLabel, group }) => {
                             'Add or remove users from this group.'
                         )}
                     >
+                        {/* TODO: https://github.com/dhis2/user-app/pull/854 */}
                         <p>
-                            See{' '}
-                            <a href="https://github.com/dhis2/user-app/pull/854">
-                                https://github.com/dhis2/user-app/pull/854
-                            </a>
+                            {i18n.t(
+                                'To add a user to this group, go to the User section and edit the user group settings for a specific user.'
+                            )}
                         </p>
                     </FormSection>
                     <FormSection

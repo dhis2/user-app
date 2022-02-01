@@ -12,6 +12,11 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
+import {
+    AuthorityPropType,
+    MetadataAuthoritiesPropType,
+} from './authority-prop-types'
+import styles from './MetadataAuthoritiesTable.module.css'
 
 const ColumnHeader = ({ children }) => (
     <DataTableColumnHeader fixed top="0">
@@ -78,7 +83,7 @@ const MetadataAuthoritiesTable = ({
     filterSelectedOnly,
     onFilterSelectedOnlyChange,
 }) => (
-    <>
+    <div className={styles.container}>
         <div>
             <Input
                 dense
@@ -89,7 +94,7 @@ const MetadataAuthoritiesTable = ({
             <CheckboxField
                 dense
                 label={i18n.t('Only show selected metadata authorities')}
-                value={filterSelectedOnly}
+                checked={filterSelectedOnly}
                 onChange={({ value }) => onFilterSelectedOnlyChange(value)}
             />
         </div>
@@ -125,7 +130,7 @@ const MetadataAuthoritiesTable = ({
             </DataTableHead>
             <DataTableBody>
                 {metadataAuthorities.map(item => (
-                    <DataTableRow key={item.id}>
+                    <DataTableRow key={item.name}>
                         <DataTableCell>{item.name}</DataTableCell>
                         <AuthorityCell
                             authority={item.addUpdatePublic}
@@ -143,9 +148,14 @@ const MetadataAuthoritiesTable = ({
                             disabled={selectedAuthorities.has(
                                 item.addUpdatePublic.id
                             )}
-                            selected={selectedAuthorities.has(
-                                item.addUpdatePrivate.id
-                            )}
+                            selected={
+                                selectedAuthorities.has(
+                                    item.addUpdatePublic.id
+                                ) ||
+                                selectedAuthorities.has(
+                                    item.addUpdatePrivate.id
+                                )
+                            }
                             onToggle={() =>
                                 onSelectedAuthorityToggle(
                                     item.addUpdatePrivate.id
@@ -174,29 +184,13 @@ const MetadataAuthoritiesTable = ({
                 ))}
             </DataTableBody>
         </DataTable>
-    </>
+    </div>
 )
-
-const AuthorityPropType = PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    empty: PropTypes.bool,
-    implicit: PropTypes.bool,
-    selected: PropTypes.bool,
-})
 
 MetadataAuthoritiesTable.propTypes = {
     filter: PropTypes.string.isRequired,
     filterSelectedOnly: PropTypes.bool.isRequired,
-    metadataAuthorities: PropTypes.arrayOf(
-        PropTypes.shape({
-            addUpdatePrivate: AuthorityPropType.isRequired,
-            addUpdatePublic: AuthorityPropType.isRequired,
-            delete: AuthorityPropType.isRequired,
-            name: PropTypes.string.isRequired,
-            externalAccess: AuthorityPropType,
-        })
-    ).isRequired,
+    metadataAuthorities: MetadataAuthoritiesPropType.isRequired,
     selectedAuthorities: PropTypes.instanceOf(Set).isRequired,
     selectedColumns: PropTypes.instanceOf(Set).isRequired,
     onFilterChange: PropTypes.func.isRequired,

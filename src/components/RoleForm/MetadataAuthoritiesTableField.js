@@ -1,15 +1,115 @@
 import { ReactFinalForm } from '@dhis2/ui'
+import PropTypes from 'prop-types'
 import React, { useState } from 'react'
+import { MetadataAuthoritiesPropType } from './authority-prop-types'
 import MetadataAuthoritiesTable from './MetadataAuthoritiesTable'
 
-const MetadataAuthoritiesTableFF = ({ input, ...props }) => {
-    // TODO
-    const handleChange = () => {
-        const newValue = 'whatever'
-        input.onChange(newValue)
+export const groupAuthorities = metadataAuthorities =>
+    metadataAuthorities.reduce(
+        (groupedAuthorities, auth) => {
+            for (const group of Object.keys(groupedAuthorities)) {
+                if (auth[group].id) {
+                    groupedAuthorities[group].push(auth[group].id)
+                }
+            }
+            return groupedAuthorities
+        },
+        {
+            addUpdatePublic: [],
+            addUpdatePrivate: [],
+            delete: [],
+            externalAccess: [],
+        }
+    )
+
+export const getInitiallySelectedColumns = ({
+    metadataAuthorities,
+    selectedAuthorities,
+}) => {
+    const groupedAuthorities = groupAuthorities(metadataAuthorities)
+    const initiallySelectedColumns = new Set()
+    for (const [column, ids] of Object.entries(groupedAuthorities)) {
+        if (ids.length > 0 && ids.every(id => selectedAuthorities.has(id))) {
+            initiallySelectedColumns.add(column)
+        }
+    }
+    return initiallySelectedColumns
+}
+
+const MetadataAuthoritiesTableFF = ({
+    input,
+    setSelectedColumns,
+    ...props
+}) => {
+    const handleSelectedAuthorityToggle = id => {
+        const groupedAuthorities = groupAuthorities(props.metadataAuthorities)
+        const newSelectedAuthorities = new Set(input.value)
+        const newSelectedColumns = new Set(props.selectedColumns)
+
+        if (newSelectedAuthorities.has(id)) {
+            newSelectedAuthorities.delete(id)
+            for (const [group, ids] of Object.entries(groupedAuthorities)) {
+                if (ids.includes(id)) {
+                    newSelectedColumns.delete(group)
+                    break
+                }
+            }
+        } else {
+            newSelectedAuthorities.add(id)
+            for (const [group, ids] of Object.entries(groupedAuthorities)) {
+                if (
+                    ids.includes(id) &&
+                    ids.every(i => newSelectedAuthorities.has(i))
+                ) {
+                    newSelectedColumns.add(group)
+                    break
+                }
+            }
+        }
+
+        setSelectedColumns(newSelectedColumns)
+        input.onChange(newSelectedAuthorities)
     }
 
-    return <MetadataAuthoritiesTable {...props} />
+    const handleSelectedColumnToggle = column => {
+        const groupedAuthorities = groupAuthorities(props.metadataAuthorities)
+        const newSelectedAuthorities = new Set(input.value)
+        const newSelectedColumns = new Set(props.selectedColumns)
+
+        if (newSelectedColumns.has(column)) {
+            newSelectedColumns.delete(column)
+            for (const id of groupedAuthorities[column]) {
+                newSelectedAuthorities.delete(id)
+            }
+        } else {
+            newSelectedColumns.add(column)
+            for (const id of groupedAuthorities[column]) {
+                newSelectedAuthorities.add(id)
+            }
+        }
+
+        setSelectedColumns(newSelectedColumns)
+        input.onChange(newSelectedAuthorities)
+    }
+
+    return (
+        <MetadataAuthoritiesTable
+            {...props}
+            selectedAuthorities={input.value}
+            onSelectedAuthorityToggle={handleSelectedAuthorityToggle}
+            onSelectedColumnToggle={handleSelectedColumnToggle}
+        />
+    )
+}
+
+MetadataAuthoritiesTableFF.propTypes = {
+    input: PropTypes.shape({
+        value: PropTypes.instanceOf(Set).isRequired,
+        onChange: PropTypes.func.isRequired,
+    }).isRequired,
+    metadataAuthorities: MetadataAuthoritiesPropType.isRequired,
+    selectedColumns: PropTypes.instanceOf(Set).isRequired,
+    setSelectedColumns: PropTypes.func.isRequired,
 }
 
 const MetadataAuthoritiesTableField = ({
@@ -21,29 +121,14 @@ const MetadataAuthoritiesTableField = ({
     // initial value fails shallow equal on form rerender.
     // Issue on GitHub: https://github.com/final-form/react-final-form/issues/686
     const [memoedInitialValue] = useState(new Set(initialValue))
-    const [selectedAuthorities, setSelectedAuthorities] =
-        useState(memoedInitialValue)
-    // TODO: if all auths in a column are selected, then set column as selected in initial state
-    const [selectedColumns, setSelectedColumns] = useState(new Set())
+    const [selectedColumns, setSelectedColumns] = useState(() =>
+        getInitiallySelectedColumns({
+            metadataAuthorities,
+            selectedAuthorities: memoedInitialValue,
+        })
+    )
     const [filter, setFilter] = useState('')
     const [filterSelectedOnly, setFilterSelectedOnly] = useState(false)
-
-    const handleSelectedAuthorityToggle = id => {
-        // TODO: call onChange(newSelectedAuthorities)
-        // TODO: call setSelectedColumns(selectedColumns)
-
-        const newSelectedAuthorities = new Set(selectedAuthorities)
-        if (newSelectedAuthorities.has(id)) {
-            newSelectedAuthorities.delete(id)
-        } else {
-            newSelectedAuthorities.add(id)
-        }
-        setSelectedAuthorities(newSelectedAuthorities)
-    }
-
-    const handleSelectedColumnToggle = column => {
-        // TODO: call onChange(newSelectedAuthorities)
-    }
 
     return (
         <ReactFinalForm.Field
@@ -51,16 +136,19 @@ const MetadataAuthoritiesTableField = ({
             component={MetadataAuthoritiesTableFF}
             initialValue={memoedInitialValue}
             metadataAuthorities={metadataAuthorities}
-            selectedAuthorities={selectedAuthorities}
-            onSelectedAuthorityToggle={handleSelectedAuthorityToggle}
             selectedColumns={selectedColumns}
-            onSelectedColumnToggle={handleSelectedColumnToggle}
+            setSelectedColumns={setSelectedColumns}
             filter={filter}
             onFilterChange={setFilter}
             filterSelectedOnly={filterSelectedOnly}
             onFilterSelectedOnlyChange={setFilterSelectedOnly}
         />
     )
+}
+
+MetadataAuthoritiesTableField.propTypes = {
+    initialValue: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    metadataAuthorities: MetadataAuthoritiesPropType.isRequired,
 }
 
 export default MetadataAuthoritiesTableField

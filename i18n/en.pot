@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-01-27T10:12:23.606Z\n"
-"PO-Revision-Date: 2022-01-27T10:12:23.606Z\n"
+"POT-Creation-Date: 2022-02-01T15:09:25.507Z\n"
+"PO-Revision-Date: 2022-02-01T15:09:25.507Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -15,17 +15,153 @@ msgstr ""
 "Could not reset user password. Make sure you have the appropriate "
 "permissions."
 
-msgid "Search"
-msgstr "Search"
+msgid "Edit user"
+msgstr "Edit user"
 
-msgid "Selected authorities only"
-msgstr "Selected authorities only"
+msgid "Edit user group"
+msgstr "Edit user group"
 
-msgid "There was a problem retrieving the available authorities."
-msgstr "There was a problem retrieving the available authorities."
+msgid "Edit user role"
+msgstr "Edit user role"
 
-msgid "No matches found"
-msgstr "No matches found"
+msgid "Send message"
+msgstr "Send message"
+
+msgid "Filter options"
+msgstr "Filter options"
+
+msgid "Error fetching form"
+msgstr "Error fetching form"
+
+msgid "There was an error fetching this form."
+msgstr "There was an error fetching this form."
+
+msgid "Cancel without saving"
+msgstr "Cancel without saving"
+
+msgid "Error updating group"
+msgstr "Error updating group"
+
+msgid "Error creating group"
+msgstr "Error creating group"
+
+msgid "Basic information"
+msgstr "Basic information"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Code"
+msgstr "Code"
+
+msgid "Used in analytics reports."
+msgstr "Used in analytics reports."
+
+msgid "User management"
+msgstr "User management"
+
+msgid "Add or remove users from this group."
+msgstr "Add or remove users from this group."
+
+msgid ""
+"To add a user to this group, go to the User section and edit the user group "
+"settings for a specific user."
+msgstr ""
+"To add a user to this group, go to the User section and edit the user group "
+"settings for a specific user."
+
+msgid "User group management"
+msgstr "User group management"
+
+msgid "This group can manage other user groups. Add managed user groups below."
+msgstr "This group can manage other user groups. Add managed user groups below."
+
+msgid "Available user groups"
+msgstr "Available user groups"
+
+msgid "Managed user groups"
+msgstr "Managed user groups"
+
+msgid "Name is already taken"
+msgstr "Name is already taken"
+
+msgid "There was a problem whilst checking the availability of this group name"
+msgstr "There was a problem whilst checking the availability of this group name"
+
+msgid "Page not found."
+msgstr "Page not found."
+
+msgid "No match for"
+msgstr "No match for"
+
+msgid "Go back home"
+msgstr "Go back home"
+
+msgid "Only show selected metadata authorities"
+msgstr "Only show selected metadata authorities"
+
+msgid "Authority"
+msgstr "Authority"
+
+msgid "Add/Update Public"
+msgstr "Add/Update Public"
+
+msgid "Add/Update Private"
+msgstr "Add/Update Private"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "External access"
+msgstr "External access"
+
+msgid "Error updating role"
+msgstr "Error updating role"
+
+msgid "Error creating role"
+msgstr "Error creating role"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Short, clear description of what this role is for."
+msgstr "Short, clear description of what this role is for."
+
+msgid "Metadata authorities"
+msgstr "Metadata authorities"
+
+msgid "Set what metadata access this role has."
+msgstr "Set what metadata access this role has."
+
+msgid "Other authorities"
+msgstr "Other authorities"
+
+msgid "Manage access to apps, tracker, data import/export and system settings."
+msgstr "Manage access to apps, tracker, data import/export and system settings."
+
+msgid "Available app authorities"
+msgstr "Available app authorities"
+
+msgid "Selected app authorities"
+msgstr "Selected app authorities"
+
+msgid "Available tracker authorities"
+msgstr "Available tracker authorities"
+
+msgid "Selected tracker authorities"
+msgstr "Selected tracker authorities"
+
+msgid "Available import/export authorities"
+msgstr "Available import/export authorities"
+
+msgid "Selected import/export authorities"
+msgstr "Selected import/export authorities"
+
+msgid "Available system authorities"
+msgstr "Available system authorities"
+
+msgid "Selected system authorities"
+msgstr "Selected system authorities"
 
 msgid "All (Full authority)"
 msgstr "All (Full authority)"
@@ -201,156 +337,6 @@ msgstr "Skip data import audit"
 msgid "Visualization"
 msgstr "Visualization"
 
-msgid "Metadata"
-msgstr "Metadata"
-
-msgid "Name"
-msgstr "Name"
-
-msgid "Add/Update Public"
-msgstr "Add/Update Public"
-
-msgid "Add/Update Private"
-msgstr "Add/Update Private"
-
-msgid "Delete"
-msgstr "Delete"
-
-msgid "External access"
-msgstr "External access"
-
-msgid "Apps"
-msgstr "Apps"
-
-msgid "Tracker"
-msgstr "Tracker"
-
-msgid "Import-Export"
-msgstr "Import-Export"
-
-msgid "System"
-msgstr "System"
-
-msgid "Edit user"
-msgstr "Edit user"
-
-msgid "Edit user group"
-msgstr "Edit user group"
-
-msgid "Edit user role"
-msgstr "Edit user role"
-
-msgid "Send message"
-msgstr "Send message"
-
-msgid "Filter options"
-msgstr "Filter options"
-
-msgid "Error fetching form"
-msgstr "Error fetching form"
-
-msgid "There was an error fetching this form."
-msgstr "There was an error fetching this form."
-
-msgid "Cancel without saving"
-msgstr "Cancel without saving"
-
-msgid "Error updating group"
-msgstr "Error updating group"
-
-msgid "Error creating group"
-msgstr "Error creating group"
-
-msgid "Basic information"
-msgstr "Basic information"
-
-msgid "Code"
-msgstr "Code"
-
-msgid "Used in analytics reports."
-msgstr "Used in analytics reports."
-
-msgid "User management"
-msgstr "User management"
-
-msgid "Add or remove users from this group."
-msgstr "Add or remove users from this group."
-
-msgid "User group management"
-msgstr "User group management"
-
-msgid "This group can manage other user groups. Add managed user groups below."
-msgstr "This group can manage other user groups. Add managed user groups below."
-
-msgid "Available user groups"
-msgstr "Available user groups"
-
-msgid "Managed user groups"
-msgstr "Managed user groups"
-
-msgid "Name is already taken"
-msgstr "Name is already taken"
-
-msgid "There was a problem whilst checking the availability of this group name"
-msgstr "There was a problem whilst checking the availability of this group name"
-
-msgid "Page not found."
-msgstr "Page not found."
-
-msgid "No match for"
-msgstr "No match for"
-
-msgid "Go back home"
-msgstr "Go back home"
-
-msgid "Error updating role"
-msgstr "Error updating role"
-
-msgid "Error creating role"
-msgstr "Error creating role"
-
-msgid "Description"
-msgstr "Description"
-
-msgid "Short, clear description of what this role is for."
-msgstr "Short, clear description of what this role is for."
-
-msgid "Metadata authorities"
-msgstr "Metadata authorities"
-
-msgid "Set what metadata access this role has."
-msgstr "Set what metadata access this role has."
-
-msgid "Other authorities"
-msgstr "Other authorities"
-
-msgid "Manage access to apps, tracker, data import/export and system settings."
-msgstr "Manage access to apps, tracker, data import/export and system settings."
-
-msgid "Available app authorities"
-msgstr "Available app authorities"
-
-msgid "Selected app authorities"
-msgstr "Selected app authorities"
-
-msgid "Available tracker authorities"
-msgstr "Available tracker authorities"
-
-msgid "Selected tracker authorities"
-msgstr "Selected tracker authorities"
-
-msgid "Available import/export authorities"
-msgstr "Available import/export authorities"
-
-msgid "Selected import/export authorities"
-msgstr "Selected import/export authorities"
-
-msgid "Available system authorities"
-msgstr "Available system authorities"
-
-msgid "Selected system authorities"
-msgstr "Selected system authorities"
-
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr "There was a problem whilst checking the availability of this role name"
 
@@ -384,6 +370,9 @@ msgstr "There was a problem retreiving your search results"
 
 msgid "Please enter at least {{ minCharLength }} characters"
 msgstr "Please enter at least {{ minCharLength }} characters"
+
+msgid "No matches found"
+msgstr "No matches found"
 
 msgid "Apply"
 msgstr "Apply"
@@ -532,6 +521,9 @@ msgstr "Data output and analysis"
 
 msgid "The organisation units that this user can export and analyse."
 msgstr "The organisation units that this user can export and analyse."
+
+msgid "Search"
+msgstr "Search"
 
 msgid "The organisation that this user can search for and in."
 msgstr "The organisation that this user can search for and in."
@@ -737,21 +729,6 @@ msgstr "List"
 msgid "Add"
 msgstr "Add"
 
-msgid "User role \"{{displayName}}\" saved successfully"
-msgstr "User role \"{{displayName}}\" saved successfully"
-
-msgid "There was a problem saving the user role."
-msgstr "There was a problem saving the user role."
-
-msgid "Save"
-msgstr "Save"
-
-msgid "Cancel"
-msgstr "Cancel"
-
-msgid "Authorities"
-msgstr "Authorities"
-
 msgid "There was an error deleting the user role: {{- error}}"
 msgstr "There was an error deleting the user role: {{- error}}"
 
@@ -854,6 +831,9 @@ msgid ""
 msgstr ""
 "Password should be at least 8 characters long, with at least one lowercase "
 "character, one uppercase character and one special character."
+
+msgid "Cancel"
+msgstr "Cancel"
 
 msgid "Replicate user"
 msgstr "Replicate user"
