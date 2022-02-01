@@ -10,6 +10,7 @@ import {
     DataTableBody,
     DataTableCell,
 } from '@dhis2/ui'
+import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 import {
@@ -19,7 +20,7 @@ import {
 import styles from './MetadataAuthoritiesTable.module.css'
 
 const ColumnHeader = ({ children }) => (
-    <DataTableColumnHeader fixed top="0">
+    <DataTableColumnHeader fixed top="0" className={styles.columnHeader}>
         {children}
     </DataTableColumnHeader>
 )
@@ -52,24 +53,94 @@ CheckboxColumnHeader.propTypes = {
     onSelectedColumnToggle: PropTypes.func.isRequired,
 }
 
-const AuthorityCell = ({ authority, disabled, selected, onToggle }) => (
-    <DataTableCell>
-        {!authority.empty && (
-            <Checkbox
-                dense
-                disabled={authority.implicit || disabled}
-                checked={authority.implicit || selected}
-                onChange={onToggle}
-            />
-        )}
-    </DataTableCell>
+const AuthorityCell = React.memo(
+    ({ authority, disabled, selected, onSelectedAuthorityToggle }) => (
+        <DataTableCell>
+            {!authority.empty && (
+                <Checkbox
+                    dense
+                    disabled={authority.implicit || disabled}
+                    checked={authority.implicit || selected}
+                    onChange={() => onSelectedAuthorityToggle(authority.id)}
+                />
+            )}
+        </DataTableCell>
+    )
 )
 
 AuthorityCell.propTypes = {
     authority: AuthorityPropType.isRequired,
     selected: PropTypes.bool.isRequired,
-    onToggle: PropTypes.func.isRequired,
+    onSelectedAuthorityToggle: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
+}
+
+const Row = ({
+    item,
+    filter,
+    filterSelectedOnly,
+    selectedAuthorities,
+    onSelectedAuthorityToggle,
+}) => {
+    const addUpdatePublicSelected = selectedAuthorities.has(
+        item.addUpdatePublic.id
+    )
+    const addUpdatePrivateSelected =
+        addUpdatePublicSelected ||
+        selectedAuthorities.has(item.addUpdatePrivate.id)
+    const deleteSelected = selectedAuthorities.has(item.delete.id)
+    const externalAccessSelected = selectedAuthorities.has(
+        item.externalAccess.id
+    )
+
+    const hasSelection =
+        addUpdatePublicSelected ||
+        addUpdatePrivateSelected ||
+        deleteSelected ||
+        externalAccessSelected
+
+    return (
+        <DataTableRow
+            className={cx({
+                [styles.hiddenRow]: filterSelectedOnly
+                    ? !hasSelection
+                    : !item.name
+                          .toLocaleLowerCase()
+                          .includes(filter.toLocaleLowerCase()),
+            })}
+        >
+            <DataTableCell>{item.name}</DataTableCell>
+            <AuthorityCell
+                authority={item.addUpdatePublic}
+                selected={addUpdatePublicSelected}
+                onSelectedAuthorityToggle={onSelectedAuthorityToggle}
+            />
+            <AuthorityCell
+                authority={item.addUpdatePrivate}
+                disabled={selectedAuthorities.has(item.addUpdatePublic.id)}
+                selected={addUpdatePrivateSelected}
+                onSelectedAuthorityToggle={onSelectedAuthorityToggle}
+            />
+            <AuthorityCell
+                authority={item.delete}
+                selected={deleteSelected}
+                onSelectedAuthorityToggle={onSelectedAuthorityToggle}
+            />
+            <AuthorityCell
+                authority={item.externalAccess}
+                selected={externalAccessSelected}
+                onSelectedAuthorityToggle={onSelectedAuthorityToggle}
+            />
+        </DataTableRow>
+    )
+}
+
+Row.propTypes = {
+    filter: PropTypes.string.isRequired,
+    filterSelectedOnly: PropTypes.bool.isRequired,
+    item: PropTypes.object.isRequired,
+    selectedAuthorities: PropTypes.instanceOf(Set).isRequired,
+    onSelectedAuthorityToggle: PropTypes.func.isRequired,
 }
 
 const MetadataAuthoritiesTable = React.memo(
@@ -133,59 +204,16 @@ const MetadataAuthoritiesTable = React.memo(
                 </DataTableHead>
                 <DataTableBody>
                     {metadataAuthorities.map(item => (
-                        <DataTableRow key={item.name}>
-                            <DataTableCell>{item.name}</DataTableCell>
-                            <AuthorityCell
-                                authority={item.addUpdatePublic}
-                                selected={selectedAuthorities.has(
-                                    item.addUpdatePublic.id
-                                )}
-                                onToggle={() =>
-                                    onSelectedAuthorityToggle(
-                                        item.addUpdatePublic.id
-                                    )
-                                }
-                            />
-                            <AuthorityCell
-                                authority={item.addUpdatePrivate}
-                                disabled={selectedAuthorities.has(
-                                    item.addUpdatePublic.id
-                                )}
-                                selected={
-                                    selectedAuthorities.has(
-                                        item.addUpdatePublic.id
-                                    ) ||
-                                    selectedAuthorities.has(
-                                        item.addUpdatePrivate.id
-                                    )
-                                }
-                                onToggle={() =>
-                                    onSelectedAuthorityToggle(
-                                        item.addUpdatePrivate.id
-                                    )
-                                }
-                            />
-                            <AuthorityCell
-                                authority={item.delete}
-                                selected={selectedAuthorities.has(
-                                    item.delete.id
-                                )}
-                                onToggle={() =>
-                                    onSelectedAuthorityToggle(item.delete.id)
-                                }
-                            />
-                            <AuthorityCell
-                                authority={item.externalAccess}
-                                selected={selectedAuthorities.has(
-                                    item.externalAccess.id
-                                )}
-                                onToggle={() =>
-                                    onSelectedAuthorityToggle(
-                                        item.externalAccess.id
-                                    )
-                                }
-                            />
-                        </DataTableRow>
+                        <Row
+                            key={item.name}
+                            item={item}
+                            filter={filter}
+                            filterSelectedOnly={filterSelectedOnly}
+                            selectedAuthorities={selectedAuthorities}
+                            onSelectedAuthorityToggle={
+                                onSelectedAuthorityToggle
+                            }
+                        />
                     ))}
                 </DataTableBody>
             </DataTable>
