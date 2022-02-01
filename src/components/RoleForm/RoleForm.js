@@ -60,14 +60,18 @@ const RoleForm = ({ submitButtonLabel, role }) => {
         importExportAuthorityOptions,
         systemAuthorityOptions,
     } = useFormData()
-    const roleAuthorityIDs = role && !loading && !error && getRoleAuthorityIDs({
-        role,
-        metadataAuthorities,
-        appAuthorityOptions,
-        trackerAuthorityOptions,
-        importExportAuthorityOptions,
-        systemAuthorityOptions,
-    })
+    const roleAuthorityIDs =
+        role &&
+        !loading &&
+        !error &&
+        getRoleAuthorityIDs({
+            role,
+            metadataAuthorities,
+            appAuthorityOptions,
+            trackerAuthorityOptions,
+            importExportAuthorityOptions,
+            systemAuthorityOptions,
+        })
     const handleSubmit = async values => {
         const roleData = getRoleData({ values, role })
 

@@ -6,7 +6,6 @@ import { orange500 } from 'material-ui/styles/colors'
 import TextField from 'material-ui/TextField/TextField'
 import PropTypes from 'prop-types'
 import React from 'react'
-import AuthorityEditor from '../components/AuthorityEditor'
 import SearchableGroupEditor from '../components/SearchableGroupEditor'
 import SearchableOrgUnitTree from '../components/SearchableOrgUnitTree'
 
@@ -106,17 +105,6 @@ export const renderTextField = ({
             errorText={errorText}
             {...other}
             {...input}
-        />
-    )
-}
-
-export const renderAuthorityEditor = ({ input }) => {
-    const initiallySelected = input.value === '' ? [] : input.value
-    return (
-        <AuthorityEditor
-            initiallySelected={initiallySelected}
-            reduxFormOnChange={input.onChange}
-            reduxFormOnBlur={input.onBlur}
         />
     )
 }
@@ -251,10 +239,6 @@ renderSearchableOrgUnitTree.propTypes = {
     ...sharedPropTypes,
     initialValues: PropTypes.array.isRequired,
     side: PropTypes.oneOf(['left', 'right']),
-}
-
-renderAuthorityEditor.propTypes = {
-    ...sharedPropTypes,
 }
 
 renderText.propTypes = {

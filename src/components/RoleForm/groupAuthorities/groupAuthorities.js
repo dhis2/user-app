@@ -1,5 +1,6 @@
+import i18n from '@dhis2/d2-i18n'
 import { sortBy } from 'lodash-es'
-import { createMetadataGroup, hasMetadataGroupSuffix } from './metadata.js'
+import { createMetadataGroup, hasMetadataGroupSuffix } from './metadata'
 
 const AUTHORITY_GROUPS = {
     tracker: new Set([
@@ -68,7 +69,7 @@ const groupForAuthority = auth => {
     return 'system'
 }
 
-const sortGroupedAuthorities = groupedAuthories => {
+const sortGroupedAuthorities = groupedAuthorities => {
     const sortedGroupedAuthorities = {}
     for (const [group, items] of Object.entries(groupedAuthorities)) {
         sortedGroupedAuthorities[group] = sortBy(items, 'name')
@@ -76,12 +77,8 @@ const sortGroupedAuthorities = groupedAuthories => {
     return sortedGroupedAuthorities
 }
 
-/**
- * Receives an authority item and creates an authority metadata group based on suffixes
- * @param {Object} auth - The authority to group
- * @param {Map} lookup - The authority lookup map
- * @return {Object} group - A metadata authority group
- */
+// Receives an authority item and creates an authority metadata group based on
+// suffixes
 const groupAuthorities = authorities => {
     // A lookup map used to check if an authority still needs to be assigned
     // to a group in constant time. Used to ensure each authority is assigned
