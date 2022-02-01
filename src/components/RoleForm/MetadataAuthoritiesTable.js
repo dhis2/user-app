@@ -85,7 +85,7 @@ const MetadataAuthoritiesTable = React.memo(
         onFilterSelectedOnlyChange,
     }) => (
         <div className={styles.container}>
-            <div>
+            <div className={styles.filters}>
                 <Input
                     dense
                     placeholder={i18n.t('Filter options')}
@@ -96,7 +96,9 @@ const MetadataAuthoritiesTable = React.memo(
                     dense
                     label={i18n.t('Only show selected metadata authorities')}
                     checked={filterSelectedOnly}
-                    onChange={({ value }) => onFilterSelectedOnlyChange(value)}
+                    onChange={({ checked }) =>
+                        onFilterSelectedOnlyChange(checked)
+                    }
                 />
             </div>
             <DataTable scrollHeight="375px">

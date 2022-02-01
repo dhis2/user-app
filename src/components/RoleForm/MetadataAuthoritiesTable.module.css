@@ -1,3 +1,12 @@
 .container {
+    margin-top: var(--spacers-dp16);
     max-width: 800px;
+}
+
+.filters {
+    display: grid;
+    grid-template-columns: 360px auto;
+    gap: var(--spacers-dp16);
+    align-items: center;
+    margin-bottom: var(--spacers-dp16);
 }
