@@ -98,11 +98,11 @@ const GroupForm = ({ submitButtonLabel, group }) => {
                         )}
                     >
                         {/* TODO: https://github.com/dhis2/user-app/pull/854 */}
-                        <p>
+                        <NoticeBox className={styles.noticeBox}>
                             {i18n.t(
                                 'To add a user to this group, go to the User section and edit the user group settings for a specific user.'
                             )}
-                        </p>
+                        </NoticeBox>
                     </FormSection>
                     <FormSection
                         title={i18n.t('User group management')}
