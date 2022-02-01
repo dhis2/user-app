@@ -17,7 +17,7 @@ import {
 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useMemo } from 'react'
 import styles from './Form.module.css'
 import SearchableOrgUnitTree from './SearchableOrgUnitTree'
 
@@ -150,6 +150,8 @@ SearchableOrgUnitTreeField.propTypes = {
     required: PropTypes.bool,
 }
 
+const MemoedTransfer = React.memo(Transfer)
+
 const TransferFF = ({ input, meta, className, ...props }) => {
     const handleChange = useCallback(
         ({ selected }) => {
@@ -168,7 +170,7 @@ const TransferFF = ({ input, meta, className, ...props }) => {
                         [styles.transferWrapperError]: error,
                     })}
                 >
-                    <Transfer
+                    <MemoedTransfer
                         {...props}
                         selected={input.value}
                         onChange={handleChange}
@@ -205,26 +207,32 @@ export const TransferField = ({
     // initial value fails shallow equal on form rerender.
     // Issue on GitHub: https://github.com/final-form/react-final-form/issues/686
     const [memoedInitialValue] = useState(initialValue)
+    const memoedLeftHeader = useMemo(
+        () => <h3 className={styles.transferFieldHeader}>{leftHeader}</h3>,
+        [leftHeader]
+    )
+    const memoedRightHeader = useMemo(
+        () => (
+            <h3 className={styles.transferFieldHeader}>
+                {props.required ? (
+                    <>
+                        {rightHeader}
+                        <Required dataTest="required" />
+                    </>
+                ) : (
+                    rightHeader
+                )}
+            </h3>
+        ),
+        [rightHeader, props.required]
+    )
 
     return (
         <ReactFinalForm.Field
             {...props}
             height="320px"
-            leftHeader={
-                <h3 className={styles.transferFieldHeader}>{leftHeader}</h3>
-            }
-            rightHeader={
-                <h3 className={styles.transferFieldHeader}>
-                    {props.required ? (
-                        <>
-                            {rightHeader}
-                            <Required dataTest="required" />
-                        </>
-                    ) : (
-                        rightHeader
-                    )}
-                </h3>
-            }
+            leftHeader={memoedLeftHeader}
+            rightHeader={memoedRightHeader}
             filterable
             filterPlaceholder={i18n.t('Filter options')}
             className={styles.field}
