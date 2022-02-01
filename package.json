@@ -40,7 +40,6 @@
         "redux-form": "^8.3.7",
         "redux-thunk": "^2.2.0",
         "rxjs": "^5.5.6",
-        "trashable": "^1.0.6",
         "use-debounce": "^7.0.0",
         "use-query-params": "^1.2.3"
     },
