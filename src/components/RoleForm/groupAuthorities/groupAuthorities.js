@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { sortBy } from 'lodash-es'
-import { createMetadataGroup, hasMetadataGroupSuffix } from './metadata'
+import { createMetadataGroup } from './metadata'
 
 const AUTHORITY_GROUPS = {
     tracker: new Set([
@@ -97,19 +97,12 @@ const groupAuthorities = authorities => {
             if (!lookup.has(auth.id)) {
                 // Do nothing if authority has already been removed from lookup
             } else if (auth.id.startsWith(APP_AUTH_PREFIX)) {
-                // Group under apps
                 groupedAuthorities.apps.push(auth)
-            } else if (!hasMetadataGroupSuffix(auth.id)) {
-                const group = groupForAuthority(auth)
-                groupedAuthorities[group].push(auth)
             } else {
                 const metadataGroup = createMetadataGroup(auth.id, lookup)
                 if (metadataGroup) {
                     groupedAuthorities.metadata.push(metadataGroup)
-                } else if (lookup.get(auth.id)) {
-                    // If no metadata group was created, we are dealing with
-                    // an authority which had a metadata suffix but was not actually
-                    // a metadata authority
+                } else {
                     const group = groupForAuthority(auth)
                     groupedAuthorities[group].push(auth)
                 }

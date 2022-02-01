@@ -93,7 +93,7 @@ const IMPLICIT_GROUP_ITEM = {
     implicit: true,
 }
 
-export const hasMetadataGroupSuffix = authID =>
+const hasMetadataGroupSuffix = authID =>
     ALL_SUFFIXES.some(suffix => authID.endsWith(suffix))
 
 export const getMetadataAuthBaseName = authID => {
@@ -110,6 +110,10 @@ export const getMetadataAuthBaseName = authID => {
  * @return {Object} A metadata authority group
  */
 export const createMetadataGroup = (authID, lookup) => {
+    if (!hasMetadataGroupSuffix(authID)) {
+        return null
+    }
+
     const baseName = getMetadataAuthBaseName(authID)
 
     // Some metadata authorities distinguish between PUBLIC_ADD and PRIVATE_ADD
