@@ -3,7 +3,10 @@ import { memoize } from 'lodash-es'
 import pDebounce from 'p-debounce'
 import { useCallback } from 'react'
 
-export const useDebouncedUniqueUsernameValidator = ({ engine }) => {
+export const useDebouncedUniqueUsernameValidator = ({
+    engine,
+    username: currentUsername,
+}) => {
     const findUserByUsername = pDebounce(async username => {
         const {
             users: { users },
@@ -19,6 +22,10 @@ export const useDebouncedUniqueUsernameValidator = ({ engine }) => {
         return users[0]
     }, 350)
     const validator = async username => {
+        if (username === currentUsername) {
+            return
+        }
+
         try {
             const user = await findUserByUsername(username)
             if (user) {

@@ -45,7 +45,10 @@ const UserForm = ({
     const history = useHistory()
     const engine = useDataEngine()
     const debouncedUniqueUsernameValidator =
-        useDebouncedUniqueUsernameValidator({ engine })
+        useDebouncedUniqueUsernameValidator({
+            engine,
+            username: user?.userCredentials.username,
+        })
     const {
         loading,
         error,
