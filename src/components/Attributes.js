@@ -1,7 +1,7 @@
-import { hasValue, composeValidators } from '@dhis2/ui'
+import { hasValue, composeValidators, email } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { TextField, HiddenField } from './Form'
+import { TextField, TextAreaField, EmailField, HiddenField } from './Form'
 
 const getFieldName = attribute => `attributeValues.${attribute.id}`
 
@@ -21,6 +21,7 @@ const AttributePropType = PropTypes.shape({
 
 const validatorsMap = {
     hasValue,
+    email,
 }
 const validators = validatorConditionals => {
     const validators = []
@@ -43,18 +44,18 @@ const validators = validatorConditionals => {
  *     [X] LONG_TEXT
  *     [ ] LETTER
  *     [ ] PHONE_NUMBER
- *     [ ] EMAIL
- *     [X] BOOLEAN
- *     [X] TRUE_ONLY
- *     [X] DATE
+ *     [X] EMAIL
+ *     [.X] BOOLEAN
+ *     [.X] TRUE_ONLY
+ *     [.X] DATE
  *     [ ] DATETIME
  *     [ ] TIME
- *     [X] NUMBER
+ *     [.X] NUMBER
  *     [ ] UNIT_INTERVAL
  *     [ ] PERCENTAGE
- *     [X] INTEGER
- *     [X] INTEGER_POSITIVE
- *     [X] INTEGER_NEGATIVE
+ *     [.X] INTEGER
+ *     [.X] INTEGER_POSITIVE
+ *     [.X] INTEGER_NEGATIVE
  *     [ ] INTEGER_ZERO_OR_POSITIVE
  *     [ ] TRACKER_ASSOCIATE
  *     [ ] USERNAME
@@ -66,6 +67,8 @@ const validators = validatorConditionals => {
  *     [ ] IMAGE
  ****************************************************************************/
 const Attribute = ({ attribute, value }) => {
+    // TODO: option set
+
     const required = attribute.mandatory
     const name = getFieldName(attribute)
     const label = attribute.displayName
@@ -83,8 +86,33 @@ const Attribute = ({ attribute, value }) => {
                     })}
                 />
             )
+        case 'LONG_TEXT':
+            return (
+                <TextAreaField
+                    required={required}
+                    name={name}
+                    label={label}
+                    initialValue={value}
+                    validate={validators({
+                        hasValue: required,
+                    })}
+                />
+            )
+        case 'EMAIL':
+            return (
+                <EmailField
+                    required={required}
+                    name={name}
+                    label={label}
+                    initialValue={value}
+                    validate={validators({
+                        hasValue: required,
+                        email: true,
+                    })}
+                />
+            )
         default:
-            return <HiddenField name={name} />
+            return <HiddenField name={name} initialValue={value} />
     }
 }
 
@@ -93,7 +121,6 @@ Attribute.propTypes = {
     value: PropTypes.any,
 }
 
-// TODO: mandatory validators (required + `hasValue` or other appropriate validator)
 // TODO: unique validators (see `getGenericUniquenessError`)
 const Attributes = ({ attributes, attributeValues }) => {
     const values = attributeValues?.reduce((values, attributeValue) => {

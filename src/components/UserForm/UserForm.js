@@ -18,6 +18,7 @@ import Attributes from '../Attributes'
 import Form, {
     FormSection,
     TextField,
+    EmailField,
     PasswordField,
     DateField,
     SingleSelectField,
@@ -211,7 +212,7 @@ const UserForm = ({
                                       )
                             }
                         />
-                        <TextField
+                        <EmailField
                             required={values.inviteUser === 'INVITE_USER'}
                             name="email"
                             label={i18n.t('Email address')}

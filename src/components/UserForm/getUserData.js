@@ -56,9 +56,12 @@ export const getUserData = ({
         dataViewOrganisationUnits: wrapIds(dataViewOrganisationUnits),
         teiSearchOrganisationUnits: wrapIds(teiSearchOrganisationUnits),
         userGroups: wrapIds(userGroups),
+
         attributeValues: attributes.map(attribute => ({
-            id: attribute.id,
-            value: values[`attributeValues.${attribute.id}`],
+            attribute: {
+                id: attribute.id,
+            },
+            value: values.attributeValues[attribute.id],
         })),
 
         userCredentials: {
@@ -89,9 +92,11 @@ export const getUserData = ({
         },
     }
 
-    // Because the data object is used as the payload of a PUT request, properties that are omitted will be removed
-    // To prevent this, all remaining owned properties are copied from the user to the data object
-    // This is only required when editing users, because new users can't have such properties
+    // Because the data object is used as the payload of a PUT request,
+    // properties that are omitted will be removed. To prevent this, all
+    // remaining owned properties are copied from the user to the data object.
+    // This is only required when editing users, because new users can't have
+    // such properties
     if (user) {
         for (const [key, value] of Object.entries(user)) {
             if (!(key in userData)) {

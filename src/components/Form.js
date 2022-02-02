@@ -5,6 +5,7 @@ import {
     NoticeBox,
     ReactFinalForm,
     InputFieldFF,
+    TextAreaFieldFF,
     SingleSelectFieldFF,
     CheckboxFieldFF,
     ButtonStrip,
@@ -58,6 +59,15 @@ export const TextField = props => (
     />
 )
 
+export const EmailField = props => (
+    <ReactFinalForm.Field
+        {...props}
+        className={styles.textField}
+        component={InputFieldFF}
+        type="email"
+    />
+)
+
 export const PasswordField = props => (
     <ReactFinalForm.Field
         {...props}
@@ -73,6 +83,14 @@ export const DateField = props => (
         className={styles.dateField}
         component={InputFieldFF}
         type="date"
+    />
+)
+
+export const TextAreaField = props => (
+    <ReactFinalForm.Field
+        {...props}
+        className={styles.textField}
+        component={TextAreaFieldFF}
     />
 )
 
@@ -280,8 +298,8 @@ export const HiddenField = ({ name, initialValue }) => {
 }
 
 HiddenField.propTypes = {
-    initialValue: PropTypes.any.isRequired,
     name: PropTypes.string.isRequired,
+    initialValue: PropTypes.any,
 }
 
 const Form = ({
