@@ -1,4 +1,5 @@
 import { useDataQuery } from '@dhis2/app-runtime'
+import { groupAttributesQuery } from '../../attributesQueries'
 
 const query = {
     userGroups: {
@@ -8,6 +9,7 @@ const query = {
             paging: false,
         },
     },
+    attributes: groupAttributesQuery,
 }
 
 const makeOptions = array =>
@@ -25,9 +27,11 @@ export const useFormData = () => {
 
     const {
         userGroups: { userGroups },
+        attributes: { attributes },
     } = data
 
     return {
         userGroupOptions: makeOptions(userGroups),
+        attributes,
     }
 }

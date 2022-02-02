@@ -4,6 +4,7 @@ import { NoticeBox, composeValidators, hasValue, FinalForm } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+import Attributes from '../Attributes'
 import Form, { FormSection, TextField, TransferField } from '../Form'
 import { getGroupData } from './getGroupData'
 import styles from './GroupForm.module.css'
@@ -20,9 +21,9 @@ const GroupForm = ({ submitButtonLabel, group }) => {
         useDebouncedUniqueGroupNameValidator({ engine, groupName: group?.name })
     const debouncedUniqueGroupCodeValidator =
         useDebouncedUniqueGroupCodeValidator({ engine, groupCode: group?.code })
-    const { loading, error, userGroupOptions } = useFormData()
+    const { loading, error, userGroupOptions, attributes } = useFormData()
     const handleSubmit = async values => {
-        const groupData = getGroupData({ values, group })
+        const groupData = getGroupData({ values, group, attributes })
 
         try {
             if (group) {
@@ -126,6 +127,12 @@ const GroupForm = ({ submitButtonLabel, group }) => {
                             }
                         />
                     </FormSection>
+                    <FormSection title={i18n.t('Attributes')}>
+                        <Attributes
+                            attributes={attributes}
+                            attributeValues={group?.attributeValues}
+                        />
+                    </FormSection>
                 </>
             )}
         </Form>
@@ -135,6 +142,8 @@ const GroupForm = ({ submitButtonLabel, group }) => {
 GroupForm.propTypes = {
     submitButtonLabel: PropTypes.string.isRequired,
     group: PropTypes.shape({
+        attributeValues: PropTypes.arrayOf(PropTypes.object.isRequired)
+            .isRequired,
         id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         code: PropTypes.string,
