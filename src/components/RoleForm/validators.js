@@ -1,27 +1,35 @@
 import i18n from '@dhis2/d2-i18n'
+import { memoize } from 'lodash-es'
 import pDebounce from 'p-debounce'
 import { useCallback } from 'react'
 
-export const useDebouncedUniqueRoleNameValidator = ({ engine, roleName }) => {
-    const currentRoleName = roleName
+export const useDebouncedUniqueRoleNameValidator = ({
+    engine,
+    roleName: currentRoleName,
+}) => {
+    const findRolebyName = pDebounce(async roleName => {
+        const {
+            roles: { userRoles: roles },
+        } = await engine.query({
+            roles: {
+                resource: 'userRoles',
+                params: {
+                    filter: `name:eq:${roleName}`,
+                    fields: 'id',
+                },
+            },
+        })
+        console.log({ roleName, roles })
+        return roles[0]
+    }, 350)
     const validator = async roleName => {
         if (roleName === currentRoleName) {
             return
         }
 
         try {
-            const {
-                roles: { userRoles: roles },
-            } = await engine.query({
-                roles: {
-                    resource: 'userRoles',
-                    params: {
-                        filter: `name:eq:${roleName}`,
-                        fields: 'id',
-                    },
-                },
-            })
-            if (roles.length > 0) {
+            const role = await findRolebyName(roleName)
+            if (role) {
                 return i18n.t('Name is already taken')
             }
         } catch (error) {
@@ -30,6 +38,7 @@ export const useDebouncedUniqueRoleNameValidator = ({ engine, roleName }) => {
             )
         }
     }
-    const debouncedValidator = pDebounce(validator, 350)
-    return useCallback(debouncedValidator, [])
+    // Memoize validator as react final form reruns all validators when any field changes
+    // See https://github.com/final-form/react-final-form/issues/292
+    return useCallback(memoize(validator), [])
 }

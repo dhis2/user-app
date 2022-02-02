@@ -8,13 +8,18 @@ import Form, { FormSection, TextField, TransferField } from '../Form'
 import { getGroupData } from './getGroupData'
 import styles from './GroupForm.module.css'
 import { useFormData } from './useFormData'
-import { useDebouncedUniqueGroupNameValidator } from './validators'
+import {
+    useDebouncedUniqueGroupNameValidator,
+    useDebouncedUniqueGroupCodeValidator,
+} from './validators'
 
 const GroupForm = ({ submitButtonLabel, group }) => {
     const history = useHistory()
     const engine = useDataEngine()
     const debouncedUniqueGroupNameValidator =
         useDebouncedUniqueGroupNameValidator({ engine, groupName: group?.name })
+    const debouncedUniqueGroupCodeValidator =
+        useDebouncedUniqueGroupCodeValidator({ engine, groupCode: group?.code })
     const { loading, error, userGroupOptions } = useFormData()
     const handleSubmit = async values => {
         const groupData = getGroupData({ values, group })
@@ -89,6 +94,7 @@ const GroupForm = ({ submitButtonLabel, group }) => {
                             label={i18n.t('Code')}
                             helpText={i18n.t('Used in analytics reports.')}
                             initialValue={group?.code}
+                            validate={debouncedUniqueGroupCodeValidator}
                         />
                     </FormSection>
                     <FormSection

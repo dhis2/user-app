@@ -37,9 +37,13 @@ FormSection.propTypes = {
     description: PropTypes.string,
 }
 
-const InputFieldFFWrapper = props => (
-    <InputFieldFF {...props} loading={props.loading || props.meta.validating} />
-)
+const InputFieldFFWrapper = props => {
+    // `meta.validating` is true for all fields when an async validator is used
+    // so only show spinner if input field is currently focused
+    const validating = props.meta.active && props.meta.validating
+
+    return <InputFieldFF {...props} loading={props.loading || validating} />
+}
 
 InputFieldFFWrapper.propTypes = {
     loading: PropTypes.bool,

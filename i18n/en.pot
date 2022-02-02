@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-02-01T15:09:25.507Z\n"
-"PO-Revision-Date: 2022-02-01T15:09:25.507Z\n"
+"POT-Creation-Date: 2022-02-02T12:16:32.559Z\n"
+"PO-Revision-Date: 2022-02-02T12:16:32.559Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -87,6 +87,12 @@ msgstr "Name is already taken"
 
 msgid "There was a problem whilst checking the availability of this group name"
 msgstr "There was a problem whilst checking the availability of this group name"
+
+msgid "Code is already taken"
+msgstr "Code is already taken"
+
+msgid "There was a problem whilst checking the availability of this group code"
+msgstr "There was a problem whilst checking the availability of this group code"
 
 msgid "Page not found."
 msgstr "Page not found."
