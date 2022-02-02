@@ -1,6 +1,11 @@
 const wrapIds = ids => ids.map(id => ({ id }))
 
-export const getUserData = ({ values, dimensionConstraintsById, user }) => {
+export const getUserData = ({
+    values,
+    dimensionConstraintsById,
+    user,
+    attributes,
+}) => {
     const inviteUser = values.inviteUser === 'INVITE_USER'
     const {
         email,
@@ -51,6 +56,10 @@ export const getUserData = ({ values, dimensionConstraintsById, user }) => {
         dataViewOrganisationUnits: wrapIds(dataViewOrganisationUnits),
         teiSearchOrganisationUnits: wrapIds(teiSearchOrganisationUnits),
         userGroups: wrapIds(userGroups),
+        attributeValues: attributes.map(attribute => ({
+            id: attribute.id,
+            value: values[`attributeValues.${attribute.id}`],
+        })),
 
         userCredentials: {
             id: user?.userCredentials?.id,

@@ -262,6 +262,28 @@ TransferField.propTypes = {
     required: PropTypes.bool,
 }
 
+const HiddenFieldFF = () => null
+
+export const HiddenField = ({ name, initialValue }) => {
+    // Fixes the infinite loop rendering bug that occurs when the
+    // initial value fails shallow equal on form rerender.
+    // Issue on GitHub: https://github.com/final-form/react-final-form/issues/686
+    const [memoedInitialValue] = useState(initialValue)
+
+    return (
+        <ReactFinalForm.Field
+            name={name}
+            initialValue={memoedInitialValue}
+            component={HiddenFieldFF}
+        />
+    )
+}
+
+HiddenField.propTypes = {
+    initialValue: PropTypes.any.isRequired,
+    name: PropTypes.string.isRequired,
+}
+
 const Form = ({
     loading,
     error,

@@ -1,5 +1,6 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import { uniqBy } from 'lodash-es'
+import { userAttributesQuery } from '../../attributesQueries'
 
 const query = {
     interfaceLanguages: {
@@ -30,6 +31,7 @@ const query = {
             paging: false,
         },
     },
+    attributes: userAttributesQuery,
 }
 
 const optionsFromLanguages = languages =>
@@ -61,6 +63,7 @@ export const useFormData = () => {
         userRoles: { userRoles },
         userGroups: { userGroups },
         dimensionConstraints: { dimensions: dimensionConstraints },
+        attributes: { attributes },
     } = data
 
     return {
@@ -70,5 +73,6 @@ export const useFormData = () => {
         userGroupOptions: makeOptions(userGroups),
         dimensionConstraints,
         dimensionConstraintOptions: makeOptions(dimensionConstraints),
+        attributes,
     }
 }

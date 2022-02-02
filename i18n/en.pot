@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-02-02T12:16:32.559Z\n"
-"PO-Revision-Date: 2022-02-02T12:16:32.559Z\n"
+"POT-Creation-Date: 2022-02-02T16:31:22.712Z\n"
+"PO-Revision-Date: 2022-02-02T16:31:22.712Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -557,6 +557,9 @@ msgstr "Available restrictions"
 
 msgid "Selected restrictions"
 msgstr "Selected restrictions"
+
+msgid "Attributes"
+msgstr "Attributes"
 
 msgid "Username already taken"
 msgstr "Username already taken"

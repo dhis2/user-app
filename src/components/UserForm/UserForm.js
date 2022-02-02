@@ -14,6 +14,7 @@ import moment from 'moment'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+import Attributes from '../Attributes'
 import Form, {
     FormSection,
     TextField,
@@ -58,6 +59,7 @@ const UserForm = ({
         userGroupOptions,
         dimensionConstraints,
         dimensionConstraintOptions,
+        attributes,
     } = useFormData()
     const handleSubmit = async values => {
         // TODO: Reload current user if current user's ID matches userId prop
@@ -65,6 +67,7 @@ const UserForm = ({
             values,
             dimensionConstraintsById: keyBy(dimensionConstraints, 'id'),
             user,
+            attributes,
         })
 
         try {
@@ -519,6 +522,12 @@ const UserForm = ({
                             }
                         />
                     </FormSection>
+                    <FormSection title={i18n.t('Attributes')}>
+                        <Attributes
+                            attributes={attributes}
+                            attributeValues={user?.attributeValues}
+                        />
+                    </FormSection>
                 </>
             )}
         </Form>
@@ -537,6 +546,8 @@ UserForm.propTypes = {
     submitButtonLabel: PropTypes.string.isRequired,
     userInterfaceLanguage: PropTypes.string.isRequired,
     user: PropTypes.shape({
+        attributeValues: PropTypes.arrayOf(PropTypes.object.isRequired)
+            .isRequired,
         dataViewOrganisationUnits: OrganisationUnitsPropType.isRequired,
         firstName: PropTypes.string.isRequired,
         organisationUnits: OrganisationUnitsPropType.isRequired,
