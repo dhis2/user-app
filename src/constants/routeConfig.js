@@ -50,7 +50,7 @@ const createRouteConfig = () => [
     {
         key: 'user_new_view',
         path: '/users/new',
-        render: CreateUser,
+        render: () => <CreateUser />,
         entityType: USER,
     },
     {
@@ -70,7 +70,7 @@ const createRouteConfig = () => [
     {
         key: 'user_role_new_view',
         path: '/user-roles/new',
-        render: CreateRole,
+        render: () => <CreateRole />,
         entityType: USER_ROLE,
     },
     {
@@ -90,7 +90,7 @@ const createRouteConfig = () => [
     {
         key: 'user_group_new_view',
         path: '/user-groups/new',
-        render: CreateGroup,
+        render: () => <CreateGroup />,
         entityType: USER_GROUP,
     },
     {
