@@ -158,7 +158,7 @@ const RoleForm = ({ submitButtonLabel, role }) => {
                         <MetadataAuthoritiesTableField
                             name="metadataAuthorities"
                             metadataAuthorities={metadataAuthorities}
-                            initialValue={roleAuthorityIDs?.metadata}
+                            initialValue={roleAuthorityIDs?.metadata || []}
                         />
                     </FormSection>
                     <FormSection
@@ -197,7 +197,7 @@ const RoleForm = ({ submitButtonLabel, role }) => {
                             leftHeader={i18n.t('Available system authorities')}
                             rightHeader={i18n.t('Selected system authorities')}
                             options={systemAuthorityOptions}
-                            initialValue={roleAuthorityIDs.system || []}
+                            initialValue={roleAuthorityIDs?.system || []}
                         />
                     </FormSection>
                 </>
