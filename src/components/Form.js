@@ -37,11 +37,20 @@ FormSection.propTypes = {
     description: PropTypes.string,
 }
 
+const InputFieldFFWrapper = props => (
+    <InputFieldFF {...props} loading={props.loading || props.meta.validating} />
+)
+
+InputFieldFFWrapper.propTypes = {
+    loading: PropTypes.bool,
+    meta: PropTypes.object,
+}
+
 export const TextField = props => (
     <ReactFinalForm.Field
         {...props}
         className={styles.textField}
-        component={InputFieldFF}
+        component={InputFieldFFWrapper}
     />
 )
 
@@ -286,6 +295,7 @@ const Form = ({
                 values,
                 submitting,
                 submitError,
+                validating,
             }) => (
                 <form className={styles.form} onSubmit={handleSubmit}>
                     {children({ values, submitError })}
@@ -294,7 +304,9 @@ const Form = ({
                             primary
                             type="submit"
                             onClick={handleSubmit}
-                            disabled={hasValidationErrors || pristine}
+                            disabled={
+                                validating || hasValidationErrors || pristine
+                            }
                             loading={submitting}
                         >
                             {submitButtonLabel}
