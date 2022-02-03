@@ -79,7 +79,7 @@ const validators = validatorConditionals => {
  *     [ ] LETTER
  *     [ ] PHONE_NUMBER
  *     [X] EMAIL
- *     [.X] BOOLEAN
+ *     [X] BOOLEAN
  *     [.X] TRUE_ONLY
  *     [X] DATE
  *     [ ] DATETIME
@@ -121,7 +121,6 @@ const Attribute = ({ attribute, value }) => {
                 initialValue={value}
                 validate={validators({
                     hasValue: required,
-                    number: true,
                 })}
             />
         )
@@ -214,6 +213,23 @@ const Attribute = ({ attribute, value }) => {
                     required={required}
                     name={name}
                     label={label}
+                    initialValue={value}
+                    validate={validators({
+                        hasValue: required,
+                    })}
+                />
+            )
+        case 'BOOLEAN':
+            return (
+                <SingleSelectField
+                    required={required}
+                    clearable={!required}
+                    name={name}
+                    label={label}
+                    options={[
+                        { label: i18n.t('Yes'), value: 'true' },
+                        { label: i18n.t('No'), value: 'false' },
+                    ]}
                     initialValue={value}
                     validate={validators({
                         hasValue: required,

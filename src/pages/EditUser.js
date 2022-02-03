@@ -48,7 +48,10 @@ const useUser = userId => {
             const { username } = user.userCredentials
             // Use d2 to fetch locales as userSettings endpoint sets the
             // content-type of its responses to application/json even when they
-            // are invalid JSON, causing issues with the data engine
+            // are invalid JSON, causing issues with the data engine.
+            // N.B. Once this endpoint is fixed and useDataQuery can be used,
+            // SWR needs to be disabled (by using fetching instead of loading)
+            // due to the behaviour of react final form's initialValue prop
             const userInterfaceLanguage = await d2.Api.getApi().get(
                 `/userSettings/keyUiLocale?user=${username}`
             )

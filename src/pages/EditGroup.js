@@ -16,16 +16,22 @@ const query = {
 }
 
 const useGroup = groupId => {
-    const { called, loading, error, data, refetch } = useDataQuery(query, {
-        lazy: true,
-    })
+    const { called, loading, fetching, error, data, refetch } = useDataQuery(
+        query,
+        {
+            lazy: true,
+        }
+    )
 
     useEffect(() => {
         refetch({ groupId })
     }, [groupId])
 
     return {
-        loading: !called || loading,
+        // Don't use SWR for forms as react final form only renders the first
+        // value passed to the initialValue prop - subsequent updates are
+        // ignored.
+        loading: !called || loading || fetching,
         error,
         group: data?.group,
     }
