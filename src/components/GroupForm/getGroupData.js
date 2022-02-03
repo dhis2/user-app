@@ -1,6 +1,6 @@
 const wrapIds = ids => ids.map(id => ({ id }))
 
-export const getGroupData = ({ values, group }) => {
+export const getGroupData = ({ values, group, attributes }) => {
     const { name, code, managedGroups } = values
 
     return {
@@ -8,5 +8,12 @@ export const getGroupData = ({ values, group }) => {
         name,
         code,
         managedGroups: wrapIds(managedGroups),
+
+        attributeValues: attributes.map(attribute => ({
+            attribute: {
+                id: attribute.id,
+            },
+            value: values.attributeValues[attribute.id],
+        })),
     }
 }

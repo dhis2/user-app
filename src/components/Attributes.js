@@ -77,6 +77,7 @@ const Attribute = ({ attribute, value }) => {
         return (
             <SingleSelectField
                 required={required}
+                clearable={!required}
                 name={name}
                 label={label}
                 options={attribute.optionSet.options.map(
@@ -85,6 +86,7 @@ const Attribute = ({ attribute, value }) => {
                         value: id,
                     })
                 )}
+                initialValue={value}
                 validate={validators({
                     hasValue: required,
                 })}
