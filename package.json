@@ -28,7 +28,6 @@
         "d2": "^31.7.0",
         "d3-color": "^1.2.0",
         "lodash-es": "^4.17.21",
-        "material-design-icons-iconfont": "^5.0.1",
         "material-ui": "^0.20.0",
         "p-debounce": "^4.0.0",
         "query-string": "^7.0.1",

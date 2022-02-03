@@ -19,7 +19,6 @@ import { USER, USER_ROLE, USER_GROUP } from './entityTypes'
 const getUserSection = () => ({
     key: 'user_section',
     label: i18n.t('User'),
-    icon: 'person',
     path: '/users',
     description: i18n.t('Create, modify, view and delete Users'),
     component: UserList,
@@ -28,7 +27,6 @@ const getUserSection = () => ({
 const getUserRoleSection = () => ({
     key: 'user_role_section',
     label: i18n.t('User role'),
-    icon: 'folder_shared',
     path: '/user-roles',
     description: i18n.t('Create, modify, view and delete User Roles'),
     component: RoleList,
@@ -37,7 +35,6 @@ const getUserRoleSection = () => ({
 const getUserGroupSection = () => ({
     key: 'user_group_section',
     label: i18n.t('User group'),
-    icon: 'group',
     path: '/user-groups',
     description: i18n.t('Create, modify, view and delete User Groups'),
     component: GroupList,

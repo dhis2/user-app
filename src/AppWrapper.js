@@ -8,7 +8,6 @@ import api from './api'
 import App from './App'
 import AppWithD2ContextAndTheme from './components/AppWithD2ContextAndTheme'
 import store from './store'
-import 'material-design-icons-iconfont/dist/material-design-icons.css'
 // TODO: remove
 import './styles/styles.css'
 
