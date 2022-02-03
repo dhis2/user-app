@@ -1,6 +1,12 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { NoticeBox, composeValidators, hasValue, FinalForm } from '@dhis2/ui'
+import {
+    NoticeBox,
+    composeValidators,
+    hasValue,
+    createMaxCharacterLength,
+    FinalForm,
+} from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
@@ -13,6 +19,8 @@ import {
     useDebouncedUniqueGroupNameValidator,
     useDebouncedUniqueGroupCodeValidator,
 } from './validators'
+
+const codeLengthValidator = createMaxCharacterLength(50)
 
 const GroupForm = ({ submitButtonLabel, group }) => {
     const history = useHistory()
@@ -95,7 +103,10 @@ const GroupForm = ({ submitButtonLabel, group }) => {
                             label={i18n.t('Code')}
                             helpText={i18n.t('Used in analytics reports.')}
                             initialValue={group?.code}
-                            validate={debouncedUniqueGroupCodeValidator}
+                            validate={composeValidators(
+                                codeLengthValidator,
+                                debouncedUniqueGroupCodeValidator
+                            )}
                         />
                     </FormSection>
                     <FormSection
