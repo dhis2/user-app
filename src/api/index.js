@@ -1,10 +1,5 @@
 import { CURRENT_USER_ORG_UNITS_FIELDS } from '../constants/queryFields'
-import {
-    getQueryFields,
-    createListRequestData,
-    appendUsernameToDisplayName,
-    getAttributesWithValueAndId,
-} from './utils'
+import { getQueryFields, getAttributesWithValueAndId } from './utils'
 
 /**
  * The Api class exposes all necessary functions to get the required data from the DHIS2 web api.
@@ -36,18 +31,7 @@ class Api {
         return this.d2.system.systemInfo.contextPath
     }
 
-    getList = (entityName, page, filter) => {
-        const fields = getQueryFields(entityName)
-        const requestData = createListRequestData({
-            page,
-            filter,
-            fields,
-            entityName,
-            currentUser: this.getCurrentUser(),
-        })
-        return this.d2.models[entityName].list(requestData)
-    }
-
+    // Used by DetailSummary component
     getItem = (entityName, id) => {
         const data = { fields: getQueryFields(entityName, true) }
         return this.d2.models[entityName].get(id, data)
@@ -69,23 +53,6 @@ class Api {
         const url = `/users/${id}/replica`
         const data = { username, password }
         return this.d2Api.post(url, data)
-    }
-
-    resetUserPassword = id => {
-        const url = `/users/${id}/reset`
-        return this.d2Api.post(url)
-    }
-
-    updateDisabledState = (id, disabled) => {
-        const url = `/users/${id}`
-        const data = { userCredentials: { disabled: disabled } }
-        return this.d2Api.patch(url, data)
-    }
-
-    disable2FA = id => {
-        const url = `/users/${id}`
-        const data = { userCredentials: { twoFA: false } }
-        return this.d2Api.patch(url, data)
     }
 
     getAttributes(entityType) {
@@ -144,32 +111,6 @@ class Api {
                     return attributesWithValueAndId.length === 0
                 })
         )
-    }
-
-    /**************************
-     ***** USER GROUPS ********
-     **************************/
-
-    getManagedUsers = () => {
-        const data = {
-            fields: ['id', 'displayName', 'userCredentials[username]'],
-            paging: false,
-        }
-        return this.d2.models.user.list(data).then(appendUsernameToDisplayName)
-    }
-
-    /**************************
-     ****** USER ROLES ********
-     **************************/
-
-    // Calling role.save() would result in an error in d2 because d2 expects you always want to
-    // save { id: <ID> } objects but authorities should be saved as a plain JSON array
-    saveRole(data) {
-        if (data.id) {
-            return this.d2Api.update(`/userRoles/${data.id}`, data)
-        } else {
-            return this.d2Api.post('/userRoles/', data)
-        }
     }
 
     /**************************
@@ -262,12 +203,6 @@ class Api {
             .then(modelCollection => {
                 return modelCollection.toArray()
             })
-    }
-
-    updateCurrentUserGroupMembership = (groupId, deleteMembership) => {
-        const method = deleteMembership ? 'delete' : 'post'
-        const url = `/users/${this.d2.currentUser.id}/userGroups/${groupId}`
-        return this.d2Api[method](url)
     }
 }
 export default new Api()
