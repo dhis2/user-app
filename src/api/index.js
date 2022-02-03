@@ -1,5 +1,12 @@
-import { CURRENT_USER_ORG_UNITS_FIELDS } from '../constants/queryFields'
 import { getQueryFields, getAttributesWithValueAndId } from './utils'
+
+const CURRENT_USER_ORG_UNITS_FIELDS = {
+    fields: [
+        'organisationUnits[id,path,displayName,children::isNotEmpty]',
+        'dataViewOrganisationUnits[id,path,displayName,children::isNotEmpty]',
+        'teiSearchOrganisationUnits[id,path,displayName,children::isNotEmpty]',
+    ],
+}
 
 /**
  * The Api class exposes all necessary functions to get the required data from the DHIS2 web api.
