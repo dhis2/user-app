@@ -54,7 +54,7 @@ const validatorsMap = {
         createNumberRange(
             -Infinity,
             0,
-            i18n.t('Value should be a nagative integer')
+            i18n.t('Value should be a negative integer')
         )
     ),
 }
@@ -81,7 +81,7 @@ const validators = validatorConditionals => {
  *     [ ] PHONE_NUMBER
  *     [X] EMAIL
  *     [X] BOOLEAN
- *     [.X] TRUE_ONLY
+ *     [X] TRUE_ONLY
  *     [X] DATE
  *     [ ] DATETIME
  *     [ ] TIME
@@ -107,19 +107,25 @@ const Attribute = ({ attribute, value }) => {
     const label = attribute.displayName
 
     if (attribute.optionSet) {
+        const options = attribute.optionSet.options.map(
+            ({ id, displayName }) => ({
+                label: displayName,
+                value: id,
+            })
+        )
+        // SingleSelectField throws an error if its value does not correspond to an option
+        const initialValue = options.find(option => option.value === value)
+            ? value
+            : undefined
+
         return (
             <SingleSelectField
                 required={required}
                 clearable={!required}
                 name={name}
                 label={label}
-                options={attribute.optionSet.options.map(
-                    ({ id, displayName }) => ({
-                        label: displayName,
-                        value: id,
-                    })
-                )}
-                initialValue={value}
+                options={options}
+                initialValue={initialValue}
                 validate={validators({
                     hasValue: required,
                 })}
@@ -221,6 +227,7 @@ const Attribute = ({ attribute, value }) => {
                 />
             )
         case 'BOOLEAN':
+            // SingleSelectField throws an error if its value does not correspond to an option
             return (
                 <SingleSelectField
                     required={required}
@@ -231,7 +238,9 @@ const Attribute = ({ attribute, value }) => {
                         { label: i18n.t('Yes'), value: 'true' },
                         { label: i18n.t('No'), value: 'false' },
                     ]}
-                    initialValue={value}
+                    initialValue={
+                        ['true', 'false'].includes(value) ? value : undefined
+                    }
                     validate={validators({
                         hasValue: required,
                     })}

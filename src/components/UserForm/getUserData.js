@@ -1,3 +1,5 @@
+import { getAttributeValues } from '../../attributes'
+
 const wrapIds = ids => ids.map(id => ({ id }))
 
 export const getUserData = ({
@@ -40,8 +42,12 @@ export const getUserData = ({
             )
         )
 
-    const userData = {
-        id: user?.id,
+    return {
+        // Because the data object is used as the payload of a PUT request,
+        // properties that are omitted will be removed. To prevent this, all
+        // remaining owned properties are copied from the user to the data
+        // object.
+        ...user,
 
         email,
         firstName,
@@ -57,12 +63,7 @@ export const getUserData = ({
         teiSearchOrganisationUnits: wrapIds(teiSearchOrganisationUnits),
         userGroups: wrapIds(userGroups),
 
-        attributeValues: attributes.map(attribute => ({
-            attribute: {
-                id: attribute.id,
-            },
-            value: values.attributeValues[attribute.id],
-        })),
+        attributeValues: getAttributeValues({ attributes, values }),
 
         userCredentials: {
             id: user?.userCredentials?.id,
@@ -91,19 +92,4 @@ export const getUserData = ({
             ),
         },
     }
-
-    // Because the data object is used as the payload of a PUT request,
-    // properties that are omitted will be removed. To prevent this, all
-    // remaining owned properties are copied from the user to the data object.
-    // This is only required when editing users, because new users can't have
-    // such properties
-    if (user) {
-        for (const [key, value] of Object.entries(user)) {
-            if (!(key in userData)) {
-                userData[key] = value
-            }
-        }
-    }
-
-    return userData
 }

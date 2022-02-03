@@ -10,7 +10,12 @@ export const getRoleData = ({ values, role }) => {
     } = values
 
     return {
-        id: role?.id,
+        // Because the data object is used as the payload of a PUT request,
+        // properties that are omitted will be removed. To prevent this, all
+        // remaining owned properties are copied from the user to the data
+        // object.
+        ...role,
+
         name,
         description,
         authorities: [

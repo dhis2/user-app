@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-02-03T09:24:35.344Z\n"
-"PO-Revision-Date: 2022-02-03T09:24:35.344Z\n"
+"POT-Creation-Date: 2022-02-03T14:05:40.174Z\n"
+"PO-Revision-Date: 2022-02-03T14:05:40.174Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -14,6 +14,18 @@ msgid ""
 msgstr ""
 "Could not reset user password. Make sure you have the appropriate "
 "permissions."
+
+msgid "Value should be a positive integer"
+msgstr "Value should be a positive integer"
+
+msgid "Value should be a negative integer"
+msgstr "Value should be a negative integer"
+
+msgid "Yes"
+msgstr "Yes"
+
+msgid "No"
+msgstr "No"
 
 msgid "Edit user"
 msgstr "Edit user"
@@ -952,12 +964,6 @@ msgstr "Error fetching user"
 msgid "There was an error fetching this user."
 msgstr "There was an error fetching this user."
 
-msgid "Yes"
-msgstr "Yes"
-
-msgid "No"
-msgstr "No"
-
 msgid "<No value>"
 msgstr "<No value>"
 
@@ -978,9 +984,6 @@ msgstr "This field is required"
 
 msgid "Value should be an integer"
 msgstr "Value should be an integer"
-
-msgid "Value should be a positive integer"
-msgstr "Value should be a positive integer"
 
 msgid "Value should be a nagative integer"
 msgstr "Value should be a nagative integer"
