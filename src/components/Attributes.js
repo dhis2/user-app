@@ -1,7 +1,7 @@
 import { hasValue, composeValidators, email } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { TextField, TextAreaField, EmailField, HiddenField } from './Form'
+import { TextField, TextAreaField, SingleSelectField, EmailField } from './Form'
 
 const getFieldName = attribute => `attributeValues.${attribute.id}`
 
@@ -10,12 +10,14 @@ const AttributePropType = PropTypes.shape({
     id: PropTypes.string.isRequired,
     mandatory: PropTypes.bool.isRequired,
     unique: PropTypes.bool.isRequired,
-    optionSet: PropTypes.arrayOf(
-        PropTypes.shape({
-            displayName: PropTypes.string.isRequired,
-            id: PropTypes.string.isRequired,
-        }).isRequired
-    ),
+    optionSet: PropTypes.shape({
+        options: PropTypes.arrayOf(
+            PropTypes.shape({
+                displayName: PropTypes.string.isRequired,
+                id: PropTypes.string.isRequired,
+            }).isRequired
+        ).isRequired,
+    }),
     valueType: PropTypes.string,
 })
 
@@ -67,25 +69,30 @@ const validators = validatorConditionals => {
  *     [ ] IMAGE
  ****************************************************************************/
 const Attribute = ({ attribute, value }) => {
-    // TODO: option set
-
     const required = attribute.mandatory
     const name = getFieldName(attribute)
     const label = attribute.displayName
 
+    if (attribute.optionSet) {
+        return (
+            <SingleSelectField
+                required={required}
+                name={name}
+                label={label}
+                options={attribute.optionSet.options.map(
+                    ({ id, displayName }) => ({
+                        label: displayName,
+                        value: id,
+                    })
+                )}
+                validate={validators({
+                    hasValue: required,
+                })}
+            />
+        )
+    }
+
     switch (attribute.valueType) {
-        case 'TEXT':
-            return (
-                <TextField
-                    required={required}
-                    name={name}
-                    label={label}
-                    initialValue={value}
-                    validate={validators({
-                        hasValue: required,
-                    })}
-                />
-            )
         case 'LONG_TEXT':
             return (
                 <TextAreaField
@@ -111,8 +118,21 @@ const Attribute = ({ attribute, value }) => {
                     })}
                 />
             )
+        // Use TEXT as fallback field type. This way all attributes will always
+        // be editable, albeit not necessarily enforcing the correct formatting
+        case 'TEXT':
         default:
-            return <HiddenField name={name} initialValue={value} />
+            return (
+                <TextField
+                    required={required}
+                    name={name}
+                    label={label}
+                    initialValue={value}
+                    validate={validators({
+                        hasValue: required,
+                    })}
+                />
+            )
     }
 }
 
