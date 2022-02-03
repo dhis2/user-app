@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-02-03T14:05:40.174Z\n"
-"PO-Revision-Date: 2022-02-03T14:05:40.174Z\n"
+"POT-Creation-Date: 2022-02-03T17:39:22.915Z\n"
+"PO-Revision-Date: 2022-02-03T17:39:22.915Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -407,29 +407,14 @@ msgstr "There was an error loading the current user"
 msgid "You do not have authorities to see users, user roles or user groups"
 msgstr "You do not have authorities to see users, user roles or user groups"
 
-msgid "Invalid username"
-msgstr "Invalid username"
+msgid "Analytics dimension restrictions"
+msgstr "Analytics dimension restrictions"
 
-msgid "Invalid WhatsApp number"
-msgstr "Invalid WhatsApp number"
+msgid "Available restrictions"
+msgstr "Available restrictions"
 
-msgid "Error updating user"
-msgstr "Error updating user"
-
-msgid "Error creating user"
-msgstr "Error creating user"
-
-msgid "Invite user"
-msgstr "Invite user"
-
-msgid "Create account or email invitation"
-msgstr "Create account or email invitation"
-
-msgid "Create account with user details"
-msgstr "Create account with user details"
-
-msgid "Email invitation to create account"
-msgstr "Email invitation to create account"
+msgid "Selected restrictions"
+msgstr "Selected restrictions"
 
 msgid "Username"
 msgstr "Username"
@@ -455,45 +440,6 @@ msgstr "Use database locale / no translation"
 msgid "Disable this user account"
 msgstr "Disable this user account"
 
-msgid "Security"
-msgstr "Security"
-
-msgid "Settings for how this user can log in."
-msgstr "Settings for how this user can log in."
-
-msgid "Change user password"
-msgstr "Change user password"
-
-msgid "New password"
-msgstr "New password"
-
-msgid "Password"
-msgstr "Password"
-
-msgid "Minimum 8 characters, one uppercase and lowercase letter and one number"
-msgstr "Minimum 8 characters, one uppercase and lowercase letter and one number"
-
-msgid "Repeat new password"
-msgstr "Repeat new password"
-
-msgid "Repeat password"
-msgstr "Repeat password"
-
-msgid "Account expiration date"
-msgstr "Account expiration date"
-
-msgid "OIDC mapping value"
-msgstr "OIDC mapping value"
-
-msgid "OpenID Connect mapping claim for your identity platform"
-msgstr "OpenID Connect mapping claim for your identity platform"
-
-msgid "LDAP identifier"
-msgstr "LDAP identifier"
-
-msgid "External authentication only (OpenID / LDAP)"
-msgstr "External authentication only (OpenID / LDAP)"
-
 msgid "Contact details"
 msgstr "Contact details"
 
@@ -514,6 +460,18 @@ msgstr "Telegram"
 
 msgid "Twitter"
 msgstr "Twitter"
+
+msgid "Invite user"
+msgstr "Invite user"
+
+msgid "Create account or email invitation"
+msgstr "Create account or email invitation"
+
+msgid "Create account with user details"
+msgstr "Create account with user details"
+
+msgid "Email invitation to create account"
+msgstr "Email invitation to create account"
 
 msgid "Organisation unit access"
 msgstr "Organisation unit access"
@@ -564,14 +522,56 @@ msgstr "User roles this user is assigned"
 msgid "User groups this user is a member of"
 msgstr "User groups this user is a member of"
 
-msgid "Analytics dimension restrictions"
-msgstr "Analytics dimension restrictions"
+msgid "Security"
+msgstr "Security"
 
-msgid "Available restrictions"
-msgstr "Available restrictions"
+msgid "Settings for how this user can log in."
+msgstr "Settings for how this user can log in."
 
-msgid "Selected restrictions"
-msgstr "Selected restrictions"
+msgid "Change user password"
+msgstr "Change user password"
+
+msgid "New password"
+msgstr "New password"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Minimum 8 characters, one uppercase and lowercase letter and one number"
+msgstr "Minimum 8 characters, one uppercase and lowercase letter and one number"
+
+msgid "Repeat new password"
+msgstr "Repeat new password"
+
+msgid "Repeat password"
+msgstr "Repeat password"
+
+msgid "Account expiration date"
+msgstr "Account expiration date"
+
+msgid "OIDC mapping value"
+msgstr "OIDC mapping value"
+
+msgid "OpenID Connect mapping claim for your identity platform"
+msgstr "OpenID Connect mapping claim for your identity platform"
+
+msgid "LDAP identifier"
+msgstr "LDAP identifier"
+
+msgid "External authentication only (OpenID / LDAP)"
+msgstr "External authentication only (OpenID / LDAP)"
+
+msgid "Invalid username"
+msgstr "Invalid username"
+
+msgid "Invalid WhatsApp number"
+msgstr "Invalid WhatsApp number"
+
+msgid "Error updating user"
+msgstr "Error updating user"
+
+msgid "Error creating user"
+msgstr "Error creating user"
 
 msgid "Username already taken"
 msgstr "Username already taken"

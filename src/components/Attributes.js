@@ -274,7 +274,7 @@ Attribute.propTypes = {
 }
 
 // TODO: unique validators (see `getGenericUniquenessError`)
-const Attributes = ({ attributes, attributeValues }) => {
+const Attributes = React.memo(({ attributes, attributeValues }) => {
     const values = attributeValues?.reduce((values, attributeValue) => {
         values.set(attributeValue.attribute.id, attributeValue.value)
         return values
@@ -287,7 +287,7 @@ const Attributes = ({ attributes, attributeValues }) => {
             value={values?.get(attribute.id)}
         />
     ))
-}
+})
 
 Attributes.propTypes = {
     attributes: PropTypes.arrayOf(AttributePropType.isRequired).isRequired,

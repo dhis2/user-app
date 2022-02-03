@@ -1,12 +1,13 @@
+import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { memoize } from 'lodash-es'
 import pDebounce from 'p-debounce'
 import { useCallback } from 'react'
 
 export const useDebouncedUniqueUsernameValidator = ({
-    engine,
     username: currentUsername,
 }) => {
+    const engine = useDataEngine()
     const findUserByUsername = pDebounce(async username => {
         const {
             users: { users },

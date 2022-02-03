@@ -1,5 +1,6 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import { uniqBy } from 'lodash-es'
+import { useMemo } from 'react'
 import { userAttributesQuery } from '../../attributes'
 
 const query = {
@@ -52,27 +53,33 @@ const makeOptions = array =>
 
 export const useFormData = () => {
     const { loading, error, data } = useDataQuery(query)
+    const formData = useMemo(() => {
+        if (!data) {
+            return
+        }
+
+        const {
+            interfaceLanguages,
+            databaseLanguages,
+            userRoles: { userRoles },
+            userGroups: { userGroups },
+            dimensionConstraints: { dimensions: dimensionConstraints },
+            attributes: { attributes },
+        } = data
+
+        return {
+            interfaceLanguageOptions: optionsFromLanguages(interfaceLanguages),
+            databaseLanguageOptions: optionsFromLanguages(databaseLanguages),
+            userRoleOptions: makeOptions(userRoles),
+            userGroupOptions: makeOptions(userGroups),
+            dimensionConstraints,
+            dimensionConstraintOptions: makeOptions(dimensionConstraints),
+            attributes,
+        }
+    }, [data])
 
     if (loading || error) {
         return { loading, error }
     }
-
-    const {
-        interfaceLanguages,
-        databaseLanguages,
-        userRoles: { userRoles },
-        userGroups: { userGroups },
-        dimensionConstraints: { dimensions: dimensionConstraints },
-        attributes: { attributes },
-    } = data
-
-    return {
-        interfaceLanguageOptions: optionsFromLanguages(interfaceLanguages),
-        databaseLanguageOptions: optionsFromLanguages(databaseLanguages),
-        userRoleOptions: makeOptions(userRoles),
-        userGroupOptions: makeOptions(userGroups),
-        dimensionConstraints,
-        dimensionConstraintOptions: makeOptions(dimensionConstraints),
-        attributes,
-    }
+    return formData
 }
