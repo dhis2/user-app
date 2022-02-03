@@ -1,6 +1,6 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import { uniqBy } from 'lodash-es'
-import { userAttributesQuery } from '../../attributesQueries'
+import { userAttributesQuery } from '../../attributes'
 
 const query = {
     interfaceLanguages: {

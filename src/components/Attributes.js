@@ -15,6 +15,7 @@ import {
     SingleSelectField,
     EmailField,
     DateField,
+    CheckboxField,
 } from './Form'
 
 const getFieldName = attribute => `attributeValues.${attribute.id}`
@@ -235,6 +236,10 @@ const Attribute = ({ attribute, value }) => {
                         hasValue: required,
                     })}
                 />
+            )
+        case 'TRUE_ONLY':
+            return (
+                <CheckboxField name={name} label={label} initialValue={value} />
             )
         // Use TEXT as fallback field type. This way all attributes will always
         // be editable, albeit not necessarily enforcing the correct formatting
