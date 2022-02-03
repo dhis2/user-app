@@ -8,8 +8,6 @@ import api from './api'
 import App from './App'
 import AppWithD2ContextAndTheme from './components/AppWithD2ContextAndTheme'
 import store from './store'
-// TODO: remove
-import './styles/styles.css'
 
 const AppWrapper = () => {
     const { d2 } = useD2({
