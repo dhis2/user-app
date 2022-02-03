@@ -1,13 +1,15 @@
-import { hasValue, composeValidators, email, number, integer } from '@dhis2/ui'
+import i18n from '@dhis2/d2-i18n'
+import {
+    hasValue,
+    composeValidators,
+    email,
+    number,
+    integer,
+    createNumberRange,
+} from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import {
-    TextField,
-    TextAreaField,
-    SingleSelectField,
-    EmailField,
-    NumberField,
-} from './Form'
+import { TextField, TextAreaField, SingleSelectField, EmailField } from './Form'
 
 const getFieldName = attribute => `attributeValues.${attribute.id}`
 
@@ -32,6 +34,22 @@ const validatorsMap = {
     email,
     number,
     integer,
+    positiveInteger: composeValidators(
+        integer,
+        createNumberRange(
+            0,
+            Infinity,
+            i18n.t('Value should be a positive integer')
+        )
+    ),
+    negativeInteger: composeValidators(
+        integer,
+        createNumberRange(
+            -Infinity,
+            0,
+            i18n.t('Value should be a nagative integer')
+        )
+    ),
 }
 const validators = validatorConditionals => {
     const validators = []
@@ -63,7 +81,7 @@ const validators = validatorConditionals => {
  *     [X] NUMBER
  *     [ ] UNIT_INTERVAL
  *     [ ] PERCENTAGE
- *     [.X] INTEGER
+ *     [X] INTEGER
  *     [.X] INTEGER_POSITIVE
  *     [.X] INTEGER_NEGATIVE
  *     [ ] INTEGER_ZERO_OR_POSITIVE
@@ -97,6 +115,7 @@ const Attribute = ({ attribute, value }) => {
                 initialValue={value}
                 validate={validators({
                     hasValue: required,
+                    number: true,
                 })}
             />
         )
@@ -129,8 +148,11 @@ const Attribute = ({ attribute, value }) => {
                 />
             )
         case 'NUMBER':
+            // React final form is not rendering validation errors for
+            // <input type="number" /> for some reason, so use standard
+            // text field
             return (
-                <NumberField
+                <TextField
                     required={required}
                     name={name}
                     label={label}
@@ -138,6 +160,45 @@ const Attribute = ({ attribute, value }) => {
                     validate={validators({
                         hasValue: required,
                         number: true,
+                    })}
+                />
+            )
+        case 'INTEGER':
+            return (
+                <TextField
+                    required={required}
+                    name={name}
+                    label={label}
+                    initialValue={value}
+                    validate={validators({
+                        hasValue: required,
+                        integer: true,
+                    })}
+                />
+            )
+        case 'INTEGER_POSITIVE':
+            return (
+                <TextField
+                    required={required}
+                    name={name}
+                    label={label}
+                    initialValue={value}
+                    validate={validators({
+                        hasValue: required,
+                        positiveInteger: true,
+                    })}
+                />
+            )
+        case 'INTEGER_NEGATIVE':
+            return (
+                <TextField
+                    required={required}
+                    name={name}
+                    label={label}
+                    initialValue={value}
+                    validate={validators({
+                        hasValue: required,
+                        negativeInteger: true,
                     })}
                 />
             )
