@@ -9,7 +9,13 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { TextField, TextAreaField, SingleSelectField, EmailField } from './Form'
+import {
+    TextField,
+    TextAreaField,
+    SingleSelectField,
+    EmailField,
+    DateField,
+} from './Form'
 
 const getFieldName = attribute => `attributeValues.${attribute.id}`
 
@@ -75,15 +81,15 @@ const validators = validatorConditionals => {
  *     [X] EMAIL
  *     [.X] BOOLEAN
  *     [.X] TRUE_ONLY
- *     [.X] DATE
+ *     [X] DATE
  *     [ ] DATETIME
  *     [ ] TIME
  *     [X] NUMBER
  *     [ ] UNIT_INTERVAL
  *     [ ] PERCENTAGE
  *     [X] INTEGER
- *     [.X] INTEGER_POSITIVE
- *     [.X] INTEGER_NEGATIVE
+ *     [X] INTEGER_POSITIVE
+ *     [X] INTEGER_NEGATIVE
  *     [ ] INTEGER_ZERO_OR_POSITIVE
  *     [ ] TRACKER_ASSOCIATE
  *     [ ] USERNAME
@@ -199,6 +205,18 @@ const Attribute = ({ attribute, value }) => {
                     validate={validators({
                         hasValue: required,
                         negativeInteger: true,
+                    })}
+                />
+            )
+        case 'DATE':
+            return (
+                <DateField
+                    required={required}
+                    name={name}
+                    label={label}
+                    initialValue={value}
+                    validate={validators({
+                        hasValue: required,
                     })}
                 />
             )
