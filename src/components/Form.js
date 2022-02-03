@@ -86,6 +86,15 @@ export const DateField = props => (
     />
 )
 
+export const NumberField = props => (
+    <ReactFinalForm.Field
+        {...props}
+        className={styles.numberField}
+        component={InputFieldFF}
+        type="number"
+    />
+)
+
 export const TextAreaField = props => (
     <ReactFinalForm.Field
         {...props}

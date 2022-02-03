@@ -1,7 +1,13 @@
-import { hasValue, composeValidators, email } from '@dhis2/ui'
+import { hasValue, composeValidators, email, number, integer } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { TextField, TextAreaField, SingleSelectField, EmailField } from './Form'
+import {
+    TextField,
+    TextAreaField,
+    SingleSelectField,
+    EmailField,
+    NumberField,
+} from './Form'
 
 const getFieldName = attribute => `attributeValues.${attribute.id}`
 
@@ -24,6 +30,8 @@ const AttributePropType = PropTypes.shape({
 const validatorsMap = {
     hasValue,
     email,
+    number,
+    integer,
 }
 const validators = validatorConditionals => {
     const validators = []
@@ -52,7 +60,7 @@ const validators = validatorConditionals => {
  *     [.X] DATE
  *     [ ] DATETIME
  *     [ ] TIME
- *     [.X] NUMBER
+ *     [X] NUMBER
  *     [ ] UNIT_INTERVAL
  *     [ ] PERCENTAGE
  *     [.X] INTEGER
@@ -117,6 +125,19 @@ const Attribute = ({ attribute, value }) => {
                     validate={validators({
                         hasValue: required,
                         email: true,
+                    })}
+                />
+            )
+        case 'NUMBER':
+            return (
+                <NumberField
+                    required={required}
+                    name={name}
+                    label={label}
+                    initialValue={value}
+                    validate={validators({
+                        hasValue: required,
+                        number: true,
                     })}
                 />
             )

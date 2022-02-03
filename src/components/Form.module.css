@@ -37,6 +37,11 @@
     max-width: 330px;
 }
 
+.numberField {
+    composes: field;
+    max-width: 150px;
+}
+
 .dateField {
     composes: field;
     max-width: 150px;
