@@ -138,12 +138,14 @@ const GroupForm = ({ submitButtonLabel, group }) => {
                             }
                         />
                     </FormSection>
-                    <FormSection title={i18n.t('Attributes')}>
-                        <Attributes
-                            attributes={attributes}
-                            attributeValues={group?.attributeValues}
-                        />
-                    </FormSection>
+                    {attributes.length > 0 && (
+                        <FormSection title={i18n.t('Attributes')}>
+                            <Attributes
+                                attributes={attributes}
+                                attributeValues={group?.attributeValues}
+                            />
+                        </FormSection>
+                    )}
                 </>
             )}
         </Form>

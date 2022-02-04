@@ -177,12 +177,14 @@ const UserForm = ({
                         user={user}
                         dimensionConstraintOptions={dimensionConstraintOptions}
                     />
-                    <FormSection title={i18n.t('Attributes')}>
-                        <Attributes
-                            attributes={attributes}
-                            attributeValues={user?.attributeValues}
-                        />
-                    </FormSection>
+                    {attributes.length > 0 && (
+                        <FormSection title={i18n.t('Attributes')}>
+                            <Attributes
+                                attributes={attributes}
+                                attributeValues={user?.attributeValues}
+                            />
+                        </FormSection>
+                    )}
                 </>
             )}
         </Form>
