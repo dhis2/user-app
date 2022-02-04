@@ -1,12 +1,4 @@
 import i18n from '@dhis2/d2-i18n'
-import {
-    hasValue,
-    composeValidators,
-    email,
-    number,
-    integer,
-    createNumberRange,
-} from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import {
@@ -16,60 +8,11 @@ import {
     EmailField,
     DateField,
     CheckboxField,
-} from './Form'
+} from '../Form'
+import AttributePropType from './attributePropType'
+import { validators, useDebouncedUniqueAttributeValidator } from './validators'
 
 const getFieldName = attribute => `attributeValues.${attribute.id}`
-
-const AttributePropType = PropTypes.shape({
-    displayName: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    mandatory: PropTypes.bool.isRequired,
-    unique: PropTypes.bool.isRequired,
-    optionSet: PropTypes.shape({
-        options: PropTypes.arrayOf(
-            PropTypes.shape({
-                displayName: PropTypes.string.isRequired,
-                id: PropTypes.string.isRequired,
-            }).isRequired
-        ).isRequired,
-    }),
-    valueType: PropTypes.string,
-})
-
-const validatorsMap = {
-    hasValue,
-    email,
-    number,
-    integer,
-    positiveInteger: composeValidators(
-        integer,
-        createNumberRange(
-            0,
-            Infinity,
-            i18n.t('Value should be a positive integer')
-        )
-    ),
-    negativeInteger: composeValidators(
-        integer,
-        createNumberRange(
-            -Infinity,
-            0,
-            i18n.t('Value should be a negative integer')
-        )
-    ),
-}
-const validators = validatorConditionals => {
-    const validators = []
-    for (const [validatorKey, condition] of Object.entries(
-        validatorConditionals
-    )) {
-        if (condition) {
-            const validator = validatorsMap[validatorKey]
-            validators.push(validator)
-        }
-    }
-    return composeValidators(...validators)
-}
 
 /**************************************************************************
  * Attributes can be either based on an optionSet, or based on a valueType.
@@ -101,10 +44,18 @@ const validators = validatorConditionals => {
  *     [ ] FILE_RESOURCE
  *     [ ] IMAGE
  ****************************************************************************/
-const Attribute = ({ attribute, value }) => {
+const Attribute = ({ attribute, value, entity, entityType }) => {
+    const uniqueValidator = useDebouncedUniqueAttributeValidator({
+        attribute,
+        currentValue: value,
+        entity,
+        entityType,
+    })
+
     const required = attribute.mandatory
     const name = getFieldName(attribute)
     const label = attribute.displayName
+    const unique = attribute.unique
 
     if (attribute.optionSet) {
         const options = attribute.optionSet.options.map(
@@ -126,9 +77,13 @@ const Attribute = ({ attribute, value }) => {
                 label={label}
                 options={options}
                 initialValue={initialValue}
-                validate={validators({
-                    hasValue: required,
-                })}
+                validate={validators(
+                    {
+                        hasValue: required,
+                        unique,
+                    },
+                    uniqueValidator
+                )}
             />
         )
     }
@@ -141,9 +96,13 @@ const Attribute = ({ attribute, value }) => {
                     name={name}
                     label={label}
                     initialValue={value}
-                    validate={validators({
-                        hasValue: required,
-                    })}
+                    validate={validators(
+                        {
+                            hasValue: required,
+                            unique,
+                        },
+                        uniqueValidator
+                    )}
                 />
             )
         case 'EMAIL':
@@ -153,10 +112,14 @@ const Attribute = ({ attribute, value }) => {
                     name={name}
                     label={label}
                     initialValue={value}
-                    validate={validators({
-                        hasValue: required,
-                        email: true,
-                    })}
+                    validate={validators(
+                        {
+                            hasValue: required,
+                            email: true,
+                            unique,
+                        },
+                        uniqueValidator
+                    )}
                 />
             )
         case 'NUMBER':
@@ -169,10 +132,14 @@ const Attribute = ({ attribute, value }) => {
                     name={name}
                     label={label}
                     initialValue={value}
-                    validate={validators({
-                        hasValue: required,
-                        number: true,
-                    })}
+                    validate={validators(
+                        {
+                            hasValue: required,
+                            number: true,
+                            unique,
+                        },
+                        uniqueValidator
+                    )}
                 />
             )
         case 'INTEGER':
@@ -182,10 +149,14 @@ const Attribute = ({ attribute, value }) => {
                     name={name}
                     label={label}
                     initialValue={value}
-                    validate={validators({
-                        hasValue: required,
-                        integer: true,
-                    })}
+                    validate={validators(
+                        {
+                            hasValue: required,
+                            integer: true,
+                            unique,
+                        },
+                        uniqueValidator
+                    )}
                 />
             )
         case 'INTEGER_POSITIVE':
@@ -195,10 +166,14 @@ const Attribute = ({ attribute, value }) => {
                     name={name}
                     label={label}
                     initialValue={value}
-                    validate={validators({
-                        hasValue: required,
-                        positiveInteger: true,
-                    })}
+                    validate={validators(
+                        {
+                            hasValue: required,
+                            positiveInteger: true,
+                            unique,
+                        },
+                        uniqueValidator
+                    )}
                 />
             )
         case 'INTEGER_NEGATIVE':
@@ -208,10 +183,14 @@ const Attribute = ({ attribute, value }) => {
                     name={name}
                     label={label}
                     initialValue={value}
-                    validate={validators({
-                        hasValue: required,
-                        negativeInteger: true,
-                    })}
+                    validate={validators(
+                        {
+                            hasValue: required,
+                            negativeInteger: true,
+                            unique,
+                        },
+                        uniqueValidator
+                    )}
                 />
             )
         case 'DATE':
@@ -221,9 +200,13 @@ const Attribute = ({ attribute, value }) => {
                     name={name}
                     label={label}
                     initialValue={value}
-                    validate={validators({
-                        hasValue: required,
-                    })}
+                    validate={validators(
+                        {
+                            hasValue: required,
+                            unique,
+                        },
+                        uniqueValidator
+                    )}
                 />
             )
         case 'BOOLEAN':
@@ -260,9 +243,13 @@ const Attribute = ({ attribute, value }) => {
                     name={name}
                     label={label}
                     initialValue={value}
-                    validate={validators({
-                        hasValue: required,
-                    })}
+                    validate={validators(
+                        {
+                            hasValue: required,
+                            unique,
+                        },
+                        uniqueValidator
+                    )}
                 />
             )
     }
@@ -270,35 +257,11 @@ const Attribute = ({ attribute, value }) => {
 
 Attribute.propTypes = {
     attribute: AttributePropType.isRequired,
+    entityType: PropTypes.string.isRequired,
+    entity: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+    }),
     value: PropTypes.any,
 }
 
-// TODO: unique validators (see `getGenericUniquenessError`)
-const Attributes = React.memo(({ attributes, attributeValues }) => {
-    const values = attributeValues?.reduce((values, attributeValue) => {
-        values.set(attributeValue.attribute.id, attributeValue.value)
-        return values
-    }, new Map())
-
-    return attributes.map(attribute => (
-        <Attribute
-            key={attribute.id}
-            attribute={attribute}
-            value={values?.get(attribute.id)}
-        />
-    ))
-})
-
-Attributes.propTypes = {
-    attributes: PropTypes.arrayOf(AttributePropType.isRequired).isRequired,
-    attributeValues: PropTypes.arrayOf(
-        PropTypes.shape({
-            attribute: PropTypes.shape({
-                id: PropTypes.string.isRequired,
-            }).isRequired,
-            value: PropTypes.any.isRequired,
-        }).isRequired
-    ),
-}
-
-export default Attributes
+export default Attribute

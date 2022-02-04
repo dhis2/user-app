@@ -143,6 +143,8 @@ const GroupForm = ({ submitButtonLabel, group }) => {
                             <Attributes
                                 attributes={attributes}
                                 attributeValues={group?.attributeValues}
+                                entity={group}
+                                entityType="userGroups"
                             />
                         </FormSection>
                     )}

@@ -182,6 +182,8 @@ const UserForm = ({
                             <Attributes
                                 attributes={attributes}
                                 attributeValues={user?.attributeValues}
+                                entity={user}
+                                entityType="users"
                             />
                         </FormSection>
                     )}

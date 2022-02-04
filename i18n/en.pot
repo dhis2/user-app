@@ -5,20 +5,26 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-02-04T12:59:31.564Z\n"
-"PO-Revision-Date: 2022-02-04T12:59:31.564Z\n"
-
-msgid "Value should be a positive integer"
-msgstr "Value should be a positive integer"
-
-msgid "Value should be a negative integer"
-msgstr "Value should be a negative integer"
+"POT-Creation-Date: 2022-02-04T17:39:47.422Z\n"
+"PO-Revision-Date: 2022-02-04T17:39:47.422Z\n"
 
 msgid "Yes"
 msgstr "Yes"
 
 msgid "No"
 msgstr "No"
+
+msgid "Attribute value needs to be unique, value already taken."
+msgstr "Attribute value needs to be unique, value already taken."
+
+msgid "There was a problem whilst checking the availability of this attribute value"
+msgstr "There was a problem whilst checking the availability of this attribute value"
+
+msgid "Value should be a positive integer"
+msgstr "Value should be a positive integer"
+
+msgid "Value should be a negative integer"
+msgstr "Value should be a negative integer"
 
 msgid "Edit user"
 msgstr "Edit user"

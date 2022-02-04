@@ -1,7 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
-import memoizeOne from 'memoize-one'
 import pDebounce from 'p-debounce'
-import { useCallback } from 'react'
+import { useValidator } from '../../hooks/useValidator'
 
 const DEBOUNCE_DELAY_MS = 350
 
@@ -39,9 +38,7 @@ export const useDebouncedUniqueGroupNameValidator = ({
             )
         }
     }
-    // Memoize validator as react final form reruns all validators when any field changes
-    // See https://github.com/final-form/react-final-form/issues/292
-    return useCallback(memoizeOne(validator), [])
+    return useValidator(validator)
 }
 
 export const useDebouncedUniqueGroupCodeValidator = ({
@@ -78,7 +75,5 @@ export const useDebouncedUniqueGroupCodeValidator = ({
             )
         }
     }
-    // Memoize validator as react final form reruns all validators when any field changes
-    // See https://github.com/final-form/react-final-form/issues/292
-    return useCallback(memoizeOne(validator), [])
+    return useValidator(validator)
 }

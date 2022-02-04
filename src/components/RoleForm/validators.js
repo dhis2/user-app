@@ -1,7 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
-import memoizeOne from 'memoize-one'
 import pDebounce from 'p-debounce'
-import { useCallback } from 'react'
+import { useValidator } from '../../hooks/useValidator'
 
 export const useDebouncedUniqueRoleNameValidator = ({
     engine,
@@ -19,7 +18,6 @@ export const useDebouncedUniqueRoleNameValidator = ({
                 },
             },
         })
-        console.log({ roleName, roles })
         return roles[0]
     }, 350)
     const validator = async roleName => {
@@ -38,7 +36,5 @@ export const useDebouncedUniqueRoleNameValidator = ({
             )
         }
     }
-    // Memoize validator as react final form reruns all validators when any field changes
-    // See https://github.com/final-form/react-final-form/issues/292
-    return useCallback(memoizeOne(validator), [])
+    return useValidator(validator)
 }

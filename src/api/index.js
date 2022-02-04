@@ -1,4 +1,4 @@
-import { getQueryFields, getAttributesWithValueAndId } from './utils'
+import { getQueryFields } from './utils'
 
 const CURRENT_USER_ORG_UNITS_FIELDS = {
     fields: [
@@ -77,47 +77,6 @@ class Api {
                 paging: false,
             })
             .then(resp => resp.attributes)
-    }
-
-    isAttributeUnique({ entityType, modelId, attributeId, value }) {
-        return (
-            this.d2.models[entityType]
-                // All users/userGroups but current
-                .filter()
-                .on('id')
-                .notEqual(modelId)
-                // Attribute id being validated
-                // NB: this only means we are filtering users that have ANY value
-                // on the current attributeId
-                .filter()
-                .on('attributeValues.attribute.id')
-                .equals(attributeId)
-                // Value on form
-                .filter()
-                .on('attributeValues.value')
-                .equals(value)
-                .list({
-                    paging: false,
-                    fields: ['id', 'attributeValues[value, attribute[id]]'],
-                })
-                .then(userCollection => {
-                    // If no users are found at this point, the attribute value is definitely unique
-                    if (userCollection.size === 0) {
-                        return true
-                    }
-
-                    // If users are returned, this can still include records with the SAME value
-                    // on ANOTHER attribute. So we have to filter on the current value and attributeId
-                    const attributesWithValueAndId =
-                        getAttributesWithValueAndId(
-                            userCollection,
-                            value,
-                            attributeId
-                        )
-
-                    return attributesWithValueAndId.length === 0
-                })
-        )
     }
 
     /**************************
