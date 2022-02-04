@@ -5,15 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-02-03T17:54:43.385Z\n"
-"PO-Revision-Date: 2022-02-03T17:54:43.385Z\n"
-
-msgid ""
-"Could not reset user password. Make sure you have the appropriate "
-"permissions."
-msgstr ""
-"Could not reset user password. Make sure you have the appropriate "
-"permissions."
+"POT-Creation-Date: 2022-02-04T12:59:31.564Z\n"
+"PO-Revision-Date: 2022-02-04T12:59:31.564Z\n"
 
 msgid "Value should be a positive integer"
 msgstr "Value should be a positive integer"
@@ -108,15 +101,6 @@ msgstr "Code is already taken"
 
 msgid "There was a problem whilst checking the availability of this group code"
 msgstr "There was a problem whilst checking the availability of this group code"
-
-msgid "Page not found."
-msgstr "Page not found."
-
-msgid "No match for"
-msgstr "No match for"
-
-msgid "Go back home"
-msgstr "Go back home"
 
 msgid "Only show selected metadata authorities"
 msgstr "Only show selected metadata authorities"
@@ -585,6 +569,21 @@ msgstr "Passwords do not match"
 msgid "Please provide a value"
 msgstr "Please provide a value"
 
+msgid "Create, modify, view and delete Users"
+msgstr "Create, modify, view and delete Users"
+
+msgid "User role"
+msgstr "User role"
+
+msgid "Create, modify, view and delete User Roles"
+msgstr "Create, modify, view and delete User Roles"
+
+msgid "User group"
+msgstr "User group"
+
+msgid "Create, modify, view and delete User Groups"
+msgstr "Create, modify, view and delete User Groups"
+
 msgid "Display name"
 msgstr "Display name"
 
@@ -639,20 +638,56 @@ msgstr "Members"
 msgid "Number of users"
 msgstr "Number of users"
 
-msgid "Create, modify, view and delete Users"
-msgstr "Create, modify, view and delete Users"
+msgid "New group"
+msgstr "New group"
 
-msgid "User role"
-msgstr "User role"
+msgid "Create group"
+msgstr "Create group"
 
-msgid "Create, modify, view and delete User Roles"
-msgstr "Create, modify, view and delete User Roles"
+msgid "New role"
+msgstr "New role"
 
-msgid "User group"
-msgstr "User group"
+msgid "Create role"
+msgstr "Create role"
 
-msgid "Create, modify, view and delete User Groups"
-msgstr "Create, modify, view and delete User Groups"
+msgid "Error fetching interface language"
+msgstr "Error fetching interface language"
+
+msgid "There was an error fetching the default interface language."
+msgstr "There was an error fetching the default interface language."
+
+msgid "New user"
+msgstr "New user"
+
+msgid "Create user"
+msgstr "Create user"
+
+msgid "Error fetching group"
+msgstr "Error fetching group"
+
+msgid "There was an error fetching this group."
+msgstr "There was an error fetching this group."
+
+msgid "Edit group"
+msgstr "Edit group"
+
+msgid "Save changes"
+msgstr "Save changes"
+
+msgid "Error fetching role"
+msgstr "Error fetching role"
+
+msgid "There was an error fetching this role."
+msgstr "There was an error fetching this role."
+
+msgid "Edit role"
+msgstr "Edit role"
+
+msgid "Error fetching user"
+msgstr "Error fetching user"
+
+msgid "There was an error fetching this user."
+msgstr "There was an error fetching this user."
 
 msgid "Show details"
 msgstr "Show details"
@@ -749,6 +784,15 @@ msgstr "List"
 
 msgid "Add"
 msgstr "Add"
+
+msgid "Page not found."
+msgstr "Page not found."
+
+msgid "No match for"
+msgstr "No match for"
+
+msgid "Go back home"
+msgstr "Go back home"
 
 msgid "There was an error deleting the user role: {{- error}}"
 msgstr "There was an error deleting the user role: {{- error}}"
@@ -912,57 +956,6 @@ msgstr "Account disabled?"
 
 msgid "Disabled"
 msgstr "Disabled"
-
-msgid "New group"
-msgstr "New group"
-
-msgid "Create group"
-msgstr "Create group"
-
-msgid "New role"
-msgstr "New role"
-
-msgid "Create role"
-msgstr "Create role"
-
-msgid "Error fetching interface language"
-msgstr "Error fetching interface language"
-
-msgid "There was an error fetching the default interface language."
-msgstr "There was an error fetching the default interface language."
-
-msgid "New user"
-msgstr "New user"
-
-msgid "Create user"
-msgstr "Create user"
-
-msgid "Error fetching group"
-msgstr "Error fetching group"
-
-msgid "There was an error fetching this group."
-msgstr "There was an error fetching this group."
-
-msgid "Edit group"
-msgstr "Edit group"
-
-msgid "Save changes"
-msgstr "Save changes"
-
-msgid "Error fetching role"
-msgstr "Error fetching role"
-
-msgid "There was an error fetching this role."
-msgstr "There was an error fetching this role."
-
-msgid "Edit role"
-msgstr "Edit role"
-
-msgid "Error fetching user"
-msgstr "Error fetching user"
-
-msgid "There was an error fetching this user."
-msgstr "There was an error fetching this user."
 
 msgid "Something went wrong when processing your request."
 msgstr "Something went wrong when processing your request."

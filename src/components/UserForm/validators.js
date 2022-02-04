@@ -1,6 +1,6 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { memoize } from 'lodash-es'
+import memoizeOne from 'memoize-one'
 import pDebounce from 'p-debounce'
 import { useCallback } from 'react'
 
@@ -40,7 +40,7 @@ export const useDebouncedUniqueUsernameValidator = ({
     }
     // Memoize validator as react final form reruns all validators when any field changes
     // See https://github.com/final-form/react-final-form/issues/292
-    return useCallback(memoize(validator), [])
+    return useCallback(memoizeOne(validator), [])
 }
 
 export const createRepeatPasswordValidator = password => repeatPassword => {
