@@ -209,8 +209,11 @@ const Attribute = ({ attribute, value, entity, entityType }) => {
                     )}
                 />
             )
-        case 'BOOLEAN':
+        case 'BOOLEAN': {
             // SingleSelectField throws an error if its value does not correspond to an option
+            const initialValue = ['true', 'false'].includes(value)
+                ? value
+                : undefined
             return (
                 <SingleSelectField
                     required={required}
@@ -221,14 +224,13 @@ const Attribute = ({ attribute, value, entity, entityType }) => {
                         { label: i18n.t('Yes'), value: 'true' },
                         { label: i18n.t('No'), value: 'false' },
                     ]}
-                    initialValue={
-                        ['true', 'false'].includes(value) ? value : undefined
-                    }
+                    initialValue={initialValue}
                     validate={validators({
                         hasValue: required,
                     })}
                 />
             )
+        }
         case 'TRUE_ONLY':
             return (
                 <CheckboxField name={name} label={label} initialValue={value} />
