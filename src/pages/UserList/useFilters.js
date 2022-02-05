@@ -1,5 +1,9 @@
-import { useState } from 'react'
-import { withDefault, StringParam, BooleanParam } from 'use-query-params'
+import {
+    withDefault,
+    StringParam,
+    BooleanParam,
+    JsonParam,
+} from 'use-query-params'
 import {
     useQueryParam,
     usePagerQueryParams,
@@ -13,7 +17,10 @@ export const useFilters = () => {
         'query',
         withDefault(StringParam, '')
     )
-    const [organisationUnits, setOrganisationUnits] = useState([])
+    const [organisationUnits, setOrganisationUnits] = useQueryParam(
+        'organisationUnits',
+        withDefault(JsonParam, [])
+    )
     const [inactiveMonths, setInactiveMonths] = useQueryParam(
         'inactiveMonths',
         StringParam

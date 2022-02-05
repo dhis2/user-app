@@ -97,7 +97,7 @@ const UserForm = ({
                 }
             }
 
-            history.push('/users')
+            history.goBack()
             if (user && user.id === currentUser.id) {
                 refreshCurrentUser()
             }
@@ -134,7 +134,6 @@ const UserForm = ({
             error={error}
             submitButtonLabel={submitButtonLabel}
             onSubmit={handleSubmit}
-            onCancel={() => history.push('/users')}
         >
             {({ values, submitError }) => (
                 <>

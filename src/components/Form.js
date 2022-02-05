@@ -19,6 +19,7 @@ import {
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useState, useCallback, useMemo } from 'react'
+import { useHistory } from 'react-router-dom'
 import styles from './Form.module.css'
 import SearchableOrgUnitTree from './SearchableOrgUnitTree'
 
@@ -280,14 +281,10 @@ TransferField.propTypes = {
     required: PropTypes.bool,
 }
 
-const Form = ({
-    loading,
-    error,
-    children,
-    submitButtonLabel,
-    onSubmit,
-    onCancel,
-}) => {
+const Form = ({ loading, error, children, submitButtonLabel, onSubmit }) => {
+    const history = useHistory()
+    const handleCancel = () => history.goBack()
+
     if (loading) {
         return (
             <CenteredContent>
@@ -333,7 +330,7 @@ const Form = ({
                         >
                             {submitButtonLabel}
                         </Button>
-                        <Button onClick={onCancel} disabled={submitting}>
+                        <Button onClick={handleCancel} disabled={submitting}>
                             {i18n.t('Cancel without saving')}
                         </Button>
                     </ButtonStrip>
@@ -346,7 +343,6 @@ const Form = ({
 Form.propTypes = {
     children: PropTypes.func.isRequired,
     submitButtonLabel: PropTypes.string.isRequired,
-    onCancel: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
     error: PropTypes.instanceOf(Error),
     loading: PropTypes.bool,

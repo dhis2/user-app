@@ -92,7 +92,7 @@ const RoleForm = ({ submitButtonLabel, role }) => {
                 })
             }
 
-            history.push('/user-roles')
+            history.goBack()
             if (role && currentUser.userRoleIds.includes(role.id)) {
                 refreshCurrentUser()
             }
@@ -117,7 +117,6 @@ const RoleForm = ({ submitButtonLabel, role }) => {
             error={error}
             submitButtonLabel={submitButtonLabel}
             onSubmit={handleSubmit}
-            onCancel={() => history.push('/user-roles')}
         >
             {({ submitError }) => (
                 <>

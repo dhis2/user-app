@@ -50,7 +50,7 @@ const GroupForm = ({ submitButtonLabel, group }) => {
                 })
             }
 
-            history.push('/user-groups')
+            history.goBack()
             if (group && currentUser.userGroupIds.includes(group.id)) {
                 refreshCurrentUser()
             }
@@ -75,7 +75,6 @@ const GroupForm = ({ submitButtonLabel, group }) => {
             error={error}
             submitButtonLabel={submitButtonLabel}
             onSubmit={handleSubmit}
-            onCancel={() => history.push('/user-groups')}
         >
             {({ submitError }) => (
                 <>
