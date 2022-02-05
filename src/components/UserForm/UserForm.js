@@ -4,8 +4,8 @@ import { NoticeBox, FinalForm } from '@dhis2/ui'
 import { keyBy } from 'lodash-es'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
+import { useCurrentUser } from '../../hooks/useCurrentUser'
 import Attributes from '../Attributes'
 import Form, { FormSection } from '../Form'
 import AnalyticsDimensionsRestrictionsSection from './AnalyticsDimensionRestrictionsSection'
@@ -41,7 +41,7 @@ const UserForm = ({
         dimensionConstraintOptions,
         attributes,
     } = useFormData()
-    const currentUser = useSelector(({ currentUser }) => currentUser)
+    const { currentUser, refreshCurrentUser } = useCurrentUser()
     const handleSubmit = async values => {
         const userData = getUserData({
             values,
@@ -99,7 +99,7 @@ const UserForm = ({
 
             history.push('/users')
             if (user && user.id === currentUser.id) {
-                window.location.reload()
+                refreshCurrentUser()
             }
         } catch (error) {
             return (

@@ -10,6 +10,7 @@ import {
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+import { useCurrentUser } from '../../hooks/useCurrentUser'
 import Attributes from '../Attributes'
 import Form, { FormSection, TextField, TransferField } from '../Form'
 import { getGroupData } from './getGroupData'
@@ -30,6 +31,7 @@ const GroupForm = ({ submitButtonLabel, group }) => {
     const debouncedUniqueGroupCodeValidator =
         useDebouncedUniqueGroupCodeValidator({ engine, groupCode: group?.code })
     const { loading, error, userGroupOptions, attributes } = useFormData()
+    const { currentUser, refreshCurrentUser } = useCurrentUser()
     const handleSubmit = async values => {
         const groupData = getGroupData({ values, group, attributes })
 
@@ -49,6 +51,9 @@ const GroupForm = ({ submitButtonLabel, group }) => {
             }
 
             history.push('/user-groups')
+            if (group && currentUser.userGroupIds.includes(group.id)) {
+                refreshCurrentUser()
+            }
         } catch (error) {
             return (
                 error?.details?.response?.errorReports?.reduce(

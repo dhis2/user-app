@@ -5,6 +5,7 @@ import { flatMap } from 'lodash-es'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+import { useCurrentUser } from '../../hooks/useCurrentUser'
 import Form, { FormSection, TextField, TransferField } from '../Form'
 import { getRoleData } from './getRoleData'
 import MetadataAuthoritiesTableField from './MetadataAuthoritiesTableField'
@@ -72,6 +73,7 @@ const RoleForm = ({ submitButtonLabel, role }) => {
             importExportAuthorityOptions,
             systemAuthorityOptions,
         })
+    const { currentUser, refreshCurrentUser } = useCurrentUser()
     const handleSubmit = async values => {
         const roleData = getRoleData({ values, role })
 
@@ -91,6 +93,9 @@ const RoleForm = ({ submitButtonLabel, role }) => {
             }
 
             history.push('/user-roles')
+            if (role && currentUser.userRoleIds.includes(role.id)) {
+                refreshCurrentUser()
+            }
         } catch (error) {
             return (
                 error?.details?.response?.errorReports?.reduce(
