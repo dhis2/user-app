@@ -19,6 +19,7 @@ const BasicInformationSection = React.memo(
         interfaceLanguageOptions,
         userDatabaseLanguage,
         databaseLanguageOptions,
+        currentUserId,
     }) => {
         const debouncedUniqueUsernameValidator =
             useDebouncedUniqueUsernameValidator({
@@ -97,6 +98,7 @@ const BasicInformationSection = React.memo(
                     name="disabled"
                     label={i18n.t('Disable this user account')}
                     initialValue={user?.userCredentials.disabled}
+                    disabled={user && user.id === currentUserId}
                 />
             </FormSection>
         )
@@ -104,6 +106,7 @@ const BasicInformationSection = React.memo(
 )
 
 BasicInformationSection.propTypes = {
+    currentUserId: PropTypes.string.isRequired,
     databaseLanguageOptions: PropTypes.array.isRequired,
     interfaceLanguageOptions: PropTypes.array.isRequired,
     userInterfaceLanguage: PropTypes.string.isRequired,

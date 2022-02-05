@@ -4,6 +4,7 @@ import { NoticeBox, FinalForm } from '@dhis2/ui'
 import { keyBy } from 'lodash-es'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import Attributes from '../Attributes'
 import Form, { FormSection } from '../Form'
@@ -40,8 +41,8 @@ const UserForm = ({
         dimensionConstraintOptions,
         attributes,
     } = useFormData()
+    const currentUser = useSelector(({ currentUser }) => currentUser)
     const handleSubmit = async values => {
-        // TODO: Reload current user if current user's ID matches userId prop
         const userData = getUserData({
             values,
             dimensionConstraintsById: keyBy(dimensionConstraints, 'id'),
@@ -97,6 +98,9 @@ const UserForm = ({
             }
 
             history.push('/users')
+            if (user && user.id === currentUser.id) {
+                window.location.reload()
+            }
         } catch (error) {
             return (
                 error?.details?.response?.errorReports?.reduce(
@@ -158,6 +162,7 @@ const UserForm = ({
                         interfaceLanguageOptions={interfaceLanguageOptions}
                         userDatabaseLanguage={userDatabaseLanguage}
                         databaseLanguageOptions={databaseLanguageOptions}
+                        currentUserId={currentUser.id}
                     />
                     <SecuritySection
                         user={user}
@@ -209,6 +214,7 @@ UserForm.propTypes = {
             .isRequired,
         dataViewOrganisationUnits: OrganisationUnitsPropType.isRequired,
         firstName: PropTypes.string.isRequired,
+        id: PropTypes.string.isRequired,
         organisationUnits: OrganisationUnitsPropType.isRequired,
         surname: PropTypes.string.isRequired,
         teiSearchOrganisationUnits: OrganisationUnitsPropType.isRequired,
