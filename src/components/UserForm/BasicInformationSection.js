@@ -11,6 +11,9 @@ import {
 } from '../Form'
 import { useDebouncedUniqueUsernameValidator } from './validators'
 
+const hasOption = (options, value) =>
+    !!options.find(option => option.value === value)
+
 const BasicInformationSection = React.memo(
     ({
         user,
@@ -25,6 +28,17 @@ const BasicInformationSection = React.memo(
             useDebouncedUniqueUsernameValidator({
                 username: user?.userCredentials.username,
             })
+        const userInterfaceLanguageInitialValue = hasOption(
+            interfaceLanguageOptions,
+            userInterfaceLanguage
+        )
+            ? userInterfaceLanguage
+            : undefined
+        const userDatabaseLanguageInitialValue = hasOption(
+            databaseLanguageOptions
+        )
+            ? userDatabaseLanguage
+            : undefined
 
         return (
             <FormSection title={i18n.t('Basic information')}>
@@ -72,7 +86,7 @@ const BasicInformationSection = React.memo(
                     required
                     name="interfaceLanguage"
                     label={i18n.t('Interface language')}
-                    initialValue={userInterfaceLanguage}
+                    initialValue={userInterfaceLanguageInitialValue}
                     filterable
                     options={interfaceLanguageOptions}
                     validate={hasValue}
@@ -81,7 +95,9 @@ const BasicInformationSection = React.memo(
                     required
                     name="databaseLanguage"
                     label={i18n.t('Database language')}
-                    initialValue={userDatabaseLanguage || 'USE_DB_LOCALE'}
+                    initialValue={
+                        userDatabaseLanguageInitialValue || 'USE_DB_LOCALE'
+                    }
                     filterable
                     options={[
                         {
