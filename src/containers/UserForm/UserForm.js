@@ -51,6 +51,7 @@ class UserForm extends Component {
         }
         this.trashableAttributesPromise = null
         this.trashableLocalePromise = null
+        this.trashableFilledOrganisationUnitLevelsPromise = null
         this.inviteFields = CONFIG.getInviteFields()
         this.baseFields = CONFIG.getBaseFields()
         this.additionalFields = CONFIG.getAdditionalFields()
@@ -64,10 +65,19 @@ class UserForm extends Component {
             api.getSelectedAndAvailableLocales(username)
         )
         this.trashableAttributesPromise = makeTrashable(api.getAttributes(USER))
+        this.trashableFilledOrganisationUnitLevelsPromise = makeTrashable(
+            api.getFilledOrganisationUnitLevels()
+        )
 
         try {
             const locales = await this.trashableLocalePromise
             const attributes = await this.trashableAttributesPromise
+            const filledOrganisationUnitLevels = (
+                await this.trashableFilledOrganisationUnitLevelsPromise
+            ).map(({ displayName, level }) => ({
+                label: displayName,
+                id: level,
+            }))
             const attributeFields = generateAttributeFields(
                 attributes,
                 user.attributeValues
@@ -76,7 +86,11 @@ class UserForm extends Component {
                 attributeFields,
                 this.props.asyncBlurFields
             )
-            this.setState({ locales, attributeFields })
+            this.setState({
+                locales,
+                attributeFields,
+                filledOrganisationUnitLevels,
+            })
             initialize(
                 userFormInitialValuesSelector(user, locales, attributeFields)
             )
@@ -96,6 +110,7 @@ class UserForm extends Component {
     componentWillUnmount() {
         this.trashableLocalePromise.trash()
         this.trashableAttributesPromise.trash()
+        this.trashableFilledOrganisationUnitLevelsPromise.trash()
     }
 
     toggleShowMore = () => {

@@ -171,6 +171,10 @@ class Api {
         )
     }
 
+    getFilledOrganisationUnitLevels() {
+        return this.d2Api.get('filledOrganisationUnitLevels')
+    }
+
     getAttributes(entityType) {
         return this.d2Api
             .get('attributes', {
