@@ -32,6 +32,9 @@ const query = {
             paging: false,
         },
     },
+    filledOrganisationUnitLevels: {
+        resource: 'filledOrganisationUnitLevels',
+    },
     attributes: userAttributesQuery,
 }
 
@@ -65,6 +68,7 @@ export const useFormData = () => {
             userGroups: { userGroups },
             dimensionConstraints: { dimensions: dimensionConstraints },
             attributes: { attributes },
+            filledOrganisationUnitLevels,
         } = data
 
         return {
@@ -74,6 +78,7 @@ export const useFormData = () => {
             userGroupOptions: makeOptions(userGroups),
             dimensionConstraints,
             dimensionConstraintOptions: makeOptions(dimensionConstraints),
+            filledOrganisationUnitLevels,
             attributes,
         }
     }, [data])

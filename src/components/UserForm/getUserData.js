@@ -22,6 +22,7 @@ export const getUserData = ({
         organisationUnits,
         dataViewOrganisationUnits,
         teiSearchOrganisationUnits,
+        dataViewMaxOrganisationUnitLevel,
         userGroups,
         username,
         changePassword,
@@ -61,6 +62,9 @@ export const getUserData = ({
         organisationUnits: wrapIds(organisationUnits),
         dataViewOrganisationUnits: wrapIds(dataViewOrganisationUnits),
         teiSearchOrganisationUnits: wrapIds(teiSearchOrganisationUnits),
+        dataViewMaxOrganisationUnitLevel:
+            dataViewMaxOrganisationUnitLevel ??
+            Number(dataViewMaxOrganisationUnitLevel),
         userGroups: wrapIds(userGroups),
 
         attributeValues: getAttributeValues({ attributes, values }),

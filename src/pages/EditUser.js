@@ -19,6 +19,7 @@ const userQuery = {
                 'organisationUnits[id,displayName,path]',
                 'dataViewOrganisationUnits[id,displayName,path]',
                 'teiSearchOrganisationUnits[id,displayName,path]',
+                'dataViewMaxOrganisationUnitLevel',
                 'userCredentials[id,username,accountExpiry,lastLogin,externalAuth,userRoles[id,displayName],cogsDimensionConstraints[id,displayName,dimensionType],catDimensionConstraints[id,displayName,dimensionType],openId,ldapId,disabled]',
                 'whatsApp',
                 'facebookMessenger',

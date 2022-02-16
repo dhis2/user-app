@@ -39,6 +39,7 @@ const UserForm = ({
         userGroupOptions,
         dimensionConstraints,
         dimensionConstraintOptions,
+        filledOrganisationUnitLevels,
         attributes,
     } = useFormData()
     const { currentUser, refreshCurrentUser } = useCurrentUser()
@@ -171,7 +172,12 @@ const UserForm = ({
                         password={values.password}
                     />
                     <ContactDetailsSection user={user} />
-                    <OrganisationUnitsSection user={user} />
+                    <OrganisationUnitsSection
+                        user={user}
+                        filledOrganisationUnitLevels={
+                            filledOrganisationUnitLevels
+                        }
+                    />
                     <RolesSection
                         user={user}
                         userGroupOptions={userGroupOptions}
@@ -247,6 +253,7 @@ UserForm.propTypes = {
                 id: PropTypes.string.isRequired,
             }).isRequired
         ).isRequired,
+        dataViewMaxOrganisationUnitLevel: PropTypes.number,
         email: PropTypes.string,
         facebookMessenger: PropTypes.string,
         phoneNumber: PropTypes.string,
