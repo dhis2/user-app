@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import DetailSummary from '../components/DetailSummary'
-import { getUserRoleDetails } from '../constants/detailFieldConfigs'
 import { USER_ROLE } from '../constants/entityTypes'
+import { getUserRoleDetails } from './detailFieldConfigs'
 
 /** Renders a DetailSummary for a UserRole instance
  * @class

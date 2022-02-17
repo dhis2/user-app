@@ -1,20 +1,24 @@
 import i18n from '@dhis2/d2-i18n'
 import React from 'react'
-import FormLoader from '../components/FormLoader'
-import PageNotFound from '../components/PageNotFound'
 import GroupDetails from '../containers/GroupDetails'
-import GroupList from '../containers/GroupList'
-import Home from '../containers/Home'
 import RoleDetails from '../containers/RoleDetails'
-import RoleList from '../containers/RoleList'
-import UserList from '../containers/UserList'
 import UserProfile from '../containers/UserProfile'
+import CreateGroup from '../pages/CreateGroup'
+import CreateRole from '../pages/CreateRole'
+import CreateUser from '../pages/CreateUser'
+import EditGroup from '../pages/EditGroup'
+import EditRole from '../pages/EditRole'
+import EditUser from '../pages/EditUser'
+import GroupList from '../pages/GroupList'
+import Home from '../pages/Home'
+import PageNotFound from '../pages/PageNotFound'
+import RoleList from '../pages/RoleList'
+import UserList from '../pages/UserList'
 import { USER, USER_ROLE, USER_GROUP } from './entityTypes'
 
 const getUserSection = () => ({
     key: 'user_section',
     label: i18n.t('User'),
-    icon: 'person',
     path: '/users',
     description: i18n.t('Create, modify, view and delete Users'),
     component: UserList,
@@ -23,7 +27,6 @@ const getUserSection = () => ({
 const getUserRoleSection = () => ({
     key: 'user_role_section',
     label: i18n.t('User role'),
-    icon: 'folder_shared',
     path: '/user-roles',
     description: i18n.t('Create, modify, view and delete User Roles'),
     component: RoleList,
@@ -32,7 +35,6 @@ const getUserRoleSection = () => ({
 const getUserGroupSection = () => ({
     key: 'user_group_section',
     label: i18n.t('User group'),
-    icon: 'group',
     path: '/user-groups',
     description: i18n.t('Create, modify, view and delete User Groups'),
     component: GroupList,
@@ -45,13 +47,13 @@ const createRouteConfig = () => [
     {
         key: 'user_new_view',
         path: '/users/new',
-        render: props => <FormLoader entityType={USER} {...props} />,
+        render: () => <CreateUser />,
         entityType: USER,
     },
     {
         key: 'user_edit_view',
         path: '/users/edit/:id',
-        render: props => <FormLoader entityType={USER} {...props} />,
+        render: ({ match }) => <EditUser userId={match.params.id} />,
         entityType: USER,
     },
     {
@@ -65,13 +67,13 @@ const createRouteConfig = () => [
     {
         key: 'user_role_new_view',
         path: '/user-roles/new',
-        render: props => <FormLoader entityType={USER_ROLE} {...props} />,
+        render: () => <CreateRole />,
         entityType: USER_ROLE,
     },
     {
         key: 'user_role_edit_view',
         path: '/user-roles/edit/:id',
-        render: props => <FormLoader entityType={USER_ROLE} {...props} />,
+        render: ({ match }) => <EditRole roleId={match.params.id} />,
         entityType: USER_ROLE,
     },
     {
@@ -85,13 +87,13 @@ const createRouteConfig = () => [
     {
         key: 'user_group_new_view',
         path: '/user-groups/new',
-        render: props => <FormLoader entityType={USER_GROUP} {...props} />,
+        render: () => <CreateGroup />,
         entityType: USER_GROUP,
     },
     {
         key: 'user_group_edit_view',
         path: '/user-groups/edit/:id',
-        render: props => <FormLoader entityType={USER_GROUP} {...props} />,
+        render: ({ match }) => <EditGroup groupId={match.params.id} />,
         entityType: USER_GROUP,
     },
     {

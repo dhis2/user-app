@@ -5,30 +5,174 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-10-28T08:38:25.790Z\n"
-"PO-Revision-Date: 2021-10-28T08:38:25.790Z\n"
+"POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
+"PO-Revision-Date: 2022-02-16T17:16:47.395Z\n"
+
+msgid "Yes"
+msgstr "Yes"
+
+msgid "No"
+msgstr "No"
+
+msgid "Attribute value needs to be unique, value already taken."
+msgstr "Attribute value needs to be unique, value already taken."
+
+msgid "There was a problem whilst checking the availability of this attribute value"
+msgstr "There was a problem whilst checking the availability of this attribute value"
+
+msgid "Value should be a positive integer"
+msgstr "Value should be a positive integer"
+
+msgid "Value should be a negative integer"
+msgstr "Value should be a negative integer"
+
+msgid "Edit user"
+msgstr "Edit user"
+
+msgid "Edit user group"
+msgstr "Edit user group"
+
+msgid "Edit user role"
+msgstr "Edit user role"
+
+msgid "Send message"
+msgstr "Send message"
+
+msgid "Filter options"
+msgstr "Filter options"
+
+msgid "Error fetching form"
+msgstr "Error fetching form"
+
+msgid "There was an error fetching this form."
+msgstr "There was an error fetching this form."
+
+msgid "Cancel without saving"
+msgstr "Cancel without saving"
+
+msgid "Error updating group"
+msgstr "Error updating group"
+
+msgid "Error creating group"
+msgstr "Error creating group"
+
+msgid "Basic information"
+msgstr "Basic information"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Code"
+msgstr "Code"
+
+msgid "Used in analytics reports."
+msgstr "Used in analytics reports."
+
+msgid "User management"
+msgstr "User management"
+
+msgid "Add or remove users from this group."
+msgstr "Add or remove users from this group."
 
 msgid ""
-"Could not reset user password. Make sure you have the appropriate "
-"permissions."
+"To add a user to this group, go to the User section and edit the user group "
+"settings for a specific user."
 msgstr ""
-"Could not reset user password. Make sure you have the appropriate "
-"permissions."
+"To add a user to this group, go to the User section and edit the user group "
+"settings for a specific user."
 
-msgid "Use database locale / no translation"
-msgstr "Use database locale / no translation"
+msgid "User group management"
+msgstr "User group management"
 
-msgid "Search"
-msgstr "Search"
+msgid "This group can manage other user groups. Add managed user groups below."
+msgstr "This group can manage other user groups. Add managed user groups below."
 
-msgid "Selected authorities only"
-msgstr "Selected authorities only"
+msgid "Available user groups"
+msgstr "Available user groups"
 
-msgid "There was a problem retrieving the available authorities."
-msgstr "There was a problem retrieving the available authorities."
+msgid "Managed user groups"
+msgstr "Managed user groups"
 
-msgid "No matches found"
-msgstr "No matches found"
+msgid "Attributes"
+msgstr "Attributes"
+
+msgid "Name is already taken"
+msgstr "Name is already taken"
+
+msgid "There was a problem whilst checking the availability of this group name"
+msgstr "There was a problem whilst checking the availability of this group name"
+
+msgid "Code is already taken"
+msgstr "Code is already taken"
+
+msgid "There was a problem whilst checking the availability of this group code"
+msgstr "There was a problem whilst checking the availability of this group code"
+
+msgid "Only show selected metadata authorities"
+msgstr "Only show selected metadata authorities"
+
+msgid "Authority"
+msgstr "Authority"
+
+msgid "Add/Update Public"
+msgstr "Add/Update Public"
+
+msgid "Add/Update Private"
+msgstr "Add/Update Private"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "External access"
+msgstr "External access"
+
+msgid "Error updating role"
+msgstr "Error updating role"
+
+msgid "Error creating role"
+msgstr "Error creating role"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Short, clear description of what this role is for."
+msgstr "Short, clear description of what this role is for."
+
+msgid "Metadata authorities"
+msgstr "Metadata authorities"
+
+msgid "Set what metadata access this role has."
+msgstr "Set what metadata access this role has."
+
+msgid "Other authorities"
+msgstr "Other authorities"
+
+msgid "Manage access to apps, tracker, data import/export and system settings."
+msgstr "Manage access to apps, tracker, data import/export and system settings."
+
+msgid "Available app authorities"
+msgstr "Available app authorities"
+
+msgid "Selected app authorities"
+msgstr "Selected app authorities"
+
+msgid "Available tracker authorities"
+msgstr "Available tracker authorities"
+
+msgid "Selected tracker authorities"
+msgstr "Selected tracker authorities"
+
+msgid "Available import/export authorities"
+msgstr "Available import/export authorities"
+
+msgid "Selected import/export authorities"
+msgstr "Selected import/export authorities"
+
+msgid "Available system authorities"
+msgstr "Available system authorities"
+
+msgid "Selected system authorities"
+msgstr "Selected system authorities"
 
 msgid "All (Full authority)"
 msgstr "All (Full authority)"
@@ -204,65 +348,8 @@ msgstr "Skip data import audit"
 msgid "Visualization"
 msgstr "Visualization"
 
-msgid "Metadata"
-msgstr "Metadata"
-
-msgid "Name"
-msgstr "Name"
-
-msgid "Add/Update Public"
-msgstr "Add/Update Public"
-
-msgid "Add/Update Private"
-msgstr "Add/Update Private"
-
-msgid "Delete"
-msgstr "Delete"
-
-msgid "External access"
-msgstr "External access"
-
-msgid "Apps"
-msgstr "Apps"
-
-msgid "Tracker"
-msgstr "Tracker"
-
-msgid "Import-Export"
-msgstr "Import-Export"
-
-msgid "System"
-msgstr "System"
-
-msgid "Edit user"
-msgstr "Edit user"
-
-msgid "Edit user group"
-msgstr "Edit user group"
-
-msgid "Edit user role"
-msgstr "Edit user role"
-
-msgid "Send message"
-msgstr "Send message"
-
-msgid "There was an error getting the form:"
-msgstr "There was an error getting the form:"
-
-msgid "Update"
-msgstr "Update"
-
-msgid "Create new"
-msgstr "Create new"
-
-msgid "Page not found."
-msgstr "Page not found."
-
-msgid "No match for"
-msgstr "No match for"
-
-msgid "Go back home"
-msgstr "Go back home"
+msgid "There was a problem whilst checking the availability of this role name"
+msgstr "There was a problem whilst checking the availability of this role name"
 
 msgid "Search by name"
 msgstr "Search by name"
@@ -279,8 +366,8 @@ msgstr "Filter available options"
 msgid "Filter selected options"
 msgstr "Filter selected options"
 
-msgid "Enter search term"
-msgstr "Enter search term"
+msgid "Search for an organisation unit"
+msgstr "Search for an organisation unit"
 
 msgid ""
 "Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
@@ -295,6 +382,9 @@ msgstr "There was a problem retreiving your search results"
 msgid "Please enter at least {{ minCharLength }} characters"
 msgstr "Please enter at least {{ minCharLength }} characters"
 
+msgid "No matches found"
+msgstr "No matches found"
+
 msgid "Apply"
 msgstr "Apply"
 
@@ -307,6 +397,202 @@ msgstr "There was an error loading the current user"
 msgid "You do not have authorities to see users, user roles or user groups"
 msgstr "You do not have authorities to see users, user roles or user groups"
 
+msgid "Analytics dimension restrictions"
+msgstr "Analytics dimension restrictions"
+
+msgid "Available restrictions"
+msgstr "Available restrictions"
+
+msgid "Selected restrictions"
+msgstr "Selected restrictions"
+
+msgid "Username"
+msgstr "Username"
+
+msgid "Email address"
+msgstr "Email address"
+
+msgid "First name"
+msgstr "First name"
+
+msgid "Last name"
+msgstr "Last name"
+
+msgid "Interface language"
+msgstr "Interface language"
+
+msgid "Database language"
+msgstr "Database language"
+
+msgid "Use database locale / no translation"
+msgstr "Use database locale / no translation"
+
+msgid "Disable this user account"
+msgstr "Disable this user account"
+
+msgid "Contact details"
+msgstr "Contact details"
+
+msgid "Mobile phone number"
+msgstr "Mobile phone number"
+
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+msgid "Facebook Messenger"
+msgstr "Facebook Messenger"
+
+msgid "Skype"
+msgstr "Skype"
+
+msgid "Telegram"
+msgstr "Telegram"
+
+msgid "Twitter"
+msgstr "Twitter"
+
+msgid "Invite user"
+msgstr "Invite user"
+
+msgid "Create account or email invitation"
+msgstr "Create account or email invitation"
+
+msgid "Create account with user details"
+msgstr "Create account with user details"
+
+msgid "Email invitation to create account"
+msgstr "Email invitation to create account"
+
+msgid "Organisation unit access"
+msgstr "Organisation unit access"
+
+msgid ""
+"Customise the organisation units this user has access to for searching, "
+"capturing and managing data."
+msgstr ""
+"Customise the organisation units this user has access to for searching, "
+"capturing and managing data."
+
+msgid "Organisation unit selections are recursive"
+msgstr "Organisation unit selections are recursive"
+
+msgid "Selecting a unit gives access to all units in its sub-hierarchy."
+msgstr "Selecting a unit gives access to all units in its sub-hierarchy."
+
+msgid "Data capture and maintenance"
+msgstr "Data capture and maintenance"
+
+msgid "The organisation units that this user can enter and edit data for."
+msgstr "The organisation units that this user can enter and edit data for."
+
+msgid "Data output and analysis"
+msgstr "Data output and analysis"
+
+msgid "The organisation units that this user can export and analyse."
+msgstr "The organisation units that this user can export and analyse."
+
+msgid "Search"
+msgstr "Search"
+
+msgid "The organisation that this user can search for and in."
+msgstr "The organisation that this user can search for and in."
+
+msgid "Maximum organisation unit level for data output"
+msgstr "Maximum organisation unit level for data output"
+
+msgid "Roles and groups"
+msgstr "Roles and groups"
+
+msgid "Manage what roles and groups this user is a member of."
+msgstr "Manage what roles and groups this user is a member of."
+
+msgid "Available user roles"
+msgstr "Available user roles"
+
+msgid "User roles this user is assigned"
+msgstr "User roles this user is assigned"
+
+msgid "User groups this user is a member of"
+msgstr "User groups this user is a member of"
+
+msgid "Security"
+msgstr "Security"
+
+msgid "Settings for how this user can log in."
+msgstr "Settings for how this user can log in."
+
+msgid "Change user password"
+msgstr "Change user password"
+
+msgid "New password"
+msgstr "New password"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Minimum 8 characters, one uppercase and lowercase letter and one number"
+msgstr "Minimum 8 characters, one uppercase and lowercase letter and one number"
+
+msgid "Repeat new password"
+msgstr "Repeat new password"
+
+msgid "Repeat password"
+msgstr "Repeat password"
+
+msgid "Account expiration date"
+msgstr "Account expiration date"
+
+msgid "OIDC mapping value"
+msgstr "OIDC mapping value"
+
+msgid "OpenID Connect mapping claim for your identity platform"
+msgstr "OpenID Connect mapping claim for your identity platform"
+
+msgid "LDAP identifier"
+msgstr "LDAP identifier"
+
+msgid "External authentication only (OpenID / LDAP)"
+msgstr "External authentication only (OpenID / LDAP)"
+
+msgid "Invalid username"
+msgstr "Invalid username"
+
+msgid "Invalid WhatsApp number"
+msgstr "Invalid WhatsApp number"
+
+msgid "Error updating user"
+msgstr "Error updating user"
+
+msgid "Error creating user"
+msgstr "Error creating user"
+
+msgid "Username already taken"
+msgstr "Username already taken"
+
+msgid "There was a problem whilst checking the availability of this username"
+msgstr "There was a problem whilst checking the availability of this username"
+
+msgid "Passwords do not match"
+msgstr "Passwords do not match"
+
+msgid "Please provide a value"
+msgstr "Please provide a value"
+
+msgid "Create, modify, view and delete Users"
+msgstr "Create, modify, view and delete Users"
+
+msgid "User role"
+msgstr "User role"
+
+msgid "Create, modify, view and delete User Roles"
+msgstr "Create, modify, view and delete User Roles"
+
+msgid "User group"
+msgstr "User group"
+
+msgid "Create, modify, view and delete User Groups"
+msgstr "Create, modify, view and delete User Groups"
+
 msgid "Display name"
 msgstr "Display name"
 
@@ -318,12 +604,6 @@ msgstr "Last login"
 
 msgid "Created"
 msgstr "Created"
-
-msgid "First name"
-msgstr "First name"
-
-msgid "Last name"
-msgstr "Last name"
 
 msgid "Introduction"
 msgstr "Introduction"
@@ -355,9 +635,6 @@ msgstr "Speaks"
 msgid "E-mail"
 msgstr "E-mail"
 
-msgid "Mobile phone number"
-msgstr "Mobile phone number"
-
 msgid "Organisations units"
 msgstr "Organisations units"
 
@@ -370,51 +647,56 @@ msgstr "Members"
 msgid "Number of users"
 msgstr "Number of users"
 
-msgid "Create, modify, view and delete Users"
-msgstr "Create, modify, view and delete Users"
+msgid "New group"
+msgstr "New group"
 
-msgid "User role"
-msgstr "User role"
+msgid "Create group"
+msgstr "Create group"
 
-msgid "Create, modify, view and delete User Roles"
-msgstr "Create, modify, view and delete User Roles"
+msgid "New role"
+msgstr "New role"
 
-msgid "User group"
-msgstr "User group"
+msgid "Create role"
+msgstr "Create role"
 
-msgid "Create, modify, view and delete User Groups"
-msgstr "Create, modify, view and delete User Groups"
+msgid "Error fetching interface language"
+msgstr "Error fetching interface language"
 
-msgid "Could not load the user group data. Please refresh the page."
-msgstr "Could not load the user group data. Please refresh the page."
+msgid "There was an error fetching the default interface language."
+msgstr "There was an error fetching the default interface language."
 
-msgid "User group \"{{displayName}}\" saved successfully"
-msgstr "User group \"{{displayName}}\" saved successfully"
+msgid "New user"
+msgstr "New user"
 
-msgid "There was a problem saving the user group."
-msgstr "There was a problem saving the user group."
+msgid "Create user"
+msgstr "Create user"
 
-msgid "Save"
-msgstr "Save"
+msgid "Error fetching group"
+msgstr "Error fetching group"
 
-msgid "Cancel"
-msgstr "Cancel"
+msgid "There was an error fetching this group."
+msgstr "There was an error fetching this group."
 
-msgid "Code"
-msgstr "Code"
+msgid "Edit group"
+msgstr "Edit group"
 
-msgid ""
-"To add a user to this group, go to the User section and edit the user group "
-"settings for a specific user."
-msgstr ""
-"To add a user to this group, go to the User section and edit the user group "
-"settings for a specific user."
+msgid "Save changes"
+msgstr "Save changes"
 
-msgid "Available user groups"
-msgstr "Available user groups"
+msgid "Error fetching role"
+msgstr "Error fetching role"
 
-msgid "Managed user groups"
-msgstr "Managed user groups"
+msgid "There was an error fetching this role."
+msgstr "There was an error fetching this role."
+
+msgid "Edit role"
+msgstr "Edit role"
+
+msgid "Error fetching user"
+msgstr "Error fetching user"
+
+msgid "There was an error fetching this user."
+msgstr "There was an error fetching this user."
 
 msgid "Show details"
 msgstr "Show details"
@@ -512,17 +794,14 @@ msgstr "List"
 msgid "Add"
 msgstr "Add"
 
-msgid "User role \"{{displayName}}\" saved successfully"
-msgstr "User role \"{{displayName}}\" saved successfully"
+msgid "Page not found."
+msgstr "Page not found."
 
-msgid "There was a problem saving the user role."
-msgstr "There was a problem saving the user role."
+msgid "No match for"
+msgstr "No match for"
 
-msgid "Description"
-msgstr "Description"
-
-msgid "Authorities"
-msgstr "Authorities"
+msgid "Go back home"
+msgstr "Go back home"
 
 msgid "There was an error deleting the user role: {{- error}}"
 msgstr "There was an error deleting the user role: {{- error}}"
@@ -535,109 +814,6 @@ msgstr "User Role Management"
 
 msgid "Error loading user roles"
 msgstr "Error loading user roles"
-
-msgid "Could not load the user data. Please refresh the page."
-msgstr "Could not load the user data. Please refresh the page."
-
-msgid "User \"{{displayName}}\" saved successfully"
-msgstr "User \"{{displayName}}\" saved successfully"
-
-msgid "There was a problem saving the user."
-msgstr "There was a problem saving the user."
-
-msgid "Show fewer options"
-msgstr "Show fewer options"
-
-msgid "Show more options"
-msgstr "Show more options"
-
-msgid "Send invite"
-msgstr "Send invite"
-
-msgid ""
-"Selecting an organisation unit provides access to all units in the "
-"sub-hierarchy"
-msgstr ""
-"Selecting an organisation unit provides access to all units in the "
-"sub-hierarchy"
-
-msgid "Create account or email invitation"
-msgstr "Create account or email invitation"
-
-msgid "Create account with user details"
-msgstr "Create account with user details"
-
-msgid "Email invitation to create account"
-msgstr "Email invitation to create account"
-
-msgid "Username"
-msgstr "Username"
-
-msgid "External authentication only (OpenID or LDAP)"
-msgstr "External authentication only (OpenID or LDAP)"
-
-msgid "Account expiration date"
-msgstr "Account expiration date"
-
-msgid "Disabled"
-msgstr "Disabled"
-
-msgid "Password"
-msgstr "Password"
-
-msgid "Retype password"
-msgstr "Retype password"
-
-msgid "OIDC mapping value"
-msgstr "OIDC mapping value"
-
-msgid "LDAP identifier"
-msgstr "LDAP identifier"
-
-msgid "WhatsApp"
-msgstr "WhatsApp"
-
-msgid "Facebook Messenger"
-msgstr "Facebook Messenger"
-
-msgid "Skype"
-msgstr "Skype"
-
-msgid "Telegram"
-msgstr "Telegram"
-
-msgid "Twitter"
-msgstr "Twitter"
-
-msgid "Interface language"
-msgstr "Interface language"
-
-msgid "Database language"
-msgstr "Database language"
-
-msgid "Available roles"
-msgstr "Available roles"
-
-msgid "Selected roles"
-msgstr "Selected roles"
-
-msgid "Data capture and maintenance organisation units"
-msgstr "Data capture and maintenance organisation units"
-
-msgid "Data output and analytic organisation units"
-msgstr "Data output and analytic organisation units"
-
-msgid "Search Organisation Units"
-msgstr "Search Organisation Units"
-
-msgid "Selected user groups"
-msgstr "Selected user groups"
-
-msgid "Available dimension restrictions for data analytics"
-msgstr "Available dimension restrictions for data analytics"
-
-msgid "Selected dimension restrictions for data analytics"
-msgstr "Selected dimension restrictions for data analytics"
 
 msgid "Profile"
 msgstr "Profile"
@@ -730,6 +906,9 @@ msgstr ""
 "Password should be at least 8 characters long, with at least one lowercase "
 "character, one uppercase character and one special character."
 
+msgid "Cancel"
+msgstr "Cancel"
+
 msgid "Replicate user"
 msgstr "Replicate user"
 
@@ -784,97 +963,8 @@ msgstr "Error loading users"
 msgid "Account disabled?"
 msgstr "Account disabled?"
 
-msgid "{{count}} selected"
-msgid_plural "{{count}} selected"
-msgstr[0] "{{count}} selected"
-msgstr[1] "{{count}} selected"
-
-msgid "Yes"
-msgstr "Yes"
-
-msgid "No"
-msgstr "No"
-
-msgid "<No value>"
-msgstr "<No value>"
+msgid "Disabled"
+msgstr "Disabled"
 
 msgid "Something went wrong when processing your request."
 msgstr "Something went wrong when processing your request."
-
-msgid "Validating..."
-msgstr "Validating..."
-
-msgid "Exceeds maximum character limit of 50"
-msgstr "Exceeds maximum character limit of 50"
-
-msgid "Please enter a valid date with the following format yyyy-mm-dd"
-msgstr "Please enter a valid date with the following format yyyy-mm-dd"
-
-msgid "Please provide a valid email address"
-msgstr "Please provide a valid email address"
-
-msgid "Value should be an integer"
-msgstr "Value should be an integer"
-
-msgid "Value should be a nagative integer"
-msgstr "Value should be a nagative integer"
-
-msgid "Value should be a number"
-msgstr "Value should be a number"
-
-msgid "Value should be a positive integer"
-msgstr "Value should be a positive integer"
-
-msgid "Passwords do not match"
-msgstr "Passwords do not match"
-
-msgid "This field is required"
-msgstr "This field is required"
-
-msgid "This field is required. Please select at least one"
-msgstr "This field is required. Please select at least one"
-
-msgid "A username should be at least 2 characters long"
-msgstr "A username should be at least 2 characters long"
-
-msgid "Username may not exceed 140 characters"
-msgstr "Username may not exceed 140 characters"
-
-msgid "Please provide a valid international phone number (+0123456789)"
-msgstr "Please provide a valid international phone number (+0123456789)"
-
-msgid "Password should be at least 8 characters long"
-msgstr "Password should be at least 8 characters long"
-
-msgid "Password should be no longer than 34 characters"
-msgstr "Password should be no longer than 34 characters"
-
-msgid "Password should contain at least one lowercase letter"
-msgstr "Password should contain at least one lowercase letter"
-
-msgid "Password should contain at least one UPPERCASE letter"
-msgstr "Password should contain at least one UPPERCASE letter"
-
-msgid "Password should contain at least one number"
-msgstr "Password should contain at least one number"
-
-msgid "Password should have at least one special character"
-msgstr "Password should have at least one special character"
-
-msgid "Username already taken"
-msgstr "Username already taken"
-
-msgid "There was a problem whilst checking the availability of this username"
-msgstr "There was a problem whilst checking the availability of this username"
-
-msgid "{{fieldDisplayName}} is already taken"
-msgstr "{{fieldDisplayName}} is already taken"
-
-msgid "Could not verify if this {{fieldDisplayName}} is unique"
-msgstr "Could not verify if this {{fieldDisplayName}} is unique"
-
-msgid "Attribute value needs to be unique, value already taken."
-msgstr "Attribute value needs to be unique, value already taken."
-
-msgid "There was a problem checking if this attribute value is unique"
-msgstr "There was a problem checking if this attribute value is unique"

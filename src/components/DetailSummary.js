@@ -1,7 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { LoadingMask, Heading } from '@dhis2/d2-ui-core'
-import capitalize from 'lodash.capitalize'
-import kebabCase from 'lodash.kebabcase'
+import { capitalize, kebabCase } from 'lodash-es'
 import { Paper } from 'material-ui'
 import RaisedButton from 'material-ui/RaisedButton'
 import ContentSend from 'material-ui/svg-icons/content/send'

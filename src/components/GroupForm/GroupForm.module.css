@@ -1,0 +1,4 @@
+.noticeBox {
+    max-width: 500px;
+    margin-bottom: var(--spacers-dp16);
+}

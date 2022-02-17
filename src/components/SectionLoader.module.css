@@ -5,5 +5,6 @@
 }
 
 .content {
-    padding: 16px;
+    padding: var(--spacers-dp16);
+    background: var(--colors-grey100);
 }

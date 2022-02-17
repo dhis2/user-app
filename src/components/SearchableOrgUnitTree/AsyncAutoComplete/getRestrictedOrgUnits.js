@@ -1,4 +1,3 @@
-import { DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS } from '../../../containers/UserForm/config.js'
 import store from '../../../store.js'
 
 /**
@@ -19,7 +18,7 @@ export const getRestrictedOrgUnits = (orgUnits, orgUnitType) => {
     const availableOrgUnits =
         currentUser[orgUnitType].size > 0
             ? currentUser[orgUnitType]
-            : currentUser[DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS]
+            : currentUser.organisationUnits
 
     return orgUnits.filter(unit => {
         const isAvailableUnit = Boolean(availableOrgUnits.get(unit.id))
