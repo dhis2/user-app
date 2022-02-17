@@ -1,9 +1,7 @@
 import React from 'react'
-import { Router } from 'react-router-dom'
-import DialogContainer from './components/DialogContainer'
+import { Router, Route } from 'react-router-dom'
+import { QueryParamProvider } from 'use-query-params'
 import SectionLoader from './components/SectionLoader'
-import SharingDialogContainer from './components/SharingDialogContainer'
-import SnackbarContainer from './components/SnackbarContainer'
 import history from './utils/history'
 
 /**
@@ -11,14 +9,13 @@ import history from './utils/history'
  * @class
  */
 const App = () => (
-    <div>
+    <>
         <Router history={history} hashType={'noslash'}>
-            <SectionLoader />
+            <QueryParamProvider ReactRouterRoute={Route}>
+                <SectionLoader />
+            </QueryParamProvider>
         </Router>
-        <SnackbarContainer />
-        <DialogContainer />
-        <SharingDialogContainer />
-    </div>
+    </>
 )
 
 export default App

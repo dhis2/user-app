@@ -8,14 +8,8 @@ import { initCurrentUser } from '../actions'
 import getRouteConfig from '../constants/routeConfig'
 import navigateTo from '../utils/navigateTo'
 import ErrorMessage from './ErrorMessage'
+import styles from './SectionLoader.module.css'
 import SideNav from './SideNav'
-
-const style = {
-    display: 'flex',
-    flex: '1 1 0%',
-    paddingRight: '2rem',
-    paddingTop: '1rem',
-}
 
 /**
  * This component prepares the user-app sections and routes based on the current user's authorities
@@ -62,6 +56,7 @@ class SectionLoader extends Component {
     }
 
     setRouteConfig(currentUser) {
+        // Only show menu items for which the user has either the "add" or "delete" authority
         this.routeConfig = !currentUser
             ? null
             : getRouteConfig().reduce(
@@ -83,6 +78,12 @@ class SectionLoader extends Component {
         if (!entityType) {
             return true
         }
+
+        // In case of error `currentUser` is a string containing the error message
+        if (typeof currentUser === 'string') {
+            return false
+        }
+
         const { models } = this.context.d2
         const canCreate = currentUser.canCreate(models[entityType])
         const canDelete = currentUser.canDelete(models[entityType])
@@ -123,14 +124,20 @@ class SectionLoader extends Component {
             return <ErrorMessage introText={introText} errorMessage="" />
         }
 
-        return [
-            <SideNav key="sidenav" sections={sections} />,
-            <Switch key="routeswitch">{this.renderRoutes(routes)}</Switch>,
-        ]
+        return (
+            <>
+                <SideNav key="sidenav" sections={sections} />
+                <div className={styles.content}>
+                    <Switch key="routeswitch">
+                        {this.renderRoutes(routes)}
+                    </Switch>
+                </div>
+            </>
+        )
     }
 
     render() {
-        return <main style={style}>{this.renderContent()}</main>
+        return <main className={styles.container}>{this.renderContent()}</main>
     }
 }
 

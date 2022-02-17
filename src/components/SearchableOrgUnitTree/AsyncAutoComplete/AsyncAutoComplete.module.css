@@ -1,0 +1,12 @@
+.scrollBox {
+    max-height: 250px;
+    min-width: 150px;
+    max-width: 350px;
+    overflow-y: auto;
+}
+
+.refineSearchWarning {
+    font-style: italic;
+    text-align: center;
+    cursor: default !important;
+}

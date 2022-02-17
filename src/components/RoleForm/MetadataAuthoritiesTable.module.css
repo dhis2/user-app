@@ -1,0 +1,30 @@
+.container {
+    margin-top: var(--spacers-dp16);
+    max-width: 800px;
+}
+
+.container :global(.tablescrollbox) {
+    /* Always show scrollbar in order to maintain width when showing one or zero results */
+    overflow-y: scroll;
+}
+
+.columnHeader {
+    vertical-align: middle !important;
+}
+
+.columnHeader label {
+    font-size: 13px !important;
+    color: var(--colors-grey800);
+}
+
+.filters {
+    display: grid;
+    grid-template-columns: 360px auto;
+    gap: var(--spacers-dp16);
+    align-items: center;
+    margin-bottom: var(--spacers-dp16);
+}
+
+.hiddenRow {
+    display: none;
+}

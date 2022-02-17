@@ -1,7 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { LoadingMask, Heading } from '@dhis2/d2-ui-core'
-import capitalize from 'lodash.capitalize'
-import kebabCase from 'lodash.kebabcase'
+import { capitalize, kebabCase } from 'lodash-es'
 import { Paper } from 'material-ui'
 import RaisedButton from 'material-ui/RaisedButton'
 import ContentSend from 'material-ui/svg-icons/content/send'
@@ -15,7 +14,6 @@ import api from '../api'
 import { USER, USER_GROUP, USER_ROLE } from '../constants/entityTypes'
 import parseDateFromUTCString from '../utils/parseDateFromUTCString'
 import ErrorMessage from './ErrorMessage'
-import IconLink from './IconLink'
 
 const styles = {
     main: {
@@ -100,6 +98,7 @@ class DetailSummary extends Component {
             } = field
             let { label } = field
 
+            // TODO: Handle label translation properly
             label = i18n.t(label)
             let value = summaryObject[key]
 
@@ -156,6 +155,7 @@ class DetailSummary extends Component {
         }
 
         if (typeof summaryObject === 'string') {
+            // TODO: use interpolation correctly
             const errorText = i18n.t(
                 `There was an error fetching the ${baseName}`
             )
@@ -170,18 +170,12 @@ class DetailSummary extends Component {
         const { id, displayName, access } = summaryObject
         const plural = `${baseName}s`,
             baseRoute = `/${kebabCase(plural)}`,
-            backTooltip = i18n.t(`Back to ${plural}`),
             editLink = `${baseRoute}/edit/${id}`,
             editLabel = this.getLabelForEntity(baseName)
 
         return (
             <main style={styles.main}>
                 <Heading style={styles.heading}>
-                    <IconLink
-                        to={baseRoute}
-                        tooltip={backTooltip}
-                        icon="arrow_back"
-                    />
                     {displayName}
 
                     {access.update ? (
