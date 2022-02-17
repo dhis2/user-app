@@ -58,6 +58,8 @@ export const ASSIGNED_ROLES = 'userRoles'
 export const DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS = 'organisationUnits'
 export const DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS = 'dataViewOrganisationUnits'
 export const TEI_SEARCH_ORG_UNITS = 'teiSearchOrganisationUnits'
+export const DATA_VIEW_MAX_ORGANISATION_UNIT_LEVEL =
+    'dataViewMaxOrganisationUnitLevel'
 export const ASSIGNED_USER_GROUPS = 'userGroups'
 export const DIMENSION_RESTRICTIONS_FOR_DATA_ANALYTICS =
     'catCogsDimensionConstraints'
@@ -81,6 +83,7 @@ export const USER_PROPS = [
     DATA_OUTPUT_AND_ANALYTICS_ORG_UNITS,
     ASSIGNED_USER_GROUPS,
     TEI_SEARCH_ORG_UNITS,
+    DATA_VIEW_MAX_ORGANISATION_UNIT_LEVEL,
 ]
 
 export const USER_CRED_PROPS = [
@@ -292,6 +295,12 @@ export const getAdditionalFields = () => [
         orgUnitType: TEI_SEARCH_ORG_UNITS,
         fieldRenderer: renderSearchableOrgUnitTree,
         wrapperStyle: { ...STYLES.orgUnitTree, paddingRight: '60px' },
+    },
+    {
+        name: DATA_VIEW_MAX_ORGANISATION_UNIT_LEVEL,
+        label: i18n.t('Maximum organisation unit level for data output'),
+        fieldRenderer: renderSelectField,
+        optionsSelector: 'filledOrganisationUnitLevels',
     },
     {
         ...getBaseCaption(),
