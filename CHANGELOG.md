@@ -1,3 +1,10 @@
+## [1.2.14](https://github.com/dhis2/user-app/compare/v1.2.13...v1.2.14) (2022-02-17)
+
+
+### Bug Fixes
+
+* **semantic:** allow merge commits ([732ae7f](https://github.com/dhis2/user-app/commit/732ae7f6cc03d4f27f48dab92abf6264f530e027))
+
 ## [1.2.13](https://github.com/dhis2/user-app/compare/v1.2.12...v1.2.13) (2022-02-15)
 
 
