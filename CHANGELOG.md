@@ -1,3 +1,22 @@
+# [1.3.0](https://github.com/dhis2/user-app/compare/v1.2.14...v1.3.0) (2022-02-17)
+
+
+### Bug Fixes
+
+* remove beta entries from changelog ([6b67e82](https://github.com/dhis2/user-app/commit/6b67e8295c4f1402e8c46a2c22c121e73c4493d0))
+* **semantic:** allow merge commits ([6f50bf3](https://github.com/dhis2/user-app/commit/6f50bf349e7b76697594cf6838a6f995e3e35e33))
+* don't publish to App Hub ([bcbdd61](https://github.com/dhis2/user-app/commit/bcbdd6105b8ba3a5360fa0a4294032c024785358))
+* **home:** migrate homepage components to @dhis2/ui ([#840](https://github.com/dhis2/user-app/issues/840)) ([8f2f7d9](https://github.com/dhis2/user-app/commit/8f2f7d9464d18076ec79e52de0313c25a07598a3))
+* **sidenav:** add missing "return null" statement when there are no sections ([a826c5e](https://github.com/dhis2/user-app/commit/a826c5e4777a95f84a3a29b0bc6a981ea07216a4))
+
+
+### Features
+
+* add css variables to be used in css modules ([#834](https://github.com/dhis2/user-app/issues/834)) ([8fdc378](https://github.com/dhis2/user-app/commit/8fdc378d6e279dcd23bb89ad5db5eef65f1c92d5))
+* migrate searchable-org-unit-tree to @dhis2/ui ([#836](https://github.com/dhis2/user-app/issues/836)) ([fe2d22c](https://github.com/dhis2/user-app/commit/fe2d22c3aeca2686117d05cb9afbc8bfac536a94))
+* migrate tables and search filter controls to @dhis2/ui ([#830](https://github.com/dhis2/user-app/issues/830)) ([f3a9f0b](https://github.com/dhis2/user-app/commit/f3a9f0b4eaea31662a640cae8fb2d18ae602897a))
+* migrate user-group form to dhis2/ui ([#831](https://github.com/dhis2/user-app/issues/831)) ([56f4b83](https://github.com/dhis2/user-app/commit/56f4b830955a3b76ffa70356505a5c9fe59b899a))
+
 ## [1.2.14](https://github.com/dhis2/user-app/compare/v1.2.13...v1.2.14) (2022-02-17)
 
 
