@@ -1,3 +1,15 @@
+# [1.3.0-beta.2](https://github.com/dhis2/user-app/compare/v1.3.0-beta.1...v1.3.0-beta.2) (2022-02-17)
+
+
+### Bug Fixes
+
+* **semantic:** allow merge commits ([732ae7f](https://github.com/dhis2/user-app/commit/732ae7f6cc03d4f27f48dab92abf6264f530e027))
+* **translations:** sync translations from transifex (master) ([d6fe01c](https://github.com/dhis2/user-app/commit/d6fe01c9e86faf28d47b8f39586e0f2ad1fb9597))
+* **translations:** sync translations from transifex (master) ([964ff3c](https://github.com/dhis2/user-app/commit/964ff3cbc0da03f2dea1040a30fcec6413f6b1fb))
+* **translations:** sync translations from transifex (master) ([32c22c2](https://github.com/dhis2/user-app/commit/32c22c2492aedacdd69012f173230696ba378938))
+* **translations:** sync translations from transifex (master) ([7432a20](https://github.com/dhis2/user-app/commit/7432a205e732e60742ccc6a43b6d1a81e930530f))
+* **translations:** sync translations from transifex (master) ([fb1f63a](https://github.com/dhis2/user-app/commit/fb1f63a41620af57555efbbce9702c9778ff510a))
+
 # [1.3.0-beta.1](https://github.com/dhis2/user-app/compare/v1.2.8...v1.3.0-beta.1) (2022-02-17)
 
 
