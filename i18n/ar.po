@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Hamza Assada <7amza.it@gmail.com>, 2020
-# Viktor Varland <viktor@dhis2.org>, 2021
-# phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2022
+# phil_dhis2, 2022
+# Hamza Assada <7amza.it@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: phil_dhis2, 2021\n"
+"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2022\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,7 +49,7 @@ msgid "Send message"
 msgstr "إرسال رسالة"
 
 msgid "Filter options"
-msgstr ""
+msgstr "خيارات التصفية"
 
 msgid "Error fetching form"
 msgstr ""
@@ -79,7 +79,7 @@ msgid "Used in analytics reports."
 msgstr ""
 
 msgid "User management"
-msgstr ""
+msgstr "إدارة المستخدم"
 
 msgid "Add or remove users from this group."
 msgstr ""
@@ -103,7 +103,7 @@ msgid "Managed user groups"
 msgstr "مجموعات المستخدمين التي سيتم إدارتها"
 
 msgid "Attributes"
-msgstr ""
+msgstr "السمات"
 
 msgid "Name is already taken"
 msgstr ""
@@ -132,10 +132,10 @@ msgid "Add/Update Private"
 msgstr ""
 
 msgid "Delete"
-msgstr ""
+msgstr "حذف"
 
 msgid "External access"
-msgstr ""
+msgstr "صلاحية الوصول الخارجي"
 
 msgid "Error updating role"
 msgstr ""
@@ -525,7 +525,7 @@ msgid "User groups this user is a member of"
 msgstr ""
 
 msgid "Security"
-msgstr ""
+msgstr "الأمان"
 
 msgid "Settings for how this user can log in."
 msgstr ""
@@ -534,7 +534,7 @@ msgid "Change user password"
 msgstr ""
 
 msgid "New password"
-msgstr ""
+msgstr "كلمة المرور الجديدة"
 
 msgid "Password"
 msgstr "كلمة المرور"
@@ -544,7 +544,7 @@ msgid ""
 msgstr ""
 
 msgid "Repeat new password"
-msgstr ""
+msgstr "تأكيد كلمة المرور الجديدة"
 
 msgid "Repeat password"
 msgstr ""
@@ -691,7 +691,7 @@ msgid "Edit group"
 msgstr ""
 
 msgid "Save changes"
-msgstr ""
+msgstr "حفظ التغيرات"
 
 msgid "Error fetching role"
 msgstr ""
@@ -709,19 +709,19 @@ msgid "There was an error fetching this user."
 msgstr ""
 
 msgid "Show details"
-msgstr ""
+msgstr "إظهار التفاصيل"
 
 msgid "Sharing settings"
-msgstr ""
+msgstr "إعدادات المشاركة"
 
 msgid "Edit"
-msgstr ""
+msgstr "تعديل"
 
 msgid "Join group"
-msgstr ""
+msgstr "الإنضمام للمجموعة"
 
 msgid "Leave group"
-msgstr ""
+msgstr "مغادرة المجموعة"
 
 msgid "Deleted \"{{- name}}\" successfully"
 msgstr ""
@@ -736,7 +736,7 @@ msgid "Are you sure you want to delete {{- name}}?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr ""
+msgstr "لا، الغاء"
 
 msgid "Yes, delete"
 msgstr ""
@@ -769,25 +769,25 @@ msgid "Are you sure you want to leave {{- name}}?"
 msgstr ""
 
 msgid "Yes, leave"
-msgstr ""
+msgstr "نعم، غادر"
 
 msgid "User Group Management"
 msgstr "إدارة مجموعة المستخدم"
 
 msgid "New"
-msgstr ""
+msgstr "جديد"
 
 msgid "Error loading user groups"
 msgstr ""
 
 msgid "No results found"
-msgstr ""
+msgstr "لم يتم العثور على أي نتائج"
 
 msgid "Member?"
 msgstr ""
 
 msgid "Actions"
-msgstr ""
+msgstr "الإجراءات"
 
 msgid "Member"
 msgstr ""
@@ -800,7 +800,7 @@ msgid ""
 msgstr "ليس لديك حق الوصول إلى أي قسم في تطبيق إدارة مستخدمي الـ DHIS 2"
 
 msgid "List"
-msgstr ""
+msgstr "عرض"
 
 msgid "Add"
 msgstr "إضافة"
@@ -827,7 +827,7 @@ msgid "Error loading user roles"
 msgstr ""
 
 msgid "Profile"
-msgstr ""
+msgstr "الملف الشخصي"
 
 msgid "Replicate"
 msgstr "إنشاء نسخة"
@@ -836,13 +836,13 @@ msgid "Reset password"
 msgstr ""
 
 msgid "Disable"
-msgstr ""
+msgstr "تعطيل"
 
 msgid "Enable"
-msgstr ""
+msgstr "تمكين"
 
 msgid "Disable Two Factor Authentication"
-msgstr ""
+msgstr "تعطيل Two Factor Authentication"
 
 msgid "There was an error deleting the user: {{- error}}"
 msgstr ""
@@ -959,7 +959,7 @@ msgid "Show self-registrations"
 msgstr ""
 
 msgid "Clear filters"
-msgstr ""
+msgstr "إلغاء عوامل التصفية"
 
 msgid "Org.unit"
 msgstr ""

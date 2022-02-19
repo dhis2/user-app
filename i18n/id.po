@@ -1,17 +1,19 @@
 # 
 # Translators:
 # phil_dhis2, 2019
-# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021
 # Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2021
+# Carwoto Sa'an <carwoto@gmail.com>, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
+# Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2022
+# Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2022
+# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2021\n"
+"Last-Translator: Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2022\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -51,7 +53,7 @@ msgid "Send message"
 msgstr "Kirim pesan"
 
 msgid "Filter options"
-msgstr ""
+msgstr "Pilihan penyaringan"
 
 msgid "Error fetching form"
 msgstr ""
@@ -105,7 +107,7 @@ msgid "Managed user groups"
 msgstr ""
 
 msgid "Attributes"
-msgstr ""
+msgstr "Atribut"
 
 msgid "Name is already taken"
 msgstr ""
@@ -134,10 +136,10 @@ msgid "Add/Update Private"
 msgstr ""
 
 msgid "Delete"
-msgstr ""
+msgstr "Hapus"
 
 msgid "External access"
-msgstr ""
+msgstr "Akses eksternal"
 
 msgid "Error updating role"
 msgstr ""
@@ -692,7 +694,7 @@ msgid "Edit group"
 msgstr ""
 
 msgid "Save changes"
-msgstr ""
+msgstr "Simpan perubahan"
 
 msgid "Error fetching role"
 msgstr ""
@@ -713,10 +715,10 @@ msgid "Show details"
 msgstr ""
 
 msgid "Sharing settings"
-msgstr ""
+msgstr "Pengaturan pembagian"
 
 msgid "Edit"
-msgstr ""
+msgstr "Sunting"
 
 msgid "Join group"
 msgstr ""
@@ -737,7 +739,7 @@ msgid "Are you sure you want to delete {{- name}}?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr ""
+msgstr "Tidak, batalkan"
 
 msgid "Yes, delete"
 msgstr ""
@@ -770,19 +772,19 @@ msgid "Are you sure you want to leave {{- name}}?"
 msgstr ""
 
 msgid "Yes, leave"
-msgstr ""
+msgstr "Ya, tinggalkan"
 
 msgid "User Group Management"
 msgstr ""
 
 msgid "New"
-msgstr ""
+msgstr "Baru"
 
 msgid "Error loading user groups"
 msgstr ""
 
 msgid "No results found"
-msgstr ""
+msgstr "Tidak ada hasil ditemukan"
 
 msgid "Member?"
 msgstr ""
@@ -801,7 +803,7 @@ msgid ""
 msgstr ""
 
 msgid "List"
-msgstr ""
+msgstr "Daftar"
 
 msgid "Add"
 msgstr "Tambah"
@@ -828,7 +830,7 @@ msgid "Error loading user roles"
 msgstr ""
 
 msgid "Profile"
-msgstr ""
+msgstr "Profil"
 
 msgid "Replicate"
 msgstr ""
@@ -837,10 +839,10 @@ msgid "Reset password"
 msgstr ""
 
 msgid "Disable"
-msgstr ""
+msgstr "Nonaktif kan"
 
 msgid "Enable"
-msgstr ""
+msgstr "Aktifkan"
 
 msgid "Disable Two Factor Authentication"
 msgstr ""
@@ -960,7 +962,7 @@ msgid "Show self-registrations"
 msgstr ""
 
 msgid "Clear filters"
-msgstr ""
+msgstr "Hapus penyaring"
 
 msgid "Org.unit"
 msgstr ""
