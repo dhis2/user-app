@@ -1,14 +1,14 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2021
+# phil_dhis2, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: phil_dhis2, 2021\n"
+"Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Burmese (https://www.transifex.com/hisp-uio/teams/100509/my/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -131,7 +131,7 @@ msgid "Add/Update Private"
 msgstr ""
 
 msgid "Delete"
-msgstr ""
+msgstr "ဖျက်ဆီးသည်"
 
 msgid "External access"
 msgstr ""
@@ -707,13 +707,13 @@ msgid "There was an error fetching this user."
 msgstr ""
 
 msgid "Show details"
-msgstr ""
+msgstr "အတိအကျပြသပါ"
 
 msgid "Sharing settings"
-msgstr ""
+msgstr "စာရင်းတည်ဆောက်ထားသည့်အနေအထားကိုမျှဝေခြင်း"
 
 msgid "Edit"
-msgstr ""
+msgstr "တည်းဖြတ်သည်"
 
 msgid "Join group"
 msgstr ""
@@ -773,13 +773,13 @@ msgid "User Group Management"
 msgstr ""
 
 msgid "New"
-msgstr ""
+msgstr "အသစ်"
 
 msgid "Error loading user groups"
 msgstr ""
 
 msgid "No results found"
-msgstr ""
+msgstr "No results found"
 
 msgid "Member?"
 msgstr ""
@@ -825,7 +825,7 @@ msgid "Error loading user roles"
 msgstr ""
 
 msgid "Profile"
-msgstr ""
+msgstr "အတ္ထုပ္ပတ္တိအကျဉ်း"
 
 msgid "Replicate"
 msgstr ""

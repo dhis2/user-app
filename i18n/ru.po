@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2021
-# phil_dhis2, 2021
-# Valeriu Plesca <vplesca@gmail.com>, 2021
+# Valeriu Plesca <vplesca@gmail.com>, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
+# phil_dhis2, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Valeriu Plesca <vplesca@gmail.com>, 2021\n"
+"Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -106,7 +106,7 @@ msgid "Managed user groups"
 msgstr "Управляемые группы пользователей"
 
 msgid "Attributes"
-msgstr ""
+msgstr "Атрибуты"
 
 msgid "Name is already taken"
 msgstr ""
@@ -135,10 +135,10 @@ msgid "Add/Update Private"
 msgstr ""
 
 msgid "Delete"
-msgstr ""
+msgstr "Удалить"
 
 msgid "External access"
-msgstr ""
+msgstr "Внешний доступ"
 
 msgid "Error updating role"
 msgstr ""
@@ -536,7 +536,7 @@ msgid "Change user password"
 msgstr ""
 
 msgid "New password"
-msgstr ""
+msgstr "Новый пароль"
 
 msgid "Password"
 msgstr "Пароль"
@@ -546,7 +546,7 @@ msgid ""
 msgstr ""
 
 msgid "Repeat new password"
-msgstr ""
+msgstr "Повторите новый пароль"
 
 msgid "Repeat password"
 msgstr ""
@@ -693,7 +693,7 @@ msgid "Edit group"
 msgstr ""
 
 msgid "Save changes"
-msgstr ""
+msgstr "Сохранить изменения"
 
 msgid "Error fetching role"
 msgstr ""
@@ -711,19 +711,19 @@ msgid "There was an error fetching this user."
 msgstr ""
 
 msgid "Show details"
-msgstr ""
+msgstr "Показать детали"
 
 msgid "Sharing settings"
-msgstr ""
+msgstr "Настройки совместного пользования"
 
 msgid "Edit"
-msgstr ""
+msgstr "Редактировать"
 
 msgid "Join group"
-msgstr ""
+msgstr "Вступить в группу"
 
 msgid "Leave group"
-msgstr ""
+msgstr "Покинуть группу"
 
 msgid "Deleted \"{{- name}}\" successfully"
 msgstr ""
@@ -777,19 +777,19 @@ msgid "User Group Management"
 msgstr "Управление группами пользователей"
 
 msgid "New"
-msgstr ""
+msgstr "Новый"
 
 msgid "Error loading user groups"
 msgstr ""
 
 msgid "No results found"
-msgstr ""
+msgstr "Результаты не найдены"
 
 msgid "Member?"
 msgstr ""
 
 msgid "Actions"
-msgstr ""
+msgstr "Действия"
 
 msgid "Member"
 msgstr ""
@@ -804,7 +804,7 @@ msgstr ""
 "пользователями DHIS 2"
 
 msgid "List"
-msgstr ""
+msgstr "Список"
 
 msgid "Add"
 msgstr "Добавить"
@@ -831,22 +831,22 @@ msgid "Error loading user roles"
 msgstr ""
 
 msgid "Profile"
-msgstr ""
+msgstr "Профиль"
 
 msgid "Replicate"
 msgstr "Продублировать"
 
 msgid "Reset password"
-msgstr ""
+msgstr "Сброс пароля"
 
 msgid "Disable"
-msgstr ""
+msgstr "Отключить"
 
 msgid "Enable"
-msgstr ""
+msgstr "Включить"
 
 msgid "Disable Two Factor Authentication"
-msgstr ""
+msgstr "Отключить двухфакторную аутентификацию"
 
 msgid "There was an error deleting the user: {{- error}}"
 msgstr ""

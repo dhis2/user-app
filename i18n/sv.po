@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2022
+# phil_dhis2, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: phil_dhis2, 2021\n"
+"Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -48,7 +48,7 @@ msgid "Send message"
 msgstr "Skicka meddelande"
 
 msgid "Filter options"
-msgstr ""
+msgstr "Filteralternativ"
 
 msgid "Error fetching form"
 msgstr ""
@@ -102,7 +102,7 @@ msgid "Managed user groups"
 msgstr "Hanterad usergrupper"
 
 msgid "Attributes"
-msgstr ""
+msgstr "Attribut"
 
 msgid "Name is already taken"
 msgstr ""
@@ -131,7 +131,7 @@ msgid "Add/Update Private"
 msgstr ""
 
 msgid "Delete"
-msgstr ""
+msgstr "Radera"
 
 msgid "External access"
 msgstr ""
@@ -532,7 +532,7 @@ msgid "Change user password"
 msgstr ""
 
 msgid "New password"
-msgstr ""
+msgstr "Nytt lösenord"
 
 msgid "Password"
 msgstr "Lösenord"
@@ -542,7 +542,7 @@ msgid ""
 msgstr ""
 
 msgid "Repeat new password"
-msgstr ""
+msgstr "Upprepa nytt lösenord"
 
 msgid "Repeat password"
 msgstr ""
@@ -691,7 +691,7 @@ msgid "Edit group"
 msgstr ""
 
 msgid "Save changes"
-msgstr ""
+msgstr "Spara ändringar"
 
 msgid "Error fetching role"
 msgstr ""
@@ -709,13 +709,13 @@ msgid "There was an error fetching this user."
 msgstr ""
 
 msgid "Show details"
-msgstr ""
+msgstr "Visa detaljer"
 
 msgid "Sharing settings"
-msgstr ""
+msgstr "Delningsinställningar inställningar~~POS\\=HEADCOMP"
 
 msgid "Edit"
-msgstr ""
+msgstr "Redigera"
 
 msgid "Join group"
 msgstr ""
@@ -775,13 +775,13 @@ msgid "User Group Management"
 msgstr "Användargrupphantering"
 
 msgid "New"
-msgstr ""
+msgstr "Ny"
 
 msgid "Error loading user groups"
 msgstr ""
 
 msgid "No results found"
-msgstr ""
+msgstr "Inga resultat hittades"
 
 msgid "Member?"
 msgstr ""
@@ -827,7 +827,7 @@ msgid "Error loading user roles"
 msgstr ""
 
 msgid "Profile"
-msgstr ""
+msgstr "Profil"
 
 msgid "Replicate"
 msgstr "Replikera"
@@ -959,7 +959,7 @@ msgid "Show self-registrations"
 msgstr ""
 
 msgid "Clear filters"
-msgstr ""
+msgstr "Rensa filter"
 
 msgid "Org.unit"
 msgstr ""

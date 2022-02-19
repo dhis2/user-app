@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2021
+# Ibatov <ibatovk@who.int>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2022\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,7 +47,7 @@ msgid "Send message"
 msgstr "Хабар юбориш"
 
 msgid "Filter options"
-msgstr ""
+msgstr "Фильтр вариантлари"
 
 msgid "Error fetching form"
 msgstr ""
@@ -77,7 +77,7 @@ msgid "Used in analytics reports."
 msgstr ""
 
 msgid "User management"
-msgstr ""
+msgstr "Фойдаланувчи бошқаруви"
 
 msgid "Add or remove users from this group."
 msgstr ""
@@ -103,7 +103,7 @@ msgid "Managed user groups"
 msgstr "Фойдаланувчиларнинг бошқариладиган гуруҳлари"
 
 msgid "Attributes"
-msgstr ""
+msgstr "Аттрибутлар"
 
 msgid "Name is already taken"
 msgstr ""
@@ -132,10 +132,10 @@ msgid "Add/Update Private"
 msgstr ""
 
 msgid "Delete"
-msgstr ""
+msgstr "Ўчириб ташлаш"
 
 msgid "External access"
-msgstr ""
+msgstr "Ташқаридан кириш ҳуқуқи"
 
 msgid "Error updating role"
 msgstr ""
@@ -526,7 +526,7 @@ msgid "User groups this user is a member of"
 msgstr ""
 
 msgid "Security"
-msgstr ""
+msgstr "Хавфсизлик"
 
 msgid "Settings for how this user can log in."
 msgstr ""
@@ -535,7 +535,7 @@ msgid "Change user password"
 msgstr ""
 
 msgid "New password"
-msgstr ""
+msgstr "Янги пароль"
 
 msgid "Password"
 msgstr "Парол"
@@ -545,7 +545,7 @@ msgid ""
 msgstr ""
 
 msgid "Repeat new password"
-msgstr ""
+msgstr "Янги паролни такрорланг"
 
 msgid "Repeat password"
 msgstr ""
@@ -692,7 +692,7 @@ msgid "Edit group"
 msgstr ""
 
 msgid "Save changes"
-msgstr ""
+msgstr "Ўзгартиришни сақлаш"
 
 msgid "Error fetching role"
 msgstr ""
@@ -710,19 +710,19 @@ msgid "There was an error fetching this user."
 msgstr ""
 
 msgid "Show details"
-msgstr ""
+msgstr "Тафсилотларни кўрсатинг"
 
 msgid "Sharing settings"
-msgstr ""
+msgstr "Созламаларни улашиш"
 
 msgid "Edit"
-msgstr ""
+msgstr "Таҳрирлаш"
 
 msgid "Join group"
-msgstr ""
+msgstr "Гуруҳга қўшилиш"
 
 msgid "Leave group"
-msgstr ""
+msgstr "Гуруҳдан чиқиш"
 
 msgid "Deleted \"{{- name}}\" successfully"
 msgstr ""
@@ -737,7 +737,7 @@ msgid "Are you sure you want to delete {{- name}}?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr ""
+msgstr "Йўқ, бекор қилинг"
 
 msgid "Yes, delete"
 msgstr ""
@@ -770,25 +770,25 @@ msgid "Are you sure you want to leave {{- name}}?"
 msgstr ""
 
 msgid "Yes, leave"
-msgstr ""
+msgstr "Ҳа, қолдириб кетиш"
 
 msgid "User Group Management"
 msgstr "Фойдаланувчи Гуруҳи Бошқаруви"
 
 msgid "New"
-msgstr ""
+msgstr "Янги"
 
 msgid "Error loading user groups"
 msgstr ""
 
 msgid "No results found"
-msgstr ""
+msgstr "Ҳеч қандай натижа топилмади"
 
 msgid "Member?"
 msgstr ""
 
 msgid "Actions"
-msgstr ""
+msgstr "Амаллар"
 
 msgid "Member"
 msgstr ""
@@ -803,7 +803,7 @@ msgstr ""
 "эмассиз"
 
 msgid "List"
-msgstr ""
+msgstr "Пациентлар Рўйхати"
 
 msgid "Add"
 msgstr "Қўшиш"
@@ -830,7 +830,7 @@ msgid "Error loading user roles"
 msgstr ""
 
 msgid "Profile"
-msgstr ""
+msgstr "Профил"
 
 msgid "Replicate"
 msgstr "Кўпайтириш"
@@ -839,13 +839,13 @@ msgid "Reset password"
 msgstr ""
 
 msgid "Disable"
-msgstr ""
+msgstr "Ўчириб қўйиш"
 
 msgid "Enable"
-msgstr ""
+msgstr "Ёқиб қўйиш"
 
 msgid "Disable Two Factor Authentication"
-msgstr ""
+msgstr "Икки факторли аутентиификацияни ўчириш"
 
 msgid "There was an error deleting the user: {{- error}}"
 msgstr ""
@@ -962,7 +962,7 @@ msgid "Show self-registrations"
 msgstr ""
 
 msgid "Clear filters"
-msgstr ""
+msgstr "Фильтрларни тозалаш"
 
 msgid "Org.unit"
 msgstr ""

@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2022
+# phil_dhis2, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: phil_dhis2, 2021\n"
+"Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Tajik (https://www.transifex.com/hisp-uio/teams/100509/tg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -102,7 +102,7 @@ msgid "Managed user groups"
 msgstr ""
 
 msgid "Attributes"
-msgstr ""
+msgstr "Нишонаҳо"
 
 msgid "Name is already taken"
 msgstr ""
@@ -131,7 +131,7 @@ msgid "Add/Update Private"
 msgstr ""
 
 msgid "Delete"
-msgstr ""
+msgstr "Нест кардан"
 
 msgid "External access"
 msgstr ""
@@ -532,7 +532,7 @@ msgid "Change user password"
 msgstr ""
 
 msgid "New password"
-msgstr ""
+msgstr "Пароли нав"
 
 msgid "Password"
 msgstr "Парол"
@@ -707,13 +707,13 @@ msgid "There was an error fetching this user."
 msgstr ""
 
 msgid "Show details"
-msgstr ""
+msgstr "Нишон додани маълумоти муфассал"
 
 msgid "Sharing settings"
-msgstr ""
+msgstr "Танзимоти датсрасии муштарак"
 
 msgid "Edit"
-msgstr ""
+msgstr "Таҳрир"
 
 msgid "Join group"
 msgstr ""
@@ -773,7 +773,7 @@ msgid "User Group Management"
 msgstr ""
 
 msgid "New"
-msgstr ""
+msgstr "Нав"
 
 msgid "Error loading user groups"
 msgstr ""
@@ -825,7 +825,7 @@ msgid "Error loading user roles"
 msgstr ""
 
 msgid "Profile"
-msgstr ""
+msgstr "Профил"
 
 msgid "Replicate"
 msgstr ""
@@ -834,10 +834,10 @@ msgid "Reset password"
 msgstr ""
 
 msgid "Disable"
-msgstr ""
+msgstr "Ғайри фаъол кардан"
 
 msgid "Enable"
-msgstr ""
+msgstr "Фаъол кардан"
 
 msgid "Disable Two Factor Authentication"
 msgstr ""

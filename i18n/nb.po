@@ -1,6 +1,6 @@
 # 
 # Translators:
-# Caroline Hesthagen Holen <caroline@devotta.no>, 2021
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2022
 # Karoline Tufte Lien <karoline@dhis2.org>, 2022
 # 
 msgid ""
@@ -48,7 +48,7 @@ msgid "Send message"
 msgstr "Send melding"
 
 msgid "Filter options"
-msgstr ""
+msgstr "Filteralternativ"
 
 msgid "Error fetching form"
 msgstr ""
@@ -57,7 +57,7 @@ msgid "There was an error fetching this form."
 msgstr ""
 
 msgid "Cancel without saving"
-msgstr ""
+msgstr "Avbryt uten å lagre"
 
 msgid "Error updating group"
 msgstr ""
@@ -78,7 +78,7 @@ msgid "Used in analytics reports."
 msgstr ""
 
 msgid "User management"
-msgstr ""
+msgstr "Brukeradministrasjon"
 
 msgid "Add or remove users from this group."
 msgstr ""
@@ -104,7 +104,7 @@ msgid "Managed user groups"
 msgstr "Administrerte brukergrupper"
 
 msgid "Attributes"
-msgstr ""
+msgstr "Attributter"
 
 msgid "Name is already taken"
 msgstr ""
@@ -133,10 +133,10 @@ msgid "Add/Update Private"
 msgstr ""
 
 msgid "Delete"
-msgstr ""
+msgstr "Slett"
 
 msgid "External access"
-msgstr ""
+msgstr "Ekstern tilgang"
 
 msgid "Error updating role"
 msgstr ""
@@ -526,7 +526,7 @@ msgid "User groups this user is a member of"
 msgstr ""
 
 msgid "Security"
-msgstr ""
+msgstr "Sikkerhet"
 
 msgid "Settings for how this user can log in."
 msgstr ""
@@ -535,7 +535,7 @@ msgid "Change user password"
 msgstr ""
 
 msgid "New password"
-msgstr ""
+msgstr "Nytt passord"
 
 msgid "Password"
 msgstr "Passord"
@@ -545,7 +545,7 @@ msgid ""
 msgstr ""
 
 msgid "Repeat new password"
-msgstr ""
+msgstr "Gjenta nytt passord"
 
 msgid "Repeat password"
 msgstr ""
@@ -693,7 +693,7 @@ msgid "Edit group"
 msgstr ""
 
 msgid "Save changes"
-msgstr ""
+msgstr "Lagre endringer"
 
 msgid "Error fetching role"
 msgstr ""
@@ -711,19 +711,19 @@ msgid "There was an error fetching this user."
 msgstr ""
 
 msgid "Show details"
-msgstr ""
+msgstr "Vis detaljer"
 
 msgid "Sharing settings"
-msgstr ""
+msgstr "Deleinnstillinger"
 
 msgid "Edit"
-msgstr ""
+msgstr "Rediger"
 
 msgid "Join group"
-msgstr ""
+msgstr "Bli med i gruppe"
 
 msgid "Leave group"
-msgstr ""
+msgstr "Forlat gruppe"
 
 msgid "Deleted \"{{- name}}\" successfully"
 msgstr ""
@@ -738,7 +738,7 @@ msgid "Are you sure you want to delete {{- name}}?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr ""
+msgstr "Nei, avbryt"
 
 msgid "Yes, delete"
 msgstr ""
@@ -771,25 +771,25 @@ msgid "Are you sure you want to leave {{- name}}?"
 msgstr ""
 
 msgid "Yes, leave"
-msgstr ""
+msgstr "Ja, avslutt"
 
 msgid "User Group Management"
 msgstr "Administrasjon av brukerroller"
 
 msgid "New"
-msgstr ""
+msgstr "Ny"
 
 msgid "Error loading user groups"
 msgstr ""
 
 msgid "No results found"
-msgstr ""
+msgstr "Ingen resultater funnet"
 
 msgid "Member?"
 msgstr ""
 
 msgid "Actions"
-msgstr ""
+msgstr "Handlinger"
 
 msgid "Member"
 msgstr ""
@@ -804,7 +804,7 @@ msgstr ""
 "Applikasjon"
 
 msgid "List"
-msgstr ""
+msgstr "Vis"
 
 msgid "Add"
 msgstr "Legg til"
@@ -831,7 +831,7 @@ msgid "Error loading user roles"
 msgstr ""
 
 msgid "Profile"
-msgstr ""
+msgstr "Profil"
 
 msgid "Replicate"
 msgstr "Repliker"
@@ -840,13 +840,13 @@ msgid "Reset password"
 msgstr ""
 
 msgid "Disable"
-msgstr ""
+msgstr "Deaktiver"
 
 msgid "Enable"
-msgstr ""
+msgstr "Aktiver"
 
 msgid "Disable Two Factor Authentication"
-msgstr ""
+msgstr "Deaktiver tofaktorautentisering"
 
 msgid "There was an error deleting the user: {{- error}}"
 msgstr ""
@@ -963,7 +963,7 @@ msgid "Show self-registrations"
 msgstr ""
 
 msgid "Clear filters"
-msgstr ""
+msgstr "Tøm filtre"
 
 msgid "Org.unit"
 msgstr ""
