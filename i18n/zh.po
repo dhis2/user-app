@@ -560,7 +560,7 @@ msgid "Search Organisation Units"
 msgstr "搜索机构"
 
 msgid "Maximum organisation unit level for data output"
-msgstr ""
+msgstr "数据输出的最大组织机构级别"
 
 msgid "Selected user groups"
 msgstr "选择的机构"
