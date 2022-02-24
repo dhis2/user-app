@@ -50,25 +50,6 @@ export const getUserData = ({
         // object.
         ...user,
 
-        email,
-        firstName,
-        surname,
-        phoneNumber,
-        whatsApp,
-        facebookMessenger,
-        skype,
-        telegram,
-        twitter,
-        organisationUnits: wrapIds(organisationUnits),
-        dataViewOrganisationUnits: wrapIds(dataViewOrganisationUnits),
-        teiSearchOrganisationUnits: wrapIds(teiSearchOrganisationUnits),
-        dataViewMaxOrganisationUnitLevel:
-            dataViewMaxOrganisationUnitLevel ??
-            Number(dataViewMaxOrganisationUnitLevel),
-        userGroups: wrapIds(userGroups),
-
-        attributeValues: getAttributeValues({ attributes, values }),
-
         userCredentials: {
             id: user?.userCredentials?.id,
             userInfo: user ? { id: user.id } : undefined,
@@ -95,5 +76,24 @@ export const getUserData = ({
                 'CATEGORY_OPTION_GROUP_SET'
             ),
         },
+
+        email,
+        firstName,
+        surname,
+        phoneNumber,
+        whatsApp,
+        facebookMessenger,
+        skype,
+        telegram,
+        twitter,
+        organisationUnits: wrapIds(organisationUnits),
+        dataViewOrganisationUnits: wrapIds(dataViewOrganisationUnits),
+        teiSearchOrganisationUnits: wrapIds(teiSearchOrganisationUnits),
+        dataViewMaxOrganisationUnitLevel:
+            dataViewMaxOrganisationUnitLevel ??
+            Number(dataViewMaxOrganisationUnitLevel),
+        userGroups: wrapIds(userGroups),
+
+        attributeValues: getAttributeValues({ attributes, values }),
     }
 }
