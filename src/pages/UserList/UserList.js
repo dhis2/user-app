@@ -107,7 +107,7 @@ const UserList = () => {
         invitationStatus,
         selfRegistered,
         nameSortDirection,
-        organisationUnits,
+        JSON.stringify(organisationUnits),
     ])
 
     return (
