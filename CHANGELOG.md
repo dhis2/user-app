@@ -1,3 +1,10 @@
+## [1.3.5](https://github.com/dhis2/user-app/compare/v1.3.4...v1.3.5) (2022-02-25)
+
+
+### Bug Fixes
+
+* **user:** only set email field as required if inviting by email ([62e79a1](https://github.com/dhis2/user-app/commit/62e79a17c011e1bd1fe5ad558c2b7296daf76f02))
+
 ## [1.3.4](https://github.com/dhis2/user-app/compare/v1.3.3...v1.3.4) (2022-02-23)
 
 
