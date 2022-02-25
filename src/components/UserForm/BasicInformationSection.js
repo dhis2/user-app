@@ -65,7 +65,9 @@ const BasicInformationSection = React.memo(
                     label={i18n.t('Email address')}
                     initialValue={user?.email}
                     validate={
-                        inviteUser ? composeValidators(hasValue, email) : email
+                        inviteUser === 'INVITE_USER'
+                            ? composeValidators(hasValue, email)
+                            : email
                     }
                 />
                 <TextField
