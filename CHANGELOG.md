@@ -1,3 +1,10 @@
+## [1.3.6](https://github.com/dhis2/user-app/compare/v1.3.5...v1.3.6) (2022-02-25)
+
+
+### Bug Fixes
+
+* **user:** org unit related fixes ([#900](https://github.com/dhis2/user-app/issues/900)) ([d35ddf5](https://github.com/dhis2/user-app/commit/d35ddf53e1a0cd1cda250c39e2b01e78d89e8b73))
+
 ## [1.3.5](https://github.com/dhis2/user-app/compare/v1.3.4...v1.3.5) (2022-02-25)
 
 
