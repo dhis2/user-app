@@ -176,7 +176,7 @@ msgid "Selected tracker authorities"
 msgstr "选定的跟踪机构"
 
 msgid "Available import/export authorities"
-msgstr "可用的进出口当局"
+msgstr "可用的导入导出授权"
 
 msgid "Selected import/export authorities"
 msgstr "选定的进出口当局"
