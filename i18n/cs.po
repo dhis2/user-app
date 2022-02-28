@@ -26,13 +26,13 @@ msgstr "Hodnota atributu musí být jedinečná, hodnota je již přijata."
 
 msgid ""
 "There was a problem whilst checking the availability of this attribute value"
-msgstr ""
+msgstr "Při kontrole dostupnosti hodnoty tohoto atributu došlo k problému"
 
 msgid "Value should be a positive integer"
 msgstr "Hodnota by měla být kladné celé číslo"
 
 msgid "Value should be a negative integer"
-msgstr ""
+msgstr "Hodnota by měla být záporné celé číslo"
 
 msgid "Edit user"
 msgstr "Upravit uživatele"
@@ -50,22 +50,22 @@ msgid "Filter options"
 msgstr "Možnosti filtru"
 
 msgid "Error fetching form"
-msgstr ""
+msgstr "Chyba při načítání formuláře"
 
 msgid "There was an error fetching this form."
-msgstr ""
+msgstr "Při načítání tohoto formuláře došlo k chybě."
 
 msgid "Cancel without saving"
 msgstr "Zrušit bez uložení"
 
 msgid "Error updating group"
-msgstr ""
+msgstr "Chyba při aktualizaci skupiny"
 
 msgid "Error creating group"
-msgstr ""
+msgstr "Chyba při vytváření skupiny"
 
 msgid "Basic information"
-msgstr ""
+msgstr "Základní informace"
 
 msgid "Name"
 msgstr "Název"
@@ -74,13 +74,13 @@ msgid "Code"
 msgstr "Kód"
 
 msgid "Used in analytics reports."
-msgstr ""
+msgstr "Používá se v analytických přehledech."
 
 msgid "User management"
 msgstr "Správa uživatelů"
 
 msgid "Add or remove users from this group."
-msgstr ""
+msgstr "Přidejte nebo odeberte uživatele z této skupiny."
 
 msgid ""
 "To add a user to this group, go to the User section and edit the user group "
@@ -90,11 +90,13 @@ msgstr ""
 "upravte nastavení skupiny uživatelů pro konkrétního uživatele."
 
 msgid "User group management"
-msgstr ""
+msgstr "Správa uživatelských skupin"
 
 msgid ""
 "This group can manage other user groups. Add managed user groups below."
 msgstr ""
+"Tato skupina může spravovat další skupiny uživatelů. Níže přidejte "
+"spravované skupiny uživatelů."
 
 msgid "Available user groups"
 msgstr "Dostupné skupiny uživatelů"
@@ -106,30 +108,30 @@ msgid "Attributes"
 msgstr "Atributy"
 
 msgid "Name is already taken"
-msgstr ""
+msgstr "Jméno je již obsazeno"
 
 msgid ""
 "There was a problem whilst checking the availability of this group name"
-msgstr ""
+msgstr "Při kontrole dostupnosti názvu této skupiny došlo k problému"
 
 msgid "Code is already taken"
-msgstr ""
+msgstr "Kód je již obsazen"
 
 msgid ""
 "There was a problem whilst checking the availability of this group code"
-msgstr ""
+msgstr "Při kontrole dostupnosti tohoto skupinového kódu došlo k problému"
 
 msgid "Only show selected metadata authorities"
-msgstr ""
+msgstr "Zobrazit pouze vybrané autority metadat"
 
 msgid "Authority"
-msgstr ""
+msgstr "Autorita"
 
 msgid "Add/Update Public"
-msgstr ""
+msgstr "Přidat / aktualizovat Veřejné"
 
 msgid "Add/Update Private"
-msgstr ""
+msgstr "Přidat / aktualizovat Soukromé"
 
 msgid "Delete"
 msgstr "Smazat"
@@ -138,53 +140,55 @@ msgid "External access"
 msgstr "Externí přístup"
 
 msgid "Error updating role"
-msgstr ""
+msgstr "Při aktualizaci role došlo k chybě"
 
 msgid "Error creating role"
-msgstr ""
+msgstr "Při vytváření role došlo k chybě"
 
 msgid "Description"
 msgstr "Popis"
 
 msgid "Short, clear description of what this role is for."
-msgstr ""
+msgstr "Krátký a jasný popis toho, k čemu tato role slouží."
 
 msgid "Metadata authorities"
-msgstr ""
+msgstr "Autority metadat"
 
 msgid "Set what metadata access this role has."
-msgstr ""
+msgstr "Nastavte, jaký přístup k metadatům má tato role."
 
 msgid "Other authorities"
-msgstr ""
+msgstr "Jiné autority"
 
 msgid ""
 "Manage access to apps, tracker, data import/export and system settings."
 msgstr ""
+"Spravujte přístup k aplikacím, trackeru, importu/exportu dat a systémovým "
+"nastavením."
 
 msgid "Available app authorities"
-msgstr ""
+msgstr "Dostupné autority aplikací"
 
 msgid "Selected app authorities"
-msgstr ""
+msgstr "Vybrané autority aplikací"
 
 msgid "Available tracker authorities"
-msgstr ""
+msgstr "Dostupné autority trasovače"
 
 msgid "Selected tracker authorities"
-msgstr ""
+msgstr "Vybrané autority trasovače"
 
 msgid "Available import/export authorities"
-msgstr ""
+msgstr "Dostupné import / export autority"
 
 msgid "Selected import/export authorities"
-msgstr ""
+msgstr "Vybrané import / export autority"
 
 msgid "Available system authorities"
-msgstr ""
+msgstr "Dostupné systémové autority"
 
 msgid "Selected system authorities"
-msgstr ""
+msgstr "Vybrané systémové autority"
 
 msgid "All (Full authority)"
 msgstr "Vše (plné oprávnění)"
@@ -361,7 +365,7 @@ msgid "Visualization"
 msgstr "Vizualizace"
 
 msgid "There was a problem whilst checking the availability of this role name"
-msgstr ""
+msgstr "Při kontrole dostupnosti názvu této role došlo k problému"
 
 msgid "Search by name"
 msgstr "Hledání podle názvu"
@@ -373,24 +377,26 @@ msgid "There was a problem displaying the GroupEditor"
 msgstr "Při zobrazování Editoru Skupin došlo k problému"
 
 msgid "Filter available options"
-msgstr ""
+msgstr "Filtrovat dostupné možnosti"
 
 msgid "Filter selected options"
-msgstr ""
+msgstr "Filtrovat vybrané možnosti"
 
 msgid "Search for an organisation unit"
-msgstr ""
+msgstr "Vyhledejte organizační jednotku"
 
 msgid ""
 "Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
 "please refine your search to see more."
 msgstr ""
+"Zobrazuje se {{visibleItemsCount}} z {{totalSearchResultCount}} výsledků "
+"vyhledávání. Upřesněte prosím vyhledávání, abyste viděli více."
 
 msgid "There was a problem retreiving your search results"
 msgstr "Při načítání výsledků vyhledávání došlo k problému"
 
 msgid "Please enter at least {{ minCharLength }} characters"
-msgstr ""
+msgstr "Zadejte prosím alespoň {{ minCharLength }} znaků"
 
 msgid "No matches found"
 msgstr "Nenalezeny žádné shody"
@@ -409,19 +415,19 @@ msgstr ""
 "Nemáte oprávnění k zobrazení uživatelů, rolí uživatelů nebo skupin uživatelů"
 
 msgid "Analytics dimension restrictions"
-msgstr ""
+msgstr "Omezení dimenzí Analytiky"
 
 msgid "Available restrictions"
-msgstr ""
+msgstr "Dostupná omezení"
 
 msgid "Selected restrictions"
-msgstr ""
+msgstr "Vybraná omezení"
 
 msgid "Username"
 msgstr "Uživatelské jméno"
 
 msgid "Email address"
-msgstr ""
+msgstr "Emailová adresa"
 
 msgid "First name"
 msgstr "Jméno"
@@ -439,10 +445,10 @@ msgid "Use database locale / no translation"
 msgstr "Použijte národní prostředí databáze / žádný překlad"
 
 msgid "Disable this user account"
-msgstr ""
+msgstr "Zakázat tento uživatelský účet"
 
 msgid "Contact details"
-msgstr ""
+msgstr "Detaily kontaktu"
 
 msgid "Mobile phone number"
 msgstr "Číslo mobilního telefonu"
@@ -463,7 +469,7 @@ msgid "Twitter"
 msgstr "Twitter"
 
 msgid "Invite user"
-msgstr ""
+msgstr "Pozvat uživatele"
 
 msgid "Create account or email invitation"
 msgstr "Vytvořte účet nebo e-mailovou pozvánku"
@@ -475,63 +481,69 @@ msgid "Email invitation to create account"
 msgstr "E-mailová pozvánka k vytvoření účtu"
 
 msgid "Organisation unit access"
-msgstr ""
+msgstr "Přístup k organizační jednotce"
 
 msgid ""
 "Customise the organisation units this user has access to for searching, "
 "capturing and managing data."
 msgstr ""
+"Přizpůsobte organizační jednotky, ke kterým má tento uživatel přístup pro "
+"vyhledávání, zachycování a správu dat."
 
 msgid "Organisation unit selections are recursive"
-msgstr ""
+msgstr "Výběr organizačních jednotek je rekurzivní"
 
 msgid "Selecting a unit gives access to all units in its sub-hierarchy."
 msgstr ""
+"Výběrem jednotky získáte přístup ke všem jednotkám v její podhierarchii."
 
 msgid "Data capture and maintenance"
-msgstr ""
+msgstr "Sběr a údržba dat"
 
 msgid "The organisation units that this user can enter and edit data for."
 msgstr ""
+"Organizační jednotky, pro které může tento uživatel zadávat a upravovat "
+"data."
 
 msgid "Data output and analysis"
-msgstr ""
+msgstr "Výstup a analýza dat"
 
 msgid "The organisation units that this user can export and analyse."
 msgstr ""
+"Organizační jednotky, které může tento uživatel exportovat a analyzovat."
 
 msgid "Search"
 msgstr "Hledat"
 
 msgid "The organisation that this user can search for and in."
-msgstr ""
+msgstr "Organizace, kterou může tento uživatel vyhledávat a v níž může"
 
 msgid "Maximum organisation unit level for data output"
-msgstr ""
+msgstr "Maximální úroveň organizační jednotky pro výstup dat"
 
 msgid "Roles and groups"
-msgstr ""
+msgstr "Role a skupiny"
 
 msgid "Manage what roles and groups this user is a member of."
-msgstr ""
+msgstr "Spravujte, jaké role a skupiny je tento uživatel členem."
 
 msgid "Available user roles"
-msgstr ""
+msgstr "Dostupné uživatelské role"
 
 msgid "User roles this user is assigned"
-msgstr ""
+msgstr "Uživatelské role, které jsou tomuto uživateli přiřazeny"
 
 msgid "User groups this user is a member of"
-msgstr ""
+msgstr "Skupiny uživatelů, jejichž je tento uživatel členem"
 
 msgid "Security"
 msgstr "Zabezpečení"
 
 msgid "Settings for how this user can log in."
-msgstr ""
+msgstr "Nastavení, jak se tento uživatel může přihlásit."
 
 msgid "Change user password"
-msgstr ""
+msgstr "Změňte uživatelské heslo"
 
 msgid "New password"
 msgstr "Nové heslo"
@@ -541,13 +553,13 @@ msgstr "Heslo"
 
 msgid ""
 "Minimum 8 characters, one uppercase and lowercase letter and one number"
-msgstr ""
+msgstr "Minimálně 8 znaků, jedno velké a malé písmeno a jedno číslo"
 
 msgid "Repeat new password"
 msgstr "opakujte nové heslo"
 
 msgid "Repeat password"
-msgstr ""
+msgstr "Zopakovat heslo"
 
 msgid "Account expiration date"
 msgstr "Datum vypršení platnosti účtu"
@@ -556,25 +568,25 @@ msgid "OIDC mapping value"
 msgstr "Hodnota mapování OIDC"
 
 msgid "OpenID Connect mapping claim for your identity platform"
-msgstr ""
+msgstr "Nárok na mapování OpenID Connect pro vaši platformu identity"
 
 msgid "LDAP identifier"
 msgstr "Identifikátor LDAP"
 
 msgid "External authentication only (OpenID / LDAP)"
-msgstr ""
+msgstr "Pouze externí ověřování (OpenID / LDAP)"
 
 msgid "Invalid username"
-msgstr ""
+msgstr "Neplatné uživatelské jméno"
 
 msgid "Invalid WhatsApp number"
-msgstr ""
+msgstr "Neplatné číslo WhatsApp"
 
 msgid "Error updating user"
-msgstr ""
+msgstr "Při aktualizaci uživatele došlo k chybě"
 
 msgid "Error creating user"
-msgstr ""
+msgstr "Při vytváření uživatele došlo k chybě"
 
 msgid "Username already taken"
 msgstr "Uživatelské jméno je již používáno"
@@ -658,55 +670,55 @@ msgid "Number of users"
 msgstr "počet uživatelů"
 
 msgid "New group"
-msgstr ""
+msgstr "Nová skupina"
 
 msgid "Create group"
-msgstr ""
+msgstr "Vytvořit skupinu"
 
 msgid "New role"
-msgstr ""
+msgstr "Nová role"
 
 msgid "Create role"
-msgstr ""
+msgstr "Vytvořit roli"
 
 msgid "Error fetching interface language"
-msgstr ""
+msgstr "Chyba při načítání jazyka rozhraní"
 
 msgid "There was an error fetching the default interface language."
-msgstr ""
+msgstr "Při načítání výchozího jazyka rozhraní došlo k chybě."
 
 msgid "New user"
-msgstr ""
+msgstr "Nový uživatel"
 
 msgid "Create user"
-msgstr ""
+msgstr "Vytvořit uživatele"
 
 msgid "Error fetching group"
-msgstr ""
+msgstr "Chyba při načítání skupiny"
 
 msgid "There was an error fetching this group."
-msgstr ""
+msgstr "Při načítání této skupiny došlo k chybě."
 
 msgid "Edit group"
-msgstr ""
+msgstr "Upravit skupinu"
 
 msgid "Save changes"
 msgstr "Uložit změny"
 
 msgid "Error fetching role"
-msgstr ""
+msgstr "Chyba při načítání role"
 
 msgid "There was an error fetching this role."
-msgstr ""
+msgstr "Při načítání této role došlo k chybě."
 
 msgid "Edit role"
-msgstr ""
+msgstr "Upravit roli"
 
 msgid "Error fetching user"
-msgstr ""
+msgstr "Chyba při načítání uživatele"
 
 msgid "There was an error fetching this user."
-msgstr ""
+msgstr "Při načítání tohoto uživatele došlo k chybě."
 
 msgid "Show details"
 msgstr "Ukázat detaily"
@@ -724,49 +736,49 @@ msgid "Leave group"
 msgstr "Opustit skupinu"
 
 msgid "Deleted \"{{- name}}\" successfully"
-msgstr ""
+msgstr "Úspěšně smazáno „{{- name}}“."
 
 msgid "There was an error deleting the user group: {{- error}}"
-msgstr ""
+msgstr "Při mazání uživatelské skupiny došlo k chybě: {{- error}}"
 
 msgid "Delete user group {{- name}}"
-msgstr ""
+msgstr "Smazat uživatelskou skupinu {{- name}}"
 
 msgid "Are you sure you want to delete {{- name}}?"
-msgstr ""
+msgstr "Opravdu chcete smazat {{- name}}?"
 
 msgid "No, cancel"
 msgstr "Ne, zrušit"
 
 msgid "Yes, delete"
-msgstr ""
+msgstr "Ano, smazat"
 
 msgid "Joined user group \"{{- name}}\" successfuly"
-msgstr ""
+msgstr "Úspěšně jste se připojili ke skupině uživatelů „{{- name}}“."
 
 msgid "There was an error joining the user group: {{- error}}"
-msgstr ""
+msgstr "Při připojování k uživatelské skupině došlo k chybě: {{- error}}"
 
 msgid "Join user group {{- name}}"
-msgstr ""
+msgstr "Připojte se ke skupině uživatelů {{- name}}"
 
 msgid "Are you sure you want to join {{- name}}?"
-msgstr ""
+msgstr "Opravdu se chcete připojit k {{- name}}?"
 
 msgid "Yes, join"
-msgstr ""
+msgstr "Ano, připojit"
 
 msgid "Left user group \"{{- name}}\" successfuly"
-msgstr ""
+msgstr "Opustil uživatelskou skupinu \"{{- name}}\" úspěšně"
 
 msgid "There was an error leaving the user group: {{- error}}"
-msgstr ""
+msgstr "Při opouštění uživatelské skupiny došlo k chybě: {{- error}}"
 
 msgid "Leave user group {{- name}}"
-msgstr ""
+msgstr "Opustit uživatelskou skupinu {{- name}}"
 
 msgid "Are you sure you want to leave {{- name}}?"
-msgstr ""
+msgstr "Opravdu chcete opustit {{- name}}?"
 
 msgid "Yes, leave"
 msgstr "Ano, odejít"
@@ -778,22 +790,22 @@ msgid "New"
 msgstr "Nový"
 
 msgid "Error loading user groups"
-msgstr ""
+msgstr "Chyba při načítání uživatelských skupin"
 
 msgid "No results found"
 msgstr "Nenalezeny žádné výsledky"
 
 msgid "Member?"
-msgstr ""
+msgstr "Člen?"
 
 msgid "Actions"
 msgstr "Akce"
 
 msgid "Member"
-msgstr ""
+msgstr "Člen"
 
 msgid "Insufficient permissions"
-msgstr ""
+msgstr "Nedostatečná oprávnění"
 
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
@@ -815,16 +827,16 @@ msgid "Go back home"
 msgstr "Zpět na domovskou stranu"
 
 msgid "There was an error deleting the user role: {{- error}}"
-msgstr ""
+msgstr "Při mazání uživatelské role došlo k chybě: {{- error}}"
 
 msgid "Delete user role {{- name}}"
-msgstr ""
+msgstr "Smazat uživatelskou roli {{- name}}"
 
 msgid "User Role Management"
 msgstr "Správa rolí uživatelů"
 
 msgid "Error loading user roles"
-msgstr ""
+msgstr "Chyba při načítání uživatelských rolí"
 
 msgid "Profile"
 msgstr "Profil"
@@ -845,65 +857,65 @@ msgid "Disable Two Factor Authentication"
 msgstr "Zakázat dvoufaktorové ověřování"
 
 msgid "There was an error deleting the user: {{- error}}"
-msgstr ""
+msgstr "Při mazání uživatele došlo k chybě: {{- error}}"
 
 msgid "Delete user {{- name}}"
-msgstr ""
+msgstr "Smazat uživatele {{- name}}"
 
 msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
-msgstr ""
+msgstr "Úspěšně zakázáno dvoufaktorové ověřování pro \"{{- name}}\""
 
 msgid "There was an error disabling two factor authentication: {{- error}}"
-msgstr ""
+msgstr "Při deaktivaci dvoufaktorového ověřování došlo k chybě: {{- error}}"
 
 msgid "Disable two factor authentication for user {{- name}}"
-msgstr ""
+msgstr "Zakázat dvoufázové ověření pro uživatele {{- name}}"
 
 msgid ""
 "Are you sure you want to disable two factor authentication for {{- name}}?"
-msgstr ""
+msgstr "Opravdu chcete zakázat dvoufaktorové ověřování pro {{- name}}?"
 
 msgid "Yes, disable two factor authentication"
-msgstr ""
+msgstr "Ano, zakázat dvoufaktorové ověřování"
 
 msgid "User \"{{- name}}\" disabled successfuly"
-msgstr ""
+msgstr "Uživatel \"{{- name}}\" byl úspěšně deaktivován"
 
 msgid "There was an error disabling the user: {{- error}}"
-msgstr ""
+msgstr "Při deaktivaci uživatele došlo k chybě: {{- error}}"
 
 msgid "Disable user {{- name}}"
-msgstr ""
+msgstr "Zakázat uživatele {{- name}}"
 
 msgid "Are you sure you want to disable {{- name}}?"
-msgstr ""
+msgstr "Opravdu chcete zakázat {{- name}}?"
 
 msgid "Yes, disable"
-msgstr ""
+msgstr "Ano, zakázat"
 
 msgid "User \"{{- name}}\" enabled successfuly"
-msgstr ""
+msgstr "Uživatel \"{{- name}}\" byl úspěšně aktivován"
 
 msgid "There was an error enabling the user: {{- error}}"
-msgstr ""
+msgstr "Při povolení uživatele došlo k chybě: {{- error}}"
 
 msgid "Enable user {{- name}}"
-msgstr ""
+msgstr "Povolit uživatele {{- name}}"
 
 msgid "Are you sure you want to enable {{- name}}?"
-msgstr ""
+msgstr "Opravdu chcete povolit {{- name}}?"
 
 msgid "Yes, enable"
-msgstr ""
+msgstr "Ano, povolit"
 
 msgid "User \"{{- name}}\" replicated successfuly"
-msgstr ""
+msgstr "Uživatel \"{{- name}}\" byl úspěšně replikován"
 
 msgid "There was an error replicating the user: {{- error}}"
-msgstr ""
+msgstr "Při replikaci uživatele došlo k chybě: {{- error}}"
 
 msgid "Replicate user {{- name}}"
-msgstr ""
+msgstr "Replikovat uživatele {{- name}}"
 
 msgid "Username for new user"
 msgstr "Uživatelské jméno pro nového uživatele"
@@ -915,6 +927,8 @@ msgid ""
 "Password should be at least 8 characters long, with at least one lowercase "
 "character, one uppercase character and one special character."
 msgstr ""
+"Heslo by mělo mít alespoň 8 znaků, alespoň jedno malé písmeno, jedno velké "
+"písmeno a jeden speciální znak."
 
 msgid "Cancel"
 msgstr "Zrušit"
@@ -923,31 +937,31 @@ msgid "Replicate user"
 msgstr "Replikovat uživatele"
 
 msgid "Password of user \"{{- name}}\" reset successfuly"
-msgstr ""
+msgstr "Heslo uživatele \"{{- name}}\" bylo úspěšně resetováno"
 
 msgid "There was an error resetting the password: {{- error}}"
-msgstr ""
+msgstr "Při resetování hesla došlo k chybě: {{- error}}"
 
 msgid "Reset password of user {{- name}}"
-msgstr ""
+msgstr "Obnovit heslo uživatele {{- name}}"
 
 msgid "Are you sure you want to reset {{- name}}'s password?"
-msgstr ""
+msgstr "Opravdu chcete resetovat heslo uživatele {{- name}}?"
 
 msgid "Yes, reset"
-msgstr ""
+msgstr "Ano, resetovat"
 
 msgid "1 month"
-msgstr ""
+msgstr "1 měsíc"
 
 msgid "{{months}} months"
-msgstr ""
+msgstr "{{months}} měsíce"
 
 msgid "Time inactive"
-msgstr ""
+msgstr "Čas neaktivní"
 
 msgid "Invitation"
-msgstr ""
+msgstr "Pozvání"
 
 msgid "All invitations"
 msgstr "Všechny pozvánky"
@@ -956,22 +970,22 @@ msgid "Expired invitations"
 msgstr "Vypršené Pozvánky"
 
 msgid "Show self-registrations"
-msgstr ""
+msgstr "Zobrazit vlastní registrace"
 
 msgid "Clear filters"
 msgstr "Vymazat filtry"
 
 msgid "Org.unit"
-msgstr ""
+msgstr "Org.jednotka"
 
 msgid "User Management"
 msgstr "Správa uživatelů"
 
 msgid "Error loading users"
-msgstr ""
+msgstr "Chyba při načítání uživatelů"
 
 msgid "Account disabled?"
-msgstr ""
+msgstr "Účet deaktivován?"
 
 msgid "Disabled"
 msgstr "Zakázáno"
