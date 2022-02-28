@@ -563,7 +563,7 @@ msgid "Search Organisation Units"
 msgstr "Hledat v organizačních jednotkách"
 
 msgid "Maximum organisation unit level for data output"
-msgstr ""
+msgstr "Maximální úroveň organizační jednotky pro výstup dat"
 
 msgid "Selected user groups"
 msgstr "Vybrané skupiny uživatelů"
