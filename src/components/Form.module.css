@@ -44,7 +44,7 @@
 
 .dateField {
     composes: field;
-    max-width: 150px;
+    max-width: 180px;
 }
 
 .transferFieldHeader {
