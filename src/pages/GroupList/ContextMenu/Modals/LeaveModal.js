@@ -30,7 +30,7 @@ const LeaveModal = ({
         try {
             await engine.mutate({
                 resource: `users/${currentUser.id}/userGroups/${group.id}`,
-                type: 'create',
+                type: 'delete',
             })
             const message = i18n.t('Left user group "{{- name}}" successfuly', {
                 name: group.displayName,
