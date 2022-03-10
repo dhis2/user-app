@@ -1,3 +1,11 @@
+## [1.3.9](https://github.com/dhis2/user-app/compare/v1.3.8...v1.3.9) (2022-03-10)
+
+
+### Bug Fixes
+
+* **form:** increase width of date input types due to Chrome calendar icon ([#914](https://github.com/dhis2/user-app/issues/914)) ([6866b85](https://github.com/dhis2/user-app/commit/6866b850303679dc5825177ac75116af82e8a187))
+* **groups:** use correct method and endpoint to leave groups ([#912](https://github.com/dhis2/user-app/issues/912)) ([4fd020a](https://github.com/dhis2/user-app/commit/4fd020a110176d194f4efe2ddac3d221d2c57c1e))
+
 ## [1.3.8](https://github.com/dhis2/user-app/compare/v1.3.7...v1.3.8) (2022-03-06)
 
 
