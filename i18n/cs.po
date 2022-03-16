@@ -1,13 +1,13 @@
 # 
 # Translators:
-# trendspotter <jirka.p@volny.cz>, 2021
+# trendspotter <jirka.p@volny.cz>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-28T15:10:38.753Z\n"
+"POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: trendspotter <jirka.p@volny.cz>, 2021\n"
+"Last-Translator: trendspotter <jirka.p@volny.cz>, 2022\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,38 +15,180 @@ msgstr ""
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
+msgid "Yes"
+msgstr "Ano"
+
+msgid "No"
+msgstr "Ne"
+
+msgid "Attribute value needs to be unique, value already taken."
+msgstr "Hodnota atributu musí být jedinečná, hodnota je již přijata."
+
 msgid ""
-"Could not reset user password. Make sure you have the appropriate "
-"permissions."
+"There was a problem whilst checking the availability of this attribute value"
+msgstr "Při kontrole dostupnosti hodnoty tohoto atributu došlo k problému"
+
+msgid "Value should be a positive integer"
+msgstr "Hodnota by měla být kladné celé číslo"
+
+msgid "Value should be a negative integer"
+msgstr "Hodnota by měla být záporné celé číslo"
+
+msgid "Edit user"
+msgstr "Upravit uživatele"
+
+msgid "Edit user group"
+msgstr "Upravit skupinu uživatelů"
+
+msgid "Edit user role"
+msgstr "Upravit uživatelskou roli"
+
+msgid "Send message"
+msgstr "Poslat zprávu"
+
+msgid "Filter options"
+msgstr "Možnosti filtru"
+
+msgid "Error fetching form"
+msgstr "Chyba při načítání formuláře"
+
+msgid "There was an error fetching this form."
+msgstr "Při načítání tohoto formuláře došlo k chybě."
+
+msgid "Cancel without saving"
+msgstr "Zrušit bez uložení"
+
+msgid "Error updating group"
+msgstr "Chyba při aktualizaci skupiny"
+
+msgid "Error creating group"
+msgstr "Chyba při vytváření skupiny"
+
+msgid "Basic information"
+msgstr "Základní informace"
+
+msgid "Name"
+msgstr "Název"
+
+msgid "Code"
+msgstr "Kód"
+
+msgid "Used in analytics reports."
+msgstr "Používá se v analytických přehledech."
+
+msgid "User management"
+msgstr "Správa uživatelů"
+
+msgid "Add or remove users from this group."
+msgstr "Přidejte nebo odeberte uživatele z této skupiny."
+
+msgid ""
+"To add a user to this group, go to the User section and edit the user group "
+"settings for a specific user."
 msgstr ""
-"Heslo uživatele nelze obnovit. Ujistěte se, že máte příslušná oprávnění."
+"Chcete-li přidat uživatele do této skupiny, přejděte do části Uživatel a "
+"upravte nastavení skupiny uživatelů pro konkrétního uživatele."
 
-msgid "Use database locale / no translation"
-msgstr "Použijte národní prostředí databáze / žádný překlad"
+msgid "User group management"
+msgstr "Správa uživatelských skupin"
 
-msgid "Search"
-msgstr "Hledat"
+msgid ""
+"This group can manage other user groups. Add managed user groups below."
+msgstr ""
+"Tato skupina může spravovat další skupiny uživatelů. Níže přidejte "
+"spravované skupiny uživatelů."
 
-msgid "Enter search term"
-msgstr "Zadejte hledaný výraz"
+msgid "Available user groups"
+msgstr "Dostupné skupiny uživatelů"
 
-msgid "Please enter at least {{ minCharCount }} characters"
-msgstr "Zadejte alespoň {{ minCharCount }} znaků"
+msgid "Managed user groups"
+msgstr "Spravované skupiny uživatelů"
 
-msgid "No matches found"
-msgstr "Nenalezeny žádné shody"
+msgid "Attributes"
+msgstr "Atributy"
 
-msgid "There was a problem retreiving your search results"
-msgstr "Při načítání výsledků vyhledávání došlo k problému"
+msgid "Name is already taken"
+msgstr "Jméno je již obsazeno"
 
-msgid "There was a problem retreiving the available authorities."
-msgstr "Při získávání dostupných autorit došlo k problému."
+msgid ""
+"There was a problem whilst checking the availability of this group name"
+msgstr "Při kontrole dostupnosti názvu této skupiny došlo k problému"
 
-msgid "Authorities"
-msgstr "Autority"
+msgid "Code is already taken"
+msgstr "Kód je již obsazen"
 
-msgid "Selected authorities only"
-msgstr "Pouze vybrané orgány"
+msgid ""
+"There was a problem whilst checking the availability of this group code"
+msgstr "Při kontrole dostupnosti tohoto skupinového kódu došlo k problému"
+
+msgid "Only show selected metadata authorities"
+msgstr "Zobrazit pouze vybrané autority metadat"
+
+msgid "Authority"
+msgstr "Autorita"
+
+msgid "Add/Update Public"
+msgstr "Přidat / aktualizovat Veřejné"
+
+msgid "Add/Update Private"
+msgstr "Přidat / aktualizovat Soukromé"
+
+msgid "Delete"
+msgstr "Smazat"
+
+msgid "External access"
+msgstr "Externí přístup"
+
+msgid "Error updating role"
+msgstr "Při aktualizaci role došlo k chybě"
+
+msgid "Error creating role"
+msgstr "Při vytváření role došlo k chybě"
+
+msgid "Description"
+msgstr "Popis"
+
+msgid "Short, clear description of what this role is for."
+msgstr "Krátký a jasný popis toho, k čemu tato role slouží."
+
+msgid "Metadata authorities"
+msgstr "Autority metadat"
+
+msgid "Set what metadata access this role has."
+msgstr "Nastavte, jaký přístup k metadatům má tato role."
+
+msgid "Other authorities"
+msgstr "Jiné autority"
+
+msgid ""
+"Manage access to apps, tracker, data import/export and system settings."
+msgstr ""
+"Spravujte přístup k aplikacím, trackeru, importu/exportu dat a systémovým "
+"nastavením."
+
+msgid "Available app authorities"
+msgstr "Dostupné autority aplikací"
+
+msgid "Selected app authorities"
+msgstr "Vybrané autority aplikací"
+
+msgid "Available tracker authorities"
+msgstr "Dostupné autority trasovače"
+
+msgid "Selected tracker authorities"
+msgstr "Vybrané autority trasovače"
+
+msgid "Available import/export authorities"
+msgstr "Dostupné import / export autority"
+
+msgid "Selected import/export authorities"
+msgstr "Vybrané import / export autority"
+
+msgid "Available system authorities"
+msgstr "Dostupné systémové autority"
+
+msgid "Selected system authorities"
+msgstr "Vybrané systémové autority"
 
 msgid "All (Full authority)"
 msgstr "Vše (plné oprávnění)"
@@ -222,96 +364,8 @@ msgstr "Přeskočit audit importu dat"
 msgid "Visualization"
 msgstr "Vizualizace"
 
-msgid "Apps"
-msgstr "Aplikace"
-
-msgid "Tracker"
-msgstr "Trasovač"
-
-msgid "Import-Export"
-msgstr "Import-Export"
-
-msgid "System"
-msgstr "Systém"
-
-msgid "Add"
-msgstr "Přidat"
-
-msgid "list"
-msgstr "seznam"
-
-msgid ""
-"You do not have access to any section of the DHIS 2 User Management App"
-msgstr "Nemáte přístup k žádné části aplikace Správa uživatelů DHIS 2"
-
-msgid "Edit user"
-msgstr "Upravit uživatele"
-
-msgid "Edit user group"
-msgstr "Upravit skupinu uživatelů"
-
-msgid "Edit user role"
-msgstr "Upravit uživatelskou roli"
-
-msgid "Send message"
-msgstr "Poslat zprávu"
-
-msgid "Update"
-msgstr "Aktualizovat"
-
-msgid "Create new"
-msgstr "Vytvořit nový"
-
-msgid "Back to"
-msgstr "Zpět k"
-
-msgid "You are not allowed to edit"
-msgstr "Nemáte dovoleno provádět úpravy"
-
-msgid "Confirm"
-msgstr "Potvrdit"
-
-msgid "There was an error fetching the list"
-msgstr "Při načítání seznamu došlo k chybě"
-
-msgid "Select an organisation unit"
-msgstr "Vyberte organizační jednotku"
-
-msgid "Organisation unit"
-msgstr "Organizační jednotka"
-
-msgid "Page not found."
-msgstr "Stránka nenalezena."
-
-msgid "No match for"
-msgstr "Žádná shoda pro"
-
-msgid "Go back home"
-msgstr "Zpět na domovskou stranu"
-
-msgid "User \"{{displayName}}\" replicated successfuly"
-msgstr "Uživatel \"{{displayName}}\" se úspěšně replikoval"
-
-msgid "There was a problem replicating the user"
-msgstr "Při replikaci uživatele došlo k potížím"
-
-msgid "Username"
-msgstr "Uživatelské jméno"
-
-msgid "Username for new user"
-msgstr "Uživatelské jméno pro nového uživatele"
-
-msgid "Password"
-msgstr "Heslo"
-
-msgid "Password for new user"
-msgstr "Heslo pro nového uživatele"
-
-msgid "Replicate"
-msgstr "Replikovat"
-
-msgid "Cancel"
-msgstr "Zrušit"
+msgid "There was a problem whilst checking the availability of this role name"
+msgstr "Při kontrole dostupnosti názvu této role došlo k problému"
 
 msgid "Search by name"
 msgstr "Hledání podle názvu"
@@ -319,14 +373,33 @@ msgstr "Hledání podle názvu"
 msgid "Could not load available items"
 msgstr "Nelze načíst dostupné položky"
 
-msgid "Filter"
-msgstr "Filtr"
-
-msgid "Filter available and selected items"
-msgstr "Filtrovat dostupné a vybrané položky"
-
 msgid "There was a problem displaying the GroupEditor"
 msgstr "Při zobrazování Editoru Skupin došlo k problému"
+
+msgid "Filter available options"
+msgstr "Filtrovat dostupné možnosti"
+
+msgid "Filter selected options"
+msgstr "Filtrovat vybrané možnosti"
+
+msgid "Search for an organisation unit"
+msgstr "Vyhledejte organizační jednotku"
+
+msgid ""
+"Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
+"please refine your search to see more."
+msgstr ""
+"Zobrazuje se {{visibleItemsCount}} z {{totalSearchResultCount}} výsledků "
+"vyhledávání. Upřesněte prosím vyhledávání, abyste viděli více."
+
+msgid "There was a problem retreiving your search results"
+msgstr "Při načítání výsledků vyhledávání došlo k problému"
+
+msgid "Please enter at least {{ minCharLength }} characters"
+msgstr "Zadejte prosím alespoň {{ minCharLength }} znaků"
+
+msgid "No matches found"
+msgstr "Nenalezeny žádné shody"
 
 msgid "Apply"
 msgstr "Aplikovat"
@@ -341,6 +414,207 @@ msgid "You do not have authorities to see users, user roles or user groups"
 msgstr ""
 "Nemáte oprávnění k zobrazení uživatelů, rolí uživatelů nebo skupin uživatelů"
 
+msgid "Analytics dimension restrictions"
+msgstr "Omezení dimenzí Analytiky"
+
+msgid "Available restrictions"
+msgstr "Dostupná omezení"
+
+msgid "Selected restrictions"
+msgstr "Vybraná omezení"
+
+msgid "Username"
+msgstr "Uživatelské jméno"
+
+msgid "Email address"
+msgstr "Emailová adresa"
+
+msgid "First name"
+msgstr "Jméno"
+
+msgid "Last name"
+msgstr "Příjmení"
+
+msgid "Interface language"
+msgstr "Jazyk rozhraní"
+
+msgid "Database language"
+msgstr "Jazyk databáze"
+
+msgid "Use database locale / no translation"
+msgstr "Použijte národní prostředí databáze / žádný překlad"
+
+msgid "Disable this user account"
+msgstr "Zakázat tento uživatelský účet"
+
+msgid "Contact details"
+msgstr "Detaily kontaktu"
+
+msgid "Mobile phone number"
+msgstr "Číslo mobilního telefonu"
+
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+msgid "Facebook Messenger"
+msgstr "Facebook Messenger"
+
+msgid "Skype"
+msgstr "Skype"
+
+msgid "Telegram"
+msgstr "Telegram"
+
+msgid "Twitter"
+msgstr "Twitter"
+
+msgid "Invite user"
+msgstr "Pozvat uživatele"
+
+msgid "Create account or email invitation"
+msgstr "Vytvořte účet nebo e-mailovou pozvánku"
+
+msgid "Create account with user details"
+msgstr "Vytvořte účet s podrobnostmi uživatele"
+
+msgid "Email invitation to create account"
+msgstr "E-mailová pozvánka k vytvoření účtu"
+
+msgid "Organisation unit access"
+msgstr "Přístup k organizační jednotce"
+
+msgid ""
+"Customise the organisation units this user has access to for searching, "
+"capturing and managing data."
+msgstr ""
+"Přizpůsobte organizační jednotky, ke kterým má tento uživatel přístup pro "
+"vyhledávání, zachycování a správu dat."
+
+msgid "Organisation unit selections are recursive"
+msgstr "Výběr organizačních jednotek je rekurzivní"
+
+msgid "Selecting a unit gives access to all units in its sub-hierarchy."
+msgstr ""
+"Výběrem jednotky získáte přístup ke všem jednotkám v její podhierarchii."
+
+msgid "Data capture and maintenance"
+msgstr "Sběr a údržba dat"
+
+msgid "The organisation units that this user can enter and edit data for."
+msgstr ""
+"Organizační jednotky, pro které může tento uživatel zadávat a upravovat "
+"data."
+
+msgid "Data output and analysis"
+msgstr "Výstup a analýza dat"
+
+msgid "The organisation units that this user can export and analyse."
+msgstr ""
+"Organizační jednotky, které může tento uživatel exportovat a analyzovat."
+
+msgid "Search"
+msgstr "Hledat"
+
+msgid "The organisation that this user can search for and in."
+msgstr "Organizace, kterou může tento uživatel vyhledávat a v níž může"
+
+msgid "Maximum organisation unit level for data output"
+msgstr "Maximální úroveň organizační jednotky pro výstup dat"
+
+msgid "Roles and groups"
+msgstr "Role a skupiny"
+
+msgid "Manage what roles and groups this user is a member of."
+msgstr "Spravujte, jaké role a skupiny je tento uživatel členem."
+
+msgid "Available user roles"
+msgstr "Dostupné uživatelské role"
+
+msgid "User roles this user is assigned"
+msgstr "Uživatelské role, které jsou tomuto uživateli přiřazeny"
+
+msgid "User groups this user is a member of"
+msgstr "Skupiny uživatelů, jejichž je tento uživatel členem"
+
+msgid "Security"
+msgstr "Zabezpečení"
+
+msgid "Settings for how this user can log in."
+msgstr "Nastavení, jak se tento uživatel může přihlásit."
+
+msgid "Change user password"
+msgstr "Změňte uživatelské heslo"
+
+msgid "New password"
+msgstr "Nové heslo"
+
+msgid "Password"
+msgstr "Heslo"
+
+msgid ""
+"Minimum 8 characters, one uppercase and lowercase letter and one number"
+msgstr "Minimálně 8 znaků, jedno velké a malé písmeno a jedno číslo"
+
+msgid "Repeat new password"
+msgstr "opakujte nové heslo"
+
+msgid "Repeat password"
+msgstr "Zopakovat heslo"
+
+msgid "Account expiration date"
+msgstr "Datum vypršení platnosti účtu"
+
+msgid "OIDC mapping value"
+msgstr "Hodnota mapování OIDC"
+
+msgid "OpenID Connect mapping claim for your identity platform"
+msgstr "Nárok na mapování OpenID Connect pro vaši platformu identity"
+
+msgid "LDAP identifier"
+msgstr "Identifikátor LDAP"
+
+msgid "External authentication only (OpenID / LDAP)"
+msgstr "Pouze externí ověřování (OpenID / LDAP)"
+
+msgid "Invalid username"
+msgstr "Neplatné uživatelské jméno"
+
+msgid "Invalid WhatsApp number"
+msgstr "Neplatné číslo WhatsApp"
+
+msgid "Error updating user"
+msgstr "Při aktualizaci uživatele došlo k chybě"
+
+msgid "Error creating user"
+msgstr "Při vytváření uživatele došlo k chybě"
+
+msgid "Username already taken"
+msgstr "Uživatelské jméno je již používáno"
+
+msgid "There was a problem whilst checking the availability of this username"
+msgstr "Při kontrole dostupnosti tohoto uživatelského jména došlo k problému"
+
+msgid "Passwords do not match"
+msgstr "Hesla se neshodují"
+
+msgid "Please provide a value"
+msgstr "Zadejte prosím hodnotu"
+
+msgid "Create, modify, view and delete Users"
+msgstr "Vytvářejte, upravujte, zobrazujte a mazejte uživatele"
+
+msgid "User role"
+msgstr "Role uživatele"
+
+msgid "Create, modify, view and delete User Roles"
+msgstr "Vytvářejte, upravujte, zobrazujte a mazejte uživatelské role"
+
+msgid "User group"
+msgstr "Uživatelská skupina"
+
+msgid "Create, modify, view and delete User Groups"
+msgstr "Vytvářejte, upravujte, prohlížejte a mazejte skupiny uživatelů"
+
 msgid "Display name"
 msgstr "Zobrazované jméno"
 
@@ -352,12 +626,6 @@ msgstr "Poslední přihlášení"
 
 msgid "Created"
 msgstr "Vytvořeno"
-
-msgid "First name"
-msgstr "Jméno"
-
-msgid "Last name"
-msgstr "Příjmení"
 
 msgid "Introduction"
 msgstr "Úvod"
@@ -389,9 +657,6 @@ msgstr "Mluví"
 msgid "E-mail"
 msgstr "E-mail"
 
-msgid "Mobile phone number"
-msgstr "Číslo mobilního telefonu"
-
 msgid "Organisations units"
 msgstr "Organizační jednotky"
 
@@ -404,214 +669,299 @@ msgstr "Členové"
 msgid "Number of users"
 msgstr "počet uživatelů"
 
-msgid "Create, modify, view and delete Users"
-msgstr "Vytvářejte, upravujte, zobrazujte a mazejte uživatele"
+msgid "New group"
+msgstr "Nová skupina"
 
-msgid "User role"
-msgstr "Role uživatele"
+msgid "Create group"
+msgstr "Vytvořit skupinu"
 
-msgid "Create, modify, view and delete User Roles"
-msgstr "Vytvářejte, upravujte, zobrazujte a mazejte uživatelské role"
+msgid "New role"
+msgstr "Nová role"
 
-msgid "User group"
-msgstr "Uživatelská skupina"
+msgid "Create role"
+msgstr "Vytvořit roli"
 
-msgid "Create, modify, view and delete User Groups"
-msgstr "Vytvářejte, upravujte, prohlížejte a mazejte skupiny uživatelů"
+msgid "Error fetching interface language"
+msgstr "Chyba při načítání jazyka rozhraní"
 
-msgid "Could not load the user group data. Please refresh the page."
-msgstr "Nelze načíst data skupiny uživatelů. Obnovte stránku."
+msgid "There was an error fetching the default interface language."
+msgstr "Při načítání výchozího jazyka rozhraní došlo k chybě."
 
-msgid "User group \"{{displayName}}\" saved successfully"
-msgstr "Skupina uživatelů \"{{displayName}}\" byla úspěšně uložena"
+msgid "New user"
+msgstr "Nový uživatel"
 
-msgid "There was a problem saving the user group."
-msgstr "Při ukládání skupiny uživatelů došlo k problému."
+msgid "Create user"
+msgstr "Vytvořit uživatele"
 
-msgid "Save"
-msgstr "Uložit"
+msgid "Error fetching group"
+msgstr "Chyba při načítání skupiny"
 
-msgid "Name"
-msgstr "Název"
+msgid "There was an error fetching this group."
+msgstr "Při načítání této skupiny došlo k chybě."
 
-msgid "Code"
-msgstr "Kód"
+msgid "Edit group"
+msgstr "Upravit skupinu"
 
-msgid ""
-"To add a user to this group, go to the User section and edit the user group "
-"settings for a specific user."
-msgstr ""
-"Chcete-li přidat uživatele do této skupiny, přejděte do části Uživatel a "
-"upravte nastavení skupiny uživatelů pro konkrétního uživatele."
+msgid "Save changes"
+msgstr "Uložit změny"
 
-msgid "Available user groups"
-msgstr "Dostupné skupiny uživatelů"
+msgid "Error fetching role"
+msgstr "Chyba při načítání role"
 
-msgid "Managed user groups"
-msgstr "Spravované skupiny uživatelů"
+msgid "There was an error fetching this role."
+msgstr "Při načítání této role došlo k chybě."
 
-msgid "You left group"
-msgstr "Opustili jste skupinu"
+msgid "Edit role"
+msgstr "Upravit roli"
 
-msgid "You joined group"
-msgstr "Připojili jste se ke skupině"
+msgid "Error fetching user"
+msgstr "Chyba při načítání uživatele"
 
-msgid "There was a problem updating your group membership"
-msgstr "Při aktualizaci členství ve skupině došlo k problému"
+msgid "There was an error fetching this user."
+msgstr "Při načítání tohoto uživatele došlo k chybě."
+
+msgid "Show details"
+msgstr "Ukázat detaily"
+
+msgid "Sharing settings"
+msgstr "Nastavení sdílení"
+
+msgid "Edit"
+msgstr "Upravit"
+
+msgid "Join group"
+msgstr "Přidat se ke skupině"
+
+msgid "Leave group"
+msgstr "Opustit skupinu"
+
+msgid "Deleted \"{{- name}}\" successfully"
+msgstr "Úspěšně smazáno „{{- name}}“."
+
+msgid "There was an error deleting the user group: {{- error}}"
+msgstr "Při mazání uživatelské skupiny došlo k chybě: {{- error}}"
+
+msgid "Delete user group {{- name}}"
+msgstr "Smazat uživatelskou skupinu {{- name}}"
+
+msgid "Are you sure you want to delete {{- name}}?"
+msgstr "Opravdu chcete smazat {{- name}}?"
+
+msgid "No, cancel"
+msgstr "Ne, zrušit"
+
+msgid "Yes, delete"
+msgstr "Ano, smazat"
+
+msgid "Joined user group \"{{- name}}\" successfuly"
+msgstr "Úspěšně jste se připojili ke skupině uživatelů „{{- name}}“."
+
+msgid "There was an error joining the user group: {{- error}}"
+msgstr "Při připojování k uživatelské skupině došlo k chybě: {{- error}}"
+
+msgid "Join user group {{- name}}"
+msgstr "Připojte se ke skupině uživatelů {{- name}}"
+
+msgid "Are you sure you want to join {{- name}}?"
+msgstr "Opravdu se chcete připojit k {{- name}}?"
+
+msgid "Yes, join"
+msgstr "Ano, připojit"
+
+msgid "Left user group \"{{- name}}\" successfuly"
+msgstr "Opustil uživatelskou skupinu \"{{- name}}\" úspěšně"
+
+msgid "There was an error leaving the user group: {{- error}}"
+msgstr "Při opouštění uživatelské skupiny došlo k chybě: {{- error}}"
+
+msgid "Leave user group {{- name}}"
+msgstr "Opustit uživatelskou skupinu {{- name}}"
+
+msgid "Are you sure you want to leave {{- name}}?"
+msgstr "Opravdu chcete opustit {{- name}}?"
+
+msgid "Yes, leave"
+msgstr "Ano, odejít"
 
 msgid "User Group Management"
 msgstr "Správa skupiny uživatelů"
 
-msgid "User role \"{{displayName}}\" saved successfully"
-msgstr "Uživatelská role \"{{displayName}}\"  byla úspěšně uložena"
+msgid "New"
+msgstr "Nový"
 
-msgid "There was a problem saving the user role."
-msgstr "Při ukládání uživatelské role došlo k problému."
+msgid "Error loading user groups"
+msgstr "Chyba při načítání uživatelských skupin"
 
-msgid "Description"
-msgstr "Popis"
+msgid "No results found"
+msgstr "Nenalezeny žádné výsledky"
+
+msgid "Member?"
+msgstr "Člen?"
+
+msgid "Actions"
+msgstr "Akce"
+
+msgid "Member"
+msgstr "Člen"
+
+msgid "Insufficient permissions"
+msgstr "Nedostatečná oprávnění"
+
+msgid ""
+"You do not have access to any section of the DHIS 2 User Management App"
+msgstr "Nemáte přístup k žádné části aplikace Správa uživatelů DHIS 2"
+
+msgid "List"
+msgstr "Seznam"
+
+msgid "Add"
+msgstr "Přidat"
+
+msgid "Page not found."
+msgstr "Stránka nenalezena."
+
+msgid "No match for"
+msgstr "Žádná shoda pro"
+
+msgid "Go back home"
+msgstr "Zpět na domovskou stranu"
+
+msgid "There was an error deleting the user role: {{- error}}"
+msgstr "Při mazání uživatelské role došlo k chybě: {{- error}}"
+
+msgid "Delete user role {{- name}}"
+msgstr "Smazat uživatelskou roli {{- name}}"
 
 msgid "User Role Management"
 msgstr "Správa rolí uživatelů"
 
-msgid "Could not load the user data. Please refresh the page."
-msgstr "Nelze načíst uživatelská data. Obnovte stránku."
+msgid "Error loading user roles"
+msgstr "Chyba při načítání uživatelských rolí"
 
-msgid "User \"{{displayName}}\" saved successfully"
-msgstr "Uživatel \"{{displayName}}\" byl úspěšně uložen"
+msgid "Profile"
+msgstr "Profil"
 
-msgid "There was a problem saving the user."
-msgstr "Při ukládání uživatele došlo k problému."
+msgid "Replicate"
+msgstr "Replikovat"
 
-msgid "Show fewer options"
-msgstr "Zobrazit méně možností"
+msgid "Reset password"
+msgstr "Obnovit heslo"
 
-msgid "Show more options"
-msgstr "Zobrazit více možností"
+msgid "Disable"
+msgstr "Zakázat"
 
-msgid "Send invite"
-msgstr "Poslat pozvánku"
+msgid "Enable"
+msgstr "Povolit"
+
+msgid "Disable Two Factor Authentication"
+msgstr "Zakázat dvoufaktorové ověřování"
+
+msgid "There was an error deleting the user: {{- error}}"
+msgstr "Při mazání uživatele došlo k chybě: {{- error}}"
+
+msgid "Delete user {{- name}}"
+msgstr "Smazat uživatele {{- name}}"
+
+msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
+msgstr "Úspěšně zakázáno dvoufaktorové ověřování pro \"{{- name}}\""
+
+msgid "There was an error disabling two factor authentication: {{- error}}"
+msgstr "Při deaktivaci dvoufaktorového ověřování došlo k chybě: {{- error}}"
+
+msgid "Disable two factor authentication for user {{- name}}"
+msgstr "Zakázat dvoufázové ověření pro uživatele {{- name}}"
 
 msgid ""
-"Selecting an organisation unit provides access to all units in the sub-"
-"hierarchy"
+"Are you sure you want to disable two factor authentication for {{- name}}?"
+msgstr "Opravdu chcete zakázat dvoufaktorové ověřování pro {{- name}}?"
+
+msgid "Yes, disable two factor authentication"
+msgstr "Ano, zakázat dvoufaktorové ověřování"
+
+msgid "User \"{{- name}}\" disabled successfuly"
+msgstr "Uživatel \"{{- name}}\" byl úspěšně deaktivován"
+
+msgid "There was an error disabling the user: {{- error}}"
+msgstr "Při deaktivaci uživatele došlo k chybě: {{- error}}"
+
+msgid "Disable user {{- name}}"
+msgstr "Zakázat uživatele {{- name}}"
+
+msgid "Are you sure you want to disable {{- name}}?"
+msgstr "Opravdu chcete zakázat {{- name}}?"
+
+msgid "Yes, disable"
+msgstr "Ano, zakázat"
+
+msgid "User \"{{- name}}\" enabled successfuly"
+msgstr "Uživatel \"{{- name}}\" byl úspěšně aktivován"
+
+msgid "There was an error enabling the user: {{- error}}"
+msgstr "Při povolení uživatele došlo k chybě: {{- error}}"
+
+msgid "Enable user {{- name}}"
+msgstr "Povolit uživatele {{- name}}"
+
+msgid "Are you sure you want to enable {{- name}}?"
+msgstr "Opravdu chcete povolit {{- name}}?"
+
+msgid "Yes, enable"
+msgstr "Ano, povolit"
+
+msgid "User \"{{- name}}\" replicated successfuly"
+msgstr "Uživatel \"{{- name}}\" byl úspěšně replikován"
+
+msgid "There was an error replicating the user: {{- error}}"
+msgstr "Při replikaci uživatele došlo k chybě: {{- error}}"
+
+msgid "Replicate user {{- name}}"
+msgstr "Replikovat uživatele {{- name}}"
+
+msgid "Username for new user"
+msgstr "Uživatelské jméno pro nového uživatele"
+
+msgid "Password for new user"
+msgstr "Heslo pro nového uživatele"
+
+msgid ""
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
 msgstr ""
-"Výběr organizační jednotky poskytuje přístup ke všem jednotkám v dílčí "
-"hierarchii"
+"Heslo by mělo mít alespoň 8 znaků, alespoň jedno malé písmeno, jedno velké "
+"písmeno a jeden speciální znak."
 
-msgid "Create account or email invitation"
-msgstr "Vytvořte účet nebo e-mailovou pozvánku"
-
-msgid "Create account with user details"
-msgstr "Vytvořte účet s podrobnostmi uživatele"
-
-msgid "Email invitation to create account"
-msgstr "E-mailová pozvánka k vytvoření účtu"
-
-msgid "External authentication only (OpenID or LDAP)"
-msgstr "Pouze externí ověřování (OpenID nebo LDAP)"
-
-msgid "Account expiration date"
-msgstr "Datum vypršení platnosti účtu"
-
-msgid "Disabled"
-msgstr "Zakázáno"
-
-msgid "Retype password"
-msgstr "Zadejte heslo znovu"
-
-msgid "OIDC mapping value"
-msgstr "Hodnota mapování OIDC"
-
-msgid "LDAP identifier"
-msgstr "Identifikátor LDAP"
-
-msgid "WhatsApp"
-msgstr "WhatsApp"
-
-msgid "Facebook Messenger"
-msgstr "Facebook Messenger"
-
-msgid "Skype"
-msgstr "Skype"
-
-msgid "Telegram"
-msgstr "Telegram"
-
-msgid "Twitter"
-msgstr "Twitter"
-
-msgid "Interface language"
-msgstr "Jazyk rozhraní"
-
-msgid "Database language"
-msgstr "Jazyk databáze"
-
-msgid "Available roles"
-msgstr "Dostupné role"
-
-msgid "Selected roles"
-msgstr "Vybrané role"
-
-msgid "Data capture and maintenance organisation units"
-msgstr "Organizační jednotky pro sběr a údržbu dat"
-
-msgid "Data output and analytic organisation units"
-msgstr "Datové výstupy a analytika organizační jednotky"
-
-msgid "Search Organisation Units"
-msgstr "Hledat v organizačních jednotkách"
-
-msgid "Selected user groups"
-msgstr "Vybrané skupiny uživatelů"
-
-msgid "Available dimension restrictions for data analytics"
-msgstr "Dostupná omezení dimenze pro analýzu dat"
-
-msgid "Selected dimension restrictions for data analytics"
-msgstr "Vybraná omezení dimenze pro analýzu dat"
+msgid "Cancel"
+msgstr "Zrušit"
 
 msgid "Replicate user"
 msgstr "Replikovat uživatele"
 
-msgid "Are you sure you want to reset {{-userName}}'s password?"
-msgstr "Opravdu chcete resetovat heslo uživatele {{-userName}}?"
+msgid "Password of user \"{{- name}}\" reset successfuly"
+msgstr "Heslo uživatele \"{{- name}}\" bylo úspěšně resetováno"
 
-msgid "Are you sure you want to disable two factor authentication for"
-msgstr "Opravdu chcete deaktivovat dvoufaktorové ověřování pro"
+msgid "There was an error resetting the password: {{- error}}"
+msgstr "Při resetování hesla došlo k chybě: {{- error}}"
 
-msgid "Succesfully disabled two factor authentication for"
-msgstr "Úspěšně deaktivováno dvoufaktorové ověřování pro"
+msgid "Reset password of user {{- name}}"
+msgstr "Obnovit heslo uživatele {{- name}}"
 
-msgid "There was a problem updating two factor authentication"
-msgstr "Při aktualizaci dvoufaktorového ověřování došlo k problému"
+msgid "Are you sure you want to reset {{- name}}'s password?"
+msgstr "Opravdu chcete resetovat heslo uživatele {{- name}}?"
 
-msgid "Are you sure you want to disable"
-msgstr "Opravdu chcete zakázat"
+msgid "Yes, reset"
+msgstr "Ano, resetovat"
 
-msgid "Are you sure you want to enable"
-msgstr "Opravdu to chcete povolit"
+msgid "1 month"
+msgstr "1 měsíc"
 
-msgid "sucessfully disabled"
-msgstr "úspěšně deaktivován"
+msgid "{{months}} months"
+msgstr "{{months}} měsíce"
 
-msgid "successfully enabled"
-msgstr "úspěšně povoleno"
+msgid "Time inactive"
+msgstr "Čas neaktivní"
 
-msgid "There was a problem updating the enabled state"
-msgstr "Při aktualizaci povoleného stavu došlo k problému"
-
-msgid "month"
-msgstr "Měsíc"
-
-msgid "months"
-msgstr "měsíce"
-
-msgid "<No value>"
-msgstr "<No value>"
-
-msgid "Inactivity"
-msgstr "Nečinnost"
+msgid "Invitation"
+msgstr "Pozvání"
 
 msgid "All invitations"
 msgstr "Všechny pozvánky"
@@ -619,115 +969,26 @@ msgstr "Všechny pozvánky"
 msgid "Expired invitations"
 msgstr "Vypršené Pozvánky"
 
-msgid "Invitations"
-msgstr "Pozvánky"
+msgid "Show self-registrations"
+msgstr "Zobrazit vlastní registrace"
 
-msgid "Self registrations"
-msgstr "Vlastní registrace"
+msgid "Clear filters"
+msgstr "Vymazat filtry"
+
+msgid "Org.unit"
+msgstr "Org.jednotka"
 
 msgid "User Management"
 msgstr "Správa uživatelů"
 
-msgid "{{count}} selected"
-msgid_plural "{{count}} selected"
-msgstr[0] "Vybráno {{count}}"
-msgstr[1] "Vybráno {{count}}"
-msgstr[2] "Vybráno {{count}}"
-msgstr[3] "Vybráno {{count}}"
+msgid "Error loading users"
+msgstr "Chyba při načítání uživatelů"
 
-msgid "Yes"
-msgstr "Ano"
+msgid "Account disabled?"
+msgstr "Účet deaktivován?"
 
-msgid "No"
-msgstr "Ne"
+msgid "Disabled"
+msgstr "Zakázáno"
 
 msgid "Something went wrong when processing your request."
 msgstr "Při zpracování vašeho požadavku se něco pokazilo."
-
-msgid "Validating..."
-msgstr "Ověřování ..."
-
-msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
-msgstr "Opravdu chcete odebrat {{type}} \"{{displayName}}\"?"
-
-msgid "{{type}} \"{{displayName}}\" removed successfully"
-msgstr "{{type}} \"{{displayName}}\" úspěšně odstraněn"
-
-msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
-msgstr "Při odstraňování položky {{type}} \"{{displayName}}\" došlo k problému?"
-
-msgid "Exceeds maximum character limit of 50"
-msgstr "Překračuje maximální počet znaků 50"
-
-msgid "Please enter a valid date with the following format yyyy-mm-dd"
-msgstr "Zadejte prosím platné datum v následujícím formátu rrrr-mm-dd"
-
-msgid "Please provide a valid email address"
-msgstr "Uveďte platnou e-mailovou adresu"
-
-msgid "Value should be an integer"
-msgstr "Hodnota by měla být celé číslo"
-
-msgid "Value should be a nagative integer"
-msgstr "Hodnota by měla být nagativní celé číslo"
-
-msgid "Value should be a number"
-msgstr "Hodnota by měla být číslo"
-
-msgid "Value should be a positive integer"
-msgstr "Hodnota by měla být kladné celé číslo"
-
-msgid "Passwords do not match"
-msgstr "Hesla se neshodují"
-
-msgid "This field is required"
-msgstr "Toto pole je povinné"
-
-msgid "This field is required. Please select at least one"
-msgstr "Toto pole je povinné. Vyberte alespoň jednu"
-
-msgid "A username should be at least 2 characters long"
-msgstr "Uživatelské jméno by mělo mít alespoň 2 znaky"
-
-msgid "Username may not exceed 140 characters"
-msgstr "Uživatelské jméno nesmí přesáhnout 140 znaků"
-
-msgid "Please provide a valid international phone number (+0123456789)"
-msgstr "Uveďte platné mezinárodní telefonní číslo (+0123456789)"
-
-msgid "Password should be at least 8 characters long"
-msgstr "Heslo by mělo mít alespoň 8 znaků"
-
-msgid "Password should be no longer than 34 characters"
-msgstr "Heslo by nemělo být delší než 34 znaků"
-
-msgid "Password should contain at least one lowercase letter"
-msgstr "Heslo by mělo obsahovat alespoň jedno malé písmeno"
-
-msgid "Password should contain at least one UPPERCASE letter"
-msgstr "Heslo by mělo obsahovat alespoň jedno VELKÉ písmeno"
-
-msgid "Password should contain at least one number"
-msgstr "Heslo by mělo obsahovat alespoň jedno číslo"
-
-msgid "Password should have at least one special character"
-msgstr "Heslo by mělo mít alespoň jeden speciální znak"
-
-msgid "Username already taken"
-msgstr "Uživatelské jméno je již používáno"
-
-msgid "There was a problem whilst checking the availability of this username"
-msgstr "Při kontrole dostupnosti tohoto uživatelského jména došlo k problému"
-
-msgid "{{fieldDisplayName}} is already taken"
-msgstr "{{fieldDisplayName}} je již obsazeno"
-
-msgid "Could not verify if this {{fieldDisplayName}} is unique"
-msgstr "Nelze ověřit, zda je toto {{fieldDisplayName}} jedinečné"
-
-msgid "Attribute value needs to be unique, value already taken."
-msgstr "Hodnota atributu musí být jedinečná, hodnota je již přijata."
-
-msgid "There was a problem checking if this attribute value is unique"
-msgstr ""
-"Při kontrole, zda je tato hodnota atributu jedinečná, došlo k problému"

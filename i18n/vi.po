@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Mai Nguyen <thanhmai.jica@gmail.com>, 2020
-# Viktor Varland <viktor@dhis2.org>, 2021
-# phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2022
+# Mai Nguyen <thanhmai.jica@gmail.com>, 2022
+# phil_dhis2, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-28T15:10:38.753Z\n"
+"POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: phil_dhis2, 2021\n"
+"Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,37 +17,174 @@ msgstr ""
 "Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+msgid "Yes"
+msgstr "Có"
+
+msgid "No"
+msgstr "Không"
+
+msgid "Attribute value needs to be unique, value already taken."
+msgstr "Giá trị thuộc tính cần phải là duy nhất, giá trị đã được sử dụng."
+
 msgid ""
-"Could not reset user password. Make sure you have the appropriate "
-"permissions."
+"There was a problem whilst checking the availability of this attribute value"
 msgstr ""
 
-msgid "Use database locale / no translation"
-msgstr "Dùng cơ sở dữ liệu địa phương/Không biên dịch"
+msgid "Value should be a positive integer"
+msgstr "Giá trị phải là một số nguyên dương"
 
-msgid "Search"
-msgstr "Tìm kiếm"
+msgid "Value should be a negative integer"
+msgstr ""
 
-msgid "Enter search term"
-msgstr "Nhập cụm từ tìm kiếm"
+msgid "Edit user"
+msgstr "Chỉnh sửa người dùng"
 
-msgid "Please enter at least {{ minCharCount }} characters"
-msgstr "Vui lòng nhập ít nhất {{số ký tự tối thiểu}} ký tự"
+msgid "Edit user group"
+msgstr "Chỉnh sửa nhóm người dùng"
 
-msgid "No matches found"
-msgstr "Không tìm thấy kết quả phù hợp"
+msgid "Edit user role"
+msgstr "Chỉnh sửa quyền người dùng"
 
-msgid "There was a problem retreiving your search results"
-msgstr "Xảy ra sự cố khi truy xuất kết quả tìm kiếm của bạn"
+msgid "Send message"
+msgstr "Gửi tin"
 
-msgid "There was a problem retreiving the available authorities."
-msgstr "Xảy ra sự cố khi truy xuất các quyền sẵn có"
+msgid "Filter options"
+msgstr "Các lựa chọn lọc"
 
-msgid "Authorities"
-msgstr "Các quyền"
+msgid "Error fetching form"
+msgstr ""
 
-msgid "Selected authorities only"
-msgstr "Chỉ các quyền được chọn"
+msgid "There was an error fetching this form."
+msgstr ""
+
+msgid "Cancel without saving"
+msgstr ""
+
+msgid "Error updating group"
+msgstr ""
+
+msgid "Error creating group"
+msgstr ""
+
+msgid "Basic information"
+msgstr ""
+
+msgid "Name"
+msgstr "Tên"
+
+msgid "Code"
+msgstr "Mã"
+
+msgid "Used in analytics reports."
+msgstr ""
+
+msgid "User management"
+msgstr "Quản lý người dùng"
+
+msgid "Add or remove users from this group."
+msgstr ""
+
+msgid ""
+"To add a user to this group, go to the User section and edit the user group "
+"settings for a specific user."
+msgstr ""
+
+msgid "User group management"
+msgstr ""
+
+msgid ""
+"This group can manage other user groups. Add managed user groups below."
+msgstr ""
+
+msgid "Available user groups"
+msgstr "Các nhóm người dùng hiện có"
+
+msgid "Managed user groups"
+msgstr "Nhóm người dùng được quản lý"
+
+msgid "Attributes"
+msgstr "Thuộc Tính"
+
+msgid "Name is already taken"
+msgstr ""
+
+msgid ""
+"There was a problem whilst checking the availability of this group name"
+msgstr ""
+
+msgid "Code is already taken"
+msgstr ""
+
+msgid ""
+"There was a problem whilst checking the availability of this group code"
+msgstr ""
+
+msgid "Only show selected metadata authorities"
+msgstr ""
+
+msgid "Authority"
+msgstr ""
+
+msgid "Add/Update Public"
+msgstr ""
+
+msgid "Add/Update Private"
+msgstr ""
+
+msgid "Delete"
+msgstr "Xóa"
+
+msgid "External access"
+msgstr "Truy cập bên ngoài"
+
+msgid "Error updating role"
+msgstr ""
+
+msgid "Error creating role"
+msgstr ""
+
+msgid "Description"
+msgstr "Miêu tả"
+
+msgid "Short, clear description of what this role is for."
+msgstr ""
+
+msgid "Metadata authorities"
+msgstr ""
+
+msgid "Set what metadata access this role has."
+msgstr ""
+
+msgid "Other authorities"
+msgstr ""
+
+msgid ""
+"Manage access to apps, tracker, data import/export and system settings."
+msgstr ""
+
+msgid "Available app authorities"
+msgstr ""
+
+msgid "Selected app authorities"
+msgstr ""
+
+msgid "Available tracker authorities"
+msgstr ""
+
+msgid "Selected tracker authorities"
+msgstr ""
+
+msgid "Available import/export authorities"
+msgstr ""
+
+msgid "Selected import/export authorities"
+msgstr ""
+
+msgid "Available system authorities"
+msgstr ""
+
+msgid "Selected system authorities"
+msgstr ""
 
 msgid "All (Full authority)"
 msgstr "Tất cả (Toàn quyền)"
@@ -223,98 +360,8 @@ msgstr "Bỏ qua kiểm tra nhận dữ liệu"
 msgid "Visualization"
 msgstr "Trực quan hóa"
 
-msgid "Apps"
-msgstr "Ứng dụng"
-
-msgid "Tracker"
-msgstr "Bộ theo dõi"
-
-msgid "Import-Export"
-msgstr "Tích hợp - Trích xuất"
-
-msgid "System"
-msgstr "Hệ thống"
-
-msgid "Add"
-msgstr "Thêm"
-
-msgid "list"
-msgstr "Danh sách"
-
-msgid ""
-"You do not have access to any section of the DHIS 2 User Management App"
+msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
-"Bạn không có quyền truy cập vào bất kỳ phần nào của Ứng dụng quản lý người "
-"dùng DHIS 2"
-
-msgid "Edit user"
-msgstr "Chỉnh sửa người dùng"
-
-msgid "Edit user group"
-msgstr "Chỉnh sửa nhóm người dùng"
-
-msgid "Edit user role"
-msgstr "Chỉnh sửa quyền người dùng"
-
-msgid "Send message"
-msgstr "Gửi tin"
-
-msgid "Update"
-msgstr "Cập nhật"
-
-msgid "Create new"
-msgstr "Tạo mới"
-
-msgid "Back to"
-msgstr "Quay trở lại"
-
-msgid "You are not allowed to edit"
-msgstr "Bạn không được phép chỉnh sửa"
-
-msgid "Confirm"
-msgstr "Xác nhận"
-
-msgid "There was an error fetching the list"
-msgstr "Đã xảy ra lỗi khi tìm danh sách"
-
-msgid "Select an organisation unit"
-msgstr "Lựa chọn đơn vị"
-
-msgid "Organisation unit"
-msgstr "Đơn vị"
-
-msgid "Page not found."
-msgstr "Không tìm thấy trang"
-
-msgid "No match for"
-msgstr "Không khớp với"
-
-msgid "Go back home"
-msgstr "Quay lại trang chủ"
-
-msgid "User \"{{displayName}}\" replicated successfuly"
-msgstr "Người dùng \"{{Tên hiển thị}}\" được sao chép thành công"
-
-msgid "There was a problem replicating the user"
-msgstr "Đã xảy ra sự cố khi sao chép người dùng"
-
-msgid "Username"
-msgstr "Tên đăng nhập"
-
-msgid "Username for new user"
-msgstr "Tên người dùng cho người dùng mới"
-
-msgid "Password"
-msgstr "Mật khẩu"
-
-msgid "Password for new user"
-msgstr "Mật khẩu cho người dùng mới"
-
-msgid "Replicate"
-msgstr "Nhân rộng"
-
-msgid "Cancel"
-msgstr "Hủy"
 
 msgid "Search by name"
 msgstr "Tìm theo tên"
@@ -322,14 +369,31 @@ msgstr "Tìm theo tên"
 msgid "Could not load available items"
 msgstr "Không thể tải các mục có sẵn"
 
-msgid "Filter"
-msgstr "Lọc"
-
-msgid "Filter available and selected items"
-msgstr "Lọc các mục có sẵn và đã chọn"
-
 msgid "There was a problem displaying the GroupEditor"
 msgstr "Đã xảy ra sự cố khi hiển thị Trình chỉnh sửa nhóm"
+
+msgid "Filter available options"
+msgstr ""
+
+msgid "Filter selected options"
+msgstr ""
+
+msgid "Search for an organisation unit"
+msgstr ""
+
+msgid ""
+"Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
+"please refine your search to see more."
+msgstr ""
+
+msgid "There was a problem retreiving your search results"
+msgstr "Xảy ra sự cố khi truy xuất kết quả tìm kiếm của bạn"
+
+msgid "Please enter at least {{ minCharLength }} characters"
+msgstr ""
+
+msgid "No matches found"
+msgstr "Không tìm thấy kết quả phù hợp"
 
 msgid "Apply"
 msgstr "Áp dụng"
@@ -344,6 +408,201 @@ msgid "You do not have authorities to see users, user roles or user groups"
 msgstr ""
 "Bạn không có quyền xem người dùng, vai trò người dùng hoặc nhóm người dùng"
 
+msgid "Analytics dimension restrictions"
+msgstr ""
+
+msgid "Available restrictions"
+msgstr ""
+
+msgid "Selected restrictions"
+msgstr ""
+
+msgid "Username"
+msgstr "Tên đăng nhập"
+
+msgid "Email address"
+msgstr ""
+
+msgid "First name"
+msgstr "Tên"
+
+msgid "Last name"
+msgstr "Tên họ"
+
+msgid "Interface language"
+msgstr "Ngôn ngữ giao diện"
+
+msgid "Database language"
+msgstr "Ngôn ngữ cơ sở dữ liệu"
+
+msgid "Use database locale / no translation"
+msgstr "Dùng cơ sở dữ liệu địa phương/Không biên dịch"
+
+msgid "Disable this user account"
+msgstr ""
+
+msgid "Contact details"
+msgstr ""
+
+msgid "Mobile phone number"
+msgstr "Số điện thoại di động"
+
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+msgid "Facebook Messenger"
+msgstr "Facebook Messenger"
+
+msgid "Skype"
+msgstr "Skype"
+
+msgid "Telegram"
+msgstr "Telegram"
+
+msgid "Twitter"
+msgstr "Twitter"
+
+msgid "Invite user"
+msgstr ""
+
+msgid "Create account or email invitation"
+msgstr "Tạo tài khoản hoặc lời mời qua email"
+
+msgid "Create account with user details"
+msgstr "Tạo tài khoản với chi tiết người dùng"
+
+msgid "Email invitation to create account"
+msgstr "Email mời tạo tài khoản"
+
+msgid "Organisation unit access"
+msgstr ""
+
+msgid ""
+"Customise the organisation units this user has access to for searching, "
+"capturing and managing data."
+msgstr ""
+
+msgid "Organisation unit selections are recursive"
+msgstr ""
+
+msgid "Selecting a unit gives access to all units in its sub-hierarchy."
+msgstr ""
+
+msgid "Data capture and maintenance"
+msgstr ""
+
+msgid "The organisation units that this user can enter and edit data for."
+msgstr ""
+
+msgid "Data output and analysis"
+msgstr ""
+
+msgid "The organisation units that this user can export and analyse."
+msgstr ""
+
+msgid "Search"
+msgstr "Tìm kiếm"
+
+msgid "The organisation that this user can search for and in."
+msgstr ""
+
+msgid "Maximum organisation unit level for data output"
+msgstr ""
+
+msgid "Roles and groups"
+msgstr ""
+
+msgid "Manage what roles and groups this user is a member of."
+msgstr ""
+
+msgid "Available user roles"
+msgstr ""
+
+msgid "User roles this user is assigned"
+msgstr ""
+
+msgid "User groups this user is a member of"
+msgstr ""
+
+msgid "Security"
+msgstr ""
+
+msgid "Settings for how this user can log in."
+msgstr ""
+
+msgid "Change user password"
+msgstr ""
+
+msgid "New password"
+msgstr "Mật khẩu mới"
+
+msgid "Password"
+msgstr "Mật khẩu"
+
+msgid ""
+"Minimum 8 characters, one uppercase and lowercase letter and one number"
+msgstr ""
+
+msgid "Repeat new password"
+msgstr "Gõ lại mật khẩu mới"
+
+msgid "Repeat password"
+msgstr ""
+
+msgid "Account expiration date"
+msgstr ""
+
+msgid "OIDC mapping value"
+msgstr ""
+
+msgid "OpenID Connect mapping claim for your identity platform"
+msgstr ""
+
+msgid "LDAP identifier"
+msgstr "Định danh LDAP"
+
+msgid "External authentication only (OpenID / LDAP)"
+msgstr ""
+
+msgid "Invalid username"
+msgstr ""
+
+msgid "Invalid WhatsApp number"
+msgstr ""
+
+msgid "Error updating user"
+msgstr ""
+
+msgid "Error creating user"
+msgstr ""
+
+msgid "Username already taken"
+msgstr "Tên người dùng đã được sử dụng"
+
+msgid "There was a problem whilst checking the availability of this username"
+msgstr "Đã xảy ra sự cố khi kiểm tra tính khả dụng của tên người dùng này"
+
+msgid "Passwords do not match"
+msgstr "Mật khẩu không phù hợp"
+
+msgid "Please provide a value"
+msgstr ""
+
+msgid "Create, modify, view and delete Users"
+msgstr "Tạo, sửa đổi, xem và xóa người dùng"
+
+msgid "User role"
+msgstr "Quyền người dùng"
+
+msgid "Create, modify, view and delete User Roles"
+msgstr "Tạo, sửa đổi, xem và xóa quyền người dùng"
+
+msgid "User group"
+msgstr "Nhóm Người Dùng"
+
+msgid "Create, modify, view and delete User Groups"
+msgstr "Tạo, sửa đổi, xem và xóa nhóm người dùng"
+
 msgid "Display name"
 msgstr "Tên hiển thị"
 
@@ -355,12 +614,6 @@ msgstr "Đăng nhập lần cuối"
 
 msgid "Created"
 msgstr "Đã tạo"
-
-msgid "First name"
-msgstr "Tên"
-
-msgid "Last name"
-msgstr "Tên họ"
 
 msgid "Introduction"
 msgstr "Giới thiệu"
@@ -392,9 +645,6 @@ msgstr "Ngôn ngữ"
 msgid "E-mail"
 msgstr "Thư điện tử"
 
-msgid "Mobile phone number"
-msgstr "Số điện thoại di động"
-
 msgid "Organisations units"
 msgstr "Đơn vị"
 
@@ -407,212 +657,299 @@ msgstr "Thành viên"
 msgid "Number of users"
 msgstr "Số người dùng"
 
-msgid "Create, modify, view and delete Users"
-msgstr "Tạo, sửa đổi, xem và xóa người dùng"
-
-msgid "User role"
-msgstr "Quyền người dùng"
-
-msgid "Create, modify, view and delete User Roles"
-msgstr "Tạo, sửa đổi, xem và xóa quyền người dùng"
-
-msgid "User group"
-msgstr "Nhóm Người Dùng"
-
-msgid "Create, modify, view and delete User Groups"
-msgstr "Tạo, sửa đổi, xem và xóa nhóm người dùng"
-
-msgid "Could not load the user group data. Please refresh the page."
-msgstr "Không thể tải dữ liệu nhóm người dùng. Vui lòng làm mới trang"
-
-msgid "User group \"{{displayName}}\" saved successfully"
-msgstr "Đã lưu thành công nhóm người dùng \"{{Tên hiển thị}}\""
-
-msgid "There was a problem saving the user group."
-msgstr "Đã xảy ra sự cố khi lưu nhóm người dùng"
-
-msgid "Save"
-msgstr "Lưu lại"
-
-msgid "Name"
-msgstr "Tên"
-
-msgid "Code"
-msgstr "Mã"
-
-msgid ""
-"To add a user to this group, go to the User section and edit the user group "
-"settings for a specific user."
+msgid "New group"
 msgstr ""
 
-msgid "Available user groups"
-msgstr "Các nhóm người dùng hiện có"
+msgid "Create group"
+msgstr ""
 
-msgid "Managed user groups"
-msgstr "Nhóm người dùng được quản lý"
+msgid "New role"
+msgstr ""
 
-msgid "You left group"
-msgstr "Bạn đã rời nhóm"
+msgid "Create role"
+msgstr ""
 
-msgid "You joined group"
-msgstr "Bạn đã tham gia nhóm"
+msgid "Error fetching interface language"
+msgstr ""
 
-msgid "There was a problem updating your group membership"
-msgstr "Đã xảy ra sự cố khi cập nhật tư cách thành viên nhóm "
+msgid "There was an error fetching the default interface language."
+msgstr ""
+
+msgid "New user"
+msgstr ""
+
+msgid "Create user"
+msgstr ""
+
+msgid "Error fetching group"
+msgstr ""
+
+msgid "There was an error fetching this group."
+msgstr ""
+
+msgid "Edit group"
+msgstr ""
+
+msgid "Save changes"
+msgstr "Lưu các thay đổi"
+
+msgid "Error fetching role"
+msgstr ""
+
+msgid "There was an error fetching this role."
+msgstr ""
+
+msgid "Edit role"
+msgstr ""
+
+msgid "Error fetching user"
+msgstr ""
+
+msgid "There was an error fetching this user."
+msgstr ""
+
+msgid "Show details"
+msgstr "Hiển thị chi tiết"
+
+msgid "Sharing settings"
+msgstr "Cài đặt chia sẻ"
+
+msgid "Edit"
+msgstr "Chỉnh sửa"
+
+msgid "Join group"
+msgstr "Tham gia nhóm"
+
+msgid "Leave group"
+msgstr "Rời khỏi nhóm"
+
+msgid "Deleted \"{{- name}}\" successfully"
+msgstr ""
+
+msgid "There was an error deleting the user group: {{- error}}"
+msgstr ""
+
+msgid "Delete user group {{- name}}"
+msgstr ""
+
+msgid "Are you sure you want to delete {{- name}}?"
+msgstr ""
+
+msgid "No, cancel"
+msgstr "Không"
+
+msgid "Yes, delete"
+msgstr ""
+
+msgid "Joined user group \"{{- name}}\" successfuly"
+msgstr ""
+
+msgid "There was an error joining the user group: {{- error}}"
+msgstr ""
+
+msgid "Join user group {{- name}}"
+msgstr ""
+
+msgid "Are you sure you want to join {{- name}}?"
+msgstr ""
+
+msgid "Yes, join"
+msgstr ""
+
+msgid "Left user group \"{{- name}}\" successfuly"
+msgstr ""
+
+msgid "There was an error leaving the user group: {{- error}}"
+msgstr ""
+
+msgid "Leave user group {{- name}}"
+msgstr ""
+
+msgid "Are you sure you want to leave {{- name}}?"
+msgstr ""
+
+msgid "Yes, leave"
+msgstr "Có"
 
 msgid "User Group Management"
 msgstr "Quản lý nhóm người dùng"
 
-msgid "User role \"{{displayName}}\" saved successfully"
-msgstr "Đã lưu thành công quyền người dùng \"{{Tên hiển thị}}\""
+msgid "New"
+msgstr "Mới"
 
-msgid "There was a problem saving the user role."
-msgstr "Đã xảy ra sự cố khi lưu quyền người dùng"
+msgid "Error loading user groups"
+msgstr ""
 
-msgid "Description"
-msgstr "Miêu tả"
+msgid "No results found"
+msgstr "Không tìm thấy kết quả nào"
+
+msgid "Member?"
+msgstr ""
+
+msgid "Actions"
+msgstr "Hành động"
+
+msgid "Member"
+msgstr ""
+
+msgid "Insufficient permissions"
+msgstr ""
+
+msgid ""
+"You do not have access to any section of the DHIS 2 User Management App"
+msgstr ""
+"Bạn không có quyền truy cập vào bất kỳ phần nào của Ứng dụng quản lý người "
+"dùng DHIS 2"
+
+msgid "List"
+msgstr "Danh sách"
+
+msgid "Add"
+msgstr "Thêm"
+
+msgid "Page not found."
+msgstr "Không tìm thấy trang"
+
+msgid "No match for"
+msgstr "Không khớp với"
+
+msgid "Go back home"
+msgstr "Quay lại trang chủ"
+
+msgid "There was an error deleting the user role: {{- error}}"
+msgstr ""
+
+msgid "Delete user role {{- name}}"
+msgstr ""
 
 msgid "User Role Management"
 msgstr "Quản lý quyền người dùng"
 
-msgid "Could not load the user data. Please refresh the page."
-msgstr "Không thể tải dữ liệu người dùng. Vui lòng làm mới trang."
-
-msgid "User \"{{displayName}}\" saved successfully"
-msgstr "Người dùng \"{{Tên hiển thị}}\" đã được lưu thành công"
-
-msgid "There was a problem saving the user."
-msgstr "Đã xảy ra sự cố khi lưu người dùng"
-
-msgid "Show fewer options"
-msgstr "Ẩn bớt tùy chọn"
-
-msgid "Show more options"
-msgstr "Hiển thi thêm tùy chọn"
-
-msgid "Send invite"
-msgstr "Gửi lời mời"
-
-msgid ""
-"Selecting an organisation unit provides access to all units in the sub-"
-"hierarchy"
-msgstr ""
-"Chọn một đơn vị cấp quyền truy cập vào tất cả các đơn vị trong hệ thống phân"
-" cấp phụ"
-
-msgid "Create account or email invitation"
-msgstr "Tạo tài khoản hoặc lời mời qua email"
-
-msgid "Create account with user details"
-msgstr "Tạo tài khoản với chi tiết người dùng"
-
-msgid "Email invitation to create account"
-msgstr "Email mời tạo tài khoản"
-
-msgid "External authentication only (OpenID or LDAP)"
-msgstr "Chỉ xác thực bên ngoài (OpenID hoặc LDAP)"
-
-msgid "Account expiration date"
+msgid "Error loading user roles"
 msgstr ""
 
-msgid "Disabled"
+msgid "Profile"
+msgstr "Hồ sơ"
+
+msgid "Replicate"
+msgstr "Nhân rộng"
+
+msgid "Reset password"
+msgstr ""
+
+msgid "Disable"
 msgstr "Tắt"
 
-msgid "Retype password"
-msgstr "Gõ lại mật khẩu"
+msgid "Enable"
+msgstr "Bật"
 
-msgid "OIDC mapping value"
+msgid "Disable Two Factor Authentication"
+msgstr "Vô hiệu hóa xác thực hai yếu tố"
+
+msgid "There was an error deleting the user: {{- error}}"
 msgstr ""
 
-msgid "LDAP identifier"
-msgstr "Định danh LDAP"
+msgid "Delete user {{- name}}"
+msgstr ""
 
-msgid "WhatsApp"
-msgstr "WhatsApp"
+msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
+msgstr ""
 
-msgid "Facebook Messenger"
-msgstr "Facebook Messenger"
+msgid "There was an error disabling two factor authentication: {{- error}}"
+msgstr ""
 
-msgid "Skype"
-msgstr "Skype"
+msgid "Disable two factor authentication for user {{- name}}"
+msgstr ""
 
-msgid "Telegram"
-msgstr "Telegram"
+msgid ""
+"Are you sure you want to disable two factor authentication for {{- name}}?"
+msgstr ""
 
-msgid "Twitter"
-msgstr "Twitter"
+msgid "Yes, disable two factor authentication"
+msgstr ""
 
-msgid "Interface language"
-msgstr "Ngôn ngữ giao diện"
+msgid "User \"{{- name}}\" disabled successfuly"
+msgstr ""
 
-msgid "Database language"
-msgstr "Ngôn ngữ cơ sở dữ liệu"
+msgid "There was an error disabling the user: {{- error}}"
+msgstr ""
 
-msgid "Available roles"
-msgstr "Các quyền sẵn có"
+msgid "Disable user {{- name}}"
+msgstr ""
 
-msgid "Selected roles"
-msgstr "Các quyền được lựa chọn"
+msgid "Are you sure you want to disable {{- name}}?"
+msgstr ""
 
-msgid "Data capture and maintenance organisation units"
-msgstr "Đơn vị thu thập và bảo trì dữ liệu"
+msgid "Yes, disable"
+msgstr ""
 
-msgid "Data output and analytic organisation units"
-msgstr "Đơn vị phân tích, khai thác số liệu"
+msgid "User \"{{- name}}\" enabled successfuly"
+msgstr ""
 
-msgid "Search Organisation Units"
-msgstr "Tìm kiếm đơn vị "
+msgid "There was an error enabling the user: {{- error}}"
+msgstr ""
 
-msgid "Selected user groups"
-msgstr "Nhóm người dùng đã chọn"
+msgid "Enable user {{- name}}"
+msgstr ""
 
-msgid "Available dimension restrictions for data analytics"
-msgstr "Các hạn chế về chiều có sẵn cho phân tích dữ liệu"
+msgid "Are you sure you want to enable {{- name}}?"
+msgstr ""
 
-msgid "Selected dimension restrictions for data analytics"
-msgstr "Các hạn chế về chiều đã chọn để phân tích dữ liệu"
+msgid "Yes, enable"
+msgstr ""
+
+msgid "User \"{{- name}}\" replicated successfuly"
+msgstr ""
+
+msgid "There was an error replicating the user: {{- error}}"
+msgstr ""
+
+msgid "Replicate user {{- name}}"
+msgstr ""
+
+msgid "Username for new user"
+msgstr "Tên người dùng cho người dùng mới"
+
+msgid "Password for new user"
+msgstr "Mật khẩu cho người dùng mới"
+
+msgid ""
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
+msgstr ""
+
+msgid "Cancel"
+msgstr "Hủy"
 
 msgid "Replicate user"
 msgstr "Tái tạo tài khoản"
 
-msgid "Are you sure you want to reset {{-userName}}'s password?"
+msgid "Password of user \"{{- name}}\" reset successfuly"
 msgstr ""
 
-msgid "Are you sure you want to disable two factor authentication for"
-msgstr "Bạn có chắc chắn muốn tắt xác thực hai yếu tố "
+msgid "There was an error resetting the password: {{- error}}"
+msgstr ""
 
-msgid "Succesfully disabled two factor authentication for"
-msgstr "Đã vô hiệu hóa thành công xác thực hai yếu tố "
+msgid "Reset password of user {{- name}}"
+msgstr ""
 
-msgid "There was a problem updating two factor authentication"
-msgstr "Đã xảy ra sự cố khi cập nhật xác thực hai yếu tố"
+msgid "Are you sure you want to reset {{- name}}'s password?"
+msgstr ""
 
-msgid "Are you sure you want to disable"
-msgstr "Bạn có chắc chắn muốn tắt"
+msgid "Yes, reset"
+msgstr ""
 
-msgid "Are you sure you want to enable"
-msgstr "Bạn có chắc chắn muốn bật"
+msgid "1 month"
+msgstr ""
 
-msgid "sucessfully disabled"
-msgstr "vô hiệu hóa thành công"
+msgid "{{months}} months"
+msgstr ""
 
-msgid "successfully enabled"
-msgstr "kích hoạt thành công"
+msgid "Time inactive"
+msgstr ""
 
-msgid "There was a problem updating the enabled state"
-msgstr "Đã xảy ra sự cố khi cập nhật trạng thái đã bật"
-
-msgid "month"
-msgstr "Tháng"
-
-msgid "months"
-msgstr "tháng"
-
-msgid "<No value>"
-msgstr "<Không có giá trị>"
-
-msgid "Inactivity"
-msgstr "Không hoạt động"
+msgid "Invitation"
+msgstr ""
 
 msgid "All invitations"
 msgstr "Tất cả lời mời"
@@ -620,114 +957,26 @@ msgstr "Tất cả lời mời"
 msgid "Expired invitations"
 msgstr "Lời mời hết hạn"
 
-msgid "Invitations"
-msgstr "Lời mời"
+msgid "Show self-registrations"
+msgstr ""
 
-msgid "Self registrations"
-msgstr "Tự đăng ký"
+msgid "Clear filters"
+msgstr "Bỏ lọc"
+
+msgid "Org.unit"
+msgstr ""
 
 msgid "User Management"
 msgstr "Quản lý người dùng"
 
-msgid "{{count}} selected"
-msgid_plural "{{count}} selected"
-msgstr[0] "{{số lượng}} đã chọn"
+msgid "Error loading users"
+msgstr ""
 
-msgid "Yes"
-msgstr "Có"
+msgid "Account disabled?"
+msgstr ""
 
-msgid "No"
-msgstr "Không"
+msgid "Disabled"
+msgstr "Tắt"
 
 msgid "Something went wrong when processing your request."
 msgstr "Xảy ra lỗi khi xử lý yêu cầu của bạn."
-
-msgid "Validating..."
-msgstr "Đang xác thực ..."
-
-msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
-msgstr "Bạn có chắc chắn muốn xóa {{kiểu}} \"{{tên hiển thị}}\" không?"
-
-msgid "{{type}} \"{{displayName}}\" removed successfully"
-msgstr "Đã xóa thành công {{kiểu}} \"{{tên hiển thị}}\""
-
-msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
-msgstr "Đã xảy ra sự cố khi xóa {{kiểu}} \"{{tên hiển thị}}\"?"
-
-msgid "Exceeds maximum character limit of 50"
-msgstr "Vượt quá giới hạn ký tự tối đa là 50"
-
-msgid "Please enter a valid date with the following format yyyy-mm-dd"
-msgstr "Vui lòng nhập ngày hợp lệ với định dạng sau yyyy-mm-dd"
-
-msgid "Please provide a valid email address"
-msgstr "Vui lòng cung cấp một địa chỉ email hợp lệ"
-
-msgid "Value should be an integer"
-msgstr "Giá trị phải là một số nguyên"
-
-msgid "Value should be a nagative integer"
-msgstr "Giá trị phải là một số nguyên âm"
-
-msgid "Value should be a number"
-msgstr "Giá trị phải là một số"
-
-msgid "Value should be a positive integer"
-msgstr "Giá trị phải là một số nguyên dương"
-
-msgid "Passwords do not match"
-msgstr "Mật khẩu không phù hợp"
-
-msgid "This field is required"
-msgstr "Trường này yêu cầu"
-
-msgid "This field is required. Please select at least one"
-msgstr "Trường này là bắt buộc. Vui lòng chọn ít nhất một."
-
-msgid "A username should be at least 2 characters long"
-msgstr "Tên người dùng phải dài ít nhất 2 ký tự"
-
-msgid "Username may not exceed 140 characters"
-msgstr "Tên người dùng không được vượt quá 140 ký tự"
-
-msgid "Please provide a valid international phone number (+0123456789)"
-msgstr "Vui lòng cung cấp số điện thoại quốc tế hợp lệ (+0123456789)"
-
-msgid "Password should be at least 8 characters long"
-msgstr "Mật khẩu phải dài ít nhất 8 ký tự"
-
-msgid "Password should be no longer than 34 characters"
-msgstr "Mật khẩu không được dài hơn 34 ký tự"
-
-msgid "Password should contain at least one lowercase letter"
-msgstr "Mật khẩu phải chứa ít nhất một chữ cái viết thường"
-
-msgid "Password should contain at least one UPPERCASE letter"
-msgstr "Mật khẩu phải chứa ít nhất một chữ cái viết hoa"
-
-msgid "Password should contain at least one number"
-msgstr "Mật khẩu phải chứa ít nhất một số"
-
-msgid "Password should have at least one special character"
-msgstr "Mật khẩu phải có ít nhất một ký tự đặc biệt"
-
-msgid "Username already taken"
-msgstr "Tên người dùng đã được sử dụng"
-
-msgid "There was a problem whilst checking the availability of this username"
-msgstr "Đã xảy ra sự cố khi kiểm tra tính khả dụng của tên người dùng này"
-
-msgid "{{fieldDisplayName}} is already taken"
-msgstr "{{trường tên hiển thị}} đã được sử dụng"
-
-msgid "Could not verify if this {{fieldDisplayName}} is unique"
-msgstr ""
-"Không thể xác minh xem {{trường tên hiển thị}} này có phải là duy nhất không"
-
-msgid "Attribute value needs to be unique, value already taken."
-msgstr "Giá trị thuộc tính cần phải là duy nhất, giá trị đã được sử dụng."
-
-msgid "There was a problem checking if this attribute value is unique"
-msgstr ""
-"Đã xảy ra sự cố khi kiểm tra xem giá trị thuộc tính này có phải là duy nhất "
-"không"

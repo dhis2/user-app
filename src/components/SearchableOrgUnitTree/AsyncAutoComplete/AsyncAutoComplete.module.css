@@ -4,13 +4,7 @@
     max-width: 350px;
     overflow-y: auto;
 }
-.inputWrap {
-    min-height: 90px;
-}
-.inputWrapDense {
-    padding-top: var(--spacers-dp4);
-    min-height: 55px;
-}
+
 .refineSearchWarning {
     font-style: italic;
     text-align: center;

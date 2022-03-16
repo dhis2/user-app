@@ -1,5 +1,3 @@
-import { DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS } from '../../containers/UserForm/config'
-
 /**
  * Organisation unit trees should have different roots depending on the context.
  * @param {String} orgUnitType - The type orgUnits to return
@@ -11,8 +9,7 @@ import { DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS } from '../../containers/UserFor
 const getOrgUnitRoots = (orgUnitType, currentUser) => {
     const systemOrgRoots = currentUser.systemOrganisationUnitRoots
     const requestedOrgUnitRoots = currentUser[orgUnitType]
-    const fallBackOrgUnitRoots =
-        currentUser[DATA_CAPTURE_AND_MAINTENANCE_ORG_UNITS]
+    const fallBackOrgUnitRoots = currentUser.organisationUnits
 
     let orgUnitRoots = null
     if (currentUser.authorities.has('ALL')) {

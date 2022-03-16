@@ -1,10 +1,7 @@
 import React from 'react'
 import { Router, Route } from 'react-router-dom'
 import { QueryParamProvider } from 'use-query-params'
-import DialogContainer from './components/DialogContainer'
 import SectionLoader from './components/SectionLoader'
-import SharingDialogContainer from './components/SharingDialogContainer'
-import SnackbarContainer from './components/SnackbarContainer'
 import history from './utils/history'
 
 /**
@@ -18,9 +15,6 @@ const App = () => (
                 <SectionLoader />
             </QueryParamProvider>
         </Router>
-        <SnackbarContainer />
-        <DialogContainer />
-        <SharingDialogContainer />
     </>
 )
 

@@ -1,3 +1,128 @@
+## [1.3.10](https://github.com/dhis2/user-app/compare/v1.3.9...v1.3.10) (2022-03-14)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([d3ff78e](https://github.com/dhis2/user-app/commit/d3ff78ef109cecc85fcd25c142d4b3db55a8846f))
+
+## [1.3.9](https://github.com/dhis2/user-app/compare/v1.3.8...v1.3.9) (2022-03-10)
+
+
+### Bug Fixes
+
+* **form:** increase width of date input types due to Chrome calendar icon ([#914](https://github.com/dhis2/user-app/issues/914)) ([6866b85](https://github.com/dhis2/user-app/commit/6866b850303679dc5825177ac75116af82e8a187))
+* **groups:** use correct method and endpoint to leave groups ([#912](https://github.com/dhis2/user-app/issues/912)) ([4fd020a](https://github.com/dhis2/user-app/commit/4fd020a110176d194f4efe2ddac3d221d2c57c1e))
+
+## [1.3.8](https://github.com/dhis2/user-app/compare/v1.3.7...v1.3.8) (2022-03-06)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([097372c](https://github.com/dhis2/user-app/commit/097372c5840c0ebd4da4d20aad4944f462bb68e0))
+
+## [1.3.7](https://github.com/dhis2/user-app/compare/v1.3.6...v1.3.7) (2022-02-28)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([11e61e1](https://github.com/dhis2/user-app/commit/11e61e195ff44070b02300239896d6271f29b482))
+
+## [1.3.6](https://github.com/dhis2/user-app/compare/v1.3.5...v1.3.6) (2022-02-25)
+
+
+### Bug Fixes
+
+* **user:** org unit related fixes ([#900](https://github.com/dhis2/user-app/issues/900)) ([d35ddf5](https://github.com/dhis2/user-app/commit/d35ddf53e1a0cd1cda250c39e2b01e78d89e8b73))
+
+## [1.3.5](https://github.com/dhis2/user-app/compare/v1.3.4...v1.3.5) (2022-02-25)
+
+
+### Bug Fixes
+
+* **user:** only set email field as required if inviting by email ([62e79a1](https://github.com/dhis2/user-app/commit/62e79a17c011e1bd1fe5ad558c2b7296daf76f02))
+
+## [1.3.4](https://github.com/dhis2/user-app/compare/v1.3.3...v1.3.4) (2022-02-23)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([fb8b1e3](https://github.com/dhis2/user-app/commit/fb8b1e35540480f11e467696d13544f85880a20c))
+
+## [1.3.3](https://github.com/dhis2/user-app/compare/v1.3.2...v1.3.3) (2022-02-22)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([a4ead95](https://github.com/dhis2/user-app/commit/a4ead95a93baaf3682577b299d4909923d0cc69e))
+
+## [1.3.2](https://github.com/dhis2/user-app/compare/v1.3.1...v1.3.2) (2022-02-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([74b9a21](https://github.com/dhis2/user-app/commit/74b9a217a3981645a9d660eadbf92c54bb6a985d))
+
+## [1.3.1](https://github.com/dhis2/user-app/compare/v1.3.0...v1.3.1) (2022-02-18)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6d6d22e](https://github.com/dhis2/user-app/commit/6d6d22ef43f7732dfcfea235342b20a09968c603))
+
+# [1.3.0](https://github.com/dhis2/user-app/compare/v1.2.14...v1.3.0) (2022-02-17)
+
+
+### Bug Fixes
+
+* remove beta entries from changelog ([6b67e82](https://github.com/dhis2/user-app/commit/6b67e8295c4f1402e8c46a2c22c121e73c4493d0))
+* **semantic:** allow merge commits ([6f50bf3](https://github.com/dhis2/user-app/commit/6f50bf349e7b76697594cf6838a6f995e3e35e33))
+* don't publish to App Hub ([bcbdd61](https://github.com/dhis2/user-app/commit/bcbdd6105b8ba3a5360fa0a4294032c024785358))
+* **home:** migrate homepage components to @dhis2/ui ([#840](https://github.com/dhis2/user-app/issues/840)) ([8f2f7d9](https://github.com/dhis2/user-app/commit/8f2f7d9464d18076ec79e52de0313c25a07598a3))
+* **sidenav:** add missing "return null" statement when there are no sections ([a826c5e](https://github.com/dhis2/user-app/commit/a826c5e4777a95f84a3a29b0bc6a981ea07216a4))
+
+
+### Features
+
+* add css variables to be used in css modules ([#834](https://github.com/dhis2/user-app/issues/834)) ([8fdc378](https://github.com/dhis2/user-app/commit/8fdc378d6e279dcd23bb89ad5db5eef65f1c92d5))
+* migrate searchable-org-unit-tree to @dhis2/ui ([#836](https://github.com/dhis2/user-app/issues/836)) ([fe2d22c](https://github.com/dhis2/user-app/commit/fe2d22c3aeca2686117d05cb9afbc8bfac536a94))
+* migrate tables and search filter controls to @dhis2/ui ([#830](https://github.com/dhis2/user-app/issues/830)) ([f3a9f0b](https://github.com/dhis2/user-app/commit/f3a9f0b4eaea31662a640cae8fb2d18ae602897a))
+* migrate user-group form to dhis2/ui ([#831](https://github.com/dhis2/user-app/issues/831)) ([56f4b83](https://github.com/dhis2/user-app/commit/56f4b830955a3b76ffa70356505a5c9fe59b899a))
+
+## [1.2.14](https://github.com/dhis2/user-app/compare/v1.2.13...v1.2.14) (2022-02-17)
+
+
+### Bug Fixes
+
+* **semantic:** allow merge commits ([732ae7f](https://github.com/dhis2/user-app/commit/732ae7f6cc03d4f27f48dab92abf6264f530e027))
+
+## [1.2.13](https://github.com/dhis2/user-app/compare/v1.2.12...v1.2.13) (2022-02-15)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([d6fe01c](https://github.com/dhis2/user-app/commit/d6fe01c9e86faf28d47b8f39586e0f2ad1fb9597))
+
+## [1.2.12](https://github.com/dhis2/user-app/compare/v1.2.11...v1.2.12) (2022-01-13)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([964ff3c](https://github.com/dhis2/user-app/commit/964ff3cbc0da03f2dea1040a30fcec6413f6b1fb))
+
+## [1.2.11](https://github.com/dhis2/user-app/compare/v1.2.10...v1.2.11) (2021-12-07)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([32c22c2](https://github.com/dhis2/user-app/commit/32c22c2492aedacdd69012f173230696ba378938))
+
+## [1.2.10](https://github.com/dhis2/user-app/compare/v1.2.9...v1.2.10) (2021-10-27)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([7432a20](https://github.com/dhis2/user-app/commit/7432a205e732e60742ccc6a43b6d1a81e930530f))
+
 ## [1.2.9](https://github.com/dhis2/user-app/compare/v1.2.8...v1.2.9) (2021-10-08)
 
 

@@ -1,22 +1,12 @@
-/* eslint-disable max-params */
+import { getQueryFields } from './utils'
 
-import i18n from '@dhis2/d2-i18n'
-import { CURRENT_USER_ORG_UNITS_FIELDS } from '../constants/queryFields'
-import {
-    INTERFACE_LANGUAGE,
-    DATABASE_LANGUAGE,
-    USE_DB_LOCALE,
-} from '../containers/UserForm/config'
-import {
-    getQueryFields,
-    createListRequestData,
-    parseUserSaveData,
-    parseLocaleUrl,
-    mapLocale,
-    appendUsernameToDisplayName,
-    parse200Error,
-    getAttributesWithValueAndId,
-} from './utils'
+const CURRENT_USER_ORG_UNITS_FIELDS = {
+    fields: [
+        'organisationUnits[id,path,displayName,children::isNotEmpty]',
+        'dataViewOrganisationUnits[id,path,displayName,children::isNotEmpty]',
+        'teiSearchOrganisationUnits[id,path,displayName,children::isNotEmpty]',
+    ],
+}
 
 /**
  * The Api class exposes all necessary functions to get the required data from the DHIS2 web api.
@@ -48,18 +38,7 @@ class Api {
         return this.d2.system.systemInfo.contextPath
     }
 
-    getList = (entityName, page, filter) => {
-        const fields = getQueryFields(entityName)
-        const requestData = createListRequestData(
-            page,
-            filter,
-            fields,
-            entityName,
-            this.getCurrentUser()
-        )
-        return this.d2.models[entityName].list(requestData)
-    }
-
+    // Used by DetailSummary component
     getItem = (entityName, id) => {
         const data = { fields: getQueryFields(entityName, true) }
         return this.d2.models[entityName].get(id, data)
@@ -83,55 +62,6 @@ class Api {
         return this.d2Api.post(url, data)
     }
 
-    resetUserPassword = id => {
-        const url = `/users/${id}/reset`
-        return this.d2Api.post(url)
-    }
-
-    updateDisabledState = (id, disabled) => {
-        const url = `/users/${id}`
-        const data = { userCredentials: { disabled: disabled } }
-        return this.d2Api.patch(url, data)
-    }
-
-    disable2FA = id => {
-        const url = `/users/${id}`
-        const data = { userCredentials: { twoFA: false } }
-        return this.d2Api.patch(url, data)
-    }
-
-    getSelectedAndAvailableLocales = username => {
-        const useDbLocaleOption = {
-            id: USE_DB_LOCALE,
-            label: i18n.t('Use database locale / no translation'),
-        }
-
-        const dbLocales = this.d2Api.get('/locales/db')
-        const uiLocales = this.d2Api.get('/locales/ui')
-
-        // As of d2 v31.3.0, d2Api handles URI encoding
-        const uiLocale = username
-            ? this.d2Api.get(`/userSettings/keyUiLocale?user=${username}`)
-            : this.d2.system.settings.get('keyUiLocale')
-
-        const dbLocale = username
-            ? this.d2Api.get(`/userSettings/keyDbLocale?user=${username}`)
-            : Promise.resolve(USE_DB_LOCALE)
-
-        return Promise.all([dbLocales, uiLocales, dbLocale, uiLocale]).then(
-            ([dbLocales, uiLocales, dbLocale, uiLocale]) => ({
-                db: {
-                    available: [useDbLocaleOption, ...dbLocales.map(mapLocale)],
-                    selected: dbLocale || USE_DB_LOCALE,
-                },
-                ui: {
-                    available: uiLocales.map(mapLocale),
-                    selected: uiLocale,
-                },
-            })
-        )
-    }
-
     getAttributes(entityType) {
         return this.d2Api
             .get('attributes', {
@@ -147,153 +77,6 @@ class Api {
                 paging: false,
             })
             .then(resp => resp.attributes)
-    }
-
-    isAttributeUnique(entityType, modelId, attributeId, value) {
-        return (
-            this.d2.models[entityType]
-                // All users/userGroups but current
-                .filter()
-                .on('id')
-                .notEqual(modelId)
-                // Attribute id being validated
-                // NB: this only means we are filtering users that have ANY value
-                // on the current attributeId
-                .filter()
-                .on('attributeValues.attribute.id')
-                .equals(attributeId)
-                // Value on form
-                .filter()
-                .on('attributeValues.value')
-                .equals(value)
-                .list({
-                    paging: false,
-                    fields: ['id', 'attributeValues[value, attribute[id]]'],
-                })
-                .then(userCollection => {
-                    // If no users are found at this point, the attribute value is definitely unique
-                    if (userCollection.size === 0) {
-                        return true
-                    }
-
-                    // If users are returned, this can still include records with the SAME value
-                    // on ANOTHER attribute. So we have to filter on the current value and attributeId
-                    const attributesWithValueAndId =
-                        getAttributesWithValueAndId(
-                            userCollection,
-                            value,
-                            attributeId
-                        )
-
-                    return attributesWithValueAndId.length === 0
-                })
-        )
-    }
-
-    /**
-     * Will first execute a create/update user request, and if any locale values have been set will add subsequent request to update these too.
-     * @param {Object} values - Form data produced by redux-form
-     * @param {Object} user - A d2 user model instance
-     * @param {String} initialUiLocale - Locale string for the UI, i.e. 'en'
-     * @param {String} initialDbLocale - Locale string for the DB, i.e. 'fr'
-     * @returns {Promise} Promise object for the combined ajax calls to save a user
-     * @method
-     */
-    saveOrInviteUser = (
-        values,
-        user,
-        inviteUser,
-        initialUiLocale,
-        initialDbLocale,
-        attributeFields
-    ) => {
-        const userData = parseUserSaveData(
-            values,
-            user,
-            inviteUser,
-            attributeFields
-        )
-        const postUrl = inviteUser ? '/users/invite' : '/users'
-        const saveUserPromise = user.id
-            ? this.d2Api.update(`/users/${user.id}`, userData)
-            : this.d2Api.post(postUrl, userData)
-
-        return saveUserPromise.then(response => {
-            if (response.status === 'ERROR') {
-                return Promise.reject(parse200Error(response))
-            }
-
-            const localePromises = []
-            const username = values.username
-
-            // Add follow-up request for setting uiLocale if needed
-            const uiLocale = values[INTERFACE_LANGUAGE]
-            if (uiLocale !== initialUiLocale) {
-                localePromises.push(
-                    this.d2Api.post(parseLocaleUrl('Ui', username, uiLocale))
-                )
-            }
-
-            // Add follow-up request for setting dbLocale if needed
-            const dbLocale = values[DATABASE_LANGUAGE]
-            if (dbLocale !== initialDbLocale) {
-                const dbLocalePromise =
-                    dbLocale === USE_DB_LOCALE
-                        ? this.d2Api.delete(
-                              `/userSettings/keyDbLocale?user=${username}`
-                          )
-                        : this.d2Api.post(
-                              parseLocaleUrl('Db', username, dbLocale)
-                          )
-                localePromises.push(dbLocalePromise)
-            }
-
-            // Dummy follow-up request to prevent Promise.all error
-            // if neither locale fields need updating
-            if (localePromises.length === 0) {
-                localePromises.push(
-                    Promise.resolve('No locale changes detected')
-                )
-            }
-            // Updating locales after user in case the user is new
-            return Promise.all(localePromises)
-        })
-    }
-
-    /**************************
-     ***** USER GROUPS ********
-     **************************/
-
-    saveUserGroup(data) {
-        if (data.id) {
-            return this.d2Api.update(
-                `/userGroups/${data.id}?mergeMode=MERGE`,
-                data
-            )
-        }
-        return this.d2Api.post('/userGroups', data)
-    }
-
-    getManagedUsers = () => {
-        const data = {
-            fields: ['id', 'displayName', 'userCredentials[username]'],
-            paging: false,
-        }
-        return this.d2.models.user.list(data).then(appendUsernameToDisplayName)
-    }
-
-    /**************************
-     ****** USER ROLES ********
-     **************************/
-
-    // Calling role.save() would result in an error in d2 because d2 expects you always want to
-    // save { id: <ID> } objects but authorities should be saved as a plain JSON array
-    saveRole(data) {
-        if (data.id) {
-            return this.d2Api.update(`/userRoles/${data.id}`, data)
-        } else {
-            return this.d2Api.post('/userRoles/', data)
-        }
     }
 
     /**************************
@@ -386,12 +169,6 @@ class Api {
             .then(modelCollection => {
                 return modelCollection.toArray()
             })
-    }
-
-    updateCurrentUserGroupMembership = (groupId, deleteMembership) => {
-        const method = deleteMembership ? 'delete' : 'post'
-        const url = `/users/${this.d2.currentUser.id}/userGroups/${groupId}`
-        return this.d2Api[method](url)
     }
 }
 export default new Api()

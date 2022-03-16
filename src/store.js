@@ -1,5 +1,4 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux'
-import { reducer as formReducer } from 'redux-form'
 import logger from 'redux-logger'
 import ReduxThunk from 'redux-thunk'
 import currentItemReducer from './reducers/currentItem'
@@ -24,7 +23,6 @@ const rootReducer = combineReducers({
     currentItem: currentItemReducer,
     currentUser: currentUserReducer,
     popups: popupsReducer,
-    form: formReducer,
 })
 
 export default createStore(rootReducer, applyMiddleware(...middlewares))

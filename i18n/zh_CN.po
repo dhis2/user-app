@@ -1,14 +1,14 @@
 # 
 # Translators:
-# 晓东 林 <13981924470@126.com>, 2020
-# easylin <lin_xd@126.com>, 2021
+# 晓东 林 <13981924470@126.com>, 2022
+# easylin <lin_xd@126.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-28T15:10:38.753Z\n"
+"POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2021\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2022\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,37 +16,174 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+msgid "Yes"
+msgstr "Yes"
+
+msgid "No"
+msgstr "No"
+
+msgid "Attribute value needs to be unique, value already taken."
+msgstr "属性应该唯一，值已经被使用"
+
 msgid ""
-"Could not reset user password. Make sure you have the appropriate "
-"permissions."
+"There was a problem whilst checking the availability of this attribute value"
 msgstr ""
 
-msgid "Use database locale / no translation"
-msgstr "使用数据库方言/不翻译"
+msgid "Value should be a positive integer"
+msgstr "值应该是应该正整数"
 
-msgid "Search"
-msgstr "搜索"
+msgid "Value should be a negative integer"
+msgstr ""
 
-msgid "Enter search term"
-msgstr "输入搜索词汇"
+msgid "Edit user"
+msgstr "编辑用户"
 
-msgid "Please enter at least {{ minCharCount }} characters"
-msgstr "请输入至少 {{ minCharCount }}个字符"
+msgid "Edit user group"
+msgstr "编辑用户组"
 
-msgid "No matches found"
-msgstr "没有发现匹配的"
+msgid "Edit user role"
+msgstr "编辑用户角色"
 
-msgid "There was a problem retreiving your search results"
-msgstr "提取搜索结果发生错误"
+msgid "Send message"
+msgstr "发生信息"
 
-msgid "There was a problem retreiving the available authorities."
-msgstr "授权"
+msgid "Filter options"
+msgstr "过滤选项"
 
-msgid "Authorities"
-msgstr "授权"
+msgid "Error fetching form"
+msgstr ""
 
-msgid "Selected authorities only"
-msgstr "仅选择的授权"
+msgid "There was an error fetching this form."
+msgstr ""
+
+msgid "Cancel without saving"
+msgstr "取消而不保存"
+
+msgid "Error updating group"
+msgstr ""
+
+msgid "Error creating group"
+msgstr ""
+
+msgid "Basic information"
+msgstr ""
+
+msgid "Name"
+msgstr "名称"
+
+msgid "Code"
+msgstr "代码"
+
+msgid "Used in analytics reports."
+msgstr ""
+
+msgid "User management"
+msgstr "用户管理"
+
+msgid "Add or remove users from this group."
+msgstr ""
+
+msgid ""
+"To add a user to this group, go to the User section and edit the user group "
+"settings for a specific user."
+msgstr ""
+
+msgid "User group management"
+msgstr ""
+
+msgid ""
+"This group can manage other user groups. Add managed user groups below."
+msgstr ""
+
+msgid "Available user groups"
+msgstr "可用用户组"
+
+msgid "Managed user groups"
+msgstr "管理的用户组"
+
+msgid "Attributes"
+msgstr "属性"
+
+msgid "Name is already taken"
+msgstr ""
+
+msgid ""
+"There was a problem whilst checking the availability of this group name"
+msgstr ""
+
+msgid "Code is already taken"
+msgstr ""
+
+msgid ""
+"There was a problem whilst checking the availability of this group code"
+msgstr ""
+
+msgid "Only show selected metadata authorities"
+msgstr ""
+
+msgid "Authority"
+msgstr ""
+
+msgid "Add/Update Public"
+msgstr ""
+
+msgid "Add/Update Private"
+msgstr ""
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "External access"
+msgstr "外部访问"
+
+msgid "Error updating role"
+msgstr ""
+
+msgid "Error creating role"
+msgstr ""
+
+msgid "Description"
+msgstr "描述"
+
+msgid "Short, clear description of what this role is for."
+msgstr ""
+
+msgid "Metadata authorities"
+msgstr ""
+
+msgid "Set what metadata access this role has."
+msgstr ""
+
+msgid "Other authorities"
+msgstr ""
+
+msgid ""
+"Manage access to apps, tracker, data import/export and system settings."
+msgstr ""
+
+msgid "Available app authorities"
+msgstr ""
+
+msgid "Selected app authorities"
+msgstr ""
+
+msgid "Available tracker authorities"
+msgstr ""
+
+msgid "Selected tracker authorities"
+msgstr ""
+
+msgid "Available import/export authorities"
+msgstr ""
+
+msgid "Selected import/export authorities"
+msgstr ""
+
+msgid "Available system authorities"
+msgstr ""
+
+msgid "Selected system authorities"
+msgstr ""
 
 msgid "All (Full authority)"
 msgstr "所有（完全授权）"
@@ -222,96 +359,8 @@ msgstr "跳过数据导入审计"
 msgid "Visualization"
 msgstr "可视化"
 
-msgid "Apps"
-msgstr "应用"
-
-msgid "Tracker"
-msgstr "跟踪随访"
-
-msgid "Import-Export"
-msgstr "数据导入导出"
-
-msgid "System"
-msgstr "系统"
-
-msgid "Add"
-msgstr "添加"
-
-msgid "list"
-msgstr "列表"
-
-msgid ""
-"You do not have access to any section of the DHIS 2 User Management App"
-msgstr "你没有任何权限访问DHIS2用户管理应用"
-
-msgid "Edit user"
-msgstr "编辑用户"
-
-msgid "Edit user group"
-msgstr "编辑用户组"
-
-msgid "Edit user role"
-msgstr "编辑用户角色"
-
-msgid "Send message"
-msgstr "发生信息"
-
-msgid "Update"
-msgstr "更新"
-
-msgid "Create new"
-msgstr "新建"
-
-msgid "Back to"
-msgstr "后退"
-
-msgid "You are not allowed to edit"
-msgstr "你不允许编辑"
-
-msgid "Confirm"
-msgstr "确认"
-
-msgid "There was an error fetching the list"
-msgstr "提取列表发生错误"
-
-msgid "Select an organisation unit"
-msgstr "选择一个机构"
-
-msgid "Organisation unit"
-msgstr "机构"
-
-msgid "Page not found."
-msgstr "没有页"
-
-msgid "No match for"
-msgstr "没有匹配"
-
-msgid "Go back home"
-msgstr "回到首页"
-
-msgid "User \"{{displayName}}\" replicated successfuly"
-msgstr "用户\"{{displayName}}\" r复制成功"
-
-msgid "There was a problem replicating the user"
-msgstr "复制用户出现问题"
-
-msgid "Username"
-msgstr "用户名"
-
-msgid "Username for new user"
-msgstr "新用户用户名"
-
-msgid "Password"
-msgstr "口令"
-
-msgid "Password for new user"
-msgstr "新用户口令"
-
-msgid "Replicate"
-msgstr "复制"
-
-msgid "Cancel"
-msgstr "取消"
+msgid "There was a problem whilst checking the availability of this role name"
+msgstr ""
 
 msgid "Search by name"
 msgstr "按名称搜索"
@@ -319,14 +368,31 @@ msgstr "按名称搜索"
 msgid "Could not load available items"
 msgstr "不能载入可用的条目"
 
-msgid "Filter"
-msgstr "过滤器"
-
-msgid "Filter available and selected items"
-msgstr "过滤器可用并选择的条目"
-
 msgid "There was a problem displaying the GroupEditor"
 msgstr "显示组编辑器有问题"
+
+msgid "Filter available options"
+msgstr ""
+
+msgid "Filter selected options"
+msgstr ""
+
+msgid "Search for an organisation unit"
+msgstr ""
+
+msgid ""
+"Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
+"please refine your search to see more."
+msgstr ""
+
+msgid "There was a problem retreiving your search results"
+msgstr "提取搜索结果发生错误"
+
+msgid "Please enter at least {{ minCharLength }} characters"
+msgstr ""
+
+msgid "No matches found"
+msgstr "没有发现匹配的"
 
 msgid "Apply"
 msgstr "应用"
@@ -340,6 +406,201 @@ msgstr "载入当前用户发生错误"
 msgid "You do not have authorities to see users, user roles or user groups"
 msgstr "你没有查看用户、用户角色和用户组的权限"
 
+msgid "Analytics dimension restrictions"
+msgstr ""
+
+msgid "Available restrictions"
+msgstr ""
+
+msgid "Selected restrictions"
+msgstr ""
+
+msgid "Username"
+msgstr "用户名"
+
+msgid "Email address"
+msgstr ""
+
+msgid "First name"
+msgstr "姓"
+
+msgid "Last name"
+msgstr "姓"
+
+msgid "Interface language"
+msgstr "界面语言"
+
+msgid "Database language"
+msgstr "数据库语言"
+
+msgid "Use database locale / no translation"
+msgstr "使用数据库方言/不翻译"
+
+msgid "Disable this user account"
+msgstr ""
+
+msgid "Contact details"
+msgstr ""
+
+msgid "Mobile phone number"
+msgstr "电话号码"
+
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+msgid "Facebook Messenger"
+msgstr "Facebook Messenger"
+
+msgid "Skype"
+msgstr "Skype"
+
+msgid "Telegram"
+msgstr "电报"
+
+msgid "Twitter"
+msgstr "Twitter"
+
+msgid "Invite user"
+msgstr ""
+
+msgid "Create account or email invitation"
+msgstr "创建帐号或邮件邀请"
+
+msgid "Create account with user details"
+msgstr "创建用户详情的账号"
+
+msgid "Email invitation to create account"
+msgstr "邮件邀请创建账号"
+
+msgid "Organisation unit access"
+msgstr ""
+
+msgid ""
+"Customise the organisation units this user has access to for searching, "
+"capturing and managing data."
+msgstr ""
+
+msgid "Organisation unit selections are recursive"
+msgstr ""
+
+msgid "Selecting a unit gives access to all units in its sub-hierarchy."
+msgstr ""
+
+msgid "Data capture and maintenance"
+msgstr ""
+
+msgid "The organisation units that this user can enter and edit data for."
+msgstr ""
+
+msgid "Data output and analysis"
+msgstr ""
+
+msgid "The organisation units that this user can export and analyse."
+msgstr ""
+
+msgid "Search"
+msgstr "搜索"
+
+msgid "The organisation that this user can search for and in."
+msgstr ""
+
+msgid "Maximum organisation unit level for data output"
+msgstr ""
+
+msgid "Roles and groups"
+msgstr ""
+
+msgid "Manage what roles and groups this user is a member of."
+msgstr ""
+
+msgid "Available user roles"
+msgstr ""
+
+msgid "User roles this user is assigned"
+msgstr ""
+
+msgid "User groups this user is a member of"
+msgstr ""
+
+msgid "Security"
+msgstr "安全"
+
+msgid "Settings for how this user can log in."
+msgstr ""
+
+msgid "Change user password"
+msgstr ""
+
+msgid "New password"
+msgstr "新口令"
+
+msgid "Password"
+msgstr "口令"
+
+msgid ""
+"Minimum 8 characters, one uppercase and lowercase letter and one number"
+msgstr ""
+
+msgid "Repeat new password"
+msgstr "重复新口令"
+
+msgid "Repeat password"
+msgstr ""
+
+msgid "Account expiration date"
+msgstr ""
+
+msgid "OIDC mapping value"
+msgstr ""
+
+msgid "OpenID Connect mapping claim for your identity platform"
+msgstr ""
+
+msgid "LDAP identifier"
+msgstr "LDAP标识"
+
+msgid "External authentication only (OpenID / LDAP)"
+msgstr ""
+
+msgid "Invalid username"
+msgstr ""
+
+msgid "Invalid WhatsApp number"
+msgstr ""
+
+msgid "Error updating user"
+msgstr ""
+
+msgid "Error creating user"
+msgstr ""
+
+msgid "Username already taken"
+msgstr "用户名已经使用"
+
+msgid "There was a problem whilst checking the availability of this username"
+msgstr "检查用户名是否可以发生问题"
+
+msgid "Passwords do not match"
+msgstr "口令不匹配"
+
+msgid "Please provide a value"
+msgstr ""
+
+msgid "Create, modify, view and delete Users"
+msgstr "创建、修改、查看和删除用户"
+
+msgid "User role"
+msgstr "用户角色"
+
+msgid "Create, modify, view and delete User Roles"
+msgstr "创建、修改、查看和删除用户角色"
+
+msgid "User group"
+msgstr "用户组"
+
+msgid "Create, modify, view and delete User Groups"
+msgstr "创建、修改、查看和删除用户"
+
 msgid "Display name"
 msgstr "显示名"
 
@@ -351,12 +612,6 @@ msgstr "上次登录"
 
 msgid "Created"
 msgstr "创建"
-
-msgid "First name"
-msgstr "姓"
-
-msgid "Last name"
-msgstr "姓"
 
 msgid "Introduction"
 msgstr "介绍"
@@ -388,9 +643,6 @@ msgstr "口语"
 msgid "E-mail"
 msgstr "E-mail"
 
-msgid "Mobile phone number"
-msgstr "电话号码"
-
 msgid "Organisations units"
 msgstr "机构"
 
@@ -403,210 +655,297 @@ msgstr "成员"
 msgid "Number of users"
 msgstr "用户数量"
 
-msgid "Create, modify, view and delete Users"
-msgstr "创建、修改、查看和删除用户"
-
-msgid "User role"
-msgstr "用户角色"
-
-msgid "Create, modify, view and delete User Roles"
-msgstr "创建、修改、查看和删除用户角色"
-
-msgid "User group"
-msgstr "用户组"
-
-msgid "Create, modify, view and delete User Groups"
-msgstr "创建、修改、查看和删除用户"
-
-msgid "Could not load the user group data. Please refresh the page."
-msgstr "不能载入用户组数据，请刷新页面"
-
-msgid "User group \"{{displayName}}\" saved successfully"
-msgstr "用户组\"{{displayName}}\" 保存成功"
-
-msgid "There was a problem saving the user group."
-msgstr "保存用户组失败"
-
-msgid "Save"
-msgstr "保存"
-
-msgid "Name"
-msgstr "名称"
-
-msgid "Code"
-msgstr "代码"
-
-msgid ""
-"To add a user to this group, go to the User section and edit the user group "
-"settings for a specific user."
+msgid "New group"
 msgstr ""
 
-msgid "Available user groups"
-msgstr "可用用户组"
+msgid "Create group"
+msgstr ""
 
-msgid "Managed user groups"
-msgstr "管理的用户组"
+msgid "New role"
+msgstr ""
 
-msgid "You left group"
-msgstr "你离开了组"
+msgid "Create role"
+msgstr ""
 
-msgid "You joined group"
-msgstr "你加入了组"
+msgid "Error fetching interface language"
+msgstr ""
 
-msgid "There was a problem updating your group membership"
-msgstr "更新你的组成员失败"
+msgid "There was an error fetching the default interface language."
+msgstr ""
+
+msgid "New user"
+msgstr ""
+
+msgid "Create user"
+msgstr ""
+
+msgid "Error fetching group"
+msgstr ""
+
+msgid "There was an error fetching this group."
+msgstr ""
+
+msgid "Edit group"
+msgstr ""
+
+msgid "Save changes"
+msgstr "保存更改"
+
+msgid "Error fetching role"
+msgstr ""
+
+msgid "There was an error fetching this role."
+msgstr ""
+
+msgid "Edit role"
+msgstr ""
+
+msgid "Error fetching user"
+msgstr ""
+
+msgid "There was an error fetching this user."
+msgstr ""
+
+msgid "Show details"
+msgstr "显示详情"
+
+msgid "Sharing settings"
+msgstr "共享设置"
+
+msgid "Edit"
+msgstr "编辑<br>"
+
+msgid "Join group"
+msgstr "加入组"
+
+msgid "Leave group"
+msgstr "离开组"
+
+msgid "Deleted \"{{- name}}\" successfully"
+msgstr ""
+
+msgid "There was an error deleting the user group: {{- error}}"
+msgstr ""
+
+msgid "Delete user group {{- name}}"
+msgstr ""
+
+msgid "Are you sure you want to delete {{- name}}?"
+msgstr ""
+
+msgid "No, cancel"
+msgstr "不，取消"
+
+msgid "Yes, delete"
+msgstr ""
+
+msgid "Joined user group \"{{- name}}\" successfuly"
+msgstr ""
+
+msgid "There was an error joining the user group: {{- error}}"
+msgstr ""
+
+msgid "Join user group {{- name}}"
+msgstr ""
+
+msgid "Are you sure you want to join {{- name}}?"
+msgstr ""
+
+msgid "Yes, join"
+msgstr ""
+
+msgid "Left user group \"{{- name}}\" successfuly"
+msgstr ""
+
+msgid "There was an error leaving the user group: {{- error}}"
+msgstr ""
+
+msgid "Leave user group {{- name}}"
+msgstr ""
+
+msgid "Are you sure you want to leave {{- name}}?"
+msgstr ""
+
+msgid "Yes, leave"
+msgstr "是离开"
 
 msgid "User Group Management"
 msgstr "用户组管理"
 
-msgid "User role \"{{displayName}}\" saved successfully"
-msgstr "用户角色\"{{displayName}}\" 保存成功"
+msgid "New"
+msgstr "新建"
 
-msgid "There was a problem saving the user role."
-msgstr "保存用户角色有问题"
+msgid "Error loading user groups"
+msgstr ""
 
-msgid "Description"
-msgstr "描述"
+msgid "No results found"
+msgstr "没有结果"
+
+msgid "Member?"
+msgstr ""
+
+msgid "Actions"
+msgstr "行动"
+
+msgid "Member"
+msgstr ""
+
+msgid "Insufficient permissions"
+msgstr ""
+
+msgid ""
+"You do not have access to any section of the DHIS 2 User Management App"
+msgstr "你没有任何权限访问DHIS2用户管理应用"
+
+msgid "List"
+msgstr "列表"
+
+msgid "Add"
+msgstr "添加"
+
+msgid "Page not found."
+msgstr "没有页"
+
+msgid "No match for"
+msgstr "没有匹配"
+
+msgid "Go back home"
+msgstr "回到首页"
+
+msgid "There was an error deleting the user role: {{- error}}"
+msgstr ""
+
+msgid "Delete user role {{- name}}"
+msgstr ""
 
 msgid "User Role Management"
 msgstr "用户角色管理"
 
-msgid "Could not load the user data. Please refresh the page."
-msgstr "不能载入用户数据，请刷新页面"
+msgid "Error loading user roles"
+msgstr ""
 
-msgid "User \"{{displayName}}\" saved successfully"
-msgstr "用户\"{{displayName}}\" 保存成功"
+msgid "Profile"
+msgstr "简历"
 
-msgid "There was a problem saving the user."
-msgstr "保存用户有问题"
+msgid "Replicate"
+msgstr "复制"
 
-msgid "Show fewer options"
-msgstr "显示较少选项"
+msgid "Reset password"
+msgstr ""
 
-msgid "Show more options"
-msgstr "显示较多选项"
+msgid "Disable"
+msgstr "不显示"
 
-msgid "Send invite"
-msgstr "发送邀请"
+msgid "Enable"
+msgstr "显示"
+
+msgid "Disable Two Factor Authentication"
+msgstr "关闭双因素认证"
+
+msgid "There was an error deleting the user: {{- error}}"
+msgstr ""
+
+msgid "Delete user {{- name}}"
+msgstr ""
+
+msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
+msgstr ""
+
+msgid "There was an error disabling two factor authentication: {{- error}}"
+msgstr ""
+
+msgid "Disable two factor authentication for user {{- name}}"
+msgstr ""
 
 msgid ""
-"Selecting an organisation unit provides access to all units in the sub-"
-"hierarchy"
-msgstr "选择一个机构假定能访问所有的下属机构"
-
-msgid "Create account or email invitation"
-msgstr "创建帐号或邮件邀请"
-
-msgid "Create account with user details"
-msgstr "创建用户详情的账号"
-
-msgid "Email invitation to create account"
-msgstr "邮件邀请创建账号"
-
-msgid "External authentication only (OpenID or LDAP)"
-msgstr "仅仅通过外部认证（OpenIDh或LDAP）"
-
-msgid "Account expiration date"
+"Are you sure you want to disable two factor authentication for {{- name}}?"
 msgstr ""
 
-msgid "Disabled"
-msgstr "关闭"
-
-msgid "Retype password"
-msgstr "重新输入口令"
-
-msgid "OIDC mapping value"
+msgid "Yes, disable two factor authentication"
 msgstr ""
 
-msgid "LDAP identifier"
-msgstr "LDAP标识"
+msgid "User \"{{- name}}\" disabled successfuly"
+msgstr ""
 
-msgid "WhatsApp"
-msgstr "WhatsApp"
+msgid "There was an error disabling the user: {{- error}}"
+msgstr ""
 
-msgid "Facebook Messenger"
-msgstr "Facebook Messenger"
+msgid "Disable user {{- name}}"
+msgstr ""
 
-msgid "Skype"
-msgstr "Skype"
+msgid "Are you sure you want to disable {{- name}}?"
+msgstr ""
 
-msgid "Telegram"
-msgstr "电报"
+msgid "Yes, disable"
+msgstr ""
 
-msgid "Twitter"
-msgstr "Twitter"
+msgid "User \"{{- name}}\" enabled successfuly"
+msgstr ""
 
-msgid "Interface language"
-msgstr "界面语言"
+msgid "There was an error enabling the user: {{- error}}"
+msgstr ""
 
-msgid "Database language"
-msgstr "数据库语言"
+msgid "Enable user {{- name}}"
+msgstr ""
 
-msgid "Available roles"
-msgstr "可用角色"
+msgid "Are you sure you want to enable {{- name}}?"
+msgstr ""
 
-msgid "Selected roles"
-msgstr "选择的角色"
+msgid "Yes, enable"
+msgstr ""
 
-msgid "Data capture and maintenance organisation units"
-msgstr "数据采集和机构维护"
+msgid "User \"{{- name}}\" replicated successfuly"
+msgstr ""
 
-msgid "Data output and analytic organisation units"
-msgstr "数据输出和分析机构"
+msgid "There was an error replicating the user: {{- error}}"
+msgstr ""
 
-msgid "Search Organisation Units"
-msgstr "搜索机构"
+msgid "Replicate user {{- name}}"
+msgstr ""
 
-msgid "Selected user groups"
-msgstr "选择的机构"
+msgid "Username for new user"
+msgstr "新用户用户名"
 
-msgid "Available dimension restrictions for data analytics"
-msgstr "数据分析的可用维度限制"
+msgid "Password for new user"
+msgstr "新用户口令"
 
-msgid "Selected dimension restrictions for data analytics"
-msgstr "数据分析选择的维度限制i"
+msgid ""
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
+msgstr ""
+
+msgid "Cancel"
+msgstr "取消"
 
 msgid "Replicate user"
 msgstr "复制用户"
 
-msgid "Are you sure you want to reset {{-userName}}'s password?"
+msgid "Password of user \"{{- name}}\" reset successfuly"
 msgstr ""
 
-msgid "Are you sure you want to disable two factor authentication for"
-msgstr "你确信关闭双因素认证"
+msgid "There was an error resetting the password: {{- error}}"
+msgstr ""
 
-msgid "Succesfully disabled two factor authentication for"
-msgstr "关闭双因素认真成功"
+msgid "Reset password of user {{- name}}"
+msgstr ""
 
-msgid "There was a problem updating two factor authentication"
-msgstr "更新双因素认真出现问题"
+msgid "Are you sure you want to reset {{- name}}'s password?"
+msgstr ""
 
-msgid "Are you sure you want to disable"
-msgstr "你确信要关闭"
+msgid "Yes, reset"
+msgstr ""
 
-msgid "Are you sure you want to enable"
-msgstr "你确信要激活"
+msgid "1 month"
+msgstr ""
 
-msgid "sucessfully disabled"
-msgstr "关闭成功"
+msgid "{{months}} months"
+msgstr ""
 
-msgid "successfully enabled"
-msgstr "激活成功"
+msgid "Time inactive"
+msgstr ""
 
-msgid "There was a problem updating the enabled state"
-msgstr "更新激活状态出现问题"
-
-msgid "month"
-msgstr "月"
-
-msgid "months"
-msgstr "月份"
-
-msgid "<No value>"
-msgstr "<无值>"
-
-msgid "Inactivity"
-msgstr "不活动"
+msgid "Invitation"
+msgstr ""
 
 msgid "All invitations"
 msgstr "所有邀请"
@@ -614,111 +953,26 @@ msgstr "所有邀请"
 msgid "Expired invitations"
 msgstr "过期的邀请"
 
-msgid "Invitations"
-msgstr "邀请"
+msgid "Show self-registrations"
+msgstr ""
 
-msgid "Self registrations"
-msgstr "自我注册"
+msgid "Clear filters"
+msgstr "清除过滤器"
+
+msgid "Org.unit"
+msgstr ""
 
 msgid "User Management"
 msgstr "用户管理"
 
-msgid "{{count}} selected"
-msgid_plural "{{count}} selected"
-msgstr[0] "已经选择{{count}} 个"
+msgid "Error loading users"
+msgstr ""
 
-msgid "Yes"
-msgstr "Yes"
+msgid "Account disabled?"
+msgstr ""
 
-msgid "No"
-msgstr "No"
+msgid "Disabled"
+msgstr "关闭"
 
 msgid "Something went wrong when processing your request."
 msgstr "处理你的请求发生错误"
-
-msgid "Validating..."
-msgstr "验证中"
-
-msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
-msgstr "你确定要删除这个 {{type}} \"{{displayName}}\"？"
-
-msgid "{{type}} \"{{displayName}}\" removed successfully"
-msgstr " {{type}} \"{{displayName}}\"移除成功"
-
-msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
-msgstr "移除 {{type}} \"{{displayName}}\"出现问题"
-
-msgid "Exceeds maximum character limit of 50"
-msgstr "超过最大50字符数量限制"
-
-msgid "Please enter a valid date with the following format yyyy-mm-dd"
-msgstr "请输入如下有效的日期：yyyy-mm-dd"
-
-msgid "Please provide a valid email address"
-msgstr "有效的邮箱"
-
-msgid "Value should be an integer"
-msgstr "值应该是整数"
-
-msgid "Value should be a nagative integer"
-msgstr "值应该是负整数"
-
-msgid "Value should be a number"
-msgstr "值应该是应该数字"
-
-msgid "Value should be a positive integer"
-msgstr "值应该是应该正整数"
-
-msgid "Passwords do not match"
-msgstr "口令不匹配"
-
-msgid "This field is required"
-msgstr "这个字段是必填的"
-
-msgid "This field is required. Please select at least one"
-msgstr "该字段必须，请至少选择一个"
-
-msgid "A username should be at least 2 characters long"
-msgstr "用户名至少两个字符"
-
-msgid "Username may not exceed 140 characters"
-msgstr "用户名不能超过140个字符"
-
-msgid "Please provide a valid international phone number (+0123456789)"
-msgstr "请提供有效的国际电话号码（+0123456789）"
-
-msgid "Password should be at least 8 characters long"
-msgstr "口令至少8个字符"
-
-msgid "Password should be no longer than 34 characters"
-msgstr "口令不能超过34字符"
-
-msgid "Password should contain at least one lowercase letter"
-msgstr "口令至少包括应该小写字母"
-
-msgid "Password should contain at least one UPPERCASE letter"
-msgstr "口令至少包括一个大写字母"
-
-msgid "Password should contain at least one number"
-msgstr "口令至少包括应该数字"
-
-msgid "Password should have at least one special character"
-msgstr "口令至少包括一个特殊字符"
-
-msgid "Username already taken"
-msgstr "用户名已经使用"
-
-msgid "There was a problem whilst checking the availability of this username"
-msgstr "检查用户名是否可以发生问题"
-
-msgid "{{fieldDisplayName}} is already taken"
-msgstr "{{fieldDisplayName}} 已经被使用"
-
-msgid "Could not verify if this {{fieldDisplayName}} is unique"
-msgstr "不能确认  {{fieldDisplayName}} 是否唯一"
-
-msgid "Attribute value needs to be unique, value already taken."
-msgstr "属性应该唯一，值已经被使用"
-
-msgid "There was a problem checking if this attribute value is unique"
-msgstr "检查属性值唯一发生问题"

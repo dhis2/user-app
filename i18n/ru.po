@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Ulanbek Abakirov <ulans@mail.ru>, 2020
-# Viktor Varland <viktor@dhis2.org>, 2021
-# phil_dhis2, 2021
+# Valeriu Plesca <vplesca@gmail.com>, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
+# phil_dhis2, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-28T15:10:38.753Z\n"
+"POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: phil_dhis2, 2021\n"
+"Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,36 +17,176 @@ msgstr ""
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
+msgid "Yes"
+msgstr "Да"
+
+msgid "No"
+msgstr "Нет"
+
+msgid "Attribute value needs to be unique, value already taken."
+msgstr "Значение атрибута должно быть уникальным, значение уже занято"
+
 msgid ""
-"Could not reset user password. Make sure you have the appropriate "
-"permissions."
+"There was a problem whilst checking the availability of this attribute value"
 msgstr ""
 
-msgid "Use database locale / no translation"
-msgstr "Использовать язык базы данных/без перевода"
+msgid "Value should be a positive integer"
+msgstr "Значение должно быть положительным целым числом"
 
-msgid "Search"
-msgstr "Поиск"
-
-msgid "Enter search term"
+msgid "Value should be a negative integer"
 msgstr ""
 
-msgid "Please enter at least {{ minCharCount }} characters"
+msgid "Edit user"
+msgstr "Изменение пользователя"
+
+msgid "Edit user group"
+msgstr "Изменить группу пользователя"
+
+msgid "Edit user role"
+msgstr "Изменить роль пользователя"
+
+msgid "Send message"
+msgstr "Отправить сообщение"
+
+msgid "Filter options"
 msgstr ""
 
-msgid "No matches found"
+msgid "Error fetching form"
 msgstr ""
 
-msgid "There was a problem retreiving your search results"
+msgid "There was an error fetching this form."
 msgstr ""
 
-msgid "There was a problem retreiving the available authorities."
+msgid "Cancel without saving"
 msgstr ""
 
-msgid "Authorities"
+msgid "Error updating group"
 msgstr ""
 
-msgid "Selected authorities only"
+msgid "Error creating group"
+msgstr ""
+
+msgid "Basic information"
+msgstr ""
+
+msgid "Name"
+msgstr "Название"
+
+msgid "Code"
+msgstr "Код"
+
+msgid "Used in analytics reports."
+msgstr ""
+
+msgid "User management"
+msgstr ""
+
+msgid "Add or remove users from this group."
+msgstr ""
+
+msgid ""
+"To add a user to this group, go to the User section and edit the user group "
+"settings for a specific user."
+msgstr ""
+"Чтобы добавить пользователя в эту группу, перейдите в раздел «Пользователь» "
+"и отредактируйте настройки группы пользователей для конкретного "
+"пользователя."
+
+msgid "User group management"
+msgstr ""
+
+msgid ""
+"This group can manage other user groups. Add managed user groups below."
+msgstr ""
+
+msgid "Available user groups"
+msgstr "Доступные группы пользователей"
+
+msgid "Managed user groups"
+msgstr "Управляемые группы пользователей"
+
+msgid "Attributes"
+msgstr "Атрибуты"
+
+msgid "Name is already taken"
+msgstr ""
+
+msgid ""
+"There was a problem whilst checking the availability of this group name"
+msgstr ""
+
+msgid "Code is already taken"
+msgstr ""
+
+msgid ""
+"There was a problem whilst checking the availability of this group code"
+msgstr ""
+
+msgid "Only show selected metadata authorities"
+msgstr ""
+
+msgid "Authority"
+msgstr ""
+
+msgid "Add/Update Public"
+msgstr ""
+
+msgid "Add/Update Private"
+msgstr ""
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "External access"
+msgstr "Внешний доступ"
+
+msgid "Error updating role"
+msgstr ""
+
+msgid "Error creating role"
+msgstr ""
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "Short, clear description of what this role is for."
+msgstr ""
+
+msgid "Metadata authorities"
+msgstr ""
+
+msgid "Set what metadata access this role has."
+msgstr ""
+
+msgid "Other authorities"
+msgstr ""
+
+msgid ""
+"Manage access to apps, tracker, data import/export and system settings."
+msgstr ""
+
+msgid "Available app authorities"
+msgstr ""
+
+msgid "Selected app authorities"
+msgstr ""
+
+msgid "Available tracker authorities"
+msgstr ""
+
+msgid "Selected tracker authorities"
+msgstr ""
+
+msgid "Available import/export authorities"
+msgstr ""
+
+msgid "Selected import/export authorities"
+msgstr ""
+
+msgid "Available system authorities"
+msgstr ""
+
+msgid "Selected system authorities"
 msgstr ""
 
 msgid "All (Full authority)"
@@ -86,28 +226,28 @@ msgid "Data Element Group Sets"
 msgstr ""
 
 msgid "Data Element Groups"
-msgstr ""
+msgstr "Группы элементов данных"
 
 msgid "Data Element"
 msgstr "Элемент данных"
 
 msgid "Min/max rule"
-msgstr ""
+msgstr "Правило мин/макс"
 
 msgid "Data Set"
 msgstr "Набор данных"
 
 msgid "Data Value"
-msgstr ""
+msgstr "Значение данных"
 
 msgid "Document"
 msgstr "Документ"
 
 msgid "Event Chart"
-msgstr ""
+msgstr "График событий"
 
 msgid "Event Report"
-msgstr ""
+msgstr "Отчет событий"
 
 msgid "External Map Layer"
 msgstr ""
@@ -116,10 +256,10 @@ msgid "Indicator Group Sets"
 msgstr ""
 
 msgid "Indicator Group"
-msgstr ""
+msgstr "Группа индикаторов"
 
 msgid "Indicator Type"
-msgstr ""
+msgstr "Тип индикатора"
 
 msgid "Indicator"
 msgstr "Индикатор"
@@ -137,7 +277,7 @@ msgid "Option Group Set"
 msgstr ""
 
 msgid "Option Group"
-msgstr ""
+msgstr "Группа опций"
 
 msgid "Option Set"
 msgstr "Набор опций"
@@ -149,7 +289,7 @@ msgid "Organisation Unit Group Set"
 msgstr ""
 
 msgid "Organisation Unit Group"
-msgstr ""
+msgstr "Группа организационных единиц"
 
 msgid "Predictor"
 msgstr "Предиктор (прогноз)"
@@ -161,13 +301,13 @@ msgid "Program"
 msgstr "Программа"
 
 msgid "Program Indicator"
-msgstr ""
+msgstr "Индикатор программы"
 
 msgid "Program Indicator Group"
 msgstr ""
 
 msgid "Program Rule"
-msgstr ""
+msgstr "Правило программы"
 
 msgid "Program Tracked Entity Attribute Group"
 msgstr ""
@@ -176,7 +316,7 @@ msgid "Push Analysis"
 msgstr ""
 
 msgid "Relationship Type"
-msgstr ""
+msgstr "Тип отношения"
 
 msgid "Report"
 msgstr "Отчет"
@@ -188,10 +328,10 @@ msgid "SQL View"
 msgstr "SQL вид"
 
 msgid "Tracked Entity"
-msgstr ""
+msgstr "Отслеживаемая сущность"
 
 msgid "Tracked Entity Attribute"
-msgstr ""
+msgstr "Атрибут отслеживаемой сущности"
 
 msgid "Tracked Entity Data Value"
 msgstr ""
@@ -203,7 +343,7 @@ msgid "User Group"
 msgstr "Группа пользователей:"
 
 msgid "User Role"
-msgstr ""
+msgstr "Роль пользователя"
 
 msgid "User"
 msgstr "Пользователь"
@@ -221,143 +361,261 @@ msgid "Skip data import audit"
 msgstr "Пропустить аудит импорта данных"
 
 msgid "Visualization"
+msgstr "Визуализация"
+
+msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
-
-msgid "Apps"
-msgstr "Приложения"
-
-msgid "Tracker"
-msgstr "Отслеживание объектов"
-
-msgid "Import-Export"
-msgstr "Импорт-Экспорт"
-
-msgid "System"
-msgstr "Система"
-
-msgid "Add"
-msgstr "Добавить"
-
-msgid "list"
-msgstr ""
-
-msgid ""
-"You do not have access to any section of the DHIS 2 User Management App"
-msgstr ""
-
-msgid "Edit user"
-msgstr ""
-
-msgid "Edit user group"
-msgstr ""
-
-msgid "Edit user role"
-msgstr ""
-
-msgid "Send message"
-msgstr "Отправить сообщение"
-
-msgid "Update"
-msgstr "Обновить"
-
-msgid "Create new"
-msgstr ""
-
-msgid "Back to"
-msgstr ""
-
-msgid "You are not allowed to edit"
-msgstr ""
-
-msgid "Confirm"
-msgstr "Подтвердить"
-
-msgid "There was an error fetching the list"
-msgstr ""
-
-msgid "Select an organisation unit"
-msgstr ""
-
-msgid "Organisation unit"
-msgstr "Организационная единица"
-
-msgid "Page not found."
-msgstr ""
-
-msgid "No match for"
-msgstr ""
-
-msgid "Go back home"
-msgstr ""
-
-msgid "User \"{{displayName}}\" replicated successfuly"
-msgstr ""
-
-msgid "There was a problem replicating the user"
-msgstr ""
-
-msgid "Username"
-msgstr "Имя пользователя"
-
-msgid "Username for new user"
-msgstr ""
-
-msgid "Password"
-msgstr "Пароль"
-
-msgid "Password for new user"
-msgstr ""
-
-msgid "Replicate"
-msgstr ""
-
-msgid "Cancel"
-msgstr "Отмена"
 
 msgid "Search by name"
 msgstr "Поиск по имени"
 
 msgid "Could not load available items"
-msgstr ""
-
-msgid "Filter"
-msgstr "Фильтр"
-
-msgid "Filter available and selected items"
-msgstr ""
+msgstr "Не удалось загрузить доступные элементы"
 
 msgid "There was a problem displaying the GroupEditor"
 msgstr ""
+
+msgid "Filter available options"
+msgstr ""
+
+msgid "Filter selected options"
+msgstr ""
+
+msgid "Search for an organisation unit"
+msgstr ""
+
+msgid ""
+"Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
+"please refine your search to see more."
+msgstr ""
+
+msgid "There was a problem retreiving your search results"
+msgstr "Возникла проблема с получением результатов поиска"
+
+msgid "Please enter at least {{ minCharLength }} characters"
+msgstr ""
+
+msgid "No matches found"
+msgstr "Ничего не найдено"
 
 msgid "Apply"
 msgstr "Применить"
 
 msgid "Clear all"
-msgstr ""
+msgstr "Очистить все"
 
 msgid "There was an error loading the current user"
-msgstr ""
+msgstr "При загрузке текущего пользователя произошла ошибка"
 
 msgid "You do not have authorities to see users, user roles or user groups"
 msgstr ""
 
-msgid "Display name"
+msgid "Analytics dimension restrictions"
 msgstr ""
 
-msgid "ID"
-msgstr "Ид"
-
-msgid "Last login"
+msgid "Available restrictions"
 msgstr ""
 
-msgid "Created"
-msgstr "Создано"
+msgid "Selected restrictions"
+msgstr ""
+
+msgid "Username"
+msgstr "Имя пользователя"
+
+msgid "Email address"
+msgstr ""
 
 msgid "First name"
 msgstr "Имя"
 
 msgid "Last name"
 msgstr "Фамилия"
+
+msgid "Interface language"
+msgstr "Язык интерфейса"
+
+msgid "Database language"
+msgstr "Язык базы данных"
+
+msgid "Use database locale / no translation"
+msgstr "Использовать язык базы данных/без перевода"
+
+msgid "Disable this user account"
+msgstr ""
+
+msgid "Contact details"
+msgstr ""
+
+msgid "Mobile phone number"
+msgstr "Номер мобильного телефона"
+
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+msgid "Facebook Messenger"
+msgstr "Facebook Messenger"
+
+msgid "Skype"
+msgstr "Skype"
+
+msgid "Telegram"
+msgstr "Telegram"
+
+msgid "Twitter"
+msgstr "Twitter"
+
+msgid "Invite user"
+msgstr ""
+
+msgid "Create account or email invitation"
+msgstr "Создать учетную запись или отправить приглашение по электронной почте"
+
+msgid "Create account with user details"
+msgstr "Создать учетную запись с данными пользователя"
+
+msgid "Email invitation to create account"
+msgstr "Приглашение по электронной почте для создания учетной записи"
+
+msgid "Organisation unit access"
+msgstr ""
+
+msgid ""
+"Customise the organisation units this user has access to for searching, "
+"capturing and managing data."
+msgstr ""
+
+msgid "Organisation unit selections are recursive"
+msgstr ""
+
+msgid "Selecting a unit gives access to all units in its sub-hierarchy."
+msgstr ""
+
+msgid "Data capture and maintenance"
+msgstr ""
+
+msgid "The organisation units that this user can enter and edit data for."
+msgstr ""
+
+msgid "Data output and analysis"
+msgstr ""
+
+msgid "The organisation units that this user can export and analyse."
+msgstr ""
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "The organisation that this user can search for and in."
+msgstr ""
+
+msgid "Maximum organisation unit level for data output"
+msgstr ""
+
+msgid "Roles and groups"
+msgstr ""
+
+msgid "Manage what roles and groups this user is a member of."
+msgstr ""
+
+msgid "Available user roles"
+msgstr ""
+
+msgid "User roles this user is assigned"
+msgstr ""
+
+msgid "User groups this user is a member of"
+msgstr ""
+
+msgid "Security"
+msgstr ""
+
+msgid "Settings for how this user can log in."
+msgstr ""
+
+msgid "Change user password"
+msgstr ""
+
+msgid "New password"
+msgstr "Новый пароль"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid ""
+"Minimum 8 characters, one uppercase and lowercase letter and one number"
+msgstr ""
+
+msgid "Repeat new password"
+msgstr "Повторите новый пароль"
+
+msgid "Repeat password"
+msgstr ""
+
+msgid "Account expiration date"
+msgstr "Дата истечения срока действия учетной записи"
+
+msgid "OIDC mapping value"
+msgstr ""
+
+msgid "OpenID Connect mapping claim for your identity platform"
+msgstr ""
+
+msgid "LDAP identifier"
+msgstr "Идентификатор LDAP"
+
+msgid "External authentication only (OpenID / LDAP)"
+msgstr ""
+
+msgid "Invalid username"
+msgstr ""
+
+msgid "Invalid WhatsApp number"
+msgstr ""
+
+msgid "Error updating user"
+msgstr ""
+
+msgid "Error creating user"
+msgstr ""
+
+msgid "Username already taken"
+msgstr "Имя пользователя уже занято"
+
+msgid "There was a problem whilst checking the availability of this username"
+msgstr "При проверке доступности этого имени пользователя возникла проблема"
+
+msgid "Passwords do not match"
+msgstr "Пароли не совпадают"
+
+msgid "Please provide a value"
+msgstr ""
+
+msgid "Create, modify, view and delete Users"
+msgstr "Создание, изменение, просмотр и удаление Пользователей"
+
+msgid "User role"
+msgstr "Роль пользователя"
+
+msgid "Create, modify, view and delete User Roles"
+msgstr "Создание, изменение, просмотр и удаление Ролей Пользователей"
+
+msgid "User group"
+msgstr "Группа пользователей"
+
+msgid "Create, modify, view and delete User Groups"
+msgstr "Создание, изменение, просмотр и удаление Групп Пользователей"
+
+msgid "Display name"
+msgstr "Отображаемое имя"
+
+msgid "ID"
+msgstr "Ид"
+
+msgid "Last login"
+msgstr "Последний вход"
+
+msgid "Created"
+msgstr "Создано"
 
 msgid "Introduction"
 msgstr "Представление"
@@ -366,7 +624,7 @@ msgid "Job title"
 msgstr "Специальность"
 
 msgid "Works at"
-msgstr ""
+msgstr "Работает в"
 
 msgid "Education"
 msgstr "Образование"
@@ -384,16 +642,13 @@ msgid "Gender"
 msgstr "Пол"
 
 msgid "Speaks"
-msgstr ""
+msgstr "Говорит"
 
 msgid "E-mail"
 msgstr "адрес электронной почты"
 
-msgid "Mobile phone number"
-msgstr "Номер мобильного телефона"
-
 msgid "Organisations units"
-msgstr ""
+msgstr "Организационные единицы"
 
 msgid "User roles"
 msgstr "Уровень доступа"
@@ -402,327 +657,328 @@ msgid "Members"
 msgstr "Члены"
 
 msgid "Number of users"
+msgstr "Количество пользователей"
+
+msgid "New group"
 msgstr ""
 
-msgid "Create, modify, view and delete Users"
+msgid "Create group"
 msgstr ""
 
-msgid "User role"
+msgid "New role"
 msgstr ""
 
-msgid "Create, modify, view and delete User Roles"
+msgid "Create role"
 msgstr ""
 
-msgid "User group"
-msgstr "Группа пользователей"
-
-msgid "Create, modify, view and delete User Groups"
+msgid "Error fetching interface language"
 msgstr ""
 
-msgid "Could not load the user group data. Please refresh the page."
+msgid "There was an error fetching the default interface language."
 msgstr ""
 
-msgid "User group \"{{displayName}}\" saved successfully"
+msgid "New user"
 msgstr ""
 
-msgid "There was a problem saving the user group."
+msgid "Create user"
 msgstr ""
 
-msgid "Save"
-msgstr "Сохранить"
-
-msgid "Name"
-msgstr "Название"
-
-msgid "Code"
-msgstr "Код"
-
-msgid ""
-"To add a user to this group, go to the User section and edit the user group "
-"settings for a specific user."
+msgid "Error fetching group"
 msgstr ""
 
-msgid "Available user groups"
+msgid "There was an error fetching this group."
 msgstr ""
 
-msgid "Managed user groups"
+msgid "Edit group"
 msgstr ""
 
-msgid "You left group"
+msgid "Save changes"
+msgstr "Сохранить изменения"
+
+msgid "Error fetching role"
 msgstr ""
 
-msgid "You joined group"
+msgid "There was an error fetching this role."
 msgstr ""
 
-msgid "There was a problem updating your group membership"
+msgid "Edit role"
+msgstr ""
+
+msgid "Error fetching user"
+msgstr ""
+
+msgid "There was an error fetching this user."
+msgstr ""
+
+msgid "Show details"
+msgstr "Показать детали"
+
+msgid "Sharing settings"
+msgstr "Настройки совместного пользования"
+
+msgid "Edit"
+msgstr "Редактировать"
+
+msgid "Join group"
+msgstr "Вступить в группу"
+
+msgid "Leave group"
+msgstr "Покинуть группу"
+
+msgid "Deleted \"{{- name}}\" successfully"
+msgstr ""
+
+msgid "There was an error deleting the user group: {{- error}}"
+msgstr ""
+
+msgid "Delete user group {{- name}}"
+msgstr ""
+
+msgid "Are you sure you want to delete {{- name}}?"
+msgstr ""
+
+msgid "No, cancel"
+msgstr ""
+
+msgid "Yes, delete"
+msgstr ""
+
+msgid "Joined user group \"{{- name}}\" successfuly"
+msgstr ""
+
+msgid "There was an error joining the user group: {{- error}}"
+msgstr ""
+
+msgid "Join user group {{- name}}"
+msgstr ""
+
+msgid "Are you sure you want to join {{- name}}?"
+msgstr ""
+
+msgid "Yes, join"
+msgstr ""
+
+msgid "Left user group \"{{- name}}\" successfuly"
+msgstr ""
+
+msgid "There was an error leaving the user group: {{- error}}"
+msgstr ""
+
+msgid "Leave user group {{- name}}"
+msgstr ""
+
+msgid "Are you sure you want to leave {{- name}}?"
+msgstr ""
+
+msgid "Yes, leave"
 msgstr ""
 
 msgid "User Group Management"
+msgstr "Управление группами пользователей"
+
+msgid "New"
+msgstr "Новый"
+
+msgid "Error loading user groups"
 msgstr ""
 
-msgid "User role \"{{displayName}}\" saved successfully"
+msgid "No results found"
+msgstr "Результаты не найдены"
+
+msgid "Member?"
 msgstr ""
 
-msgid "There was a problem saving the user role."
+msgid "Actions"
+msgstr "Действия"
+
+msgid "Member"
 msgstr ""
 
-msgid "Description"
-msgstr "Описание"
-
-msgid "User Role Management"
-msgstr ""
-
-msgid "Could not load the user data. Please refresh the page."
-msgstr ""
-
-msgid "User \"{{displayName}}\" saved successfully"
-msgstr ""
-
-msgid "There was a problem saving the user."
-msgstr ""
-
-msgid "Show fewer options"
-msgstr "Показать меньше опций"
-
-msgid "Show more options"
-msgstr "Показать больше опций"
-
-msgid "Send invite"
+msgid "Insufficient permissions"
 msgstr ""
 
 msgid ""
-"Selecting an organisation unit provides access to all units in the sub-"
-"hierarchy"
+"You do not have access to any section of the DHIS 2 User Management App"
+msgstr ""
+"У вас нет доступа к какому-либо разделу приложения для управления "
+"пользователями DHIS 2"
+
+msgid "List"
+msgstr "Список"
+
+msgid "Add"
+msgstr "Добавить"
+
+msgid "Page not found."
+msgstr "Страница не найдена"
+
+msgid "No match for"
 msgstr ""
 
-msgid "Create account or email invitation"
+msgid "Go back home"
+msgstr "Возврат домой"
+
+msgid "There was an error deleting the user role: {{- error}}"
 msgstr ""
 
-msgid "Create account with user details"
+msgid "Delete user role {{- name}}"
 msgstr ""
 
-msgid "Email invitation to create account"
+msgid "User Role Management"
+msgstr "Управление ролями пользователей"
+
+msgid "Error loading user roles"
 msgstr ""
 
-msgid "External authentication only (OpenID or LDAP)"
+msgid "Profile"
+msgstr "Профиль"
+
+msgid "Replicate"
+msgstr "Продублировать"
+
+msgid "Reset password"
+msgstr "Сброс пароля"
+
+msgid "Disable"
+msgstr "Отключить"
+
+msgid "Enable"
+msgstr "Включить"
+
+msgid "Disable Two Factor Authentication"
+msgstr "Отключить двухфакторную аутентификацию"
+
+msgid "There was an error deleting the user: {{- error}}"
 msgstr ""
 
-msgid "Account expiration date"
+msgid "Delete user {{- name}}"
+msgstr ""
+
+msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
+msgstr ""
+
+msgid "There was an error disabling two factor authentication: {{- error}}"
+msgstr ""
+
+msgid "Disable two factor authentication for user {{- name}}"
+msgstr ""
+
+msgid ""
+"Are you sure you want to disable two factor authentication for {{- name}}?"
+msgstr ""
+
+msgid "Yes, disable two factor authentication"
+msgstr ""
+
+msgid "User \"{{- name}}\" disabled successfuly"
+msgstr ""
+
+msgid "There was an error disabling the user: {{- error}}"
+msgstr ""
+
+msgid "Disable user {{- name}}"
+msgstr ""
+
+msgid "Are you sure you want to disable {{- name}}?"
+msgstr ""
+
+msgid "Yes, disable"
+msgstr ""
+
+msgid "User \"{{- name}}\" enabled successfuly"
+msgstr ""
+
+msgid "There was an error enabling the user: {{- error}}"
+msgstr ""
+
+msgid "Enable user {{- name}}"
+msgstr ""
+
+msgid "Are you sure you want to enable {{- name}}?"
+msgstr ""
+
+msgid "Yes, enable"
+msgstr ""
+
+msgid "User \"{{- name}}\" replicated successfuly"
+msgstr ""
+
+msgid "There was an error replicating the user: {{- error}}"
+msgstr ""
+
+msgid "Replicate user {{- name}}"
+msgstr ""
+
+msgid "Username for new user"
+msgstr "Имя пользователя для нового пользователя"
+
+msgid "Password for new user"
+msgstr "Пароль для нового пользователя"
+
+msgid ""
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
+msgstr ""
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Replicate user"
+msgstr "Дублировать пользователя"
+
+msgid "Password of user \"{{- name}}\" reset successfuly"
+msgstr ""
+
+msgid "There was an error resetting the password: {{- error}}"
+msgstr ""
+
+msgid "Reset password of user {{- name}}"
+msgstr ""
+
+msgid "Are you sure you want to reset {{- name}}'s password?"
+msgstr ""
+
+msgid "Yes, reset"
+msgstr ""
+
+msgid "1 month"
+msgstr ""
+
+msgid "{{months}} months"
+msgstr ""
+
+msgid "Time inactive"
+msgstr ""
+
+msgid "Invitation"
+msgstr ""
+
+msgid "All invitations"
+msgstr "Все приглашения"
+
+msgid "Expired invitations"
+msgstr "Просроченные приглашения"
+
+msgid "Show self-registrations"
+msgstr ""
+
+msgid "Clear filters"
+msgstr ""
+
+msgid "Org.unit"
+msgstr ""
+
+msgid "User Management"
+msgstr "Управление пользователями"
+
+msgid "Error loading users"
+msgstr ""
+
+msgid "Account disabled?"
 msgstr ""
 
 msgid "Disabled"
 msgstr "Отключено"
 
-msgid "Retype password"
-msgstr ""
-
-msgid "OIDC mapping value"
-msgstr ""
-
-msgid "LDAP identifier"
-msgstr ""
-
-msgid "WhatsApp"
-msgstr ""
-
-msgid "Facebook Messenger"
-msgstr ""
-
-msgid "Skype"
-msgstr ""
-
-msgid "Telegram"
-msgstr ""
-
-msgid "Twitter"
-msgstr ""
-
-msgid "Interface language"
-msgstr "Язык интерфейса"
-
-msgid "Database language"
-msgstr "Язык базы данных"
-
-msgid "Available roles"
-msgstr ""
-
-msgid "Selected roles"
-msgstr ""
-
-msgid "Data capture and maintenance organisation units"
-msgstr ""
-
-msgid "Data output and analytic organisation units"
-msgstr ""
-
-msgid "Search Organisation Units"
-msgstr ""
-
-msgid "Selected user groups"
-msgstr ""
-
-msgid "Available dimension restrictions for data analytics"
-msgstr ""
-
-msgid "Selected dimension restrictions for data analytics"
-msgstr ""
-
-msgid "Replicate user"
-msgstr "Дублировать пользователя"
-
-msgid "Are you sure you want to reset {{-userName}}'s password?"
-msgstr ""
-
-msgid "Are you sure you want to disable two factor authentication for"
-msgstr ""
-
-msgid "Succesfully disabled two factor authentication for"
-msgstr ""
-
-msgid "There was a problem updating two factor authentication"
-msgstr ""
-
-msgid "Are you sure you want to disable"
-msgstr ""
-
-msgid "Are you sure you want to enable"
-msgstr ""
-
-msgid "sucessfully disabled"
-msgstr ""
-
-msgid "successfully enabled"
-msgstr ""
-
-msgid "There was a problem updating the enabled state"
-msgstr ""
-
-msgid "month"
-msgstr ""
-
-msgid "months"
-msgstr ""
-
-msgid "<No value>"
-msgstr "<Нет значения>"
-
-msgid "Inactivity"
-msgstr ""
-
-msgid "All invitations"
-msgstr ""
-
-msgid "Expired invitations"
-msgstr "Просроченные приглашения"
-
-msgid "Invitations"
-msgstr ""
-
-msgid "Self registrations"
-msgstr ""
-
-msgid "User Management"
-msgstr ""
-
-msgid "{{count}} selected"
-msgid_plural "{{count}} selected"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-
-msgid "Yes"
-msgstr "Да"
-
-msgid "No"
-msgstr "Нет"
-
 msgid "Something went wrong when processing your request."
-msgstr ""
-
-msgid "Validating..."
-msgstr ""
-
-msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
-msgstr ""
-
-msgid "{{type}} \"{{displayName}}\" removed successfully"
-msgstr ""
-
-msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
-msgstr ""
-
-msgid "Exceeds maximum character limit of 50"
-msgstr ""
-
-msgid "Please enter a valid date with the following format yyyy-mm-dd"
-msgstr ""
-
-msgid "Please provide a valid email address"
-msgstr "Введите правильный адрес электронной почты"
-
-msgid "Value should be an integer"
-msgstr ""
-
-msgid "Value should be a nagative integer"
-msgstr ""
-
-msgid "Value should be a number"
-msgstr ""
-
-msgid "Value should be a positive integer"
-msgstr ""
-
-msgid "Passwords do not match"
-msgstr ""
-
-msgid "This field is required"
-msgstr "Это поле обязательно к заполнению"
-
-msgid "This field is required. Please select at least one"
-msgstr ""
-
-msgid "A username should be at least 2 characters long"
-msgstr ""
-
-msgid "Username may not exceed 140 characters"
-msgstr ""
-
-msgid "Please provide a valid international phone number (+0123456789)"
-msgstr ""
-
-msgid "Password should be at least 8 characters long"
-msgstr ""
-
-msgid "Password should be no longer than 34 characters"
-msgstr ""
-
-msgid "Password should contain at least one lowercase letter"
-msgstr ""
-
-msgid "Password should contain at least one UPPERCASE letter"
-msgstr ""
-
-msgid "Password should contain at least one number"
-msgstr ""
-
-msgid "Password should have at least one special character"
-msgstr ""
-
-msgid "Username already taken"
-msgstr ""
-
-msgid "There was a problem whilst checking the availability of this username"
-msgstr ""
-
-msgid "{{fieldDisplayName}} is already taken"
-msgstr ""
-
-msgid "Could not verify if this {{fieldDisplayName}} is unique"
-msgstr ""
-
-msgid "Attribute value needs to be unique, value already taken."
-msgstr ""
-
-msgid "There was a problem checking if this attribute value is unique"
-msgstr ""
+msgstr "Что-то пошло не так при обработке вашего запроса."

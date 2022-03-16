@@ -4,13 +4,13 @@ import {
     getAllExpandedOrgUnitPaths,
     Button,
     ButtonStrip,
-    Field,
-    Divider,
+    IconErrorFilled24,
+    theme,
 } from '@dhis2/ui'
 import cx from 'classnames'
-import defer from 'lodash.defer'
+import { defer } from 'lodash-es'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useState, useCallback, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import api from '../../api'
 import AsyncAutoComplete from './AsyncAutoComplete/index.js'
@@ -19,6 +19,13 @@ import getInitiallySelectedUnits from './getInitiallySelectedUnits.js'
 import getOrgUnitRoots from './getOrgUnitRoots.js'
 import removeLastPathSegment from './removeLastPathSegment.js'
 import styles from './SearchableOrgUnitTree.module.css'
+import { useDeepMemo } from './useDeepMemo.js'
+
+// Rendering an org unit tree can be expensive and this is particularly
+// problematic in React Final Form forms due to the fact that they rerender on
+// every input change, so we use React.memo and useCallback to ensure props are
+// shallow equal on rerenders.
+const MemoedOrganisationUnitTree = React.memo(OrganisationUnitTree)
 
 /**
  * Renders a @dhis2/ui OrganisationUnitTree with an AsyncAutoComplete above it and a button strip below
@@ -30,10 +37,9 @@ const SearchableOrgUnitTree = ({
     orgUnitType,
     initiallySelected,
     confirmSelection,
-    errorText,
     headerText,
-    side,
-    dense,
+    description,
+    error,
     onBlur,
     onChange,
 }) => {
@@ -49,54 +55,66 @@ const SearchableOrgUnitTree = ({
         getInitiallyExpandedUnits(initiallySelected)
     )
 
-    const handleExpand = ({ path }) => {
-        if (!expanded.includes(path)) {
-            setExpanded([...expanded, path])
-        }
-    }
+    const handleExpand = useCallback(
+        ({ path }) => {
+            if (!expanded.includes(path)) {
+                setExpanded([...expanded, path])
+            }
+        },
+        [expanded, setExpanded]
+    )
 
-    const handleCollapse = ({ path }) => {
-        const pathIndex = expanded.indexOf(path)
+    const handleCollapse = useCallback(
+        ({ path }) => {
+            const pathIndex = expanded.indexOf(path)
 
-        if (pathIndex !== -1) {
-            const updatedExpanded =
-                pathIndex === 0
-                    ? expanded.slice(1)
+            if (pathIndex !== -1) {
+                const updatedExpanded =
+                    pathIndex === 0
+                        ? expanded.slice(1)
+                        : [
+                              ...expanded.slice(0, pathIndex),
+                              ...expanded.slice(pathIndex + 1),
+                          ]
+
+                setExpanded(updatedExpanded)
+            }
+        },
+        [expanded, setExpanded]
+    )
+
+    const update = useCallback(
+        (nextOrgUnits, nextExpanded) => {
+            if (onChange) {
+                onChange(nextOrgUnits.map(unit => unit.id))
+                // Also call onBlur if this is available. In a redux-form the component will be 'touched' by it
+                onBlur && onBlur()
+            }
+
+            setSelectedOrgUnits(nextOrgUnits)
+
+            if (nextExpanded) {
+                setExpanded(nextExpanded)
+            }
+        },
+        [onChange, onBlur, setSelectedOrgUnits, setExpanded]
+    )
+
+    const toggleSelectedOrgUnits = useCallback(
+        ({ id, path, displayName }) => {
+            const orgUnitIndex = selectedOrgUnits.findIndex(u => u.id === id)
+            const nextOrgUnits =
+                orgUnitIndex === -1
+                    ? [...selectedOrgUnits, { id, path, displayName }]
                     : [
-                          ...expanded.slice(0, pathIndex),
-                          ...expanded.slice(pathIndex + 1),
+                          ...selectedOrgUnits.slice(0, orgUnitIndex),
+                          ...selectedOrgUnits.slice(orgUnitIndex + 1),
                       ]
 
-            setExpanded(updatedExpanded)
-        }
-    }
-
-    const update = (nextOrgUnits, nextExpanded) => {
-        if (onChange) {
-            onChange(nextOrgUnits.map(unit => unit.id))
-            // Also call onBlur if this is available. In a redux-form the component will be 'touched' by it
-            onBlur && onBlur()
-        }
-
-        setSelectedOrgUnits(nextOrgUnits)
-
-        if (nextExpanded) {
-            setExpanded(nextExpanded)
-        }
-    }
-
-    const toggleSelectedOrgUnits = ({ id, path, displayName }) => {
-        const orgUnitIndex = selectedOrgUnits.findIndex(u => u.id === id)
-        const nextOrgUnits =
-            orgUnitIndex === -1
-                ? [...selectedOrgUnits, { id, path, displayName }]
-                : [
-                      ...selectedOrgUnits.slice(0, orgUnitIndex),
-                      ...selectedOrgUnits.slice(orgUnitIndex + 1),
-                  ]
-
-        update(nextOrgUnits)
-    }
+            update(nextOrgUnits)
+        },
+        [selectedOrgUnits, update]
+    )
 
     const selectAndShowFilteredOrgUnit = orgUnit => {
         const nextOrgUnits = [...selectedOrgUnits, orgUnit]
@@ -118,56 +136,73 @@ const SearchableOrgUnitTree = ({
         defer(() => confirmSelection([]))
     }
 
+    const rootIds = useDeepMemo(() => roots.map(({ id }) => id), [roots])
+    const selectedOrgUnitPaths = useMemo(
+        () => selectedOrgUnits.map(({ path }) => path),
+        [selectedOrgUnits]
+    )
+
     return (
-        <div className={cx(styles.wrapper, styles[side], className)}>
-            <Field error={!!errorText} validationText={errorText || ''}>
-                {/* Without `display: grid`, AsyncAutoComplete takes up too much vertical space */}
-                <div className={styles.grid}>
-                    <div className={styles.header}>
-                        {headerText && (
+        <div className={styles.flexWrapper}>
+            <div
+                className={cx(styles.innerWrapper, className, {
+                    [styles.error]: error,
+                })}
+            >
+                <div>
+                    {headerText && (
+                        <div className={styles.header}>
                             <h4 className={styles.headerText}>{headerText}</h4>
-                        )}
+                            {description && (
+                                <p className={styles.headerDescription}>
+                                    {description}
+                                </p>
+                            )}
+                        </div>
+                    )}
+                    <div className={styles.searchFilterWrapper}>
                         <AsyncAutoComplete
                             query={api.queryOrgUnits}
                             orgUnitType={orgUnitType}
                             selectHandler={selectAndShowFilteredOrgUnit}
-                            dense={dense}
                         />
                     </div>
-
-                    <Divider margin="0" />
-
                     <div className={styles.scrollBox}>
-                        <OrganisationUnitTree
-                            roots={roots.map(({ id }) => id)}
+                        <MemoedOrganisationUnitTree
+                            roots={rootIds}
                             onChange={toggleSelectedOrgUnits}
-                            selected={selectedOrgUnits.map(({ path }) => path)}
+                            selected={selectedOrgUnitPaths}
                             expanded={expanded}
                             handleExpand={handleExpand}
                             handleCollapse={handleCollapse}
                         />
                     </div>
                 </div>
-            </Field>
-            {confirmSelection && (
-                <div className={styles.buttonStrip}>
-                    <ButtonStrip>
-                        <Button
-                            primary={true}
-                            onClick={applySelection}
-                            disabled={!roots}
-                            small
-                        >
-                            {i18n.t('Apply')}
-                        </Button>
-                        <Button
-                            onClick={clearSelection}
-                            disabled={!roots}
-                            small
-                        >
-                            {i18n.t('Clear all')}
-                        </Button>
-                    </ButtonStrip>
+                {confirmSelection && (
+                    <div className={styles.buttonStrip}>
+                        <ButtonStrip>
+                            <Button
+                                primary={true}
+                                onClick={applySelection}
+                                disabled={!roots}
+                                small
+                            >
+                                {i18n.t('Apply')}
+                            </Button>
+                            <Button
+                                onClick={clearSelection}
+                                disabled={!roots}
+                                small
+                            >
+                                {i18n.t('Clear all')}
+                            </Button>
+                        </ButtonStrip>
+                    </div>
+                )}
+            </div>
+            {error && (
+                <div className={styles.errorIcon}>
+                    <IconErrorFilled24 color={theme.error} />
                 </div>
             )}
         </div>
@@ -177,18 +212,17 @@ const SearchableOrgUnitTree = ({
 SearchableOrgUnitTree.propTypes = {
     initiallySelected: PropTypes.arrayOf(
         PropTypes.shape({
-            displayName: PropTypes.string.isRequired,
             id: PropTypes.string.isRequired,
             path: PropTypes.string.isRequired,
+            displayName: PropTypes.string,
         }).isRequired
     ).isRequired,
     orgUnitType: PropTypes.string.isRequired,
     className: PropTypes.string,
     confirmSelection: PropTypes.func,
-    dense: PropTypes.bool,
-    errorText: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-    headerText: PropTypes.string,
-    side: PropTypes.oneOf(['left', 'right']),
+    description: PropTypes.string,
+    error: PropTypes.bool,
+    headerText: PropTypes.node,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
 }

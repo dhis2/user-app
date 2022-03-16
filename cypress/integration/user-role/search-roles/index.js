@@ -31,13 +31,11 @@ Given('the user-manager filtered the list', () => {
 When('the user-manager edits one of the displayed user roles', () => {
     cy.getWithDataTest('{context-menu-button}').first().click()
     cy.getWithDataTest('{dhis2-uicore-menu}').contains('Edit').click()
-    cy.findByRole('heading', { name: /^Update User Authority Group:/ }).should(
-        'exist'
-    )
+    cy.findByRole('heading', { name: 'Edit role' }).should('exist')
 })
 
 When('returns to the list view without saving', () => {
-    cy.findByRole('button', { name: 'Cancel' }).click()
+    cy.findByRole('button', { name: 'Cancel without saving' }).click()
     cy.findByRole('heading', { name: 'User Role Management' }).should('exist')
 })
 
