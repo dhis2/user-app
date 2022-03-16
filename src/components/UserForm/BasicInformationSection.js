@@ -35,7 +35,8 @@ const BasicInformationSection = React.memo(
             ? userInterfaceLanguage
             : undefined
         const userDatabaseLanguageInitialValue = hasOption(
-            databaseLanguageOptions
+            databaseLanguageOptions,
+            userDatabaseLanguage
         )
             ? userDatabaseLanguage
             : undefined
