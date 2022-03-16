@@ -10,7 +10,7 @@ export const useUsers = ({ groupId, mode }) => {
     const queries = useMemo(() => {
         const resource = `userGroups/${groupId}/users/gist`
         const params = {
-            fields: ['id', 'name', 'userCredentials.username~rename(username)'],
+            fields: ['id', 'name', 'username'],
             total: true,
             pageSize: 10,
         }
@@ -29,11 +29,7 @@ export const useUsers = ({ groupId, mode }) => {
                         return []
                     }
 
-                    const filterFields = [
-                        'firstName',
-                        'surname',
-                        'userCredentials.username',
-                    ]
+                    const filterFields = ['firstName', 'surname', 'username']
                     return filterFields.map(
                         field => `${index}:${field}:ilike:${token}`
                     )
