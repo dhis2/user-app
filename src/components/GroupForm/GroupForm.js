@@ -1,35 +1,22 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import {
-    NoticeBox,
-    composeValidators,
-    hasValue,
-    createMaxCharacterLength,
-    FinalForm,
-} from '@dhis2/ui'
+import { NoticeBox, FinalForm } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { useCurrentUser } from '../../hooks/useCurrentUser'
 import Attributes from '../Attributes'
-import Form, { FormSection, TextField, TransferField } from '../Form'
+import Form, { FormSection } from '../Form'
+import BasicInformationSection from './BasicInformationSection.js'
 import { getGroupData } from './getGroupData'
 import styles from './GroupForm.module.css'
 import { useFormData } from './useFormData'
-import {
-    useDebouncedUniqueGroupNameValidator,
-    useDebouncedUniqueGroupCodeValidator,
-} from './validators'
-
-const codeLengthValidator = createMaxCharacterLength(50)
+import UserGroupManagementSection from './UserGroupManagementSection.js'
+import UserManagementSection from './UserManagementSection.js'
 
 const GroupForm = ({ submitButtonLabel, group }) => {
     const history = useHistory()
     const engine = useDataEngine()
-    const debouncedUniqueGroupNameValidator =
-        useDebouncedUniqueGroupNameValidator({ engine, groupName: group?.name })
-    const debouncedUniqueGroupCodeValidator =
-        useDebouncedUniqueGroupCodeValidator({ engine, groupCode: group?.code })
     const { loading, error, userGroupOptions, attributes } = useFormData()
     const { currentUser, refreshCurrentUser } = useCurrentUser()
     const handleSubmit = async values => {
@@ -91,57 +78,12 @@ const GroupForm = ({ submitButtonLabel, group }) => {
                             {submitError.message}
                         </NoticeBox>
                     )}
-                    <FormSection title={i18n.t('Basic information')}>
-                        <TextField
-                            required
-                            name="name"
-                            label={i18n.t('Name')}
-                            initialValue={group?.name}
-                            validate={composeValidators(
-                                hasValue,
-                                debouncedUniqueGroupNameValidator
-                            )}
-                        />
-                        <TextField
-                            name="code"
-                            label={i18n.t('Code')}
-                            helpText={i18n.t('Used in analytics reports.')}
-                            initialValue={group?.code}
-                            validate={composeValidators(
-                                codeLengthValidator,
-                                debouncedUniqueGroupCodeValidator
-                            )}
-                        />
-                    </FormSection>
-                    <FormSection
-                        title={i18n.t('User management')}
-                        description={i18n.t(
-                            'Add or remove users from this group.'
-                        )}
-                    >
-                        {/* TODO: https://github.com/dhis2/user-app/pull/854 */}
-                        <NoticeBox className={styles.noticeBox}>
-                            {i18n.t(
-                                'To add a user to this group, go to the User section and edit the user group settings for a specific user.'
-                            )}
-                        </NoticeBox>
-                    </FormSection>
-                    <FormSection
-                        title={i18n.t('User group management')}
-                        description={i18n.t(
-                            'This group can manage other user groups. Add managed user groups below.'
-                        )}
-                    >
-                        <TransferField
-                            name="managedGroups"
-                            leftHeader={i18n.t('Available user groups')}
-                            rightHeader={i18n.t('Managed user groups')}
-                            options={userGroupOptions}
-                            initialValue={
-                                group?.managedGroups.map(({ id }) => id) || []
-                            }
-                        />
-                    </FormSection>
+                    <BasicInformationSection group={group} />
+                    <UserManagementSection group={group} />
+                    <UserGroupManagementSection
+                        group={group}
+                        userGroupOptions={userGroupOptions}
+                    />
                     {attributes.length > 0 && (
                         <FormSection title={i18n.t('Attributes')}>
                             <Attributes
