@@ -25,7 +25,6 @@
         "@dhis2/ui": "^7.14.2",
         "classnames": "^2.3.1",
         "d2": "^31.7.0",
-        "d3-color": "^1.2.0",
         "lodash-es": "^4.17.21",
         "material-ui": "^0.20.0",
         "memoize-one": "^6.0.0",
