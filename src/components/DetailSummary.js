@@ -1,3 +1,5 @@
+// TODO: delete
+
 import i18n from '@dhis2/d2-i18n'
 import { LoadingMask, Heading } from '@dhis2/d2-ui-core'
 import { capitalize, kebabCase } from 'lodash-es'
@@ -51,7 +53,7 @@ class DetailSummary extends Component {
         getItem(baseName, routeId)
     }
 
-    getLabelForEntity(baseName) {
+    getEditLabelForEntity(baseName) {
         switch (baseName) {
             case USER:
                 return i18n.t('Edit user')
@@ -126,7 +128,9 @@ class DetailSummary extends Component {
                 }
 
                 if ((parseDate || parseDateTime) && typeof value === 'string') {
-                    value = parseDateFromUTCString(value, parseDateTime)
+                    value = parseDateFromUTCString(value, {
+                        includeTime: !!parseDateTime,
+                    })
                 }
 
                 if (count) {
@@ -171,7 +175,7 @@ class DetailSummary extends Component {
         const plural = `${baseName}s`,
             baseRoute = `/${kebabCase(plural)}`,
             editLink = `${baseRoute}/edit/${id}`,
-            editLabel = this.getLabelForEntity(baseName)
+            editLabel = this.getEditLabelForEntity(baseName)
 
         return (
             <main style={styles.main}>

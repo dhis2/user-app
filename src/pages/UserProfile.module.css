@@ -1,0 +1,40 @@
+.container {
+    background: white;
+    border: 2px solid var(--colors-grey300);
+    padding: var(--spacers-dp16);
+}
+
+.section:not(:last-child) {
+    margin-bottom: var(--spacers-dp32);
+}
+
+.sectionHeader {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: var(--spacers-dp12);
+}
+
+.sectionHeaderTitle {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--colors-grey800);
+    margin: 0;
+    margin-bottom: var(--spacers-dp4);
+}
+
+.field {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    gap: var(--spacers-dp16);
+    padding: var(--spacers-dp12) 0;
+}
+
+.fieldLabel {
+    color: var(--colors-grey800);
+}
+
+.permissionTag {
+    margin: 0 var(--spacers-dp4);
+}

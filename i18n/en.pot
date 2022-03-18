@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
-"PO-Revision-Date: 2022-02-16T17:16:47.395Z\n"
+"POT-Creation-Date: 2022-03-18T16:43:30.158Z\n"
+"PO-Revision-Date: 2022-03-18T16:43:30.158Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -599,48 +599,6 @@ msgstr "Display name"
 msgid "ID"
 msgstr "ID"
 
-msgid "Last login"
-msgstr "Last login"
-
-msgid "Created"
-msgstr "Created"
-
-msgid "Introduction"
-msgstr "Introduction"
-
-msgid "Job title"
-msgstr "Job title"
-
-msgid "Works at"
-msgstr "Works at"
-
-msgid "Education"
-msgstr "Education"
-
-msgid "Interests"
-msgstr "Interests"
-
-msgid "Nationality"
-msgstr "Nationality"
-
-msgid "Birthday"
-msgstr "Birthday"
-
-msgid "Gender"
-msgstr "Gender"
-
-msgid "Speaks"
-msgstr "Speaks"
-
-msgid "E-mail"
-msgstr "E-mail"
-
-msgid "Organisations units"
-msgstr "Organisations units"
-
-msgid "User roles"
-msgstr "User roles"
-
 msgid "Members"
 msgstr "Members"
 
@@ -960,11 +918,62 @@ msgstr "User Management"
 msgid "Error loading users"
 msgstr "Error loading users"
 
+msgid "Last login"
+msgstr "Last login"
+
 msgid "Account disabled?"
 msgstr "Account disabled?"
 
 msgid "Disabled"
 msgstr "Disabled"
+
+msgid "Overview"
+msgstr "Overview"
+
+msgid "Created"
+msgstr "Created"
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "E-mail"
+msgstr "E-mail"
+
+msgid "Permissions"
+msgstr "Permissions"
+
+msgid "Organisations units"
+msgstr "Organisations units"
+
+msgid "User units"
+msgstr "User units"
+
+msgid "Introduction"
+msgstr "Introduction"
+
+msgid "Job title"
+msgstr "Job title"
+
+msgid "Works at"
+msgstr "Works at"
+
+msgid "Gender"
+msgstr "Gender"
+
+msgid "Speaks"
+msgstr "Speaks"
+
+msgid "Nationality"
+msgstr "Nationality"
+
+msgid "Education"
+msgstr "Education"
+
+msgid "Interests"
+msgstr "Interests"
+
+msgid "Birthday"
+msgstr "Birthday"
 
 msgid "Something went wrong when processing your request."
 msgstr "Something went wrong when processing your request."
