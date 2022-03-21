@@ -1,3 +1,10 @@
+## [1.3.11](https://github.com/dhis2/user-app/compare/v1.3.10...v1.3.11) (2022-03-21)
+
+
+### Bug Fixes
+
+* **user:** show user's database language ([#917](https://github.com/dhis2/user-app/issues/917)) ([a73f506](https://github.com/dhis2/user-app/commit/a73f506e7342a08aa4ec473c4ab60798eef1f4d6))
+
 ## [1.3.10](https://github.com/dhis2/user-app/compare/v1.3.9...v1.3.10) (2022-03-14)
 
 
