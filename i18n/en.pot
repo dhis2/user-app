@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-03-22T15:38:06.883Z\n"
-"PO-Revision-Date: 2022-03-22T15:38:06.883Z\n"
+"POT-Creation-Date: 2022-03-22T15:45:16.135Z\n"
+"PO-Revision-Date: 2022-03-22T15:45:16.135Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -25,18 +25,6 @@ msgstr "Value should be a positive integer"
 
 msgid "Value should be a negative integer"
 msgstr "Value should be a negative integer"
-
-msgid "Edit user"
-msgstr "Edit user"
-
-msgid "Edit user group"
-msgstr "Edit user group"
-
-msgid "Edit user role"
-msgstr "Edit user role"
-
-msgid "Send message"
-msgstr "Send message"
 
 msgid "Filter options"
 msgstr "Filter options"
@@ -593,18 +581,6 @@ msgstr "User group"
 msgid "Create, modify, view and delete User Groups"
 msgstr "Create, modify, view and delete User Groups"
 
-msgid "Display name"
-msgstr "Display name"
-
-msgid "ID"
-msgstr "ID"
-
-msgid "Members"
-msgstr "Members"
-
-msgid "Number of users"
-msgstr "Number of users"
-
 msgid "New group"
 msgstr "New group"
 
@@ -656,8 +632,17 @@ msgstr "Error fetching user"
 msgid "There was an error fetching this user."
 msgstr "There was an error fetching this user."
 
+msgid "Edit user"
+msgstr "Edit user"
+
 msgid "Overview"
 msgstr "Overview"
+
+msgid "Edit user group"
+msgstr "Edit user group"
+
+msgid "ID"
+msgstr "ID"
 
 msgid "Show details"
 msgstr "Show details"
@@ -734,6 +719,9 @@ msgstr "Error loading user groups"
 msgid "No results found"
 msgstr "No results found"
 
+msgid "Display name"
+msgstr "Display name"
+
 msgid "Member?"
 msgstr "Member?"
 
@@ -763,6 +751,9 @@ msgstr "No match for"
 
 msgid "Go back home"
 msgstr "Go back home"
+
+msgid "Edit user role"
+msgstr "Edit user role"
 
 msgid "There was an error deleting the user role: {{- error}}"
 msgstr "There was an error deleting the user role: {{- error}}"
@@ -944,6 +935,9 @@ msgstr "Created"
 
 msgid "Contact"
 msgstr "Contact"
+
+msgid "Send message"
+msgstr "Send message"
 
 msgid "E-mail"
 msgstr "E-mail"

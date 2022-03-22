@@ -1,5 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { LoadingMask } from '@dhis2/d2-ui-core'
+import { CenteredContent, CircularLoader, NoticeBox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
@@ -7,7 +7,6 @@ import { Switch, Route, withRouter } from 'react-router-dom'
 import { initCurrentUser } from '../actions'
 import getRouteConfig from '../constants/routeConfig'
 import navigateTo from '../utils/navigateTo'
-import ErrorMessage from './ErrorMessage'
 import styles from './SectionLoader.module.css'
 import SideNav from './SideNav'
 
@@ -33,9 +32,9 @@ class SectionLoader extends Component {
         // so he cannot edit user roles anymore
         if (
             currentUser &&
-            currentUser !== this.props.currentUser &&
-            pathname !== '/' &&
-            !this.pathHasAvailableSection(pathname)
+                currentUser !== this.props.currentUser &&
+                pathname !== '/' &&
+                !this.pathHasAvailableSection(pathname)
         ) {
             navigateTo('/')
         }
@@ -60,18 +59,18 @@ class SectionLoader extends Component {
         this.routeConfig = !currentUser
             ? null
             : getRouteConfig().reduce(
-                  (routeConfig, configItem) => {
-                      const { routes, sections } = routeConfig
-                      if (this.userHasAuthorities(configItem, currentUser)) {
-                          routes.push(configItem)
-                          if (configItem.label) {
-                              sections.push(configItem)
-                          }
-                      }
-                      return routeConfig
-                  },
-                  { routes: [], sections: [] }
-              )
+                (routeConfig, configItem) => {
+                    const { routes, sections } = routeConfig
+                    if (this.userHasAuthorities(configItem, currentUser)) {
+                        routes.push(configItem)
+                        if (configItem.label) {
+                            sections.push(configItem)
+                        }
+                    }
+                    return routeConfig
+                },
+                { routes: [], sections: [] }
+            )
     }
 
     userHasAuthorities({ entityType }, currentUser) {
@@ -90,54 +89,59 @@ class SectionLoader extends Component {
         return canCreate || canDelete
     }
 
-    renderRoutes(routes) {
-        return routes.map(section => (
-            <Route key={section.key} exact strict {...section} />
-        ))
-    }
-
-    renderContent() {
+    render() {
         const { currentUser } = this.props
 
         if (!currentUser) {
-            return <LoadingMask />
+            return (
+                <CenteredContent>
+                    <CircularLoader />
+                </CenteredContent>
+            )
         }
 
         if (typeof currentUser === 'string') {
-            const introText = i18n.t(
-                'There was an error loading the current user'
-            )
+            const errorMessage = currentUser
             return (
-                <ErrorMessage
-                    introText={introText}
-                    errorMessage={currentUser}
-                />
+                <NoticeBox
+                    error
+                    title={i18n.t(
+                        'There was an error loading the current user'
+                    )}
+                    className={styles.noticeBox}
+                >
+                    {errorMessage}
+                </NoticeBox>
             )
         }
 
         const { routes, sections } = this.routeConfig
 
         if (sections && sections.length === 0) {
-            const introText = i18n.t(
-                'You do not have authorities to see users, user roles or user groups'
+            return (
+                <NoticeBox
+                    error
+                    title={i18n.t(
+                        'You do not have authorities to see users, user roles or user groups'
+                    )}
+                    className={styles.noticeBox}
+                >
+                </NoticeBox>
             )
-            return <ErrorMessage introText={introText} errorMessage="" />
         }
 
         return (
-            <>
+            <main className={styles.container}>
                 <SideNav key="sidenav" sections={sections} />
                 <div className={styles.content}>
                     <Switch key="routeswitch">
-                        {this.renderRoutes(routes)}
+                        {routes.map(section => (
+                            <Route key={section.key} exact strict {...section} />
+                        ))}
                     </Switch>
                 </div>
-            </>
+            </main>
         )
-    }
-
-    render() {
-        return <main className={styles.container}>{this.renderContent()}</main>
     }
 }
 
