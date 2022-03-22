@@ -1,4 +1,3 @@
-import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     CenteredContent,
@@ -9,96 +8,19 @@ import {
     Button,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useHistory } from 'react-router-dom'
-import api from '../api'
-import parseDateFromUTCString from '../utils/parseDateFromUTCString'
+import api from '../../api'
+import parseDateFromUTCString from '../../utils/parseDateFromUTCString'
+import Field from './Field'
+import Section from './Section'
+import useUser from './use-user'
 import styles from './UserProfile.module.css'
-
-const query = {
-    user: {
-        resource: 'users',
-        id: ({ id }) => id,
-        params: {
-            fields: [
-                'access',
-
-                'id',
-                'username',
-                'displayName',
-                'lastLogin',
-                'created',
-                'firstName',
-                'surname',
-
-                'email',
-                'phoneNumber',
-
-                'organisationUnits[displayName]',
-                'userRoles[displayName]',
-
-                'introduction',
-                'jobTitle',
-                'employer',
-                'gender',
-                'languages',
-                'education',
-                'interests',
-                'nationality',
-                'birthday',
-            ],
-        },
-    },
-}
 
 const genders = {
     gender_male: i18n.t('Male'),
     gender_female: i18n.t('Female'),
     gender_other: i18n.t('Other'),
-}
-
-const useUser = userId => {
-    const { called, loading, error, data, refetch } = useDataQuery(query, {
-        lazy: true,
-    })
-
-    useEffect(() => {
-        refetch({ id: userId })
-    }, [userId])
-
-    return {
-        loading: !called || loading,
-        error,
-        user: data?.user,
-    }
-}
-
-const Section = ({ title, children, action }) => (
-    <section className={styles.section}>
-        <header className={styles.sectionHeader}>
-            <h3 className={styles.sectionHeaderTitle}>{title}</h3>
-            <div>{action}</div>
-        </header>
-        {children}
-    </section>
-)
-
-Section.propTypes = {
-    children: PropTypes.node.isRequired,
-    title: PropTypes.node.isRequired,
-    action: PropTypes.node,
-}
-
-const Field = ({ label, value }) => (
-    <div className={styles.field}>
-        <div className={styles.fieldLabel}>{label}</div>
-        <div>{value}</div>
-    </div>
-)
-
-Field.propTypes = {
-    label: PropTypes.string.isRequired,
-    value: PropTypes.node,
 }
 
 const DateTimeValue = ({ dateTime }) => (
@@ -109,6 +31,18 @@ const DateTimeValue = ({ dateTime }) => (
 
 DateTimeValue.propTypes = {
     dateTime: PropTypes.string.isRequired,
+}
+
+const Permissions = ({ displayNames }) => (
+    <div className={styles.permissions}>
+        {displayNames.map(displayName => (
+            <Tag key={displayName}>{displayName}</Tag>
+        ))}
+    </div>
+)
+
+Permissions.propTypes = {
+    displayNames: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 }
 
 const UserProfile = ({ userId }) => {
@@ -187,25 +121,23 @@ const UserProfile = ({ userId }) => {
                 <Section title={i18n.t('Permissions')}>
                     <Field
                         label={i18n.t('Organisations units')}
-                        value={user.organisationUnits.map(ou => (
-                            <Tag
-                                key={ou.displayName}
-                                className={styles.permissionTag}
-                            >
-                                {ou.displayName}
-                            </Tag>
-                        ))}
+                        value={
+                            <Permissions
+                                displayNames={user.organisationUnits.map(
+                                    ou => ou.displayName
+                                )}
+                            />
+                        }
                     />
                     <Field
                         label={i18n.t('User units')}
-                        value={user.userRoles.map(role => (
-                            <Tag
-                                key={role.displayName}
-                                className={styles.permissionTag}
-                            >
-                                {role.displayName}
-                            </Tag>
-                        ))}
+                        value={
+                            <Permissions
+                                displayNames={user.userRoles.map(
+                                    role => role.displayName
+                                )}
+                            />
+                        }
                     />
                 </Section>
                 <Section title={i18n.t('Profile')}>

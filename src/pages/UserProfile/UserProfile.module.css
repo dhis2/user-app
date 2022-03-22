@@ -1,0 +1,11 @@
+.container {
+    background: white;
+    border: 2px solid var(--colors-grey300);
+    padding: var(--spacers-dp16);
+}
+
+.permissions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacers-dp8);
+}
