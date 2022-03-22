@@ -1,7 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import React from 'react'
 import GroupDetails from '../containers/GroupDetails'
-import RoleDetails from '../containers/RoleDetails'
 import CreateGroup from '../pages/CreateGroup'
 import CreateRole from '../pages/CreateRole'
 import CreateUser from '../pages/CreateUser'
@@ -11,6 +10,7 @@ import EditUser from '../pages/EditUser'
 import GroupList from '../pages/GroupList'
 import Home from '../pages/Home'
 import PageNotFound from '../pages/PageNotFound'
+import RoleDetails from '../pages/RoleDetails'
 import RoleList from '../pages/RoleList'
 import UserList from '../pages/UserList'
 import UserProfile from '../pages/UserProfile'
@@ -79,7 +79,7 @@ const createRouteConfig = () => [
     {
         key: 'user_role_details_view',
         path: '/user-roles/view/:id',
-        component: RoleDetails,
+        component: ({ match }) => <RoleDetails roleId={match.params.id} />,
         entityType: USER_ROLE,
     },
     getUserRoleSection(),

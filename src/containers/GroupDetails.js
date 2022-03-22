@@ -1,3 +1,5 @@
+// TODO: delete file
+
 import PropTypes from 'prop-types'
 import React from 'react'
 import DetailSummary from '../components/DetailSummary'

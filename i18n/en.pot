@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-03-22T11:54:39.146Z\n"
-"PO-Revision-Date: 2022-03-22T11:54:39.146Z\n"
+"POT-Creation-Date: 2022-03-22T15:19:19.435Z\n"
+"PO-Revision-Date: 2022-03-22T15:19:19.435Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -761,6 +761,9 @@ msgstr "No match for"
 msgid "Go back home"
 msgstr "Go back home"
 
+msgid "Overview"
+msgstr "Overview"
+
 msgid "There was an error deleting the user role: {{- error}}"
 msgstr "There was an error deleting the user role: {{- error}}"
 
@@ -935,9 +938,6 @@ msgstr "Female"
 
 msgid "Other"
 msgstr "Other"
-
-msgid "Overview"
-msgstr "Overview"
 
 msgid "Created"
 msgstr "Created"

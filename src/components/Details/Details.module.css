@@ -1,0 +1,5 @@
+.details {
+    background: white;
+    border: 2px solid var(--colors-grey300);
+    padding: var(--spacers-dp16);
+}

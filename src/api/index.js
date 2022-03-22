@@ -38,6 +38,7 @@ class Api {
         return this.d2.system.systemInfo.contextPath
     }
 
+    // TODO: delete method
     // Used by DetailSummary component
     getItem = (entityName, id) => {
         const data = { fields: getQueryFields(entityName, true) }
