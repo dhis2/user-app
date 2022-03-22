@@ -15,15 +15,6 @@ import api from '../api'
 import parseDateFromUTCString from '../utils/parseDateFromUTCString'
 import styles from './UserProfile.module.css'
 
-// TODO:
-// - 'Send message' button
-// - 'Edit <whatever>' button (check if user has permissions first)
-// - Show display name at top but don't need to repeat it
-// - Show username, ID, last login, created at, first name and last name at top,
-//   then 'contact' section with email, phone number and 'send message' button,
-//   then 'permissions' section with org units and user roles, finally 'profile' section with other info
-// - For gender, need to remove 'gender_' prefix
-
 const query = {
     user: {
         resource: 'users',
@@ -58,6 +49,12 @@ const query = {
             ],
         },
     },
+}
+
+const genders = {
+    gender_male: i18n.t('Male'),
+    gender_female: i18n.t('Female'),
+    gender_other: i18n.t('Other'),
 }
 
 const useUser = userId => {
@@ -218,7 +215,10 @@ const UserProfile = ({ userId }) => {
                     />
                     <Field label={i18n.t('Job title')} value={user.jobTitle} />
                     <Field label={i18n.t('Works at')} value={user.employer} />
-                    <Field label={i18n.t('Gender')} value={user.gender} />
+                    <Field
+                        label={i18n.t('Gender')}
+                        value={genders[user.gender] || user.gender}
+                    />
                     <Field label={i18n.t('Speaks')} value={user.languages} />
                     <Field
                         label={i18n.t('Nationality')}
