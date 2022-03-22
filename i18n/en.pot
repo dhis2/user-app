@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-03-22T15:19:19.435Z\n"
-"PO-Revision-Date: 2022-03-22T15:19:19.435Z\n"
+"POT-Creation-Date: 2022-03-22T15:38:06.883Z\n"
+"PO-Revision-Date: 2022-03-22T15:38:06.883Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -656,6 +656,9 @@ msgstr "Error fetching user"
 msgid "There was an error fetching this user."
 msgstr "There was an error fetching this user."
 
+msgid "Overview"
+msgstr "Overview"
+
 msgid "Show details"
 msgstr "Show details"
 
@@ -760,9 +763,6 @@ msgstr "No match for"
 
 msgid "Go back home"
 msgstr "Go back home"
-
-msgid "Overview"
-msgstr "Overview"
 
 msgid "There was an error deleting the user role: {{- error}}"
 msgstr "There was an error deleting the user role: {{- error}}"

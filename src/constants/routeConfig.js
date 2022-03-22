@@ -1,12 +1,12 @@
 import i18n from '@dhis2/d2-i18n'
 import React from 'react'
-import GroupDetails from '../containers/GroupDetails'
 import CreateGroup from '../pages/CreateGroup'
 import CreateRole from '../pages/CreateRole'
 import CreateUser from '../pages/CreateUser'
 import EditGroup from '../pages/EditGroup'
 import EditRole from '../pages/EditRole'
 import EditUser from '../pages/EditUser'
+import GroupDetails from '../pages/GroupDetails'
 import GroupList from '../pages/GroupList'
 import Home from '../pages/Home'
 import PageNotFound from '../pages/PageNotFound'
@@ -99,7 +99,7 @@ const createRouteConfig = () => [
     {
         key: 'user_group_details_view',
         path: '/user-groups/view/:id',
-        component: GroupDetails,
+        component: ({ match }) => <GroupDetails groupId={match.params.id} />,
         entityType: USER_GROUP,
     },
     getUserGroupSection(),
