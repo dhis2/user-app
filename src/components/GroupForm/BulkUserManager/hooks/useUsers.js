@@ -3,7 +3,7 @@ import { useState, useMemo, useEffect } from 'react'
 import { useDebounce } from 'use-debounce'
 import { useSet } from './useSet'
 
-const FILTER_DEBOUNCE = 375
+const FILTER_DEBOUNCE_MS = 375
 
 export const useUsers = ({ groupId, mode }) => {
     // Use useMemo to silence warnings from useDataQuery about dynamic queries
@@ -76,10 +76,10 @@ export const useUsers = ({ groupId, mode }) => {
     const selectedNonMembers = useSet()
     const [membersFilter, setMembersFilter] = useState('')
     const [nonMembersFilter, setNonMembersFilter] = useState('')
-    const [debouncedMembersFilter] = useDebounce(membersFilter, FILTER_DEBOUNCE)
+    const [debouncedMembersFilter] = useDebounce(membersFilter, FILTER_DEBOUNCE_MS)
     const [debouncedNonMembersFilter] = useDebounce(
         nonMembersFilter,
-        FILTER_DEBOUNCE
+        FILTER_DEBOUNCE_MS
     )
 
     useEffect(() => {
