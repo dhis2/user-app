@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
-"PO-Revision-Date: 2022-02-16T17:16:47.395Z\n"
+"POT-Creation-Date: 2022-03-22T16:54:33.862Z\n"
+"PO-Revision-Date: 2022-03-22T16:54:33.862Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -25,18 +25,6 @@ msgstr "Value should be a positive integer"
 
 msgid "Value should be a negative integer"
 msgstr "Value should be a negative integer"
-
-msgid "Edit user"
-msgstr "Edit user"
-
-msgid "Edit user group"
-msgstr "Edit user group"
-
-msgid "Edit user role"
-msgstr "Edit user role"
-
-msgid "Send message"
-msgstr "Send message"
 
 msgid "Filter options"
 msgstr "Filter options"
@@ -354,18 +342,6 @@ msgstr "There was a problem whilst checking the availability of this role name"
 msgid "Search by name"
 msgstr "Search by name"
 
-msgid "Could not load available items"
-msgstr "Could not load available items"
-
-msgid "There was a problem displaying the GroupEditor"
-msgstr "There was a problem displaying the GroupEditor"
-
-msgid "Filter available options"
-msgstr "Filter available options"
-
-msgid "Filter selected options"
-msgstr "Filter selected options"
-
 msgid "Search for an organisation unit"
 msgstr "Search for an organisation unit"
 
@@ -375,6 +351,9 @@ msgid ""
 msgstr ""
 "Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
 "please refine your search to see more."
+
+msgid "Something went wrong when processing your request."
+msgstr "Something went wrong when processing your request."
 
 msgid "There was a problem retreiving your search results"
 msgstr "There was a problem retreiving your search results"
@@ -593,60 +572,6 @@ msgstr "User group"
 msgid "Create, modify, view and delete User Groups"
 msgstr "Create, modify, view and delete User Groups"
 
-msgid "Display name"
-msgstr "Display name"
-
-msgid "ID"
-msgstr "ID"
-
-msgid "Last login"
-msgstr "Last login"
-
-msgid "Created"
-msgstr "Created"
-
-msgid "Introduction"
-msgstr "Introduction"
-
-msgid "Job title"
-msgstr "Job title"
-
-msgid "Works at"
-msgstr "Works at"
-
-msgid "Education"
-msgstr "Education"
-
-msgid "Interests"
-msgstr "Interests"
-
-msgid "Nationality"
-msgstr "Nationality"
-
-msgid "Birthday"
-msgstr "Birthday"
-
-msgid "Gender"
-msgstr "Gender"
-
-msgid "Speaks"
-msgstr "Speaks"
-
-msgid "E-mail"
-msgstr "E-mail"
-
-msgid "Organisations units"
-msgstr "Organisations units"
-
-msgid "User roles"
-msgstr "User roles"
-
-msgid "Members"
-msgstr "Members"
-
-msgid "Number of users"
-msgstr "Number of users"
-
 msgid "New group"
 msgstr "New group"
 
@@ -697,6 +622,18 @@ msgstr "Error fetching user"
 
 msgid "There was an error fetching this user."
 msgstr "There was an error fetching this user."
+
+msgid "Edit user"
+msgstr "Edit user"
+
+msgid "Overview"
+msgstr "Overview"
+
+msgid "Edit user group"
+msgstr "Edit user group"
+
+msgid "ID"
+msgstr "ID"
 
 msgid "Show details"
 msgstr "Show details"
@@ -773,6 +710,9 @@ msgstr "Error loading user groups"
 msgid "No results found"
 msgstr "No results found"
 
+msgid "Display name"
+msgstr "Display name"
+
 msgid "Member?"
 msgstr "Member?"
 
@@ -802,6 +742,9 @@ msgstr "No match for"
 
 msgid "Go back home"
 msgstr "Go back home"
+
+msgid "Edit user role"
+msgstr "Edit user role"
 
 msgid "There was an error deleting the user role: {{- error}}"
 msgstr "There was an error deleting the user role: {{- error}}"
@@ -960,11 +903,68 @@ msgstr "User Management"
 msgid "Error loading users"
 msgstr "Error loading users"
 
+msgid "Last login"
+msgstr "Last login"
+
 msgid "Account disabled?"
 msgstr "Account disabled?"
 
 msgid "Disabled"
 msgstr "Disabled"
 
-msgid "Something went wrong when processing your request."
-msgstr "Something went wrong when processing your request."
+msgid "Male"
+msgstr "Male"
+
+msgid "Female"
+msgstr "Female"
+
+msgid "Other"
+msgstr "Other"
+
+msgid "Created"
+msgstr "Created"
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "Send message"
+msgstr "Send message"
+
+msgid "E-mail"
+msgstr "E-mail"
+
+msgid "Permissions"
+msgstr "Permissions"
+
+msgid "Organisations units"
+msgstr "Organisations units"
+
+msgid "User units"
+msgstr "User units"
+
+msgid "Introduction"
+msgstr "Introduction"
+
+msgid "Job title"
+msgstr "Job title"
+
+msgid "Works at"
+msgstr "Works at"
+
+msgid "Gender"
+msgstr "Gender"
+
+msgid "Speaks"
+msgstr "Speaks"
+
+msgid "Nationality"
+msgstr "Nationality"
+
+msgid "Education"
+msgstr "Education"
+
+msgid "Interests"
+msgstr "Interests"
+
+msgid "Birthday"
+msgstr "Birthday"

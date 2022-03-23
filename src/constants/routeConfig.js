@@ -1,19 +1,19 @@
 import i18n from '@dhis2/d2-i18n'
 import React from 'react'
-import GroupDetails from '../containers/GroupDetails'
-import RoleDetails from '../containers/RoleDetails'
-import UserProfile from '../containers/UserProfile'
 import CreateGroup from '../pages/CreateGroup'
 import CreateRole from '../pages/CreateRole'
 import CreateUser from '../pages/CreateUser'
 import EditGroup from '../pages/EditGroup'
 import EditRole from '../pages/EditRole'
 import EditUser from '../pages/EditUser'
+import GroupDetails from '../pages/GroupDetails'
 import GroupList from '../pages/GroupList'
 import Home from '../pages/Home'
 import PageNotFound from '../pages/PageNotFound'
+import RoleDetails from '../pages/RoleDetails'
 import RoleList from '../pages/RoleList'
 import UserList from '../pages/UserList'
+import UserProfile from '../pages/UserProfile'
 import { USER, USER_ROLE, USER_GROUP } from './entityTypes'
 
 const getUserSection = () => ({
@@ -59,7 +59,7 @@ const createRouteConfig = () => [
     {
         key: 'user_profile_view',
         path: '/users/view/:id',
-        component: UserProfile,
+        component: ({ match }) => <UserProfile userId={match.params.id} />,
         entityType: USER,
     },
     getUserSection(),
@@ -79,7 +79,7 @@ const createRouteConfig = () => [
     {
         key: 'user_role_details_view',
         path: '/user-roles/view/:id',
-        component: RoleDetails,
+        component: ({ match }) => <RoleDetails roleId={match.params.id} />,
         entityType: USER_ROLE,
     },
     getUserRoleSection(),
@@ -99,7 +99,7 @@ const createRouteConfig = () => [
     {
         key: 'user_group_details_view',
         path: '/user-groups/view/:id',
-        component: GroupDetails,
+        component: ({ match }) => <GroupDetails groupId={match.params.id} />,
         entityType: USER_GROUP,
     },
     getUserGroupSection(),
