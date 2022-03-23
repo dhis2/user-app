@@ -124,7 +124,9 @@ UserTable.propTypes = {
         cancel: PropTypes.func.isRequired,
         get: PropTypes.func.isRequired,
     }).isRequired,
-    selected: PropTypes.instanceOf(Set).isRequired,
+    selected: PropTypes.shape({
+        has: PropTypes.func.isRequired,
+    }).isRequired,
     onActionClick: PropTypes.func.isRequired,
     onToggleAllSelected: PropTypes.func.isRequired,
     onToggleSelected: PropTypes.func.isRequired,
