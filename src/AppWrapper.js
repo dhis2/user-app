@@ -6,7 +6,6 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import api from './api'
 import App from './App'
-import AppWithD2Context from './components/AppWithD2Context'
 import store from './store'
 
 const AppWrapper = () => {
@@ -38,9 +37,7 @@ const AppWrapper = () => {
         <>
             <CssVariables spacers colors theme />
             <Provider store={store}>
-                <AppWithD2Context d2={d2}>
-                    <App />
-                </AppWithD2Context>
+                <App />
             </Provider>
         </>
     )
