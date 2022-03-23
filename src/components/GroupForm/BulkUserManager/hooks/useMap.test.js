@@ -62,13 +62,14 @@ describe('useMap', () => {
     })
 
     it('should only change reference when mutating the map', () => {
-        const { result } = renderHook(() => useMap())
+        const { result, rerender } = renderHook(() => useMap())
         const reference1 = result.current
 
         act(() => {
             result.current.get('key')
         })
 
+        rerender()
         expect(result.current).toBe(reference1)
 
         act(() => {
