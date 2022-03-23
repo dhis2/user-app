@@ -1,0 +1,10 @@
+.field {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: var(--spacers-dp16);
+    padding: var(--spacers-dp12) 0;
+}
+
+.label {
+    color: var(--colors-grey800);
+}

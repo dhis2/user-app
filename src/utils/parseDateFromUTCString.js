@@ -1,4 +1,4 @@
-import api from '../api'
+import i18n from '@dhis2/d2-i18n'
 
 /**
  * Receives a full UTC data string and return a formatted version according to the user's locale
@@ -8,9 +8,7 @@ import api from '../api'
  * @memberof module:utils
  * @function
  */
-const parseDateFromUTCString = (utcString, includeTime) => {
-    const d2 = api.getD2()
-    const locale = d2.currentUser.userSettings.settings.keyUiLocale
+const parseDateFromUTCString = (utcString, { includeTime = false } = {}) => {
     const date = new Date(utcString)
     const dateOptions = {
         day: 'numeric',
@@ -25,7 +23,12 @@ const parseDateFromUTCString = (utcString, includeTime) => {
         ? { ...dateOptions, ...timeOptions }
         : dateOptions
 
-    return new Intl.DateTimeFormat(locale, options).format(date)
+    // Wrap in try/catch in case i18n.language is not valid locale
+    try {
+        return new Intl.DateTimeFormat(i18n.language, options).format(date)
+    } catch (error) {
+        return utcString
+    }
 }
 
 export default parseDateFromUTCString

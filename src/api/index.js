@@ -1,5 +1,3 @@
-import { getQueryFields } from './utils'
-
 const CURRENT_USER_ORG_UNITS_FIELDS = {
     fields: [
         'organisationUnits[id,path,displayName,children::isNotEmpty]',
@@ -36,12 +34,6 @@ class Api {
 
     getContextPath = () => {
         return this.d2.system.systemInfo.contextPath
-    }
-
-    // Used by DetailSummary component
-    getItem = (entityName, id) => {
-        const data = { fields: getQueryFields(entityName, true) }
-        return this.d2.models[entityName].get(id, data)
     }
 
     genericFind = (entityName, propertyName, value) => {

@@ -8,3 +8,9 @@
     padding: var(--spacers-dp16);
     background: var(--colors-grey100);
 }
+
+.noticeBox {
+    margin: auto;
+    margin-top: var(--spacers-dp16);
+    max-width: 400px;
+}
