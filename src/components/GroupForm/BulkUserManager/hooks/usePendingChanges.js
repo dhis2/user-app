@@ -1,7 +1,14 @@
+import { useEffect } from 'react'
 import { useMap } from './useMap'
 
-export const usePendingChanges = () => {
+const noop = () => {}
+
+export const usePendingChanges = ({ onChange = noop }) => {
     const pendingChanges = useMap()
+
+    useEffect(() => {
+        onChange()
+    }, [pendingChanges])
 
     return {
         size: pendingChanges.size,
@@ -24,6 +31,8 @@ export const usePendingChanges = () => {
         cancel: pendingChange => {
             pendingChanges.delete(pendingChange.userId)
         },
-        cancelAll: pendingChanges.clear,
+        cancelAll: () => {
+            pendingChanges.clear()
+        },
     }
 }

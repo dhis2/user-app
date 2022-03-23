@@ -37,6 +37,28 @@ const GroupForm = ({ submitButtonLabel, group }) => {
                 })
             }
 
+            if (values.members.length > 0) {
+                const additions = []
+                const deletions = []
+
+                for (const { action, userId } of values.members) {
+                    if (action === 'ADD') {
+                        additions.push({ id: userId })
+                    } else if (action === 'REMOVE') {
+                        deletions.push({ id: userId })
+                    }
+                }
+
+                await engine.mutate({
+                    resource: `userGroups/${group.id}/users`,
+                    type: 'create',
+                    data: {
+                        additions,
+                        deletions,
+                    },
+                })
+            }
+
             history.goBack()
             if (group && currentUser.userGroupIds.includes(group.id)) {
                 refreshCurrentUser()

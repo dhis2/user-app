@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { FormSection, TransferField } from '../Form'
 
-const UserGroupManagementSection = ({ group, userGroupOptions }) => (
+const UserGroupManagementSection = React.memo(({ group, userGroupOptions }) => (
     <FormSection
         title={i18n.t('User group management')}
         description={i18n.t(
@@ -18,7 +18,7 @@ const UserGroupManagementSection = ({ group, userGroupOptions }) => (
             initialValue={group?.managedGroups.map(({ id }) => id) || []}
         />
     </FormSection>
-)
+))
 
 UserGroupManagementSection.propTypes = {
     userGroupOptions: PropTypes.array.isRequired,

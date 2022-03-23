@@ -9,7 +9,12 @@ import PendingChanges from './PendingChanges'
 import TopBar from './TopBar'
 import UserTable from './UserTable'
 
-const BulkUserManager = ({ groupId }) => {
+const BulkUserManager = ({ groupId, onChange }) => {
+    // TODO
+    if (!groupId) {
+        throw new Error('TODO: implement support for new groups')
+    }
+
     const [mode, setMode] = useState('MEMBERS')
     const {
         loading,
@@ -26,7 +31,14 @@ const BulkUserManager = ({ groupId }) => {
         groupId,
         mode,
     })
-    const pendingChanges = usePendingChanges()
+    const pendingChanges = usePendingChanges({
+        onChange: () => {
+            onChange(
+                pendingChanges.map(({ action, userId }) => ({ action, userId }))
+            )
+        },
+    })
+
     const showPagination = !loading && !error && users.length > 0
 
     return (
@@ -124,7 +136,8 @@ const BulkUserManager = ({ groupId }) => {
 }
 
 BulkUserManager.propTypes = {
-    groupId: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+    groupId: PropTypes.string,
 }
 
 export default BulkUserManager
