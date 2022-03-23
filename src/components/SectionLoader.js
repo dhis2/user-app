@@ -22,13 +22,6 @@ const userHasAuthorities = ({ entity, currentUser, d2 }) => {
         return true
     }
 
-    // In case of error `currentUser` is a string containing the error message
-    // TODO: modify `const routeConfig = !currentUser` line to `const routeConfig = typeof currentUser === 'object'`
-    // to remove this check
-    if (typeof currentUser === 'string') {
-        return false
-    }
-
     const { models } = d2
     const canCreate = currentUser.canCreate(models[entityType])
     const canDelete = currentUser.canDelete(models[entityType])
@@ -62,27 +55,28 @@ const SectionLoader = ({
     }, [currentUser, pathname])
 
     // Only show menu items for which the user has either the "add" or "delete" authority
-    const routeConfig = !currentUser
-        ? null
-        : getRouteConfig().reduce(
-              (routeConfig, configItem) => {
-                  const { routes, sections } = routeConfig
-                  if (
-                      userHasAuthorities({
-                          entity: configItem,
-                          currentUser,
-                          d2,
-                      })
-                  ) {
-                      routes.push(configItem)
-                      if (configItem.label) {
-                          sections.push(configItem)
+    const routeConfig =
+        typeof currentUser === 'string' || currentUser === null
+            ? null
+            : getRouteConfig().reduce(
+                  (routeConfig, configItem) => {
+                      const { routes, sections } = routeConfig
+                      if (
+                          userHasAuthorities({
+                              entity: configItem,
+                              currentUser,
+                              d2,
+                          })
+                      ) {
+                          routes.push(configItem)
+                          if (configItem.label) {
+                              sections.push(configItem)
+                          }
                       }
-                  }
-                  return routeConfig
-              },
-              { routes: [], sections: [] }
-          )
+                      return routeConfig
+                  },
+                  { routes: [], sections: [] }
+              )
     const pathHasAvailableSection = pathname => {
         if (!routeConfig) {
             return false
