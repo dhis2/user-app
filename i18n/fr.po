@@ -3,16 +3,16 @@
 # Matthieu Pinard <matthieu@pinard.no>, 2019
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # Bram Piot <bram.piot@gmail.com>, 2022
-# Viktor Varland <viktor@dhis2.org>, 2022
 # Edem Kossi <ekossi@hispwca.org>, 2022
-# Yao Selom Saka <ysaka@hispwca.org>, 2022
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
+# Yao Selom Saka <ysaka@hispwca.org>, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
 # phil_dhis2, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
+"POT-Creation-Date: 2022-03-22T16:54:33.862Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -40,18 +40,6 @@ msgstr "La valeur doit être un entier positif"
 
 msgid "Value should be a negative integer"
 msgstr ""
-
-msgid "Edit user"
-msgstr "Modifier l'utilisateur"
-
-msgid "Edit user group"
-msgstr "Modifier le groupe d'utilisateurs"
-
-msgid "Edit user role"
-msgstr "Modifier le rôle utilisateur"
-
-msgid "Send message"
-msgstr "Envoyer Message"
 
 msgid "Filter options"
 msgstr "Options de filtre"
@@ -374,18 +362,6 @@ msgstr ""
 msgid "Search by name"
 msgstr "Rechercher par nom"
 
-msgid "Could not load available items"
-msgstr "Impossible de charger les éléments disponibles"
-
-msgid "There was a problem displaying the GroupEditor"
-msgstr "Un problème est survenu lors de l'affichage de l'éditeur de groupe"
-
-msgid "Filter available options"
-msgstr ""
-
-msgid "Filter selected options"
-msgstr ""
-
 msgid "Search for an organisation unit"
 msgstr ""
 
@@ -393,6 +369,9 @@ msgid ""
 "Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
 "please refine your search to see more."
 msgstr ""
+
+msgid "Something went wrong when processing your request."
+msgstr "Une erreur s'est produite lors du traitement de votre demande."
 
 msgid "There was a problem retreiving your search results"
 msgstr ""
@@ -616,60 +595,6 @@ msgstr "Groupe d'utilisateur"
 msgid "Create, modify, view and delete User Groups"
 msgstr "Créer, modifier, afficher et supprimer des groupes d'utilisateurs"
 
-msgid "Display name"
-msgstr "Afficher un nom"
-
-msgid "ID"
-msgstr "Id"
-
-msgid "Last login"
-msgstr "Dernière connexion"
-
-msgid "Created"
-msgstr "Créé le"
-
-msgid "Introduction"
-msgstr "Introduction"
-
-msgid "Job title"
-msgstr "Intitulé de l'emploi"
-
-msgid "Works at"
-msgstr "Travaille à"
-
-msgid "Education"
-msgstr "Éducation"
-
-msgid "Interests"
-msgstr "Intérêts"
-
-msgid "Nationality"
-msgstr "Nationalité"
-
-msgid "Birthday"
-msgstr "Date de naissance"
-
-msgid "Gender"
-msgstr "Genre"
-
-msgid "Speaks"
-msgstr "Parle"
-
-msgid "E-mail"
-msgstr "Courrier électronique"
-
-msgid "Organisations units"
-msgstr "Unités d'organisation"
-
-msgid "User roles"
-msgstr "Rôles d'utilisateur"
-
-msgid "Members"
-msgstr "Membres"
-
-msgid "Number of users"
-msgstr "Nombre d'utilisateurs"
-
 msgid "New group"
 msgstr ""
 
@@ -720,6 +645,18 @@ msgstr ""
 
 msgid "There was an error fetching this user."
 msgstr ""
+
+msgid "Edit user"
+msgstr "Modifier l'utilisateur"
+
+msgid "Overview"
+msgstr "Général"
+
+msgid "Edit user group"
+msgstr "Modifier le groupe d'utilisateurs"
+
+msgid "ID"
+msgstr "Id"
 
 msgid "Show details"
 msgstr "Afficher les détails"
@@ -796,6 +733,9 @@ msgstr ""
 msgid "No results found"
 msgstr "Aucun résultat trouvé"
 
+msgid "Display name"
+msgstr "Afficher un nom"
+
 msgid "Member?"
 msgstr ""
 
@@ -828,6 +768,9 @@ msgstr "Pas de correspondance pour"
 
 msgid "Go back home"
 msgstr "Rentrer à la maison"
+
+msgid "Edit user role"
+msgstr "Modifier le rôle utilisateur"
 
 msgid "There was an error deleting the user role: {{- error}}"
 msgstr ""
@@ -985,11 +928,68 @@ msgstr "Gestion des utilisateurs"
 msgid "Error loading users"
 msgstr ""
 
+msgid "Last login"
+msgstr "Dernière connexion"
+
 msgid "Account disabled?"
 msgstr ""
 
 msgid "Disabled"
 msgstr "Désactivé"
 
-msgid "Something went wrong when processing your request."
-msgstr "Une erreur s'est produite lors du traitement de votre demande."
+msgid "Male"
+msgstr "Masculin"
+
+msgid "Female"
+msgstr "Féminin"
+
+msgid "Other"
+msgstr "Autre"
+
+msgid "Created"
+msgstr "Créé le"
+
+msgid "Contact"
+msgstr ""
+
+msgid "Send message"
+msgstr "Envoyer Message"
+
+msgid "E-mail"
+msgstr "Courrier électronique"
+
+msgid "Permissions"
+msgstr "Autorisations"
+
+msgid "Organisations units"
+msgstr "Unités d'organisation"
+
+msgid "User units"
+msgstr ""
+
+msgid "Introduction"
+msgstr "Introduction"
+
+msgid "Job title"
+msgstr "Intitulé de l'emploi"
+
+msgid "Works at"
+msgstr "Travaille à"
+
+msgid "Gender"
+msgstr "Genre"
+
+msgid "Speaks"
+msgstr "Parle"
+
+msgid "Nationality"
+msgstr "Nationalité"
+
+msgid "Education"
+msgstr "Éducation"
+
+msgid "Interests"
+msgstr "Intérêts"
+
+msgid "Birthday"
+msgstr "Date de naissance"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
+"POT-Creation-Date: 2022-03-22T16:54:33.862Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
 "Language-Team: Bengali (https://www.transifex.com/hisp-uio/teams/100509/bn/)\n"
@@ -32,18 +32,6 @@ msgid "Value should be a positive integer"
 msgstr ""
 
 msgid "Value should be a negative integer"
-msgstr ""
-
-msgid "Edit user"
-msgstr ""
-
-msgid "Edit user group"
-msgstr ""
-
-msgid "Edit user role"
-msgstr ""
-
-msgid "Send message"
 msgstr ""
 
 msgid "Filter options"
@@ -364,24 +352,15 @@ msgstr ""
 msgid "Search by name"
 msgstr ""
 
-msgid "Could not load available items"
-msgstr ""
-
-msgid "There was a problem displaying the GroupEditor"
-msgstr ""
-
-msgid "Filter available options"
-msgstr ""
-
-msgid "Filter selected options"
-msgstr ""
-
 msgid "Search for an organisation unit"
 msgstr ""
 
 msgid ""
 "Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
 "please refine your search to see more."
+msgstr ""
+
+msgid "Something went wrong when processing your request."
 msgstr ""
 
 msgid "There was a problem retreiving your search results"
@@ -600,60 +579,6 @@ msgstr ""
 msgid "Create, modify, view and delete User Groups"
 msgstr ""
 
-msgid "Display name"
-msgstr ""
-
-msgid "ID"
-msgstr ""
-
-msgid "Last login"
-msgstr ""
-
-msgid "Created"
-msgstr ""
-
-msgid "Introduction"
-msgstr ""
-
-msgid "Job title"
-msgstr ""
-
-msgid "Works at"
-msgstr ""
-
-msgid "Education"
-msgstr ""
-
-msgid "Interests"
-msgstr ""
-
-msgid "Nationality"
-msgstr ""
-
-msgid "Birthday"
-msgstr ""
-
-msgid "Gender"
-msgstr ""
-
-msgid "Speaks"
-msgstr ""
-
-msgid "E-mail"
-msgstr ""
-
-msgid "Organisations units"
-msgstr ""
-
-msgid "User roles"
-msgstr ""
-
-msgid "Members"
-msgstr ""
-
-msgid "Number of users"
-msgstr ""
-
 msgid "New group"
 msgstr ""
 
@@ -703,6 +628,18 @@ msgid "Error fetching user"
 msgstr ""
 
 msgid "There was an error fetching this user."
+msgstr ""
+
+msgid "Edit user"
+msgstr ""
+
+msgid "Overview"
+msgstr ""
+
+msgid "Edit user group"
+msgstr ""
+
+msgid "ID"
 msgstr ""
 
 msgid "Show details"
@@ -780,6 +717,9 @@ msgstr ""
 msgid "No results found"
 msgstr ""
 
+msgid "Display name"
+msgstr ""
+
 msgid "Member?"
 msgstr ""
 
@@ -809,6 +749,9 @@ msgid "No match for"
 msgstr ""
 
 msgid "Go back home"
+msgstr ""
+
+msgid "Edit user role"
 msgstr ""
 
 msgid "There was an error deleting the user role: {{- error}}"
@@ -967,11 +910,68 @@ msgstr ""
 msgid "Error loading users"
 msgstr ""
 
+msgid "Last login"
+msgstr ""
+
 msgid "Account disabled?"
 msgstr ""
 
 msgid "Disabled"
 msgstr ""
 
-msgid "Something went wrong when processing your request."
+msgid "Male"
+msgstr ""
+
+msgid "Female"
+msgstr ""
+
+msgid "Other"
+msgstr ""
+
+msgid "Created"
+msgstr ""
+
+msgid "Contact"
+msgstr ""
+
+msgid "Send message"
+msgstr ""
+
+msgid "E-mail"
+msgstr ""
+
+msgid "Permissions"
+msgstr ""
+
+msgid "Organisations units"
+msgstr ""
+
+msgid "User units"
+msgstr ""
+
+msgid "Introduction"
+msgstr ""
+
+msgid "Job title"
+msgstr ""
+
+msgid "Works at"
+msgstr ""
+
+msgid "Gender"
+msgstr ""
+
+msgid "Speaks"
+msgstr ""
+
+msgid "Nationality"
+msgstr ""
+
+msgid "Education"
+msgstr ""
+
+msgid "Interests"
+msgstr ""
+
+msgid "Birthday"
 msgstr ""

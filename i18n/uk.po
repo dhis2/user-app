@@ -1,14 +1,14 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2022
-# Nadiia <semchuk@aph.org.ua>, 2022
 # Wanda <wanda@frontlineaids.org>, 2022
+# Nadiia <semchuk@aph.org.ua>, 2022
 # phil_dhis2, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
+"POT-Creation-Date: 2022-03-22T16:54:33.862Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
@@ -36,18 +36,6 @@ msgstr ""
 
 msgid "Value should be a negative integer"
 msgstr ""
-
-msgid "Edit user"
-msgstr ""
-
-msgid "Edit user group"
-msgstr ""
-
-msgid "Edit user role"
-msgstr ""
-
-msgid "Send message"
-msgstr "Send message"
 
 msgid "Filter options"
 msgstr ""
@@ -367,24 +355,15 @@ msgstr ""
 msgid "Search by name"
 msgstr "Пошук за ім'ям"
 
-msgid "Could not load available items"
-msgstr ""
-
-msgid "There was a problem displaying the GroupEditor"
-msgstr ""
-
-msgid "Filter available options"
-msgstr ""
-
-msgid "Filter selected options"
-msgstr ""
-
 msgid "Search for an organisation unit"
 msgstr ""
 
 msgid ""
 "Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
 "please refine your search to see more."
+msgstr ""
+
+msgid "Something went wrong when processing your request."
 msgstr ""
 
 msgid "There was a problem retreiving your search results"
@@ -603,60 +582,6 @@ msgstr ""
 msgid "Create, modify, view and delete User Groups"
 msgstr ""
 
-msgid "Display name"
-msgstr ""
-
-msgid "ID"
-msgstr "ID (ідентифікатор)"
-
-msgid "Last login"
-msgstr ""
-
-msgid "Created"
-msgstr "Створено"
-
-msgid "Introduction"
-msgstr "Введення"
-
-msgid "Job title"
-msgstr "Посада"
-
-msgid "Works at"
-msgstr ""
-
-msgid "Education"
-msgstr "Освіта"
-
-msgid "Interests"
-msgstr "Зацікавленості"
-
-msgid "Nationality"
-msgstr "Громадянство"
-
-msgid "Birthday"
-msgstr "День народження"
-
-msgid "Gender"
-msgstr "Ґендер / Гендер"
-
-msgid "Speaks"
-msgstr ""
-
-msgid "E-mail"
-msgstr "Електронна пошта (емейл)"
-
-msgid "Organisations units"
-msgstr ""
-
-msgid "User roles"
-msgstr "Рівні доступу"
-
-msgid "Members"
-msgstr ""
-
-msgid "Number of users"
-msgstr ""
-
 msgid "New group"
 msgstr ""
 
@@ -707,6 +632,18 @@ msgstr ""
 
 msgid "There was an error fetching this user."
 msgstr ""
+
+msgid "Edit user"
+msgstr ""
+
+msgid "Overview"
+msgstr ""
+
+msgid "Edit user group"
+msgstr ""
+
+msgid "ID"
+msgstr "ID (ідентифікатор)"
 
 msgid "Show details"
 msgstr "Показати деталі"
@@ -783,6 +720,9 @@ msgstr ""
 msgid "No results found"
 msgstr "Результатів не знайдено"
 
+msgid "Display name"
+msgstr ""
+
 msgid "Member?"
 msgstr ""
 
@@ -812,6 +752,9 @@ msgid "No match for"
 msgstr ""
 
 msgid "Go back home"
+msgstr ""
+
+msgid "Edit user role"
 msgstr ""
 
 msgid "There was an error deleting the user role: {{- error}}"
@@ -970,11 +913,68 @@ msgstr ""
 msgid "Error loading users"
 msgstr ""
 
+msgid "Last login"
+msgstr ""
+
 msgid "Account disabled?"
 msgstr ""
 
 msgid "Disabled"
 msgstr ""
 
-msgid "Something went wrong when processing your request."
+msgid "Male"
+msgstr "Чоловік"
+
+msgid "Female"
+msgstr "Жінка"
+
+msgid "Other"
+msgstr "Інше"
+
+msgid "Created"
+msgstr "Створено"
+
+msgid "Contact"
 msgstr ""
+
+msgid "Send message"
+msgstr "Send message"
+
+msgid "E-mail"
+msgstr "Електронна пошта (емейл)"
+
+msgid "Permissions"
+msgstr ""
+
+msgid "Organisations units"
+msgstr ""
+
+msgid "User units"
+msgstr ""
+
+msgid "Introduction"
+msgstr "Введення"
+
+msgid "Job title"
+msgstr "Посада"
+
+msgid "Works at"
+msgstr ""
+
+msgid "Gender"
+msgstr "Ґендер / Гендер"
+
+msgid "Speaks"
+msgstr ""
+
+msgid "Nationality"
+msgstr "Громадянство"
+
+msgid "Education"
+msgstr "Освіта"
+
+msgid "Interests"
+msgstr "Зацікавленості"
+
+msgid "Birthday"
+msgstr "День народження"
