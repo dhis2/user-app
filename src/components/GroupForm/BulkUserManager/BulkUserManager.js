@@ -1,7 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
 import { DataTableToolbar, Pagination, SegmentedControl } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './BulkUserManager.module.css'
 import { usePendingChanges } from './hooks/usePendingChanges'
 import { useUsers } from './hooks/useUsers'
@@ -31,13 +31,13 @@ const BulkUserManager = ({ groupId, onChange }) => {
         groupId,
         mode,
     })
-    const pendingChanges = usePendingChanges({
-        onChange: () => {
-            onChange(
-                pendingChanges.map(({ action, userId }) => ({ action, userId }))
-            )
-        },
-    })
+    const pendingChanges = usePendingChanges()
+
+    useEffect(() => {
+        onChange(
+            pendingChanges.map(({ action, userId }) => ({ action, userId }))
+        )
+    }, [pendingChanges])
 
     const showPagination = !loading && !error && users.length > 0
 

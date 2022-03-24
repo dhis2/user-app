@@ -76,7 +76,10 @@ export const useUsers = ({ groupId, mode }) => {
     const selectedNonMembers = useSet()
     const [membersFilter, setMembersFilter] = useState('')
     const [nonMembersFilter, setNonMembersFilter] = useState('')
-    const [debouncedMembersFilter] = useDebounce(membersFilter, FILTER_DEBOUNCE_MS)
+    const [debouncedMembersFilter] = useDebounce(
+        membersFilter,
+        FILTER_DEBOUNCE_MS
+    )
     const [debouncedNonMembersFilter] = useDebounce(
         nonMembersFilter,
         FILTER_DEBOUNCE_MS
