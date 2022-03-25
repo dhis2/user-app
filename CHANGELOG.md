@@ -1,3 +1,10 @@
+## [1.3.13](https://github.com/dhis2/user-app/compare/v1.3.12...v1.3.13) (2022-03-25)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([a983cad](https://github.com/dhis2/user-app/commit/a983cadad611055939359eacfc264e5b6f175ea3))
+
 ## [1.3.12](https://github.com/dhis2/user-app/compare/v1.3.11...v1.3.12) (2022-03-24)
 
 
