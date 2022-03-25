@@ -3,17 +3,17 @@
 # phil_dhis2, 2019
 # Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2021
 # Carwoto Sa'an <carwoto@gmail.com>, 2022
-# Viktor Varland <viktor@dhis2.org>, 2022
 # Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2022
-# Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2022
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
+# Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
+"POT-Creation-Date: 2022-03-22T16:54:33.862Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2022\n"
+"Last-Translator: Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2022\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,18 +39,6 @@ msgstr ""
 
 msgid "Value should be a negative integer"
 msgstr ""
-
-msgid "Edit user"
-msgstr ""
-
-msgid "Edit user group"
-msgstr ""
-
-msgid "Edit user role"
-msgstr ""
-
-msgid "Send message"
-msgstr "Kirim pesan"
 
 msgid "Filter options"
 msgstr "Pilihan penyaringan"
@@ -370,24 +358,15 @@ msgstr ""
 msgid "Search by name"
 msgstr "Cari berdasarkan nama"
 
-msgid "Could not load available items"
-msgstr ""
-
-msgid "There was a problem displaying the GroupEditor"
-msgstr ""
-
-msgid "Filter available options"
-msgstr ""
-
-msgid "Filter selected options"
-msgstr ""
-
 msgid "Search for an organisation unit"
 msgstr ""
 
 msgid ""
 "Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
 "please refine your search to see more."
+msgstr ""
+
+msgid "Something went wrong when processing your request."
 msgstr ""
 
 msgid "There was a problem retreiving your search results"
@@ -606,60 +585,6 @@ msgstr ""
 msgid "Create, modify, view and delete User Groups"
 msgstr ""
 
-msgid "Display name"
-msgstr ""
-
-msgid "ID"
-msgstr "ID"
-
-msgid "Last login"
-msgstr ""
-
-msgid "Created"
-msgstr "Dibuat"
-
-msgid "Introduction"
-msgstr ""
-
-msgid "Job title"
-msgstr ""
-
-msgid "Works at"
-msgstr ""
-
-msgid "Education"
-msgstr ""
-
-msgid "Interests"
-msgstr ""
-
-msgid "Nationality"
-msgstr ""
-
-msgid "Birthday"
-msgstr ""
-
-msgid "Gender"
-msgstr ""
-
-msgid "Speaks"
-msgstr ""
-
-msgid "E-mail"
-msgstr "E-mail"
-
-msgid "Organisations units"
-msgstr ""
-
-msgid "User roles"
-msgstr ""
-
-msgid "Members"
-msgstr ""
-
-msgid "Number of users"
-msgstr ""
-
 msgid "New group"
 msgstr ""
 
@@ -710,6 +635,18 @@ msgstr ""
 
 msgid "There was an error fetching this user."
 msgstr ""
+
+msgid "Edit user"
+msgstr ""
+
+msgid "Overview"
+msgstr ""
+
+msgid "Edit user group"
+msgstr ""
+
+msgid "ID"
+msgstr "ID"
 
 msgid "Show details"
 msgstr ""
@@ -786,6 +723,9 @@ msgstr ""
 msgid "No results found"
 msgstr "Tidak ada hasil ditemukan"
 
+msgid "Display name"
+msgstr ""
+
 msgid "Member?"
 msgstr ""
 
@@ -815,6 +755,9 @@ msgid "No match for"
 msgstr ""
 
 msgid "Go back home"
+msgstr ""
+
+msgid "Edit user role"
 msgstr ""
 
 msgid "There was an error deleting the user role: {{- error}}"
@@ -973,11 +916,68 @@ msgstr ""
 msgid "Error loading users"
 msgstr ""
 
+msgid "Last login"
+msgstr ""
+
 msgid "Account disabled?"
 msgstr ""
 
 msgid "Disabled"
 msgstr "Dinonaktifkan"
 
-msgid "Something went wrong when processing your request."
+msgid "Male"
+msgstr "Pria"
+
+msgid "Female"
+msgstr "Wanita"
+
+msgid "Other"
+msgstr "Lainnya"
+
+msgid "Created"
+msgstr "Dibuat"
+
+msgid "Contact"
+msgstr ""
+
+msgid "Send message"
+msgstr "Kirim pesan"
+
+msgid "E-mail"
+msgstr "E-mail"
+
+msgid "Permissions"
+msgstr ""
+
+msgid "Organisations units"
+msgstr ""
+
+msgid "User units"
+msgstr ""
+
+msgid "Introduction"
+msgstr ""
+
+msgid "Job title"
+msgstr ""
+
+msgid "Works at"
+msgstr ""
+
+msgid "Gender"
+msgstr ""
+
+msgid "Speaks"
+msgstr ""
+
+msgid "Nationality"
+msgstr ""
+
+msgid "Education"
+msgstr ""
+
+msgid "Interests"
+msgstr ""
+
+msgid "Birthday"
 msgstr ""

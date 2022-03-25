@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
+"POT-Creation-Date: 2022-03-22T16:54:33.862Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2022\n"
 "Language-Team: Uzbek (Latin) (https://www.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
@@ -34,18 +34,6 @@ msgstr "Qiymat butun musbat son boʼlishi lozim"
 
 msgid "Value should be a negative integer"
 msgstr ""
-
-msgid "Edit user"
-msgstr "Foydalanuvchini tahrir qilish"
-
-msgid "Edit user group"
-msgstr "Foydalanuvchi guruhini tahrir qilish"
-
-msgid "Edit user role"
-msgstr "Foydalanuvchi rolini tahrir qilish"
-
-msgid "Send message"
-msgstr "Xabar yuborish"
 
 msgid "Filter options"
 msgstr "Filtr variantlari"
@@ -365,18 +353,6 @@ msgstr ""
 msgid "Search by name"
 msgstr "Ismi orqali izlash"
 
-msgid "Could not load available items"
-msgstr "Mavjud elementlar yuklanmadi"
-
-msgid "There was a problem displaying the GroupEditor"
-msgstr "Tahrirchilar Guruhini koʼrsatishda muammo yuz berdi"
-
-msgid "Filter available options"
-msgstr ""
-
-msgid "Filter selected options"
-msgstr ""
-
 msgid "Search for an organisation unit"
 msgstr ""
 
@@ -384,6 +360,9 @@ msgid ""
 "Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
 "please refine your search to see more."
 msgstr ""
+
+msgid "Something went wrong when processing your request."
+msgstr "Soʼrovingiz koʼrib chiqilishida xatolik yuz berdi."
 
 msgid "There was a problem retreiving your search results"
 msgstr "Qidiruv natijalari chiqarib olishda muammo yuz berdi"
@@ -604,60 +583,6 @@ msgid "Create, modify, view and delete User Groups"
 msgstr ""
 "Foydalanuvchi Guruhlarini yaratish, oʼzgartirish, koʼrish va oʼchirish"
 
-msgid "Display name"
-msgstr "Displey nomi"
-
-msgid "ID"
-msgstr "ID"
-
-msgid "Last login"
-msgstr "Oxirgi kirish"
-
-msgid "Created"
-msgstr "Yaratilgan"
-
-msgid "Introduction"
-msgstr "Tanishtirish"
-
-msgid "Job title"
-msgstr "Lavozim"
-
-msgid "Works at"
-msgstr "...da ishlaydi"
-
-msgid "Education"
-msgstr "Maʼlumoti"
-
-msgid "Interests"
-msgstr "Qiziqishi"
-
-msgid "Nationality"
-msgstr "Millati"
-
-msgid "Birthday"
-msgstr "Tugilgan kun"
-
-msgid "Gender"
-msgstr "Jinsi"
-
-msgid "Speaks"
-msgstr "Gapiradi"
-
-msgid "E-mail"
-msgstr "Elektron pochta"
-
-msgid "Organisations units"
-msgstr "Tashkiliy boʼlimlar"
-
-msgid "User roles"
-msgstr "Foydalanuvchi rollari"
-
-msgid "Members"
-msgstr "Аʼzolar"
-
-msgid "Number of users"
-msgstr "Foydalanuvchilar soni"
-
 msgid "New group"
 msgstr ""
 
@@ -708,6 +633,18 @@ msgstr ""
 
 msgid "There was an error fetching this user."
 msgstr ""
+
+msgid "Edit user"
+msgstr "Foydalanuvchini tahrir qilish"
+
+msgid "Overview"
+msgstr "Qisqacha koʼzdan kechirish"
+
+msgid "Edit user group"
+msgstr "Foydalanuvchi guruhini tahrir qilish"
+
+msgid "ID"
+msgstr "ID"
 
 msgid "Show details"
 msgstr "Tafsilotlarni koʼrsating"
@@ -784,6 +721,9 @@ msgstr ""
 msgid "No results found"
 msgstr "Hech qanday natija topilmadi"
 
+msgid "Display name"
+msgstr "Displey nomi"
+
 msgid "Member?"
 msgstr ""
 
@@ -816,6 +756,9 @@ msgstr "uchun toʼgʼri kelmaydi"
 
 msgid "Go back home"
 msgstr "Uyga qaytish"
+
+msgid "Edit user role"
+msgstr "Foydalanuvchi rolini tahrir qilish"
 
 msgid "There was an error deleting the user role: {{- error}}"
 msgstr ""
@@ -973,11 +916,68 @@ msgstr "Foydalanuvchi Boshqarish"
 msgid "Error loading users"
 msgstr ""
 
+msgid "Last login"
+msgstr "Oxirgi kirish"
+
 msgid "Account disabled?"
 msgstr ""
 
 msgid "Disabled"
 msgstr "Oʼchirib qoʼyilgan"
 
-msgid "Something went wrong when processing your request."
-msgstr "Soʼrovingiz koʼrib chiqilishida xatolik yuz berdi."
+msgid "Male"
+msgstr "Erkak"
+
+msgid "Female"
+msgstr "Аyol"
+
+msgid "Other"
+msgstr "Boshqa"
+
+msgid "Created"
+msgstr "Yaratilgan"
+
+msgid "Contact"
+msgstr ""
+
+msgid "Send message"
+msgstr "Xabar yuborish"
+
+msgid "E-mail"
+msgstr "Elektron pochta"
+
+msgid "Permissions"
+msgstr "Ruxsatlar"
+
+msgid "Organisations units"
+msgstr "Tashkiliy boʼlimlar"
+
+msgid "User units"
+msgstr ""
+
+msgid "Introduction"
+msgstr "Tanishtirish"
+
+msgid "Job title"
+msgstr "Lavozim"
+
+msgid "Works at"
+msgstr "...da ishlaydi"
+
+msgid "Gender"
+msgstr "Jinsi"
+
+msgid "Speaks"
+msgstr "Gapiradi"
+
+msgid "Nationality"
+msgstr "Millati"
+
+msgid "Education"
+msgstr "Maʼlumoti"
+
+msgid "Interests"
+msgstr "Qiziqishi"
+
+msgid "Birthday"
+msgstr "Tugilgan kun"

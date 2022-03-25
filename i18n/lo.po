@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
+"POT-Creation-Date: 2022-03-22T16:54:33.862Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
@@ -34,18 +34,6 @@ msgstr ""
 
 msgid "Value should be a negative integer"
 msgstr ""
-
-msgid "Edit user"
-msgstr ""
-
-msgid "Edit user group"
-msgstr ""
-
-msgid "Edit user role"
-msgstr ""
-
-msgid "Send message"
-msgstr "Send message"
 
 msgid "Filter options"
 msgstr "ຄັດກອງເອົາຕົວເລືອກ"
@@ -365,24 +353,15 @@ msgstr ""
 msgid "Search by name"
 msgstr "ຄົ້ນຫາຈາກຊື່"
 
-msgid "Could not load available items"
-msgstr ""
-
-msgid "There was a problem displaying the GroupEditor"
-msgstr ""
-
-msgid "Filter available options"
-msgstr ""
-
-msgid "Filter selected options"
-msgstr ""
-
 msgid "Search for an organisation unit"
 msgstr ""
 
 msgid ""
 "Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
 "please refine your search to see more."
+msgstr ""
+
+msgid "Something went wrong when processing your request."
 msgstr ""
 
 msgid "There was a problem retreiving your search results"
@@ -601,60 +580,6 @@ msgstr ""
 msgid "Create, modify, view and delete User Groups"
 msgstr ""
 
-msgid "Display name"
-msgstr ""
-
-msgid "ID"
-msgstr "ລະຫັດ"
-
-msgid "Last login"
-msgstr ""
-
-msgid "Created"
-msgstr "ສ້າງແລ້ວ"
-
-msgid "Introduction"
-msgstr "ລາຍລະອຽດອື່ນໆ"
-
-msgid "Job title"
-msgstr "ອາຊີບ"
-
-msgid "Works at"
-msgstr ""
-
-msgid "Education"
-msgstr "ລະດັບການສືກສາ"
-
-msgid "Interests"
-msgstr "ສິ່ງທີ່ສົນໃຈ"
-
-msgid "Nationality"
-msgstr "ສັນຊາດ"
-
-msgid "Birthday"
-msgstr "ວັນເດືອນປີເກີດ"
-
-msgid "Gender"
-msgstr "ເພດ"
-
-msgid "Speaks"
-msgstr ""
-
-msgid "E-mail"
-msgstr "ອີເມວ"
-
-msgid "Organisations units"
-msgstr ""
-
-msgid "User roles"
-msgstr "ຕຳແໜ່ງຮັບພິດຊອບໃນລະບົບ"
-
-msgid "Members"
-msgstr ""
-
-msgid "Number of users"
-msgstr ""
-
 msgid "New group"
 msgstr ""
 
@@ -705,6 +630,18 @@ msgstr ""
 
 msgid "There was an error fetching this user."
 msgstr ""
+
+msgid "Edit user"
+msgstr ""
+
+msgid "Overview"
+msgstr ""
+
+msgid "Edit user group"
+msgstr ""
+
+msgid "ID"
+msgstr "ລະຫັດ"
 
 msgid "Show details"
 msgstr "ເບີ່ງລາຍລະອຽດ"
@@ -781,6 +718,9 @@ msgstr ""
 msgid "No results found"
 msgstr ""
 
+msgid "Display name"
+msgstr ""
+
 msgid "Member?"
 msgstr ""
 
@@ -810,6 +750,9 @@ msgid "No match for"
 msgstr ""
 
 msgid "Go back home"
+msgstr ""
+
+msgid "Edit user role"
 msgstr ""
 
 msgid "There was an error deleting the user role: {{- error}}"
@@ -968,11 +911,68 @@ msgstr ""
 msgid "Error loading users"
 msgstr ""
 
+msgid "Last login"
+msgstr ""
+
 msgid "Account disabled?"
 msgstr ""
 
 msgid "Disabled"
 msgstr "Disabled"
 
-msgid "Something went wrong when processing your request."
+msgid "Male"
+msgstr "~ເພດຊາຍ"
+
+msgid "Female"
+msgstr "ຍິງ"
+
+msgid "Other"
+msgstr "ອື່ນໆ"
+
+msgid "Created"
+msgstr "ສ້າງແລ້ວ"
+
+msgid "Contact"
 msgstr ""
+
+msgid "Send message"
+msgstr "Send message"
+
+msgid "E-mail"
+msgstr "ອີເມວ"
+
+msgid "Permissions"
+msgstr ""
+
+msgid "Organisations units"
+msgstr ""
+
+msgid "User units"
+msgstr ""
+
+msgid "Introduction"
+msgstr "ລາຍລະອຽດອື່ນໆ"
+
+msgid "Job title"
+msgstr "ອາຊີບ"
+
+msgid "Works at"
+msgstr ""
+
+msgid "Gender"
+msgstr "ເພດ"
+
+msgid "Speaks"
+msgstr ""
+
+msgid "Nationality"
+msgstr "ສັນຊາດ"
+
+msgid "Education"
+msgstr "ລະດັບການສືກສາ"
+
+msgid "Interests"
+msgstr "ສິ່ງທີ່ສົນໃຈ"
+
+msgid "Birthday"
+msgstr "ວັນເດືອນປີເກີດ"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
+"POT-Creation-Date: 2022-03-22T16:54:33.862Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Persian (Afghanistan) (https://www.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
@@ -33,18 +33,6 @@ msgstr ""
 
 msgid "Value should be a negative integer"
 msgstr ""
-
-msgid "Edit user"
-msgstr ""
-
-msgid "Edit user group"
-msgstr ""
-
-msgid "Edit user role"
-msgstr ""
-
-msgid "Send message"
-msgstr "ارسال پیام"
 
 msgid "Filter options"
 msgstr ""
@@ -364,24 +352,15 @@ msgstr ""
 msgid "Search by name"
 msgstr "جستجو بر اساس نام"
 
-msgid "Could not load available items"
-msgstr ""
-
-msgid "There was a problem displaying the GroupEditor"
-msgstr ""
-
-msgid "Filter available options"
-msgstr ""
-
-msgid "Filter selected options"
-msgstr ""
-
 msgid "Search for an organisation unit"
 msgstr ""
 
 msgid ""
 "Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
 "please refine your search to see more."
+msgstr ""
+
+msgid "Something went wrong when processing your request."
 msgstr ""
 
 msgid "There was a problem retreiving your search results"
@@ -600,60 +579,6 @@ msgstr "گروپ استفاده کننده"
 msgid "Create, modify, view and delete User Groups"
 msgstr ""
 
-msgid "Display name"
-msgstr ""
-
-msgid "ID"
-msgstr "آی دی"
-
-msgid "Last login"
-msgstr ""
-
-msgid "Created"
-msgstr "ایجاد شده"
-
-msgid "Introduction"
-msgstr "معرفی"
-
-msgid "Job title"
-msgstr "عنوان وظیفه"
-
-msgid "Works at"
-msgstr ""
-
-msgid "Education"
-msgstr "تحصیلات"
-
-msgid "Interests"
-msgstr "علاقه مندی"
-
-msgid "Nationality"
-msgstr "ملیت"
-
-msgid "Birthday"
-msgstr "تاریخ تولد"
-
-msgid "Gender"
-msgstr "جنسیت"
-
-msgid "Speaks"
-msgstr ""
-
-msgid "E-mail"
-msgstr "ایمل"
-
-msgid "Organisations units"
-msgstr ""
-
-msgid "User roles"
-msgstr "نقش استفاده کننده"
-
-msgid "Members"
-msgstr "عضو"
-
-msgid "Number of users"
-msgstr ""
-
 msgid "New group"
 msgstr ""
 
@@ -704,6 +629,18 @@ msgstr ""
 
 msgid "There was an error fetching this user."
 msgstr ""
+
+msgid "Edit user"
+msgstr ""
+
+msgid "Overview"
+msgstr ""
+
+msgid "Edit user group"
+msgstr ""
+
+msgid "ID"
+msgstr "آی دی"
 
 msgid "Show details"
 msgstr "نمایش جزییات"
@@ -780,6 +717,9 @@ msgstr ""
 msgid "No results found"
 msgstr "هیج نتیجه ی یافت نشد"
 
+msgid "Display name"
+msgstr ""
+
 msgid "Member?"
 msgstr ""
 
@@ -809,6 +749,9 @@ msgid "No match for"
 msgstr ""
 
 msgid "Go back home"
+msgstr ""
+
+msgid "Edit user role"
 msgstr ""
 
 msgid "There was an error deleting the user role: {{- error}}"
@@ -967,11 +910,68 @@ msgstr ""
 msgid "Error loading users"
 msgstr ""
 
+msgid "Last login"
+msgstr ""
+
 msgid "Account disabled?"
 msgstr ""
 
 msgid "Disabled"
 msgstr "غیرفعال سازی"
 
-msgid "Something went wrong when processing your request."
+msgid "Male"
+msgstr "مذکر"
+
+msgid "Female"
+msgstr "مونث"
+
+msgid "Other"
+msgstr "دیگر"
+
+msgid "Created"
+msgstr "ایجاد شده"
+
+msgid "Contact"
 msgstr ""
+
+msgid "Send message"
+msgstr "ارسال پیام"
+
+msgid "E-mail"
+msgstr "ایمل"
+
+msgid "Permissions"
+msgstr ""
+
+msgid "Organisations units"
+msgstr ""
+
+msgid "User units"
+msgstr ""
+
+msgid "Introduction"
+msgstr "معرفی"
+
+msgid "Job title"
+msgstr "عنوان وظیفه"
+
+msgid "Works at"
+msgstr ""
+
+msgid "Gender"
+msgstr "جنسیت"
+
+msgid "Speaks"
+msgstr ""
+
+msgid "Nationality"
+msgstr "ملیت"
+
+msgid "Education"
+msgstr "تحصیلات"
+
+msgid "Interests"
+msgstr "علاقه مندی"
+
+msgid "Birthday"
+msgstr "تاریخ تولد"

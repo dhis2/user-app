@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
+"POT-Creation-Date: 2022-03-22T16:54:33.862Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: trendspotter <jirka.p@volny.cz>, 2022\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -33,18 +33,6 @@ msgstr "Hodnota by měla být kladné celé číslo"
 
 msgid "Value should be a negative integer"
 msgstr "Hodnota by měla být záporné celé číslo"
-
-msgid "Edit user"
-msgstr "Upravit uživatele"
-
-msgid "Edit user group"
-msgstr "Upravit skupinu uživatelů"
-
-msgid "Edit user role"
-msgstr "Upravit uživatelskou roli"
-
-msgid "Send message"
-msgstr "Poslat zprávu"
 
 msgid "Filter options"
 msgstr "Možnosti filtru"
@@ -370,18 +358,6 @@ msgstr "Při kontrole dostupnosti názvu této role došlo k problému"
 msgid "Search by name"
 msgstr "Hledání podle názvu"
 
-msgid "Could not load available items"
-msgstr "Nelze načíst dostupné položky"
-
-msgid "There was a problem displaying the GroupEditor"
-msgstr "Při zobrazování Editoru Skupin došlo k problému"
-
-msgid "Filter available options"
-msgstr "Filtrovat dostupné možnosti"
-
-msgid "Filter selected options"
-msgstr "Filtrovat vybrané možnosti"
-
 msgid "Search for an organisation unit"
 msgstr "Vyhledejte organizační jednotku"
 
@@ -391,6 +367,9 @@ msgid ""
 msgstr ""
 "Zobrazuje se {{visibleItemsCount}} z {{totalSearchResultCount}} výsledků "
 "vyhledávání. Upřesněte prosím vyhledávání, abyste viděli více."
+
+msgid "Something went wrong when processing your request."
+msgstr "Při zpracování vašeho požadavku se něco pokazilo."
 
 msgid "There was a problem retreiving your search results"
 msgstr "Při načítání výsledků vyhledávání došlo k problému"
@@ -615,60 +594,6 @@ msgstr "Uživatelská skupina"
 msgid "Create, modify, view and delete User Groups"
 msgstr "Vytvářejte, upravujte, prohlížejte a mazejte skupiny uživatelů"
 
-msgid "Display name"
-msgstr "Zobrazované jméno"
-
-msgid "ID"
-msgstr "ID"
-
-msgid "Last login"
-msgstr "Poslední přihlášení"
-
-msgid "Created"
-msgstr "Vytvořeno"
-
-msgid "Introduction"
-msgstr "Úvod"
-
-msgid "Job title"
-msgstr "Pracovní pozice"
-
-msgid "Works at"
-msgstr "Pracuje v"
-
-msgid "Education"
-msgstr "Vzdělání"
-
-msgid "Interests"
-msgstr "Zájmy"
-
-msgid "Nationality"
-msgstr "Státní příslušnost"
-
-msgid "Birthday"
-msgstr "Narozeniny"
-
-msgid "Gender"
-msgstr "pohlaví"
-
-msgid "Speaks"
-msgstr "Mluví"
-
-msgid "E-mail"
-msgstr "E-mail"
-
-msgid "Organisations units"
-msgstr "Organizační jednotky"
-
-msgid "User roles"
-msgstr "Uživatelské role"
-
-msgid "Members"
-msgstr "Členové"
-
-msgid "Number of users"
-msgstr "počet uživatelů"
-
 msgid "New group"
 msgstr "Nová skupina"
 
@@ -719,6 +644,18 @@ msgstr "Chyba při načítání uživatele"
 
 msgid "There was an error fetching this user."
 msgstr "Při načítání tohoto uživatele došlo k chybě."
+
+msgid "Edit user"
+msgstr "Upravit uživatele"
+
+msgid "Overview"
+msgstr "Přehled"
+
+msgid "Edit user group"
+msgstr "Upravit skupinu uživatelů"
+
+msgid "ID"
+msgstr "ID"
 
 msgid "Show details"
 msgstr "Ukázat detaily"
@@ -795,6 +732,9 @@ msgstr "Chyba při načítání uživatelských skupin"
 msgid "No results found"
 msgstr "Nenalezeny žádné výsledky"
 
+msgid "Display name"
+msgstr "Zobrazované jméno"
+
 msgid "Member?"
 msgstr "Člen?"
 
@@ -825,6 +765,9 @@ msgstr "Žádná shoda pro"
 
 msgid "Go back home"
 msgstr "Zpět na domovskou stranu"
+
+msgid "Edit user role"
+msgstr "Upravit uživatelskou roli"
 
 msgid "There was an error deleting the user role: {{- error}}"
 msgstr "Při mazání uživatelské role došlo k chybě: {{- error}}"
@@ -984,11 +927,68 @@ msgstr "Správa uživatelů"
 msgid "Error loading users"
 msgstr "Chyba při načítání uživatelů"
 
+msgid "Last login"
+msgstr "Poslední přihlášení"
+
 msgid "Account disabled?"
 msgstr "Účet deaktivován?"
 
 msgid "Disabled"
 msgstr "Zakázáno"
 
-msgid "Something went wrong when processing your request."
-msgstr "Při zpracování vašeho požadavku se něco pokazilo."
+msgid "Male"
+msgstr "Male"
+
+msgid "Female"
+msgstr "Žena"
+
+msgid "Other"
+msgstr "jiný"
+
+msgid "Created"
+msgstr "Vytvořeno"
+
+msgid "Contact"
+msgstr "Kontakt"
+
+msgid "Send message"
+msgstr "Poslat zprávu"
+
+msgid "E-mail"
+msgstr "E-mail"
+
+msgid "Permissions"
+msgstr "Oprávnění"
+
+msgid "Organisations units"
+msgstr "Organizační jednotky"
+
+msgid "User units"
+msgstr ""
+
+msgid "Introduction"
+msgstr "Úvod"
+
+msgid "Job title"
+msgstr "Pracovní pozice"
+
+msgid "Works at"
+msgstr "Pracuje v"
+
+msgid "Gender"
+msgstr "pohlaví"
+
+msgid "Speaks"
+msgstr "Mluví"
+
+msgid "Nationality"
+msgstr "Státní příslušnost"
+
+msgid "Education"
+msgstr "Vzdělání"
+
+msgid "Interests"
+msgstr "Zájmy"
+
+msgid "Birthday"
+msgstr "Narozeniny"
