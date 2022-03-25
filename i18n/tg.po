@@ -927,7 +927,7 @@ msgid "Female"
 msgstr "Зан"
 
 msgid "Other"
-msgstr ""
+msgstr "Дигар"
 
 msgid "Created"
 msgstr ""
