@@ -23,6 +23,7 @@ const GroupForm = ({ submitButtonLabel, group }) => {
         const groupData = getGroupData({ values, group, attributes })
 
         try {
+            let groupId = group?.id
             if (group) {
                 await engine.mutate({
                     resource: `userGroups/${group.id}?mergeMode=MERGE`,
@@ -30,11 +31,12 @@ const GroupForm = ({ submitButtonLabel, group }) => {
                     data: groupData,
                 })
             } else {
-                await engine.mutate({
+                const { response } = await engine.mutate({
                     resource: 'userGroups',
                     type: 'create',
                     data: groupData,
                 })
+                groupId = response.uid
             }
 
             if (values.members.length > 0) {
@@ -50,7 +52,7 @@ const GroupForm = ({ submitButtonLabel, group }) => {
                 }
 
                 await engine.mutate({
-                    resource: `userGroups/${group.id}/users`,
+                    resource: `userGroups/${groupId}/users`,
                     type: 'create',
                     data: {
                         additions,

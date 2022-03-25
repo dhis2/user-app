@@ -10,12 +10,7 @@ import TopBar from './TopBar'
 import UserTable from './UserTable'
 
 const BulkUserManager = ({ groupId, onChange }) => {
-    // TODO
-    if (!groupId) {
-        throw new Error('TODO: implement support for new groups')
-    }
-
-    const [mode, setMode] = useState('MEMBERS')
+    const [mode, setMode] = useState(groupId ? 'MEMBERS' : 'NON_MEMBERS')
     const {
         loading,
         error,
@@ -50,6 +45,7 @@ const BulkUserManager = ({ groupId, onChange }) => {
                     {
                         label: i18n.t('View and remove users from group'),
                         value: 'MEMBERS',
+                        disabled: !groupId,
                     },
                     {
                         label: i18n.t('Add users to group'),

@@ -1,71 +1,13 @@
 import { useDataQuery } from '@dhis2/app-runtime'
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useDebounce } from 'use-debounce'
+import { useQueries } from './useQueries'
 import { useSet } from './useSet'
 
 const FILTER_DEBOUNCE_MS = 375
 
 export const useUsers = ({ groupId, mode }) => {
-    // Use useMemo to silence warnings from useDataQuery about dynamic queries
-    const queries = useMemo(() => {
-        const resource = `userGroups/${groupId}/users/gist`
-        const params = {
-            fields: ['id', 'name', 'username'],
-            total: true,
-            pageSize: 10,
-        }
-
-        // The gist API does not support filtering by full name, so we must
-        // split the filter into space-separated tokens and filter by those
-        // tokens. A filter group is created for each token, with filters within
-        // each group being combined with a logical OR and the groups being
-        // combined with a logical AND.
-        const getFilterParams = filterQuery => {
-            const filterTokens = filterQuery.split(' ')
-            let filter = undefined
-            if (filterQuery !== '') {
-                filter = filterTokens.flatMap((token, index) => {
-                    if (token === '') {
-                        return []
-                    }
-
-                    const filterFields = ['firstName', 'surname', 'username']
-                    return filterFields.map(
-                        field => `${index}:${field}:ilike:${token}`
-                    )
-                })
-            }
-
-            return {
-                rootJunction: filterTokens.length === 1 ? 'OR' : 'AND',
-                filter,
-            }
-        }
-
-        return {
-            members: {
-                users: {
-                    resource,
-                    params: ({ page, filter }) => ({
-                        ...params,
-                        ...getFilterParams(filter),
-                        page,
-                    }),
-                },
-            },
-            nonMembers: {
-                users: {
-                    resource,
-                    params: ({ page, filter }) => ({
-                        ...params,
-                        ...getFilterParams(filter),
-                        page,
-                        inverse: true,
-                    }),
-                },
-            },
-        }
-    }, [groupId])
+    const queries = useQueries({ groupId })
     const membersDataQuery = useDataQuery(queries.members, { lazy: true })
     const nonMembersDataQuery = useDataQuery(queries.nonMembers, { lazy: true })
     const [prevMembers, setPrevMembers] = useState()
