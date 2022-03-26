@@ -952,7 +952,7 @@ msgid "Organisations units"
 msgstr "机构"
 
 msgid "User units"
-msgstr ""
+msgstr "用户机构"
 
 msgid "Introduction"
 msgstr "介绍"
