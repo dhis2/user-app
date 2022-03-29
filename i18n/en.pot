@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-03-23T15:07:52.875Z\n"
-"PO-Revision-Date: 2022-03-23T15:07:52.875Z\n"
+"POT-Creation-Date: 2022-03-28T08:08:58.138Z\n"
+"PO-Revision-Date: 2022-03-28T08:08:58.138Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -154,9 +154,6 @@ msgstr "User management"
 
 msgid "Add or remove users from this group."
 msgstr "Add or remove users from this group."
-
-msgid "You must save this group before you can manage its members."
-msgstr "You must save this group before you can manage its members."
 
 msgid "Name is already taken"
 msgstr "Name is already taken"
