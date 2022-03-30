@@ -44,12 +44,6 @@ export const getUserData = ({
         )
 
     return {
-        // Because the data object is used as the payload of a PUT request,
-        // properties that are omitted will be removed. To prevent this, all
-        // remaining owned properties are copied from the user to the data
-        // object.
-        ...user,
-
         username,
         disabled,
         password:
@@ -60,7 +54,7 @@ export const getUserData = ({
         accountExpiry:
             typeof accountExpiry === 'string' && accountExpiry !== ''
                 ? accountExpiry
-                : undefined,
+                : null,
         openId,
         ldapId,
         externalAuth,

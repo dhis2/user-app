@@ -11,6 +11,7 @@ import Form, { FormSection } from '../Form'
 import AnalyticsDimensionsRestrictionsSection from './AnalyticsDimensionRestrictionsSection'
 import BasicInformationSection from './BasicInformationSection'
 import ContactDetailsSection from './ContactDetailsSection'
+import { getJsonPatch } from './getJsonPatch'
 import { getUserData } from './getUserData'
 import InviteUserSection from './InviteUserSection'
 import OrganisationUnitsSection from './OrganisationUnitsSection'
@@ -43,7 +44,7 @@ const UserForm = ({
         attributes,
     } = useFormData()
     const { currentUser, refreshCurrentUser } = useCurrentUser()
-    const handleSubmit = async values => {
+    const handleSubmit = async (values, form) => {
         const userData = getUserData({
             values,
             dimensionConstraintsById: keyBy(dimensionConstraints, 'id'),
@@ -53,10 +54,17 @@ const UserForm = ({
 
         try {
             if (user) {
+                const dirtyFields = new Set(
+                    Object.keys(form.getState().dirtyFields)
+                )
+
                 await engine.mutate({
-                    resource: `users/${userData.id}`,
-                    type: 'update',
-                    data: userData,
+                    resource: `users/${user.id}`,
+                    type: 'json-patch',
+                    data: getJsonPatch({
+                        userData,
+                        dirtyFields,
+                    }),
                 })
             } else {
                 const inviteUser = values.inviteUser === 'INVITE_USER'
