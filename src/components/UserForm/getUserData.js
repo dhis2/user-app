@@ -50,33 +50,27 @@ export const getUserData = ({
         // object.
         ...user,
 
-        userCredentials: {
-            id: user?.userCredentials?.id,
-            userInfo: user ? { id: user.id } : undefined,
-
-            username,
-            disabled,
-            password:
-                !inviteUser && !externalAuth && (!user || changePassword)
-                    ? password
-                    : undefined,
-            // See https://jira.dhis2.org/browse/DHIS2-10569
-            accountExpiry:
-                typeof accountExpiry === 'string' && accountExpiry !== ''
-                    ? accountExpiry
-                    : undefined,
-            openId,
-            ldapId,
-            externalAuth,
-            userRoles: wrapIds(userRoles),
-            // Dimension constraints are combined into a single input
-            // component, but need to be stored separately
-            catDimensionConstraints: constraintsForType('CATEGORY'),
-            cogsDimensionConstraints: constraintsForType(
-                'CATEGORY_OPTION_GROUP_SET'
-            ),
-        },
-
+        username,
+        disabled,
+        password:
+            !inviteUser && !externalAuth && (!user || changePassword)
+                ? password
+                : undefined,
+        // See https://jira.dhis2.org/browse/DHIS2-10569
+        accountExpiry:
+            typeof accountExpiry === 'string' && accountExpiry !== ''
+                ? accountExpiry
+                : undefined,
+        openId,
+        ldapId,
+        externalAuth,
+        userRoles: wrapIds(userRoles),
+        // Dimension constraints are combined into a single input
+        // component, but need to be stored separately
+        catDimensionConstraints: constraintsForType('CATEGORY'),
+        cogsDimensionConstraints: constraintsForType(
+            'CATEGORY_OPTION_GROUP_SET'
+        ),
         email,
         firstName,
         surname,
