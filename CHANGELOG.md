@@ -1,3 +1,17 @@
+## [1.3.15](https://github.com/dhis2/user-app/compare/v1.3.14...v1.3.15) (2022-03-31)
+
+
+### Bug Fixes
+
+* **attributes:** don't assume presence of values.attributeValues ([#927](https://github.com/dhis2/user-app/issues/927)) ([def822e](https://github.com/dhis2/user-app/commit/def822eeefe0b076590cf27b1b14e067e85ce6ff))
+
+## [1.3.14](https://github.com/dhis2/user-app/compare/v1.3.13...v1.3.14) (2022-03-26)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([8052a33](https://github.com/dhis2/user-app/commit/8052a3387ca1b7160a0cd48b8806750611a0dc72))
+
 ## [1.3.13](https://github.com/dhis2/user-app/compare/v1.3.12...v1.3.13) (2022-03-25)
 
 
