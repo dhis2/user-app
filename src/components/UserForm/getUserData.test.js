@@ -38,26 +38,6 @@ describe('getUserData', () => {
         },
     }
 
-    it('optionally takes the existing user model', () => {
-        const userDataWithoutUser = getUserData({
-            values,
-            dimensionConstraintsById,
-            attributes: [],
-            user: undefined,
-        })
-        const userDataWithUser = getUserData({
-            values,
-            dimensionConstraintsById,
-            attributes: [],
-            user: { id: 'user-1' },
-        })
-        for (const key of Object.keys(values)) {
-            if (key !== 'userCredentials') {
-                expect(userDataWithoutUser[key]).toEqual(userDataWithUser[key])
-            }
-        }
-    })
-
     it('splits dimension constraints', () => {
         const userData = getUserData({
             values,
@@ -65,12 +45,8 @@ describe('getUserData', () => {
             attributes: [],
         })
 
-        expect(userData.userCredentials.catDimensionConstraints).toEqual([
-            { id: 'type-1' },
-        ])
-        expect(userData.userCredentials.cogsDimensionConstraints).toEqual([
-            { id: 'type-2' },
-        ])
+        expect(userData.catDimensionConstraints).toEqual([{ id: 'type-1' }])
+        expect(userData.cogsDimensionConstraints).toEqual([{ id: 'type-2' }])
     })
 
     it('wraps organisation unit IDs', () => {
@@ -118,7 +94,7 @@ describe('getUserData', () => {
             attributes: [],
         })
 
-        expect(userData.userCredentials.userRoles).toEqual([
+        expect(userData.userRoles).toEqual([
             { id: 'role-1' },
             { id: 'role-2' },
             { id: 'role-3' },
@@ -126,13 +102,10 @@ describe('getUserData', () => {
     })
 
     // See https://jira.dhis2.org/browse/DHIS2-10569
-    it('replaces empty account expiry with undefined', () => {
+    it('replaces empty account expiry with null', () => {
         const valuesWithEmptyAccountExpiry = {
             ...values,
-            userCredentials: {
-                ...values.userCredentials,
-                accountExpiry: '',
-            },
+            accountExpiry: '',
         }
         const userData = getUserData({
             values: valuesWithEmptyAccountExpiry,
@@ -140,7 +113,7 @@ describe('getUserData', () => {
             attributes: [],
         })
 
-        expect(userData.userCredentials.accountExpiry).toBe(undefined)
+        expect(userData.accountExpiry).toBe(null)
     })
 
     describe('only sets a password in certain conditions', () => {
@@ -158,7 +131,7 @@ describe('getUserData', () => {
                 attributes: [],
             })
 
-            expect(userData.userCredentials.password).toBe(undefined)
+            expect(userData.password).toBe(undefined)
         })
 
         it('does not set a password if externalAuth is true', () => {
@@ -175,7 +148,7 @@ describe('getUserData', () => {
                 attributes: [],
             })
 
-            expect(userData.userCredentials.password).toBe(undefined)
+            expect(userData.password).toBe(undefined)
         })
 
         it('does not set a password if user exists and changePassword is false', () => {
@@ -193,7 +166,7 @@ describe('getUserData', () => {
                 user: { id: 'user-1' },
             })
 
-            expect(userData.userCredentials.password).toBe(undefined)
+            expect(userData.password).toBe(undefined)
         })
 
         it('sets a password if user is new and will not be invited nor use external auth', () => {
@@ -210,7 +183,7 @@ describe('getUserData', () => {
                 attributes: [],
             })
 
-            expect(userData.userCredentials.password).toBe('password')
+            expect(userData.password).toBe('password')
         })
 
         it('sets a password if user exists and changePassword is true and external auth will not be used', () => {
@@ -228,18 +201,7 @@ describe('getUserData', () => {
                 user: { id: 'user-1' },
             })
 
-            expect(userData.userCredentials.password).toBe('password')
+            expect(userData.password).toBe('password')
         })
-    })
-
-    it('copies fields present in user but not present in form', () => {
-        const userData = getUserData({
-            values,
-            dimensionConstraintsById,
-            attributes: [],
-            user: { id: 'user-1', unknownField: true },
-        })
-
-        expect(userData.unknownField).toBe(true)
     })
 })
