@@ -9,6 +9,7 @@ import Attributes from '../Attributes'
 import Form, { FormSection } from '../Form'
 import BasicInformationSection from './BasicInformationSection.js'
 import { getGroupData } from './getGroupData'
+import { getJsonPatch } from './getJsonPatch'
 import styles from './GroupForm.module.css'
 import { useFormData } from './useFormData'
 import UserGroupManagementSection from './UserGroupManagementSection.js'
@@ -19,16 +20,23 @@ const GroupForm = ({ submitButtonLabel, group }) => {
     const engine = useDataEngine()
     const { loading, error, userGroupOptions, attributes } = useFormData()
     const { currentUser, refreshCurrentUser } = useCurrentUser()
-    const handleSubmit = async values => {
-        const groupData = getGroupData({ values, group, attributes })
+    const handleSubmit = async (values, form) => {
+        const groupData = getGroupData({ values, attributes })
 
         try {
             let groupId = group?.id
             if (group) {
+                const dirtyFields = new Set(
+                    Object.keys(form.getState().dirtyFields)
+                )
+
                 await engine.mutate({
                     resource: `userGroups/${group.id}?mergeMode=MERGE`,
-                    type: 'update',
-                    data: groupData,
+                    type: 'json-patch',
+                    data: getJsonPatch({
+                        groupData,
+                        dirtyFields,
+                    }),
                 })
             } else {
                 const { response } = await engine.mutate({
