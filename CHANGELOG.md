@@ -1,3 +1,10 @@
+## [1.3.15](https://github.com/dhis2/user-app/compare/v1.3.14...v1.3.15) (2022-03-31)
+
+
+### Bug Fixes
+
+* **attributes:** don't assume presence of values.attributeValues ([#927](https://github.com/dhis2/user-app/issues/927)) ([def822e](https://github.com/dhis2/user-app/commit/def822eeefe0b076590cf27b1b14e067e85ce6ff))
+
 ## [1.3.14](https://github.com/dhis2/user-app/compare/v1.3.13...v1.3.14) (2022-03-26)
 
 
