@@ -7,6 +7,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { useCurrentUser } from '../../hooks/useCurrentUser'
 import Form, { FormSection, TextField, TransferField } from '../Form'
+import { getJsonPatch } from './getJsonPatch'
 import { getRoleData } from './getRoleData'
 import MetadataAuthoritiesTableField from './MetadataAuthoritiesTableField'
 import styles from './RoleForm.module.css'
@@ -74,15 +75,22 @@ const RoleForm = ({ submitButtonLabel, role }) => {
             systemAuthorityOptions,
         })
     const { currentUser, refreshCurrentUser } = useCurrentUser()
-    const handleSubmit = async values => {
-        const roleData = getRoleData({ values, role })
+    const handleSubmit = async (values, form) => {
+        const roleData = getRoleData({ values })
 
         try {
             if (role) {
+                const dirtyFields = new Set(
+                    Object.keys(form.getState().dirtyFields)
+                )
+
                 await engine.mutate({
                     resource: `userRoles/${role.id}`,
-                    type: 'update',
-                    data: roleData,
+                    type: 'json-patch',
+                    data: getJsonPatch({
+                        roleData,
+                        dirtyFields,
+                    }),
                 })
             } else {
                 await engine.mutate({

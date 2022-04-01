@@ -21,7 +21,7 @@ export const getJsonPatch = ({ userData, dirtyFields }) => {
             changes.push({
                 op: 'add',
                 path: '/' + field,
-                value,
+                value: value ?? null,
             })
         }
     }

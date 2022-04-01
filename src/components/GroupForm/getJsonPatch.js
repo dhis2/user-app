@@ -13,7 +13,7 @@ export const getJsonPatch = ({ groupData, dirtyFields }) => {
             changes.push({
                 op: 'add',
                 path: '/' + field,
-                value,
+                value: value ?? null,
             })
         }
     }
