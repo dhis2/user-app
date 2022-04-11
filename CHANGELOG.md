@@ -1,3 +1,10 @@
+## [1.3.16](https://github.com/dhis2/user-app/compare/v1.3.15...v1.3.16) (2022-04-11)
+
+
+### Bug Fixes
+
+* **user-list:** only show 'reset password' action if an email can be sent ([#924](https://github.com/dhis2/user-app/issues/924)) ([27ccccb](https://github.com/dhis2/user-app/commit/27ccccbd182f1e60be40a77279c3d82d8e0f96f8))
+
 ## [1.3.15](https://github.com/dhis2/user-app/compare/v1.3.14...v1.3.15) (2022-03-31)
 
 
