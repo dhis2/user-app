@@ -1,3 +1,10 @@
+## [1.3.17](https://github.com/dhis2/user-app/compare/v1.3.16...v1.3.17) (2022-04-11)
+
+
+### Bug Fixes
+
+* **user-list:** show title at top of 'replicate user' form ([#925](https://github.com/dhis2/user-app/issues/925)) ([dd93d8c](https://github.com/dhis2/user-app/commit/dd93d8c7067fc88e387498d88f61c82d39344b74))
+
 ## [1.3.16](https://github.com/dhis2/user-app/compare/v1.3.15...v1.3.16) (2022-04-11)
 
 
