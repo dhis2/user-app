@@ -1,7 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
 import { DataTableToolbar, Pagination, SegmentedControl } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import styles from './BulkUserManager.module.css'
 import { usePendingChanges } from './hooks/usePendingChanges'
 import { useUsers } from './hooks/useUsers'
@@ -28,8 +28,14 @@ const BulkUserManager = ({ groupId, onChange }) => {
     })
     const pendingChanges = usePendingChanges()
 
+    // React Final Form provides fields with a new `onChange` when their value
+    // is updated, so adding `onChange` to the `useEffect`'s list of deps
+    // would trigger an infinite render loop. Instead, we use a ref to refer
+    // to the latest version of `onChange`
+    const onChangeRef = useRef()
+    onChangeRef.current = onChange
     useEffect(() => {
-        onChange(
+        onChangeRef.current(
             pendingChanges.map(({ action, userId }) => ({ action, userId }))
         )
     }, [pendingChanges])
