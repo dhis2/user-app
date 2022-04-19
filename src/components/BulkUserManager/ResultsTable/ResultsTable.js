@@ -14,9 +14,9 @@ import {
 import PropTypes from 'prop-types'
 import React from 'react'
 import DataTableInfoWrapper from './DataTableInfoWrapper'
-import UserTableRow from './UserTableRow'
+import ResultsTableRow from './ResultsTableRow'
 
-const UserTable = ({
+const ResultsTable = ({
     loading,
     error,
     users,
@@ -89,7 +89,7 @@ const UserTable = ({
                     const pendingChange = pendingChanges.get(user.id)
 
                     return (
-                        <UserTableRow
+                        <ResultsTableRow
                             key={user.id}
                             user={user}
                             actionButton={
@@ -116,7 +116,7 @@ const UserTable = ({
     )
 }
 
-UserTable.propTypes = {
+ResultsTable.propTypes = {
     actionLabel: PropTypes.string.isRequired,
     loading: PropTypes.bool.isRequired,
     noResultsMessage: PropTypes.string.isRequired,
@@ -140,4 +140,4 @@ UserTable.propTypes = {
     ),
 }
 
-export default UserTable
+export default ResultsTable

@@ -10,7 +10,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import styles from './UserTableRow.module.css'
+import styles from './ResultsTableRow.module.css'
 
 const getRowClass = pendingChangeAction => {
     switch (pendingChangeAction) {
@@ -49,7 +49,7 @@ PendingChange.propTypes = {
     onCancel: PropTypes.func.isRequired,
 }
 
-const UserTableRow = ({
+const ResultsTableRow = ({
     user,
     pendingChangeAction,
     onPendingChangeCancel,
@@ -76,7 +76,7 @@ const UserTableRow = ({
     </DataTableRow>
 )
 
-UserTableRow.propTypes = {
+ResultsTableRow.propTypes = {
     actionButton: PropTypes.element.isRequired,
     selected: PropTypes.bool.isRequired,
     user: PropTypes.shape({
@@ -88,4 +88,4 @@ UserTableRow.propTypes = {
     pendingChangeAction: PropTypes.oneOf(['ADD', 'REMOVE']),
 }
 
-export default UserTableRow
+export default ResultsTableRow

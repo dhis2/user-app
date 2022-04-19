@@ -6,8 +6,8 @@ import styles from './BulkUserManager.module.css'
 import { usePendingChanges } from './hooks/usePendingChanges'
 import { useUsers } from './hooks/useUsers'
 import PendingChanges from './PendingChanges'
+import ResultsTable from './ResultsTable'
 import TopBar from './TopBar'
-import UserTable from './UserTable'
 
 const BulkUserManager = ({ groupId, onChange }) => {
     const [mode, setMode] = useState(groupId ? 'MEMBERS' : 'NON_MEMBERS')
@@ -75,7 +75,7 @@ const BulkUserManager = ({ groupId, onChange }) => {
                             pendingChanges={pendingChanges}
                         />
                     </DataTableToolbar>
-                    <UserTable
+                    <ResultsTable
                         loading={loading}
                         error={error}
                         users={users}
