@@ -13,7 +13,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import DataTableInfoWrapper from '../../../../components/DataTableInfoWrapper'
+import DataTableInfoWrapper from './DataTableInfoWrapper'
 import UserTableRow from './UserTableRow'
 
 const UserTable = ({
