@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-03-28T08:08:58.138Z\n"
-"PO-Revision-Date: 2022-03-28T08:08:58.138Z\n"
+"POT-Creation-Date: 2022-04-20T10:06:54.716Z\n"
+"PO-Revision-Date: 2022-04-20T10:06:54.716Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -25,30 +25,6 @@ msgstr "Value should be a positive integer"
 
 msgid "Value should be a negative integer"
 msgstr "Value should be a negative integer"
-
-msgid "Filter options"
-msgstr "Filter options"
-
-msgid "Error fetching form"
-msgstr "Error fetching form"
-
-msgid "There was an error fetching this form."
-msgstr "There was an error fetching this form."
-
-msgid "Cancel without saving"
-msgstr "Cancel without saving"
-
-msgid "Basic information"
-msgstr "Basic information"
-
-msgid "Name"
-msgstr "Name"
-
-msgid "Code"
-msgstr "Code"
-
-msgid "Used in analytics reports."
-msgstr "Used in analytics reports."
 
 msgid "Users"
 msgstr "Users"
@@ -86,6 +62,24 @@ msgstr "Cancel all"
 msgid "Cancel"
 msgstr "Cancel"
 
+msgid "Error loading users"
+msgstr "Error loading users"
+
+msgid "Username"
+msgstr "Username"
+
+msgid "Display name"
+msgstr "Display name"
+
+msgid "Action"
+msgstr "Action"
+
+msgid "Will be added"
+msgstr "Will be added"
+
+msgid "Will be removed"
+msgstr "Will be removed"
+
 msgid "Search for a user in this group"
 msgstr "Search for a user in this group"
 
@@ -110,23 +104,29 @@ msgstr "Add 1 user"
 msgid "Add {{selectedCount}} users"
 msgstr "Add {{selectedCount}} users"
 
-msgid "Error loading users"
-msgstr "Error loading users"
+msgid "Filter options"
+msgstr "Filter options"
 
-msgid "Username"
-msgstr "Username"
+msgid "Error fetching form"
+msgstr "Error fetching form"
 
-msgid "Display name"
-msgstr "Display name"
+msgid "There was an error fetching this form."
+msgstr "There was an error fetching this form."
 
-msgid "Action"
-msgstr "Action"
+msgid "Cancel without saving"
+msgstr "Cancel without saving"
 
-msgid "Will be added"
-msgstr "Will be added"
+msgid "Basic information"
+msgstr "Basic information"
 
-msgid "Will be removed"
-msgstr "Will be removed"
+msgid "Name"
+msgstr "Name"
+
+msgid "Code"
+msgstr "Code"
+
+msgid "Used in analytics reports."
+msgstr "Used in analytics reports."
 
 msgid "Error updating group"
 msgstr "Error updating group"

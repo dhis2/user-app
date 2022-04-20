@@ -1,15 +1,21 @@
 import i18n from '@dhis2/d2-i18n'
 import { DataTableToolbar, Pagination, SegmentedControl } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState } from 'react'
 import styles from './BulkUserManager.module.css'
-import { usePendingChanges } from './hooks/usePendingChanges'
 import { useUsers } from './hooks/useUsers'
 import PendingChanges from './PendingChanges'
+import {
+    addEntity,
+    removeEntity,
+    cancelAddEntity,
+    cancelRemoveEntity,
+} from './pendingChangesActions'
+import PendingChangesPropType from './PendingChangesPropType'
 import ResultsTable from './ResultsTable'
 import TopBar from './TopBar'
 
-const BulkUserManager = ({ groupId, onChange }) => {
+const BulkUserManager = ({ groupId, value: pendingChanges, onChange }) => {
     const [mode, setMode] = useState(groupId ? 'MEMBERS' : 'NON_MEMBERS')
     const {
         loading,
@@ -26,20 +32,6 @@ const BulkUserManager = ({ groupId, onChange }) => {
         groupId,
         mode,
     })
-    const pendingChanges = usePendingChanges()
-
-    // React Final Form provides fields with a new `onChange` when their value
-    // is updated, so adding `onChange` to the `useEffect`'s list of deps
-    // would trigger an infinite render loop. Instead, we use a ref to refer
-    // to the latest version of `onChange`
-    const onChangeRef = useRef()
-    onChangeRef.current = onChange
-    useEffect(() => {
-        onChangeRef.current(
-            pendingChanges.map(({ action, userId }) => ({ action, userId }))
-        )
-    }, [pendingChanges])
-
     const showPagination = !loading && !error && users.length > 0
 
     return (
@@ -73,11 +65,13 @@ const BulkUserManager = ({ groupId, onChange }) => {
                             )}
                             totalUsers={pager.total}
                             pendingChanges={pendingChanges}
+                            onChange={onChange}
                         />
                     </DataTableToolbar>
                     <ResultsTable
                         loading={loading}
                         error={error}
+                        mode={mode}
                         users={users}
                         noResultsMessage={
                             mode === 'MEMBERS' && filter === ''
@@ -91,14 +85,21 @@ const BulkUserManager = ({ groupId, onChange }) => {
                                 ? i18n.t('Remove from group')
                                 : i18n.t('Add to group')
                         }
-                        onActionClick={user => {
-                            if (mode === 'MEMBERS') {
-                                pendingChanges.remove(user)
-                            } else {
-                                pendingChanges.add(user)
-                            }
+                        onActionClick={entity => {
+                            onChange(
+                                mode === 'MEMBERS'
+                                    ? removeEntity(pendingChanges, entity)
+                                    : addEntity(pendingChanges, entity)
+                            )
                         }}
                         pendingChanges={pendingChanges}
+                        onPendingChangeCancel={entity => {
+                            onChange(
+                                mode === 'MEMBERS'
+                                    ? cancelRemoveEntity(pendingChanges, entity)
+                                    : cancelAddEntity(pendingChanges, entity)
+                            )
+                        }}
                         selected={selected}
                         onToggleSelected={toggleSelected}
                         onToggleAllSelected={toggleAllSelected}
@@ -130,7 +131,11 @@ const BulkUserManager = ({ groupId, onChange }) => {
                     )}
                 </div>
                 <div>
-                    <PendingChanges pendingChanges={pendingChanges} />
+                    <PendingChanges
+                        pendingChanges={pendingChanges}
+                        onChange={onChange}
+                        renderPendingChange={entity => entity.username}
+                    />
                 </div>
             </div>
         </div>
@@ -138,6 +143,7 @@ const BulkUserManager = ({ groupId, onChange }) => {
 }
 
 BulkUserManager.propTypes = {
+    value: PendingChangesPropType.isRequired,
     onChange: PropTypes.func.isRequired,
     groupId: PropTypes.string,
 }

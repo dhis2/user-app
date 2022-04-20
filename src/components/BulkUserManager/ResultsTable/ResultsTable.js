@@ -13,17 +13,20 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
+import PendingChangesPropType from '../PendingChangesPropType'
 import DataTableInfoWrapper from './DataTableInfoWrapper'
 import ResultsTableRow from './ResultsTableRow'
 
 const ResultsTable = ({
     loading,
     error,
+    mode,
     users,
     noResultsMessage,
     actionLabel,
     onActionClick,
     pendingChanges,
+    onPendingChangeCancel,
     selected,
     onToggleSelected,
     onToggleAllSelected,
@@ -86,7 +89,14 @@ const ResultsTable = ({
             </DataTableHead>
             <DataTableBody loading={loading}>
                 {users.map(user => {
-                    const pendingChange = pendingChanges.get(user.id)
+                    const pendingChangeEntity = (
+                        mode === 'MEMBERS'
+                            ? pendingChanges.removals
+                            : pendingChanges.additions
+                    ).find(e => e.id === user.id)
+                    const hasPendingChange = !!pendingChangeEntity
+                    const pendingChangeAction =
+                        mode === 'MEMBERS' ? 'REMOVE' : 'ADD'
 
                     return (
                         <ResultsTableRow
@@ -102,9 +112,13 @@ const ResultsTable = ({
                                     {actionLabel}
                                 </Button>
                             }
-                            pendingChangeAction={pendingChange?.action}
+                            pendingChangeAction={
+                                hasPendingChange
+                                    ? pendingChangeAction
+                                    : undefined
+                            }
                             onPendingChangeCancel={() =>
-                                pendingChanges.cancel(pendingChange)
+                                onPendingChangeCancel(pendingChangeEntity)
                             }
                             selected={selected.has(user.id)}
                             onToggleSelected={() => onToggleSelected(user.id)}
@@ -119,15 +133,14 @@ const ResultsTable = ({
 ResultsTable.propTypes = {
     actionLabel: PropTypes.string.isRequired,
     loading: PropTypes.bool.isRequired,
+    mode: PropTypes.oneOf(['MEMBERS', 'NON_MEMBERS']).isRequired,
     noResultsMessage: PropTypes.string.isRequired,
-    pendingChanges: PropTypes.shape({
-        cancel: PropTypes.func.isRequired,
-        get: PropTypes.func.isRequired,
-    }).isRequired,
+    pendingChanges: PendingChangesPropType.isRequired,
     selected: PropTypes.shape({
         has: PropTypes.func.isRequired,
     }).isRequired,
     onActionClick: PropTypes.func.isRequired,
+    onPendingChangeCancel: PropTypes.func.isRequired,
     onToggleAllSelected: PropTypes.func.isRequired,
     onToggleSelected: PropTypes.func.isRequired,
     error: PropTypes.instanceOf(Error),

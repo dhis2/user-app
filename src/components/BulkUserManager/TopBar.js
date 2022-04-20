@@ -2,6 +2,8 @@ import i18n from '@dhis2/d2-i18n'
 import { InputField, Button } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { addEntity, removeEntity } from './pendingChangesActions'
+import PendingChangesPropType from './PendingChangesPropType'
 import styles from './TopBar.module.css'
 
 const TopBar = ({
@@ -12,6 +14,7 @@ const TopBar = ({
     selectedUsers,
     totalUsers,
     pendingChanges,
+    onChange,
 }) => {
     const selectedCount = selectedUsers.length
 
@@ -50,13 +53,15 @@ const TopBar = ({
                 small
                 secondary
                 onClick={() => {
-                    selectedUsers.forEach(user => {
-                        if (mode === 'MEMBERS') {
-                            pendingChanges.remove(user)
-                        } else {
-                            pendingChanges.add(user)
-                        }
-                    })
+                    onChange(
+                        selectedUsers.reduce((pendingChanges, user) => {
+                            if (mode === 'MEMBERS') {
+                                return removeEntity(pendingChanges, user)
+                            } else {
+                                return addEntity(pendingChanges, user)
+                            }
+                        }, pendingChanges)
+                    )
                 }}
             >
                 {mode === 'MEMBERS'
@@ -79,11 +84,9 @@ TopBar.propTypes = {
     filter: PropTypes.string.isRequired,
     loading: PropTypes.bool.isRequired,
     mode: PropTypes.oneOf(['MEMBERS', 'NON_MEMBERS']).isRequired,
-    pendingChanges: PropTypes.shape({
-        add: PropTypes.func.isRequired,
-        remove: PropTypes.func.isRequired,
-    }).isRequired,
+    pendingChanges: PendingChangesPropType.isRequired,
     selectedUsers: PropTypes.array.isRequired,
+    onChange: PropTypes.func.isRequired,
     onFilterChange: PropTypes.func.isRequired,
     totalUsers: PropTypes.number,
 }

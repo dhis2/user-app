@@ -3,65 +3,77 @@ import { Button, IconCross16, IconAdd16, colors } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './PendingChanges.module.css'
+import {
+    resetChanges,
+    cancelAddEntity,
+    cancelRemoveEntity,
+    totalPendingChanges,
+} from './pendingChangesActions'
+import PendingChangesPropType from './PendingChangesPropType'
 
-const PendingChanges = ({ pendingChanges }) => (
+const PendingChanges = ({ pendingChanges, onChange, renderPendingChange }) => (
     <>
         <div className={styles.pendingChangesRow}>
             <span className={styles.pendingChangesCount}>
-                {pendingChanges.size === 1
+                {totalPendingChanges(pendingChanges) === 1
                     ? i18n.t('1 pending change')
                     : i18n.t('{{pendingChanges}} pending changes', {
-                          pendingChanges: pendingChanges.size,
+                          pendingChanges: totalPendingChanges(pendingChanges),
                       })}
             </span>
-            {pendingChanges.size > 0 && (
-                <Button secondary small onClick={pendingChanges.cancelAll}>
+            {totalPendingChanges(pendingChanges) > 0 && (
+                <Button
+                    secondary
+                    small
+                    onClick={() => onChange(resetChanges())}
+                >
                     {i18n.t('Cancel all')}
                 </Button>
             )}
         </div>
         <div className={styles.scrollbox}>
-            {pendingChanges.map(pendingChange => {
-                const { action, userId, username } = pendingChange
-
-                return (
-                    <div
-                        key={userId}
-                        className={
-                            action === 'ADD'
-                                ? styles.pendingAddRow
-                                : styles.pendingRemoveRow
+            {pendingChanges.additions.map(entity => (
+                <div key={entity.id} className={styles.pendingAddRow}>
+                    <span className={styles.pendingChangeSummary}>
+                        <IconAdd16 color={colors.green700} />
+                        {renderPendingChange(entity)}
+                    </span>
+                    <Button
+                        secondary
+                        small
+                        onClick={() =>
+                            onChange(cancelAddEntity(pendingChanges, entity))
                         }
                     >
-                        <span className={styles.pendingChangeSummary}>
-                            {action === 'ADD' ? (
-                                <IconAdd16 color={colors.green700} />
-                            ) : (
-                                <IconCross16 color={colors.red700} />
-                            )}
-                            {username}
-                        </span>
-                        <Button
-                            secondary
-                            small
-                            onClick={() => pendingChanges.cancel(pendingChange)}
-                        >
-                            {i18n.t('Cancel')}
-                        </Button>
-                    </div>
-                )
-            })}
+                        {i18n.t('Cancel')}
+                    </Button>
+                </div>
+            ))}
+            {pendingChanges.removals.map(entity => (
+                <div key={entity.id} className={styles.pendingRemoveRow}>
+                    <span className={styles.pendingChangeSummary}>
+                        <IconCross16 color={colors.red700} />
+                        {renderPendingChange(entity)}
+                    </span>
+                    <Button
+                        secondary
+                        small
+                        onClick={() =>
+                            onChange(cancelRemoveEntity(pendingChanges, entity))
+                        }
+                    >
+                        {i18n.t('Cancel')}
+                    </Button>
+                </div>
+            ))}
         </div>
     </>
 )
 
 PendingChanges.propTypes = {
-    pendingChanges: PropTypes.shape({
-        cancel: PropTypes.func.isRequired,
-        cancelAll: PropTypes.func.isRequired,
-        map: PropTypes.func.isRequired,
-        size: PropTypes.number.isRequired,
-    }).isRequired,
+    pendingChanges: PendingChangesPropType.isRequired,
+    onChange: PropTypes.func.isRequired,
+    renderPendingChange: PropTypes.func,
 }
 
 export default PendingChanges

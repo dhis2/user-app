@@ -5,18 +5,25 @@ import BulkUserManager from '../BulkUserManager/index.js'
 
 const BulkUserManagerFF = ({ input, groupId }) => {
     const handleChange = useCallback(
-        pendingChanges => {
-            input.onChange(pendingChanges)
+        value => {
+            input.onChange(value)
             input.onBlur()
         },
         [input.onChange, input.onBlur]
     )
 
-    return <BulkUserManager groupId={groupId} onChange={handleChange} />
+    return (
+        <BulkUserManager
+            groupId={groupId}
+            value={input.value}
+            onChange={handleChange}
+        />
+    )
 }
 
 BulkUserManagerFF.propTypes = {
     input: PropTypes.shape({
+        value: PropTypes.object.isRequired,
         onBlur: PropTypes.func.isRequired,
         onChange: PropTypes.func.isRequired,
     }).isRequired,
@@ -27,7 +34,10 @@ const BulkUserManagerField = props => {
     // Fixes the infinite loop rendering bug that occurs when the
     // initial value fails shallow equal on form rerender.
     // Issue on GitHub: https://github.com/final-form/react-final-form/issues/686
-    const [memoedInitialValue] = useState([])
+    const [memoedInitialValue] = useState({
+        additions: [],
+        removals: [],
+    })
 
     return (
         <ReactFinalForm.Field
