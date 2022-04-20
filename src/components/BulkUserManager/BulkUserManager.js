@@ -134,7 +134,7 @@ const BulkUserManager = ({ groupId, value: pendingChanges, onChange }) => {
                     <PendingChanges
                         pendingChanges={pendingChanges}
                         onChange={onChange}
-                        renderPendingChange={entity => entity.username}
+                        renderPendingChange={entity => entity.username || entity.name}
                     />
                 </div>
             </div>
