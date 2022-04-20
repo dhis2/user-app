@@ -20,6 +20,7 @@ import ResultsTableRow from './ResultsTableRow'
 const ResultsTable = ({
     columnHeaders,
     renderRow,
+    queryErrorMessage,
     loading,
     error,
     mode,
@@ -46,7 +47,7 @@ const ResultsTable = ({
     if (!loading && error) {
         return (
             <DataTableInfoWrapper columns={4}>
-                <NoticeBox error title={i18n.t('Error loading users')}>
+                <NoticeBox error title={queryErrorMessage}>
                     {error.message}
                 </NoticeBox>
             </DataTableInfoWrapper>
@@ -147,6 +148,7 @@ ResultsTable.propTypes = {
     onToggleAllSelected: PropTypes.func.isRequired,
     onToggleSelected: PropTypes.func.isRequired,
     error: PropTypes.instanceOf(Error),
+    queryErrorMessage: PropTypes.string,
     results: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string.isRequired,

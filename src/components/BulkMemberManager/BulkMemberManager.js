@@ -17,6 +17,10 @@ import TopBar from './TopBar'
 
 const BulkMemberManager = ({
     canManageMembers,
+    topBarFilterLabel,
+    topBarSelectionText,
+    topBarActionText,
+    queryErrorMessage,
     membersQuery,
     nonMembersQuery,
     transformQueryResponse,
@@ -70,6 +74,9 @@ const BulkMemberManager = ({
                 <div>
                     <DataTableToolbar className={styles.topbar}>
                         <TopBar
+                            filterLabel={topBarFilterLabel}
+                            selectionText={topBarSelectionText}
+                            actionText={topBarActionText}
                             mode={mode}
                             loading={loading}
                             filter={filter}
@@ -77,7 +84,7 @@ const BulkMemberManager = ({
                             selectedUsers={(results || []).filter(({ id }) =>
                                 selected.has(id)
                             )}
-                            totalUsers={pager.total}
+                            pagerTotal={pager.total}
                             pendingChanges={pendingChanges}
                             onChange={onChange}
                         />
@@ -85,6 +92,7 @@ const BulkMemberManager = ({
                     <ResultsTable
                         columnHeaders={columnHeaders}
                         renderRow={renderRow}
+                        queryErrorMessage={queryErrorMessage}
                         loading={loading}
                         error={error}
                         mode={mode}
@@ -203,10 +211,29 @@ BulkMemberManager.propTypes = {
      */
     filterDebounceMs: PropTypes.number,
     /**
+     * Message shown to user if members/non-members query fails.
+     */
+    queryErrorMessage: PropTypes.string,
+    /**
      * Called with arg `(entity)`. Returns an array containing the
      * contents of each column for the particular row.
      */
     renderRow: PropTypes.func,
+    /**
+     * Called with args `({ mode, selectedCount })`.
+     */
+    topBarActionText: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+    /**
+     * Called with args `({ mode })`.
+     */
+    topBarFilterLabel: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+    /**
+     * Called with args `({ selectedCount, pagerTotal })`.
+     */
+    topBarSelectionText: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.string,
+    ]),
     /**
      * Callback to transform the response from the data queries.
      * Shape of return value: `{ id: string, displayName: string }[]`

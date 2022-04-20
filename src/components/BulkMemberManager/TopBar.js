@@ -1,4 +1,3 @@
-import i18n from '@dhis2/d2-i18n'
 import { InputField, Button } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -7,12 +6,15 @@ import PendingChangesPropType from './PendingChangesPropType'
 import styles from './TopBar.module.css'
 
 const TopBar = ({
+    filterLabel,
+    selectionText,
+    actionText,
     mode,
     loading,
     filter,
     onFilterChange,
     selectedUsers,
-    totalUsers,
+    pagerTotal,
     pendingChanges,
     onChange,
 }) => {
@@ -22,9 +24,9 @@ const TopBar = ({
         return (
             <InputField
                 placeholder={
-                    mode === 'MEMBERS'
-                        ? i18n.t('Search for a user in this group')
-                        : i18n.t('Search for a user to add')
+                    typeof filterLabel === 'function'
+                        ? filterLabel({ mode })
+                        : filterLabel
                 }
                 value={filter}
                 onChange={({ value }) => onFilterChange(value)}
@@ -39,15 +41,9 @@ const TopBar = ({
     return (
         <>
             <span className={styles.selection}>
-                {totalUsers === 1
-                    ? i18n.t('1 of 1 user selected')
-                    : i18n.t(
-                          '{{selectedCount}} of {{totalUsers}} users selected',
-                          {
-                              selectedCount,
-                              totalUsers,
-                          }
-                      )}
+                {typeof selectionText === 'function'
+                    ? selectionText({ selectedCount, pagerTotal })
+                    : selectionText}
             </span>
             <Button
                 small
@@ -64,17 +60,9 @@ const TopBar = ({
                     )
                 }}
             >
-                {mode === 'MEMBERS'
-                    ? selectedCount === 1
-                        ? i18n.t('Remove 1 user')
-                        : i18n.t('Remove {{selectedCount}} users', {
-                              selectedCount,
-                          })
-                    : selectedCount === 1
-                    ? i18n.t('Add 1 user')
-                    : i18n.t('Add {{selectedCount}} users', {
-                          selectedCount,
-                      })}
+                {typeof actionText === 'function'
+                    ? actionText({ mode, selectedCount })
+                    : actionText}
             </Button>
         </>
     )
@@ -88,7 +76,10 @@ TopBar.propTypes = {
     selectedUsers: PropTypes.array.isRequired,
     onChange: PropTypes.func.isRequired,
     onFilterChange: PropTypes.func.isRequired,
-    totalUsers: PropTypes.number,
+    actionText: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+    filterLabel: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+    pagerTotal: PropTypes.number,
+    selectionText: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
 }
 
 export default TopBar
