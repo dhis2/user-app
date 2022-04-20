@@ -47,16 +47,16 @@ const ReplicateModal = ({ user, refetchUsers, onClose }) => {
     }
 
     return (
-        <Modal small>
-            <ModalTitle>
-                {i18n.t('Replicate user {{- name}}', {
-                    name: user.displayName,
-                })}
-            </ModalTitle>
-            <ReactFinalForm.Form onSubmit={handleReplicate}>
-                {({ handleSubmit, valid, submitting }) => (
-                    <form onSubmit={handleSubmit}>
-                        <ModalContent>
+        <ReactFinalForm.Form onSubmit={handleReplicate}>
+            {({ handleSubmit, valid, submitting }) => (
+                <Modal small>
+                    <ModalTitle>
+                        {i18n.t('Replicate user {{- name}}', {
+                            name: user.displayName,
+                        })}
+                    </ModalTitle>
+                    <ModalContent>
+                        <form onSubmit={handleSubmit}>
                             <ReactFinalForm.Field
                                 name="username"
                                 label={i18n.t('Username')}
@@ -79,30 +79,30 @@ const ReplicateModal = ({ user, refetchUsers, onClose }) => {
                                 className={styles.field}
                                 component={InputFieldFF}
                             />
-                        </ModalContent>
-                        <ModalActions>
-                            <ButtonStrip end>
-                                <Button
-                                    secondary
-                                    onClick={onClose}
-                                    disabled={submitting}
-                                >
-                                    {i18n.t('Cancel')}
-                                </Button>
-                                <Button
-                                    primary
-                                    type="submit"
-                                    disabled={!valid}
-                                    loading={submitting}
-                                >
-                                    {i18n.t('Replicate user')}
-                                </Button>
-                            </ButtonStrip>
-                        </ModalActions>
-                    </form>
-                )}
-            </ReactFinalForm.Form>
-        </Modal>
+                        </form>
+                    </ModalContent>
+                    <ModalActions>
+                        <ButtonStrip end>
+                            <Button
+                                secondary
+                                onClick={onClose}
+                                disabled={submitting}
+                            >
+                                {i18n.t('Cancel')}
+                            </Button>
+                            <Button
+                                primary
+                                disabled={!valid}
+                                loading={submitting}
+                                onClick={handleSubmit}
+                            >
+                                {i18n.t('Replicate user')}
+                            </Button>
+                        </ButtonStrip>
+                    </ModalActions>
+                </Modal>
+            )}
+        </ReactFinalForm.Form>
     )
 }
 
