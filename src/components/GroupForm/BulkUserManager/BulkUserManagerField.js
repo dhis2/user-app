@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React, { useCallback, useState } from 'react'
 import BulkUserManager from './BulkUserManager'
 
-const BulkUserManagerFF = ({ input, groupId }) => {
+const BulkUserManagerFF = ({ className, input, groupId }) => {
     const handleChange = useCallback(
         value => {
             input.onChange(value)
@@ -14,6 +14,7 @@ const BulkUserManagerFF = ({ input, groupId }) => {
 
     return (
         <BulkUserManager
+            className={className}
             groupId={groupId}
             value={input.value}
             onChange={handleChange}
@@ -27,6 +28,7 @@ BulkUserManagerFF.propTypes = {
         onBlur: PropTypes.func.isRequired,
         onChange: PropTypes.func.isRequired,
     }).isRequired,
+    className: PropTypes.string,
     groupId: PropTypes.string,
 }
 

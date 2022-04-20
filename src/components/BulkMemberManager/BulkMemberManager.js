@@ -1,5 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { DataTableToolbar, Pagination, SegmentedControl } from '@dhis2/ui'
+import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import styles from './BulkMemberManager.module.css'
@@ -16,6 +17,7 @@ import ResultsTable from './ResultsTable'
 import TopBar from './TopBar'
 
 const BulkMemberManager = ({
+    className,
     canManageMembers,
     membersManagementLabel,
     nonMembersManagementLabel,
@@ -59,7 +61,7 @@ const BulkMemberManager = ({
     const showPagination = !loading && !error && results.length > 0
 
     return (
-        <div className={styles.container}>
+        <div className={cx(styles.container, className)}>
             <SegmentedControl
                 selected={mode}
                 options={[
@@ -209,6 +211,10 @@ BulkMemberManager.propTypes = {
      * existing members to manage. Default value: `true`.
      */
     canManageMembers: PropTypes.bool,
+    /**
+     * CSS class name applied to container element.
+     */
+    className: PropTypes.string,
     /**
      * Column headers for results table. Default value: `['Display name']`.
      */

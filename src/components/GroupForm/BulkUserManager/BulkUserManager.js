@@ -51,11 +51,12 @@ const renderPageSummaryText = ({ firstItem, lastItem, total }) =>
         total,
     })
 
-const BulkUserManager = ({ groupId, value, onChange }) => {
+const BulkUserManager = ({ className, groupId, value, onChange }) => {
     const { membersQuery, nonMembersQuery } = useQueries({ groupId })
 
     return (
         <BulkMemberManager
+            className={className}
             canManageMembers={!!groupId}
             membersManagementLabel={i18n.t('View and remove users from group')}
             nonMembersManagementLabel={i18n.t('Add users to group')}
@@ -80,6 +81,7 @@ const BulkUserManager = ({ groupId, value, onChange }) => {
 BulkUserManager.propTypes = {
     value: PropTypes.object.isRequired,
     onChange: PropTypes.func.isRequired,
+    className: PropTypes.string,
     groupId: PropTypes.string,
 }
 

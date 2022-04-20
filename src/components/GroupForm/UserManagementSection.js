@@ -3,13 +3,18 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { FormSection } from '../Form'
 import BulkUserManagerField from './BulkUserManager/BulkUserManagerField'
+import styles from './UserManagementSection.module.css'
 
 const UserManagementSection = React.memo(({ group }) => (
     <FormSection
         title={i18n.t('User management')}
         description={i18n.t('Add or remove users from this group.')}
     >
-        <BulkUserManagerField name="members" groupId={group?.id} />
+        <BulkUserManagerField
+            name="members"
+            groupId={group?.id}
+            className={styles.bulkUserManagerField}
+        />
     </FormSection>
 ))
 
