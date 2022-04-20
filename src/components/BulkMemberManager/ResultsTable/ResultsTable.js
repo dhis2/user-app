@@ -25,7 +25,7 @@ const ResultsTable = ({
     error,
     mode,
     results,
-    noResultsMessage,
+    noResultsText,
     actionLabel,
     onActionClick,
     pendingChanges,
@@ -57,7 +57,7 @@ const ResultsTable = ({
     if (!loading && results.length === 0) {
         return (
             <DataTableInfoWrapper columns={4}>
-                <p>{noResultsMessage}</p>
+                <p>{noResultsText}</p>
             </DataTableInfoWrapper>
         )
     }
@@ -137,7 +137,7 @@ ResultsTable.propTypes = {
     columnHeaders: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
     loading: PropTypes.bool.isRequired,
     mode: PropTypes.oneOf(['MEMBERS', 'NON_MEMBERS']).isRequired,
-    noResultsMessage: PropTypes.string.isRequired,
+    noResultsText: PropTypes.string.isRequired,
     pendingChanges: PendingChangesPropType.isRequired,
     renderRow: PropTypes.func.isRequired,
     selected: PropTypes.shape({

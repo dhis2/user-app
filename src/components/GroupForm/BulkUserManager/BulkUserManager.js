@@ -30,11 +30,26 @@ const renderTopBarActionText = ({ mode, selectedCount }) =>
               selectedCount,
           })
 
+const renderRowActionLabel = ({ mode }) =>
+    mode === 'MEMBERS' ? i18n.t('Remove from group') : i18n.t('Add to group')
+
 const transformUserResults = results =>
     results.users.map(user => ({
         ...user,
         displayName: user.username || user.name,
     }))
+
+const renderNoResultsText = ({ mode, filter }) =>
+    mode === 'MEMBERS' && filter === ''
+        ? i18n.t(`There aren't any users in this group yet`)
+        : i18n.t('No results found')
+
+const renderPageSummaryText = ({ firstItem, lastItem, total }) =>
+    i18n.t('Users {{firstItem}}-{{lastItem}} of {{total}}', {
+        firstItem,
+        lastItem,
+        total,
+    })
 
 const BulkUserManager = ({ groupId, value, onChange }) => {
     const { membersQuery, nonMembersQuery } = useQueries({ groupId })
@@ -42,15 +57,20 @@ const BulkUserManager = ({ groupId, value, onChange }) => {
     return (
         <BulkMemberManager
             canManageMembers={!!groupId}
+            membersManagementLabel={i18n.t('View and remove users from group')}
+            nonMembersManagementLabel={i18n.t('Add users to group')}
             topBarFilterLabel={renderTopBarFilterLabel}
             topBarSelectionText={renderTopBarSelectionText}
             topBarActionText={renderTopBarActionText}
+            noResultsText={renderNoResultsText}
             columnHeaders={[i18n.t('Username'), i18n.t('Display name')]}
+            rowActionLabel={renderRowActionLabel}
             renderRow={user => [user.username, user.name]}
             queryErrorMessage={i18n.t('Error loading users')}
             membersQuery={membersQuery}
             nonMembersQuery={nonMembersQuery}
             transformQueryResponse={transformUserResults}
+            pageSummaryText={renderPageSummaryText}
             value={value}
             onChange={onChange}
         />

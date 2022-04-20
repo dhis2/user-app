@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-04-20T14:23:06.484Z\n"
-"PO-Revision-Date: 2022-04-20T14:23:06.484Z\n"
+"POT-Creation-Date: 2022-04-20T15:07:45.050Z\n"
+"PO-Revision-Date: 2022-04-20T15:07:45.050Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -26,26 +26,8 @@ msgstr "Value should be a positive integer"
 msgid "Value should be a negative integer"
 msgstr "Value should be a negative integer"
 
-msgid "View and remove users from group"
-msgstr "View and remove users from group"
-
-msgid "Add users to group"
-msgstr "Add users to group"
-
-msgid "There aren't any users in this group yet"
-msgstr "There aren't any users in this group yet"
-
 msgid "No results found"
 msgstr "No results found"
-
-msgid "Remove from group"
-msgstr "Remove from group"
-
-msgid "Add to group"
-msgstr "Add to group"
-
-msgid "Users {{firstItem}}-{{lastItem}} of {{total}}"
-msgstr "Users {{firstItem}}-{{lastItem}} of {{total}}"
 
 msgid "Display name"
 msgstr "Display name"
@@ -62,9 +44,6 @@ msgstr "Cancel all"
 msgid "Cancel"
 msgstr "Cancel"
 
-msgid "Error loading users"
-msgstr "Error loading users"
-
 msgid "Action"
 msgstr "Action"
 
@@ -73,30 +52,6 @@ msgstr "Will be added"
 
 msgid "Will be removed"
 msgstr "Will be removed"
-
-msgid "Search for a user in this group"
-msgstr "Search for a user in this group"
-
-msgid "Search for a user to add"
-msgstr "Search for a user to add"
-
-msgid "1 of 1 user selected"
-msgstr "1 of 1 user selected"
-
-msgid "{{selectedCount}} of {{totalUsers}} users selected"
-msgstr "{{selectedCount}} of {{totalUsers}} users selected"
-
-msgid "Remove 1 user"
-msgstr "Remove 1 user"
-
-msgid "Remove {{selectedCount}} users"
-msgstr "Remove {{selectedCount}} users"
-
-msgid "Add 1 user"
-msgstr "Add 1 user"
-
-msgid "Add {{selectedCount}} users"
-msgstr "Add {{selectedCount}} users"
 
 msgid "Filter options"
 msgstr "Filter options"
@@ -122,8 +77,53 @@ msgstr "Code"
 msgid "Used in analytics reports."
 msgstr "Used in analytics reports."
 
+msgid "Search for a user in this group"
+msgstr "Search for a user in this group"
+
+msgid "Search for a user to add"
+msgstr "Search for a user to add"
+
+msgid "1 of 1 user selected"
+msgstr "1 of 1 user selected"
+
+msgid "{{selectedCount}} of {{totalUsers}} users selected"
+msgstr "{{selectedCount}} of {{totalUsers}} users selected"
+
+msgid "Remove 1 user"
+msgstr "Remove 1 user"
+
+msgid "Remove {{selectedCount}} users"
+msgstr "Remove {{selectedCount}} users"
+
+msgid "Add 1 user"
+msgstr "Add 1 user"
+
+msgid "Add {{selectedCount}} users"
+msgstr "Add {{selectedCount}} users"
+
+msgid "Remove from group"
+msgstr "Remove from group"
+
+msgid "Add to group"
+msgstr "Add to group"
+
+msgid "There aren't any users in this group yet"
+msgstr "There aren't any users in this group yet"
+
+msgid "Users {{firstItem}}-{{lastItem}} of {{total}}"
+msgstr "Users {{firstItem}}-{{lastItem}} of {{total}}"
+
+msgid "View and remove users from group"
+msgstr "View and remove users from group"
+
+msgid "Add users to group"
+msgstr "Add users to group"
+
 msgid "Username"
 msgstr "Username"
+
+msgid "Error loading users"
+msgstr "Error loading users"
 
 msgid "Error updating group"
 msgstr "Error updating group"

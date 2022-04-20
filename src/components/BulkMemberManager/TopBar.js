@@ -13,12 +13,12 @@ const TopBar = ({
     loading,
     filter,
     onFilterChange,
-    selectedUsers,
+    selectedResults,
     pagerTotal,
     pendingChanges,
     onChange,
 }) => {
-    const selectedCount = selectedUsers.length
+    const selectedCount = selectedResults.length
 
     if (selectedCount === 0) {
         return (
@@ -50,11 +50,11 @@ const TopBar = ({
                 secondary
                 onClick={() => {
                     onChange(
-                        selectedUsers.reduce((pendingChanges, user) => {
+                        selectedResults.reduce((pendingChanges, entity) => {
                             if (mode === 'MEMBERS') {
-                                return removeEntity(pendingChanges, user)
+                                return removeEntity(pendingChanges, entity)
                             } else {
-                                return addEntity(pendingChanges, user)
+                                return addEntity(pendingChanges, entity)
                             }
                         }, pendingChanges)
                     )
@@ -73,7 +73,7 @@ TopBar.propTypes = {
     loading: PropTypes.bool.isRequired,
     mode: PropTypes.oneOf(['MEMBERS', 'NON_MEMBERS']).isRequired,
     pendingChanges: PendingChangesPropType.isRequired,
-    selectedUsers: PropTypes.array.isRequired,
+    selectedResults: PropTypes.array.isRequired,
     onChange: PropTypes.func.isRequired,
     onFilterChange: PropTypes.func.isRequired,
     actionText: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),

@@ -17,16 +17,21 @@ import TopBar from './TopBar'
 
 const BulkMemberManager = ({
     canManageMembers,
+    membersManagementLabel,
+    nonMembersManagementLabel,
     topBarFilterLabel,
     topBarSelectionText,
     topBarActionText,
+    noResultsText,
     queryErrorMessage,
     membersQuery,
     nonMembersQuery,
     transformQueryResponse,
     filterDebounceMs,
     columnHeaders,
+    rowActionLabel,
     renderRow,
+    pageSummaryText,
     value: pendingChanges,
     onChange,
 }) => {
@@ -59,12 +64,12 @@ const BulkMemberManager = ({
                 selected={mode}
                 options={[
                     {
-                        label: i18n.t('View and remove users from group'),
+                        label: membersManagementLabel,
                         value: 'MEMBERS',
                         disabled: !canManageMembers,
                     },
                     {
-                        label: i18n.t('Add users to group'),
+                        label: nonMembersManagementLabel,
                         value: 'NON_MEMBERS',
                     },
                 ]}
@@ -81,9 +86,13 @@ const BulkMemberManager = ({
                             loading={loading}
                             filter={filter}
                             onFilterChange={setFilter}
-                            selectedUsers={(results || []).filter(({ id }) =>
-                                selected.has(id)
-                            )}
+                            selectedResults={
+                                results
+                                    ? results.filter(({ id }) =>
+                                          selected.has(id)
+                                      )
+                                    : []
+                            }
                             pagerTotal={pager.total}
                             pendingChanges={pendingChanges}
                             onChange={onChange}
@@ -97,17 +106,15 @@ const BulkMemberManager = ({
                         error={error}
                         mode={mode}
                         results={results}
-                        noResultsMessage={
-                            mode === 'MEMBERS' && filter === ''
-                                ? i18n.t(
-                                      `There aren't any users in this group yet`
-                                  )
-                                : i18n.t('No results found')
+                        noResultsText={
+                            typeof noResultsText === 'function'
+                                ? noResultsText({ mode, filter })
+                                : noResultsText
                         }
                         actionLabel={
-                            mode === 'MEMBERS'
-                                ? i18n.t('Remove from group')
-                                : i18n.t('Add to group')
+                            typeof rowActionLabel === 'function'
+                                ? rowActionLabel({ mode })
+                                : rowActionLabel
                         }
                         onActionClick={entity => {
                             onChange(
@@ -134,20 +141,7 @@ const BulkMemberManager = ({
                                 className={styles.pagination}
                                 {...pager}
                                 onPageChange={setPage}
-                                pageSummaryText={({
-                                    firstItem,
-                                    lastItem,
-                                    total,
-                                }) =>
-                                    i18n.t(
-                                        'Users {{firstItem}}-{{lastItem}} of {{total}}',
-                                        {
-                                            firstItem,
-                                            lastItem,
-                                            total,
-                                        }
-                                    )
-                                }
+                                pageSummaryText={pageSummaryText}
                                 hidePageSelect
                                 hidePageSizeSelect
                             />
@@ -167,6 +161,7 @@ const BulkMemberManager = ({
 
 BulkMemberManager.defaultProps = {
     canManageMembers: true,
+    noResultsText: i18n.t('No results found'),
     columnHeaders: [i18n.t('Display name')],
     renderRow: entity => [entity.displayName],
     filterDebounceMs: 375,
@@ -175,6 +170,10 @@ BulkMemberManager.defaultProps = {
 
 BulkMemberManager.propTypes = {
     /**
+     * Label used by segmented control for member management option.
+     */
+    membersManagementLabel: PropTypes.string.isRequired,
+    /**
      * Query for fetching members to view and/or remove.
      * Query params passed to `results` query: `({ page, filter })`
      */
@@ -182,12 +181,21 @@ BulkMemberManager.propTypes = {
         results: PropTypes.object.isRequired,
     }).isRequired,
     /**
+     * Label used by segmented control for non-member management option.
+     */
+    nonMembersManagementLabel: PropTypes.string.isRequired,
+    /**
      * Query for fetching non-members to view and/or add.
      * Query params passed to `results` query: `({ page, filter })`
      */
     nonMembersQuery: PropTypes.shape({
         results: PropTypes.object.isRequired,
     }).isRequired,
+    /**
+     * Called with args `({ mode })`.
+     */
+    rowActionLabel: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
+        .isRequired,
     /**
      * Current pending changes.
      */
@@ -202,14 +210,22 @@ BulkMemberManager.propTypes = {
      */
     canManageMembers: PropTypes.bool,
     /**
-     * Column headers for results table. Default value of `['Display name']`.
+     * Column headers for results table. Default value: `['Display name']`.
      */
     columnHeaders: PropTypes.arrayOf(PropTypes.string.isRequired),
     /**
      * Debounce (in milliseconds) applied to filter before triggering a
-     * new request. Default value of 375ms.
+     * new request. Default value: `375`.
      */
     filterDebounceMs: PropTypes.number,
+    /**
+     * Called with args `({ mode, filter })`. Default value: `'No results found'`.
+     */
+    noResultsText: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+    /**
+     * See documentation for `Pagination` component's `pageSummaryText` prop.
+     */
+    pageSummaryText: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     /**
      * Message shown to user if members/non-members query fails.
      */
