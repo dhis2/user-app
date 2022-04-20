@@ -1,7 +1,7 @@
 import { ReactFinalForm } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useCallback, useState } from 'react'
-import BulkUserManager from '../BulkUserManager/index.js'
+import BulkUserManager from './BulkUserManager'
 
 const BulkUserManagerFF = ({ input, groupId }) => {
     const handleChange = useCallback(

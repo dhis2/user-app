@@ -50,7 +50,7 @@ PendingChange.propTypes = {
 }
 
 const ResultsTableRow = ({
-    user,
+    cells,
     pendingChangeAction,
     onPendingChangeCancel,
     actionButton,
@@ -61,8 +61,9 @@ const ResultsTableRow = ({
         <DataTableCell width="48px">
             <Checkbox checked={selected} onChange={onToggleSelected} />
         </DataTableCell>
-        <DataTableCell>{user.username}</DataTableCell>
-        <DataTableCell>{user.name}</DataTableCell>
+        {cells.map((cell, index) => (
+            <DataTableCell key={index}>{cell}</DataTableCell>
+        ))}
         <DataTableCell>
             {pendingChangeAction ? (
                 <PendingChange
@@ -78,11 +79,8 @@ const ResultsTableRow = ({
 
 ResultsTableRow.propTypes = {
     actionButton: PropTypes.element.isRequired,
+    cells: PropTypes.array.isRequired,
     selected: PropTypes.bool.isRequired,
-    user: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        username: PropTypes.string.isRequired,
-    }).isRequired,
     onPendingChangeCancel: PropTypes.func.isRequired,
     onToggleSelected: PropTypes.func.isRequired,
     pendingChangeAction: PropTypes.oneOf(['ADD', 'REMOVE']),

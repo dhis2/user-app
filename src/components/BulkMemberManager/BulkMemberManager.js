@@ -2,8 +2,8 @@ import i18n from '@dhis2/d2-i18n'
 import { DataTableToolbar, Pagination, SegmentedControl } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import styles from './BulkUserManager.module.css'
-import { useUsers } from './hooks/useUsers'
+import styles from './BulkMemberManager.module.css'
+import { useResults } from './hooks/useResults'
 import PendingChanges from './PendingChanges'
 import {
     addEntity,
@@ -15,12 +15,24 @@ import PendingChangesPropType from './PendingChangesPropType'
 import ResultsTable from './ResultsTable'
 import TopBar from './TopBar'
 
-const BulkUserManager = ({ groupId, value: pendingChanges, onChange }) => {
-    const [mode, setMode] = useState(groupId ? 'MEMBERS' : 'NON_MEMBERS')
+const BulkMemberManager = ({
+    canManageMembers,
+    membersQuery,
+    nonMembersQuery,
+    transformQueryResponse,
+    filterDebounceMs,
+    columnHeaders,
+    renderRow,
+    value: pendingChanges,
+    onChange,
+}) => {
+    const [mode, setMode] = useState(
+        canManageMembers ? 'MEMBERS' : 'NON_MEMBERS'
+    )
     const {
         loading,
         error,
-        users,
+        results,
         pager,
         setPage,
         selected,
@@ -28,22 +40,24 @@ const BulkUserManager = ({ groupId, value: pendingChanges, onChange }) => {
         toggleAllSelected,
         filter,
         setFilter,
-    } = useUsers({
-        groupId,
+    } = useResults({
+        membersQuery,
+        nonMembersQuery,
+        transformQueryResponse,
+        filterDebounceMs,
         mode,
     })
-    const showPagination = !loading && !error && users.length > 0
+    const showPagination = !loading && !error && results.length > 0
 
     return (
         <div className={styles.container}>
-            <h2>{i18n.t('Users')}</h2>
             <SegmentedControl
                 selected={mode}
                 options={[
                     {
                         label: i18n.t('View and remove users from group'),
                         value: 'MEMBERS',
-                        disabled: !groupId,
+                        disabled: !canManageMembers,
                     },
                     {
                         label: i18n.t('Add users to group'),
@@ -60,7 +74,7 @@ const BulkUserManager = ({ groupId, value: pendingChanges, onChange }) => {
                             loading={loading}
                             filter={filter}
                             onFilterChange={setFilter}
-                            selectedUsers={(users || []).filter(({ id }) =>
+                            selectedUsers={(results || []).filter(({ id }) =>
                                 selected.has(id)
                             )}
                             totalUsers={pager.total}
@@ -69,10 +83,12 @@ const BulkUserManager = ({ groupId, value: pendingChanges, onChange }) => {
                         />
                     </DataTableToolbar>
                     <ResultsTable
+                        columnHeaders={columnHeaders}
+                        renderRow={renderRow}
                         loading={loading}
                         error={error}
                         mode={mode}
-                        users={users}
+                        results={results}
                         noResultsMessage={
                             mode === 'MEMBERS' && filter === ''
                                 ? i18n.t(
@@ -134,7 +150,6 @@ const BulkUserManager = ({ groupId, value: pendingChanges, onChange }) => {
                     <PendingChanges
                         pendingChanges={pendingChanges}
                         onChange={onChange}
-                        renderPendingChange={entity => entity.username || entity.name}
                     />
                 </div>
             </div>
@@ -142,10 +157,61 @@ const BulkUserManager = ({ groupId, value: pendingChanges, onChange }) => {
     )
 }
 
-BulkUserManager.propTypes = {
-    value: PendingChangesPropType.isRequired,
-    onChange: PropTypes.func.isRequired,
-    groupId: PropTypes.string,
+BulkMemberManager.defaultProps = {
+    canManageMembers: true,
+    columnHeaders: [i18n.t('Display name')],
+    renderRow: entity => [entity.displayName],
+    filterDebounceMs: 375,
+    transformQueryResponse: response => response,
 }
 
-export default BulkUserManager
+BulkMemberManager.propTypes = {
+    /**
+     * Query for fetching members to view and/or remove.
+     * Query params passed to `results` query: `({ page, filter })`
+     */
+    membersQuery: PropTypes.shape({
+        results: PropTypes.object.isRequired,
+    }).isRequired,
+    /**
+     * Query for fetching non-members to view and/or add.
+     * Query params passed to `results` query: `({ page, filter })`
+     */
+    nonMembersQuery: PropTypes.shape({
+        results: PropTypes.object.isRequired,
+    }).isRequired,
+    /**
+     * Current pending changes.
+     */
+    value: PendingChangesPropType.isRequired,
+    /**
+     * Called with arg `(newValue)`
+     */
+    onChange: PropTypes.func.isRequired,
+    /**
+     * The collection that is being manipulated has been persisted and so has
+     * existing members to manage. Default value: `true`.
+     */
+    canManageMembers: PropTypes.bool,
+    /**
+     * Column headers for results table. Default value of `['Display name']`.
+     */
+    columnHeaders: PropTypes.arrayOf(PropTypes.string.isRequired),
+    /**
+     * Debounce (in milliseconds) applied to filter before triggering a
+     * new request. Default value of 375ms.
+     */
+    filterDebounceMs: PropTypes.number,
+    /**
+     * Called with arg `(entity)`. Returns an array containing the
+     * contents of each column for the particular row.
+     */
+    renderRow: PropTypes.func,
+    /**
+     * Callback to transform the response from the data queries.
+     * Shape of return value: `{ id: string, displayName: string }[]`
+     */
+    transformQueryResponse: PropTypes.func,
+}
+
+export default BulkMemberManager

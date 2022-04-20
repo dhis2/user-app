@@ -1,15 +1,17 @@
 import { useDataQuery } from '@dhis2/app-runtime'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useDebounce } from 'use-debounce'
-import { useQueries } from './useQueries'
 import { useSet } from './useSet'
 
-const FILTER_DEBOUNCE_MS = 375
-
-export const useUsers = ({ groupId, mode }) => {
-    const queries = useQueries({ groupId })
-    const membersDataQuery = useDataQuery(queries.members, { lazy: true })
-    const nonMembersDataQuery = useDataQuery(queries.nonMembers, { lazy: true })
+export const useResults = ({
+    membersQuery,
+    nonMembersQuery,
+    transformQueryResponse,
+    filterDebounceMs,
+    mode,
+}) => {
+    const membersDataQuery = useDataQuery(membersQuery, { lazy: true })
+    const nonMembersDataQuery = useDataQuery(nonMembersQuery, { lazy: true })
     const [prevMembers, setPrevMembers] = useState()
     const [prevNonMembers, setPrevNonMembers] = useState()
     const [membersPage, setMembersPage] = useState(1)
@@ -20,22 +22,34 @@ export const useUsers = ({ groupId, mode }) => {
     const [nonMembersFilter, setNonMembersFilter] = useState('')
     const [debouncedMembersFilter] = useDebounce(
         membersFilter,
-        FILTER_DEBOUNCE_MS
+        filterDebounceMs
     )
     const [debouncedNonMembersFilter] = useDebounce(
         nonMembersFilter,
-        FILTER_DEBOUNCE_MS
+        filterDebounceMs
     )
+    const transformQueryResponseRef = useRef()
+    transformQueryResponseRef.current = transformQueryResponse
 
     useEffect(() => {
         if (mode === 'MEMBERS') {
-            setPrevMembers(membersDataQuery.data?.users.users)
+            setPrevMembers(
+                membersDataQuery.data &&
+                    transformQueryResponseRef.current(
+                        membersDataQuery.data.results
+                    )
+            )
             membersDataQuery.refetch({
                 page: membersPage,
                 filter: debouncedMembersFilter,
             })
         } else {
-            setPrevNonMembers(nonMembersDataQuery.data?.users.users)
+            setPrevNonMembers(
+                nonMembersDataQuery.data &&
+                    transformQueryResponseRef.current(
+                        nonMembersDataQuery.data.results
+                    )
+            )
             nonMembersDataQuery.refetch({
                 page: nonMembersPage,
                 filter: debouncedNonMembersFilter,
@@ -51,8 +65,8 @@ export const useUsers = ({ groupId, mode }) => {
 
     const { called, loading, error, data } =
         mode === 'MEMBERS' ? membersDataQuery : nonMembersDataQuery
-    const prevUsers = mode === 'MEMBERS' ? prevMembers : prevNonMembers
-    const users = data?.users.users || prevUsers
+    const prevResults = mode === 'MEMBERS' ? prevMembers : prevNonMembers
+    const results = data ? transformQueryResponse(data.results) : prevResults
     const [page, setPage] =
         mode === 'MEMBERS'
             ? [membersPage, setMembersPage]
@@ -66,26 +80,26 @@ export const useUsers = ({ groupId, mode }) => {
     return {
         loading: !called || loading,
         error,
-        users,
+        results,
         pager: {
-            ...data?.users.pager,
+            ...data?.results.pager,
             page,
         },
         setPage,
         selected,
-        toggleSelected: userId => {
-            if (selected.has(userId)) {
-                selected.delete(userId)
+        toggleSelected: id => {
+            if (selected.has(id)) {
+                selected.delete(id)
             } else {
-                selected.add(userId)
+                selected.add(id)
             }
         },
         toggleAllSelected: () => {
-            const userIds = users.map(({ id }) => id)
-            if (userIds.some(userId => selected.has(userId))) {
-                userIds.forEach(selected.delete)
+            const ids = results.map(({ id }) => id)
+            if (ids.some(id => selected.has(id))) {
+                ids.forEach(selected.delete)
             } else {
-                userIds.forEach(selected.add)
+                ids.forEach(selected.add)
             }
         },
         filter,

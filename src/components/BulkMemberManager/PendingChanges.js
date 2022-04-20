@@ -11,7 +11,7 @@ import {
 } from './pendingChangesActions'
 import PendingChangesPropType from './PendingChangesPropType'
 
-const PendingChanges = ({ pendingChanges, onChange, renderPendingChange }) => (
+const PendingChanges = ({ pendingChanges, onChange }) => (
     <>
         <div className={styles.pendingChangesRow}>
             <span className={styles.pendingChangesCount}>
@@ -36,7 +36,7 @@ const PendingChanges = ({ pendingChanges, onChange, renderPendingChange }) => (
                 <div key={entity.id} className={styles.pendingAddRow}>
                     <span className={styles.pendingChangeSummary}>
                         <IconAdd16 color={colors.green700} />
-                        {renderPendingChange(entity)}
+                        {entity.displayName}
                     </span>
                     <Button
                         secondary
@@ -53,7 +53,7 @@ const PendingChanges = ({ pendingChanges, onChange, renderPendingChange }) => (
                 <div key={entity.id} className={styles.pendingRemoveRow}>
                     <span className={styles.pendingChangeSummary}>
                         <IconCross16 color={colors.red700} />
-                        {renderPendingChange(entity)}
+                        {entity.displayName}
                     </span>
                     <Button
                         secondary
@@ -73,7 +73,6 @@ const PendingChanges = ({ pendingChanges, onChange, renderPendingChange }) => (
 PendingChanges.propTypes = {
     pendingChanges: PendingChangesPropType.isRequired,
     onChange: PropTypes.func.isRequired,
-    renderPendingChange: PropTypes.func,
 }
 
 export default PendingChanges

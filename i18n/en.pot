@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-04-20T10:06:54.716Z\n"
-"PO-Revision-Date: 2022-04-20T10:06:54.716Z\n"
+"POT-Creation-Date: 2022-04-20T14:23:06.484Z\n"
+"PO-Revision-Date: 2022-04-20T14:23:06.484Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -25,9 +25,6 @@ msgstr "Value should be a positive integer"
 
 msgid "Value should be a negative integer"
 msgstr "Value should be a negative integer"
-
-msgid "Users"
-msgstr "Users"
 
 msgid "View and remove users from group"
 msgstr "View and remove users from group"
@@ -50,6 +47,9 @@ msgstr "Add to group"
 msgid "Users {{firstItem}}-{{lastItem}} of {{total}}"
 msgstr "Users {{firstItem}}-{{lastItem}} of {{total}}"
 
+msgid "Display name"
+msgstr "Display name"
+
 msgid "1 pending change"
 msgstr "1 pending change"
 
@@ -64,12 +64,6 @@ msgstr "Cancel"
 
 msgid "Error loading users"
 msgstr "Error loading users"
-
-msgid "Username"
-msgstr "Username"
-
-msgid "Display name"
-msgstr "Display name"
 
 msgid "Action"
 msgstr "Action"
@@ -127,6 +121,9 @@ msgstr "Code"
 
 msgid "Used in analytics reports."
 msgstr "Used in analytics reports."
+
+msgid "Username"
+msgstr "Username"
 
 msgid "Error updating group"
 msgstr "Error updating group"

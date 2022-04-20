@@ -1,10 +1,9 @@
 import { useMemo } from 'react'
 
-// The gist API does not support filtering by full name, so we must
-// split the filter into space-separated tokens and filter by those
-// tokens. A filter group is created for each token, with filters within
-// each group being combined with a logical OR and the groups being
-// combined with a logical AND.
+// The gist API does not support filtering by a user's full name, so we must
+// split the filter into space-separated tokens and filter by those tokens. A
+// filter group is created for each token, with filters within each group being
+// combined with a logical OR and the groups being combined with a logical AND.
 const getGistFilterParams = filterQuery => {
     const filterTokens = filterQuery.split(' ')
     let filter = undefined
@@ -36,9 +35,9 @@ export const useQueries = ({ groupId }) => {
     return useMemo(() => {
         if (!groupId) {
             return {
-                members: {},
-                nonMembers: {
-                    users: {
+                membersQuery: {},
+                nonMembersQuery: {
+                    results: {
                         resource: 'users',
                         params: ({ page, filter }) => ({
                             ...params,
@@ -52,8 +51,8 @@ export const useQueries = ({ groupId }) => {
 
         const resource = `userGroups/${groupId}/users/gist`
         return {
-            members: {
-                users: {
+            membersQuery: {
+                results: {
                     resource,
                     params: ({ page, filter }) => ({
                         ...params,
@@ -62,8 +61,8 @@ export const useQueries = ({ groupId }) => {
                     }),
                 },
             },
-            nonMembers: {
-                users: {
+            nonMembersQuery: {
+                results: {
                     resource,
                     params: ({ page, filter }) => ({
                         ...params,

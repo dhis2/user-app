@@ -18,10 +18,12 @@ import DataTableInfoWrapper from './DataTableInfoWrapper'
 import ResultsTableRow from './ResultsTableRow'
 
 const ResultsTable = ({
+    columnHeaders,
+    renderRow,
     loading,
     error,
     mode,
-    users,
+    results,
     noResultsMessage,
     actionLabel,
     onActionClick,
@@ -31,7 +33,7 @@ const ResultsTable = ({
     onToggleSelected,
     onToggleAllSelected,
 }) => {
-    if (loading && !users) {
+    if (loading && !results) {
         return (
             <DataTableInfoWrapper columns={4}>
                 <CenteredContent>
@@ -51,7 +53,7 @@ const ResultsTable = ({
         )
     }
 
-    if (!loading && users.length === 0) {
+    if (!loading && results.length === 0) {
         return (
             <DataTableInfoWrapper columns={4}>
                 <p>{noResultsMessage}</p>
@@ -59,7 +61,7 @@ const ResultsTable = ({
         )
     }
 
-    const selectedUsers = users.filter(({ id }) => selected.has(id))
+    const selectedResults = results.filter(({ id }) => selected.has(id))
 
     return (
         <DataTable>
@@ -67,46 +69,45 @@ const ResultsTable = ({
                 <DataTableRow>
                     <DataTableColumnHeader width="48px">
                         <Checkbox
-                            checked={selectedUsers.length === users.length}
+                            checked={selectedResults.length === results.length}
                             indeterminate={
-                                selectedUsers.length > 0 &&
-                                selectedUsers.length < users.length
+                                selectedResults.length > 0 &&
+                                selectedResults.length < results.length
                             }
                             onChange={onToggleAllSelected}
                             disabled={loading}
                         />
                     </DataTableColumnHeader>
-                    <DataTableColumnHeader>
-                        {i18n.t('Username')}
-                    </DataTableColumnHeader>
-                    <DataTableColumnHeader>
-                        {i18n.t('Display name')}
-                    </DataTableColumnHeader>
+                    {columnHeaders.map(header => (
+                        <DataTableColumnHeader key={header}>
+                            {header}
+                        </DataTableColumnHeader>
+                    ))}
                     <DataTableColumnHeader>
                         {i18n.t('Action')}
                     </DataTableColumnHeader>
                 </DataTableRow>
             </DataTableHead>
             <DataTableBody loading={loading}>
-                {users.map(user => {
+                {results.map(result => {
                     const pendingChangeEntity = (
                         mode === 'MEMBERS'
                             ? pendingChanges.removals
                             : pendingChanges.additions
-                    ).find(e => e.id === user.id)
+                    ).find(e => e.id === result.id)
                     const hasPendingChange = !!pendingChangeEntity
                     const pendingChangeAction =
                         mode === 'MEMBERS' ? 'REMOVE' : 'ADD'
 
                     return (
                         <ResultsTableRow
-                            key={user.id}
-                            user={user}
+                            key={result.id}
+                            cells={renderRow(result)}
                             actionButton={
                                 <Button
                                     secondary
                                     small
-                                    onClick={() => onActionClick(user)}
+                                    onClick={() => onActionClick(result)}
                                     disabled={loading}
                                 >
                                     {actionLabel}
@@ -120,8 +121,8 @@ const ResultsTable = ({
                             onPendingChangeCancel={() =>
                                 onPendingChangeCancel(pendingChangeEntity)
                             }
-                            selected={selected.has(user.id)}
-                            onToggleSelected={() => onToggleSelected(user.id)}
+                            selected={selected.has(result.id)}
+                            onToggleSelected={() => onToggleSelected(result.id)}
                         />
                     )
                 })}
@@ -132,10 +133,12 @@ const ResultsTable = ({
 
 ResultsTable.propTypes = {
     actionLabel: PropTypes.string.isRequired,
+    columnHeaders: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
     loading: PropTypes.bool.isRequired,
     mode: PropTypes.oneOf(['MEMBERS', 'NON_MEMBERS']).isRequired,
     noResultsMessage: PropTypes.string.isRequired,
     pendingChanges: PendingChangesPropType.isRequired,
+    renderRow: PropTypes.func.isRequired,
     selected: PropTypes.shape({
         has: PropTypes.func.isRequired,
     }).isRequired,
@@ -144,11 +147,9 @@ ResultsTable.propTypes = {
     onToggleAllSelected: PropTypes.func.isRequired,
     onToggleSelected: PropTypes.func.isRequired,
     error: PropTypes.instanceOf(Error),
-    users: PropTypes.arrayOf(
+    results: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired,
-            username: PropTypes.string.isRequired,
         }).isRequired
     ),
 }
