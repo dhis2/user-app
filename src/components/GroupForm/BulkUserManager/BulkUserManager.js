@@ -7,7 +7,7 @@ import { useQueries } from './useQueries'
 const transformUserResults = results =>
     results.users.map(user => ({
         ...user,
-        displayName: user.username,
+        displayName: user.username || user.name,
     }))
 
 const BulkUserManager = ({ groupId, value, onChange }) => {
