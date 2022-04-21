@@ -9,12 +9,11 @@ const renderTopBarFilterLabel = ({ mode }) =>
         ? i18n.t('Search for a user in this group')
         : i18n.t('Search for a user to add')
 
-const renderTopBarSelectionText = ({ selectedCount, pagerTotal }) =>
-    pagerTotal === 1
-        ? i18n.t('1 of 1 user selected')
-        : i18n.t('{{selectedCount}} of {{totalUsers}} users selected', {
+const renderTopBarSelectionText = ({ selectedCount }) =>
+    selectedCount === 1
+        ? i18n.t('1 user selected')
+        : i18n.t('{{selectedCount}} users selected', {
               selectedCount,
-              totalUsers: pagerTotal,
           })
 
 const renderTopBarActionText = ({ mode, selectedCount }) =>
@@ -43,13 +42,6 @@ const renderNoResultsText = ({ mode, filter }) =>
     mode === 'MEMBERS' && filter === ''
         ? i18n.t(`There aren't any users in this group yet`)
         : i18n.t('No results found')
-
-const renderPageSummaryText = ({ firstItem, lastItem, total }) =>
-    i18n.t('Users {{firstItem}}-{{lastItem}} of {{total}}', {
-        firstItem,
-        lastItem,
-        total,
-    })
 
 const BulkUserManager = ({ className, groupId, value, onChange }) => {
     const { allQuery, membersQuery, nonMembersQuery } = useQueries({ groupId })
@@ -80,7 +72,6 @@ const BulkUserManager = ({ className, groupId, value, onChange }) => {
             membersQuery={membersQuery}
             nonMembersQuery={nonMembersQuery}
             transformQueryResponse={transformUserResults}
-            pageSummaryText={renderPageSummaryText}
             value={value}
             onChange={onChange}
         />

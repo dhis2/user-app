@@ -33,7 +33,6 @@ const BulkMemberManager = ({
     filterDebounceMs,
     columns,
     rowActionLabel,
-    pageSummaryText,
     value: pendingChanges,
     onChange,
 }) => {
@@ -143,8 +142,11 @@ const BulkMemberManager = ({
                             <Pagination
                                 className={styles.pagination}
                                 {...pager}
+                                isLastPage={
+                                    typeof pager.total !== 'number' &&
+                                    !pager.nextPage
+                                }
                                 onPageChange={setPage}
-                                pageSummaryText={pageSummaryText}
                                 hidePageSelect
                                 hidePageSizeSelect
                             />
@@ -245,10 +247,6 @@ BulkMemberManager.propTypes = {
      * Called with args `({ mode, filter })`. Default value: `'No results found'`.
      */
     noResultsText: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-    /**
-     * See documentation for `Pagination` component's `pageSummaryText` prop.
-     */
-    pageSummaryText: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     /**
      * Message shown to user if members/non-members query fails.
      */

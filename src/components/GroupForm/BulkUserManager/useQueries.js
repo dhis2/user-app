@@ -27,7 +27,8 @@ const getGistFilterParams = filterQuery => {
 export const useQueries = ({ groupId }) => {
     const params = {
         fields: ['id', 'name', 'username'],
-        total: true,
+        // Disable totals for performance reasons
+        total: false,
         pageSize: 10,
     }
 
