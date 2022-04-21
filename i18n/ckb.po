@@ -1,6 +1,6 @@
 # 
 # Translators:
-# phil_dhis2, 2019
+# phil_dhis2, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # KRG HIS <antonia.bezenchek@informa.pro>, 2022
 # 
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
+"PO-Revision-Date: 2022-04-20 11:10+0000\n"
 "Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2022\n"
 "Language-Team: Central Kurdish (https://www.transifex.com/hisp-uio/teams/100509/ckb/)\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Yes"
-msgstr "ەڵێ"
+msgstr "بەڵێ"
 
 msgid "No"
 msgstr "نەخێر"
@@ -295,7 +295,7 @@ msgid "Program Stage"
 msgstr ""
 
 msgid "Program"
-msgstr "بةرنامة"
+msgstr "پرۆگرام"
 
 msgid "Program Indicator"
 msgstr ""
@@ -500,7 +500,7 @@ msgid "The organisation units that this user can export and analyse."
 msgstr ""
 
 msgid "Search"
-msgstr "طةران"
+msgstr "گەڕان"
 
 msgid "The organisation that this user can search for and in."
 msgstr ""

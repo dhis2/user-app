@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2022
 # Nadiia <semchuk@aph.org.ua>, 2022
 # Wanda <wanda@frontlineaids.org>, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
 # phil_dhis2, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
+"PO-Revision-Date: 2022-04-20 11:10+0000\n"
 "Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -145,7 +145,7 @@ msgid "Error creating role"
 msgstr ""
 
 msgid "Description"
-msgstr "Змалювання"
+msgstr "Опис"
 
 msgid "Short, clear description of what this role is for."
 msgstr ""
@@ -218,7 +218,7 @@ msgid "Constant"
 msgstr "Константа"
 
 msgid "Dashboard"
-msgstr "Інформаційна панель (дашборд)"
+msgstr "Інформаційна панель - дашборд"
 
 msgid "Data Element Group Sets"
 msgstr ""
@@ -260,7 +260,7 @@ msgid "Indicator Type"
 msgstr ""
 
 msgid "Indicator"
-msgstr "Показник"
+msgstr "Індикатор"
 
 msgid "Legend Set"
 msgstr ""
@@ -296,7 +296,7 @@ msgid "Program Stage"
 msgstr ""
 
 msgid "Program"
-msgstr "Program"
+msgstr "Програма"
 
 msgid "Program Indicator"
 msgstr ""
@@ -616,7 +616,7 @@ msgid "Created"
 msgstr "Створено"
 
 msgid "Introduction"
-msgstr "Введення"
+msgstr "Коротко про себе"
 
 msgid "Job title"
 msgstr "Посада"
@@ -628,7 +628,7 @@ msgid "Education"
 msgstr "Освіта"
 
 msgid "Interests"
-msgstr "Зацікавленості"
+msgstr "Хобі"
 
 msgid "Nationality"
 msgstr "Громадянство"
@@ -637,19 +637,19 @@ msgid "Birthday"
 msgstr "День народження"
 
 msgid "Gender"
-msgstr "Ґендер / Гендер"
+msgstr "Ґендер "
 
 msgid "Speaks"
 msgstr ""
 
 msgid "E-mail"
-msgstr "Електронна пошта (емейл)"
+msgstr "Електронна пошта "
 
 msgid "Organisations units"
 msgstr ""
 
 msgid "User roles"
-msgstr "Рівні доступу"
+msgstr "Ролі користувача"
 
 msgid "Members"
 msgstr ""
