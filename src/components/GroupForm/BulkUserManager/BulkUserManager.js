@@ -52,7 +52,7 @@ const renderPageSummaryText = ({ firstItem, lastItem, total }) =>
     })
 
 const BulkUserManager = ({ className, groupId, value, onChange }) => {
-    const { membersQuery, nonMembersQuery } = useQueries({ groupId })
+    const { allQuery, membersQuery, nonMembersQuery } = useQueries({ groupId })
 
     return (
         <BulkMemberManager
@@ -76,6 +76,7 @@ const BulkUserManager = ({ className, groupId, value, onChange }) => {
             ]}
             rowActionLabel={renderRowActionLabel}
             queryErrorMessage={i18n.t('Error loading users')}
+            allQuery={allQuery}
             membersQuery={membersQuery}
             nonMembersQuery={nonMembersQuery}
             transformQueryResponse={transformUserResults}

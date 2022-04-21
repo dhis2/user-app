@@ -4,6 +4,8 @@ import { useDebounce } from 'use-debounce'
 import { useSet } from './useSet'
 
 export const useResults = ({
+    canManageMembers,
+    allQuery,
     membersQuery,
     nonMembersQuery,
     transformQueryResponse,
@@ -11,7 +13,10 @@ export const useResults = ({
     mode,
 }) => {
     const membersDataQuery = useDataQuery(membersQuery, { lazy: true })
-    const nonMembersDataQuery = useDataQuery(nonMembersQuery, { lazy: true })
+    const nonMembersDataQuery = useDataQuery(
+        canManageMembers ? nonMembersQuery : allQuery,
+        { lazy: true }
+    )
     const [prevMembers, setPrevMembers] = useState()
     const [prevNonMembers, setPrevNonMembers] = useState()
     const [membersPage, setMembersPage] = useState(1)

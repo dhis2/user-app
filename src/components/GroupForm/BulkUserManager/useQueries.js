@@ -33,24 +33,19 @@ export const useQueries = ({ groupId }) => {
 
     // Use useMemo to silence warnings from useDataQuery about dynamic queries
     return useMemo(() => {
-        if (!groupId) {
-            return {
-                membersQuery: {},
-                nonMembersQuery: {
-                    results: {
-                        resource: 'users',
-                        params: ({ page, filter }) => ({
-                            ...params,
-                            query: filter,
-                            page,
-                        }),
-                    },
-                },
-            }
-        }
-
         const resource = `userGroups/${groupId}/users/gist`
+
         return {
+            allQuery: {
+                results: {
+                    resource: 'users',
+                    params: ({ page, filter }) => ({
+                        ...params,
+                        query: filter,
+                        page,
+                    }),
+                },
+            },
             membersQuery: {
                 results: {
                     resource,

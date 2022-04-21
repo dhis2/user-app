@@ -26,6 +26,7 @@ const BulkMemberManager = ({
     topBarActionText,
     noResultsText,
     queryErrorMessage,
+    allQuery,
     membersQuery,
     nonMembersQuery,
     transformQueryResponse,
@@ -51,6 +52,8 @@ const BulkMemberManager = ({
         filter,
         setFilter,
     } = useResults({
+        canManageMembers,
+        allQuery,
         membersQuery,
         nonMembersQuery,
         transformQueryResponse,
@@ -172,7 +175,16 @@ BulkMemberManager.defaultProps = {
     transformQueryResponse: response => response,
 }
 
+const QueryPropType = PropTypes.shape({
+    results: PropTypes.object.isRequired,
+})
+
 BulkMemberManager.propTypes = {
+    /**
+     * Query used when the `canManageMembers` prop is false.
+     * Query params passed to `results` query: `({ page, filter })`
+     */
+    allQuery: QueryPropType.isRequired,
     /**
      * Label used by segmented control for member management option.
      */
@@ -181,9 +193,7 @@ BulkMemberManager.propTypes = {
      * Query for fetching members to view and/or remove.
      * Query params passed to `results` query: `({ page, filter })`
      */
-    membersQuery: PropTypes.shape({
-        results: PropTypes.object.isRequired,
-    }).isRequired,
+    membersQuery: QueryPropType.isRequired,
     /**
      * Label used by segmented control for non-member management option.
      */
@@ -192,9 +202,7 @@ BulkMemberManager.propTypes = {
      * Query for fetching non-members to view and/or add.
      * Query params passed to `results` query: `({ page, filter })`
      */
-    nonMembersQuery: PropTypes.shape({
-        results: PropTypes.object.isRequired,
-    }).isRequired,
+    nonMembersQuery: QueryPropType.isRequired,
     /**
      * Called with args `({ mode })`.
      */
