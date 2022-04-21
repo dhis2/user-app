@@ -1,19 +1,19 @@
 # 
 # Translators:
-# phil_dhis2, 2019
-# Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2021
+# Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2022
 # Carwoto Sa'an <carwoto@gmail.com>, 2022
-# Viktor Varland <viktor@dhis2.org>, 2022
 # Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2022
 # Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2022
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2022
+# phil_dhis2, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2022\n"
+"PO-Revision-Date: 2022-04-20 11:10+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Yes"
-msgstr "Ya"
+msgstr "Iya"
 
 msgid "No"
 msgstr "Tidak"
@@ -263,13 +263,13 @@ msgid "Indicator Type"
 msgstr ""
 
 msgid "Indicator"
-msgstr "indikator"
+msgstr "Indikator"
 
 msgid "Legend Set"
 msgstr ""
 
 msgid "Map"
-msgstr "peta"
+msgstr "Peta"
 
 msgid "Min-Max Data Element"
 msgstr ""
@@ -421,7 +421,7 @@ msgid "Selected restrictions"
 msgstr ""
 
 msgid "Username"
-msgstr "User name"
+msgstr "Nama pengguna"
 
 msgid "Email address"
 msgstr ""
@@ -540,7 +540,7 @@ msgid "New password"
 msgstr ""
 
 msgid "Password"
-msgstr "Password"
+msgstr "Sandi"
 
 msgid ""
 "Minimum 8 characters, one uppercase and lowercase letter and one number"
@@ -920,7 +920,7 @@ msgid ""
 msgstr ""
 
 msgid "Cancel"
-msgstr "batal"
+msgstr "Batal"
 
 msgid "Replicate user"
 msgstr ""

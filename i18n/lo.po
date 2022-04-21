@@ -1,14 +1,16 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2022
+# Somkhit Bouavong <bouavongk@gmail.com>, 2022
+# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2022
 # phil_dhis2, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: phil_dhis2, 2022\n"
+"PO-Revision-Date: 2022-04-20 11:10+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,10 +19,10 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Yes"
-msgstr "ແມ່ນ"
+msgstr "ມີ"
 
 msgid "No"
-msgstr "ບໍ່"
+msgstr "ບໍ່ມີ"
 
 msgid "Attribute value needs to be unique, value already taken."
 msgstr ""
@@ -216,7 +218,7 @@ msgid "Constant"
 msgstr "Constant"
 
 msgid "Dashboard"
-msgstr "ຕາໜ່າງສັງລວມຂໍ້ມູນຂ່າວສານ"
+msgstr "ກະດານຂ່າວ"
 
 msgid "Data Element Group Sets"
 msgstr ""
@@ -231,7 +233,7 @@ msgid "Min/max rule"
 msgstr ""
 
 msgid "Data Set"
-msgstr "ແບບຟອມ (ຊຸດ​ຂໍ້​ມູນ)"
+msgstr "Data set"
 
 msgid "Data Value"
 msgstr ""
@@ -294,7 +296,7 @@ msgid "Program Stage"
 msgstr "Program Stage"
 
 msgid "Program"
-msgstr "ສາຍງານ"
+msgstr "Program"
 
 msgid "Program Indicator"
 msgstr ""
@@ -336,7 +338,7 @@ msgid "Tracked Entity Instance"
 msgstr ""
 
 msgid "User Group"
-msgstr "User Group:"
+msgstr "User Group\\:"
 
 msgid "User Role"
 msgstr ""
@@ -535,7 +537,7 @@ msgid "New password"
 msgstr "ລະຫັດໃໝ່"
 
 msgid "Password"
-msgstr "ລະຫັດ"
+msgstr "ລະຫັດຜ່ານ"
 
 msgid ""
 "Minimum 8 characters, one uppercase and lowercase letter and one number"
@@ -801,7 +803,7 @@ msgid "List"
 msgstr "ສະແດງ"
 
 msgid "Add"
-msgstr "ເພີ່ມ"
+msgstr "ເພີ່່ມ"
 
 msgid "Page not found."
 msgstr ""
@@ -915,7 +917,7 @@ msgid ""
 msgstr ""
 
 msgid "Cancel"
-msgstr "ຍົກເລີກ"
+msgstr "Cancel"
 
 msgid "Replicate user"
 msgstr ""
