@@ -47,13 +47,20 @@ const GroupForm = ({ submitButtonLabel, group }) => {
                 groupId = response.uid
             }
 
-            if (values.members.additions.length > 0 || values.members.removals.length > 0) {
+            if (
+                values.members.additions.length > 0 ||
+                values.members.removals.length > 0
+            ) {
                 await engine.mutate({
                     resource: `userGroups/${groupId}/users`,
                     type: 'create',
                     data: {
-                        additions: values.members.additions.map(user => ({ id: user.id })),
-                        deletions: values.members.removals.map(user => ({ id: user.id })),
+                        additions: values.members.additions.map(user => ({
+                            id: user.id,
+                        })),
+                        deletions: values.members.removals.map(user => ({
+                            id: user.id,
+                        })),
                     },
                 })
             }
