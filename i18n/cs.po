@@ -964,7 +964,7 @@ msgid "Organisations units"
 msgstr "Organizační jednotky"
 
 msgid "User units"
-msgstr ""
+msgstr "Uživatelské jednotky"
 
 msgid "Introduction"
 msgstr "Úvod"
