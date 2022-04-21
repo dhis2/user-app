@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-03-22T16:54:33.862Z\n"
-"PO-Revision-Date: 2022-03-22T16:54:33.862Z\n"
+"POT-Creation-Date: 2022-04-21T15:05:16.105Z\n"
+"PO-Revision-Date: 2022-04-21T15:05:16.105Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -26,6 +26,33 @@ msgstr "Value should be a positive integer"
 msgid "Value should be a negative integer"
 msgstr "Value should be a negative integer"
 
+msgid "No results found"
+msgstr "No results found"
+
+msgid "Display name"
+msgstr "Display name"
+
+msgid "1 pending change"
+msgstr "1 pending change"
+
+msgid "{{pendingChanges}} pending changes"
+msgstr "{{pendingChanges}} pending changes"
+
+msgid "Cancel all"
+msgstr "Cancel all"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Action"
+msgstr "Action"
+
+msgid "Will be added"
+msgstr "Will be added"
+
+msgid "Will be removed"
+msgstr "Will be removed"
+
 msgid "Filter options"
 msgstr "Filter options"
 
@@ -37,12 +64,6 @@ msgstr "There was an error fetching this form."
 
 msgid "Cancel without saving"
 msgstr "Cancel without saving"
-
-msgid "Error updating group"
-msgstr "Error updating group"
-
-msgid "Error creating group"
-msgstr "Error creating group"
 
 msgid "Basic information"
 msgstr "Basic information"
@@ -56,18 +77,62 @@ msgstr "Code"
 msgid "Used in analytics reports."
 msgstr "Used in analytics reports."
 
-msgid "User management"
-msgstr "User management"
+msgid "Search for a user in this group"
+msgstr "Search for a user in this group"
 
-msgid "Add or remove users from this group."
-msgstr "Add or remove users from this group."
+msgid "Search for a user to add"
+msgstr "Search for a user to add"
 
-msgid ""
-"To add a user to this group, go to the User section and edit the user group "
-"settings for a specific user."
-msgstr ""
-"To add a user to this group, go to the User section and edit the user group "
-"settings for a specific user."
+msgid "1 user selected"
+msgstr "1 user selected"
+
+msgid "{{selectedCount}} users selected"
+msgstr "{{selectedCount}} users selected"
+
+msgid "Remove 1 user"
+msgstr "Remove 1 user"
+
+msgid "Remove {{selectedCount}} users"
+msgstr "Remove {{selectedCount}} users"
+
+msgid "Add 1 user"
+msgstr "Add 1 user"
+
+msgid "Add {{selectedCount}} users"
+msgstr "Add {{selectedCount}} users"
+
+msgid "Remove from group"
+msgstr "Remove from group"
+
+msgid "Add to group"
+msgstr "Add to group"
+
+msgid "There aren't any users in this group yet"
+msgstr "There aren't any users in this group yet"
+
+msgid "Users {{firstItem}}-{{lastItem}}"
+msgstr "Users {{firstItem}}-{{lastItem}}"
+
+msgid "View and remove users from group"
+msgstr "View and remove users from group"
+
+msgid "Add users to group"
+msgstr "Add users to group"
+
+msgid "Username"
+msgstr "Username"
+
+msgid "Error loading users"
+msgstr "Error loading users"
+
+msgid "Error updating group"
+msgstr "Error updating group"
+
+msgid "Error creating group"
+msgstr "Error creating group"
+
+msgid "Attributes"
+msgstr "Attributes"
 
 msgid "User group management"
 msgstr "User group management"
@@ -81,8 +146,11 @@ msgstr "Available user groups"
 msgid "Managed user groups"
 msgstr "Managed user groups"
 
-msgid "Attributes"
-msgstr "Attributes"
+msgid "User management"
+msgstr "User management"
+
+msgid "Add or remove users from this group."
+msgstr "Add or remove users from this group."
 
 msgid "Name is already taken"
 msgstr "Name is already taken"
@@ -384,9 +452,6 @@ msgstr "Available restrictions"
 
 msgid "Selected restrictions"
 msgstr "Selected restrictions"
-
-msgid "Username"
-msgstr "Username"
 
 msgid "Email address"
 msgstr "Email address"
@@ -707,12 +772,6 @@ msgstr "New"
 msgid "Error loading user groups"
 msgstr "Error loading user groups"
 
-msgid "No results found"
-msgstr "No results found"
-
-msgid "Display name"
-msgstr "Display name"
-
 msgid "Member?"
 msgstr "Member?"
 
@@ -849,9 +908,6 @@ msgstr ""
 "Password should be at least 8 characters long, with at least one lowercase "
 "character, one uppercase character and one special character."
 
-msgid "Cancel"
-msgstr "Cancel"
-
 msgid "Replicate user"
 msgstr "Replicate user"
 
@@ -899,9 +955,6 @@ msgstr "Org.unit"
 
 msgid "User Management"
 msgstr "User Management"
-
-msgid "Error loading users"
-msgstr "Error loading users"
 
 msgid "Last login"
 msgstr "Last login"
