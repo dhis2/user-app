@@ -36,7 +36,7 @@ const ResultsTable = ({
 }) => {
     if (loading && !results) {
         return (
-            <DataTableInfoWrapper columns={4}>
+            <DataTableInfoWrapper>
                 <CenteredContent>
                     <CircularLoader />
                 </CenteredContent>
@@ -46,7 +46,7 @@ const ResultsTable = ({
 
     if (!loading && error) {
         return (
-            <DataTableInfoWrapper columns={4}>
+            <DataTableInfoWrapper>
                 <NoticeBox error title={queryErrorMessage}>
                     {error.message}
                 </NoticeBox>
@@ -56,7 +56,7 @@ const ResultsTable = ({
 
     if (!loading && results.length === 0) {
         return (
-            <DataTableInfoWrapper columns={4}>
+            <DataTableInfoWrapper>
                 <p>{noResultsText}</p>
             </DataTableInfoWrapper>
         )
