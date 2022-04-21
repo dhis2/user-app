@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/dhis2/user-app/compare/v1.3.18...v1.4.0) (2022-04-21)
+
+
+### Features
+
+* **user-group:** bulk group member manager ([#854](https://github.com/dhis2/user-app/issues/854)) ([0141a96](https://github.com/dhis2/user-app/commit/0141a961d09fbf51e38771654b948695b7d66827))
+
 ## [1.3.18](https://github.com/dhis2/user-app/compare/v1.3.17...v1.3.18) (2022-04-21)
 
 
