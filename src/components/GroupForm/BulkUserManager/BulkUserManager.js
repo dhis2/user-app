@@ -65,8 +65,8 @@ const BulkUserManager = ({ className, groupId, value, onChange }) => {
             topBarActionText={renderTopBarActionText}
             noResultsText={renderNoResultsText}
             columnHeaders={[i18n.t('Username'), i18n.t('Display name')]}
-            rowActionLabel={renderRowActionLabel}
             renderRow={user => [user.username, user.name]}
+            rowActionLabel={renderRowActionLabel}
             queryErrorMessage={i18n.t('Error loading users')}
             membersQuery={membersQuery}
             nonMembersQuery={nonMembersQuery}
