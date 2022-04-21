@@ -18,8 +18,7 @@ import DataTableInfoWrapper from './DataTableInfoWrapper'
 import ResultsTableRow from './ResultsTableRow'
 
 const ResultsTable = ({
-    columnHeaders,
-    renderRow,
+    columns,
     queryErrorMessage,
     loading,
     error,
@@ -79,9 +78,9 @@ const ResultsTable = ({
                             disabled={loading}
                         />
                     </DataTableColumnHeader>
-                    {columnHeaders.map(header => (
-                        <DataTableColumnHeader key={header}>
-                            {header}
+                    {columns.map(column => (
+                        <DataTableColumnHeader key={column.label}>
+                            {column.label}
                         </DataTableColumnHeader>
                     ))}
                     <DataTableColumnHeader>
@@ -99,11 +98,14 @@ const ResultsTable = ({
                     const hasPendingChange = !!pendingChangeEntity
                     const pendingChangeAction =
                         mode === 'MEMBERS' ? 'REMOVE' : 'ADD'
+                    const cells = columns.map(column =>
+                        column.mapDataToValue(result)
+                    )
 
                     return (
                         <ResultsTableRow
                             key={result.id}
-                            cells={renderRow(result)}
+                            cells={cells}
                             actionButton={
                                 <Button
                                     secondary
@@ -134,12 +136,16 @@ const ResultsTable = ({
 
 ResultsTable.propTypes = {
     actionLabel: PropTypes.string.isRequired,
-    columnHeaders: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    columns: PropTypes.arrayOf(
+        PropTypes.shape({
+            label: PropTypes.string.isRequired,
+            mapDataToValue: PropTypes.func.isRequired,
+        })
+    ).isRequired,
     loading: PropTypes.bool.isRequired,
     mode: PropTypes.oneOf(['MEMBERS', 'NON_MEMBERS']).isRequired,
     noResultsText: PropTypes.string.isRequired,
     pendingChanges: PendingChangesPropType.isRequired,
-    renderRow: PropTypes.func.isRequired,
     selected: PropTypes.shape({
         has: PropTypes.func.isRequired,
     }).isRequired,

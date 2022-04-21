@@ -30,9 +30,8 @@ const BulkMemberManager = ({
     nonMembersQuery,
     transformQueryResponse,
     filterDebounceMs,
-    columnHeaders,
+    columns,
     rowActionLabel,
-    renderRow,
     pageSummaryText,
     value: pendingChanges,
     onChange,
@@ -101,8 +100,7 @@ const BulkMemberManager = ({
                         />
                     </DataTableToolbar>
                     <ResultsTable
-                        columnHeaders={columnHeaders}
-                        renderRow={renderRow}
+                        columns={columns}
                         queryErrorMessage={queryErrorMessage}
                         loading={loading}
                         error={error}
@@ -164,8 +162,12 @@ const BulkMemberManager = ({
 BulkMemberManager.defaultProps = {
     canManageMembers: true,
     noResultsText: i18n.t('No results found'),
-    columnHeaders: [i18n.t('Display name')],
-    renderRow: entity => [entity.displayName],
+    columns: [
+        {
+            label: i18n.t('Display name'),
+            mapDataToValue: entity => entity.displayName,
+        },
+    ],
     filterDebounceMs: 375,
     transformQueryResponse: response => response,
 }
@@ -216,9 +218,16 @@ BulkMemberManager.propTypes = {
      */
     className: PropTypes.string,
     /**
-     * Column headers for results table. Default value: `['Display name']`.
+     * Define the columns rendered for the paginated results.
+     * `mapDataToValue` is called with arg `(entity)`.
+     * Default value: `[{ label: 'Display name', mapDataToValue: e => e.displayName }]`.
      */
-    columnHeaders: PropTypes.arrayOf(PropTypes.string.isRequired),
+    columns: PropTypes.arrayOf(
+        PropTypes.shape({
+            label: PropTypes.string.isRequired,
+            mapDataToValue: PropTypes.func.isRequired,
+        }).isRequired
+    ),
     /**
      * Debounce (in milliseconds) applied to filter before triggering a
      * new request. Default value: `375`.
@@ -236,11 +245,6 @@ BulkMemberManager.propTypes = {
      * Message shown to user if members/non-members query fails.
      */
     queryErrorMessage: PropTypes.string,
-    /**
-     * Called with arg `(entity)`. Returns an array containing the
-     * contents of each column for the particular row.
-     */
-    renderRow: PropTypes.func,
     /**
      * Called with args `({ mode, selectedCount })`.
      */
