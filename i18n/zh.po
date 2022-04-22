@@ -2,15 +2,15 @@
 # Translators:
 # phil_dhis2, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
-# 晓东 林 <13981924470@126.com>, 2022
 # easylin <lin_xd@126.com>, 2022
+# 晓东 林 <13981924470@126.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-22T16:54:33.862Z\n"
+"POT-Creation-Date: 2022-04-21T15:05:16.105Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2022\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2022\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,6 +37,33 @@ msgstr "值应该是应该正整数"
 msgid "Value should be a negative integer"
 msgstr "值应为负整数"
 
+msgid "No results found"
+msgstr "没有结果"
+
+msgid "Display name"
+msgstr "显示名"
+
+msgid "1 pending change"
+msgstr ""
+
+msgid "{{pendingChanges}} pending changes"
+msgstr ""
+
+msgid "Cancel all"
+msgstr ""
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Action"
+msgstr "Action"
+
+msgid "Will be added"
+msgstr ""
+
+msgid "Will be removed"
+msgstr ""
+
 msgid "Filter options"
 msgstr "过滤选项"
 
@@ -48,12 +75,6 @@ msgstr "获取此表单时出错。"
 
 msgid "Cancel without saving"
 msgstr "取消而不保存"
-
-msgid "Error updating group"
-msgstr "更新群组时出错"
-
-msgid "Error creating group"
-msgstr "创建组时出错"
 
 msgid "Basic information"
 msgstr "基本信息"
@@ -67,16 +88,62 @@ msgstr "代码"
 msgid "Used in analytics reports."
 msgstr "用于分析报告。"
 
-msgid "User management"
-msgstr "用户管理"
+msgid "Search for a user in this group"
+msgstr ""
 
-msgid "Add or remove users from this group."
-msgstr "在该组中添加或删除用户。"
+msgid "Search for a user to add"
+msgstr ""
 
-msgid ""
-"To add a user to this group, go to the User section and edit the user group "
-"settings for a specific user."
-msgstr "要将用户添加到该组，请转到“用户”部分并编辑特定用户的用户组设置。"
+msgid "1 user selected"
+msgstr ""
+
+msgid "{{selectedCount}} users selected"
+msgstr ""
+
+msgid "Remove 1 user"
+msgstr ""
+
+msgid "Remove {{selectedCount}} users"
+msgstr ""
+
+msgid "Add 1 user"
+msgstr ""
+
+msgid "Add {{selectedCount}} users"
+msgstr ""
+
+msgid "Remove from group"
+msgstr ""
+
+msgid "Add to group"
+msgstr ""
+
+msgid "There aren't any users in this group yet"
+msgstr ""
+
+msgid "Users {{firstItem}}-{{lastItem}}"
+msgstr ""
+
+msgid "View and remove users from group"
+msgstr ""
+
+msgid "Add users to group"
+msgstr ""
+
+msgid "Username"
+msgstr "用户名"
+
+msgid "Error loading users"
+msgstr "加载用户时出错"
+
+msgid "Error updating group"
+msgstr "更新群组时出错"
+
+msgid "Error creating group"
+msgstr "创建组时出错"
+
+msgid "Attributes"
+msgstr "属性"
 
 msgid "User group management"
 msgstr "用户组管理"
@@ -91,8 +158,11 @@ msgstr "可用用户组"
 msgid "Managed user groups"
 msgstr "管理的用户组"
 
-msgid "Attributes"
-msgstr "属性"
+msgid "User management"
+msgstr "用户管理"
+
+msgid "Add or remove users from this group."
+msgstr "在该组中添加或删除用户。"
 
 msgid "Name is already taken"
 msgstr "姓名已被占用"
@@ -397,9 +467,6 @@ msgstr "可用限制"
 
 msgid "Selected restrictions"
 msgstr "选定的限制"
-
-msgid "Username"
-msgstr "用户名"
 
 msgid "Email address"
 msgstr "电子邮件地址"
@@ -719,12 +786,6 @@ msgstr "新建"
 msgid "Error loading user groups"
 msgstr "加载用户组时出错"
 
-msgid "No results found"
-msgstr "没有结果"
-
-msgid "Display name"
-msgstr "显示名"
-
 msgid "Member?"
 msgstr "成员？"
 
@@ -861,9 +922,6 @@ msgid ""
 "character, one uppercase character and one special character."
 msgstr "密码长度至少应为 8 个字符，至少包含 1 个小写字符、1 个大写字符和 1 个特殊字符。"
 
-msgid "Cancel"
-msgstr "取消"
-
 msgid "Replicate user"
 msgstr "复制用户"
 
@@ -911,9 +969,6 @@ msgstr "组织单位"
 
 msgid "User Management"
 msgstr "用户管理"
-
-msgid "Error loading users"
-msgstr "加载用户时出错"
 
 msgid "Last login"
 msgstr "上次登录"

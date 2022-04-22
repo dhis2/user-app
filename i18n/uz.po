@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-22T16:54:33.862Z\n"
+"POT-Creation-Date: 2022-04-21T15:05:16.105Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2022\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -34,6 +34,33 @@ msgstr "Қиймат бутун мусбат сон бўлиши лозим"
 msgid "Value should be a negative integer"
 msgstr ""
 
+msgid "No results found"
+msgstr "Ҳеч қандай натижа топилмади"
+
+msgid "Display name"
+msgstr "Дисплей номи"
+
+msgid "1 pending change"
+msgstr ""
+
+msgid "{{pendingChanges}} pending changes"
+msgstr ""
+
+msgid "Cancel all"
+msgstr ""
+
+msgid "Cancel"
+msgstr "Бекор қилиш"
+
+msgid "Action"
+msgstr ""
+
+msgid "Will be added"
+msgstr ""
+
+msgid "Will be removed"
+msgstr ""
+
 msgid "Filter options"
 msgstr "Фильтр вариантлари"
 
@@ -44,12 +71,6 @@ msgid "There was an error fetching this form."
 msgstr ""
 
 msgid "Cancel without saving"
-msgstr ""
-
-msgid "Error updating group"
-msgstr ""
-
-msgid "Error creating group"
 msgstr ""
 
 msgid "Basic information"
@@ -64,18 +85,62 @@ msgstr "Код"
 msgid "Used in analytics reports."
 msgstr ""
 
-msgid "User management"
-msgstr "Фойдаланувчи бошқаруви"
-
-msgid "Add or remove users from this group."
+msgid "Search for a user in this group"
 msgstr ""
 
-msgid ""
-"To add a user to this group, go to the User section and edit the user group "
-"settings for a specific user."
+msgid "Search for a user to add"
 msgstr ""
-"Бу гуруҳга фойдаланувчини қўшиш учун, \"Фойдаланувчи\" бўлимига ўтинг ва "
-"муайян фойдаланувчи учун гуруҳ фойдаланувчилари созламаларини таҳрирланг"
+
+msgid "1 user selected"
+msgstr ""
+
+msgid "{{selectedCount}} users selected"
+msgstr ""
+
+msgid "Remove 1 user"
+msgstr ""
+
+msgid "Remove {{selectedCount}} users"
+msgstr ""
+
+msgid "Add 1 user"
+msgstr ""
+
+msgid "Add {{selectedCount}} users"
+msgstr ""
+
+msgid "Remove from group"
+msgstr ""
+
+msgid "Add to group"
+msgstr ""
+
+msgid "There aren't any users in this group yet"
+msgstr ""
+
+msgid "Users {{firstItem}}-{{lastItem}}"
+msgstr ""
+
+msgid "View and remove users from group"
+msgstr ""
+
+msgid "Add users to group"
+msgstr ""
+
+msgid "Username"
+msgstr "Фойдаланувчи исми"
+
+msgid "Error loading users"
+msgstr ""
+
+msgid "Error updating group"
+msgstr ""
+
+msgid "Error creating group"
+msgstr ""
+
+msgid "Attributes"
+msgstr "Аттрибутлар"
 
 msgid "User group management"
 msgstr ""
@@ -90,8 +155,11 @@ msgstr "Мавжуд фойдаланувчи гуруҳлари"
 msgid "Managed user groups"
 msgstr "Фойдаланувчиларнинг бошқариладиган гуруҳлари"
 
-msgid "Attributes"
-msgstr "Аттрибутлар"
+msgid "User management"
+msgstr "Фойдаланувчи бошқаруви"
+
+msgid "Add or remove users from this group."
+msgstr ""
 
 msgid "Name is already taken"
 msgstr ""
@@ -396,9 +464,6 @@ msgstr ""
 
 msgid "Selected restrictions"
 msgstr ""
-
-msgid "Username"
-msgstr "Фойдаланувчи исми"
 
 msgid "Email address"
 msgstr ""
@@ -718,12 +783,6 @@ msgstr "Янги"
 msgid "Error loading user groups"
 msgstr ""
 
-msgid "No results found"
-msgstr "Ҳеч қандай натижа топилмади"
-
-msgid "Display name"
-msgstr "Дисплей номи"
-
 msgid "Member?"
 msgstr ""
 
@@ -862,9 +921,6 @@ msgid ""
 "character, one uppercase character and one special character."
 msgstr ""
 
-msgid "Cancel"
-msgstr "Бекор қилиш"
-
 msgid "Replicate user"
 msgstr "Фойдаланувчини репликация қилиш"
 
@@ -912,9 +968,6 @@ msgstr ""
 
 msgid "User Management"
 msgstr "Фойдаланувчи Бошқариш"
-
-msgid "Error loading users"
-msgstr ""
 
 msgid "Last login"
 msgstr "Охирги кириш"

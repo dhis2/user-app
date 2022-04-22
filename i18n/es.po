@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-22T16:54:33.862Z\n"
+"POT-Creation-Date: 2022-04-21T15:05:16.105Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
@@ -40,6 +40,33 @@ msgstr "El valor debe ser un entero positivo"
 msgid "Value should be a negative integer"
 msgstr ""
 
+msgid "No results found"
+msgstr "No results found"
+
+msgid "Display name"
+msgstr "Mostrar nombre"
+
+msgid "1 pending change"
+msgstr ""
+
+msgid "{{pendingChanges}} pending changes"
+msgstr ""
+
+msgid "Cancel all"
+msgstr ""
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Action"
+msgstr "Acción"
+
+msgid "Will be added"
+msgstr ""
+
+msgid "Will be removed"
+msgstr ""
+
 msgid "Filter options"
 msgstr "Opciones"
 
@@ -50,12 +77,6 @@ msgid "There was an error fetching this form."
 msgstr ""
 
 msgid "Cancel without saving"
-msgstr ""
-
-msgid "Error updating group"
-msgstr ""
-
-msgid "Error creating group"
 msgstr ""
 
 msgid "Basic information"
@@ -70,16 +91,62 @@ msgstr "Código"
 msgid "Used in analytics reports."
 msgstr ""
 
-msgid "User management"
-msgstr "Administración de usuarios"
-
-msgid "Add or remove users from this group."
+msgid "Search for a user in this group"
 msgstr ""
 
-msgid ""
-"To add a user to this group, go to the User section and edit the user group "
-"settings for a specific user."
+msgid "Search for a user to add"
 msgstr ""
+
+msgid "1 user selected"
+msgstr ""
+
+msgid "{{selectedCount}} users selected"
+msgstr ""
+
+msgid "Remove 1 user"
+msgstr ""
+
+msgid "Remove {{selectedCount}} users"
+msgstr ""
+
+msgid "Add 1 user"
+msgstr ""
+
+msgid "Add {{selectedCount}} users"
+msgstr ""
+
+msgid "Remove from group"
+msgstr ""
+
+msgid "Add to group"
+msgstr ""
+
+msgid "There aren't any users in this group yet"
+msgstr ""
+
+msgid "Users {{firstItem}}-{{lastItem}}"
+msgstr ""
+
+msgid "View and remove users from group"
+msgstr ""
+
+msgid "Add users to group"
+msgstr ""
+
+msgid "Username"
+msgstr "Nombre de usuario"
+
+msgid "Error loading users"
+msgstr ""
+
+msgid "Error updating group"
+msgstr ""
+
+msgid "Error creating group"
+msgstr ""
+
+msgid "Attributes"
+msgstr "Atributos"
 
 msgid "User group management"
 msgstr ""
@@ -94,8 +161,11 @@ msgstr "Grupos de usuarios disponibles"
 msgid "Managed user groups"
 msgstr "Grupos de usuarios administrados "
 
-msgid "Attributes"
-msgstr "Atributos"
+msgid "User management"
+msgstr "Administración de usuarios"
+
+msgid "Add or remove users from this group."
+msgstr ""
 
 msgid "Name is already taken"
 msgstr ""
@@ -400,9 +470,6 @@ msgstr ""
 
 msgid "Selected restrictions"
 msgstr ""
-
-msgid "Username"
-msgstr "Nombre de usuario"
 
 msgid "Email address"
 msgstr ""
@@ -723,12 +790,6 @@ msgstr "Nuevo"
 msgid "Error loading user groups"
 msgstr ""
 
-msgid "No results found"
-msgstr "No results found"
-
-msgid "Display name"
-msgstr "Mostrar nombre"
-
 msgid "Member?"
 msgstr ""
 
@@ -867,9 +928,6 @@ msgid ""
 "character, one uppercase character and one special character."
 msgstr ""
 
-msgid "Cancel"
-msgstr "Cancelar"
-
 msgid "Replicate user"
 msgstr "Replicar usuario"
 
@@ -917,9 +975,6 @@ msgstr ""
 
 msgid "User Management"
 msgstr "Administración de usuarios"
-
-msgid "Error loading users"
-msgstr ""
 
 msgid "Last login"
 msgstr "Último ingreso"
