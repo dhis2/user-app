@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-22T16:54:33.862Z\n"
+"POT-Creation-Date: 2022-04-21T15:05:16.105Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: trendspotter <jirka.p@volny.cz>, 2022\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -34,6 +34,33 @@ msgstr "Hodnota by měla být kladné celé číslo"
 msgid "Value should be a negative integer"
 msgstr "Hodnota by měla být záporné celé číslo"
 
+msgid "No results found"
+msgstr "Nenalezeny žádné výsledky"
+
+msgid "Display name"
+msgstr "Zobrazované jméno"
+
+msgid "1 pending change"
+msgstr ""
+
+msgid "{{pendingChanges}} pending changes"
+msgstr ""
+
+msgid "Cancel all"
+msgstr ""
+
+msgid "Cancel"
+msgstr "Zrušit"
+
+msgid "Action"
+msgstr "Akce"
+
+msgid "Will be added"
+msgstr ""
+
+msgid "Will be removed"
+msgstr ""
+
 msgid "Filter options"
 msgstr "Možnosti filtru"
 
@@ -45,12 +72,6 @@ msgstr "Při načítání tohoto formuláře došlo k chybě."
 
 msgid "Cancel without saving"
 msgstr "Zrušit bez uložení"
-
-msgid "Error updating group"
-msgstr "Chyba při aktualizaci skupiny"
-
-msgid "Error creating group"
-msgstr "Chyba při vytváření skupiny"
 
 msgid "Basic information"
 msgstr "Základní informace"
@@ -64,18 +85,62 @@ msgstr "Kód"
 msgid "Used in analytics reports."
 msgstr "Používá se v analytických přehledech."
 
-msgid "User management"
-msgstr "Správa uživatelů"
-
-msgid "Add or remove users from this group."
-msgstr "Přidejte nebo odeberte uživatele z této skupiny."
-
-msgid ""
-"To add a user to this group, go to the User section and edit the user group "
-"settings for a specific user."
+msgid "Search for a user in this group"
 msgstr ""
-"Chcete-li přidat uživatele do této skupiny, přejděte do části Uživatel a "
-"upravte nastavení skupiny uživatelů pro konkrétního uživatele."
+
+msgid "Search for a user to add"
+msgstr ""
+
+msgid "1 user selected"
+msgstr ""
+
+msgid "{{selectedCount}} users selected"
+msgstr ""
+
+msgid "Remove 1 user"
+msgstr ""
+
+msgid "Remove {{selectedCount}} users"
+msgstr ""
+
+msgid "Add 1 user"
+msgstr ""
+
+msgid "Add {{selectedCount}} users"
+msgstr ""
+
+msgid "Remove from group"
+msgstr ""
+
+msgid "Add to group"
+msgstr ""
+
+msgid "There aren't any users in this group yet"
+msgstr ""
+
+msgid "Users {{firstItem}}-{{lastItem}}"
+msgstr ""
+
+msgid "View and remove users from group"
+msgstr ""
+
+msgid "Add users to group"
+msgstr ""
+
+msgid "Username"
+msgstr "Uživatelské jméno"
+
+msgid "Error loading users"
+msgstr "Chyba při načítání uživatelů"
+
+msgid "Error updating group"
+msgstr "Chyba při aktualizaci skupiny"
+
+msgid "Error creating group"
+msgstr "Chyba při vytváření skupiny"
+
+msgid "Attributes"
+msgstr "Atributy"
 
 msgid "User group management"
 msgstr "Správa uživatelských skupin"
@@ -92,8 +157,11 @@ msgstr "Dostupné skupiny uživatelů"
 msgid "Managed user groups"
 msgstr "Spravované skupiny uživatelů"
 
-msgid "Attributes"
-msgstr "Atributy"
+msgid "User management"
+msgstr "Správa uživatelů"
+
+msgid "Add or remove users from this group."
+msgstr "Přidejte nebo odeberte uživatele z této skupiny."
 
 msgid "Name is already taken"
 msgstr "Jméno je již obsazeno"
@@ -401,9 +469,6 @@ msgstr "Dostupná omezení"
 
 msgid "Selected restrictions"
 msgstr "Vybraná omezení"
-
-msgid "Username"
-msgstr "Uživatelské jméno"
 
 msgid "Email address"
 msgstr "Emailová adresa"
@@ -729,12 +794,6 @@ msgstr "Nový"
 msgid "Error loading user groups"
 msgstr "Chyba při načítání uživatelských skupin"
 
-msgid "No results found"
-msgstr "Nenalezeny žádné výsledky"
-
-msgid "Display name"
-msgstr "Zobrazované jméno"
-
 msgid "Member?"
 msgstr "Člen?"
 
@@ -873,9 +932,6 @@ msgstr ""
 "Heslo by mělo mít alespoň 8 znaků, alespoň jedno malé písmeno, jedno velké "
 "písmeno a jeden speciální znak."
 
-msgid "Cancel"
-msgstr "Zrušit"
-
 msgid "Replicate user"
 msgstr "Replikovat uživatele"
 
@@ -923,9 +979,6 @@ msgstr "Org.jednotka"
 
 msgid "User Management"
 msgstr "Správa uživatelů"
-
-msgid "Error loading users"
-msgstr "Chyba při načítání uživatelů"
 
 msgid "Last login"
 msgstr "Poslední přihlášení"

@@ -1,31 +1,26 @@
 # 
 # Translators:
-# phil_dhis2, 2019
-# Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2021
-# Carwoto Sa'an <carwoto@gmail.com>, 2022
-# Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2022
-# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2022
-# Viktor Varland <viktor@dhis2.org>, 2022
-# Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2022
+# Cherise Beek <cherise.beek@gmail.com>, 2022
+# Rica Zamora Duchateau, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-04-21T15:05:16.105Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2022\n"
-"Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
+"Last-Translator: Rica Zamora Duchateau, 2022\n"
+"Language-Team: Dutch (https://www.transifex.com/hisp-uio/teams/100509/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: id\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Yes"
-msgstr "Ya"
+msgstr "Ja"
 
 msgid "No"
-msgstr "Tidak"
+msgstr "Nee"
 
 msgid "Attribute value needs to be unique, value already taken."
 msgstr ""
@@ -41,7 +36,7 @@ msgid "Value should be a negative integer"
 msgstr ""
 
 msgid "No results found"
-msgstr "Tidak ada hasil ditemukan"
+msgstr ""
 
 msgid "Display name"
 msgstr ""
@@ -56,7 +51,7 @@ msgid "Cancel all"
 msgstr ""
 
 msgid "Cancel"
-msgstr "batal"
+msgstr "Annuleer"
 
 msgid "Action"
 msgstr ""
@@ -68,7 +63,7 @@ msgid "Will be removed"
 msgstr ""
 
 msgid "Filter options"
-msgstr "Pilihan penyaringan"
+msgstr ""
 
 msgid "Error fetching form"
 msgstr ""
@@ -83,10 +78,10 @@ msgid "Basic information"
 msgstr ""
 
 msgid "Name"
-msgstr "Nama"
+msgstr "Naam"
 
 msgid "Code"
-msgstr "Kode"
+msgstr "Code"
 
 msgid "Used in analytics reports."
 msgstr ""
@@ -134,7 +129,7 @@ msgid "Add users to group"
 msgstr ""
 
 msgid "Username"
-msgstr "User name"
+msgstr ""
 
 msgid "Error loading users"
 msgstr ""
@@ -146,7 +141,7 @@ msgid "Error creating group"
 msgstr ""
 
 msgid "Attributes"
-msgstr "Atribut"
+msgstr ""
 
 msgid "User group management"
 msgstr ""
@@ -194,10 +189,10 @@ msgid "Add/Update Private"
 msgstr ""
 
 msgid "Delete"
-msgstr "Hapus"
+msgstr "Verwijderen"
 
 msgid "External access"
-msgstr "Akses eksternal"
+msgstr "Externe toegang"
 
 msgid "Error updating role"
 msgstr ""
@@ -206,7 +201,7 @@ msgid "Error creating role"
 msgstr ""
 
 msgid "Description"
-msgstr "Deskripsi"
+msgstr "Beschrijving"
 
 msgid "Short, clear description of what this role is for."
 msgstr ""
@@ -255,13 +250,13 @@ msgid "Analytics Table Hook"
 msgstr ""
 
 msgid "Attribute"
-msgstr "Atribut"
+msgstr ""
 
 msgid "Category Combo"
 msgstr ""
 
 msgid "Category"
-msgstr "Kategori"
+msgstr ""
 
 msgid "Category Option"
 msgstr ""
@@ -276,10 +271,10 @@ msgid "Color Set"
 msgstr ""
 
 msgid "Constant"
-msgstr "Konstan"
+msgstr ""
 
 msgid "Dashboard"
-msgstr "Dashboard"
+msgstr ""
 
 msgid "Data Element Group Sets"
 msgstr ""
@@ -288,13 +283,13 @@ msgid "Data Element Groups"
 msgstr ""
 
 msgid "Data Element"
-msgstr "Data Elemen"
+msgstr ""
 
 msgid "Min/max rule"
 msgstr ""
 
 msgid "Data Set"
-msgstr "Data Set"
+msgstr "informatie reeks"
 
 msgid "Data Value"
 msgstr ""
@@ -321,13 +316,13 @@ msgid "Indicator Type"
 msgstr ""
 
 msgid "Indicator"
-msgstr "indikator"
+msgstr "Indicator"
 
 msgid "Legend Set"
 msgstr ""
 
 msgid "Map"
-msgstr "peta"
+msgstr ""
 
 msgid "Min-Max Data Element"
 msgstr ""
@@ -342,7 +337,7 @@ msgid "Option Set"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr "Unit Organisasi"
+msgstr ""
 
 msgid "Organisation Unit Group Set"
 msgstr ""
@@ -354,10 +349,10 @@ msgid "Predictor"
 msgstr ""
 
 msgid "Program Stage"
-msgstr "Tahapan program"
+msgstr ""
 
 msgid "Program"
-msgstr "Program"
+msgstr "Programma"
 
 msgid "Program Indicator"
 msgstr ""
@@ -378,7 +373,7 @@ msgid "Relationship Type"
 msgstr ""
 
 msgid "Report"
-msgstr "Laporan"
+msgstr ""
 
 msgid "Section"
 msgstr ""
@@ -399,7 +394,7 @@ msgid "Tracked Entity Instance"
 msgstr ""
 
 msgid "User Group"
-msgstr "Grup user"
+msgstr ""
 
 msgid "User Role"
 msgstr ""
@@ -408,10 +403,10 @@ msgid "User"
 msgstr ""
 
 msgid "Validation Rule Group"
-msgstr "Grup Aturan Validasi"
+msgstr ""
 
 msgid "Validation Rule"
-msgstr "Aturan validasi"
+msgstr ""
 
 msgid "Data predictor group"
 msgstr ""
@@ -426,7 +421,7 @@ msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
 
 msgid "Search by name"
-msgstr "Cari berdasarkan nama"
+msgstr ""
 
 msgid "Search for an organisation unit"
 msgstr ""
@@ -449,7 +444,7 @@ msgid "No matches found"
 msgstr ""
 
 msgid "Apply"
-msgstr "Terapkan"
+msgstr ""
 
 msgid "Clear all"
 msgstr ""
@@ -550,7 +545,7 @@ msgid "The organisation units that this user can export and analyse."
 msgstr ""
 
 msgid "Search"
-msgstr "Pencarian"
+msgstr ""
 
 msgid "The organisation that this user can search for and in."
 msgstr ""
@@ -586,7 +581,7 @@ msgid "New password"
 msgstr ""
 
 msgid "Password"
-msgstr "Password"
+msgstr ""
 
 msgid ""
 "Minimum 8 characters, one uppercase and lowercase letter and one number"
@@ -686,7 +681,7 @@ msgid "Edit group"
 msgstr ""
 
 msgid "Save changes"
-msgstr "Simpan perubahan"
+msgstr ""
 
 msgid "Error fetching role"
 msgstr ""
@@ -713,16 +708,16 @@ msgid "Edit user group"
 msgstr ""
 
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 msgid "Show details"
 msgstr ""
 
 msgid "Sharing settings"
-msgstr "Pengaturan pembagian"
+msgstr "Instellingen voor delen"
 
 msgid "Edit"
-msgstr "Sunting"
+msgstr "Bewerk"
 
 msgid "Join group"
 msgstr ""
@@ -743,7 +738,7 @@ msgid "Are you sure you want to delete {{- name}}?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr "Tidak, batalkan"
+msgstr ""
 
 msgid "Yes, delete"
 msgstr ""
@@ -776,13 +771,13 @@ msgid "Are you sure you want to leave {{- name}}?"
 msgstr ""
 
 msgid "Yes, leave"
-msgstr "Ya, tinggalkan"
+msgstr ""
 
 msgid "User Group Management"
 msgstr ""
 
 msgid "New"
-msgstr "Baru"
+msgstr ""
 
 msgid "Error loading user groups"
 msgstr ""
@@ -804,10 +799,10 @@ msgid ""
 msgstr ""
 
 msgid "List"
-msgstr "Daftar"
+msgstr ""
 
 msgid "Add"
-msgstr "Tambah"
+msgstr ""
 
 msgid "Page not found."
 msgstr ""
@@ -834,7 +829,7 @@ msgid "Error loading user roles"
 msgstr ""
 
 msgid "Profile"
-msgstr "Profil"
+msgstr ""
 
 msgid "Replicate"
 msgstr ""
@@ -843,10 +838,10 @@ msgid "Reset password"
 msgstr ""
 
 msgid "Disable"
-msgstr "Nonaktif kan"
+msgstr ""
 
 msgid "Enable"
-msgstr "Aktifkan"
+msgstr ""
 
 msgid "Disable Two Factor Authentication"
 msgstr ""
@@ -957,13 +952,13 @@ msgid "All invitations"
 msgstr ""
 
 msgid "Expired invitations"
-msgstr "Undangan sudah tidak berlaku"
+msgstr ""
 
 msgid "Show self-registrations"
 msgstr ""
 
 msgid "Clear filters"
-msgstr "Hapus penyaring"
+msgstr ""
 
 msgid "Org.unit"
 msgstr ""
@@ -978,28 +973,28 @@ msgid "Account disabled?"
 msgstr ""
 
 msgid "Disabled"
-msgstr "Dinonaktifkan"
+msgstr ""
 
 msgid "Male"
-msgstr "Pria"
+msgstr ""
 
 msgid "Female"
-msgstr "Wanita"
+msgstr ""
 
 msgid "Other"
-msgstr "Lainnya"
+msgstr ""
 
 msgid "Created"
-msgstr "Dibuat"
+msgstr ""
 
 msgid "Contact"
 msgstr ""
 
 msgid "Send message"
-msgstr "Kirim pesan"
+msgstr ""
 
 msgid "E-mail"
-msgstr "E-mail"
+msgstr ""
 
 msgid "Permissions"
 msgstr ""
