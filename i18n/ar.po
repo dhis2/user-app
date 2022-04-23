@@ -55,7 +55,7 @@ msgid "Cancel"
 msgstr "إلغاء"
 
 msgid "Action"
-msgstr ""
+msgstr "إجراء"
 
 msgid "Will be added"
 msgstr ""

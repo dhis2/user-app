@@ -55,7 +55,7 @@ msgid "Cancel"
 msgstr "Hủy"
 
 msgid "Action"
-msgstr ""
+msgstr "Hành động"
 
 msgid "Will be added"
 msgstr ""

@@ -53,7 +53,7 @@ msgid "Cancel"
 msgstr "انصراف"
 
 msgid "Action"
-msgstr ""
+msgstr "اقدام"
 
 msgid "Will be added"
 msgstr ""
