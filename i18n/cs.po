@@ -41,13 +41,13 @@ msgid "Display name"
 msgstr "Zobrazované jméno"
 
 msgid "1 pending change"
-msgstr ""
+msgstr "1 čekající změna"
 
 msgid "{{pendingChanges}} pending changes"
-msgstr ""
+msgstr "{{pendingChanges}} čekající změny"
 
 msgid "Cancel all"
-msgstr ""
+msgstr "Zrušit vše"
 
 msgid "Cancel"
 msgstr "Zrušit"
@@ -56,10 +56,10 @@ msgid "Action"
 msgstr "Akce"
 
 msgid "Will be added"
-msgstr ""
+msgstr "Bude přidáno"
 
 msgid "Will be removed"
-msgstr ""
+msgstr "Bude odstraněn"
 
 msgid "Filter options"
 msgstr "Možnosti filtru"
@@ -86,46 +86,46 @@ msgid "Used in analytics reports."
 msgstr "Používá se v analytických přehledech."
 
 msgid "Search for a user in this group"
-msgstr ""
+msgstr "Vyhledejte uživatele v této skupině"
 
 msgid "Search for a user to add"
-msgstr ""
+msgstr "Vyhledejte uživatele, kterého chcete přidat"
 
 msgid "1 user selected"
-msgstr ""
+msgstr "Vybrán 1 uživatel"
 
 msgid "{{selectedCount}} users selected"
-msgstr ""
+msgstr "Počet vybraných uživatelů: {{selectedCount}}"
 
 msgid "Remove 1 user"
-msgstr ""
+msgstr "Odebrat 1 uživatele"
 
 msgid "Remove {{selectedCount}} users"
-msgstr ""
+msgstr "Odebrat {{selectedCount}} uživatele"
 
 msgid "Add 1 user"
-msgstr ""
+msgstr "Přidat 1 uživatele"
 
 msgid "Add {{selectedCount}} users"
-msgstr ""
+msgstr "Přidat {{selectedCount}} uživatelů"
 
 msgid "Remove from group"
-msgstr ""
+msgstr "Odebrat ze skupiny"
 
 msgid "Add to group"
-msgstr ""
+msgstr "Přidat do skupiny"
 
 msgid "There aren't any users in this group yet"
-msgstr ""
+msgstr "V této skupině zatím nejsou žádní uživatelé"
 
 msgid "Users {{firstItem}}-{{lastItem}}"
-msgstr ""
+msgstr "Uživatelé {{firstItem}}-{{lastItem}}"
 
 msgid "View and remove users from group"
-msgstr ""
+msgstr "Zobrazit a odebrat uživatele ze skupiny"
 
 msgid "Add users to group"
-msgstr ""
+msgstr "Přidat uživatele do skupiny"
 
 msgid "Username"
 msgstr "Uživatelské jméno"
