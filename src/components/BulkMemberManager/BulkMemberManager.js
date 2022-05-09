@@ -86,7 +86,6 @@ const BulkMemberManager = ({
                             selectionText={topBarSelectionText}
                             actionText={topBarActionText}
                             mode={mode}
-                            loading={loading}
                             filter={filter}
                             onFilterChange={setFilter}
                             selectedResults={results?.filter(({ id }) =>

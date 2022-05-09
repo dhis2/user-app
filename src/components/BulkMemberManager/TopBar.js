@@ -10,7 +10,6 @@ const TopBar = ({
     selectionText,
     actionText,
     mode,
-    loading,
     filter,
     onFilterChange,
     selectedResults,
@@ -31,7 +30,6 @@ const TopBar = ({
                 value={filter}
                 onChange={({ value }) => onFilterChange(value)}
                 inputWidth="300px"
-                disabled={loading}
                 type="search"
                 dense
             />
@@ -74,7 +72,6 @@ TopBar.defaultProps = {
 
 TopBar.propTypes = {
     filter: PropTypes.string.isRequired,
-    loading: PropTypes.bool.isRequired,
     mode: PropTypes.oneOf(['MEMBERS', 'NON_MEMBERS']).isRequired,
     pendingChanges: PendingChangesPropType.isRequired,
     onChange: PropTypes.func.isRequired,
