@@ -68,17 +68,21 @@ const TopBar = ({
     )
 }
 
+TopBar.defaultProps = {
+    selectedResults: [],
+}
+
 TopBar.propTypes = {
     filter: PropTypes.string.isRequired,
     loading: PropTypes.bool.isRequired,
     mode: PropTypes.oneOf(['MEMBERS', 'NON_MEMBERS']).isRequired,
     pendingChanges: PendingChangesPropType.isRequired,
-    selectedResults: PropTypes.array.isRequired,
     onChange: PropTypes.func.isRequired,
     onFilterChange: PropTypes.func.isRequired,
     actionText: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     filterLabel: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     pagerTotal: PropTypes.number,
+    selectedResults: PropTypes.array,
     selectionText: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
 }
 

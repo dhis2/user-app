@@ -89,13 +89,9 @@ const BulkMemberManager = ({
                             loading={loading}
                             filter={filter}
                             onFilterChange={setFilter}
-                            selectedResults={
-                                results
-                                    ? results.filter(({ id }) =>
-                                          selected.has(id)
-                                      )
-                                    : []
-                            }
+                            selectedResults={results?.filter(({ id }) =>
+                                selected.has(id)
+                            )}
                             pagerTotal={pager.total}
                             pendingChanges={pendingChanges}
                             onChange={onChange}
