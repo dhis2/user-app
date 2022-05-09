@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-04-21T15:05:16.105Z\n"
-"PO-Revision-Date: 2022-04-21T15:05:16.105Z\n"
+"POT-Creation-Date: 2022-05-04T13:20:00.831Z\n"
+"PO-Revision-Date: 2022-05-04T13:20:00.831Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -109,9 +109,6 @@ msgstr "Add to group"
 
 msgid "There aren't any users in this group yet"
 msgstr "There aren't any users in this group yet"
-
-msgid "Users {{firstItem}}-{{lastItem}}"
-msgstr "Users {{firstItem}}-{{lastItem}}"
 
 msgid "View and remove users from group"
 msgstr "View and remove users from group"
