@@ -48,6 +48,7 @@ const BulkMemberManager = ({
         selected,
         toggleSelected,
         toggleAllSelected,
+        clearAllSelected,
         filter,
         setFilter,
     } = useResults({
@@ -94,6 +95,7 @@ const BulkMemberManager = ({
                             pagerTotal={pager.total}
                             pendingChanges={pendingChanges}
                             onChange={onChange}
+                            clearAllSelected={clearAllSelected}
                         />
                     </DataTableToolbar>
                     <ResultsTable
@@ -119,6 +121,7 @@ const BulkMemberManager = ({
                                     ? removeEntity(pendingChanges, entity)
                                     : addEntity(pendingChanges, entity)
                             )
+                            toggleSelected(entity.id)
                         }}
                         pendingChanges={pendingChanges}
                         onPendingChangeCancel={entity => {
@@ -130,7 +133,9 @@ const BulkMemberManager = ({
                         }}
                         selected={selected}
                         onToggleSelected={toggleSelected}
-                        onToggleAllSelected={toggleAllSelected}
+                        onToggleAllSelected={() =>
+                            toggleAllSelected(pendingChanges)
+                        }
                     />
                     {showPagination && (
                         <DataTableToolbar position="bottom">

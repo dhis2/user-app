@@ -59,7 +59,11 @@ const ResultsTableRow = ({
 }) => (
     <DataTableRow className={getRowClass(pendingChangeAction)}>
         <DataTableCell width="48px">
-            <Checkbox checked={selected} onChange={onToggleSelected} />
+            <Checkbox
+                checked={selected}
+                disabled={!!pendingChangeAction}
+                onChange={onToggleSelected}
+            />
         </DataTableCell>
         {cells.map((cell, index) => (
             <DataTableCell key={index}>{cell}</DataTableCell>

@@ -74,7 +74,7 @@ const ResultsTable = ({
                                 selectedResults.length > 0 &&
                                 selectedResults.length < results.length
                             }
-                            onChange={onToggleAllSelected}
+                            onChange={() => onToggleAllSelected(pendingChanges)}
                             disabled={loading}
                         />
                     </DataTableColumnHeader>

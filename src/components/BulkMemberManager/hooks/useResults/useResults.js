@@ -99,13 +99,25 @@ export const useResults = ({
                 selected.add(id)
             }
         },
-        toggleAllSelected: () => {
+        toggleAllSelected: pendingChanges => {
+            const pendingIdsSet = new Set(
+                pendingChanges.additions
+                    .concat(pendingChanges.removals)
+                    .map(({ id }) => id)
+            )
             const ids = results.map(({ id }) => id)
             if (ids.some(id => selected.has(id))) {
                 ids.forEach(selected.delete)
             } else {
-                ids.forEach(selected.add)
+                ids.forEach(id => {
+                    if (!pendingIdsSet.has(id)) {
+                        selected.add(id)
+                    }
+                })
             }
+        },
+        clearAllSelected: () => {
+            selected.clear()
         },
         filter,
         setFilter,

@@ -16,6 +16,7 @@ const TopBar = ({
     pagerTotal,
     pendingChanges,
     onChange,
+    clearAllSelected,
 }) => {
     const selectedCount = selectedResults.length
 
@@ -56,6 +57,7 @@ const TopBar = ({
                             }
                         }, pendingChanges)
                     )
+                    clearAllSelected()
                 }}
             >
                 {typeof actionText === 'function'
@@ -71,6 +73,7 @@ TopBar.defaultProps = {
 }
 
 TopBar.propTypes = {
+    clearAllSelected: PropTypes.func.isRequired,
     filter: PropTypes.string.isRequired,
     mode: PropTypes.oneOf(['MEMBERS', 'NON_MEMBERS']).isRequired,
     pendingChanges: PendingChangesPropType.isRequired,
