@@ -39,7 +39,7 @@
     },
     "devDependencies": {
         "@dhis2/cli-app-scripts": "^9.0.0",
-        "@dhis2/cli-style": "^9.2.2",
+        "@dhis2/cli-style": "^10.4.1",
         "@dhis2/cypress-commands": "^9.0.1",
         "@dhis2/cypress-plugins": "^9.0.1",
         "@testing-library/cypress": "^8.0.1",
