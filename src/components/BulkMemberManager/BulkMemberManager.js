@@ -27,8 +27,7 @@ const BulkMemberManager = ({
     noResultsText,
     queryErrorMessage,
     allQuery,
-    membersQuery,
-    nonMembersQuery,
+    membersGistQuery,
     transformQueryResponse,
     filterDebounceMs,
     columns,
@@ -41,26 +40,25 @@ const BulkMemberManager = ({
     )
     const {
         loading,
+        filter,
+        setFilter,
         error,
         results,
         pager,
-        setPage,
-        selected,
+        navigateToPage,
+        isSelected,
         toggleSelected,
         toggleAllSelected,
         clearAllSelected,
-        filter,
-        setFilter,
     } = useResults({
         canManageMembers,
         allQuery,
-        membersQuery,
-        nonMembersQuery,
+        membersGistQuery,
         transformQueryResponse,
         filterDebounceMs,
         mode,
     })
-    const showPagination = !loading && !error && results.length > 0
+    const showPagination = !error && !!pager && results?.length > 0
 
     return (
         <div className={cx(styles.container, className)}>
@@ -90,9 +88,9 @@ const BulkMemberManager = ({
                             filter={filter}
                             onFilterChange={setFilter}
                             selectedResults={results?.filter(({ id }) =>
-                                selected.has(id)
+                                isSelected(id)
                             )}
-                            pagerTotal={pager.total}
+                            pagerTotal={pager?.total}
                             pendingChanges={pendingChanges}
                             onChange={onChange}
                             clearAllSelected={clearAllSelected}
@@ -131,7 +129,7 @@ const BulkMemberManager = ({
                                     : cancelAddEntity(pendingChanges, entity)
                             )
                         }}
-                        selected={selected}
+                        isSelected={isSelected}
                         onToggleSelected={toggleSelected}
                         onToggleAllSelected={() =>
                             toggleAllSelected(pendingChanges)
@@ -146,9 +144,11 @@ const BulkMemberManager = ({
                                     typeof pager.total !== 'number' &&
                                     !pager.nextPage
                                 }
-                                onPageChange={setPage}
+                                onPageChange={navigateToPage}
+                                pageLength={results.length}
                                 hidePageSelect
                                 hidePageSizeSelect
+                                disabled={loading}
                             />
                         </DataTableToolbar>
                     )}
@@ -188,23 +188,20 @@ BulkMemberManager.propTypes = {
      */
     allQuery: QueryPropType.isRequired,
     /**
+     * Query for fetching members to view and/or remove.
+     * Query params passed to `results` query: `({ page, filter })`
+     * Can only be a gist API endpoint because its `inverse` query
+     * param is used to search for members or non-members
+     */
+    membersGistQuery: QueryPropType.isRequired,
+    /**
      * Label used by segmented control for member management option.
      */
     membersManagementLabel: PropTypes.string.isRequired,
     /**
-     * Query for fetching members to view and/or remove.
-     * Query params passed to `results` query: `({ page, filter })`
-     */
-    membersQuery: QueryPropType.isRequired,
-    /**
      * Label used by segmented control for non-member management option.
      */
     nonMembersManagementLabel: PropTypes.string.isRequired,
-    /**
-     * Query for fetching non-members to view and/or add.
-     * Query params passed to `results` query: `({ page, filter })`
-     */
-    nonMembersQuery: QueryPropType.isRequired,
     /**
      * Called with args `({ mode })`.
      */

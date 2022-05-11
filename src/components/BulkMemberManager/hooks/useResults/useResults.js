@@ -1,26 +1,38 @@
 import { useDataQuery } from '@dhis2/app-runtime'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { useDebounce } from 'use-debounce'
 import { useSet } from './useSet'
 
 export const useResults = ({
     canManageMembers,
     allQuery,
-    membersQuery,
-    nonMembersQuery,
+    membersGistQuery,
     transformQueryResponse,
     filterDebounceMs,
     mode,
 }) => {
-    const membersDataQuery = useDataQuery(membersQuery, { lazy: true })
-    const nonMembersDataQuery = useDataQuery(
-        canManageMembers ? nonMembersQuery : allQuery,
-        { lazy: true }
-    )
-    const [prevMembers, setPrevMembers] = useState()
-    const [prevNonMembers, setPrevNonMembers] = useState()
-    const [membersPage, setMembersPage] = useState(1)
-    const [nonMembersPage, setNonMembersPage] = useState(1)
+    const prevPageRef = useRef({
+        members: {
+            pager: undefined,
+            results: undefined,
+        },
+        nonMembers: {
+            pager: undefined,
+            results: undefined,
+        },
+    })
+    const isMemberMode = mode === 'MEMBERS'
+    const allDataQuery = useDataQuery(allQuery, { lazy: true })
+    const membersDataQuery = useDataQuery(membersGistQuery, {
+        lazy: true,
+        variables: {
+            inverse: !isMemberMode,
+        },
+    })
+    const { called, loading, error, data, refetch } = canManageMembers
+        ? membersDataQuery
+        : allDataQuery
+    const [results, setResults] = useState([])
     const selectedMembers = useSet()
     const selectedNonMembers = useSet()
     const [membersFilter, setMembersFilter] = useState('')
@@ -33,65 +45,68 @@ export const useResults = ({
         nonMembersFilter,
         filterDebounceMs
     )
-    const transformQueryResponseRef = useRef()
-    transformQueryResponseRef.current = transformQueryResponse
+    const [filter, setFilter] = isMemberMode
+        ? [membersFilter, setMembersFilter]
+        : [nonMembersFilter, setNonMembersFilter]
+    const selected = isMemberMode ? selectedMembers : selectedNonMembers
+    const queryFilter = isMemberMode
+        ? debouncedMembersFilter
+        : debouncedNonMembersFilter
+    const prevPager = isMemberMode
+        ? prevPageRef.current.members.pager
+        : prevPageRef.current.nonMembers.pager
+
+    const navigateToPage = useCallback(
+        page => refetch({ page, filter: queryFilter, inverse: !isMemberMode }),
+        [refetch, queryFilter, isMemberMode]
+    )
+
+    const updatePrevPageRef = useCallback(
+        (results, pager) => {
+            if (isMemberMode) {
+                prevPageRef.current.members.results = results
+                prevPageRef.current.members.pager = pager
+            } else {
+                prevPageRef.current.nonMembers.results = results
+                prevPageRef.current.nonMembers.pager = pager
+            }
+        },
+        [isMemberMode]
+    )
 
     useEffect(() => {
-        if (mode === 'MEMBERS') {
-            setPrevMembers(
-                membersDataQuery.data &&
-                    transformQueryResponseRef.current(
-                        membersDataQuery.data.results
-                    )
-            )
-            membersDataQuery.refetch({
-                page: membersPage,
-                filter: debouncedMembersFilter,
-            })
-        } else {
-            setPrevNonMembers(
-                nonMembersDataQuery.data &&
-                    transformQueryResponseRef.current(
-                        nonMembersDataQuery.data.results
-                    )
-            )
-            nonMembersDataQuery.refetch({
-                page: nonMembersPage,
-                filter: debouncedNonMembersFilter,
-            })
-        }
-    }, [
-        mode,
-        membersPage,
-        nonMembersPage,
-        debouncedMembersFilter,
-        debouncedNonMembersFilter,
-    ])
+        const prevResults = isMemberMode
+            ? prevPageRef.current.members.results
+            : prevPageRef.current.nonMembers.results
 
-    const { called, loading, error, data } =
-        mode === 'MEMBERS' ? membersDataQuery : nonMembersDataQuery
-    const prevResults = mode === 'MEMBERS' ? prevMembers : prevNonMembers
-    const results = data ? transformQueryResponse(data.results) : prevResults
-    const [page, setPage] =
-        mode === 'MEMBERS'
-            ? [membersPage, setMembersPage]
-            : [nonMembersPage, setNonMembersPage]
-    const selected = mode === 'MEMBERS' ? selectedMembers : selectedNonMembers
-    const [filter, setFilter] =
-        mode === 'MEMBERS'
-            ? [membersFilter, setMembersFilter]
-            : [nonMembersFilter, setNonMembersFilter]
+        if (prevResults) {
+            setResults(prevResults)
+        } else {
+            navigateToPage(1)
+        }
+    }, [isMemberMode])
+
+    useEffect(() => {
+        if (data) {
+            const newResults = transformQueryResponse(data.results)
+            updatePrevPageRef(newResults, data.results.pager)
+            setResults(newResults)
+        }
+    }, [data])
+
+    useEffect(() => {
+        navigateToPage(1)
+    }, [debouncedMembersFilter, debouncedNonMembersFilter])
 
     return {
         loading: !called || loading,
+        filter,
+        setFilter,
         error,
         results,
-        pager: {
-            ...data?.results.pager,
-            page,
-        },
-        setPage,
-        selected,
+        pager: data ? data.results.pager : prevPager,
+        navigateToPage,
+        isSelected: id => selected.has(id),
         toggleSelected: id => {
             if (selected.has(id)) {
                 selected.delete(id)
@@ -119,7 +134,5 @@ export const useResults = ({
         clearAllSelected: () => {
             selected.clear()
         },
-        filter,
-        setFilter,
     }
 }

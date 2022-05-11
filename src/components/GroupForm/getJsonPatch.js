@@ -1,5 +1,6 @@
 export const getJsonPatch = ({ groupData, dirtyFields }) => {
     const changes = []
+    console.log
 
     for (const [field, value] of Object.entries(groupData)) {
         let modified = dirtyFields.has(field)

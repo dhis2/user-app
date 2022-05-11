@@ -47,24 +47,14 @@ export const useQueries = ({ groupId }) => {
                     }),
                 },
             },
-            membersQuery: {
+            membersGistQuery: {
                 results: {
                     resource,
-                    params: ({ page, filter }) => ({
+                    params: ({ page, filter, inverse }) => ({
                         ...params,
                         ...getGistFilterParams(filter),
                         page,
-                    }),
-                },
-            },
-            nonMembersQuery: {
-                results: {
-                    resource,
-                    params: ({ page, filter }) => ({
-                        ...params,
-                        ...getGistFilterParams(filter),
-                        page,
-                        inverse: true,
+                        inverse,
                     }),
                 },
             },
