@@ -22,9 +22,6 @@ export const createJsonPatchRequestBody = ({
     const dirtyFieldsArray = Object.keys(dirtyFields).filter(
         key => dirtyFields[key]
     )
-    const anyDirtyAttributes = dirtyFieldsArray.some(
-        key => dirtyFields[key] && key.startsWith(ATTRIBUTE_VALUES)
-    )
     const patch = dirtyFieldsArray.reduce((acc, key) => {
         if (key !== 'members' && !key.startsWith(ATTRIBUTE_VALUES)) {
             const value =
@@ -40,6 +37,12 @@ export const createJsonPatchRequestBody = ({
         }
         return acc
     }, [])
+
+    // Replace all attribute values if any were changed.
+    // There is no way to update individual attributes.
+    const anyDirtyAttributes = dirtyFieldsArray.some(key =>
+        key.startsWith(ATTRIBUTE_VALUES)
+    )
 
     if (anyDirtyAttributes) {
         patch.push({
