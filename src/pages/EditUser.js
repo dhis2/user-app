@@ -31,7 +31,7 @@ const userQuery = {
     },
 }
 
-const useUser = userId => {
+const useUser = (userId) => {
     const engine = useDataEngine()
     const { d2 } = useD2()
     const [loading, setLoading] = useState(true)

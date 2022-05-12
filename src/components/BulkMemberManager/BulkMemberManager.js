@@ -113,7 +113,7 @@ const BulkMemberManager = ({
                                 ? rowActionLabel({ mode })
                                 : rowActionLabel
                         }
-                        onActionClick={entity => {
+                        onActionClick={(entity) => {
                             onChange(
                                 mode === 'MEMBERS'
                                     ? removeEntity(pendingChanges, entity)
@@ -122,7 +122,7 @@ const BulkMemberManager = ({
                             toggleSelected(entity.id)
                         }}
                         pendingChanges={pendingChanges}
-                        onPendingChangeCancel={entity => {
+                        onPendingChangeCancel={(entity) => {
                             onChange(
                                 mode === 'MEMBERS'
                                     ? cancelRemoveEntity(pendingChanges, entity)
@@ -170,11 +170,11 @@ BulkMemberManager.defaultProps = {
     columns: [
         {
             label: i18n.t('Display name'),
-            mapDataToValue: entity => entity.displayName,
+            mapDataToValue: (entity) => entity.displayName,
         },
     ],
     filterDebounceMs: 375,
-    transformQueryResponse: response => response,
+    transformQueryResponse: (response) => response,
 }
 
 const QueryPropType = PropTypes.shape({

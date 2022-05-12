@@ -4,7 +4,7 @@ import { useMemo } from 'react'
 // split the filter into space-separated tokens and filter by those tokens. A
 // filter group is created for each token, with filters within each group being
 // combined with a logical OR and the groups being combined with a logical AND.
-const getGistFilterParams = filterQuery => {
+const getGistFilterParams = (filterQuery) => {
     const filterTokens = filterQuery.split(' ')
     let filter = undefined
     if (filterQuery !== '') {
@@ -14,7 +14,9 @@ const getGistFilterParams = filterQuery => {
             }
 
             const filterFields = ['firstName', 'surname', 'username']
-            return filterFields.map(field => `${index}:${field}:ilike:${token}`)
+            return filterFields.map(
+                (field) => `${index}:${field}:ilike:${token}`
+            )
         })
     }
 

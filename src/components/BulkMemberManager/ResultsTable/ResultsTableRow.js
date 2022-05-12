@@ -12,7 +12,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './ResultsTableRow.module.css'
 
-const getRowClass = pendingChangeAction => {
+const getRowClass = (pendingChangeAction) => {
     switch (pendingChangeAction) {
         case 'ADD':
             return styles.pendingAddRow

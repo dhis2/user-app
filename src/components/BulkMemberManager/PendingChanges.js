@@ -32,7 +32,7 @@ const PendingChanges = ({ pendingChanges, onChange }) => (
             )}
         </div>
         <div className={styles.scrollbox}>
-            {pendingChanges.additions.map(entity => (
+            {pendingChanges.additions.map((entity) => (
                 <div key={entity.id} className={styles.pendingAddRow}>
                     <span className={styles.pendingChangeSummary}>
                         <IconAdd16 color={colors.green700} />
@@ -49,7 +49,7 @@ const PendingChanges = ({ pendingChanges, onChange }) => (
                     </Button>
                 </div>
             ))}
-            {pendingChanges.removals.map(entity => (
+            {pendingChanges.removals.map((entity) => (
                 <div key={entity.id} className={styles.pendingRemoveRow}>
                     <span className={styles.pendingChangeSummary}>
                         <IconCross16 color={colors.red700} />

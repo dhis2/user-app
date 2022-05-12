@@ -203,7 +203,7 @@ const MetadataAuthoritiesTable = React.memo(
                     </DataTableRow>
                 </DataTableHead>
                 <DataTableBody>
-                    {metadataAuthorities.map(item => (
+                    {metadataAuthorities.map((item) => (
                         <Row
                             key={item.name}
                             item={item}

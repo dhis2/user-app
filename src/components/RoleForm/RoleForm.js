@@ -23,12 +23,12 @@ const getRoleAuthorityIDs = ({
     systemAuthorityOptions,
 }) => {
     const metadataIDs = new Set(
-        flatMap(metadataAuthorities, authority => [
+        flatMap(metadataAuthorities, (authority) => [
             authority.addUpdatePublic.id,
             authority.addUpdatePrivate.id,
             authority.delete.id,
             authority.externalAccess.id,
-        ]).filter(authID => authID !== undefined)
+        ]).filter((authID) => authID !== undefined)
     )
     const appIDs = new Set(appAuthorityOptions.map(({ value }) => value))
     const trackerIDs = new Set(
@@ -40,11 +40,11 @@ const getRoleAuthorityIDs = ({
     const systemIDs = new Set(systemAuthorityOptions.map(({ value }) => value))
 
     return {
-        metadata: role.authorities.filter(id => metadataIDs.has(id)),
-        apps: role.authorities.filter(id => appIDs.has(id)),
-        tracker: role.authorities.filter(id => trackerIDs.has(id)),
-        importExport: role.authorities.filter(id => importExportIDs.has(id)),
-        system: role.authorities.filter(id => systemIDs.has(id)),
+        metadata: role.authorities.filter((id) => metadataIDs.has(id)),
+        apps: role.authorities.filter((id) => appIDs.has(id)),
+        tracker: role.authorities.filter((id) => trackerIDs.has(id)),
+        importExport: role.authorities.filter((id) => importExportIDs.has(id)),
+        system: role.authorities.filter((id) => systemIDs.has(id)),
     }
 }
 

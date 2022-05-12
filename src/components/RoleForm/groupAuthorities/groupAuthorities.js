@@ -60,7 +60,7 @@ const AUTHORITY_GROUPS = {
 
 const APP_AUTH_PREFIX = 'M_'
 
-const groupForAuthority = auth => {
+const groupForAuthority = (auth) => {
     for (const [group, authorityIDs] of Object.entries(AUTHORITY_GROUPS)) {
         if (authorityIDs.has(auth.id)) {
             return group
@@ -69,7 +69,7 @@ const groupForAuthority = auth => {
     return 'system'
 }
 
-const sortGroupedAuthorities = groupedAuthorities => {
+const sortGroupedAuthorities = (groupedAuthorities) => {
     const sortedGroupedAuthorities = {}
     for (const [group, items] of Object.entries(groupedAuthorities)) {
         sortedGroupedAuthorities[group] = sortBy(items, 'name')
@@ -79,7 +79,7 @@ const sortGroupedAuthorities = groupedAuthorities => {
 
 // Receives an authority item and creates an authority metadata group based on
 // suffixes
-const groupAuthorities = authorities => {
+const groupAuthorities = (authorities) => {
     // A lookup map used to check if an authority still needs to be assigned
     // to a group in constant time. Used to ensure each authority is assigned
     // to only one group

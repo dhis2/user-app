@@ -11,7 +11,7 @@ const Home = () => {
     const { currentUser, models } = d2
     // Only show menu items for which the user has either the "add" or "delete" authority
     const accessibleSections = getSections()
-        .map(section => {
+        .map((section) => {
             const sectionModel = models[section.entityType]
             return {
                 ...section,
@@ -19,7 +19,7 @@ const Home = () => {
                 canDelete: currentUser.canDelete(sectionModel),
             }
         })
-        .filter(section => section.canCreate || section.canDelete)
+        .filter((section) => section.canCreate || section.canDelete)
 
     if (accessibleSections.length === 0) {
         return (
@@ -35,7 +35,7 @@ const Home = () => {
 
     return (
         <div className={styles.grid}>
-            {accessibleSections.map(section => {
+            {accessibleSections.map((section) => {
                 const listAction = {
                     label: i18n.t('List'),
                     icon: IconList16,

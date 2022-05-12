@@ -5,16 +5,16 @@ export const useSet = () => {
 
     return useMemo(
         () => ({
-            has: value => set.has(value),
-            add: value => {
-                setSet(set => {
+            has: (value) => set.has(value),
+            add: (value) => {
+                setSet((set) => {
                     const newSet = new Set(set)
                     newSet.add(value)
                     return newSet
                 })
             },
-            delete: value => {
-                setSet(set => {
+            delete: (value) => {
+                setSet((set) => {
                     const newSet = new Set(set)
                     newSet.delete(value)
                     return newSet

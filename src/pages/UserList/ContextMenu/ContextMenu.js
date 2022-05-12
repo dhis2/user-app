@@ -31,7 +31,7 @@ const useCurrentModal = () => {
 
     return [
         CurrentModal,
-        Modal => {
+        (Modal) => {
             // As setState supports functional updates, we can't pass functional
             // components directly
             setCurrentModal(() => Modal)

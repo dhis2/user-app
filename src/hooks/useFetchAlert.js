@@ -6,7 +6,7 @@ export const useFetchAlert = () => {
         ({ isError }) => (isError ? { critical: true } : { success: true })
     )
     return {
-        showSuccess: message => show({ message }),
-        showError: message => show({ message, isError: true }),
+        showSuccess: (message) => show({ message }),
+        showError: (message) => show({ message, isError: true }),
     }
 }

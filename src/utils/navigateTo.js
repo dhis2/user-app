@@ -6,7 +6,7 @@ import history from './history'
  * @memberof module:utils
  * @function
  */
-const navigateTo = path => {
+const navigateTo = (path) => {
     history.push(path)
 }
 

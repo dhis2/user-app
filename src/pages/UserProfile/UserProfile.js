@@ -34,7 +34,7 @@ DateTimeValue.propTypes = {
 
 const Permissions = ({ displayNames }) => (
     <div className={styles.permissions}>
-        {displayNames.map(displayName => (
+        {displayNames.map((displayName) => (
             <Tag key={displayName}>{displayName}</Tag>
         ))}
     </div>
@@ -118,7 +118,7 @@ const UserProfile = ({ userId }) => {
                     value={
                         <Permissions
                             displayNames={user.organisationUnits.map(
-                                ou => ou.displayName
+                                (ou) => ou.displayName
                             )}
                         />
                     }
@@ -128,7 +128,7 @@ const UserProfile = ({ userId }) => {
                     value={
                         <Permissions
                             displayNames={user.userRoles.map(
-                                role => role.displayName
+                                (role) => role.displayName
                             )}
                         />
                     }

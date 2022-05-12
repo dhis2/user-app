@@ -92,7 +92,7 @@ LeaveModal.propTypes = {
 }
 
 const mapStateToProps = ({ currentUser }) => ({ currentUser })
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
     refreshCurrentUser: () => dispatch(refreshCurrentUser()),
 })
 

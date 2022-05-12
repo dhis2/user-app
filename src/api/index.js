@@ -68,7 +68,7 @@ class Api {
                 filter: `${entityType}Attribute:eq:true`,
                 paging: false,
             })
-            .then(resp => resp.attributes)
+            .then((resp) => resp.attributes)
     }
 
     /**************************
@@ -84,7 +84,7 @@ class Api {
             .get('me', {
                 fields: 'userGroups[id],userCredentials[userRoles[id]]',
             })
-            .then(res => ({
+            .then((res) => ({
                 userGroupIds: res.userGroups.map(({ id }) => id),
                 userRoleIds: res.userCredentials.userRoles.map(({ id }) => id),
             }))
@@ -158,7 +158,7 @@ class Api {
                 level: 1,
                 fields: 'id,path,displayName,children::isNotEmpty',
             })
-            .then(modelCollection => {
+            .then((modelCollection) => {
                 return modelCollection.toArray()
             })
     }

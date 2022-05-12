@@ -78,7 +78,7 @@ const UserTable = ({
                 </DataTableRow>
             </DataTableHead>
             <DataTableBody loading={loading}>
-                {users.map(user => {
+                {users.map((user) => {
                     const { id, displayName, access, userCredentials } = user
                     const { username, lastLogin, disabled } = userCredentials
                     const handleClick = () => {

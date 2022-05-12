@@ -20,7 +20,7 @@ const AppWrapper = () => {
             ],
         },
         i18nRoot: './d2i18n',
-        onInitialized: d2 => {
+        onInitialized: (d2) => {
             api.init(d2)
         },
     })

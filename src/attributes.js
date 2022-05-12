@@ -27,7 +27,7 @@ export const groupAttributesQuery = {
 }
 
 export const getAttributeValues = ({ attributes, values }) =>
-    attributes.map(attribute => {
+    attributes.map((attribute) => {
         let value = values.attributeValues?.[attribute.id] || ''
         if (attribute.valueType === 'TRUE_ONLY' && !value) {
             value = ''

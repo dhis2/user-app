@@ -6,7 +6,7 @@ import styles from './OrganisationUnitFilter.module.css'
 import { Select } from './select'
 import { Input } from './single-select/input'
 
-const formatList = items => {
+const formatList = (items) => {
     // Wrap Intl.ListFormat in try/catch as DHIS2 locales are not always ISO 639 compliant
     try {
         const formatter = new Intl.ListFormat(i18n.language, {
@@ -45,7 +45,7 @@ const OrganisationUnitFilter = ({
                         className={styles.orgUnitTree}
                         orgUnitType="teiSearchOrganisationUnits"
                         initiallySelected={organisationUnits}
-                        confirmSelection={selectedOrgUnits => {
+                        confirmSelection={(selectedOrgUnits) => {
                             onOrganisationUnitsChange(selectedOrgUnits)
                             selectRef.current.handleClose()
                         }}

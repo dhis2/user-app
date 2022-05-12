@@ -6,7 +6,7 @@ export const useDebouncedUniqueRoleNameValidator = ({
     engine,
     roleName: currentRoleName,
 }) => {
-    const findRolebyName = pDebounce(async roleName => {
+    const findRolebyName = pDebounce(async (roleName) => {
         const {
             roles: { userRoles: roles },
         } = await engine.query({
@@ -20,7 +20,7 @@ export const useDebouncedUniqueRoleNameValidator = ({
         })
         return roles[0]
     }, 350)
-    const validator = async roleName => {
+    const validator = async (roleName) => {
         if (roleName === currentRoleName) {
             return
         }

@@ -29,7 +29,7 @@ const DeleteModal = ({ group, refetchGroups, onClose }) => {
             refetchGroups()
             onClose()
         },
-        onError: error => {
+        onError: (error) => {
             const message = i18n.t(
                 'There was an error deleting the user group: {{- error}}',
                 {

@@ -12,7 +12,7 @@ import {
 import { useDebouncedUniqueUsernameValidator } from './validators'
 
 const hasOption = (options, value) =>
-    !!options.find(option => option.value === value)
+    !!options.find((option) => option.value === value)
 
 const BasicInformationSection = React.memo(
     ({

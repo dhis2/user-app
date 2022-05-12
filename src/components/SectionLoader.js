@@ -77,12 +77,12 @@ const SectionLoader = ({
                   },
                   { routes: [], sections: [] }
               )
-    const pathHasAvailableSection = pathname => {
+    const pathHasAvailableSection = (pathname) => {
         if (!routeConfig) {
             return false
         }
 
-        return routeConfig.sections.some(section =>
+        return routeConfig.sections.some((section) =>
             pathname.includes(section.path.split(':')[0])
         )
     }
@@ -127,7 +127,7 @@ const SectionLoader = ({
             <SideNav key="sidenav" sections={sections} />
             <div className={styles.content}>
                 <Switch key="routeswitch">
-                    {routes.map(section => (
+                    {routes.map((section) => (
                         <Route key={section.key} exact strict {...section} />
                     ))}
                 </Switch>

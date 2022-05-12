@@ -10,7 +10,7 @@ const Attributes = React.memo(
             return values
         }, new Map())
 
-        return attributes.map(attribute => (
+        return attributes.map((attribute) => (
             <Attribute
                 key={attribute.id}
                 attribute={attribute}

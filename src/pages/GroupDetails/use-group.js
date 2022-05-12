@@ -11,7 +11,7 @@ const query = {
     },
 }
 
-const useGroup = groupId => {
+const useGroup = (groupId) => {
     const { called, loading, error, data, refetch } = useDataQuery(query, {
         lazy: true,
     })

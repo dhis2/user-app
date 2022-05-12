@@ -86,7 +86,7 @@ const SearchableOrgUnitTree = ({
     const update = useCallback(
         (nextOrgUnits, nextExpanded) => {
             if (onChange) {
-                onChange(nextOrgUnits.map(unit => unit.id))
+                onChange(nextOrgUnits.map((unit) => unit.id))
                 // Also call onBlur if this is available. In a redux-form the component will be 'touched' by it
                 onBlur && onBlur()
             }
@@ -102,7 +102,7 @@ const SearchableOrgUnitTree = ({
 
     const toggleSelectedOrgUnits = useCallback(
         ({ id, path, displayName }) => {
-            const orgUnitIndex = selectedOrgUnits.findIndex(u => u.id === id)
+            const orgUnitIndex = selectedOrgUnits.findIndex((u) => u.id === id)
             const nextOrgUnits =
                 orgUnitIndex === -1
                     ? [...selectedOrgUnits, { id, path, displayName }]
@@ -116,7 +116,7 @@ const SearchableOrgUnitTree = ({
         [selectedOrgUnits, update]
     )
 
-    const selectAndShowFilteredOrgUnit = orgUnit => {
+    const selectAndShowFilteredOrgUnit = (orgUnit) => {
         const nextOrgUnits = [...selectedOrgUnits, orgUnit]
         const nextExpanded = getAllExpandedOrgUnitPaths([
             ...expanded,

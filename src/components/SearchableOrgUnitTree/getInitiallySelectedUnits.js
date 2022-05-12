@@ -1,5 +1,5 @@
-const getInitiallySelectedUnits = orgUnitModels =>
-    orgUnitModels.map(model => ({
+const getInitiallySelectedUnits = (orgUnitModels) =>
+    orgUnitModels.map((model) => ({
         id: model.id,
         path: model.path,
         displayName: model.displayName,
