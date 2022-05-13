@@ -256,7 +256,7 @@ msgid "Category Combo"
 msgstr ""
 
 msgid "Category"
-msgstr ""
+msgstr "Categorie"
 
 msgid "Category Option"
 msgstr ""
@@ -337,7 +337,7 @@ msgid "Option Set"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Organisatieëenheid"
 
 msgid "Organisation Unit Group Set"
 msgstr ""
@@ -708,7 +708,7 @@ msgid "Edit user group"
 msgstr ""
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid "Show details"
 msgstr ""
@@ -988,7 +988,7 @@ msgid "Created"
 msgstr ""
 
 msgid "Contact"
-msgstr ""
+msgstr "Contact"
 
 msgid "Send message"
 msgstr ""
