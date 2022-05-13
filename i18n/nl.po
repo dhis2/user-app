@@ -56,7 +56,7 @@ msgid "Category Combo"
 msgstr ""
 
 msgid "Category"
-msgstr ""
+msgstr "Categorie"
 
 msgid "Category Option"
 msgstr ""
@@ -140,7 +140,7 @@ msgid "Option Set"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Organisatieëenheid"
 
 msgid "Organisation Unit Group Set"
 msgstr ""
@@ -330,7 +330,7 @@ msgid "Display name"
 msgstr ""
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid "Last login"
 msgstr ""
