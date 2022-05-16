@@ -1,3 +1,10 @@
+## [1.4.5](https://github.com/dhis2/user-app/compare/v1.4.4...v1.4.5) (2022-05-16)
+
+
+### Bug Fixes
+
+* bulk-member-manager improvements ([#948](https://github.com/dhis2/user-app/issues/948)) ([49cae25](https://github.com/dhis2/user-app/commit/49cae250f6156ce8f7c1f735fd043b36d9c84c00))
+
 ## [1.4.4](https://github.com/dhis2/user-app/compare/v1.4.3...v1.4.4) (2022-05-02)
 
 
