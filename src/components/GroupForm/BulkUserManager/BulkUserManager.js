@@ -44,7 +44,7 @@ const renderNoResultsText = ({ mode, filter }) =>
         : i18n.t('No results found')
 
 const BulkUserManager = ({ className, groupId, value, onChange }) => {
-    const { allQuery, membersQuery, nonMembersQuery } = useQueries({ groupId })
+    const { allQuery, membersGistQuery } = useQueries({ groupId })
 
     return (
         <BulkMemberManager
@@ -69,8 +69,7 @@ const BulkUserManager = ({ className, groupId, value, onChange }) => {
             rowActionLabel={renderRowActionLabel}
             queryErrorMessage={i18n.t('Error loading users')}
             allQuery={allQuery}
-            membersQuery={membersQuery}
-            nonMembersQuery={nonMembersQuery}
+            membersGistQuery={membersGistQuery}
             transformQueryResponse={transformUserResults}
             value={value}
             onChange={onChange}

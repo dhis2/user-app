@@ -10,13 +10,13 @@ const TopBar = ({
     selectionText,
     actionText,
     mode,
-    loading,
     filter,
     onFilterChange,
     selectedResults,
     pagerTotal,
     pendingChanges,
     onChange,
+    clearAllSelected,
 }) => {
     const selectedCount = selectedResults.length
 
@@ -31,7 +31,6 @@ const TopBar = ({
                 value={filter}
                 onChange={({ value }) => onFilterChange(value)}
                 inputWidth="300px"
-                disabled={loading}
                 type="search"
                 dense
             />
@@ -58,6 +57,7 @@ const TopBar = ({
                             }
                         }, pendingChanges)
                     )
+                    clearAllSelected()
                 }}
             >
                 {typeof actionText === 'function'
@@ -68,17 +68,21 @@ const TopBar = ({
     )
 }
 
+TopBar.defaultProps = {
+    selectedResults: [],
+}
+
 TopBar.propTypes = {
+    clearAllSelected: PropTypes.func.isRequired,
     filter: PropTypes.string.isRequired,
-    loading: PropTypes.bool.isRequired,
     mode: PropTypes.oneOf(['MEMBERS', 'NON_MEMBERS']).isRequired,
     pendingChanges: PendingChangesPropType.isRequired,
-    selectedResults: PropTypes.array.isRequired,
     onChange: PropTypes.func.isRequired,
     onFilterChange: PropTypes.func.isRequired,
     actionText: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     filterLabel: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     pagerTotal: PropTypes.number,
+    selectedResults: PropTypes.array,
     selectionText: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
 }
 

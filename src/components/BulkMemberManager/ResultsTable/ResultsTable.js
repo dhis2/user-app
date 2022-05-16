@@ -29,7 +29,7 @@ const ResultsTable = ({
     onActionClick,
     pendingChanges,
     onPendingChangeCancel,
-    selected,
+    isSelected,
     onToggleSelected,
     onToggleAllSelected,
 }) => {
@@ -61,7 +61,7 @@ const ResultsTable = ({
         )
     }
 
-    const selectedResults = results.filter(({ id }) => selected.has(id))
+    const selectedResults = results.filter(({ id }) => isSelected(id))
 
     return (
         <DataTable>
@@ -74,7 +74,7 @@ const ResultsTable = ({
                                 selectedResults.length > 0 &&
                                 selectedResults.length < results.length
                             }
-                            onChange={onToggleAllSelected}
+                            onChange={() => onToggleAllSelected(pendingChanges)}
                             disabled={loading}
                         />
                     </DataTableColumnHeader>
@@ -124,7 +124,7 @@ const ResultsTable = ({
                             onPendingChangeCancel={() =>
                                 onPendingChangeCancel(pendingChangeEntity)
                             }
-                            selected={selected.has(result.id)}
+                            selected={isSelected(result.id)}
                             onToggleSelected={() => onToggleSelected(result.id)}
                         />
                     )
@@ -142,13 +142,11 @@ ResultsTable.propTypes = {
             mapDataToValue: PropTypes.func.isRequired,
         })
     ).isRequired,
+    isSelected: PropTypes.func.isRequired,
     loading: PropTypes.bool.isRequired,
     mode: PropTypes.oneOf(['MEMBERS', 'NON_MEMBERS']).isRequired,
     noResultsText: PropTypes.string.isRequired,
     pendingChanges: PendingChangesPropType.isRequired,
-    selected: PropTypes.shape({
-        has: PropTypes.func.isRequired,
-    }).isRequired,
     onActionClick: PropTypes.func.isRequired,
     onPendingChangeCancel: PropTypes.func.isRequired,
     onToggleAllSelected: PropTypes.func.isRequired,

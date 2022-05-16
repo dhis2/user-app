@@ -8,8 +8,10 @@ import { useCurrentUser } from '../../hooks/useCurrentUser'
 import Attributes from '../Attributes'
 import Form, { FormSection } from '../Form'
 import BasicInformationSection from './BasicInformationSection.js'
-import { getGroupData } from './getGroupData'
-import { getJsonPatch } from './getJsonPatch'
+import {
+    createPostRequestBody,
+    createJsonPatchRequestBody,
+} from './createRequestBody.js'
 import styles from './GroupForm.module.css'
 import { useFormData } from './useFormData'
 import UserGroupManagementSection from './UserGroupManagementSection.js'
@@ -21,47 +23,23 @@ const GroupForm = ({ submitButtonLabel, group }) => {
     const { loading, error, userGroupOptions, attributes } = useFormData()
     const { currentUser, refreshCurrentUser } = useCurrentUser()
     const handleSubmit = async (values, form) => {
-        const groupData = getGroupData({ values, attributes })
-
         try {
-            let groupId = group?.id
             if (group) {
-                const dirtyFields = new Set(
-                    Object.keys(form.getState().dirtyFields)
-                )
-
                 await engine.mutate({
-                    resource: `userGroups/${group.id}?mergeMode=MERGE`,
+                    resource: 'userGroups',
+                    id: group.id,
                     type: 'json-patch',
-                    data: getJsonPatch({
-                        groupData,
-                        dirtyFields,
+                    data: createJsonPatchRequestBody({
+                        values,
+                        attributes,
+                        dirtyFields: form.getState().dirtyFields,
                     }),
                 })
             } else {
-                const { response } = await engine.mutate({
+                await engine.mutate({
                     resource: 'userGroups',
                     type: 'create',
-                    data: groupData,
-                })
-                groupId = response.uid
-            }
-
-            if (
-                values.members.additions.length > 0 ||
-                values.members.removals.length > 0
-            ) {
-                await engine.mutate({
-                    resource: `userGroups/${groupId}/users`,
-                    type: 'create',
-                    data: {
-                        additions: values.members.additions.map(user => ({
-                            id: user.id,
-                        })),
-                        deletions: values.members.removals.map(user => ({
-                            id: user.id,
-                        })),
-                    },
+                    data: createPostRequestBody({ values, attributes }),
                 })
             }
 
