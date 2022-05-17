@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-04-21T15:05:16.105Z\n"
+"POT-Creation-Date: 2022-05-04T13:20:00.831Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Rica Zamora Duchateau, 2022\n"
 "Language-Team: Dutch (https://www.transifex.com/hisp-uio/teams/100509/nl/)\n"
@@ -117,9 +117,6 @@ msgid "Add to group"
 msgstr ""
 
 msgid "There aren't any users in this group yet"
-msgstr ""
-
-msgid "Users {{firstItem}}-{{lastItem}}"
 msgstr ""
 
 msgid "View and remove users from group"
@@ -256,7 +253,7 @@ msgid "Category Combo"
 msgstr ""
 
 msgid "Category"
-msgstr ""
+msgstr "Categorie"
 
 msgid "Category Option"
 msgstr ""
@@ -337,7 +334,7 @@ msgid "Option Set"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Organisatieëenheid"
 
 msgid "Organisation Unit Group Set"
 msgstr ""
@@ -708,7 +705,7 @@ msgid "Edit user group"
 msgstr ""
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid "Show details"
 msgstr ""
@@ -988,7 +985,7 @@ msgid "Created"
 msgstr ""
 
 msgid "Contact"
-msgstr ""
+msgstr "Contact"
 
 msgid "Send message"
 msgstr ""

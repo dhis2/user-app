@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-04-21T15:05:16.105Z\n"
+"POT-Creation-Date: 2022-05-04T13:20:00.831Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2022\n"
 "Language-Team: Central Kurdish (https://www.transifex.com/hisp-uio/teams/100509/ckb/)\n"
@@ -118,9 +118,6 @@ msgid "Add to group"
 msgstr ""
 
 msgid "There aren't any users in this group yet"
-msgstr ""
-
-msgid "Users {{firstItem}}-{{lastItem}}"
 msgstr ""
 
 msgid "View and remove users from group"

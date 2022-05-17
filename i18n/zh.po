@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-04-21T15:05:16.105Z\n"
+"POT-Creation-Date: 2022-05-04T13:20:00.831Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2022\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -120,9 +120,6 @@ msgstr "添加到组"
 
 msgid "There aren't any users in this group yet"
 msgstr "此群组中还没有任何用户"
-
-msgid "Users {{firstItem}}-{{lastItem}}"
-msgstr "用户 {{firstItem}}-{{lastItem}}"
 
 msgid "View and remove users from group"
 msgstr "查看和删除组中的用户"
