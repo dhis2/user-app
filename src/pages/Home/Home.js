@@ -2,9 +2,9 @@ import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import i18n from '@dhis2/d2-i18n'
 import { NoticeBox, IconAdd16, IconList16 } from '@dhis2/ui'
 import React from 'react'
-import { getSections } from '../../constants/routeConfig'
+import { getSections } from '../../constants/routeConfig.js'
 import styles from './Home.module.css'
-import SectionCard from './SectionCard'
+import SectionCard from './SectionCard.js'
 
 const Home = () => {
     const { d2 } = useD2()

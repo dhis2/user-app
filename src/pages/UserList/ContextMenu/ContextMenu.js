@@ -18,13 +18,13 @@ import {
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import navigateTo from '../../../utils/navigateTo'
-import DeleteModal from './Modals/DeleteModal'
-import Disable2FaModal from './Modals/Disable2FaModal'
-import DisableModal from './Modals/DisableModal'
-import EnableModal from './Modals/EnableModal'
-import ReplicateModal from './Modals/ReplicateModal'
-import ResetPasswordModal from './Modals/ResetPasswordModal'
+import navigateTo from '../../../utils/navigateTo.js'
+import DeleteModal from './Modals/DeleteModal.js'
+import Disable2FaModal from './Modals/Disable2FaModal.js'
+import DisableModal from './Modals/DisableModal.js'
+import EnableModal from './Modals/EnableModal.js'
+import ReplicateModal from './Modals/ReplicateModal.js'
+import ResetPasswordModal from './Modals/ResetPasswordModal.js'
 
 const useCurrentModal = () => {
     const [CurrentModal, setCurrentModal] = useState()

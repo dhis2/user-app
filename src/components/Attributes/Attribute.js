@@ -8,9 +8,12 @@ import {
     EmailField,
     DateField,
     CheckboxField,
-} from '../Form'
-import AttributePropType from './attributePropType'
-import { validators, useDebouncedUniqueAttributeValidator } from './validators'
+} from '../Form.js'
+import AttributePropType from './attributePropType.js'
+import {
+    validators,
+    useDebouncedUniqueAttributeValidator,
+} from './validators.js'
 
 const getFieldName = (attribute) => `attributeValues.${attribute.id}`
 

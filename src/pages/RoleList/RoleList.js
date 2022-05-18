@@ -9,11 +9,11 @@ import {
 } from '@dhis2/ui'
 import React, { useState, useEffect } from 'react'
 import { useDebounce } from 'use-debounce'
-import SearchFilter from '../../components/SearchFilter'
-import navigateTo from '../../utils/navigateTo'
+import SearchFilter from '../../components/SearchFilter.js'
+import navigateTo from '../../utils/navigateTo.js'
 import styles from './RoleList.module.css'
-import RoleTable from './RoleTable'
-import { useFilters } from './useFilters'
+import RoleTable from './RoleTable.js'
+import { useFilters } from './useFilters.js'
 
 const rolesQuery = {
     roles: {

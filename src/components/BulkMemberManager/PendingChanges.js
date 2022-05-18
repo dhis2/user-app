@@ -8,8 +8,8 @@ import {
     cancelAddEntity,
     cancelRemoveEntity,
     totalPendingChanges,
-} from './pendingChangesActions'
-import PendingChangesPropType from './PendingChangesPropType'
+} from './pendingChangesActions.js'
+import PendingChangesPropType from './PendingChangesPropType.js'
 
 const PendingChanges = ({ pendingChanges, onChange }) => (
     <>

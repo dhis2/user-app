@@ -2,7 +2,7 @@ import {
     LIST_REQUESTED,
     LIST_RECEIVED,
     LIST_ERRORED,
-} from '../constants/actionTypes'
+} from '../constants/actionTypes.js'
 
 const initialState = {
     type: null,

@@ -1,5 +1,5 @@
-import { FILTER_UPDATED, FILTER_RESET } from '../constants/actionTypes'
-import { LIST_FILTER as DEFAULT_FILTER } from '../constants/defaults'
+import { FILTER_UPDATED, FILTER_RESET } from '../constants/actionTypes.js'
+import { LIST_FILTER as DEFAULT_FILTER } from '../constants/defaults.js'
 
 /**
  * Reducer to control the filter state that is used to GET filtered lists

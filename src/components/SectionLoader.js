@@ -5,11 +5,11 @@ import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { Switch, Route, withRouter } from 'react-router-dom'
-import { initCurrentUser } from '../actions'
-import getRouteConfig from '../constants/routeConfig'
-import navigateTo from '../utils/navigateTo'
+import { initCurrentUser } from '../actions/index.js'
+import getRouteConfig from '../constants/routeConfig.js'
+import navigateTo from '../utils/navigateTo.js'
 import styles from './SectionLoader.module.css'
-import SideNav from './SideNav'
+import SideNav from './SideNav.js'
 
 /**
  * This component prepares the user-app sections and routes based on the current user's authorities

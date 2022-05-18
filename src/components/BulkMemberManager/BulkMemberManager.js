@@ -4,17 +4,17 @@ import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import styles from './BulkMemberManager.module.css'
-import { useResults } from './hooks/useResults'
-import PendingChanges from './PendingChanges'
+import { useResults } from './hooks/useResults/index.js'
+import PendingChanges from './PendingChanges.js'
 import {
     addEntity,
     removeEntity,
     cancelAddEntity,
     cancelRemoveEntity,
-} from './pendingChangesActions'
-import PendingChangesPropType from './PendingChangesPropType'
-import ResultsTable from './ResultsTable'
-import TopBar from './TopBar'
+} from './pendingChangesActions.js'
+import PendingChangesPropType from './PendingChangesPropType.js'
+import ResultsTable from './ResultsTable/index.js'
+import TopBar from './TopBar.js'
 
 const BulkMemberManager = ({
     className,

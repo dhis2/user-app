@@ -1,4 +1,4 @@
-import history from './history'
+import history from './history.js'
 /**
  * Pushed new routes to the hashHistory object.
  * Can be used to imperatively trigger route changes in the Router.

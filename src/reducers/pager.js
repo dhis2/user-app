@@ -1,4 +1,4 @@
-import { LIST_RECEIVED, PAGER_RESET } from '../constants/actionTypes'
+import { LIST_RECEIVED, PAGER_RESET } from '../constants/actionTypes.js'
 
 /**
  * Reducer to control the pager state. The pager state is used as a query parameter when fetching lists from the API.

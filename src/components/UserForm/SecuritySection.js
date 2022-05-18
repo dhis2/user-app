@@ -9,9 +9,9 @@ import {
     PasswordField,
     TextField,
     DateField,
-} from '../Form'
+} from '../Form.js'
 import styles from './UserForm.module.css'
-import { createRepeatPasswordValidator } from './validators'
+import { createRepeatPasswordValidator } from './validators.js'
 
 const SecuritySection = React.memo(
     ({ user, inviteUser, externalAuth, changePassword, password }) => {

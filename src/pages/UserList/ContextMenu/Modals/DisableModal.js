@@ -10,7 +10,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { useFetchAlert } from '../../../../hooks/useFetchAlert'
+import { useFetchAlert } from '../../../../hooks/useFetchAlert.js'
 
 const DisableModal = ({ user, refetchUsers, onClose }) => {
     const engine = useDataEngine()

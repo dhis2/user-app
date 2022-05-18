@@ -13,9 +13,9 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import PendingChangesPropType from '../PendingChangesPropType'
-import DataTableInfoWrapper from './DataTableInfoWrapper'
-import ResultsTableRow from './ResultsTableRow'
+import PendingChangesPropType from '../PendingChangesPropType.js'
+import DataTableInfoWrapper from './DataTableInfoWrapper.js'
+import ResultsTableRow from './ResultsTableRow.js'
 
 const ResultsTable = ({
     columns,

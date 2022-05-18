@@ -3,7 +3,7 @@ import { Layer } from '@dhis2-ui/layer'
 import { Popper } from '@dhis2-ui/popper'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { resolve } from 'styled-jsx/css'
+import { resolve } from 'styled-jsx/css.js'
 
 const MenuWrapper = ({
     children,

@@ -8,7 +8,7 @@ import {
     useQueryParam,
     usePagerQueryParams,
     useNameSortDirectionQueryParam,
-} from '../../hooks/useQueryParams'
+} from '../../hooks/useQueryParams.js'
 
 export const useFilters = () => {
     const { page, setPage, pageSize, setPageSize, withClearPager } =

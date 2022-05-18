@@ -1,8 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { FormSection } from '../Form'
-import BulkUserManagerField from './BulkUserManager/BulkUserManagerField'
+import { FormSection } from '../Form.js'
+import BulkUserManagerField from './BulkUserManager/BulkUserManagerField.js'
 import styles from './UserManagementSection.module.css'
 
 const UserManagementSection = React.memo(({ group }) => (

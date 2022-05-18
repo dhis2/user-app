@@ -9,10 +9,10 @@ import {
 } from '@dhis2/ui'
 import React, { useState, useEffect } from 'react'
 import { useDebounce } from 'use-debounce'
-import SearchFilter from '../../components/SearchFilter'
-import navigateTo from '../../utils/navigateTo'
+import SearchFilter from '../../components/SearchFilter.js'
+import navigateTo from '../../utils/navigateTo.js'
 import styles from './GroupList.module.css'
-import GroupTable from './GroupTable'
+import GroupTable from './GroupTable.js'
 import { useFilters } from './useFilters.js'
 
 const groupsQuery = {

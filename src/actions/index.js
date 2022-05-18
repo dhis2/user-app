@@ -3,8 +3,8 @@
  * @module actions
  */
 
-import api from '../api'
-import * as ACTIONS from '../constants/actionTypes'
+import api from '../api/index.js'
+import * as ACTIONS from '../constants/actionTypes.js'
 
 /**
  * Convenience function for creating a redux action

@@ -11,8 +11,8 @@ import {
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { refreshCurrentUser } from '../../../../actions'
-import { useFetchAlert } from '../../../../hooks/useFetchAlert'
+import { refreshCurrentUser } from '../../../../actions/index.js'
+import { useFetchAlert } from '../../../../hooks/useFetchAlert.js'
 
 const JoinModal = ({
     group,

@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { sortBy } from 'lodash-es'
-import { createMetadataGroup } from './metadata'
+import { createMetadataGroup } from './metadata.js'
 
 const AUTHORITY_GROUPS = {
     tracker: new Set([

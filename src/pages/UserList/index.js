@@ -1,2 +1,2 @@
-import UserList from './UserList'
+import UserList from './UserList.js'
 export default UserList

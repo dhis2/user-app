@@ -1,7 +1,7 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import pDebounce from 'p-debounce'
-import { useValidator } from '../../hooks/useValidator'
+import { useValidator } from '../../hooks/useValidator.js'
 
 const DEBOUNCE_DELAY_MS = 350
 

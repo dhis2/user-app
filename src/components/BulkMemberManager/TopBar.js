@@ -1,8 +1,8 @@
 import { InputField, Button } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { addEntity, removeEntity } from './pendingChangesActions'
-import PendingChangesPropType from './PendingChangesPropType'
+import { addEntity, removeEntity } from './pendingChangesActions.js'
+import PendingChangesPropType from './PendingChangesPropType.js'
 import styles from './TopBar.module.css'
 
 const TopBar = ({

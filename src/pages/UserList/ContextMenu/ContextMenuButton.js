@@ -1,7 +1,7 @@
 import { colors, IconMore24, Button } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useRef, useState } from 'react'
-import ContextMenu from './ContextMenu'
+import ContextMenu from './ContextMenu.js'
 import styles from './ContextMenuButton.module.css'
 
 const ContextMenuButton = ({ user, refetchUsers }) => {

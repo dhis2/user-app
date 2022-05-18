@@ -1,7 +1,7 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useDebounce } from 'use-debounce'
-import { useSet } from './useSet'
+import { useSet } from './useSet.js'
 
 export const useResults = ({
     canManageMembers,

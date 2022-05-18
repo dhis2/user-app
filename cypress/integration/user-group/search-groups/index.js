@@ -1,4 +1,4 @@
-import '../common'
+import '../common.js'
 import { Given, Then, When } from 'cypress-cucumber-preprocessor/steps'
 
 const NAME_SEARCH_QUERY = 'admin'

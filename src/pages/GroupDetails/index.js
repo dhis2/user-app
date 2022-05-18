@@ -1,2 +1,2 @@
-import GroupDetails from './GroupDetails'
+import GroupDetails from './GroupDetails.js'
 export default GroupDetails

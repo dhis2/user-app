@@ -13,9 +13,9 @@ import {
 import PropTypes from 'prop-types'
 import React from 'react'
 import { connect } from 'react-redux'
-import DataTableInfoWrapper from '../../components/DataTableInfoWrapper'
-import navigateTo from '../../utils/navigateTo'
-import ContextMenuButton from './ContextMenu/ContextMenuButton'
+import DataTableInfoWrapper from '../../components/DataTableInfoWrapper.js'
+import navigateTo from '../../utils/navigateTo.js'
+import ContextMenuButton from './ContextMenu/ContextMenuButton.js'
 
 const GroupTable = ({
     loading,

@@ -1,8 +1,8 @@
 import { ReactFinalForm } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useCallback, useState } from 'react'
-import { MetadataAuthoritiesPropType } from './authority-prop-types'
-import MetadataAuthoritiesTable from './MetadataAuthoritiesTable'
+import { MetadataAuthoritiesPropType } from './authority-prop-types.js'
+import MetadataAuthoritiesTable from './MetadataAuthoritiesTable.js'
 
 export const groupAuthorities = (metadataAuthorities) =>
     metadataAuthorities.reduce(

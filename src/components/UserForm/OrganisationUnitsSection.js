@@ -6,9 +6,9 @@ import {
     FormSection,
     SearchableOrgUnitTreeField,
     SingleSelectField,
-} from '../Form'
+} from '../Form.js'
 import styles from './UserForm.module.css'
-import { hasSelectionValidator } from './validators'
+import { hasSelectionValidator } from './validators.js'
 
 const OrganisationUnitsSection = React.memo(
     ({ user, filledOrganisationUnitLevels }) => (

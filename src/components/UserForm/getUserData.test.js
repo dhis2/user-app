@@ -1,4 +1,4 @@
-import { getUserData } from './getUserData'
+import { getUserData } from './getUserData.js'
 
 describe('getUserData', () => {
     const values = {

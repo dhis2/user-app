@@ -1,8 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React from 'react'
-import BulkMemberManager from '../../BulkMemberManager'
-import { useQueries } from './useQueries'
+import BulkMemberManager from '../../BulkMemberManager/index.js'
+import { useQueries } from './useQueries.js'
 
 const renderTopBarFilterLabel = ({ mode }) =>
     mode === 'MEMBERS'

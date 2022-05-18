@@ -6,11 +6,11 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { FormSection, TextField } from '../Form'
+import { FormSection, TextField } from '../Form.js'
 import {
     useDebouncedUniqueGroupNameValidator,
     useDebouncedUniqueGroupCodeValidator,
-} from './validators'
+} from './validators.js'
 
 const codeLengthValidator = createMaxCharacterLength(50)
 

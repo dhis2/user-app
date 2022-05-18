@@ -1,4 +1,4 @@
-import { getAttributeValues } from '../../attributes'
+import { getAttributeValues } from '../../attributes.js'
 
 const wrapIds = (ids) => ids.map((id) => ({ id }))
 

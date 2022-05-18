@@ -21,7 +21,7 @@ import PropTypes from 'prop-types'
 import React, { useState, useCallback, useMemo } from 'react'
 import { useHistory } from 'react-router-dom'
 import styles from './Form.module.css'
-import SearchableOrgUnitTree from './SearchableOrgUnitTree'
+import SearchableOrgUnitTree from './SearchableOrgUnitTree/index.js'
 
 export const FormSection = ({ title, children, description }) => (
     <section className={styles.section}>

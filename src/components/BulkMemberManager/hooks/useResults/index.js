@@ -1,1 +1,1 @@
-export { useResults } from './useResults'
+export { useResults } from './useResults.js'

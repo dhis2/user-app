@@ -1,5 +1,5 @@
 import { useDataQuery } from '@dhis2/app-runtime'
-import { groupAttributesQuery } from '../../attributes'
+import { groupAttributesQuery } from '../../attributes.js'
 
 const query = {
     userGroups: {

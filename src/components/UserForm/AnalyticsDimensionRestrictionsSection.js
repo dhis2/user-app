@@ -1,7 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { FormSection, TransferField } from '../Form'
+import { FormSection, TransferField } from '../Form.js'
 
 const AnalyticsDimensionsRestrictionsSection = React.memo(
     ({ user, dimensionConstraintOptions }) => (

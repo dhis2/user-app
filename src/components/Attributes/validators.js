@@ -9,7 +9,7 @@ import {
     createNumberRange,
 } from '@dhis2/ui'
 import pDebounce from 'p-debounce'
-import { useValidator } from '../../hooks/useValidator'
+import { useValidator } from '../../hooks/useValidator.js'
 
 export const useDebouncedUniqueAttributeValidator = ({
     attribute,

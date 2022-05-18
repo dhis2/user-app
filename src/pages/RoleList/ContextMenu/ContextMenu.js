@@ -12,9 +12,9 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import navigateTo from '../../../utils/navigateTo'
-import DeleteModal from './Modals/DeleteModal'
-import SharingSettingsModal from './Modals/SharingSettingsModal'
+import navigateTo from '../../../utils/navigateTo.js'
+import DeleteModal from './Modals/DeleteModal.js'
+import SharingSettingsModal from './Modals/SharingSettingsModal.js'
 
 const useCurrentModal = () => {
     const [CurrentModal, setCurrentModal] = useState()
