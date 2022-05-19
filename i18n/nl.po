@@ -206,7 +206,7 @@ msgid "User Role"
 msgstr ""
 
 msgid "User"
-msgstr ""
+msgstr "Gebruiker"
 
 msgid "Validation Rule Group"
 msgstr ""
@@ -282,7 +282,7 @@ msgid "There was a problem replicating the user"
 msgstr ""
 
 msgid "Username"
-msgstr ""
+msgstr "Gebruikersnaam"
 
 msgid "Username for new user"
 msgstr ""
