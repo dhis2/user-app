@@ -36,7 +36,7 @@ msgid "Value should be a negative integer"
 msgstr ""
 
 msgid "No results found"
-msgstr ""
+msgstr "Geen resultaten gevonden"
 
 msgid "Display name"
 msgstr ""
@@ -126,7 +126,7 @@ msgid "Add users to group"
 msgstr ""
 
 msgid "Username"
-msgstr ""
+msgstr "Gebruikersnaam"
 
 msgid "Error loading users"
 msgstr ""
@@ -397,7 +397,7 @@ msgid "User Role"
 msgstr ""
 
 msgid "User"
-msgstr ""
+msgstr "Gebruiker"
 
 msgid "Validation Rule Group"
 msgstr ""
@@ -575,7 +575,7 @@ msgid "Change user password"
 msgstr ""
 
 msgid "New password"
-msgstr ""
+msgstr "Nieuw paswoord"
 
 msgid "Password"
 msgstr ""
@@ -585,7 +585,7 @@ msgid ""
 msgstr ""
 
 msgid "Repeat new password"
-msgstr ""
+msgstr "Herhaal nieuw paswoord"
 
 msgid "Repeat password"
 msgstr ""
@@ -735,7 +735,7 @@ msgid "Are you sure you want to delete {{- name}}?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr ""
+msgstr "Nee, annuleer"
 
 msgid "Yes, delete"
 msgstr ""
@@ -768,7 +768,7 @@ msgid "Are you sure you want to leave {{- name}}?"
 msgstr ""
 
 msgid "Yes, leave"
-msgstr ""
+msgstr "Ja, verlaat"
 
 msgid "User Group Management"
 msgstr ""
