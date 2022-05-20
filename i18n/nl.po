@@ -342,7 +342,7 @@ msgid "User Role"
 msgstr ""
 
 msgid "User"
-msgstr ""
+msgstr "Gebruiker"
 
 msgid "Validation Rule Group"
 msgstr ""
@@ -416,7 +416,7 @@ msgid "Selected restrictions"
 msgstr ""
 
 msgid "Username"
-msgstr ""
+msgstr "Gebruikersnaam"
 
 msgid "Email address"
 msgstr ""
@@ -532,7 +532,7 @@ msgid "Change user password"
 msgstr ""
 
 msgid "New password"
-msgstr ""
+msgstr "Nieuw paswoord"
 
 msgid "Password"
 msgstr ""
@@ -542,7 +542,7 @@ msgid ""
 msgstr ""
 
 msgid "Repeat new password"
-msgstr ""
+msgstr "Herhaal nieuw paswoord"
 
 msgid "Repeat password"
 msgstr ""
@@ -734,7 +734,7 @@ msgid "Are you sure you want to delete {{- name}}?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr ""
+msgstr "Nee, annuleer"
 
 msgid "Yes, delete"
 msgstr ""
@@ -767,7 +767,7 @@ msgid "Are you sure you want to leave {{- name}}?"
 msgstr ""
 
 msgid "Yes, leave"
-msgstr ""
+msgstr "Ja, verlaat"
 
 msgid "User Group Management"
 msgstr ""
@@ -779,7 +779,7 @@ msgid "Error loading user groups"
 msgstr ""
 
 msgid "No results found"
-msgstr ""
+msgstr "Geen resultaten gevonden"
 
 msgid "Member?"
 msgstr ""
