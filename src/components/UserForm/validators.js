@@ -1,5 +1,6 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
+import { composeValidators, hasValue, dhis2Username } from '@dhis2/ui'
 import pDebounce from 'p-debounce'
 import { useValidator } from '../../hooks/useValidator.js'
 
@@ -38,6 +39,31 @@ export const useDebouncedUniqueUsernameValidator = ({
         }
     }
     return useValidator(validator)
+}
+
+export const useUserNameValidator = ({ user, isInviteUser }) => {
+    const debouncedUniqueUsernameValidator =
+        useDebouncedUniqueUsernameValidator({
+            username: user?.userCredentials.username,
+        })
+
+    if (user) {
+        return undefined
+    }
+
+    // username field is optional when inviting users, see DHIS2-13283
+    if (isInviteUser) {
+        return composeValidators(
+            dhis2Username,
+            debouncedUniqueUsernameValidator
+        )
+    }
+
+    return composeValidators(
+        hasValue,
+        dhis2Username,
+        debouncedUniqueUsernameValidator
+    )
 }
 
 export const createRepeatPasswordValidator = (password) => (repeatPassword) => {

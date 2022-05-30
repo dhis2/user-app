@@ -1,7 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
-import { composeValidators, hasValue, dhis2Username, email } from '@dhis2/ui'
+import { composeValidators, hasValue, email } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useForm } from 'react-final-form'
 import {
     FormSection,
     TextField,
@@ -9,10 +10,12 @@ import {
     SingleSelectField,
     CheckboxField,
 } from '../Form.js'
-import { useDebouncedUniqueUsernameValidator } from './validators.js'
+import { useUserNameValidator } from './validators.js'
 
 const hasOption = (options, value) =>
     !!options.find((option) => option.value === value)
+
+const INVITE_USER = 'INVITE_USER'
 
 const BasicInformationSection = React.memo(
     ({
@@ -24,10 +27,11 @@ const BasicInformationSection = React.memo(
         databaseLanguageOptions,
         currentUserId,
     }) => {
-        const debouncedUniqueUsernameValidator =
-            useDebouncedUniqueUsernameValidator({
-                username: user?.userCredentials.username,
-            })
+        const { resetFieldState } = useForm()
+        const validateUserName = useUserNameValidator({
+            user,
+            isInviteUser: inviteUser === INVITE_USER,
+        })
         const userInterfaceLanguageInitialValue = hasOption(
             interfaceLanguageOptions,
             userInterfaceLanguage
@@ -41,32 +45,28 @@ const BasicInformationSection = React.memo(
             ? userDatabaseLanguage
             : undefined
 
+        useEffect(() => {
+            resetFieldState('username')
+        }, [inviteUser, resetFieldState])
+
         return (
             <FormSection title={i18n.t('Basic information')}>
                 <TextField
-                    required
+                    required={inviteUser !== INVITE_USER}
                     name="username"
                     label={i18n.t('Username')}
                     initialValue={user?.userCredentials.username}
                     disabled={!!user}
                     autoComplete="new-password"
-                    validate={
-                        user
-                            ? undefined
-                            : composeValidators(
-                                  hasValue,
-                                  dhis2Username,
-                                  debouncedUniqueUsernameValidator
-                              )
-                    }
+                    validate={validateUserName}
                 />
                 <EmailField
-                    required={inviteUser === 'INVITE_USER'}
+                    required={inviteUser === INVITE_USER}
                     name="email"
                     label={i18n.t('Email address')}
                     initialValue={user?.email}
                     validate={
-                        inviteUser === 'INVITE_USER'
+                        inviteUser === INVITE_USER
                             ? composeValidators(hasValue, email)
                             : email
                     }
