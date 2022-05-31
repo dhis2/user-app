@@ -257,7 +257,7 @@ msgid "Indicator Type"
 msgstr ""
 
 msgid "Indicator"
-msgstr ""
+msgstr "Indicator"
 
 msgid "Legend Set"
 msgstr ""
@@ -800,7 +800,7 @@ msgid "List"
 msgstr ""
 
 msgid "Add"
-msgstr ""
+msgstr "Adăugare"
 
 msgid "Page not found."
 msgstr ""
