@@ -9,7 +9,7 @@ export const createPostRequestBody = ({ values, attributes }) => {
         name,
         code,
         users: members.additions.map(({ id }) => ({ id })),
-        managedGroups: managedGroups.map(id => ({ id })),
+        managedGroups: managedGroups.map((id) => ({ id })),
         attributeValues: getAttributeValues({ attributes, values }),
     }
 }
@@ -20,13 +20,13 @@ export const createJsonPatchRequestBody = ({
     dirtyFields,
 }) => {
     const dirtyFieldsArray = Object.keys(dirtyFields).filter(
-        key => dirtyFields[key]
+        (key) => dirtyFields[key]
     )
     const patch = dirtyFieldsArray.reduce((acc, key) => {
         if (key !== 'members' && !key.startsWith(ATTRIBUTE_VALUES)) {
             const value =
                 key === 'managedGroups'
-                    ? values[key].map(id => ({ id }))
+                    ? values[key].map((id) => ({ id }))
                     : values[key]
 
             acc.push({
@@ -40,7 +40,7 @@ export const createJsonPatchRequestBody = ({
 
     // Replace all attribute values if any were changed.
     // There is no way to update individual attributes.
-    const anyDirtyAttributes = dirtyFieldsArray.some(key =>
+    const anyDirtyAttributes = dirtyFieldsArray.some((key) =>
         key.startsWith(ATTRIBUTE_VALUES)
     )
 
