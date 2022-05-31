@@ -118,7 +118,7 @@ msgid "Indicator Type"
 msgstr ""
 
 msgid "Indicator"
-msgstr ""
+msgstr "Indicator"
 
 msgid "Legend Set"
 msgstr ""
@@ -229,7 +229,7 @@ msgid "System"
 msgstr ""
 
 msgid "Add"
-msgstr ""
+msgstr "Adăugare"
 
 msgid "list"
 msgstr ""
@@ -458,10 +458,10 @@ msgid "There was a problem saving the user."
 msgstr ""
 
 msgid "Show fewer options"
-msgstr ""
+msgstr "Afișare mai puține opțiuni"
 
 msgid "Show more options"
-msgstr ""
+msgstr "Afișare mai multe opțiuni"
 
 msgid "Send invite"
 msgstr ""
