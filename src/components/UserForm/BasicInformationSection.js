@@ -8,11 +8,11 @@ import {
     EmailField,
     SingleSelectField,
     CheckboxField,
-} from '../Form'
-import { useDebouncedUniqueUsernameValidator } from './validators'
+} from '../Form.js'
+import { useDebouncedUniqueUsernameValidator } from './validators.js'
 
 const hasOption = (options, value) =>
-    !!options.find(option => option.value === value)
+    !!options.find((option) => option.value === value)
 
 const BasicInformationSection = React.memo(
     ({

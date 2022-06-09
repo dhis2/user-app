@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
-import dialogReducer from './dialog'
-import sharingReducer from './sharing'
-import snackbarReducer from './snackbar'
+import dialogReducer from './dialog.js'
+import sharingReducer from './sharing.js'
+import snackbarReducer from './snackbar.js'
 
 /**
  * @module reducers/popups

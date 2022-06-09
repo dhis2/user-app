@@ -9,7 +9,7 @@ import {
     createNumberRange,
 } from '@dhis2/ui'
 import pDebounce from 'p-debounce'
-import { useValidator } from '../../hooks/useValidator'
+import { useValidator } from '../../hooks/useValidator.js'
 
 export const useDebouncedUniqueAttributeValidator = ({
     attribute,
@@ -18,7 +18,7 @@ export const useDebouncedUniqueAttributeValidator = ({
     entityType,
 }) => {
     const engine = useDataEngine()
-    const findAllByAttributeValue = pDebounce(async value => {
+    const findAllByAttributeValue = pDebounce(async (value) => {
         const filters = [
             `attributeValues.attribute.id:eq:${attribute.id}`,
             `attributeValues.value:eq:${value}`,
@@ -41,13 +41,13 @@ export const useDebouncedUniqueAttributeValidator = ({
         // value and attributeId
         return entities[entityType].filter(({ attributeValues }) =>
             attributeValues.some(
-                attributeValue =>
+                (attributeValue) =>
                     attributeValue.attribute.id === attribute.id &&
                     attributeValue.value === value
             )
         )
     }, 350)
-    const validator = async value => {
+    const validator = async (value) => {
         if (value === currentValue) {
             return
         }

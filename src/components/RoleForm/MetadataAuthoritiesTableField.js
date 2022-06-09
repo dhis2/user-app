@@ -1,10 +1,10 @@
 import { ReactFinalForm } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useCallback, useState } from 'react'
-import { MetadataAuthoritiesPropType } from './authority-prop-types'
-import MetadataAuthoritiesTable from './MetadataAuthoritiesTable'
+import { MetadataAuthoritiesPropType } from './authority-prop-types.js'
+import MetadataAuthoritiesTable from './MetadataAuthoritiesTable.js'
 
-export const groupAuthorities = metadataAuthorities =>
+export const groupAuthorities = (metadataAuthorities) =>
     metadataAuthorities.reduce(
         (groupedAuthorities, auth) => {
             for (const group of Object.keys(groupedAuthorities)) {
@@ -29,7 +29,7 @@ export const getInitiallySelectedColumns = ({
     const groupedAuthorities = groupAuthorities(metadataAuthorities)
     const initiallySelectedColumns = new Set()
     for (const [column, ids] of Object.entries(groupedAuthorities)) {
-        if (ids.length > 0 && ids.every(id => selectedAuthorities.has(id))) {
+        if (ids.length > 0 && ids.every((id) => selectedAuthorities.has(id))) {
             initiallySelectedColumns.add(column)
         }
     }
@@ -45,7 +45,7 @@ const MetadataAuthoritiesTableFF = ({
     ...props
 }) => {
     const handleSelectedAuthorityToggle = useCallback(
-        id => {
+        (id) => {
             const groupedAuthorities = groupAuthorities(
                 props.metadataAuthorities
             )
@@ -65,7 +65,7 @@ const MetadataAuthoritiesTableFF = ({
                 for (const [group, ids] of Object.entries(groupedAuthorities)) {
                     if (
                         ids.includes(id) &&
-                        ids.every(i => newSelectedAuthorities.has(i))
+                        ids.every((i) => newSelectedAuthorities.has(i))
                     ) {
                         newSelectedColumns.add(group)
                         break
@@ -86,7 +86,7 @@ const MetadataAuthoritiesTableFF = ({
     )
 
     const handleSelectedColumnToggle = useCallback(
-        column => {
+        (column) => {
             const groupedAuthorities = groupAuthorities(
                 props.metadataAuthorities
             )

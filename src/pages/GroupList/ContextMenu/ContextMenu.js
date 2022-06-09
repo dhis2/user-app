@@ -13,18 +13,18 @@ import {
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import navigateTo from '../../../utils/navigateTo'
-import DeleteModal from './Modals/DeleteModal'
-import JoinModal from './Modals/JoinModal'
-import LeaveModal from './Modals/LeaveModal'
-import SharingSettingsModal from './Modals/SharingSettingsModal'
+import navigateTo from '../../../utils/navigateTo.js'
+import DeleteModal from './Modals/DeleteModal.js'
+import JoinModal from './Modals/JoinModal.js'
+import LeaveModal from './Modals/LeaveModal.js'
+import SharingSettingsModal from './Modals/SharingSettingsModal.js'
 
 const useCurrentModal = () => {
     const [CurrentModal, setCurrentModal] = useState()
 
     return [
         CurrentModal,
-        Modal => {
+        (Modal) => {
             // As setState supports functional updates, we can't pass functional
             // components directly
             setCurrentModal(() => Modal)

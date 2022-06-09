@@ -1,7 +1,7 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import { uniqBy } from 'lodash-es'
 import { useMemo } from 'react'
-import { userAttributesQuery } from '../../attributes'
+import { userAttributesQuery } from '../../attributes.js'
 
 const query = {
     interfaceLanguages: {
@@ -38,7 +38,7 @@ const query = {
     attributes: userAttributesQuery,
 }
 
-const optionsFromLanguages = languages =>
+const optionsFromLanguages = (languages) =>
     // It is possible for the server to return duplicate entries for database locales
     uniqBy(
         languages.map(({ name, locale }) => ({
@@ -48,7 +48,7 @@ const optionsFromLanguages = languages =>
         'value'
     )
 
-const makeOptions = array =>
+const makeOptions = (array) =>
     array.map(({ displayName, name, id }) => ({
         label: displayName || name,
         value: id,

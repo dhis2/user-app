@@ -3,8 +3,8 @@
  * @module actions
  */
 
-import api from '../api'
-import * as ACTIONS from '../constants/actionTypes'
+import api from '../api/index.js'
+import * as ACTIONS from '../constants/actionTypes.js'
 
 /**
  * Convenience function for creating a redux action
@@ -43,7 +43,7 @@ const createAsyncActionSequence = async (actionTypes, promise, dispatch) => {
  * @function
  */
 // Used by DetailSummary component
-export const getItem = (entityName, id) => dispatch => {
+export const getItem = (entityName, id) => (dispatch) => {
     createAsyncActionSequence(
         {
             requested: ACTIONS.ITEM_REQUESTED,
@@ -61,7 +61,7 @@ const currentUserActions = {
     errored: ACTIONS.CURRENT_USER_ERRORED,
 }
 
-export const initCurrentUser = () => dispatch => {
+export const initCurrentUser = () => (dispatch) => {
     createAsyncActionSequence(
         currentUserActions,
         api.initCurrentUser(),
@@ -69,7 +69,7 @@ export const initCurrentUser = () => dispatch => {
     )
 }
 
-export const refreshCurrentUser = () => dispatch => {
+export const refreshCurrentUser = () => (dispatch) => {
     createAsyncActionSequence(
         currentUserActions,
         api.refreshCurrentUser(),

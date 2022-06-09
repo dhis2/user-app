@@ -11,7 +11,7 @@ const query = {
     },
 }
 
-const makeOptions = array =>
+const makeOptions = (array) =>
     array.map(({ name, id }) => ({
         label: name,
         value: id,

@@ -3,8 +3,8 @@ import { CenteredContent, CircularLoader, NoticeBox, Button } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import Details, { Section, Field } from '../../components/Details'
-import useRole from './use-role'
+import Details, { Section, Field } from '../../components/Details/index.js'
+import useRole from './use-role.js'
 
 const RoleDetails = ({ roleId }) => {
     const { loading, error, role } = useRole(roleId)

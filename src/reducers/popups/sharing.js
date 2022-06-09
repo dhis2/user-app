@@ -1,8 +1,8 @@
 import {
     SHOW_SHARING_DIALOG,
     HIDE_SHARING_DIALOG,
-} from '../../constants/actionTypes'
-import { INITIAL_SHARING_STATE } from '../../constants/defaults'
+} from '../../constants/actionTypes.js'
+import { INITIAL_SHARING_STATE } from '../../constants/defaults.js'
 
 /**
  * Reducer to show / hide the SharingDialogContainer

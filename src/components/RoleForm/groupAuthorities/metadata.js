@@ -93,12 +93,12 @@ const IMPLICIT_GROUP_ITEM = {
     implicit: true,
 }
 
-const hasMetadataGroupSuffix = authID =>
-    ALL_SUFFIXES.some(suffix => authID.endsWith(suffix))
+const hasMetadataGroupSuffix = (authID) =>
+    ALL_SUFFIXES.some((suffix) => authID.endsWith(suffix))
 
-export const getMetadataAuthBaseName = authID => {
+export const getMetadataAuthBaseName = (authID) => {
     // The suffix of the the incoming authority, i.e. "F_CATEGORY_COMBO_DELETE" => "_DELETE"
-    const authSuffix = ALL_SUFFIXES.find(suffix => authID.endsWith(suffix))
+    const authSuffix = ALL_SUFFIXES.find((suffix) => authID.endsWith(suffix))
     // The authority baseName, i.e. "F_CATEGORY_COMBO_DELETE" => "F_CATEGORY_COMBO"
     return authID.replace(new RegExp(`${authSuffix}$`), '')
 }
@@ -152,7 +152,7 @@ export const createMetadataGroup = (authID, lookup) => {
     }
 
     // Delete from lookup to prevent double entries
-    ALL_SUFFIXES.forEach(suffix => lookup.delete(baseName + suffix))
+    ALL_SUFFIXES.forEach((suffix) => lookup.delete(baseName + suffix))
 
     return {
         name: GROUP_NAMES[baseName] || baseName,

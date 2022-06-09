@@ -1,12 +1,12 @@
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React, { useRef } from 'react'
-import SearchableOrgUnitTree from '../../components/SearchableOrgUnitTree'
+import SearchableOrgUnitTree from '../../components/SearchableOrgUnitTree/index.js'
 import styles from './OrganisationUnitFilter.module.css'
-import { Select } from './select'
-import { Input } from './single-select/input'
+import { Select } from './select/index.js'
+import { Input } from './single-select/input.js'
 
-const formatList = items => {
+const formatList = (items) => {
     // Wrap Intl.ListFormat in try/catch as DHIS2 locales are not always ISO 639 compliant
     try {
         const formatter = new Intl.ListFormat(i18n.language, {
@@ -45,7 +45,7 @@ const OrganisationUnitFilter = ({
                         className={styles.orgUnitTree}
                         orgUnitType="teiSearchOrganisationUnits"
                         initiallySelected={organisationUnits}
-                        confirmSelection={selectedOrgUnits => {
+                        confirmSelection={(selectedOrgUnits) => {
                             onOrganisationUnitsChange(selectedOrgUnits)
                             selectRef.current.handleClose()
                         }}

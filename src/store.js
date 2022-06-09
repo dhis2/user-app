@@ -1,12 +1,12 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import logger from 'redux-logger'
 import ReduxThunk from 'redux-thunk'
-import currentItemReducer from './reducers/currentItem'
-import currentUserReducer from './reducers/currentUser'
-import filterReducer from './reducers/filter'
-import listReducer from './reducers/list'
-import pagerReducer from './reducers/pager'
-import popupsReducer from './reducers/popups/'
+import currentItemReducer from './reducers/currentItem.js'
+import currentUserReducer from './reducers/currentUser.js'
+import filterReducer from './reducers/filter.js'
+import listReducer from './reducers/list.js'
+import pagerReducer from './reducers/pager.js'
+import popupsReducer from './reducers/popups/index.js'
 
 const middlewares = [ReduxThunk]
 

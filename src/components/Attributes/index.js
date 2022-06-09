@@ -1,2 +1,2 @@
-import Attributes from './Attributes'
+import Attributes from './Attributes.js'
 export default Attributes

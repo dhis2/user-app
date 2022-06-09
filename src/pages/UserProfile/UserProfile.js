@@ -10,10 +10,10 @@ import {
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import api from '../../api'
-import Details, { Section, Field } from '../../components/Details'
-import parseDateFromUTCString from '../../utils/parseDateFromUTCString'
-import useUser from './use-user'
+import api from '../../api/index.js'
+import Details, { Section, Field } from '../../components/Details/index.js'
+import parseDateFromUTCString from '../../utils/parseDateFromUTCString.js'
+import useUser from './use-user.js'
 import styles from './UserProfile.module.css'
 
 const genders = {
@@ -34,7 +34,7 @@ DateTimeValue.propTypes = {
 
 const Permissions = ({ displayNames }) => (
     <div className={styles.permissions}>
-        {displayNames.map(displayName => (
+        {displayNames.map((displayName) => (
             <Tag key={displayName}>{displayName}</Tag>
         ))}
     </div>
@@ -118,7 +118,7 @@ const UserProfile = ({ userId }) => {
                     value={
                         <Permissions
                             displayNames={user.organisationUnits.map(
-                                ou => ou.displayName
+                                (ou) => ou.displayName
                             )}
                         />
                     }
@@ -128,7 +128,7 @@ const UserProfile = ({ userId }) => {
                     value={
                         <Permissions
                             displayNames={user.userRoles.map(
-                                role => role.displayName
+                                (role) => role.displayName
                             )}
                         />
                     }

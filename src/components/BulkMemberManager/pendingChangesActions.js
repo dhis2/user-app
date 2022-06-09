@@ -15,13 +15,13 @@ export const removeEntity = (pendingChanges, entity) => ({
 
 export const cancelAddEntity = (pendingChanges, entity) => ({
     ...pendingChanges,
-    additions: pendingChanges.additions.filter(e => e !== entity),
+    additions: pendingChanges.additions.filter((e) => e !== entity),
 })
 
 export const cancelRemoveEntity = (pendingChanges, entity) => ({
     ...pendingChanges,
-    removals: pendingChanges.removals.filter(e => e !== entity),
+    removals: pendingChanges.removals.filter((e) => e !== entity),
 })
 
-export const totalPendingChanges = pendingChanges =>
+export const totalPendingChanges = (pendingChanges) =>
     pendingChanges.additions.length + pendingChanges.removals.length

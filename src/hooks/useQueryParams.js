@@ -10,7 +10,7 @@ import {
 // this app's use cases
 const defaultUpdateType = 'replaceIn'
 
-export const useQueryParams = config => {
+export const useQueryParams = (config) => {
     const [queryParams, setQueryParams] = _useQueryParams(config)
     const setQueryParamsReplace = (values, updateType = defaultUpdateType) => {
         setQueryParams(values, updateType)
@@ -33,7 +33,7 @@ export const usePagerQueryParams = () => {
         withDefault(NumberParam, 50)
     )
 
-    const withPushIn = setFn => value => {
+    const withPushIn = (setFn) => (value) => {
         setFn(value, 'pushIn')
     }
     const clearPager = () => {
@@ -46,7 +46,7 @@ export const usePagerQueryParams = () => {
         setPage: withPushIn(setPage),
         pageSize,
         setPageSize: withPushIn(setPageSize),
-        withClearPager: setFn => value => {
+        withClearPager: (setFn) => (value) => {
             clearPager()
             setFn(value)
         },

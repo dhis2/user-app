@@ -1,4 +1,4 @@
-import groupAuthorities from './groupAuthorities'
+import groupAuthorities from './groupAuthorities.js'
 
 describe('groupAuthorities', () => {
     it('groups unknown authorities under the system group', () => {

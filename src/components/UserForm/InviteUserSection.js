@@ -1,7 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { FormSection, SingleSelectField } from '../Form'
+import { FormSection, SingleSelectField } from '../Form.js'
 
 const InviteUserSection = ({ user, emailConfigured }) => {
     if (user || !emailConfigured) {

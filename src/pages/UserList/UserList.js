@@ -9,11 +9,11 @@ import {
 } from '@dhis2/ui'
 import React, { useState, useEffect } from 'react'
 import { useDebounce } from 'use-debounce'
-import navigateTo from '../../utils/navigateTo'
-import Filters from './Filters'
-import { useFilters } from './useFilters'
+import navigateTo from '../../utils/navigateTo.js'
+import Filters from './Filters.js'
+import { useFilters } from './useFilters.js'
 import styles from './UserList.module.css'
-import UserTable from './UserTable'
+import UserTable from './UserTable.js'
 
 const usersQuery = {
     users: {

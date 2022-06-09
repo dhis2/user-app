@@ -20,11 +20,11 @@ export const getRestrictedOrgUnits = (orgUnits, orgUnitType) => {
             ? currentUser[orgUnitType]
             : currentUser.organisationUnits
 
-    return orgUnits.filter(unit => {
+    return orgUnits.filter((unit) => {
         const isAvailableUnit = Boolean(availableOrgUnits.get(unit.id))
         const hasAvailableAncestor =
             !isAvailableUnit &&
-            unit.ancestors.some(ancestor =>
+            unit.ancestors.some((ancestor) =>
                 Boolean(availableOrgUnits.get(ancestor.id))
             )
 

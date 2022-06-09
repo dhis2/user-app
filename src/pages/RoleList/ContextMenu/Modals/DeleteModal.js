@@ -10,7 +10,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { useFetchAlert } from '../../../../hooks/useFetchAlert'
+import { useFetchAlert } from '../../../../hooks/useFetchAlert.js'
 
 const mutation = {
     resource: 'userRoles',
@@ -29,7 +29,7 @@ const DeleteModal = ({ role, refetchRoles, onClose }) => {
             refetchRoles()
             onClose()
         },
-        onError: error => {
+        onError: (error) => {
             const message = i18n.t(
                 'There was an error deleting the user role: {{- error}}',
                 {

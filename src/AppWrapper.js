@@ -4,9 +4,9 @@ import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import { CenteredContent, CircularLoader, CssVariables } from '@dhis2/ui'
 import React from 'react'
 import { Provider } from 'react-redux'
-import api from './api'
-import App from './App'
-import store from './store'
+import api from './api/index.js'
+import App from './App.js'
+import store from './store.js'
 
 const AppWrapper = () => {
     const { d2 } = useD2({
@@ -20,7 +20,7 @@ const AppWrapper = () => {
             ],
         },
         i18nRoot: './d2i18n',
-        onInitialized: d2 => {
+        onInitialized: (d2) => {
             api.init(d2)
         },
     })

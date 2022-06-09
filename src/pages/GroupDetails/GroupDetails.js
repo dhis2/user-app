@@ -3,8 +3,8 @@ import { CenteredContent, CircularLoader, NoticeBox, Button } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import Details, { Section, Field } from '../../components/Details'
-import useGroup from './use-group'
+import Details, { Section, Field } from '../../components/Details/index.js'
+import useGroup from './use-group.js'
 
 const GroupDetails = ({ groupId }) => {
     const { loading, error, group } = useGroup(groupId)

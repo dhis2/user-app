@@ -27,7 +27,7 @@ const AsyncAutoComplete = ({ selectHandler, orgUnitType }) => {
         searchText,
         waiting,
     })
-    const selectOrgUnit = orgUnit => {
+    const selectOrgUnit = (orgUnit) => {
         setSearchText('')
         clear()
         selectHandler(orgUnit)
@@ -57,7 +57,7 @@ const AsyncAutoComplete = ({ selectHandler, orgUnitType }) => {
                         <Card>
                             <div className={styles.scrollBox}>
                                 <Menu dense>
-                                    {organisationUnits.map(orgUnit => (
+                                    {organisationUnits.map((orgUnit) => (
                                         <MenuItem
                                             key={orgUnit.id}
                                             label={orgUnit.displayName}

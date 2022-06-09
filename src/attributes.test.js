@@ -1,4 +1,4 @@
-import { getAttributeValues } from './attributes'
+import { getAttributeValues } from './attributes.js'
 
 describe('getAttributeValues', () => {
     it('generates attribute values from attributes and form values', () => {

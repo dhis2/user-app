@@ -1,8 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React from 'react'
-import BulkMemberManager from '../../BulkMemberManager'
-import { useQueries } from './useQueries'
+import BulkMemberManager from '../../BulkMemberManager/index.js'
+import { useQueries } from './useQueries.js'
 
 const renderTopBarFilterLabel = ({ mode }) =>
     mode === 'MEMBERS'
@@ -32,8 +32,8 @@ const renderTopBarActionText = ({ mode, selectedCount }) =>
 const renderRowActionLabel = ({ mode }) =>
     mode === 'MEMBERS' ? i18n.t('Remove from group') : i18n.t('Add to group')
 
-const transformUserResults = results =>
-    results.users.map(user => ({
+const transformUserResults = (results) =>
+    results.users.map((user) => ({
         ...user,
         displayName: user.username || user.name,
     }))
@@ -59,11 +59,11 @@ const BulkUserManager = ({ className, groupId, value, onChange }) => {
             columns={[
                 {
                     label: i18n.t('Username'),
-                    mapDataToValue: user => user.username,
+                    mapDataToValue: (user) => user.username,
                 },
                 {
                     label: i18n.t('Display name'),
-                    mapDataToValue: user => user.name,
+                    mapDataToValue: (user) => user.name,
                 },
             ]}
             rowActionLabel={renderRowActionLabel}

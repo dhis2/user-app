@@ -1,6 +1,6 @@
-import { getAttributeValues } from '../../attributes'
+import { getAttributeValues } from '../../attributes.js'
 
-const wrapIds = ids => ids.map(id => ({ id }))
+const wrapIds = (ids) => ids.map((id) => ({ id }))
 
 export const getUserData = ({
     values,
@@ -35,10 +35,10 @@ export const getUserData = ({
         userRoles,
         dimensionConstraints,
     } = values
-    const constraintsForType = dimensionType =>
+    const constraintsForType = (dimensionType) =>
         wrapIds(
             dimensionConstraints.filter(
-                id =>
+                (id) =>
                     dimensionConstraintsById[id].dimensionType === dimensionType
             )
         )

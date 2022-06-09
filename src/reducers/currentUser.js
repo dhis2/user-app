@@ -2,7 +2,7 @@ import {
     CURRENT_USER_REQUESTED,
     CURRENT_USER_RECEIVED,
     CURRENT_USER_ERRORED,
-} from '../constants/actionTypes'
+} from '../constants/actionTypes.js'
 
 /**
  * Reducer to control the current user state, initialized from the sectionLoader,

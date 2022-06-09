@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react-hooks'
-import { useSet } from './useSet'
+import { useSet } from './useSet.js'
 
 describe('useSet', () => {
     it('should support adding values and checking for their presence', () => {

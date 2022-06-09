@@ -37,7 +37,7 @@ const query = {
     },
 }
 
-const useUser = userId => {
+const useUser = (userId) => {
     const { called, loading, error, data, refetch } = useDataQuery(query, {
         lazy: true,
     })

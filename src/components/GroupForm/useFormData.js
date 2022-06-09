@@ -1,5 +1,5 @@
 import { useDataQuery } from '@dhis2/app-runtime'
-import { groupAttributesQuery } from '../../attributes'
+import { groupAttributesQuery } from '../../attributes.js'
 
 const query = {
     userGroups: {
@@ -12,7 +12,7 @@ const query = {
     attributes: groupAttributesQuery,
 }
 
-const makeOptions = array =>
+const makeOptions = (array) =>
     array.map(({ displayName, name, id }) => ({
         label: displayName || name,
         value: id,

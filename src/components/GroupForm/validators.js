@@ -1,7 +1,7 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import pDebounce from 'p-debounce'
-import { useValidator } from '../../hooks/useValidator'
+import { useValidator } from '../../hooks/useValidator.js'
 
 const DEBOUNCE_DELAY_MS = 350
 
@@ -9,7 +9,7 @@ export const useDebouncedUniqueGroupNameValidator = ({
     groupName: currentGroupName,
 }) => {
     const engine = useDataEngine()
-    const findGroupByName = pDebounce(async groupName => {
+    const findGroupByName = pDebounce(async (groupName) => {
         const {
             groups: { userGroups: groups },
         } = await engine.query({
@@ -23,7 +23,7 @@ export const useDebouncedUniqueGroupNameValidator = ({
         })
         return groups[0]
     }, DEBOUNCE_DELAY_MS)
-    const validator = async groupName => {
+    const validator = async (groupName) => {
         if (groupName === currentGroupName) {
             return
         }
@@ -46,7 +46,7 @@ export const useDebouncedUniqueGroupCodeValidator = ({
     groupCode: currentGroupCode,
 }) => {
     const engine = useDataEngine()
-    const findGroupByCode = pDebounce(async groupCode => {
+    const findGroupByCode = pDebounce(async (groupCode) => {
         const {
             groups: { userGroups: groups },
         } = await engine.query({
@@ -60,7 +60,7 @@ export const useDebouncedUniqueGroupCodeValidator = ({
         })
         return groups[0]
     }, DEBOUNCE_DELAY_MS)
-    const validator = async groupCode => {
+    const validator = async (groupCode) => {
         if (!groupCode || groupCode === currentGroupCode) {
             return
         }

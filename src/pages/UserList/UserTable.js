@@ -13,9 +13,9 @@ import {
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import React from 'react'
-import DataTableInfoWrapper from '../../components/DataTableInfoWrapper'
-import navigateTo from '../../utils/navigateTo'
-import ContextMenuButton from './ContextMenu/ContextMenuButton'
+import DataTableInfoWrapper from '../../components/DataTableInfoWrapper.js'
+import navigateTo from '../../utils/navigateTo.js'
+import ContextMenuButton from './ContextMenu/ContextMenuButton.js'
 
 const UserTable = ({
     loading,
@@ -78,7 +78,7 @@ const UserTable = ({
                 </DataTableRow>
             </DataTableHead>
             <DataTableBody loading={loading}>
-                {users.map(user => {
+                {users.map((user) => {
                     const { id, displayName, access, userCredentials } = user
                     const { username, lastLogin, disabled } = userCredentials
                     const handleClick = () => {

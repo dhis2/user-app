@@ -16,7 +16,7 @@ import React from 'react'
 import {
     AuthorityPropType,
     MetadataAuthoritiesPropType,
-} from './authority-prop-types'
+} from './authority-prop-types.js'
 import styles from './MetadataAuthoritiesTable.module.css'
 
 const ColumnHeader = ({ children }) => (
@@ -203,7 +203,7 @@ const MetadataAuthoritiesTable = React.memo(
                     </DataTableRow>
                 </DataTableHead>
                 <DataTableBody>
-                    {metadataAuthorities.map(item => (
+                    {metadataAuthorities.map((item) => (
                         <Row
                             key={item.name}
                             item={item}

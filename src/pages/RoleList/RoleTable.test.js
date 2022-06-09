@@ -1,7 +1,7 @@
 import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import React from 'react'
-import RoleTable from './RoleTable'
+import RoleTable from './RoleTable.js'
 
 describe('<RoleTable>', () => {
     it('renders a loading spinner while roles are being fetched', () => {

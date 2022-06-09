@@ -4,7 +4,7 @@ import {
     ITEM_REQUESTED,
     ITEM_RECEIVED,
     ITEM_ERRORED,
-} from '../constants/actionTypes'
+} from '../constants/actionTypes.js'
 
 /**
  * @module reducers

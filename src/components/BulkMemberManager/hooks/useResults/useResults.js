@@ -1,7 +1,7 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useDebounce } from 'use-debounce'
-import { useSet } from './useSet'
+import { useSet } from './useSet.js'
 
 export const useResults = ({
     canManageMembers,
@@ -57,7 +57,8 @@ export const useResults = ({
         : prevPageRef.current.nonMembers.pager
 
     const navigateToPage = useCallback(
-        page => refetch({ page, filter: queryFilter, inverse: !isMemberMode }),
+        (page) =>
+            refetch({ page, filter: queryFilter, inverse: !isMemberMode }),
         [refetch, queryFilter, isMemberMode]
     )
 
@@ -106,25 +107,25 @@ export const useResults = ({
         results,
         pager: data ? data.results.pager : prevPager,
         navigateToPage,
-        isSelected: id => selected.has(id),
-        toggleSelected: id => {
+        isSelected: (id) => selected.has(id),
+        toggleSelected: (id) => {
             if (selected.has(id)) {
                 selected.delete(id)
             } else {
                 selected.add(id)
             }
         },
-        toggleAllSelected: pendingChanges => {
+        toggleAllSelected: (pendingChanges) => {
             const pendingIdsSet = new Set(
                 pendingChanges.additions
                     .concat(pendingChanges.removals)
                     .map(({ id }) => id)
             )
             const ids = results.map(({ id }) => id)
-            if (ids.some(id => selected.has(id))) {
+            if (ids.some((id) => selected.has(id))) {
                 ids.forEach(selected.delete)
             } else {
-                ids.forEach(id => {
+                ids.forEach((id) => {
                     if (!pendingIdsSet.has(id)) {
                         selected.add(id)
                     }

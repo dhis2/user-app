@@ -1,4 +1,4 @@
-import '../common'
+import '../common.js'
 import { Given, Then, When } from 'cypress-cucumber-preprocessor/steps'
 
 const NAME_SEARCH_QUERY = 'admin'
@@ -13,7 +13,7 @@ When('the user-manager searches the list by entering a name', () => {
 Then(
     'only the users whose username or display name contains the search term should be displayed',
     () => {
-        cy.get('[data-test="dhis2-uicore-tablebody"] tr').each($tr => {
+        cy.get('[data-test="dhis2-uicore-tablebody"] tr').each(($tr) => {
             // Either the display name cell or the username cell will contain
             // text matching the search query, so check entire row
             cy.wrap($tr).contains(NAME_SEARCH_QUERY, { matchCase: false })

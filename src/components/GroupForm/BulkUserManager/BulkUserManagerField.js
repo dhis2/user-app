@@ -1,11 +1,11 @@
 import { ReactFinalForm } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useCallback, useState } from 'react'
-import BulkUserManager from './BulkUserManager'
+import BulkUserManager from './BulkUserManager.js'
 
 const BulkUserManagerFF = ({ className, input, groupId }) => {
     const handleChange = useCallback(
-        value => {
+        (value) => {
             input.onChange(value)
             input.onBlur()
         },
@@ -32,7 +32,7 @@ BulkUserManagerFF.propTypes = {
     groupId: PropTypes.string,
 }
 
-const BulkUserManagerField = props => {
+const BulkUserManagerField = (props) => {
     // Fixes the infinite loop rendering bug that occurs when the
     // initial value fails shallow equal on form rerender.
     // Issue on GitHub: https://github.com/final-form/react-final-form/issues/686

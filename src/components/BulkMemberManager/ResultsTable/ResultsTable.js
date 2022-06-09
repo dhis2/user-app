@@ -13,9 +13,9 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import PendingChangesPropType from '../PendingChangesPropType'
-import DataTableInfoWrapper from './DataTableInfoWrapper'
-import ResultsTableRow from './ResultsTableRow'
+import PendingChangesPropType from '../PendingChangesPropType.js'
+import DataTableInfoWrapper from './DataTableInfoWrapper.js'
+import ResultsTableRow from './ResultsTableRow.js'
 
 const ResultsTable = ({
     columns,
@@ -78,7 +78,7 @@ const ResultsTable = ({
                             disabled={loading}
                         />
                     </DataTableColumnHeader>
-                    {columns.map(column => (
+                    {columns.map((column) => (
                         <DataTableColumnHeader key={column.label}>
                             {column.label}
                         </DataTableColumnHeader>
@@ -89,16 +89,16 @@ const ResultsTable = ({
                 </DataTableRow>
             </DataTableHead>
             <DataTableBody loading={loading}>
-                {results.map(result => {
+                {results.map((result) => {
                     const pendingChangeEntity = (
                         mode === 'MEMBERS'
                             ? pendingChanges.removals
                             : pendingChanges.additions
-                    ).find(e => e.id === result.id)
+                    ).find((e) => e.id === result.id)
                     const hasPendingChange = !!pendingChangeEntity
                     const pendingChangeAction =
                         mode === 'MEMBERS' ? 'REMOVE' : 'ADD'
-                    const cells = columns.map(column =>
+                    const cells = columns.map((column) =>
                         column.mapDataToValue(result)
                     )
 

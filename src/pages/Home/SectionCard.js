@@ -1,7 +1,7 @@
 import { Card, Button, colors } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import navigateTo from '../../utils/navigateTo'
+import navigateTo from '../../utils/navigateTo.js'
 import styles from './SectionCard.module.css'
 
 const SectionCard = ({ titleText, bodyText, actions }) => (

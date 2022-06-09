@@ -1,5 +1,5 @@
-import { SHOW_DIALOG, HIDE_DIALOG } from '../../constants/actionTypes'
-import { INITIAL_DIALOG_STATE } from '../../constants/defaults'
+import { SHOW_DIALOG, HIDE_DIALOG } from '../../constants/actionTypes.js'
+import { INITIAL_DIALOG_STATE } from '../../constants/defaults.js'
 
 /**
  * Reducer to show / hide the DialogContainer

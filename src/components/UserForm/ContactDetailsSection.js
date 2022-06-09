@@ -1,7 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { FormSection, TextField } from '../Form'
+import { FormSection, TextField } from '../Form.js'
 
 const ContactDetailsSection = React.memo(({ user }) => (
     <FormSection title={i18n.t('Contact details')}>

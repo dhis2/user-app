@@ -1,8 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { FormSection, TransferField } from '../Form'
-import { hasSelectionValidator } from './validators'
+import { FormSection, TransferField } from '../Form.js'
+import { hasSelectionValidator } from './validators.js'
 
 const RolesSection = React.memo(
     ({ user, userRoleOptions, userGroupOptions }) => (

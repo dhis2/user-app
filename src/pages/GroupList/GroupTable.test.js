@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 import React from 'react'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import GroupTable from './GroupTable'
+import GroupTable from './GroupTable.js'
 
 const render = (component, options = {}) => {
     const currentUser = options.currentUser || { userGroupIds: [] }

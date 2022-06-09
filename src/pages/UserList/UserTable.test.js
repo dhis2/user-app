@@ -2,7 +2,7 @@ import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import moment from 'moment'
 import React from 'react'
-import UserTable from './UserTable'
+import UserTable from './UserTable.js'
 
 describe('<UserTable>', () => {
     it('renders a loading spinner while users are being fetched', () => {

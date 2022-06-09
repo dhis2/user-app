@@ -1,4 +1,4 @@
-import '../common'
+import '../common.js'
 import { Given, Then, When } from 'cypress-cucumber-preprocessor/steps'
 
 Then('the user-manager should see the first page of all users', () => {

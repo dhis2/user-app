@@ -29,7 +29,7 @@ describe('createMetadataGroup', () => {
             'F_ATTRIBUTE_EXTERNAL',
         ]
         const auths = keyBy(
-            authIDs.map(id => ({ id })),
+            authIDs.map((id) => ({ id })),
             'id'
         )
         const createLookup = () => new Map(Object.entries(auths))
@@ -67,7 +67,7 @@ describe('createMetadataGroup', () => {
             'F_ATTRIBUTE_EXTERNAL',
         ]
         const auths = keyBy(
-            authIDs.map(id => ({ id })),
+            authIDs.map((id) => ({ id })),
             'id'
         )
         const lookup = new Map(Object.entries(auths))
@@ -136,7 +136,7 @@ describe('createMetadataGroup', () => {
         ]
         const authIDs = [...metadataAuthIDs, ...otherAuthIDs]
         const auths = keyBy(
-            authIDs.map(id => ({ id })),
+            authIDs.map((id) => ({ id })),
             'id'
         )
         const lookup = new Map(Object.entries(auths))

@@ -10,7 +10,7 @@ import classnames from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './Filters.module.css'
-import OrganisationUnitFilter from './OrganisationUnitFilter'
+import OrganisationUnitFilter from './OrganisationUnitFilter.js'
 
 const InactiveMonthsFilter = ({ inactiveMonths, onInactiveMonthsChange }) => {
     const options = Array(12)

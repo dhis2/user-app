@@ -4,16 +4,16 @@ import { NoticeBox, FinalForm } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { useCurrentUser } from '../../hooks/useCurrentUser'
-import Attributes from '../Attributes'
-import Form, { FormSection } from '../Form'
+import { useCurrentUser } from '../../hooks/useCurrentUser.js'
+import Attributes from '../Attributes/index.js'
+import Form, { FormSection } from '../Form.js'
 import BasicInformationSection from './BasicInformationSection.js'
 import {
     createPostRequestBody,
     createJsonPatchRequestBody,
 } from './createRequestBody.js'
 import styles from './GroupForm.module.css'
-import { useFormData } from './useFormData'
+import { useFormData } from './useFormData.js'
 import UserGroupManagementSection from './UserGroupManagementSection.js'
 import UserManagementSection from './UserManagementSection.js'
 

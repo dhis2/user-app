@@ -1,4 +1,4 @@
-import '../common'
+import '../common.js'
 import { Given, Then, When } from 'cypress-cucumber-preprocessor/steps'
 
 const NAME_SEARCH_QUERY = 'admin'
@@ -14,7 +14,7 @@ Then(
     'only the user groups whose display name contains the search term should be displayed',
     () => {
         cy.get('[data-test="dhis2-uicore-tablebody"] tr td:first-child').each(
-            $td => {
+            ($td) => {
                 cy.wrap($td).contains(NAME_SEARCH_QUERY, { matchCase: false })
             }
         )

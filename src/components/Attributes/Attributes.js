@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import Attribute from './Attribute'
-import AttributePropType from './attributePropType'
+import Attribute from './Attribute.js'
+import AttributePropType from './attributePropType.js'
 
 const Attributes = React.memo(
     ({ attributes, attributeValues, entity, entityType }) => {
@@ -10,7 +10,7 @@ const Attributes = React.memo(
             return values
         }, new Map())
 
-        return attributes.map(attribute => (
+        return attributes.map((attribute) => (
             <Attribute
                 key={attribute.id}
                 attribute={attribute}

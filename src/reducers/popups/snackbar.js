@@ -1,5 +1,5 @@
-import { SHOW_SNACKBAR, HIDE_SNACKBAR } from '../../constants/actionTypes'
-import { INITIAL_SNACKBAR_STATE } from '../../constants/defaults'
+import { SHOW_SNACKBAR, HIDE_SNACKBAR } from '../../constants/actionTypes.js'
+import { INITIAL_SNACKBAR_STATE } from '../../constants/defaults.js'
 
 /**
  * Reducer to show / hide the SnackbarContainer
