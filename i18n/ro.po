@@ -56,7 +56,7 @@ msgid "There was an error fetching this form."
 msgstr ""
 
 msgid "Cancel without saving"
-msgstr ""
+msgstr "Anulare fără salvare"
 
 msgid "Error updating group"
 msgstr ""
@@ -278,7 +278,7 @@ msgid "Option Set"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Unitate Organizațională"
 
 msgid "Organisation Unit Group Set"
 msgstr ""
@@ -293,7 +293,7 @@ msgid "Program Stage"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Program"
 
 msgid "Program Indicator"
 msgstr ""
@@ -914,7 +914,7 @@ msgid ""
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Anulare"
 
 msgid "Replicate user"
 msgstr ""
