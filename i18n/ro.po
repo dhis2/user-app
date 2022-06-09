@@ -139,7 +139,7 @@ msgid "Option Set"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Unitate Organizațională"
 
 msgid "Organisation Unit Group Set"
 msgstr ""
@@ -154,7 +154,7 @@ msgid "Program Stage"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Program"
 
 msgid "Program Indicator"
 msgstr ""
@@ -266,7 +266,7 @@ msgid "You are not allowed to edit"
 msgstr ""
 
 msgid "Confirm"
-msgstr ""
+msgstr "Confirmare"
 
 msgid "There was an error fetching the list"
 msgstr ""
@@ -308,7 +308,7 @@ msgid "Replicate"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Anulare"
 
 msgid "Search by name"
 msgstr ""
