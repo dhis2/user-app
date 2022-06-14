@@ -47,6 +47,7 @@ const BasicInformationSection = React.memo(
 
         useEffect(() => {
             resetFieldState('username')
+            resetFieldState('email')
         }, [inviteUser, resetFieldState])
 
         return (
