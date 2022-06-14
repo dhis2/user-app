@@ -1,3 +1,10 @@
+## [1.4.12](https://github.com/dhis2/user-app/compare/v1.4.11...v1.4.12) (2022-06-14)
+
+
+### Bug Fixes
+
+* make username optional when inviting users ([#978](https://github.com/dhis2/user-app/issues/978)) ([dbdcccf](https://github.com/dhis2/user-app/commit/dbdcccfa294c1e4413cbf4fec391795f4dff3d34))
+
 ## [1.4.11](https://github.com/dhis2/user-app/compare/v1.4.10...v1.4.11) (2022-06-09)
 
 
