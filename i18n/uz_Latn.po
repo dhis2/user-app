@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-02-16T17:16:47.395Z\n"
+"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2022\n"
 "Language-Team: Uzbek (Latin) (https://www.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
