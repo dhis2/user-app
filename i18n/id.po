@@ -7,13 +7,14 @@
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2022
 # phil_dhis2, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
+# Raja Fathurrahim, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
+"Last-Translator: Raja Fathurrahim, 2022\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -362,7 +363,7 @@ msgid "Skip data import audit"
 msgstr ""
 
 msgid "Visualization"
-msgstr ""
+msgstr "Visualisasi"
 
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
