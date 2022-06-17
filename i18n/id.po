@@ -5,13 +5,14 @@
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021
 # Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2021
+# Raja Fathurrahim, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-11T14:57:14.928Z\n"
 "PO-Revision-Date: 2020-02-28 15:08+0000\n"
-"Last-Translator: Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2021\n"
+"Last-Translator: Raja Fathurrahim, 2022\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -221,7 +222,7 @@ msgid "Skip data import audit"
 msgstr ""
 
 msgid "Visualization"
-msgstr ""
+msgstr "Visualisasi"
 
 msgid "Apps"
 msgstr ""
@@ -593,7 +594,7 @@ msgid "There was a problem updating the enabled state"
 msgstr ""
 
 msgid "month"
-msgstr ""
+msgstr "bulan"
 
 msgid "months"
 msgstr ""
