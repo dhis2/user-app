@@ -78,7 +78,7 @@ msgid "There was an error fetching this form."
 msgstr ""
 
 msgid "Cancel without saving"
-msgstr ""
+msgstr "Batalkan tanpa menyimpan"
 
 msgid "Basic information"
 msgstr ""
