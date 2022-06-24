@@ -228,7 +228,7 @@ msgid "Visualization"
 msgstr "Visualisasi"
 
 msgid "Apps"
-msgstr ""
+msgstr "Aplikasi"
 
 msgid "Tracker"
 msgstr "Tracker"
