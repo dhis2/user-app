@@ -222,7 +222,7 @@ msgid "Data predictor group"
 msgstr ""
 
 msgid "Apps"
-msgstr ""
+msgstr "Aplikasi"
 
 msgid "Tracker"
 msgstr "Tracker"
