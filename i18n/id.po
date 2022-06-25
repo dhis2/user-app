@@ -346,7 +346,7 @@ msgid "Organisation Unit Group Set"
 msgstr ""
 
 msgid "Organisation Unit Group"
-msgstr ""
+msgstr "Grup Unit Organisasi"
 
 msgid "Predictor"
 msgstr ""
@@ -789,7 +789,7 @@ msgid "Member?"
 msgstr ""
 
 msgid "Actions"
-msgstr ""
+msgstr "Tindakan / Aksi"
 
 msgid "Member"
 msgstr ""
