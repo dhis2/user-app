@@ -150,7 +150,7 @@ msgid "Organisation Unit Group Set"
 msgstr ""
 
 msgid "Organisation Unit Group"
-msgstr ""
+msgstr "Grup Unit Organisasi"
 
 msgid "Predictor"
 msgstr ""
@@ -225,7 +225,7 @@ msgid "Visualization"
 msgstr "Visualisasi"
 
 msgid "Apps"
-msgstr ""
+msgstr "Aplikasi"
 
 msgid "Tracker"
 msgstr "Tracker"
