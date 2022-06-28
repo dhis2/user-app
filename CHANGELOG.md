@@ -1,3 +1,10 @@
+## [1.4.17](https://github.com/dhis2/user-app/compare/v1.4.16...v1.4.17) (2022-06-28)
+
+
+### Bug Fixes
+
+* upgrade @dhis2/ui to allow uppercase in username validation ([#1018](https://github.com/dhis2/user-app/issues/1018)) ([f80d732](https://github.com/dhis2/user-app/commit/f80d732eb46c08133354740dd23cb2a4691eba60))
+
 ## [1.4.16](https://github.com/dhis2/user-app/compare/v1.4.15...v1.4.16) (2022-06-25)
 
 
