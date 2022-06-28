@@ -1,7 +1,6 @@
 # 
 # Translators:
 # phil_dhis2, 2019
-# Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2021
 # Carwoto Sa'an <carwoto@gmail.com>, 2022
 # Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2022
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2022
@@ -841,7 +840,7 @@ msgid "Reset password"
 msgstr ""
 
 msgid "Disable"
-msgstr "Nonaktif kan"
+msgstr "Nonaktif "
 
 msgid "Enable"
 msgstr "Aktifkan"
@@ -997,7 +996,7 @@ msgid "Send message"
 msgstr "Kirim pesan"
 
 msgid "E-mail"
-msgstr "E-mail"
+msgstr "Surel"
 
 msgid "Permissions"
 msgstr ""
