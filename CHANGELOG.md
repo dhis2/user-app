@@ -1,3 +1,10 @@
+## [1.4.19](https://github.com/dhis2/user-app/compare/v1.4.18...v1.4.19) (2022-07-14)
+
+
+### Bug Fixes
+
+* **bulk-user-manager:** sort list by firstName and surname ([b5f4bf2](https://github.com/dhis2/user-app/commit/b5f4bf27163c1900bae30fc71aedd385a71e2d71))
+
 ## [1.4.18](https://github.com/dhis2/user-app/compare/v1.4.17...v1.4.18) (2022-06-29)
 
 
