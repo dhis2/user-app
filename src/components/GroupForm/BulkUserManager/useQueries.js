@@ -32,6 +32,7 @@ export const useQueries = ({ groupId }) => {
         // Disable totals for performance reasons
         total: false,
         pageSize: 10,
+        order: ['firstName:asc', 'surname:asc'],
     }
 
     // Use useMemo to silence warnings from useDataQuery about dynamic queries
