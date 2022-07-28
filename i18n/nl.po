@@ -68,7 +68,7 @@ msgid "Category Option Group Set"
 msgstr ""
 
 msgid "Chart"
-msgstr ""
+msgstr "Grafiek"
 
 msgid "Color Set"
 msgstr ""
