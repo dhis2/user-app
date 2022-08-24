@@ -4,13 +4,14 @@
 # Wanda <wanda@frontlineaids.org>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # phil_dhis2, 2022
+# Éva Tamási, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
-"Last-Translator: phil_dhis2, 2022\n"
+"Last-Translator: Éva Tamási, 2022\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,6 +27,7 @@ msgstr "Ні"
 
 msgid "Attribute value needs to be unique, value already taken."
 msgstr ""
+"Значення атрибута має бути унікальним, це значення вже використовується."
 
 msgid ""
 "There was a problem whilst checking the availability of this attribute value"
@@ -136,7 +138,7 @@ msgid "Delete"
 msgstr "Видалити"
 
 msgid "External access"
-msgstr ""
+msgstr "Зовнішній доступ"
 
 msgid "Error updating role"
 msgstr ""
@@ -586,7 +588,7 @@ msgid "Passwords do not match"
 msgstr ""
 
 msgid "Please provide a value"
-msgstr ""
+msgstr "Вкажіть значення"
 
 msgid "Create, modify, view and delete Users"
 msgstr ""
@@ -604,13 +606,13 @@ msgid "Create, modify, view and delete User Groups"
 msgstr ""
 
 msgid "Display name"
-msgstr ""
+msgstr "Коротке ім'я"
 
 msgid "ID"
 msgstr "ID (ідентифікатор)"
 
 msgid "Last login"
-msgstr ""
+msgstr "Останній вхід"
 
 msgid "Created"
 msgstr "Створено"
@@ -640,7 +642,7 @@ msgid "Gender"
 msgstr "Ґендер "
 
 msgid "Speaks"
-msgstr ""
+msgstr "Говорить"
 
 msgid "E-mail"
 msgstr "Електронна пошта "
@@ -691,7 +693,7 @@ msgid "Edit group"
 msgstr ""
 
 msgid "Save changes"
-msgstr ""
+msgstr "Зберегти зміни"
 
 msgid "Error fetching role"
 msgstr ""
@@ -718,10 +720,10 @@ msgid "Edit"
 msgstr "Редагувати"
 
 msgid "Join group"
-msgstr ""
+msgstr "Приєднатися до групи"
 
 msgid "Leave group"
-msgstr ""
+msgstr "Вийти з групи"
 
 msgid "Deleted \"{{- name}}\" successfully"
 msgstr ""
@@ -736,7 +738,7 @@ msgid "Are you sure you want to delete {{- name}}?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr ""
+msgstr "Ні, скасувати"
 
 msgid "Yes, delete"
 msgstr ""
@@ -769,7 +771,7 @@ msgid "Are you sure you want to leave {{- name}}?"
 msgstr ""
 
 msgid "Yes, leave"
-msgstr ""
+msgstr "Так, вийти"
 
 msgid "User Group Management"
 msgstr ""
@@ -787,7 +789,7 @@ msgid "Member?"
 msgstr ""
 
 msgid "Actions"
-msgstr ""
+msgstr "Дії"
 
 msgid "Member"
 msgstr ""
@@ -830,19 +832,19 @@ msgid "Profile"
 msgstr "Профіль"
 
 msgid "Replicate"
-msgstr ""
+msgstr "Повторити"
 
 msgid "Reset password"
-msgstr ""
+msgstr "Скинути пароль"
 
 msgid "Disable"
-msgstr ""
+msgstr "Вимкнути"
 
 msgid "Enable"
-msgstr ""
+msgstr "Увімкнути"
 
 msgid "Disable Two Factor Authentication"
-msgstr ""
+msgstr "Вимкнути двофакторну автентифікацію"
 
 msgid "There was an error deleting the user: {{- error}}"
 msgstr ""
@@ -974,7 +976,7 @@ msgid "Account disabled?"
 msgstr ""
 
 msgid "Disabled"
-msgstr ""
+msgstr "Вимкнено"
 
 msgid "Something went wrong when processing your request."
 msgstr ""
