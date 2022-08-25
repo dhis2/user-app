@@ -4,13 +4,14 @@
 # phil_dhis2, 2020
 # Wanda <wanda@frontlineaids.org>, 2021
 # Nadiia <semchuk@aph.org.ua>, 2021
+# Éva Tamási, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-03-11T14:08:46.110Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Nadiia <semchuk@aph.org.ua>, 2021\n"
+"Last-Translator: Éva Tamási, 2022\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -266,7 +267,7 @@ msgid "You are not allowed to edit"
 msgstr ""
 
 msgid "Confirm"
-msgstr ""
+msgstr "Підтвердити"
 
 msgid "There was an error fetching the list"
 msgstr ""
@@ -305,7 +306,7 @@ msgid "Password for new user"
 msgstr ""
 
 msgid "Replicate"
-msgstr ""
+msgstr "Повторити"
 
 msgid "Cancel"
 msgstr "Скасувати"
@@ -338,13 +339,13 @@ msgid "You do not have authorities to see users, user roles or user groups"
 msgstr ""
 
 msgid "Display name"
-msgstr ""
+msgstr "Коротке ім'я"
 
 msgid "ID"
 msgstr "ID (ідентифікатор)"
 
 msgid "Last login"
-msgstr ""
+msgstr "Останній вхід"
 
 msgid "Created"
 msgstr "Створено"
@@ -380,7 +381,7 @@ msgid "Gender"
 msgstr "Ґендер / Гендер"
 
 msgid "Speaks"
-msgstr ""
+msgstr "Говорить"
 
 msgid "E-mail"
 msgstr "Електронна пошта (емейл)"
@@ -507,7 +508,7 @@ msgid "Account expiration date"
 msgstr ""
 
 msgid "Disabled"
-msgstr ""
+msgstr "Вимкнено"
 
 msgid "Retype password"
 msgstr ""
@@ -652,7 +653,7 @@ msgid "Please enter a valid date with the following format yyyy-mm-dd"
 msgstr ""
 
 msgid "Please provide a valid email address"
-msgstr ""
+msgstr "Вкажіть дійсну адресу електронної пошти"
 
 msgid "Value should be an integer"
 msgstr ""
@@ -685,22 +686,22 @@ msgid "Please provide a valid international phone number (+0123456789)"
 msgstr ""
 
 msgid "Password should be at least 8 characters long"
-msgstr ""
+msgstr "Пароль має містити щонайменше 8 символів"
 
 msgid "Password should be no longer than 34 characters"
-msgstr ""
+msgstr "Пароль має містити не більше 34 символів"
 
 msgid "Password should contain at least one lowercase letter"
-msgstr ""
+msgstr "Пароль має містити принаймні одну малу літеру"
 
 msgid "Password should contain at least one UPPERCASE letter"
-msgstr ""
+msgstr "Пароль має містити принаймні одну ВЕЛИКУ літеру"
 
 msgid "Password should contain at least one number"
-msgstr ""
+msgstr "Пароль має містити принаймні одну цифру"
 
 msgid "Password should have at least one special character"
-msgstr ""
+msgstr "Пароль має містити принаймні один спеціальний символ"
 
 msgid "Username already taken"
 msgstr ""
@@ -716,6 +717,7 @@ msgstr ""
 
 msgid "Attribute value needs to be unique, value already taken."
 msgstr ""
+"Значення атрибута має бути унікальним, це значення вже використовується."
 
 msgid "There was a problem checking if this attribute value is unique"
 msgstr ""
