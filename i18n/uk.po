@@ -41,16 +41,16 @@ msgid "Value should be a negative integer"
 msgstr "Значення має бути від'ємним цілим числом"
 
 msgid "Edit user"
-msgstr ""
+msgstr "Редагувати користувача"
 
 msgid "Edit user group"
-msgstr ""
+msgstr "Редагувати групу користувачів"
 
 msgid "Edit user role"
-msgstr ""
+msgstr "Редагувати роль користувача"
 
 msgid "Send message"
-msgstr "Send message"
+msgstr "Надіслати повідомлення"
 
 msgid "Filter options"
 msgstr "Параметри фільтра"
@@ -83,7 +83,7 @@ msgid "Used in analytics reports."
 msgstr "Використовується в аналітичних звітах."
 
 msgid "User management"
-msgstr "Керування користувачем"
+msgstr "Керування користувачами"
 
 msgid "Add or remove users from this group."
 msgstr "Додайте або видаліть користувачів з цієї групи."
@@ -92,6 +92,8 @@ msgid ""
 "To add a user to this group, go to the User section and edit the user group "
 "settings for a specific user."
 msgstr ""
+"Щоб додати користувача до цієї групи, перейдіть до розділу \"Користувач\" і "
+"змініть налаштування групи користувачів для конкретного користувача."
 
 msgid "User group management"
 msgstr "Керування групами користувачів"
@@ -225,7 +227,7 @@ msgid "Constant"
 msgstr "Константа"
 
 msgid "Dashboard"
-msgstr "Інформаційна панель - дашборд"
+msgstr "Інформаційна панель (дашборд)"
 
 msgid "Data Element Group Sets"
 msgstr "Набори груп елементів даних"
@@ -267,7 +269,7 @@ msgid "Indicator Type"
 msgstr "Тип показника"
 
 msgid "Indicator"
-msgstr "Індикатор"
+msgstr "Показник"
 
 msgid "Legend Set"
 msgstr "Набір умовних позначень"
@@ -375,16 +377,16 @@ msgid "Search by name"
 msgstr "Пошук за ім'ям"
 
 msgid "Could not load available items"
-msgstr ""
+msgstr "Не вдалося завантажити доступні елементи"
 
 msgid "There was a problem displaying the GroupEditor"
-msgstr ""
+msgstr "Виникла проблема з відображенням GroupEditor"
 
 msgid "Filter available options"
-msgstr ""
+msgstr "Доступні параметри фільтра"
 
 msgid "Filter selected options"
-msgstr ""
+msgstr "Вибрані параметри фільтра"
 
 msgid "Search for an organisation unit"
 msgstr "Пошук організаційного підрозділу"
@@ -447,7 +449,7 @@ msgid "Database language"
 msgstr "Мова бази даних"
 
 msgid "Use database locale / no translation"
-msgstr "Використовувати локацію бази даних / без перекладу"
+msgstr "Використовувати мову бази даних / без перекладу"
 
 msgid "Disable this user account"
 msgstr "Вимкнути цей обліковий запис користувача"
@@ -493,58 +495,63 @@ msgid ""
 "capturing and managing data."
 msgstr ""
 "Налаштуйте організаційні підрозділи, до яких цей користувач має доступ для "
-"пошуку, збору та керування даними."
+"пошуку, збирання та керування даними."
 
 msgid "Organisation unit selections are recursive"
-msgstr ""
+msgstr "Вибір організаційних підрозділів є рекурсивним"
 
 msgid "Selecting a unit gives access to all units in its sub-hierarchy."
 msgstr ""
+"Вибір підрозділу надає доступ до всіх вкладених підрозділів у його ієрархії."
 
 msgid "Data capture and maintenance"
-msgstr ""
+msgstr "Збирання та обслуговування даних"
 
 msgid "The organisation units that this user can enter and edit data for."
 msgstr ""
+"Організаційні підрозділи, для яких цей користувач може вводити та редагувати"
+" дані."
 
 msgid "Data output and analysis"
-msgstr ""
+msgstr "Виведення та аналіз даних"
 
 msgid "The organisation units that this user can export and analyse."
 msgstr ""
+"Організаційні підрозділи, які цей користувач може експортувати та "
+"аналізувати."
 
 msgid "Search"
 msgstr "Пошук"
 
 msgid "The organisation that this user can search for and in."
-msgstr ""
+msgstr "Організація, в якій цей користувач може здійснювати пошук."
 
 msgid "Maximum organisation unit level for data output"
-msgstr ""
+msgstr "Максимальний рівень організаційного підрозділу для виведення даних"
 
 msgid "Roles and groups"
-msgstr ""
+msgstr "Ролі та групи"
 
 msgid "Manage what roles and groups this user is a member of."
-msgstr ""
+msgstr "Керування ролями та групами, до яких входить цей користувач."
 
 msgid "Available user roles"
-msgstr ""
+msgstr "Доступні ролі користувача"
 
 msgid "User roles this user is assigned"
-msgstr ""
+msgstr "Ролі користувача, призначені цьому користувачеві"
 
 msgid "User groups this user is a member of"
-msgstr ""
+msgstr "Групи користувачів, членом яких є цей користувач"
 
 msgid "Security"
-msgstr ""
+msgstr "Безпека"
 
 msgid "Settings for how this user can log in."
-msgstr ""
+msgstr "Налаштування способу входу цього користувача."
 
 msgid "Change user password"
-msgstr ""
+msgstr "Змінити пароль користувача"
 
 msgid "New password"
 msgstr "Новий пароль"
@@ -554,67 +561,68 @@ msgstr "Пароль"
 
 msgid ""
 "Minimum 8 characters, one uppercase and lowercase letter and one number"
-msgstr ""
+msgstr "Мінімум 8 символів, одна велика і мала літери і одна цифра"
 
 msgid "Repeat new password"
 msgstr "Повторити новий пароль"
 
 msgid "Repeat password"
-msgstr ""
+msgstr "Повторити пароль"
 
 msgid "Account expiration date"
-msgstr ""
+msgstr "Дата закінчення терміну дії облікового запису"
 
 msgid "OIDC mapping value"
-msgstr ""
+msgstr "Значення OIDC"
 
 msgid "OpenID Connect mapping claim for your identity platform"
-msgstr ""
+msgstr "Запит OpenID Connect вашої платформи ідентифікації"
 
 msgid "LDAP identifier"
-msgstr ""
+msgstr "Ідентифікатор LDAP"
 
 msgid "External authentication only (OpenID / LDAP)"
-msgstr ""
+msgstr "Тільки зовнішня автентифікація (OpenID / LDAP)"
 
 msgid "Invalid username"
-msgstr ""
+msgstr "Недійсне ім'я користувача"
 
 msgid "Invalid WhatsApp number"
-msgstr ""
+msgstr "Недійсний номер WhatsApp"
 
 msgid "Error updating user"
-msgstr ""
+msgstr "Помилка оновлення користувача"
 
 msgid "Error creating user"
-msgstr ""
+msgstr "Помилка створення користувача"
 
 msgid "Username already taken"
-msgstr ""
+msgstr "Ім'я користувача вже використовується"
 
 msgid "There was a problem whilst checking the availability of this username"
 msgstr ""
+"Під час перевірки доступності цього імені користувача виникла проблема"
 
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Паролі не збігаються"
 
 msgid "Please provide a value"
 msgstr "Вкажіть значення"
 
 msgid "Create, modify, view and delete Users"
-msgstr ""
+msgstr "Створення, зміна, перегляд і видалення користувачів"
 
 msgid "User role"
-msgstr ""
+msgstr "Роль користувача"
 
 msgid "Create, modify, view and delete User Roles"
-msgstr ""
+msgstr "Створення, зміна, перегляд і видалення ролей користувачів"
 
 msgid "User group"
-msgstr ""
+msgstr "Група користувачів"
 
 msgid "Create, modify, view and delete User Groups"
-msgstr ""
+msgstr "Створення, зміна, перегляд і видалення груп користувачів"
 
 msgid "Display name"
 msgstr "Коротке ім'я"
@@ -629,19 +637,19 @@ msgid "Created"
 msgstr "Створено"
 
 msgid "Introduction"
-msgstr "Коротко про себе"
+msgstr "Вступ"
 
 msgid "Job title"
 msgstr "Посада"
 
 msgid "Works at"
-msgstr ""
+msgstr "Працює в"
 
 msgid "Education"
 msgstr "Освіта"
 
 msgid "Interests"
-msgstr "Хобі"
+msgstr "Зацікавленості"
 
 msgid "Nationality"
 msgstr "Громадянство"
@@ -650,7 +658,7 @@ msgid "Birthday"
 msgstr "День народження"
 
 msgid "Gender"
-msgstr "Ґендер "
+msgstr "Стать "
 
 msgid "Speaks"
 msgstr "Говорить"
@@ -659,67 +667,67 @@ msgid "E-mail"
 msgstr "Електронна пошта "
 
 msgid "Organisations units"
-msgstr ""
+msgstr "Організаційні підрозділи"
 
 msgid "User roles"
-msgstr "Ролі користувача"
+msgstr "Ролі користувачів"
 
 msgid "Members"
-msgstr ""
+msgstr "Учасники"
 
 msgid "Number of users"
-msgstr ""
+msgstr "Кількість користувачів"
 
 msgid "New group"
-msgstr ""
+msgstr "Нова група"
 
 msgid "Create group"
-msgstr ""
+msgstr "Створити групу"
 
 msgid "New role"
-msgstr ""
+msgstr "Нова роль"
 
 msgid "Create role"
-msgstr ""
+msgstr "Створити роль"
 
 msgid "Error fetching interface language"
-msgstr ""
+msgstr "Помилка при отриманні мови інтерфейсу"
 
 msgid "There was an error fetching the default interface language."
-msgstr ""
+msgstr "Під час отримання мови інтерфейсу за замовчуванням сталася помилка."
 
 msgid "New user"
-msgstr ""
+msgstr "Новий користувач"
 
 msgid "Create user"
-msgstr ""
+msgstr "Створити користувача"
 
 msgid "Error fetching group"
-msgstr ""
+msgstr "Помилка отримання групи"
 
 msgid "There was an error fetching this group."
-msgstr ""
+msgstr "Під час отримання цієї групи сталася помилка."
 
 msgid "Edit group"
-msgstr ""
+msgstr "Редагувати групу"
 
 msgid "Save changes"
 msgstr "Зберегти зміни"
 
 msgid "Error fetching role"
-msgstr ""
+msgstr "Помилка отримання ролі"
 
 msgid "There was an error fetching this role."
-msgstr ""
+msgstr "Під час отримання цієї ролі сталася помилка."
 
 msgid "Edit role"
-msgstr ""
+msgstr "Редагувати роль"
 
 msgid "Error fetching user"
-msgstr ""
+msgstr "Помилка отримання користувача"
 
 msgid "There was an error fetching this user."
-msgstr ""
+msgstr "Під час отримання цього користувача сталася помилка."
 
 msgid "Show details"
 msgstr "Показати деталі"
@@ -737,107 +745,107 @@ msgid "Leave group"
 msgstr "Вийти з групи"
 
 msgid "Deleted \"{{- name}}\" successfully"
-msgstr ""
+msgstr "\"{{- name}}\" успішно видалено"
 
 msgid "There was an error deleting the user group: {{- error}}"
-msgstr ""
+msgstr "Під час видалення групи користувачів сталася помилка: {{- error}}"
 
 msgid "Delete user group {{- name}}"
-msgstr ""
+msgstr "Видалити групу користувачів {{- name}}"
 
 msgid "Are you sure you want to delete {{- name}}?"
-msgstr ""
+msgstr "Ви дійсно хочете видалити {{- name}}?"
 
 msgid "No, cancel"
 msgstr "Ні, скасувати"
 
 msgid "Yes, delete"
-msgstr ""
+msgstr "Так, видалити"
 
 msgid "Joined user group \"{{- name}}\" successfuly"
-msgstr ""
+msgstr "Успішно приєднався до групи користувачів \"{{- name}}\""
 
 msgid "There was an error joining the user group: {{- error}}"
-msgstr ""
+msgstr "Під час приєднання до групи користувачів сталася помилка: {{- error}}"
 
 msgid "Join user group {{- name}}"
-msgstr ""
+msgstr "Приєднатися до групи користувачів {{- name}}"
 
 msgid "Are you sure you want to join {{- name}}?"
-msgstr ""
+msgstr "Ви дійсно хочете приєднатися до {{- name}}?"
 
 msgid "Yes, join"
-msgstr ""
+msgstr "Так, приєднатися"
 
 msgid "Left user group \"{{- name}}\" successfuly"
-msgstr ""
+msgstr "Успішно вийшов з групи користивачів \"{{- name}}\""
 
 msgid "There was an error leaving the user group: {{- error}}"
-msgstr ""
+msgstr "Під час виходу з групи користувачів сталася помилка: {{- error}}"
 
 msgid "Leave user group {{- name}}"
-msgstr ""
+msgstr "Вийти з групи користувачів {{- name}}"
 
 msgid "Are you sure you want to leave {{- name}}?"
-msgstr ""
+msgstr "Ви дійсно хочете вийти з {{- name}}?"
 
 msgid "Yes, leave"
 msgstr "Так, вийти"
 
 msgid "User Group Management"
-msgstr ""
+msgstr "Керування групами користувачів"
 
 msgid "New"
 msgstr "Новий"
 
 msgid "Error loading user groups"
-msgstr ""
+msgstr "Помилка завантаження груп користувачів"
 
 msgid "No results found"
 msgstr "Результатів не знайдено"
 
 msgid "Member?"
-msgstr ""
+msgstr "Учасник?"
 
 msgid "Actions"
 msgstr "Дії"
 
 msgid "Member"
-msgstr ""
+msgstr "Учасник"
 
 msgid "Insufficient permissions"
-msgstr ""
+msgstr "Недостатньо дозволів"
 
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
-msgstr ""
+msgstr "У вас немає доступу до жодного розділу додатка DHIS 2 User Management"
 
 msgid "List"
-msgstr "Показати"
+msgstr "Список"
 
 msgid "Add"
 msgstr "Додати"
 
 msgid "Page not found."
-msgstr ""
+msgstr "Сторінку не знайдено."
 
 msgid "No match for"
-msgstr ""
+msgstr "Немає збігів для"
 
 msgid "Go back home"
-msgstr ""
+msgstr "Повернутися на головну"
 
 msgid "There was an error deleting the user role: {{- error}}"
-msgstr ""
+msgstr "Під час видалення ролі користувача сталася помилка: {{- error}}"
 
 msgid "Delete user role {{- name}}"
-msgstr ""
+msgstr "Видалити роль користувача {{- name}}"
 
 msgid "User Role Management"
-msgstr ""
+msgstr "Керування ролями користувачів"
 
 msgid "Error loading user roles"
-msgstr ""
+msgstr "Помилка завантаження ролей користувачів"
 
 msgid "Profile"
 msgstr "Профіль"
@@ -858,133 +866,136 @@ msgid "Disable Two Factor Authentication"
 msgstr "Вимкнути двофакторну автентифікацію"
 
 msgid "There was an error deleting the user: {{- error}}"
-msgstr ""
+msgstr "Під час видалення користувача сталася помилка: {{- error}}"
 
 msgid "Delete user {{- name}}"
-msgstr ""
+msgstr "Видалити користувача {{- name}}"
 
 msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
-msgstr ""
+msgstr "Двофакторну автентифікацію для \"{{- name}}\" успішно вимкнено"
 
 msgid "There was an error disabling two factor authentication: {{- error}}"
 msgstr ""
+"Під час вимкнення двофакторної автентифікації сталася помилка: {{- error}}"
 
 msgid "Disable two factor authentication for user {{- name}}"
-msgstr ""
+msgstr "Вимкнути двофакторну автентифікацію для користувача {{- name}}"
 
 msgid ""
 "Are you sure you want to disable two factor authentication for {{- name}}?"
-msgstr ""
+msgstr "Ви дійсно хочете вимкнути двофакторну автентифікацію для {{- name}}?"
 
 msgid "Yes, disable two factor authentication"
-msgstr ""
+msgstr "Так, вимкнути двофакторну автентифікацію"
 
 msgid "User \"{{- name}}\" disabled successfuly"
-msgstr ""
+msgstr "Користувача \"{{- name}}\" успішно відключено"
 
 msgid "There was an error disabling the user: {{- error}}"
-msgstr ""
+msgstr "Під час відключення користувача сталася помилка: {{- error}}"
 
 msgid "Disable user {{- name}}"
-msgstr ""
+msgstr "Відключити користувача {{- name}}"
 
 msgid "Are you sure you want to disable {{- name}}?"
-msgstr ""
+msgstr "Ви дійсно хочете відключити {{- name}}?"
 
 msgid "Yes, disable"
-msgstr ""
+msgstr "Так, відключити"
 
 msgid "User \"{{- name}}\" enabled successfuly"
-msgstr ""
+msgstr "Користувача \"{{- name}}\" успішно підключено"
 
 msgid "There was an error enabling the user: {{- error}}"
-msgstr ""
+msgstr "Під час підключення користувача сталася помилка: {{- error}}"
 
 msgid "Enable user {{- name}}"
-msgstr ""
+msgstr "Підключити користувача {{- name}}"
 
 msgid "Are you sure you want to enable {{- name}}?"
-msgstr ""
+msgstr "Ви дійсно хочете підключити {{- name}}?"
 
 msgid "Yes, enable"
-msgstr ""
+msgstr "Так, підключити"
 
 msgid "User \"{{- name}}\" replicated successfuly"
-msgstr ""
+msgstr "Користувача \"{{- name}}\" успішно скопійовано"
 
 msgid "There was an error replicating the user: {{- error}}"
-msgstr ""
+msgstr "Під час копіювання користувача сталася помилка: {{- error}}"
 
 msgid "Replicate user {{- name}}"
-msgstr ""
+msgstr "Копіювати користувача {{- name}}"
 
 msgid "Username for new user"
-msgstr ""
+msgstr "Ім'я користувача для нового користувача"
 
 msgid "Password for new user"
-msgstr ""
+msgstr "Пароль для нового користувача"
 
 msgid ""
 "Password should be at least 8 characters long, with at least one lowercase "
 "character, one uppercase character and one special character."
 msgstr ""
+"Пароль має містити щонайменше 8 символів, принаймні один символ нижнього "
+"регістру, один символ верхнього регістру та один спеціальний символ."
 
 msgid "Cancel"
 msgstr "Скасувати"
 
 msgid "Replicate user"
-msgstr ""
+msgstr "Копіювати користувача"
 
 msgid "Password of user \"{{- name}}\" reset successfuly"
-msgstr ""
+msgstr "Пароль користувача \"{{- name}}\" успішно скинуто"
 
 msgid "There was an error resetting the password: {{- error}}"
-msgstr ""
+msgstr "Під час скидання пароля сталася помилка: {{- error}}"
 
 msgid "Reset password of user {{- name}}"
-msgstr ""
+msgstr "Скинути пароль користувача {{- name}}"
 
 msgid "Are you sure you want to reset {{- name}}'s password?"
-msgstr ""
+msgstr "Ви дійсно хочете скинути пароль {{- name}}?"
 
 msgid "Yes, reset"
-msgstr ""
+msgstr "Так, скинути"
 
 msgid "1 month"
-msgstr ""
+msgstr "1 місяць"
 
 msgid "{{months}} months"
-msgstr ""
+msgstr "{{months}} місяців"
 
 msgid "Time inactive"
-msgstr ""
+msgstr "Неактивний час"
 
 msgid "Invitation"
-msgstr ""
+msgstr "Запрошення"
 
 msgid "All invitations"
-msgstr ""
+msgstr "Усі запрошення"
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "Запрошення, термін дії яких минув"
 
 msgid "Show self-registrations"
-msgstr ""
+msgstr "Показати самостійну реєстрацію"
 
 msgid "Clear filters"
-msgstr ""
+msgstr "Очистити фільтри"
 
 msgid "Org.unit"
-msgstr ""
+msgstr "Організаційний підрозділ"
 
 msgid "User Management"
-msgstr ""
+msgstr "Керування користувачами"
 
 msgid "Error loading users"
 msgstr "Помилка завантаження користувачів"
 
 msgid "Account disabled?"
-msgstr ""
+msgstr "Обліковий запис вимкнено?"
 
 msgid "Disabled"
 msgstr "Вимкнено"
