@@ -37,10 +37,10 @@ msgid "Please enter at least {{ minCharCount }} characters"
 msgstr ""
 
 msgid "No matches found"
-msgstr ""
+msgstr "Результатів не знайдено"
 
 msgid "There was a problem retreiving your search results"
-msgstr ""
+msgstr "Під час отримання результатів пошуку виникла проблема"
 
 msgid "There was a problem retreiving the available authorities."
 msgstr ""
@@ -52,31 +52,31 @@ msgid "Selected authorities only"
 msgstr ""
 
 msgid "All (Full authority)"
-msgstr ""
+msgstr "Усе (всі повноваження)"
 
 msgid "Analytics Table Hook"
-msgstr ""
+msgstr "Обробник аналітичної таблиці"
 
 msgid "Attribute"
 msgstr "Атрибут"
 
 msgid "Category Combo"
-msgstr ""
+msgstr "Комбінація категорій"
 
 msgid "Category"
 msgstr "Категорія"
 
 msgid "Category Option"
-msgstr ""
+msgstr "Параметр категорії"
 
 msgid "Category Option Group"
-msgstr ""
+msgstr "Група параметрів категорій"
 
 msgid "Category Option Group Set"
-msgstr ""
+msgstr "Набір груп параметрів категорій"
 
 msgid "Color Set"
-msgstr ""
+msgstr "Набір кольорів"
 
 msgid "Constant"
 msgstr "Константа"
@@ -85,100 +85,100 @@ msgid "Dashboard"
 msgstr "Інформаційна панель - дашборд"
 
 msgid "Data Element Group Sets"
-msgstr ""
+msgstr "Набори груп елементів даних"
 
 msgid "Data Element Groups"
-msgstr ""
+msgstr "Групи елементів даних"
 
 msgid "Data Element"
-msgstr ""
+msgstr "Елемент даних"
 
 msgid "Min/max rule"
-msgstr ""
+msgstr "Правило мін/макс"
 
 msgid "Data Set"
 msgstr "Набір даних"
 
 msgid "Data Value"
-msgstr ""
+msgstr "Значення даних"
 
 msgid "Document"
-msgstr ""
+msgstr "Документ"
 
 msgid "Event Chart"
-msgstr ""
+msgstr "Діаграма подій"
 
 msgid "Event Report"
-msgstr ""
+msgstr "Звіт про подію"
 
 msgid "External Map Layer"
-msgstr ""
+msgstr "Зовнішній шар мапи"
 
 msgid "Indicator Group Sets"
-msgstr ""
+msgstr "Набори груп показників"
 
 msgid "Indicator Group"
-msgstr ""
+msgstr "Група показників"
 
 msgid "Indicator Type"
-msgstr ""
+msgstr "Тип показника"
 
 msgid "Indicator"
 msgstr "Індикатор"
 
 msgid "Legend Set"
-msgstr ""
+msgstr "Набір умовних позначень"
 
 msgid "Map"
 msgstr "Мапа"
 
 msgid "Min-Max Data Element"
-msgstr ""
+msgstr "Мин-макс елемента даних"
 
 msgid "Option Group Set"
-msgstr ""
+msgstr "Набір груп параметрів"
 
 msgid "Option Group"
-msgstr ""
+msgstr "Група параметрів"
 
 msgid "Option Set"
-msgstr ""
+msgstr "Набір параметрів"
 
 msgid "Organisation Unit"
 msgstr "Організаційний підрозділ"
 
 msgid "Organisation Unit Group Set"
-msgstr ""
+msgstr "Набір груп організаційних підрозділів"
 
 msgid "Organisation Unit Group"
-msgstr ""
+msgstr "Група організаційних підрозділів"
 
 msgid "Predictor"
 msgstr "Предиктор"
 
 msgid "Program Stage"
-msgstr ""
+msgstr "Етап програми"
 
 msgid "Program"
 msgstr "Програма"
 
 msgid "Program Indicator"
-msgstr ""
+msgstr "Показник програми"
 
 msgid "Program Indicator Group"
-msgstr ""
+msgstr "Група показників програми"
 
 msgid "Program Rule"
-msgstr ""
+msgstr "Правило програми"
 
 msgid "Program Tracked Entity Attribute Group"
-msgstr ""
+msgstr "Група атрибутів об'єкта, що відстежується програмою"
 
 msgid "Push Analysis"
-msgstr ""
+msgstr "Push-аналіз"
 
 msgid "Relationship Type"
-msgstr ""
+msgstr "Тип відносин"
 
 msgid "Report"
 msgstr "Звіт"
@@ -187,43 +187,43 @@ msgid "Section"
 msgstr "Секція"
 
 msgid "SQL View"
-msgstr ""
+msgstr "Перегляд SQL"
 
 msgid "Tracked Entity"
-msgstr ""
+msgstr "Відстежуваний об'єкт"
 
 msgid "Tracked Entity Attribute"
-msgstr ""
+msgstr "Атрибут відстежуваного об'єкта"
 
 msgid "Tracked Entity Data Value"
-msgstr ""
+msgstr "Значення даних відстежуваного об'єкта"
 
 msgid "Tracked Entity Instance"
-msgstr ""
+msgstr "Приклад відстежуваного об'єкта"
 
 msgid "User Group"
-msgstr ""
+msgstr "Група користувачів"
 
 msgid "User Role"
-msgstr ""
+msgstr "Роль користувача"
 
 msgid "User"
 msgstr "Користувач"
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "Група правил перевірки"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Правило перевірки"
 
 msgid "Data predictor group"
-msgstr ""
+msgstr "Група предикторів даних"
 
 msgid "Skip data import audit"
-msgstr ""
+msgstr "Пропустити аудит імпорту даних"
 
 msgid "Visualization"
-msgstr ""
+msgstr "Візуалізація"
 
 msgid "Apps"
 msgstr "Додатки"
@@ -335,13 +335,15 @@ msgid "Apply"
 msgstr "Застосувати"
 
 msgid "Clear all"
-msgstr ""
+msgstr "Очистити все"
 
 msgid "There was an error loading the current user"
-msgstr ""
+msgstr "Під час завантаження поточного користувача сталася помилка"
 
 msgid "You do not have authorities to see users, user roles or user groups"
 msgstr ""
+"У вас немає повноважень для перегляду користувачів, ролей користувачів або "
+"груп користувачів"
 
 msgid "Display name"
 msgstr "Коротке ім'я"
@@ -445,10 +447,10 @@ msgid ""
 msgstr ""
 
 msgid "Available user groups"
-msgstr ""
+msgstr "Доступні групи користувачів"
 
 msgid "Managed user groups"
-msgstr ""
+msgstr "Керовані групи користувачів"
 
 msgid "You left group"
 msgstr ""
@@ -498,13 +500,13 @@ msgid ""
 msgstr ""
 
 msgid "Create account or email invitation"
-msgstr ""
+msgstr "Створити обліковий запис або надіслати запрошення електронною поштою"
 
 msgid "Create account with user details"
-msgstr ""
+msgstr "Створити обліковий запис з реквізитами користувача"
 
 msgid "Email invitation to create account"
-msgstr ""
+msgstr "Надіслати електронний лист із запрошенням створити обліковий запис"
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr ""
@@ -643,7 +645,7 @@ msgid "No"
 msgstr "Ні"
 
 msgid "Something went wrong when processing your request."
-msgstr ""
+msgstr "Під час обробки запиту сталася помилка."
 
 msgid "Validating..."
 msgstr ""
@@ -676,7 +678,7 @@ msgid "Value should be a number"
 msgstr ""
 
 msgid "Value should be a positive integer"
-msgstr ""
+msgstr "Значення має бути додатним цілим числом"
 
 msgid "Passwords do not match"
 msgstr ""
