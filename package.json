@@ -23,7 +23,7 @@
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/d2-ui-core": "^7.0.5",
         "@dhis2/d2-ui-sharing-dialog": "^7.0.5",
-        "@dhis2/ui": "^8.4.4",
+        "@dhis2/ui": "^8.4.17",
         "classnames": "^2.3.1",
         "d2": "^31.7.0",
         "d3-color": "^1.2.0",
@@ -58,6 +58,6 @@
         "start-server-and-test": "^1.14.0"
     },
     "resolutions": {
-        "@dhis2/ui": "^8.4.4"
+        "@dhis2/ui": "^8.4.17"
     }
 }
