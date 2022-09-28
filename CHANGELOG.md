@@ -1,3 +1,10 @@
+## [1.4.23](https://github.com/dhis2/user-app/compare/v1.4.22...v1.4.23) (2022-09-28)
+
+
+### Bug Fixes
+
+* upgrade @dhis2/ui to use correct username validation ([#1051](https://github.com/dhis2/user-app/issues/1051)) ([2469550](https://github.com/dhis2/user-app/commit/2469550de77df918cc8f4efd766b683582100354))
+
 ## [1.4.22](https://github.com/dhis2/user-app/compare/v1.4.21...v1.4.22) (2022-08-27)
 
 
