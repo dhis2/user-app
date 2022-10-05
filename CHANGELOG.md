@@ -1,3 +1,10 @@
+## [1.4.24](https://github.com/dhis2/user-app/compare/v1.4.23...v1.4.24) (2022-10-05)
+
+
+### Bug Fixes
+
+* **styled-jsx:** remove incorrect extension ([#1054](https://github.com/dhis2/user-app/issues/1054)) ([a766624](https://github.com/dhis2/user-app/commit/a7666243bf6073798eeae257666e76ffa5801a68))
+
 ## [1.4.23](https://github.com/dhis2/user-app/compare/v1.4.22...v1.4.23) (2022-09-28)
 
 
