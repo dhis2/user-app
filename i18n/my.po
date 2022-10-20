@@ -1,6 +1,6 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
+# Viktor Varland <viktor@dhis2.org>, 2022
 # Aung Kyi Min <AungKyi.Min@savethechildren.org>, 2022
 # phil_dhis2, 2022
 # 
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
+"PO-Revision-Date: 2022-10-15 22:33+0000\n"
 "Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Burmese (https://www.transifex.com/hisp-uio/teams/100509/my/)\n"
 "MIME-Version: 1.0\n"
@@ -18,10 +18,10 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Yes"
-msgstr "Yes"
+msgstr "မှန်"
 
 msgid "No"
-msgstr "Nr"
+msgstr "No"
 
 msgid "Attribute value needs to be unique, value already taken."
 msgstr ""
@@ -392,7 +392,7 @@ msgid "Tracked Entity Instance"
 msgstr ""
 
 msgid "User Group"
-msgstr "User Group:"
+msgstr "User Group\\:"
 
 msgid "User Role"
 msgstr ""
