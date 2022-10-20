@@ -1,20 +1,21 @@
 # 
 # Translators:
-# Matthieu Pinard <matthieu@pinard.no>, 2019
-# Karoline Tufte Lien <karoline@dhis2.org>, 2020
+# Matthieu Pinard <matthieu@pinard.no>, 2022
 # Bram Piot <bram.piot@gmail.com>, 2022
 # Edem Kossi <ekossi@hispwca.org>, 2022
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
-# Yao Selom Saka <ysaka@hispwca.org>, 2022
-# phil_dhis2, 2022
+# Sakibou ALASSANI <sakibou.alass@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
+# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
+# Karoline Tufte Lien <karoline@dhis2.org>, 2022
+# phil_dhis2, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
+"PO-Revision-Date: 2022-10-15 22:33+0000\n"
+"Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -247,7 +248,7 @@ msgid "Selected system authorities"
 msgstr ""
 
 msgid "All (Full authority)"
-msgstr "Tout (Pleine autorité)"
+msgstr "Tout (Pleine autorisation)"
 
 msgid "Analytics Table Hook"
 msgstr "Crochet de Tables Analytiques"
@@ -268,7 +269,7 @@ msgid "Category Option Group"
 msgstr "Groupe d'options de catégorie"
 
 msgid "Category Option Group Set"
-msgstr "Category Option Group Set"
+msgstr "Ensemble de groupes d'options de catégorie"
 
 msgid "Color Set"
 msgstr "Jeu de Couleurs"
@@ -352,7 +353,7 @@ msgid "Predictor"
 msgstr "Prédicteur"
 
 msgid "Program Stage"
-msgstr "Etape de programme"
+msgstr "Stade de programme"
 
 msgid "Program"
 msgstr "Programme"
@@ -397,7 +398,7 @@ msgid "Tracked Entity Instance"
 msgstr "Instance d'entité suivie"
 
 msgid "User Group"
-msgstr "Groupe d'utilisateur:"
+msgstr "Groupe d'utilisateurs"
 
 msgid "User Role"
 msgstr "Rôle d'utilisateur"
@@ -415,7 +416,7 @@ msgid "Data predictor group"
 msgstr "Groupe de prédicteur de données"
 
 msgid "Skip data import audit"
-msgstr "Sauter l'audit d'importation de données"
+msgstr "Ignorer l'audit d'importation de données"
 
 msgid "Visualization"
 msgstr "Visualisation"
@@ -487,7 +488,7 @@ msgid "Database language"
 msgstr "Langue de la base de données"
 
 msgid "Use database locale / no translation"
-msgstr "Utiliser la localisation de la base de donnée/ pas de traduction"
+msgstr "Utiliser la localisation de la base de données/ pas de traduction"
 
 msgid "Disable this user account"
 msgstr ""
@@ -552,7 +553,7 @@ msgid "The organisation units that this user can export and analyse."
 msgstr ""
 
 msgid "Search"
-msgstr "Chercher"
+msgstr "Rechercher"
 
 msgid "The organisation that this user can search for and in."
 msgstr ""
@@ -651,7 +652,7 @@ msgid "Create, modify, view and delete User Roles"
 msgstr "Créer, modifier, afficher et supprimer des rôles d'utilisateur"
 
 msgid "User group"
-msgstr "Groupe d'utilisateur"
+msgstr "Groupe d'utilisateurs"
 
 msgid "Create, modify, view and delete User Groups"
 msgstr "Créer, modifier, afficher et supprimer des groupes d'utilisateurs"
@@ -717,7 +718,7 @@ msgid "Edit user group"
 msgstr "Modifier le groupe d'utilisateurs"
 
 msgid "ID"
-msgstr "Id"
+msgstr "ID"
 
 msgid "Show details"
 msgstr "Afficher les détails"
@@ -816,7 +817,7 @@ msgid "Add"
 msgstr "Ajouter"
 
 msgid "Page not found."
-msgstr "Page non trouvée"
+msgstr "Page non trouvée."
 
 msgid "No match for"
 msgstr "Pas de correspondance pour"
@@ -834,7 +835,7 @@ msgid "Delete user role {{- name}}"
 msgstr ""
 
 msgid "User Role Management"
-msgstr "Gestion des rôles utilisateur"
+msgstr "Gestion des rôles d'utilisateur"
 
 msgid "Error loading user roles"
 msgstr ""
@@ -843,7 +844,7 @@ msgid "Profile"
 msgstr "Profil"
 
 msgid "Replicate"
-msgstr "Replier"
+msgstr "Cloner"
 
 msgid "Reset password"
 msgstr "Réinitialiser le mot de passe"
@@ -996,7 +997,7 @@ msgid "Other"
 msgstr "Autre"
 
 msgid "Created"
-msgstr "Créé le"
+msgstr "Créé"
 
 msgid "Contact"
 msgstr ""
@@ -1005,7 +1006,7 @@ msgid "Send message"
 msgstr "Envoyer Message"
 
 msgid "E-mail"
-msgstr "Courrier électronique"
+msgstr "Adresse email"
 
 msgid "Permissions"
 msgstr "Autorisations"
@@ -1026,7 +1027,7 @@ msgid "Works at"
 msgstr "Travaille à"
 
 msgid "Gender"
-msgstr "Genre"
+msgstr "Sexe"
 
 msgid "Speaks"
 msgstr "Parle"

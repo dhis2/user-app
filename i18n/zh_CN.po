@@ -1,14 +1,14 @@
 # 
 # Translators:
-# 晓东 林 <13981924470@126.com>, 2022
 # easylin <lin_xd@126.com>, 2022
+# 晓东 林 <13981924470@126.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2022\n"
+"PO-Revision-Date: 2022-10-15 22:33+0000\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2022\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,10 +17,10 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Yes"
-msgstr "Yes"
+msgstr "是"
 
 msgid "No"
-msgstr "No"
+msgstr "否"
 
 msgid "Attribute value needs to be unique, value already taken."
 msgstr "属性应该唯一，值已经被使用"
@@ -271,7 +271,7 @@ msgid "Constant"
 msgstr "常数"
 
 msgid "Dashboard"
-msgstr "仪表盘"
+msgstr "状态面板"
 
 msgid "Data Element Group Sets"
 msgstr "数据元组集"
@@ -373,7 +373,7 @@ msgid "Report"
 msgstr "报表"
 
 msgid "Section"
-msgstr "分区"
+msgstr "分段"
 
 msgid "SQL View"
 msgstr "SQL视图"
@@ -471,7 +471,7 @@ msgid "Last name"
 msgstr "姓"
 
 msgid "Interface language"
-msgstr "界面语言"
+msgstr "接口语言"
 
 msgid "Database language"
 msgstr "数据库语言"
@@ -639,7 +639,7 @@ msgid "Create, modify, view and delete User Roles"
 msgstr "创建、修改、查看和删除用户角色"
 
 msgid "User group"
-msgstr "用户组"
+msgstr "User组"
 
 msgid "Create, modify, view and delete User Groups"
 msgstr "创建、修改、查看和删除用户"
@@ -678,7 +678,7 @@ msgid "Edit group"
 msgstr ""
 
 msgid "Save changes"
-msgstr "保存更改"
+msgstr "保存修改"
 
 msgid "Error fetching role"
 msgstr ""
@@ -714,7 +714,7 @@ msgid "Sharing settings"
 msgstr "共享设置"
 
 msgid "Edit"
-msgstr "编辑<br>"
+msgstr "编辑"
 
 msgid "Join group"
 msgstr "加入组"
@@ -982,7 +982,7 @@ msgid "Other"
 msgstr "其它"
 
 msgid "Created"
-msgstr "创建"
+msgstr "已创建"
 
 msgid "Contact"
 msgstr ""
@@ -991,7 +991,7 @@ msgid "Send message"
 msgstr "发生信息"
 
 msgid "E-mail"
-msgstr "E-mail"
+msgstr "电子邮件"
 
 msgid "Permissions"
 msgstr ""
@@ -1006,7 +1006,7 @@ msgid "Introduction"
 msgstr "介绍"
 
 msgid "Job title"
-msgstr "工作职位"
+msgstr "工作头衔"
 
 msgid "Works at"
 msgstr "工作于"

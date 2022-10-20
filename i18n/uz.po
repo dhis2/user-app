@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
+"PO-Revision-Date: 2022-10-15 22:33+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2022\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
@@ -38,7 +38,7 @@ msgid "No results found"
 msgstr "Ҳеч қандай натижа топилмади"
 
 msgid "Display name"
-msgstr "Дисплей номи"
+msgstr "Номини экранда кўрсатиш"
 
 msgid "1 pending change"
 msgstr ""
@@ -297,7 +297,7 @@ msgid "Event Chart"
 msgstr "Ҳодиса Диаграмма"
 
 msgid "Event Report"
-msgstr "Ҳодиса Ҳисобот"
+msgstr "Ҳодиса/Тадбир Ҳисобот"
 
 msgid "External Map Layer"
 msgstr "Харита Ташқи Қавати"
@@ -348,7 +348,7 @@ msgid "Program Stage"
 msgstr "Дастур Босқичи"
 
 msgid "Program"
-msgstr "Программа"
+msgstr "Дастур"
 
 msgid "Program Indicator"
 msgstr "Дастур Индикатори"
@@ -417,7 +417,7 @@ msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
 
 msgid "Search by name"
-msgstr "Исми орқали излаш"
+msgstr "Исми орқали қидириш"
 
 msgid "Search for an organisation unit"
 msgstr ""
@@ -543,7 +543,7 @@ msgid "The organisation units that this user can export and analyse."
 msgstr ""
 
 msgid "Search"
-msgstr "Излаш"
+msgstr "Қидириш"
 
 msgid "The organisation that this user can search for and in."
 msgstr ""
@@ -579,7 +579,7 @@ msgid "New password"
 msgstr "Янги пароль"
 
 msgid "Password"
-msgstr "Парол"
+msgstr "Пароль"
 
 msgid ""
 "Minimum 8 characters, one uppercase and lowercase letter and one number"
@@ -985,7 +985,7 @@ msgid "Other"
 msgstr "Бошқа"
 
 msgid "Created"
-msgstr "Яратилди"
+msgstr "Яратилган"
 
 msgid "Contact"
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
+"PO-Revision-Date: 2022-10-15 22:33+0000\n"
 "Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
@@ -79,10 +79,10 @@ msgid "Basic information"
 msgstr ""
 
 msgid "Name"
-msgstr "الاسم"
+msgstr "الإسم"
 
 msgid "Code"
-msgstr "الرمز"
+msgstr "الكود"
 
 msgid "Used in analytics reports."
 msgstr ""
@@ -248,7 +248,7 @@ msgid "Analytics Table Hook"
 msgstr ""
 
 msgid "Attribute"
-msgstr "الخاصية"
+msgstr "السمة"
 
 msgid "Category Combo"
 msgstr ""
@@ -374,7 +374,7 @@ msgid "Report"
 msgstr "التقرير"
 
 msgid "Section"
-msgstr "القسم"
+msgstr "قسم"
 
 msgid "SQL View"
 msgstr "منظور SQL"
@@ -401,10 +401,10 @@ msgid "User"
 msgstr "المستخدم"
 
 msgid "Validation Rule Group"
-msgstr "مجموعة قواعد التحقق"
+msgstr "مجموعة قواعد التحقق من الصحة"
 
 msgid "Validation Rule"
-msgstr "قاعدة التحقق"
+msgstr "قاعدة تحقق من الصحة"
 
 msgid "Data predictor group"
 msgstr ""
@@ -488,7 +488,7 @@ msgid "Contact details"
 msgstr ""
 
 msgid "Mobile phone number"
-msgstr "رقم الهاتف الجوال"
+msgstr "رقم الجوال"
 
 msgid "WhatsApp"
 msgstr "واتس آب"
@@ -544,7 +544,7 @@ msgid "The organisation units that this user can export and analyse."
 msgstr ""
 
 msgid "Search"
-msgstr "البحث"
+msgstr "بحث"
 
 msgid "The organisation that this user can search for and in."
 msgstr ""
@@ -629,7 +629,7 @@ msgid "Passwords do not match"
 msgstr "عدم تطابق كلمتي السر"
 
 msgid "Please provide a value"
-msgstr ""
+msgstr "يرجى إدخال قيمة"
 
 msgid "Create, modify, view and delete Users"
 msgstr "إنشاء، تعديل، استعراض و حذف المستخدمين"
@@ -707,7 +707,7 @@ msgid "Edit user group"
 msgstr "تعديل مجموعة المستخدم"
 
 msgid "ID"
-msgstr "المعرف"
+msgstr "ID"
 
 msgid "Show details"
 msgstr "إظهار التفاصيل"
