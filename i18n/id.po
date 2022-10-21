@@ -3,17 +3,17 @@
 # phil_dhis2, 2022
 # Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2022
 # Carwoto Sa'an <carwoto@gmail.com>, 2022
-# Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # Raja Fathurrahim, 2022
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2022
+# Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
 "PO-Revision-Date: 2022-10-15 22:33+0000\n"
-"Last-Translator: Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2022\n"
+"Last-Translator: Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2022\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -571,7 +571,7 @@ msgid "User groups this user is a member of"
 msgstr ""
 
 msgid "Security"
-msgstr ""
+msgstr "Keamanan"
 
 msgid "Settings for how this user can log in."
 msgstr ""
@@ -704,7 +704,7 @@ msgid "Edit user"
 msgstr ""
 
 msgid "Overview"
-msgstr ""
+msgstr "Gambaran"
 
 msgid "Edit user group"
 msgstr ""
