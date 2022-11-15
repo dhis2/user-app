@@ -1,9 +1,10 @@
 import { useDataQuery } from '@dhis2/app-runtime'
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import { useDebounce } from 'use-debounce'
 import { useSet } from './useSet.js'
 
 export const useResults = ({
+    pendingChanges,
     canManageMembers,
     allQuery,
     membersGistQuery,
@@ -11,6 +12,13 @@ export const useResults = ({
     filterDebounceMs,
     mode,
 }) => {
+    const pendingChangesForMode = useMemo(() => {
+        const currentPendingChanges =
+            mode === 'MEMBERS'
+                ? pendingChanges.removals
+                : pendingChanges.additions
+        return new Set(currentPendingChanges.map(({ id }) => id))
+    }, [mode, pendingChanges])
     const prevPageRef = useRef({
         members: {
             pager: undefined,
@@ -108,6 +116,10 @@ export const useResults = ({
         pager: data ? data.results.pager : prevPager,
         navigateToPage,
         isSelected: (id) => selected.has(id),
+        isPendingChange: (id) => pendingChangesForMode.has(id),
+        deselect: (id) => {
+            selected.delete(id)
+        },
         toggleSelected: (id) => {
             if (selected.has(id)) {
                 selected.delete(id)
