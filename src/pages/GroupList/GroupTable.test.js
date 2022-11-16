@@ -1,21 +1,12 @@
-import { render as _render, screen, within } from '@testing-library/react'
+import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import React from 'react'
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { useCurrentUser } from '../../hooks/useCurrentUser.js'
 import GroupTable from './GroupTable.js'
 
-const render = (component, options = {}) => {
-    const currentUser = options.currentUser || { userGroupIds: [] }
-    return _render(component, {
-        wrapper: ({ children }) => {
-            const store = createStore(() => ({
-                currentUser,
-            }))
-            return <Provider store={store}>{children}</Provider>
-        },
-    })
-}
+jest.mock('../../hooks/useCurrentUser.js', () => ({
+    useCurrentUser: jest.fn(),
+}))
 
 describe('<GroupTable>', () => {
     it('renders a loading spinner while groups are being fetched', () => {
@@ -90,10 +81,10 @@ describe('<GroupTable>', () => {
                 },
             },
         ]
+        const mockUserGroupIds = ['group-2']
 
-        const currentUser = {
-            userGroupIds: ['group-2'],
-        }
+        useCurrentUser.mockReturnValue({ userGroupIds: mockUserGroupIds })
+
         render(
             <GroupTable
                 loading={false}
@@ -101,10 +92,7 @@ describe('<GroupTable>', () => {
                 refetch={() => {}}
                 nameSortDirection="asc"
                 onNameSortDirectionToggle={() => {}}
-            />,
-            {
-                currentUser,
-            }
+            />
         )
 
         expect(screen.getAllByRole('columnheader')).toHaveLength(3)
@@ -130,7 +118,7 @@ describe('<GroupTable>', () => {
             expect(
                 within(row).getByRole('cell', { name: displayName })
             ).toBeInTheDocument()
-            if (currentUser.userGroupIds.includes(id)) {
+            if (mockUserGroupIds.includes(id)) {
                 expect(
                     within(row).getByRole('cell', { name: 'Member' })
                 ).toBeInTheDocument()
