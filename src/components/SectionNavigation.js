@@ -2,7 +2,6 @@ import i18n from '@dhis2/d2-i18n'
 import { NoticeBox } from '@dhis2/ui'
 import React, { useEffect } from 'react'
 import { Route, useRouteMatch, useLocation } from 'react-router-dom'
-import { USER, USER_ROLE, USER_GROUP } from '../constants/entityTypes.js'
 import { useCurrentUser } from '../hooks/useCurrentUser.js'
 import CreateGroup from '../pages/CreateGroup.js'
 import CreateRole from '../pages/CreateRole.js'
@@ -20,6 +19,10 @@ import UserProfile from '../pages/UserProfile/index.js'
 import navigateTo from '../utils/navigateTo.js'
 import styles from './SectionNavigation.module.css'
 import { SideNav, NavItem } from './SideNav.js'
+
+const USER = 'user'
+const USER_ROLE = 'userRole'
+const USER_GROUP = 'userGroup'
 
 const SectionNavigation = () => {
     const { pathname } = useLocation()

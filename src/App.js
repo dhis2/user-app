@@ -9,13 +9,11 @@ import history from './utils/history.js'
  * @class
  */
 const App = () => (
-    <>
-        <Router history={history} hashType={'noslash'}>
-            <QueryParamProvider ReactRouterRoute={Route}>
-                <SectionNavigation />
-            </QueryParamProvider>
-        </Router>
-    </>
+    <Router history={history} hashType={'noslash'}>
+        <QueryParamProvider ReactRouterRoute={Route}>
+            <SectionNavigation />
+        </QueryParamProvider>
+    </Router>
 )
 
 export default App
