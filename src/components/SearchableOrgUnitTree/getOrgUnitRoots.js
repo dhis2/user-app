@@ -12,7 +12,7 @@ const getOrgUnitRoots = (orgUnitType, currentUser) => {
     const fallBackOrgUnitRoots = currentUser.organisationUnits
 
     let orgUnitRoots = null
-    if (currentUser.authorities.has('ALL')) {
+    if (currentUser.authorities.includes('ALL')) {
         orgUnitRoots = systemOrgRoots
     } else if (requestedOrgUnitRoots.size === 0) {
         orgUnitRoots = fallBackOrgUnitRoots.toArray()

@@ -17,7 +17,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { connect } from 'react-redux'
+import { useCurrentUserNew } from '../../../components/CurrentUserProvider.js'
 import navigateTo from '../../../utils/navigateTo.js'
 import DeleteModal from './Modals/DeleteModal.js'
 import Disable2FaModal from './Modals/Disable2FaModal.js'
@@ -39,13 +39,8 @@ const useCurrentModal = () => {
     ]
 }
 
-const ContextMenu = ({
-    currentUser,
-    user,
-    anchorRef,
-    refetchUsers,
-    onClose,
-}) => {
+const ContextMenu = ({ user, anchorRef, refetchUsers, onClose }) => {
+    const currentUser = useCurrentUserNew()
     const {
         systemInfo: { emailConfigured },
     } = useConfig()
@@ -55,13 +50,13 @@ const ContextMenu = ({
         userCredentials: { disabled, twoFA },
     } = user
     const canReplicate =
-        access.update && currentUser.authorities.has('F_REPLICATE_USER')
+        access.update && currentUser.authorities.includes('F_REPLICATE_USER')
     const canResetPassword =
         emailConfigured &&
         user.email &&
         access.update &&
-        (currentUser.authorities.has('F_USER_ADD') ||
-            currentUser.authorities.has('F_USER_ADD_WITHIN_MANAGED_GROUP'))
+        (currentUser.authorities.includes('F_USER_ADD') ||
+            currentUser.authorities.includes('F_USER_ADD_WITHIN_MANAGED_GROUP'))
     const canDisable = currentUser.id !== user.id && access.update && !disabled
     const canDelete = currentUser.id !== user.id && access.delete
 
@@ -161,10 +156,6 @@ const ContextMenu = ({
 
 ContextMenu.propTypes = {
     anchorRef: PropTypes.object.isRequired,
-    currentUser: PropTypes.shape({
-        authorities: PropTypes.object.isRequired,
-        id: PropTypes.string.isRequired,
-    }).isRequired,
     refetchUsers: PropTypes.func.isRequired,
     user: PropTypes.shape({
         access: PropTypes.shape({
@@ -182,6 +173,4 @@ ContextMenu.propTypes = {
     onClose: PropTypes.func.isRequired,
 }
 
-const mapStateToProps = ({ currentUser }) => ({ currentUser })
-
-export default connect(mapStateToProps)(ContextMenu)
+export default ContextMenu

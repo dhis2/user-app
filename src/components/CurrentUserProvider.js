@@ -11,9 +11,13 @@ const query = {
         resource: '/me',
         params: {
             fields: [
-                'userGroups[id]',
-                'userCredentials[userRoles[id]]',
+                'id',
+                'username',
+                'surname',
+                'firstName',
                 'authorities',
+                'userCredentials[userRoles[id]]',
+                'userGroups[id]',
                 'organisationUnits[id,path,displayName,children::isNotEmpty]',
                 'dataViewOrganisationUnits[id,path,displayName,children::isNotEmpty]',
                 'teiSearchOrganisationUnits[id,path,displayName,children::isNotEmpty]',
@@ -97,7 +101,18 @@ const CurrentUserProvider = ({ children }) => {
     }
 
     const value = {
+        id: data.me.id,
+        username: data.me.username,
+        surname: data.me.surname,
+        firstName: data.me.firstName,
         authorities: data.me.authorities,
+        userGroupIds: data.me.userGroups.map(({ id }) => id),
+        userRoleIds: data.me.userCredentials.userRoles.map(({ id }) => id),
+        organisationUnits: data.me.organisationUnits ?? [],
+        dataViewOrganisationUnits: data.me.dataViewOrganisationUnits ?? [],
+        teiSearchOrganisationUnits: data.me.teiSearchOrganisationUnits ?? [],
+        systemOrganisationUnitRoots:
+            data.systemOrganisationUnitRoots.organisationUnits ?? [],
         hasAppAccess: data.me.authorities.some((auth) =>
             AUTH_LOOKUP.APP.has(auth)
         ),
@@ -119,14 +134,7 @@ const CurrentUserProvider = ({ children }) => {
         canCreateRoles: data.me.authorities.some((auth) =>
             AUTH_LOOKUP.ROLE_CREATE.has(auth)
         ),
-        userGroupIds: data.me.userGroups.map(({ id }) => id),
-        userRoleIds: data.me.userCredentials.userRoles.map(({ id }) => id),
-        organisationUnits: data.me.organisationUnits ?? [],
-        dataViewOrganisationUnits: data.me.dataViewOrganisationUnits ?? [],
-        teiSearchOrganisationUnits: data.me.teiSearchOrganisationUnits ?? [],
-        systemOrganisationUnitRoots:
-            data.systemOrganisationUnitRoots.organisationUnits ?? [],
-        refreshCurrentUser: refetch,
+        refresh: refetch,
     }
 
     return (
@@ -142,4 +150,4 @@ CurrentUserProvider.propTypes = {
 
 const useCurrentUserNew = () => useContext(CurrentUserContext)
 
-export { CurrentUserProvider, useCurrentUserNew }
+export { CurrentUserProvider, useCurrentUserNew, CurrentUserContext }
