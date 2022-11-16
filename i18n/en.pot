@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
-"PO-Revision-Date: 2022-06-13T10:12:52.361Z\n"
+"POT-Creation-Date: 2022-11-16T09:27:01.876Z\n"
+"PO-Revision-Date: 2022-11-16T09:27:01.876Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -52,6 +52,12 @@ msgstr "Will be added"
 
 msgid "Will be removed"
 msgstr "Will be removed"
+
+msgid "Network error"
+msgstr "Network error"
+
+msgid "Could not load current user information."
+msgstr "Could not load current user information."
 
 msgid "Filter options"
 msgstr "Filter options"

@@ -10,7 +10,21 @@ const query = {
     me: {
         resource: '/me',
         params: {
-            fields: 'userGroups[id],userCredentials[userRoles[id]]',
+            fields: [
+                'userGroups[id]',
+                'userCredentials[userRoles[id]]',
+                'organisationUnits[id,path,displayName,children::isNotEmpty]',
+                'dataViewOrganisationUnits[id,path,displayName,children::isNotEmpty]',
+                'teiSearchOrganisationUnits[id,path,displayName,children::isNotEmpty]',
+            ],
+        },
+    },
+    systemOrganisationUnitRoots: {
+        resource: '/organisationUnits',
+        params: {
+            paging: false,
+            level: 1,
+            fields: 'id,path,displayName,children::isNotEmpty',
         },
     },
 }
@@ -37,7 +51,13 @@ const CurrentUserProvider = ({ children }) => {
     }
 
     const value = {
-        ...data.me,
+        userGroupIds: data.me.userGroups.map(({ id }) => id),
+        userRoleIds: data.me.userCredentials.userRoles.map(({ id }) => id),
+        organisationUnits: data.me.organisationUnits ?? [],
+        dataViewOrganisationUnits: data.me.dataViewOrganisationUnits ?? [],
+        teiSearchOrganisationUnits: data.me.teiSearchOrganisationUnits ?? [],
+        systemOrganisationUnitRoots:
+            data.systemOrganisationUnitRoots.organisationUnits ?? [],
         refreshCurrentUser: refetch,
     }
 

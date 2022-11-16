@@ -6,6 +6,7 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import api from './api/index.js'
 import App from './App.js'
+import { CurrentUserProvider } from './components/CurrentUserProvider.js'
 import store from './store.js'
 
 const AppWrapper = () => {
@@ -37,7 +38,9 @@ const AppWrapper = () => {
         <>
             <CssVariables spacers colors theme />
             <Provider store={store}>
-                <App />
+                <CurrentUserProvider>
+                    <App />
+                </CurrentUserProvider>
             </Provider>
         </>
     )
