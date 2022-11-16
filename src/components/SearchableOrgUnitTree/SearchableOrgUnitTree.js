@@ -11,7 +11,6 @@ import cx from 'classnames'
 import { defer } from 'lodash-es'
 import PropTypes from 'prop-types'
 import React, { useState, useCallback, useMemo } from 'react'
-import api from '../../api/index.js'
 import { useCurrentUser } from '../../hooks/useCurrentUser.js'
 import AsyncAutoComplete from './AsyncAutoComplete/index.js'
 import getInitiallyExpandedUnits from './getInitiallyExpandedUnits.js'
@@ -161,7 +160,6 @@ const SearchableOrgUnitTree = ({
                     )}
                     <div className={styles.searchFilterWrapper}>
                         <AsyncAutoComplete
-                            query={api.queryOrgUnits}
                             orgUnitType={orgUnitType}
                             selectHandler={selectAndShowFilteredOrgUnit}
                         />
