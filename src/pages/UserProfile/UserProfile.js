@@ -29,7 +29,7 @@ const DateTimeValue = ({ dateTime }) => (
 )
 
 DateTimeValue.propTypes = {
-    dateTime: PropTypes.string.isRequired,
+    dateTime: PropTypes.string,
 }
 
 const Permissions = ({ displayNames }) => (
@@ -46,7 +46,6 @@ Permissions.propTypes = {
 
 const UserProfile = ({ userId }) => {
     const { baseUrl } = useConfig()
-    console.log(baseUrl)
     const { loading, error, user } = useUser(userId)
     const history = useHistory()
 
