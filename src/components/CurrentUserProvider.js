@@ -13,6 +13,7 @@ const query = {
             fields: [
                 'userGroups[id]',
                 'userCredentials[userRoles[id]]',
+                'authorities',
                 'organisationUnits[id,path,displayName,children::isNotEmpty]',
                 'dataViewOrganisationUnits[id,path,displayName,children::isNotEmpty]',
                 'teiSearchOrganisationUnits[id,path,displayName,children::isNotEmpty]',
@@ -27,6 +28,51 @@ const query = {
             fields: 'id,path,displayName,children::isNotEmpty',
         },
     },
+}
+
+const AUTH_LOOKUP = {
+    APP: new Set(['ALL', 'M_dhis-web-user']),
+    USER: new Set([
+        'ALL',
+        'F_USER_VIEW',
+        'F_REPLICATE_USER',
+        'F_USER_ADD',
+        'F_USER_ADD_WITHIN_MANAGED_GROUP',
+        'F_USER_DELETE',
+        'F_USER_DELETE_WITHIN_MANAGED_GROUP',
+    ]),
+    GROUP: new Set([
+        'ALL',
+        'F_USERGROUP_DELETE',
+        'F_USERGROUP_PRIVATE_ADD',
+        'F_USERGROUP_PUBLIC_ADD',
+        'F_USER_GROUPS_READ_ONLY_ADD_MEMBERS',
+        'F_USERGROUP_MANAGING_RELATIONSHIPS_ADD',
+        'F_USERGROUP_MANAGING_RELATIONSHIPS_VIEW',
+    ]),
+    ROLE: new Set([
+        'ALL',
+        'F_USERROLE_DELETE',
+        'F_USERROLE_PRIVATE_ADD',
+        'F_USERROLE_PUBLIC_ADD',
+    ]),
+    USER_CREATE: new Set([
+        'ALL',
+        'F_USER_ADD',
+        'F_USER_ADD_WITHIN_MANAGED_GROUP',
+    ]),
+    GROUP_CREATE: new Set([
+        'ALL',
+        'F_USERGROUP_PRIVATE_ADD',
+        'F_USERGROUP_PUBLIC_ADD',
+        'F_USER_GROUPS_READ_ONLY_ADD_MEMBERS',
+        'F_USERGROUP_MANAGING_RELATIONSHIPS_ADD',
+    ]),
+    ROLE_CREATE: new Set([
+        'ALL',
+        'F_USERROLE_PRIVATE_ADD',
+        'F_USERROLE_PUBLIC_ADD',
+    ]),
 }
 
 const CurrentUserProvider = ({ children }) => {
@@ -51,6 +97,28 @@ const CurrentUserProvider = ({ children }) => {
     }
 
     const value = {
+        authorities: data.me.authorities,
+        hasAppAccess: data.me.authorities.some((auth) =>
+            AUTH_LOOKUP.APP.has(auth)
+        ),
+        hasUserSectionAccess: data.me.authorities.some((auth) =>
+            AUTH_LOOKUP.USER.has(auth)
+        ),
+        hasGroupSectionAccess: data.me.authorities.some((auth) =>
+            AUTH_LOOKUP.GROUP.has(auth)
+        ),
+        hasRoleSectionAccess: data.me.authorities.some((auth) =>
+            AUTH_LOOKUP.ROLE.has(auth)
+        ),
+        canCreateUsers: data.me.authorities.some((auth) =>
+            AUTH_LOOKUP.USER_CREATE.has(auth)
+        ),
+        canCreateGroups: data.me.authorities.some((auth) =>
+            AUTH_LOOKUP.GROUP_CREATE.has(auth)
+        ),
+        canCreateRoles: data.me.authorities.some((auth) =>
+            AUTH_LOOKUP.ROLE_CREATE.has(auth)
+        ),
         userGroupIds: data.me.userGroups.map(({ id }) => id),
         userRoleIds: data.me.userCredentials.userRoles.map(({ id }) => id),
         organisationUnits: data.me.organisationUnits ?? [],
@@ -72,6 +140,6 @@ CurrentUserProvider.propTypes = {
     children: PropTypes.node.isRequired,
 }
 
-const useCurrentUser = () => useContext(CurrentUserContext)
+const useCurrentUserNew = () => useContext(CurrentUserContext)
 
-export { CurrentUserProvider, useCurrentUser }
+export { CurrentUserProvider, useCurrentUserNew }

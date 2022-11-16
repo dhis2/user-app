@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-11-16T09:27:01.876Z\n"
-"PO-Revision-Date: 2022-11-16T09:27:01.876Z\n"
+"POT-Creation-Date: 2022-11-16T12:36:05.591Z\n"
+"PO-Revision-Date: 2022-11-16T12:36:05.591Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -441,11 +441,17 @@ msgstr "Apply"
 msgid "Clear all"
 msgstr "Clear all"
 
-msgid "There was an error loading the current user"
-msgstr "There was an error loading the current user"
+msgid "Insufficient permissions"
+msgstr "Insufficient permissions"
 
-msgid "You do not have authorities to see users, user roles or user groups"
-msgstr "You do not have authorities to see users, user roles or user groups"
+msgid "You do not have access to any section of the DHIS 2 User Management App"
+msgstr "You do not have access to any section of the DHIS 2 User Management App"
+
+msgid "User role"
+msgstr "User role"
+
+msgid "User group"
+msgstr "User group"
 
 msgid "Analytics dimension restrictions"
 msgstr "Analytics dimension restrictions"
@@ -625,21 +631,6 @@ msgstr "Passwords do not match"
 msgid "Please provide a value"
 msgstr "Please provide a value"
 
-msgid "Create, modify, view and delete Users"
-msgstr "Create, modify, view and delete Users"
-
-msgid "User role"
-msgstr "User role"
-
-msgid "Create, modify, view and delete User Roles"
-msgstr "Create, modify, view and delete User Roles"
-
-msgid "User group"
-msgstr "User group"
-
-msgid "Create, modify, view and delete User Groups"
-msgstr "Create, modify, view and delete User Groups"
-
 msgid "New group"
 msgstr "New group"
 
@@ -784,26 +775,20 @@ msgstr "Actions"
 msgid "Member"
 msgstr "Member"
 
-msgid "Insufficient permissions"
-msgstr "Insufficient permissions"
-
-msgid "You do not have access to any section of the DHIS 2 User Management App"
-msgstr "You do not have access to any section of the DHIS 2 User Management App"
-
 msgid "List"
 msgstr "List"
 
 msgid "Add"
 msgstr "Add"
 
-msgid "Page not found."
-msgstr "Page not found."
+msgid "Create, modify, view and delete Users"
+msgstr "Create, modify, view and delete Users"
 
-msgid "No match for"
-msgstr "No match for"
+msgid "Create, modify, view and delete User Roles"
+msgstr "Create, modify, view and delete User Roles"
 
-msgid "Go back home"
-msgstr "Go back home"
+msgid "Create, modify, view and delete User Groups"
+msgstr "Create, modify, view and delete User Groups"
 
 msgid "Edit user role"
 msgstr "Edit user role"
