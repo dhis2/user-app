@@ -3,6 +3,7 @@ import { NoticeBox } from '@dhis2/ui'
 import React, { useEffect } from 'react'
 import { Route, useRouteMatch, useLocation } from 'react-router-dom'
 import { USER, USER_ROLE, USER_GROUP } from '../constants/entityTypes.js'
+import { useCurrentUser } from '../hooks/useCurrentUser.js'
 import CreateGroup from '../pages/CreateGroup.js'
 import CreateRole from '../pages/CreateRole.js'
 import CreateUser from '../pages/CreateUser.js'
@@ -17,7 +18,6 @@ import RoleList from '../pages/RoleList/index.js'
 import UserList from '../pages/UserList/index.js'
 import UserProfile from '../pages/UserProfile/index.js'
 import navigateTo from '../utils/navigateTo.js'
-import { useCurrentUserNew } from './CurrentUserProvider.js'
 import styles from './SectionNavigation.module.css'
 import { SideNav, NavItem } from './SideNav.js'
 
@@ -28,7 +28,7 @@ const SectionNavigation = () => {
         hasUserSectionAccess,
         hasGroupSectionAccess,
         hasRoleSectionAccess,
-    } = useCurrentUserNew()
+    } = useCurrentUser()
     const isUserSection = useRouteMatch('/users')
     const isRoleSection = useRouteMatch('/user-roles')
     const isGroupSection = useRouteMatch('/user-groups')

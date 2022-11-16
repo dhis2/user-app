@@ -2,7 +2,7 @@ import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Layer, CenteredContent, CircularLoader, NoticeBox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { createContext, useContext } from 'react'
+import React, { createContext } from 'react'
 
 const CurrentUserContext = createContext({})
 
@@ -148,6 +148,4 @@ CurrentUserProvider.propTypes = {
     children: PropTypes.node.isRequired,
 }
 
-const useCurrentUserNew = () => useContext(CurrentUserContext)
-
-export { CurrentUserProvider, useCurrentUserNew, CurrentUserContext }
+export { CurrentUserProvider, CurrentUserContext }

@@ -17,7 +17,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { useCurrentUserNew } from '../../../components/CurrentUserProvider.js'
+import { useCurrentUser } from '../../../hooks/useCurrentUser.js'
 import navigateTo from '../../../utils/navigateTo.js'
 import DeleteModal from './Modals/DeleteModal.js'
 import Disable2FaModal from './Modals/Disable2FaModal.js'
@@ -40,7 +40,7 @@ const useCurrentModal = () => {
 }
 
 const ContextMenu = ({ user, anchorRef, refetchUsers, onClose }) => {
-    const currentUser = useCurrentUserNew()
+    const currentUser = useCurrentUser()
     const {
         systemInfo: { emailConfigured },
     } = useConfig()

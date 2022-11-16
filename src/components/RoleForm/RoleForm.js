@@ -5,7 +5,7 @@ import { flatMap } from 'lodash-es'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { useCurrentUserNew } from '../CurrentUserProvider.js'
+import { useCurrentUser } from '../../hooks/useCurrentUser.js'
 import Form, { FormSection, TextField, TransferField } from '../Form.js'
 import { getJsonPatch } from './getJsonPatch.js'
 import { getRoleData } from './getRoleData.js'
@@ -74,7 +74,7 @@ const RoleForm = ({ submitButtonLabel, role }) => {
             importExportAuthorityOptions,
             systemAuthorityOptions,
         })
-    const currentUser = useCurrentUserNew()
+    const currentUser = useCurrentUser()
     const handleSubmit = async (values, form) => {
         const roleData = getRoleData({ values })
 

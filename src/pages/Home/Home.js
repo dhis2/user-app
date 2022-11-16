@@ -1,7 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
 import { IconAdd16, IconList16 } from '@dhis2/ui'
 import React from 'react'
-import { useCurrentUserNew } from '../../components/CurrentUserProvider.js'
+import { useCurrentUser } from '../../hooks/useCurrentUser.js'
 import styles from './Home.module.css'
 import SectionCard from './SectionCard.js'
 
@@ -27,7 +27,7 @@ const Home = () => {
         canCreateUsers,
         canCreateGroups,
         canCreateRoles,
-    } = useCurrentUserNew()
+    } = useCurrentUser()
 
     return (
         <div className={styles.grid}>

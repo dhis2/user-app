@@ -12,7 +12,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { useCurrentUserNew } from '../../../components/CurrentUserProvider.js'
+import { useCurrentUser } from '../../../hooks/useCurrentUser.js'
 import navigateTo from '../../../utils/navigateTo.js'
 import DeleteModal from './Modals/DeleteModal.js'
 import JoinModal from './Modals/JoinModal.js'
@@ -33,7 +33,7 @@ const useCurrentModal = () => {
 }
 
 const ContextMenu = ({ group, anchorRef, refetchGroups, onClose }) => {
-    const currentUser = useCurrentUserNew()
+    const currentUser = useCurrentUser()
     const currentUserIsMember = currentUser.userGroupIds.includes(group.id)
     const [CurrentModal, setCurrentModal] = useCurrentModal()
     const { access } = group

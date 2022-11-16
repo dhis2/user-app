@@ -12,8 +12,8 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { useCurrentUserNew } from '../../components/CurrentUserProvider.js'
 import DataTableInfoWrapper from '../../components/DataTableInfoWrapper.js'
+import { useCurrentUser } from '../../hooks/useCurrentUser.js'
 import navigateTo from '../../utils/navigateTo.js'
 import ContextMenuButton from './ContextMenu/ContextMenuButton.js'
 
@@ -25,7 +25,7 @@ const GroupTable = ({
     nameSortDirection,
     onNameSortDirectionToggle,
 }) => {
-    const currentUser = useCurrentUserNew()
+    const currentUser = useCurrentUser()
 
     if (loading && !groups) {
         return (

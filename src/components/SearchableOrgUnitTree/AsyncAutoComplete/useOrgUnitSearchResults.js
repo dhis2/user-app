@@ -1,7 +1,7 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import { debounce } from 'lodash-es'
 import { useState, useEffect, useRef } from 'react'
-import { useCurrentUserNew } from '../../CurrentUserProvider.js'
+import { useCurrentUser } from '../../../hooks/useCurrentUser.js'
 import { PAGE_SIZE, MIN_CHAR_LENGTH, DEBOUNCE_TIME } from './constants.js'
 import { getRestrictedOrgUnits } from './getRestrictedOrgUnits.js'
 
@@ -24,7 +24,7 @@ const query = {
 }
 
 const useOrgUnitSearchResults = ({ searchText, orgUnitType }) => {
-    const currentUser = useCurrentUserNew()
+    const currentUser = useCurrentUser()
     const [organisationUnits, setOrganisationUnits] = useState([])
     const [waiting, setWaiting] = useState(false)
     const { refetch, fetching, error, data } = useDataQuery(query, {

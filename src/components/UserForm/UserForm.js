@@ -5,8 +5,8 @@ import { keyBy } from 'lodash-es'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+import { useCurrentUser } from '../../hooks/useCurrentUser.js'
 import Attributes from '../Attributes/index.js'
-import { useCurrentUserNew } from '../CurrentUserProvider.js'
 import Form, { FormSection } from '../Form.js'
 import AnalyticsDimensionsRestrictionsSection from './AnalyticsDimensionRestrictionsSection.js'
 import BasicInformationSection from './BasicInformationSection.js'
@@ -43,7 +43,7 @@ const UserForm = ({
         filledOrganisationUnitLevels,
         attributes,
     } = useFormData()
-    const currentUser = useCurrentUserNew()
+    const currentUser = useCurrentUser()
     const handleSubmit = async (values, form) => {
         const userData = getUserData({
             values,

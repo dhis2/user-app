@@ -10,11 +10,11 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { useCurrentUserNew } from '../../../../components/CurrentUserProvider.js'
+import { useCurrentUser } from '../../../../hooks/useCurrentUser.js'
 import { useFetchAlert } from '../../../../hooks/useFetchAlert.js'
 
 const JoinModal = ({ group, refetchGroups, onClose }) => {
-    const currentUser = useCurrentUserNew()
+    const currentUser = useCurrentUser()
     const engine = useDataEngine()
     const [loading, setLoading] = useState(false)
     const { showSuccess, showError } = useFetchAlert()
