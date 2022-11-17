@@ -8,19 +8,14 @@ export const useDebouncedUniqueUsernameValidator = ({
     username: currentUsername,
 }) => {
     const engine = useDataEngine()
-    const findUserByUsername = pDebounce(async username => {
-        const {
-            users: { users },
-        } = await engine.query({
-            users: {
-                resource: 'users',
-                params: {
-                    filter: `userCredentials.username:eq:${username}`,
-                    fields: 'id',
-                },
+    const checkUsername = pDebounce(async username => {
+        const { result } = await engine.query({
+            result: {
+                resource: 'account/username',
+                params: { username },
             },
         })
-        return users[0]
+        return result
     }, 350)
     const validator = async username => {
         if (username === currentUsername) {
@@ -28,8 +23,8 @@ export const useDebouncedUniqueUsernameValidator = ({
         }
 
         try {
-            const user = await findUserByUsername(username)
-            if (user) {
+            const { response } = await checkUsername(username)
+            if (response === 'error') {
                 return i18n.t('Username already taken')
             }
         } catch (error) {
@@ -46,7 +41,6 @@ export const useUserNameValidator = ({ user, isInviteUser }) => {
         useDebouncedUniqueUsernameValidator({
             username: user?.userCredentials.username,
         })
-
     if (user) {
         return undefined
     }

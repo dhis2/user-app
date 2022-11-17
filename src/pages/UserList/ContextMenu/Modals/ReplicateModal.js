@@ -9,16 +9,23 @@ import {
     Button,
     ReactFinalForm,
     InputFieldFF,
-    dhis2Username,
     dhis2Password,
+    composeValidators,
+    hasValue,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { TextField } from '../../../../components/Form.js'
+import { useUserNameValidator } from '../../../../components/UserForm/validators.js'
 import { useFetchAlert } from '../../../../hooks/useFetchAlert'
 import styles from './ReplicateModal.module.css'
 
 const ReplicateModal = ({ user, refetchUsers, onClose }) => {
     const engine = useDataEngine()
+    const validateUserName = useUserNameValidator({
+        user: undefined,
+        isInviteUser: false,
+    })
     const { showSuccess, showError } = useFetchAlert()
 
     const handleReplicate = async ({ username, password }) => {
@@ -57,16 +64,16 @@ const ReplicateModal = ({ user, refetchUsers, onClose }) => {
                     </ModalTitle>
                     <ModalContent>
                         <form onSubmit={handleSubmit}>
-                            <ReactFinalForm.Field
+                            <TextField
                                 name="username"
                                 label={i18n.t('Username')}
                                 placeholder={i18n.t('Username for new user')}
-                                validate={dhis2Username}
+                                validate={validateUserName}
                                 autoComplete="new-password"
                                 className={styles.field}
                                 component={InputFieldFF}
                             />
-                            <ReactFinalForm.Field
+                            <TextField
                                 name="password"
                                 label={i18n.t('Password')}
                                 type="password"
@@ -74,7 +81,10 @@ const ReplicateModal = ({ user, refetchUsers, onClose }) => {
                                 helpText={i18n.t(
                                     'Password should be at least 8 characters long, with at least one lowercase character, one uppercase character and one special character.'
                                 )}
-                                validate={dhis2Password}
+                                validate={composeValidators(
+                                    hasValue,
+                                    dhis2Password
+                                )}
                                 autoComplete="new-password"
                                 className={styles.field}
                                 component={InputFieldFF}
