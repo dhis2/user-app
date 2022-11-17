@@ -62,24 +62,9 @@ const ResultsTable = ({
         )
     }
 
-    const { noneSelected, allSelected, allPending } = results.reduce(
-        (state, { id }) => {
-            if (isSelected(id)) {
-                state.noneSelected = false
-            } else {
-                state.allSelected = false
-            }
-            if (!isPendingChange(id)) {
-                state.allPending = false
-            }
-            return state
-        },
-        {
-            noneSelected: true,
-            allSelected: true,
-            allPending: true,
-        }
-    )
+    const noneSelected =  results.every(({ id }) => !isSelected(id))
+    const allSelected =  results.every(({ id }) => isSelected(id))
+    const allPending = results.every(({ id }) => isPendingChange(id))
 
     return (
         <DataTable>
