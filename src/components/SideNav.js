@@ -33,34 +33,19 @@ NavItem.propTypes = {
  * If its on a path/route that doesn't match any section it will render null.
  * This is because when a form or the CardLinks are displayed, the sidebar should not show.
  */
-const SideNav = ({ sections }) => {
-    if (!sections.length) {
-        return null
-    }
-
-    return (
-        <nav
-            // See http://web-accessibility.carnegiemuseums.org/code/navigation/
-            role="nav"
-            aria-label="Main Navigation"
-            className={styles.nav}
-        >
-            <Menu>
-                {sections.map(({ path, label }) => {
-                    return <NavItem key={path} path={path} label={label} />
-                })}
-            </Menu>
-        </nav>
-    )
-}
+const SideNav = ({ children }) => (
+    <nav
+        // See http://web-accessibility.carnegiemuseums.org/code/navigation/
+        role="nav"
+        aria-label="Main Navigation"
+        className={styles.nav}
+    >
+        <Menu>{children}</Menu>
+    </nav>
+)
 
 SideNav.propTypes = {
-    sections: PropTypes.arrayOf(
-        PropTypes.shape({
-            label: PropTypes.string.isRequired,
-            path: PropTypes.string.isRequired,
-        })
-    ).isRequired,
+    children: PropTypes.node.isRequired,
 }
 
-export default SideNav
+export { SideNav, NavItem }

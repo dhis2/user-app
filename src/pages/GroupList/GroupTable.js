@@ -12,8 +12,8 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { connect } from 'react-redux'
 import DataTableInfoWrapper from '../../components/DataTableInfoWrapper.js'
+import { useCurrentUser } from '../../hooks/useCurrentUser.js'
 import navigateTo from '../../utils/navigateTo.js'
 import ContextMenuButton from './ContextMenu/ContextMenuButton.js'
 
@@ -22,10 +22,11 @@ const GroupTable = ({
     error,
     groups,
     refetch,
-    currentUser,
     nameSortDirection,
     onNameSortDirectionToggle,
 }) => {
+    const currentUser = useCurrentUser()
+
     if (loading && !groups) {
         return (
             <DataTableInfoWrapper columns={3}>
@@ -107,9 +108,6 @@ const GroupTable = ({
 }
 
 GroupTable.propTypes = {
-    currentUser: PropTypes.shape({
-        userGroupIds: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-    }).isRequired,
     nameSortDirection: PropTypes.oneOf(['asc', 'desc']).isRequired,
     refetch: PropTypes.func.isRequired,
     onNameSortDirectionToggle: PropTypes.func.isRequired,
@@ -127,6 +125,4 @@ GroupTable.propTypes = {
     loading: PropTypes.bool,
 }
 
-const mapStateToProps = ({ currentUser }) => ({ currentUser })
-
-export default connect(mapStateToProps)(GroupTable)
+export default GroupTable

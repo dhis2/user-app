@@ -21,7 +21,7 @@ const GroupForm = ({ submitButtonLabel, group }) => {
     const history = useHistory()
     const engine = useDataEngine()
     const { loading, error, userGroupOptions, attributes } = useFormData()
-    const { currentUser, refreshCurrentUser } = useCurrentUser()
+    const currentUser = useCurrentUser()
     const handleSubmit = async (values, form) => {
         try {
             if (group) {
@@ -45,7 +45,7 @@ const GroupForm = ({ submitButtonLabel, group }) => {
 
             history.goBack()
             if (group && currentUser.userGroupIds.includes(group.id)) {
-                refreshCurrentUser()
+                currentUser.refresh()
             }
         } catch (error) {
             return (

@@ -11,8 +11,7 @@ import cx from 'classnames'
 import { defer } from 'lodash-es'
 import PropTypes from 'prop-types'
 import React, { useState, useCallback, useMemo } from 'react'
-import { useSelector } from 'react-redux'
-import api from '../../api/index.js'
+import { useCurrentUser } from '../../hooks/useCurrentUser.js'
 import AsyncAutoComplete from './AsyncAutoComplete/index.js'
 import getInitiallyExpandedUnits from './getInitiallyExpandedUnits.js'
 import getInitiallySelectedUnits from './getInitiallySelectedUnits.js'
@@ -43,9 +42,8 @@ const SearchableOrgUnitTree = ({
     onBlur,
     onChange,
 }) => {
-    const roots = useSelector(({ currentUser }) =>
-        getOrgUnitRoots(orgUnitType, currentUser)
-    )
+    const currentUser = useCurrentUser()
+    const roots = getOrgUnitRoots(orgUnitType, currentUser)
 
     const [selectedOrgUnits, setSelectedOrgUnits] = useState(() =>
         getInitiallySelectedUnits(initiallySelected)
@@ -162,7 +160,6 @@ const SearchableOrgUnitTree = ({
                     )}
                     <div className={styles.searchFilterWrapper}>
                         <AsyncAutoComplete
-                            query={api.queryOrgUnits}
                             orgUnitType={orgUnitType}
                             selectHandler={selectAndShowFilteredOrgUnit}
                         />

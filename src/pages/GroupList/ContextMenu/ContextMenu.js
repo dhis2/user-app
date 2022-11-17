@@ -12,7 +12,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { connect } from 'react-redux'
+import { useCurrentUser } from '../../../hooks/useCurrentUser.js'
 import navigateTo from '../../../utils/navigateTo.js'
 import DeleteModal from './Modals/DeleteModal.js'
 import JoinModal from './Modals/JoinModal.js'
@@ -32,13 +32,9 @@ const useCurrentModal = () => {
     ]
 }
 
-const ContextMenu = ({
-    group,
-    anchorRef,
-    refetchGroups,
-    currentUserIsMember,
-    onClose,
-}) => {
+const ContextMenu = ({ group, anchorRef, refetchGroups, onClose }) => {
+    const currentUser = useCurrentUser()
+    const currentUserIsMember = currentUser.userGroupIds.includes(group.id)
     const [CurrentModal, setCurrentModal] = useCurrentModal()
     const { access } = group
 
@@ -118,7 +114,6 @@ const ContextMenu = ({
 
 ContextMenu.propTypes = {
     anchorRef: PropTypes.object.isRequired,
-    currentUserIsMember: PropTypes.bool.isRequired,
     group: PropTypes.shape({
         access: PropTypes.shape({
             delete: PropTypes.bool.isRequired,
@@ -132,8 +127,4 @@ ContextMenu.propTypes = {
     onClose: PropTypes.func.isRequired,
 }
 
-const mapStateToProps = ({ currentUser }, { group }) => ({
-    currentUserIsMember: currentUser.userGroupIds.includes(group.id),
-})
-
-export default connect(mapStateToProps)(ContextMenu)
+export default ContextMenu

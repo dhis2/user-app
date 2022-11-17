@@ -1,3 +1,4 @@
+import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     CenteredContent,
@@ -10,7 +11,6 @@ import {
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import api from '../../api/index.js'
 import Details, { Section, Field } from '../../components/Details/index.js'
 import parseDateFromUTCString from '../../utils/parseDateFromUTCString.js'
 import useUser from './use-user.js'
@@ -29,7 +29,7 @@ const DateTimeValue = ({ dateTime }) => (
 )
 
 DateTimeValue.propTypes = {
-    dateTime: PropTypes.string.isRequired,
+    dateTime: PropTypes.string,
 }
 
 const Permissions = ({ displayNames }) => (
@@ -45,6 +45,7 @@ Permissions.propTypes = {
 }
 
 const UserProfile = ({ userId }) => {
+    const { baseUrl } = useConfig()
     const { loading, error, user } = useUser(userId)
     const history = useHistory()
 
@@ -52,7 +53,7 @@ const UserProfile = ({ userId }) => {
         history.push(`/users/edit/${userId}`)
     }
     const handleMessageUser = () => {
-        location.href = `${api.getContextPath()}/dhis-web-messaging/#/PRIVATE/create/${userId}`
+        location.href = `${baseUrl}/dhis-web-messaging/#/PRIVATE/create/${userId}`
     }
 
     if (loading) {

@@ -43,7 +43,7 @@ const UserForm = ({
         filledOrganisationUnitLevels,
         attributes,
     } = useFormData()
-    const { currentUser, refreshCurrentUser } = useCurrentUser()
+    const currentUser = useCurrentUser()
     const handleSubmit = async (values, form) => {
         const userData = getUserData({
             values,
@@ -108,7 +108,7 @@ const UserForm = ({
 
             history.goBack()
             if (user && user.id === currentUser.id) {
-                refreshCurrentUser()
+                currentUser.refresh()
             }
         } catch (error) {
             return (
