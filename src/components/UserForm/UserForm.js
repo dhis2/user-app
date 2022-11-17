@@ -1,9 +1,9 @@
 import { useConfig, useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { NoticeBox, FinalForm } from '@dhis2/ui'
+import { NoticeBox, FinalForm, ReactFinalForm } from '@dhis2/ui'
 import { keyBy } from 'lodash-es'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useCurrentUser } from '../../hooks/useCurrentUser.js'
 import Attributes from '../Attributes/index.js'
@@ -20,6 +20,18 @@ import SecuritySection from './SecuritySection.js'
 import { useFormData } from './useFormData.js'
 import styles from './UserForm.module.css'
 
+const getFormButtonTexts = (submitButtonLabel, mode) =>
+    mode === 'INVITE_USER'
+        ? {
+              mode,
+              submit: i18n.t('Send invite'),
+              cancel: i18n.t('Cancel invite'),
+          }
+        : {
+              mode,
+              submit: submitButtonLabel,
+          }
+
 const UserForm = ({
     submitButtonLabel,
     user,
@@ -29,6 +41,9 @@ const UserForm = ({
     const {
         systemInfo: { emailConfigured },
     } = useConfig()
+    const [formButtonTexts, setFormButtonTexts] = useState(
+        getFormButtonTexts(submitButtonLabel)
+    )
     const history = useHistory()
     const engine = useDataEngine()
     const {
@@ -141,7 +156,8 @@ const UserForm = ({
         <Form
             loading={loading}
             error={error}
-            submitButtonLabel={submitButtonLabel}
+            submitButtonLabel={formButtonTexts.submit}
+            cancelButtonLabel={formButtonTexts.cancel}
             onSubmit={handleSubmit}
         >
             {({ values, submitError }) => (
@@ -205,6 +221,27 @@ const UserForm = ({
                             />
                         </FormSection>
                     )}
+                    <ReactFinalForm.FormSpy
+                        subscription={{
+                            values: true,
+                            active: true,
+                            modified: true,
+                        }}
+                        onChange={({ active, modified, values }) => {
+                            if (
+                                active === 'inviteUser' &&
+                                modified.inviteUser &&
+                                values.inviteUser !== formButtonTexts.mode
+                            ) {
+                                setFormButtonTexts(
+                                    getFormButtonTexts(
+                                        submitButtonLabel,
+                                        values.inviteUser
+                                    )
+                                )
+                            }
+                        }}
+                    />
                 </>
             )}
         </Form>
