@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
+"POT-Creation-Date: 2022-11-16T12:36:05.591Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2022\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -61,6 +61,12 @@ msgid "Will be added"
 msgstr ""
 
 msgid "Will be removed"
+msgstr ""
+
+msgid "Network error"
+msgstr ""
+
+msgid "Could not load current user information."
 msgstr ""
 
 msgid "Filter options"
@@ -447,12 +453,18 @@ msgstr "تطبيق"
 msgid "Clear all"
 msgstr "تنظيف الكل"
 
-msgid "There was an error loading the current user"
-msgstr "حدث خطأ أثناء تحميل المستخدم الحالي"
-
-msgid "You do not have authorities to see users, user roles or user groups"
+msgid "Insufficient permissions"
 msgstr ""
-"ليس لديك سلطات لرؤية المستخدمين أو أدوار المستخدمين أو مجموعات المستخدمين"
+
+msgid ""
+"You do not have access to any section of the DHIS 2 User Management App"
+msgstr "ليس لديك حق الوصول إلى أي قسم في تطبيق إدارة مستخدمي الـ DHIS 2"
+
+msgid "User role"
+msgstr "دور المستخدم"
+
+msgid "User group"
+msgstr "مجموعة المستخدمين"
 
 msgid "Analytics dimension restrictions"
 msgstr ""
@@ -631,21 +643,6 @@ msgstr "عدم تطابق كلمتي السر"
 msgid "Please provide a value"
 msgstr "يرجى إدخال قيمة"
 
-msgid "Create, modify, view and delete Users"
-msgstr "إنشاء، تعديل، استعراض و حذف المستخدمين"
-
-msgid "User role"
-msgstr "دور المستخدم"
-
-msgid "Create, modify, view and delete User Roles"
-msgstr "إنشاء، تعديل، استعراض و حذف أدوار المستخدم"
-
-msgid "User group"
-msgstr "مجموعة المستخدمين"
-
-msgid "Create, modify, view and delete User Groups"
-msgstr "إنشاء، تعديل، استعراض و حذف مجموعات المستخدم"
-
 msgid "New group"
 msgstr ""
 
@@ -790,27 +787,20 @@ msgstr "الإجراءات"
 msgid "Member"
 msgstr ""
 
-msgid "Insufficient permissions"
-msgstr ""
-
-msgid ""
-"You do not have access to any section of the DHIS 2 User Management App"
-msgstr "ليس لديك حق الوصول إلى أي قسم في تطبيق إدارة مستخدمي الـ DHIS 2"
-
 msgid "List"
 msgstr "عرض"
 
 msgid "Add"
 msgstr "إضافة"
 
-msgid "Page not found."
-msgstr "لم يتم إيجاد الصفحة"
+msgid "Create, modify, view and delete Users"
+msgstr "إنشاء، تعديل، استعراض و حذف المستخدمين"
 
-msgid "No match for"
-msgstr "لا يوجد تطابق لـ "
+msgid "Create, modify, view and delete User Roles"
+msgstr "إنشاء، تعديل، استعراض و حذف أدوار المستخدم"
 
-msgid "Go back home"
-msgstr "العودة للصفحة الرئيسة"
+msgid "Create, modify, view and delete User Groups"
+msgstr "إنشاء، تعديل، استعراض و حذف مجموعات المستخدم"
 
 msgid "Edit user role"
 msgstr "تعديل دور المستخدم"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
+"POT-Creation-Date: 2022-11-16T12:36:05.591Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: trendspotter <jirka.p@volny.cz>, 2022\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -60,6 +60,12 @@ msgstr "Bude přidáno"
 
 msgid "Will be removed"
 msgstr "Bude odstraněn"
+
+msgid "Network error"
+msgstr "Chyba sítě"
+
+msgid "Could not load current user information."
+msgstr ""
 
 msgid "Filter options"
 msgstr "Možnosti filtru"
@@ -451,12 +457,18 @@ msgstr "Aplikovat"
 msgid "Clear all"
 msgstr "Vymazat vše"
 
-msgid "There was an error loading the current user"
-msgstr "Při načítání aktuálního uživatele došlo k chybě"
+msgid "Insufficient permissions"
+msgstr "Nedostatečná oprávnění"
 
-msgid "You do not have authorities to see users, user roles or user groups"
-msgstr ""
-"Nemáte oprávnění k zobrazení uživatelů, rolí uživatelů nebo skupin uživatelů"
+msgid ""
+"You do not have access to any section of the DHIS 2 User Management App"
+msgstr "Nemáte přístup k žádné části aplikace Správa uživatelů DHIS 2"
+
+msgid "User role"
+msgstr "Role uživatele"
+
+msgid "User group"
+msgstr "Uživatelská skupina"
 
 msgid "Analytics dimension restrictions"
 msgstr "Omezení dimenzí Analytiky"
@@ -641,21 +653,6 @@ msgstr "Hesla se neshodují"
 msgid "Please provide a value"
 msgstr "Zadejte prosím hodnotu"
 
-msgid "Create, modify, view and delete Users"
-msgstr "Vytvářejte, upravujte, zobrazujte a mazejte uživatele"
-
-msgid "User role"
-msgstr "Role uživatele"
-
-msgid "Create, modify, view and delete User Roles"
-msgstr "Vytvářejte, upravujte, zobrazujte a mazejte uživatelské role"
-
-msgid "User group"
-msgstr "Uživatelská skupina"
-
-msgid "Create, modify, view and delete User Groups"
-msgstr "Vytvářejte, upravujte, prohlížejte a mazejte skupiny uživatelů"
-
 msgid "New group"
 msgstr "Nová skupina"
 
@@ -800,27 +797,20 @@ msgstr "Akce"
 msgid "Member"
 msgstr "Člen"
 
-msgid "Insufficient permissions"
-msgstr "Nedostatečná oprávnění"
-
-msgid ""
-"You do not have access to any section of the DHIS 2 User Management App"
-msgstr "Nemáte přístup k žádné části aplikace Správa uživatelů DHIS 2"
-
 msgid "List"
 msgstr "Seznam"
 
 msgid "Add"
 msgstr "Přidat"
 
-msgid "Page not found."
-msgstr "Stránka nenalezena."
+msgid "Create, modify, view and delete Users"
+msgstr "Vytvářejte, upravujte, zobrazujte a mazejte uživatele"
 
-msgid "No match for"
-msgstr "Žádná shoda pro"
+msgid "Create, modify, view and delete User Roles"
+msgstr "Vytvářejte, upravujte, zobrazujte a mazejte uživatelské role"
 
-msgid "Go back home"
-msgstr "Zpět na domovskou stranu"
+msgid "Create, modify, view and delete User Groups"
+msgstr "Vytvářejte, upravujte, prohlížejte a mazejte skupiny uživatelů"
 
 msgid "Edit user role"
 msgstr "Upravit uživatelskou roli"

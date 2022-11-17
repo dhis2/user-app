@@ -1,6 +1,6 @@
 # 
 # Translators:
-# Pablo Pajuelo Cabezas <ppajuelo@quadram.mobi>, 2022
+# Pablo Pajuelo Cabezas <pablo@dhis2.org>, 2022
 # William Aviles <waviles@clintonhealthaccess.org>, 2022
 # Prabhjot Singh, 2022
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
+"POT-Creation-Date: 2022-11-16T12:36:05.591Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Carlos Tejo Alonso, 2022\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
@@ -66,6 +66,12 @@ msgid "Will be added"
 msgstr ""
 
 msgid "Will be removed"
+msgstr ""
+
+msgid "Network error"
+msgstr ""
+
+msgid "Could not load current user information."
 msgstr ""
 
 msgid "Filter options"
@@ -452,13 +458,20 @@ msgstr "Aplicar"
 msgid "Clear all"
 msgstr "Clear all"
 
-msgid "There was an error loading the current user"
-msgstr "Se produjo un error al cargar el usuario actual"
-
-msgid "You do not have authorities to see users, user roles or user groups"
+msgid "Insufficient permissions"
 msgstr ""
-"No tienes autoridades para ver usuarios, roles del usuario o grupos de "
-"usuarios"
+
+msgid ""
+"You do not have access to any section of the DHIS 2 User Management App"
+msgstr ""
+"No tiene acceso a ninguna sección de la Aplicación de Gestión de Usuarios "
+"DHIS 2"
+
+msgid "User role"
+msgstr "Rol del usuario"
+
+msgid "User group"
+msgstr "Grupo de usuario"
 
 msgid "Analytics dimension restrictions"
 msgstr ""
@@ -638,21 +651,6 @@ msgstr "Las contraseñas no coinciden"
 msgid "Please provide a value"
 msgstr "Proporcione un valor"
 
-msgid "Create, modify, view and delete Users"
-msgstr "Crear, modificar, ver y eliminar Usuarios"
-
-msgid "User role"
-msgstr "Rol del usuario"
-
-msgid "Create, modify, view and delete User Roles"
-msgstr "Crear, modificar, ver y eliminar Roles del Usuario"
-
-msgid "User group"
-msgstr "Grupo de usuario"
-
-msgid "Create, modify, view and delete User Groups"
-msgstr "Crear, modificar, ver y eliminar Grupos de Usuarios"
-
 msgid "New group"
 msgstr ""
 
@@ -797,29 +795,20 @@ msgstr "Acciones"
 msgid "Member"
 msgstr ""
 
-msgid "Insufficient permissions"
-msgstr ""
-
-msgid ""
-"You do not have access to any section of the DHIS 2 User Management App"
-msgstr ""
-"No tiene acceso a ninguna sección de la Aplicación de Gestión de Usuarios "
-"DHIS 2"
-
 msgid "List"
 msgstr "Mostrar"
 
 msgid "Add"
 msgstr "Añadir"
 
-msgid "Page not found."
-msgstr "Page not found."
+msgid "Create, modify, view and delete Users"
+msgstr "Crear, modificar, ver y eliminar Usuarios"
 
-msgid "No match for"
-msgstr "No hay coincidencia para"
+msgid "Create, modify, view and delete User Roles"
+msgstr "Crear, modificar, ver y eliminar Roles del Usuario"
 
-msgid "Go back home"
-msgstr "Regresar a casa"
+msgid "Create, modify, view and delete User Groups"
+msgstr "Crear, modificar, ver y eliminar Grupos de Usuarios"
 
 msgid "Edit user role"
 msgstr "Editar rol de usuario"
