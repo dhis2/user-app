@@ -62,8 +62,8 @@ const ResultsTable = ({
         )
     }
 
-    const noneSelected =  results.every(({ id }) => !isSelected(id))
-    const allSelected =  results.every(({ id }) => isSelected(id))
+    const noneSelected = results.every(({ id }) => !isSelected(id))
+    const allSelected = results.every(({ id }) => isSelected(id))
     const allPending = results.every(({ id }) => isPendingChange(id))
 
     return (
