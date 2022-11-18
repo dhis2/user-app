@@ -20,18 +20,6 @@ import SecuritySection from './SecuritySection.js'
 import { useFormData } from './useFormData.js'
 import styles from './UserForm.module.css'
 
-const getFormButtonTexts = (submitButtonLabel, mode) =>
-    mode === 'INVITE_USER'
-        ? {
-              mode,
-              submit: i18n.t('Send invite'),
-              cancel: i18n.t('Cancel invite'),
-          }
-        : {
-              mode,
-              submit: submitButtonLabel,
-          }
-
 const UserForm = ({
     submitButtonLabel,
     user,
@@ -41,9 +29,7 @@ const UserForm = ({
     const {
         systemInfo: { emailConfigured },
     } = useConfig()
-    const [formButtonTexts, setFormButtonTexts] = useState(
-        getFormButtonTexts(submitButtonLabel)
-    )
+    const [isInvite, setIsInvite] = useState(false)
     const history = useHistory()
     const engine = useDataEngine()
     const {
@@ -156,8 +142,14 @@ const UserForm = ({
         <Form
             loading={loading}
             error={error}
-            submitButtonLabel={formButtonTexts.submit}
-            cancelButtonLabel={formButtonTexts.cancel}
+            submitButtonLabel={
+                isInvite ? i18n.t('Send invite') : submitButtonLabel
+            }
+            cancelButtonLabel={
+                isInvite
+                    ? i18n.t('Cancel invite')
+                    : i18n.t('Cancel without saving')
+            }
             onSubmit={handleSubmit}
         >
             {({ values, submitError }) => (
@@ -178,6 +170,7 @@ const UserForm = ({
                     <InviteUserSection
                         user={user}
                         emailConfigured={emailConfigured}
+                        setIsInvite={setIsInvite}
                     />
                     <BasicInformationSection
                         user={user}
