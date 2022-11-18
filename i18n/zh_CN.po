@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
+"POT-Creation-Date: 2022-11-16T12:36:05.591Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2022\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -60,6 +60,12 @@ msgid "Will be added"
 msgstr ""
 
 msgid "Will be removed"
+msgstr ""
+
+msgid "Network error"
+msgstr ""
+
+msgid "Could not load current user information."
 msgstr ""
 
 msgid "Filter options"
@@ -446,11 +452,18 @@ msgstr "应用"
 msgid "Clear all"
 msgstr "全清除"
 
-msgid "There was an error loading the current user"
-msgstr "载入当前用户发生错误"
+msgid "Insufficient permissions"
+msgstr ""
 
-msgid "You do not have authorities to see users, user roles or user groups"
-msgstr "你没有查看用户、用户角色和用户组的权限"
+msgid ""
+"You do not have access to any section of the DHIS 2 User Management App"
+msgstr "你没有任何权限访问DHIS2用户管理应用"
+
+msgid "User role"
+msgstr "用户角色"
+
+msgid "User group"
+msgstr "用户组"
 
 msgid "Analytics dimension restrictions"
 msgstr ""
@@ -629,21 +642,6 @@ msgstr "口令不匹配"
 msgid "Please provide a value"
 msgstr ""
 
-msgid "Create, modify, view and delete Users"
-msgstr "创建、修改、查看和删除用户"
-
-msgid "User role"
-msgstr "用户角色"
-
-msgid "Create, modify, view and delete User Roles"
-msgstr "创建、修改、查看和删除用户角色"
-
-msgid "User group"
-msgstr "用户组"
-
-msgid "Create, modify, view and delete User Groups"
-msgstr "创建、修改、查看和删除用户"
-
 msgid "New group"
 msgstr ""
 
@@ -788,27 +786,20 @@ msgstr "行动"
 msgid "Member"
 msgstr ""
 
-msgid "Insufficient permissions"
-msgstr ""
-
-msgid ""
-"You do not have access to any section of the DHIS 2 User Management App"
-msgstr "你没有任何权限访问DHIS2用户管理应用"
-
 msgid "List"
 msgstr "列表"
 
 msgid "Add"
 msgstr "添加"
 
-msgid "Page not found."
-msgstr "没有页"
+msgid "Create, modify, view and delete Users"
+msgstr "创建、修改、查看和删除用户"
 
-msgid "No match for"
-msgstr "没有匹配"
+msgid "Create, modify, view and delete User Roles"
+msgstr "创建、修改、查看和删除用户角色"
 
-msgid "Go back home"
-msgstr "回到首页"
+msgid "Create, modify, view and delete User Groups"
+msgstr "创建、修改、查看和删除用户"
 
 msgid "Edit user role"
 msgstr "编辑用户角色"

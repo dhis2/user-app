@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
+"POT-Creation-Date: 2022-11-16T12:36:05.591Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Thuy Nguyen <thuynguyen@hispvietnam.org>, 2022\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -62,6 +62,12 @@ msgid "Will be added"
 msgstr ""
 
 msgid "Will be removed"
+msgstr ""
+
+msgid "Network error"
+msgstr ""
+
+msgid "Could not load current user information."
 msgstr ""
 
 msgid "Filter options"
@@ -448,12 +454,20 @@ msgstr "Áp dụng"
 msgid "Clear all"
 msgstr "Xóa tất cả"
 
-msgid "There was an error loading the current user"
-msgstr "Đã xảy ra lỗi khi tải người dùng hiện tại"
-
-msgid "You do not have authorities to see users, user roles or user groups"
+msgid "Insufficient permissions"
 msgstr ""
-"Bạn không có quyền xem người dùng, vai trò người dùng hoặc nhóm người dùng"
+
+msgid ""
+"You do not have access to any section of the DHIS 2 User Management App"
+msgstr ""
+"Bạn không có quyền truy cập vào bất kỳ phần nào của Ứng dụng quản lý người "
+"dùng DHIS 2"
+
+msgid "User role"
+msgstr "Quyền người dùng"
+
+msgid "User group"
+msgstr "Nhóm Người Dùng"
 
 msgid "Analytics dimension restrictions"
 msgstr ""
@@ -632,21 +646,6 @@ msgstr "Mật khẩu không phù hợp"
 msgid "Please provide a value"
 msgstr ""
 
-msgid "Create, modify, view and delete Users"
-msgstr "Tạo, sửa đổi, xem và xóa người dùng"
-
-msgid "User role"
-msgstr "Quyền người dùng"
-
-msgid "Create, modify, view and delete User Roles"
-msgstr "Tạo, sửa đổi, xem và xóa quyền người dùng"
-
-msgid "User group"
-msgstr "Nhóm Người Dùng"
-
-msgid "Create, modify, view and delete User Groups"
-msgstr "Tạo, sửa đổi, xem và xóa nhóm người dùng"
-
 msgid "New group"
 msgstr ""
 
@@ -791,29 +790,20 @@ msgstr "Hành động"
 msgid "Member"
 msgstr ""
 
-msgid "Insufficient permissions"
-msgstr ""
-
-msgid ""
-"You do not have access to any section of the DHIS 2 User Management App"
-msgstr ""
-"Bạn không có quyền truy cập vào bất kỳ phần nào của Ứng dụng quản lý người "
-"dùng DHIS 2"
-
 msgid "List"
 msgstr "Danh sách"
 
 msgid "Add"
 msgstr "Thêm"
 
-msgid "Page not found."
-msgstr "Không tìm thấy trang"
+msgid "Create, modify, view and delete Users"
+msgstr "Tạo, sửa đổi, xem và xóa người dùng"
 
-msgid "No match for"
-msgstr "Không khớp với"
+msgid "Create, modify, view and delete User Roles"
+msgstr "Tạo, sửa đổi, xem và xóa quyền người dùng"
 
-msgid "Go back home"
-msgstr "Quay lại trang chủ"
+msgid "Create, modify, view and delete User Groups"
+msgstr "Tạo, sửa đổi, xem và xóa nhóm người dùng"
 
 msgid "Edit user role"
 msgstr "Chỉnh sửa quyền người dùng"

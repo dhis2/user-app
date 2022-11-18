@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
+"POT-Creation-Date: 2022-11-16T12:36:05.591Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Éva Tamási, 2022\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
@@ -66,6 +66,12 @@ msgstr "Буде додано"
 
 msgid "Will be removed"
 msgstr "Буде видалено"
+
+msgid "Network error"
+msgstr ""
+
+msgid "Could not load current user information."
+msgstr ""
 
 msgid "Filter options"
 msgstr "Параметри фільтра"
@@ -457,13 +463,18 @@ msgstr "Застосувати"
 msgid "Clear all"
 msgstr "Очистити все"
 
-msgid "There was an error loading the current user"
-msgstr "Під час завантаження поточного користувача сталася помилка"
+msgid "Insufficient permissions"
+msgstr "Недостатньо дозволів"
 
-msgid "You do not have authorities to see users, user roles or user groups"
-msgstr ""
-"У вас немає повноважень для перегляду користувачів, ролей користувачів або "
-"груп користувачів"
+msgid ""
+"You do not have access to any section of the DHIS 2 User Management App"
+msgstr "У вас немає доступу до жодного розділу додатка DHIS 2 User Management"
+
+msgid "User role"
+msgstr "Роль користувача"
+
+msgid "User group"
+msgstr "Група користувачів"
 
 msgid "Analytics dimension restrictions"
 msgstr "Обмеження вимірів аналітики"
@@ -650,21 +661,6 @@ msgstr "Паролі не збігаються"
 msgid "Please provide a value"
 msgstr "Вкажіть значення"
 
-msgid "Create, modify, view and delete Users"
-msgstr "Створення, зміна, перегляд і видалення користувачів"
-
-msgid "User role"
-msgstr "Роль користувача"
-
-msgid "Create, modify, view and delete User Roles"
-msgstr "Створення, зміна, перегляд і видалення ролей користувачів"
-
-msgid "User group"
-msgstr "Група користувачів"
-
-msgid "Create, modify, view and delete User Groups"
-msgstr "Створення, зміна, перегляд і видалення груп користувачів"
-
 msgid "New group"
 msgstr "Нова група"
 
@@ -809,27 +805,20 @@ msgstr "Дії"
 msgid "Member"
 msgstr "Учасник"
 
-msgid "Insufficient permissions"
-msgstr "Недостатньо дозволів"
-
-msgid ""
-"You do not have access to any section of the DHIS 2 User Management App"
-msgstr "У вас немає доступу до жодного розділу додатка DHIS 2 User Management"
-
 msgid "List"
 msgstr "Список"
 
 msgid "Add"
 msgstr "Додати"
 
-msgid "Page not found."
-msgstr "Сторінку не знайдено."
+msgid "Create, modify, view and delete Users"
+msgstr "Створення, зміна, перегляд і видалення користувачів"
 
-msgid "No match for"
-msgstr "Немає збігів для"
+msgid "Create, modify, view and delete User Roles"
+msgstr "Створення, зміна, перегляд і видалення ролей користувачів"
 
-msgid "Go back home"
-msgstr "Повернутися на головну"
+msgid "Create, modify, view and delete User Groups"
+msgstr "Створення, зміна, перегляд і видалення груп користувачів"
 
 msgid "Edit user role"
 msgstr "Редагувати роль користувача"

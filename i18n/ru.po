@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
+"POT-Creation-Date: 2022-11-16T12:36:05.591Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
@@ -61,6 +61,12 @@ msgid "Will be added"
 msgstr ""
 
 msgid "Will be removed"
+msgstr ""
+
+msgid "Network error"
+msgstr ""
+
+msgid "Could not load current user information."
 msgstr ""
 
 msgid "Filter options"
@@ -447,11 +453,20 @@ msgstr "Применить"
 msgid "Clear all"
 msgstr "Очистить все"
 
-msgid "There was an error loading the current user"
-msgstr "При загрузке текущего пользователя произошла ошибка"
-
-msgid "You do not have authorities to see users, user roles or user groups"
+msgid "Insufficient permissions"
 msgstr ""
+
+msgid ""
+"You do not have access to any section of the DHIS 2 User Management App"
+msgstr ""
+"У вас нет доступа к какому-либо разделу приложения для управления "
+"пользователями DHIS 2"
+
+msgid "User role"
+msgstr "Роль пользователя"
+
+msgid "User group"
+msgstr "Группа пользователей"
 
 msgid "Analytics dimension restrictions"
 msgstr ""
@@ -630,21 +645,6 @@ msgstr "Пароли не совпадают"
 msgid "Please provide a value"
 msgstr ""
 
-msgid "Create, modify, view and delete Users"
-msgstr "Создание, изменение, просмотр и удаление Пользователей"
-
-msgid "User role"
-msgstr "Роль пользователя"
-
-msgid "Create, modify, view and delete User Roles"
-msgstr "Создание, изменение, просмотр и удаление Ролей Пользователей"
-
-msgid "User group"
-msgstr "Группа пользователей"
-
-msgid "Create, modify, view and delete User Groups"
-msgstr "Создание, изменение, просмотр и удаление Групп Пользователей"
-
 msgid "New group"
 msgstr ""
 
@@ -789,29 +789,20 @@ msgstr "Действия"
 msgid "Member"
 msgstr ""
 
-msgid "Insufficient permissions"
-msgstr ""
-
-msgid ""
-"You do not have access to any section of the DHIS 2 User Management App"
-msgstr ""
-"У вас нет доступа к какому-либо разделу приложения для управления "
-"пользователями DHIS 2"
-
 msgid "List"
 msgstr "Список"
 
 msgid "Add"
 msgstr "Добавить"
 
-msgid "Page not found."
-msgstr "Страница не найдена"
+msgid "Create, modify, view and delete Users"
+msgstr "Создание, изменение, просмотр и удаление Пользователей"
 
-msgid "No match for"
-msgstr ""
+msgid "Create, modify, view and delete User Roles"
+msgstr "Создание, изменение, просмотр и удаление Ролей Пользователей"
 
-msgid "Go back home"
-msgstr "Возврат домой"
+msgid "Create, modify, view and delete User Groups"
+msgstr "Создание, изменение, просмотр и удаление Групп Пользователей"
 
 msgid "Edit user role"
 msgstr "Изменить роль пользователя"
