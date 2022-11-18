@@ -1,9 +1,18 @@
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useField } from 'react-final-form'
 import { FormSection, SingleSelectField } from '../Form.js'
 
-const InviteUserSection = ({ user, emailConfigured }) => {
+const InviteUserSection = ({ user, emailConfigured, setIsInvite }) => {
+    const {
+        input: { value },
+    } = useField('inviteUser', { subscription: { value: true, data: true } })
+
+    useEffect(() => {
+        setIsInvite(value === 'INVITE_USER')
+    }, [value])
+
     if (user || !emailConfigured) {
         return null
     }
@@ -31,6 +40,7 @@ const InviteUserSection = ({ user, emailConfigured }) => {
 
 InviteUserSection.propTypes = {
     emailConfigured: PropTypes.bool,
+    setIsInvite: PropTypes.func,
     user: PropTypes.object,
 }
 
