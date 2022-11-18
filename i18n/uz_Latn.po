@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
+"POT-Creation-Date: 2022-11-16T12:36:05.591Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2022\n"
 "Language-Team: Uzbek (Latin) (https://www.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
@@ -60,6 +60,12 @@ msgid "Will be added"
 msgstr ""
 
 msgid "Will be removed"
+msgstr ""
+
+msgid "Network error"
+msgstr ""
+
+msgid "Could not load current user information."
 msgstr ""
 
 msgid "Filter options"
@@ -446,13 +452,20 @@ msgstr "Murojaat qilish"
 msgid "Clear all"
 msgstr "Barchasini tozalash"
 
-msgid "There was an error loading the current user"
-msgstr "Joriy foydalanuvchini yuklashda xatolik yuz berdi"
-
-msgid "You do not have authorities to see users, user roles or user groups"
+msgid "Insufficient permissions"
 msgstr ""
-"Sizda foydalanuvchilarni, foydalanuvchi rollarini yoki foydalanuvchi "
-"guruhlarini koʼrish vakolati mavjud emas"
+
+msgid ""
+"You do not have access to any section of the DHIS 2 User Management App"
+msgstr ""
+"DHIS2 Foydalanuvchi Boshqarish Ilovasi hech bir sektsiyasiga kirish huquqiga"
+" ega emassiz"
+
+msgid "User role"
+msgstr ""
+
+msgid "User group"
+msgstr ""
 
 msgid "Analytics dimension restrictions"
 msgstr ""
@@ -631,22 +644,6 @@ msgstr "Parollar mos kelmadi"
 msgid "Please provide a value"
 msgstr ""
 
-msgid "Create, modify, view and delete Users"
-msgstr "Foydalanuvchilarni yaratish, oʼzgartirish, koʼrish va oʼchirish"
-
-msgid "User role"
-msgstr ""
-
-msgid "Create, modify, view and delete User Roles"
-msgstr "Foydalanuvchi Rollarini yaratish, oʼzgartirish, koʼrish va oʼchirish"
-
-msgid "User group"
-msgstr ""
-
-msgid "Create, modify, view and delete User Groups"
-msgstr ""
-"Foydalanuvchi Guruhlarini yaratish, oʼzgartirish, koʼrish va oʼchirish"
-
 msgid "New group"
 msgstr ""
 
@@ -791,29 +788,21 @@ msgstr "Аmallar"
 msgid "Member"
 msgstr ""
 
-msgid "Insufficient permissions"
-msgstr ""
-
-msgid ""
-"You do not have access to any section of the DHIS 2 User Management App"
-msgstr ""
-"DHIS2 Foydalanuvchi Boshqarish Ilovasi hech bir sektsiyasiga kirish huquqiga"
-" ega emassiz"
-
 msgid "List"
 msgstr "Patsientlar Roʼyxati"
 
 msgid "Add"
 msgstr "Qoʼshish"
 
-msgid "Page not found."
-msgstr "Sahifa topilmadi."
+msgid "Create, modify, view and delete Users"
+msgstr "Foydalanuvchilarni yaratish, oʼzgartirish, koʼrish va oʼchirish"
 
-msgid "No match for"
-msgstr "uchun toʼgʼri kelmaydi"
+msgid "Create, modify, view and delete User Roles"
+msgstr "Foydalanuvchi Rollarini yaratish, oʼzgartirish, koʼrish va oʼchirish"
 
-msgid "Go back home"
-msgstr "Uyga qaytish"
+msgid "Create, modify, view and delete User Groups"
+msgstr ""
+"Foydalanuvchi Guruhlarini yaratish, oʼzgartirish, koʼrish va oʼchirish"
 
 msgid "Edit user role"
 msgstr "Foydalanuvchi rolini tahrir qilish"

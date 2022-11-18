@@ -4,6 +4,7 @@ import { useDebounce } from 'use-debounce'
 import { useSet } from './useSet.js'
 
 export const useResults = ({
+    pendingChanges,
     canManageMembers,
     allQuery,
     membersGistQuery,
@@ -11,6 +12,11 @@ export const useResults = ({
     filterDebounceMs,
     mode,
 }) => {
+    const currentPendingChanges =
+        mode === 'MEMBERS' ? pendingChanges.removals : pendingChanges.additions
+    const pendingChangesForMode = new Set(
+        currentPendingChanges.map(({ id }) => id)
+    )
     const prevPageRef = useRef({
         members: {
             pager: undefined,
@@ -108,6 +114,10 @@ export const useResults = ({
         pager: data ? data.results.pager : prevPager,
         navigateToPage,
         isSelected: (id) => selected.has(id),
+        isPendingChange: (id) => pendingChangesForMode.has(id),
+        deselect: (id) => {
+            selected.delete(id)
+        },
         toggleSelected: (id) => {
             if (selected.has(id)) {
                 selected.delete(id)

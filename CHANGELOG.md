@@ -1,3 +1,24 @@
+## [1.4.31](https://github.com/dhis2/user-app/compare/v1.4.30...v1.4.31) (2022-11-18)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([399d074](https://github.com/dhis2/user-app/commit/399d0741a4517124d1e7114651e0a26629d9989b))
+
+## [1.4.30](https://github.com/dhis2/user-app/compare/v1.4.29...v1.4.30) (2022-11-17)
+
+
+### Bug Fixes
+
+* user manager checkbox behaviour ([#1073](https://github.com/dhis2/user-app/issues/1073)) ([dbdf276](https://github.com/dhis2/user-app/commit/dbdf276cc92bc811659b1682bacdc585630b81ee))
+
+## [1.4.29](https://github.com/dhis2/user-app/compare/v1.4.28...v1.4.29) (2022-11-17)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6606706](https://github.com/dhis2/user-app/commit/660670622fd52106046dbb2ef72c492d2ef2ba53))
+
 ## [1.4.28](https://github.com/dhis2/user-app/compare/v1.4.27...v1.4.28) (2022-11-16)
 
 

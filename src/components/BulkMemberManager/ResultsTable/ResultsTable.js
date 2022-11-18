@@ -29,6 +29,7 @@ const ResultsTable = ({
     onActionClick,
     pendingChanges,
     onPendingChangeCancel,
+    isPendingChange,
     isSelected,
     onToggleSelected,
     onToggleAllSelected,
@@ -61,7 +62,9 @@ const ResultsTable = ({
         )
     }
 
-    const selectedResults = results.filter(({ id }) => isSelected(id))
+    const noneSelected = results.every(({ id }) => !isSelected(id))
+    const allSelected = results.every(({ id }) => isSelected(id))
+    const allPending = results.every(({ id }) => isPendingChange(id))
 
     return (
         <DataTable>
@@ -69,13 +72,10 @@ const ResultsTable = ({
                 <DataTableRow>
                     <DataTableColumnHeader width="48px">
                         <Checkbox
-                            checked={selectedResults.length === results.length}
-                            indeterminate={
-                                selectedResults.length > 0 &&
-                                selectedResults.length < results.length
-                            }
+                            checked={allSelected || allPending}
+                            indeterminate={!noneSelected && !allSelected}
+                            disabled={allPending}
                             onChange={() => onToggleAllSelected(pendingChanges)}
-                            disabled={loading}
                         />
                     </DataTableColumnHeader>
                     {columns.map((column) => (
@@ -124,7 +124,10 @@ const ResultsTable = ({
                             onPendingChangeCancel={() =>
                                 onPendingChangeCancel(pendingChangeEntity)
                             }
-                            selected={isSelected(result.id)}
+                            selected={
+                                isSelected(result.id) ||
+                                isPendingChange(result.id)
+                            }
                             onToggleSelected={() => onToggleSelected(result.id)}
                         />
                     )
@@ -142,6 +145,7 @@ ResultsTable.propTypes = {
             mapDataToValue: PropTypes.func.isRequired,
         })
     ).isRequired,
+    isPendingChange: PropTypes.func.isRequired,
     isSelected: PropTypes.func.isRequired,
     loading: PropTypes.bool.isRequired,
     mode: PropTypes.oneOf(['MEMBERS', 'NON_MEMBERS']).isRequired,

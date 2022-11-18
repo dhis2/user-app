@@ -11,16 +11,15 @@ const getOrgUnitRoots = (orgUnitType, currentUser) => {
     const requestedOrgUnitRoots = currentUser[orgUnitType]
     const fallBackOrgUnitRoots = currentUser.organisationUnits
 
-    let orgUnitRoots = null
-    if (currentUser.authorities.has('ALL')) {
-        orgUnitRoots = systemOrgRoots
-    } else if (requestedOrgUnitRoots.size === 0) {
-        orgUnitRoots = fallBackOrgUnitRoots.toArray()
-    } else if (fallBackOrgUnitRoots.size > 0) {
-        orgUnitRoots = fallBackOrgUnitRoots.toArray()
+    if (currentUser.authorities.includes('ALL')) {
+        return systemOrgRoots ?? []
+    } else if (requestedOrgUnitRoots?.length > 0) {
+        return requestedOrgUnitRoots
+    } else if (fallBackOrgUnitRoots?.length > 0) {
+        return fallBackOrgUnitRoots
+    } else {
+        return []
     }
-
-    return orgUnitRoots
 }
 
 export default getOrgUnitRoots

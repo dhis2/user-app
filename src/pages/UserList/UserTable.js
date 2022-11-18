@@ -139,8 +139,8 @@ UserTable.propTypes = {
             id: PropTypes.string.isRequired,
             userCredentials: PropTypes.shape({
                 disabled: PropTypes.bool.isRequired,
-                username: PropTypes.string.isRequired,
                 lastLogin: PropTypes.string,
+                username: PropTypes.string,
             }).isRequired,
         }).isRequired
     ),

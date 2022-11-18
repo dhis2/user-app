@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
+"POT-Creation-Date: 2022-11-16T12:36:05.591Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
@@ -60,6 +60,12 @@ msgid "Will be added"
 msgstr ""
 
 msgid "Will be removed"
+msgstr ""
+
+msgid "Network error"
+msgstr ""
+
+msgid "Could not load current user information."
 msgstr ""
 
 msgid "Filter options"
@@ -446,10 +452,17 @@ msgstr "Verkställ"
 msgid "Clear all"
 msgstr "Rensa alla"
 
-msgid "There was an error loading the current user"
+msgid "Insufficient permissions"
 msgstr ""
 
-msgid "You do not have authorities to see users, user roles or user groups"
+msgid ""
+"You do not have access to any section of the DHIS 2 User Management App"
+msgstr ""
+
+msgid "User role"
+msgstr ""
+
+msgid "User group"
 msgstr ""
 
 msgid "Analytics dimension restrictions"
@@ -631,21 +644,6 @@ msgstr "Lösenorden stämmer inte överens"
 msgid "Please provide a value"
 msgstr ""
 
-msgid "Create, modify, view and delete Users"
-msgstr ""
-
-msgid "User role"
-msgstr ""
-
-msgid "Create, modify, view and delete User Roles"
-msgstr ""
-
-msgid "User group"
-msgstr ""
-
-msgid "Create, modify, view and delete User Groups"
-msgstr ""
-
 msgid "New group"
 msgstr ""
 
@@ -790,27 +788,20 @@ msgstr ""
 msgid "Member"
 msgstr ""
 
-msgid "Insufficient permissions"
-msgstr ""
-
-msgid ""
-"You do not have access to any section of the DHIS 2 User Management App"
-msgstr ""
-
 msgid "List"
 msgstr ""
 
 msgid "Add"
 msgstr "Lägg till"
 
-msgid "Page not found."
-msgstr "Sidan hittades inte"
+msgid "Create, modify, view and delete Users"
+msgstr ""
 
-msgid "No match for"
-msgstr "Ingen träff hittades för"
+msgid "Create, modify, view and delete User Roles"
+msgstr ""
 
-msgid "Go back home"
-msgstr "Gå tillbaka till hem"
+msgid "Create, modify, view and delete User Groups"
+msgstr ""
 
 msgid "Edit user role"
 msgstr ""

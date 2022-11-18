@@ -1,9 +1,8 @@
-import { useDataEngine } from '@dhis2/app-runtime'
-import { useD2 } from '@dhis2/app-runtime-adapter-d2'
+import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { CenteredContent, CircularLoader, NoticeBox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import UserForm from '../components/UserForm/index.js'
 
 const userQuery = {
@@ -31,49 +30,58 @@ const userQuery = {
     },
 }
 
-const useUser = (userId) => {
-    const engine = useDataEngine()
-    const { d2 } = useD2()
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(null)
-    const [data, setData] = useState(null)
+const userSettingsQuery = {
+    userSettings: {
+        resource: 'userSettings',
+        params: ({ username }) => ({
+            user: username,
+            // Field filters don't work, but let's pass them anyway
+            fields: ['keyUiLocale', 'keyDbLocale'],
+        }),
+    },
+}
 
-    const fetch = async () => {
-        setLoading(true)
-        setError(null)
-        setData(null)
-        try {
-            const { user } = await engine.query(userQuery, {
-                variables: { id: userId },
-            })
-            const { username } = user.userCredentials
-            // Use d2 to fetch locales as userSettings endpoint sets the
-            // content-type of its responses to application/json even when they
-            // are invalid JSON, causing issues with the data engine.
-            // N.B. Once this endpoint is fixed and useDataQuery can be used,
-            // SWR needs to be disabled (by using fetching instead of loading)
-            // due to the behaviour of react final form's initialValue prop
-            const userInterfaceLanguage = await d2.Api.getApi().get(
-                `/userSettings/keyUiLocale?user=${username}`
-            )
-            const userDatabaseLanguage = await d2.Api.getApi().get(
-                `/userSettings/keyDbLocale?user=${username}`
-            )
-            setData({ user, userInterfaceLanguage, userDatabaseLanguage })
-        } catch (error) {
-            setError(error)
-        }
-        setLoading(false)
-    }
+const useUser = (userId) => {
+    const user = useDataQuery(userQuery, { lazy: true })
+    const userSettings = useDataQuery(userSettingsQuery, { lazy: true })
 
     useEffect(() => {
-        fetch()
-    }, [userId])
+        const currentUserId = user.data?.user.id
+        if (
+            !currentUserId ||
+            (currentUserId && userId && currentUserId !== userId)
+        ) {
+            user.refetch({ id: userId })
+        }
+    }, [user, userId])
+
+    useEffect(() => {
+        if (user.data?.user && !userSettings.data) {
+            const { username } = user.data.user.userCredentials
+            userSettings.refetch({ username })
+        }
+    }, [user, userSettings])
+
+    const loading =
+        !user.called ||
+        !userSettings.called ||
+        user.loading ||
+        userSettings.loading ||
+        user.fetching ||
+        userSettings.fetching
+    const error = loading ? undefined : user.error || userSettings.error
+    const shouldReturnData = !loading && !error
 
     return {
         loading,
         error,
-        ...data,
+        user: shouldReturnData ? user.data.user : undefined,
+        userInterfaceLanguage: shouldReturnData
+            ? userSettings.data.userSettings.keyUiLocale
+            : undefined,
+        userDatabaseLanguage: shouldReturnData
+            ? userSettings.data.userSettings.keyDbLocale
+            : undefined,
     }
 }
 

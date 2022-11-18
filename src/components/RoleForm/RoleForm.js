@@ -74,7 +74,7 @@ const RoleForm = ({ submitButtonLabel, role }) => {
             importExportAuthorityOptions,
             systemAuthorityOptions,
         })
-    const { currentUser, refreshCurrentUser } = useCurrentUser()
+    const currentUser = useCurrentUser()
     const handleSubmit = async (values, form) => {
         const roleData = getRoleData({ values })
 
@@ -102,7 +102,7 @@ const RoleForm = ({ submitButtonLabel, role }) => {
 
             history.goBack()
             if (role && currentUser.userRoleIds.includes(role.id)) {
-                refreshCurrentUser()
+                currentUser.refresh()
             }
         } catch (error) {
             return (

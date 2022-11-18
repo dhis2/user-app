@@ -10,18 +10,12 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { connect } from 'react-redux'
-import { refreshCurrentUser } from '../../../../actions/index.js'
+import { useCurrentUser } from '../../../../hooks/useCurrentUser.js'
 import { useFetchAlert } from '../../../../hooks/useFetchAlert.js'
 
-const LeaveModal = ({
-    group,
-    refetchGroups,
-    currentUser,
-    refreshCurrentUser,
-    onClose,
-}) => {
+const LeaveModal = ({ group, refetchGroups, onClose }) => {
     const engine = useDataEngine()
+    const currentUser = useCurrentUser()
     const [loading, setLoading] = useState(false)
     const { showSuccess, showError } = useFetchAlert()
 
@@ -37,7 +31,7 @@ const LeaveModal = ({
             })
             showSuccess(message)
             refetchGroups()
-            refreshCurrentUser()
+            currentUser.refresh()
             onClose()
         } catch (error) {
             setLoading(false)
@@ -79,21 +73,12 @@ const LeaveModal = ({
 }
 
 LeaveModal.propTypes = {
-    currentUser: PropTypes.shape({
-        id: PropTypes.string.isRequired,
-    }).isRequired,
     group: PropTypes.shape({
         displayName: PropTypes.string.isRequired,
         id: PropTypes.string.isRequired,
     }).isRequired,
     refetchGroups: PropTypes.func.isRequired,
-    refreshCurrentUser: PropTypes.func.isRequired,
     onClose: PropTypes.func.isRequired,
 }
 
-const mapStateToProps = ({ currentUser }) => ({ currentUser })
-const mapDispatchToProps = (dispatch) => ({
-    refreshCurrentUser: () => dispatch(refreshCurrentUser()),
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(LeaveModal)
+export default LeaveModal

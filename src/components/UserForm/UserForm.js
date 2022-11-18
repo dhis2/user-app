@@ -1,6 +1,6 @@
 import { useConfig, useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { NoticeBox, FinalForm } from '@dhis2/ui'
+import { NoticeBox, FinalForm, ReactFinalForm } from '@dhis2/ui'
 import { keyBy } from 'lodash-es'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
@@ -44,7 +44,7 @@ const UserForm = ({
         filledOrganisationUnitLevels,
         attributes,
     } = useFormData()
-    const { currentUser, refreshCurrentUser } = useCurrentUser()
+    const currentUser = useCurrentUser()
     const handleSubmit = async (values, form) => {
         const userData = getUserData({
             values,
@@ -109,7 +109,7 @@ const UserForm = ({
 
             history.goBack()
             if (user && user.id === currentUser.id) {
-                refreshCurrentUser()
+                currentUser.refresh()
             }
         } catch (error) {
             return (
@@ -214,6 +214,27 @@ const UserForm = ({
                             />
                         </FormSection>
                     )}
+                    <ReactFinalForm.FormSpy
+                        subscription={{
+                            values: true,
+                            active: true,
+                            modified: true,
+                        }}
+                        onChange={({ active, modified, values }) => {
+                            if (
+                                active === 'inviteUser' &&
+                                modified.inviteUser &&
+                                values.inviteUser !== formButtonTexts.mode
+                            ) {
+                                setFormButtonTexts(
+                                    getFormButtonTexts(
+                                        submitButtonLabel,
+                                        values.inviteUser
+                                    )
+                                )
+                            }
+                        }}
+                    />
                 </>
             )}
         </Form>
