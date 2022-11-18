@@ -1,3 +1,11 @@
+## [1.4.32](https://github.com/dhis2/user-app/compare/v1.4.31...v1.4.32) (2022-11-18)
+
+
+### Bug Fixes
+
+* address various style and text issues ([#1091](https://github.com/dhis2/user-app/issues/1091)) ([d7295d3](https://github.com/dhis2/user-app/commit/d7295d34071d876ee1d9c50a163cf439641f09ee)), closes [#1094](https://github.com/dhis2/user-app/issues/1094)
+* use dedicated endpoint for checking the username ([#1092](https://github.com/dhis2/user-app/issues/1092)) ([e107e02](https://github.com/dhis2/user-app/commit/e107e021dfd7c8342fd1bbe96d95c14620d0e039))
+
 ## [1.4.31](https://github.com/dhis2/user-app/compare/v1.4.30...v1.4.31) (2022-11-18)
 
 
