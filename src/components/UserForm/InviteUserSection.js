@@ -7,11 +7,11 @@ import { FormSection, SingleSelectField } from '../Form.js'
 const InviteUserSection = ({ user, emailConfigured, setIsInvite }) => {
     const {
         input: { value },
-    } = useField('inviteUser', { subscription: { value: true, data: true } })
+    } = useField('inviteUser', { subscription: { value: true } })
 
     useEffect(() => {
         setIsInvite(value === 'INVITE_USER')
-    }, [value])
+    }, [value, setIsInvite])
 
     if (user || !emailConfigured) {
         return null
