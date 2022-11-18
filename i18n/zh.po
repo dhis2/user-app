@@ -2,15 +2,15 @@
 # Translators:
 # phil_dhis2, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
-# 晓东 林 <13981924470@126.com>, 2022
 # easylin <lin_xd@126.com>, 2022
+# 晓东 林 <13981924470@126.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-11-16T12:36:05.591Z\n"
+"POT-Creation-Date: 2022-11-17T13:40:24.697Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2022\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2022\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -622,6 +622,12 @@ msgstr "LDAP标识"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr "仅外部身份验证（OpenID / LDAP）"
 
+msgid "Send invite"
+msgstr "发送邀请"
+
+msgid "Cancel invite"
+msgstr ""
+
 msgid "Invalid username"
 msgstr "无效的用户名"
 
@@ -919,11 +925,8 @@ msgstr "用户“{{-name}}”的密码重置成功"
 msgid "There was an error resetting the password: {{- error}}"
 msgstr "重置密码时出错：{{- error}}"
 
-msgid "Reset password of user {{- name}}"
-msgstr "重置用户 {{- name}} 的密码"
-
-msgid "Are you sure you want to reset {{- name}}'s password?"
-msgstr "您确定要重置 {{- name}} 的密码吗？"
+msgid "Are you sure you want to reset the password for {{- name}}?"
+msgstr ""
 
 msgid "Yes, reset"
 msgstr "是的，重置"
@@ -961,11 +964,14 @@ msgstr "用户管理"
 msgid "Last login"
 msgstr "上次登录"
 
-msgid "Account disabled?"
-msgstr "帐户已禁用？"
+msgid "Status"
+msgstr "状态"
 
 msgid "Disabled"
 msgstr "关闭"
+
+msgid "Active"
+msgstr "活跃的"
 
 msgid "Male"
 msgstr "男"
