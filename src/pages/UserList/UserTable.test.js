@@ -18,7 +18,7 @@ import UserTable from './UserTable'
  */
 jest.mock('p-debounce', () => ({
     __esModule: true,
-    default: (fn) => fn,
+    default: fn => fn,
 }))
 
 describe('<UserTable>', () => {
