@@ -8,18 +8,10 @@ import {
     IconCross16,
     colors,
 } from '@dhis2/ui'
+import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './ResultsTableRow.module.css'
-
-const getRowClass = (pendingChangeAction) => {
-    switch (pendingChangeAction) {
-        case 'ADD':
-            return styles.pendingAddRow
-        case 'REMOVE':
-            return styles.pendingRemoveRow
-    }
-}
 
 const PendingChange = ({ action, onCancel }) => (
     <div className={styles.pendingChange}>
@@ -57,7 +49,12 @@ const ResultsTableRow = ({
     selected,
     onToggleSelected,
 }) => (
-    <DataTableRow className={getRowClass(pendingChangeAction)}>
+    <DataTableRow
+        className={cx(styles.row, {
+            [styles.pendingAddRow]: pendingChangeAction === 'ADD',
+            [styles.pendingRemoveRow]: pendingChangeAction === 'REMOVE',
+        })}
+    >
         <DataTableCell width="48px">
             <Checkbox
                 checked={selected}
@@ -68,7 +65,7 @@ const ResultsTableRow = ({
         {cells.map((cell, index) => (
             <DataTableCell key={index}>{cell}</DataTableCell>
         ))}
-        <DataTableCell>
+        <DataTableCell className={styles.actionCell}>
             {pendingChangeAction ? (
                 <PendingChange
                     action={pendingChangeAction}

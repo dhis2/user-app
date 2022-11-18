@@ -595,6 +595,12 @@ msgstr "LDAP identifier"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr "External authentication only (OpenID / LDAP)"
 
+msgid "Send invite"
+msgstr "Send invite"
+
+msgid "Cancel invite"
+msgstr "Cancel invite"
+
 msgid "Invalid username"
 msgstr "Invalid username"
 
@@ -914,11 +920,8 @@ msgstr "Password of user \"{{- name}}\" reset successfuly"
 msgid "There was an error resetting the password: {{- error}}"
 msgstr "There was an error resetting the password: {{- error}}"
 
-msgid "Reset password of user {{- name}}"
-msgstr "Reset password of user {{- name}}"
-
-msgid "Are you sure you want to reset {{- name}}'s password?"
-msgstr "Are you sure you want to reset {{- name}}'s password?"
+msgid "Are you sure you want to reset the password for {{- name}}?"
+msgstr "Are you sure you want to reset the password for {{- name}}?"
 
 msgid "Yes, reset"
 msgstr "Yes, reset"
@@ -956,11 +959,14 @@ msgstr "User Management"
 msgid "Last login"
 msgstr "Last login"
 
-msgid "Account disabled?"
-msgstr "Account disabled?"
+msgid "Status"
+msgstr "Status"
 
 msgid "Disabled"
 msgstr "Disabled"
+
+msgid "Active"
+msgstr "Active"
 
 msgid "Male"
 msgstr "Male"

@@ -31,7 +31,7 @@ const useCurrentModal = () => {
 
     return [
         CurrentModal,
-        (Modal) => {
+        Modal => {
             // As setState supports functional updates, we can't pass functional
             // components directly
             setCurrentModal(() => Modal)
@@ -55,12 +55,15 @@ const ContextMenu = ({
         userCredentials: { disabled, twoFA },
     } = user
     const canReplicate =
-        access.update && currentUser.authorities.has('F_REPLICATE_USER')
+        access.update &&
+        (currentUser.authorities.has('ALL') ||
+            currentUser.authorities.has('F_REPLICATE_USER'))
     const canResetPassword =
         emailConfigured &&
         user.email &&
         access.update &&
-        (currentUser.authorities.has('F_USER_ADD') ||
+        (currentUser.authorities.has('ALL') ||
+            currentUser.authorities.has('F_REPLICATE_USER') ||
             currentUser.authorities.has('F_USER_ADD_WITHIN_MANAGED_GROUP'))
     const canDisable = currentUser.id !== user.id && access.update && !disabled
     const canDelete = currentUser.id !== user.id && access.delete
