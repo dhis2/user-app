@@ -1,3 +1,10 @@
+## [1.4.31](https://github.com/dhis2/user-app/compare/v1.4.30...v1.4.31) (2022-11-18)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([399d074](https://github.com/dhis2/user-app/commit/399d0741a4517124d1e7114651e0a26629d9989b))
+
 ## [1.4.30](https://github.com/dhis2/user-app/compare/v1.4.29...v1.4.30) (2022-11-17)
 
 
