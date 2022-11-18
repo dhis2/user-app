@@ -50,13 +50,20 @@ const ContextMenu = ({ user, anchorRef, refetchUsers, onClose }) => {
         userCredentials: { disabled, twoFA },
     } = user
     const canReplicate =
-        access.update && currentUser.authorities.includes('F_REPLICATE_USER')
+        access.update &&
+        currentUser.authorities.some(
+            (auth) => auth === 'ALL' || auth === 'F_REPLICATE_USER'
+        )
     const canResetPassword =
         emailConfigured &&
         user.email &&
         access.update &&
-        (currentUser.authorities.includes('F_USER_ADD') ||
-            currentUser.authorities.includes('F_USER_ADD_WITHIN_MANAGED_GROUP'))
+        currentUser.authorities.some(
+            (auth) =>
+                auth === 'ALL' ||
+                auth === 'F_USER_ADD' ||
+                auth === 'F_USER_ADD_WITHIN_MANAGED_GROUP'
+        )
     const canDisable = currentUser.id !== user.id && access.update && !disabled
     const canDelete = currentUser.id !== user.id && access.delete
 

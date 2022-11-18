@@ -126,7 +126,7 @@ describe('<UserTable>', () => {
             screen.getByRole('columnheader', { name: 'Last login' })
         ).toBeInTheDocument()
         expect(
-            screen.getByRole('columnheader', { name: 'Account disabled?' })
+            screen.getByRole('columnheader', { name: 'Status' })
         ).toBeInTheDocument()
         expect(
             screen.getByRole('columnheader', { name: 'Actions' })

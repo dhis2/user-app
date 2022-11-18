@@ -23,3 +23,7 @@
 .pendingRemoveRow .pendingChangeDescription {
     color: var(--colors-red700);
 }
+
+tr.row td.actionCell {
+    width: 320px;
+}
