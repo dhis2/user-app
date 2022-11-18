@@ -4,6 +4,23 @@ import moment from 'moment'
 import React from 'react'
 import UserTable from './UserTable'
 
+/*
+ * Since we don't need to verify if this debounce module
+ * works as expected it is OK to mock it. The fact that
+ * I mocked it is because without the mock, the test suite will
+ * fail due to a Jest file parse error. This error started
+ * to appear after adding an import of `useUserNameValidator`
+ * to `src/pages/UserList/ContextMenu/Modals/ReplicateModal.js`
+ * in the commit below:
+ * https://github.com/dhis2/user-app/pull/1092/commits/c4edd10011e73e327cf6f1cc26b5c51e342c4081
+ * I couldn't identify the root cause of this and settled on this
+ * workaround in the end...
+ */
+jest.mock('p-debounce', () => ({
+    __esModule: true,
+    default: (fn) => fn,
+}))
+
 describe('<UserTable>', () => {
     it('renders a loading spinner while users are being fetched', () => {
         render(
