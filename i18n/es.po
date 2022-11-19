@@ -3,18 +3,18 @@
 # Pablo Pajuelo Cabezas <pablo@dhis2.org>, 2022
 # William Aviles <waviles@clintonhealthaccess.org>, 2022
 # Prabhjot Singh, 2022
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # Janeth Cruz, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
-# phil_dhis2, 2022
 # Carlos Tejo Alonso, 2022
+# phil_dhis2, 2022
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-11-16T12:36:05.591Z\n"
+"POT-Creation-Date: 2022-11-17T13:40:24.697Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Carlos Tejo Alonso, 2022\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -626,6 +626,12 @@ msgstr "identificador LDAP"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr ""
 
+msgid "Send invite"
+msgstr "Enviar invitación"
+
+msgid "Cancel invite"
+msgstr ""
+
 msgid "Invalid username"
 msgstr ""
 
@@ -926,10 +932,7 @@ msgstr ""
 msgid "There was an error resetting the password: {{- error}}"
 msgstr ""
 
-msgid "Reset password of user {{- name}}"
-msgstr ""
-
-msgid "Are you sure you want to reset {{- name}}'s password?"
+msgid "Are you sure you want to reset the password for {{- name}}?"
 msgstr ""
 
 msgid "Yes, reset"
@@ -968,11 +971,14 @@ msgstr "Administración de usuarios"
 msgid "Last login"
 msgstr "Último ingreso"
 
-msgid "Account disabled?"
-msgstr ""
+msgid "Status"
+msgstr "Estado"
 
 msgid "Disabled"
 msgstr "Inhabilitar"
+
+msgid "Active"
+msgstr "Activo"
 
 msgid "Male"
 msgstr "Masculino"
