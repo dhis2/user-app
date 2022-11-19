@@ -1,6 +1,6 @@
 {
     "name": "user-app",
-    "version": "1.4.32",
+    "version": "1.4.33",
     "description": "DHIS2 User app",
     "license": "BSD-3-Clause",
     "private": true,
