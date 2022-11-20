@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-11-16T12:36:05.591Z\n"
+"POT-Creation-Date: 2022-11-17T13:40:24.697Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
@@ -618,6 +618,12 @@ msgstr ""
 msgid "External authentication only (OpenID / LDAP)"
 msgstr ""
 
+msgid "Send invite"
+msgstr ""
+
+msgid "Cancel invite"
+msgstr ""
+
 msgid "Invalid username"
 msgstr ""
 
@@ -917,10 +923,7 @@ msgstr ""
 msgid "There was an error resetting the password: {{- error}}"
 msgstr ""
 
-msgid "Reset password of user {{- name}}"
-msgstr ""
-
-msgid "Are you sure you want to reset {{- name}}'s password?"
+msgid "Are you sure you want to reset the password for {{- name}}?"
 msgstr ""
 
 msgid "Yes, reset"
@@ -959,11 +962,14 @@ msgstr "Användarhantering"
 msgid "Last login"
 msgstr ""
 
-msgid "Account disabled?"
-msgstr ""
+msgid "Status"
+msgstr "Status"
 
 msgid "Disabled"
 msgstr ""
+
+msgid "Active"
+msgstr "Aktiva"
 
 msgid "Male"
 msgstr "Man"
