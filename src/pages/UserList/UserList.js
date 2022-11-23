@@ -128,37 +128,39 @@ const UserList = () => {
                 onOrganisationUnitsChange={setOrganisationUnits}
                 onClear={clearFilters}
             />
-            <DataTableToolbar>
-                <Button
-                    small
-                    icon={<IconAdd24 color={colors.grey600} />}
-                    onClick={() => navigateTo('/users/new')}
-                >
-                    {i18n.t('New')}
-                </Button>
-            </DataTableToolbar>
-            <UserTable
-                loading={!called || loading}
-                error={error}
-                users={users?.users || prevUsers?.users}
-                refetch={refetchUsers}
-                nameSortDirection={nameSortDirection}
-                onNameSortDirectionToggle={toggleNameSortDirection}
-            />
-            {(loading
-                ? prevUsers?.users.length > 0
-                : users?.users.length > 0) && (
-                <DataTableToolbar position="bottom">
-                    <Pagination
-                        className={styles.pagination}
-                        {...(loading ? prevUsers.pager : users.pager)}
-                        page={page}
-                        onPageChange={setPage}
-                        pageSize={pageSize}
-                        onPageSizeChange={setPageSize}
-                    />
+            <div className={styles.container}>
+                <DataTableToolbar>
+                    <Button
+                        small
+                        icon={<IconAdd24 color={colors.grey600} />}
+                        onClick={() => navigateTo('/users/new')}
+                    >
+                        {i18n.t('New')}
+                    </Button>
                 </DataTableToolbar>
-            )}
+                <UserTable
+                    loading={!called || loading}
+                    error={error}
+                    users={users?.users || prevUsers?.users}
+                    refetch={refetchUsers}
+                    nameSortDirection={nameSortDirection}
+                    onNameSortDirectionToggle={toggleNameSortDirection}
+                />
+                {(loading
+                    ? prevUsers?.users.length > 0
+                    : users?.users.length > 0) && (
+                    <DataTableToolbar position="bottom">
+                        <Pagination
+                            className={styles.pagination}
+                            {...(loading ? prevUsers.pager : users.pager)}
+                            page={page}
+                            onPageChange={setPage}
+                            pageSize={pageSize}
+                            onPageSizeChange={setPageSize}
+                        />
+                    </DataTableToolbar>
+                )}
+            </div>
         </>
     )
 }
