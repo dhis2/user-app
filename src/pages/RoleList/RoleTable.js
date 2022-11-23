@@ -1,5 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import {
+    Button,
     CenteredContent,
     CircularLoader,
     NoticeBox,
@@ -13,6 +14,7 @@ import {
 import PropTypes from 'prop-types'
 import React from 'react'
 import DataTableInfoWrapper from '../../components/DataTableInfoWrapper.js'
+import EmptyTableInfo from '../../components/EmptyTableInfo.js'
 import navigateTo from '../../utils/navigateTo.js'
 import ContextMenuButton from './ContextMenu/ContextMenuButton.js'
 
@@ -47,7 +49,21 @@ const RoleTable = ({
     if (!loading && roles.length === 0) {
         return (
             <DataTableInfoWrapper columns={3}>
-                <p>{i18n.t('No results found')}</p>
+                <EmptyTableInfo
+                    header={i18n.t('No results found')}
+                    text={i18n.t(
+                        'There are no user roles to show here. You can add a new user role below.'
+                    )}
+                    action={
+                        <Button
+                            small
+                            secondary
+                            onClick={() => navigateTo('/user-roles/new')}
+                        >
+                            {i18n.t('Add new user role')}
+                        </Button>
+                    }
+                />
             </DataTableInfoWrapper>
         )
     }
