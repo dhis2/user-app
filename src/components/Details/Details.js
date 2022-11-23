@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import PageHeader from '../../components/PageHeader.js'
 import styles from './Details.module.css'
 
 const Details = ({ title, children }) => (
     <>
-        <h2>{title}</h2>
+        <PageHeader>{title}</PageHeader>
         <div className={styles.details}>{children}</div>
     </>
 )

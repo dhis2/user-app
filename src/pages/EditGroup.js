@@ -4,6 +4,7 @@ import { CenteredContent, CircularLoader, NoticeBox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import GroupForm from '../components/GroupForm/index.js'
+import PageHeader from '../components/PageHeader.js'
 
 const query = {
     group: {
@@ -60,7 +61,7 @@ const EditGroup = ({ groupId }) => {
 
     return (
         <>
-            <h2>{i18n.t('Edit group')}</h2>
+            <PageHeader>{i18n.t('Edit group')}</PageHeader>
             <GroupForm
                 group={group}
                 submitButtonLabel={i18n.t('Save changes')}

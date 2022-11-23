@@ -9,6 +9,7 @@ import {
 } from '@dhis2/ui'
 import React, { useState, useEffect } from 'react'
 import { useDebounce } from 'use-debounce'
+import PageHeader from '../../components/PageHeader.js'
 import SearchFilter from '../../components/SearchFilter.js'
 import navigateTo from '../../utils/navigateTo.js'
 import styles from './GroupList.module.css'
@@ -72,7 +73,7 @@ const GroupList = () => {
 
     return (
         <>
-            <h2 className={styles.header}>{i18n.t('User Group Management')}</h2>
+            <PageHeader>{i18n.t('User Group Management')}</PageHeader>
             <SearchFilter value={query} onChange={setQuery} />
             <DataTableToolbar>
                 <Button

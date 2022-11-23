@@ -3,6 +3,7 @@ import i18n from '@dhis2/d2-i18n'
 import { CenteredContent, CircularLoader, NoticeBox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
+import PageHeader from '../components/PageHeader.js'
 import UserForm from '../components/UserForm/index.js'
 
 const userQuery = {
@@ -114,7 +115,7 @@ const EditUser = ({ userId }) => {
 
     return (
         <>
-            <h2>{i18n.t('Edit user')}</h2>
+            <PageHeader>{i18n.t('Edit user')}</PageHeader>
             <UserForm
                 user={user}
                 userInterfaceLanguage={userInterfaceLanguage || 'en'}

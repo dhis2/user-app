@@ -9,6 +9,7 @@ import {
 } from '@dhis2/ui'
 import React, { useState, useEffect } from 'react'
 import { useDebounce } from 'use-debounce'
+import PageHeader from '../../components/PageHeader.js'
 import SearchFilter from '../../components/SearchFilter.js'
 import navigateTo from '../../utils/navigateTo.js'
 import styles from './RoleList.module.css'
@@ -70,7 +71,7 @@ const RoleList = () => {
 
     return (
         <>
-            <h2 className={styles.header}>{i18n.t('User Role Management')}</h2>
+            <PageHeader>{i18n.t('User Role Management')}</PageHeader>
             <SearchFilter value={query} onChange={setQuery} />
             <DataTableToolbar>
                 <Button

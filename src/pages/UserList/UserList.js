@@ -9,6 +9,7 @@ import {
 } from '@dhis2/ui'
 import React, { useState, useEffect } from 'react'
 import { useDebounce } from 'use-debounce'
+import PageHeader from '../../components/PageHeader.js'
 import navigateTo from '../../utils/navigateTo.js'
 import Filters from './Filters.js'
 import { useFilters } from './useFilters.js'
@@ -113,7 +114,7 @@ const UserList = () => {
 
     return (
         <>
-            <h2 className={styles.header}>{i18n.t('User Management')}</h2>
+            <PageHeader>{i18n.t('User Management')}</PageHeader>
             <Filters
                 query={query}
                 onQueryChange={setQuery}

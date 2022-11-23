@@ -3,6 +3,7 @@ import i18n from '@dhis2/d2-i18n'
 import { CenteredContent, CircularLoader, NoticeBox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
+import PageHeader from '../components/PageHeader.js'
 import RoleForm from '../components/RoleForm/index.js'
 
 const query = {
@@ -60,7 +61,7 @@ const EditRole = ({ roleId }) => {
 
     return (
         <>
-            <h2>{i18n.t('Edit role')}</h2>
+            <PageHeader>{i18n.t('Edit role')}</PageHeader>
             <RoleForm role={role} submitButtonLabel={i18n.t('Save changes')} />
         </>
     )
