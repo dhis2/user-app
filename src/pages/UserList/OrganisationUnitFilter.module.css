@@ -1,6 +1,5 @@
 .rootInput {
     min-width: 100px;
-    margin-right: var(--spacers-dp8);
 }
 
 .inputValue {
