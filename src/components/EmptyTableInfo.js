@@ -1,4 +1,3 @@
-import { Button } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './EmptyTableInfo.module.css'
