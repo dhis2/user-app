@@ -5,7 +5,7 @@ import styles from './Field.module.css'
 const Field = ({ label, value }) => (
     <div className={styles.field}>
         <div className={styles.label}>{label}</div>
-        <div>{value}</div>
+        <div className={styles.value}>{value}</div>
     </div>
 )
 
