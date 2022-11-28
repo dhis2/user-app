@@ -20,7 +20,7 @@
     "dependencies": {
         "@dhis2/app-runtime": "^3.4.0",
         "@dhis2/d2-i18n": "^1.1.0",
-        "@dhis2/ui": "^8.4.17",
+        "@dhis2/ui": "^8.7.2",
         "classnames": "^2.3.1",
         "lodash-es": "^4.17.21",
         "memoize-one": "^6.0.0",
