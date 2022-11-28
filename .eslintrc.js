@@ -8,5 +8,6 @@ module.exports = {
     },
     rules: {
         'react/display-name': 'off',
+        'react/no-unknown-property': ['error', { ignore: ['jsx'] }],
     },
 }

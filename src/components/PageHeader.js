@@ -6,7 +6,7 @@ import styles from './PageHeader.module.css'
  * Generic page header component used by all pages
  */
 const PageHeader = ({ children }) => (
-    <h2 className={styles.header} dataTest="page-header">
+    <h2 className={styles.header} data-test="page-header">
         {children}
     </h2>
 )
