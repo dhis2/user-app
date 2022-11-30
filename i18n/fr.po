@@ -69,7 +69,7 @@ msgid "Will be removed"
 msgstr ""
 
 msgid "Network error"
-msgstr ""
+msgstr "Erreur réseau"
 
 msgid "Could not load current user information."
 msgstr ""
@@ -994,7 +994,7 @@ msgid "Created"
 msgstr "Créé le"
 
 msgid "Contact"
-msgstr ""
+msgstr "Contact"
 
 msgid "Send message"
 msgstr "Envoyer Message"
