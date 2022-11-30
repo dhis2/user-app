@@ -1000,7 +1000,7 @@ msgid "Created"
 msgstr "Créé"
 
 msgid "Contact"
-msgstr ""
+msgstr "Contact"
 
 msgid "Send message"
 msgstr "Envoyer Message"
