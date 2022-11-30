@@ -4,17 +4,17 @@
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # Bram Piot <bram.piot@gmail.com>, 2022
 # Edem Kossi <ekossi@hispwca.org>, 2022
-# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # phil_dhis2, 2022
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
+# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-11-17T13:40:24.697Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022\n"
+"Last-Translator: Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -571,7 +571,7 @@ msgid "The organisation that this user can search for and in."
 msgstr ""
 
 msgid "Maximum organisation unit level for data output"
-msgstr ""
+msgstr "Niveau maximal de l'unité d'organisation pour la sortie des données"
 
 msgid "Roles and groups"
 msgstr ""
@@ -617,7 +617,7 @@ msgid "Account expiration date"
 msgstr "Date d'expiration du compte"
 
 msgid "OIDC mapping value"
-msgstr ""
+msgstr "Valeur de mappage OIDC"
 
 msgid "OpenID Connect mapping claim for your identity platform"
 msgstr ""
