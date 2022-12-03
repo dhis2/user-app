@@ -35,12 +35,14 @@ msgstr "La valeur d'attribut doit être unique, valeur déjà prise."
 msgid ""
 "There was a problem whilst checking the availability of this attribute value"
 msgstr ""
+"Un problème est survenu lors de la vérification de la disponibilité de cette"
+" valeur d'attribut"
 
 msgid "Value should be a positive integer"
 msgstr "La valeur doit être un entier positif"
 
 msgid "Value should be a negative integer"
-msgstr ""
+msgstr "La valeur doit être un entier négatif"
 
 msgid "No results found"
 msgstr "Aucun résultat trouvé"
@@ -49,13 +51,13 @@ msgid "Display name"
 msgstr "Afficher un nom"
 
 msgid "1 pending change"
-msgstr ""
+msgstr "1 modification en attente"
 
 msgid "{{pendingChanges}} pending changes"
-msgstr ""
+msgstr "{{pendingChanges}} modifications en attente"
 
 msgid "Cancel all"
-msgstr ""
+msgstr "Annuler tout"
 
 msgid "Cancel"
 msgstr "Annuler"
@@ -64,25 +66,25 @@ msgid "Action"
 msgstr "Action"
 
 msgid "Will be added"
-msgstr ""
+msgstr "Sera ajouté"
 
 msgid "Will be removed"
-msgstr ""
+msgstr "Sera supprimé"
 
 msgid "Filter options"
 msgstr "Options de filtre"
 
 msgid "Error fetching form"
-msgstr ""
+msgstr "Erreur lors de la récupération de formulaire"
 
 msgid "There was an error fetching this form."
-msgstr ""
+msgstr "Une erreur est survenue lors de la récupération de ce formulaire."
 
 msgid "Cancel without saving"
 msgstr "Annuler sans sauvegarder"
 
 msgid "Basic information"
-msgstr ""
+msgstr "Informations de base"
 
 msgid "Name"
 msgstr "Nom"
@@ -91,68 +93,70 @@ msgid "Code"
 msgstr "Code"
 
 msgid "Used in analytics reports."
-msgstr ""
+msgstr "Utilisé dans les rapports analytiques."
 
 msgid "Search for a user in this group"
-msgstr ""
+msgstr "Rechercher un utilisateur dans ce groupe"
 
 msgid "Search for a user to add"
-msgstr ""
+msgstr "Rechercher un utilisateur à ajouter"
 
 msgid "1 user selected"
-msgstr ""
+msgstr "1 utilisateur sélectionné"
 
 msgid "{{selectedCount}} users selected"
-msgstr ""
+msgstr "{{selectedCount}} utilisateurs sélectionnés"
 
 msgid "Remove 1 user"
-msgstr ""
+msgstr "Supprimer 1 utilisateur"
 
 msgid "Remove {{selectedCount}} users"
-msgstr ""
+msgstr "Supprimer {{selectedCount}} utilisateurs "
 
 msgid "Add 1 user"
-msgstr ""
+msgstr "Ajouter 1 utilisateur"
 
 msgid "Add {{selectedCount}} users"
-msgstr ""
+msgstr "Ajouter {{selectedCount}} utilisateurs "
 
 msgid "Remove from group"
-msgstr ""
+msgstr "Supprimer du groupe"
 
 msgid "Add to group"
-msgstr ""
+msgstr "Ajouter au groupe"
 
 msgid "There aren't any users in this group yet"
-msgstr ""
+msgstr "Il n'y a pas encore d'utilisateurs dans ce groupe"
 
 msgid "View and remove users from group"
-msgstr ""
+msgstr "Afficher et supprimer des utilisateurs du groupe"
 
 msgid "Add users to group"
-msgstr ""
+msgstr "Ajouter des utilisateurs au groupe"
 
 msgid "Username"
 msgstr "Nom d'utilisateur"
 
 msgid "Error loading users"
-msgstr ""
+msgstr "Erreur lors du chargement des utilisateurs"
 
 msgid "Error updating group"
-msgstr ""
+msgstr "Erreur lors de la mise à jour du groupe"
 
 msgid "Error creating group"
-msgstr ""
+msgstr "Erreur lors de la création d'un groupe"
 
 msgid "Attributes"
 msgstr "Les attributs"
 
 msgid "User group management"
-msgstr ""
+msgstr "Gestion des groupes d'utilisateurs"
 
 msgid ""
 "This group can manage other user groups. Add managed user groups below."
 msgstr ""
+"Ce groupe peut gérer d'autres groupes d'utilisateurs. Ajoutez les groupes "
+"d'utilisateurs gérés ci-dessous."
 
 msgid "Available user groups"
 msgstr "Groupes d'utilisateurs disponibles"
@@ -164,33 +168,37 @@ msgid "User management"
 msgstr "Gestion des utilisateurs"
 
 msgid "Add or remove users from this group."
-msgstr ""
+msgstr "Ajouter et supprimer des utilisateurs de ce groupe"
 
 msgid "Name is already taken"
-msgstr ""
+msgstr "Ce nom est déjà utilisé"
 
 msgid ""
 "There was a problem whilst checking the availability of this group name"
 msgstr ""
+"Un problème est survenu lors de la vérification de la disponibilité de ce "
+"nom de groupe"
 
 msgid "Code is already taken"
-msgstr ""
+msgstr "Ce code est déjà utilisé"
 
 msgid ""
 "There was a problem whilst checking the availability of this group code"
 msgstr ""
+"Un problème est survenu lors de la vérification de la disponibilité de ce "
+"code de groupe"
 
 msgid "Only show selected metadata authorities"
-msgstr ""
+msgstr "Afficher uniquement les autorités de métadonnées sélectionnées"
 
 msgid "Authority"
-msgstr ""
+msgstr "Droit d'accès"
 
 msgid "Add/Update Public"
-msgstr ""
+msgstr "Ajouter/mettre à jour les droits d'accès publics"
 
 msgid "Add/Update Private"
-msgstr ""
+msgstr "Ajouter/mettre à jour les droits d'accès privés"
 
 msgid "Delete"
 msgstr "Supprimer"
@@ -199,53 +207,55 @@ msgid "External access"
 msgstr "Accès externe"
 
 msgid "Error updating role"
-msgstr ""
+msgstr "Erreur lors de la mise à jour du rôle"
 
 msgid "Error creating role"
-msgstr ""
+msgstr "Erreur lors de la création du rôle"
 
 msgid "Description"
 msgstr "Description"
 
 msgid "Short, clear description of what this role is for."
-msgstr ""
+msgstr "Description brève et claire de la nature de ce rôle."
 
 msgid "Metadata authorities"
-msgstr ""
+msgstr "Droits d'accès aux métadonnées"
 
 msgid "Set what metadata access this role has."
-msgstr ""
+msgstr "Définit l'accès aux métadonnées dont dispose ce rôle."
 
 msgid "Other authorities"
-msgstr ""
+msgstr "Autres droits d'accès"
 
 msgid ""
 "Manage access to apps, tracker, data import/export and system settings."
 msgstr ""
+"Gérer l'accès aux applications, au tracker, à l'importation/exportation de "
+"données et aux paramètres du système."
 
 msgid "Available app authorities"
-msgstr ""
+msgstr "Droits d'accès aux applications (Disponibles)"
 
 msgid "Selected app authorities"
-msgstr ""
+msgstr "Droits d'accès aux applications (Sélectionnés)"
 
 msgid "Available tracker authorities"
-msgstr ""
+msgstr "Droits d'accès au tracker (disponibles)"
 
 msgid "Selected tracker authorities"
-msgstr ""
+msgstr "Droits d'accès au tracker (Sélectionnés)"
 
 msgid "Available import/export authorities"
-msgstr ""
+msgstr "Droits d'accès à l'importation et à l'exportation (Disponibles)"
 
 msgid "Selected import/export authorities"
-msgstr ""
+msgstr "Droits d'accès à l'importation et à l'exportation (Sélectionnés)"
 
 msgid "Available system authorities"
-msgstr ""
+msgstr "Droits d'accès au système (disponibles)"
 
 msgid "Selected system authorities"
-msgstr ""
+msgstr "Droits d'accès au système ((Sélectionnés))"
 
 msgid "All (Full authority)"
 msgstr "Tout (Pleine autorisation)"
@@ -423,17 +433,21 @@ msgstr "Visualisation"
 
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
+"Un problème est survenu lors de la vérification de la disponibilité de ce "
+"nom de rôle"
 
 msgid "Search by name"
 msgstr "Rechercher par nom"
 
 msgid "Search for an organisation unit"
-msgstr ""
+msgstr "Rechercher une unité d'organisation"
 
 msgid ""
 "Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
 "please refine your search to see more."
 msgstr ""
+"Affichage de {{visibleItemsCount}} sur {{totalSearchResultCount}} résultats "
+"de recherche, veuillez affiner votre recherche pour en afficher davantage."
 
 msgid "Something went wrong when processing your request."
 msgstr "Une erreur s'est produite lors du traitement de votre demande."
@@ -444,7 +458,7 @@ msgstr ""
 "recherche"
 
 msgid "Please enter at least {{ minCharLength }} characters"
-msgstr ""
+msgstr "Veuillez saisir au moins {{ minCharCount }} caractères"
 
 msgid "No matches found"
 msgstr "Aucun résultat"
@@ -464,16 +478,16 @@ msgstr ""
 "groupes d'utilisateurs"
 
 msgid "Analytics dimension restrictions"
-msgstr ""
+msgstr "Restrictions des dimensions analytiques"
 
 msgid "Available restrictions"
-msgstr ""
+msgstr "Restrictions disponibles"
 
 msgid "Selected restrictions"
-msgstr ""
+msgstr "Restrictions sélectionnées"
 
 msgid "Email address"
-msgstr ""
+msgstr "Adresse e-mail"
 
 msgid "First name"
 msgstr "Prénom"
@@ -491,10 +505,10 @@ msgid "Use database locale / no translation"
 msgstr "Utiliser la localisation de la base de données/ pas de traduction"
 
 msgid "Disable this user account"
-msgstr ""
+msgstr "Désactiver ce compte d'utilisateur"
 
 msgid "Contact details"
-msgstr ""
+msgstr "Coordonnées"
 
 msgid "Mobile phone number"
 msgstr "Numéro de téléphone portable"
@@ -515,7 +529,7 @@ msgid "Twitter"
 msgstr "Twitter"
 
 msgid "Invite user"
-msgstr ""
+msgstr "Inviter un utilisateur"
 
 msgid "Create account or email invitation"
 msgstr "Créer un compte ou une invitation par e-mail"
@@ -527,63 +541,72 @@ msgid "Email invitation to create account"
 msgstr "Invitation par e-mail pour créer un compte"
 
 msgid "Organisation unit access"
-msgstr ""
+msgstr "Accès à l'unité d'organisation"
 
 msgid ""
 "Customise the organisation units this user has access to for searching, "
 "capturing and managing data."
 msgstr ""
+"Personnaliser les unités d'organisation auxquelles cet utilisateur a accès "
+"pour rechercher, capturer et gérer les données."
 
 msgid "Organisation unit selections are recursive"
-msgstr ""
+msgstr "Les sélections des unités d'organisation sont récursives"
 
 msgid "Selecting a unit gives access to all units in its sub-hierarchy."
 msgstr ""
+"La sélection d'une unité donne accès à toutes les unités de sa sous-"
+"hiérarchie."
 
 msgid "Data capture and maintenance"
-msgstr ""
+msgstr "Saisie et maintenance des données"
 
 msgid "The organisation units that this user can enter and edit data for."
 msgstr ""
+"Les unités d'organisation pour lesquelles cet utilisateur peut saisir et "
+"modifier des données."
 
 msgid "Data output and analysis"
-msgstr ""
+msgstr "Sortie et analyse des données"
 
 msgid "The organisation units that this user can export and analyse."
 msgstr ""
+"Les unités d'organisation que cet utilisateur peut exporter et analyser."
 
 msgid "Search"
 msgstr "Rechercher"
 
 msgid "The organisation that this user can search for and in."
 msgstr ""
+"Les unités d'organisation que cet utilisateur peut rechercher et dans "
+"lesquelles il peut effectuer des recherches."
 
 msgid "Maximum organisation unit level for data output"
 msgstr "Niveau maximal de l'unité d'organisation pour la sortie des données"
 
 msgid "Roles and groups"
-msgstr ""
+msgstr "Rôles et groupes"
 
 msgid "Manage what roles and groups this user is a member of."
-msgstr ""
+msgstr "Gérer les rôles et les groupes dont cet utilisateur est membre."
 
 msgid "Available user roles"
-msgstr ""
+msgstr "Rôles d'utilisateurs disponibles"
 
 msgid "User roles this user is assigned"
-msgstr ""
+msgstr "Rôles d'utilisateur attribués à cet utilisateur"
 
 msgid "User groups this user is a member of"
-msgstr ""
+msgstr "Groupes d'utilisateurs dont cet utilisateur est membre"
 
 msgid "Security"
 msgstr "Securité"
 
 msgid "Settings for how this user can log in."
-msgstr ""
+msgstr "Paramètres de connexion pour cet utilisateur."
 
 msgid "Change user password"
-msgstr ""
+msgstr "Changer le mot de passe de l'utilisateur"
 
 msgid "New password"
 msgstr "Nouveau mot de passe"
@@ -593,13 +616,13 @@ msgstr "Mot de passe"
 
 msgid ""
 "Minimum 8 characters, one uppercase and lowercase letter and one number"
-msgstr ""
+msgstr "Minimum 8 caractères, une lettre majuscule et minuscule et un chiffre"
 
 msgid "Repeat new password"
 msgstr "Répéter le mot de passe"
 
 msgid "Repeat password"
-msgstr ""
+msgstr "Saisir à nouveau le mot de passe"
 
 msgid "Account expiration date"
 msgstr "Date d'expiration du compte"
@@ -608,25 +631,25 @@ msgid "OIDC mapping value"
 msgstr "Valeur de mappage OIDC"
 
 msgid "OpenID Connect mapping claim for your identity platform"
-msgstr ""
+msgstr "Demande de mappage OpenID Connect pour votre plateforme d'identité"
 
 msgid "LDAP identifier"
 msgstr "Identifiant LDAP"
 
 msgid "External authentication only (OpenID / LDAP)"
-msgstr ""
+msgstr "Authentification externe uniquement (OpenID / LDAP)"
 
 msgid "Invalid username"
-msgstr ""
+msgstr "Nom d'utilisateur invalide"
 
 msgid "Invalid WhatsApp number"
-msgstr ""
+msgstr "Numéro WhatsApp invalide"
 
 msgid "Error updating user"
-msgstr ""
+msgstr "Erreur lors de la mise à jour de l'utilisateur"
 
 msgid "Error creating user"
-msgstr ""
+msgstr "Erreur lors de la création de l'utilisateur"
 
 msgid "Username already taken"
 msgstr "Nom d'utilisateur déjà pris"
@@ -640,7 +663,7 @@ msgid "Passwords do not match"
 msgstr "Les mots de passe ne correspondent pas"
 
 msgid "Please provide a value"
-msgstr ""
+msgstr "Veuillez entrer une valeur"
 
 msgid "Create, modify, view and delete Users"
 msgstr "Créer, modifier, afficher et supprimer des utilisateurs"
@@ -658,55 +681,57 @@ msgid "Create, modify, view and delete User Groups"
 msgstr "Créer, modifier, afficher et supprimer des groupes d'utilisateurs"
 
 msgid "New group"
-msgstr ""
+msgstr "Nouveau groupe"
 
 msgid "Create group"
-msgstr ""
+msgstr "Créer un groupe"
 
 msgid "New role"
-msgstr ""
+msgstr "Nouveau rôle"
 
 msgid "Create role"
-msgstr ""
+msgstr "Créer un rôle"
 
 msgid "Error fetching interface language"
-msgstr ""
+msgstr "Erreur lors de la récupération de la langue de l'interface"
 
 msgid "There was an error fetching the default interface language."
 msgstr ""
+"Une erreur s'est produite lors de la récupération de la langue par défaut de"
+" l'interface."
 
 msgid "New user"
-msgstr ""
+msgstr "Nouvel utilisateur"
 
 msgid "Create user"
-msgstr ""
+msgstr "Créer un utilisateur"
 
 msgid "Error fetching group"
-msgstr ""
+msgstr "Erreur lors de la récupération du groupe"
 
 msgid "There was an error fetching this group."
-msgstr ""
+msgstr "Une erreur s'est produite lors de la récupération de ce groupe."
 
 msgid "Edit group"
-msgstr ""
+msgstr "Modifier le groupe"
 
 msgid "Save changes"
 msgstr "Sauvegarder les modifications"
 
 msgid "Error fetching role"
-msgstr ""
+msgstr "Erreur lors de la récupération du rôle"
 
 msgid "There was an error fetching this role."
-msgstr ""
+msgstr "Une erreur s'est produite lors de la récupération de ce rôle."
 
 msgid "Edit role"
-msgstr ""
+msgstr "Modifier le rôle"
 
 msgid "Error fetching user"
-msgstr ""
+msgstr "Erreur lors de la récupération de l'utilisateur"
 
 msgid "There was an error fetching this user."
-msgstr ""
+msgstr "Une erreur s'est produite lors de la récupération de cet utilisateur."
 
 msgid "Edit user"
 msgstr "Modifier l'utilisateur"
@@ -736,49 +761,55 @@ msgid "Leave group"
 msgstr "Quitter le groupe"
 
 msgid "Deleted \"{{- name}}\" successfully"
-msgstr ""
+msgstr "\"{{- nom}}\" supprimé avec succès"
 
 msgid "There was an error deleting the user group: {{- error}}"
 msgstr ""
+"Une erreur s'est produite lors de la suppression du groupe d'utilisateurs : "
+"{{- erreur}}"
 
 msgid "Delete user group {{- name}}"
-msgstr ""
+msgstr "Supprimer le groupe d'utilisateurs {{- nom}}"
 
 msgid "Are you sure you want to delete {{- name}}?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir supprimer {{- nom}} ?"
 
 msgid "No, cancel"
 msgstr "Non, annuler"
 
 msgid "Yes, delete"
-msgstr ""
+msgstr "Oui, supprimer"
 
 msgid "Joined user group \"{{- name}}\" successfuly"
-msgstr ""
+msgstr "\"{{- nom}}\" a rejoint avec succès le groupe d'utilisateurs"
 
 msgid "There was an error joining the user group: {{- error}}"
 msgstr ""
+"Une erreur s'est produite lors du processus d'adhésion au groupe "
+"d'utilisateurs : {{- error}}"
 
 msgid "Join user group {{- name}}"
-msgstr ""
+msgstr "Rejoindre le groupe d'utilisateurs {{- nom}}"
 
 msgid "Are you sure you want to join {{- name}}?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir rejoindre {{- nom}} ?"
 
 msgid "Yes, join"
-msgstr ""
+msgstr "Oui, rejoindre"
 
 msgid "Left user group \"{{- name}}\" successfuly"
-msgstr ""
+msgstr "\"{{- nom}}\" a quitté avec succès le groupe d'utilisateurs"
 
 msgid "There was an error leaving the user group: {{- error}}"
 msgstr ""
+"Une erreur s'est produite lors de la sortie du groupe d'utilisateurs : {{- "
+"erreur}}"
 
 msgid "Leave user group {{- name}}"
-msgstr ""
+msgstr "Quitter le groupe d'utilisateurs {{- nom}}"
 
 msgid "Are you sure you want to leave {{- name}}?"
-msgstr ""
+msgstr "Vous êtes sûr de vouloir quitter {{- nom}} ?"
 
 msgid "Yes, leave"
 msgstr "Oui, quitter"
@@ -790,19 +821,19 @@ msgid "New"
 msgstr "Nouveau"
 
 msgid "Error loading user groups"
-msgstr ""
+msgstr "Erreur lors du chargement des groupes d'utilisateurs"
 
 msgid "Member?"
-msgstr ""
+msgstr "Membre ?"
 
 msgid "Actions"
 msgstr "Actions"
 
 msgid "Member"
-msgstr ""
+msgstr "Membre"
 
 msgid "Insufficient permissions"
-msgstr ""
+msgstr "Autorisations insuffisantes"
 
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
@@ -830,15 +861,17 @@ msgstr "Modifier le rôle utilisateur"
 
 msgid "There was an error deleting the user role: {{- error}}"
 msgstr ""
+"Une erreur s'est produite lors de la suppression du rôle de l'utilisateur : "
+"{{- erreur}}"
 
 msgid "Delete user role {{- name}}"
-msgstr ""
+msgstr "Supprimer le rôle d'utilisateur {{- nom}}"
 
 msgid "User Role Management"
 msgstr "Gestion des rôles d'utilisateur"
 
 msgid "Error loading user roles"
-msgstr ""
+msgstr "Erreur lors du chargement des rôles d'utilisateur"
 
 msgid "Profile"
 msgstr "Profil"
@@ -860,64 +893,79 @@ msgstr "Désactiver l'authentification à Deux Facteurs"
 
 msgid "There was an error deleting the user: {{- error}}"
 msgstr ""
+"Une erreur s'est produite lors de la suppression de l'utilisateur : {{- "
+"erreur}}"
 
 msgid "Delete user {{- name}}"
-msgstr ""
+msgstr "Supprimer l'utilisateur {{- nom}}"
 
 msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
 msgstr ""
+"Désactivation réussie de l'authentification à deux facteurs pour \"{{- "
+"nom}}\""
 
 msgid "There was an error disabling two factor authentication: {{- error}}"
 msgstr ""
+"Une erreur s'est produite lors de la désactivation de l'authentification à "
+"deux facteurs : {{- erreur}}"
 
 msgid "Disable two factor authentication for user {{- name}}"
 msgstr ""
+"Désactiver l'authentification à deux facteurs pour l'utilisateur {{- nom}}"
 
 msgid ""
 "Are you sure you want to disable two factor authentication for {{- name}}?"
 msgstr ""
+"Êtes-vous sûr de vouloir désactiver l'authentification à deux facteurs pour "
+"{{- nom}} ?"
 
 msgid "Yes, disable two factor authentication"
-msgstr ""
+msgstr "Oui, désactiver l'authentification à deux facteurs"
 
 msgid "User \"{{- name}}\" disabled successfuly"
-msgstr ""
+msgstr "Utilisateur \"{{- nom}}\" désactivé avec succès"
 
 msgid "There was an error disabling the user: {{- error}}"
 msgstr ""
+"Une erreur s'est produite lors de la désactivation de l'utilisateur : {{- "
+"erreur}}"
 
 msgid "Disable user {{- name}}"
-msgstr ""
+msgstr "Désactiver l'utilisateur {{- nom}}"
 
 msgid "Are you sure you want to disable {{- name}}?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir désactiver {{- nom}} ?"
 
 msgid "Yes, disable"
-msgstr ""
+msgstr "Oui, désactiver"
 
 msgid "User \"{{- name}}\" enabled successfuly"
-msgstr ""
+msgstr "Utilisateur \"{{- nom}}\" activé avec succès"
 
 msgid "There was an error enabling the user: {{- error}}"
 msgstr ""
+"Une erreur s'est produite lors de l'activation de l'utilisateur : {{- "
+"erreur}}"
 
 msgid "Enable user {{- name}}"
-msgstr ""
+msgstr "Activer l'utilisateur {{- nom}}"
 
 msgid "Are you sure you want to enable {{- name}}?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir activer {{- nom}} ?"
 
 msgid "Yes, enable"
-msgstr ""
+msgstr "Oui, activer"
 
 msgid "User \"{{- name}}\" replicated successfuly"
-msgstr ""
+msgstr "Utilisateur \"{{- nom}}\" répliqué avec succès"
 
 msgid "There was an error replicating the user: {{- error}}"
 msgstr ""
+"Une erreur s'est produite lors de la réplication de l'utilisateur : {{- "
+"erreur}}"
 
 msgid "Replicate user {{- name}}"
-msgstr ""
+msgstr "Répliquer l'utilisateur {{- nom}}"
 
 msgid "Username for new user"
 msgstr "Nom d'utilisateur pour le nouvel utilisateur"
@@ -929,36 +977,40 @@ msgid ""
 "Password should be at least 8 characters long, with at least one lowercase "
 "character, one uppercase character and one special character."
 msgstr ""
+"Le mot de passe doit comporter au moins 8 caractères, avec au moins un "
+"caractère minuscule, un caractère majuscule et un caractère spécial."
 
 msgid "Replicate user"
 msgstr "Répliquer l'utilisateur"
 
 msgid "Password of user \"{{- name}}\" reset successfuly"
-msgstr ""
+msgstr "Mot de passe de l'utilisateur \"{{- nom}}\" réinitialisé avec succès"
 
 msgid "There was an error resetting the password: {{- error}}"
 msgstr ""
+"Une erreur s'est produite lors de la réinitialisation du mot de passe : {{- "
+"erreur}}"
 
 msgid "Reset password of user {{- name}}"
-msgstr ""
+msgstr "Réinitialiser le mot de passe de l'utilisateur {{- nom}}"
 
 msgid "Are you sure you want to reset {{- name}}'s password?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir réinitialiser le mot de passe de {{- nom}} ?"
 
 msgid "Yes, reset"
-msgstr ""
+msgstr "Oui, réinitialiser"
 
 msgid "1 month"
-msgstr ""
+msgstr "1 mois"
 
 msgid "{{months}} months"
-msgstr ""
+msgstr "{{months}} mois"
 
 msgid "Time inactive"
-msgstr ""
+msgstr "Temps d'inactivité"
 
 msgid "Invitation"
-msgstr ""
+msgstr "Invitation"
 
 msgid "All invitations"
 msgstr "Toutes les invitations"
@@ -967,13 +1019,13 @@ msgid "Expired invitations"
 msgstr "Invitations périmées"
 
 msgid "Show self-registrations"
-msgstr ""
+msgstr "Afficher les auto-inscriptions"
 
 msgid "Clear filters"
 msgstr "Effacer les filtres"
 
 msgid "Org.unit"
-msgstr ""
+msgstr "Unité d'organisation"
 
 msgid "User Management"
 msgstr "Gestion des utilisateurs"
@@ -982,7 +1034,7 @@ msgid "Last login"
 msgstr "Dernière connexion"
 
 msgid "Account disabled?"
-msgstr ""
+msgstr "Compte désactivé ?"
 
 msgid "Disabled"
 msgstr "Désactivé"
@@ -1015,7 +1067,7 @@ msgid "Organisations units"
 msgstr "Unités d'organisation"
 
 msgid "User units"
-msgstr ""
+msgstr "Unités utilisateur"
 
 msgid "Introduction"
 msgstr "Introduction"
