@@ -54,6 +54,7 @@ export const useFilters = () => {
         nameSortDirection,
         toggleNameSortDirection: withClearPager(toggleNameSortDirection),
         clearFilters: () => {
+            setSelfRegistered(false)
             setQuery()
             setOrganisationUnits([])
             setInactiveMonths()
