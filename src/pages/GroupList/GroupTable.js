@@ -57,7 +57,7 @@ const GroupTable = ({
                     text={i18n.t(
                         'There are no user groups to show here. You can add a new user group below.'
                     )}
-                    action={
+                    footer={
                         <Button
                             small
                             secondary

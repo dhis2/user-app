@@ -54,7 +54,7 @@ const RoleTable = ({
                     text={i18n.t(
                         'There are no user roles to show here. You can add a new user role below.'
                     )}
-                    action={
+                    footer={
                         <Button
                             small
                             secondary

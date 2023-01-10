@@ -55,7 +55,7 @@ const UserTable = ({
                     text={i18n.t(
                         'There are no users to show here. You can add a new user below.'
                     )}
-                    action={
+                    footer={
                         <Button
                             small
                             secondary
