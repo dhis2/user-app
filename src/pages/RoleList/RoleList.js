@@ -9,6 +9,7 @@ import {
 } from '@dhis2/ui'
 import React, { useState, useEffect } from 'react'
 import { useDebounce } from 'use-debounce'
+import PageHeader from '../../components/PageHeader.js'
 import SearchFilter from '../../components/SearchFilter.js'
 import navigateTo from '../../utils/navigateTo.js'
 import styles from './RoleList.module.css'
@@ -70,39 +71,41 @@ const RoleList = () => {
 
     return (
         <>
-            <h2 className={styles.header}>{i18n.t('User Role Management')}</h2>
+            <PageHeader>{i18n.t('User Role Management')}</PageHeader>
             <SearchFilter value={query} onChange={setQuery} />
-            <DataTableToolbar>
-                <Button
-                    small
-                    icon={<IconAdd24 color={colors.grey600} />}
-                    onClick={() => navigateTo('/user-roles/new')}
-                >
-                    {i18n.t('New')}
-                </Button>
-            </DataTableToolbar>
-            <RoleTable
-                loading={!called || loading}
-                error={error}
-                roles={roles?.userRoles || prevRoles?.userRoles}
-                refetch={refetchRoles}
-                nameSortDirection={nameSortDirection}
-                onNameSortDirectionToggle={toggleNameSortDirection}
-            />
-            {(loading
-                ? prevRoles?.userRoles.length > 0
-                : roles?.userRoles.length > 0) && (
-                <DataTableToolbar position="bottom">
-                    <Pagination
-                        className={styles.pagination}
-                        {...(loading ? prevRoles.pager : roles.pager)}
-                        page={page}
-                        onPageChange={setPage}
-                        pageSize={pageSize}
-                        onPageSizeChange={setPageSize}
-                    />
+            <div className={styles.container}>
+                <DataTableToolbar>
+                    <Button
+                        small
+                        icon={<IconAdd24 color={colors.grey600} />}
+                        onClick={() => navigateTo('/user-roles/new')}
+                    >
+                        {i18n.t('New')}
+                    </Button>
                 </DataTableToolbar>
-            )}
+                <RoleTable
+                    loading={!called || loading}
+                    error={error}
+                    roles={roles?.userRoles || prevRoles?.userRoles}
+                    refetch={refetchRoles}
+                    nameSortDirection={nameSortDirection}
+                    onNameSortDirectionToggle={toggleNameSortDirection}
+                />
+                {(loading
+                    ? prevRoles?.userRoles.length > 0
+                    : roles?.userRoles.length > 0) && (
+                    <DataTableToolbar position="bottom">
+                        <Pagination
+                            className={styles.pagination}
+                            {...(loading ? prevRoles.pager : roles.pager)}
+                            page={page}
+                            onPageChange={setPage}
+                            pageSize={pageSize}
+                            onPageSizeChange={setPageSize}
+                        />
+                    </DataTableToolbar>
+                )}
+            </div>
         </>
     )
 }
