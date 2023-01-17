@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/dhis2/user-app/compare/v1.4.37...v1.5.0) (2023-01-17)
+
+
+### Bug Fixes
+
+* clear self registration selection on filter reset [DHIS2-14189] ([#1100](https://github.com/dhis2/user-app/issues/1100)) ([166b5b5](https://github.com/dhis2/user-app/commit/166b5b5f0ef04d305a911e8889225ab27a8284a1))
+
+
+### Features
+
+* interface adjustments ([#1101](https://github.com/dhis2/user-app/issues/1101)) ([6d8feed](https://github.com/dhis2/user-app/commit/6d8feede59b6d588e684aa9e1a5db5eaded833bd))
+
 ## [1.4.37](https://github.com/dhis2/user-app/compare/v1.4.36...v1.4.37) (2022-12-03)
 
 
