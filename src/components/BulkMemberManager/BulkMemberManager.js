@@ -46,11 +46,14 @@ const BulkMemberManager = ({
         results,
         pager,
         navigateToPage,
+        isPendingChange,
         isSelected,
+        deselect,
         toggleSelected,
         toggleAllSelected,
         clearAllSelected,
     } = useResults({
+        pendingChanges,
         canManageMembers,
         allQuery,
         membersGistQuery,
@@ -87,8 +90,9 @@ const BulkMemberManager = ({
                             mode={mode}
                             filter={filter}
                             onFilterChange={setFilter}
-                            selectedResults={results?.filter(({ id }) =>
-                                isSelected(id)
+                            selectedResults={results?.filter(
+                                ({ id }) =>
+                                    isSelected(id) && !isPendingChange(id)
                             )}
                             pagerTotal={pager?.total}
                             pendingChanges={pendingChanges}
@@ -119,7 +123,7 @@ const BulkMemberManager = ({
                                     ? removeEntity(pendingChanges, entity)
                                     : addEntity(pendingChanges, entity)
                             )
-                            toggleSelected(entity.id)
+                            deselect(entity.id)
                         }}
                         pendingChanges={pendingChanges}
                         onPendingChangeCancel={(entity) => {
@@ -129,6 +133,7 @@ const BulkMemberManager = ({
                                     : cancelAddEntity(pendingChanges, entity)
                             )
                         }}
+                        isPendingChange={isPendingChange}
                         isSelected={isSelected}
                         onToggleSelected={toggleSelected}
                         onToggleAllSelected={() =>
