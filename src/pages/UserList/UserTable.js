@@ -1,4 +1,4 @@
-import { useDate } from '@dhis2/app-runtime'
+import { useTimeZoneConversion } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     CenteredContent,
@@ -26,7 +26,7 @@ const UserTable = ({
     nameSortDirection,
     onNameSortDirectionToggle,
 }) => {
-    const { fromServerDate } = useDate()
+    const { fromServerDate } = useTimeZoneConversion()
     if (loading && !users) {
         return (
             <DataTableInfoWrapper columns={5}>

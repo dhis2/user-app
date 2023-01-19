@@ -18,7 +18,7 @@
         "cypress:live": "start-server-and-test 'yarn start:nobrowser' http://localhost:3000 'yarn cypress open --env networkMode=live'"
     },
     "dependencies": {
-        "@dhis2/app-runtime": "^3.4.0",
+        "@dhis2/app-runtime": "^3.8.0",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/ui": "^8.4.17",
         "classnames": "^2.3.1",
