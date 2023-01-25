@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/dhis2/user-app/compare/v1.5.0...v1.5.1) (2023-01-25)
+
+
+### Bug Fixes
+
+* update lastLogin for server difference [DHIS2-14203] ([#1118](https://github.com/dhis2/user-app/issues/1118)) ([c109ac9](https://github.com/dhis2/user-app/commit/c109ac98d570b2cb9da22ca284132333bf36a6df))
+
 # [1.5.0](https://github.com/dhis2/user-app/compare/v1.4.37...v1.5.0) (2023-01-17)
 
 
