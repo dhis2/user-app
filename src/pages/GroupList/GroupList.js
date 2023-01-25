@@ -9,6 +9,7 @@ import {
 } from '@dhis2/ui'
 import React, { useState, useEffect } from 'react'
 import { useDebounce } from 'use-debounce'
+import PageHeader from '../../components/PageHeader.js'
 import SearchFilter from '../../components/SearchFilter.js'
 import navigateTo from '../../utils/navigateTo.js'
 import styles from './GroupList.module.css'
@@ -72,39 +73,41 @@ const GroupList = () => {
 
     return (
         <>
-            <h2 className={styles.header}>{i18n.t('User Group Management')}</h2>
+            <PageHeader>{i18n.t('User Group Management')}</PageHeader>
             <SearchFilter value={query} onChange={setQuery} />
-            <DataTableToolbar>
-                <Button
-                    small
-                    icon={<IconAdd24 color={colors.grey600} />}
-                    onClick={() => navigateTo('/user-groups/new')}
-                >
-                    {i18n.t('New')}
-                </Button>
-            </DataTableToolbar>
-            <GroupTable
-                loading={!called || loading}
-                error={error}
-                groups={groups?.userGroups || prevGroups?.userGroups}
-                refetch={refetchGroups}
-                nameSortDirection={nameSortDirection}
-                onNameSortDirectionToggle={toggleNameSortDirection}
-            />
-            {(loading
-                ? prevGroups?.userGroups.length > 0
-                : groups?.userGroups.length > 0) && (
-                <DataTableToolbar position="bottom">
-                    <Pagination
-                        className={styles.pagination}
-                        {...(loading ? prevGroups.pager : groups.pager)}
-                        page={page}
-                        onPageChange={setPage}
-                        pageSize={pageSize}
-                        onPageSizeChange={setPageSize}
-                    />
+            <div className={styles.container}>
+                <DataTableToolbar>
+                    <Button
+                        small
+                        icon={<IconAdd24 color={colors.grey600} />}
+                        onClick={() => navigateTo('/user-groups/new')}
+                    >
+                        {i18n.t('New')}
+                    </Button>
                 </DataTableToolbar>
-            )}
+                <GroupTable
+                    loading={!called || loading}
+                    error={error}
+                    groups={groups?.userGroups || prevGroups?.userGroups}
+                    refetch={refetchGroups}
+                    nameSortDirection={nameSortDirection}
+                    onNameSortDirectionToggle={toggleNameSortDirection}
+                />
+                {(loading
+                    ? prevGroups?.userGroups.length > 0
+                    : groups?.userGroups.length > 0) && (
+                    <DataTableToolbar position="bottom">
+                        <Pagination
+                            className={styles.pagination}
+                            {...(loading ? prevGroups.pager : groups.pager)}
+                            page={page}
+                            onPageChange={setPage}
+                            pageSize={pageSize}
+                            onPageSizeChange={setPageSize}
+                        />
+                    </DataTableToolbar>
+                )}
+            </div>
         </>
     )
 }

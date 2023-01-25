@@ -12,7 +12,7 @@ const DataTableInfoWrapper = ({ children, columns }) => (
     <DataTable>
         <DataTableBody>
             <DataTableRow>
-                <DataTableCell colSpan={String(columns)}>
+                <DataTableCell staticStyle colSpan={String(columns)}>
                     <div className={styles.wrapper}>{children}</div>
                 </DataTableCell>
             </DataTableRow>

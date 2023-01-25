@@ -1,6 +1,7 @@
 import { useTimeZoneConversion } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
+    Button,
     CenteredContent,
     CircularLoader,
     NoticeBox,
@@ -15,6 +16,7 @@ import moment from 'moment'
 import PropTypes from 'prop-types'
 import React from 'react'
 import DataTableInfoWrapper from '../../components/DataTableInfoWrapper.js'
+import EmptyTableInfo from '../../components/EmptyTableInfo.js'
 import navigateTo from '../../utils/navigateTo.js'
 import ContextMenuButton from './ContextMenu/ContextMenuButton.js'
 
@@ -50,7 +52,21 @@ const UserTable = ({
     if (!loading && users.length === 0) {
         return (
             <DataTableInfoWrapper columns={5}>
-                <p>{i18n.t('No results found')}</p>
+                <EmptyTableInfo
+                    header={i18n.t('No results found')}
+                    text={i18n.t(
+                        'There are no users to show here. You can add a new user below.'
+                    )}
+                    footer={
+                        <Button
+                            small
+                            secondary
+                            onClick={() => navigateTo('/users/new')}
+                        >
+                            {i18n.t('Add new user')}
+                        </Button>
+                    }
+                />
             </DataTableInfoWrapper>
         )
     }

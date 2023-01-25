@@ -2,6 +2,7 @@ import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { CenteredContent, CircularLoader, NoticeBox } from '@dhis2/ui'
 import React from 'react'
+import PageHeader from '../components/PageHeader.js'
 import UserForm from '../components/UserForm/index.js'
 
 const query = {
@@ -36,7 +37,7 @@ const CreateUser = () => {
 
     return (
         <>
-            <h2>{i18n.t('New user')}</h2>
+            <PageHeader>{i18n.t('New user')}</PageHeader>
             <UserForm
                 userInterfaceLanguage={
                     data.userInterfaceLanguage.keyUiLocale || 'en'

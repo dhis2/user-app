@@ -9,6 +9,7 @@ import {
 } from '@dhis2/ui'
 import React, { useState, useEffect } from 'react'
 import { useDebounce } from 'use-debounce'
+import PageHeader from '../../components/PageHeader.js'
 import navigateTo from '../../utils/navigateTo.js'
 import Filters from './Filters.js'
 import { useFilters } from './useFilters.js'
@@ -113,7 +114,7 @@ const UserList = () => {
 
     return (
         <>
-            <h2 className={styles.header}>{i18n.t('User Management')}</h2>
+            <PageHeader>{i18n.t('User Management')}</PageHeader>
             <Filters
                 query={query}
                 onQueryChange={setQuery}
@@ -127,37 +128,39 @@ const UserList = () => {
                 onOrganisationUnitsChange={setOrganisationUnits}
                 onClear={clearFilters}
             />
-            <DataTableToolbar>
-                <Button
-                    small
-                    icon={<IconAdd24 color={colors.grey600} />}
-                    onClick={() => navigateTo('/users/new')}
-                >
-                    {i18n.t('New')}
-                </Button>
-            </DataTableToolbar>
-            <UserTable
-                loading={!called || loading}
-                error={error}
-                users={users?.users || prevUsers?.users}
-                refetch={refetchUsers}
-                nameSortDirection={nameSortDirection}
-                onNameSortDirectionToggle={toggleNameSortDirection}
-            />
-            {(loading
-                ? prevUsers?.users.length > 0
-                : users?.users.length > 0) && (
-                <DataTableToolbar position="bottom">
-                    <Pagination
-                        className={styles.pagination}
-                        {...(loading ? prevUsers.pager : users.pager)}
-                        page={page}
-                        onPageChange={setPage}
-                        pageSize={pageSize}
-                        onPageSizeChange={setPageSize}
-                    />
+            <div className={styles.container}>
+                <DataTableToolbar>
+                    <Button
+                        small
+                        icon={<IconAdd24 color={colors.grey600} />}
+                        onClick={() => navigateTo('/users/new')}
+                    >
+                        {i18n.t('New')}
+                    </Button>
                 </DataTableToolbar>
-            )}
+                <UserTable
+                    loading={!called || loading}
+                    error={error}
+                    users={users?.users || prevUsers?.users}
+                    refetch={refetchUsers}
+                    nameSortDirection={nameSortDirection}
+                    onNameSortDirectionToggle={toggleNameSortDirection}
+                />
+                {(loading
+                    ? prevUsers?.users.length > 0
+                    : users?.users.length > 0) && (
+                    <DataTableToolbar position="bottom">
+                        <Pagination
+                            className={styles.pagination}
+                            {...(loading ? prevUsers.pager : users.pager)}
+                            page={page}
+                            onPageChange={setPage}
+                            pageSize={pageSize}
+                            onPageSizeChange={setPageSize}
+                        />
+                    </DataTableToolbar>
+                )}
+            </div>
         </>
     )
 }

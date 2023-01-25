@@ -58,7 +58,7 @@ describe('<GroupTable>', () => {
         )
 
         expect(
-            screen.getByRole('row', { name: 'No results found' })
+            screen.getByTestId('data-test-empty-table-info')
         ).toBeInTheDocument()
     })
 

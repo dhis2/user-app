@@ -1,5 +1,6 @@
 .nav {
     background: var(--colors-grey200);
+    border-right: 1px solid var(--colors-grey400);
 }
 
 li.navItem {
