@@ -1,6 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
 
 const GROUP_NAMES = {
+    F_AGGREGATE_DATA_EXCHANGE: i18n.t('Aggregate Data Exchange'),
     F_ANALYTICSTABLEHOOK: i18n.t('Analytics Table Hook'),
     F_ATTRIBUTE: i18n.t('Attribute'),
     F_CATEGORY_COMBO: i18n.t('Category Combo'),
