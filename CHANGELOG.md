@@ -1,3 +1,11 @@
+## [1.5.2](https://github.com/dhis2/user-app/compare/v1.5.1...v1.5.2) (2023-01-26)
+
+
+### Bug Fixes
+
+* Add translation for aggregate data exchange auth [DHIS2-13961] ([0e0da9a](https://github.com/dhis2/user-app/commit/0e0da9abe48480e00d74756729ac1ddc95194661))
+* Add translation for F_AGGREGATE_DATA_EXCHANGE auth ([b43d336](https://github.com/dhis2/user-app/commit/b43d336b124ae4a4649f332517ac4cb6429ee345))
+
 ## [1.5.1](https://github.com/dhis2/user-app/compare/v1.5.0...v1.5.1) (2023-01-25)
 
 
