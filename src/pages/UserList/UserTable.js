@@ -1,3 +1,4 @@
+import { useTimeZoneConversion } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     CenteredContent,
@@ -25,6 +26,7 @@ const UserTable = ({
     nameSortDirection,
     onNameSortDirectionToggle,
 }) => {
+    const { fromServerDate } = useTimeZoneConversion()
     if (loading && !users) {
         return (
             <DataTableInfoWrapper columns={5}>
@@ -81,6 +83,8 @@ const UserTable = ({
                 {users.map((user) => {
                     const { id, displayName, access, userCredentials } = user
                     const { username, lastLogin, disabled } = userCredentials
+                    const lastLoginClient = fromServerDate(lastLogin)
+
                     const handleClick = () => {
                         if (access.update) {
                             navigateTo(`/users/edit/${id}`)
@@ -100,7 +104,7 @@ const UserTable = ({
                             <DataTableCell onClick={handleClick}>
                                 {lastLogin && (
                                     <span title={lastLogin}>
-                                        {moment(lastLogin).fromNow()}
+                                        {moment(lastLoginClient).fromNow()}
                                     </span>
                                 )}
                             </DataTableCell>
