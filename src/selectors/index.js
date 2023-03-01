@@ -51,7 +51,7 @@ export const pagerSelector = memoize(pager => {
  * @returns {Array} An array of d2 model instances with properties appended for use in the List component
  * @function
  */
-export const listSelector = (list, groupMemberships) => {
+export const listSelector = (list, groupMemberships, fromServerDate) => {
     if (!list || typeof list === 'string') {
         return list
     }
@@ -59,15 +59,22 @@ export const listSelector = (list, groupMemberships) => {
     const listType = list.modelDefinition.name
     return list
         .toArray()
-        .map(item => listMappings[listType](item, groupMemberships))
+        .map(item =>
+            listMappings[listType](item, groupMemberships, fromServerDate)
+        )
 }
 
 const listMappings = {
-    user: item => {
+    user: (item, _, fromServerDate) => {
         item.userName = item.userCredentials.username
         item.disabled = item.userCredentials.disabled
         item.accountExpiry = item.userCredentials.accountExpiry
-        item.lastLogin = item.userCredentials.lastLogin
+        item.lastLogin =
+            fromServerDate && item.userCredentials.lastLogin
+                ? fromServerDate(
+                      item.userCredentials.lastLogin
+                  ).getClientZonedISOString()
+                : item.userCredentials.lastLogin
         return item
     },
     userRole: item => item,

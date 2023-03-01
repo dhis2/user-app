@@ -85,7 +85,7 @@ class DetailSummary extends Component {
     }
 
     renderPropertyFields() {
-        const { summaryObject, config } = this.props
+        const { summaryObject, config, fromServerDate } = this.props
         const labelCellStyle = { ...styles.cell, ...styles.valueCell }
 
         return config.map((field, index) => {
@@ -127,7 +127,11 @@ class DetailSummary extends Component {
                 }
 
                 if ((parseDate || parseDateTime) && typeof value === 'string') {
-                    value = parseDateFromUTCString(value, parseDateTime)
+                    value = parseDateFromUTCString(
+                        value,
+                        parseDateTime,
+                        fromServerDate
+                    )
                 }
 
                 if (count) {
@@ -211,6 +215,7 @@ DetailSummary.propTypes = {
     config: PropTypes.array.isRequired,
     getItem: PropTypes.func.isRequired,
     routeId: PropTypes.string.isRequired,
+    fromServerDate: PropTypes.func,
     summaryObject: PropTypes.object,
 }
 

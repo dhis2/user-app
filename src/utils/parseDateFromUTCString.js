@@ -8,10 +8,12 @@ import api from '../api'
  * @memberof module:utils
  * @function
  */
-const parseDateFromUTCString = (utcString, includeTime) => {
+const parseDateFromUTCString = (utcString, includeTime, fromServerDate) => {
     const d2 = api.getD2()
     const locale = d2.currentUser.userSettings.settings.keyUiLocale
-    const date = new Date(utcString)
+    const date = fromServerDate
+        ? fromServerDate(utcString)
+        : new Date(utcString)
     const dateOptions = {
         day: 'numeric',
         month: 'long',

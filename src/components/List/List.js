@@ -61,7 +61,8 @@ class List extends Component {
             entityType,
             listType,
         } = this.props
-
+        console.log(this.props)
+        console.log(items, getList)
         // Only fetch when there is no suitable list available
         if (items === null || listType !== entityType) {
             // If list type is defined but doesn't match current entity
@@ -223,6 +224,7 @@ List.propTypes = {
     sectionName: PropTypes.string.isRequired,
     showSnackbar: PropTypes.func.isRequired,
     className: PropTypes.string,
+    fromServerDate: PropTypes.func,
     items: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
     listType: PropTypes.string,
     pager: PropTypes.object,
@@ -232,10 +234,14 @@ List.defaultProps = {
     className: 'paged-filterable-data-table',
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
     return {
         listType: state.list.type,
-        items: listSelector(state.list.items, state.currentUser.userGroupIds),
+        items: listSelector(
+            state.list.items,
+            state.currentUser.userGroupIds,
+            ownProps?.fromServerDate
+        ),
         pager: pagerSelector(state.pager),
     }
 }

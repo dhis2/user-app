@@ -1,3 +1,4 @@
+import { useTimeZoneConversion } from '@dhis2/app-runtime'
 import PropTypes from 'prop-types'
 import React from 'react'
 import DetailSummary from '../components/DetailSummary'
@@ -11,7 +12,17 @@ const UserProfile = ({
     match: {
         params: { id },
     },
-}) => <DetailSummary routeId={id} config={getUserProfile()} baseName={USER} />
+}) => {
+    const { fromServerDate } = useTimeZoneConversion()
+    return (
+        <DetailSummary
+            routeId={id}
+            config={getUserProfile()}
+            baseName={USER}
+            fromServerDate={fromServerDate}
+        />
+    )
+}
 
 UserProfile.propTypes = {
     match: PropTypes.object.isRequired,
