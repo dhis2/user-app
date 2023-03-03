@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-02-16T18:07:59.076Z\n"
-"PO-Revision-Date: 2022-02-16T18:07:59.076Z\n"
+"POT-Creation-Date: 2023-03-03T10:52:57.388Z\n"
+"PO-Revision-Date: 2023-03-03T10:52:57.388Z\n"
 
 msgid ""
 "Could not reset user password. Make sure you have the appropriate "
@@ -684,6 +684,12 @@ msgstr "A username should be at least 2 characters long"
 
 msgid "Username may not exceed 140 characters"
 msgstr "Username may not exceed 140 characters"
+
+msgid "First name should be at least 2 characters long"
+msgstr "First name should be at least 2 characters long"
+
+msgid "First name may not exceed 160 characters"
+msgstr "First name may not exceed 160 characters"
 
 msgid "Please provide a valid international phone number (+0123456789)"
 msgstr "Please provide a valid international phone number (+0123456789)"
