@@ -93,6 +93,16 @@ export function username(value) {
     }
 }
 
+export function surname(value) {
+    if (hasValue(value) && value.length < 2) {
+        return i18n.t('Surname should be at least 2 characters long')
+    }
+
+    if (hasValue(value) && value.length > 160) {
+        return i18n.t('Surname may not exceed 160 characters')
+    }
+}
+
 export function firstName(value) {
     if (hasValue(value) && value.length < 2) {
         return i18n.t('First name should be at least 2 characters long')
