@@ -36,7 +36,7 @@ describe('<RoleTable>', () => {
             'Error loading user roles'
         )
         expect(
-            screen.getByTestId('dhis2-uicore-noticebox-message')
+            screen.getByTestId('dhis2-uicore-noticebox-content-message')
         ).toHaveTextContent(errorMessage)
     })
 
