@@ -1,3 +1,10 @@
+## [1.5.3](https://github.com/dhis2/user-app/compare/v1.5.2...v1.5.3) (2023-03-07)
+
+
+### Bug Fixes
+
+* address user list action menu regressions ([#1127](https://github.com/dhis2/user-app/issues/1127)) ([ecff2c0](https://github.com/dhis2/user-app/commit/ecff2c07f1c7332d055027a664e9448c6adf239c))
+
 ## [1.5.2](https://github.com/dhis2/user-app/compare/v1.5.1...v1.5.2) (2023-01-26)
 
 
