@@ -35,7 +35,7 @@ const ContextMenu = ({ role, anchorRef, refetchRoles, onClose }) => {
 
     return (
         <>
-            <Layer onClick={onClose}>
+            <Layer onBackdropClick={onClose}>
                 <Popper reference={anchorRef} placement="bottom-start">
                     <FlyoutMenu>
                         {access.read && (
