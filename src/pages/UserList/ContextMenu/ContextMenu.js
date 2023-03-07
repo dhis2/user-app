@@ -155,7 +155,10 @@ const ContextMenu = ({
                 <CurrentModal
                     user={user}
                     refetchUsers={refetchUsers}
-                    onClose={() => setCurrentModal(null)}
+                    onClose={() => {
+                        onClose()
+                        setCurrentModal(null)
+                    }}
                 />
             )}
         </>
