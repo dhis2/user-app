@@ -54,7 +54,7 @@ describe('<UserTable>', () => {
             'Error loading users'
         )
         expect(
-            screen.getByTestId('dhis2-uicore-noticebox-message')
+            screen.getByTestId('dhis2-uicore-noticebox-content-message')
         ).toHaveTextContent(errorMessage)
     })
 

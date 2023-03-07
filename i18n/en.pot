@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-11-22T12:34:57.947Z\n"
-"PO-Revision-Date: 2022-11-22T12:34:57.947Z\n"
+"POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
+"PO-Revision-Date: 2023-03-06T13:36:07.125Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -235,6 +235,9 @@ msgstr "Selected system authorities"
 
 msgid "All (Full authority)"
 msgstr "All (Full authority)"
+
+msgid "Aggregate Data Exchange"
+msgstr "Aggregate Data Exchange"
 
 msgid "Analytics Table Hook"
 msgstr "Analytics Table Hook"
@@ -607,17 +610,17 @@ msgstr "LDAP identifier"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr "External authentication only (OpenID / LDAP)"
 
-msgid "Send invite"
-msgstr "Send invite"
-
-msgid "Cancel invite"
-msgstr "Cancel invite"
-
 msgid "Invalid username"
 msgstr "Invalid username"
 
 msgid "Invalid WhatsApp number"
 msgstr "Invalid WhatsApp number"
+
+msgid "Send invite"
+msgstr "Send invite"
+
+msgid "Cancel invite"
+msgstr "Cancel invite"
 
 msgid "Error updating user"
 msgstr "Error updating user"
@@ -772,6 +775,12 @@ msgstr "New"
 msgid "Error loading user groups"
 msgstr "Error loading user groups"
 
+msgid "There are no user groups to show here. You can add a new user group below."
+msgstr "There are no user groups to show here. You can add a new user group below."
+
+msgid "Add new user group"
+msgstr "Add new user group"
+
 msgid "Member?"
 msgstr "Member?"
 
@@ -810,6 +819,12 @@ msgstr "User Role Management"
 
 msgid "Error loading user roles"
 msgstr "Error loading user roles"
+
+msgid "There are no user roles to show here. You can add a new user role below."
+msgstr "There are no user roles to show here. You can add a new user role below."
+
+msgid "Add new user role"
+msgstr "Add new user role"
 
 msgid "Profile"
 msgstr "Profile"
@@ -947,6 +962,12 @@ msgstr "Org.unit"
 msgid "User Management"
 msgstr "User Management"
 
+msgid "There are no users to show here. You can add a new user below."
+msgstr "There are no users to show here. You can add a new user below."
+
+msgid "Add new user"
+msgstr "Add new user"
+
 msgid "Last login"
 msgstr "Last login"
 
@@ -1015,21 +1036,3 @@ msgstr "Interests"
 
 msgid "Birthday"
 msgstr "Birthday"
-
-msgid "There are no users to show here. You can add a new user below."
-msgstr "There are no users to show here. You can add a new user below."
-
-msgid "Add new user"
-msgstr "Add new user"
-
-msgid "There are no user groups to show here. You can add a new user group below."
-msgstr "There are no user groups to show here. You can add a new user group below."
-
-msgid "Add new user group"
-msgstr "Add new user group"
-
-msgid "There are no user roles to show here. You can add a new user role below."
-msgstr "There are no user roles to show here. You can add a new user role below."
-
-msgid "Add new user role"
-msgstr "Add new user role"

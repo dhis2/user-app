@@ -1,6 +1,4 @@
-import { Card } from '@dhis2-ui/card'
-import { Layer } from '@dhis2-ui/layer'
-import { Popper } from '@dhis2-ui/popper'
+import { Card, Layer, Popper } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { resolve } from 'styled-jsx/css'
@@ -19,7 +17,7 @@ const MenuWrapper = ({
         overflow: auto;
     `
     return (
-        <Layer onClick={onClick} transparent>
+        <Layer onBackdropClick={onClick} transparent>
             <Popper
                 reference={selectRef}
                 placement="bottom-start"

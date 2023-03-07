@@ -52,7 +52,7 @@ const AsyncAutoComplete = ({ selectHandler, orgUnitType }) => {
             </div>
 
             {organisationUnits.length > 0 && (
-                <Layer onClick={onBackdropClick}>
+                <Layer onBackdropClick={onBackdropClick}>
                     <Popper placement="bottom-start" reference={inputEl}>
                         <Card>
                             <div className={styles.scrollBox}>

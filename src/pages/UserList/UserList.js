@@ -34,7 +34,8 @@ const usersQuery = {
                 'displayName',
                 'access',
                 'email',
-                'userCredentials[username,disabled,lastLogin,twoFA]',
+                'twoFactorEnabled',
+                'userCredentials[username,disabled,lastLogin]',
                 'teiSearchOrganisationUnits[id,path]',
             ],
             order: [
