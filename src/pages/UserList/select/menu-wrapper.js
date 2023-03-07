@@ -19,7 +19,7 @@ const MenuWrapper = ({
         overflow: auto;
     `
     return (
-        <Layer onClick={onClick} transparent>
+        <Layer onBackdropClick={onClick} transparent>
             <Popper
                 reference={selectRef}
                 placement="bottom-start"
