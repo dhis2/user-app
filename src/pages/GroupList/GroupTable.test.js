@@ -41,7 +41,7 @@ describe('<GroupTable>', () => {
             'Error loading user groups'
         )
         expect(
-            screen.getByTestId('dhis2-uicore-noticebox-message')
+            screen.getByTestId('dhis2-uicore-noticebox-content-message')
         ).toHaveTextContent(errorMessage)
     })
 

@@ -47,7 +47,8 @@ const ContextMenu = ({ user, anchorRef, refetchUsers, onClose }) => {
     const [CurrentModal, setCurrentModal] = useCurrentModal()
     const {
         access,
-        userCredentials: { disabled, twoFA },
+        twoFactorEnabled,
+        userCredentials: { disabled },
     } = user
     const canReplicate =
         access.update &&
@@ -69,7 +70,7 @@ const ContextMenu = ({ user, anchorRef, refetchUsers, onClose }) => {
 
     return (
         <>
-            <Layer onClick={onClose}>
+            <Layer onBackdropClick={onClose}>
                 <Popper reference={anchorRef} placement="bottom-start">
                     <FlyoutMenu>
                         {access.read && (
@@ -128,7 +129,7 @@ const ContextMenu = ({ user, anchorRef, refetchUsers, onClose }) => {
                                 dense
                             />
                         )}
-                        {access.update && twoFA && (
+                        {access.update && twoFactorEnabled && (
                             <MenuItem
                                 label={i18n.t(
                                     'Disable Two Factor Authentication'
@@ -154,7 +155,10 @@ const ContextMenu = ({ user, anchorRef, refetchUsers, onClose }) => {
                 <CurrentModal
                     user={user}
                     refetchUsers={refetchUsers}
-                    onClose={() => setCurrentModal(null)}
+                    onClose={() => {
+                        onClose()
+                        setCurrentModal(null)
+                    }}
                 />
             )}
         </>
@@ -171,9 +175,9 @@ ContextMenu.propTypes = {
             update: PropTypes.bool.isRequired,
         }).isRequired,
         id: PropTypes.string.isRequired,
+        twoFactorEnabled: PropTypes.bool.isRequired,
         userCredentials: PropTypes.shape({
             disabled: PropTypes.bool.isRequired,
-            twoFA: PropTypes.bool.isRequired,
         }).isRequired,
         email: PropTypes.string,
     }).isRequired,
