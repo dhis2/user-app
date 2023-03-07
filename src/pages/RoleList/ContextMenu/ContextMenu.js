@@ -84,7 +84,10 @@ const ContextMenu = ({ role, anchorRef, refetchRoles, onClose }) => {
                 <CurrentModal
                     role={role}
                     refetchRoles={refetchRoles}
-                    onClose={() => setCurrentModal(null)}
+                    onClose={() => {
+                        onClose()
+                        setCurrentModal(null)
+                    }}
                 />
             )}
         </>
