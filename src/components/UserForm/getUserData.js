@@ -69,12 +69,6 @@ export const getUserData = ({
             ldapId,
             externalAuth,
             userRoles: wrapIds(userRoles),
-            // Dimension constraints are combined into a single input
-            // component, but need to be stored separately
-            catDimensionConstraints: constraintsForType('CATEGORY'),
-            cogsDimensionConstraints: constraintsForType(
-                'CATEGORY_OPTION_GROUP_SET'
-            ),
         },
 
         email,
@@ -93,6 +87,12 @@ export const getUserData = ({
             dataViewMaxOrganisationUnitLevel ??
             Number(dataViewMaxOrganisationUnitLevel),
         userGroups: wrapIds(userGroups),
+        // Dimension constraints are combined into a single input
+        // component, but need to be stored separately
+        catDimensionConstraints: constraintsForType('CATEGORY'),
+        cogsDimensionConstraints: constraintsForType(
+            'CATEGORY_OPTION_GROUP_SET'
+        ),
 
         attributeValues: getAttributeValues({ attributes, values }),
     }
