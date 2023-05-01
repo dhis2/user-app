@@ -128,9 +128,20 @@ class Api {
     }
 
     updateDisabledState = (id, disabled) => {
-        const url = `/users/${id}`
-        const data = { userCredentials: { disabled: disabled } }
-        return this.d2Api.patch(url, data)
+        const url = `${this.d2Api.baseUrl}/users/${id}`
+        const data = [
+            {
+                op: 'replace',
+                path: '/disabled',
+                value: disabled,
+            },
+        ]
+
+        return this.d2Api.request('PATCH', url, JSON.stringify(data), {
+            headers: {
+                'Content-Type': 'application/json-patch+json',
+            },
+        })
     }
 
     disable2FA = id => {
