@@ -1,14 +1,14 @@
 # 
 # Translators:
-# trendspotter <jirka.p@volny.cz>, 2022
+# Jiří Podhorecký, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-11-17T13:40:24.697Z\n"
+"POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: trendspotter <jirka.p@volny.cz>, 2022\n"
-"Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
+"Last-Translator: Jiří Podhorecký, 2023\n"
+"Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -251,6 +251,9 @@ msgstr "Vybrané systémové autority"
 
 msgid "All (Full authority)"
 msgstr "Vše (plné oprávnění)"
+
+msgid "Aggregate Data Exchange"
+msgstr "Aggregate Data Exchange"
 
 msgid "Analytics Table Hook"
 msgstr "Hook Analytické tabulky "
@@ -629,17 +632,17 @@ msgstr "Identifikátor LDAP"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr "Pouze externí ověřování (OpenID / LDAP)"
 
-msgid "Send invite"
-msgstr "Poslat pozvánku"
-
-msgid "Cancel invite"
-msgstr ""
-
 msgid "Invalid username"
 msgstr "Neplatné uživatelské jméno"
 
 msgid "Invalid WhatsApp number"
 msgstr "Neplatné číslo WhatsApp"
+
+msgid "Send invite"
+msgstr "Poslat pozvánku"
+
+msgid "Cancel invite"
+msgstr ""
 
 msgid "Error updating user"
 msgstr "Při aktualizaci uživatele došlo k chybě"
@@ -794,6 +797,13 @@ msgstr "Nový"
 msgid "Error loading user groups"
 msgstr "Chyba při načítání uživatelských skupin"
 
+msgid ""
+"There are no user groups to show here. You can add a new user group below."
+msgstr ""
+
+msgid "Add new user group"
+msgstr ""
+
 msgid "Member?"
 msgstr "Člen?"
 
@@ -832,6 +842,13 @@ msgstr "Správa rolí uživatelů"
 
 msgid "Error loading user roles"
 msgstr "Chyba při načítání uživatelských rolí"
+
+msgid ""
+"There are no user roles to show here. You can add a new user role below."
+msgstr ""
+
+msgid "Add new user role"
+msgstr ""
 
 msgid "Profile"
 msgstr "Profil"
@@ -969,6 +986,12 @@ msgstr "Org.jednotka"
 
 msgid "User Management"
 msgstr "Správa uživatelů"
+
+msgid "There are no users to show here. You can add a new user below."
+msgstr ""
+
+msgid "Add new user"
+msgstr ""
 
 msgid "Last login"
 msgstr "Poslední přihlášení"

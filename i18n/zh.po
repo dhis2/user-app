@@ -3,15 +3,15 @@
 # phil_dhis2, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # 晓东 林 <13981924470@126.com>, 2022
-# easylin <lin_xd@126.com>, 2022
+# easylin <lin_xd@126.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-11-17T13:40:24.697Z\n"
+"POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2022\n"
-"Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2023\n"
+"Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -212,13 +212,13 @@ msgid "Short, clear description of what this role is for."
 msgstr "简短、清晰地描述此角色的用途。"
 
 msgid "Metadata authorities"
-msgstr "元数据机构"
+msgstr "元数据权限"
 
 msgid "Set what metadata access this role has."
 msgstr "设置此角色拥有的元数据访问权限。"
 
 msgid "Other authorities"
-msgstr "其他当局"
+msgstr "其他授权"
 
 msgid ""
 "Manage access to apps, tracker, data import/export and system settings."
@@ -240,7 +240,7 @@ msgid "Available import/export authorities"
 msgstr "可用的导入导出授权"
 
 msgid "Selected import/export authorities"
-msgstr "选定的进出口当局"
+msgstr "选定的导入/导出授权"
 
 msgid "Available system authorities"
 msgstr "可用的系统权限"
@@ -250,6 +250,9 @@ msgstr "选定的系统权限"
 
 msgid "All (Full authority)"
 msgstr "所有（完全授权）"
+
+msgid "Aggregate Data Exchange"
+msgstr "统计数据交换"
 
 msgid "Analytics Table Hook"
 msgstr "分析表钩子"
@@ -622,17 +625,17 @@ msgstr "LDAP标识"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr "仅外部身份验证（OpenID / LDAP）"
 
-msgid "Send invite"
-msgstr "发送邀请"
-
-msgid "Cancel invite"
-msgstr "取消邀请"
-
 msgid "Invalid username"
 msgstr "无效的用户名"
 
 msgid "Invalid WhatsApp number"
 msgstr "WhatsApp 号码无效"
+
+msgid "Send invite"
+msgstr "发送邀请"
+
+msgid "Cancel invite"
+msgstr "取消邀请"
 
 msgid "Error updating user"
 msgstr "更新用户时出错"
@@ -787,6 +790,13 @@ msgstr "新建"
 msgid "Error loading user groups"
 msgstr "加载用户组时出错"
 
+msgid ""
+"There are no user groups to show here. You can add a new user group below."
+msgstr ""
+
+msgid "Add new user group"
+msgstr ""
+
 msgid "Member?"
 msgstr "成员？"
 
@@ -825,6 +835,13 @@ msgstr "用户角色管理"
 
 msgid "Error loading user roles"
 msgstr "加载用户角色时出错"
+
+msgid ""
+"There are no user roles to show here. You can add a new user role below."
+msgstr ""
+
+msgid "Add new user role"
+msgstr ""
 
 msgid "Profile"
 msgstr "基本信息"
@@ -960,6 +977,12 @@ msgstr "组织单位"
 
 msgid "User Management"
 msgstr "用户管理"
+
+msgid "There are no users to show here. You can add a new user below."
+msgstr ""
+
+msgid "Add new user"
+msgstr ""
 
 msgid "Last login"
 msgstr "上次登录"
