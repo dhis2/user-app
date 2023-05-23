@@ -1,21 +1,22 @@
 # 
 # Translators:
-# Matthieu Pinard <matthieu@pinard.no>, 2019
+# Matthieu Pinard <matthieu@dhis2.org>, 2019
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # Bram Piot <bram.piot@gmail.com>, 2022
 # Edem Kossi <ekossi@hispwca.org>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # phil_dhis2, 2022
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
-# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
+# Yassine NAHDI <yassine_nahdi@gnet.tn>, 2023
+# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-11-17T13:40:24.697Z\n"
+"POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022\n"
-"Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
+"Last-Translator: Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2023\n"
+"Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -74,7 +75,7 @@ msgid "Network error"
 msgstr "Erreur réseau"
 
 msgid "Could not load current user information."
-msgstr ""
+msgstr "Impossible de charger les informations sur l'utilisateur actuel."
 
 msgid "Filter options"
 msgstr "Options de filtre"
@@ -264,6 +265,9 @@ msgstr "Droits d'accès au système ((Sélectionnés))"
 
 msgid "All (Full authority)"
 msgstr "Tout (Pleine autorité)"
+
+msgid "Aggregate Data Exchange"
+msgstr "Échange de données agrégées"
 
 msgid "Analytics Table Hook"
 msgstr "Crochet de Tables Analytiques"
@@ -651,17 +655,17 @@ msgstr "Identifiant LDAP"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr "Authentification externe uniquement (OpenID / LDAP)"
 
-msgid "Send invite"
-msgstr "Envoyer une invitation"
-
-msgid "Cancel invite"
-msgstr ""
-
 msgid "Invalid username"
 msgstr "Nom d'utilisateur invalide"
 
 msgid "Invalid WhatsApp number"
 msgstr "Numéro WhatsApp invalide"
+
+msgid "Send invite"
+msgstr "Envoyer une invitation"
+
+msgid "Cancel invite"
+msgstr "Annuler l'invitation"
 
 msgid "Error updating user"
 msgstr "Erreur lors de la mise à jour de l'utilisateur"
@@ -826,6 +830,13 @@ msgstr "Nouveau"
 msgid "Error loading user groups"
 msgstr "Erreur lors du chargement des groupes d'utilisateurs"
 
+msgid ""
+"There are no user groups to show here. You can add a new user group below."
+msgstr ""
+
+msgid "Add new user group"
+msgstr ""
+
 msgid "Member?"
 msgstr "Membre ?"
 
@@ -866,6 +877,13 @@ msgstr "Gestion des rôles utilisateur"
 
 msgid "Error loading user roles"
 msgstr "Erreur lors du chargement des rôles d'utilisateur"
+
+msgid ""
+"There are no user roles to show here. You can add a new user role below."
+msgstr ""
+
+msgid "Add new user role"
+msgstr ""
 
 msgid "Profile"
 msgstr "Profil"
@@ -986,7 +1004,7 @@ msgstr ""
 "erreur}}"
 
 msgid "Are you sure you want to reset the password for {{- name}}?"
-msgstr ""
+msgstr "Voulez-vous vraiment réinitialiser le mot de passe de {{- name}} ?"
 
 msgid "Yes, reset"
 msgstr "Oui, réinitialiser"
@@ -1020,6 +1038,12 @@ msgstr "Unité d'organisation"
 
 msgid "User Management"
 msgstr "Gestion des utilisateurs"
+
+msgid "There are no users to show here. You can add a new user below."
+msgstr ""
+
+msgid "Add new user"
+msgstr ""
 
 msgid "Last login"
 msgstr "Dernière connexion"
