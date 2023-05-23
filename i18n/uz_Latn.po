@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Yury Rogachev <yury@dhis2.org>, 2022
+# Yury Rogachev <yury@dhis2.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-11-17T13:40:24.697Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2022\n"
-"Language-Team: Uzbek (Latin) (https://www.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
+"POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
+"PO-Revision-Date: 2023-05-22 19:30+0000\n"
+"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2023\n"
+"Language-Team: Uzbek (Latin) (https://app.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -248,6 +248,9 @@ msgstr ""
 
 msgid "All (Full authority)"
 msgstr "Barchasi (Toʼliq vakolatlar)"
+
+msgid "Aggregate Data Exchange"
+msgstr ""
 
 msgid "Analytics Table Hook"
 msgstr "Аnalitik jadvallar tahlilchisi"
@@ -620,16 +623,16 @@ msgstr "LDAP identifikator"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr ""
 
-msgid "Send invite"
-msgstr "Taklifnomani yuboring"
-
-msgid "Cancel invite"
-msgstr ""
-
 msgid "Invalid username"
 msgstr ""
 
 msgid "Invalid WhatsApp number"
+msgstr ""
+
+msgid "Send invite"
+msgstr "Taklifnomani yuboring"
+
+msgid "Cancel invite"
 msgstr ""
 
 msgid "Error updating user"
@@ -785,6 +788,13 @@ msgstr "Yangi"
 msgid "Error loading user groups"
 msgstr ""
 
+msgid ""
+"There are no user groups to show here. You can add a new user group below."
+msgstr ""
+
+msgid "Add new user group"
+msgstr ""
+
 msgid "Member?"
 msgstr ""
 
@@ -823,6 +833,13 @@ msgid "User Role Management"
 msgstr "Foydalanuvchi Roli Boshqaruvi"
 
 msgid "Error loading user roles"
+msgstr ""
+
+msgid ""
+"There are no user roles to show here. You can add a new user role below."
+msgstr ""
+
+msgid "Add new user role"
 msgstr ""
 
 msgid "Profile"
@@ -959,6 +976,12 @@ msgstr ""
 
 msgid "User Management"
 msgstr "Foydalanuvchi Boshqarish"
+
+msgid "There are no users to show here. You can add a new user below."
+msgstr ""
+
+msgid "Add new user"
+msgstr ""
 
 msgid "Last login"
 msgstr "Oxirgi kirish"

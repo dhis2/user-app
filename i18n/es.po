@@ -1,21 +1,24 @@
 # 
 # Translators:
-# Pablo Pajuelo Cabezas <pablo@dhis2.org>, 2022
-# William Aviles <waviles@clintonhealthaccess.org>, 2022
-# Prabhjot Singh, 2022
-# Janeth Cruz, 2022
-# Viktor Varland <viktor@dhis2.org>, 2022
-# Carlos Tejo Alonso, 2022
-# phil_dhis2, 2022
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
+# Janeth Cruz, 2023
+# Sergio Valenzuela <sergio.valenzuela@ehas.org>, 2023
+# ericbp <ericbarredap@gmail.com>, 2023
+# Pablo Pajuelo Cabezas <pablo@dhis2.org>, 2023
+# William Aviles <waviles@clintonhealthaccess.org>, 2023
+# Prabhjot Singh, 2023
+# Carlos Tejo Alonso, 2023
+# Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023
+# phil_dhis2, 2023
+# Viktor Varland <viktor@dhis2.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-11-17T13:40:24.697Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022\n"
-"Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
+"POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
+"PO-Revision-Date: 2023-05-22 19:30+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2023\n"
+"Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -84,7 +87,7 @@ msgid "There was an error fetching this form."
 msgstr ""
 
 msgid "Cancel without saving"
-msgstr ""
+msgstr "Cancelar sin guardar"
 
 msgid "Basic information"
 msgstr ""
@@ -254,6 +257,9 @@ msgstr ""
 
 msgid "All (Full authority)"
 msgstr "Todo (Plena autoridad)"
+
+msgid "Aggregate Data Exchange"
+msgstr ""
 
 msgid "Analytics Table Hook"
 msgstr ""
@@ -430,7 +436,7 @@ msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
 
 msgid "Search by name"
-msgstr "Buscar por nombre"
+msgstr "Búsqueda por nombre"
 
 msgid "Search for an organisation unit"
 msgstr ""
@@ -626,16 +632,16 @@ msgstr "identificador LDAP"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr ""
 
-msgid "Send invite"
-msgstr "Enviar invitación"
-
-msgid "Cancel invite"
-msgstr ""
-
 msgid "Invalid username"
 msgstr ""
 
 msgid "Invalid WhatsApp number"
+msgstr ""
+
+msgid "Send invite"
+msgstr "Enviar invitación"
+
+msgid "Cancel invite"
 msgstr ""
 
 msgid "Error updating user"
@@ -781,7 +787,7 @@ msgid "Are you sure you want to leave {{- name}}?"
 msgstr ""
 
 msgid "Yes, leave"
-msgstr ""
+msgstr "Si, salir"
 
 msgid "User Group Management"
 msgstr "Administración de grupos de usuarios"
@@ -790,6 +796,13 @@ msgid "New"
 msgstr "Nuevo"
 
 msgid "Error loading user groups"
+msgstr ""
+
+msgid ""
+"There are no user groups to show here. You can add a new user group below."
+msgstr ""
+
+msgid "Add new user group"
 msgstr ""
 
 msgid "Member?"
@@ -829,6 +842,13 @@ msgid "User Role Management"
 msgstr "Administración de Roles de Usuario"
 
 msgid "Error loading user roles"
+msgstr ""
+
+msgid ""
+"There are no user roles to show here. You can add a new user role below."
+msgstr ""
+
+msgid "Add new user role"
 msgstr ""
 
 msgid "Profile"
@@ -967,6 +987,12 @@ msgstr ""
 
 msgid "User Management"
 msgstr "Administración de usuarios"
+
+msgid "There are no users to show here. You can add a new user below."
+msgstr ""
+
+msgid "Add new user"
+msgstr ""
 
 msgid "Last login"
 msgstr "Último ingreso"

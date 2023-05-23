@@ -1,15 +1,15 @@
 # 
 # Translators:
-# easylin <lin_xd@126.com>, 2022
-# 晓东 林 <13981924470@126.com>, 2022
+# easylin <lin_xd@126.com>, 2023
+# 晓东 林 <13981924470@126.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-11-17T13:40:24.697Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2022\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
+"POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
+"PO-Revision-Date: 2023-05-22 19:30+0000\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2023\n"
+"Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,10 +17,10 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Yes"
-msgstr "Yes"
+msgstr "是"
 
 msgid "No"
-msgstr "No"
+msgstr "否"
 
 msgid "Attribute value needs to be unique, value already taken."
 msgstr "属性应该唯一，值已经被使用"
@@ -249,6 +249,9 @@ msgstr ""
 msgid "All (Full authority)"
 msgstr "所有（完全授权）"
 
+msgid "Aggregate Data Exchange"
+msgstr ""
+
 msgid "Analytics Table Hook"
 msgstr "分析表钩子"
 
@@ -277,7 +280,7 @@ msgid "Constant"
 msgstr "常数"
 
 msgid "Dashboard"
-msgstr "仪表盘"
+msgstr "状态面板"
 
 msgid "Data Element Group Sets"
 msgstr "数据元组集"
@@ -379,7 +382,7 @@ msgid "Report"
 msgstr "报表"
 
 msgid "Section"
-msgstr "分区"
+msgstr "分段"
 
 msgid "SQL View"
 msgstr "SQL视图"
@@ -463,7 +466,7 @@ msgid "User role"
 msgstr "用户角色"
 
 msgid "User group"
-msgstr "用户组"
+msgstr "User组"
 
 msgid "Analytics dimension restrictions"
 msgstr ""
@@ -484,7 +487,7 @@ msgid "Last name"
 msgstr "姓"
 
 msgid "Interface language"
-msgstr "界面语言"
+msgstr "接口语言"
 
 msgid "Database language"
 msgstr "数据库语言"
@@ -618,16 +621,16 @@ msgstr "LDAP标识"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr ""
 
-msgid "Send invite"
-msgstr "发送邀请"
-
-msgid "Cancel invite"
-msgstr ""
-
 msgid "Invalid username"
 msgstr ""
 
 msgid "Invalid WhatsApp number"
+msgstr ""
+
+msgid "Send invite"
+msgstr "发送邀请"
+
+msgid "Cancel invite"
 msgstr ""
 
 msgid "Error updating user"
@@ -682,7 +685,7 @@ msgid "Edit group"
 msgstr ""
 
 msgid "Save changes"
-msgstr "保存更改"
+msgstr "保存修改"
 
 msgid "Error fetching role"
 msgstr ""
@@ -718,7 +721,7 @@ msgid "Sharing settings"
 msgstr "共享设置"
 
 msgid "Edit"
-msgstr "编辑<br>"
+msgstr "编辑"
 
 msgid "Join group"
 msgstr "加入组"
@@ -783,6 +786,13 @@ msgstr "新建"
 msgid "Error loading user groups"
 msgstr ""
 
+msgid ""
+"There are no user groups to show here. You can add a new user group below."
+msgstr ""
+
+msgid "Add new user group"
+msgstr ""
+
 msgid "Member?"
 msgstr ""
 
@@ -820,6 +830,13 @@ msgid "User Role Management"
 msgstr "用户角色管理"
 
 msgid "Error loading user roles"
+msgstr ""
+
+msgid ""
+"There are no user roles to show here. You can add a new user role below."
+msgstr ""
+
+msgid "Add new user role"
 msgstr ""
 
 msgid "Profile"
@@ -957,6 +974,12 @@ msgstr ""
 msgid "User Management"
 msgstr "用户管理"
 
+msgid "There are no users to show here. You can add a new user below."
+msgstr ""
+
+msgid "Add new user"
+msgstr ""
+
 msgid "Last login"
 msgstr "上次登录"
 
@@ -979,7 +1002,7 @@ msgid "Other"
 msgstr "其它"
 
 msgid "Created"
-msgstr "创建"
+msgstr "已创建"
 
 msgid "Contact"
 msgstr ""
@@ -988,7 +1011,7 @@ msgid "Send message"
 msgstr "发生信息"
 
 msgid "E-mail"
-msgstr "E-mail"
+msgstr "电子邮件"
 
 msgid "Permissions"
 msgstr ""
@@ -1003,7 +1026,7 @@ msgid "Introduction"
 msgstr "介绍"
 
 msgid "Job title"
-msgstr "工作职位"
+msgstr "工作头衔"
 
 msgid "Works at"
 msgstr "工作于"
