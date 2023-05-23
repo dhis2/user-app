@@ -1,21 +1,22 @@
 # 
 # Translators:
-# Matthieu Pinard <matthieu@pinard.no>, 2019
-# Karoline Tufte Lien <karoline@dhis2.org>, 2020
-# Bram Piot <bram.piot@gmail.com>, 2022
-# Edem Kossi <ekossi@hispwca.org>, 2022
-# Viktor Varland <viktor@dhis2.org>, 2022
-# phil_dhis2, 2022
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
-# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
+# Bram Piot <bram.piot@gmail.com>, 2023
+# Yassine NAHDI <yassine_nahdi@gnet.tn>, 2023
+# Edem Kossi <ekossi@hispwca.org>, 2023
+# Matthieu Pinard <matthieu@dhis2.org>, 2023
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023
+# Karoline Tufte Lien <karoline@dhis2.org>, 2023
+# phil_dhis2, 2023
+# Viktor Varland <viktor@dhis2.org>, 2023
+# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-11-17T13:40:24.697Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022\n"
-"Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
+"POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
+"PO-Revision-Date: 2023-05-22 19:30+0000\n"
+"Last-Translator: Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2023\n"
+"Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -74,7 +75,7 @@ msgid "Network error"
 msgstr "Erreur réseau"
 
 msgid "Could not load current user information."
-msgstr ""
+msgstr "Impossible de charger les informations sur l'utilisateur actuel."
 
 msgid "Filter options"
 msgstr "Options de filtre"
@@ -116,7 +117,7 @@ msgid "Remove 1 user"
 msgstr "Supprimer 1 utilisateur"
 
 msgid "Remove {{selectedCount}} users"
-msgstr "Supprimer{{selectedCount}} utilisateurs "
+msgstr "Supprimer {{selectedCount}} utilisateurs "
 
 msgid "Add 1 user"
 msgstr "Ajouter 1 utilisateur"
@@ -197,7 +198,7 @@ msgid "Only show selected metadata authorities"
 msgstr "Afficher uniquement les autorités de métadonnées sélectionnées"
 
 msgid "Authority"
-msgstr "Autorité"
+msgstr "Droit d'accès"
 
 msgid "Add/Update Public"
 msgstr "Ajouter/mettre à jour les droits d'accès publics"
@@ -224,13 +225,13 @@ msgid "Short, clear description of what this role is for."
 msgstr "Description brève et claire de la nature de ce rôle."
 
 msgid "Metadata authorities"
-msgstr "Autorités en matière de métadonnées"
+msgstr "Droits d'accès aux métadonnées"
 
 msgid "Set what metadata access this role has."
 msgstr "Définit l'accès aux métadonnées dont dispose ce rôle."
 
 msgid "Other authorities"
-msgstr "Autres autorités"
+msgstr "Autres droits d'accès"
 
 msgid ""
 "Manage access to apps, tracker, data import/export and system settings."
@@ -239,19 +240,19 @@ msgstr ""
 "données et aux paramètres du système."
 
 msgid "Available app authorities"
-msgstr "Droits d'accès aux applications"
+msgstr "Droits d'accès aux applications (Disponibles)"
 
 msgid "Selected app authorities"
-msgstr "Droits d'accès aux applications sélectionnés"
+msgstr "Droits d'accès aux applications (Sélectionnés)"
 
 msgid "Available tracker authorities"
-msgstr "Droits d'accès au tracker disponibles"
+msgstr "Droits d'accès au tracker (disponibles)"
 
 msgid "Selected tracker authorities"
-msgstr "Droits d'accès au tracker sélectionnés"
+msgstr "Droits d'accès au tracker (Sélectionnés)"
 
 msgid "Available import/export authorities"
-msgstr "Droits d'accès à l'importation et à l'exportation"
+msgstr "Droits d'accès à l'importation et à l'exportation (Disponibles)"
 
 msgid "Selected import/export authorities"
 msgstr "Droits d'accès à l'importation et à l'exportation (Sélectionnés)"
@@ -263,7 +264,10 @@ msgid "Selected system authorities"
 msgstr "Droits d'accès au système ((Sélectionnés))"
 
 msgid "All (Full authority)"
-msgstr "Tout (Pleine autorité)"
+msgstr "Tout (Pleine autorisation)"
+
+msgid "Aggregate Data Exchange"
+msgstr "Échange de données agrégées"
 
 msgid "Analytics Table Hook"
 msgstr "Crochet de Tables Analytiques"
@@ -284,7 +288,7 @@ msgid "Category Option Group"
 msgstr "Groupe d'options de catégorie"
 
 msgid "Category Option Group Set"
-msgstr "Category Option Group Set"
+msgstr "Ensemble de groupes d'options de catégorie"
 
 msgid "Color Set"
 msgstr "Jeu de Couleurs"
@@ -368,7 +372,7 @@ msgid "Predictor"
 msgstr "Prédicteur"
 
 msgid "Program Stage"
-msgstr "Etape de programme"
+msgstr "Stade de programme"
 
 msgid "Program"
 msgstr "Programme"
@@ -413,7 +417,7 @@ msgid "Tracked Entity Instance"
 msgstr "Instance d'entité suivie"
 
 msgid "User Group"
-msgstr "Groupe d'utilisateur:"
+msgstr "Groupe d'utilisateurs"
 
 msgid "User Role"
 msgstr "Rôle d'utilisateur"
@@ -431,7 +435,7 @@ msgid "Data predictor group"
 msgstr "Groupe de prédicteur de données"
 
 msgid "Skip data import audit"
-msgstr "Sauter l'audit d'importation de données"
+msgstr "Ignorer l'audit d'importation de données"
 
 msgid "Visualization"
 msgstr "Visualisation"
@@ -487,7 +491,7 @@ msgid "User role"
 msgstr "Rôle d'utilisateur"
 
 msgid "User group"
-msgstr "Groupe d'utilisateur"
+msgstr "Groupe d'utilisateurs"
 
 msgid "Analytics dimension restrictions"
 msgstr "Restrictions des dimensions analytiques"
@@ -514,7 +518,7 @@ msgid "Database language"
 msgstr "Langue de la base de données"
 
 msgid "Use database locale / no translation"
-msgstr "Utiliser la localisation de la base de donnée/ pas de traduction"
+msgstr "Utiliser la localisation de la base de données/ pas de traduction"
 
 msgid "Disable this user account"
 msgstr "Désactiver ce compte d'utilisateur"
@@ -586,7 +590,7 @@ msgstr ""
 "Les unités d'organisation que cet utilisateur peut exporter et analyser."
 
 msgid "Search"
-msgstr "Chercher"
+msgstr "Rechercher"
 
 msgid "The organisation that this user can search for and in."
 msgstr ""
@@ -651,17 +655,17 @@ msgstr "Identifiant LDAP"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr "Authentification externe uniquement (OpenID / LDAP)"
 
-msgid "Send invite"
-msgstr "Envoyer une invitation"
-
-msgid "Cancel invite"
-msgstr ""
-
 msgid "Invalid username"
 msgstr "Nom d'utilisateur invalide"
 
 msgid "Invalid WhatsApp number"
 msgstr "Numéro WhatsApp invalide"
+
+msgid "Send invite"
+msgstr "Envoyer une invitation"
+
+msgid "Cancel invite"
+msgstr "Annuler l'invitation"
 
 msgid "Error updating user"
 msgstr "Erreur lors de la mise à jour de l'utilisateur"
@@ -746,7 +750,7 @@ msgid "Edit user group"
 msgstr "Modifier le groupe d'utilisateurs"
 
 msgid "ID"
-msgstr "Id"
+msgstr "ID"
 
 msgid "Show details"
 msgstr "Afficher les détails"
@@ -826,6 +830,13 @@ msgstr "Nouveau"
 msgid "Error loading user groups"
 msgstr "Erreur lors du chargement des groupes d'utilisateurs"
 
+msgid ""
+"There are no user groups to show here. You can add a new user group below."
+msgstr ""
+
+msgid "Add new user group"
+msgstr ""
+
 msgid "Member?"
 msgstr "Membre ?"
 
@@ -862,10 +873,17 @@ msgid "Delete user role {{- name}}"
 msgstr "Supprimer le rôle d'utilisateur {{- nom}}"
 
 msgid "User Role Management"
-msgstr "Gestion des rôles utilisateur"
+msgstr "Gestion des rôles d'utilisateur"
 
 msgid "Error loading user roles"
 msgstr "Erreur lors du chargement des rôles d'utilisateur"
+
+msgid ""
+"There are no user roles to show here. You can add a new user role below."
+msgstr ""
+
+msgid "Add new user role"
+msgstr ""
 
 msgid "Profile"
 msgstr "Profil"
@@ -986,7 +1004,7 @@ msgstr ""
 "erreur}}"
 
 msgid "Are you sure you want to reset the password for {{- name}}?"
-msgstr ""
+msgstr "Voulez-vous vraiment réinitialiser le mot de passe de {{- name}} ?"
 
 msgid "Yes, reset"
 msgstr "Oui, réinitialiser"
@@ -1021,6 +1039,12 @@ msgstr "Unité d'organisation"
 msgid "User Management"
 msgstr "Gestion des utilisateurs"
 
+msgid "There are no users to show here. You can add a new user below."
+msgstr ""
+
+msgid "Add new user"
+msgstr ""
+
 msgid "Last login"
 msgstr "Dernière connexion"
 
@@ -1043,7 +1067,7 @@ msgid "Other"
 msgstr "Autre"
 
 msgid "Created"
-msgstr "Créé le"
+msgstr "Créé"
 
 msgid "Contact"
 msgstr "Contact"
@@ -1052,7 +1076,7 @@ msgid "Send message"
 msgstr "Envoyer Message"
 
 msgid "E-mail"
-msgstr "Courrier électronique"
+msgstr "Adresse email"
 
 msgid "Permissions"
 msgstr "Autorisations"
@@ -1073,7 +1097,7 @@ msgid "Works at"
 msgstr "Travaille à"
 
 msgid "Gender"
-msgstr "Genre"
+msgstr "Sexe"
 
 msgid "Speaks"
 msgstr "Parle"

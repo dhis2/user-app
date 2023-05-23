@@ -1,17 +1,17 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2022
-# Mai Nguyen <thanhmai.jica@gmail.com>, 2022
-# phil_dhis2, 2022
-# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2022
+# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2023
+# Mai Nguyen <thanhmai.jica@gmail.com>, 2023
+# phil_dhis2, 2023
+# Viktor Varland <viktor@dhis2.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-11-17T13:40:24.697Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Thuy Nguyen <thuynguyen@hispvietnam.org>, 2022\n"
-"Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
+"POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
+"PO-Revision-Date: 2023-05-22 19:30+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2023\n"
+"Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -71,7 +71,7 @@ msgid "Could not load current user information."
 msgstr ""
 
 msgid "Filter options"
-msgstr "Các lựa chọn lọc"
+msgstr "Tùy chọn bộ lọc"
 
 msgid "Error fetching form"
 msgstr ""
@@ -206,7 +206,7 @@ msgid "Error creating role"
 msgstr ""
 
 msgid "Description"
-msgstr "Miêu tả"
+msgstr "Mô tả"
 
 msgid "Short, clear description of what this role is for."
 msgstr ""
@@ -250,6 +250,9 @@ msgstr ""
 
 msgid "All (Full authority)"
 msgstr "Tất cả (Toàn quyền)"
+
+msgid "Aggregate Data Exchange"
+msgstr ""
 
 msgid "Analytics Table Hook"
 msgstr "Bảng phân tích Hook"
@@ -381,7 +384,7 @@ msgid "Report"
 msgstr "Báo cáo"
 
 msgid "Section"
-msgstr "Phần"
+msgstr "Section"
 
 msgid "SQL View"
 msgstr "Bảng truy vấn"
@@ -622,16 +625,16 @@ msgstr "Định danh LDAP"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr ""
 
-msgid "Send invite"
-msgstr "Gửi lời mời"
-
-msgid "Cancel invite"
-msgstr ""
-
 msgid "Invalid username"
 msgstr ""
 
 msgid "Invalid WhatsApp number"
+msgstr ""
+
+msgid "Send invite"
+msgstr "Gửi lời mời"
+
+msgid "Cancel invite"
 msgstr ""
 
 msgid "Error updating user"
@@ -787,6 +790,13 @@ msgstr "Mới"
 msgid "Error loading user groups"
 msgstr ""
 
+msgid ""
+"There are no user groups to show here. You can add a new user group below."
+msgstr ""
+
+msgid "Add new user group"
+msgstr ""
+
 msgid "Member?"
 msgstr ""
 
@@ -824,6 +834,13 @@ msgid "User Role Management"
 msgstr "Quản lý quyền người dùng"
 
 msgid "Error loading user roles"
+msgstr ""
+
+msgid ""
+"There are no user roles to show here. You can add a new user role below."
+msgstr ""
+
+msgid "Add new user role"
 msgstr ""
 
 msgid "Profile"
@@ -953,13 +970,19 @@ msgid "Show self-registrations"
 msgstr ""
 
 msgid "Clear filters"
-msgstr "Bỏ lọc"
+msgstr "Xóa các bộ lọc"
 
 msgid "Org.unit"
 msgstr ""
 
 msgid "User Management"
 msgstr "Quản lý người dùng"
+
+msgid "There are no users to show here. You can add a new user below."
+msgstr ""
+
+msgid "Add new user"
+msgstr ""
 
 msgid "Last login"
 msgstr "Đăng nhập lần cuối"

@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2022
+# Ibatov <ibatovk@who.int>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-11-17T13:40:24.697Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2022\n"
-"Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
+"POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
+"PO-Revision-Date: 2023-05-22 19:30+0000\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2023\n"
+"Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,7 +38,7 @@ msgid "No results found"
 msgstr "Ҳеч қандай натижа топилмади"
 
 msgid "Display name"
-msgstr "Дисплей номи"
+msgstr "Номини экранда кўрсатиш"
 
 msgid "1 pending change"
 msgstr ""
@@ -248,6 +248,9 @@ msgstr ""
 msgid "All (Full authority)"
 msgstr "Барчаси (Тўлиқ ваколатлар)"
 
+msgid "Aggregate Data Exchange"
+msgstr ""
+
 msgid "Analytics Table Hook"
 msgstr "Аналитик жадваллар таҳлилчиси"
 
@@ -303,7 +306,7 @@ msgid "Event Chart"
 msgstr "Ҳодиса Диаграмма"
 
 msgid "Event Report"
-msgstr "Ҳодиса Ҳисобот"
+msgstr "Ҳодиса/Тадбир Ҳисобот"
 
 msgid "External Map Layer"
 msgstr "Харита Ташқи Қавати"
@@ -354,7 +357,7 @@ msgid "Program Stage"
 msgstr "Дастур Босқичи"
 
 msgid "Program"
-msgstr "Программа"
+msgstr "Дастур"
 
 msgid "Program Indicator"
 msgstr "Дастур Индикатори"
@@ -423,7 +426,7 @@ msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
 
 msgid "Search by name"
-msgstr "Исми орқали излаш"
+msgstr "Исми орқали қидириш"
 
 msgid "Search for an organisation unit"
 msgstr ""
@@ -556,7 +559,7 @@ msgid "The organisation units that this user can export and analyse."
 msgstr ""
 
 msgid "Search"
-msgstr "Излаш"
+msgstr "Қидириш"
 
 msgid "The organisation that this user can search for and in."
 msgstr ""
@@ -592,7 +595,7 @@ msgid "New password"
 msgstr "Янги пароль"
 
 msgid "Password"
-msgstr "Парол"
+msgstr "Пароль"
 
 msgid ""
 "Minimum 8 characters, one uppercase and lowercase letter and one number"
@@ -619,16 +622,16 @@ msgstr "LDAP идентификатор"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr ""
 
-msgid "Send invite"
-msgstr "Таклифномани юборинг"
-
-msgid "Cancel invite"
-msgstr ""
-
 msgid "Invalid username"
 msgstr ""
 
 msgid "Invalid WhatsApp number"
+msgstr ""
+
+msgid "Send invite"
+msgstr "Таклифномани юборинг"
+
+msgid "Cancel invite"
 msgstr ""
 
 msgid "Error updating user"
@@ -784,6 +787,13 @@ msgstr "Янги"
 msgid "Error loading user groups"
 msgstr ""
 
+msgid ""
+"There are no user groups to show here. You can add a new user group below."
+msgstr ""
+
+msgid "Add new user group"
+msgstr ""
+
 msgid "Member?"
 msgstr ""
 
@@ -821,6 +831,13 @@ msgid "User Role Management"
 msgstr "Фойдаланувчи Роли Бошқаруви"
 
 msgid "Error loading user roles"
+msgstr ""
+
+msgid ""
+"There are no user roles to show here. You can add a new user role below."
+msgstr ""
+
+msgid "Add new user role"
 msgstr ""
 
 msgid "Profile"
@@ -958,6 +975,12 @@ msgstr ""
 msgid "User Management"
 msgstr "Фойдаланувчи Бошқариш"
 
+msgid "There are no users to show here. You can add a new user below."
+msgstr ""
+
+msgid "Add new user"
+msgstr ""
+
 msgid "Last login"
 msgstr "Охирги кириш"
 
@@ -980,7 +1003,7 @@ msgid "Other"
 msgstr "Бошқа"
 
 msgid "Created"
-msgstr "Яратилди"
+msgstr "Яратилган"
 
 msgid "Contact"
 msgstr ""

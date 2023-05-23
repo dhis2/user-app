@@ -1,16 +1,16 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2022
-# Valeriu Plesca <vplesca@gmail.com>, 2022
-# phil_dhis2, 2022
+# Viktor Varland <viktor@dhis2.org>, 2023
+# Valeriu Plesca <vplesca@gmail.com>, 2023
+# phil_dhis2, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-11-17T13:40:24.697Z\n"
-"PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: phil_dhis2, 2022\n"
-"Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
+"POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
+"PO-Revision-Date: 2023-05-22 19:30+0000\n"
+"Last-Translator: phil_dhis2, 2023\n"
+"Language-Team: Russian (https://app.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -250,6 +250,9 @@ msgstr ""
 msgid "All (Full authority)"
 msgstr ""
 
+msgid "Aggregate Data Exchange"
+msgstr ""
+
 msgid "Analytics Table Hook"
 msgstr ""
 
@@ -356,7 +359,7 @@ msgid "Program Stage"
 msgstr "Стадия программы"
 
 msgid "Program"
-msgstr "Программа"
+msgstr "Program"
 
 msgid "Program Indicator"
 msgstr "Индикатор программы"
@@ -398,7 +401,7 @@ msgid "Tracked Entity Instance"
 msgstr ""
 
 msgid "User Group"
-msgstr "Группа пользователей:"
+msgstr "Группа пользователей\\:"
 
 msgid "User Role"
 msgstr "Роль пользователя"
@@ -425,7 +428,7 @@ msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
 
 msgid "Search by name"
-msgstr "Поиск по имени"
+msgstr "Поиск по названию"
 
 msgid "Search for an organisation unit"
 msgstr ""
@@ -621,16 +624,16 @@ msgstr "Идентификатор LDAP"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr ""
 
-msgid "Send invite"
-msgstr "Отправить приглашение"
-
-msgid "Cancel invite"
-msgstr ""
-
 msgid "Invalid username"
 msgstr ""
 
 msgid "Invalid WhatsApp number"
+msgstr ""
+
+msgid "Send invite"
+msgstr "Отправить приглашение"
+
+msgid "Cancel invite"
 msgstr ""
 
 msgid "Error updating user"
@@ -786,6 +789,13 @@ msgstr "Новый"
 msgid "Error loading user groups"
 msgstr ""
 
+msgid ""
+"There are no user groups to show here. You can add a new user group below."
+msgstr ""
+
+msgid "Add new user group"
+msgstr ""
+
 msgid "Member?"
 msgstr ""
 
@@ -823,6 +833,13 @@ msgid "User Role Management"
 msgstr "Управление ролями пользователей"
 
 msgid "Error loading user roles"
+msgstr ""
+
+msgid ""
+"There are no user roles to show here. You can add a new user role below."
+msgstr ""
+
+msgid "Add new user role"
 msgstr ""
 
 msgid "Profile"
@@ -959,6 +976,12 @@ msgstr ""
 
 msgid "User Management"
 msgstr "Управление пользователями"
+
+msgid "There are no users to show here. You can add a new user below."
+msgstr ""
+
+msgid "Add new user"
+msgstr ""
 
 msgid "Last login"
 msgstr "Последний вход"
