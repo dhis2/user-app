@@ -3,15 +3,15 @@
 # phil_dhis2, 2022
 # 晓东 林 <13981924470@126.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
-# easylin <lin_xd@126.com>, 2022
+# easylin <lin_xd@126.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2022\n"
-"Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2023\n"
+"Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -151,13 +151,13 @@ msgid "Short, clear description of what this role is for."
 msgstr "简短、清晰地描述此角色的用途。"
 
 msgid "Metadata authorities"
-msgstr "元数据机构"
+msgstr "元数据授权"
 
 msgid "Set what metadata access this role has."
 msgstr "设置此角色拥有的元数据访问权限。"
 
 msgid "Other authorities"
-msgstr "其他当局"
+msgstr "其他授权"
 
 msgid ""
 "Manage access to apps, tracker, data import/export and system settings."
@@ -179,7 +179,7 @@ msgid "Available import/export authorities"
 msgstr "可用的导入导出授权"
 
 msgid "Selected import/export authorities"
-msgstr "选定的进出口当局"
+msgstr "选定的导入/导出授权"
 
 msgid "Available system authorities"
 msgstr "可用的系统权限"
