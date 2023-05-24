@@ -3,16 +3,16 @@
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Sheila André <sandre@saudigitus.org>, 2021
 # phil_dhis2, 2021
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # Ge Joao <gsimango@saudigitus.org>, 2021
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-02-16T18:07:59.076Z\n"
+"POT-Creation-Date: 2023-03-06T12:01:39.768Z\n"
 "PO-Revision-Date: 2021-09-04 00:49+0000\n"
-"Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2021\n"
-"Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023\n"
+"Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -641,9 +641,9 @@ msgstr "Gestão de usuários"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "{{count}} selecionado"
+msgstr[1] "{{count}} selecionado"
+msgstr[2] "{{count}} selecionado"
 
 msgid "Yes"
 msgstr "Sim"
@@ -701,6 +701,18 @@ msgstr "Um nome de usuário deve ter pelo menos 2 caracteres"
 
 msgid "Username may not exceed 140 characters"
 msgstr "O nome de usuário não pode exceder 140 caracteres"
+
+msgid "Surname should be at least 2 characters long"
+msgstr ""
+
+msgid "Surname may not exceed 160 characters"
+msgstr ""
+
+msgid "First name should be at least 2 characters long"
+msgstr ""
+
+msgid "First name may not exceed 160 characters"
+msgstr ""
 
 msgid "Please provide a valid international phone number (+0123456789)"
 msgstr ""
