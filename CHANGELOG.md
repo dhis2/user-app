@@ -1,3 +1,10 @@
+## [1.5.5](https://github.com/dhis2/user-app/compare/v1.5.4...v1.5.5) (2023-05-24)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([8d14d31](https://github.com/dhis2/user-app/commit/8d14d310973aad622614f31998f79bd5da9382b0))
+
 ## [1.5.4](https://github.com/dhis2/user-app/compare/v1.5.3...v1.5.4) (2023-05-23)
 
 
