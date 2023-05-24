@@ -9,7 +9,7 @@
         "dhis2Password": "district",
         "dhis2DataTestPrefix": "",
         "networkMode": "live",
-        "dhis2ApiVersion": "40"
+        "dhis2ApiVersion": "41"
     },
     "testFiles": "**/*.feature",
     "ignoreTestFiles": ["**/*-wip/*.feature"],
