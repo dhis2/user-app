@@ -68,7 +68,7 @@ msgid "Basic information"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "නම"
 
 msgid "Code"
 msgstr ""
@@ -197,7 +197,7 @@ msgid "Category Combo"
 msgstr ""
 
 msgid "Category"
-msgstr ""
+msgstr "කාණ්ඩය"
 
 msgid "Category Option"
 msgstr ""
@@ -263,7 +263,7 @@ msgid "Legend Set"
 msgstr ""
 
 msgid "Map"
-msgstr ""
+msgstr "සිතියම"
 
 msgid "Min-Max Data Element"
 msgstr ""
@@ -736,7 +736,7 @@ msgid "No, cancel"
 msgstr ""
 
 msgid "Yes, delete"
-msgstr ""
+msgstr "ඔව්, මකන්න"
 
 msgid "Joined user group \"{{- name}}\" successfuly"
 msgstr ""
