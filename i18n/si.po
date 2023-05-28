@@ -86,7 +86,7 @@ msgid "Name"
 msgstr "නම"
 
 msgid "Code"
-msgstr ""
+msgstr "කේත කරන්න"
 
 msgid "Used in analytics reports."
 msgstr ""
@@ -297,7 +297,7 @@ msgid "Data Set"
 msgstr ""
 
 msgid "Data Value"
-msgstr ""
+msgstr "දත්ත අගය"
 
 msgid "Document"
 msgstr ""
@@ -378,7 +378,7 @@ msgid "Relationship Type"
 msgstr ""
 
 msgid "Report"
-msgstr ""
+msgstr "වාර්තාව"
 
 msgid "Section"
 msgstr ""
@@ -477,10 +477,10 @@ msgid "Selected restrictions"
 msgstr ""
 
 msgid "Email address"
-msgstr ""
+msgstr "ඊමේල් ලිපිනය"
 
 msgid "First name"
-msgstr ""
+msgstr "මුල් නම"
 
 msgid "Last name"
 msgstr ""
@@ -504,19 +504,19 @@ msgid "Mobile phone number"
 msgstr ""
 
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 msgid "Facebook Messenger"
 msgstr ""
 
 msgid "Skype"
-msgstr ""
+msgstr "Skype"
 
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 msgid "Invite user"
 msgstr ""
@@ -593,7 +593,7 @@ msgid "New password"
 msgstr ""
 
 msgid "Password"
-msgstr ""
+msgstr "රහස්‍ය පදය"
 
 msgid ""
 "Minimum 8 characters, one uppercase and lowercase letter and one number"
@@ -956,7 +956,7 @@ msgid "Invitation"
 msgstr ""
 
 msgid "All invitations"
-msgstr ""
+msgstr "සියලු ආරාධනා"
 
 msgid "Expired invitations"
 msgstr ""
@@ -1010,7 +1010,7 @@ msgid "Send message"
 msgstr ""
 
 msgid "E-mail"
-msgstr ""
+msgstr "ඊමේල්"
 
 msgid "Permissions"
 msgstr ""
