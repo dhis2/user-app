@@ -91,7 +91,7 @@ msgid "Data Set"
 msgstr ""
 
 msgid "Data Value"
-msgstr ""
+msgstr "දත්ත අගය"
 
 msgid "Document"
 msgstr ""
@@ -172,7 +172,7 @@ msgid "Relationship Type"
 msgstr ""
 
 msgid "Report"
-msgstr ""
+msgstr "වාර්තාව"
 
 msgid "Section"
 msgstr ""
@@ -296,7 +296,7 @@ msgid "Username for new user"
 msgstr ""
 
 msgid "Password"
-msgstr ""
+msgstr "රහස්‍ය පදය"
 
 msgid "Password for new user"
 msgstr ""
@@ -350,7 +350,7 @@ msgid "Surname"
 msgstr ""
 
 msgid "First name"
-msgstr ""
+msgstr "මුල් නම"
 
 msgid "Introduction"
 msgstr ""
@@ -380,7 +380,7 @@ msgid "Speaks"
 msgstr ""
 
 msgid "E-mail"
-msgstr ""
+msgstr "ඊමේල්"
 
 msgid "Mobile phone number"
 msgstr ""
@@ -428,7 +428,7 @@ msgid "Name"
 msgstr "නම"
 
 msgid "Code"
-msgstr ""
+msgstr "කේත කරන්න"
 
 msgid ""
 "To add a user to this group, go to the User section and edit the user group "
@@ -516,19 +516,19 @@ msgid "LDAP identifier"
 msgstr ""
 
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 msgid "Facebook Messenger"
 msgstr ""
 
 msgid "Skype"
-msgstr ""
+msgstr "Skype"
 
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 msgid "Interface language"
 msgstr ""
@@ -600,7 +600,7 @@ msgid "Inactivity"
 msgstr ""
 
 msgid "All invitations"
-msgstr ""
+msgstr "සියලු ආරාධනා"
 
 msgid "Expired invitations"
 msgstr ""
