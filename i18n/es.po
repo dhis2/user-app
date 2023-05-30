@@ -4,14 +4,15 @@
 # phil_dhis2, 2020
 # William Aviles <waviles@clintonhealthaccess.org>, 2020
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
+# Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-03-11T14:08:46.110Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021\n"
-"Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
+"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2023\n"
+"Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -49,7 +50,7 @@ msgid "All (Full authority)"
 msgstr "Todo (Plena autoridad)"
 
 msgid "Analytics Table Hook"
-msgstr ""
+msgstr "Gancho de tabla de análisis"
 
 msgid "Attribute"
 msgstr "Atributo"
@@ -513,7 +514,7 @@ msgid "External authentication only (OpenID or LDAP)"
 msgstr "Solo autenticación externa (OpenID o LDAP)"
 
 msgid "Account expiration date"
-msgstr ""
+msgstr "Fecha de vencimiento de la cuenta"
 
 msgid "Disabled"
 msgstr "Inhabilitar"
@@ -522,7 +523,7 @@ msgid "Retype password"
 msgstr "Vuelva a escribir la contraseña"
 
 msgid "OIDC mapping value"
-msgstr ""
+msgstr "Valor de asignación de OIDC"
 
 msgid "LDAP identifier"
 msgstr "identificador LDAP"
