@@ -1,3 +1,10 @@
+## [1.5.10](https://github.com/dhis2/user-app/compare/v1.5.9...v1.5.10) (2023-05-31)
+
+
+### Bug Fixes
+
+* language drop downs [DHIS2-15328] ([#1147](https://github.com/dhis2/user-app/issues/1147)) ([afaaf1c](https://github.com/dhis2/user-app/commit/afaaf1c82f7469800b2530026836324b3fc2565a))
+
 ## [1.5.9](https://github.com/dhis2/user-app/compare/v1.5.8...v1.5.9) (2023-05-30)
 
 
