@@ -6,9 +6,15 @@ import { userAttributesQuery } from '../../attributes.js'
 const query = {
     interfaceLanguages: {
         resource: 'locales/ui',
+        params: {
+            fields: ['locale', 'name', 'displayName'],
+        },
     },
     databaseLanguages: {
         resource: 'locales/db',
+        params: {
+            fields: ['locale', 'name', 'displayName'],
+        },
     },
     userRoles: {
         resource: 'userRoles',
@@ -41,8 +47,8 @@ const query = {
 const optionsFromLanguages = (languages) =>
     // It is possible for the server to return duplicate entries for database locales
     uniqBy(
-        languages.map(({ name, locale }) => ({
-            label: name,
+        languages.map(({ name, displayName, locale }) => ({
+            label: name === displayName ? name : `${name} — ${displayName}`,
             value: locale,
         })),
         'value'

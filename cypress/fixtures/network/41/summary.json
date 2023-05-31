@@ -1,0 +1,18 @@
+{
+    "count": 339,
+    "totalResponseSize": 210295,
+    "duplicates": 265,
+    "nonDeterministicResponses": 24,
+    "apiVersion": "41",
+    "fixtureFiles": [
+        "static_resources.json",
+        "show_tiles_with_list_and_add_action_to_all_available_sections.json",
+        "the_app_has_a_main_navigation.json",
+        "user_groups_can_be_listed.json",
+        "the_user_group_list_can_be_searched.json",
+        "user_roles_can_be_listed.json",
+        "the_user_role_list_can_be_searched.json",
+        "users_can_be_listed.json",
+        "the_user_list_can_be_searched.json"
+    ]
+}
