@@ -452,6 +452,8 @@ msgid ""
 "To add a user to this group, go to the User section and edit the user group "
 "settings for a specific user."
 msgstr ""
+"Para agregar un usuario a este grupo, vaya a la sección Usuario y edite la "
+"configuración del grupo de usuarios para un usuario específico."
 
 msgid "Available user groups"
 msgstr "Grupos de usuarios disponibles"
