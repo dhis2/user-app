@@ -2,14 +2,15 @@
 # Translators:
 # Cherise Beek <cherise.beek@gmail.com>, 2021
 # Rica Zamora Duchateau, 2022
+# Charel van den Elsen, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-02-16T18:07:59.076Z\n"
+"POT-Creation-Date: 2023-03-06T12:01:39.768Z\n"
 "PO-Revision-Date: 2021-09-04 00:49+0000\n"
-"Last-Translator: Rica Zamora Duchateau, 2022\n"
-"Language-Team: Dutch (https://www.transifex.com/hisp-uio/teams/100509/nl/)\n"
+"Last-Translator: Charel van den Elsen, 2023\n"
+"Language-Team: Dutch (https://app.transifex.com/hisp-uio/teams/100509/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -223,7 +224,7 @@ msgid "Visualization"
 msgstr ""
 
 msgid "Apps"
-msgstr ""
+msgstr "Apps"
 
 msgid "Tracker"
 msgstr ""
@@ -686,6 +687,18 @@ msgid "A username should be at least 2 characters long"
 msgstr ""
 
 msgid "Username may not exceed 140 characters"
+msgstr ""
+
+msgid "Surname should be at least 2 characters long"
+msgstr ""
+
+msgid "Surname may not exceed 160 characters"
+msgstr ""
+
+msgid "First name should be at least 2 characters long"
+msgstr ""
+
+msgid "First name may not exceed 160 characters"
 msgstr ""
 
 msgid "Please provide a valid international phone number (+0123456789)"
