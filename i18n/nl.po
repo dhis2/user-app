@@ -80,7 +80,7 @@ msgid "Constant"
 msgstr ""
 
 msgid "Dashboard"
-msgstr ""
+msgstr "Dashboard"
 
 msgid "Data Element Group Sets"
 msgstr ""
@@ -179,7 +179,7 @@ msgid "Relationship Type"
 msgstr ""
 
 msgid "Report"
-msgstr ""
+msgstr "Rapport"
 
 msgid "Section"
 msgstr ""
@@ -236,7 +236,7 @@ msgid "System"
 msgstr ""
 
 msgid "Add"
-msgstr ""
+msgstr "Toevoegen"
 
 msgid "list"
 msgstr ""
@@ -330,7 +330,7 @@ msgid "There was a problem displaying the GroupEditor"
 msgstr ""
 
 msgid "Apply"
-msgstr ""
+msgstr "Toepassen"
 
 msgid "Clear all"
 msgstr ""
