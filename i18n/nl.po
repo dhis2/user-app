@@ -281,7 +281,7 @@ msgid "Constant"
 msgstr ""
 
 msgid "Dashboard"
-msgstr ""
+msgstr "Dashboard"
 
 msgid "Data Element Group Sets"
 msgstr ""
@@ -380,7 +380,7 @@ msgid "Relationship Type"
 msgstr ""
 
 msgid "Report"
-msgstr ""
+msgstr "Rapport"
 
 msgid "Section"
 msgstr ""
@@ -451,7 +451,7 @@ msgid "No matches found"
 msgstr ""
 
 msgid "Apply"
-msgstr ""
+msgstr "Toepassen"
 
 msgid "Clear all"
 msgstr ""
@@ -782,7 +782,7 @@ msgid "User Group Management"
 msgstr ""
 
 msgid "New"
-msgstr ""
+msgstr "Nieuw"
 
 msgid "Error loading user groups"
 msgstr ""
@@ -804,10 +804,10 @@ msgid "Member"
 msgstr ""
 
 msgid "List"
-msgstr ""
+msgstr "Lijst"
 
 msgid "Add"
-msgstr ""
+msgstr "Toevoegen"
 
 msgid "Create, modify, view and delete Users"
 msgstr ""
@@ -985,7 +985,7 @@ msgid "Last login"
 msgstr ""
 
 msgid "Status"
-msgstr ""
+msgstr "status"
 
 msgid "Disabled"
 msgstr ""
