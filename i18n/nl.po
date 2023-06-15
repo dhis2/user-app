@@ -349,7 +349,7 @@ msgid "Last login"
 msgstr ""
 
 msgid "Created"
-msgstr ""
+msgstr "Gemaakt"
 
 msgid "Surname"
 msgstr ""
@@ -385,7 +385,7 @@ msgid "Speaks"
 msgstr ""
 
 msgid "E-mail"
-msgstr ""
+msgstr "E-mail"
 
 msgid "Mobile phone number"
 msgstr ""
