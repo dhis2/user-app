@@ -612,7 +612,7 @@ msgid "Last login"
 msgstr ""
 
 msgid "Created"
-msgstr ""
+msgstr "Gemaakt"
 
 msgid "Introduction"
 msgstr ""
@@ -642,7 +642,7 @@ msgid "Speaks"
 msgstr ""
 
 msgid "E-mail"
-msgstr ""
+msgstr "E-mail"
 
 msgid "Organisations units"
 msgstr ""
@@ -826,7 +826,7 @@ msgid "Error loading user roles"
 msgstr ""
 
 msgid "Profile"
-msgstr ""
+msgstr "Profiel"
 
 msgid "Replicate"
 msgstr ""
