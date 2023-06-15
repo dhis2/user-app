@@ -827,7 +827,7 @@ msgid "Error loading user roles"
 msgstr ""
 
 msgid "Profile"
-msgstr ""
+msgstr "Profiel"
 
 msgid "Replicate"
 msgstr ""
@@ -983,7 +983,7 @@ msgid "Other"
 msgstr ""
 
 msgid "Created"
-msgstr ""
+msgstr "Gemaakt"
 
 msgid "Contact"
 msgstr "Contact"
@@ -992,7 +992,7 @@ msgid "Send message"
 msgstr ""
 
 msgid "E-mail"
-msgstr ""
+msgstr "E-mail"
 
 msgid "Permissions"
 msgstr ""
