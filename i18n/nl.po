@@ -26,7 +26,7 @@ msgid "Use database locale / no translation"
 msgstr ""
 
 msgid "Search"
-msgstr ""
+msgstr "Zoek"
 
 msgid "Enter search term"
 msgstr ""
@@ -270,7 +270,7 @@ msgid "You are not allowed to edit"
 msgstr ""
 
 msgid "Confirm"
-msgstr ""
+msgstr "Bevestigen"
 
 msgid "There was an error fetching the list"
 msgstr ""
@@ -354,34 +354,34 @@ msgid "Created"
 msgstr "Gemaakt"
 
 msgid "Surname"
-msgstr ""
+msgstr "Achternaam"
 
 msgid "First name"
-msgstr ""
+msgstr "Voornaam"
 
 msgid "Introduction"
-msgstr ""
+msgstr "Introductie"
 
 msgid "Job title"
-msgstr ""
+msgstr "Functietitel"
 
 msgid "Works at"
 msgstr ""
 
 msgid "Education"
-msgstr ""
+msgstr "Onderwijs"
 
 msgid "Interests"
-msgstr ""
+msgstr "Interesses"
 
 msgid "Nationality"
-msgstr ""
+msgstr "Nationaliteit"
 
 msgid "Birthday"
-msgstr ""
+msgstr "Verjaardag"
 
 msgid "Gender"
-msgstr ""
+msgstr "Geslacht"
 
 msgid "Speaks"
 msgstr ""
@@ -390,13 +390,13 @@ msgid "E-mail"
 msgstr "E-mail"
 
 msgid "Mobile phone number"
-msgstr ""
+msgstr "Mobiele telefoonnummer"
 
 msgid "Organisations units"
 msgstr ""
 
 msgid "User roles"
-msgstr ""
+msgstr "Gebruikersrollen"
 
 msgid "Members"
 msgstr ""
@@ -523,25 +523,25 @@ msgid "LDAP identifier"
 msgstr ""
 
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 msgid "Facebook Messenger"
-msgstr ""
+msgstr "Facebook messenger"
 
 msgid "Skype"
-msgstr ""
+msgstr "Skype"
 
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 msgid "Interface language"
-msgstr ""
+msgstr "Interfacetaal"
 
 msgid "Database language"
-msgstr ""
+msgstr "Database taal"
 
 msgid "Available roles"
 msgstr ""
@@ -629,8 +629,8 @@ msgstr ""
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{{count}} geselecteerd"
+msgstr[1] "{{count}} geselecteerd"
 
 msgid "Yes"
 msgstr "Ja"
@@ -660,7 +660,7 @@ msgid "Please enter a valid date with the following format yyyy-mm-dd"
 msgstr ""
 
 msgid "Please provide a valid email address"
-msgstr ""
+msgstr "geef alstublieft een geldig email adres"
 
 msgid "Value should be an integer"
 msgstr ""
@@ -705,22 +705,22 @@ msgid "Please provide a valid international phone number (+0123456789)"
 msgstr ""
 
 msgid "Password should be at least 8 characters long"
-msgstr ""
+msgstr "Wachtwoord moet minimaal 8 tekens lang zijn"
 
 msgid "Password should be no longer than 34 characters"
-msgstr ""
+msgstr "Wachtwoord mag niet langer zijn dan 34 tekens"
 
 msgid "Password should contain at least one lowercase letter"
-msgstr ""
+msgstr "Wachtwoord moet minimaal één kleine letter bevatten"
 
 msgid "Password should contain at least one UPPERCASE letter"
-msgstr ""
+msgstr "Wachtwoord moet minimaal één HOOFDLETTER bevatten"
 
 msgid "Password should contain at least one number"
-msgstr ""
+msgstr "Wachtwoord moet minimaal één cijfer bevatten"
 
 msgid "Password should have at least one special character"
-msgstr ""
+msgstr "Wachtwoord moet minimaal één speciaal teken bevatten"
 
 msgid "Username already taken"
 msgstr ""
