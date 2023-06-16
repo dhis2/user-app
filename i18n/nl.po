@@ -466,16 +466,16 @@ msgid "Email address"
 msgstr ""
 
 msgid "First name"
-msgstr ""
+msgstr "Voornaam"
 
 msgid "Last name"
 msgstr ""
 
 msgid "Interface language"
-msgstr ""
+msgstr "Interfacetaal"
 
 msgid "Database language"
-msgstr ""
+msgstr "Database taal"
 
 msgid "Use database locale / no translation"
 msgstr ""
@@ -487,22 +487,22 @@ msgid "Contact details"
 msgstr ""
 
 msgid "Mobile phone number"
-msgstr ""
+msgstr "Mobiele telefoonnummer"
 
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 msgid "Facebook Messenger"
-msgstr ""
+msgstr "Facebook messenger"
 
 msgid "Skype"
-msgstr ""
+msgstr "Skype"
 
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 msgid "Invite user"
 msgstr ""
@@ -543,7 +543,7 @@ msgid "The organisation units that this user can export and analyse."
 msgstr ""
 
 msgid "Search"
-msgstr ""
+msgstr "Zoek"
 
 msgid "The organisation that this user can search for and in."
 msgstr ""
@@ -628,7 +628,7 @@ msgid "Passwords do not match"
 msgstr ""
 
 msgid "Please provide a value"
-msgstr ""
+msgstr "Geef een waarde op"
 
 msgid "Create, modify, view and delete Users"
 msgstr ""
@@ -974,13 +974,13 @@ msgid "Disabled"
 msgstr ""
 
 msgid "Male"
-msgstr ""
+msgstr "Mannelijk"
 
 msgid "Female"
-msgstr ""
+msgstr "Vrouwelijk"
 
 msgid "Other"
-msgstr ""
+msgstr "Anders"
 
 msgid "Created"
 msgstr "Gemaakt"
@@ -1004,28 +1004,28 @@ msgid "User units"
 msgstr ""
 
 msgid "Introduction"
-msgstr ""
+msgstr "Introductie"
 
 msgid "Job title"
-msgstr ""
+msgstr "Functietitel"
 
 msgid "Works at"
 msgstr ""
 
 msgid "Gender"
-msgstr ""
+msgstr "Geslacht"
 
 msgid "Speaks"
 msgstr ""
 
 msgid "Nationality"
-msgstr ""
+msgstr "Nationaliteit"
 
 msgid "Education"
-msgstr ""
+msgstr "Onderwijs"
 
 msgid "Interests"
-msgstr ""
+msgstr "Interesses"
 
 msgid "Birthday"
-msgstr ""
+msgstr "Verjaardag"
