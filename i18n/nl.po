@@ -54,7 +54,7 @@ msgid "Analytics Table Hook"
 msgstr ""
 
 msgid "Attribute"
-msgstr ""
+msgstr "Attribuut"
 
 msgid "Category Combo"
 msgstr ""
@@ -180,7 +180,7 @@ msgid "Report"
 msgstr "Rapport"
 
 msgid "Section"
-msgstr ""
+msgstr "Sectie"
 
 msgid "SQL View"
 msgstr ""
@@ -313,7 +313,7 @@ msgid "Cancel"
 msgstr "Annuleer"
 
 msgid "Search by name"
-msgstr ""
+msgstr "Zoek op naam"
 
 msgid "Could not load available items"
 msgstr ""
