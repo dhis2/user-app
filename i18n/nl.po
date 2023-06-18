@@ -257,7 +257,7 @@ msgid "Analytics Table Hook"
 msgstr ""
 
 msgid "Attribute"
-msgstr ""
+msgstr "Attribuut"
 
 msgid "Category Combo"
 msgstr ""
@@ -383,7 +383,7 @@ msgid "Report"
 msgstr "Rapport"
 
 msgid "Section"
-msgstr ""
+msgstr "Sectie"
 
 msgid "SQL View"
 msgstr ""
@@ -428,7 +428,7 @@ msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
 
 msgid "Search by name"
-msgstr ""
+msgstr "Zoek op naam"
 
 msgid "Search for an organisation unit"
 msgstr ""
