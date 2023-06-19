@@ -1,3 +1,4 @@
+import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     Layer,
@@ -45,6 +46,9 @@ const ContextMenu = ({
     refetchUsers,
     onClose,
 }) => {
+    const {
+        systemInfo: { emailConfigured },
+    } = useConfig()
     const [CurrentModal, setCurrentModal] = useCurrentModal()
     const {
         access,
@@ -53,6 +57,8 @@ const ContextMenu = ({
     const canReplicate =
         access.update && currentUser.authorities.has('F_REPLICATE_USER')
     const canResetPassword =
+        emailConfigured &&
+        user.email &&
         access.update &&
         (currentUser.authorities.has('F_USER_ADD') ||
             currentUser.authorities.has('F_USER_ADD_WITHIN_MANAGED_GROUP'))
@@ -171,6 +177,7 @@ ContextMenu.propTypes = {
             disabled: PropTypes.bool.isRequired,
             twoFA: PropTypes.bool.isRequired,
         }).isRequired,
+        email: PropTypes.string,
     }).isRequired,
     onClose: PropTypes.func.isRequired,
 }
