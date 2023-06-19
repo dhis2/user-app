@@ -4,8 +4,8 @@ import { NoticeBox, composeValidators, hasValue, FinalForm } from '@dhis2/ui'
 import { flatMap } from 'lodash-es'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { useHistory } from 'react-router-dom'
 import { useCurrentUser } from '../../hooks/useCurrentUser.js'
+import navigateTo from '../../utils/navigateTo.js'
 import Form, { FormSection, TextField, TransferField } from '../Form.js'
 import { getJsonPatch } from './getJsonPatch.js'
 import { getRoleData } from './getRoleData.js'
@@ -49,7 +49,6 @@ const getRoleAuthorityIDs = ({
 }
 
 const RoleForm = ({ submitButtonLabel, role }) => {
-    const history = useHistory()
     const engine = useDataEngine()
     const debouncedUniqueRoleNameValidator =
         useDebouncedUniqueRoleNameValidator({ engine, roleName: role?.name })
@@ -100,7 +99,7 @@ const RoleForm = ({ submitButtonLabel, role }) => {
                 })
             }
 
-            history.goBack()
+            navigateTo('/user-roles')
             if (role && currentUser.userRoleIds.includes(role.id)) {
                 currentUser.refresh()
             }

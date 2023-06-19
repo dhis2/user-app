@@ -3,8 +3,8 @@ import i18n from '@dhis2/d2-i18n'
 import { NoticeBox, FinalForm } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { useHistory } from 'react-router-dom'
 import { useCurrentUser } from '../../hooks/useCurrentUser.js'
+import navigateTo from '../../utils/navigateTo.js'
 import Attributes from '../Attributes/index.js'
 import Form, { FormSection } from '../Form.js'
 import BasicInformationSection from './BasicInformationSection.js'
@@ -18,7 +18,6 @@ import UserGroupManagementSection from './UserGroupManagementSection.js'
 import UserManagementSection from './UserManagementSection.js'
 
 const GroupForm = ({ submitButtonLabel, group }) => {
-    const history = useHistory()
     const engine = useDataEngine()
     const { loading, error, userGroupOptions, attributes } = useFormData()
     const currentUser = useCurrentUser()
@@ -43,7 +42,7 @@ const GroupForm = ({ submitButtonLabel, group }) => {
                 })
             }
 
-            history.goBack()
+            navigateTo('/user-groups')
             if (group && currentUser.userGroupIds.includes(group.id)) {
                 currentUser.refresh()
             }

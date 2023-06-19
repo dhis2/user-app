@@ -4,8 +4,8 @@ import { NoticeBox, FinalForm } from '@dhis2/ui'
 import { keyBy } from 'lodash-es'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
 import { useCurrentUser } from '../../hooks/useCurrentUser.js'
+import navigateTo from '../../utils/navigateTo.js'
 import Attributes from '../Attributes/index.js'
 import Form, { FormSection } from '../Form.js'
 import AnalyticsDimensionsRestrictionsSection from './AnalyticsDimensionRestrictionsSection.js'
@@ -30,7 +30,6 @@ const UserForm = ({
         systemInfo: { emailConfigured },
     } = useConfig()
     const [isInvite, setIsInvite] = useState(false)
-    const history = useHistory()
     const engine = useDataEngine()
     const {
         loading,
@@ -107,7 +106,7 @@ const UserForm = ({
                 }
             }
 
-            history.goBack()
+            navigateTo('/users')
             if (user && user.id === currentUser.id) {
                 currentUser.refresh()
             }
