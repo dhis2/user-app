@@ -43,6 +43,12 @@ export const getUserData = ({
             )
         )
 
+    // See https://jira.dhis2.org/browse/DHIS2-10569
+    const updatedAccountExpiry =
+        typeof accountExpiry === 'string' && accountExpiry !== ''
+            ? accountExpiry
+            : undefined
+
     return {
         // Because the data object is used as the payload of a PUT request,
         // properties that are omitted will be removed. To prevent this, all
@@ -60,11 +66,7 @@ export const getUserData = ({
                 !inviteUser && !externalAuth && (!user || changePassword)
                     ? password
                     : undefined,
-            // See https://jira.dhis2.org/browse/DHIS2-10569
-            accountExpiry:
-                typeof accountExpiry === 'string' && accountExpiry !== ''
-                    ? accountExpiry
-                    : undefined,
+            accountExpiry: updatedAccountExpiry,
             openId,
             ldapId,
             externalAuth,
@@ -77,6 +79,7 @@ export const getUserData = ({
             ),
         },
 
+        accountExpiry: updatedAccountExpiry,
         email,
         firstName,
         surname,
