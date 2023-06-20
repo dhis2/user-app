@@ -70,7 +70,7 @@ msgid "Could not load current user information."
 msgstr ""
 
 msgid "Filter options"
-msgstr ""
+msgstr "Filter opties"
 
 msgid "Error fetching form"
 msgstr ""
@@ -716,7 +716,7 @@ msgid "ID"
 msgstr "ID"
 
 msgid "Show details"
-msgstr ""
+msgstr "Toon details"
 
 msgid "Sharing settings"
 msgstr "Instellingen voor delen"
