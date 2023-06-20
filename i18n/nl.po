@@ -49,7 +49,7 @@ msgid "Send message"
 msgstr ""
 
 msgid "Filter options"
-msgstr ""
+msgstr "Filter opties"
 
 msgid "Error fetching form"
 msgstr ""
@@ -708,7 +708,7 @@ msgid "There was an error fetching this user."
 msgstr ""
 
 msgid "Show details"
-msgstr ""
+msgstr "Toon details"
 
 msgid "Sharing settings"
 msgstr "Instellingen voor delen"
