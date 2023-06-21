@@ -29,13 +29,13 @@ msgstr "属性应该唯一，值已经被使用"
 
 msgid ""
 "There was a problem whilst checking the availability of this attribute value"
-msgstr ""
+msgstr "检查此属性值的可用性时出现问题"
 
 msgid "Value should be a positive integer"
 msgstr "值应该是应该正整数"
 
 msgid "Value should be a negative integer"
-msgstr ""
+msgstr "值应为负整数"
 
 msgid "No results found"
 msgstr "没有结果"
@@ -44,13 +44,13 @@ msgid "Display name"
 msgstr "显示名"
 
 msgid "1 pending change"
-msgstr ""
+msgstr "1 项待定更改"
 
 msgid "{{pendingChanges}} pending changes"
-msgstr ""
+msgstr "{{pendingChanges}} 未决更改"
 
 msgid "Cancel all"
-msgstr ""
+msgstr "全部取消"
 
 msgid "Cancel"
 msgstr "取消"
@@ -59,10 +59,10 @@ msgid "Action"
 msgstr "Action"
 
 msgid "Will be added"
-msgstr ""
+msgstr "将添加"
 
 msgid "Will be removed"
-msgstr ""
+msgstr "将被移除"
 
 msgid "Network error"
 msgstr "网络错误"
@@ -74,16 +74,16 @@ msgid "Filter options"
 msgstr "过滤选项"
 
 msgid "Error fetching form"
-msgstr ""
+msgstr "获取表单时出错"
 
 msgid "There was an error fetching this form."
-msgstr ""
+msgstr "获取此表单时出错。"
 
 msgid "Cancel without saving"
 msgstr "取消而不保存"
 
 msgid "Basic information"
-msgstr ""
+msgstr "基本信息"
 
 msgid "Name"
 msgstr "名称"
@@ -92,46 +92,46 @@ msgid "Code"
 msgstr "代码"
 
 msgid "Used in analytics reports."
-msgstr ""
+msgstr "用于分析报告。"
 
 msgid "Search for a user in this group"
-msgstr ""
+msgstr "在此组中搜索用户"
 
 msgid "Search for a user to add"
-msgstr ""
+msgstr "搜索要添加的用户"
 
 msgid "1 user selected"
-msgstr ""
+msgstr "已选择 1 位用户"
 
 msgid "{{selectedCount}} users selected"
-msgstr ""
+msgstr "{{selectedCount}} 用户已选择"
 
 msgid "Remove 1 user"
-msgstr ""
+msgstr "移除 1 位用户"
 
 msgid "Remove {{selectedCount}} users"
-msgstr ""
+msgstr "删除 {{selectedCount}} 用户"
 
 msgid "Add 1 user"
-msgstr ""
+msgstr "添加 1 个用户"
 
 msgid "Add {{selectedCount}} users"
-msgstr ""
+msgstr "添加 {{selectedCount}} 用户"
 
 msgid "Remove from group"
-msgstr ""
+msgstr "从组中删除"
 
 msgid "Add to group"
-msgstr ""
+msgstr "添加到群组"
 
 msgid "There aren't any users in this group yet"
-msgstr ""
+msgstr "该群组还没有任何用户"
 
 msgid "View and remove users from group"
-msgstr ""
+msgstr "查看和删除组中的用户"
 
 msgid "Add users to group"
-msgstr ""
+msgstr "将用户添加到组"
 
 msgid "Username"
 msgstr "用户名"
@@ -140,20 +140,20 @@ msgid "Error loading users"
 msgstr "加载用户时出错"
 
 msgid "Error updating group"
-msgstr ""
+msgstr "更新组时出错"
 
 msgid "Error creating group"
-msgstr ""
+msgstr "创建群组时出错"
 
 msgid "Attributes"
 msgstr "属性"
 
 msgid "User group management"
-msgstr ""
+msgstr "用户组管理"
 
 msgid ""
 "This group can manage other user groups. Add managed user groups below."
-msgstr ""
+msgstr "该组可以管理其他用户组。在下面添加受管理的用户组。"
 
 msgid "Available user groups"
 msgstr "可用用户组"
@@ -165,33 +165,33 @@ msgid "User management"
 msgstr "用户管理"
 
 msgid "Add or remove users from this group."
-msgstr ""
+msgstr "向该组添加或删除用户。"
 
 msgid "Name is already taken"
 msgstr "名称已被占用"
 
 msgid ""
 "There was a problem whilst checking the availability of this group name"
-msgstr ""
+msgstr "检查此组名的可用性时出现问题"
 
 msgid "Code is already taken"
-msgstr ""
+msgstr "代码已被占用"
 
 msgid ""
 "There was a problem whilst checking the availability of this group code"
-msgstr ""
+msgstr "检查此组代码的可用性时出现问题"
 
 msgid "Only show selected metadata authorities"
-msgstr ""
+msgstr "只显示选定的元数据权威"
 
 msgid "Authority"
-msgstr ""
+msgstr "权威"
 
 msgid "Add/Update Public"
-msgstr ""
+msgstr "添加/更新公共"
 
 msgid "Add/Update Private"
-msgstr ""
+msgstr "添加/更新私人"
 
 msgid "Delete"
 msgstr "删除"
@@ -200,41 +200,41 @@ msgid "External access"
 msgstr "外部访问"
 
 msgid "Error updating role"
-msgstr ""
+msgstr "更新角色时出错"
 
 msgid "Error creating role"
-msgstr ""
+msgstr "创建角色时出错"
 
 msgid "Description"
 msgstr "描述"
 
 msgid "Short, clear description of what this role is for."
-msgstr ""
+msgstr "简短、清晰地描述此角色的用途。"
 
 msgid "Metadata authorities"
 msgstr "元数据授权"
 
 msgid "Set what metadata access this role has."
-msgstr ""
+msgstr "设置此角色具有的元数据访问权限。"
 
 msgid "Other authorities"
 msgstr "其他授权"
 
 msgid ""
 "Manage access to apps, tracker, data import/export and system settings."
-msgstr ""
+msgstr "管理对应用程序、跟踪器、数据导入/导出和系统设置的访问。"
 
 msgid "Available app authorities"
-msgstr ""
+msgstr "可用的应用权限"
 
 msgid "Selected app authorities"
-msgstr ""
+msgstr "选定的应用程序权限"
 
 msgid "Available tracker authorities"
-msgstr ""
+msgstr "可用的跟踪器权限"
 
 msgid "Selected tracker authorities"
-msgstr ""
+msgstr "选定的跟踪机构"
 
 msgid "Available import/export authorities"
 msgstr "可用的导入导出授权"
@@ -243,10 +243,10 @@ msgid "Selected import/export authorities"
 msgstr "选定的导入/导出授权"
 
 msgid "Available system authorities"
-msgstr ""
+msgstr "可用的系统权限"
 
 msgid "Selected system authorities"
-msgstr ""
+msgstr "选定的系统权限"
 
 msgid "All (Full authority)"
 msgstr "所有（完全授权）"
@@ -426,18 +426,19 @@ msgid "Visualization"
 msgstr "可视化"
 
 msgid "There was a problem whilst checking the availability of this role name"
-msgstr ""
+msgstr "检查此角色名称的可用性时出现问题"
 
 msgid "Search by name"
 msgstr "按名称搜索"
 
 msgid "Search for an organisation unit"
-msgstr ""
+msgstr "搜索组织单位"
 
 msgid ""
 "Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
 "please refine your search to see more."
 msgstr ""
+"显示 {{visibleItemsCount}} 个搜索结果，共 {{totalSearchResultCount}} 个，请优化您的搜索以查看更多。"
 
 msgid "Something went wrong when processing your request."
 msgstr "处理你的请求发生错误"
@@ -458,7 +459,7 @@ msgid "Clear all"
 msgstr "全清除"
 
 msgid "Insufficient permissions"
-msgstr ""
+msgstr "权限不足"
 
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
@@ -471,16 +472,16 @@ msgid "User group"
 msgstr "用户组"
 
 msgid "Analytics dimension restrictions"
-msgstr ""
+msgstr "分析维度限制"
 
 msgid "Available restrictions"
-msgstr ""
+msgstr "可用限制"
 
 msgid "Selected restrictions"
-msgstr ""
+msgstr "选定的限制"
 
 msgid "Email address"
-msgstr ""
+msgstr "电子邮件地址"
 
 msgid "First name"
 msgstr "姓名"
@@ -498,10 +499,10 @@ msgid "Use database locale / no translation"
 msgstr "使用数据库方言/不翻译"
 
 msgid "Disable this user account"
-msgstr ""
+msgstr "禁用此用户帐户"
 
 msgid "Contact details"
-msgstr ""
+msgstr "联系方式"
 
 msgid "Mobile phone number"
 msgstr "电话号码"
@@ -522,7 +523,7 @@ msgid "Twitter"
 msgstr "Twitter"
 
 msgid "Invite user"
-msgstr ""
+msgstr "邀请用户"
 
 msgid "Create account or email invitation"
 msgstr "创建帐号或邮件邀请"
@@ -534,27 +535,27 @@ msgid "Email invitation to create account"
 msgstr "邮件邀请创建账号"
 
 msgid "Organisation unit access"
-msgstr ""
+msgstr "组织单位访问"
 
 msgid ""
 "Customise the organisation units this user has access to for searching, "
 "capturing and managing data."
-msgstr ""
+msgstr "自定义该用户有权访问以搜索、捕获和管理数据的组织单位。"
 
 msgid "Organisation unit selections are recursive"
-msgstr ""
+msgstr "组织单位选择是递归的"
 
 msgid "Selecting a unit gives access to all units in its sub-hierarchy."
-msgstr ""
+msgstr "选择一个单元可以访问其子层次结构中的所有单元。"
 
 msgid "Data capture and maintenance"
-msgstr ""
+msgstr "数据采集与维护"
 
 msgid "The organisation units that this user can enter and edit data for."
-msgstr ""
+msgstr "该用户可以为其输入和编辑数据的组织单位。"
 
 msgid "Data output and analysis"
-msgstr ""
+msgstr "数据输出与分析"
 
 msgid "The organisation units that this user can export and analyse."
 msgstr "该用户可以导出和分析的组织单位。"
@@ -563,34 +564,34 @@ msgid "Search"
 msgstr "搜索"
 
 msgid "The organisation that this user can search for and in."
-msgstr ""
+msgstr "该用户可以搜索和所在的组织。"
 
 msgid "Maximum organisation unit level for data output"
 msgstr "数据输出的最大组织单位级别"
 
 msgid "Roles and groups"
-msgstr ""
+msgstr "角色和组"
 
 msgid "Manage what roles and groups this user is a member of."
-msgstr ""
+msgstr "管理此用户所属的角色和组。"
 
 msgid "Available user roles"
-msgstr ""
+msgstr "可用的用户角色"
 
 msgid "User roles this user is assigned"
-msgstr ""
+msgstr "分配给此用户的用户角色"
 
 msgid "User groups this user is a member of"
-msgstr ""
+msgstr "该用户所属的用户组"
 
 msgid "Security"
 msgstr "安全"
 
 msgid "Settings for how this user can log in."
-msgstr ""
+msgstr "该用户如何登录的设置。"
 
 msgid "Change user password"
-msgstr ""
+msgstr "更改用户密码"
 
 msgid "New password"
 msgstr "新口令"
@@ -600,13 +601,13 @@ msgstr "口令"
 
 msgid ""
 "Minimum 8 characters, one uppercase and lowercase letter and one number"
-msgstr ""
+msgstr "最少8个字符，一个大小写字母和一个数字"
 
 msgid "Repeat new password"
 msgstr "重复新口令"
 
 msgid "Repeat password"
-msgstr ""
+msgstr "重复输入密码"
 
 msgid "Account expiration date"
 msgstr "帐户到期日期"
@@ -615,19 +616,19 @@ msgid "OIDC mapping value"
 msgstr "OIDC映射值"
 
 msgid "OpenID Connect mapping claim for your identity platform"
-msgstr ""
+msgstr "身份平台的 OpenID Connect 映射声明"
 
 msgid "LDAP identifier"
 msgstr "LDAP标识"
 
 msgid "External authentication only (OpenID / LDAP)"
-msgstr ""
+msgstr "仅限外部身份验证 (OpenID / LDAP)"
 
 msgid "Invalid username"
-msgstr ""
+msgstr "无效的用户名"
 
 msgid "Invalid WhatsApp number"
-msgstr ""
+msgstr "无效的 WhatsApp 号码"
 
 msgid "Send invite"
 msgstr "发送邀请"
@@ -636,10 +637,10 @@ msgid "Cancel invite"
 msgstr "取消邀请"
 
 msgid "Error updating user"
-msgstr ""
+msgstr "更新用户时出错"
 
 msgid "Error creating user"
-msgstr ""
+msgstr "创建用户时出错"
 
 msgid "Username already taken"
 msgstr "用户名已经使用"
@@ -651,58 +652,58 @@ msgid "Passwords do not match"
 msgstr "口令不匹配"
 
 msgid "Please provide a value"
-msgstr ""
+msgstr "请提供一个值"
 
 msgid "New group"
-msgstr ""
+msgstr "新建群组"
 
 msgid "Create group"
-msgstr ""
+msgstr "创建组"
 
 msgid "New role"
-msgstr ""
+msgstr "新角色"
 
 msgid "Create role"
-msgstr ""
+msgstr "创建角色"
 
 msgid "Error fetching interface language"
-msgstr ""
+msgstr "获取界面语言时出错"
 
 msgid "There was an error fetching the default interface language."
-msgstr ""
+msgstr "获取默认界面语言时出错。"
 
 msgid "New user"
 msgstr "新用户"
 
 msgid "Create user"
-msgstr ""
+msgstr "创建用户"
 
 msgid "Error fetching group"
-msgstr ""
+msgstr "获取群组时出错"
 
 msgid "There was an error fetching this group."
-msgstr ""
+msgstr "获取该群组时出错。"
 
 msgid "Edit group"
-msgstr ""
+msgstr "编辑群组"
 
 msgid "Save changes"
 msgstr "保存修改"
 
 msgid "Error fetching role"
-msgstr ""
+msgstr "获取角色时出错"
 
 msgid "There was an error fetching this role."
-msgstr ""
+msgstr "获取此角色时出错。"
 
 msgid "Edit role"
-msgstr ""
+msgstr "编辑角色"
 
 msgid "Error fetching user"
-msgstr ""
+msgstr "获取用户时出错"
 
 msgid "There was an error fetching this user."
-msgstr ""
+msgstr "获取此用户时出错。"
 
 msgid "Edit user"
 msgstr "编辑用户"
@@ -732,49 +733,49 @@ msgid "Leave group"
 msgstr "离开组"
 
 msgid "Deleted \"{{- name}}\" successfully"
-msgstr ""
+msgstr "成功删除“{{- name}}”"
 
 msgid "There was an error deleting the user group: {{- error}}"
-msgstr ""
+msgstr "删除用户组时出错：{{- error}}"
 
 msgid "Delete user group {{- name}}"
-msgstr ""
+msgstr "删除用户组 {{- name}}"
 
 msgid "Are you sure you want to delete {{- name}}?"
-msgstr ""
+msgstr "您确定要删除 {{- name}} 吗？"
 
 msgid "No, cancel"
 msgstr "不，取消"
 
 msgid "Yes, delete"
-msgstr ""
+msgstr "是的，删除"
 
 msgid "Joined user group \"{{- name}}\" successfuly"
-msgstr ""
+msgstr "成功加入用户组“{{- name}}”"
 
 msgid "There was an error joining the user group: {{- error}}"
-msgstr ""
+msgstr "加入用户组时出错：{{- error}}"
 
 msgid "Join user group {{- name}}"
-msgstr ""
+msgstr "加入用户组 {{- name}}"
 
 msgid "Are you sure you want to join {{- name}}?"
-msgstr ""
+msgstr "您确定要加入{{- name}}吗？"
 
 msgid "Yes, join"
-msgstr ""
+msgstr "是的，加入"
 
 msgid "Left user group \"{{- name}}\" successfuly"
-msgstr ""
+msgstr "成功离开用户组“{{- name}}”"
 
 msgid "There was an error leaving the user group: {{- error}}"
-msgstr ""
+msgstr "离开用户组时出错：{{- error}}"
 
 msgid "Leave user group {{- name}}"
-msgstr ""
+msgstr "离开用户组 {{- name}}"
 
 msgid "Are you sure you want to leave {{- name}}?"
-msgstr ""
+msgstr "您确定要离开 {{- name}} 吗？"
 
 msgid "Yes, leave"
 msgstr "是离开"
@@ -786,23 +787,23 @@ msgid "New"
 msgstr "新建"
 
 msgid "Error loading user groups"
-msgstr ""
+msgstr "加载用户组时出错"
 
 msgid ""
 "There are no user groups to show here. You can add a new user group below."
-msgstr ""
+msgstr "此处没有要显示的用户组。您可以在下面添加一个新的用户组。"
 
 msgid "Add new user group"
-msgstr ""
+msgstr "添加新用户组"
 
 msgid "Member?"
-msgstr ""
+msgstr "成员？"
 
 msgid "Actions"
 msgstr "行动"
 
 msgid "Member"
-msgstr ""
+msgstr "成员"
 
 msgid "List"
 msgstr "列表"
@@ -823,23 +824,23 @@ msgid "Edit user role"
 msgstr "编辑用户角色"
 
 msgid "There was an error deleting the user role: {{- error}}"
-msgstr ""
+msgstr "删除用户角色时出错：{{- error}}"
 
 msgid "Delete user role {{- name}}"
-msgstr ""
+msgstr "删除用户角色 {{- name}}"
 
 msgid "User Role Management"
 msgstr "用户角色管理"
 
 msgid "Error loading user roles"
-msgstr ""
+msgstr "加载用户角色时出错"
 
 msgid ""
 "There are no user roles to show here. You can add a new user role below."
-msgstr ""
+msgstr "此处没有要显示的用户角色。您可以在下方添加新的用户角色。"
 
 msgid "Add new user role"
-msgstr ""
+msgstr "添加新用户角色"
 
 msgid "Profile"
 msgstr "基本信息"
@@ -860,50 +861,50 @@ msgid "Disable Two Factor Authentication"
 msgstr "关闭双因素认证"
 
 msgid "There was an error deleting the user: {{- error}}"
-msgstr ""
+msgstr "删除用户时出错：{{- error}}"
 
 msgid "Delete user {{- name}}"
-msgstr ""
+msgstr "删除用户 {{- name}}"
 
 msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
-msgstr ""
+msgstr "成功禁用“{{- name}}”的双因素身份验证"
 
 msgid "There was an error disabling two factor authentication: {{- error}}"
-msgstr ""
+msgstr "禁用双因素身份验证时出错：{{- 错误}}"
 
 msgid "Disable two factor authentication for user {{- name}}"
-msgstr ""
+msgstr "为用户 {{- name}} 禁用双因素身份验证"
 
 msgid ""
 "Are you sure you want to disable two factor authentication for {{- name}}?"
 msgstr "您确定要为 {{-name}} 禁用两因素身份验证吗？"
 
 msgid "Yes, disable two factor authentication"
-msgstr ""
+msgstr "是的，禁用双因素身份验证"
 
 msgid "User \"{{- name}}\" disabled successfuly"
 msgstr "用户“{{- name}}”已成功禁用"
 
 msgid "There was an error disabling the user: {{- error}}"
-msgstr ""
+msgstr "禁用用户时出错：{{- error}}"
 
 msgid "Disable user {{- name}}"
-msgstr ""
+msgstr "禁用用户 {{- name}}"
 
 msgid "Are you sure you want to disable {{- name}}?"
-msgstr ""
+msgstr "您确定要禁用 {{- name}} 吗？"
 
 msgid "Yes, disable"
-msgstr ""
+msgstr "是的，禁用"
 
 msgid "User \"{{- name}}\" enabled successfuly"
-msgstr ""
+msgstr "用户“{{- name}}”启用成功"
 
 msgid "There was an error enabling the user: {{- error}}"
-msgstr ""
+msgstr "启用用户时出错：{{- error}}"
 
 msgid "Enable user {{- name}}"
-msgstr ""
+msgstr "启用用户 {{- name}}"
 
 msgid "Are you sure you want to enable {{- name}}?"
 msgstr "您确定要启用 {{- name}} 吗？"
@@ -977,10 +978,10 @@ msgid "User Management"
 msgstr "用户管理"
 
 msgid "There are no users to show here. You can add a new user below."
-msgstr ""
+msgstr "此处没有可显示的用户。您可以在下方添加新用户。"
 
 msgid "Add new user"
-msgstr ""
+msgstr "添加新用户"
 
 msgid "Last login"
 msgstr "上次登录"
