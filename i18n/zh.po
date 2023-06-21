@@ -792,10 +792,10 @@ msgstr "加载用户组时出错"
 
 msgid ""
 "There are no user groups to show here. You can add a new user group below."
-msgstr ""
+msgstr "此处没有要显示的用户组。您可以在下面添加一个新的用户组。"
 
 msgid "Add new user group"
-msgstr ""
+msgstr "添加新用户组"
 
 msgid "Member?"
 msgstr "成员？"
@@ -838,10 +838,10 @@ msgstr "加载用户角色时出错"
 
 msgid ""
 "There are no user roles to show here. You can add a new user role below."
-msgstr ""
+msgstr "此处没有要显示的用户角色。您可以在下方添加新的用户角色。"
 
 msgid "Add new user role"
-msgstr ""
+msgstr "添加新用户角色"
 
 msgid "Profile"
 msgstr "基本信息"
@@ -979,10 +979,10 @@ msgid "User Management"
 msgstr "用户管理"
 
 msgid "There are no users to show here. You can add a new user below."
-msgstr ""
+msgstr "此处没有可显示的用户。您可以在下方添加新用户。"
 
 msgid "Add new user"
-msgstr ""
+msgstr "添加新用户"
 
 msgid "Last login"
 msgstr "上次登录"
