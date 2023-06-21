@@ -3,19 +3,19 @@
 # Pablo Pajuelo Cabezas <pablo@dhis2.org>, 2022
 # William Aviles <waviles@clintonhealthaccess.org>, 2022
 # Prabhjot Singh, 2022
-# Janeth Cruz, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # Carlos Tejo Alonso, 2022
 # phil_dhis2, 2022
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
+# Janeth Cruz, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2023\n"
+"Last-Translator: Janeth Cruz, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -195,7 +195,7 @@ msgid "Only show selected metadata authorities"
 msgstr "Mostrar solo las autoridades de metadatos seleccionadas"
 
 msgid "Authority"
-msgstr ""
+msgstr "Autoridad"
 
 msgid "Add/Update Public"
 msgstr ""
@@ -450,6 +450,8 @@ msgid ""
 "Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
 "please refine your search to see more."
 msgstr ""
+"Mostrar {{visibleItemsCount}} de {{totalSearchResultCount}} resultados de "
+"búsqueda, reajuste su búsqueda para mostrar más."
 
 msgid "Something went wrong when processing your request."
 msgstr "Algo salió mal al procesar su solicitud."
@@ -458,7 +460,7 @@ msgid "There was a problem retreiving your search results"
 msgstr "Se produjo un problema al recuperar los resultados de búsqueda."
 
 msgid "Please enter at least {{ minCharLength }} characters"
-msgstr ""
+msgstr "Por favor ingrese al menos {{ minCharLength }} caracteres"
 
 msgid "No matches found"
 msgstr "No se encontraron coincidencias"
@@ -470,7 +472,7 @@ msgid "Clear all"
 msgstr "Limpiar todo"
 
 msgid "Insufficient permissions"
-msgstr ""
+msgstr "Permisos insuficientes"
 
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
