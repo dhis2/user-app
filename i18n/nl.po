@@ -58,7 +58,7 @@ msgid "There was an error fetching this form."
 msgstr ""
 
 msgid "Cancel without saving"
-msgstr ""
+msgstr "Annuleer zonder op te slaan"
 
 msgid "Error updating group"
 msgstr ""
