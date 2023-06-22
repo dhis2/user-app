@@ -256,7 +256,7 @@ msgid "Update"
 msgstr "Bijwerken"
 
 msgid "Create new"
-msgstr ""
+msgstr "Maak nieuw"
 
 msgid "Back to"
 msgstr ""
