@@ -19,7 +19,7 @@ const RolesSection = React.memo(
                 rightHeader={i18n.t('User roles this user is assigned')}
                 options={userRoleOptions}
                 initialValue={
-                    user?.userCredentials.userRoles.map(({ id }) => id) || []
+                    user?.userCredentials?.userRoles?.map(({ id }) => id) || []
                 }
                 validate={hasSelectionValidator}
             />
