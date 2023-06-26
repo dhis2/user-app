@@ -1,3 +1,10 @@
+## [1.5.19](https://github.com/dhis2/user-app/compare/v1.5.18...v1.5.19) (2023-06-26)
+
+
+### Bug Fixes
+
+* handle empty user roles response ([#1215](https://github.com/dhis2/user-app/issues/1215)) ([0cf0218](https://github.com/dhis2/user-app/commit/0cf021833d615cdb9567e6f6e435a254b8f032cd))
+
 ## [1.5.18](https://github.com/dhis2/user-app/compare/v1.5.17...v1.5.18) (2023-06-22)
 
 
