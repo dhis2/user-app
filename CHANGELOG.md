@@ -1,3 +1,10 @@
+## [1.5.21](https://github.com/dhis2/user-app/compare/v1.5.20...v1.5.21) (2023-06-27)
+
+
+### Bug Fixes
+
+* align password help text with validation logic ([#1131](https://github.com/dhis2/user-app/issues/1131)) ([e3e27de](https://github.com/dhis2/user-app/commit/e3e27de16a208ac7861bf7904a2b0d179fafa9bc))
+
 ## [1.5.20](https://github.com/dhis2/user-app/compare/v1.5.19...v1.5.20) (2023-06-27)
 
 
