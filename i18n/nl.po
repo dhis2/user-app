@@ -139,7 +139,7 @@ msgid "Error creating group"
 msgstr ""
 
 msgid "Attributes"
-msgstr ""
+msgstr "attributen"
 
 msgid "User group management"
 msgstr ""
@@ -579,7 +579,7 @@ msgid "New password"
 msgstr "Nieuw paswoord"
 
 msgid "Password"
-msgstr ""
+msgstr "Wachtwoord"
 
 msgid ""
 "Minimum 8 characters, one uppercase and lowercase letter and one number"
@@ -956,7 +956,7 @@ msgid "Show self-registrations"
 msgstr ""
 
 msgid "Clear filters"
-msgstr ""
+msgstr "Wis filters"
 
 msgid "Org.unit"
 msgstr ""
