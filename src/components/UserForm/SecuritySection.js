@@ -48,7 +48,7 @@ const SecuritySection = React.memo(
                                         : i18n.t('Password')
                                 }
                                 helpText={i18n.t(
-                                    'Minimum 8 characters, one uppercase and lowercase letter and one number'
+                                    'Password should be at least 8 characters long, with at least one lowercase character, one uppercase character and one special character.'
                                 )}
                                 initialValue=""
                                 autoComplete="new-password"
