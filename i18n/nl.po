@@ -303,7 +303,7 @@ msgid "Username for new user"
 msgstr ""
 
 msgid "Password"
-msgstr ""
+msgstr "Wachtwoord"
 
 msgid "Password for new user"
 msgstr ""
