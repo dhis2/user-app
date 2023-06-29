@@ -524,7 +524,7 @@ msgid "User groups this user is a member of"
 msgstr ""
 
 msgid "Security"
-msgstr ""
+msgstr "Beveiliging"
 
 msgid "Settings for how this user can log in."
 msgstr ""
