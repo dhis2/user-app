@@ -2,14 +2,15 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2022
 # phil_dhis2, 2022
+# channara rin, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-11-17T13:40:24.697Z\n"
+"POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: phil_dhis2, 2022\n"
-"Language-Team: Khmer (https://www.transifex.com/hisp-uio/teams/100509/km/)\n"
+"Last-Translator: channara rin, 2023\n"
+"Language-Team: Khmer (https://app.transifex.com/hisp-uio/teams/100509/km/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,7 +37,7 @@ msgid "Value should be a negative integer"
 msgstr ""
 
 msgid "No results found"
-msgstr ""
+msgstr "មិនមានលទ្ធផលបង្ហាញ"
 
 msgid "Display name"
 msgstr ""
@@ -249,6 +250,9 @@ msgstr ""
 msgid "All (Full authority)"
 msgstr ""
 
+msgid "Aggregate Data Exchange"
+msgstr ""
+
 msgid "Analytics Table Hook"
 msgstr ""
 
@@ -319,7 +323,7 @@ msgid "Indicator Type"
 msgstr ""
 
 msgid "Indicator"
-msgstr ""
+msgstr "សួចនាករ"
 
 msgid "Legend Set"
 msgstr ""
@@ -618,16 +622,16 @@ msgstr ""
 msgid "External authentication only (OpenID / LDAP)"
 msgstr ""
 
-msgid "Send invite"
-msgstr ""
-
-msgid "Cancel invite"
-msgstr ""
-
 msgid "Invalid username"
 msgstr ""
 
 msgid "Invalid WhatsApp number"
+msgstr ""
+
+msgid "Send invite"
+msgstr ""
+
+msgid "Cancel invite"
 msgstr ""
 
 msgid "Error updating user"
@@ -783,6 +787,13 @@ msgstr "ថ្មី"
 msgid "Error loading user groups"
 msgstr ""
 
+msgid ""
+"There are no user groups to show here. You can add a new user group below."
+msgstr ""
+
+msgid "Add new user group"
+msgstr ""
+
 msgid "Member?"
 msgstr ""
 
@@ -820,6 +831,13 @@ msgid "User Role Management"
 msgstr ""
 
 msgid "Error loading user roles"
+msgstr ""
+
+msgid ""
+"There are no user roles to show here. You can add a new user role below."
+msgstr ""
+
+msgid "Add new user role"
 msgstr ""
 
 msgid "Profile"
@@ -955,6 +973,12 @@ msgid "Org.unit"
 msgstr ""
 
 msgid "User Management"
+msgstr ""
+
+msgid "There are no users to show here. You can add a new user below."
+msgstr ""
+
+msgid "Add new user"
 msgstr ""
 
 msgid "Last login"
