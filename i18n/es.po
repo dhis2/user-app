@@ -33,7 +33,7 @@ msgid "No"
 msgstr "No"
 
 msgid "Attribute value needs to be unique, value already taken."
-msgstr "El valor del atributo debe ser único, valor ya tomado."
+msgstr "El valor del atributo debe ser único, el valor introducido ya existe"
 
 msgid ""
 "There was a problem whilst checking the availability of this attribute value"
@@ -47,7 +47,7 @@ msgid "Value should be a negative integer"
 msgstr "El valor debe ser un entero negativo"
 
 msgid "No results found"
-msgstr "No results found"
+msgstr "No se han encontrado resultados"
 
 msgid "Display name"
 msgstr "Mostrar nombre"
@@ -128,7 +128,7 @@ msgid "Add {{selectedCount}} users"
 msgstr "Agregar {{selectedCount}} usuarios"
 
 msgid "Remove from group"
-msgstr "Sacar del grupo"
+msgstr "Eliminar del grupo"
 
 msgid "Add to group"
 msgstr "Añadir al grupo"
@@ -381,7 +381,7 @@ msgid "Program Indicator"
 msgstr "Indicador de Programa"
 
 msgid "Program Indicator Group"
-msgstr "Grupo de indicadores del programa"
+msgstr "Grupo de indicadores de programa"
 
 msgid "Program Rule"
 msgstr "Regla del programa"
