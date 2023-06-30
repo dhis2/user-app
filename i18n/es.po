@@ -372,7 +372,7 @@ msgid "Program Indicator"
 msgstr "Indicador de Programa"
 
 msgid "Program Indicator Group"
-msgstr "Grupo de indicadores del programa"
+msgstr "Grupo de indicadores de programa"
 
 msgid "Program Rule"
 msgstr "Regla del programa"
