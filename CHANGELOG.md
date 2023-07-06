@@ -1,3 +1,10 @@
+## [1.5.24](https://github.com/dhis2/user-app/compare/v1.5.23...v1.5.24) (2023-07-06)
+
+
+### Bug Fixes
+
+* org unit search logic [DHIS2-14585] ([#1217](https://github.com/dhis2/user-app/issues/1217)) ([fcf3e9e](https://github.com/dhis2/user-app/commit/fcf3e9e737cd6dff6ee4ea112a0ed4b809a48ebf))
+
 ## [1.5.23](https://github.com/dhis2/user-app/compare/v1.5.22...v1.5.23) (2023-07-06)
 
 
