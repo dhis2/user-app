@@ -179,7 +179,7 @@ msgid "Add or remove users from this group."
 msgstr "Agregue o elimine usuarios de este grupo."
 
 msgid "Name is already taken"
-msgstr "Nombre ya usado"
+msgstr "El nombre ya está tomado"
 
 msgid ""
 "There was a problem whilst checking the availability of this group name"
@@ -300,7 +300,7 @@ msgid "Dashboard"
 msgstr "Tablero"
 
 msgid "Data Element Group Sets"
-msgstr "Conjuntos de grupos de elementos de datos"
+msgstr "Set de grupos de elementos de datos"
 
 msgid "Data Element Groups"
 msgstr "Grupos de elementos de datos"
@@ -318,7 +318,7 @@ msgid "Data Value"
 msgstr "Valor de datos"
 
 msgid "Document"
-msgstr "Document"
+msgstr "Documento"
 
 msgid "Event Chart"
 msgstr "Tabla de eventos"
