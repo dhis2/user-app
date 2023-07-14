@@ -363,7 +363,7 @@ msgid "Organisation Unit"
 msgstr "Unidad Organizativa"
 
 msgid "Organisation Unit Group Set"
-msgstr "Grupo de unidad organizativa establecida"
+msgstr "Set de grupos de unidades organizativas"
 
 msgid "Organisation Unit Group"
 msgstr "Grupo de Unidad Organizativa"
@@ -771,10 +771,10 @@ msgid "Are you sure you want to delete {{- name}}?"
 msgstr "¿Está seguro de que desea eliminar {{- nombre}}?"
 
 msgid "No, cancel"
-msgstr "No, cancela"
+msgstr "No, cancelar"
 
 msgid "Yes, delete"
-msgstr "si, eliminar"
+msgstr "Si, eliminar"
 
 msgid "Joined user group \"{{- name}}\" successfuly"
 msgstr "Se unió al grupo de usuarios \"{{- nombre}}\" con éxito"
@@ -789,10 +789,10 @@ msgid "Are you sure you want to join {{- name}}?"
 msgstr "¿Estás seguro de que quieres unirte a {{- nombre}}?"
 
 msgid "Yes, join"
-msgstr "Sí, únete"
+msgstr "Sí, unirme"
 
 msgid "Left user group \"{{- name}}\" successfuly"
-msgstr "Grupo de usuarios izquierdo \"{{- nombre}}\" con éxito"
+msgstr "Grupo de usuarios \"{{- nombre}}\" abandonado con éxito"
 
 msgid "There was an error leaving the user group: {{- error}}"
 msgstr "Hubo un error al abandonar el grupo de usuarios: {{- error}}"
@@ -866,8 +866,8 @@ msgstr "Error al cargar roles de usuario"
 msgid ""
 "There are no user roles to show here. You can add a new user role below."
 msgstr ""
-"No hay funciones de usuario para mostrar aquí. Puede agregar un nuevo rol de"
-" usuario a continuación."
+"No hay roles de usuario para mostrar aquí. Puede agregar un nuevo rol de "
+"usuario a continuación."
 
 msgid "Add new user role"
 msgstr "Agregar nuevo rol de usuario"
@@ -1010,7 +1010,7 @@ msgid "Clear filters"
 msgstr "Limpiar filtros"
 
 msgid "Org.unit"
-msgstr "unidad organizativa"
+msgstr "Unidad organizativa"
 
 msgid "User Management"
 msgstr "Administración de usuarios"
@@ -1078,7 +1078,7 @@ msgid "Gender"
 msgstr "Sexo"
 
 msgid "Speaks"
-msgstr "Habla"
+msgstr "Idiomas"
 
 msgid "Nationality"
 msgstr "Nacionalidad"
