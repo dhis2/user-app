@@ -78,7 +78,7 @@ msgid "Could not load current user information."
 msgstr "No se pudo cargar la información del usuario actual."
 
 msgid "Filter options"
-msgstr "Opciones"
+msgstr "Opciones de filtro"
 
 msgid "Error fetching form"
 msgstr "Error al obtener el formulario"
