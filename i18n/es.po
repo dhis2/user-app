@@ -27,7 +27,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "Yes"
-msgstr "Sí"
+msgstr "Si"
 
 msgid "No"
 msgstr "No"
@@ -47,7 +47,7 @@ msgid "Value should be a negative integer"
 msgstr "El valor debe ser un entero negativo"
 
 msgid "No results found"
-msgstr "No results found"
+msgstr "No se han encontrado resultados"
 
 msgid "Display name"
 msgstr "Mostrar nombre"
@@ -71,10 +71,10 @@ msgid "Will be added"
 msgstr "Será añadido"
 
 msgid "Will be removed"
-msgstr "será eliminado"
+msgstr "Será eliminado"
 
 msgid "Filter options"
-msgstr "Opciones"
+msgstr "Opciones de filtro"
 
 msgid "Error fetching form"
 msgstr "Error al obtener el formulario"
@@ -122,7 +122,7 @@ msgid "Add {{selectedCount}} users"
 msgstr "Agregar {{selectedCount}} usuarios"
 
 msgid "Remove from group"
-msgstr "Sacar del grupo"
+msgstr "Eliminar del grupo"
 
 msgid "Add to group"
 msgstr "Añadir al grupo"
@@ -767,7 +767,7 @@ msgid "No, cancel"
 msgstr "No, cancela"
 
 msgid "Yes, delete"
-msgstr "si, eliminar"
+msgstr "Si, eliminar"
 
 msgid "Joined user group \"{{- name}}\" successfuly"
 msgstr "Se unió al grupo de usuarios \"{{- nombre}}\" con éxito"
@@ -782,7 +782,7 @@ msgid "Are you sure you want to join {{- name}}?"
 msgstr "¿Estás seguro de que quieres unirte a {{- nombre}}?"
 
 msgid "Yes, join"
-msgstr "Sí, únete"
+msgstr "Sí, unirme"
 
 msgid "Left user group \"{{- name}}\" successfuly"
 msgstr "Grupo de usuarios izquierdo \"{{- nombre}}\" con éxito"
@@ -833,7 +833,7 @@ msgid "Add"
 msgstr "Añadir"
 
 msgid "Page not found."
-msgstr "Page not found."
+msgstr "Página no encontrada."
 
 msgid "No match for"
 msgstr "No hay coincidencia para"
@@ -915,7 +915,7 @@ msgid "Are you sure you want to disable {{- name}}?"
 msgstr "¿Está seguro de que desea deshabilitar {{- nombre}}?"
 
 msgid "Yes, disable"
-msgstr "Sí, deshabilitar"
+msgstr "Si, deshabilitar"
 
 msgid "User \"{{- name}}\" enabled successfuly"
 msgstr "Usuario \"{{- nombre}}\" habilitado correctamente"
@@ -930,7 +930,7 @@ msgid "Are you sure you want to enable {{- name}}?"
 msgstr "¿Está seguro de que desea habilitar {{- nombre}}?"
 
 msgid "Yes, enable"
-msgstr "Sí, habilitar"
+msgstr "Si, habilitar"
 
 msgid "User \"{{- name}}\" replicated successfuly"
 msgstr "Usuario \"{{- nombre}}\" replicado con éxito"
@@ -970,7 +970,7 @@ msgid "Are you sure you want to reset {{- name}}'s password?"
 msgstr "¿Está seguro de que desea restablecer la contraseña de {{- name}}?"
 
 msgid "Yes, reset"
-msgstr "Sí, resetear"
+msgstr "Si, resetear"
 
 msgid "1 month"
 msgstr "1 mes"
@@ -997,7 +997,7 @@ msgid "Clear filters"
 msgstr "Limpiar filtros"
 
 msgid "Org.unit"
-msgstr "unidad organizativa"
+msgstr "Unidad organizativa"
 
 msgid "User Management"
 msgstr "Administración de usuarios"
@@ -1009,7 +1009,7 @@ msgid "Account disabled?"
 msgstr "¿Cuenta deshabilitada?"
 
 msgid "Disabled"
-msgstr "Inhabilitar"
+msgstr "Deshabilitado"
 
 msgid "Male"
 msgstr "Masculino"
