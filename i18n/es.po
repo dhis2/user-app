@@ -80,7 +80,7 @@ msgid "Could not load current user information."
 msgstr "No se pudo cargar la información del usuario actual."
 
 msgid "Filter options"
-msgstr "Opciones"
+msgstr "Opciones de filtro"
 
 msgid "Error fetching form"
 msgstr "Error al obtener el formulario"
@@ -288,7 +288,7 @@ msgid "Category Option Group"
 msgstr "Grupo de opciones de categoría"
 
 msgid "Category Option Group Set"
-msgstr "Grupo de opciones de categoría establecido"
+msgstr "Set de grupos de opciones de categorías"
 
 msgid "Color Set"
 msgstr "Conjunto de colores"
@@ -330,7 +330,7 @@ msgid "External Map Layer"
 msgstr "Capa de mapa externo"
 
 msgid "Indicator Group Sets"
-msgstr "Conjuntos de grupos de indicadores"
+msgstr "Sets de grupos de indicadores"
 
 msgid "Indicator Group"
 msgstr "Grupo de indicadores"
@@ -351,13 +351,13 @@ msgid "Min-Max Data Element"
 msgstr "Min-Max Elemento de datos"
 
 msgid "Option Group Set"
-msgstr "Conjunto de grupo de opciones"
+msgstr "Set de grupos de opciones"
 
 msgid "Option Group"
 msgstr "Grupo de opciones"
 
 msgid "Option Set"
-msgstr "Conjunto de opciones"
+msgstr "Set de opciones"
 
 msgid "Organisation Unit"
 msgstr "Unidad Organizativa"
@@ -453,7 +453,7 @@ msgid ""
 "Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
 "please refine your search to see more."
 msgstr ""
-"Mostrar {{visibleItemsCount}} de {{totalSearchResultCount}} resultados de "
+"Mostrando {{visibleItemsCount}} de {{totalSearchResultCount}} resultados de "
 "búsqueda, reajuste su búsqueda para mostrar más."
 
 msgid "Something went wrong when processing your request."
@@ -480,8 +480,8 @@ msgstr "Permisos insuficientes"
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
 msgstr ""
-"No tiene acceso a ninguna sección de la Aplicación de Gestión de Usuarios "
-"DHIS 2"
+"No tiene acceso a ninguna sección de la Aplicación de Gestión de Usuarios de"
+" DHIS2."
 
 msgid "User role"
 msgstr "Rol del usuario"
@@ -582,7 +582,7 @@ msgstr "Salida y análisis de datos"
 
 msgid "The organisation units that this user can export and analyse."
 msgstr ""
-"Las unidades de organización que este usuario puede exportar y analizar."
+"Las unidades de organizativas que este usuario puede exportar y analizar."
 
 msgid "Search"
 msgstr "Buscar"
