@@ -59,7 +59,7 @@ msgid "Send message"
 msgstr "Enviar mensaje"
 
 msgid "Filter options"
-msgstr "Opciones"
+msgstr "Opciones de filtro"
 
 msgid "Error fetching form"
 msgstr "Error al obtener el formulario"
@@ -403,14 +403,14 @@ msgid ""
 "Showing {{visibleItemsCount}} of {{totalSearchResultCount}} search results, "
 "please refine your search to see more."
 msgstr ""
-"Mostrar {{visibleItemsCount}} de {{totalSearchResultCount}} resultados de "
+"Mostrando {{visibleItemsCount}} de {{totalSearchResultCount}} resultados de "
 "búsqueda, reajuste su búsqueda para mostrar más."
 
 msgid "There was a problem retreiving your search results"
 msgstr "Se produjo un problema al recuperar los resultados de búsqueda."
 
 msgid "Please enter at least {{ minCharLength }} characters"
-msgstr "Por favor ingrese al menos {{ minCharLength }} caracteres"
+msgstr "Por favor, ingrese al menos {{ minCharLength }} caracteres"
 
 msgid "No matches found"
 msgstr "No se encontraron coincidencias"
