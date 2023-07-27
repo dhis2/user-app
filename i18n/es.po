@@ -48,7 +48,7 @@ msgid "No results found"
 msgstr "No se han encontrado resultados"
 
 msgid "Display name"
-msgstr "Mostrar nombre"
+msgstr "Nombre visible"
 
 msgid "1 pending change"
 msgstr "1 cambio pendiente"
@@ -745,7 +745,7 @@ msgid "Show details"
 msgstr "Mostrar detalles"
 
 msgid "Sharing settings"
-msgstr "Configuración de uso compartido"
+msgstr "Ajustes de uso compartido"
 
 msgid "Edit"
 msgstr "Editar"
@@ -886,7 +886,7 @@ msgid "Enable"
 msgstr "Habilitar"
 
 msgid "Disable Two Factor Authentication"
-msgstr "Deshabilitar autenticación en dos pasos"
+msgstr "Deshabilitar autenticación de dos factores"
 
 msgid "There was an error deleting the user: {{- error}}"
 msgstr "Hubo un error al eliminar el usuario: {{- error}}"
