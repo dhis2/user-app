@@ -173,7 +173,7 @@ msgid "Add or remove users from this group."
 msgstr "Agregue o elimine usuarios de este grupo."
 
 msgid "Name is already taken"
-msgstr "Nombre ya usado"
+msgstr "El nombre ya está tomado"
 
 msgid ""
 "There was a problem whilst checking the availability of this group name"
@@ -375,7 +375,7 @@ msgid "Program Indicator Group"
 msgstr "Grupo de indicadores de programa"
 
 msgid "Program Rule"
-msgstr "Regla del programa"
+msgstr "Regla de programa"
 
 msgid "Program Tracked Entity Attribute Group"
 msgstr "Grupo de atributos de entidad con rastreo de programa"
@@ -543,8 +543,8 @@ msgid ""
 "Customise the organisation units this user has access to for searching, "
 "capturing and managing data."
 msgstr ""
-"Personalice las unidades de la organización a las que este usuario tiene "
-"acceso para buscar, capturar y administrar datos."
+"Personalice las unidades organizativas a las que este usuario tiene acceso "
+"para buscar, capturar y administrar datos."
 
 msgid "Organisation unit selections are recursive"
 msgstr "Las selecciones de unidades organizativas son recursivas"
@@ -566,7 +566,8 @@ msgstr "Salida y análisis de datos"
 
 msgid "The organisation units that this user can export and analyse."
 msgstr ""
-"Las unidades de organización que este usuario puede exportar y analizar."
+"Las unidades organizativas para las que este usuario puede exportar y "
+"analizar."
 
 msgid "Search"
 msgstr "Buscar"
@@ -612,10 +613,10 @@ msgid ""
 msgstr "Mínimo 8 caracteres, una letra mayúscula y minúscula y un número"
 
 msgid "Repeat new password"
-msgstr "Repita la contraseña"
+msgstr "Repita la nueva contraseña"
 
 msgid "Repeat password"
-msgstr "Repita la nueva contraseña"
+msgstr "Repita la contraseña"
 
 msgid "Account expiration date"
 msgstr "Fecha de vencimiento de la cuenta"
@@ -740,7 +741,7 @@ msgid "Show details"
 msgstr "Mostrar detalles"
 
 msgid "Sharing settings"
-msgstr "Configuración de uso compartido"
+msgstr "Ajustes de uso compartido"
 
 msgid "Edit"
 msgstr "Editar"
@@ -749,7 +750,7 @@ msgid "Join group"
 msgstr "Unirse al grupo"
 
 msgid "Leave group"
-msgstr "Dejar el grupo"
+msgstr "Salir del grupo"
 
 msgid "Deleted \"{{- name}}\" successfully"
 msgstr "Se eliminó \"{{- nombre}}\" con éxito"
@@ -764,7 +765,7 @@ msgid "Are you sure you want to delete {{- name}}?"
 msgstr "¿Está seguro de que desea eliminar {{- nombre}}?"
 
 msgid "No, cancel"
-msgstr "No, cancela"
+msgstr "No, cancelar"
 
 msgid "Yes, delete"
 msgstr "Si, eliminar"
@@ -785,7 +786,7 @@ msgid "Yes, join"
 msgstr "Sí, unirme"
 
 msgid "Left user group \"{{- name}}\" successfuly"
-msgstr "Grupo de usuarios izquierdo \"{{- nombre}}\" con éxito"
+msgstr "Grupo de usuarios \"{{- nombre}}\" abandonado con éxito"
 
 msgid "There was an error leaving the user group: {{- error}}"
 msgstr "Hubo un error al abandonar el grupo de usuarios: {{- error}}"
@@ -823,8 +824,8 @@ msgstr "Permisos insuficientes"
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
 msgstr ""
-"No tiene acceso a ninguna sección de la Aplicación de Gestión de Usuarios "
-"DHIS 2"
+"No tiene acceso a ninguna sección de la Aplicación de Gestión de Usuarios de"
+" DHIS2."
 
 msgid "List"
 msgstr "Mostrar"
@@ -872,7 +873,7 @@ msgid "Enable"
 msgstr "Habilitar"
 
 msgid "Disable Two Factor Authentication"
-msgstr "Deshabilitar autenticación en dos pasos"
+msgstr "Deshabilitar autenticación de dos factores"
 
 msgid "There was an error deleting the user: {{- error}}"
 msgstr "Hubo un error al eliminar el usuario: {{- error}}"
