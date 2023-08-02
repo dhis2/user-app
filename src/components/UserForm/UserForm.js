@@ -3,7 +3,7 @@ import i18n from '@dhis2/d2-i18n'
 import { NoticeBox, FinalForm } from '@dhis2/ui'
 import { keyBy } from 'lodash-es'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useCurrentUser } from '../../hooks/useCurrentUser'
 import Attributes from '../Attributes'
@@ -28,6 +28,7 @@ const UserForm = ({
     const {
         systemInfo: { emailConfigured },
     } = useConfig()
+    const [isInvite, setIsInvite] = useState(false)
     const history = useHistory()
     const engine = useDataEngine()
     const {
@@ -133,7 +134,14 @@ const UserForm = ({
         <Form
             loading={loading}
             error={error}
-            submitButtonLabel={submitButtonLabel}
+            submitButtonLabel={
+                isInvite ? i18n.t('Send invite') : submitButtonLabel
+            }
+            cancelButtonLabel={
+                isInvite
+                    ? i18n.t('Cancel invite')
+                    : i18n.t('Cancel without saving')
+            }
             onSubmit={handleSubmit}
         >
             {({ values, submitError }) => (
@@ -154,6 +162,7 @@ const UserForm = ({
                     <InviteUserSection
                         user={user}
                         emailConfigured={emailConfigured}
+                        setIsInvite={setIsInvite}
                     />
                     <BasicInformationSection
                         user={user}

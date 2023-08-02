@@ -72,7 +72,7 @@ const UserTable = ({
                         {i18n.t('Last login')}
                     </DataTableColumnHeader>
                     <DataTableColumnHeader>
-                        {i18n.t('Account disabled?')}
+                        {i18n.t('Status')}
                     </DataTableColumnHeader>
                     <DataTableColumnHeader>
                         {i18n.t('Actions')}
@@ -109,7 +109,9 @@ const UserTable = ({
                                 )}
                             </DataTableCell>
                             <DataTableCell onClick={handleClick}>
-                                {disabled && i18n.t('Disabled')}
+                                {disabled
+                                    ? i18n.t('Disabled')
+                                    : i18n.t('Active')}
                             </DataTableCell>
                             <DataTableCell>
                                 <ContextMenuButton
