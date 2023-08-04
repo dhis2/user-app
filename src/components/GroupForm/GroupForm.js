@@ -67,6 +67,9 @@ const GroupForm = ({ submitButtonLabel, group }) => {
             error={error}
             submitButtonLabel={submitButtonLabel}
             onSubmit={handleSubmit}
+            onCancel={() => {
+                navigateTo('/user-groups')
+            }}
         >
             {({ submitError }) => (
                 <>

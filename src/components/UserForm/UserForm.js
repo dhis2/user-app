@@ -150,6 +150,9 @@ const UserForm = ({
                     : i18n.t('Cancel without saving')
             }
             onSubmit={handleSubmit}
+            onCancel={() => {
+                navigateTo('/users')
+            }}
         >
             {({ values, submitError }) => (
                 <>

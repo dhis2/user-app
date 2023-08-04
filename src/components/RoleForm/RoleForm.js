@@ -124,6 +124,9 @@ const RoleForm = ({ submitButtonLabel, role }) => {
             error={error}
             submitButtonLabel={submitButtonLabel}
             onSubmit={handleSubmit}
+            onCancel={() => {
+                navigateTo('/user-roles')
+            }}
         >
             {({ submitError }) => (
                 <>
