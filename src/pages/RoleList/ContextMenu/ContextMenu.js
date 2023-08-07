@@ -44,10 +44,9 @@ const ContextMenu = ({ role, anchorRef, refetchRoles, onClose }) => {
                             <MenuItem
                                 label={i18n.t('Show details')}
                                 icon={<IconInfo16 color={colors.grey600} />}
-                                onClick={() => {
-                                    setReferrer('user-roles')
+                                onClick={() =>
                                     navigateTo(`/user-roles/view/${role.id}`)
-                                }}
+                                }
                                 dense
                             />
                         )}
@@ -65,9 +64,10 @@ const ContextMenu = ({ role, anchorRef, refetchRoles, onClose }) => {
                             <MenuItem
                                 label={i18n.t('Edit')}
                                 icon={<IconEdit16 color={colors.grey600} />}
-                                onClick={() =>
+                                onClick={() => {
+                                    setReferrer('user-roles')
                                     navigateTo(`/user-roles/edit/${role.id}`)
-                                }
+                                }}
                                 dense
                             />
                         )}
