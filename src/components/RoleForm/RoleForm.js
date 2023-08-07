@@ -4,7 +4,9 @@ import { NoticeBox, composeValidators, hasValue, FinalForm } from '@dhis2/ui'
 import { flatMap } from 'lodash-es'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import { useCurrentUser } from '../../hooks/useCurrentUser.js'
+import { useReferrerInfo } from '../../providers/index.js'
 import navigateTo from '../../utils/navigateTo.js'
 import Form, { FormSection, TextField, TransferField } from '../Form.js'
 import { getJsonPatch } from './getJsonPatch.js'
@@ -74,6 +76,8 @@ const RoleForm = ({ submitButtonLabel, role }) => {
             systemAuthorityOptions,
         })
     const currentUser = useCurrentUser()
+    const { referrer } = useReferrerInfo()
+    const history = useHistory()
     const handleSubmit = async (values, form) => {
         const roleData = getRoleData({ values })
 
@@ -125,7 +129,11 @@ const RoleForm = ({ submitButtonLabel, role }) => {
             submitButtonLabel={submitButtonLabel}
             onSubmit={handleSubmit}
             onCancel={() => {
-                navigateTo('/user-roles')
+                if (referrer === 'user-roles') {
+                    history.goBack()
+                } else {
+                    navigateTo('/user-roles')
+                }
             }}
         >
             {({ submitError }) => (

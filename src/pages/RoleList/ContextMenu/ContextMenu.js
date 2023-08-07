@@ -12,6 +12,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
+import { useReferrerInfo } from '../../../providers/index.js'
 import navigateTo from '../../../utils/navigateTo.js'
 import DeleteModal from './Modals/DeleteModal.js'
 import SharingSettingsModal from './Modals/SharingSettingsModal.js'
@@ -32,6 +33,7 @@ const useCurrentModal = () => {
 const ContextMenu = ({ role, anchorRef, refetchRoles, onClose }) => {
     const [CurrentModal, setCurrentModal] = useCurrentModal()
     const { access } = role
+    const { setReferrer } = useReferrerInfo()
 
     return (
         <>
@@ -42,9 +44,10 @@ const ContextMenu = ({ role, anchorRef, refetchRoles, onClose }) => {
                             <MenuItem
                                 label={i18n.t('Show details')}
                                 icon={<IconInfo16 color={colors.grey600} />}
-                                onClick={() =>
+                                onClick={() => {
+                                    setReferrer('user-roles')
                                     navigateTo(`/user-roles/view/${role.id}`)
-                                }
+                                }}
                                 dense
                             />
                         )}

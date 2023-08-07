@@ -3,7 +3,9 @@ import i18n from '@dhis2/d2-i18n'
 import { NoticeBox, FinalForm } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import { useCurrentUser } from '../../hooks/useCurrentUser.js'
+import { useReferrerInfo } from '../../providers/index.js'
 import navigateTo from '../../utils/navigateTo.js'
 import Attributes from '../Attributes/index.js'
 import Form, { FormSection } from '../Form.js'
@@ -21,6 +23,8 @@ const GroupForm = ({ submitButtonLabel, group }) => {
     const engine = useDataEngine()
     const { loading, error, userGroupOptions, attributes } = useFormData()
     const currentUser = useCurrentUser()
+    const { referrer } = useReferrerInfo()
+    const history = useHistory()
     const handleSubmit = async (values, form) => {
         try {
             if (group) {
@@ -68,7 +72,11 @@ const GroupForm = ({ submitButtonLabel, group }) => {
             submitButtonLabel={submitButtonLabel}
             onSubmit={handleSubmit}
             onCancel={() => {
-                navigateTo('/user-groups')
+                if (referrer === 'user-groups') {
+                    history.goBack()
+                } else {
+                    navigateTo('/user-groups')
+                }
             }}
         >
             {({ submitError }) => (

@@ -13,6 +13,7 @@ import {
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useCurrentUser } from '../../../hooks/useCurrentUser.js'
+import { useReferrerInfo } from '../../../providers/index.js'
 import navigateTo from '../../../utils/navigateTo.js'
 import DeleteModal from './Modals/DeleteModal.js'
 import JoinModal from './Modals/JoinModal.js'
@@ -37,6 +38,7 @@ const ContextMenu = ({ group, anchorRef, refetchGroups, onClose }) => {
     const currentUserIsMember = currentUser.userGroupIds.includes(group.id)
     const [CurrentModal, setCurrentModal] = useCurrentModal()
     const { access } = group
+    const { setReferrer } = useReferrerInfo()
 
     return (
         <>
@@ -67,9 +69,10 @@ const ContextMenu = ({ group, anchorRef, refetchGroups, onClose }) => {
                             <MenuItem
                                 label={i18n.t('Edit')}
                                 icon={<IconEdit16 color={colors.grey600} />}
-                                onClick={() =>
+                                onClick={() => {
+                                    setReferrer('user-groups')
                                     navigateTo(`/user-groups/edit/${group.id}`)
-                                }
+                                }}
                                 dense
                             />
                         )}

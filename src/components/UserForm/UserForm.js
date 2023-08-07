@@ -4,7 +4,9 @@ import { NoticeBox, FinalForm } from '@dhis2/ui'
 import { keyBy } from 'lodash-es'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import { useCurrentUser } from '../../hooks/useCurrentUser.js'
+import { useReferrerInfo } from '../../providers/index.js'
 import navigateTo from '../../utils/navigateTo.js'
 import Attributes from '../Attributes/index.js'
 import Form, { FormSection } from '../Form.js'
@@ -44,6 +46,8 @@ const UserForm = ({
         attributes,
     } = useFormData()
     const currentUser = useCurrentUser()
+    const { referrer } = useReferrerInfo()
+    const history = useHistory()
     const handleSubmit = async (values, form) => {
         const userData = getUserData({
             values,
@@ -151,7 +155,11 @@ const UserForm = ({
             }
             onSubmit={handleSubmit}
             onCancel={() => {
-                navigateTo('/users')
+                if (referrer === 'users') {
+                    history.goBack()
+                } else {
+                    navigateTo('/users')
+                }
             }}
         >
             {({ values, submitError }) => (
