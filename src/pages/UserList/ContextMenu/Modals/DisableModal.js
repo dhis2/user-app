@@ -22,9 +22,14 @@ const DisableModal = ({ user, refetchUsers, onClose }) => {
         try {
             await engine.mutate({
                 resource: `users/${user.id}`,
-                type: 'update',
-                partial: true,
-                data: { userCredentials: { disabled: true } },
+                type: 'json-patch',
+                data: [
+                    {
+                        op: 'replace',
+                        path: '/userCredentials/disabled',
+                        value: true,
+                    },
+                ],
             })
             const message = i18n.t('User "{{- name}}" disabled successfuly', {
                 name: user.displayName,
