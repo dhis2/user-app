@@ -1,3 +1,10 @@
+## [1.5.27](https://github.com/dhis2/user-app/compare/v1.5.26...v1.5.27) (2023-08-08)
+
+
+### Bug Fixes
+
+* hide x scrollbar in replicate user [DHIS2-15611] ([#1293](https://github.com/dhis2/user-app/issues/1293)) ([84c5b7a](https://github.com/dhis2/user-app/commit/84c5b7ad75fad32b9aa4a4a80a13e11af522fe55))
+
 ## [1.5.26](https://github.com/dhis2/user-app/compare/v1.5.25...v1.5.26) (2023-07-27)
 
 
