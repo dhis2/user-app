@@ -62,7 +62,7 @@ const ReplicateModal = ({ user, refetchUsers, onClose }) => {
                             name: user.displayName,
                         })}
                     </ModalTitle>
-                    <ModalContent>
+                    <ModalContent className={styles.modalContent}>
                         <form onSubmit={handleSubmit}>
                             <TextField
                                 name="username"
