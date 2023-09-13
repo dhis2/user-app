@@ -4,7 +4,7 @@
 # ericbp <ericbarredap@gmail.com>, 2020
 # Sergio Valenzuela <sergio.valenzuela@ehas.org>, 2020
 # William Aviles <waviles@clintonhealthaccess.org>, 2020
-# phil_dhis2, 2020
+# Philip Larsen Donnelly, 2020
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # Prabhjot Singh, 2023
 # Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
@@ -192,16 +192,16 @@ msgid "SQL View"
 msgstr "Vista SQL"
 
 msgid "Tracked Entity"
-msgstr "Entidad Rastreada"
+msgstr "Entidad de Tracker"
 
 msgid "Tracked Entity Attribute"
-msgstr "Atributo de Entidad Rastreada"
+msgstr "Atributo de Entidad de Tracker"
 
 msgid "Tracked Entity Data Value"
-msgstr "Valor de Datos de Entidad Rastreada"
+msgstr "Valor de datos de Entidad de Tracker"
 
 msgid "Tracked Entity Instance"
-msgstr "Instancia de Entidad Rastreada"
+msgstr "Entidad de Tracker"
 
 msgid "User Group"
 msgstr "Grupo de usuarios"
@@ -231,7 +231,7 @@ msgid "Apps"
 msgstr "Aplicaciones"
 
 msgid "Tracker"
-msgstr "Rastreador"
+msgstr "Tracker"
 
 msgid "Import-Export"
 msgstr "Importar/exportar"
@@ -294,7 +294,7 @@ msgid "No match for"
 msgstr "No hay coincidencia para"
 
 msgid "Go back home"
-msgstr "Regresar a casa"
+msgstr "Volver al inicio"
 
 msgid "User \"{{displayName}}\" replicated successfuly"
 msgstr "Usuario \"{{displayName}}\" replicado con éxito"
