@@ -17,6 +17,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import DataTableInfoWrapper from '../../components/DataTableInfoWrapper.js'
 import EmptyTableInfo from '../../components/EmptyTableInfo.js'
+import { useReferrerInfo } from '../../providers/useReferrer.js'
 import navigateTo from '../../utils/navigateTo.js'
 import ContextMenuButton from './ContextMenu/ContextMenuButton.js'
 
@@ -29,6 +30,7 @@ const UserTable = ({
     onNameSortDirectionToggle,
 }) => {
     const { fromServerDate } = useTimeZoneConversion()
+    const { setReferrer } = useReferrerInfo()
     if (loading && !users) {
         return (
             <DataTableInfoWrapper columns={5}>
@@ -102,6 +104,7 @@ const UserTable = ({
                     const lastLoginClient = fromServerDate(lastLogin)
 
                     const handleClick = () => {
+                        setReferrer('users')
                         if (access.update) {
                             navigateTo(`/users/edit/${id}`)
                         } else if (access.read) {

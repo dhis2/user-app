@@ -18,6 +18,7 @@ import {
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useCurrentUser } from '../../../hooks/useCurrentUser.js'
+import { useReferrerInfo } from '../../../providers/useReferrer.js'
 import navigateTo from '../../../utils/navigateTo.js'
 import DeleteModal from './Modals/DeleteModal.js'
 import Disable2FaModal from './Modals/Disable2FaModal.js'
@@ -67,6 +68,7 @@ const ContextMenu = ({ user, anchorRef, refetchUsers, onClose }) => {
         )
     const canDisable = currentUser.id !== user.id && access.update && !disabled
     const canDelete = currentUser.id !== user.id && access.delete
+    const { setReferrer } = useReferrerInfo()
 
     return (
         <>
@@ -87,9 +89,10 @@ const ContextMenu = ({ user, anchorRef, refetchUsers, onClose }) => {
                             <MenuItem
                                 label={i18n.t('Edit')}
                                 icon={<IconEdit16 color={colors.grey600} />}
-                                onClick={() =>
+                                onClick={() => {
+                                    setReferrer('users')
                                     navigateTo(`/users/edit/${user.id}`)
-                                }
+                                }}
                                 dense
                             />
                         )}

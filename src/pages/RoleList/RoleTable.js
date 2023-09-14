@@ -15,6 +15,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import DataTableInfoWrapper from '../../components/DataTableInfoWrapper.js'
 import EmptyTableInfo from '../../components/EmptyTableInfo.js'
+import { useReferrerInfo } from '../../providers/useReferrer.js'
 import navigateTo from '../../utils/navigateTo.js'
 import ContextMenuButton from './ContextMenu/ContextMenuButton.js'
 
@@ -26,6 +27,7 @@ const RoleTable = ({
     nameSortDirection,
     onNameSortDirectionToggle,
 }) => {
+    const { setReferrer } = useReferrerInfo()
     if (loading && !roles) {
         return (
             <DataTableInfoWrapper columns={3}>
@@ -90,6 +92,7 @@ const RoleTable = ({
                 {roles.map((role) => {
                     const { id, displayName, access, description } = role
                     const handleClick = () => {
+                        setReferrer('user-roles')
                         if (access.update) {
                             navigateTo(`/user-roles/edit/${id}`)
                         } else if (access.read) {
