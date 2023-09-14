@@ -109,7 +109,10 @@ const ContextMenu = ({
                 <CurrentModal
                     group={group}
                     refetchGroups={refetchGroups}
-                    onClose={() => setCurrentModal(null)}
+                    onClose={() => {
+                        onClose()
+                        setCurrentModal(null)
+                    }}
                 />
             )}
         </>

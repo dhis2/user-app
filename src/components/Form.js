@@ -281,7 +281,14 @@ TransferField.propTypes = {
     required: PropTypes.bool,
 }
 
-const Form = ({ loading, error, children, submitButtonLabel, onSubmit }) => {
+const Form = ({
+    loading,
+    error,
+    children,
+    submitButtonLabel,
+    cancelButtonLabel,
+    onSubmit,
+}) => {
     const history = useHistory()
     const handleCancel = () => history.goBack()
 
@@ -331,7 +338,7 @@ const Form = ({ loading, error, children, submitButtonLabel, onSubmit }) => {
                             {submitButtonLabel}
                         </Button>
                         <Button onClick={handleCancel} disabled={submitting}>
-                            {i18n.t('Cancel without saving')}
+                            {cancelButtonLabel}
                         </Button>
                     </ButtonStrip>
                 </form>
@@ -340,10 +347,15 @@ const Form = ({ loading, error, children, submitButtonLabel, onSubmit }) => {
     )
 }
 
+Form.defaultProps = {
+    cancelButtonLabel: i18n.t('Cancel without saving'),
+}
+
 Form.propTypes = {
     children: PropTypes.func.isRequired,
     submitButtonLabel: PropTypes.string.isRequired,
     onSubmit: PropTypes.func.isRequired,
+    cancelButtonLabel: PropTypes.string,
     error: PropTypes.instanceOf(Error),
     loading: PropTypes.bool,
 }
