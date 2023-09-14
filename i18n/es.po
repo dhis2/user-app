@@ -4,7 +4,7 @@
 # William Aviles <waviles@clintonhealthaccess.org>, 2022
 # Prabhjot Singh, 2022
 # Pablo Pajuelo Cabezas <pablo@dhis2.org>, 2022
-# phil_dhis2, 2022
+# Philip Larsen Donnelly, 2022
 # ericbp <ericbarredap@gmail.com>, 2022
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
@@ -177,7 +177,7 @@ msgstr "Otras autoridades"
 msgid ""
 "Manage access to apps, tracker, data import/export and system settings."
 msgstr ""
-"Administre el acceso a las aplicaciones, el rastreador, la "
+"Administre el acceso a las aplicaciones, el tracker, la "
 "importación/exportación de datos y la configuración del sistema."
 
 msgid "Available app authorities"
@@ -343,16 +343,16 @@ msgid "SQL View"
 msgstr "Vista SQL"
 
 msgid "Tracked Entity"
-msgstr "Entidad Rastreada"
+msgstr "Entidad de Tracker"
 
 msgid "Tracked Entity Attribute"
-msgstr "Atributo de Entidad Rastreada"
+msgstr "Atributo de Entidad de Tracker"
 
 msgid "Tracked Entity Data Value"
-msgstr "Valor de Datos de Entidad Rastreada"
+msgstr "Valor de datos de Entidad de Tracker"
 
 msgid "Tracked Entity Instance"
-msgstr "Instancia de Entidad Rastreada"
+msgstr "Entidad de Tracker"
 
 msgid "User Group"
 msgstr "Grupo de usuarios"
@@ -843,7 +843,7 @@ msgid "No match for"
 msgstr "No hay coincidencia para"
 
 msgid "Go back home"
-msgstr "Regresar a casa"
+msgstr "Volver al inicio"
 
 msgid "There was an error deleting the user role: {{- error}}"
 msgstr "Hubo un error al eliminar el rol de usuario: {{- error}}"
