@@ -16,6 +16,7 @@ import React from 'react'
 import DataTableInfoWrapper from '../../components/DataTableInfoWrapper.js'
 import EmptyTableInfo from '../../components/EmptyTableInfo.js'
 import { useCurrentUser } from '../../hooks/useCurrentUser.js'
+import { useReferrerInfo } from '../../providers/useReferrer.js'
 import navigateTo from '../../utils/navigateTo.js'
 import ContextMenuButton from './ContextMenu/ContextMenuButton.js'
 
@@ -28,6 +29,7 @@ const GroupTable = ({
     onNameSortDirectionToggle,
 }) => {
     const currentUser = useCurrentUser()
+    const { setReferrer } = useReferrerInfo()
 
     if (loading && !groups) {
         return (
@@ -93,6 +95,7 @@ const GroupTable = ({
                 {groups.map((group) => {
                     const { id, displayName, access } = group
                     const handleClick = () => {
+                        setReferrer('user-groups')
                         if (access.update) {
                             navigateTo(`/user-groups/edit/${id}`)
                         } else if (access.read) {

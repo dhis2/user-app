@@ -7,7 +7,8 @@ import history from './history.js'
  * @function
  */
 const navigateTo = (path) => {
-    history.push(path)
+    // window.history.pushState({ prevUrl: window.location.href },null)
+    history.push(path, { search: 'bAH!' })
 }
 
 export default navigateTo
