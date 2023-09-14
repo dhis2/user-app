@@ -1,3 +1,10 @@
+## [1.5.29](https://github.com/dhis2/user-app/compare/v1.5.28...v1.5.29) (2023-09-14)
+
+
+### Bug Fixes
+
+* update successful save redirects [DHIS2-15431] ([#1218](https://github.com/dhis2/user-app/issues/1218)) ([75d5039](https://github.com/dhis2/user-app/commit/75d5039e68f986bf0413a52f4b889c738614a39f))
+
 ## [1.5.28](https://github.com/dhis2/user-app/compare/v1.5.27...v1.5.28) (2023-09-14)
 
 
