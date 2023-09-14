@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
-"PO-Revision-Date: 2022-06-13T10:12:52.361Z\n"
+"POT-Creation-Date: 2023-08-02T13:20:46.717Z\n"
+"PO-Revision-Date: 2023-08-02T13:20:46.717Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -560,6 +560,12 @@ msgstr "Invalid username"
 msgid "Invalid WhatsApp number"
 msgstr "Invalid WhatsApp number"
 
+msgid "Send invite"
+msgstr "Send invite"
+
+msgid "Cancel invite"
+msgstr "Cancel invite"
+
 msgid "Error updating user"
 msgstr "Error updating user"
 
@@ -918,11 +924,8 @@ msgstr "Password of user \"{{- name}}\" reset successfuly"
 msgid "There was an error resetting the password: {{- error}}"
 msgstr "There was an error resetting the password: {{- error}}"
 
-msgid "Reset password of user {{- name}}"
-msgstr "Reset password of user {{- name}}"
-
-msgid "Are you sure you want to reset {{- name}}'s password?"
-msgstr "Are you sure you want to reset {{- name}}'s password?"
+msgid "Are you sure you want to reset the password for {{- name}}?"
+msgstr "Are you sure you want to reset the password for {{- name}}?"
 
 msgid "Yes, reset"
 msgstr "Yes, reset"
@@ -960,11 +963,14 @@ msgstr "User Management"
 msgid "Error loading users"
 msgstr "Error loading users"
 
-msgid "Account disabled?"
-msgstr "Account disabled?"
+msgid "Status"
+msgstr "Status"
 
 msgid "Disabled"
 msgstr "Disabled"
+
+msgid "Active"
+msgstr "Active"
 
 msgid "Something went wrong when processing your request."
 msgstr "Something went wrong when processing your request."

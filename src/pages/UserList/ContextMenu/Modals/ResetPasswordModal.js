@@ -47,14 +47,10 @@ const ResetPasswordModal = ({ user, onClose }) => {
 
     return (
         <Modal small>
-            <ModalTitle>
-                {i18n.t('Reset password of user {{- name}}', {
-                    name: user.displayName,
-                })}
-            </ModalTitle>
+            <ModalTitle>{i18n.t('Reset password')}</ModalTitle>
             <ModalContent>
                 {i18n.t(
-                    `Are you sure you want to reset {{- name}}'s password?`,
+                    `Are you sure you want to reset the password for {{- name}}?`,
                     { name: user.displayName }
                 )}
             </ModalContent>
