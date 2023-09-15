@@ -1,14 +1,14 @@
 # 
 # Translators:
-# trendspotter <jirka.p@volny.cz>, 2022
+# Jiří Podhorecký, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
+"POT-Creation-Date: 2023-08-02T13:20:46.717Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
-"Last-Translator: trendspotter <jirka.p@volny.cz>, 2022\n"
-"Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
+"Last-Translator: Jiří Podhorecký, 2023\n"
+"Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -582,6 +582,12 @@ msgstr "Neplatné uživatelské jméno"
 msgid "Invalid WhatsApp number"
 msgstr "Neplatné číslo WhatsApp"
 
+msgid "Send invite"
+msgstr "Poslat pozvánku"
+
+msgid "Cancel invite"
+msgstr ""
+
 msgid "Error updating user"
 msgstr "Při aktualizaci uživatele došlo k chybě"
 
@@ -942,11 +948,8 @@ msgstr "Heslo uživatele \"{{- name}}\" bylo úspěšně resetováno"
 msgid "There was an error resetting the password: {{- error}}"
 msgstr "Při resetování hesla došlo k chybě: {{- error}}"
 
-msgid "Reset password of user {{- name}}"
-msgstr "Obnovit heslo uživatele {{- name}}"
-
-msgid "Are you sure you want to reset {{- name}}'s password?"
-msgstr "Opravdu chcete resetovat heslo uživatele {{- name}}?"
+msgid "Are you sure you want to reset the password for {{- name}}?"
+msgstr ""
 
 msgid "Yes, reset"
 msgstr "Ano, resetovat"
@@ -984,11 +987,14 @@ msgstr "Správa uživatelů"
 msgid "Error loading users"
 msgstr "Chyba při načítání uživatelů"
 
-msgid "Account disabled?"
-msgstr "Účet deaktivován?"
+msgid "Status"
+msgstr ""
 
 msgid "Disabled"
 msgstr "Zakázáno"
+
+msgid "Active"
+msgstr ""
 
 msgid "Something went wrong when processing your request."
 msgstr "Při zpracování vašeho požadavku se něco pokazilo."
