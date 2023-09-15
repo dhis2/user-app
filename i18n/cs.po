@@ -1,14 +1,14 @@
 # 
 # Translators:
-# trendspotter <jirka.p@volny.cz>, 2022
+# Jiří Podhorecký, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
 "PO-Revision-Date: 2022-10-15 22:33+0000\n"
-"Last-Translator: trendspotter <jirka.p@volny.cz>, 2022\n"
-"Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
+"Last-Translator: Jiří Podhorecký, 2023\n"
+"Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -617,6 +617,12 @@ msgstr "Identifikátor LDAP"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr "Pouze externí ověřování (OpenID / LDAP)"
 
+msgid "Send invite"
+msgstr "Poslat pozvánku"
+
+msgid "Cancel invite"
+msgstr ""
+
 msgid "Invalid username"
 msgstr "Neplatné uživatelské jméno"
 
@@ -938,11 +944,8 @@ msgstr "Heslo uživatele \"{{- name}}\" bylo úspěšně resetováno"
 msgid "There was an error resetting the password: {{- error}}"
 msgstr "Při resetování hesla došlo k chybě: {{- error}}"
 
-msgid "Reset password of user {{- name}}"
-msgstr "Obnovit heslo uživatele {{- name}}"
-
-msgid "Are you sure you want to reset {{- name}}'s password?"
-msgstr "Opravdu chcete resetovat heslo uživatele {{- name}}?"
+msgid "Are you sure you want to reset the password for {{- name}}?"
+msgstr ""
 
 msgid "Yes, reset"
 msgstr "Ano, resetovat"
@@ -980,11 +983,14 @@ msgstr "Správa uživatelů"
 msgid "Last login"
 msgstr "Poslední přihlášení"
 
-msgid "Account disabled?"
-msgstr "Účet deaktivován?"
+msgid "Status"
+msgstr "Stav"
 
 msgid "Disabled"
 msgstr "Zakázáno"
+
+msgid "Active"
+msgstr "Aktivní"
 
 msgid "Male"
 msgstr "Male"
