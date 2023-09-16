@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Karoline Tufte Lien <karoline@dhis2.org>, 2022
-# Caroline Hesthagen Holen <caroline@devotta.no>, 2022
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2023
+# Karoline Tufte Lien <karoline@dhis2.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
 "PO-Revision-Date: 2022-10-15 22:33+0000\n"
-"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2022\n"
-"Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2023\n"
+"Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -606,6 +606,12 @@ msgstr "LDAP-ID"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr ""
 
+msgid "Send invite"
+msgstr "Send invitasjon"
+
+msgid "Cancel invite"
+msgstr ""
+
 msgid "Invalid username"
 msgstr ""
 
@@ -928,10 +934,7 @@ msgstr ""
 msgid "There was an error resetting the password: {{- error}}"
 msgstr ""
 
-msgid "Reset password of user {{- name}}"
-msgstr ""
-
-msgid "Are you sure you want to reset {{- name}}'s password?"
+msgid "Are you sure you want to reset the password for {{- name}}?"
 msgstr ""
 
 msgid "Yes, reset"
@@ -970,11 +973,14 @@ msgstr "Brukeradministrasjon"
 msgid "Last login"
 msgstr "Sist innlogget"
 
-msgid "Account disabled?"
-msgstr ""
+msgid "Status"
+msgstr "Status"
 
 msgid "Disabled"
 msgstr "Deaktivert"
+
+msgid "Active"
+msgstr "Aktiv"
 
 msgid "Male"
 msgstr "Mann"

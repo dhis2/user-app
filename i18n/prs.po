@@ -1,14 +1,14 @@
 # 
 # Translators:
-# phil_dhis2, 2022
+# Philip Larsen Donnelly, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
 "PO-Revision-Date: 2022-10-15 22:33+0000\n"
-"Last-Translator: phil_dhis2, 2022\n"
-"Language-Team: Persian (Afghanistan) (https://www.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
+"Last-Translator: Philip Larsen Donnelly, 2023\n"
+"Language-Team: Persian (Afghanistan) (https://app.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -604,6 +604,12 @@ msgstr ""
 msgid "External authentication only (OpenID / LDAP)"
 msgstr ""
 
+msgid "Send invite"
+msgstr ""
+
+msgid "Cancel invite"
+msgstr ""
+
 msgid "Invalid username"
 msgstr ""
 
@@ -923,10 +929,7 @@ msgstr ""
 msgid "There was an error resetting the password: {{- error}}"
 msgstr ""
 
-msgid "Reset password of user {{- name}}"
-msgstr ""
-
-msgid "Are you sure you want to reset {{- name}}'s password?"
+msgid "Are you sure you want to reset the password for {{- name}}?"
 msgstr ""
 
 msgid "Yes, reset"
@@ -965,11 +968,14 @@ msgstr ""
 msgid "Last login"
 msgstr ""
 
-msgid "Account disabled?"
-msgstr ""
+msgid "Status"
+msgstr "وضعیت"
 
 msgid "Disabled"
 msgstr "غیرفعال سازی"
+
+msgid "Active"
+msgstr "فعال"
 
 msgid "Male"
 msgstr "مذکر"
