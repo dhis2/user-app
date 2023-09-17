@@ -3,8 +3,8 @@
 # David Júnior <davidjr.mondlane@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
-# Ge Joao <gsimango@saudigitus.org>, 2022
-# phil_dhis2, 2022
+# Philip Larsen Donnelly, 2022
+# Ge Joao <gsimango@saudigitus.org>, 2023
 # Sheila André <sandre@saudigitus.org>, 2023
 # 
 msgid ""
@@ -611,6 +611,12 @@ msgstr "identificador LDAP"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr ""
 
+msgid "Send invite"
+msgstr "Enviar convite "
+
+msgid "Cancel invite"
+msgstr ""
+
 msgid "Invalid username"
 msgstr ""
 
@@ -933,10 +939,7 @@ msgstr ""
 msgid "There was an error resetting the password: {{- error}}"
 msgstr ""
 
-msgid "Reset password of user {{- name}}"
-msgstr ""
-
-msgid "Are you sure you want to reset {{- name}}'s password?"
+msgid "Are you sure you want to reset the password for {{- name}}?"
 msgstr ""
 
 msgid "Yes, reset"
@@ -975,11 +978,14 @@ msgstr "Gestão de usuários"
 msgid "Last login"
 msgstr "Última entrada"
 
-msgid "Account disabled?"
-msgstr ""
+msgid "Status"
+msgstr "Status"
 
 msgid "Disabled"
 msgstr "Desabilitar"
+
+msgid "Active"
+msgstr "Ativo"
 
 msgid "Male"
 msgstr "Masculino"

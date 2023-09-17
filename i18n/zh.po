@@ -1,8 +1,8 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2022
-# 晓东 林 <13981924470@126.com>, 2022
-# phil_dhis2, 2022
+# Philip Larsen Donnelly, 2022
+# 晓东 林 <13981924470@126.com>, 2023
 # easylin <lin_xd@126.com>, 2023
 # 
 msgid ""
@@ -609,6 +609,12 @@ msgstr "LDAP标识"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr "仅外部身份验证（OpenID / LDAP）"
 
+msgid "Send invite"
+msgstr "发送邀请"
+
+msgid "Cancel invite"
+msgstr "取消邀请"
+
 msgid "Invalid username"
 msgstr "无效的用户名"
 
@@ -928,10 +934,7 @@ msgstr "用户“{{-name}}”的密码重置成功"
 msgid "There was an error resetting the password: {{- error}}"
 msgstr "重置密码时出错：{{- error}}"
 
-msgid "Reset password of user {{- name}}"
-msgstr "重置用户 {{- name}} 的密码"
-
-msgid "Are you sure you want to reset {{- name}}'s password?"
+msgid "Are you sure you want to reset the password for {{- name}}?"
 msgstr "您确定要重置 {{- name}} 的密码吗？"
 
 msgid "Yes, reset"
@@ -970,11 +973,14 @@ msgstr "用户管理"
 msgid "Last login"
 msgstr "上次登录"
 
-msgid "Account disabled?"
-msgstr "帐户已禁用？"
+msgid "Status"
+msgstr "状态"
 
 msgid "Disabled"
 msgstr "关闭"
+
+msgid "Active"
+msgstr "活跃的"
 
 msgid "Male"
 msgstr "男"

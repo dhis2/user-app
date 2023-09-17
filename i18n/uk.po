@@ -1,18 +1,18 @@
 # 
 # Translators:
-# Nadiia <semchuk@aph.org.ua>, 2022
 # Wanda <wanda@frontlineaids.org>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
-# Éva Tamási, 2022
-# phil_dhis2, 2022
+# Éva Tamási, 2023
+# Philip Larsen Donnelly, 2023
+# Nadiia <semchuk@aph.org.ua>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
 "PO-Revision-Date: 2022-10-15 22:33+0000\n"
-"Last-Translator: phil_dhis2, 2022\n"
-"Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
+"Last-Translator: Nadiia <semchuk@aph.org.ua>, 2023\n"
+"Language-Team: Ukrainian (https://app.transifex.com/hisp-uio/teams/100509/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -625,6 +625,12 @@ msgstr "Ідентифікатор LDAP"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr "Тільки зовнішня автентифікація (OpenID / LDAP)"
 
+msgid "Send invite"
+msgstr "Надіслати запрошення"
+
+msgid "Cancel invite"
+msgstr ""
+
 msgid "Invalid username"
 msgstr "Недійсне ім'я користувача"
 
@@ -948,11 +954,8 @@ msgstr "Пароль користувача \"{{- name}}\" успішно ски
 msgid "There was an error resetting the password: {{- error}}"
 msgstr "Під час скидання пароля сталася помилка: {{- error}}"
 
-msgid "Reset password of user {{- name}}"
-msgstr "Скинути пароль користувача {{- name}}"
-
-msgid "Are you sure you want to reset {{- name}}'s password?"
-msgstr "Ви дійсно хочете скинути пароль {{- name}}?"
+msgid "Are you sure you want to reset the password for {{- name}}?"
+msgstr ""
 
 msgid "Yes, reset"
 msgstr "Так, скинути"
@@ -990,11 +993,14 @@ msgstr "Керування користувачами"
 msgid "Last login"
 msgstr "Останній вхід"
 
-msgid "Account disabled?"
-msgstr "Обліковий запис вимкнено?"
+msgid "Status"
+msgstr "Статус"
 
 msgid "Disabled"
 msgstr "Вимкнено"
+
+msgid "Active"
+msgstr "Активно"
 
 msgid "Male"
 msgstr "Чоловік"
