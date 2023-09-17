@@ -1,16 +1,16 @@
 # 
 # Translators:
 # David Júnior <davidjr.mondlane@gmail.com>, 2022
-# Ge Joao <gsimango@saudigitus.org>, 2022
-# phil_dhis2, 2022
+# Philip Larsen Donnelly, 2022
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
+# Ge Joao <gsimango@saudigitus.org>, 2023
 # Sheila André <sandre@saudigitus.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
+"POT-Creation-Date: 2023-08-02T13:20:46.717Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
 "Last-Translator: Sheila André <sandre@saudigitus.org>, 2023\n"
 "Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
@@ -574,6 +574,12 @@ msgstr ""
 msgid "Invalid WhatsApp number"
 msgstr ""
 
+msgid "Send invite"
+msgstr "Enviar convite "
+
+msgid "Cancel invite"
+msgstr ""
+
 msgid "Error updating user"
 msgstr ""
 
@@ -935,10 +941,7 @@ msgstr ""
 msgid "There was an error resetting the password: {{- error}}"
 msgstr ""
 
-msgid "Reset password of user {{- name}}"
-msgstr ""
-
-msgid "Are you sure you want to reset {{- name}}'s password?"
+msgid "Are you sure you want to reset the password for {{- name}}?"
 msgstr ""
 
 msgid "Yes, reset"
@@ -977,11 +980,14 @@ msgstr "Gestão de usuários"
 msgid "Error loading users"
 msgstr ""
 
-msgid "Account disabled?"
-msgstr ""
+msgid "Status"
+msgstr "Status"
 
 msgid "Disabled"
 msgstr "Desabilitar"
+
+msgid "Active"
+msgstr "Ativo"
 
 msgid "Something went wrong when processing your request."
 msgstr "Ocorreu um erro ao processar sua solicitação."
