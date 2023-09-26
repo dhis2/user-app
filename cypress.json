@@ -4,7 +4,7 @@
     "projectId": "48zztu",
     "experimentalInteractiveRunEvents": true,
     "env": {
-        "dhis2BaseUrl": "http://localhost:8080",
+        "dhis2BaseUrl": "https://debug.dhis2.org/2.38dev",
         "dhis2Username": "admin",
         "dhis2Password": "district",
         "dhis2DataTestPrefix": "",
