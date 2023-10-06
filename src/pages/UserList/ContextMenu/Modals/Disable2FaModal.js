@@ -21,10 +21,8 @@ const Disable2FaModal = ({ user, refetchUsers, onClose }) => {
         setLoading(true)
         try {
             await engine.mutate({
-                resource: `users/${user.id}`,
-                type: 'update',
-                partial: true,
-                data: { userCredentials: { twoFA: false } },
+                resource: `users/${user.id}/twoFA/disabled`,
+                type: 'create',
             })
             const message = i18n.t(
                 'Disabled two factor authentication for "{{- name}}" successfuly',
