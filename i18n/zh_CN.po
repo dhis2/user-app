@@ -1,15 +1,15 @@
 # 
 # Translators:
-# easylin <lin_xd@126.com>, 2022
 # 晓东 林 <13981924470@126.com>, 2022
+# easylin <lin_xd@126.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-11-17T13:40:24.697Z\n"
+"POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2022\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2023\n"
+"Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -63,7 +63,7 @@ msgid "Will be removed"
 msgstr ""
 
 msgid "Network error"
-msgstr ""
+msgstr "网络错误"
 
 msgid "Could not load current user information."
 msgstr ""
@@ -248,6 +248,9 @@ msgstr ""
 
 msgid "All (Full authority)"
 msgstr "所有（完全授权）"
+
+msgid "Aggregate Data Exchange"
+msgstr ""
 
 msgid "Analytics Table Hook"
 msgstr "分析表钩子"
@@ -618,16 +621,16 @@ msgstr "LDAP标识"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr ""
 
-msgid "Send invite"
-msgstr "发送邀请"
-
-msgid "Cancel invite"
-msgstr ""
-
 msgid "Invalid username"
 msgstr ""
 
 msgid "Invalid WhatsApp number"
+msgstr ""
+
+msgid "Send invite"
+msgstr "发送邀请"
+
+msgid "Cancel invite"
 msgstr ""
 
 msgid "Error updating user"
@@ -783,6 +786,13 @@ msgstr "新建"
 msgid "Error loading user groups"
 msgstr ""
 
+msgid ""
+"There are no user groups to show here. You can add a new user group below."
+msgstr ""
+
+msgid "Add new user group"
+msgstr ""
+
 msgid "Member?"
 msgstr ""
 
@@ -820,6 +830,13 @@ msgid "User Role Management"
 msgstr "用户角色管理"
 
 msgid "Error loading user roles"
+msgstr ""
+
+msgid ""
+"There are no user roles to show here. You can add a new user role below."
+msgstr ""
+
+msgid "Add new user role"
 msgstr ""
 
 msgid "Profile"
@@ -956,6 +973,12 @@ msgstr ""
 
 msgid "User Management"
 msgstr "用户管理"
+
+msgid "There are no users to show here. You can add a new user below."
+msgstr ""
+
+msgid "Add new user"
+msgstr ""
 
 msgid "Last login"
 msgstr "上次登录"
