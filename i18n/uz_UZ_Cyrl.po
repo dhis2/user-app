@@ -249,7 +249,7 @@ msgid "All (Full authority)"
 msgstr "Барчаси (Тўлиқ ваколатлар)"
 
 msgid "Aggregate Data Exchange"
-msgstr ""
+msgstr "Маълумотлар Элементини Ўзгартириш"
 
 msgid "Analytics Table Hook"
 msgstr "Аналитик жадваллар таҳлилчиси"
@@ -446,7 +446,7 @@ msgid "Please enter at least {{ minCharLength }} characters"
 msgstr ""
 
 msgid "No matches found"
-msgstr "Ҳеч нарса топилмади"
+msgstr "Ҳеч қандай маълумотлар топилмади"
 
 msgid "Apply"
 msgstr "Мурожаат қилиш"
