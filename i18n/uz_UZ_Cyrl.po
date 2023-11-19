@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2022
+# Ibatov <ibatovk@who.int>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2022\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2023\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -249,7 +249,7 @@ msgid "All (Full authority)"
 msgstr "Барчаси (Тўлиқ ваколатлар)"
 
 msgid "Aggregate Data Exchange"
-msgstr ""
+msgstr "Маълумотлар Элементини Ўзгартириш"
 
 msgid "Analytics Table Hook"
 msgstr "Аналитик жадваллар таҳлилчиси"
