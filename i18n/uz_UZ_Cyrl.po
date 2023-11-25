@@ -994,7 +994,7 @@ msgid "Created"
 msgstr "Яратилган"
 
 msgid "Contact"
-msgstr ""
+msgstr "Контакт"
 
 msgid "Send message"
 msgstr "Хабар юбориш"
