@@ -62,7 +62,7 @@ msgid "Will be removed"
 msgstr ""
 
 msgid "Network error"
-msgstr ""
+msgstr "Тармоқда хатолик"
 
 msgid "Could not load current user information."
 msgstr ""
@@ -1006,7 +1006,7 @@ msgid "Created"
 msgstr "Яратилган"
 
 msgid "Contact"
-msgstr ""
+msgstr "Контакт"
 
 msgid "Send message"
 msgstr "Хабар юбориш"
