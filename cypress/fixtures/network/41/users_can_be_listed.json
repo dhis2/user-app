@@ -1,0 +1,157 @@
+[
+    {
+        "path": "/api/41/systemSettings/helpPageLink",
+        "featureName": "Users can be listed",
+        "static": false,
+        "count": 2,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"helpPageLink\":\"https://dhis2.github.io/dhis2-docs/master/en/user/html/dhis2_user_manual_en.html\"}",
+        "responseSize": 99,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "content-type": "application/json",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block",
+            "server": "Jetty(10.0.18)"
+        }
+    },
+    {
+        "path": "/api/41/organisationUnits?paging=false&level=1&fields=id%2Cpath%2CdisplayName%2Cchildren%3A%3AisNotEmpty",
+        "featureName": "Users can be listed",
+        "static": false,
+        "count": 2,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"organisationUnits\":[{\"children\":true,\"path\":\"/ImspTQPwCqd\",\"displayName\":\"Sierra Leone\",\"id\":\"ImspTQPwCqd\"}]}",
+        "responseSize": 111,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "content-type": "application/json",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block",
+            "server": "Jetty(10.0.18)"
+        }
+    },
+    {
+        "path": "/api/41/users?fields=id,displayName,access,email,twoFactorEnabled,userCredentials%5Busername%2Cdisabled%2ClastLogin%5D,teiSearchOrganisationUnits%5Bid%2Cpath%5D&order=firstName%3Aasc,surname%3Aasc&userOrgUnits=true&includeChildren=true&page=1&pageSize=50&query=&selfRegistered=false",
+        "featureName": "Users can be listed",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"pager\":{\"page\":1,\"total\":137,\"pageSize\":50,\"nextPage\":\"/41/users?page=2&userOrgUnits=true&includeChildren=true&query=&fields=id%2CdisplayName%2Caccess%2Cemail%2CtwoFactorEnabled%2CuserCredentials%5Busername%2Cdisabled%2ClastLogin%5D%2CteiSearchOrganisationUnits%5Bid%2Cpath%5D&order=firstName%3Aasc%2Csurname%3Aasc&selfRegistered=false\",\"pageCount\":3},\"users\":[{\"email\":\"alain@ema.il\",\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"traore\",\"lastLogin\":\"2013-12-30T17:16:43.235\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Alain Traore\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"oXD88WWSQpR\"},{\"email\":\"dummy@dhis2.org\",\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Ali Nana\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"gEnZri18JsV\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabicB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Arabic Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"Rq9TNYOyS6a\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabicS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Arabic Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"OSWYhAwJqiC\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabic\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Arabic UAE\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"OF1mSOFpygN\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabiceB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicE Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"IC1o0DI2iWu\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabice\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicE Egypt\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"FVsLhslRbTK\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabiceS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicE Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"akw4ilMLc24\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabiciB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicI Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"G2ysGXpcZWr\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabici\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicI Iraq\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"NG6JReWSInT\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabiciS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicI Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"iswBgC3ROmB\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabicsB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicS Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"EGwENMFCpbm\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabics\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicS Sudan\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"DdfFqqZkBhd\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabicsS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicS Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"EyUuSlSe50U\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"bengali\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Bengali Bangladesh\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"wQ1F32Aa9Ug\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"bengaliB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Bengali Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"nFNQNgrbTED\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"bengaliS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Bengali Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"wQTgefEcyTG\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"bislamaB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Bislama Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"DLjZWMsVsq2\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"bislamaS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Bislama Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"C6fqFRbKe6r\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"bislama\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Bislama Vanuatu\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"JyMUTHHxh3B\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"bombali\",\"lastLogin\":\"2014-09-28T23:19:34.514\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Bombali District\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"NOOF56dveaZ\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"burmeseB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Burmese Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"WYDN4b4yRlg\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"burmese\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Burmese Myanmar\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"T4AwvxjfaFy\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"burmeseS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Burmese Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"rIouAxmW0vD\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"chinese\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Chinese Asia\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"yarlPr6DsOF\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"chineseB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Chinese Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"rH2032EPFvr\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"chineseS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Chinese Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"ITrQQlJqbaE\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"chinesecB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ChineseC Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"SpuKahMLsAr\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"chinesec\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ChineseC China\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"t6ijJxbHBCa\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"chinesecS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ChineseC Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"xbAzaTwEGx0\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"danishB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Danish Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"ga5Y0Wg5kof\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"danish\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Danish Denmark\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"wqFivBzTq3r\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"danishS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Danish Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"oEtWWgCGUif\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"konan\",\"lastLogin\":\"2019-04-29T16:13:04.047\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Didier Konan\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"I9fMsY4pRKk\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"donor\",\"lastLogin\":\"2014-04-08T21:27:06.659\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Donor User\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"cddnwKV2gm9\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"englishB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"English Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"FfQ2460chiA\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"englishS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"English Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"vgSpvvWCbxI\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"english\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"English US/UK\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"tQSUE8azWFG\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"frenchB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"French Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"L2B791gfbds\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"french\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"French France\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"OhBMBATrkP7\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"frenchS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"French Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"ImbBYJHZrAW\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"analyticstest\",\"lastLogin\":\"2021-04-16T10:29:30.967\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Freya Njordsdottir\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"tiJZaFA1tXp\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"geetha\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Geetha Alwan\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"IAzIZweJnhm\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"geethaS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Geetha Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"qObaDc0JE3y\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"gintareS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Gintare Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"IriFPYe2sGG\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"gintare\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Gintare Vilkelyte\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"k0pJIVKAJz3\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"guest\",\"lastLogin\":\"2014-10-07T22:17:43.434\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Guest User\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"rWLrZL8rP3K\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"haroonS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Haroon Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"hP0k45PbWah\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"haroon\",\"lastLogin\":\"2021-03-18T11:58:09.851\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Haroon Twalibu\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"Mw9e2OWvRKr\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"hella\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Hella Dawit\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"sVahVulbH6q\"}]}",
+        "responseSize": 13918,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "content-type": "application/json",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block",
+            "server": "Jetty(10.0.18)"
+        }
+    },
+    {
+        "path": "/api/41/users?fields=id,displayName,access,email,twoFactorEnabled,userCredentials%5Busername%2Cdisabled%2ClastLogin%5D,teiSearchOrganisationUnits%5Bid%2Cpath%5D&order=firstName%3Aasc,surname%3Aasc&userOrgUnits=true&includeChildren=true&page=1&pageSize=5&query=&selfRegistered=false",
+        "featureName": "Users can be listed",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"pager\":{\"page\":1,\"total\":137,\"pageSize\":5,\"nextPage\":\"/41/users?page=2&pageSize=5&userOrgUnits=true&includeChildren=true&query=&fields=id%2CdisplayName%2Caccess%2Cemail%2CtwoFactorEnabled%2CuserCredentials%5Busername%2Cdisabled%2ClastLogin%5D%2CteiSearchOrganisationUnits%5Bid%2Cpath%5D&order=firstName%3Aasc%2Csurname%3Aasc&selfRegistered=false\",\"pageCount\":28},\"users\":[{\"email\":\"alain@ema.il\",\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"traore\",\"lastLogin\":\"2013-12-30T17:16:43.235\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Alain Traore\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"oXD88WWSQpR\"},{\"email\":\"dummy@dhis2.org\",\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Ali Nana\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"gEnZri18JsV\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabicB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Arabic Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"Rq9TNYOyS6a\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabicS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Arabic Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"OSWYhAwJqiC\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabic\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Arabic UAE\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"OF1mSOFpygN\"}]}",
+        "responseSize": 1775,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "content-type": "application/json",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block",
+            "server": "Jetty(10.0.18)"
+        }
+    },
+    {
+        "path": "/api/41/users?fields=id,displayName,access,email,twoFactorEnabled,userCredentials%5Busername%2Cdisabled%2ClastLogin%5D,teiSearchOrganisationUnits%5Bid%2Cpath%5D&order=firstName%3Aasc,surname%3Aasc&userOrgUnits=true&includeChildren=true&page=2&pageSize=5&query=&selfRegistered=false",
+        "featureName": "Users can be listed",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"pager\":{\"page\":2,\"total\":137,\"pageSize\":5,\"nextPage\":\"/41/users?page=3&pageSize=5&userOrgUnits=true&includeChildren=true&query=&fields=id%2CdisplayName%2Caccess%2Cemail%2CtwoFactorEnabled%2CuserCredentials%5Busername%2Cdisabled%2ClastLogin%5D%2CteiSearchOrganisationUnits%5Bid%2Cpath%5D&order=firstName%3Aasc%2Csurname%3Aasc&selfRegistered=false\",\"prevPage\":\"/41/users?pageSize=5&userOrgUnits=true&includeChildren=true&query=&fields=id%2CdisplayName%2Caccess%2Cemail%2CtwoFactorEnabled%2CuserCredentials%5Busername%2Cdisabled%2ClastLogin%5D%2CteiSearchOrganisationUnits%5Bid%2Cpath%5D&order=firstName%3Aasc%2Csurname%3Aasc&selfRegistered=false\",\"pageCount\":28},\"users\":[{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabiceB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicE Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"IC1o0DI2iWu\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabice\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicE Egypt\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"FVsLhslRbTK\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabiceS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicE Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"akw4ilMLc24\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabiciB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicI Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"G2ysGXpcZWr\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabici\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicI Iraq\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"NG6JReWSInT\"}]}",
+        "responseSize": 2049,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "content-type": "application/json",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block",
+            "server": "Jetty(10.0.18)"
+        }
+    }
+]

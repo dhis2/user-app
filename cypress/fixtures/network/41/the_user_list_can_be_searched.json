@@ -1,0 +1,401 @@
+[
+    {
+        "path": "/api/41/systemSettings/helpPageLink",
+        "featureName": "The user list can be searched",
+        "static": false,
+        "count": 2,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"helpPageLink\":\"https://dhis2.github.io/dhis2-docs/master/en/user/html/dhis2_user_manual_en.html\"}",
+        "responseSize": 99,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "content-type": "application/json",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block",
+            "server": "Jetty(10.0.18)"
+        }
+    },
+    {
+        "path": "/api/41/organisationUnits?paging=false&level=1&fields=id%2Cpath%2CdisplayName%2Cchildren%3A%3AisNotEmpty",
+        "featureName": "The user list can be searched",
+        "static": false,
+        "count": 2,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"organisationUnits\":[{\"children\":true,\"path\":\"/ImspTQPwCqd\",\"displayName\":\"Sierra Leone\",\"id\":\"ImspTQPwCqd\"}]}",
+        "responseSize": 111,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "content-type": "application/json",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block",
+            "server": "Jetty(10.0.18)"
+        }
+    },
+    {
+        "path": "/api/41/users?fields=id,displayName,access,email,twoFactorEnabled,userCredentials%5Busername%2Cdisabled%2ClastLogin%5D,teiSearchOrganisationUnits%5Bid%2Cpath%5D&order=firstName%3Aasc,surname%3Aasc&userOrgUnits=true&includeChildren=true&page=1&pageSize=50&query=&selfRegistered=false",
+        "featureName": "The user list can be searched",
+        "static": false,
+        "count": 2,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"pager\":{\"page\":1,\"total\":137,\"pageSize\":50,\"nextPage\":\"/41/users?page=2&userOrgUnits=true&includeChildren=true&query=&fields=id%2CdisplayName%2Caccess%2Cemail%2CtwoFactorEnabled%2CuserCredentials%5Busername%2Cdisabled%2ClastLogin%5D%2CteiSearchOrganisationUnits%5Bid%2Cpath%5D&order=firstName%3Aasc%2Csurname%3Aasc&selfRegistered=false\",\"pageCount\":3},\"users\":[{\"email\":\"alain@ema.il\",\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"traore\",\"lastLogin\":\"2013-12-30T17:16:43.235\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Alain Traore\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"oXD88WWSQpR\"},{\"email\":\"dummy@dhis2.org\",\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Ali Nana\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"gEnZri18JsV\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabicB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Arabic Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"Rq9TNYOyS6a\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabicS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Arabic Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"OSWYhAwJqiC\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabic\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Arabic UAE\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"OF1mSOFpygN\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabiceB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicE Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"IC1o0DI2iWu\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabice\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicE Egypt\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"FVsLhslRbTK\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabiceS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicE Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"akw4ilMLc24\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabiciB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicI Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"G2ysGXpcZWr\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabici\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicI Iraq\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"NG6JReWSInT\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabiciS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicI Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"iswBgC3ROmB\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabicsB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicS Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"EGwENMFCpbm\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabics\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicS Sudan\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"DdfFqqZkBhd\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"arabicsS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ArabicS Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"EyUuSlSe50U\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"bengali\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Bengali Bangladesh\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"wQ1F32Aa9Ug\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"bengaliB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Bengali Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"nFNQNgrbTED\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"bengaliS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Bengali Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"wQTgefEcyTG\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"bislamaB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Bislama Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"DLjZWMsVsq2\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"bislamaS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Bislama Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"C6fqFRbKe6r\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"bislama\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Bislama Vanuatu\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"JyMUTHHxh3B\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"bombali\",\"lastLogin\":\"2014-09-28T23:19:34.514\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Bombali District\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"NOOF56dveaZ\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"burmeseB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Burmese Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"WYDN4b4yRlg\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"burmese\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Burmese Myanmar\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"T4AwvxjfaFy\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"burmeseS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Burmese Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"rIouAxmW0vD\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"chinese\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Chinese Asia\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"yarlPr6DsOF\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"chineseB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Chinese Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"rH2032EPFvr\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"chineseS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Chinese Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"ITrQQlJqbaE\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"chinesecB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ChineseC Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"SpuKahMLsAr\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"chinesec\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ChineseC China\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"t6ijJxbHBCa\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"chinesecS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"ChineseC Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"xbAzaTwEGx0\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"danishB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Danish Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"ga5Y0Wg5kof\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"danish\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Danish Denmark\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"wqFivBzTq3r\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"danishS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Danish Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"oEtWWgCGUif\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"konan\",\"lastLogin\":\"2019-04-29T16:13:04.047\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Didier Konan\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"I9fMsY4pRKk\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"donor\",\"lastLogin\":\"2014-04-08T21:27:06.659\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Donor User\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"cddnwKV2gm9\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"englishB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"English Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"FfQ2460chiA\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"englishS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"English Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"vgSpvvWCbxI\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"english\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"English US/UK\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"tQSUE8azWFG\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"frenchB\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"French Bombali\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"L2B791gfbds\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"french\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"French France\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"OhBMBATrkP7\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"frenchS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"French Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"ImbBYJHZrAW\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"analyticstest\",\"lastLogin\":\"2021-04-16T10:29:30.967\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Freya Njordsdottir\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"tiJZaFA1tXp\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"geetha\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Geetha Alwan\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"IAzIZweJnhm\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"geethaS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Geetha Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"qObaDc0JE3y\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"gintareS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Gintare Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"IriFPYe2sGG\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"gintare\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Gintare Vilkelyte\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"k0pJIVKAJz3\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"guest\",\"lastLogin\":\"2014-10-07T22:17:43.434\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Guest User\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"rWLrZL8rP3K\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"haroonS\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Haroon Super\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"hP0k45PbWah\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"haroon\",\"lastLogin\":\"2021-03-18T11:58:09.851\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Haroon Twalibu\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"Mw9e2OWvRKr\"},{\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"hella\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"Hella Dawit\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"sVahVulbH6q\"}]}",
+        "responseSize": 13918,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "content-type": "application/json",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block",
+            "server": "Jetty(10.0.18)"
+        }
+    },
+    {
+        "path": "/api/41/users?fields=id,displayName,access,email,twoFactorEnabled,userCredentials%5Busername%2Cdisabled%2ClastLogin%5D,teiSearchOrganisationUnits%5Bid%2Cpath%5D&order=firstName%3Aasc,surname%3Aasc&userOrgUnits=true&includeChildren=true&page=1&pageSize=50&query=admin&selfRegistered=false",
+        "featureName": "The user list can be searched",
+        "static": false,
+        "count": 3,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"pager\":{\"page\":1,\"total\":1,\"pageSize\":50,\"pageCount\":1},\"users\":[{\"email\":\"dummy@dhis2.org\",\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"username\":\"admin\",\"lastLogin\":\"2023-12-11T16:05:11.238\",\"disabled\":false},\"twoFactorEnabled\":false,\"displayName\":\"John Traore\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"xE7jOejl9FI\"}]}",
+        "responseSize": 392,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "content-type": "application/json",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block",
+            "server": "Jetty(10.0.18)"
+        }
+    },
+    {
+        "path": "/api/41/users/xE7jOejl9FI?fields=%3Aowner,access,displayName,userGroups%5Bid%2CdisplayName%5D,organisationUnits%5Bid%2CdisplayName%2Cpath%5D,dataViewOrganisationUnits%5Bid%2CdisplayName%2Cpath%5D,teiSearchOrganisationUnits%5Bid%2CdisplayName%2Cpath%5D,dataViewMaxOrganisationUnitLevel,userCredentials%5Bid%2Cusername%2CaccountExpiry%2ClastLogin%2CexternalAuth%2CuserRoles%5Bid%2CdisplayName%5D%2CcogsDimensionConstraints%5Bid%2CdisplayName%2CdimensionType%5D%2CcatDimensionConstraints%5Bid%2CdisplayName%2CdimensionType%5D%2CopenId%2CldapId%2Cdisabled%5D,whatsApp,facebookMessenger,skype,telegram,twitter",
+        "featureName": "The user list can be searched",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"created\":\"2013-04-18T17:15:08.407\",\"lastUpdated\":\"2023-12-11T16:05:11.239\",\"createdBy\":{\"id\":\"xE7jOejl9FI\",\"code\":null,\"name\":\"John Traore\",\"displayName\":\"John Traore\",\"username\":\"admin\"},\"lastUpdatedBy\":{\"id\":\"xE7jOejl9FI\",\"code\":null,\"name\":\"John Traore\",\"displayName\":\"John Traore\",\"username\":\"admin\"},\"username\":\"admin\",\"externalAuth\":false,\"passwordLastUpdated\":\"2014-12-18T20:56:05.264\",\"cogsDimensionConstraints\":[],\"catDimensionConstraints\":[],\"lastLogin\":\"2023-12-11T16:05:11.238\",\"selfRegistered\":false,\"invitation\":false,\"disabled\":false,\"surname\":\"Traore\",\"firstName\":\"John\",\"email\":\"dummy@dhis2.org\",\"jobTitle\":\"Super user\",\"introduction\":\"I am the super user of DHIS 2\",\"gender\":\"gender_male\",\"birthday\":\"1971-04-08T00:00:00.000\",\"nationality\":\"Sierra Leone\",\"employer\":\"DHIS\",\"education\":\"Master of super using\",\"interests\":\"Football, swimming, singing, dancing\",\"languages\":\"English\",\"lastCheckedInterpretations\":\"2016-10-13T11:51:34.317\",\"whatsApp\":\"+123123123123\",\"facebookMessenger\":\"john.traore\",\"skype\":\"john.traore\",\"telegram\":\"john.traore\",\"twitter\":\"john.traore\",\"organisationUnits\":[{\"path\":\"/ImspTQPwCqd\",\"displayName\":\"Sierra Leone\",\"id\":\"ImspTQPwCqd\"}],\"dataViewOrganisationUnits\":[],\"teiSearchOrganisationUnits\":[],\"userCredentials\":{\"id\":\"xE7jOejl9FI\",\"username\":\"admin\",\"externalAuth\":false,\"cogsDimensionConstraints\":[],\"catDimensionConstraints\":[],\"lastLogin\":\"2023-12-11T16:05:11.238\",\"disabled\":false,\"userRoles\":[{\"displayName\":\"Antenatal care program\",\"id\":\"UYXOT4A7JMI\"},{\"displayName\":\"Superuser\",\"id\":\"Ufph3mGRmMo\"},{\"displayName\":\"Data entry clerk\",\"id\":\"Euq3XfEIEbx\"},{\"displayName\":\"MNCH / PNC (Adult Woman) program\",\"id\":\"aNk5AyC7ydy\"},{\"displayName\":\"TB program\",\"id\":\"cUlTcejWree\"},{\"displayName\":\"Child Health Tracker\",\"id\":\"TMK9CMZ2V98\"},{\"displayName\":\"Child Health Program Manager\",\"id\":\"Ql6Gew7eaX6\"},{\"displayName\":\"WHO MCH program\",\"id\":\"Pqoy4DLOdMK\"},{\"displayName\":\"Inpatient program\",\"id\":\"DRdaVRtwmG5\"},{\"displayName\":\"M and E Officer\",\"id\":\"jRWSNIHdKww\"},{\"displayName\":\"Facility tracker\",\"id\":\"txB7vu1w2Pr\"},{\"displayName\":\"Guest\",\"id\":\"XS0dNzuZmfH\"},{\"displayName\":\"User manager\",\"id\":\"xJZBzAHI88H\"}]},\"displayName\":\"John Traore\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"xE7jOejl9FI\",\"attributeValues\":[],\"userRoles\":[{\"id\":\"UYXOT4A7JMI\"},{\"id\":\"Ufph3mGRmMo\"},{\"id\":\"Euq3XfEIEbx\"},{\"id\":\"aNk5AyC7ydy\"},{\"id\":\"cUlTcejWree\"},{\"id\":\"TMK9CMZ2V98\"},{\"id\":\"Ql6Gew7eaX6\"},{\"id\":\"Pqoy4DLOdMK\"},{\"id\":\"DRdaVRtwmG5\"},{\"id\":\"jRWSNIHdKww\"},{\"id\":\"txB7vu1w2Pr\"},{\"id\":\"XS0dNzuZmfH\"},{\"id\":\"xJZBzAHI88H\"}],\"userGroups\":[{\"displayName\":\"_PROGRAM_TB program\",\"id\":\"Kk12LkEWtXp\"},{\"displayName\":\"_PROGRAM_Antenatal care program\",\"id\":\"M1Qre0247G3\"},{\"displayName\":\"_PROGRAM_Inpatient program\",\"id\":\"NTC8GjJ7p8P\"},{\"displayName\":\"_DATASET_Superuser\",\"id\":\"B6JNeAQ6akX\"},{\"displayName\":\"Administrators\",\"id\":\"wl5cDMuUhmF\"},{\"displayName\":\"Feedback Message Recipients\",\"id\":\"QYrzIjSfI8z\"},{\"displayName\":\"System administrators\",\"id\":\"lFHP5lLkzVr\"},{\"displayName\":\"Malaria program\",\"id\":\"jvrEwEJ2yZn\"},{\"displayName\":\"Africare HQ\",\"id\":\"vAvEltyXGbD\"},{\"displayName\":\"_DATASET_M and E Officer\",\"id\":\"w900PX10L7O\"},{\"displayName\":\"_DATASET_Child Health Program Manager\",\"id\":\"GogLpGmkL0g\"},{\"displayName\":\"_PROGRAM_MNCH / PNC (Adult Woman) program\",\"id\":\"vRoAruMnNpB\"},{\"displayName\":\"_PROGRAM_WHO MCH program\",\"id\":\"z1gNAf2zUxZ\"},{\"displayName\":\"_PROGRAM_Superuser\",\"id\":\"gXpmQO6eEOo\"},{\"displayName\":\"_DATASET_Data entry clerk\",\"id\":\"tH0GcNZZ1vW\"},{\"displayName\":\"_PROGRAM_Child Health Tracker\",\"id\":\"H9XnHoWRKCg\"}]}",
+        "responseSize": 3620,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "content-type": "application/json",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block",
+            "server": "Jetty(10.0.18)"
+        }
+    },
+    {
+        "path": "/api/41/locales/db?fields=locale,name,displayName",
+        "featureName": "The user list can be searched",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "[{\"locale\":\"af\",\"name\":\"Afrikaans\",\"displayName\":\"Afrikaans\"},{\"locale\":\"am\",\"name\":\"አማርኛ\",\"displayName\":\"Amharic\"},{\"locale\":\"ar\",\"name\":\"العربية\",\"displayName\":\"Arabic\"},{\"locale\":\"bi\",\"name\":\"Bislama\",\"displayName\":\"Bislama\"},{\"locale\":\"my\",\"name\":\"မြန်မာ\",\"displayName\":\"Burmese\"},{\"locale\":\"zh\",\"name\":\"中文\",\"displayName\":\"Chinese\"},{\"locale\":\"nl\",\"name\":\"Nederlands\",\"displayName\":\"Dutch\"},{\"locale\":\"dz\",\"name\":\"རྫོང་ཁ\",\"displayName\":\"Dzongkha\"},{\"locale\":\"en\",\"name\":\"English\",\"displayName\":\"English\"},{\"locale\":\"en_BW\",\"name\":\"English (Botswana)\",\"displayName\":\"English (Botswana)\"},{\"locale\":\"en_KH\",\"name\":\"English (Cambodia)\",\"displayName\":\"English (Cambodia)\"},{\"locale\":\"en_TZ\",\"name\":\"English (Tanzania)\",\"displayName\":\"English (Tanzania)\"},{\"locale\":\"en_UG\",\"name\":\"English (Uganda)\",\"displayName\":\"English (Uganda)\"},{\"locale\":\"fr\",\"name\":\"français\",\"displayName\":\"French\"},{\"locale\":\"fr_SN\",\"name\":\"français (Sénégal)\",\"displayName\":\"French (Senegal)\"},{\"locale\":\"fr_SN\",\"name\":\"français (Sénégal)\",\"displayName\":\"French (Senegal)\"},{\"locale\":\"de\",\"name\":\"Deutsch\",\"displayName\":\"German\"},{\"locale\":\"gu\",\"name\":\"ગુજરાતી\",\"displayName\":\"Gujarati\"},{\"locale\":\"hi\",\"name\":\"हिन्दी\",\"displayName\":\"Hindi\"},{\"locale\":\"id\",\"name\":\"Indonesia\",\"displayName\":\"Indonesian\"},{\"locale\":\"it\",\"name\":\"italiano\",\"displayName\":\"Italian\"},{\"locale\":\"km\",\"name\":\"ខ្មែរ\",\"displayName\":\"Khmer\"},{\"locale\":\"rw\",\"name\":\"Kinyarwanda\",\"displayName\":\"Kinyarwanda\"},{\"locale\":\"lo\",\"name\":\"ລາວ\",\"displayName\":\"Lao\"},{\"locale\":\"ne\",\"name\":\"नेपाली\",\"displayName\":\"Nepali\"},{\"locale\":\"no\",\"name\":\"norsk\",\"displayName\":\"Norwegian\"},{\"locale\":\"ps\",\"name\":\"پښتو\",\"displayName\":\"Pashto\"},{\"locale\":\"fa\",\"name\":\"فارسی\",\"displayName\":\"Persian\"},{\"locale\":\"pt\",\"name\":\"português\",\"displayName\":\"Portuguese\"},{\"locale\":\"ru\",\"name\":\"русский\",\"displayName\":\"Russian\"},{\"locale\":\"es\",\"name\":\"español\",\"displayName\":\"Spanish\"},{\"locale\":\"es_GT\",\"name\":\"español (Guatemala)\",\"displayName\":\"Spanish (Guatemala)\"},{\"locale\":\"es_MX\",\"name\":\"español (México)\",\"displayName\":\"Spanish (Mexico)\"},{\"locale\":\"sw\",\"name\":\"Kiswahili\",\"displayName\":\"Swahili\"},{\"locale\":\"tg\",\"name\":\"тоҷикӣ\",\"displayName\":\"Tajik\"},{\"locale\":\"vi\",\"name\":\"Tiếng Việt\",\"displayName\":\"Vietnamese\"}]",
+        "responseSize": 2374,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "content-type": "application/json",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block",
+            "server": "Jetty(10.0.18)"
+        }
+    },
+    {
+        "path": "/api/41/locales/ui?fields=locale,name,displayName",
+        "featureName": "The user list can be searched",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "[{\"locale\":\"ar\",\"name\":\"العربية\",\"displayName\":\"Arabic\"},{\"locale\":\"ar_EG\",\"name\":\"العربية (مصر)\",\"displayName\":\"Arabic (Egypt)\"},{\"locale\":\"ar_IQ\",\"name\":\"العربية (العراق)\",\"displayName\":\"Arabic (Iraq)\"},{\"locale\":\"ar_SD\",\"name\":\"العربية (السودان)\",\"displayName\":\"Arabic (Sudan)\"},{\"locale\":\"bn\",\"name\":\"বাংলা\",\"displayName\":\"Bangla\"},{\"locale\":\"bi\",\"name\":\"Bislama\",\"displayName\":\"Bislama\"},{\"locale\":\"my\",\"name\":\"မြန်မာ\",\"displayName\":\"Burmese\"},{\"locale\":\"ckb\",\"name\":\"کوردیی ناوەندی\",\"displayName\":\"Central Kurdish\"},{\"locale\":\"zh\",\"name\":\"中文\",\"displayName\":\"Chinese\"},{\"locale\":\"zh_CN\",\"name\":\"中文 (中国)\",\"displayName\":\"Chinese (China)\"},{\"locale\":\"cs\",\"name\":\"čeština\",\"displayName\":\"Czech\"},{\"locale\":\"da\",\"name\":\"dansk\",\"displayName\":\"Danish\"},{\"locale\":\"nl\",\"name\":\"Nederlands\",\"displayName\":\"Dutch\"},{\"locale\":\"en\",\"name\":\"English\",\"displayName\":\"English\"},{\"locale\":\"fr\",\"name\":\"français\",\"displayName\":\"French\"},{\"locale\":\"id\",\"name\":\"Indonesia\",\"displayName\":\"Indonesian\"},{\"locale\":\"id_ID\",\"name\":\"Indonesia (Indonesia)\",\"displayName\":\"Indonesian (Indonesia)\"},{\"locale\":\"km\",\"name\":\"ខ្មែរ\",\"displayName\":\"Khmer\"},{\"locale\":\"rw\",\"name\":\"Kinyarwanda\",\"displayName\":\"Kinyarwanda\"},{\"locale\":\"lo\",\"name\":\"ລາວ\",\"displayName\":\"Lao\"},{\"locale\":\"mn\",\"name\":\"монгол\",\"displayName\":\"Mongolian\"},{\"locale\":\"ne\",\"name\":\"नेपाली\",\"displayName\":\"Nepali\"},{\"locale\":\"nb\",\"name\":\"norsk bokmål\",\"displayName\":\"Norwegian Bokmål\"},{\"locale\":\"or\",\"name\":\"ଓଡ଼ିଆ\",\"displayName\":\"Odia\"},{\"locale\":\"ps\",\"name\":\"پښتو\",\"displayName\":\"Pashto\"},{\"locale\":\"pt\",\"name\":\"português\",\"displayName\":\"Portuguese\"},{\"locale\":\"pt_BR\",\"name\":\"português (Brasil)\",\"displayName\":\"Portuguese (Brazil)\"},{\"locale\":\"ro\",\"name\":\"română\",\"displayName\":\"Romanian\"},{\"locale\":\"ru\",\"name\":\"русский\",\"displayName\":\"Russian\"},{\"locale\":\"si\",\"name\":\"සිංහල\",\"displayName\":\"Sinhala\"},{\"locale\":\"es\",\"name\":\"español\",\"displayName\":\"Spanish\"},{\"locale\":\"sv\",\"name\":\"svenska\",\"displayName\":\"Swedish\"},{\"locale\":\"tg\",\"name\":\"тоҷикӣ\",\"displayName\":\"Tajik\"},{\"locale\":\"tet\",\"name\":\"Tetum\",\"displayName\":\"Tetum\"},{\"locale\":\"uk\",\"name\":\"українська\",\"displayName\":\"Ukrainian\"},{\"locale\":\"ur\",\"name\":\"اردو\",\"displayName\":\"Urdu\"},{\"locale\":\"uz_UZ_Cyrl\",\"name\":\"o‘zbek (Oʻzbekiston, Cyrl)\",\"displayName\":\"Uzbek (Uzbekistan, Cyrl)\"},{\"locale\":\"uz_UZ_Latn\",\"name\":\"o‘zbek (Oʻzbekiston, Latn)\",\"displayName\":\"Uzbek (Uzbekistan, Latn)\"},{\"locale\":\"vi\",\"name\":\"Tiếng Việt\",\"displayName\":\"Vietnamese\"},{\"locale\":\"prs\",\"name\":\"prs\",\"displayName\":\"prs\"}]",
+        "responseSize": 2690,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "content-type": "application/json",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block",
+            "server": "Jetty(10.0.18)"
+        }
+    },
+    {
+        "path": "/api/41/userRoles?fields=id,displayName&canIssue=true&paging=false",
+        "featureName": "The user list can be searched",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"userRoles\":[{\"displayName\":\"Antenatal care program\",\"id\":\"UYXOT4A7JMI\"},{\"displayName\":\"Child Health Program Manager\",\"id\":\"Ql6Gew7eaX6\"},{\"displayName\":\"Child Health Tracker\",\"id\":\"TMK9CMZ2V98\"},{\"displayName\":\"Data entry clerk\",\"id\":\"Euq3XfEIEbx\"},{\"displayName\":\"Facility tracker\",\"id\":\"txB7vu1w2Pr\"},{\"displayName\":\"Guest\",\"id\":\"XS0dNzuZmfH\"},{\"displayName\":\"Inpatient program\",\"id\":\"DRdaVRtwmG5\"},{\"displayName\":\"M and E Officer\",\"id\":\"jRWSNIHdKww\"},{\"displayName\":\"MNCH / PNC (Adult Woman) program\",\"id\":\"aNk5AyC7ydy\"},{\"displayName\":\"Superuser\",\"id\":\"Ufph3mGRmMo\"},{\"displayName\":\"TB program\",\"id\":\"cUlTcejWree\"},{\"displayName\":\"User manager\",\"id\":\"xJZBzAHI88H\"},{\"displayName\":\"WHO MCH program\",\"id\":\"Pqoy4DLOdMK\"}]}",
+        "responseSize": 726,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "content-type": "application/json",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block",
+            "server": "Jetty(10.0.18)"
+        }
+    },
+    {
+        "path": "/api/41/userGroups?fields=id,displayName&paging=false",
+        "featureName": "The user list can be searched",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"userGroups\":[{\"displayName\":\"Administrators\",\"id\":\"wl5cDMuUhmF\"},{\"displayName\":\"Africare HQ\",\"id\":\"vAvEltyXGbD\"},{\"displayName\":\"Bo District M&E officers\",\"id\":\"ZoHNWQajIoe\"},{\"displayName\":\"Bonthe District M&E Officers\",\"id\":\"th4S6ovwcr8\"},{\"displayName\":\"Cape Town University Research Group\",\"id\":\"wAAA1agEHin\"},{\"displayName\":\"EPI Stock Completeness Notification Recipients\",\"id\":\"qlEhuAA77gc\"},{\"displayName\":\"Family Health Partner\",\"id\":\"ZrsVF7IJ93y\"},{\"displayName\":\"Family Planning Program Coordinators\",\"id\":\"sZRhXMPbcWc\"},{\"displayName\":\"Feedback Message Recipients\",\"id\":\"QYrzIjSfI8z\"},{\"displayName\":\"HIV Program Coordinators\",\"id\":\"Rg8wusV7QYi\"},{\"displayName\":\"Kenya staff\",\"id\":\"YCPJDwzbe8T\"},{\"displayName\":\"Malaria program\",\"id\":\"jvrEwEJ2yZn\"},{\"displayName\":\"Nairobi University Research Group\",\"id\":\"k3xzluFKVyw\"},{\"displayName\":\"Partner for Health International\",\"id\":\"GZSvMCVowAx\"},{\"displayName\":\"System administrators\",\"id\":\"lFHP5lLkzVr\"},{\"displayName\":\"TB Program Coordinators\",\"id\":\"hj0nnsVsPLU\"},{\"displayName\":\"Wakiki\",\"id\":\"L4XTzgbdza3\"},{\"displayName\":\"World Health Program\",\"id\":\"Iqfwd3j2qe5\"},{\"displayName\":\"_DATASET_Child Health Program Manager\",\"id\":\"GogLpGmkL0g\"},{\"displayName\":\"_DATASET_Data entry clerk\",\"id\":\"tH0GcNZZ1vW\"},{\"displayName\":\"_DATASET_M and E Officer\",\"id\":\"w900PX10L7O\"},{\"displayName\":\"_DATASET_Superuser\",\"id\":\"B6JNeAQ6akX\"},{\"displayName\":\"_DATASET_System administrator (ALL)\",\"id\":\"zz6XckBrLlj\"},{\"displayName\":\"_PROGRAM_Antenatal care program\",\"id\":\"M1Qre0247G3\"},{\"displayName\":\"_PROGRAM_Child Health Tracker\",\"id\":\"H9XnHoWRKCg\"},{\"displayName\":\"_PROGRAM_Inpatient program\",\"id\":\"NTC8GjJ7p8P\"},{\"displayName\":\"_PROGRAM_MNCH / PNC (Adult Woman) program\",\"id\":\"vRoAruMnNpB\"},{\"displayName\":\"_PROGRAM_Superuser\",\"id\":\"gXpmQO6eEOo\"},{\"displayName\":\"_PROGRAM_System administrator (ALL)\",\"id\":\"pBnkuih0c1K\"},{\"displayName\":\"_PROGRAM_TB program\",\"id\":\"Kk12LkEWtXp\"},{\"displayName\":\"_PROGRAM_WHO MCH program\",\"id\":\"z1gNAf2zUxZ\"}]}",
+        "responseSize": 1983,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "content-type": "application/json",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block",
+            "server": "Jetty(10.0.18)"
+        }
+    },
+    {
+        "path": "/api/41/filledOrganisationUnitLevels",
+        "featureName": "The user list can be searched",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "[{\"name\":\"National\",\"created\":\"2011-12-24T12:24:22.935\",\"lastUpdated\":\"2015-08-09T12:58:05.003\",\"translations\":[],\"favorites\":[],\"sharing\":{\"external\":false,\"users\":{},\"userGroups\":{}},\"level\":1,\"displayName\":\"National\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"favorite\":false,\"id\":\"H1KlN4QIauv\",\"attributeValues\":[]},{\"name\":\"District\",\"created\":\"2011-12-24T12:24:22.935\",\"lastUpdated\":\"2015-08-09T12:58:04.997\",\"translations\":[],\"favorites\":[],\"sharing\":{\"external\":false,\"users\":{},\"userGroups\":{}},\"level\":2,\"displayName\":\"District\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"favorite\":false,\"id\":\"wjP19dkFeIk\",\"attributeValues\":[]},{\"name\":\"Chiefdom\",\"created\":\"2011-12-24T12:24:22.935\",\"lastUpdated\":\"2015-08-09T12:58:05.001\",\"translations\":[],\"favorites\":[],\"sharing\":{\"external\":false,\"users\":{},\"userGroups\":{}},\"level\":3,\"displayName\":\"Chiefdom\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"favorite\":false,\"id\":\"tTUf91fCytl\",\"attributeValues\":[]},{\"name\":\"Facility\",\"created\":\"2011-12-24T12:24:22.935\",\"lastUpdated\":\"2015-08-09T12:58:05.005\",\"translations\":[],\"favorites\":[],\"sharing\":{\"external\":false,\"users\":{},\"userGroups\":{}},\"level\":4,\"displayName\":\"Facility\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"favorite\":false,\"id\":\"m9lBJogzE95\",\"attributeValues\":[]}]",
+        "responseSize": 1501,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "content-type": "application/json",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block",
+            "server": "Jetty(10.0.18)"
+        }
+    },
+    {
+        "path": "/api/41/dimensions/constraints?fields=id,name,dimensionType&paging=false",
+        "featureName": "The user list can be searched",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"dimensions\":[{\"name\":\"Funding Agency\",\"dimensionType\":\"CATEGORY_OPTION_GROUP_SET\",\"id\":\"SooXFOUnciJ\"},{\"name\":\"Donor\",\"dimensionType\":\"CATEGORY_OPTION_GROUP_SET\",\"id\":\"C31vHZqu0qU\"},{\"name\":\"Implementing Partner\",\"dimensionType\":\"CATEGORY\",\"id\":\"LFsZ8v5v7rq\"},{\"name\":\"Project\",\"dimensionType\":\"CATEGORY\",\"id\":\"yY2bQYqNt0o\"},{\"name\":\"Target vs Result\",\"dimensionType\":\"CATEGORY\",\"id\":\"eLwL77Z9E7R\"}]}",
+        "responseSize": 402,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "content-type": "application/json",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block",
+            "server": "Jetty(10.0.18)"
+        }
+    },
+    {
+        "path": "/api/41/attributes?fields=id,displayName,mandatory,unique,valueType,optionSet%5Boptions%5Bid%2CdisplayName%5D%5D&filter=userAttribute%3Aeq%3Atrue&paging=false",
+        "featureName": "The user list can be searched",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"attributes\":[]}",
+        "responseSize": 17,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "content-type": "application/json",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block",
+            "server": "Jetty(10.0.18)"
+        }
+    },
+    {
+        "path": "/api/41/organisationUnits/ImspTQPwCqd?fields=displayName,path,id",
+        "featureName": "The user list can be searched",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"path\":\"/ImspTQPwCqd\",\"displayName\":\"Sierra Leone\",\"id\":\"ImspTQPwCqd\"}",
+        "responseSize": 71,
+        "responseHeaders": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "content-type": "application/json",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block",
+            "server": "Jetty(10.0.18)"
+        }
+    }
+]

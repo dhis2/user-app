@@ -1,9 +1,9 @@
 {
-    "count": 347,
-    "totalResponseSize": 223981,
-    "duplicates": 272,
-    "nonDeterministicResponses": 24,
-    "apiVersion": "40",
+    "count": 340,
+    "totalResponseSize": 215048,
+    "duplicates": 265,
+    "nonDeterministicResponses": 25,
+    "apiVersion": "41",
     "fixtureFiles": [
         "static_resources.json",
         "show_tiles_with_list_and_add_action_to_all_available_sections.json",

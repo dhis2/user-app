@@ -44,6 +44,7 @@ const userSettingsQuery = {
 
 const useUser = (userId) => {
     const user = useDataQuery(userQuery, { lazy: true })
+    const username = user.data?.user?.userCredentials?.username
     const userSettings = useDataQuery(userSettingsQuery, { lazy: true })
 
     useEffect(() => {
@@ -57,11 +58,10 @@ const useUser = (userId) => {
     }, [user, userId])
 
     useEffect(() => {
-        if (user.data?.user && !userSettings.data) {
-            const { username } = user.data.user.userCredentials
+        if (username) {
             userSettings.refetch({ username })
         }
-    }, [user, userSettings])
+    }, [username])
 
     const loading =
         !user.called ||
