@@ -1,3 +1,10 @@
+## [1.5.35](https://github.com/dhis2/user-app/compare/v1.5.34...v1.5.35) (2023-12-11)
+
+
+### Bug Fixes
+
+* retrieve user locales [DHIS2-16170] ([#1325](https://github.com/dhis2/user-app/issues/1325)) ([2d9f76b](https://github.com/dhis2/user-app/commit/2d9f76b15dc25dd314cc13e7baf33dada640bae3))
+
 ## [1.5.34](https://github.com/dhis2/user-app/compare/v1.5.33...v1.5.34) (2023-12-11)
 
 
