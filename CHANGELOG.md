@@ -1,3 +1,10 @@
+## [1.5.34](https://github.com/dhis2/user-app/compare/v1.5.33...v1.5.34) (2023-12-11)
+
+
+### Bug Fixes
+
+* org unit access in search [DHIS2-16268] ([#1324](https://github.com/dhis2/user-app/issues/1324)) ([8dd538f](https://github.com/dhis2/user-app/commit/8dd538f98f5ea38e1ffd8dda8791334ab5563520))
+
 ## [1.5.33](https://github.com/dhis2/user-app/compare/v1.5.32...v1.5.33) (2023-11-26)
 
 
