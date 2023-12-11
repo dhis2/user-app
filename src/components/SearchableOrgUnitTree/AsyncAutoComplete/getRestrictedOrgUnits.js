@@ -12,18 +12,19 @@ export const getRestrictedOrgUnits = (orgUnits, orgUnitType, currentUser) => {
     }
 
     // Try the requested orgUnitType first and use currentUser.organisationUnits as fallback
-    const availableOrgUnits = new Set(
-        currentUser[orgUnitType].length > 0
+    const availableOrgUnits =
+        currentUser[orgUnitType]?.length > 0
             ? currentUser[orgUnitType]
             : currentUser.organisationUnits
-    )
+
+    const availableOrgUnitIDs = new Set(availableOrgUnits.map(({ id }) => id))
 
     return orgUnits.filter((unit) => {
-        const isAvailableUnit = availableOrgUnits.has(unit.id)
+        const isAvailableUnit = availableOrgUnitIDs.has(unit.id)
         const hasAvailableAncestor =
             !isAvailableUnit &&
             unit.ancestors.some((ancestor) =>
-                availableOrgUnits.has(ancestor.id)
+                availableOrgUnitIDs.has(ancestor.id)
             )
 
         return isAvailableUnit || hasAvailableAncestor
