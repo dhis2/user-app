@@ -13,7 +13,7 @@ export const getRestrictedOrgUnits = (orgUnits, orgUnitType, currentUser) => {
 
     // Try the requested orgUnitType first and use currentUser.organisationUnits as fallback
     const availableOrgUnits =
-        currentUser[orgUnitType].length > 0
+        currentUser[orgUnitType]?.length > 0
             ? currentUser[orgUnitType]
             : currentUser.organisationUnits
 
