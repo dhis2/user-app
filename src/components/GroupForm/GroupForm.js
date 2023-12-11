@@ -5,6 +5,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { useCurrentUser } from '../../hooks/useCurrentUser.js'
+import { useReferrerInfo } from '../../providers/index.js'
+import navigateTo from '../../utils/navigateTo.js'
 import Attributes from '../Attributes/index.js'
 import Form, { FormSection } from '../Form.js'
 import BasicInformationSection from './BasicInformationSection.js'
@@ -18,10 +20,11 @@ import UserGroupManagementSection from './UserGroupManagementSection.js'
 import UserManagementSection from './UserManagementSection.js'
 
 const GroupForm = ({ submitButtonLabel, group }) => {
-    const history = useHistory()
     const engine = useDataEngine()
     const { loading, error, userGroupOptions, attributes } = useFormData()
     const currentUser = useCurrentUser()
+    const { referrer } = useReferrerInfo()
+    const history = useHistory()
     const handleSubmit = async (values, form) => {
         try {
             if (group) {
@@ -43,7 +46,7 @@ const GroupForm = ({ submitButtonLabel, group }) => {
                 })
             }
 
-            history.goBack()
+            navigateTo('/user-groups')
             if (group && currentUser.userGroupIds.includes(group.id)) {
                 currentUser.refresh()
             }
@@ -68,6 +71,13 @@ const GroupForm = ({ submitButtonLabel, group }) => {
             error={error}
             submitButtonLabel={submitButtonLabel}
             onSubmit={handleSubmit}
+            onCancel={() => {
+                if (referrer === 'user-groups') {
+                    history.goBack()
+                } else {
+                    navigateTo('/user-groups')
+                }
+            }}
         >
             {({ submitError }) => (
                 <>

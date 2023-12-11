@@ -6,6 +6,8 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useCurrentUser } from '../../hooks/useCurrentUser.js'
+import { useReferrerInfo } from '../../providers/index.js'
+import navigateTo from '../../utils/navigateTo.js'
 import Attributes from '../Attributes/index.js'
 import Form, { FormSection } from '../Form.js'
 import AnalyticsDimensionsRestrictionsSection from './AnalyticsDimensionRestrictionsSection.js'
@@ -30,7 +32,6 @@ const UserForm = ({
         systemInfo: { emailConfigured },
     } = useConfig()
     const [isInvite, setIsInvite] = useState(false)
-    const history = useHistory()
     const engine = useDataEngine()
     const {
         loading,
@@ -45,6 +46,8 @@ const UserForm = ({
         attributes,
     } = useFormData()
     const currentUser = useCurrentUser()
+    const { referrer } = useReferrerInfo()
+    const history = useHistory()
     const handleSubmit = async (values, form) => {
         const userData = getUserData({
             values,
@@ -107,7 +110,7 @@ const UserForm = ({
                 }
             }
 
-            history.goBack()
+            navigateTo('/users')
             if (user && user.id === currentUser.id) {
                 currentUser.refresh()
             }
@@ -151,6 +154,13 @@ const UserForm = ({
                     : i18n.t('Cancel without saving')
             }
             onSubmit={handleSubmit}
+            onCancel={() => {
+                if (referrer === 'users') {
+                    history.goBack()
+                } else {
+                    navigateTo('/users')
+                }
+            }}
         >
             {({ values, submitError }) => (
                 <>

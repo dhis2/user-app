@@ -19,7 +19,6 @@ import {
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useState, useCallback, useMemo } from 'react'
-import { useHistory } from 'react-router-dom'
 import styles from './Form.module.css'
 import SearchableOrgUnitTree from './SearchableOrgUnitTree/index.js'
 
@@ -288,10 +287,8 @@ const Form = ({
     submitButtonLabel,
     cancelButtonLabel,
     onSubmit,
+    onCancel,
 }) => {
-    const history = useHistory()
-    const handleCancel = () => history.goBack()
-
     if (loading) {
         return (
             <CenteredContent>
@@ -337,7 +334,7 @@ const Form = ({
                         >
                             {submitButtonLabel}
                         </Button>
-                        <Button onClick={handleCancel} disabled={submitting}>
+                        <Button onClick={onCancel} disabled={submitting}>
                             {cancelButtonLabel}
                         </Button>
                     </ButtonStrip>
@@ -354,6 +351,7 @@ Form.defaultProps = {
 Form.propTypes = {
     children: PropTypes.func.isRequired,
     submitButtonLabel: PropTypes.string.isRequired,
+    onCancel: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
     cancelButtonLabel: PropTypes.string,
     error: PropTypes.instanceOf(Error),

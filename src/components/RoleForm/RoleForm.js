@@ -6,6 +6,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { useCurrentUser } from '../../hooks/useCurrentUser.js'
+import { useReferrerInfo } from '../../providers/index.js'
+import navigateTo from '../../utils/navigateTo.js'
 import Form, { FormSection, TextField, TransferField } from '../Form.js'
 import { getJsonPatch } from './getJsonPatch.js'
 import { getRoleData } from './getRoleData.js'
@@ -49,7 +51,6 @@ const getRoleAuthorityIDs = ({
 }
 
 const RoleForm = ({ submitButtonLabel, role }) => {
-    const history = useHistory()
     const engine = useDataEngine()
     const debouncedUniqueRoleNameValidator =
         useDebouncedUniqueRoleNameValidator({ engine, roleName: role?.name })
@@ -75,6 +76,8 @@ const RoleForm = ({ submitButtonLabel, role }) => {
             systemAuthorityOptions,
         })
     const currentUser = useCurrentUser()
+    const { referrer } = useReferrerInfo()
+    const history = useHistory()
     const handleSubmit = async (values, form) => {
         const roleData = getRoleData({ values })
 
@@ -100,7 +103,7 @@ const RoleForm = ({ submitButtonLabel, role }) => {
                 })
             }
 
-            history.goBack()
+            navigateTo('/user-roles')
             if (role && currentUser.userRoleIds.includes(role.id)) {
                 currentUser.refresh()
             }
@@ -125,6 +128,13 @@ const RoleForm = ({ submitButtonLabel, role }) => {
             error={error}
             submitButtonLabel={submitButtonLabel}
             onSubmit={handleSubmit}
+            onCancel={() => {
+                if (referrer === 'user-roles') {
+                    history.goBack()
+                } else {
+                    navigateTo('/user-roles')
+                }
+            }}
         >
             {({ submitError }) => (
                 <>
