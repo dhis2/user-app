@@ -27,7 +27,7 @@
             "content-type": "application/json",
             "x-content-type-options": "nosniff",
             "x-xss-protection": "1; mode=block",
-            "server": "Jetty(10.0.15)"
+            "server": "Jetty(10.0.18)"
         }
     },
     {
@@ -58,7 +58,7 @@
             "content-type": "application/json",
             "x-content-type-options": "nosniff",
             "x-xss-protection": "1; mode=block",
-            "server": "Jetty(10.0.15)"
+            "server": "Jetty(10.0.18)"
         }
     },
     {
@@ -89,7 +89,7 @@
             "content-type": "application/json",
             "x-content-type-options": "nosniff",
             "x-xss-protection": "1; mode=block",
-            "server": "Jetty(10.0.15)"
+            "server": "Jetty(10.0.18)"
         }
     },
     {
@@ -120,7 +120,7 @@
             "content-type": "application/json",
             "x-content-type-options": "nosniff",
             "x-xss-protection": "1; mode=block",
-            "server": "Jetty(10.0.15)"
+            "server": "Jetty(10.0.18)"
         }
     },
     {
@@ -151,7 +151,7 @@
             "content-type": "application/json",
             "x-content-type-options": "nosniff",
             "x-xss-protection": "1; mode=block",
-            "server": "Jetty(10.0.15)"
+            "server": "Jetty(10.0.18)"
         }
     }
 ]

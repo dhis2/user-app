@@ -27,7 +27,7 @@
             "content-type": "application/json",
             "x-content-type-options": "nosniff",
             "x-xss-protection": "1; mode=block",
-            "server": "Jetty(10.0.15)"
+            "server": "Jetty(10.0.18)"
         }
     },
     {
@@ -58,7 +58,7 @@
             "content-type": "application/json",
             "x-content-type-options": "nosniff",
             "x-xss-protection": "1; mode=block",
-            "server": "Jetty(10.0.15)"
+            "server": "Jetty(10.0.18)"
         }
     },
     {
@@ -89,7 +89,7 @@
             "content-type": "application/json",
             "x-content-type-options": "nosniff",
             "x-xss-protection": "1; mode=block",
-            "server": "Jetty(10.0.15)"
+            "server": "Jetty(10.0.18)"
         }
     },
     {
@@ -120,7 +120,7 @@
             "content-type": "application/json",
             "x-content-type-options": "nosniff",
             "x-xss-protection": "1; mode=block",
-            "server": "Jetty(10.0.15)"
+            "server": "Jetty(10.0.18)"
         }
     },
     {
@@ -140,7 +140,7 @@
             "sec-fetch-mode": "cors"
         },
         "statusCode": 200,
-        "responseBody": "{\"name\":\"_DATASET_System administrator (ALL)\",\"created\":\"2021-03-18T11:52:17.434\",\"lastUpdated\":\"2023-05-10T13:37:15.581\",\"translations\":[],\"createdBy\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"lastUpdatedBy\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"sharing\":{\"owner\":\"GOLswS44mh8\",\"external\":false,\"users\":{},\"userGroups\":{},\"public\":\"rw------\"},\"displayName\":\"_DATASET_System administrator (ALL)\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"zz6XckBrLlj\",\"attributeValues\":[],\"managedGroups\":[]}",
+        "responseBody": "{\"name\":\"_DATASET_System administrator (ALL)\",\"created\":\"2021-03-18T11:52:17.434\",\"lastUpdated\":\"2021-03-18T11:58:32.366\",\"translations\":[],\"createdBy\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"lastUpdatedBy\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"sharing\":{\"owner\":\"GOLswS44mh8\",\"external\":false,\"users\":{},\"userGroups\":{},\"public\":\"rw------\"},\"displayName\":\"_DATASET_System administrator (ALL)\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"id\":\"zz6XckBrLlj\",\"attributeValues\":[],\"managedGroups\":[]}",
         "responseSize": 675,
         "responseHeaders": {
             "access-control-allow-credentials": "true",
@@ -151,7 +151,7 @@
             "content-type": "application/json",
             "x-content-type-options": "nosniff",
             "x-xss-protection": "1; mode=block",
-            "server": "Jetty(10.0.15)"
+            "server": "Jetty(10.0.18)"
         }
     },
     {
@@ -182,7 +182,7 @@
             "content-type": "application/json",
             "x-content-type-options": "nosniff",
             "x-xss-protection": "1; mode=block",
-            "server": "Jetty(10.0.15)"
+            "server": "Jetty(10.0.18)"
         }
     },
     {
@@ -213,7 +213,7 @@
             "content-type": "application/json",
             "x-content-type-options": "nosniff",
             "x-xss-protection": "1; mode=block",
-            "server": "Jetty(10.0.15)"
+            "server": "Jetty(10.0.18)"
         }
     },
     {
@@ -244,7 +244,7 @@
             "content-type": "application/json",
             "x-content-type-options": "nosniff",
             "x-xss-protection": "1; mode=block",
-            "server": "Jetty(10.0.15)"
+            "server": "Jetty(10.0.18)"
         }
     }
 ]
