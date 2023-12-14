@@ -1,52 +1,44 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import {
-    NoticeBox,
-    composeValidators,
-    hasValue,
-    createMaxCharacterLength,
-    FinalForm,
-} from '@dhis2/ui'
+import { NoticeBox, FinalForm } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { useCurrentUser } from '../../hooks/useCurrentUser'
 import Attributes from '../Attributes'
-import Form, { FormSection, TextField, TransferField } from '../Form'
-import { getGroupData } from './getGroupData'
+import Form, { FormSection } from '../Form'
+import BasicInformationSection from './BasicInformationSection.js'
+import {
+    createPostRequestBody,
+    createJsonPatchRequestBody,
+} from './createRequestBody.js'
 import styles from './GroupForm.module.css'
 import { useFormData } from './useFormData'
-import {
-    useDebouncedUniqueGroupNameValidator,
-    useDebouncedUniqueGroupCodeValidator,
-} from './validators'
-
-const codeLengthValidator = createMaxCharacterLength(50)
+import UserGroupManagementSection from './UserGroupManagementSection.js'
 
 const GroupForm = ({ submitButtonLabel, group }) => {
     const history = useHistory()
     const engine = useDataEngine()
-    const debouncedUniqueGroupNameValidator =
-        useDebouncedUniqueGroupNameValidator({ engine, groupName: group?.name })
-    const debouncedUniqueGroupCodeValidator =
-        useDebouncedUniqueGroupCodeValidator({ engine, groupCode: group?.code })
     const { loading, error, userGroupOptions, attributes } = useFormData()
     const { currentUser, refreshCurrentUser } = useCurrentUser()
-    const handleSubmit = async values => {
-        const groupData = getGroupData({ values, group, attributes })
-
+    const handleSubmit = async (values, form) => {
         try {
             if (group) {
                 await engine.mutate({
-                    resource: `userGroups/${group.id}?mergeMode=MERGE`,
-                    type: 'update',
-                    data: groupData,
+                    resource: 'userGroups',
+                    id: group.id,
+                    type: 'json-patch',
+                    data: createJsonPatchRequestBody({
+                        values,
+                        attributes,
+                        dirtyFields: form.getState().dirtyFields,
+                    }),
                 })
             } else {
                 await engine.mutate({
                     resource: 'userGroups',
                     type: 'create',
-                    data: groupData,
+                    data: createPostRequestBody({ values, attributes }),
                 })
             }
 
@@ -91,28 +83,7 @@ const GroupForm = ({ submitButtonLabel, group }) => {
                             {submitError.message}
                         </NoticeBox>
                     )}
-                    <FormSection title={i18n.t('Basic information')}>
-                        <TextField
-                            required
-                            name="name"
-                            label={i18n.t('Name')}
-                            initialValue={group?.name}
-                            validate={composeValidators(
-                                hasValue,
-                                debouncedUniqueGroupNameValidator
-                            )}
-                        />
-                        <TextField
-                            name="code"
-                            label={i18n.t('Code')}
-                            helpText={i18n.t('Used in analytics reports.')}
-                            initialValue={group?.code}
-                            validate={composeValidators(
-                                codeLengthValidator,
-                                debouncedUniqueGroupCodeValidator
-                            )}
-                        />
-                    </FormSection>
+                    <BasicInformationSection group={group} />
                     <FormSection
                         title={i18n.t('User management')}
                         description={i18n.t(
@@ -126,22 +97,10 @@ const GroupForm = ({ submitButtonLabel, group }) => {
                             )}
                         </NoticeBox>
                     </FormSection>
-                    <FormSection
-                        title={i18n.t('User group management')}
-                        description={i18n.t(
-                            'This group can manage other user groups. Add managed user groups below.'
-                        )}
-                    >
-                        <TransferField
-                            name="managedGroups"
-                            leftHeader={i18n.t('Available user groups')}
-                            rightHeader={i18n.t('Managed user groups')}
-                            options={userGroupOptions}
-                            initialValue={
-                                group?.managedGroups.map(({ id }) => id) || []
-                            }
-                        />
-                    </FormSection>
+                    <UserGroupManagementSection
+                        group={group}
+                        userGroupOptions={userGroupOptions}
+                    />
                     {attributes.length > 0 && (
                         <FormSection title={i18n.t('Attributes')}>
                             <Attributes
