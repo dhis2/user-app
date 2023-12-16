@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-08-02T13:20:46.717Z\n"
+"POT-Creation-Date: 2023-12-12T13:36:05.060Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
 "Last-Translator: Nadiia <semchuk@aph.org.ua>, 2023\n"
 "Language-Team: Ukrainian (https://app.transifex.com/hisp-uio/teams/100509/uk/)\n"
@@ -70,46 +70,6 @@ msgstr "Помилка оновлення групи"
 msgid "Error creating group"
 msgstr "Помилка створення групи"
 
-msgid "Basic information"
-msgstr "Основні відомості"
-
-msgid "Name"
-msgstr "Ім'я"
-
-msgid "Code"
-msgstr "Код"
-
-msgid "Used in analytics reports."
-msgstr "Використовується в аналітичних звітах."
-
-msgid "User management"
-msgstr "Керування користувачами"
-
-msgid "Add or remove users from this group."
-msgstr "Додайте або видаліть користувачів з цієї групи."
-
-msgid ""
-"To add a user to this group, go to the User section and edit the user group "
-"settings for a specific user."
-msgstr ""
-"Щоб додати користувача до цієї групи, перейдіть до розділу \"Користувач\" і "
-"змініть налаштування групи користувачів для конкретного користувача."
-
-msgid "User group management"
-msgstr "Керування групами користувачів"
-
-msgid ""
-"This group can manage other user groups. Add managed user groups below."
-msgstr ""
-"Ця група може керувати іншими групами користувачів. Додайте керовані групи "
-"користувачів нижче."
-
-msgid "Available user groups"
-msgstr "Доступні групи користувачів"
-
-msgid "Managed user groups"
-msgstr "Керовані групи користувачів"
-
 msgid "Attributes"
 msgstr "Атрибути"
 
@@ -150,6 +110,12 @@ msgstr "Помилка оновлення ролі"
 
 msgid "Error creating role"
 msgstr "Помилка створення ролі"
+
+msgid "Basic information"
+msgstr "Основні відомості"
+
+msgid "Name"
+msgstr "Ім'я"
 
 msgid "Description"
 msgstr "Опис"
@@ -541,6 +507,9 @@ msgstr "Доступні ролі користувача"
 msgid "User roles this user is assigned"
 msgstr "Ролі користувача, призначені цьому користувачеві"
 
+msgid "Available user groups"
+msgstr "Доступні групи користувачів"
+
 msgid "User groups this user is a member of"
 msgstr "Групи користувачів, членом яких є цей користувач"
 
@@ -560,8 +529,11 @@ msgid "Password"
 msgstr "Пароль"
 
 msgid ""
-"Minimum 8 characters, one uppercase and lowercase letter and one number"
-msgstr "Мінімум 8 символів, одна велика і мала літери і одна цифра"
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
+msgstr ""
+"Пароль має містити щонайменше 8 символів, принаймні один символ нижнього "
+"регістру, один символ верхнього регістру та один спеціальний символ."
 
 msgid "Repeat new password"
 msgstr "Повторити новий пароль"
@@ -938,13 +910,6 @@ msgstr "Ім'я користувача для нового користувач�
 
 msgid "Password for new user"
 msgstr "Пароль для нового користувача"
-
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
-msgstr ""
-"Пароль має містити щонайменше 8 символів, принаймні один символ нижнього "
-"регістру, один символ верхнього регістру та один спеціальний символ."
 
 msgid "Cancel"
 msgstr "Скасувати"
