@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
+"POT-Creation-Date: 2023-12-12T13:36:05.060Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
 "Last-Translator: Malinda Wijeratne, 2023\n"
 "Language-Team: Sinhala (https://app.transifex.com/hisp-uio/teams/100509/si/)\n"
@@ -64,42 +64,6 @@ msgstr ""
 msgid "Error creating group"
 msgstr ""
 
-msgid "Basic information"
-msgstr ""
-
-msgid "Name"
-msgstr "නම"
-
-msgid "Code"
-msgstr "කේත කරන්න"
-
-msgid "Used in analytics reports."
-msgstr ""
-
-msgid "User management"
-msgstr ""
-
-msgid "Add or remove users from this group."
-msgstr ""
-
-msgid ""
-"To add a user to this group, go to the User section and edit the user group "
-"settings for a specific user."
-msgstr ""
-
-msgid "User group management"
-msgstr ""
-
-msgid ""
-"This group can manage other user groups. Add managed user groups below."
-msgstr ""
-
-msgid "Available user groups"
-msgstr ""
-
-msgid "Managed user groups"
-msgstr ""
-
 msgid "Attributes"
 msgstr ""
 
@@ -140,6 +104,12 @@ msgstr ""
 
 msgid "Error creating role"
 msgstr ""
+
+msgid "Basic information"
+msgstr ""
+
+msgid "Name"
+msgstr "නම"
 
 msgid "Description"
 msgstr "විස්තරය"
@@ -518,6 +488,9 @@ msgstr ""
 msgid "User roles this user is assigned"
 msgstr ""
 
+msgid "Available user groups"
+msgstr ""
+
 msgid "User groups this user is a member of"
 msgstr ""
 
@@ -537,7 +510,8 @@ msgid "Password"
 msgstr "රහස්‍ය පදය"
 
 msgid ""
-"Minimum 8 characters, one uppercase and lowercase letter and one number"
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
 msgstr ""
 
 msgid "Repeat new password"
@@ -565,6 +539,12 @@ msgid "Invalid username"
 msgstr ""
 
 msgid "Invalid WhatsApp number"
+msgstr ""
+
+msgid "Send invite"
+msgstr ""
+
+msgid "Cancel invite"
 msgstr ""
 
 msgid "Error updating user"
@@ -908,11 +888,6 @@ msgstr ""
 msgid "Password for new user"
 msgstr ""
 
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
-msgstr ""
-
 msgid "Cancel"
 msgstr ""
 
@@ -925,10 +900,7 @@ msgstr ""
 msgid "There was an error resetting the password: {{- error}}"
 msgstr ""
 
-msgid "Reset password of user {{- name}}"
-msgstr ""
-
-msgid "Are you sure you want to reset {{- name}}'s password?"
+msgid "Are you sure you want to reset the password for {{- name}}?"
 msgstr ""
 
 msgid "Yes, reset"
@@ -967,10 +939,13 @@ msgstr ""
 msgid "Error loading users"
 msgstr ""
 
-msgid "Account disabled?"
+msgid "Status"
 msgstr ""
 
 msgid "Disabled"
+msgstr ""
+
+msgid "Active"
 msgstr ""
 
 msgid "Something went wrong when processing your request."

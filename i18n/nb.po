@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-08-02T13:20:46.717Z\n"
+"POT-Creation-Date: 2023-12-12T13:36:05.060Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
 "Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2023\n"
 "Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -65,44 +65,6 @@ msgstr ""
 msgid "Error creating group"
 msgstr ""
 
-msgid "Basic information"
-msgstr ""
-
-msgid "Name"
-msgstr "Navn"
-
-msgid "Code"
-msgstr "Kode"
-
-msgid "Used in analytics reports."
-msgstr ""
-
-msgid "User management"
-msgstr "Brukeradministrasjon"
-
-msgid "Add or remove users from this group."
-msgstr ""
-
-msgid ""
-"To add a user to this group, go to the User section and edit the user group "
-"settings for a specific user."
-msgstr ""
-"For å legge til en bruker i denne gruppen, gå til brukerdelen og rediger "
-"innstillingene for brukergruppen for en bestemt bruker."
-
-msgid "User group management"
-msgstr ""
-
-msgid ""
-"This group can manage other user groups. Add managed user groups below."
-msgstr ""
-
-msgid "Available user groups"
-msgstr "Tilgjengelige brukergrupper"
-
-msgid "Managed user groups"
-msgstr "Administrerte brukergrupper"
-
 msgid "Attributes"
 msgstr "Attributter"
 
@@ -143,6 +105,12 @@ msgstr ""
 
 msgid "Error creating role"
 msgstr ""
+
+msgid "Basic information"
+msgstr ""
+
+msgid "Name"
+msgstr "Navn"
 
 msgid "Description"
 msgstr "Beskrivelse"
@@ -522,6 +490,9 @@ msgstr ""
 msgid "User roles this user is assigned"
 msgstr ""
 
+msgid "Available user groups"
+msgstr "Tilgjengelige brukergrupper"
+
 msgid "User groups this user is a member of"
 msgstr ""
 
@@ -541,7 +512,8 @@ msgid "Password"
 msgstr "Passord"
 
 msgid ""
-"Minimum 8 characters, one uppercase and lowercase letter and one number"
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
 msgstr ""
 
 msgid "Repeat new password"
@@ -920,11 +892,6 @@ msgstr "Brukernavn for ny bruker"
 
 msgid "Password for new user"
 msgstr "Passord for ny bruker"
-
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
-msgstr ""
 
 msgid "Cancel"
 msgstr "Avbryt"

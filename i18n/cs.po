@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-08-02T13:20:46.717Z\n"
+"POT-Creation-Date: 2023-12-12T13:36:05.060Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
 "Last-Translator: Jiří Podhorecký, 2023\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -64,46 +64,6 @@ msgstr "Chyba při aktualizaci skupiny"
 msgid "Error creating group"
 msgstr "Chyba při vytváření skupiny"
 
-msgid "Basic information"
-msgstr "Základní informace"
-
-msgid "Name"
-msgstr "Název"
-
-msgid "Code"
-msgstr "Kód"
-
-msgid "Used in analytics reports."
-msgstr "Používá se v analytických přehledech."
-
-msgid "User management"
-msgstr "Správa uživatelů"
-
-msgid "Add or remove users from this group."
-msgstr "Přidejte nebo odeberte uživatele z této skupiny."
-
-msgid ""
-"To add a user to this group, go to the User section and edit the user group "
-"settings for a specific user."
-msgstr ""
-"Chcete-li přidat uživatele do této skupiny, přejděte do části Uživatel a "
-"upravte nastavení skupiny uživatelů pro konkrétního uživatele."
-
-msgid "User group management"
-msgstr "Správa uživatelských skupin"
-
-msgid ""
-"This group can manage other user groups. Add managed user groups below."
-msgstr ""
-"Tato skupina může spravovat další skupiny uživatelů. Níže přidejte "
-"spravované skupiny uživatelů."
-
-msgid "Available user groups"
-msgstr "Dostupné skupiny uživatelů"
-
-msgid "Managed user groups"
-msgstr "Spravované skupiny uživatelů"
-
 msgid "Attributes"
 msgstr "Atributy"
 
@@ -144,6 +104,12 @@ msgstr "Při aktualizaci role došlo k chybě"
 
 msgid "Error creating role"
 msgstr "Při vytváření role došlo k chybě"
+
+msgid "Basic information"
+msgstr "Základní informace"
+
+msgid "Name"
+msgstr "Název"
 
 msgid "Description"
 msgstr "Popis"
@@ -533,6 +499,9 @@ msgstr "Dostupné uživatelské role"
 msgid "User roles this user is assigned"
 msgstr "Uživatelské role, které jsou tomuto uživateli přiřazeny"
 
+msgid "Available user groups"
+msgstr "Dostupné skupiny uživatelů"
+
 msgid "User groups this user is a member of"
 msgstr "Skupiny uživatelů, jejichž je tento uživatel členem"
 
@@ -552,8 +521,11 @@ msgid "Password"
 msgstr "Heslo"
 
 msgid ""
-"Minimum 8 characters, one uppercase and lowercase letter and one number"
-msgstr "Minimálně 8 znaků, jedno velké a malé písmeno a jedno číslo"
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
+msgstr ""
+"Heslo by mělo mít alespoň 8 znaků, alespoň jedno malé písmeno, jedno velké "
+"písmeno a jeden speciální znak."
 
 msgid "Repeat new password"
 msgstr "opakujte nové heslo"
@@ -929,13 +901,6 @@ msgstr "Uživatelské jméno pro nového uživatele"
 msgid "Password for new user"
 msgstr "Heslo pro nového uživatele"
 
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
-msgstr ""
-"Heslo by mělo mít alespoň 8 znaků, alespoň jedno malé písmeno, jedno velké "
-"písmeno a jeden speciální znak."
-
 msgid "Cancel"
 msgstr "Zrušit"
 
@@ -988,13 +953,13 @@ msgid "Error loading users"
 msgstr "Chyba při načítání uživatelů"
 
 msgid "Status"
-msgstr ""
+msgstr "Stav"
 
 msgid "Disabled"
 msgstr "Zakázáno"
 
 msgid "Active"
-msgstr ""
+msgstr "Aktivní"
 
 msgid "Something went wrong when processing your request."
 msgstr "Při zpracování vašeho požadavku se něco pokazilo."
