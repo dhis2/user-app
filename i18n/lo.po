@@ -37,7 +37,7 @@ msgid "Please enter at least {{ minCharCount }} characters"
 msgstr ""
 
 msgid "No matches found"
-msgstr ""
+msgstr "ບໍ່ພົບລາຍການທີ່ຄືກັນ"
 
 msgid "There was a problem retreiving your search results"
 msgstr ""
