@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-08-02T13:20:46.717Z\n"
+"POT-Creation-Date: 2023-12-12T13:36:05.060Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2023\n"
 "Language-Team: Uzbek (Latin) (https://app.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
@@ -65,42 +65,6 @@ msgstr ""
 msgid "Error creating group"
 msgstr ""
 
-msgid "Basic information"
-msgstr ""
-
-msgid "Name"
-msgstr "Исми"
-
-msgid "Code"
-msgstr "Kod"
-
-msgid "Used in analytics reports."
-msgstr ""
-
-msgid "User management"
-msgstr ""
-
-msgid "Add or remove users from this group."
-msgstr ""
-
-msgid ""
-"To add a user to this group, go to the User section and edit the user group "
-"settings for a specific user."
-msgstr ""
-
-msgid "User group management"
-msgstr ""
-
-msgid ""
-"This group can manage other user groups. Add managed user groups below."
-msgstr ""
-
-msgid "Available user groups"
-msgstr "Mavjud foydalanuvchi guruhlari"
-
-msgid "Managed user groups"
-msgstr "Foydalanuvchilarning boshqariladigan guruhlari"
-
 msgid "Attributes"
 msgstr "Аttributlar"
 
@@ -141,6 +105,12 @@ msgstr ""
 
 msgid "Error creating role"
 msgstr ""
+
+msgid "Basic information"
+msgstr ""
+
+msgid "Name"
+msgstr "Исми"
 
 msgid "Description"
 msgstr "Tavsif"
@@ -521,6 +491,9 @@ msgstr ""
 msgid "User roles this user is assigned"
 msgstr ""
 
+msgid "Available user groups"
+msgstr "Mavjud foydalanuvchi guruhlari"
+
 msgid "User groups this user is a member of"
 msgstr ""
 
@@ -540,7 +513,8 @@ msgid "Password"
 msgstr "Parol"
 
 msgid ""
-"Minimum 8 characters, one uppercase and lowercase letter and one number"
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
 msgstr ""
 
 msgid "Repeat new password"
@@ -919,11 +893,6 @@ msgstr "Yangi foydalanuvchi uchun FoydalanuvchiNomi"
 
 msgid "Password for new user"
 msgstr "Yangi fodalanuvchi uchun parol"
-
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
-msgstr ""
 
 msgid "Cancel"
 msgstr "Бекор қилиш"

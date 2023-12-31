@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-08-02T13:20:46.717Z\n"
+"POT-Creation-Date: 2023-12-12T13:36:05.060Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2023\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -67,42 +67,6 @@ msgstr "更新群组时出错"
 msgid "Error creating group"
 msgstr "创建组时出错"
 
-msgid "Basic information"
-msgstr "基本信息"
-
-msgid "Name"
-msgstr "名称"
-
-msgid "Code"
-msgstr "代码"
-
-msgid "Used in analytics reports."
-msgstr "用于分析报告。"
-
-msgid "User management"
-msgstr "用户管理"
-
-msgid "Add or remove users from this group."
-msgstr "在该组中添加或删除用户。"
-
-msgid ""
-"To add a user to this group, go to the User section and edit the user group "
-"settings for a specific user."
-msgstr "要将用户添加到该组，请转到“用户”部分并编辑特定用户的用户组设置。"
-
-msgid "User group management"
-msgstr "用户组管理"
-
-msgid ""
-"This group can manage other user groups. Add managed user groups below."
-msgstr "该组可以管理其他用户组。在下方添加托管用户组。"
-
-msgid "Available user groups"
-msgstr "可用用户组"
-
-msgid "Managed user groups"
-msgstr "管理的用户组"
-
 msgid "Attributes"
 msgstr "属性"
 
@@ -143,6 +107,12 @@ msgstr "更新角色时出错"
 
 msgid "Error creating role"
 msgstr "创建角色时出错"
+
+msgid "Basic information"
+msgstr "基本信息"
+
+msgid "Name"
+msgstr "名称"
 
 msgid "Description"
 msgstr "描述"
@@ -523,6 +493,9 @@ msgstr "可用的用户角色"
 msgid "User roles this user is assigned"
 msgstr "分配给此用户的用户角色"
 
+msgid "Available user groups"
+msgstr "可用用户组"
+
 msgid "User groups this user is a member of"
 msgstr "此用户所属的用户组"
 
@@ -542,8 +515,9 @@ msgid "Password"
 msgstr "口令"
 
 msgid ""
-"Minimum 8 characters, one uppercase and lowercase letter and one number"
-msgstr "最少 8 个字符，一个大小写字母和一个数字"
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
+msgstr "密码长度至少为 8 个字符，至少包含 1 个小写字符、1 个大写字符和 1 个特殊字符。"
 
 msgid "Repeat new password"
 msgstr "重复新口令"
@@ -918,11 +892,6 @@ msgstr "新用户用户名"
 
 msgid "Password for new user"
 msgstr "新用户口令"
-
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
-msgstr "密码长度至少为 8 个字符，至少包含 1 个小写字符、1 个大写字符和 1 个特殊字符。"
 
 msgid "Cancel"
 msgstr "取消"
