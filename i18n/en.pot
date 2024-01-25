@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
-"PO-Revision-Date: 2022-06-13T10:12:52.361Z\n"
+"POT-Creation-Date: 2024-01-17T09:36:40.909Z\n"
+"PO-Revision-Date: 2024-01-17T09:36:40.909Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -401,6 +401,18 @@ msgstr "Skip data import audit"
 msgid "Visualization"
 msgstr "Visualization"
 
+msgid "Aggregate data exchange"
+msgstr "Aggregate data exchange"
+
+msgid "Event hook"
+msgstr "Event hook"
+
+msgid "Route"
+msgstr "Route"
+
+msgid "Impersonate user"
+msgstr "Impersonate user"
+
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr "There was a problem whilst checking the availability of this role name"
 
@@ -571,8 +583,12 @@ msgstr "New password"
 msgid "Password"
 msgstr "Password"
 
-msgid "Minimum 8 characters, one uppercase and lowercase letter and one number"
-msgstr "Minimum 8 characters, one uppercase and lowercase letter and one number"
+msgid ""
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
+msgstr ""
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
 
 msgid "Repeat new password"
 msgstr "Repeat new password"
@@ -595,17 +611,17 @@ msgstr "LDAP identifier"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr "External authentication only (OpenID / LDAP)"
 
-msgid "Send invite"
-msgstr "Send invite"
-
-msgid "Cancel invite"
-msgstr "Cancel invite"
-
 msgid "Invalid username"
 msgstr "Invalid username"
 
 msgid "Invalid WhatsApp number"
 msgstr "Invalid WhatsApp number"
+
+msgid "Send invite"
+msgstr "Send invite"
+
+msgid "Cancel invite"
+msgstr "Cancel invite"
 
 msgid "Error updating user"
 msgstr "Error updating user"
@@ -903,13 +919,6 @@ msgstr "Username for new user"
 
 msgid "Password for new user"
 msgstr "Password for new user"
-
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
-msgstr ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
 
 msgid "Replicate user"
 msgstr "Replicate user"
