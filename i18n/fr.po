@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
+"POT-Creation-Date: 2024-01-17T09:36:40.909Z\n"
 "PO-Revision-Date: 2022-10-15 22:33+0000\n"
 "Last-Translator: Yassine NAHDI <yassine_nahdi@gnet.tn>, 2023\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -432,6 +432,18 @@ msgstr "Ignorer l'audit d'importation de données"
 msgid "Visualization"
 msgstr "Visualisation"
 
+msgid "Aggregate data exchange"
+msgstr ""
+
+msgid "Event hook"
+msgstr ""
+
+msgid "Route"
+msgstr ""
+
+msgid "Impersonate user"
+msgstr ""
+
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
 "Un problème est survenu lors de la vérification de la disponibilité de ce "
@@ -616,8 +628,11 @@ msgid "Password"
 msgstr "Mot de passe"
 
 msgid ""
-"Minimum 8 characters, one uppercase and lowercase letter and one number"
-msgstr "Minimum 8 caractères, une lettre majuscule et minuscule et un chiffre"
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
+msgstr ""
+"Le mot de passe doit comporter au moins 8 caractères, avec au moins un "
+"caractère minuscule, un caractère majuscule et un caractère spécial."
 
 msgid "Repeat new password"
 msgstr "Répéter le mot de passe"
@@ -640,17 +655,17 @@ msgstr "Identifiant LDAP"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr "Authentification externe uniquement (OpenID / LDAP)"
 
-msgid "Send invite"
-msgstr "Envoyer une invitation"
-
-msgid "Cancel invite"
-msgstr "Annuler l'invitation"
-
 msgid "Invalid username"
 msgstr "Nom d'utilisateur invalide"
 
 msgid "Invalid WhatsApp number"
 msgstr "Numéro WhatsApp invalide"
+
+msgid "Send invite"
+msgstr "Envoyer une invitation"
+
+msgid "Cancel invite"
+msgstr "Annuler l'invitation"
 
 msgid "Error updating user"
 msgstr "Erreur lors de la mise à jour de l'utilisateur"
@@ -979,13 +994,6 @@ msgstr "Nom d'utilisateur pour le nouvel utilisateur"
 
 msgid "Password for new user"
 msgstr "Mot de passe pour nouvel utilisateur"
-
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
-msgstr ""
-"Le mot de passe doit comporter au moins 8 caractères, avec au moins un "
-"caractère minuscule, un caractère majuscule et un caractère spécial."
 
 msgid "Replicate user"
 msgstr "Répliquer l'utilisateur"

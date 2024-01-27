@@ -16,7 +16,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
+"POT-Creation-Date: 2024-01-17T09:36:40.909Z\n"
 "PO-Revision-Date: 2022-10-15 22:33+0000\n"
 "Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
@@ -431,6 +431,18 @@ msgstr "Omitir revisión de importación de datos"
 msgid "Visualization"
 msgstr "Visualización"
 
+msgid "Aggregate data exchange"
+msgstr ""
+
+msgid "Event hook"
+msgstr ""
+
+msgid "Route"
+msgstr ""
+
+msgid "Impersonate user"
+msgstr ""
+
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr "Hubo un problema al verificar la disponibilidad de este nombre de rol"
 
@@ -609,8 +621,11 @@ msgid "Password"
 msgstr "Contraseña"
 
 msgid ""
-"Minimum 8 characters, one uppercase and lowercase letter and one number"
-msgstr "Mínimo 8 caracteres, una letra mayúscula y minúscula y un número"
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
+msgstr ""
+"La contraseña debe tener al menos 8 caracteres con al menos una letra "
+"minúscula, una letra mayúscula y un carácter especial"
 
 msgid "Repeat new password"
 msgstr "Repita la nueva contraseña"
@@ -634,17 +649,17 @@ msgstr "identificador LDAP"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr "Solo autenticación externa (OpenID / LDAP)"
 
-msgid "Send invite"
-msgstr "Enviar invitación"
-
-msgid "Cancel invite"
-msgstr "Cancelar invitación"
-
 msgid "Invalid username"
 msgstr "Nombre de usuario no válido"
 
 msgid "Invalid WhatsApp number"
 msgstr "Número de WhatsApp no válido"
+
+msgid "Send invite"
+msgstr "Enviar invitación"
+
+msgid "Cancel invite"
+msgstr "Cancelar invitación"
 
 msgid "Error updating user"
 msgstr "Error al actualizar usuario"
@@ -953,13 +968,6 @@ msgstr "Nombre de usuario para nuevo usuario"
 
 msgid "Password for new user"
 msgstr "Contraseña para nuevo usuario"
-
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
-msgstr ""
-"La contraseña debe tener al menos 8 caracteres con al menos una letra "
-"minúscula, una letra mayúscula y un carácter especial"
 
 msgid "Replicate user"
 msgstr "Replicar usuario"

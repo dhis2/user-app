@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
+"POT-Creation-Date: 2024-01-17T09:36:40.909Z\n"
 "PO-Revision-Date: 2022-10-15 22:33+0000\n"
 "Last-Translator: Jiří Podhorecký, 2023\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -417,6 +417,18 @@ msgstr "Přeskočit audit importu dat"
 msgid "Visualization"
 msgstr "Vizualizace"
 
+msgid "Aggregate data exchange"
+msgstr ""
+
+msgid "Event hook"
+msgstr ""
+
+msgid "Route"
+msgstr ""
+
+msgid "Impersonate user"
+msgstr ""
+
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr "Při kontrole dostupnosti názvu této role došlo k problému"
 
@@ -593,8 +605,11 @@ msgid "Password"
 msgstr "Heslo"
 
 msgid ""
-"Minimum 8 characters, one uppercase and lowercase letter and one number"
-msgstr "Minimálně 8 znaků, jedno velké a malé písmeno a jedno číslo"
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
+msgstr ""
+"Heslo by mělo mít alespoň 8 znaků, alespoň jedno malé písmeno, jedno velké "
+"písmeno a jeden speciální znak."
 
 msgid "Repeat new password"
 msgstr "opakujte nové heslo"
@@ -617,17 +632,17 @@ msgstr "Identifikátor LDAP"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr "Pouze externí ověřování (OpenID / LDAP)"
 
-msgid "Send invite"
-msgstr "Poslat pozvánku"
-
-msgid "Cancel invite"
-msgstr ""
-
 msgid "Invalid username"
 msgstr "Neplatné uživatelské jméno"
 
 msgid "Invalid WhatsApp number"
 msgstr "Neplatné číslo WhatsApp"
+
+msgid "Send invite"
+msgstr "Poslat pozvánku"
+
+msgid "Cancel invite"
+msgstr ""
 
 msgid "Error updating user"
 msgstr "Při aktualizaci uživatele došlo k chybě"
@@ -927,13 +942,6 @@ msgstr "Uživatelské jméno pro nového uživatele"
 
 msgid "Password for new user"
 msgstr "Heslo pro nového uživatele"
-
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
-msgstr ""
-"Heslo by mělo mít alespoň 8 znaků, alespoň jedno malé písmeno, jedno velké "
-"písmeno a jeden speciální znak."
 
 msgid "Replicate user"
 msgstr "Replikovat uživatele"
