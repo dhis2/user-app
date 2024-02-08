@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-12-12T13:36:05.060Z\n"
-"PO-Revision-Date: 2023-12-12T13:36:05.060Z\n"
+"POT-Creation-Date: 2024-02-08T17:31:59.581Z\n"
+"PO-Revision-Date: 2024-02-08T17:31:59.581Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -50,14 +50,51 @@ msgstr "There was an error fetching this form."
 msgid "Cancel without saving"
 msgstr "Cancel without saving"
 
+msgid "Basic information"
+msgstr "Basic information"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Code"
+msgstr "Code"
+
+msgid "Used in analytics reports."
+msgstr "Used in analytics reports."
+
 msgid "Error updating group"
 msgstr "Error updating group"
 
 msgid "Error creating group"
 msgstr "Error creating group"
 
+msgid "User management"
+msgstr "User management"
+
+msgid "Add or remove users from this group."
+msgstr "Add or remove users from this group."
+
+msgid ""
+"To add a user to this group, go to the User section and edit the user group "
+"settings for a specific user."
+msgstr ""
+"To add a user to this group, go to the User section and edit the user group "
+"settings for a specific user."
+
 msgid "Attributes"
 msgstr "Attributes"
+
+msgid "User group management"
+msgstr "User group management"
+
+msgid "This group can manage other user groups. Add managed user groups below."
+msgstr "This group can manage other user groups. Add managed user groups below."
+
+msgid "Available user groups"
+msgstr "Available user groups"
+
+msgid "Managed user groups"
+msgstr "Managed user groups"
 
 msgid "Name is already taken"
 msgstr "Name is already taken"
@@ -94,12 +131,6 @@ msgstr "Error updating role"
 
 msgid "Error creating role"
 msgstr "Error creating role"
-
-msgid "Basic information"
-msgstr "Basic information"
-
-msgid "Name"
-msgstr "Name"
 
 msgid "Description"
 msgstr "Description"
@@ -480,9 +511,6 @@ msgstr "Available user roles"
 
 msgid "User roles this user is assigned"
 msgstr "User roles this user is assigned"
-
-msgid "Available user groups"
-msgstr "Available user groups"
 
 msgid "User groups this user is a member of"
 msgstr "User groups this user is a member of"
