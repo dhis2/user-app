@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
-"PO-Revision-Date: 2023-03-06T13:36:07.125Z\n"
+"POT-Creation-Date: 2024-01-19T12:15:17.744Z\n"
+"PO-Revision-Date: 2024-01-19T12:15:17.744Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -410,6 +410,12 @@ msgstr "Skip data import audit"
 msgid "Visualization"
 msgstr "Visualization"
 
+msgid "Event Hook"
+msgstr "Event Hook"
+
+msgid "Route"
+msgstr "Route"
+
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr "There was a problem whilst checking the availability of this role name"
 
@@ -586,8 +592,12 @@ msgstr "New password"
 msgid "Password"
 msgstr "Password"
 
-msgid "Minimum 8 characters, one uppercase and lowercase letter and one number"
-msgstr "Minimum 8 characters, one uppercase and lowercase letter and one number"
+msgid ""
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
+msgstr ""
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
 
 msgid "Repeat new password"
 msgstr "Repeat new password"
@@ -909,13 +919,6 @@ msgstr "Username for new user"
 
 msgid "Password for new user"
 msgstr "Password for new user"
-
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
-msgstr ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
 
 msgid "Replicate user"
 msgstr "Replicate user"

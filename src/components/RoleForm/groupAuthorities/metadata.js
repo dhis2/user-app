@@ -61,6 +61,8 @@ const GROUP_NAMES = {
     F_PREDICTORGROUP: i18n.t('Data predictor group'),
     F_SKIP_DATA_IMPORT_AUDIT: i18n.t('Skip data import audit'),
     F_VISUALIZATION: i18n.t('Visualization'),
+    F_EVENT_HOOK: i18n.t('Event Hook'),
+    F_ROUTE: i18n.t('Route'),
 }
 
 // Metadata group suffixes
