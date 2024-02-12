@@ -1,3 +1,10 @@
+## [1.5.37](https://github.com/dhis2/user-app/compare/v1.5.36...v1.5.37) (2024-02-12)
+
+
+### Bug Fixes
+
+* add missing authority translations [DHIS2-16516] ([#1339](https://github.com/dhis2/user-app/issues/1339)) ([96698f8](https://github.com/dhis2/user-app/commit/96698f8543c0f2251f038d112586b6cd7ca88818))
+
 ## [1.5.36](https://github.com/dhis2/user-app/compare/v1.5.35...v1.5.36) (2023-12-24)
 
 
