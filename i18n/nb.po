@@ -2,14 +2,15 @@
 # Translators:
 # Caroline Hesthagen Holen <caroline@devotta.no>, 2021
 # Karoline Tufte Lien <karoline@dhis2.org>, 2022
+# Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-03-11T14:08:46.110Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2022\n"
-"Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -713,10 +714,10 @@ msgstr ""
 "Det oppsto et problem ved sjekking av tilgjengelighet av dette brukernavnet"
 
 msgid "{{fieldDisplayName}} is already taken"
-msgstr "{{FieldDisplayName}} er allerede opptatt"
+msgstr "{{fieldDisplayName}} er allerede opptatt"
 
 msgid "Could not verify if this {{fieldDisplayName}} is unique"
-msgstr "Kunne ikke verifisere hvis dette {{FieldDisplayName}} er unikt"
+msgstr "Kunne ikke verifisere hvis dette {{fieldDisplayName}} er unikt"
 
 msgid "Attribute value needs to be unique, value already taken."
 msgstr "Attributtverdien må være unik, verdien er allerede opptatt"
