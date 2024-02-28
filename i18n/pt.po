@@ -1,17 +1,17 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # Ge Joao <gsimango@saudigitus.org>, 2021
+# Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-03-11T14:08:46.110Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2021\n"
-"Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,7 +28,7 @@ msgid "Enter search term"
 msgstr "Digite o termo de pesquisa"
 
 msgid "Please enter at least {{ minCharCount }} characters"
-msgstr "Digite pelo menos {{minCharCount}} caracteres"
+msgstr "Digite pelo menos {{ minCharCount }} caracteres"
 
 msgid "No matches found"
 msgstr "Nenhuma equivalência encontrada"
@@ -479,7 +479,7 @@ msgstr ""
 "Não foi possível carregar os dados do usuário. Por favor atualize a página."
 
 msgid "User \"{{displayName}}\" saved successfully"
-msgstr "Usuário \"{{NomedeUsuário}}\" salvo com sucesso"
+msgstr "Usuário \"{{displayName}}\" salvo com sucesso"
 
 msgid "There was a problem saving the user."
 msgstr "Ocorreu um problema ao salvar o usuário."
