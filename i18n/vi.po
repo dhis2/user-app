@@ -1,16 +1,16 @@
 # 
 # Translators:
-# phil_dhis2, 2020
 # Mai Nguyen <thanhmai.jica@gmail.com>, 2020
 # Viktor Varland <viktor@dhis2.org>, 2021
+# Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-11T14:57:14.928Z\n"
 "PO-Revision-Date: 2020-12-22 22:18+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
-"Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,7 +30,7 @@ msgid "Enter search term"
 msgstr "Nhập cụm từ tìm kiếm"
 
 msgid "Please enter at least {{ minCharCount }} characters"
-msgstr "Vui lòng nhập ít nhất {{số ký tự tối thiểu}} ký tự"
+msgstr "Vui lòng nhập ít nhất {{ minCharCount }} ký tự"
 
 msgid "No matches found"
 msgstr "Không tìm thấy kết quả phù hợp"
@@ -291,7 +291,7 @@ msgid "Go back home"
 msgstr "Quay lại trang chủ"
 
 msgid "User \"{{displayName}}\" replicated successfuly"
-msgstr "Người dùng \"{{Tên hiển thị}}\" được sao chép thành công"
+msgstr "Người dùng \"{{displayName}}\" được sao chép thành công"
 
 msgid "There was a problem replicating the user"
 msgstr "Đã xảy ra sự cố khi sao chép người dùng"
@@ -424,7 +424,7 @@ msgid "Could not load the user group data. Please refresh the page."
 msgstr "Không thể tải dữ liệu nhóm người dùng. Vui lòng làm mới trang"
 
 msgid "User group \"{{displayName}}\" saved successfully"
-msgstr "Đã lưu thành công nhóm người dùng \"{{Tên hiển thị}}\""
+msgstr "Đã lưu thành công nhóm người dùng \"{{displayName}}\""
 
 msgid "There was a problem saving the user group."
 msgstr "Đã xảy ra sự cố khi lưu nhóm người dùng"
@@ -463,7 +463,7 @@ msgid "User Group Management"
 msgstr "Quản lý nhóm người dùng"
 
 msgid "User role \"{{displayName}}\" saved successfully"
-msgstr "Đã lưu thành công vai trò người dùng \"{{Tên hiển thị}}\""
+msgstr "Đã lưu thành công vai trò người dùng \"{{displayName}}\""
 
 msgid "There was a problem saving the user role."
 msgstr "Đã xảy ra sự cố khi lưu quyền người dùng"
@@ -478,7 +478,7 @@ msgid "Could not load the user data. Please refresh the page."
 msgstr "Không thể tải dữ liệu người dùng. Vui lòng làm mới trang."
 
 msgid "User \"{{displayName}}\" saved successfully"
-msgstr "Người dùng \"{{Tên hiển thị}}\" đã được lưu thành công"
+msgstr "Người dùng \"{{displayName}}\" đã được lưu thành công"
 
 msgid "There was a problem saving the user."
 msgstr "Đã xảy ra sự cố khi lưu người dùng"
@@ -624,7 +624,7 @@ msgstr "Quản lý người dùng"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
-msgstr[0] "Đã chọn {{đếm}}"
+msgstr[0] "Đã chọn {{count}}"
 
 msgid "Yes"
 msgstr "Có"
@@ -639,13 +639,13 @@ msgid "Validating..."
 msgstr "Đang xác thực ..."
 
 msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
-msgstr "Bạn có chắc chắn muốn xóa {{kiểu}} \"{{tên hiển thị}}\" không?"
+msgstr "Bạn có chắc chắn muốn xóa {{type}} \"{{displayName}}\" không?"
 
 msgid "{{type}} \"{{displayName}}\" removed successfully"
-msgstr "Đã xóa thành công {{kiểu}} \"{{tên hiển thị}}\""
+msgstr "Đã xóa thành công {{type}} \"{{displayName}}\""
 
 msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
-msgstr "Đã xảy ra sự cố khi xóa {{kiểu}} \"{{tên hiển thị}}\"?"
+msgstr "Đã xảy ra sự cố khi xóa {{type}} \"{{displayName}}\"?"
 
 msgid "Exceeds maximum character limit of 50"
 msgstr "Vượt quá giới hạn ký tự tối đa là 50"
@@ -711,11 +711,11 @@ msgid "There was a problem whilst checking the availability of this username"
 msgstr "Đã xảy ra sự cố khi kiểm tra tính khả dụng của tên người dùng này"
 
 msgid "{{fieldDisplayName}} is already taken"
-msgstr "{{trường tên hiển thị}} đã được sử dụng"
+msgstr "{{fieldDisplayName}} đã được sử dụng"
 
 msgid "Could not verify if this {{fieldDisplayName}} is unique"
 msgstr ""
-"Không thể xác minh xem {{trường tên hiển thị}} này có phải là duy nhất không"
+"Không thể xác minh xem {{fieldDisplayName}} này có phải là duy nhất không"
 
 msgid "Attribute value needs to be unique, value already taken."
 msgstr "Giá trị thuộc tính cần phải là duy nhất, giá trị đã được sử dụng."
