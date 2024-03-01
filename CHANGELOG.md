@@ -1,3 +1,15 @@
+# [100.0.0](https://github.com/dhis2/user-app/compare/v99.9.9...v100.0.0) (2024-03-01)
+
+
+### Features
+
+* trigger release ([64dd7f0](https://github.com/dhis2/user-app/commit/64dd7f0269dc27e95c4e71949ff0668d24c52132))
+
+
+### BREAKING CHANGES
+
+* bump to v100.0.0 for continuous release
+
 ## [1.5.38](https://github.com/dhis2/user-app/compare/v1.5.37...v1.5.38) (2024-02-28)
 
 
