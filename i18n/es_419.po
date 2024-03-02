@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
 # Jaime Bosque <jaime.bosque@dhis2.org>, 2023
+# Enzo Nicolas Rossi <enzo@dhis2.org>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
+"POT-Creation-Date: 2024-01-19T12:15:17.744Z\n"
 "PO-Revision-Date: 2023-05-22 19:30+0000\n"
-"Last-Translator: Jaime Bosque <jaime.bosque@dhis2.org>, 2023\n"
+"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2024\n"
 "Language-Team: Spanish (Latin America) (https://app.transifex.com/hisp-uio/teams/100509/es_419/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,7 +36,7 @@ msgid "Value should be a negative integer"
 msgstr ""
 
 msgid "No results found"
-msgstr ""
+msgstr "No se han encontrado resultados"
 
 msgid "Display name"
 msgstr ""
@@ -343,7 +343,7 @@ msgid "Option Set"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Unidad Organizativa"
 
 msgid "Organisation Unit Group Set"
 msgstr ""
@@ -358,7 +358,7 @@ msgid "Program Stage"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Programa"
 
 msgid "Program Indicator"
 msgstr ""
@@ -421,6 +421,12 @@ msgid "Skip data import audit"
 msgstr ""
 
 msgid "Visualization"
+msgstr ""
+
+msgid "Event Hook"
+msgstr ""
+
+msgid "Route"
 msgstr ""
 
 msgid "There was a problem whilst checking the availability of this role name"
@@ -597,7 +603,8 @@ msgid "Password"
 msgstr "Contraseña"
 
 msgid ""
-"Minimum 8 characters, one uppercase and lowercase letter and one number"
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
 msgstr ""
 
 msgid "Repeat new password"
@@ -922,11 +929,6 @@ msgid "Username for new user"
 msgstr ""
 
 msgid "Password for new user"
-msgstr ""
-
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
 msgstr ""
 
 msgid "Replicate user"
