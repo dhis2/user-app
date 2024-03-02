@@ -9,16 +9,16 @@
 # Carlos Tejo Alonso, 2022
 # Janeth Cruz, 2023
 # Pablo Del Médico, 2023
-# Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023
-# Philip Larsen Donnelly, 2023
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2024
+# Enzo Nicolas Rossi <enzo@dhis2.org>, 2024
+# Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-12-12T13:36:05.060Z\n"
+"POT-Creation-Date: 2024-02-08T17:31:59.581Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2023\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -70,14 +70,54 @@ msgstr "Hubo un error al obtener este formulario."
 msgid "Cancel without saving"
 msgstr "Cancelar sin guardar"
 
+msgid "Basic information"
+msgstr "Información básica"
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "Code"
+msgstr "Código"
+
+msgid "Used in analytics reports."
+msgstr "Se utiliza en informes analíticos."
+
 msgid "Error updating group"
 msgstr "Error al actualizar el grupo"
 
 msgid "Error creating group"
 msgstr "Error al crear grupo"
 
+msgid "User management"
+msgstr "Administración de usuarios"
+
+msgid "Add or remove users from this group."
+msgstr "Agregue o elimine usuarios de este grupo."
+
+msgid ""
+"To add a user to this group, go to the User section and edit the user group "
+"settings for a specific user."
+msgstr ""
+"Para agregar un usuario a este grupo, vaya a la app de usuarios y edite la "
+"configuración del grupo de usuarios para un usuario específico."
+
 msgid "Attributes"
 msgstr "Atributos"
+
+msgid "User group management"
+msgstr "Gestión de grupos de usuarios"
+
+msgid ""
+"This group can manage other user groups. Add managed user groups below."
+msgstr ""
+"Este grupo puede gestionar otros grupos de usuarios. Agregue grupos de "
+"usuarios administrados a continuación."
+
+msgid "Available user groups"
+msgstr "Grupos de usuarios disponibles"
+
+msgid "Managed user groups"
+msgstr "Grupos de usuarios administrados "
 
 msgid "Name is already taken"
 msgstr "Nombre ya usado"
@@ -118,12 +158,6 @@ msgstr "Error al actualizar el rol"
 
 msgid "Error creating role"
 msgstr "Error al crear el rol"
-
-msgid "Basic information"
-msgstr "Información básica"
-
-msgid "Name"
-msgstr "Nombre"
 
 msgid "Description"
 msgstr "Descripción"
@@ -514,9 +548,6 @@ msgstr "Roles de usuario disponibles"
 msgid "User roles this user is assigned"
 msgstr "Roles de usuario asignados a este usuario"
 
-msgid "Available user groups"
-msgstr "Grupos de usuarios disponibles"
-
 msgid "User groups this user is a member of"
 msgstr "Grupos de usuarios de los que este usuario es miembro"
 
@@ -731,16 +762,16 @@ msgid "Leave group"
 msgstr "Dejar el grupo"
 
 msgid "Deleted \"{{- name}}\" successfully"
-msgstr "Se eliminó \"{{- nombre}}\" con éxito"
+msgstr "Se eliminó \"{{- name}}\" con éxito"
 
 msgid "There was an error deleting the user group: {{- error}}"
 msgstr "Hubo un error al eliminar el grupo de usuarios: {{- error}}"
 
 msgid "Delete user group {{- name}}"
-msgstr "Eliminar grupo de usuarios {{- nombre}}"
+msgstr "Eliminar grupo de usuarios {{- name}}"
 
 msgid "Are you sure you want to delete {{- name}}?"
-msgstr "¿Está seguro de que desea eliminar {{- nombre}}?"
+msgstr "¿Está seguro de que desea eliminar {{- name}}?"
 
 msgid "No, cancel"
 msgstr "No, cancela"
@@ -749,31 +780,31 @@ msgid "Yes, delete"
 msgstr "si, eliminar"
 
 msgid "Joined user group \"{{- name}}\" successfuly"
-msgstr "Se unió al grupo de usuarios \"{{- nombre}}\" con éxito"
+msgstr "Se unió al grupo de usuarios \"{{- name}}\" con éxito"
 
 msgid "There was an error joining the user group: {{- error}}"
 msgstr "Hubo un error al unirse al grupo de usuarios: {{- error}}"
 
 msgid "Join user group {{- name}}"
-msgstr "Únete al grupo de usuarios {{- nombre}}"
+msgstr "Únete al grupo de usuarios {{- name}}"
 
 msgid "Are you sure you want to join {{- name}}?"
-msgstr "¿Estás seguro de que quieres unirte a {{- nombre}}?"
+msgstr "¿Estás seguro de que quieres unirte a {{- name}}?"
 
 msgid "Yes, join"
 msgstr "Sí, únete"
 
 msgid "Left user group \"{{- name}}\" successfuly"
-msgstr "Grupo de usuarios izquierdo \"{{- nombre}}\" con éxito"
+msgstr "Grupo de usuarios izquierdo \"{{- name}}\" con éxito"
 
 msgid "There was an error leaving the user group: {{- error}}"
 msgstr "Hubo un error al abandonar el grupo de usuarios: {{- error}}"
 
 msgid "Leave user group {{- name}}"
-msgstr "Abandonar el grupo de usuarios {{- nombre}}"
+msgstr "Abandonar el grupo de usuarios {{- name}}"
 
 msgid "Are you sure you want to leave {{- name}}?"
-msgstr "¿Seguro que quieres salir de {{- nombre}}?"
+msgstr "¿Seguro que quieres salir de {{- name}}?"
 
 msgid "Yes, leave"
 msgstr "Si, salir"
@@ -827,7 +858,7 @@ msgid "There was an error deleting the user role: {{- error}}"
 msgstr "Hubo un error al eliminar el rol de usuario: {{- error}}"
 
 msgid "Delete user role {{- name}}"
-msgstr "Eliminar rol de usuario {{- nombre}}"
+msgstr "Eliminar rol de usuario {{- name}}"
 
 msgid "User Role Management"
 msgstr "Administración de Roles de Usuario"
@@ -857,11 +888,11 @@ msgid "There was an error deleting the user: {{- error}}"
 msgstr "Hubo un error al eliminar el usuario: {{- error}}"
 
 msgid "Delete user {{- name}}"
-msgstr "Eliminar usuario {{- nombre}}"
+msgstr "Eliminar usuario {{- name}}"
 
 msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
 msgstr ""
-"Se deshabilitó la autenticación de dos factores para \"{{- nombre}}\" con "
+"Se deshabilitó la autenticación de dos factores para \"{{- name}}\" con "
 "éxito"
 
 msgid "There was an error disabling two factor authentication: {{- error}}"
@@ -870,55 +901,55 @@ msgstr ""
 
 msgid "Disable two factor authentication for user {{- name}}"
 msgstr ""
-"Deshabilitar la autenticación de dos factores para el usuario {{- nombre}}"
+"Deshabilitar la autenticación de dos factores para el usuario {{- name}}"
 
 msgid ""
 "Are you sure you want to disable two factor authentication for {{- name}}?"
 msgstr ""
 "¿Está seguro de que desea deshabilitar la autenticación de dos factores para"
-" {{- nombre}}?"
+" {{- name}}?"
 
 msgid "Yes, disable two factor authentication"
 msgstr "Sí, deshabilite la autenticación de dos factores"
 
 msgid "User \"{{- name}}\" disabled successfuly"
-msgstr "Usuario \"{{- nombre}}\" deshabilitado exitosamente"
+msgstr "Usuario \"{{- name}}\" deshabilitado exitosamente"
 
 msgid "There was an error disabling the user: {{- error}}"
 msgstr "Hubo un error al deshabilitar al usuario: {{- error}}"
 
 msgid "Disable user {{- name}}"
-msgstr "Deshabilitar usuario {{- nombre}}"
+msgstr "Deshabilitar usuario {{- name}}"
 
 msgid "Are you sure you want to disable {{- name}}?"
-msgstr "¿Está seguro de que desea deshabilitar {{- nombre}}?"
+msgstr "¿Está seguro de que desea deshabilitar {{- name}}?"
 
 msgid "Yes, disable"
 msgstr "Sí, deshabilitar"
 
 msgid "User \"{{- name}}\" enabled successfuly"
-msgstr "Usuario \"{{- nombre}}\" habilitado correctamente"
+msgstr "Usuario \"{{- name}}\" habilitado correctamente"
 
 msgid "There was an error enabling the user: {{- error}}"
 msgstr "Hubo un error al habilitar al usuario: {{- error}}"
 
 msgid "Enable user {{- name}}"
-msgstr "Habilitar usuario {{- nombre}}"
+msgstr "Habilitar usuario {{- name}}"
 
 msgid "Are you sure you want to enable {{- name}}?"
-msgstr "¿Está seguro de que desea habilitar {{- nombre}}?"
+msgstr "¿Está seguro de que desea habilitar {{- name}}?"
 
 msgid "Yes, enable"
 msgstr "Sí, habilitar"
 
 msgid "User \"{{- name}}\" replicated successfuly"
-msgstr "Usuario \"{{- nombre}}\" replicado con éxito"
+msgstr "Usuario \"{{- name}}\" replicado con éxito"
 
 msgid "There was an error replicating the user: {{- error}}"
 msgstr "Hubo un error al replicar al usuario: {{- error}}"
 
 msgid "Replicate user {{- name}}"
-msgstr "Replicar usuario {{- nombre}}"
+msgstr "Replicar usuario {{- name}}"
 
 msgid "Username for new user"
 msgstr "Nombre de usuario para nuevo usuario"
@@ -933,13 +964,13 @@ msgid "Replicate user"
 msgstr "Replicar usuario"
 
 msgid "Password of user \"{{- name}}\" reset successfuly"
-msgstr "La contraseña del usuario \"{{- nombre}}\" se restableció con éxito"
+msgstr "La contraseña del usuario \"{{- name}}\" se restableció con éxito"
 
 msgid "There was an error resetting the password: {{- error}}"
 msgstr "Hubo un error al restablecer la contraseña: {{- error}}"
 
 msgid "Are you sure you want to reset the password for {{- name}}?"
-msgstr "¿Está seguro de que desea restablecer la contraseña de {{- nombre}}?"
+msgstr "¿Está seguro de que desea restablecer la contraseña de {{- name}}?"
 
 msgid "Yes, reset"
 msgstr "Sí, resetear"
@@ -948,7 +979,7 @@ msgid "1 month"
 msgstr "1 mes"
 
 msgid "{{months}} months"
-msgstr "{{meses}} meses"
+msgstr "{{months}} meses"
 
 msgid "Time inactive"
 msgstr "Tiempo inactivo"
