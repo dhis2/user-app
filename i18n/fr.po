@@ -8,15 +8,15 @@
 # Karoline Tufte Lien <karoline@dhis2.org>, 2022
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023
-# Philip Larsen Donnelly, 2023
 # Yassine NAHDI <yassine_nahdi@gnet.tn>, 2023
+# Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
+"POT-Creation-Date: 2024-01-17T09:36:40.909Z\n"
 "PO-Revision-Date: 2022-10-15 22:33+0000\n"
-"Last-Translator: Yassine NAHDI <yassine_nahdi@gnet.tn>, 2023\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -432,6 +432,18 @@ msgstr "Ignorer l'audit d'importation de données"
 msgid "Visualization"
 msgstr "Visualisation"
 
+msgid "Aggregate data exchange"
+msgstr ""
+
+msgid "Event hook"
+msgstr ""
+
+msgid "Route"
+msgstr ""
+
+msgid "Impersonate user"
+msgstr ""
+
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
 "Un problème est survenu lors de la vérification de la disponibilité de ce "
@@ -459,7 +471,7 @@ msgstr ""
 "recherche"
 
 msgid "Please enter at least {{ minCharLength }} characters"
-msgstr "Veuillez saisir au moins {{ minCharCount }} caractères"
+msgstr "Veuillez saisir au moins {{ minCharLength }} caractères"
 
 msgid "No matches found"
 msgstr "Aucun résultat"
@@ -616,8 +628,11 @@ msgid "Password"
 msgstr "Mot de passe"
 
 msgid ""
-"Minimum 8 characters, one uppercase and lowercase letter and one number"
-msgstr "Minimum 8 caractères, une lettre majuscule et minuscule et un chiffre"
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
+msgstr ""
+"Le mot de passe doit comporter au moins 8 caractères, avec au moins un "
+"caractère minuscule, un caractère majuscule et un caractère spécial."
 
 msgid "Repeat new password"
 msgstr "Répéter le mot de passe"
@@ -640,17 +655,17 @@ msgstr "Identifiant LDAP"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr "Authentification externe uniquement (OpenID / LDAP)"
 
-msgid "Send invite"
-msgstr "Envoyer une invitation"
-
-msgid "Cancel invite"
-msgstr "Annuler l'invitation"
-
 msgid "Invalid username"
 msgstr "Nom d'utilisateur invalide"
 
 msgid "Invalid WhatsApp number"
 msgstr "Numéro WhatsApp invalide"
+
+msgid "Send invite"
+msgstr "Envoyer une invitation"
+
+msgid "Cancel invite"
+msgstr "Annuler l'invitation"
 
 msgid "Error updating user"
 msgstr "Erreur lors de la mise à jour de l'utilisateur"
@@ -768,18 +783,18 @@ msgid "Leave group"
 msgstr "Quitter le groupe"
 
 msgid "Deleted \"{{- name}}\" successfully"
-msgstr "\"{{- nom}}\" supprimé avec succès"
+msgstr "\"{{- name}}\" supprimé avec succès"
 
 msgid "There was an error deleting the user group: {{- error}}"
 msgstr ""
 "Une erreur s'est produite lors de la suppression du groupe d'utilisateurs : "
-"{{- erreur}}"
+"{{- error}}"
 
 msgid "Delete user group {{- name}}"
-msgstr "Supprimer le groupe d'utilisateurs {{- nom}}"
+msgstr "Supprimer le groupe d'utilisateurs {{- name}}"
 
 msgid "Are you sure you want to delete {{- name}}?"
-msgstr "Êtes-vous sûr de vouloir supprimer {{- nom}} ?"
+msgstr "Êtes-vous sûr de vouloir supprimer {{- name}} ?"
 
 msgid "No, cancel"
 msgstr "Non, annuler"
@@ -788,7 +803,7 @@ msgid "Yes, delete"
 msgstr "Oui, supprimer"
 
 msgid "Joined user group \"{{- name}}\" successfuly"
-msgstr "\"{{- nom}}\" a rejoint avec succès le groupe d'utilisateurs"
+msgstr "\"{{- name}}\" a rejoint avec succès le groupe d'utilisateurs"
 
 msgid "There was an error joining the user group: {{- error}}"
 msgstr ""
@@ -796,27 +811,27 @@ msgstr ""
 "d'utilisateurs : {{- error}}"
 
 msgid "Join user group {{- name}}"
-msgstr "Rejoindre le groupe d'utilisateurs {{- nom}}"
+msgstr "Rejoindre le groupe d'utilisateurs {{- name}}"
 
 msgid "Are you sure you want to join {{- name}}?"
-msgstr "Êtes-vous sûr de vouloir rejoindre {{- nom}} ?"
+msgstr "Êtes-vous sûr de vouloir rejoindre {{- name}} ?"
 
 msgid "Yes, join"
 msgstr "Oui, rejoindre"
 
 msgid "Left user group \"{{- name}}\" successfuly"
-msgstr "\"{{- nom}}\" a quitté avec succès le groupe d'utilisateurs"
+msgstr "\"{{- name}}\" a quitté avec succès le groupe d'utilisateurs"
 
 msgid "There was an error leaving the user group: {{- error}}"
 msgstr ""
 "Une erreur s'est produite lors de la sortie du groupe d'utilisateurs : {{- "
-"erreur}}"
+"error}}"
 
 msgid "Leave user group {{- name}}"
-msgstr "Quitter le groupe d'utilisateurs {{- nom}}"
+msgstr "Quitter le groupe d'utilisateurs {{- name}}"
 
 msgid "Are you sure you want to leave {{- name}}?"
-msgstr "Vous êtes sûr de vouloir quitter {{- nom}} ?"
+msgstr "Vous êtes sûr de vouloir quitter {{- name}} ?"
 
 msgid "Yes, leave"
 msgstr "Oui, quitter"
@@ -869,10 +884,10 @@ msgstr "Modifier le rôle utilisateur"
 msgid "There was an error deleting the user role: {{- error}}"
 msgstr ""
 "Une erreur s'est produite lors de la suppression du rôle de l'utilisateur : "
-"{{- erreur}}"
+"{{- error}}"
 
 msgid "Delete user role {{- name}}"
-msgstr "Supprimer le rôle d'utilisateur {{- nom}}"
+msgstr "Supprimer le rôle d'utilisateur {{- name}}"
 
 msgid "User Role Management"
 msgstr "Gestion des rôles d'utilisateur"
@@ -901,78 +916,78 @@ msgstr "Désactiver l'authentification à Deux Facteurs"
 msgid "There was an error deleting the user: {{- error}}"
 msgstr ""
 "Une erreur s'est produite lors de la suppression de l'utilisateur : {{- "
-"erreur}}"
+"error}}"
 
 msgid "Delete user {{- name}}"
-msgstr "Supprimer l'utilisateur {{- nom}}"
+msgstr "Supprimer l'utilisateur {{- name}}"
 
 msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
 msgstr ""
 "Désactivation réussie de l'authentification à deux facteurs pour \"{{- "
-"nom}}\""
+"name}}\""
 
 msgid "There was an error disabling two factor authentication: {{- error}}"
 msgstr ""
 "Une erreur s'est produite lors de la désactivation de l'authentification à "
-"deux facteurs : {{- erreur}}"
+"deux facteurs : {{- error}}"
 
 msgid "Disable two factor authentication for user {{- name}}"
 msgstr ""
-"Désactiver l'authentification à deux facteurs pour l'utilisateur {{- nom}}"
+"Désactiver l'authentification à deux facteurs pour l'utilisateur {{- name}}"
 
 msgid ""
 "Are you sure you want to disable two factor authentication for {{- name}}?"
 msgstr ""
 "Êtes-vous sûr de vouloir désactiver l'authentification à deux facteurs pour "
-"{{- nom}} ?"
+"{{- name}} ?"
 
 msgid "Yes, disable two factor authentication"
 msgstr "Oui, désactiver l'authentification à deux facteurs"
 
 msgid "User \"{{- name}}\" disabled successfuly"
-msgstr "Utilisateur \"{{- nom}}\" désactivé avec succès"
+msgstr "Utilisateur \"{{- name}}\" désactivé avec succès"
 
 msgid "There was an error disabling the user: {{- error}}"
 msgstr ""
 "Une erreur s'est produite lors de la désactivation de l'utilisateur : {{- "
-"erreur}}"
+"error}}"
 
 msgid "Disable user {{- name}}"
-msgstr "Désactiver l'utilisateur {{- nom}}"
+msgstr "Désactiver l'utilisateur {{- name}}"
 
 msgid "Are you sure you want to disable {{- name}}?"
-msgstr "Êtes-vous sûr de vouloir désactiver {{- nom}} ?"
+msgstr "Êtes-vous sûr de vouloir désactiver {{- name}} ?"
 
 msgid "Yes, disable"
 msgstr "Oui, désactiver"
 
 msgid "User \"{{- name}}\" enabled successfuly"
-msgstr "Utilisateur \"{{- nom}}\" activé avec succès"
+msgstr "Utilisateur \"{{- name}}\" activé avec succès"
 
 msgid "There was an error enabling the user: {{- error}}"
 msgstr ""
 "Une erreur s'est produite lors de l'activation de l'utilisateur : {{- "
-"erreur}}"
+"error}}"
 
 msgid "Enable user {{- name}}"
-msgstr "Activer l'utilisateur {{- nom}}"
+msgstr "Activer l'utilisateur {{- name}}"
 
 msgid "Are you sure you want to enable {{- name}}?"
-msgstr "Êtes-vous sûr de vouloir activer {{- nom}} ?"
+msgstr "Êtes-vous sûr de vouloir activer {{- name}} ?"
 
 msgid "Yes, enable"
 msgstr "Oui, activer"
 
 msgid "User \"{{- name}}\" replicated successfuly"
-msgstr "Utilisateur \"{{- nom}}\" répliqué avec succès"
+msgstr "Utilisateur \"{{- name}}\" répliqué avec succès"
 
 msgid "There was an error replicating the user: {{- error}}"
 msgstr ""
 "Une erreur s'est produite lors de la réplication de l'utilisateur : {{- "
-"erreur}}"
+"error}}"
 
 msgid "Replicate user {{- name}}"
-msgstr "Répliquer l'utilisateur {{- nom}}"
+msgstr "Répliquer l'utilisateur {{- name}}"
 
 msgid "Username for new user"
 msgstr "Nom d'utilisateur pour le nouvel utilisateur"
@@ -980,23 +995,16 @@ msgstr "Nom d'utilisateur pour le nouvel utilisateur"
 msgid "Password for new user"
 msgstr "Mot de passe pour nouvel utilisateur"
 
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
-msgstr ""
-"Le mot de passe doit comporter au moins 8 caractères, avec au moins un "
-"caractère minuscule, un caractère majuscule et un caractère spécial."
-
 msgid "Replicate user"
 msgstr "Répliquer l'utilisateur"
 
 msgid "Password of user \"{{- name}}\" reset successfuly"
-msgstr "Mot de passe de l'utilisateur \"{{- nom}}\" réinitialisé avec succès"
+msgstr "Mot de passe de l'utilisateur \"{{- name}}\" réinitialisé avec succès"
 
 msgid "There was an error resetting the password: {{- error}}"
 msgstr ""
 "Une erreur s'est produite lors de la réinitialisation du mot de passe : {{- "
-"erreur}}"
+"error}}"
 
 msgid "Are you sure you want to reset the password for {{- name}}?"
 msgstr "Voulez-vous vraiment réinitialiser le mot de passe de {{- name}} ?"
