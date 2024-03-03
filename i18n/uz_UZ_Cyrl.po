@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2023
+# Ibatov <ibatovk@who.int>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
+"POT-Creation-Date: 2024-01-17T09:36:40.909Z\n"
 "PO-Revision-Date: 2022-10-15 22:33+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2023\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2024\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -413,6 +413,18 @@ msgstr "Маълумотлар импорти аудитини ўтказиб ю
 msgid "Visualization"
 msgstr "Визуализация"
 
+msgid "Aggregate data exchange"
+msgstr ""
+
+msgid "Event hook"
+msgstr ""
+
+msgid "Route"
+msgstr ""
+
+msgid "Impersonate user"
+msgstr "Робот фойдаланувчи"
+
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
 
@@ -582,7 +594,8 @@ msgid "Password"
 msgstr "Пароль"
 
 msgid ""
-"Minimum 8 characters, one uppercase and lowercase letter and one number"
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
 msgstr ""
 
 msgid "Repeat new password"
@@ -606,16 +619,16 @@ msgstr "LDAP идентификатор"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr ""
 
-msgid "Send invite"
-msgstr "Таклифномани юборинг"
-
-msgid "Cancel invite"
-msgstr ""
-
 msgid "Invalid username"
 msgstr ""
 
 msgid "Invalid WhatsApp number"
+msgstr ""
+
+msgid "Send invite"
+msgstr "Таклифномани юборинг"
+
+msgid "Cancel invite"
 msgstr ""
 
 msgid "Error updating user"
@@ -918,11 +931,6 @@ msgstr "Янги фойдаланувчи учун ФойдаланувчиНо�
 
 msgid "Password for new user"
 msgstr "Янги фодаланувчи учун пароль"
-
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
-msgstr ""
 
 msgid "Replicate user"
 msgstr "Фойдаланувчини репликация қилиш"
