@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
+"POT-Creation-Date: 2024-01-19T12:15:17.744Z\n"
 "PO-Revision-Date: 2023-05-22 19:30+0000\n"
 "Last-Translator: Jiří Podhorecký, 2023\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -426,6 +426,12 @@ msgstr "Přeskočit audit importu dat"
 msgid "Visualization"
 msgstr "Vizualizace"
 
+msgid "Event Hook"
+msgstr ""
+
+msgid "Route"
+msgstr ""
+
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr "Při kontrole dostupnosti názvu této role došlo k problému"
 
@@ -608,8 +614,11 @@ msgid "Password"
 msgstr "Heslo"
 
 msgid ""
-"Minimum 8 characters, one uppercase and lowercase letter and one number"
-msgstr "Minimálně 8 znaků, jedno velké a malé písmeno a jedno číslo"
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
+msgstr ""
+"Heslo by mělo mít alespoň 8 znaků, alespoň jedno malé písmeno, jedno velké "
+"písmeno a jeden speciální znak."
 
 msgid "Repeat new password"
 msgstr "opakujte nové heslo"
@@ -934,13 +943,6 @@ msgstr "Uživatelské jméno pro nového uživatele"
 
 msgid "Password for new user"
 msgstr "Heslo pro nového uživatele"
-
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
-msgstr ""
-"Heslo by mělo mít alespoň 8 znaků, alespoň jedno malé písmeno, jedno velké "
-"písmeno a jeden speciální znak."
 
 msgid "Replicate user"
 msgstr "Replikovat uživatele"

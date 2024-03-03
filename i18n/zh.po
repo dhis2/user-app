@@ -1,16 +1,16 @@
 # 
 # Translators:
-# phil_dhis2, 2023
 # 晓东 林 <13981924470@126.com>, 2023
 # Viktor Varland <viktor@dhis2.org>, 2023
-# easylin <lin_xd@126.com>, 2023
+# Philip Larsen Donnelly, 2024
+# easylin <lin_xd@126.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
+"POT-Creation-Date: 2024-01-19T12:15:17.744Z\n"
 "PO-Revision-Date: 2023-05-22 19:30+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2023\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2024\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -425,6 +425,12 @@ msgstr "跳过数据导入审计"
 msgid "Visualization"
 msgstr "可视化"
 
+msgid "Event Hook"
+msgstr ""
+
+msgid "Route"
+msgstr "路线"
+
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr "检查此角色名称的可用性时出现问题"
 
@@ -600,8 +606,9 @@ msgid "Password"
 msgstr "口令"
 
 msgid ""
-"Minimum 8 characters, one uppercase and lowercase letter and one number"
-msgstr "最少8个字符，一个大小写字母和一个数字"
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
+msgstr "密码长度至少应为 8 个字符，至少包含 1 个小写字符、1 个大写字符和 1 个特殊字符。"
 
 msgid "Repeat new password"
 msgstr "重复新口令"
@@ -870,14 +877,14 @@ msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
 msgstr "成功禁用“{{- name}}”的双因素身份验证"
 
 msgid "There was an error disabling two factor authentication: {{- error}}"
-msgstr "禁用双因素身份验证时出错：{{- 错误}}"
+msgstr "禁用双因素身份验证时出错：{{- error}}"
 
 msgid "Disable two factor authentication for user {{- name}}"
 msgstr "为用户 {{- name}} 禁用双因素身份验证"
 
 msgid ""
 "Are you sure you want to disable two factor authentication for {{- name}}?"
-msgstr "您确定要为 {{-name}} 禁用两因素身份验证吗？"
+msgstr "您确定要为 {{- name}} 禁用两因素身份验证吗？"
 
 msgid "Yes, disable two factor authentication"
 msgstr "是的，禁用双因素身份验证"
@@ -927,16 +934,11 @@ msgstr "新用户用户名"
 msgid "Password for new user"
 msgstr "新用户口令"
 
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
-msgstr "密码长度至少应为 8 个字符，至少包含 1 个小写字符、1 个大写字符和 1 个特殊字符。"
-
 msgid "Replicate user"
 msgstr "复制用户"
 
 msgid "Password of user \"{{- name}}\" reset successfuly"
-msgstr "用户“{{-name}}”的密码重置成功"
+msgstr "用户“{{- name}}”的密码重置成功"
 
 msgid "There was an error resetting the password: {{- error}}"
 msgstr "重置密码时出错：{{- error}}"
