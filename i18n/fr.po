@@ -1,21 +1,21 @@
 # 
 # Translators:
 # Edem Kossi <ekossi@hispwca.org>, 2021
-# Matthieu Pinard <matthieu@pinard.no>, 2021
-# phil_dhis2, 2021
+# Matthieu Pinard <matthieu@dhis2.org>, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Karoline Tufte Lien <karoline@dhis2.org>, 2021
 # Bram Piot <bram.piot@gmail.com>, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
+# Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-02-16T18:07:59.076Z\n"
+"POT-Creation-Date: 2023-03-06T12:01:39.768Z\n"
 "PO-Revision-Date: 2021-09-04 00:49+0000\n"
-"Last-Translator: Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022\n"
-"Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -304,7 +304,7 @@ msgid "Go back home"
 msgstr "Rentrer à la maison"
 
 msgid "User \"{{displayName}}\" replicated successfuly"
-msgstr "Utilisateur \"{{Afficherunnom}}\"  répliqué avec succès"
+msgstr "Utilisateur \"{{displayName}}\"  répliqué avec succès"
 
 msgid "There was a problem replicating the user"
 msgstr "Un problème est survenu lors de la réplication de l'utilisateur"
@@ -440,7 +440,7 @@ msgstr ""
 "rafraîchir la page"
 
 msgid "User group \"{{displayName}}\" saved successfully"
-msgstr "Groupe d'utilisateurs \"{{Afficherunnom}}\" enregistré avec succès"
+msgstr "Groupe d'utilisateurs \"{{displayName}}\" enregistré avec succès"
 
 msgid "There was a problem saving the user group."
 msgstr ""
@@ -484,7 +484,7 @@ msgid "User Group Management"
 msgstr "Gestion des groupes d'utilisateurs"
 
 msgid "User role \"{{displayName}}\" saved successfully"
-msgstr "Rôle d'utilisateur \"{{Afficherunnom}}\" enregistré avec succès"
+msgstr "Rôle d'utilisateur \"{{displayName}}\" enregistré avec succès"
 
 msgid "There was a problem saving the user role."
 msgstr ""
@@ -501,7 +501,7 @@ msgstr ""
 "Impossible de charger les données utilisateur. Veuillez rafraîchir la page."
 
 msgid "User \"{{displayName}}\" saved successfully"
-msgstr "Utilisateur \"{{Afficherunnom}}\" enregistré avec succès"
+msgstr "Utilisateur \"{{displayName}}\" enregistré avec succès"
 
 msgid "There was a problem saving the user."
 msgstr "Un problème est survenu lors de l'enregistrement de l'utilisateur."
@@ -602,8 +602,7 @@ msgstr "Répliquer l'utilisateur"
 
 msgid "Are you sure you want to reset {{-userName}}'s password?"
 msgstr ""
-"Êtes-vous sûr de vouloir réinitialiser le mot de passe de "
-"{{-nomd'utilisateur}} ?"
+"Êtes-vous sûr de vouloir réinitialiser le mot de passe de {{-userName}} ?"
 
 msgid "Are you sure you want to disable two factor authentication for"
 msgstr ""
@@ -661,9 +660,9 @@ msgstr "Gestion des utilisateurs"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
-msgstr[0] "g"
-msgstr[1] "{{nombre}} sélectionnés"
-msgstr[2] "{{nombre}} sélectionnés"
+msgstr[0] "{{count}} sélectionné"
+msgstr[1] "{{count}} sélectionnés"
+msgstr[2] "{{count}} sélectionnés"
 
 msgid "Yes"
 msgstr "Oui"
@@ -678,15 +677,14 @@ msgid "Validating..."
 msgstr "Valider..."
 
 msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
-msgstr "Voulez-vous vraiment supprimer le {{type}} \"{{Afficherunnom}}\"?"
+msgstr "Voulez-vous vraiment supprimer le {{type}} \"{{displayName}}\"?"
 
 msgid "{{type}} \"{{displayName}}\" removed successfully"
-msgstr "{{type}} \"{{Afficherunnom}}\" supprimé avec succès"
+msgstr "{{type}} \"{{displayName}}\" supprimé avec succès"
 
 msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
 msgstr ""
-"Un problème est survenu lors de la suppression {{type}} "
-"\"{{Afficherunnom}}\"?"
+"Un problème est survenu lors de la suppression {{type}} \"{{displayName}}\"?"
 
 msgid "Exceeds maximum character limit of 50"
 msgstr "Dépasse la limite de 50 caractères maximum"
@@ -724,6 +722,18 @@ msgstr "Un nom d'utilisateur doit comporter au moins 2 caractères"
 msgid "Username may not exceed 140 characters"
 msgstr "Le nom d'utilisateur ne doit pas dépasser 140 caractères"
 
+msgid "Surname should be at least 2 characters long"
+msgstr ""
+
+msgid "Surname may not exceed 160 characters"
+msgstr ""
+
+msgid "First name should be at least 2 characters long"
+msgstr ""
+
+msgid "First name may not exceed 160 characters"
+msgstr ""
+
 msgid "Please provide a valid international phone number (+0123456789)"
 msgstr ""
 "Veuillez fournir un numéro de téléphone international valide (+0123456789)"
@@ -755,10 +765,10 @@ msgstr ""
 "nom d'utilisateur"
 
 msgid "{{fieldDisplayName}} is already taken"
-msgstr "{{champNomd'affichage}} est déjà pris"
+msgstr "{{fieldDisplayName}} est déjà pris"
 
 msgid "Could not verify if this {{fieldDisplayName}} is unique"
-msgstr "Impossible de vérifier si cela {{champNomd'affichage}} est unique"
+msgstr "Impossible de vérifier si cela {{fieldDisplayName}} est unique"
 
 msgid "Attribute value needs to be unique, value already taken."
 msgstr "La valeur d'attribut doit être unique, valeur déjà prise."
