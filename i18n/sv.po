@@ -1,14 +1,14 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2022
-# Philip Larsen Donnelly, 2023
+# Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-12-12T13:36:05.060Z\n"
+"POT-Creation-Date: 2024-02-08T17:31:59.581Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2023\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: Swedish (https://app.transifex.com/hisp-uio/teams/100509/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -59,14 +59,50 @@ msgstr ""
 msgid "Cancel without saving"
 msgstr ""
 
+msgid "Basic information"
+msgstr ""
+
+msgid "Name"
+msgstr "Namn"
+
+msgid "Code"
+msgstr "Koda"
+
+msgid "Used in analytics reports."
+msgstr ""
+
 msgid "Error updating group"
 msgstr ""
 
 msgid "Error creating group"
 msgstr ""
 
+msgid "User management"
+msgstr ""
+
+msgid "Add or remove users from this group."
+msgstr ""
+
+msgid ""
+"To add a user to this group, go to the User section and edit the user group "
+"settings for a specific user."
+msgstr ""
+
 msgid "Attributes"
 msgstr "Attribut"
+
+msgid "User group management"
+msgstr ""
+
+msgid ""
+"This group can manage other user groups. Add managed user groups below."
+msgstr ""
+
+msgid "Available user groups"
+msgstr "Tillgängliga användargrupper"
+
+msgid "Managed user groups"
+msgstr "Hanterad usergrupper"
 
 msgid "Name is already taken"
 msgstr ""
@@ -105,12 +141,6 @@ msgstr ""
 
 msgid "Error creating role"
 msgstr ""
-
-msgid "Basic information"
-msgstr ""
-
-msgid "Name"
-msgstr "Namn"
 
 msgid "Description"
 msgstr "Beskrivning"
@@ -488,9 +518,6 @@ msgstr ""
 
 msgid "User roles this user is assigned"
 msgstr ""
-
-msgid "Available user groups"
-msgstr "Tillgängliga användargrupper"
 
 msgid "User groups this user is a member of"
 msgstr ""

@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
 # Jaime Bosque <jaime.bosque@dhis2.org>, 2023
+# Enzo Nicolas Rossi <enzo@dhis2.org>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-08-02T13:20:46.717Z\n"
+"POT-Creation-Date: 2024-02-08T17:31:59.581Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
-"Last-Translator: Jaime Bosque <jaime.bosque@dhis2.org>, 2023\n"
+"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2024\n"
 "Language-Team: Spanish (Latin America) (https://app.transifex.com/hisp-uio/teams/100509/es_419/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -59,12 +59,6 @@ msgstr ""
 msgid "Cancel without saving"
 msgstr "Cancelar sin guardar"
 
-msgid "Error updating group"
-msgstr ""
-
-msgid "Error creating group"
-msgstr ""
-
 msgid "Basic information"
 msgstr ""
 
@@ -75,6 +69,12 @@ msgid "Code"
 msgstr ""
 
 msgid "Used in analytics reports."
+msgstr ""
+
+msgid "Error updating group"
+msgstr ""
+
+msgid "Error creating group"
 msgstr ""
 
 msgid "User management"
@@ -88,6 +88,9 @@ msgid ""
 "settings for a specific user."
 msgstr ""
 
+msgid "Attributes"
+msgstr "Atributos"
+
 msgid "User group management"
 msgstr ""
 
@@ -100,9 +103,6 @@ msgstr ""
 
 msgid "Managed user groups"
 msgstr ""
-
-msgid "Attributes"
-msgstr "Atributos"
 
 msgid "Name is already taken"
 msgstr ""
@@ -279,7 +279,7 @@ msgid "Option Set"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Unidad Organizativa"
 
 msgid "Organisation Unit Group Set"
 msgstr ""
@@ -294,7 +294,7 @@ msgid "Program Stage"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Programa"
 
 msgid "Program Indicator"
 msgstr ""
@@ -538,7 +538,8 @@ msgid "Password"
 msgstr "Contraseña"
 
 msgid ""
-"Minimum 8 characters, one uppercase and lowercase letter and one number"
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
 msgstr ""
 
 msgid "Repeat new password"
@@ -785,7 +786,7 @@ msgid "Error loading user groups"
 msgstr ""
 
 msgid "No results found"
-msgstr ""
+msgstr "No se han encontrado resultados"
 
 msgid "Member?"
 msgstr ""
@@ -913,11 +914,6 @@ msgid "Username for new user"
 msgstr ""
 
 msgid "Password for new user"
-msgstr ""
-
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
 msgstr ""
 
 msgid "Cancel"

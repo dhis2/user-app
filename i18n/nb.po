@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Caroline Hesthagen Holen <caroline@devotta.no>, 2023
-# Karoline Tufte Lien <karoline@dhis2.org>, 2023
+# Karoline Tufte Lien <karoline@dhis2.org>, 2024
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-12-12T13:36:05.060Z\n"
+"POT-Creation-Date: 2024-02-08T17:31:59.581Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2023\n"
+"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2024\n"
 "Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -59,14 +59,52 @@ msgstr ""
 msgid "Cancel without saving"
 msgstr "Avbryt uten å lagre"
 
+msgid "Basic information"
+msgstr ""
+
+msgid "Name"
+msgstr "Navn"
+
+msgid "Code"
+msgstr "Kode"
+
+msgid "Used in analytics reports."
+msgstr ""
+
 msgid "Error updating group"
 msgstr ""
 
 msgid "Error creating group"
 msgstr ""
 
+msgid "User management"
+msgstr "Brukeradministrasjon"
+
+msgid "Add or remove users from this group."
+msgstr ""
+
+msgid ""
+"To add a user to this group, go to the User section and edit the user group "
+"settings for a specific user."
+msgstr ""
+"For å legge til en bruker i denne gruppen, gå til brukerdelen og rediger "
+"innstillingene for brukergruppen for en bestemt bruker."
+
 msgid "Attributes"
 msgstr "Attributter"
+
+msgid "User group management"
+msgstr ""
+
+msgid ""
+"This group can manage other user groups. Add managed user groups below."
+msgstr ""
+
+msgid "Available user groups"
+msgstr "Tilgjengelige brukergrupper"
+
+msgid "Managed user groups"
+msgstr "Administrerte brukergrupper"
 
 msgid "Name is already taken"
 msgstr ""
@@ -105,12 +143,6 @@ msgstr ""
 
 msgid "Error creating role"
 msgstr ""
-
-msgid "Basic information"
-msgstr ""
-
-msgid "Name"
-msgstr "Navn"
 
 msgid "Description"
 msgstr "Beskrivelse"
@@ -489,9 +521,6 @@ msgstr ""
 
 msgid "User roles this user is assigned"
 msgstr ""
-
-msgid "Available user groups"
-msgstr "Tilgjengelige brukergrupper"
 
 msgid "User groups this user is a member of"
 msgstr ""
