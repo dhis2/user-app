@@ -426,7 +426,7 @@ msgid "Visualization"
 msgstr "可视化"
 
 msgid "Event Hook"
-msgstr ""
+msgstr "事件挂钩"
 
 msgid "Route"
 msgstr "路线"
