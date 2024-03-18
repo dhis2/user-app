@@ -1,4 +1,3 @@
-import { Input } from '@dhis2-ui/input'
 import { colors } from '@dhis2/ui-constants'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
