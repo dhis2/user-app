@@ -9,7 +9,7 @@
         "start": "d2-app-scripts start",
         "format": "yarn d2-style apply",
         "format:staged": "yarn d2-style apply --staged",
-        "lint": "yarn d2-style check",
+        "lint": "yarn d2-style check --no-inline-config",
         "documentation": "rimraf build && jsdoc -c jsdoc.json",
         "start:nobrowser": "BROWSER=none d2-app-scripts start",
         "test": "d2-app-scripts test",
