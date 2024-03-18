@@ -8,5 +8,7 @@ module.exports = {
     },
     rules: {
         'react/display-name': 'off',
+        'react/no-unknown-property': 'off',
+        'react/no-deprecated': 'off',
     },
 }
