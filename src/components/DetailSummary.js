@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { LoadingMask, Heading } from '@dhis2/d2-ui-core'
-import { capitalize, kebabCase } from 'lodash-es'
+import { kebabCase } from 'lodash-es'
 import { Paper } from 'material-ui'
 import RaisedButton from 'material-ui/RaisedButton'
 import ContentSend from 'material-ui/svg-icons/content/send'
@@ -12,7 +12,6 @@ import { Link } from 'react-router-dom'
 import { getItem } from '../actions'
 import api from '../api'
 import { USER, USER_GROUP, USER_ROLE } from '../constants/entityTypes'
-import parseDateFromUTCString from '../utils/parseDateFromUTCString'
 import ErrorMessage from './ErrorMessage'
 
 const styles = {
@@ -86,65 +85,22 @@ class DetailSummary extends Component {
         const { summaryObject, config } = this.props
         const labelCellStyle = { ...styles.cell, ...styles.valueCell }
 
-        return config.map((field, index) => {
-            const {
-                key,
-                removeText,
-                parseDate,
-                parseDateTime,
-                nestedPropselector,
-                parseArrayAsCommaDelimitedString,
-                count,
-            } = field
-            let { label } = field
+        const idFieldConfig = config.find(field => field.key === 'id')
 
-            // TODO: Handle label translation properly
-            label = i18n.t(label)
-            let value = summaryObject[key]
+        if (!idFieldConfig) {
+            return ''
+        }
 
-            if (typeof value === 'undefined') {
-                value = ''
-            } else {
-                if (nestedPropselector) {
-                    nestedPropselector.forEach(selector => {
-                        value = value[selector]
-                    })
-                }
+        let { label } = idFieldConfig
+        label = i18n.t(label)
+        const value = summaryObject['id']
 
-                if (parseArrayAsCommaDelimitedString) {
-                    // Some nested lists come through as a modelCollection but others are already arrays
-                    if (typeof value.toArray === 'function') {
-                        value = value.toArray()
-                    }
-                    value = value
-                        .map(item => item[parseArrayAsCommaDelimitedString])
-                        .join(', ')
-                }
-
-                if (removeText) {
-                    value = capitalize(value.replace(removeText, ''))
-                }
-
-                if ((parseDate || parseDateTime) && typeof value === 'string') {
-                    value = parseDateFromUTCString(value, parseDateTime)
-                }
-
-                if (count) {
-                    if (typeof value.size === 'number') {
-                        value = value.size
-                    } else if (typeof value.length === 'number') {
-                        value = value.length
-                    }
-                }
-            }
-
-            return (
-                <tr key={index}>
-                    <td style={labelCellStyle}>{label}</td>
-                    <td style={styles.cell}>{value}</td>
-                </tr>
-            )
-        })
+        return (
+            <tr>
+                <td style={labelCellStyle}>{label}</td>
+                <td style={styles.cell}>{value}</td>
+            </tr>
+        )
     }
 
     render() {
