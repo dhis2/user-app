@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { LoadingMask, Heading } from '@dhis2/d2-ui-core'
-import { capitalize, kebabCase } from 'lodash-es'
+import { kebabCase } from 'lodash-es'
 import { Paper } from 'material-ui'
 import RaisedButton from 'material-ui/RaisedButton'
 import ContentSend from 'material-ui/svg-icons/content/send'
@@ -12,7 +12,6 @@ import { Link } from 'react-router-dom'
 import { getItem } from '../actions'
 import api from '../api'
 import { USER, USER_GROUP, USER_ROLE } from '../constants/entityTypes'
-import parseDateFromUTCString from '../utils/parseDateFromUTCString'
 import ErrorMessage from './ErrorMessage'
 
 const styles = {
