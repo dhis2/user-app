@@ -113,25 +113,25 @@ const CurrentUserProvider = ({ children }) => {
         teiSearchOrganisationUnits: data.me.teiSearchOrganisationUnits ?? [],
         systemOrganisationUnitRoots:
             data.systemOrganisationUnitRoots.organisationUnits ?? [],
-        hasAppAccess: data.me.authorities.some((auth) =>
+        hasAppAccess: data.me.authorities.some(auth =>
             AUTH_LOOKUP.APP.has(auth)
         ),
-        hasUserSectionAccess: data.me.authorities.some((auth) =>
+        hasUserSectionAccess: data.me.authorities.some(auth =>
             AUTH_LOOKUP.USER.has(auth)
         ),
-        hasGroupSectionAccess: data.me.authorities.some((auth) =>
+        hasGroupSectionAccess: data.me.authorities.some(auth =>
             AUTH_LOOKUP.GROUP.has(auth)
         ),
-        hasRoleSectionAccess: data.me.authorities.some((auth) =>
+        hasRoleSectionAccess: data.me.authorities.some(auth =>
             AUTH_LOOKUP.ROLE.has(auth)
         ),
-        canCreateUsers: data.me.authorities.some((auth) =>
+        canCreateUsers: data.me.authorities.some(auth =>
             AUTH_LOOKUP.USER_CREATE.has(auth)
         ),
-        canCreateGroups: data.me.authorities.some((auth) =>
+        canCreateGroups: data.me.authorities.some(auth =>
             AUTH_LOOKUP.GROUP_CREATE.has(auth)
         ),
-        canCreateRoles: data.me.authorities.some((auth) =>
+        canCreateRoles: data.me.authorities.some(auth =>
             AUTH_LOOKUP.ROLE_CREATE.has(auth)
         ),
         refresh: refetch,

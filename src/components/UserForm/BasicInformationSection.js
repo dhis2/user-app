@@ -13,7 +13,7 @@ import {
 import { useUserNameValidator } from './validators.js'
 
 const hasOption = (options, value) =>
-    !!options.find((option) => option.value === value)
+    !!options.find(option => option.value === value)
 
 const INVITE_USER = 'INVITE_USER'
 

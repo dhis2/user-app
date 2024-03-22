@@ -44,7 +44,7 @@ const query = {
     attributes: userAttributesQuery,
 }
 
-const optionsFromLanguages = (languages) =>
+const optionsFromLanguages = languages =>
     // It is possible for the server to return duplicate entries for database locales
     uniqBy(
         languages.map(({ name, displayName, locale }) => ({
@@ -54,7 +54,7 @@ const optionsFromLanguages = (languages) =>
         'value'
     )
 
-const makeOptions = (array) =>
+const makeOptions = array =>
     array.map(({ displayName, name, id }) => ({
         label: displayName || name,
         value: id,

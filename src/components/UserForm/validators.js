@@ -8,7 +8,7 @@ export const useDebouncedUniqueUsernameValidator = ({
     username: currentUsername,
 }) => {
     const engine = useDataEngine()
-    const checkUsername = pDebounce(async (username) => {
+    const checkUsername = pDebounce(async username => {
         const { result } = await engine.query({
             result: {
                 resource: 'account/username',
@@ -17,7 +17,7 @@ export const useDebouncedUniqueUsernameValidator = ({
         })
         return result
     }, 350)
-    const validator = async (username) => {
+    const validator = async username => {
         if (username === currentUsername) {
             return
         }
@@ -60,13 +60,13 @@ export const useUserNameValidator = ({ user, isInviteUser }) => {
     )
 }
 
-export const createRepeatPasswordValidator = (password) => (repeatPassword) => {
+export const createRepeatPasswordValidator = password => repeatPassword => {
     if (password && password !== repeatPassword) {
         return i18n.t('Passwords do not match')
     }
 }
 
-export const hasSelectionValidator = (value) => {
+export const hasSelectionValidator = value => {
     if (!Array.isArray(value) || value.length === 0) {
         return i18n.t('Please provide a value')
     }

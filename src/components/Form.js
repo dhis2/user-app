@@ -38,7 +38,7 @@ FormSection.propTypes = {
     description: PropTypes.string,
 }
 
-const InputFieldFFWrapper = (props) => {
+const InputFieldFFWrapper = props => {
     // `meta.validating` is true for all fields when an async validator is used
     // so only show spinner if input field is currently focused
     const validating = props.meta.active && props.meta.validating
@@ -51,7 +51,7 @@ InputFieldFFWrapper.propTypes = {
     meta: PropTypes.object,
 }
 
-export const TextField = (props) => (
+export const TextField = props => (
     <ReactFinalForm.Field
         {...props}
         className={styles.textField}
@@ -59,7 +59,7 @@ export const TextField = (props) => (
     />
 )
 
-export const EmailField = (props) => (
+export const EmailField = props => (
     <ReactFinalForm.Field
         {...props}
         className={styles.textField}
@@ -68,7 +68,7 @@ export const EmailField = (props) => (
     />
 )
 
-export const PasswordField = (props) => (
+export const PasswordField = props => (
     <ReactFinalForm.Field
         {...props}
         className={styles.passwordField}
@@ -77,7 +77,7 @@ export const PasswordField = (props) => (
     />
 )
 
-export const DateField = (props) => (
+export const DateField = props => (
     <ReactFinalForm.Field
         {...props}
         className={styles.dateField}
@@ -86,7 +86,7 @@ export const DateField = (props) => (
     />
 )
 
-export const TextAreaField = (props) => (
+export const TextAreaField = props => (
     <ReactFinalForm.Field
         {...props}
         className={styles.textField}
@@ -94,7 +94,7 @@ export const TextAreaField = (props) => (
     />
 )
 
-export const SingleSelectField = (props) => (
+export const SingleSelectField = props => (
     <ReactFinalForm.Field
         {...props}
         className={styles.singleSelectField}
@@ -102,7 +102,7 @@ export const SingleSelectField = (props) => (
     />
 )
 
-export const CheckboxField = (props) => (
+export const CheckboxField = props => (
     <ReactFinalForm.Field
         {...props}
         className={styles.field}
@@ -147,7 +147,7 @@ export const SearchableOrgUnitTreeField = ({
     // Fixes the infinite loop rendering bug that occurs when the
     // initial value fails shallow equal on form rerender.
     // Issue on GitHub: https://github.com/final-form/react-final-form/issues/686
-    const [memoedInitialValue] = useState(initialValue.map((ou) => ou.id))
+    const [memoedInitialValue] = useState(initialValue.map(ou => ou.id))
 
     return (
         <ReactFinalForm.Field
