@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-02-08T17:31:59.581Z\n"
-"PO-Revision-Date: 2024-02-08T17:31:59.581Z\n"
+"POT-Creation-Date: 2024-03-22T08:26:32.388Z\n"
+"PO-Revision-Date: 2024-03-22T08:26:32.388Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -37,6 +37,9 @@ msgstr "Edit user role"
 
 msgid "Send message"
 msgstr "Send message"
+
+msgid "ID"
+msgstr "ID"
 
 msgid "Filter options"
 msgstr "Filter options"
@@ -605,9 +608,6 @@ msgstr "Create, modify, view and delete User Groups"
 
 msgid "Display name"
 msgstr "Display name"
-
-msgid "ID"
-msgstr "ID"
 
 msgid "Last login"
 msgstr "Last login"

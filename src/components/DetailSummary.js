@@ -83,8 +83,19 @@ class DetailSummary extends Component {
     }
 
     renderPropertyFields() {
-        const { summaryObject, config } = this.props
+        const { summaryObject, config, baseName } = this.props
         const labelCellStyle = { ...styles.cell, ...styles.valueCell }
+
+        if (baseName === USER_GROUP) {
+            const idLabel = i18n.t('ID')
+            const idValue = summaryObject['id'] || ''
+            return (
+                <tr>
+                    <td style={labelCellStyle}>{idLabel}</td>
+                    <td style={styles.cell}>{idValue}</td>
+                </tr>
+            )
+        }
 
         return config.map((field, index) => {
             const {
