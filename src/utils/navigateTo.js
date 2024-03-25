@@ -6,7 +6,7 @@ import history from './history.js'
  * @memberof module:utils
  * @function
  */
-const navigateTo = (path) => {
+const navigateTo = path => {
     // window.history.pushState({ prevUrl: window.location.href },null)
     history.push(path, { search: 'bAH!' })
 }

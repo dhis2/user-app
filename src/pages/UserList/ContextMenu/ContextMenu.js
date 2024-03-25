@@ -32,7 +32,7 @@ const useCurrentModal = () => {
 
     return [
         CurrentModal,
-        (Modal) => {
+        Modal => {
             // As setState supports functional updates, we can't pass functional
             // components directly
             setCurrentModal(() => Modal)
@@ -54,14 +54,14 @@ const ContextMenu = ({ user, anchorRef, refetchUsers, onClose }) => {
     const canReplicate =
         access.update &&
         currentUser.authorities.some(
-            (auth) => auth === 'ALL' || auth === 'F_REPLICATE_USER'
+            auth => auth === 'ALL' || auth === 'F_REPLICATE_USER'
         )
     const canResetPassword =
         emailConfigured &&
         user.email &&
         access.update &&
         currentUser.authorities.some(
-            (auth) =>
+            auth =>
                 auth === 'ALL' ||
                 auth === 'F_USER_ADD' ||
                 auth === 'F_USER_ADD_WITHIN_MANAGED_GROUP'
