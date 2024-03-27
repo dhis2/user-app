@@ -89,7 +89,7 @@ const RoleTable = ({
                 </DataTableRow>
             </DataTableHead>
             <DataTableBody loading={loading}>
-                {roles.map((role) => {
+                {roles.map(role => {
                     const { id, displayName, access, description } = role
                     const handleClick = () => {
                         setReferrer('user-roles')

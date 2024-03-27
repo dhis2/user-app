@@ -42,7 +42,7 @@ const userSettingsQuery = {
     },
 }
 
-const useUser = (userId) => {
+const useUser = userId => {
     const user = useDataQuery(userQuery, { lazy: true })
     const username = user.data?.user?.userCredentials?.username
     const userSettings = useDataQuery(userSettingsQuery, { lazy: true })

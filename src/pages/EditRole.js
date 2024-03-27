@@ -16,7 +16,7 @@ const query = {
     },
 }
 
-const useRole = (roleId) => {
+const useRole = roleId => {
     const { called, loading, fetching, error, data, refetch } = useDataQuery(
         query,
         {

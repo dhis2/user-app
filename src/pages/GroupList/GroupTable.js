@@ -92,7 +92,7 @@ const GroupTable = ({
                 </DataTableRow>
             </DataTableHead>
             <DataTableBody loading={loading}>
-                {groups.map((group) => {
+                {groups.map(group => {
                     const { id, displayName, access } = group
                     const handleClick = () => {
                         setReferrer('user-groups')
