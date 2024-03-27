@@ -15,7 +15,7 @@ import {
     useDebouncedUniqueAttributeValidator,
 } from './validators.js'
 
-const getFieldName = (attribute) => `attributeValues.${attribute.id}`
+const getFieldName = attribute => `attributeValues.${attribute.id}`
 
 /**************************************************************************
  * Attributes can be either based on an optionSet, or based on a valueType.
@@ -68,7 +68,7 @@ const Attribute = ({ attribute, value, entity, entityType }) => {
             })
         )
         // SingleSelectField throws an error if its value does not correspond to an option
-        const initialValue = options.find((option) => option.value === value)
+        const initialValue = options.find(option => option.value === value)
             ? value
             : undefined
 
