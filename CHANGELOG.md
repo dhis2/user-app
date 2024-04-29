@@ -1,3 +1,10 @@
+## [100.0.4](https://github.com/dhis2/user-app/compare/v100.0.3...v100.0.4) (2024-04-29)
+
+
+### Bug Fixes
+
+* change query for user search in user groups ([1ccb719](https://github.com/dhis2/user-app/commit/1ccb7192adb0ed4ea4c2b7bfea83b23682ed34df))
+
 ## [100.0.3](https://github.com/dhis2/user-app/compare/v100.0.2...v100.0.3) (2024-04-21)
 
 
