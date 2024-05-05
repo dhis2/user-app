@@ -5,13 +5,14 @@
 # Thuy Nguyen <thuynguyen@hispvietnam.org>, 2022
 # Saysamone Sibounma, 2023
 # Philip Larsen Donnelly, 2024
+# Namwan Chanthavisouk, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-08T17:31:59.581Z\n"
+"POT-Creation-Date: 2024-03-22T08:26:32.388Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Last-Translator: Namwan Chanthavisouk, 2024\n"
 "Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,6 +50,9 @@ msgstr ""
 
 msgid "Send message"
 msgstr "Send message"
+
+msgid "ID"
+msgstr "ລະຫັດ"
 
 msgid "Filter options"
 msgstr "ຄັດກອງເອົາຕົວເລືອກ"
@@ -614,9 +618,6 @@ msgstr ""
 msgid "Display name"
 msgstr ""
 
-msgid "ID"
-msgstr "ລະຫັດ"
-
 msgid "Last login"
 msgstr ""
 
@@ -747,7 +748,7 @@ msgid "No, cancel"
 msgstr ""
 
 msgid "Yes, delete"
-msgstr ""
+msgstr "ຢືນຢັນ, ລົບ"
 
 msgid "Joined user group \"{{- name}}\" successfuly"
 msgstr ""
