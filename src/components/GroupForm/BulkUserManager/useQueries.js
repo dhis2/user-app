@@ -21,7 +21,7 @@ const getGistFilterParams = (filterQuery) => {
     }
 
     return {
-        rootJunction: filterTokens.length === 1 ? 'OR' : 'AND',
+        rootJunction: 'AND',
         filter,
     }
 }
