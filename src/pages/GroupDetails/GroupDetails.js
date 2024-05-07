@@ -34,7 +34,7 @@ const GroupDetails = ({ groupId }) => {
 
     return (
         <Details title={group.displayName}>
-            {group.access.read && (
+            {!group?.access?.write && (
                 <NoticeBox warn>
                     {i18n.t('You do not have access to edit this user group')}
                 </NoticeBox>
