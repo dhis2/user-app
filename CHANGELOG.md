@@ -1,3 +1,11 @@
+# [100.1.0](https://github.com/dhis2/user-app/compare/v100.0.5...v100.1.0) (2024-05-07)
+
+
+### Features
+
+* add a default notice box based on access level of the user in GroupDetails page ([619186d](https://github.com/dhis2/user-app/commit/619186da13da1fcf0dd323fd3bf28753d737a0f8))
+* update notice box  display logic ([6870615](https://github.com/dhis2/user-app/commit/6870615a401e53617a7acc1d9010583132e10013))
+
 ## [100.0.5](https://github.com/dhis2/user-app/compare/v100.0.4...v100.0.5) (2024-05-05)
 
 
