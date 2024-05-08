@@ -7,6 +7,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "POT-Creation-Date: 2024-01-17T09:36:40.909Z\n"
 "PO-Revision-Date: 2024-01-17T09:36:40.909Z\n"
+"POT-Creation-Date: 2024-03-27T09:03:25.496Z\n"
+"PO-Revision-Date: 2024-03-27T09:03:25.496Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -709,6 +711,9 @@ msgstr "There was an error fetching this user."
 
 msgid "Edit user"
 msgstr "Edit user"
+
+msgid "You do not have access to edit this user group"
+msgstr "You do not have access to edit this user group"
 
 msgid "Overview"
 msgstr "Overview"
