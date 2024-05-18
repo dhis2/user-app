@@ -5,13 +5,14 @@
 # Philip Larsen Donnelly, 2021
 # Thuy Nguyen <thuynguyen@hispvietnam.org>, 2022
 # Saysamone Sibounma, 2023
+# Namwan Chanthavisouk, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-03-06T12:01:39.768Z\n"
 "PO-Revision-Date: 2021-09-04 00:49+0000\n"
-"Last-Translator: Saysamone Sibounma, 2023\n"
+"Last-Translator: Namwan Chanthavisouk, 2024\n"
 "Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -661,7 +662,7 @@ msgid "Please enter a valid date with the following format yyyy-mm-dd"
 msgstr ""
 
 msgid "Please provide a valid email address"
-msgstr ""
+msgstr "ກະລຸນາປ້ອນທີ່ຢູ່ອີເມວທີ່ຖືກຕ້ອງ"
 
 msgid "Value should be an integer"
 msgstr ""
@@ -706,22 +707,22 @@ msgid "Please provide a valid international phone number (+0123456789)"
 msgstr ""
 
 msgid "Password should be at least 8 characters long"
-msgstr ""
+msgstr "ລະຫັດຜ່ານຄວນມີຢ່າງໜ້ອຍ 8 ຕົວອັກສອນ"
 
 msgid "Password should be no longer than 34 characters"
-msgstr ""
+msgstr "ລະຫັດຜ່ານຄວນຈະບໍ່ເກີນ 34 ຕົວອັກສອນ"
 
 msgid "Password should contain at least one lowercase letter"
-msgstr ""
+msgstr "ລະຫັດຜ່ານຄວນມີຕົວພິມນ້ອຍຢ່າງໜ້ອຍໜຶ່ງຕົວ"
 
 msgid "Password should contain at least one UPPERCASE letter"
-msgstr ""
+msgstr "ລະຫັດຜ່ານຄວນມີຕົວພິມໃຫຍ່ຢ່າງໜ້ອຍໜຶ່ງຕົວ"
 
 msgid "Password should contain at least one number"
-msgstr ""
+msgstr "ລະຫັດຜ່ານຄວນມີຢ່າງໜ້ອຍໜຶ່ງຕົວເລກ"
 
 msgid "Password should have at least one special character"
-msgstr ""
+msgstr "ລະຫັດຜ່ານຄວນມີຢ່າງໜ້ອຍໜຶ່ງຕົວອັກສອນພິເສດ"
 
 msgid "Username already taken"
 msgstr ""
