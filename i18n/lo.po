@@ -598,7 +598,7 @@ msgid "Passwords do not match"
 msgstr ""
 
 msgid "Please provide a value"
-msgstr ""
+msgstr "ກະລຸນາລະບຸຄ່າ"
 
 msgid "Create, modify, view and delete Users"
 msgstr ""
@@ -790,7 +790,7 @@ msgid "Error loading user groups"
 msgstr ""
 
 msgid "No results found"
-msgstr ""
+msgstr "ບໍ່ພົບຜົນການຊອກຫາ"
 
 msgid "Member?"
 msgstr ""
