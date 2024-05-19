@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-01-19T12:15:17.744Z\n"
+"POT-Creation-Date: 2024-03-27T09:03:25.496Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Namwan Chanthavisouk, 2024\n"
 "Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
@@ -39,7 +39,7 @@ msgid "Value should be a negative integer"
 msgstr ""
 
 msgid "No results found"
-msgstr ""
+msgstr "ບໍ່ພົບຜົນການຊອກຫາ"
 
 msgid "Display name"
 msgstr ""
@@ -659,7 +659,7 @@ msgid "Passwords do not match"
 msgstr ""
 
 msgid "Please provide a value"
-msgstr ""
+msgstr "ກະລຸນາລະບຸຄ່າ"
 
 msgid "New group"
 msgstr ""
@@ -713,6 +713,9 @@ msgid "There was an error fetching this user."
 msgstr ""
 
 msgid "Edit user"
+msgstr ""
+
+msgid "You do not have access to edit this user group"
 msgstr ""
 
 msgid "Overview"
