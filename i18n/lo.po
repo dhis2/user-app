@@ -755,7 +755,7 @@ msgid "Are you sure you want to delete {{- name}}?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr ""
+msgstr "ບໍ່, ຍົກເລີກ"
 
 msgid "Yes, delete"
 msgstr "ຢືນຢັນ, ລົບ"
