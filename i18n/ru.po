@@ -2,14 +2,15 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2023
 # Valeriu Plesca <vplesca@gmail.com>, 2023
-# phil_dhis2, 2023
+# Philip Larsen Donnelly, 2023
+# Yury Rogachev <yury@dhis2.org>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
+"POT-Creation-Date: 2024-03-27T09:03:25.496Z\n"
 "PO-Revision-Date: 2023-05-22 19:30+0000\n"
-"Last-Translator: phil_dhis2, 2023\n"
+"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -424,6 +425,12 @@ msgstr "Пропустить аудит импорта данных"
 msgid "Visualization"
 msgstr "Визуализация"
 
+msgid "Event Hook"
+msgstr ""
+
+msgid "Route"
+msgstr ""
+
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
 
@@ -600,7 +607,8 @@ msgid "Password"
 msgstr "Пароль"
 
 msgid ""
-"Minimum 8 characters, one uppercase and lowercase letter and one number"
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
 msgstr ""
 
 msgid "Repeat new password"
@@ -708,6 +716,9 @@ msgstr ""
 msgid "Edit user"
 msgstr "Изменение пользователя"
 
+msgid "You do not have access to edit this user group"
+msgstr ""
+
 msgid "Overview"
 msgstr ""
 
@@ -745,7 +756,7 @@ msgid "Are you sure you want to delete {{- name}}?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr ""
+msgstr "Нет, отменить"
 
 msgid "Yes, delete"
 msgstr ""
@@ -926,11 +937,6 @@ msgstr "Имя пользователя для нового пользовате
 
 msgid "Password for new user"
 msgstr "Пароль для нового пользователя"
-
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
-msgstr ""
 
 msgid "Replicate user"
 msgstr "Дублировать пользователя"

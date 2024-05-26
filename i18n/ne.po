@@ -1,30 +1,25 @@
 # 
 # Translators:
-# Philip Larsen Donnelly, 2023
-# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2023
-# Somkhit Bouavong <bouavongk@gmail.com>, 2023
-# Viktor Varland <viktor@dhis2.org>, 2023
-# Saysamone Sibounma, 2023
-# Namwan Chanthavisouk, 2024
+# Saroj Dhakal <lotusnagarkot@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-03-27T09:03:25.496Z\n"
 "PO-Revision-Date: 2023-05-22 19:30+0000\n"
-"Last-Translator: Namwan Chanthavisouk, 2024\n"
-"Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
+"Last-Translator: Saroj Dhakal <lotusnagarkot@gmail.com>, 2024\n"
+"Language-Team: Nepali (https://app.transifex.com/hisp-uio/teams/100509/ne/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lo\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ne\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Yes"
-msgstr "ແມ່ນ"
+msgstr ""
 
 msgid "No"
-msgstr "ບໍ່ແມນ"
+msgstr ""
 
 msgid "Attribute value needs to be unique, value already taken."
 msgstr ""
@@ -40,7 +35,7 @@ msgid "Value should be a negative integer"
 msgstr ""
 
 msgid "No results found"
-msgstr "ບໍ່ພົບຜົນການຊອກຫາ"
+msgstr "कुनै पनि नतिजा भेटिएन"
 
 msgid "Display name"
 msgstr ""
@@ -55,10 +50,10 @@ msgid "Cancel all"
 msgstr ""
 
 msgid "Cancel"
-msgstr "Cancel"
+msgstr "रद्द गर्नुहोस्"
 
 msgid "Action"
-msgstr "Action"
+msgstr ""
 
 msgid "Will be added"
 msgstr ""
@@ -67,13 +62,13 @@ msgid "Will be removed"
 msgstr ""
 
 msgid "Network error"
-msgstr "ຂໍ້ຜິດພາດທາງເຄື່ອຂ່າຍ"
+msgstr ""
 
 msgid "Could not load current user information."
 msgstr ""
 
 msgid "Filter options"
-msgstr "ຄັດກອງເອົາຕົວເລືອກ"
+msgstr ""
 
 msgid "Error fetching form"
 msgstr ""
@@ -88,10 +83,10 @@ msgid "Basic information"
 msgstr ""
 
 msgid "Name"
-msgstr "ຊື່"
+msgstr ""
 
 msgid "Code"
-msgstr "ລະຫັດ"
+msgstr ""
 
 msgid "Used in analytics reports."
 msgstr ""
@@ -136,7 +131,7 @@ msgid "Add users to group"
 msgstr ""
 
 msgid "Username"
-msgstr "ຊື່ຜູ້ໃຊ້"
+msgstr ""
 
 msgid "Error loading users"
 msgstr ""
@@ -148,7 +143,7 @@ msgid "Error creating group"
 msgstr ""
 
 msgid "Attributes"
-msgstr "Attributes"
+msgstr ""
 
 msgid "User group management"
 msgstr ""
@@ -196,7 +191,7 @@ msgid "Add/Update Private"
 msgstr ""
 
 msgid "Delete"
-msgstr "ລົບ"
+msgstr ""
 
 msgid "External access"
 msgstr ""
@@ -208,7 +203,7 @@ msgid "Error creating role"
 msgstr ""
 
 msgid "Description"
-msgstr "ລາຍລະອຽດ"
+msgstr ""
 
 msgid "Short, clear description of what this role is for."
 msgstr ""
@@ -260,13 +255,13 @@ msgid "Analytics Table Hook"
 msgstr ""
 
 msgid "Attribute"
-msgstr "Attribute"
+msgstr ""
 
 msgid "Category Combo"
 msgstr ""
 
 msgid "Category"
-msgstr "ລວງນອນ"
+msgstr ""
 
 msgid "Category Option"
 msgstr ""
@@ -281,10 +276,10 @@ msgid "Color Set"
 msgstr ""
 
 msgid "Constant"
-msgstr "Constant"
+msgstr ""
 
 msgid "Dashboard"
-msgstr "ກະດານຂ່າວ"
+msgstr ""
 
 msgid "Data Element Group Sets"
 msgstr ""
@@ -299,7 +294,7 @@ msgid "Min/max rule"
 msgstr ""
 
 msgid "Data Set"
-msgstr "Data set"
+msgstr ""
 
 msgid "Data Value"
 msgstr ""
@@ -326,13 +321,13 @@ msgid "Indicator Type"
 msgstr ""
 
 msgid "Indicator"
-msgstr "ຕົວຊີ້ວັດ"
+msgstr ""
 
 msgid "Legend Set"
 msgstr ""
 
 msgid "Map"
-msgstr "ແຜນທີ່"
+msgstr ""
 
 msgid "Min-Max Data Element"
 msgstr ""
@@ -347,7 +342,7 @@ msgid "Option Set"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr "ຫົວໜ່ວຍ ການຈັດຕັ້ງ"
+msgstr ""
 
 msgid "Organisation Unit Group Set"
 msgstr ""
@@ -359,10 +354,10 @@ msgid "Predictor"
 msgstr ""
 
 msgid "Program Stage"
-msgstr "Program Stage"
+msgstr ""
 
 msgid "Program"
-msgstr "Program"
+msgstr ""
 
 msgid "Program Indicator"
 msgstr ""
@@ -383,13 +378,13 @@ msgid "Relationship Type"
 msgstr ""
 
 msgid "Report"
-msgstr "ລາຍງານ"
+msgstr ""
 
 msgid "Section"
-msgstr "ພາກສວ່ນ"
+msgstr ""
 
 msgid "SQL View"
-msgstr "SQL View"
+msgstr ""
 
 msgid "Tracked Entity"
 msgstr ""
@@ -404,13 +399,13 @@ msgid "Tracked Entity Instance"
 msgstr ""
 
 msgid "User Group"
-msgstr "User Group\\:"
+msgstr ""
 
 msgid "User Role"
 msgstr ""
 
 msgid "User"
-msgstr "User"
+msgstr ""
 
 msgid "Validation Rule Group"
 msgstr ""
@@ -437,7 +432,7 @@ msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
 
 msgid "Search by name"
-msgstr "ຄົ້ນຫາຈາກຊື່"
+msgstr ""
 
 msgid "Search for an organisation unit"
 msgstr ""
@@ -457,10 +452,10 @@ msgid "Please enter at least {{ minCharLength }} characters"
 msgstr ""
 
 msgid "No matches found"
-msgstr "ບໍ່ພົບລາຍການທີ່ຄືກັນ"
+msgstr ""
 
 msgid "Apply"
-msgstr "ນຳໃຊ້"
+msgstr ""
 
 msgid "Clear all"
 msgstr ""
@@ -491,16 +486,16 @@ msgid "Email address"
 msgstr ""
 
 msgid "First name"
-msgstr "ນາມສະກຸນ"
+msgstr ""
 
 msgid "Last name"
-msgstr "ນາມສະກຸນ"
+msgstr ""
 
 msgid "Interface language"
-msgstr "ພາສາສະແດງຜົນ"
+msgstr ""
 
 msgid "Database language"
-msgstr "ພາສາຂໍ້ມູນໃນລະບົບ"
+msgstr ""
 
 msgid "Use database locale / no translation"
 msgstr ""
@@ -512,7 +507,7 @@ msgid "Contact details"
 msgstr ""
 
 msgid "Mobile phone number"
-msgstr "ໝາຍເລກໂທລະສັບ"
+msgstr ""
 
 msgid "WhatsApp"
 msgstr ""
@@ -568,7 +563,7 @@ msgid "The organisation units that this user can export and analyse."
 msgstr ""
 
 msgid "Search"
-msgstr "ຄົນຫາ"
+msgstr "खोज"
 
 msgid "The organisation that this user can search for and in."
 msgstr ""
@@ -592,7 +587,7 @@ msgid "User groups this user is a member of"
 msgstr ""
 
 msgid "Security"
-msgstr "ຄວາມປອດໄພ"
+msgstr ""
 
 msgid "Settings for how this user can log in."
 msgstr ""
@@ -601,10 +596,10 @@ msgid "Change user password"
 msgstr ""
 
 msgid "New password"
-msgstr "ລະຫັດໃໝ່"
+msgstr ""
 
 msgid "Password"
-msgstr "ລະຫັດຜ່ານ"
+msgstr ""
 
 msgid ""
 "Password should be at least 8 characters long, with at least one lowercase "
@@ -612,7 +607,7 @@ msgid ""
 msgstr ""
 
 msgid "Repeat new password"
-msgstr "ຢືນຢັນລະຫັດໃໝ່ອີກຄັ້ງ"
+msgstr ""
 
 msgid "Repeat password"
 msgstr ""
@@ -660,7 +655,7 @@ msgid "Passwords do not match"
 msgstr ""
 
 msgid "Please provide a value"
-msgstr "ກະລຸນາລະບຸຄ່າ"
+msgstr ""
 
 msgid "New group"
 msgstr ""
@@ -696,7 +691,7 @@ msgid "Edit group"
 msgstr ""
 
 msgid "Save changes"
-msgstr "ບັນທຶກ"
+msgstr ""
 
 msgid "Error fetching role"
 msgstr ""
@@ -720,22 +715,22 @@ msgid "You do not have access to edit this user group"
 msgstr ""
 
 msgid "Overview"
-msgstr "ພາບລວມ"
+msgstr ""
 
 msgid "Edit user group"
 msgstr ""
 
 msgid "ID"
-msgstr "ລະຫັດ"
+msgstr ""
 
 msgid "Show details"
-msgstr "ເບີ່ງລາຍລະອຽດ"
+msgstr ""
 
 msgid "Sharing settings"
-msgstr "ຕັ້ງຄ່າການ share"
+msgstr ""
 
 msgid "Edit"
-msgstr "ແກ້ໄຂ"
+msgstr ""
 
 msgid "Join group"
 msgstr ""
@@ -756,10 +751,10 @@ msgid "Are you sure you want to delete {{- name}}?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr "ບໍ່, ຍົກເລີກ"
+msgstr ""
 
 msgid "Yes, delete"
-msgstr "ຢືນຢັນ, ລົບ"
+msgstr ""
 
 msgid "Joined user group \"{{- name}}\" successfuly"
 msgstr ""
@@ -795,7 +790,7 @@ msgid "User Group Management"
 msgstr ""
 
 msgid "New"
-msgstr "ສ້າງໃຫມ່"
+msgstr ""
 
 msgid "Error loading user groups"
 msgstr ""
@@ -817,10 +812,10 @@ msgid "Member"
 msgstr ""
 
 msgid "List"
-msgstr "ສະແດງ"
+msgstr ""
 
 msgid "Add"
-msgstr "ເພີ່່ມ"
+msgstr "थप्नुहोस्"
 
 msgid "Create, modify, view and delete Users"
 msgstr ""
@@ -854,7 +849,7 @@ msgid "Add new user role"
 msgstr ""
 
 msgid "Profile"
-msgstr "ລາຍລະອຽດສ່ວນຕົົວ"
+msgstr ""
 
 msgid "Replicate"
 msgstr ""
@@ -863,10 +858,10 @@ msgid "Reset password"
 msgstr ""
 
 msgid "Disable"
-msgstr "Disable"
+msgstr ""
 
 msgid "Enable"
-msgstr "Enable"
+msgstr ""
 
 msgid "Disable Two Factor Authentication"
 msgstr ""
@@ -975,7 +970,7 @@ msgid "Show self-registrations"
 msgstr ""
 
 msgid "Clear filters"
-msgstr "ປັບປຸງເຄື່ອງມືຄັດຈ້ອນ"
+msgstr ""
 
 msgid "Org.unit"
 msgstr ""
@@ -993,34 +988,34 @@ msgid "Last login"
 msgstr ""
 
 msgid "Status"
-msgstr "ສະຖານະ"
+msgstr "स्थिती"
 
 msgid "Disabled"
-msgstr "Disabled"
+msgstr ""
 
 msgid "Active"
-msgstr "ທີ່ຍັງນໍາໃຊ້ຢູ່"
+msgstr ""
 
 msgid "Male"
-msgstr "~ເພດຊາຍ"
+msgstr ""
 
 msgid "Female"
-msgstr "ຍິງ"
+msgstr ""
 
 msgid "Other"
-msgstr "ອື່ນໆ"
+msgstr ""
 
 msgid "Created"
-msgstr "ສ້າງແລ້ວ"
+msgstr ""
 
 msgid "Contact"
 msgstr ""
 
 msgid "Send message"
-msgstr "Send message"
+msgstr ""
 
 msgid "E-mail"
-msgstr "ອີເມວ"
+msgstr ""
 
 msgid "Permissions"
 msgstr ""
@@ -1032,28 +1027,28 @@ msgid "User units"
 msgstr ""
 
 msgid "Introduction"
-msgstr "ລາຍລະອຽດອື່ນໆ"
+msgstr ""
 
 msgid "Job title"
-msgstr "ອາຊີບ"
+msgstr ""
 
 msgid "Works at"
 msgstr ""
 
 msgid "Gender"
-msgstr "ເພດ"
+msgstr ""
 
 msgid "Speaks"
 msgstr ""
 
 msgid "Nationality"
-msgstr "ສັນຊາດ"
+msgstr ""
 
 msgid "Education"
-msgstr "ລະດັບການສືກສາ"
+msgstr ""
 
 msgid "Interests"
-msgstr "ສິ່ງທີ່ສົນໃຈ"
+msgstr ""
 
 msgid "Birthday"
-msgstr "ວັນເດືອນປີເກີດ"
+msgstr ""
