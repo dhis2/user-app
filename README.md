@@ -28,6 +28,15 @@ A deployable `.zip` file can be found in `build/bundle`!
 
 See the section about [building](https://platform.dhis2.nu/#/scripts/build) for more information.
 
+## Conditional E2E Test Recording
+
+To record e2e tests in Cypress Cloud, you can use one of the following methods based on your needs:
+
+-   **Commit Message**: Include `[e2e record]` in your commit messages to activate recording.
+-   **GitHub Labels**: Apply the `e2e record` label to your pull request to trigger recording.
+
+This setup helps in managing Cypress Cloud credits more efficiently, ensuring recordings are only made when explicitly required.
+
 ## Learn More
 
 You can learn more about the platform in the [DHIS2 Application Platform Documentation](https://platform.dhis2.nu/).
