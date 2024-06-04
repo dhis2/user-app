@@ -41,18 +41,18 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
               with:
-                  node-version: 16.x
+                  node-version: 18.x
 
-            - uses: c-hive/gha-yarn-cache@v1
-            - run: yarn install --frozen-lockfile
+            - name: Install
+              run: yarn install --frozen-lockfile
 
             - name: Build
               run: yarn d2-app-scripts build
 
-            - uses: actions/upload-artifact@v2
+            - uses: actions/upload-artifact@v3
               with:
                   name: app-build
                   path: |
@@ -63,13 +63,13 @@ jobs:
     lint:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
               with:
-                  node-version: 16.x
+                  node-version: 18.x
 
-            - uses: c-hive/gha-yarn-cache@v1
-            - run: yarn install --frozen-lockfile
+            - name: Install
+              run: yarn install --frozen-lockfile
 
             # Can be removed if translations aren't required for tests,
             # or if not using the App Platform
@@ -82,13 +82,13 @@ jobs:
     test:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
               with:
-                  node-version: 16.x
+                  node-version: 18.x
 
-            - uses: c-hive/gha-yarn-cache@v1
-            - run: yarn install --frozen-lockfile
+            - name: Install
+              run: yarn install --frozen-lockfile
 
             # Can be removed if translations aren't required for tests,
             # or if not using the App Platform
@@ -112,10 +112,16 @@ jobs:
             SHOULD_RECORD: ${{ contains(github.event.head_commit.message, '[e2e record]') || contains(join(github.event.pull_request.labels.*.name), 'e2e record') }}
 
         steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
               with:
-                  node-version: 16.x
+                  node-version: 18.x
+
+            - uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: '**/node_modules'
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('patches/*.patch') }}
 
             - name: Set Cypress Record Environment Variables
               if: env.SHOULD_RECORD == 'true'
@@ -157,16 +163,16 @@ jobs:
         needs: [build, lint, test] # add e2e if you use it
         if: "!github.event.push.repository.fork && github.actor != 'dependabot[bot]'"
         steps:
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@v3
               with:
                   token: ${{ secrets.DHIS2_BOT_GITHUB_TOKEN }}
 
             - uses: actions/setup-node@v3
               with:
-                  node-version: 16
+                  node-version: 18.x
                   cache: 'yarn'
 
-            - uses: actions/download-artifact@v2
+            - uses: actions/download-artifact@v3
               with:
                   name: app-build
 
