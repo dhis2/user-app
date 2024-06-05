@@ -21,7 +21,7 @@
         "@dhis2/app-runtime": "^3.9.0",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/ui": "^8.12.1",
-        "classnames": "^2.3.1",
+        "classnames": "^2.5.1",
         "lodash-es": "^4.17.21",
         "memoize-one": "^6.0.0",
         "p-debounce": "^4.0.0",
