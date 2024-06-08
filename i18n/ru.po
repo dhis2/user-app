@@ -80,7 +80,7 @@ msgid "There was an error fetching this form."
 msgstr ""
 
 msgid "Cancel without saving"
-msgstr ""
+msgstr "Отменить без сохранения"
 
 msgid "Basic information"
 msgstr ""
