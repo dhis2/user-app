@@ -92,10 +92,8 @@ const SecuritySection = React.memo(
                     name="accountExpiry"
                     label={i18n.t('Account expiration date')}
                     initialValue={
-                        user?.userCredentials.accountExpiry &&
-                        moment(user.userCredentials.accountExpiry).format(
-                            'YYYY-MM-DD'
-                        )
+                        user?.accountExpiry &&
+                        moment(user.accountExpiry).format('YYYY-MM-DD')
                     }
                 />
                 <TextField
@@ -104,13 +102,13 @@ const SecuritySection = React.memo(
                     helpText={i18n.t(
                         'OpenID Connect mapping claim for your identity platform'
                     )}
-                    initialValue={user?.userCredentials.openId}
+                    initialValue={user?.openId}
                     autoComplete="off"
                 />
                 <TextField
                     name="ldapId"
                     label={i18n.t('LDAP identifier')}
-                    initialValue={user?.userCredentials.ldapId}
+                    initialValue={user?.ldapId}
                     autoComplete="off"
                 />
                 <CheckboxField
@@ -118,7 +116,7 @@ const SecuritySection = React.memo(
                     label={i18n.t(
                         'External authentication only (OpenID / LDAP)'
                     )}
-                    initialValue={user?.userCredentials.externalAuth}
+                    initialValue={user?.externalAuth}
                 />
             </FormSection>
         )

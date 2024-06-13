@@ -56,7 +56,7 @@ const BasicInformationSection = React.memo(
                     required={inviteUser !== INVITE_USER}
                     name="username"
                     label={i18n.t('Username')}
-                    initialValue={user?.userCredentials.username}
+                    initialValue={user?.username}
                     disabled={!!user}
                     autoComplete="new-password"
                     validate={validateUserName}
@@ -117,7 +117,7 @@ const BasicInformationSection = React.memo(
                 <CheckboxField
                     name="disabled"
                     label={i18n.t('Disable this user account')}
-                    initialValue={user?.userCredentials.disabled}
+                    initialValue={user?.disabled}
                     disabled={user && user.id === currentUserId}
                 />
             </FormSection>

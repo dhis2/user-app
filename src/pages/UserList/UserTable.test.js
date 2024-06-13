@@ -84,11 +84,9 @@ describe('<UserTable>', () => {
                     read: true,
                     update: true,
                 },
-                userCredentials: {
-                    username: 'user1',
-                    lastLogin: '2021-10-15T12:34:56Z',
-                    disabled: false,
-                },
+                username: 'user1',
+                lastLogin: '2021-10-15T12:34:56Z',
+                disabled: false,
             },
             {
                 id: 'user-2',
@@ -97,11 +95,9 @@ describe('<UserTable>', () => {
                     read: true,
                     update: true,
                 },
-                userCredentials: {
-                    username: 'user2',
-                    lastLogin: '2021-09-14T12:34:56Z',
-                    disabled: true,
-                },
+                username: 'user2',
+                lastLogin: '2021-09-14T12:34:56Z',
+                disabled: true,
             },
         ]
 
@@ -137,8 +133,7 @@ describe('<UserTable>', () => {
         ).getAllByRole('row')
         expect(rows).toHaveLength(users.length)
         users.forEach((user, index) => {
-            const { displayName, userCredentials } = user
-            const { username, lastLogin, disabled } = userCredentials
+            const { displayName, username, lastLogin, disabled } = user
 
             const row = rows[index]
             expect(within(row).getAllByRole('cell')).toHaveLength(5)
@@ -180,11 +175,9 @@ describe('<UserTable>', () => {
                     read: true,
                     update: true,
                 },
-                userCredentials: {
-                    username: 'user1',
-                    lastLogin: '2021-10-15T12:34:56Z',
-                    disabled: false,
-                },
+                username: 'user1',
+                lastLogin: '2021-10-15T12:34:56Z',
+                disabled: false,
             },
             {
                 id: 'user-2',
@@ -193,11 +186,9 @@ describe('<UserTable>', () => {
                     read: true,
                     update: true,
                 },
-                userCredentials: {
-                    username: 'user2',
-                    lastLogin: '2021-09-14T12:34:56Z',
-                    disabled: true,
-                },
+                username: 'user2',
+                lastLogin: '2021-09-14T12:34:56Z',
+                disabled: true,
             },
         ]
 
