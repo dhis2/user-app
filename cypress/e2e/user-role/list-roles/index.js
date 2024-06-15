@@ -1,5 +1,5 @@
 import '../common.js'
-import { Given, Then, When } from 'cypress-cucumber-preprocessor/steps'
+import { Given, Then, When } from '@badeball/cypress-cucumber-preprocessor'
 
 Then('the user-manager should see the first page of all user roles', () => {
     cy.getWithDataTest('{dhis2-uiwidgets-pagination-summary}').contains(

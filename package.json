@@ -32,17 +32,18 @@
         "use-query-params": "^1.2.3"
     },
     "devDependencies": {
+        "@badeball/cypress-cucumber-preprocessor": "^20.0.7",
+        "@cypress/webpack-preprocessor": "^6.0.2",
         "@dhis2/cli-app-scripts": "^10.3.1",
         "@dhis2/cli-style": "^10.4.1",
-        "@dhis2/cypress-commands": "^9.0.1",
-        "@dhis2/cypress-plugins": "^9.0.1",
+        "@dhis2/cypress-commands": "10.0.6",
+        "@dhis2/cypress-plugins": "10.0.6",
         "@testing-library/cypress": "^8.0.1",
         "@testing-library/jest-dom": "^5.14.1",
         "@testing-library/react": "^12.1.2",
         "@testing-library/react-hooks": "^7.0.2",
         "@testing-library/user-event": "^13.4.1",
-        "cypress": "^8.6.0",
-        "cypress-cucumber-preprocessor": "^4.3.0",
+        "cypress": "13.0",
         "jsdoc": "^3.6.2",
         "redux-logger": "^3.0.6",
         "start-server-and-test": "^1.14.0"
