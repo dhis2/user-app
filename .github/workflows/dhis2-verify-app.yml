@@ -101,7 +101,7 @@ jobs:
                   node-version: 16.x
 
             - name: End-to-End tests
-              uses: cypress-io/github-action@v2
+              uses: cypress-io/github-action@v6
               with:
                   start: yarn d2-app-scripts start
                   wait-on: 'http://localhost:3000'
