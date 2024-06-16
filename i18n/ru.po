@@ -660,7 +660,7 @@ msgid "Passwords do not match"
 msgstr "Пароли не совпадают"
 
 msgid "Please provide a value"
-msgstr ""
+msgstr "Введите значение"
 
 msgid "New group"
 msgstr ""
