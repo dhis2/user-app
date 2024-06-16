@@ -599,7 +599,7 @@ msgid "Passwords do not match"
 msgstr "Пароли не совпадают"
 
 msgid "Please provide a value"
-msgstr ""
+msgstr "Введите значение"
 
 msgid "Create, modify, view and delete Users"
 msgstr "Создание, изменение, просмотр и удаление Пользователей"
