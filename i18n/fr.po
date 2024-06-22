@@ -9,13 +9,14 @@
 # Yassine NAHDI <yassine_nahdi@gnet.tn>, 2023
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2023
 # Philip Larsen Donnelly, 2024
+# Elise Desailly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-01-19T12:15:17.744Z\n"
+"POT-Creation-Date: 2024-03-27T09:03:25.496Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Last-Translator: Elise Desailly, 2024\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -752,6 +753,9 @@ msgstr "Une erreur s'est produite lors de la récupération de cet utilisateur."
 msgid "Edit user"
 msgstr "Modifier l'utilisateur"
 
+msgid "You do not have access to edit this user group"
+msgstr "Vous n'êtes pas autorisé à modifier ce groupe d'utilisateurs"
+
 msgid "Overview"
 msgstr "Général"
 
@@ -842,9 +846,11 @@ msgstr "Erreur lors du chargement des groupes d'utilisateurs"
 msgid ""
 "There are no user groups to show here. You can add a new user group below."
 msgstr ""
+"Il n'y a aucun groupe d'utilisateurs à afficher ici. Vous pouvez ajouter un "
+"nouveau groupe d'utilisateurs ci-dessous."
 
 msgid "Add new user group"
-msgstr ""
+msgstr "Ajouter un nouveau groupe d'utilisateurs"
 
 msgid "Member?"
 msgstr "Membre ?"
@@ -890,9 +896,11 @@ msgstr "Erreur lors du chargement des rôles d'utilisateur"
 msgid ""
 "There are no user roles to show here. You can add a new user role below."
 msgstr ""
+"Il n'y a aucun rôle d'utilisateur à afficher ici. Vous pouvez ajouter un "
+"nouveau rôle d'utilisateur ci-dessous."
 
 msgid "Add new user role"
-msgstr ""
+msgstr "Ajouter un nouveau rôle d'utilisateur"
 
 msgid "Profile"
 msgstr "Profil"
@@ -1043,9 +1051,11 @@ msgstr "Gestion des utilisateurs"
 
 msgid "There are no users to show here. You can add a new user below."
 msgstr ""
+"Il n'y a aucun utilisateur à afficher ici. Vous pouvez ajouter un nouvel "
+"utilisateur ci-dessous."
 
 msgid "Add new user"
-msgstr ""
+msgstr "Ajouter un nouvel utilisateur"
 
 msgid "Last login"
 msgstr "Dernière connexion"
