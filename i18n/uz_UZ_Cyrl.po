@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2023
+# Ibatov <ibatovk@who.int>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
+"POT-Creation-Date: 2024-03-27T09:03:25.496Z\n"
 "PO-Revision-Date: 2023-05-22 19:30+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2023\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2024\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -422,6 +422,12 @@ msgstr "Маълумотлар импорти аудитини ўтказиб ю
 msgid "Visualization"
 msgstr "Визуализация"
 
+msgid "Event Hook"
+msgstr ""
+
+msgid "Route"
+msgstr ""
+
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
 
@@ -598,7 +604,8 @@ msgid "Password"
 msgstr "Пароль"
 
 msgid ""
-"Minimum 8 characters, one uppercase and lowercase letter and one number"
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
 msgstr ""
 
 msgid "Repeat new password"
@@ -705,6 +712,9 @@ msgstr ""
 
 msgid "Edit user"
 msgstr "Фойдаланувчини таҳрир қилиш"
+
+msgid "You do not have access to edit this user group"
+msgstr ""
 
 msgid "Overview"
 msgstr "Қисқача кўздан кечириш"
@@ -847,7 +857,7 @@ msgid "Replicate"
 msgstr "Кўпайтириш"
 
 msgid "Reset password"
-msgstr ""
+msgstr "Паролни тиклаш"
 
 msgid "Disable"
 msgstr "Ўчириб қўйиш"
@@ -924,11 +934,6 @@ msgstr "Янги фойдаланувчи учун ФойдаланувчиНо�
 
 msgid "Password for new user"
 msgstr "Янги фодаланувчи учун пароль"
-
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
-msgstr ""
 
 msgid "Replicate user"
 msgstr "Фойдаланувчини репликация қилиш"
