@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-08T17:31:59.581Z\n"
+"POT-Creation-Date: 2024-03-22T08:26:32.388Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2024\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -45,6 +45,9 @@ msgstr "Фойдаланувчи ролини таҳрир қилиш"
 
 msgid "Send message"
 msgstr "Хабар юбориш"
+
+msgid "ID"
+msgstr "ID"
 
 msgid "Filter options"
 msgstr "Фильтр вариантлари"
@@ -614,9 +617,6 @@ msgstr "Фойдаланувчи Гуруҳларини яратиш, ўзгар
 msgid "Display name"
 msgstr "Номини экранда кўрсатиш"
 
-msgid "ID"
-msgstr "ID"
-
 msgid "Last login"
 msgstr "Охирги кириш"
 
@@ -843,7 +843,7 @@ msgid "Replicate"
 msgstr "Кўпайтириш"
 
 msgid "Reset password"
-msgstr ""
+msgstr "Паролни тиклаш"
 
 msgid "Disable"
 msgstr "Ўчириб қўйиш"
