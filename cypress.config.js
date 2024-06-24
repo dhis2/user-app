@@ -22,7 +22,7 @@ module.exports = defineConfig({
         dhis2Password: 'district',
         dhis2DataTestPrefix: '',
         networkMode: 'live',
-        dhis2ApiVersion: '41',
+        dhis2ApiVersion: '42',
     },
     defaultCommandTimeout: 10000,
     requestTimeout: 10000,

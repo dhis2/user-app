@@ -1,0 +1,167 @@
+[
+    {
+        "path": "/api/42/systemSettings/helpPageLink",
+        "featureName": "User roles can be listed",
+        "static": false,
+        "count": 2,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"helpPageLink\":\"https://dhis2.github.io/dhis2-docs/master/en/user/html/dhis2_user_manual_en.html\"}",
+        "responseSize": 99,
+        "responseHeaders": {
+            "server": "nginx/1.25.4",
+            "content-type": "application/json;charset=UTF-8",
+            "transfer-encoding": "chunked",
+            "connection": "keep-alive",
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block"
+        }
+    },
+    {
+        "path": "/api/42/organisationUnits?paging=false&level=1&fields=id%2Cpath%2CdisplayName%2Cchildren%3A%3AisNotEmpty",
+        "featureName": "User roles can be listed",
+        "static": false,
+        "count": 2,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"organisationUnits\":[{\"children\":true,\"path\":\"/ImspTQPwCqd\",\"displayName\":\"Sierra Leone\",\"id\":\"ImspTQPwCqd\"}]}",
+        "responseSize": 111,
+        "responseHeaders": {
+            "server": "nginx/1.25.4",
+            "content-type": "application/json;charset=UTF-8",
+            "transfer-encoding": "chunked",
+            "connection": "keep-alive",
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block"
+        }
+    },
+    {
+        "path": "/api/42/userRoles?fields=id,displayName,access,user%5Bid%2CdisplayName%5D,publicAccess,userGroupAccesses,description&order=name%3Aasc&page=1&pageSize=50",
+        "featureName": "User roles can be listed",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"pager\":{\"page\":1,\"total\":14,\"pageSize\":50,\"pageCount\":1},\"userRoles\":[{\"description\":\"Access to the antenatal care program\",\"displayName\":\"Antenatal care program\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"xE7jOejl9FI\",\"code\":null,\"name\":\"John Traore\",\"displayName\":\"John Traore\",\"username\":\"admin\"},\"id\":\"UYXOT4A7JMI\"},{\"description\":\"Child Health Program Manager\",\"displayName\":\"Child Health Program Manager\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"Ql6Gew7eaX6\"},{\"description\":\"Access to the child health program in tracker\",\"displayName\":\"Child Health Tracker\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"TMK9CMZ2V98\"},{\"description\":\"Data entry clerk\",\"displayName\":\"Data entry clerk\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"xE7jOejl9FI\",\"code\":null,\"name\":\"John Traore\",\"displayName\":\"John Traore\",\"username\":\"admin\"},\"id\":\"Euq3XfEIEbx\"},{\"description\":\"Tracker user at the facility\",\"displayName\":\"Facility tracker\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"txB7vu1w2Pr\"},{\"description\":\"Read-only\",\"displayName\":\"Guest\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"xE7jOejl9FI\",\"code\":null,\"name\":\"John Traore\",\"displayName\":\"John Traore\",\"username\":\"admin\"},\"id\":\"XS0dNzuZmfH\"},{\"description\":\"Access to the inpatient program in tracker\",\"displayName\":\"Inpatient program\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"DRdaVRtwmG5\"},{\"description\":\"M and E Officer\",\"displayName\":\"M and E Officer\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"xE7jOejl9FI\",\"code\":null,\"name\":\"John Traore\",\"displayName\":\"John Traore\",\"username\":\"admin\"},\"id\":\"jRWSNIHdKww\"},{\"description\":\"Access to the MNCH program in tracker\",\"displayName\":\"MNCH / PNC (Adult Woman) program\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"xE7jOejl9FI\",\"code\":null,\"name\":\"John Traore\",\"displayName\":\"John Traore\",\"username\":\"admin\"},\"id\":\"aNk5AyC7ydy\"},{\"description\":\"Superuser\",\"displayName\":\"Superuser\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"Ufph3mGRmMo\"},{\"description\":\"System administrator\",\"displayName\":\"System administrator (ALL)\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"LGWLyWNro4x\"},{\"description\":\"Access to the TB program in Tracker\",\"displayName\":\"TB program\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"cUlTcejWree\"},{\"description\":\"User manager\",\"displayName\":\"User manager\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"xJZBzAHI88H\"},{\"description\":\"WHO MCH program\",\"displayName\":\"WHO MCH program\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"xE7jOejl9FI\",\"code\":null,\"name\":\"John Traore\",\"displayName\":\"John Traore\",\"username\":\"admin\"},\"id\":\"Pqoy4DLOdMK\"}]}",
+        "responseSize": 4309,
+        "responseHeaders": {
+            "server": "nginx/1.25.4",
+            "content-type": "application/json;charset=UTF-8",
+            "transfer-encoding": "chunked",
+            "connection": "keep-alive",
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block"
+        }
+    },
+    {
+        "path": "/api/42/userRoles?fields=id,displayName,access,user%5Bid%2CdisplayName%5D,publicAccess,userGroupAccesses,description&order=name%3Aasc&page=1&pageSize=5",
+        "featureName": "User roles can be listed",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"pager\":{\"page\":1,\"total\":14,\"pageSize\":5,\"nextPage\":\"/42/userRoles?page=2&pageSize=5&fields=id%2CdisplayName%2Caccess%2Cuser%5Bid%2CdisplayName%5D%2CpublicAccess%2CuserGroupAccesses%2Cdescription&order=name%3Aasc\",\"pageCount\":3},\"userRoles\":[{\"description\":\"Access to the antenatal care program\",\"displayName\":\"Antenatal care program\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"xE7jOejl9FI\",\"code\":null,\"name\":\"John Traore\",\"displayName\":\"John Traore\",\"username\":\"admin\"},\"id\":\"UYXOT4A7JMI\"},{\"description\":\"Child Health Program Manager\",\"displayName\":\"Child Health Program Manager\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"Ql6Gew7eaX6\"},{\"description\":\"Access to the child health program in tracker\",\"displayName\":\"Child Health Tracker\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"TMK9CMZ2V98\"},{\"description\":\"Data entry clerk\",\"displayName\":\"Data entry clerk\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"xE7jOejl9FI\",\"code\":null,\"name\":\"John Traore\",\"displayName\":\"John Traore\",\"username\":\"admin\"},\"id\":\"Euq3XfEIEbx\"},{\"description\":\"Tracker user at the facility\",\"displayName\":\"Facility tracker\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"txB7vu1w2Pr\"}]}",
+        "responseSize": 1827,
+        "responseHeaders": {
+            "server": "nginx/1.25.4",
+            "content-type": "application/json;charset=UTF-8",
+            "transfer-encoding": "chunked",
+            "connection": "keep-alive",
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block"
+        }
+    },
+    {
+        "path": "/api/42/userRoles?fields=id,displayName,access,user%5Bid%2CdisplayName%5D,publicAccess,userGroupAccesses,description&order=name%3Aasc&page=2&pageSize=5",
+        "featureName": "User roles can be listed",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"pager\":{\"page\":2,\"total\":14,\"pageSize\":5,\"nextPage\":\"/42/userRoles?page=3&pageSize=5&fields=id%2CdisplayName%2Caccess%2Cuser%5Bid%2CdisplayName%5D%2CpublicAccess%2CuserGroupAccesses%2Cdescription&order=name%3Aasc\",\"prevPage\":\"/42/userRoles?pageSize=5&fields=id%2CdisplayName%2Caccess%2Cuser%5Bid%2CdisplayName%5D%2CpublicAccess%2CuserGroupAccesses%2Cdescription&order=name%3Aasc\",\"pageCount\":3},\"userRoles\":[{\"description\":\"Read-only\",\"displayName\":\"Guest\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"xE7jOejl9FI\",\"code\":null,\"name\":\"John Traore\",\"displayName\":\"John Traore\",\"username\":\"admin\"},\"id\":\"XS0dNzuZmfH\"},{\"description\":\"Access to the inpatient program in tracker\",\"displayName\":\"Inpatient program\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"DRdaVRtwmG5\"},{\"description\":\"M and E Officer\",\"displayName\":\"M and E Officer\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"xE7jOejl9FI\",\"code\":null,\"name\":\"John Traore\",\"displayName\":\"John Traore\",\"username\":\"admin\"},\"id\":\"jRWSNIHdKww\"},{\"description\":\"Access to the MNCH program in tracker\",\"displayName\":\"MNCH / PNC (Adult Woman) program\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"xE7jOejl9FI\",\"code\":null,\"name\":\"John Traore\",\"displayName\":\"John Traore\",\"username\":\"admin\"},\"id\":\"aNk5AyC7ydy\"},{\"description\":\"Superuser\",\"displayName\":\"Superuser\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"Ufph3mGRmMo\"}]}",
+        "responseSize": 1954,
+        "responseHeaders": {
+            "server": "nginx/1.25.4",
+            "content-type": "application/json;charset=UTF-8",
+            "transfer-encoding": "chunked",
+            "connection": "keep-alive",
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block"
+        }
+    }
+]
