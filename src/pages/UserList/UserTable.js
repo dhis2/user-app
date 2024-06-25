@@ -99,8 +99,14 @@ const UserTable = ({
             </DataTableHead>
             <DataTableBody loading={loading}>
                 {users.map((user) => {
-                    const { id, displayName, access, userCredentials } = user
-                    const { username, lastLogin, disabled } = userCredentials
+                    const {
+                        id,
+                        displayName,
+                        access,
+                        username,
+                        lastLogin,
+                        disabled,
+                    } = user
                     const lastLoginClient = fromServerDate(lastLogin)
 
                     const handleClick = () => {
@@ -158,13 +164,11 @@ UserTable.propTypes = {
                 read: PropTypes.bool.isRequired,
                 update: PropTypes.bool.isRequired,
             }).isRequired,
+            disabled: PropTypes.bool.isRequired,
             displayName: PropTypes.string.isRequired,
             id: PropTypes.string.isRequired,
-            userCredentials: PropTypes.shape({
-                disabled: PropTypes.bool.isRequired,
-                lastLogin: PropTypes.string,
-                username: PropTypes.string,
-            }).isRequired,
+            lastLogin: PropTypes.string,
+            username: PropTypes.string,
         }).isRequired
     ),
 }

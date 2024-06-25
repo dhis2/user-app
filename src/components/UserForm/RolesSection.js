@@ -18,9 +18,7 @@ const RolesSection = React.memo(
                 leftHeader={i18n.t('Available user roles')}
                 rightHeader={i18n.t('User roles this user is assigned')}
                 options={userRoleOptions}
-                initialValue={
-                    user?.userCredentials?.userRoles?.map(({ id }) => id) || []
-                }
+                initialValue={user?.userRoles?.map(({ id }) => id) || []}
                 validate={hasSelectionValidator}
             />
             <TransferField

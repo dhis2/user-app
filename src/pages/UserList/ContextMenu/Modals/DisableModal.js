@@ -26,7 +26,7 @@ const DisableModal = ({ user, refetchUsers, onClose }) => {
                 data: [
                     {
                         op: 'replace',
-                        path: '/userCredentials/disabled',
+                        path: '/disabled',
                         value: true,
                     },
                 ],

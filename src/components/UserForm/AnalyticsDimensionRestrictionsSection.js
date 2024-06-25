@@ -15,8 +15,8 @@ const AnalyticsDimensionsRestrictionsSection = React.memo(
                     user
                         ? []
                               .concat(
-                                  user.userCredentials.cogsDimensionConstraints,
-                                  user.userCredentials.catDimensionConstraints
+                                  user.cogsDimensionConstraints,
+                                  user.catDimensionConstraints
                               )
                               .map(({ id }) => id)
                         : []

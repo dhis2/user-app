@@ -244,45 +244,43 @@ UserForm.propTypes = {
     user: PropTypes.shape({
         attributeValues: PropTypes.arrayOf(PropTypes.object.isRequired)
             .isRequired,
+        catDimensionConstraints: PropTypes.arrayOf(
+            PropTypes.shape({
+                id: PropTypes.string.isRequired,
+            }).isRequired
+        ).isRequired,
+        cogsDimensionConstraints: PropTypes.arrayOf(
+            PropTypes.shape({
+                id: PropTypes.string.isRequired,
+            }).isRequired
+        ).isRequired,
         dataViewOrganisationUnits: OrganisationUnitsPropType.isRequired,
+        disabled: PropTypes.bool.isRequired,
+        externalAuth: PropTypes.bool.isRequired,
         firstName: PropTypes.string.isRequired,
         id: PropTypes.string.isRequired,
         organisationUnits: OrganisationUnitsPropType.isRequired,
         surname: PropTypes.string.isRequired,
         teiSearchOrganisationUnits: OrganisationUnitsPropType.isRequired,
-        userCredentials: PropTypes.shape({
-            catDimensionConstraints: PropTypes.arrayOf(
-                PropTypes.shape({
-                    id: PropTypes.string.isRequired,
-                }).isRequired
-            ).isRequired,
-            cogsDimensionConstraints: PropTypes.arrayOf(
-                PropTypes.shape({
-                    id: PropTypes.string.isRequired,
-                }).isRequired
-            ).isRequired,
-            disabled: PropTypes.bool.isRequired,
-            externalAuth: PropTypes.bool.isRequired,
-            userRoles: PropTypes.arrayOf(
-                PropTypes.shape({
-                    displayName: PropTypes.string.isRequired,
-                    id: PropTypes.string.isRequired,
-                }).isRequired
-            ).isRequired,
-            username: PropTypes.string.isRequired,
-            accountExpiry: PropTypes.string,
-            ldapId: PropTypes.string,
-            openId: PropTypes.string,
-        }).isRequired,
         userGroups: PropTypes.arrayOf(
             PropTypes.shape({
                 displayName: PropTypes.string.isRequired,
                 id: PropTypes.string.isRequired,
             }).isRequired
         ).isRequired,
+        userRoles: PropTypes.arrayOf(
+            PropTypes.shape({
+                displayName: PropTypes.string.isRequired,
+                id: PropTypes.string.isRequired,
+            }).isRequired
+        ).isRequired,
+        username: PropTypes.string.isRequired,
+        accountExpiry: PropTypes.string,
         dataViewMaxOrganisationUnitLevel: PropTypes.number,
         email: PropTypes.string,
         facebookMessenger: PropTypes.string,
+        ldapId: PropTypes.string,
+        openId: PropTypes.string,
         phoneNumber: PropTypes.string,
         skype: PropTypes.string,
         telegram: PropTypes.string,

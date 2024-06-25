@@ -165,6 +165,38 @@
         }
     },
     {
+        "path": "/api/42/attributes?fields=id,displayName,mandatory,unique,valueType,optionSet%5Boptions%5Bid%2CdisplayName%5D%5D&filter=userGroupAttribute%3Aeq%3Atrue&paging=false",
+        "featureName": "The user group list can be searched",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"attributes\":[]}",
+        "responseSize": 17,
+        "responseHeaders": {
+            "server": "nginx/1.25.4",
+            "content-type": "application/json;charset=UTF-8",
+            "connection": "keep-alive",
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block"
+        }
+    },
+    {
         "path": "/api/42/userGroups?fields=id,displayName&paging=false",
         "featureName": "The user group list can be searched",
         "static": false,
@@ -187,38 +219,6 @@
             "server": "nginx/1.25.4",
             "content-type": "application/json;charset=UTF-8",
             "transfer-encoding": "chunked",
-            "connection": "keep-alive",
-            "access-control-allow-credentials": "true",
-            "access-control-allow-origin": "http://localhost:3000",
-            "vary": "Origin",
-            "access-control-expose-headers": "ETag, Location",
-            "cache-control": "no-cache, private",
-            "x-content-type-options": "nosniff",
-            "x-xss-protection": "1; mode=block"
-        }
-    },
-    {
-        "path": "/api/42/attributes?fields=id,displayName,mandatory,unique,valueType,optionSet%5Boptions%5Bid%2CdisplayName%5D%5D&filter=userGroupAttribute%3Aeq%3Atrue&paging=false",
-        "featureName": "The user group list can be searched",
-        "static": false,
-        "count": 1,
-        "nonDeterministic": false,
-        "method": "GET",
-        "requestBody": "",
-        "requestHeaders": {
-            "host": "localhost:8080",
-            "proxy-connection": "keep-alive",
-            "accept": "application/json",
-            "origin": "http://localhost:3000",
-            "sec-fetch-site": "same-site",
-            "sec-fetch-mode": "cors"
-        },
-        "statusCode": 200,
-        "responseBody": "{\"attributes\":[]}",
-        "responseSize": 17,
-        "responseHeaders": {
-            "server": "nginx/1.25.4",
-            "content-type": "application/json;charset=UTF-8",
             "connection": "keep-alive",
             "access-control-allow-credentials": "true",
             "access-control-allow-origin": "http://localhost:3000",

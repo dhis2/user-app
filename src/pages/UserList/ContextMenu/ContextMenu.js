@@ -46,11 +46,7 @@ const ContextMenu = ({ user, anchorRef, refetchUsers, onClose }) => {
         systemInfo: { emailConfigured },
     } = useConfig()
     const [CurrentModal, setCurrentModal] = useCurrentModal()
-    const {
-        access,
-        twoFactorEnabled,
-        userCredentials: { disabled },
-    } = user
+    const { access, twoFactorEnabled, disabled } = user
     const canReplicate =
         access.update &&
         currentUser.authorities.some(
@@ -177,11 +173,9 @@ ContextMenu.propTypes = {
             read: PropTypes.bool.isRequired,
             update: PropTypes.bool.isRequired,
         }).isRequired,
+        disabled: PropTypes.bool.isRequired,
         id: PropTypes.string.isRequired,
         twoFactorEnabled: PropTypes.bool.isRequired,
-        userCredentials: PropTypes.shape({
-            disabled: PropTypes.bool.isRequired,
-        }).isRequired,
         email: PropTypes.string,
     }).isRequired,
     onClose: PropTypes.func.isRequired,

@@ -20,7 +20,17 @@ const userQuery = {
                 'dataViewOrganisationUnits[id,displayName,path]',
                 'teiSearchOrganisationUnits[id,displayName,path]',
                 'dataViewMaxOrganisationUnitLevel',
-                'userCredentials[id,username,accountExpiry,lastLogin,externalAuth,userRoles[id,displayName],cogsDimensionConstraints[id,displayName,dimensionType],catDimensionConstraints[id,displayName,dimensionType],openId,ldapId,disabled]',
+                'id',
+                'username',
+                'accountExpiry',
+                'lastLogin',
+                'externalAuth',
+                'userRoles[id,displayName]',
+                'cogsDimensionConstraints[id,displayName,dimensionType]',
+                'catDimensionConstraints[id,displayName,dimensionType]',
+                'openId',
+                'ldapId',
+                'disabled',
                 'whatsApp',
                 'facebookMessenger',
                 'skype',
@@ -44,7 +54,7 @@ const userSettingsQuery = {
 
 const useUser = (userId) => {
     const user = useDataQuery(userQuery, { lazy: true })
-    const username = user.data?.user?.userCredentials?.username
+    const username = user.data?.user?.username
     const userSettings = useDataQuery(userSettingsQuery, { lazy: true })
 
     useEffect(() => {

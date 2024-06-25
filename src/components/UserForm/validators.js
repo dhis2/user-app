@@ -39,7 +39,7 @@ export const useDebouncedUniqueUsernameValidator = ({
 export const useUserNameValidator = ({ user, isInviteUser }) => {
     const debouncedUniqueUsernameValidator =
         useDebouncedUniqueUsernameValidator({
-            username: user?.userCredentials.username,
+            username: user?.username,
         })
     if (user) {
         return undefined
