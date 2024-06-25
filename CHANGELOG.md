@@ -1,3 +1,10 @@
+## [100.1.6](https://github.com/dhis2/user-app/compare/v100.1.5...v100.1.6) (2024-06-25)
+
+
+### Bug Fixes
+
+* remove references to deprecated userCredentials object ([#1407](https://github.com/dhis2/user-app/issues/1407)) ([803dcfd](https://github.com/dhis2/user-app/commit/803dcfde5b04aa9ea3c095606c5972ebf9416ef7))
+
 ## [100.1.5](https://github.com/dhis2/user-app/compare/v100.1.4...v100.1.5) (2024-06-16)
 
 
