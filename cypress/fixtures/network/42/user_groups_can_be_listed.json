@@ -1,0 +1,167 @@
+[
+    {
+        "path": "/api/42/systemSettings/helpPageLink",
+        "featureName": "User groups can be listed",
+        "static": false,
+        "count": 2,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"helpPageLink\":\"https://dhis2.github.io/dhis2-docs/master/en/user/html/dhis2_user_manual_en.html\"}",
+        "responseSize": 99,
+        "responseHeaders": {
+            "server": "nginx/1.25.4",
+            "content-type": "application/json;charset=UTF-8",
+            "transfer-encoding": "chunked",
+            "connection": "keep-alive",
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block"
+        }
+    },
+    {
+        "path": "/api/42/organisationUnits?paging=false&level=1&fields=id%2Cpath%2CdisplayName%2Cchildren%3A%3AisNotEmpty",
+        "featureName": "User groups can be listed",
+        "static": false,
+        "count": 2,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"organisationUnits\":[{\"children\":true,\"path\":\"/ImspTQPwCqd\",\"displayName\":\"Sierra Leone\",\"id\":\"ImspTQPwCqd\"}]}",
+        "responseSize": 111,
+        "responseHeaders": {
+            "server": "nginx/1.25.4",
+            "content-type": "application/json;charset=UTF-8",
+            "transfer-encoding": "chunked",
+            "connection": "keep-alive",
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block"
+        }
+    },
+    {
+        "path": "/api/42/userGroups?fields=id,displayName,access,user%5Bid%2CdisplayName%5D,publicAccess,userGroupAccesses&order=name%3Aasc&page=1&pageSize=50",
+        "featureName": "User groups can be listed",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"pager\":{\"page\":1,\"total\":31,\"pageSize\":50,\"pageCount\":1},\"userGroups\":[{\"displayName\":\"Administrators\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"wl5cDMuUhmF\"},{\"displayName\":\"Africare HQ\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"vAvEltyXGbD\"},{\"displayName\":\"Bo District M&E officers\",\"access\":{\"manage\":false,\"externalize\":false,\"write\":false,\"read\":true,\"update\":false,\"delete\":false},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"ZoHNWQajIoe\"},{\"displayName\":\"Bonthe District M&E Officers\",\"access\":{\"manage\":false,\"externalize\":false,\"write\":false,\"read\":true,\"update\":false,\"delete\":false},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"th4S6ovwcr8\"},{\"displayName\":\"Cape Town University Research Group\",\"access\":{\"manage\":false,\"externalize\":false,\"write\":false,\"read\":true,\"update\":false,\"delete\":false},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"wAAA1agEHin\"},{\"displayName\":\"_DATASET_Child Health Program Manager\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"GogLpGmkL0g\"},{\"displayName\":\"_DATASET_Data entry clerk\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"xE7jOejl9FI\",\"code\":null,\"name\":\"John Traore\",\"displayName\":\"John Traore\",\"username\":\"admin\"},\"id\":\"tH0GcNZZ1vW\"},{\"displayName\":\"_DATASET_M and E Officer\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"w900PX10L7O\"},{\"displayName\":\"_DATASET_Superuser\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"B6JNeAQ6akX\"},{\"displayName\":\"_DATASET_System administrator (ALL)\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"zz6XckBrLlj\"},{\"displayName\":\"EPI Stock Completeness Notification Recipients\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"xE7jOejl9FI\",\"code\":null,\"name\":\"John Traore\",\"displayName\":\"John Traore\",\"username\":\"admin\"},\"id\":\"qlEhuAA77gc\"},{\"displayName\":\"Family Health Partner\",\"access\":{\"manage\":false,\"externalize\":false,\"write\":false,\"read\":true,\"update\":false,\"delete\":false},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"ZrsVF7IJ93y\"},{\"displayName\":\"Family Planning Program Coordinators\",\"access\":{\"manage\":false,\"externalize\":false,\"write\":false,\"read\":true,\"update\":false,\"delete\":false},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"sZRhXMPbcWc\"},{\"displayName\":\"Feedback Message Recipients\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"xE7jOejl9FI\",\"code\":null,\"name\":\"John Traore\",\"displayName\":\"John Traore\",\"username\":\"admin\"},\"id\":\"QYrzIjSfI8z\"},{\"displayName\":\"HIV Program Coordinators\",\"access\":{\"manage\":false,\"externalize\":false,\"write\":false,\"read\":true,\"update\":false,\"delete\":false},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"Rg8wusV7QYi\"},{\"displayName\":\"Kenya staff\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"YCPJDwzbe8T\"},{\"displayName\":\"Malaria program\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"jvrEwEJ2yZn\"},{\"displayName\":\"Nairobi University Research Group\",\"access\":{\"manage\":false,\"externalize\":false,\"write\":false,\"read\":true,\"update\":false,\"delete\":false},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"k3xzluFKVyw\"},{\"displayName\":\"Partner for Health International\",\"access\":{\"manage\":false,\"externalize\":false,\"write\":false,\"read\":true,\"update\":false,\"delete\":false},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"GZSvMCVowAx\"},{\"displayName\":\"_PROGRAM_Antenatal care program\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"xE7jOejl9FI\",\"code\":null,\"name\":\"John Traore\",\"displayName\":\"John Traore\",\"username\":\"admin\"},\"id\":\"M1Qre0247G3\"},{\"displayName\":\"_PROGRAM_Child Health Tracker\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"H9XnHoWRKCg\"},{\"displayName\":\"_PROGRAM_Inpatient program\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"NTC8GjJ7p8P\"},{\"displayName\":\"_PROGRAM_MNCH / PNC (Adult Woman) program\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"xE7jOejl9FI\",\"code\":null,\"name\":\"John Traore\",\"displayName\":\"John Traore\",\"username\":\"admin\"},\"id\":\"vRoAruMnNpB\"},{\"displayName\":\"_PROGRAM_Superuser\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"gXpmQO6eEOo\"},{\"displayName\":\"_PROGRAM_System administrator (ALL)\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"pBnkuih0c1K\"},{\"displayName\":\"_PROGRAM_TB program\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"Kk12LkEWtXp\"},{\"displayName\":\"_PROGRAM_WHO MCH program\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"xE7jOejl9FI\",\"code\":null,\"name\":\"John Traore\",\"displayName\":\"John Traore\",\"username\":\"admin\"},\"id\":\"z1gNAf2zUxZ\"},{\"displayName\":\"System administrators\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"lFHP5lLkzVr\"},{\"displayName\":\"TB Program Coordinators\",\"access\":{\"manage\":false,\"externalize\":false,\"write\":false,\"read\":true,\"update\":false,\"delete\":false},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"hj0nnsVsPLU\"},{\"displayName\":\"Wakiki\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"L4XTzgbdza3\"},{\"displayName\":\"World Health Program\",\"access\":{\"manage\":false,\"externalize\":false,\"write\":false,\"read\":true,\"update\":false,\"delete\":false},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"Iqfwd3j2qe5\"}]}",
+        "responseSize": 8442,
+        "responseHeaders": {
+            "server": "nginx/1.25.4",
+            "content-type": "application/json;charset=UTF-8",
+            "transfer-encoding": "chunked",
+            "connection": "keep-alive",
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block"
+        }
+    },
+    {
+        "path": "/api/42/userGroups?fields=id,displayName,access,user%5Bid%2CdisplayName%5D,publicAccess,userGroupAccesses&order=name%3Aasc&page=1&pageSize=5",
+        "featureName": "User groups can be listed",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"pager\":{\"page\":1,\"total\":31,\"pageSize\":5,\"nextPage\":\"/42/userGroups?page=2&pageSize=5&fields=id%2CdisplayName%2Caccess%2Cuser%5Bid%2CdisplayName%5D%2CpublicAccess%2CuserGroupAccesses&order=name%3Aasc\",\"pageCount\":7},\"userGroups\":[{\"displayName\":\"Administrators\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"wl5cDMuUhmF\"},{\"displayName\":\"Africare HQ\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"vAvEltyXGbD\"},{\"displayName\":\"Bo District M&E officers\",\"access\":{\"manage\":false,\"externalize\":false,\"write\":false,\"read\":true,\"update\":false,\"delete\":false},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"ZoHNWQajIoe\"},{\"displayName\":\"Bonthe District M&E Officers\",\"access\":{\"manage\":false,\"externalize\":false,\"write\":false,\"read\":true,\"update\":false,\"delete\":false},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"th4S6ovwcr8\"},{\"displayName\":\"Cape Town University Research Group\",\"access\":{\"manage\":false,\"externalize\":false,\"write\":false,\"read\":true,\"update\":false,\"delete\":false},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"wAAA1agEHin\"}]}",
+        "responseSize": 1597,
+        "responseHeaders": {
+            "server": "nginx/1.25.4",
+            "content-type": "application/json;charset=UTF-8",
+            "transfer-encoding": "chunked",
+            "connection": "keep-alive",
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block"
+        }
+    },
+    {
+        "path": "/api/42/userGroups?fields=id,displayName,access,user%5Bid%2CdisplayName%5D,publicAccess,userGroupAccesses&order=name%3Aasc&page=2&pageSize=5",
+        "featureName": "User groups can be listed",
+        "static": false,
+        "count": 1,
+        "nonDeterministic": false,
+        "method": "GET",
+        "requestBody": "",
+        "requestHeaders": {
+            "host": "localhost:8080",
+            "proxy-connection": "keep-alive",
+            "accept": "application/json",
+            "origin": "http://localhost:3000",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-mode": "cors"
+        },
+        "statusCode": 200,
+        "responseBody": "{\"pager\":{\"page\":2,\"total\":31,\"pageSize\":5,\"nextPage\":\"/42/userGroups?page=3&pageSize=5&fields=id%2CdisplayName%2Caccess%2Cuser%5Bid%2CdisplayName%5D%2CpublicAccess%2CuserGroupAccesses&order=name%3Aasc\",\"prevPage\":\"/42/userGroups?pageSize=5&fields=id%2CdisplayName%2Caccess%2Cuser%5Bid%2CdisplayName%5D%2CpublicAccess%2CuserGroupAccesses&order=name%3Aasc\",\"pageCount\":7},\"userGroups\":[{\"displayName\":\"_DATASET_Child Health Program Manager\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"GogLpGmkL0g\"},{\"displayName\":\"_DATASET_Data entry clerk\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"xE7jOejl9FI\",\"code\":null,\"name\":\"John Traore\",\"displayName\":\"John Traore\",\"username\":\"admin\"},\"id\":\"tH0GcNZZ1vW\"},{\"displayName\":\"_DATASET_M and E Officer\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"w900PX10L7O\"},{\"displayName\":\"_DATASET_Superuser\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"B6JNeAQ6akX\"},{\"displayName\":\"_DATASET_System administrator (ALL)\",\"access\":{\"manage\":true,\"externalize\":false,\"write\":true,\"read\":true,\"update\":true,\"delete\":true},\"user\":{\"id\":\"GOLswS44mh8\",\"code\":null,\"name\":\"Tom Wakiki\",\"displayName\":\"Tom Wakiki\",\"username\":\"system\"},\"id\":\"zz6XckBrLlj\"}]}",
+        "responseSize": 1791,
+        "responseHeaders": {
+            "server": "nginx/1.25.4",
+            "content-type": "application/json;charset=UTF-8",
+            "transfer-encoding": "chunked",
+            "connection": "keep-alive",
+            "access-control-allow-credentials": "true",
+            "access-control-allow-origin": "http://localhost:3000",
+            "vary": "Origin",
+            "access-control-expose-headers": "ETag, Location",
+            "cache-control": "no-cache, private",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block"
+        }
+    }
+]

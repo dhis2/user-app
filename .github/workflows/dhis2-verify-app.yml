@@ -29,7 +29,7 @@ jobs:
             - uses: actions/checkout@v2
             - uses: actions/setup-node@v1
               with:
-                  node-version: 16.x
+                  node-version: 18.x
 
             - uses: c-hive/gha-yarn-cache@v1
             - run: yarn install --frozen-lockfile
@@ -51,7 +51,7 @@ jobs:
             - uses: actions/checkout@v2
             - uses: actions/setup-node@v1
               with:
-                  node-version: 16.x
+                  node-version: 18.x
 
             - uses: c-hive/gha-yarn-cache@v1
             - run: yarn install --frozen-lockfile
@@ -70,7 +70,7 @@ jobs:
             - uses: actions/checkout@v2
             - uses: actions/setup-node@v1
               with:
-                  node-version: 16.x
+                  node-version: 18.x
 
             - uses: c-hive/gha-yarn-cache@v1
             - run: yarn install --frozen-lockfile
@@ -98,10 +98,10 @@ jobs:
 
             - uses: actions/setup-node@v1
               with:
-                  node-version: 16.x
+                  node-version: 18.x
 
             - name: End-to-End tests
-              uses: cypress-io/github-action@v2
+              uses: cypress-io/github-action@v6
               with:
                   start: yarn d2-app-scripts start
                   wait-on: 'http://localhost:3000'
@@ -113,7 +113,7 @@ jobs:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
                   CYPRESS_dhis2BaseUrl: http://localhost:8080
-                  CYPRESS_dhis2ApiVersion: 41
+                  CYPRESS_dhis2ApiVersion: 42
                   CYPRESS_networkMode: stub
 
     release:
@@ -127,7 +127,7 @@ jobs:
 
             - uses: actions/setup-node@v3
               with:
-                  node-version: 16
+                  node-version: 18
                   cache: 'yarn'
 
             - uses: actions/download-artifact@v2
