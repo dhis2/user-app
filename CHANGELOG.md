@@ -1,3 +1,10 @@
+## [100.1.7](https://github.com/dhis2/user-app/compare/v100.1.6...v100.1.7) (2024-07-15)
+
+
+### Bug Fixes
+
+* ignore case when sorting grouped authorities by name ([6f50370](https://github.com/dhis2/user-app/commit/6f50370ac1227e65fa66c41b4f583db2514674a1))
+
 ## [100.1.6](https://github.com/dhis2/user-app/compare/v100.1.5...v100.1.6) (2024-06-25)
 
 
