@@ -72,7 +72,9 @@ const groupForAuthority = (auth) => {
 const sortGroupedAuthorities = (groupedAuthorities) => {
     const sortedGroupedAuthorities = {}
     for (const [group, items] of Object.entries(groupedAuthorities)) {
-        sortedGroupedAuthorities[group] = sortBy(items, 'name')
+        sortedGroupedAuthorities[group] = sortBy(items, (item) =>
+            item.name?.toLowerCase()
+        )
     }
     return sortedGroupedAuthorities
 }
