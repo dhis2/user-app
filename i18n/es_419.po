@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-08T17:31:59.581Z\n"
+"POT-Creation-Date: 2024-03-22T08:26:32.388Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
 "Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2024\n"
 "Language-Team: Spanish (Latin America) (https://app.transifex.com/hisp-uio/teams/100509/es_419/)\n"
@@ -45,6 +45,9 @@ msgid "Edit user role"
 msgstr ""
 
 msgid "Send message"
+msgstr ""
+
+msgid "ID"
 msgstr ""
 
 msgid "Filter options"
@@ -198,7 +201,7 @@ msgid "Category Combo"
 msgstr ""
 
 msgid "Category"
-msgstr ""
+msgstr "Categoría"
 
 msgid "Category Option"
 msgstr ""
@@ -609,9 +612,6 @@ msgid "Create, modify, view and delete User Groups"
 msgstr ""
 
 msgid "Display name"
-msgstr ""
-
-msgid "ID"
 msgstr ""
 
 msgid "Last login"
