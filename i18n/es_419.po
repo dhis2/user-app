@@ -61,7 +61,7 @@ msgid "Category Combo"
 msgstr ""
 
 msgid "Category"
-msgstr ""
+msgstr "Categoría"
 
 msgid "Category Option"
 msgstr ""
