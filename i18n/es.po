@@ -8,17 +8,17 @@
 # Carlos Tejo Alonso, 2023
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023
 # Viktor Varland <viktor@dhis2.org>, 2023
-# Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
 # Janeth Cruz, 2023
 # Pablo Del Médico, 2023
 # Philip Larsen Donnelly, 2024
+# Enzo Nicolas Rossi <enzo@dhis2.org>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-01-19T12:15:17.744Z\n"
+"POT-Creation-Date: 2024-03-27T09:03:25.496Z\n"
 "PO-Revision-Date: 2023-05-22 19:30+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -441,10 +441,10 @@ msgid "Visualization"
 msgstr "Visualización"
 
 msgid "Event Hook"
-msgstr ""
+msgstr "Gancho para eventos"
 
 msgid "Route"
-msgstr ""
+msgstr "Ruta"
 
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr "Hubo un problema al verificar la disponibilidad de este nombre de rol"
@@ -742,6 +742,9 @@ msgstr "Hubo un error al obtener este usuario."
 
 msgid "Edit user"
 msgstr "Editar usuario"
+
+msgid "You do not have access to edit this user group"
+msgstr "No tiene acceso para editar este grupo de usuarios"
 
 msgid "Overview"
 msgstr "General"
