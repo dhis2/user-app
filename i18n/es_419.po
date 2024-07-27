@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-01-17T09:36:40.909Z\n"
+"POT-Creation-Date: 2024-03-27T09:03:25.496Z\n"
 "PO-Revision-Date: 2022-10-15 22:33+0000\n"
 "Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2024\n"
 "Language-Team: Spanish (Latin America) (https://app.transifex.com/hisp-uio/teams/100509/es_419/)\n"
@@ -253,7 +253,7 @@ msgid "Category Combo"
 msgstr ""
 
 msgid "Category"
-msgstr ""
+msgstr "Categoría"
 
 msgid "Category Option"
 msgstr ""
@@ -715,6 +715,9 @@ msgid "There was an error fetching this user."
 msgstr ""
 
 msgid "Edit user"
+msgstr ""
+
+msgid "You do not have access to edit this user group"
 msgstr ""
 
 msgid "Overview"
