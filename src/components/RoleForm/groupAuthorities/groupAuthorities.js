@@ -20,7 +20,7 @@ const AUTHORITY_GROUPS = {
         'F_TRACKER_IMPORTER_EXPERIMENTAL',
         'F_UNCOMPLETE_EVENT',
         'F_VIEW_EVENT_ANALYTICS',
-        'F_CAPTURE_DATASTORE_UPDATE'
+        'F_CAPTURE_DATASTORE_UPDATE',
     ]),
     importExport: new Set([
         'F_EXPORT_DATA',
