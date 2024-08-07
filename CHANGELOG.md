@@ -1,3 +1,15 @@
+# [100.2.0](https://github.com/dhis2/user-app/compare/v100.1.8...v100.2.0) (2024-08-07)
+
+
+### Bug Fixes
+
+* add capture authority to tracker list ([e4e53c5](https://github.com/dhis2/user-app/commit/e4e53c560c4351338a699e5a46f20f771a876968))
+
+
+### Features
+
+* add capture authority to tracker set ([372f84f](https://github.com/dhis2/user-app/commit/372f84f4e8c3c93d8cb7d736db4e258558dec8b9))
+
 ## [100.1.8](https://github.com/dhis2/user-app/compare/v100.1.7...v100.1.8) (2024-07-24)
 
 
