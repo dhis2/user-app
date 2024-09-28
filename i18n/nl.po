@@ -1,15 +1,15 @@
 # 
 # Translators:
 # Cherise Beek <cherise.beek@gmail.com>, 2023
-# Rica Zamora Duchateau, 2023
 # Charel van den Elsen, 2023
+# Rica, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
+"POT-Creation-Date: 2024-03-27T09:03:25.496Z\n"
 "PO-Revision-Date: 2023-05-22 19:30+0000\n"
-"Last-Translator: Charel van den Elsen, 2023\n"
+"Last-Translator: Rica, 2024\n"
 "Language-Team: Dutch (https://app.transifex.com/hisp-uio/teams/100509/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -424,6 +424,12 @@ msgstr ""
 msgid "Visualization"
 msgstr ""
 
+msgid "Event Hook"
+msgstr ""
+
+msgid "Route"
+msgstr ""
+
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
 
@@ -485,7 +491,7 @@ msgid "First name"
 msgstr "Voornaam"
 
 msgid "Last name"
-msgstr ""
+msgstr "Achternaam"
 
 msgid "Interface language"
 msgstr "Interfacetaal"
@@ -598,7 +604,8 @@ msgid "Password"
 msgstr "Wachtwoord"
 
 msgid ""
-"Minimum 8 characters, one uppercase and lowercase letter and one number"
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
 msgstr ""
 
 msgid "Repeat new password"
@@ -704,6 +711,9 @@ msgid "There was an error fetching this user."
 msgstr ""
 
 msgid "Edit user"
+msgstr ""
+
+msgid "You do not have access to edit this user group"
 msgstr ""
 
 msgid "Overview"
@@ -847,7 +857,7 @@ msgid "Replicate"
 msgstr ""
 
 msgid "Reset password"
-msgstr ""
+msgstr "Wachtwoord opnieuw instellen"
 
 msgid "Disable"
 msgstr ""
@@ -923,11 +933,6 @@ msgid "Username for new user"
 msgstr ""
 
 msgid "Password for new user"
-msgstr ""
-
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
 msgstr ""
 
 msgid "Replicate user"
