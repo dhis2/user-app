@@ -5,7 +5,7 @@ on: push
 concurrency:
     group: ${{ github.workflow }}-${{ github.ref }}
     # Cancel previous runs if not on a release branch
-    cancel-in-progress: ${{ !contains(fromJSON('["refs/heads/master", "ref/heads/main"]'), github.ref) }}
+    cancel-in-progress: ${{ !contains(fromJSON('["refs/heads/master", "refs/heads/main"]'), github.ref) }}
 
 jobs:
     lint-commits:
