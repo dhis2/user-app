@@ -198,7 +198,7 @@ msgid "Delete"
 msgstr "ລົບ"
 
 msgid "External access"
-msgstr ""
+msgstr "ການເຂົ້າເຖີງຈາກພາຍນອກ"
 
 msgid "Error updating role"
 msgstr ""
