@@ -1013,7 +1013,7 @@ msgid "Created"
 msgstr "ສ້າງແລ້ວ"
 
 msgid "Contact"
-msgstr ""
+msgstr "ຕິດຕໍ່"
 
 msgid "Send message"
 msgstr "Send message"
