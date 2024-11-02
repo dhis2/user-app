@@ -199,7 +199,7 @@ msgid "Delete"
 msgstr "ລົບ"
 
 msgid "External access"
-msgstr ""
+msgstr "ການເຂົ້າເຖີງຈາກພາຍນອກ"
 
 msgid "Error updating role"
 msgstr ""
@@ -789,7 +789,7 @@ msgid "Are you sure you want to leave {{- name}}?"
 msgstr ""
 
 msgid "Yes, leave"
-msgstr ""
+msgstr "ຢືນຢັນ, ອອກ"
 
 msgid "User Group Management"
 msgstr ""
@@ -1014,7 +1014,7 @@ msgid "Created"
 msgstr "ສ້າງແລ້ວ"
 
 msgid "Contact"
-msgstr ""
+msgstr "ຕິດຕໍ່"
 
 msgid "Send message"
 msgstr "Send message"
