@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Jiří Podhorecký, 2023
+# Jiří Podhorecký <jirka.p@volny.cz>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-01-17T09:36:40.909Z\n"
+"POT-Creation-Date: 2024-03-27T09:03:25.496Z\n"
 "PO-Revision-Date: 2022-10-15 22:33+0000\n"
-"Last-Translator: Jiří Podhorecký, 2023\n"
+"Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -421,13 +421,13 @@ msgid "Aggregate data exchange"
 msgstr ""
 
 msgid "Event hook"
-msgstr ""
+msgstr "Hook události"
 
 msgid "Route"
-msgstr ""
+msgstr "Trasa"
 
 msgid "Impersonate user"
-msgstr ""
+msgstr "Vydávat se za uživatele"
 
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr "Při kontrole dostupnosti názvu této role došlo k problému"
@@ -642,7 +642,7 @@ msgid "Send invite"
 msgstr "Poslat pozvánku"
 
 msgid "Cancel invite"
-msgstr ""
+msgstr "Zrušit pozvánku"
 
 msgid "Error updating user"
 msgstr "Při aktualizaci uživatele došlo k chybě"
@@ -730,6 +730,9 @@ msgstr "Při načítání tohoto uživatele došlo k chybě."
 
 msgid "Edit user"
 msgstr "Upravit uživatele"
+
+msgid "You do not have access to edit this user group"
+msgstr "Nemáte přístup k úpravám této skupiny uživatelů."
 
 msgid "Overview"
 msgstr "Přehled"
@@ -953,7 +956,7 @@ msgid "There was an error resetting the password: {{- error}}"
 msgstr "Při resetování hesla došlo k chybě: {{- error}}"
 
 msgid "Are you sure you want to reset the password for {{- name}}?"
-msgstr ""
+msgstr "Opravdu chcete obnovit heslo pro {{- name}}?"
 
 msgid "Yes, reset"
 msgstr "Ano, resetovat"
