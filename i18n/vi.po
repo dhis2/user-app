@@ -4,13 +4,14 @@
 # Philip Larsen Donnelly, 2023
 # Viktor Varland <viktor@dhis2.org>, 2023
 # Thuy Nguyen <thuynguyen@hispvietnam.org>, 2024
+# Em Le <em.hispvietnam@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-01-19T12:15:17.744Z\n"
+"POT-Creation-Date: 2024-03-27T09:03:25.496Z\n"
 "PO-Revision-Date: 2023-05-22 19:30+0000\n"
-"Last-Translator: Thuy Nguyen <thuynguyen@hispvietnam.org>, 2024\n"
+"Last-Translator: Em Le <em.hispvietnam@gmail.com>, 2024\n"
 "Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -80,7 +81,7 @@ msgid "There was an error fetching this form."
 msgstr ""
 
 msgid "Cancel without saving"
-msgstr ""
+msgstr "Hủy và không lưu"
 
 msgid "Basic information"
 msgstr ""
@@ -715,6 +716,9 @@ msgstr ""
 
 msgid "Edit user"
 msgstr "Chỉnh sửa người dùng"
+
+msgid "You do not have access to edit this user group"
+msgstr ""
 
 msgid "Overview"
 msgstr "Tổng quan"
