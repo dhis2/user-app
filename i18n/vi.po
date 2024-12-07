@@ -4,13 +4,14 @@
 # Mai Nguyen <thanhmai.jica@gmail.com>, 2023
 # Thuy Nguyen <thuynguyen@hispvietnam.org>, 2023
 # Philip Larsen Donnelly, 2023
+# Em Le <em.hispvietnam@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-06-13T10:12:52.361Z\n"
+"POT-Creation-Date: 2024-03-27T09:03:25.496Z\n"
 "PO-Revision-Date: 2022-10-15 22:33+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2023\n"
+"Last-Translator: Em Le <em.hispvietnam@gmail.com>, 2024\n"
 "Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -74,7 +75,7 @@ msgid "There was an error fetching this form."
 msgstr ""
 
 msgid "Cancel without saving"
-msgstr ""
+msgstr "Hủy và không lưu"
 
 msgid "Basic information"
 msgstr ""
@@ -416,6 +417,18 @@ msgstr "Bỏ qua kiểm tra nhận dữ liệu"
 msgid "Visualization"
 msgstr "Trực quan hóa"
 
+msgid "Aggregate data exchange"
+msgstr ""
+
+msgid "Event hook"
+msgstr ""
+
+msgid "Route"
+msgstr ""
+
+msgid "Impersonate user"
+msgstr "Người dùng mạo danh"
+
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
 
@@ -584,7 +597,8 @@ msgid "Password"
 msgstr "Mật khẩu"
 
 msgid ""
-"Minimum 8 characters, one uppercase and lowercase letter and one number"
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
 msgstr ""
 
 msgid "Repeat new password"
@@ -608,16 +622,16 @@ msgstr "Định danh LDAP"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr ""
 
-msgid "Send invite"
-msgstr "Gửi lời mời"
-
-msgid "Cancel invite"
-msgstr ""
-
 msgid "Invalid username"
 msgstr ""
 
 msgid "Invalid WhatsApp number"
+msgstr ""
+
+msgid "Send invite"
+msgstr "Gửi lời mời"
+
+msgid "Cancel invite"
 msgstr ""
 
 msgid "Error updating user"
@@ -706,6 +720,9 @@ msgstr ""
 
 msgid "Edit user"
 msgstr "Chỉnh sửa người dùng"
+
+msgid "You do not have access to edit this user group"
+msgstr ""
 
 msgid "Overview"
 msgstr "Tổng quan"
@@ -920,11 +937,6 @@ msgstr "Tên người dùng cho người dùng mới"
 
 msgid "Password for new user"
 msgstr "Mật khẩu cho người dùng mới"
-
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
-msgstr ""
 
 msgid "Replicate user"
 msgstr "Tái tạo tài khoản"
