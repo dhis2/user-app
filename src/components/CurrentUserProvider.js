@@ -135,6 +135,7 @@ const CurrentUserProvider = ({ children }) => {
             AUTH_LOOKUP.ROLE_CREATE.has(auth)
         ),
         refresh: refetch,
+        hasAllAuthority: data.me.authorities.includes('ALL'),
     }
 
     return (

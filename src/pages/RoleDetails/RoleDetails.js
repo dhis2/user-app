@@ -4,10 +4,13 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import Details, { Section, Field } from '../../components/Details/index.js'
+import { AssignmentRestrictionWarning } from '../../components/RoleForm/AssignmentRestrictionsWarning.js'
+import { useCurrentUser } from '../../hooks/useCurrentUser.js'
 import useRole from './use-role.js'
 
 const RoleDetails = ({ roleId }) => {
     const { loading, error, role } = useRole(roleId)
+    const currentUser = useCurrentUser()
     const history = useHistory()
 
     const handleEditRole = () => {
@@ -45,6 +48,13 @@ const RoleDetails = ({ roleId }) => {
                 }
             >
                 <Field label={i18n.t('ID')} value={role.id} />
+                {role && (
+                    <AssignmentRestrictionWarning
+                        roleId={role.id}
+                        roleAuthorities={role.authorities}
+                        currentUser={currentUser}
+                    />
+                )}
             </Section>
         </Details>
     )

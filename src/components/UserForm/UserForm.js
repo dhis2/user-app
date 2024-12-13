@@ -39,6 +39,8 @@ const UserForm = ({
         interfaceLanguageOptions,
         databaseLanguageOptions,
         userRoleOptions,
+        userRolesHidden,
+        userRolesAreHidden,
         userGroupOptions,
         dimensionConstraints,
         dimensionConstraintOptions,
@@ -209,6 +211,8 @@ const UserForm = ({
                         user={user}
                         userGroupOptions={userGroupOptions}
                         userRoleOptions={userRoleOptions}
+                        userRolesAreHidden={userRolesAreHidden}
+                        userRolesHidden={userRolesHidden}
                     />
                     <AnalyticsDimensionsRestrictionsSection
                         user={user}

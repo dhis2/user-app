@@ -7,6 +7,7 @@ export const getRoleData = ({ values }) => {
         trackerAuthorities,
         importExportAuthorities,
         systemAuthorities,
+        legacyAuthorities,
     } = values
 
     return {
@@ -18,6 +19,7 @@ export const getRoleData = ({ values }) => {
             ...trackerAuthorities,
             ...importExportAuthorities,
             ...systemAuthorities,
+            ...(legacyAuthorities ?? []),
         ],
     }
 }

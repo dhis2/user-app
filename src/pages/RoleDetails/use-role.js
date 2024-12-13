@@ -6,8 +6,12 @@ const query = {
         resource: 'userRoles',
         id: ({ id }) => id,
         params: {
-            fields: ['id', 'access', 'displayName'],
+            fields: ['id', 'access', 'displayName', 'authorities'],
         },
+    },
+    // move this elsewhere presumably? (e.g. to provider)
+    authorities: {
+        resource: 'authorities',
     },
 }
 

@@ -34,10 +34,12 @@ const SectionNavigation = () => {
     } = useCurrentUser()
     const isUserSection = useRouteMatch('/users')
     const isRoleSection = useRouteMatch('/user-roles')
+    const isRoleViewDetailsSection = useRouteMatch('/user-roles/view')
     const isGroupSection = useRouteMatch('/user-groups')
     const hasAccessToCurrentSection =
         hasAppAccess &&
         (pathname === '/' ||
+            isRoleViewDetailsSection ||
             (isUserSection && hasUserSectionAccess) ||
             (isRoleSection && hasRoleSectionAccess) ||
             (isGroupSection && hasGroupSectionAccess))
@@ -143,21 +145,21 @@ const SectionNavigation = () => {
                         <Route
                             exact
                             strict
-                            path="/user-roles/view/:id"
-                            render={({ match }) => (
-                                <RoleDetails roleId={match.params.id} />
-                            )}
-                            entityType={USER_ROLE}
-                        />
-                        <Route
-                            exact
-                            strict
                             path="/user-roles"
                             component={RoleList}
                             entityType={USER_ROLE}
                         />
                     </>
                 )}
+                <Route
+                    exact
+                    strict
+                    path="/user-roles/view/:id"
+                    render={({ match }) => (
+                        <RoleDetails roleId={match.params.id} />
+                    )}
+                    entityType={USER_ROLE}
+                />
                 {hasGroupSectionAccess && (
                     <>
                         <Route

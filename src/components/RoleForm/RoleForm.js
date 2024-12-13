@@ -9,8 +9,10 @@ import { useCurrentUser } from '../../hooks/useCurrentUser.js'
 import { useReferrerInfo } from '../../providers/index.js'
 import navigateTo from '../../utils/navigateTo.js'
 import Form, { FormSection, TextField, TransferField } from '../Form.js'
+import { AssignmentRestrictionWarning } from './AssignmentRestrictionsWarning.js'
 import { getJsonPatch } from './getJsonPatch.js'
 import { getRoleData } from './getRoleData.js'
+import { LegacyAuthoritiesTableField } from './LegacyAuthoritiesTable.js'
 import MetadataAuthoritiesTableField from './MetadataAuthoritiesTableField.js'
 import styles from './RoleForm.module.css'
 import { useFormData } from './useFormData.js'
@@ -40,6 +42,13 @@ const getRoleAuthorityIDs = ({
         importExportAuthorityOptions.map(({ value }) => value)
     )
     const systemIDs = new Set(systemAuthorityOptions.map(({ value }) => value))
+    const allKnownIDs = new Set([
+        ...metadataIDs,
+        ...appIDs,
+        ...trackerIDs,
+        ...importExportIDs,
+        ...systemIDs,
+    ])
 
     return {
         metadata: role.authorities.filter((id) => metadataIDs.has(id)),
@@ -47,6 +56,7 @@ const getRoleAuthorityIDs = ({
         tracker: role.authorities.filter((id) => trackerIDs.has(id)),
         importExport: role.authorities.filter((id) => importExportIDs.has(id)),
         system: role.authorities.filter((id) => systemIDs.has(id)),
+        legacy: role.authorities.filter((id) => !allKnownIDs.has(id)).sort(),
     }
 }
 
@@ -55,8 +65,6 @@ const RoleForm = ({ submitButtonLabel, role }) => {
     const debouncedUniqueRoleNameValidator =
         useDebouncedUniqueRoleNameValidator({ engine, roleName: role?.name })
     const {
-        loading,
-        error,
         metadataAuthorities,
         appAuthorityOptions,
         trackerAuthorityOptions,
@@ -65,8 +73,6 @@ const RoleForm = ({ submitButtonLabel, role }) => {
     } = useFormData()
     const roleAuthorityIDs =
         role &&
-        !loading &&
-        !error &&
         getRoleAuthorityIDs({
             role,
             metadataAuthorities,
@@ -124,8 +130,6 @@ const RoleForm = ({ submitButtonLabel, role }) => {
 
     return (
         <Form
-            loading={loading}
-            error={error}
             submitButtonLabel={submitButtonLabel}
             onSubmit={handleSubmit}
             onCancel={() => {
@@ -151,6 +155,14 @@ const RoleForm = ({ submitButtonLabel, role }) => {
                             {submitError.message}
                         </NoticeBox>
                     )}
+                    {role && (
+                        <AssignmentRestrictionWarning
+                            roleId={role.id}
+                            roleAuthorities={role.authorities}
+                            currentUser={currentUser}
+                        />
+                    )}
+
                     <FormSection title={i18n.t('Basic information')}>
                         <TextField
                             required
@@ -222,6 +234,19 @@ const RoleForm = ({ submitButtonLabel, role }) => {
                             initialValue={roleAuthorityIDs?.system || []}
                         />
                     </FormSection>
+                    {!role ? null : (
+                        <FormSection
+                            title={i18n.t('Legacy and nonstandard authorities')}
+                            description={i18n.t(
+                                'Authorities not recognized as standard authorities. These authorities may be legacy authorities if you have upgraded versions.'
+                            )}
+                        >
+                            <LegacyAuthoritiesTableField
+                                name="legacyAuthorities"
+                                legacyAuthorities={roleAuthorityIDs?.legacy}
+                            />
+                        </FormSection>
+                    )}
                 </>
             )}
         </Form>
