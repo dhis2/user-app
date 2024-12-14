@@ -1015,7 +1015,7 @@ msgid "Created"
 msgstr "Đã tạo"
 
 msgid "Contact"
-msgstr ""
+msgstr "Liên lạc"
 
 msgid "Send message"
 msgstr "Gửi tin"
