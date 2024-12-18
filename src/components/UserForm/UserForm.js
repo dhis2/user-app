@@ -5,8 +5,7 @@ import { keyBy } from 'lodash-es'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { useCurrentUser } from '../../hooks/useCurrentUser.js'
-import { useReferrerInfo } from '../../providers/index.js'
+import { useCurrentUser, useReferrerInfo } from '../../providers/index.js'
 import navigateTo from '../../utils/navigateTo.js'
 import Attributes from '../Attributes/index.js'
 import Form, { FormSection } from '../Form.js'
@@ -39,6 +38,7 @@ const UserForm = ({
         interfaceLanguageOptions,
         databaseLanguageOptions,
         userRoleOptions,
+        userRolesHidden,
         userGroupOptions,
         dimensionConstraints,
         dimensionConstraintOptions,
@@ -209,6 +209,7 @@ const UserForm = ({
                         user={user}
                         userGroupOptions={userGroupOptions}
                         userRoleOptions={userRoleOptions}
+                        userRolesHidden={userRolesHidden}
                     />
                     <AnalyticsDimensionsRestrictionsSection
                         user={user}

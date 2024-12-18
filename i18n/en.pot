@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-03-27T09:03:25.496Z\n"
-"PO-Revision-Date: 2024-03-27T09:03:25.496Z\n"
+"POT-Creation-Date: 2024-12-18T07:54:11.061Z\n"
+"PO-Revision-Date: 2024-12-18T07:54:11.062Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -52,12 +52,6 @@ msgstr "Will be added"
 
 msgid "Will be removed"
 msgstr "Will be removed"
-
-msgid "Network error"
-msgstr "Network error"
-
-msgid "Could not load current user information."
-msgstr "Could not load current user information."
 
 msgid "Filter options"
 msgstr "Filter options"
@@ -167,11 +161,30 @@ msgstr "Code is already taken"
 msgid "There was a problem whilst checking the availability of this group code"
 msgstr "There was a problem whilst checking the availability of this group code"
 
-msgid "Only show selected metadata authorities"
-msgstr "Only show selected metadata authorities"
+msgid ""
+"You cannot assign this role because you are assigned to this role, and your "
+"system does not allow you to assign roles of which you are a member."
+msgstr ""
+"You cannot assign this role because you are assigned to this role, and your "
+"system does not allow you to assign roles of which you are a member."
+
+msgid "You cannot assign this role because it has authorities that you do not have."
+msgstr "You cannot assign this role because it has authorities that you do not have."
+
+msgid "There are no legacy or nonstandard authorities assigned to this user role."
+msgstr "There are no legacy or nonstandard authorities assigned to this user role."
+
+msgid "Remove"
+msgstr "Remove"
 
 msgid "Authority"
 msgstr "Authority"
+
+msgid "Remove authority"
+msgstr "Remove authority"
+
+msgid "Only show selected metadata authorities"
+msgstr "Only show selected metadata authorities"
 
 msgid "Add/Update Public"
 msgstr "Add/Update Public"
@@ -232,6 +245,16 @@ msgstr "Available system authorities"
 
 msgid "Selected system authorities"
 msgstr "Selected system authorities"
+
+msgid "Legacy and nonstandard authorities"
+msgstr "Legacy and nonstandard authorities"
+
+msgid ""
+"Authorities not recognized as standard authorities. These authorities may "
+"be legacy authorities if you have upgraded versions."
+msgstr ""
+"Authorities not recognized as standard authorities. These authorities may "
+"be legacy authorities if you have upgraded versions."
 
 msgid "All (Full authority)"
 msgstr "All (Full authority)"
@@ -573,6 +596,9 @@ msgstr "Available user roles"
 
 msgid "User roles this user is assigned"
 msgstr "User roles this user is assigned"
+
+msgid "You do not have permission to assign certain user roles"
+msgstr "You do not have permission to assign certain user roles"
 
 msgid "User groups this user is a member of"
 msgstr "User groups this user is a member of"
@@ -1042,3 +1068,12 @@ msgstr "Interests"
 
 msgid "Birthday"
 msgstr "Birthday"
+
+msgid "Network error"
+msgstr "Network error"
+
+msgid "Could not load current user information."
+msgstr "Could not load current user information."
+
+msgid "Could not load system information."
+msgstr "Could not load system information."

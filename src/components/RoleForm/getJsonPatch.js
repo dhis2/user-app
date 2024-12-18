@@ -11,12 +11,13 @@ export const getJsonPatch = ({ roleData, dirtyFields }) => {
         // TODO: Once a replace-by-key op is supported, only submit authorities
         // that have changed
         if (
-            field === 'authorities' &&
-            (dirtyFields.has('metadataAuthorities') ||
-                dirtyFields.has('appAuthorities') ||
-                dirtyFields.has('trackerAuthorities') ||
-                dirtyFields.has('importExportAuthorities') ||
-                dirtyFields.has('systemAuthorities'))
+            (field === 'authorities' &&
+                (dirtyFields.has('metadataAuthorities') ||
+                    dirtyFields.has('appAuthorities') ||
+                    dirtyFields.has('trackerAuthorities') ||
+                    dirtyFields.has('importExportAuthorities') ||
+                    dirtyFields.has('systemAuthorities'))) ||
+            dirtyFields.has('legacyAuthorities')
         ) {
             modified = true
         }

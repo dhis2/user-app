@@ -1,4 +1,4 @@
 import { useContext } from 'react'
-import { CurrentUserContext } from '../components/CurrentUserProvider.js'
+import { CurrentUserContext } from './CurrentUserProvider.js'
 
 export const useCurrentUser = () => useContext(CurrentUserContext)

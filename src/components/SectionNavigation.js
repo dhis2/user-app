@@ -2,7 +2,6 @@ import i18n from '@dhis2/d2-i18n'
 import { NoticeBox } from '@dhis2/ui'
 import React, { useEffect } from 'react'
 import { Route, useRouteMatch, useLocation } from 'react-router-dom'
-import { useCurrentUser } from '../hooks/useCurrentUser.js'
 import CreateGroup from '../pages/CreateGroup.js'
 import CreateRole from '../pages/CreateRole.js'
 import CreateUser from '../pages/CreateUser.js'
@@ -16,6 +15,7 @@ import RoleDetails from '../pages/RoleDetails/index.js'
 import RoleList from '../pages/RoleList/index.js'
 import UserList from '../pages/UserList/index.js'
 import UserProfile from '../pages/UserProfile/index.js'
+import { useCurrentUser } from '../providers/index.js'
 import navigateTo from '../utils/navigateTo.js'
 import styles from './SectionNavigation.module.css'
 import { SideNav, NavItem } from './SideNav.js'
@@ -34,10 +34,12 @@ const SectionNavigation = () => {
     } = useCurrentUser()
     const isUserSection = useRouteMatch('/users')
     const isRoleSection = useRouteMatch('/user-roles')
+    const isRoleViewDetailsSection = useRouteMatch('/user-roles/view')
     const isGroupSection = useRouteMatch('/user-groups')
     const hasAccessToCurrentSection =
         hasAppAccess &&
         (pathname === '/' ||
+            isRoleViewDetailsSection ||
             (isUserSection && hasUserSectionAccess) ||
             (isRoleSection && hasRoleSectionAccess) ||
             (isGroupSection && hasGroupSectionAccess))
@@ -143,21 +145,21 @@ const SectionNavigation = () => {
                         <Route
                             exact
                             strict
-                            path="/user-roles/view/:id"
-                            render={({ match }) => (
-                                <RoleDetails roleId={match.params.id} />
-                            )}
-                            entityType={USER_ROLE}
-                        />
-                        <Route
-                            exact
-                            strict
                             path="/user-roles"
                             component={RoleList}
                             entityType={USER_ROLE}
                         />
                     </>
                 )}
+                <Route
+                    exact
+                    strict
+                    path="/user-roles/view/:id"
+                    render={({ match }) => (
+                        <RoleDetails roleId={match.params.id} />
+                    )}
+                    entityType={USER_ROLE}
+                />
                 {hasGroupSectionAccess && (
                     <>
                         <Route
