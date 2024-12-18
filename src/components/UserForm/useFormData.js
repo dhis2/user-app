@@ -105,8 +105,6 @@ export const useFormData = () => {
                 all: userRolesAll,
                 assignable: userRoles,
             }),
-            userRolesAreHidden:
-                userRoles.length !== data.userRolesCount?.pager?.total,
             userGroupOptions: makeOptions(userGroups),
             dimensionConstraints,
             dimensionConstraintOptions: makeOptions(dimensionConstraints),

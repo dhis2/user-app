@@ -1,10 +1,10 @@
 import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import React from 'react'
-import { useCurrentUser } from '../../hooks/useCurrentUser.js'
+import { useCurrentUser } from '../../providers/current-user/useCurrentUser.js'
 import GroupTable from './GroupTable.js'
 
-jest.mock('../../hooks/useCurrentUser.js', () => ({
+jest.mock('../../providers/current-user/useCurrentUser.js', () => ({
     useCurrentUser: jest.fn(),
 }))
 

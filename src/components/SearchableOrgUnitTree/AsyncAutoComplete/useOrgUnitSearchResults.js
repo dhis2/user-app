@@ -1,7 +1,7 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import { debounce } from 'lodash-es'
 import { useState, useEffect, useRef } from 'react'
-import { useCurrentUser } from '../../../hooks/useCurrentUser.js'
+import { useCurrentUser } from '../../../providers/index.js'
 import { PAGE_SIZE, MIN_CHAR_LENGTH, DEBOUNCE_TIME } from './constants.js'
 import { getRestrictedOrgUnits } from './getRestrictedOrgUnits.js'
 

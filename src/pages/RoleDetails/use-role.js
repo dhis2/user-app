@@ -9,10 +9,6 @@ const query = {
             fields: ['id', 'access', 'displayName', 'authorities'],
         },
     },
-    // move this elsewhere presumably? (e.g. to provider)
-    authorities: {
-        resource: 'authorities',
-    },
 }
 
 const useRole = (roleId) => {

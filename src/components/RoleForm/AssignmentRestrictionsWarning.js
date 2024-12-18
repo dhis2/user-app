@@ -9,8 +9,11 @@ export const AssignmentRestrictionWarning = ({
     currentUser,
     roleId,
     roleAuthorities,
+    initiallyExpanded,
 }) => {
-    const [detailsExpanded, setDetailsExpanded] = useState(false)
+    const [detailsExpanded, setDetailsExpanded] = useState(
+        initiallyExpanded ?? false
+    )
 
     // check if user is able to assign this role if they are a member
     const {
@@ -57,6 +60,7 @@ export const AssignmentRestrictionWarning = ({
                             onClick={() => {
                                 setDetailsExpanded((prev) => !prev)
                             }}
+                            data-test="roles-details-expand"
                         >
                             {detailsExpanded ? (
                                 <IconChevronUp24 />
@@ -67,7 +71,7 @@ export const AssignmentRestrictionWarning = ({
                     </div>
 
                     {detailsExpanded && (
-                        <ul>
+                        <ul data-test="authorities-user-does-not-have-list">
                             {authoritiesUserDoesNotHave
                                 .sort((a, b) =>
                                     (
@@ -77,7 +81,7 @@ export const AssignmentRestrictionWarning = ({
                                     )
                                 )
                                 .map((auth) => (
-                                    <li key={auth.id}>
+                                    <li key={auth}>
                                         {authorityIdToNameMap.get(auth) ?? auth}
                                     </li>
                                 ))}
@@ -92,5 +96,6 @@ export const AssignmentRestrictionWarning = ({
 AssignmentRestrictionWarning.propTypes = {
     roleId: PropTypes.string.isRequired,
     currentUser: PropTypes.object,
+    initiallyExpanded: PropTypes.bool,
     roleAuthorities: PropTypes.arrayOf(PropTypes.string),
 }

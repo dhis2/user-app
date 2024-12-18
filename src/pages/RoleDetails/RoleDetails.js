@@ -5,7 +5,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import Details, { Section, Field } from '../../components/Details/index.js'
 import { AssignmentRestrictionWarning } from '../../components/RoleForm/AssignmentRestrictionsWarning.js'
-import { useCurrentUser } from '../../hooks/useCurrentUser.js'
+import { useCurrentUser } from '../../providers/index.js'
 import useRole from './use-role.js'
 
 const RoleDetails = ({ roleId }) => {
@@ -53,6 +53,7 @@ const RoleDetails = ({ roleId }) => {
                         roleId={role.id}
                         roleAuthorities={role.authorities}
                         currentUser={currentUser}
+                        initiallyExpanded={true}
                     />
                 )}
             </Section>

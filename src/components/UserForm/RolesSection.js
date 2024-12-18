@@ -7,13 +7,7 @@ import { FormSection, TransferField } from '../Form.js'
 import { hasSelectionValidator } from './validators.js'
 
 const RolesSection = React.memo(
-    ({
-        user,
-        userRoleOptions,
-        userGroupOptions,
-        userRolesAreHidden,
-        userRolesHidden,
-    }) => (
+    ({ user, userRoleOptions, userGroupOptions, userRolesHidden }) => (
         <FormSection
             title={i18n.t('Roles and groups')}
             description={i18n.t(
@@ -30,7 +24,7 @@ const RolesSection = React.memo(
                 validate={hasSelectionValidator}
             />
             <div style={{ marginBlock: '8px', width: '690px' }}>
-                {userRolesAreHidden && (
+                {userRolesHidden?.length > 0 && (
                     <NoticeBox
                         title={i18n.t(
                             'You do not have permission to assign certain user roles'
@@ -57,7 +51,7 @@ const RolesSection = React.memo(
                 leftHeader={i18n.t('Available user groups')}
                 rightHeader={i18n.t('User groups this user is a member of')}
                 options={userGroupOptions}
-                initialValue={user?.userGroups.map(({ id }) => id) || []}
+                initialValue={user?.userGroups?.map(({ id }) => id) || []}
             />
         </FormSection>
     )
@@ -67,7 +61,6 @@ RolesSection.propTypes = {
     userGroupOptions: PropTypes.array.isRequired,
     userRoleOptions: PropTypes.array.isRequired,
     user: PropTypes.object,
-    userRolesAreHidden: PropTypes.bool,
     userRolesHidden: PropTypes.array,
 }
 

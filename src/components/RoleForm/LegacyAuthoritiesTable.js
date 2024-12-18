@@ -60,7 +60,10 @@ const LegacyAuthoritiesTable = React.memo(
             )
         }
         return (
-            <div className={styles.container}>
+            <div
+                className={styles.container}
+                data-test="legacy-authorities-table"
+            >
                 <DataTable scrollHeight="375px">
                     <DataTableHead>
                         <DataTableRow>
@@ -99,15 +102,16 @@ const LegacyAuthoritiesTableFF = ({
     meta,
     ...props
 }) => {
+    const { value: inputValue, onChange: inputOnChange } = input
     const handleAuthorityRemove = useCallback(
         ({ id }) => {
-            const newSelectedAuthorities = new Set(input.value)
+            const newSelectedAuthorities = new Set(inputValue)
             if (newSelectedAuthorities.has(id)) {
                 newSelectedAuthorities.delete(id)
             }
-            input.onChange(newSelectedAuthorities)
+            inputOnChange(newSelectedAuthorities)
         },
-        [input.value, input.onChange]
+        [inputValue, inputOnChange]
     )
 
     return (

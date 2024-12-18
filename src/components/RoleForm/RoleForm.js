@@ -5,8 +5,7 @@ import { flatMap } from 'lodash-es'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { useCurrentUser } from '../../hooks/useCurrentUser.js'
-import { useReferrerInfo } from '../../providers/index.js'
+import { useCurrentUser, useReferrerInfo } from '../../providers/index.js'
 import navigateTo from '../../utils/navigateTo.js'
 import Form, { FormSection, TextField, TransferField } from '../Form.js'
 import { AssignmentRestrictionWarning } from './AssignmentRestrictionsWarning.js'
@@ -56,7 +55,9 @@ const getRoleAuthorityIDs = ({
         tracker: role.authorities.filter((id) => trackerIDs.has(id)),
         importExport: role.authorities.filter((id) => importExportIDs.has(id)),
         system: role.authorities.filter((id) => systemIDs.has(id)),
-        legacy: role.authorities.filter((id) => !allKnownIDs.has(id)).sort(),
+        legacy: role.authorities
+            .filter((id) => !allKnownIDs.has(id))
+            .sort((a, b) => a.localeCompare(b)),
     }
 }
 

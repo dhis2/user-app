@@ -8,7 +8,7 @@ const CurrentUserContext = createContext({})
 
 const query = {
     me: {
-        resource: '/me',
+        resource: 'me',
         params: {
             fields: [
                 'id',
@@ -25,7 +25,7 @@ const query = {
         },
     },
     systemOrganisationUnitRoots: {
-        resource: '/organisationUnits',
+        resource: 'organisationUnits',
         params: {
             paging: false,
             level: 1,
