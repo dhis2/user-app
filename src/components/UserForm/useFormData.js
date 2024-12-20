@@ -31,13 +31,6 @@ const query = {
             paging: false,
         },
     },
-    userRolesCount: {
-        resource: 'userRoles',
-        params: {
-            paging: true,
-            pageSize: 1,
-        },
-    },
     userGroups: {
         resource: 'userGroups',
         params: {
