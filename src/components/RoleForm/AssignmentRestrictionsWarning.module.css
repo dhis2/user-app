@@ -1,0 +1,13 @@
+.noticeBox {
+    max-width: 700px;
+    margin-bottom: var(--spacers-dp16);
+}
+
+.noticeBox > div {
+    margin-block-end: var(--spacers-dp8);
+}
+
+.missingRolesMessage {
+    display: flex;
+    align-items: center;
+}

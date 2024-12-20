@@ -1,15 +1,6 @@
-import { useDataQuery } from '@dhis2/app-runtime'
 import { useMemo } from 'react'
+import { useSystemInformation } from '../../providers/index.js'
 import { groupAuthorities } from './groupAuthorities/index.js'
-
-const query = {
-    authorities: {
-        resource: 'authorities',
-        params: {
-            fields: ['id', 'name'],
-        },
-    },
-}
 
 const makeOptions = (array) =>
     array.map(({ name, id }) => ({
@@ -18,15 +9,9 @@ const makeOptions = (array) =>
     }))
 
 export const useFormData = () => {
-    const { loading, error, data } = useDataQuery(query)
-    const authorities = useMemo(() => {
-        if (!data) {
-            return
-        }
+    const { authorities: systemAuthorities } = useSystemInformation()
 
-        const {
-            authorities: { systemAuthorities },
-        } = data
+    const authorities = useMemo(() => {
         const groupedAuthorities = groupAuthorities(systemAuthorities)
 
         return {
@@ -38,10 +23,7 @@ export const useFormData = () => {
             ),
             systemAuthorityOptions: makeOptions(groupedAuthorities.system),
         }
-    }, [data])
+    }, [systemAuthorities])
 
-    if (loading || error) {
-        return { loading, error }
-    }
     return authorities
 }

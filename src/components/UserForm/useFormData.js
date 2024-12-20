@@ -24,6 +24,13 @@ const query = {
             paging: false,
         },
     },
+    userRolesAll: {
+        resource: 'userRoles',
+        params: {
+            fields: ['id', 'displayName'],
+            paging: false,
+        },
+    },
     userGroups: {
         resource: 'userGroups',
         params: {
@@ -60,6 +67,11 @@ const makeOptions = (array) =>
         value: id,
     }))
 
+const getHiddenRoles = ({ all, assignable }) => {
+    const assignableIDs = new Set(assignable.map((role) => role?.id))
+    return all.filter((role) => !assignableIDs.has(role?.id))
+}
+
 export const useFormData = () => {
     const { loading, error, data } = useDataQuery(query)
     const formData = useMemo(() => {
@@ -71,6 +83,7 @@ export const useFormData = () => {
             interfaceLanguages,
             databaseLanguages,
             userRoles: { userRoles },
+            userRolesAll: { userRoles: userRolesAll },
             userGroups: { userGroups },
             dimensionConstraints: { dimensions: dimensionConstraints },
             attributes: { attributes },
@@ -81,6 +94,10 @@ export const useFormData = () => {
             interfaceLanguageOptions: optionsFromLanguages(interfaceLanguages),
             databaseLanguageOptions: optionsFromLanguages(databaseLanguages),
             userRoleOptions: makeOptions(userRoles),
+            userRolesHidden: getHiddenRoles({
+                all: userRolesAll,
+                assignable: userRoles,
+            }),
             userGroupOptions: makeOptions(userGroups),
             dimensionConstraints,
             dimensionConstraintOptions: makeOptions(dimensionConstraints),

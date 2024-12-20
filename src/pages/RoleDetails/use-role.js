@@ -6,7 +6,7 @@ const query = {
         resource: 'userRoles',
         id: ({ id }) => id,
         params: {
-            fields: ['id', 'access', 'displayName'],
+            fields: ['id', 'access', 'displayName', 'authorities'],
         },
     },
 }
