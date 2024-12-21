@@ -764,7 +764,7 @@ msgid "No, cancel"
 msgstr "Không"
 
 msgid "Yes, delete"
-msgstr ""
+msgstr "Có, xóa"
 
 msgid "Joined user group \"{{- name}}\" successfuly"
 msgstr ""
@@ -860,7 +860,7 @@ msgid "Replicate"
 msgstr "Nhân rộng"
 
 msgid "Reset password"
-msgstr ""
+msgstr "Đặt lại mật khẩu"
 
 msgid "Disable"
 msgstr "Tắt"
