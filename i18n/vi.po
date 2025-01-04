@@ -4,13 +4,14 @@
 # Thuy Nguyen <thuynguyen@hispvietnam.org>, 2023
 # Mai Nguyen <thanhmai.jica@gmail.com>, 2024
 # Philip Larsen Donnelly, 2024
+# Em Le <em.hispvietnam@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-08T17:31:59.581Z\n"
+"POT-Creation-Date: 2024-03-22T08:26:32.388Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Last-Translator: Em Le <em.hispvietnam@gmail.com>, 2024\n"
 "Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,6 +50,9 @@ msgstr "Chỉnh sửa quyền người dùng"
 msgid "Send message"
 msgstr "Gửi tin"
 
+msgid "ID"
+msgstr "Định danh"
+
 msgid "Filter options"
 msgstr "Các lựa chọn lọc"
 
@@ -59,7 +63,7 @@ msgid "There was an error fetching this form."
 msgstr ""
 
 msgid "Cancel without saving"
-msgstr ""
+msgstr "Hủy và không lưu"
 
 msgid "Basic information"
 msgstr ""
@@ -614,9 +618,6 @@ msgstr "Tạo, sửa đổi, xem và xóa nhóm người dùng"
 msgid "Display name"
 msgstr "Tên hiển thị"
 
-msgid "ID"
-msgstr "Định danh"
-
 msgid "Last login"
 msgstr "Đăng nhập lần cuối"
 
@@ -747,7 +748,7 @@ msgid "No, cancel"
 msgstr "Không"
 
 msgid "Yes, delete"
-msgstr ""
+msgstr "Có, xóa"
 
 msgid "Joined user group \"{{- name}}\" successfuly"
 msgstr ""
@@ -843,7 +844,7 @@ msgid "Replicate"
 msgstr "Nhân rộng"
 
 msgid "Reset password"
-msgstr ""
+msgstr "Đặt lại mật khẩu"
 
 msgid "Disable"
 msgstr "Tắt"
