@@ -10,8 +10,8 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { useCurrentUser } from '../../../../hooks/useCurrentUser.js'
 import { useFetchAlert } from '../../../../hooks/useFetchAlert.js'
+import { useCurrentUser } from '../../../../providers/index.js'
 
 const JoinModal = ({ group, refetchGroups, onClose }) => {
     const currentUser = useCurrentUser()
