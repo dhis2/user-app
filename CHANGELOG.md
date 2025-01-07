@@ -1,3 +1,10 @@
+# [100.3.0](https://github.com/dhis2/user-app/compare/v100.2.10...v100.3.0) (2025-01-07)
+
+
+### Features
+
+* help users with user role assignment [DHIS2-18422] [DHIS2-18446] ([#1506](https://github.com/dhis2/user-app/issues/1506)) ([7a788ed](https://github.com/dhis2/user-app/commit/7a788ed6c54e8be991f3ae7fe9b8122275f807d0))
+
 ## [100.2.10](https://github.com/dhis2/user-app/compare/v100.2.9...v100.2.10) (2024-12-22)
 
 
