@@ -29,13 +29,13 @@ export const AssignmentRestrictionWarning = ({
         userRoleIds.includes(roleId)
 
     // check if role has authorities that user does not have
-    const authoritiesUserDoesNotHave = hasAllAuthority
+    const missingAutoritiesForUser = hasAllAuthority
         ? []
         : roleAuthorities.filter(
               (roleAuth) => !userAuthorities.includes(roleAuth)
           )
 
-    if (!cannotAssignThisRole && authoritiesUserDoesNotHave.length === 0) {
+    if (!cannotAssignThisRole && missingAutoritiesForUser.length === 0) {
         return null
     }
 
@@ -48,7 +48,7 @@ export const AssignmentRestrictionWarning = ({
                     )}
                 </div>
             )}
-            {authoritiesUserDoesNotHave?.length > 0 && (
+            {missingAutoritiesForUser?.length > 0 && (
                 <div>
                     <div className={styles.missingRolesMessage}>
                         <span>
@@ -72,7 +72,7 @@ export const AssignmentRestrictionWarning = ({
 
                     {detailsExpanded && (
                         <ul data-test="authorities-user-does-not-have-list">
-                            {authoritiesUserDoesNotHave
+                            {missingAutoritiesForUser
                                 .sort((a, b) =>
                                     (
                                         authorityIdToNameMap.get(a) ?? a
