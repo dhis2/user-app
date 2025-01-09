@@ -9,7 +9,7 @@ import {
     Button,
     ReactFinalForm,
     InputFieldFF,
-    dhis2Password,
+    createPattern,
     composeValidators,
     hasValue,
 } from '@dhis2/ui'
@@ -18,6 +18,7 @@ import React from 'react'
 import { TextField } from '../../../../components/Form.js'
 import { useUserNameValidator } from '../../../../components/UserForm/validators.js'
 import { useFetchAlert } from '../../../../hooks/useFetchAlert.js'
+import { useSystemInformation } from '../../../../providers/index.js'
 import styles from './ReplicateModal.module.css'
 
 const ReplicateModal = ({ user, refetchUsers, onClose }) => {
@@ -27,6 +28,9 @@ const ReplicateModal = ({ user, refetchUsers, onClose }) => {
         isInviteUser: false,
     })
     const { showSuccess, showError } = useFetchAlert()
+    const { minPasswordLength, maxPasswordLength, passwordValidationPattern } =
+        useSystemInformation()
+    const passwordRegex = new RegExp(passwordValidationPattern)
 
     const handleReplicate = async ({ username, password }) => {
         try {
@@ -79,11 +83,15 @@ const ReplicateModal = ({ user, refetchUsers, onClose }) => {
                                 type="password"
                                 placeholder={i18n.t('Password for new user')}
                                 helpText={i18n.t(
-                                    'Password should be at least 8 characters long, with at least one lowercase character, one uppercase character and one special character.'
+                                    'Password should be between {{minPasswordLength}} and {{maxPasswordLength}} characters long, with at least one lowercase character, one uppercase character, one number, and one special character.',
+                                    { minPasswordLength, maxPasswordLength }
                                 )}
                                 validate={composeValidators(
                                     hasValue,
-                                    dhis2Password
+                                    createPattern(
+                                        passwordRegex,
+                                        i18n.t('Invalid password')
+                                    )
                                 )}
                                 autoComplete="new-password"
                                 className={styles.field}
