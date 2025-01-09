@@ -1,8 +1,9 @@
 import i18n from '@dhis2/d2-i18n'
-import { composeValidators, hasValue, dhis2Password } from '@dhis2/ui'
+import { composeValidators, hasValue, createPattern } from '@dhis2/ui'
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { useSystemInformation } from '../../providers/index.js'
 import {
     FormSection,
     CheckboxField,
@@ -15,6 +16,16 @@ import { createRepeatPasswordValidator } from './validators.js'
 
 const SecuritySection = React.memo(
     ({ user, inviteUser, externalAuth, changePassword, password }) => {
+        const {
+            minPasswordLength,
+            maxPasswordLength,
+            passwordValidationPattern,
+        } = useSystemInformation()
+        const passwordRegex = new RegExp(passwordValidationPattern)
+        const passwordRegExValidator = createPattern(
+            passwordRegex,
+            i18n.t('Invalid password')
+        )
         if (inviteUser === 'INVITE_USER') {
             return null
         }
@@ -48,16 +59,17 @@ const SecuritySection = React.memo(
                                         : i18n.t('Password')
                                 }
                                 helpText={i18n.t(
-                                    'Password should be at least 8 characters long, with at least one lowercase character, one uppercase character and one special character.'
+                                    'Password should be between {{minPasswordLength}} and {{maxPasswordLength}} characters long, with at least one lowercase character, one uppercase character, one number, and one special character.',
+                                    { minPasswordLength, maxPasswordLength }
                                 )}
                                 initialValue=""
                                 autoComplete="new-password"
                                 validate={
                                     user && !changePassword
-                                        ? dhis2Password
+                                        ? passwordRegExValidator
                                         : composeValidators(
                                               hasValue,
-                                              dhis2Password
+                                              passwordRegExValidator
                                           )
                                 }
                             />

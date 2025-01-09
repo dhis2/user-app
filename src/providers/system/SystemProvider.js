@@ -10,7 +10,7 @@ const query = {
         resource: '/authorities',
     },
     systemSettings: {
-        resource: '/systemSettings/keyCanGrantOwnUserAuthorityGroups',
+        resource: '/systemSettings',
     },
 }
 
@@ -53,6 +53,11 @@ export const SystemProvider = ({ children }) => {
         usersCanAssignOwnUserRoles: Boolean(
             data.systemSettings?.keyCanGrantOwnUserAuthorityGroups
         ),
+        minPasswordLength: Number(data.systemSettings?.minPasswordLength),
+        maxPasswordLength: Number(data.systemSettings?.maxPasswordLength),
+        passwordValidationPattern:
+            data.systemSettings?.passwordValidationPattern ??
+            '^(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_])[A-Za-z\\d\\W_]{8,32}$',
     }
 
     return (
