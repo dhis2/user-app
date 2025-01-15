@@ -18,8 +18,8 @@ import {
     SingleSelectField,
     CheckboxField,
 } from '../Form.js'
-import { useUserNameValidator } from './validators.js'
 import styles from './UserForm.module.css'
+import { useUserNameValidator } from './validators.js'
 
 const hasOption = (options, value) =>
     !!options.find((option) => option.value === value)
@@ -34,9 +34,7 @@ const EmailStatusMessage = ({ emailVerified }) => {
         : i18n.t('This email has not been verified.')
 
     return (
-        <div
-          className={styles.statusMessage}
-        >
+        <div className={styles.statusMessage}>
             <span>{React.createElement(icon, { color })}</span>
             <div style={{ color }}>{message}</div>
         </div>
@@ -164,5 +162,7 @@ BasicInformationSection.propTypes = {
     user: PropTypes.object,
     userDatabaseLanguage: PropTypes.string,
 }
-
+EmailStatusMessage.propTypes = {
+    emailVerified: PropTypes.bool.isRequired,
+}
 export default BasicInformationSection
