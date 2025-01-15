@@ -10,11 +10,41 @@ import {
 import React, { useState, useEffect } from 'react'
 import { useDebounce } from 'use-debounce'
 import PageHeader from '../../components/PageHeader.js'
+import { useFeatureToggle } from '../../hooks/useFeatureToggle.js'
 import navigateTo from '../../utils/navigateTo.js'
 import Filters from './Filters.js'
 import { useFilters } from './useFilters.js'
 import styles from './UserList.module.css'
 import UserTable from './UserTable.js'
+
+const getUsersQueryFilters = ({
+    organisationUnits,
+    emailVerificationStatus,
+    displayEmailVerifiedStatus,
+}) => {
+    const organisationUnitsFilter =
+        organisationUnits.length > 0
+            ? `organisationUnits.id:in:[${organisationUnits.map(
+                  ({ id }) => id
+              )}]`
+            : undefined
+    // email verification filter is ignored if feature is not accessible
+    const emailVerificationFilter =
+        !displayEmailVerifiedStatus ||
+        !['true', 'false'].includes(emailVerificationStatus)
+            ? undefined
+            : `emailVerified:eq:${emailVerificationStatus}`
+
+    if (
+        organisationUnitsFilter === undefined &&
+        emailVerificationFilter === undefined
+    ) {
+        return undefined
+    }
+    return [organisationUnitsFilter, emailVerificationFilter]
+        .filter((f) => f)
+        .join(',')
+}
 
 const usersQuery = {
     users: {
@@ -28,12 +58,15 @@ const usersQuery = {
             selfRegistered,
             nameSortDirection,
             organisationUnits,
+            emailVerificationStatus,
+            displayEmailVerifiedStatus,
         }) => ({
             fields: [
                 'id',
                 'displayName',
                 'access',
                 'email',
+                'emailVerified',
                 'twoFactorEnabled',
                 'username',
                 'disabled',
@@ -52,12 +85,11 @@ const usersQuery = {
             inactiveMonths,
             invitationStatus,
             selfRegistered,
-            filter:
-                organisationUnits.length > 0
-                    ? `organisationUnits.id:in:[${organisationUnits.map(
-                          ({ id }) => id
-                      )}]`
-                    : undefined,
+            filter: getUsersQueryFilters({
+                organisationUnits,
+                emailVerificationStatus,
+                displayEmailVerifiedStatus,
+            }),
         }),
     },
 }
@@ -85,9 +117,12 @@ const UserList = () => {
         toggleNameSortDirection,
         organisationUnits,
         setOrganisationUnits,
+        emailVerificationStatus,
+        setEmailVerificationStatus,
         clearFilters,
     } = useFilters()
     const [debouncedQuery] = useDebounce(query, 375)
+    const { displayEmailVerifiedStatus } = useFeatureToggle()
     const refetchUsers = () => {
         setPrevUsers(users)
         refetch({
@@ -99,6 +134,8 @@ const UserList = () => {
             selfRegistered,
             nameSortDirection,
             organisationUnits,
+            emailVerificationStatus,
+            displayEmailVerifiedStatus,
         })
     }
 
@@ -113,6 +150,8 @@ const UserList = () => {
         selfRegistered,
         nameSortDirection,
         JSON.stringify(organisationUnits),
+        emailVerificationStatus,
+        displayEmailVerifiedStatus,
     ])
 
     return (
@@ -129,7 +168,10 @@ const UserList = () => {
                 onSelfRegisteredChange={setSelfRegistered}
                 organisationUnits={organisationUnits}
                 onOrganisationUnitsChange={setOrganisationUnits}
+                emailVerificationStatus={emailVerificationStatus}
+                onEmailVerificationStatusChange={setEmailVerificationStatus}
                 onClear={clearFilters}
+                displayEmailVerifiedStatus={displayEmailVerifiedStatus}
             />
             <div className={styles.container}>
                 <DataTableToolbar>
@@ -148,6 +190,7 @@ const UserList = () => {
                     refetch={refetchUsers}
                     nameSortDirection={nameSortDirection}
                     onNameSortDirectionToggle={toggleNameSortDirection}
+                    displayEmailVerifiedStatus={displayEmailVerifiedStatus}
                 />
                 {(loading
                     ? prevUsers?.users.length > 0

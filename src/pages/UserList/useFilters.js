@@ -29,6 +29,10 @@ export const useFilters = () => {
         'invitationStatus',
         StringParam
     )
+    const [emailVerificationStatus, setEmailVerificationStatus] = useQueryParam(
+        'emailVerification',
+        StringParam
+    )
     const [selfRegistered, setSelfRegistered] = useQueryParam(
         'selfRegistered',
         withDefault(BooleanParam, false)
@@ -47,6 +51,8 @@ export const useFilters = () => {
         setOrganisationUnits: withClearPager(setOrganisationUnits),
         inactiveMonths,
         setInactiveMonths: withClearPager(setInactiveMonths),
+        emailVerificationStatus,
+        setEmailVerificationStatus: withClearPager(setEmailVerificationStatus),
         invitationStatus,
         setInvitationStatus: withClearPager(setInvitationStatus),
         selfRegistered,
@@ -59,6 +65,7 @@ export const useFilters = () => {
             setOrganisationUnits([])
             setInactiveMonths()
             setInvitationStatus()
+            setEmailVerificationStatus()
         },
     }
 }
