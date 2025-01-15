@@ -1,8 +1,16 @@
 import i18n from '@dhis2/d2-i18n'
-import { composeValidators, hasValue, email } from '@dhis2/ui'
+import {
+    composeValidators,
+    hasValue,
+    email,
+    IconCheckmarkCircle16,
+    colors,
+    IconInfo16,
+} from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { useForm } from 'react-final-form'
+import { useFeatureToggle } from '../../hooks/useFeatureToggle.js'
 import {
     FormSection,
     TextField,
@@ -11,11 +19,29 @@ import {
     CheckboxField,
 } from '../Form.js'
 import { useUserNameValidator } from './validators.js'
+import styles from './UserForm.module.css'
 
 const hasOption = (options, value) =>
     !!options.find((option) => option.value === value)
 
 const INVITE_USER = 'INVITE_USER'
+
+const EmailStatusMessage = ({ emailVerified }) => {
+    const icon = emailVerified ? IconCheckmarkCircle16 : IconInfo16
+    const color = emailVerified ? colors.green600 : colors.red600
+    const message = emailVerified
+        ? i18n.t('This email has been verified.')
+        : i18n.t('This email has not been verified.')
+
+    return (
+        <div
+          className={styles.statusMessage}
+        >
+            <span>{React.createElement(icon, { color })}</span>
+            <div style={{ color }}>{message}</div>
+        </div>
+    )
+}
 
 const BasicInformationSection = React.memo(
     ({
@@ -27,6 +53,7 @@ const BasicInformationSection = React.memo(
         databaseLanguageOptions,
         currentUserId,
     }) => {
+        const { displayEmailVerifiedStatus } = useFeatureToggle()
         const { resetFieldState } = useForm()
         const validateUserName = useUserNameValidator({
             user,
@@ -72,6 +99,9 @@ const BasicInformationSection = React.memo(
                             : email
                     }
                 />
+                {displayEmailVerifiedStatus && user && (
+                    <EmailStatusMessage emailVerified={user?.emailVerified} />
+                )}
                 <TextField
                     required
                     name="firstName"
