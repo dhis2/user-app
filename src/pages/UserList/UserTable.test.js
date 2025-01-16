@@ -30,6 +30,7 @@ describe('<UserTable>', () => {
                 refetch={() => {}}
                 nameSortDirection="asc"
                 onNameSortDirectionToggle={() => {}}
+                displayEmailVerifiedStatus={false}
             />
         )
 
@@ -47,6 +48,7 @@ describe('<UserTable>', () => {
                 refetch={() => {}}
                 nameSortDirection="asc"
                 onNameSortDirectionToggle={() => {}}
+                displayEmailVerifiedStatus={false}
             />
         )
 
@@ -67,6 +69,7 @@ describe('<UserTable>', () => {
                 refetch={() => {}}
                 nameSortDirection="asc"
                 onNameSortDirectionToggle={() => {}}
+                displayEmailVerifiedStatus={false}
             />
         )
 
@@ -108,6 +111,7 @@ describe('<UserTable>', () => {
                 refetch={() => {}}
                 nameSortDirection="asc"
                 onNameSortDirectionToggle={() => {}}
+                displayEmailVerifiedStatus={false}
             />
         )
 
@@ -200,6 +204,7 @@ describe('<UserTable>', () => {
                 refetch={() => {}}
                 nameSortDirection="asc"
                 onNameSortDirectionToggle={toggleNameSortDirection}
+                displayEmailVerifiedStatus={false}
             />
         )
 
@@ -209,5 +214,74 @@ describe('<UserTable>', () => {
             ).getByRole('button')
         )
         expect(toggleNameSortDirection).toHaveBeenCalled()
+    })
+
+    it('renders email verification information if displayEmailVerifiedStatus is true ', () => {
+        const users = [
+            {
+                id: 'user-1',
+                displayName: 'User One',
+                access: {
+                    read: true,
+                    update: true,
+                },
+                username: 'user1',
+                lastLogin: '2021-10-15T12:34:56Z',
+                disabled: false,
+                emailVerified: true,
+            },
+            {
+                id: 'user-2',
+                displayName: 'Another User',
+                access: {
+                    read: true,
+                    update: true,
+                },
+                username: 'user2',
+                lastLogin: '2021-09-14T12:34:56Z',
+                disabled: true,
+                emailVerified: false,
+            },
+        ]
+
+        render(
+            <UserTable
+                loading={false}
+                users={users}
+                refetch={() => {}}
+                nameSortDirection="asc"
+                onNameSortDirectionToggle={() => {}}
+                displayEmailVerifiedStatus={true}
+            />
+        )
+
+        expect(screen.getAllByRole('columnheader')).toHaveLength(6)
+        expect(
+            screen.getByRole('columnheader', { name: 'Email verification' })
+        ).toBeInTheDocument()
+
+        const rows = within(
+            screen.getByTestId('dhis2-uicore-tablebody')
+        ).getAllByRole('row')
+        expect(rows).toHaveLength(users.length)
+        users.forEach((user, index) => {
+            const { emailVerified } = user
+
+            const row = rows[index]
+            expect(within(row).getAllByRole('cell')).toHaveLength(6)
+            if (emailVerified) {
+                expect(
+                    within(row).getByRole('cell', {
+                        name: 'Verified',
+                    })
+                ).toBeInTheDocument()
+            } else {
+                expect(
+                    within(row).queryByRole('cell', {
+                        name: 'Not verified',
+                    })
+                ).toBeInTheDocument()
+            }
+        })
     })
 })

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-12-18T07:54:11.061Z\n"
-"PO-Revision-Date: 2024-12-18T07:54:11.062Z\n"
+"POT-Creation-Date: 2025-01-15T10:47:12.485Z\n"
+"PO-Revision-Date: 2025-01-15T10:47:12.486Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -973,6 +973,18 @@ msgstr "{{months}} months"
 msgid "Time inactive"
 msgstr "Time inactive"
 
+msgid "Email verification"
+msgstr "Email verification"
+
+msgid "All"
+msgstr "All"
+
+msgid "Email verified"
+msgstr "Email verified"
+
+msgid "Email not verified"
+msgstr "Email not verified"
+
 msgid "Invitation"
 msgstr "Invitation"
 
@@ -1005,6 +1017,12 @@ msgstr "Last login"
 
 msgid "Status"
 msgstr "Status"
+
+msgid "Verified"
+msgstr "Verified"
+
+msgid "Not verified"
+msgstr "Not verified"
 
 msgid "Disabled"
 msgstr "Disabled"

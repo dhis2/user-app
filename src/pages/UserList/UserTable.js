@@ -28,9 +28,11 @@ const UserTable = ({
     refetch,
     nameSortDirection,
     onNameSortDirectionToggle,
+    displayEmailVerifiedStatus,
 }) => {
     const { fromServerDate } = useTimeZoneConversion()
     const { setReferrer } = useReferrerInfo()
+
     if (loading && !users) {
         return (
             <DataTableInfoWrapper columns={5}>
@@ -89,6 +91,11 @@ const UserTable = ({
                     <DataTableColumnHeader>
                         {i18n.t('Last login')}
                     </DataTableColumnHeader>
+                    {displayEmailVerifiedStatus && (
+                        <DataTableColumnHeader>
+                            {i18n.t('Email verification')}
+                        </DataTableColumnHeader>
+                    )}
                     <DataTableColumnHeader>
                         {i18n.t('Status')}
                     </DataTableColumnHeader>
@@ -106,6 +113,7 @@ const UserTable = ({
                         username,
                         lastLogin,
                         disabled,
+                        emailVerified,
                     } = user
                     const lastLoginClient = fromServerDate(lastLogin)
 
@@ -133,6 +141,14 @@ const UserTable = ({
                                     </span>
                                 )}
                             </DataTableCell>
+                            {displayEmailVerifiedStatus && (
+                                <DataTableCell onClick={handleClick}>
+                                    {emailVerified
+                                        ? i18n.t('Verified')
+                                        : i18n.t('Not verified')}
+                                </DataTableCell>
+                            )}
+
                             <DataTableCell onClick={handleClick}>
                                 {disabled
                                     ? i18n.t('Disabled')
@@ -153,6 +169,7 @@ const UserTable = ({
 }
 
 UserTable.propTypes = {
+    displayEmailVerifiedStatus: PropTypes.bool.isRequired,
     nameSortDirection: PropTypes.oneOf(['asc', 'desc']).isRequired,
     refetch: PropTypes.func.isRequired,
     onNameSortDirectionToggle: PropTypes.func.isRequired,

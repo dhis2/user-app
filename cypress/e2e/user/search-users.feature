@@ -1,11 +1,10 @@
 Feature: The user list can be searched
 
-    # SKIPPED because of search problems (7 Jan 2025)
-    # Scenario: The user list gets filtered by name
-    #     Given some users exist
-    #     And the user-manager navigated to the user list view
-    #     When the user-manager searches the list by entering a name
-    #     Then only the users whose username or display name contains the search term should be displayed
+    Scenario: The user list gets filtered by name
+        Given some users exist
+        And the user-manager navigated to the user list view
+        When the user-manager searches the list by entering a name
+        Then only the users whose username or display name contains the search term should be displayed
 
     # Scenario: The user list gets filtered by organisation unit
     #     Given some users exist
@@ -25,14 +24,13 @@ Feature: The user list can be searched
     #     When the user-manager chooses to view only self-registered users
     #     Then only the users who have registered themselves should be displayed
 
-    # SKIPPED because of search problems (7 Jan 2025)
-    # Scenario: The user-manager returns to the search results after opening the edit form
-    #     Given some users exist
-    #     And the user-manager navigated to the user list view
-    #     And the user-manager filtered the list
-    #     When the user-manager edits one of the displayed users
-    #     And returns to the list view without saving
-    #     Then the previously applied search should still be applied
+    Scenario: The user-manager returns to the search results after opening the edit form
+        Given some users exist
+        And the user-manager navigated to the user list view
+        And the user-manager filtered the list
+        When the user-manager edits one of the displayed users
+        And returns to the list view without saving
+        Then the previously applied search should still be applied
 
     # Scenario: The user-manager returns to the search results after editing a user
     #     Given some users exist
