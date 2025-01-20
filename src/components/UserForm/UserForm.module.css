@@ -11,3 +11,11 @@
     max-width: 500px;
     margin-bottom: var(--spacers-dp16);
 }
+
+.statusMessage {
+    display: flex;
+    margin-block: 8px;
+    gap: 5px;
+    align-items: center;
+    font-size: 13px;
+}
