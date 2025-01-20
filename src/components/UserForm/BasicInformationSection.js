@@ -1,11 +1,10 @@
+import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { composeValidators, hasValue, email } from '@dhis2/ui'
-import { useConfig } from '@dhis2/app-runtime'
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { useForm } from 'react-final-form'
 import { useFeatureToggle } from '../../hooks/useFeatureToggle.js'
-import EmailStatusMessage from './EmailStatusMessage.js'
 import {
     FormSection,
     TextField,
@@ -13,6 +12,7 @@ import {
     SingleSelectField,
     CheckboxField,
 } from '../Form.js'
+import EmailStatusMessage from './EmailStatusMessage.js'
 import { useUserNameValidator } from './validators.js'
 
 const hasOption = (options, value) =>
@@ -38,6 +38,7 @@ const BasicInformationSection = React.memo(
             user,
             isInviteUser: inviteUser === INVITE_USER,
         })
+
         const userInterfaceLanguageInitialValue = hasOption(
             interfaceLanguageOptions,
             userInterfaceLanguage
@@ -55,12 +56,6 @@ const BasicInformationSection = React.memo(
             resetFieldState('username')
             resetFieldState('email')
         }, [inviteUser, resetFieldState])
-
-        console.log(
-            displayEmailVerifiedStatus,
-            user,
-            'displayEmailVerifiedStatus'
-        )
 
         return (
             <FormSection title={i18n.t('Basic information')}>
@@ -84,8 +79,10 @@ const BasicInformationSection = React.memo(
                             : email
                     }
                 />
-                {!displayEmailVerifiedStatus && user && (
+
+                {displayEmailVerifiedStatus && user && (
                     <EmailStatusMessage
+                        email={user?.email}
                         emailVerified={user?.emailVerified}
                         enforceVerifiedEmail={enforceVerifiedEmail}
                     />
