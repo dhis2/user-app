@@ -57,7 +57,9 @@ export const SystemProvider = ({ children }) => {
         maxPasswordLength: Number(data.systemSettings?.maxPasswordLength),
         passwordValidationPattern:
             data.systemSettings?.passwordValidationPattern ??
-            '^(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_])[A-Za-z\\d\\W_]{8,32}$',
+            `^(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_])[A-Za-z\\d\\W_]{${
+                data.systemSettings?.minPasswordLength ?? 8
+            },${data.systemSettings?.maxPasswordLength ?? 34}}$`,
     }
 
     return (

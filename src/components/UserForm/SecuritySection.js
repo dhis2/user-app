@@ -21,6 +21,7 @@ const SecuritySection = React.memo(
             maxPasswordLength,
             passwordValidationPattern,
         } = useSystemInformation()
+        console.log('passwordValidationPattern', passwordValidationPattern)
         const passwordRegex = new RegExp(passwordValidationPattern)
         const passwordRegExValidator = createPattern(
             passwordRegex,
