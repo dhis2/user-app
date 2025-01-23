@@ -1,3 +1,10 @@
+# [100.4.0](https://github.com/dhis2/user-app/compare/v100.3.0...v100.4.0) (2025-01-16)
+
+
+### Features
+
+* add email verification in user list [DHIS2-18613] ([#1520](https://github.com/dhis2/user-app/issues/1520)) ([d5cf1a3](https://github.com/dhis2/user-app/commit/d5cf1a37738286379fc8f74bc7cf36fb410e0808))
+
 # [100.3.0](https://github.com/dhis2/user-app/compare/v100.2.10...v100.3.0) (2025-01-07)
 
 

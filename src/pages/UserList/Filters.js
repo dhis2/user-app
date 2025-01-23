@@ -60,7 +60,10 @@ const Filters = ({
     onSelfRegisteredChange,
     organisationUnits,
     onOrganisationUnitsChange,
+    emailVerificationStatus,
+    onEmailVerificationStatusChange,
     onClear,
+    displayEmailVerifiedStatus,
 }) => (
     <div className={styles.container}>
         <InputField
@@ -79,6 +82,27 @@ const Filters = ({
             inactiveMonths={inactiveMonths}
             onInactiveMonthsChange={onInactiveMonthsChange}
         />
+        {displayEmailVerifiedStatus && (
+            <SingleSelectField
+                prefix={i18n.t('Email verification')}
+                selected={emailVerificationStatus}
+                onChange={({ selected }) =>
+                    onEmailVerificationStatusChange(selected)
+                }
+                className={styles.input}
+                dense
+            >
+                <SingleSelectOption label={i18n.t('All')} value="all" />
+                <SingleSelectOption
+                    label={i18n.t('Email verified')}
+                    value="true"
+                />
+                <SingleSelectOption
+                    label={i18n.t('Email not verified')}
+                    value="false"
+                />
+            </SingleSelectField>
+        )}
         <SingleSelectField
             prefix={i18n.t('Invitation')}
             selected={invitationStatus}
@@ -106,7 +130,8 @@ const Filters = ({
                     !inactiveMonths &&
                     !invitationStatus &&
                     !selfRegistered &&
-                    organisationUnits.length === 0,
+                    organisationUnits.length === 0 &&
+                    !emailVerificationStatus,
             })}
             small
             onClick={onClear}
@@ -117,13 +142,16 @@ const Filters = ({
 )
 
 Filters.propTypes = {
+    displayEmailVerifiedStatus: PropTypes.bool.isRequired,
     organisationUnits: PropTypes.array.isRequired,
     onClear: PropTypes.func.isRequired,
+    onEmailVerificationStatusChange: PropTypes.func.isRequired,
     onInactiveMonthsChange: PropTypes.func.isRequired,
     onInvitationStatusChange: PropTypes.func.isRequired,
     onOrganisationUnitsChange: PropTypes.func.isRequired,
     onQueryChange: PropTypes.func.isRequired,
     onSelfRegisteredChange: PropTypes.func.isRequired,
+    emailVerificationStatus: PropTypes.string,
     inactiveMonths: PropTypes.string,
     invitationStatus: PropTypes.string,
     query: PropTypes.string,

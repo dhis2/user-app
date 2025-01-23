@@ -978,6 +978,18 @@ msgstr "{{months}} months"
 msgid "Time inactive"
 msgstr "Time inactive"
 
+msgid "Email verification"
+msgstr "Email verification"
+
+msgid "All"
+msgstr "All"
+
+msgid "Email verified"
+msgstr "Email verified"
+
+msgid "Email not verified"
+msgstr "Email not verified"
+
 msgid "Invitation"
 msgstr "Invitation"
 
@@ -1010,6 +1022,12 @@ msgstr "Last login"
 
 msgid "Status"
 msgstr "Status"
+
+msgid "Verified"
+msgstr "Verified"
+
+msgid "Not verified"
+msgstr "Not verified"
 
 msgid "Disabled"
 msgstr "Disabled"
