@@ -53,8 +53,8 @@ export const SystemProvider = ({ children }) => {
         usersCanAssignOwnUserRoles: Boolean(
             data.systemSettings?.keyCanGrantOwnUserAuthorityGroups
         ),
-        minPasswordLength: Number(data.systemSettings?.minPasswordLength),
-        maxPasswordLength: Number(data.systemSettings?.maxPasswordLength),
+        minPasswordLength: Number(data.systemSettings?.minPasswordLength ?? 8),
+        maxPasswordLength: Number(data.systemSettings?.maxPasswordLength ?? 34),
         passwordValidationPattern:
             data.systemSettings?.passwordValidationPattern ??
             `^(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_])[A-Za-z\\d\\W_]{${
