@@ -184,4 +184,60 @@ describe('SecuritySection', () => {
         // expect invalid password warning to appear
         expect(invalidPasswordValidationError).not.toBeInTheDocument()
     })
+
+    it('uses fall back min/max lengths in validation if invalid values are provided without passwordValidationPattern', async () => {
+        useDataQuery.mockReturnValue({
+            data: {
+                systemSettings: {
+                    minPasswordLength: 2.3,
+                    maxPasswordLength: undefined,
+                },
+            },
+        })
+        render(
+            <RenderWrapper>
+                <SecuritySection
+                    changePassword={true}
+                    externalAuth={false}
+                    inviteUser={'SET_PASSWORD'}
+                    password={undefined}
+                    user={{}}
+                />
+            </RenderWrapper>
+        )
+
+        // we display an invalid value if one was provided in the warning
+        const passwordHelpText = screen.getByText(
+            'Password should be between 2.3 and 34 characters long, with at least one lowercase character, one uppercase character, one number, and one special character.'
+        )
+        expect(passwordHelpText).toBeInTheDocument()
+
+        const passwordInputNode = screen.getByLabelText('New password', {
+            selector: 'input',
+        })
+        const repeatPasswordInputNode = screen.getByLabelText(
+            'Repeat new password',
+            { selector: 'input' }
+        )
+
+        // enter invalid password (but the length check will actually be based on default min length of 8)
+        userEvent.type(passwordInputNode, 'abcA!1')
+
+        // click away
+        userEvent.click(repeatPasswordInputNode)
+
+        // expect invalid password warning to appear
+        const invalidPasswordValidationError =
+            screen.queryByText('Invalid password')
+        expect(invalidPasswordValidationError).toBeInTheDocument()
+
+        // enter valid password
+        userEvent.type(passwordInputNode, 'abcA!1abc')
+
+        // click away
+        userEvent.click(repeatPasswordInputNode)
+
+        // expect invalid password warning to appear
+        expect(invalidPasswordValidationError).not.toBeInTheDocument()
+    })
 })
