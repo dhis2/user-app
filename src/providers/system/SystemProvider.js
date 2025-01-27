@@ -7,10 +7,13 @@ import { SystemContext } from './SystemContext.js'
 
 const query = {
     systemAuthorities: {
-        resource: '/authorities',
+        resource: 'authorities',
     },
     systemSettings: {
-        resource: '/systemSettings',
+        resource: 'systemSettings',
+    },
+    loginConfig: {
+        resource: 'loginConfig',
     },
 }
 
@@ -56,7 +59,7 @@ export const SystemProvider = ({ children }) => {
         minPasswordLength: data.systemSettings?.minPasswordLength ?? 8,
         maxPasswordLength: data.systemSettings?.maxPasswordLength ?? 34,
         passwordValidationPattern:
-            data.systemSettings?.passwordValidationPattern ??
+            data?.loginConfig?.loginConfig?.passwordValidationPattern ??
             `^(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_])[A-Za-z\\d\\W_]{${
                 Number.isInteger(Number(data.systemSettings?.minPasswordLength))
                     ? Number(data.systemSettings?.minPasswordLength)
