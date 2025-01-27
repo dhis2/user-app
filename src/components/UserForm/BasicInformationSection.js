@@ -28,7 +28,7 @@ const hasOption = (options, value) =>
 const INVITE_USER = 'INVITE_USER'
 
 const query = {
-    enforceVerifiedEmail: {
+    data: {
         resource: '/systemSettings/enforceVerifiedEmail',
     },
 }
@@ -43,9 +43,10 @@ const BasicInformationSection = React.memo(
         databaseLanguageOptions,
         currentUserId,
     }) => {
-        const { displayEmailVerifiedStatus } = useFeatureToggle()
+        const { displayEmailVerifiedStatus, error } = useFeatureToggle()
         const { data: enforceVerifiedEmail, loading: enforceLoading } =
             useDataQuery(query)
+        console.log(error, 'error')
         const { resetFieldState } = useForm()
         const validateUserName = useUserNameValidator({
             user,
@@ -101,8 +102,11 @@ const BasicInformationSection = React.memo(
 
                 {displayEmailVerifiedStatus && user && (
                     <EmailStatusMessage
-                        emailVerified={user?.emailVerified}
-                        enforceVerifiedEmail={enforceVerifiedEmail}
+                        emailVerified={user?.emailVerified ?? false}
+                        enforceVerifiedEmail={
+                            enforceVerifiedEmail?.data?.enforceVerifiedEmail ??
+                            false
+                        }
                     />
                 )}
                 <TextField
