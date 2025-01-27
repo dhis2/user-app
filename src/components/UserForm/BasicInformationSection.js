@@ -1,6 +1,13 @@
-import { useConfig } from '@dhis2/app-runtime'
+import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { composeValidators, hasValue, email } from '@dhis2/ui'
+import {
+    composeValidators,
+    hasValue,
+    email,
+    Layer,
+    CenteredContent,
+    CircularLoader,
+} from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { useForm } from 'react-final-form'
@@ -20,6 +27,12 @@ const hasOption = (options, value) =>
 
 const INVITE_USER = 'INVITE_USER'
 
+const query = {
+    enforceVerifiedEmail: {
+        resource: '/systemSettings/enforceVerifiedEmail',
+    },
+}
+
 const BasicInformationSection = React.memo(
     ({
         user,
@@ -31,14 +44,13 @@ const BasicInformationSection = React.memo(
         currentUserId,
     }) => {
         const { displayEmailVerifiedStatus } = useFeatureToggle()
-        const enforceVerifiedEmail =
-            useConfig()?.systemInfo?.enforceVerifiedEmail
+        const { data: enforceVerifiedEmail, loading: enforceLoading } =
+            useDataQuery(query)
         const { resetFieldState } = useForm()
         const validateUserName = useUserNameValidator({
             user,
             isInviteUser: inviteUser === INVITE_USER,
         })
-
         const userInterfaceLanguageInitialValue = hasOption(
             interfaceLanguageOptions,
             userInterfaceLanguage
@@ -59,6 +71,13 @@ const BasicInformationSection = React.memo(
 
         return (
             <FormSection title={i18n.t('Basic information')}>
+                {enforceLoading && (
+                    <Layer translucent>
+                        <CenteredContent>
+                            <CircularLoader />
+                        </CenteredContent>
+                    </Layer>
+                )}
                 <TextField
                     required={inviteUser !== INVITE_USER}
                     name="username"
@@ -82,7 +101,6 @@ const BasicInformationSection = React.memo(
 
                 {displayEmailVerifiedStatus && user && (
                     <EmailStatusMessage
-                        email={user?.email}
                         emailVerified={user?.emailVerified}
                         enforceVerifiedEmail={enforceVerifiedEmail}
                     />

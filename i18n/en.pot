@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-01-20T12:44:13.377Z\n"
-"PO-Revision-Date: 2025-01-20T12:44:13.377Z\n"
+"POT-Creation-Date: 2025-01-27T15:22:08.300Z\n"
+"PO-Revision-Date: 2025-01-27T15:22:08.300Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -536,14 +536,17 @@ msgstr "Telegram"
 msgid "Twitter"
 msgstr "Twitter"
 
-msgid "This email has been verified."
-msgstr "This email has been verified."
+msgid "This user email has been verified."
+msgstr "This user email has been verified."
 
-msgid "This email has not been verified."
-msgstr "This email has not been verified."
+msgid "This user does not have a verified email."
+msgstr "This user does not have a verified email."
 
 msgid "This user does not have a verified email"
 msgstr "This user does not have a verified email"
+
+msgid "This user email has been verified"
+msgstr "This user email has been verified"
 
 msgid "Invite user"
 msgstr "Invite user"

@@ -4,27 +4,32 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './UserForm.module.css'
 
-const EmailStatusMessage = ({ email, emailVerified, enforceVerifiedEmail }) => {
+const EmailStatusMessage = ({ emailVerified, enforceVerifiedEmail }) => {
     let icon
     let color
     let message
 
     if (enforceVerifiedEmail) {
-        if (email && emailVerified) {
+        if (emailVerified) {
             color = colors.green600
             icon = IconCheckmarkCircle16
-            message = i18n.t('This email has been verified.')
+            message = i18n.t('This user email has been verified.')
         }
-        if (email && !emailVerified) {
+        if (!emailVerified) {
             color = colors.red600
             icon = IconWarning16
-            message = i18n.t('This email has not been verified.')
+            message = i18n.t('This user does not have a verified email.')
         }
     } else {
-        if (!email || !emailVerified) {
+        if (!emailVerified) {
             color = colors.default
             icon = IconWarning16
             message = i18n.t('This user does not have a verified email')
+        }
+        if (emailVerified) {
+            color = colors.default
+            icon = IconWarning16
+            message = i18n.t('This user email has been verified')
         }
     }
 
@@ -39,7 +44,6 @@ const EmailStatusMessage = ({ email, emailVerified, enforceVerifiedEmail }) => {
 EmailStatusMessage.propTypes = {
     emailVerified: PropTypes.bool.isRequired,
     enforceVerifiedEmail: PropTypes.bool.isRequired,
-    email: PropTypes.string,
 }
 
 export default EmailStatusMessage
