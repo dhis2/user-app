@@ -4,9 +4,6 @@ import {
     composeValidators,
     hasValue,
     email,
-    Layer,
-    CenteredContent,
-    CircularLoader,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
@@ -43,10 +40,9 @@ const BasicInformationSection = React.memo(
         databaseLanguageOptions,
         currentUserId,
     }) => {
-        const { displayEmailVerifiedStatus, error } = useFeatureToggle()
-        const { data: enforceVerifiedEmail, loading: enforceLoading } =
+        const { displayEmailVerifiedStatus } = useFeatureToggle()
+        const { data: enforceVerifiedEmail } =
             useDataQuery(query)
-        console.log(error, 'error')
         const { resetFieldState } = useForm()
         const validateUserName = useUserNameValidator({
             user,
@@ -72,13 +68,6 @@ const BasicInformationSection = React.memo(
 
         return (
             <FormSection title={i18n.t('Basic information')}>
-                {enforceLoading && (
-                    <Layer translucent>
-                        <CenteredContent>
-                            <CircularLoader />
-                        </CenteredContent>
-                    </Layer>
-                )}
                 <TextField
                     required={inviteUser !== INVITE_USER}
                     name="username"
