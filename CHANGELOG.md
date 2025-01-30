@@ -1,3 +1,22 @@
+# [100.5.0](https://github.com/dhis2/user-app/compare/v100.4.0...v100.5.0) (2025-01-30)
+
+
+### Bug Fixes
+
+* get enforce verification ([a1cb686](https://github.com/dhis2/user-app/commit/a1cb686dd1fecb8ce883dd299fc8d546f85d71f6))
+* run yarn format ([be1752a](https://github.com/dhis2/user-app/commit/be1752a129fd0686bad8dcf00ff906a191dcafd6))
+* update v42 fixtures ([3c5e07f](https://github.com/dhis2/user-app/commit/3c5e07fdd5458fea8d791817a4c6c128de56e4f9))
+
+
+### Features
+
+* add email status message component ([487a8f2](https://github.com/dhis2/user-app/commit/487a8f24bfc9dab610d98fefef5ad03a2029a4ba))
+* add email verification in user list [DHIS2-18613] ([a52cab0](https://github.com/dhis2/user-app/commit/a52cab02fb8ff8b463896477f10a67d2bc06db48))
+* fetch the enforce verified email ([00807cb](https://github.com/dhis2/user-app/commit/00807cb5793cee745321522549e94114d81f925d))
+* show user verified status ([0cc7ae3](https://github.com/dhis2/user-app/commit/0cc7ae356a4a3e4db2a50c01794bee25365abb24))
+* show user verified status ([585a675](https://github.com/dhis2/user-app/commit/585a675155680857a521f960ab3986c7c1718974))
+* update cypress fixtures ([88770a8](https://github.com/dhis2/user-app/commit/88770a8b0055ee06c172cccc741b2ecd391b6c41))
+
 # [100.4.0](https://github.com/dhis2/user-app/compare/v100.3.0...v100.4.0) (2025-01-16)
 
 

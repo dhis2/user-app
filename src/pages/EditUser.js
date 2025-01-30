@@ -21,6 +21,7 @@ const userQuery = {
                 'teiSearchOrganisationUnits[id,displayName,path]',
                 'dataViewMaxOrganisationUnitLevel',
                 'id',
+                'emailVerified',
                 'username',
                 'accountExpiry',
                 'lastLogin',
