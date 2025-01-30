@@ -1,8 +1,10 @@
+import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { composeValidators, hasValue, email } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { useForm } from 'react-final-form'
+import { useFeatureToggle } from '../../hooks/useFeatureToggle.js'
 import {
     FormSection,
     TextField,
@@ -10,12 +12,19 @@ import {
     SingleSelectField,
     CheckboxField,
 } from '../Form.js'
+import EmailStatusMessage from './EmailStatusMessage.js'
 import { useUserNameValidator } from './validators.js'
 
 const hasOption = (options, value) =>
     !!options.find((option) => option.value === value)
 
 const INVITE_USER = 'INVITE_USER'
+
+const query = {
+    data: {
+        resource: '/systemSettings/enforceVerifiedEmail',
+    },
+}
 
 const BasicInformationSection = React.memo(
     ({
@@ -27,6 +36,8 @@ const BasicInformationSection = React.memo(
         databaseLanguageOptions,
         currentUserId,
     }) => {
+        const { displayEmailVerifiedStatus } = useFeatureToggle()
+        const { data: enforceVerifiedEmail } = useDataQuery(query)
         const { resetFieldState } = useForm()
         const validateUserName = useUserNameValidator({
             user,
@@ -72,6 +83,16 @@ const BasicInformationSection = React.memo(
                             : email
                     }
                 />
+
+                {displayEmailVerifiedStatus && user && (
+                    <EmailStatusMessage
+                        emailVerified={user?.emailVerified ?? false}
+                        enforceVerifiedEmail={
+                            enforceVerifiedEmail?.data?.enforceVerifiedEmail ??
+                            false
+                        }
+                    />
+                )}
                 <TextField
                     required
                     name="firstName"
