@@ -16,12 +16,10 @@ import { createRepeatPasswordValidator } from './validators.js'
 
 const SecuritySection = React.memo(
     ({ user, inviteUser, externalAuth, changePassword, password }) => {
-        const {
-            minPasswordLength,
-            maxPasswordLength,
-            passwordValidationPattern,
-        } = useSystemInformation()
-        const passwordRegex = new RegExp(passwordValidationPattern)
+        const { minPasswordLength, maxPasswordLength } = useSystemInformation()
+        const passwordRegex = new RegExp(
+            `^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[\\W_])[A-Za-z\\d\\W_]{${minPasswordLength},${maxPasswordLength}}$`
+        )
         const passwordRegExValidator = createPattern(
             passwordRegex,
             i18n.t('Invalid password')

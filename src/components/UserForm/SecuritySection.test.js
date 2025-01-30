@@ -55,87 +55,102 @@ describe('SecuritySection', () => {
         expect(passwordHelpText).toBeInTheDocument()
     })
 
-    it('warns if inputted password fails validation against system passwordValidationPattern', async () => {
-        useDataQuery.mockReturnValue({
-            data: {
-                systemSettings: {
-                    minPasswordLength: 20,
-                    maxPasswordLength: 30,
-                    passwordValidationPattern: '^cat$',
+    it.each([
+        ['A1!abcdef', 10, 30, 'is too short'],
+        ['A1abcdefghij', 10, 30, 'does not have symbol'],
+        ['A!abcdefghij', 10, 30, 'does not have number'],
+        ['1!abcdefghij', 10, 30, 'does not have uppercase'],
+        ['A1!ABCDEFGHIJKLM', 10, 30, 'does not have lowercase'],
+        ['A1!abcdefgi', 4, 8, 'is too long'],
+    ])(
+        'shows invalid passport for %s with minPasswordLength %s and maxPasswordLength %s because password %s',
+        async (invalidPassword, minPasswordLength, maxPasswordLength) => {
+            useDataQuery.mockReturnValue({
+                data: {
+                    systemSettings: {
+                        minPasswordLength,
+                        maxPasswordLength,
+                    },
                 },
-            },
-        })
-        render(
-            <RenderWrapper>
-                <SecuritySection
-                    changePassword={true}
-                    externalAuth={false}
-                    inviteUser={'SET_PASSWORD'}
-                    password={undefined}
-                    user={{}}
-                />
-            </RenderWrapper>
-        )
-        const passwordInputNode = screen.getByLabelText('New password', {
-            selector: 'input',
-        })
-        const repeatPasswordInputNode = screen.getByLabelText(
-            'Repeat new password',
-            { selector: 'input' }
-        )
+            })
+            render(
+                <RenderWrapper>
+                    <SecuritySection
+                        changePassword={true}
+                        externalAuth={false}
+                        inviteUser={'SET_PASSWORD'}
+                        password={undefined}
+                        user={{}}
+                    />
+                </RenderWrapper>
+            )
+            const passwordInputNode = screen.getByLabelText('New password', {
+                selector: 'input',
+            })
+            const repeatPasswordInputNode = screen.getByLabelText(
+                'Repeat new password',
+                { selector: 'input' }
+            )
 
-        // enter invalid password
-        userEvent.type(passwordInputNode, 'dog')
+            // enter invalid password
+            await userEvent.type(passwordInputNode, invalidPassword)
 
-        // click away
-        userEvent.click(repeatPasswordInputNode)
+            // click away
+            await userEvent.click(repeatPasswordInputNode)
 
-        // expect invalid password warning to appear
-        const invalidPasswordValidationError =
-            screen.getByText('Invalid password')
-        expect(invalidPasswordValidationError).toBeInTheDocument()
-    })
+            // expect invalid password warning to appear
+            const invalidPasswordValidationError =
+                screen.getByText('Invalid password')
+            expect(invalidPasswordValidationError).toBeInTheDocument()
+        }
+    )
 
-    it('passes if input password satisfies system passwordValidationPattern', async () => {
-        useDataQuery.mockReturnValue({
-            data: {
-                systemSettings: {
-                    minPasswordLength: 20,
-                    maxPasswordLength: 30,
-                    passwordValidationPattern: '^cat$',
+    it.each([
+        ['A1!abcdefghijk', 10, 30],
+        ['A1!abc', 5, 10],
+        ['abcdefghijabcdefghij4#B', 20, 25],
+    ])(
+        'passes validation for password %s with minPasswordLength %s and maxPasswordLength %s',
+        async (invalidPassword, minPasswordLength, maxPasswordLength) => {
+            useDataQuery.mockReturnValue({
+                data: {
+                    systemSettings: {
+                        minPasswordLength,
+                        maxPasswordLength,
+                    },
                 },
-            },
-        })
-        render(
-            <RenderWrapper>
-                <SecuritySection
-                    changePassword={true}
-                    externalAuth={false}
-                    inviteUser={'SET_PASSWORD'}
-                    password={undefined}
-                    user={{}}
-                />
-            </RenderWrapper>
-        )
-        const passwordInputNode = screen.getByLabelText('New password', {
-            selector: 'input',
-        })
-        const repeatPasswordInputNode = screen.getByLabelText(
-            'Repeat new password',
-            { selector: 'input' }
-        )
+            })
+            render(
+                <RenderWrapper>
+                    <SecuritySection
+                        changePassword={true}
+                        externalAuth={false}
+                        inviteUser={'SET_PASSWORD'}
+                        password={undefined}
+                        user={{}}
+                    />
+                </RenderWrapper>
+            )
+            const passwordInputNode = screen.getByLabelText('New password', {
+                selector: 'input',
+            })
+            const repeatPasswordInputNode = screen.getByLabelText(
+                'Repeat new password',
+                { selector: 'input' }
+            )
 
-        // enter invalid password
-        userEvent.type(passwordInputNode, 'cat')
+            // enter valid password
+            await userEvent.type(passwordInputNode, invalidPassword)
 
-        // click away
-        userEvent.click(repeatPasswordInputNode)
+            // click away
+            await userEvent.click(repeatPasswordInputNode)
 
-        // expect invalid password warning to appear
-        const invalidPasswordValidationError =
-            screen.queryByText('Invalid password')
-        expect(invalidPasswordValidationError).not.toBeInTheDocument()
-    })
+            // expect invalid password warning not to appear
+            const invalidPasswordValidationError =
+                screen.queryByText('Invalid password')
+            expect(invalidPasswordValidationError).not.toBeInTheDocument()
+        }
+    )
 
     it('uses default values if system settings is missing', async () => {
         useDataQuery.mockReturnValue({ data: {} })
@@ -152,7 +167,7 @@ describe('SecuritySection', () => {
         )
 
         const passwordHelpText = screen.getByText(
-            'Password should be between 8 and 34 characters long, with at least one lowercase character, one uppercase character, one number, and one special character.'
+            'Password should be between 8 and 72 characters long, with at least one lowercase character, one uppercase character, one number, and one special character.'
         )
         expect(passwordHelpText).toBeInTheDocument()
 
@@ -208,7 +223,7 @@ describe('SecuritySection', () => {
 
         // we display an invalid value if one was provided in the warning
         const passwordHelpText = screen.getByText(
-            'Password should be between 2.3 and 34 characters long, with at least one lowercase character, one uppercase character, one number, and one special character.'
+            'Password should be between 8 and 72 characters long, with at least one lowercase character, one uppercase character, one number, and one special character.'
         )
         expect(passwordHelpText).toBeInTheDocument()
 
