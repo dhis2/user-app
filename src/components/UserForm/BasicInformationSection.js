@@ -1,10 +1,6 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import {
-    composeValidators,
-    hasValue,
-    email,
-} from '@dhis2/ui'
+import { composeValidators, hasValue, email } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { useForm } from 'react-final-form'
@@ -41,8 +37,7 @@ const BasicInformationSection = React.memo(
         currentUserId,
     }) => {
         const { displayEmailVerifiedStatus } = useFeatureToggle()
-        const { data: enforceVerifiedEmail } =
-            useDataQuery(query)
+        const { data: enforceVerifiedEmail } = useDataQuery(query)
         const { resetFieldState } = useForm()
         const validateUserName = useUserNameValidator({
             user,
