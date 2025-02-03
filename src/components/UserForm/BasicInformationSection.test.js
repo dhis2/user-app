@@ -1,8 +1,9 @@
-import { render, screen, waitFor } from '@testing-library/react'
-import BasicInformationSection from './BasicInformationSection'
-import { useFeatureToggle } from '../../hooks/useFeatureToggle'
 import { useDataQuery } from '@dhis2/app-runtime'
+import { render, screen, waitFor } from '@testing-library/react'
+import React from 'react'
 import { Form } from 'react-final-form'
+import { useFeatureToggle } from '../../hooks/useFeatureToggle.js'
+import BasicInformationSection from './BasicInformationSection.js'
 
 jest.mock('@dhis2/app-runtime', () => ({
     ...jest.requireActual('@dhis2/app-runtime'),
@@ -158,7 +159,7 @@ describe('BasicInformationSection', () => {
             expect(positiveMessage).toBeInTheDocument()
         })
     })
-    
+
     it('disables the "Disable this user account" checkbox for the current user', () => {
         useFeatureToggle.mockReturnValue({ displayEmailVerifiedStatus: true })
         useDataQuery.mockReturnValue({
