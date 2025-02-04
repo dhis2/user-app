@@ -6,13 +6,15 @@
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2024
 # Sheila André <sandre@saudigitus.org>, 2024
 # Philip Larsen Donnelly, 2024
+# Shelsea Chumaio, 2024
+# Edson Nhancale, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-08T17:31:59.581Z\n"
+"POT-Creation-Date: 2024-03-22T08:26:32.388Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Last-Translator: Edson Nhancale, 2025\n"
 "Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -50,6 +52,9 @@ msgstr "Editar função do usuário"
 
 msgid "Send message"
 msgstr "Enviar mensagem"
+
+msgid "ID"
+msgstr "ID"
 
 msgid "Filter options"
 msgstr "Opções de filtro"
@@ -598,7 +603,7 @@ msgid "Passwords do not match"
 msgstr "As senhas não coincidem"
 
 msgid "Please provide a value"
-msgstr ""
+msgstr "Forneça um valor"
 
 msgid "Create, modify, view and delete Users"
 msgstr "Criar, modificar, visualizar e excluir Usuários"
@@ -617,9 +622,6 @@ msgstr "Criar, modificar, visualizar e excluir Grupos de Usuários"
 
 msgid "Display name"
 msgstr "Nome em Exibição"
-
-msgid "ID"
-msgstr "ID"
 
 msgid "Last login"
 msgstr "Última entrada"
@@ -751,7 +753,7 @@ msgid "No, cancel"
 msgstr "Não cancele"
 
 msgid "Yes, delete"
-msgstr ""
+msgstr "Sim, eliminar"
 
 msgid "Joined user group \"{{- name}}\" successfuly"
 msgstr ""
