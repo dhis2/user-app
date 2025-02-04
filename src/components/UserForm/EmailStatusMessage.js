@@ -56,9 +56,9 @@ const EmailStatusMessage = ({
 }
 
 EmailStatusMessage.propTypes = {
-    isEmailEdited: PropTypes.bool.isRequired,
     emailVerified: PropTypes.bool.isRequired,
     enforceVerifiedEmail: PropTypes.bool.isRequired,
+    isEmailEdited: PropTypes.bool.isRequired,
 }
 
 export default EmailStatusMessage
