@@ -1,52 +1,44 @@
 # 
 # Translators:
-# David Júnior <davidjr.mondlane@gmail.com>, 2023
-# Philip Larsen Donnelly, 2023
-# Ge Joao <gsimango@saudigitus.org>, 2023
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023
-# Viktor Varland <viktor@dhis2.org>, 2023
-# Sheila André <sandre@saudigitus.org>, 2023
-# Shelsea Chumaio, 2024
-# Helton Dias, 2024
-# Edson Nhancale, 2025
+# Siddharth Agarwal, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-03-27T09:03:25.496Z\n"
 "PO-Revision-Date: 2023-05-22 19:30+0000\n"
-"Last-Translator: Edson Nhancale, 2025\n"
-"Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
+"Last-Translator: Siddharth Agarwal, 2025\n"
+"Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Language: hi_IN\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Yes"
-msgstr "sim"
+msgstr "हाँ"
 
 msgid "No"
-msgstr "Não"
+msgstr "नहीं"
 
 msgid "Attribute value needs to be unique, value already taken."
-msgstr "O valor do atributo precisa ser exclusivo, valor já utilizado."
+msgstr ""
 
 msgid ""
 "There was a problem whilst checking the availability of this attribute value"
 msgstr ""
 
 msgid "Value should be a positive integer"
-msgstr "O valor deve ser um número inteiro positivo"
+msgstr ""
 
 msgid "Value should be a negative integer"
 msgstr ""
 
 msgid "No results found"
-msgstr "Nenhum resultado encontrado"
+msgstr ""
 
 msgid "Display name"
-msgstr "Nome em Exibição"
+msgstr ""
 
 msgid "1 pending change"
 msgstr ""
@@ -58,10 +50,10 @@ msgid "Cancel all"
 msgstr ""
 
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr "रद्द करें"
 
 msgid "Action"
-msgstr "Acção"
+msgstr ""
 
 msgid "Will be added"
 msgstr ""
@@ -70,13 +62,13 @@ msgid "Will be removed"
 msgstr ""
 
 msgid "Network error"
-msgstr " Erro de rede"
+msgstr ""
 
 msgid "Could not load current user information."
 msgstr ""
 
 msgid "Filter options"
-msgstr "Opções de filtro"
+msgstr ""
 
 msgid "Error fetching form"
 msgstr ""
@@ -85,16 +77,16 @@ msgid "There was an error fetching this form."
 msgstr ""
 
 msgid "Cancel without saving"
-msgstr "Cancelar sem gravar"
+msgstr ""
 
 msgid "Basic information"
 msgstr ""
 
 msgid "Name"
-msgstr "Nome"
+msgstr "नाम"
 
 msgid "Code"
-msgstr "Código"
+msgstr ""
 
 msgid "Used in analytics reports."
 msgstr ""
@@ -139,7 +131,7 @@ msgid "Add users to group"
 msgstr ""
 
 msgid "Username"
-msgstr "Nome de usuário"
+msgstr ""
 
 msgid "Error loading users"
 msgstr ""
@@ -151,7 +143,7 @@ msgid "Error creating group"
 msgstr ""
 
 msgid "Attributes"
-msgstr "Atributos"
+msgstr ""
 
 msgid "User group management"
 msgstr ""
@@ -161,13 +153,13 @@ msgid ""
 msgstr ""
 
 msgid "Available user groups"
-msgstr "Grupos de usuários disponíveis"
+msgstr ""
 
 msgid "Managed user groups"
-msgstr "Grupos de usuários gerenciados"
+msgstr ""
 
 msgid "User management"
-msgstr "Gestão de utilizadores"
+msgstr ""
 
 msgid "Add or remove users from this group."
 msgstr ""
@@ -199,10 +191,10 @@ msgid "Add/Update Private"
 msgstr ""
 
 msgid "Delete"
-msgstr "Suprimir"
+msgstr "हटाएं"
 
 msgid "External access"
-msgstr "Acesso externo"
+msgstr ""
 
 msgid "Error updating role"
 msgstr ""
@@ -211,7 +203,7 @@ msgid "Error creating role"
 msgstr ""
 
 msgid "Description"
-msgstr "Descrição"
+msgstr ""
 
 msgid "Short, clear description of what this role is for."
 msgstr ""
@@ -254,181 +246,181 @@ msgid "Selected system authorities"
 msgstr ""
 
 msgid "All (Full authority)"
-msgstr "Tudo (Autoridade total)"
+msgstr ""
 
 msgid "Aggregate Data Exchange"
 msgstr ""
 
 msgid "Analytics Table Hook"
-msgstr "Gancho da tabelas analíticas"
+msgstr ""
 
 msgid "Attribute"
-msgstr "Atributo"
+msgstr ""
 
 msgid "Category Combo"
-msgstr "Combinação de categoria"
+msgstr ""
 
 msgid "Category"
-msgstr "Categoria"
+msgstr ""
 
 msgid "Category Option"
-msgstr "Opção de categoria"
+msgstr ""
 
 msgid "Category Option Group"
-msgstr "Grupo de opções de categoria"
+msgstr ""
 
 msgid "Category Option Group Set"
-msgstr "Conjunto de grupos de opções de categoria"
+msgstr ""
 
 msgid "Color Set"
-msgstr "Conjunto de cores"
+msgstr ""
 
 msgid "Constant"
-msgstr "Constante"
+msgstr ""
 
 msgid "Dashboard"
-msgstr "Painel de Instrumentos"
+msgstr ""
 
 msgid "Data Element Group Sets"
-msgstr "Conjuntos de grupos de elementos de dados"
+msgstr ""
 
 msgid "Data Element Groups"
-msgstr "Grupos de elementos de dados"
+msgstr ""
 
 msgid "Data Element"
-msgstr "Elemento de dados"
+msgstr ""
 
 msgid "Min/max rule"
-msgstr "Min/max regra"
+msgstr ""
 
 msgid "Data Set"
-msgstr "Ficha"
+msgstr ""
 
 msgid "Data Value"
-msgstr "Valor dos dados"
+msgstr ""
 
 msgid "Document"
-msgstr "Documento"
+msgstr ""
 
 msgid "Event Chart"
-msgstr "Gráfico de Eventos"
+msgstr ""
 
 msgid "Event Report"
-msgstr "Relatório de Evento"
+msgstr ""
 
 msgid "External Map Layer"
-msgstr "Camada de mapa externo"
+msgstr ""
 
 msgid "Indicator Group Sets"
-msgstr "Conjuntos de grupos de indicadores"
+msgstr ""
 
 msgid "Indicator Group"
-msgstr "Grupo de Indicadores"
+msgstr ""
 
 msgid "Indicator Type"
-msgstr "Tipo de indicador"
+msgstr ""
 
 msgid "Indicator"
-msgstr "Indicador"
+msgstr ""
 
 msgid "Legend Set"
-msgstr "Conjunto de legendas"
+msgstr ""
 
 msgid "Map"
-msgstr "Mapa"
+msgstr ""
 
 msgid "Min-Max Data Element"
-msgstr "MIn-Max Elemento de dados"
+msgstr ""
 
 msgid "Option Group Set"
-msgstr "Conjunto de grupos de opções"
+msgstr ""
 
 msgid "Option Group"
-msgstr "Grupo de opções"
+msgstr ""
 
 msgid "Option Set"
-msgstr "Conjunto de opções"
+msgstr ""
 
 msgid "Organisation Unit"
-msgstr "Unidade organizacional"
+msgstr ""
 
 msgid "Organisation Unit Group Set"
-msgstr "Conjunto de grupos de unidades da organização"
+msgstr ""
 
 msgid "Organisation Unit Group"
-msgstr "Grupo de unidades de organização"
+msgstr ""
 
 msgid "Predictor"
-msgstr "Preditor"
+msgstr ""
 
 msgid "Program Stage"
-msgstr "Estágio do Programa"
+msgstr ""
 
 msgid "Program"
-msgstr "Programa"
+msgstr ""
 
 msgid "Program Indicator"
-msgstr "Indicador do programa"
+msgstr ""
 
 msgid "Program Indicator Group"
-msgstr "Grupo de Indicadores do Programa"
+msgstr ""
 
 msgid "Program Rule"
-msgstr "Regra do programa"
+msgstr ""
 
 msgid "Program Tracked Entity Attribute Group"
-msgstr "Grupo de atributos da entidade rastreada pelo programa"
+msgstr ""
 
 msgid "Push Analysis"
-msgstr "Análise de envio"
+msgstr ""
 
 msgid "Relationship Type"
-msgstr "Tipo de Relação"
+msgstr ""
 
 msgid "Report"
-msgstr "Relatório"
+msgstr ""
 
 msgid "Section"
-msgstr "Secção"
+msgstr ""
 
 msgid "SQL View"
-msgstr "Ver SQL"
+msgstr ""
 
 msgid "Tracked Entity"
-msgstr "Entidade Rastreada"
+msgstr ""
 
 msgid "Tracked Entity Attribute"
-msgstr "Atributo da entidade rastreada"
+msgstr ""
 
 msgid "Tracked Entity Data Value"
-msgstr "Valor dos dados da entidade rastreada"
+msgstr ""
 
 msgid "Tracked Entity Instance"
-msgstr "Instância da entidade rastreada"
+msgstr ""
 
 msgid "User Group"
-msgstr "Grupo de utilizadores\\:"
+msgstr ""
 
 msgid "User Role"
-msgstr "Regras de utilizador"
+msgstr ""
 
 msgid "User"
-msgstr "Utilizador"
+msgstr ""
 
 msgid "Validation Rule Group"
-msgstr "Grupo de Regras de Validação"
+msgstr ""
 
 msgid "Validation Rule"
-msgstr "Regra de validação"
+msgstr ""
 
 msgid "Data predictor group"
-msgstr "Grupo de previsão de dados"
+msgstr ""
 
 msgid "Skip data import audit"
-msgstr "Ignorar auditoria de importação de dados"
+msgstr ""
 
 msgid "Visualization"
-msgstr "Visualização"
+msgstr ""
 
 msgid "Event Hook"
 msgstr ""
@@ -440,7 +432,7 @@ msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
 
 msgid "Search by name"
-msgstr "Pesquisar por nome"
+msgstr ""
 
 msgid "Search for an organisation unit"
 msgstr ""
@@ -451,22 +443,22 @@ msgid ""
 msgstr ""
 
 msgid "Something went wrong when processing your request."
-msgstr "Ocorreu um erro ao processar sua solicitação."
+msgstr ""
 
 msgid "There was a problem retreiving your search results"
-msgstr "Ocorreu um problema ao recuperar seus resultados de pesquisa"
+msgstr ""
 
 msgid "Please enter at least {{ minCharLength }} characters"
 msgstr ""
 
 msgid "No matches found"
-msgstr "Nenhuma equivalência encontrada"
+msgstr ""
 
 msgid "Apply"
-msgstr "Aplicar"
+msgstr ""
 
 msgid "Clear all"
-msgstr "Limpar tudo"
+msgstr ""
 
 msgid "Insufficient permissions"
 msgstr ""
@@ -474,14 +466,12 @@ msgstr ""
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
 msgstr ""
-"Você não tem acesso a nenhuma secção do aplicativo DHIS 2 Aplicativo de "
-"Gerenciamento"
 
 msgid "User role"
-msgstr "Função de usuário"
+msgstr ""
 
 msgid "User group"
-msgstr "Grupo de usuários"
+msgstr ""
 
 msgid "Analytics dimension restrictions"
 msgstr ""
@@ -496,19 +486,19 @@ msgid "Email address"
 msgstr ""
 
 msgid "First name"
-msgstr "Primeiro nome"
+msgstr ""
 
 msgid "Last name"
-msgstr "Último nome"
+msgstr ""
 
 msgid "Interface language"
-msgstr "Idioma da interface"
+msgstr ""
 
 msgid "Database language"
-msgstr "Idioma da base de dados"
+msgstr ""
 
 msgid "Use database locale / no translation"
-msgstr "Utilizar lingua da Base de Dados / Sem tradução"
+msgstr ""
 
 msgid "Disable this user account"
 msgstr ""
@@ -517,34 +507,34 @@ msgid "Contact details"
 msgstr ""
 
 msgid "Mobile phone number"
-msgstr "Número de telemóvel"
+msgstr ""
 
 msgid "WhatsApp"
-msgstr "WhatsApp"
+msgstr ""
 
 msgid "Facebook Messenger"
-msgstr "Facebook Messenger"
+msgstr ""
 
 msgid "Skype"
-msgstr "Skype"
+msgstr ""
 
 msgid "Telegram"
-msgstr "Telegram"
+msgstr ""
 
 msgid "Twitter"
-msgstr "Twitter"
+msgstr ""
 
 msgid "Invite user"
 msgstr ""
 
 msgid "Create account or email invitation"
-msgstr "Criar conta ou convite por email"
+msgstr ""
 
 msgid "Create account with user details"
-msgstr "Crie uma conta com detalhes do usuário"
+msgstr ""
 
 msgid "Email invitation to create account"
-msgstr "Convite por email para criar conta"
+msgstr ""
 
 msgid "Organisation unit access"
 msgstr ""
@@ -573,7 +563,7 @@ msgid "The organisation units that this user can export and analyse."
 msgstr ""
 
 msgid "Search"
-msgstr "Pesquisar"
+msgstr ""
 
 msgid "The organisation that this user can search for and in."
 msgstr ""
@@ -597,7 +587,7 @@ msgid "User groups this user is a member of"
 msgstr ""
 
 msgid "Security"
-msgstr "Segurança"
+msgstr ""
 
 msgid "Settings for how this user can log in."
 msgstr ""
@@ -606,10 +596,10 @@ msgid "Change user password"
 msgstr ""
 
 msgid "New password"
-msgstr "Nova senha"
+msgstr ""
 
 msgid "Password"
-msgstr "Senha"
+msgstr ""
 
 msgid ""
 "Password should be at least 8 characters long, with at least one lowercase "
@@ -617,7 +607,7 @@ msgid ""
 msgstr ""
 
 msgid "Repeat new password"
-msgstr "Repita a nova senha"
+msgstr ""
 
 msgid "Repeat password"
 msgstr ""
@@ -632,7 +622,7 @@ msgid "OpenID Connect mapping claim for your identity platform"
 msgstr ""
 
 msgid "LDAP identifier"
-msgstr "identificador LDAP"
+msgstr ""
 
 msgid "External authentication only (OpenID / LDAP)"
 msgstr ""
@@ -644,7 +634,7 @@ msgid "Invalid WhatsApp number"
 msgstr ""
 
 msgid "Send invite"
-msgstr "Enviar convite "
+msgstr ""
 
 msgid "Cancel invite"
 msgstr ""
@@ -656,17 +646,16 @@ msgid "Error creating user"
 msgstr ""
 
 msgid "Username already taken"
-msgstr "Nome de usuário já utilizado"
+msgstr ""
 
 msgid "There was a problem whilst checking the availability of this username"
 msgstr ""
-"Ocorreu um problema ao verificar a disponibilidade desse nome de usuário"
 
 msgid "Passwords do not match"
-msgstr "As senhas não coincidem"
+msgstr ""
 
 msgid "Please provide a value"
-msgstr "Forneça um valor"
+msgstr ""
 
 msgid "New group"
 msgstr ""
@@ -702,7 +691,7 @@ msgid "Edit group"
 msgstr ""
 
 msgid "Save changes"
-msgstr "Salvar alterações"
+msgstr ""
 
 msgid "Error fetching role"
 msgstr ""
@@ -720,34 +709,34 @@ msgid "There was an error fetching this user."
 msgstr ""
 
 msgid "Edit user"
-msgstr "Editar utilizador"
+msgstr ""
 
 msgid "You do not have access to edit this user group"
 msgstr ""
 
 msgid "Overview"
-msgstr "Visão global"
+msgstr ""
 
 msgid "Edit user group"
-msgstr "Editar grupo de usuários"
+msgstr ""
 
 msgid "ID"
-msgstr "ID"
+msgstr "आईडी"
 
 msgid "Show details"
-msgstr "Mostrar detalhes"
+msgstr ""
 
 msgid "Sharing settings"
-msgstr "Definições de partilha"
+msgstr ""
 
 msgid "Edit"
-msgstr "Editar"
+msgstr "संपादन करें"
 
 msgid "Join group"
-msgstr "Juntar-se ao grupo"
+msgstr ""
 
 msgid "Leave group"
-msgstr "sair do grupo"
+msgstr ""
 
 msgid "Deleted \"{{- name}}\" successfully"
 msgstr ""
@@ -762,10 +751,10 @@ msgid "Are you sure you want to delete {{- name}}?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr "Não cancele"
+msgstr ""
 
 msgid "Yes, delete"
-msgstr "Sim, eliminar"
+msgstr ""
 
 msgid "Joined user group \"{{- name}}\" successfuly"
 msgstr ""
@@ -795,13 +784,13 @@ msgid "Are you sure you want to leave {{- name}}?"
 msgstr ""
 
 msgid "Yes, leave"
-msgstr "Sim, sair"
+msgstr ""
 
 msgid "User Group Management"
-msgstr "Gestão de grupo de usuários"
+msgstr ""
 
 msgid "New"
-msgstr "Novo"
+msgstr ""
 
 msgid "Error loading user groups"
 msgstr ""
@@ -817,28 +806,28 @@ msgid "Member?"
 msgstr ""
 
 msgid "Actions"
-msgstr "Acções"
+msgstr ""
 
 msgid "Member"
 msgstr ""
 
 msgid "List"
-msgstr "Lista"
+msgstr ""
 
 msgid "Add"
-msgstr "Adicionar"
+msgstr "जोड़ें"
 
 msgid "Create, modify, view and delete Users"
-msgstr "Criar, modificar, visualizar e excluir Usuários"
+msgstr ""
 
 msgid "Create, modify, view and delete User Roles"
-msgstr "Criar, modificar, visualizar e excluir Funções do usuário"
+msgstr ""
 
 msgid "Create, modify, view and delete User Groups"
-msgstr "Criar, modificar, visualizar e excluir Grupos de Usuários"
+msgstr ""
 
 msgid "Edit user role"
-msgstr "Editar função do usuário"
+msgstr ""
 
 msgid "There was an error deleting the user role: {{- error}}"
 msgstr ""
@@ -847,7 +836,7 @@ msgid "Delete user role {{- name}}"
 msgstr ""
 
 msgid "User Role Management"
-msgstr "Gestão de Função de Usuário"
+msgstr ""
 
 msgid "Error loading user roles"
 msgstr ""
@@ -860,22 +849,22 @@ msgid "Add new user role"
 msgstr ""
 
 msgid "Profile"
-msgstr "Perfil"
+msgstr ""
 
 msgid "Replicate"
-msgstr "Replicar"
+msgstr ""
 
 msgid "Reset password"
 msgstr ""
 
 msgid "Disable"
-msgstr "Desactivar"
+msgstr ""
 
 msgid "Enable"
-msgstr "Habilitar"
+msgstr ""
 
 msgid "Disable Two Factor Authentication"
-msgstr "Desativar dois factores de autenticação"
+msgstr ""
 
 msgid "There was an error deleting the user: {{- error}}"
 msgstr ""
@@ -939,13 +928,13 @@ msgid "Replicate user {{- name}}"
 msgstr ""
 
 msgid "Username for new user"
-msgstr "Nome de usuário para novo usuário"
+msgstr ""
 
 msgid "Password for new user"
-msgstr "Senha para novo usuário"
+msgstr ""
 
 msgid "Replicate user"
-msgstr "Replicar usuário"
+msgstr ""
 
 msgid "Password of user \"{{- name}}\" reset successfuly"
 msgstr ""
@@ -972,22 +961,22 @@ msgid "Invitation"
 msgstr ""
 
 msgid "All invitations"
-msgstr "Todos os convites"
+msgstr ""
 
 msgid "Expired invitations"
-msgstr "Convites expirados"
+msgstr ""
 
 msgid "Show self-registrations"
 msgstr ""
 
 msgid "Clear filters"
-msgstr "Limpar filtros"
+msgstr ""
 
 msgid "Org.unit"
 msgstr ""
 
 msgid "User Management"
-msgstr "Gestão de usuários"
+msgstr ""
 
 msgid "There are no users to show here. You can add a new user below."
 msgstr ""
@@ -996,70 +985,70 @@ msgid "Add new user"
 msgstr ""
 
 msgid "Last login"
-msgstr "Última entrada"
+msgstr ""
 
 msgid "Status"
-msgstr "Status"
+msgstr ""
 
 msgid "Disabled"
-msgstr "Desabilitar"
+msgstr ""
 
 msgid "Active"
-msgstr "Ativo"
+msgstr ""
 
 msgid "Male"
-msgstr "Masculino"
+msgstr "पुरूष"
 
 msgid "Female"
-msgstr "Feminino"
+msgstr "महिला"
 
 msgid "Other"
-msgstr "Outro"
+msgstr ""
 
 msgid "Created"
-msgstr "Criado"
+msgstr ""
 
 msgid "Contact"
-msgstr "Contacto"
+msgstr ""
 
 msgid "Send message"
-msgstr "Enviar mensagem"
+msgstr ""
 
 msgid "E-mail"
-msgstr "e-mail"
+msgstr ""
 
 msgid "Permissions"
-msgstr "Permissões"
+msgstr ""
 
 msgid "Organisations units"
-msgstr "Unidades organizacionais "
+msgstr ""
 
 msgid "User units"
 msgstr ""
 
 msgid "Introduction"
-msgstr "Apresentação"
+msgstr ""
 
 msgid "Job title"
-msgstr "Profissão"
+msgstr ""
 
 msgid "Works at"
-msgstr "Trabalha em"
+msgstr ""
 
 msgid "Gender"
-msgstr "Sexo"
+msgstr ""
 
 msgid "Speaks"
-msgstr "Fala"
+msgstr ""
 
 msgid "Nationality"
-msgstr "Nacionalidade"
+msgstr ""
 
 msgid "Education"
-msgstr "Escolaridade"
+msgstr ""
 
 msgid "Interests"
-msgstr "Interesses"
+msgstr ""
 
 msgid "Birthday"
-msgstr "Aniversário"
+msgstr ""
