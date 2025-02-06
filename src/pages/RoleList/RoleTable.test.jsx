@@ -118,7 +118,7 @@ describe('<RoleTable>', () => {
         })
     })
 
-    it('allows sorting of roles by name', () => {
+    it('allows sorting of roles by name', async () => {
         const roles = [
             {
                 id: 'role-1',
@@ -151,7 +151,7 @@ describe('<RoleTable>', () => {
             />
         )
 
-        userEvent.click(
+        await userEvent.click(
             within(
                 screen.getByRole('columnheader', { name: 'Display name' })
             ).getByRole('button')

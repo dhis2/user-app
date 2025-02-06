@@ -170,7 +170,7 @@ describe('<UserTable>', () => {
         })
     })
 
-    it('allows sorting of users by name/username', () => {
+    it('allows sorting of users by name/username', async () => {
         const users = [
             {
                 id: 'user-1',
@@ -208,7 +208,7 @@ describe('<UserTable>', () => {
             />
         )
 
-        userEvent.click(
+        await userEvent.click(
             within(
                 screen.getByRole('columnheader', { name: 'Display name' })
             ).getByRole('button')

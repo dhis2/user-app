@@ -205,9 +205,7 @@ describe('Legacy Authorities', () => {
         within(rows[1]).queryByRole('button', { name: 'Remove' }).click()
 
         const saveButton = await screen.findByText(SAVE_BUTTON_TEXT)
-        await waitFor(() => {
-            userEvent.click(saveButton)
-        })
+        await userEvent.click(saveButton)
         expect(mockPatchUserRole).toHaveBeenCalled()
         expect(mockPatchUserRole).toHaveBeenCalledWith(
             expected_post_after_removal
@@ -346,7 +344,7 @@ describe('User roles assignment warnings', () => {
 
         await waitFor(async () => {
             const expandIcon = await screen.findByTestId('roles-details-expand')
-            userEvent.click(expandIcon)
+            await userEvent.click(expandIcon)
             const missingAuthoritiesList = await screen.findByTestId(
                 'authorities-user-does-not-have-list'
             )
@@ -356,7 +354,7 @@ describe('User roles assignment warnings', () => {
             expect(missingAuthorities[0]).toHaveTextContent('beat box')
             expect(missingAuthorities[1]).toHaveTextContent('Dance')
             expect(missingAuthorities.length).toBe(2)
-            userEvent.click(expandIcon)
+            await userEvent.click(expandIcon)
             expect(missingAuthoritiesList).not.toBeVisible()
         })
     })

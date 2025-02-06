@@ -126,7 +126,7 @@ describe('<GroupTable>', () => {
         })
     })
 
-    it('allows sorting of groups by name', () => {
+    it('allows sorting of groups by name', async () => {
         const groups = [
             {
                 id: 'group-1',
@@ -157,7 +157,7 @@ describe('<GroupTable>', () => {
             />
         )
 
-        userEvent.click(
+        await userEvent.click(
             within(
                 screen.getByRole('columnheader', { name: 'Display name' })
             ).getByRole('button')

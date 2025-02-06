@@ -180,10 +180,10 @@ describe('SecuritySection', () => {
         )
 
         // enter invalid password
-        userEvent.type(passwordInputNode, 'abcA!1')
+        await userEvent.type(passwordInputNode, 'abcA!1')
 
         // click away
-        userEvent.click(repeatPasswordInputNode)
+        await userEvent.click(repeatPasswordInputNode)
 
         // expect invalid password warning to appear
         const invalidPasswordValidationError =
@@ -191,10 +191,10 @@ describe('SecuritySection', () => {
         expect(invalidPasswordValidationError).toBeInTheDocument()
 
         // enter valid password
-        userEvent.type(passwordInputNode, 'abcA!1abc')
+        await userEvent.type(passwordInputNode, 'abcA!1abc')
 
         // click away
-        userEvent.click(repeatPasswordInputNode)
+        await userEvent.click(repeatPasswordInputNode)
 
         // expect invalid password warning to appear
         expect(invalidPasswordValidationError).not.toBeInTheDocument()
@@ -236,10 +236,10 @@ describe('SecuritySection', () => {
         )
 
         // enter invalid password (but the length check will actually be based on default min length of 8)
-        userEvent.type(passwordInputNode, 'abcA!1')
+        await userEvent.type(passwordInputNode, 'abcA!1')
 
         // click away
-        userEvent.click(repeatPasswordInputNode)
+        await userEvent.click(repeatPasswordInputNode)
 
         // expect invalid password warning to appear
         const invalidPasswordValidationError =
@@ -247,10 +247,10 @@ describe('SecuritySection', () => {
         expect(invalidPasswordValidationError).toBeInTheDocument()
 
         // enter valid password
-        userEvent.type(passwordInputNode, 'abcA!1abc')
+        await userEvent.type(passwordInputNode, 'abcA!1abc')
 
         // click away
-        userEvent.click(repeatPasswordInputNode)
+        await userEvent.click(repeatPasswordInputNode)
 
         // expect invalid password warning to appear
         expect(invalidPasswordValidationError).not.toBeInTheDocument()

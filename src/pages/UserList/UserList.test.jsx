@@ -1,5 +1,5 @@
 import { Provider, CustomDataProvider } from '@dhis2/app-runtime'
-import { render, screen, within, waitFor } from '@testing-library/react'
+import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -132,9 +132,7 @@ describe('UserList', () => {
         const emailVerificationDropdown = await screen.findByText(
             EMAIL_VERIFICATION_TEXT
         )
-        await waitFor(() => {
-            userEvent.click(emailVerificationDropdown)
-        })
+        await userEvent.click(emailVerificationDropdown)
         const email_verify_options = within(
             await screen.findByTestId('dhis2-uicore-select-menu-menuwrapper')
         ).getAllByTestId('dhis2-uicore-singleselectoption')
@@ -164,13 +162,9 @@ describe('UserList', () => {
             const emailVerificationDropdown = await screen.findByText(
                 EMAIL_VERIFICATION_TEXT
             )
-            await waitFor(() => {
-                userEvent.click(emailVerificationDropdown)
-            })
+            await userEvent.click(emailVerificationDropdown)
 
-            await waitFor(() => {
-                userEvent.click(screen.getByText(filterOption))
-            })
+            await userEvent.click(screen.getByText(filterOption))
 
             expect(screen.getByText(filterOption)).toBeInTheDocument()
             expect(mockUsersGet).toHaveBeenCalledTimes(2)
