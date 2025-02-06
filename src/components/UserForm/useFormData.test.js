@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks'
+import { renderHook } from '@testing-library/react'
 import { useFormData } from './useFormData.js'
 
 jest.mock('@dhis2/app-runtime', () => ({

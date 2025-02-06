@@ -1,5 +1,5 @@
 import { useConfig } from '@dhis2/app-runtime'
-import { renderHook } from '@testing-library/react-hooks'
+import { renderHook } from '@testing-library/react'
 import { useFeatureToggle } from './useFeatureToggle.js'
 
 jest.mock('@dhis2/app-runtime', () => ({
