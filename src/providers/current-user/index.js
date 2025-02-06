@@ -1,2 +1,2 @@
 export { useCurrentUser } from './useCurrentUser.js'
-export { CurrentUserProvider } from './CurrentUserProvider.js'
+export { CurrentUserProvider } from './CurrentUserProvider.jsx'

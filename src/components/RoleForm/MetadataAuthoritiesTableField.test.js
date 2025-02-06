@@ -1,7 +1,7 @@
 import {
     groupAuthorities,
     getInitiallySelectedColumns,
-} from './MetadataAuthoritiesTableField.js'
+} from './MetadataAuthoritiesTableField.jsx'
 
 describe('groupAuthorities', () => {
     it('groups metadata authorities', () => {

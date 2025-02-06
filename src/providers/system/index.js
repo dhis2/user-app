@@ -1,2 +1,2 @@
-export { SystemProvider } from './SystemProvider.js'
+export { SystemProvider } from './SystemProvider.jsx'
 export { useSystemInformation } from './useSystemInformation.js'
