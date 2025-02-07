@@ -7,10 +7,13 @@ import { SystemContext } from './SystemContext.js'
 
 const query = {
     systemAuthorities: {
-        resource: '/authorities',
+        resource: 'authorities',
     },
     systemSettings: {
-        resource: '/systemSettings/keyCanGrantOwnUserAuthorityGroups',
+        resource: 'systemSettings',
+    },
+    loginConfig: {
+        resource: 'loginConfig',
     },
 }
 
@@ -53,6 +56,16 @@ export const SystemProvider = ({ children }) => {
         usersCanAssignOwnUserRoles: Boolean(
             data.systemSettings?.keyCanGrantOwnUserAuthorityGroups
         ),
+        minPasswordLength: Number.isInteger(
+            Number(data.systemSettings?.minPasswordLength)
+        )
+            ? data.systemSettings?.minPasswordLength
+            : 8,
+        maxPasswordLength: Number.isInteger(
+            Number(data.systemSettings?.maxPasswordLength)
+        )
+            ? data.systemSettings?.maxPasswordLength
+            : 72,
     }
 
     return (

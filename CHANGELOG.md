@@ -1,3 +1,17 @@
+## [100.5.2](https://github.com/dhis2/user-app/compare/v100.5.1...v100.5.2) (2025-02-05)
+
+
+### Bug Fixes
+
+* use password regex [DHIS2-15704] ([#1519](https://github.com/dhis2/user-app/issues/1519)) ([ae79f23](https://github.com/dhis2/user-app/commit/ae79f2346846238d4efc3a7506b9ac4e5fe69d7b))
+
+## [100.5.1](https://github.com/dhis2/user-app/compare/v100.5.0...v100.5.1) (2025-02-04)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([083bb9b](https://github.com/dhis2/user-app/commit/083bb9b4720b5d1f573277e4e51c0f90c21b17a9))
+
 # [100.5.0](https://github.com/dhis2/user-app/compare/v100.4.0...v100.5.0) (2025-01-30)
 
 

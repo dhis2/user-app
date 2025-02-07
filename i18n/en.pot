@@ -612,6 +612,9 @@ msgstr "You do not have permission to assign certain user roles"
 msgid "User groups this user is a member of"
 msgstr "User groups this user is a member of"
 
+msgid "Invalid password"
+msgstr "Invalid password"
+
 msgid "Security"
 msgstr "Security"
 
@@ -628,11 +631,13 @@ msgid "Password"
 msgstr "Password"
 
 msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
+"Password should be between {{minPasswordLength}} and {{maxPasswordLength}} "
+"characters long, with at least one lowercase character, one uppercase "
+"character, one number, and one special character."
 msgstr ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
+"Password should be between {{minPasswordLength}} and {{maxPasswordLength}} "
+"characters long, with at least one lowercase character, one uppercase "
+"character, one number, and one special character."
 
 msgid "Repeat new password"
 msgstr "Repeat new password"
