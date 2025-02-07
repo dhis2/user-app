@@ -2,7 +2,7 @@ import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { composeValidators, hasValue, email } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useForm, useField } from 'react-final-form'
 import { useFeatureToggle } from '../../hooks/useFeatureToggle.js'
 import {
@@ -64,7 +64,6 @@ const BasicInformationSection = React.memo(
         const {
             meta: { dirty },
         } = useField('email', { subscription: { value: true, dirty: true } })
-
 
         return (
             <FormSection title={i18n.t('Basic information')}>
