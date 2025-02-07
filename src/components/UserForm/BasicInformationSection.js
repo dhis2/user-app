@@ -61,17 +61,10 @@ const BasicInformationSection = React.memo(
             resetFieldState('email')
         }, [inviteUser, resetFieldState])
 
-        const [isEmailEdited, setIsEmailEdited] = useState(false)
-
         const {
-            input: { value },
-        } = useField('email', { subscription: { value: true } })
+            meta: { dirty },
+        } = useField('email', { subscription: { value: true, dirty: true } })
 
-        useEffect(() => {
-            if (value && user) {
-                setIsEmailEdited(value !== user?.email)
-            }
-        }, [value, user])
 
         return (
             <FormSection title={i18n.t('Basic information')}>
@@ -98,7 +91,7 @@ const BasicInformationSection = React.memo(
 
                 {displayEmailVerifiedStatus && user && (
                     <EmailStatusMessage
-                        isEmailEdited={isEmailEdited}
+                        isEmailEdited={dirty}
                         emailVerified={user?.emailVerified ?? false}
                         enforceVerifiedEmail={
                             enforceVerifiedEmail?.data?.enforceVerifiedEmail ??
