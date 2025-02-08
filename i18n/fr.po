@@ -4,19 +4,19 @@
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # Bram Piot <bram.piot@gmail.com>, 2022
 # Edem Kossi <ekossi@hispwca.org>, 2022
-# Viktor Varland <viktor@dhis2.org>, 2022
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # Yassine NAHDI <yassine_nahdi@gnet.tn>, 2023
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2023
-# Philip Larsen Donnelly, 2024
 # Elise Desailly, 2024
+# Viktor Varland <viktor@dhis2.org>, 2025
+# Philip Larsen Donnelly, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-03-27T09:03:25.496Z\n"
+"POT-Creation-Date: 2025-01-30T10:02:13.474Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Elise Desailly, 2024\n"
+"Last-Translator: Philip Larsen Donnelly, 2025\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -71,12 +71,6 @@ msgstr "Sera ajouté"
 
 msgid "Will be removed"
 msgstr "Sera supprimé"
-
-msgid "Network error"
-msgstr "Erreur réseau"
-
-msgid "Could not load current user information."
-msgstr "Impossible de charger les informations sur l'utilisateur actuel."
 
 msgid "Filter options"
 msgstr "Options de filtre"
@@ -195,11 +189,30 @@ msgstr ""
 "Un problème est survenu lors de la vérification de la disponibilité de ce "
 "code de groupe"
 
-msgid "Only show selected metadata authorities"
-msgstr "Afficher uniquement les autorités de métadonnées sélectionnées"
+msgid ""
+"You cannot assign this role because you are assigned to this role, and your "
+"system does not allow you to assign roles of which you are a member."
+msgstr ""
+
+msgid ""
+"You cannot assign this role because it has authorities that you do not have."
+msgstr ""
+
+msgid ""
+"There are no legacy or nonstandard authorities assigned to this user role."
+msgstr ""
+
+msgid "Remove"
+msgstr "Supprimer"
 
 msgid "Authority"
 msgstr "Autorité"
+
+msgid "Remove authority"
+msgstr ""
+
+msgid "Only show selected metadata authorities"
+msgstr "Afficher uniquement les autorités de métadonnées sélectionnées"
 
 msgid "Add/Update Public"
 msgstr "Ajouter/mettre à jour les droits d'accès publics"
@@ -263,6 +276,14 @@ msgstr "Droits d'accès au système (disponibles)"
 
 msgid "Selected system authorities"
 msgstr "Droits d'accès au système ((Sélectionnés))"
+
+msgid "Legacy and nonstandard authorities"
+msgstr ""
+
+msgid ""
+"Authorities not recognized as standard authorities. These authorities may be"
+" legacy authorities if you have upgraded versions."
+msgstr ""
 
 msgid "All (Full authority)"
 msgstr "Tout (Pleine autorité)"
@@ -551,6 +572,15 @@ msgstr "Telegram"
 msgid "Twitter"
 msgstr "Twitter"
 
+msgid "This user email has been verified."
+msgstr ""
+
+msgid "This user does not have a verified email."
+msgstr ""
+
+msgid "This user does not have a verified email"
+msgstr ""
+
 msgid "Invite user"
 msgstr "Inviter un utilisateur"
 
@@ -619,8 +649,14 @@ msgstr "Rôles d'utilisateurs disponibles"
 msgid "User roles this user is assigned"
 msgstr "Rôles d'utilisateur attribués à cet utilisateur"
 
+msgid "You do not have permission to assign certain user roles"
+msgstr ""
+
 msgid "User groups this user is a member of"
 msgstr "Groupes d'utilisateurs dont cet utilisateur est membre"
+
+msgid "Invalid password"
+msgstr ""
 
 msgid "Security"
 msgstr "Securité"
@@ -638,11 +674,10 @@ msgid "Password"
 msgstr "Mot de passe"
 
 msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
+"Password should be between {{minPasswordLength}} and {{maxPasswordLength}} "
+"characters long, with at least one lowercase character, one uppercase "
+"character, one number, and one special character."
 msgstr ""
-"Le mot de passe doit comporter au moins 8 caractères, avec au moins un "
-"caractère minuscule, un caractère majuscule et un caractère spécial."
 
 msgid "Repeat new password"
 msgstr "Répéter le mot de passe"
@@ -1028,6 +1063,18 @@ msgstr "{{months}} mois"
 msgid "Time inactive"
 msgstr "Temps d'inactivité"
 
+msgid "Email verification"
+msgstr ""
+
+msgid "All"
+msgstr "Tout"
+
+msgid "Email verified"
+msgstr ""
+
+msgid "Email not verified"
+msgstr ""
+
 msgid "Invitation"
 msgstr "Invitation"
 
@@ -1062,6 +1109,12 @@ msgstr "Dernière connexion"
 
 msgid "Status"
 msgstr "Statut"
+
+msgid "Verified"
+msgstr "Verifiée"
+
+msgid "Not verified"
+msgstr ""
 
 msgid "Disabled"
 msgstr "Désactivé"
@@ -1125,3 +1178,12 @@ msgstr "Intérêts"
 
 msgid "Birthday"
 msgstr "Date de naissance"
+
+msgid "Network error"
+msgstr "Erreur réseau"
+
+msgid "Could not load current user information."
+msgstr "Impossible de charger les informations sur l'utilisateur actuel."
+
+msgid "Could not load system information."
+msgstr ""
