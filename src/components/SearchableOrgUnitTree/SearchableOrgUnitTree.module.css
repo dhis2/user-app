@@ -2,7 +2,8 @@
     padding: 0 var(--spacers-dp8);
 }
 
-.header, .searchFilterWrapper {
+.header,
+.searchFilterWrapper {
     composes: horizontalPadding;
     padding: var(--spacers-dp8);
 }

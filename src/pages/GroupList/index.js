@@ -1,2 +1,2 @@
-import GroupList from './GroupList.js'
+import GroupList from './GroupList.jsx'
 export default GroupList
