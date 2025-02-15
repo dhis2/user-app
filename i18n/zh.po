@@ -625,7 +625,7 @@ msgid "User groups this user is a member of"
 msgstr "此用户所属的用户组"
 
 msgid "Invalid password"
-msgstr ""
+msgstr "密码无效"
 
 msgid "Security"
 msgstr "安全"
@@ -647,6 +647,8 @@ msgid ""
 "characters long, with at least one lowercase character, one uppercase "
 "character, one number, and one special character."
 msgstr ""
+"密码长度应在{{minPasswordLength}} 和{{maxPasswordLength}} "
+"之间，至少包含一个小写字符、一个大写字符、一个数字和一个特殊字符。"
 
 msgid "Repeat new password"
 msgstr "重复新口令"
