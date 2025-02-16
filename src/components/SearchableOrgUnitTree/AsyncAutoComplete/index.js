@@ -1,2 +1,2 @@
-import AsyncAutoComplete from './AsyncAutoComplete.js'
+import AsyncAutoComplete from './AsyncAutoComplete.jsx'
 export default AsyncAutoComplete

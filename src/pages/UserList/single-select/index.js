@@ -1,1 +1,1 @@
-export { SingleSelect } from './single-select.js'
+export { SingleSelect } from './single-select.jsx'

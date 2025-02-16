@@ -1,2 +1,2 @@
-import RoleDetails from './RoleDetails.js'
+import RoleDetails from './RoleDetails.jsx'
 export default RoleDetails
