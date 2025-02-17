@@ -3,7 +3,7 @@ import i18n from '@dhis2/d2-i18n'
 import { composeValidators, hasValue, email } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
-import { useForm } from 'react-final-form'
+import { useForm, useField } from 'react-final-form'
 import { useFeatureToggle } from '../../hooks/useFeatureToggle.js'
 import {
     FormSection,
@@ -61,6 +61,10 @@ const BasicInformationSection = React.memo(
             resetFieldState('email')
         }, [inviteUser, resetFieldState])
 
+        const {
+            meta: { dirty },
+        } = useField('email', { subscription: { value: true, dirty: true } })
+
         return (
             <FormSection title={i18n.t('Basic information')}>
                 <TextField
@@ -86,6 +90,7 @@ const BasicInformationSection = React.memo(
 
                 {displayEmailVerifiedStatus && user && (
                     <EmailStatusMessage
+                        isEmailEdited={dirty}
                         emailVerified={user?.emailVerified ?? false}
                         enforceVerifiedEmail={
                             enforceVerifiedEmail?.data?.enforceVerifiedEmail ??
