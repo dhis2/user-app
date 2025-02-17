@@ -20,15 +20,14 @@ describe('EmailStatusMessage', () => {
             <EmailStatusMessage
                 emailVerified={true}
                 enforceVerifiedEmail={true}
+                isEmailEdited={false}  // Not editing the email
             />
         )
 
         await waitFor(() =>
             screen.getByText(/This user email has been verified/i)
         )
-        expect(
-            screen.getByText(/This user email has been verified/i)
-        ).toBeInTheDocument()
+        expect(screen.getByText(/This user email has been verified/i)).toBeInTheDocument()
 
         const icon = await screen.findByTestId('icon-checkmark-circle')
         expect(icon).not.toBe(null)
@@ -42,22 +41,19 @@ describe('EmailStatusMessage', () => {
             <EmailStatusMessage
                 emailVerified={false}
                 enforceVerifiedEmail={true}
+                isEmailEdited={false}  // Not editing the email
             />
         )
 
         await waitFor(() =>
             screen.getByText(/This user does not have a verified email/i)
         )
-        expect(
-            screen.getByText(/This user does not have a verified email/i)
-        ).toBeInTheDocument()
+        expect(screen.getByText(/This user does not have a verified email/i)).toBeInTheDocument()
 
         const icon = await screen.findByTestId('icon-warning')
         expect(icon).not.toBe(null)
 
-        const message = screen.getByText(
-            'This user does not have a verified email.'
-        )
+        const message = screen.getByText('This user does not have a verified email.')
         expect(message).toHaveStyle('color: red')
     })
 
@@ -66,22 +62,40 @@ describe('EmailStatusMessage', () => {
             <EmailStatusMessage
                 emailVerified={false}
                 enforceVerifiedEmail={false}
+                isEmailEdited={false}  // Not editing the email
             />
         )
 
         await waitFor(() =>
             screen.getByText(/This user does not have a verified email/i)
         )
-        expect(
-            screen.getByText(/This user does not have a verified email/i)
-        ).toBeInTheDocument()
+        expect(screen.getByText(/This user does not have a verified email/i)).toBeInTheDocument()
 
         const icon = await screen.findByTestId('icon-info')
         expect(icon).not.toBe(null)
 
-        const message = screen.getByText(
-            'This user does not have a verified email'
+        const message = screen.getByText('This user does not have a verified email')
+        expect(message).toHaveStyle('color: black')
+    })
+
+    it('shows the not verified message when email is being edited', async () => {
+        render(
+            <EmailStatusMessage
+                emailVerified={false}
+                enforceVerifiedEmail={false}
+                isEmailEdited={true}
+            />
         )
+
+        await waitFor(() =>
+            screen.getByText(/This user does not have a verified email/i)
+        )
+        expect(screen.getByText(/This user does not have a verified email/i)).toBeInTheDocument()
+
+        const icon = await screen.findByTestId('icon-info')
+        expect(icon).not.toBe(null)
+
+        const message = screen.getByText('This user does not have a verified email')
         expect(message).toHaveStyle('color: black')
     })
 })
