@@ -2,19 +2,20 @@
 # Translators:
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # Philip Larsen Donnelly, 2022
-# Viktor Varland <viktor@dhis2.org>, 2022
 # Ge Joao <gsimango@saudigitus.org>, 2022
 # David Júnior <davidjr.mondlane@gmail.com>, 2022
 # Sheila André <sandre@saudigitus.org>, 2023
 # Shelsea Chumaio, 2024
 # Helton Dias, 2024
+# Edson Nhancale, 2025
+# Viktor Varland <viktor@dhis2.org>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-03-27T09:03:25.496Z\n"
+"POT-Creation-Date: 2025-01-30T10:02:13.474Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Helton Dias, 2024\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2025\n"
 "Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -66,12 +67,6 @@ msgid "Will be added"
 msgstr ""
 
 msgid "Will be removed"
-msgstr ""
-
-msgid "Network error"
-msgstr " Erro de rede"
-
-msgid "Could not load current user information."
 msgstr ""
 
 msgid "Filter options"
@@ -185,10 +180,29 @@ msgid ""
 "There was a problem whilst checking the availability of this group code"
 msgstr ""
 
-msgid "Only show selected metadata authorities"
+msgid ""
+"You cannot assign this role because you are assigned to this role, and your "
+"system does not allow you to assign roles of which you are a member."
+msgstr ""
+
+msgid ""
+"You cannot assign this role because it has authorities that you do not have."
+msgstr ""
+
+msgid ""
+"There are no legacy or nonstandard authorities assigned to this user role."
+msgstr ""
+
+msgid "Remove"
 msgstr ""
 
 msgid "Authority"
+msgstr ""
+
+msgid "Remove authority"
+msgstr ""
+
+msgid "Only show selected metadata authorities"
 msgstr ""
 
 msgid "Add/Update Public"
@@ -250,6 +264,14 @@ msgid "Available system authorities"
 msgstr ""
 
 msgid "Selected system authorities"
+msgstr ""
+
+msgid "Legacy and nonstandard authorities"
+msgstr ""
+
+msgid ""
+"Authorities not recognized as standard authorities. These authorities may be"
+" legacy authorities if you have upgraded versions."
 msgstr ""
 
 msgid "All (Full authority)"
@@ -533,6 +555,15 @@ msgstr "Telegram"
 msgid "Twitter"
 msgstr "Twitter"
 
+msgid "This user email has been verified."
+msgstr ""
+
+msgid "This user does not have a verified email."
+msgstr ""
+
+msgid "This user does not have a verified email"
+msgstr ""
+
 msgid "Invite user"
 msgstr ""
 
@@ -590,6 +621,9 @@ msgid "Available user roles"
 msgstr ""
 
 msgid "User roles this user is assigned"
+msgstr ""
+
+msgid "You do not have permission to assign certain user roles"
 msgstr ""
 
 msgid "User groups this user is a member of"
@@ -665,7 +699,7 @@ msgid "Passwords do not match"
 msgstr "As senhas não coincidem"
 
 msgid "Please provide a value"
-msgstr ""
+msgstr "Forneça um valor"
 
 msgid "New group"
 msgstr ""
@@ -967,6 +1001,18 @@ msgstr ""
 msgid "Time inactive"
 msgstr ""
 
+msgid "Email verification"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+msgid "Email verified"
+msgstr ""
+
+msgid "Email not verified"
+msgstr ""
+
 msgid "Invitation"
 msgstr ""
 
@@ -999,6 +1045,12 @@ msgstr "Última entrada"
 
 msgid "Status"
 msgstr "Status"
+
+msgid "Verified"
+msgstr "Verificado"
+
+msgid "Not verified"
+msgstr ""
 
 msgid "Disabled"
 msgstr "Desabilitar"
@@ -1062,3 +1114,12 @@ msgstr "Interesses"
 
 msgid "Birthday"
 msgstr "Aniversário"
+
+msgid "Network error"
+msgstr " Erro de rede"
+
+msgid "Could not load current user information."
+msgstr ""
+
+msgid "Could not load system information."
+msgstr ""
