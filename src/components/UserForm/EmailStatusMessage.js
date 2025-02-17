@@ -18,6 +18,11 @@ const EmailStatusMessage = ({
     let color
     let message
 
+    if (isEmailEdited && emailVerified) {
+        color = colors.default
+        icon = IconInfo16
+        message = i18n.t('This user does not have a verified email')
+    }
     if (enforceVerifiedEmail) {
         if (emailVerified) {
             color = colors.green600
@@ -28,11 +33,6 @@ const EmailStatusMessage = ({
             color = colors.red600
             icon = IconWarning16
             message = i18n.t('This user does not have a verified email.')
-        }
-        if (isEmailEdited && emailVerified) {
-            color = colors.default
-            icon = IconInfo16
-            message = i18n.t('This user does not have a verified email')
         }
     } else {
         if (!emailVerified) {
