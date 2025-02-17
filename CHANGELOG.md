@@ -1,3 +1,14 @@
+# [100.6.0](https://github.com/dhis2/user-app/compare/v100.5.4...v100.6.0) (2025-02-17)
+
+
+### Features
+
+* change the useeffect to meta ([b4e1e73](https://github.com/dhis2/user-app/commit/b4e1e731d6ca80720f40beff31326069711950c0))
+* simplify email verification status logic in EmailStatusMessage component ([4dc6348](https://github.com/dhis2/user-app/commit/4dc634813c948870bc29054a5ef6788584c467a7))
+* update email status message based on change in email input ([3d18e0f](https://github.com/dhis2/user-app/commit/3d18e0f7d6ed2c1dccaec306fbd612ef3b230794))
+* update email status message based on change in email input ([a910735](https://github.com/dhis2/user-app/commit/a910735eb84419b50ef02a59115e0bf6ab3a4024))
+* update email verification messages and add new Babel plugin ([552b4eb](https://github.com/dhis2/user-app/commit/552b4ebb792ba109dc14b9e3bbf55b7469af5b76))
+
 ## [100.5.4](https://github.com/dhis2/user-app/compare/v100.5.3...v100.5.4) (2025-02-16)
 
 
