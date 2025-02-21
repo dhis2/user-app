@@ -20,11 +20,11 @@ import React, { useState } from 'react'
 import { useCurrentUser, useReferrerInfo } from '../../../providers/index.js'
 import navigateTo from '../../../utils/navigateTo.js'
 import DeleteModal from './Modals/DeleteModal.js'
-import Disable2FaModal from './Modals/Disable2FaModal.js'
 import DisableModal from './Modals/DisableModal.js'
 import EnableModal from './Modals/EnableModal.js'
 import ReplicateModal from './Modals/ReplicateModal.js'
 import ResetPasswordModal from './Modals/ResetPasswordModal.js'
+import ResetTwoFAModal from './Modals/ResetTwoFAModal.js'
 
 const useCurrentModal = () => {
     const [CurrentModal, setCurrentModal] = useState()
@@ -45,7 +45,7 @@ const ContextMenu = ({ user, anchorRef, refetchUsers, onClose }) => {
         systemInfo: { emailConfigured },
     } = useConfig()
     const [CurrentModal, setCurrentModal] = useCurrentModal()
-    const { access, twoFactorEnabled, disabled } = user
+    const { access, disabled } = user
     const canReplicate =
         access.update &&
         currentUser.authorities.some(
@@ -63,6 +63,7 @@ const ContextMenu = ({ user, anchorRef, refetchUsers, onClose }) => {
         )
     const canDisable = currentUser.id !== user.id && access.update && !disabled
     const canDelete = currentUser.id !== user.id && access.delete
+    const canReset2FA = currentUser.id !== user.id && access.update
     const { setReferrer } = useReferrerInfo()
 
     return (
@@ -127,13 +128,13 @@ const ContextMenu = ({ user, anchorRef, refetchUsers, onClose }) => {
                                 dense
                             />
                         )}
-                        {access.update && twoFactorEnabled && (
+                        {canReset2FA && (
                             <MenuItem
                                 label={i18n.t(
-                                    'Disable Two Factor Authentication'
+                                    'Reset two factor authentication'
                                 )}
                                 icon={<IconLockOpen16 color={colors.grey600} />}
-                                onClick={() => setCurrentModal(Disable2FaModal)}
+                                onClick={() => setCurrentModal(ResetTwoFAModal)}
                                 dense
                             />
                         )}
@@ -174,7 +175,6 @@ ContextMenu.propTypes = {
         }).isRequired,
         disabled: PropTypes.bool.isRequired,
         id: PropTypes.string.isRequired,
-        twoFactorEnabled: PropTypes.bool.isRequired,
         email: PropTypes.string,
     }).isRequired,
     onClose: PropTypes.func.isRequired,

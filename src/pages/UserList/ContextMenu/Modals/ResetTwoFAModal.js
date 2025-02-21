@@ -11,13 +11,14 @@ import {
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useFetchAlert } from '../../../../hooks/useFetchAlert.js'
+import styles from './ResetTwoFAModal.module.css'
 
-const Disable2FaModal = ({ user, refetchUsers, onClose }) => {
+const ResetTwoFAModal = ({ user, onClose }) => {
     const engine = useDataEngine()
     const [loading, setLoading] = useState(false)
     const { showSuccess, showError } = useFetchAlert()
 
-    const handleDisable2Fa = async () => {
+    const handleReset2FA = async () => {
         setLoading(true)
         try {
             await engine.mutate({
@@ -25,18 +26,17 @@ const Disable2FaModal = ({ user, refetchUsers, onClose }) => {
                 type: 'create',
             })
             const message = i18n.t(
-                'Disabled two factor authentication for "{{- name}}" successfuly',
+                'Two factor authentication for "{{- name}}" has reset successfully',
                 {
                     name: user.displayName,
                 }
             )
             showSuccess(message)
-            refetchUsers()
             onClose()
         } catch (error) {
             setLoading(false)
             const message = i18n.t(
-                'There was an error disabling two factor authentication: {{- error}}',
+                'There was an error resetting the two factor authentication: {{- error}}',
                 {
                     error: error.message,
                     nsSeparator: '-:-',
@@ -47,34 +47,29 @@ const Disable2FaModal = ({ user, refetchUsers, onClose }) => {
     }
 
     return (
-        <Modal>
-            <ModalTitle>
-                {i18n.t(
-                    'Disable two factor authentication for user {{- name}}',
-                    {
-                        name: user.displayName,
-                    }
-                )}
-            </ModalTitle>
+        <Modal small>
+            <ModalTitle>{i18n.t('Reset two factor authentication')}</ModalTitle>
             <ModalContent>
-                {i18n.t(
-                    `Are you sure you want to disable two factor authentication for {{- name}}?`,
-                    {
-                        name: user.displayName,
-                    }
-                )}
+                <div>
+                    {i18n.t(
+                        `If {{- name}} has two factor authentication enabled, resetting the two factor authentication will make it possible for them to log in without providing a two factor authentication code.`,
+                        { name: user.displayName }
+                    )}
+                </div>
+                <div className={styles.secondary2FAModalText}>
+                    {i18n.t(
+                        `Are you sure you want to reset two factor authentication for {{- name}}?`,
+                        { name: user.displayName }
+                    )}
+                </div>
             </ModalContent>
             <ModalActions>
                 <ButtonStrip end>
                     <Button secondary onClick={onClose} disabled={loading}>
                         {i18n.t('No, cancel')}
                     </Button>
-                    <Button
-                        primary
-                        loading={loading}
-                        onClick={handleDisable2Fa}
-                    >
-                        {i18n.t('Yes, disable two factor authentication')}
+                    <Button primary loading={loading} onClick={handleReset2FA}>
+                        {i18n.t('Yes, reset')}
                     </Button>
                 </ButtonStrip>
             </ModalActions>
@@ -82,10 +77,9 @@ const Disable2FaModal = ({ user, refetchUsers, onClose }) => {
     )
 }
 
-Disable2FaModal.propTypes = {
-    refetchUsers: PropTypes.func.isRequired,
+ResetTwoFAModal.propTypes = {
     user: PropTypes.object.isRequired,
     onClose: PropTypes.func.isRequired,
 }
 
-export default Disable2FaModal
+export default ResetTwoFAModal
