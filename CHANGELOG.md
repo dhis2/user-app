@@ -1,3 +1,10 @@
+## [100.6.1](https://github.com/dhis2/user-app/compare/v100.6.0...v100.6.1) (2025-02-24)
+
+
+### Bug Fixes
+
+* reset 2fa button [DHIS2-18831] ([#1530](https://github.com/dhis2/user-app/issues/1530)) ([043ee9e](https://github.com/dhis2/user-app/commit/043ee9e04227a4ccbd1301fea735660afe92c4c0))
+
 # [100.6.0](https://github.com/dhis2/user-app/compare/v100.5.4...v100.6.0) (2025-02-17)
 
 
