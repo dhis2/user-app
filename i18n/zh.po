@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-01-30T10:02:13.474Z\n"
+"POT-Creation-Date: 2025-02-21T10:16:54.865Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2025\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -550,14 +550,14 @@ msgstr "电报"
 msgid "Twitter"
 msgstr "Twitter"
 
+msgid "This user does not have a verified email"
+msgstr "该用户没有经过验证的电子邮件"
+
 msgid "This user email has been verified."
 msgstr "此用户电子邮件已通过验证。"
 
 msgid "This user does not have a verified email."
 msgstr "该用户没有经过验证的电子邮件。"
-
-msgid "This user does not have a verified email"
-msgstr "该用户没有经过验证的电子邮件"
 
 msgid "Invite user"
 msgstr "邀请用户"
@@ -907,30 +907,14 @@ msgstr "不显示"
 msgid "Enable"
 msgstr "显示"
 
-msgid "Disable Two Factor Authentication"
-msgstr "关闭双因素认证"
+msgid "Reset two factor authentication"
+msgstr ""
 
 msgid "There was an error deleting the user: {{- error}}"
 msgstr "删除用户时出错：{{- error}}"
 
 msgid "Delete user {{- name}}"
 msgstr "删除用户 {{- name}}"
-
-msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
-msgstr "成功禁用“{{- name}}”的两因素身份验证"
-
-msgid "There was an error disabling two factor authentication: {{- error}}"
-msgstr "禁用两因素身份验证时出错：{{- error}}"
-
-msgid "Disable two factor authentication for user {{- name}}"
-msgstr "为用户 {{- name}} 禁用两因素身份验证"
-
-msgid ""
-"Are you sure you want to disable two factor authentication for {{- name}}?"
-msgstr "您确定要为 {{- name}} 禁用两因素身份验证吗？"
-
-msgid "Yes, disable two factor authentication"
-msgstr "是的，禁用两因素身份验证"
 
 msgid "User \"{{- name}}\" disabled successfuly"
 msgstr "用户“{{- name}}”已成功禁用"
@@ -991,6 +975,23 @@ msgstr "您确定要重置 {{- name}} 的密码吗？"
 
 msgid "Yes, reset"
 msgstr "是的，重置"
+
+msgid "Two factor authentication for \"{{- name}}\" has reset successfully"
+msgstr ""
+
+msgid ""
+"There was an error resetting the two factor authentication: {{- error}}"
+msgstr ""
+
+msgid ""
+"If {{- name}} has two factor authentication enabled, resetting the two "
+"factor authentication will make it possible for them to log in without "
+"providing a two factor authentication code."
+msgstr ""
+
+msgid ""
+"Are you sure you want to reset two factor authentication for {{- name}}?"
+msgstr ""
 
 msgid "1 month"
 msgstr "1个月"
