@@ -1,9 +1,9 @@
 import { Provider, CustomDataProvider } from '@dhis2/app-runtime'
-import { render, screen, waitFor } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import PropTypes from 'prop-types'
 import React from 'react'
-import ContextMenu from './ContextMenu.js'
+import ContextMenu from './ContextMenu.jsx'
 
 jest.mock('../../../providers/current-user/useCurrentUser.js', () => ({
     useCurrentUser: jest.fn(() => ({ id: 'anotherID01', authorities: [] })),
@@ -109,9 +109,7 @@ describe('Context Menu', () => {
         const resetTwoFAOption = screen.getByText(
             'Reset two factor authentication'
         )
-        await waitFor(() => {
-            userEvent.click(resetTwoFAOption)
-        })
+        await userEvent.click(resetTwoFAOption)
         const explanationText = screen.getByText(
             'If Nils Holgersson has two factor authentication enabled, resetting the two factor authentication will make it possible for them to log in without providing a two factor authentication code.'
         )
@@ -128,14 +126,10 @@ describe('Context Menu', () => {
         const resetTwoFAOption = screen.getByText(
             'Reset two factor authentication'
         )
-        await waitFor(() => {
-            userEvent.click(resetTwoFAOption)
-        })
-
+        await userEvent.click(resetTwoFAOption)
         const resetTwoFAConfirm = screen.getByText('Yes, reset')
-        await waitFor(() => {
-            userEvent.click(resetTwoFAConfirm)
-        })
+
+        await userEvent.click(resetTwoFAConfirm)
         expect(mockReset2FA).toHaveBeenCalledTimes(1)
         expect(mockReset2FA).toHaveBeenCalledWith('create')
     })

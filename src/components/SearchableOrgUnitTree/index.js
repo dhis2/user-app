@@ -1,2 +1,2 @@
-import SearchableOrgUnitTree from './SearchableOrgUnitTree.js'
+import SearchableOrgUnitTree from './SearchableOrgUnitTree.jsx'
 export default SearchableOrgUnitTree

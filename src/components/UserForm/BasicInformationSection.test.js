@@ -2,7 +2,7 @@ import { useDataQuery, useConfig } from '@dhis2/app-runtime'
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 import { Form } from 'react-final-form'
-import BasicInformationSection from './BasicInformationSection.js'
+import BasicInformationSection from './BasicInformationSection.jsx'
 
 jest.mock('@dhis2/app-runtime', () => ({
     ...jest.requireActual('@dhis2/app-runtime'),
@@ -91,7 +91,6 @@ describe('BasicInformationSection', () => {
         renderWithForm(
             <BasicInformationSection
                 user={null}
-                inviteUser={'INVITE_USER'}
                 userInterfaceLanguage="en"
                 interfaceLanguageOptions={[]}
                 userDatabaseLanguage="en"

@@ -1,7 +1,7 @@
-export { Select } from './select.js'
-export { Loading } from './loading.js'
-export { FilterableMenu } from './filterable-menu.js'
-export { Empty } from './empty.js'
+export { Select } from './select.jsx'
+export { Loading } from './loading.jsx'
+export { FilterableMenu } from './filterable-menu.jsx'
+export { Empty } from './empty.jsx'
 export {
     checkIfValidOption,
     filterIgnored,
@@ -9,6 +9,6 @@ export {
     findOption,
     removeOption,
 } from './option-helpers.js'
-export { InputClearButton } from './input-clear-button.js'
-export { InputPlaceholder } from './input-placeholder.js'
-export { InputPrefix } from './input-prefix.js'
+export { InputClearButton } from './input-clear-button.jsx'
+export { InputPlaceholder } from './input-placeholder.jsx'
+export { InputPrefix } from './input-prefix.jsx'

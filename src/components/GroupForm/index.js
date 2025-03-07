@@ -1,2 +1,2 @@
-import GroupForm from './GroupForm.js'
+import GroupForm from './GroupForm.jsx'
 export default GroupForm
