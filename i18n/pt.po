@@ -1,21 +1,21 @@
 # 
 # Translators:
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
-# Philip Larsen Donnelly, 2022
 # Ge Joao <gsimango@saudigitus.org>, 2022
 # David Júnior <davidjr.mondlane@gmail.com>, 2022
 # Sheila André <sandre@saudigitus.org>, 2023
-# Shelsea Chumaio, 2024
 # Helton Dias, 2024
 # Edson Nhancale, 2025
 # Viktor Varland <viktor@dhis2.org>, 2025
+# Philip Larsen Donnelly, 2025
+# Shelsea Chumaio, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-01-30T10:02:13.474Z\n"
+"POT-Creation-Date: 2025-02-21T10:16:54.865Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2025\n"
+"Last-Translator: Shelsea Chumaio, 2025\n"
 "Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -194,7 +194,7 @@ msgid ""
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "Remover"
 
 msgid "Authority"
 msgstr ""
@@ -555,13 +555,13 @@ msgstr "Telegram"
 msgid "Twitter"
 msgstr "Twitter"
 
+msgid "This user does not have a verified email"
+msgstr ""
+
 msgid "This user email has been verified."
 msgstr ""
 
 msgid "This user does not have a verified email."
-msgstr ""
-
-msgid "This user does not have a verified email"
 msgstr ""
 
 msgid "Invite user"
@@ -629,6 +629,9 @@ msgstr ""
 msgid "User groups this user is a member of"
 msgstr ""
 
+msgid "Invalid password"
+msgstr ""
+
 msgid "Security"
 msgstr "Segurança"
 
@@ -645,8 +648,9 @@ msgid "Password"
 msgstr "Senha"
 
 msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
+"Password should be between {{minPasswordLength}} and {{maxPasswordLength}} "
+"characters long, with at least one lowercase character, one uppercase "
+"character, one number, and one special character."
 msgstr ""
 
 msgid "Repeat new password"
@@ -907,29 +911,13 @@ msgstr "Desactivar"
 msgid "Enable"
 msgstr "Habilitar"
 
-msgid "Disable Two Factor Authentication"
-msgstr "Desativar dois factores de autenticação"
+msgid "Reset two factor authentication"
+msgstr ""
 
 msgid "There was an error deleting the user: {{- error}}"
 msgstr ""
 
 msgid "Delete user {{- name}}"
-msgstr ""
-
-msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
-msgstr ""
-
-msgid "There was an error disabling two factor authentication: {{- error}}"
-msgstr ""
-
-msgid "Disable two factor authentication for user {{- name}}"
-msgstr ""
-
-msgid ""
-"Are you sure you want to disable two factor authentication for {{- name}}?"
-msgstr ""
-
-msgid "Yes, disable two factor authentication"
 msgstr ""
 
 msgid "User \"{{- name}}\" disabled successfuly"
@@ -992,6 +980,23 @@ msgstr ""
 msgid "Yes, reset"
 msgstr ""
 
+msgid "Two factor authentication for \"{{- name}}\" has reset successfully"
+msgstr ""
+
+msgid ""
+"There was an error resetting the two factor authentication: {{- error}}"
+msgstr ""
+
+msgid ""
+"If {{- name}} has two factor authentication enabled, resetting the two "
+"factor authentication will make it possible for them to log in without "
+"providing a two factor authentication code."
+msgstr ""
+
+msgid ""
+"Are you sure you want to reset two factor authentication for {{- name}}?"
+msgstr ""
+
 msgid "1 month"
 msgstr ""
 
@@ -1005,7 +1010,7 @@ msgid "Email verification"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "Todos"
 
 msgid "Email verified"
 msgstr ""

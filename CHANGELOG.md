@@ -1,3 +1,42 @@
+## [100.6.2](https://github.com/dhis2/user-app/compare/v100.6.1...v100.6.2) (2025-03-02)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([c6da4cc](https://github.com/dhis2/user-app/commit/c6da4cc65dc71d41b3711dda03b2191521f34a82))
+
+## [100.6.1](https://github.com/dhis2/user-app/compare/v100.6.0...v100.6.1) (2025-02-24)
+
+
+### Bug Fixes
+
+* reset 2fa button [DHIS2-18831] ([#1530](https://github.com/dhis2/user-app/issues/1530)) ([043ee9e](https://github.com/dhis2/user-app/commit/043ee9e04227a4ccbd1301fea735660afe92c4c0))
+
+# [100.6.0](https://github.com/dhis2/user-app/compare/v100.5.4...v100.6.0) (2025-02-17)
+
+
+### Features
+
+* change the useeffect to meta ([b4e1e73](https://github.com/dhis2/user-app/commit/b4e1e731d6ca80720f40beff31326069711950c0))
+* simplify email verification status logic in EmailStatusMessage component ([4dc6348](https://github.com/dhis2/user-app/commit/4dc634813c948870bc29054a5ef6788584c467a7))
+* update email status message based on change in email input ([3d18e0f](https://github.com/dhis2/user-app/commit/3d18e0f7d6ed2c1dccaec306fbd612ef3b230794))
+* update email status message based on change in email input ([a910735](https://github.com/dhis2/user-app/commit/a910735eb84419b50ef02a59115e0bf6ab3a4024))
+* update email verification messages and add new Babel plugin ([552b4eb](https://github.com/dhis2/user-app/commit/552b4ebb792ba109dc14b9e3bbf55b7469af5b76))
+
+## [100.5.4](https://github.com/dhis2/user-app/compare/v100.5.3...v100.5.4) (2025-02-16)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([67cfd28](https://github.com/dhis2/user-app/commit/67cfd2841a508eeccc60daea1e958fc6f0b3e766))
+
+## [100.5.3](https://github.com/dhis2/user-app/compare/v100.5.2...v100.5.3) (2025-02-09)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([47c12fe](https://github.com/dhis2/user-app/commit/47c12fe1fbe96162ea7e6766b7b47dd02482debd))
+
 ## [100.5.2](https://github.com/dhis2/user-app/compare/v100.5.1...v100.5.2) (2025-02-05)
 
 

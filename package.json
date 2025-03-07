@@ -1,6 +1,6 @@
 {
     "name": "user-app",
-    "version": "100.5.2",
+    "version": "100.6.2",
     "description": "DHIS2 User app",
     "license": "BSD-3-Clause",
     "private": true,
@@ -32,6 +32,7 @@
         "use-query-params": "^1.2.3"
     },
     "devDependencies": {
+        "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
         "@badeball/cypress-cucumber-preprocessor": "^20.0.7",
         "@cypress/webpack-preprocessor": "^6.0.2",
         "@dhis2/cli-app-scripts": "^12.3.0",

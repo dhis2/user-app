@@ -1,16 +1,16 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2022
-# phil_dhis2, 2022
-# Hamza Assada <7amza.it@gmail.com>, 2022
+# Viktor Varland <viktor@dhis2.org>, 2025
+# Hamza Assada <7amza.it@gmail.com>, 2025
+# Philip Larsen Donnelly, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-11-17T13:40:24.697Z\n"
+"POT-Creation-Date: 2025-02-21T10:16:54.865Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2022\n"
-"Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
+"Last-Translator: Philip Larsen Donnelly, 2025\n"
+"Language-Team: Arabic (https://app.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -61,12 +61,6 @@ msgid "Will be added"
 msgstr ""
 
 msgid "Will be removed"
-msgstr ""
-
-msgid "Network error"
-msgstr ""
-
-msgid "Could not load current user information."
 msgstr ""
 
 msgid "Filter options"
@@ -180,10 +174,29 @@ msgid ""
 "There was a problem whilst checking the availability of this group code"
 msgstr ""
 
-msgid "Only show selected metadata authorities"
+msgid ""
+"You cannot assign this role because you are assigned to this role, and your "
+"system does not allow you to assign roles of which you are a member."
 msgstr ""
 
+msgid ""
+"You cannot assign this role because it has authorities that you do not have."
+msgstr ""
+
+msgid ""
+"There are no legacy or nonstandard authorities assigned to this user role."
+msgstr ""
+
+msgid "Remove"
+msgstr "إزلة"
+
 msgid "Authority"
+msgstr ""
+
+msgid "Remove authority"
+msgstr ""
+
+msgid "Only show selected metadata authorities"
 msgstr ""
 
 msgid "Add/Update Public"
@@ -247,8 +260,19 @@ msgstr ""
 msgid "Selected system authorities"
 msgstr ""
 
+msgid "Legacy and nonstandard authorities"
+msgstr ""
+
+msgid ""
+"Authorities not recognized as standard authorities. These authorities may be"
+" legacy authorities if you have upgraded versions."
+msgstr ""
+
 msgid "All (Full authority)"
 msgstr "الكل (صلاحية كاملة)"
+
+msgid "Aggregate Data Exchange"
+msgstr ""
 
 msgid "Analytics Table Hook"
 msgstr ""
@@ -421,6 +445,12 @@ msgstr "تخطي تدقيق استيراد البيانات"
 msgid "Visualization"
 msgstr "التخطيط البياني"
 
+msgid "Event Hook"
+msgstr ""
+
+msgid "Route"
+msgstr ""
+
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
 
@@ -517,6 +547,15 @@ msgstr "تلجرام"
 msgid "Twitter"
 msgstr "تويتر"
 
+msgid "This user does not have a verified email"
+msgstr ""
+
+msgid "This user email has been verified."
+msgstr ""
+
+msgid "This user does not have a verified email."
+msgstr ""
+
 msgid "Invite user"
 msgstr ""
 
@@ -576,7 +615,13 @@ msgstr ""
 msgid "User roles this user is assigned"
 msgstr ""
 
+msgid "You do not have permission to assign certain user roles"
+msgstr ""
+
 msgid "User groups this user is a member of"
+msgstr ""
+
+msgid "Invalid password"
 msgstr ""
 
 msgid "Security"
@@ -595,7 +640,9 @@ msgid "Password"
 msgstr "كلمة المرور"
 
 msgid ""
-"Minimum 8 characters, one uppercase and lowercase letter and one number"
+"Password should be between {{minPasswordLength}} and {{maxPasswordLength}} "
+"characters long, with at least one lowercase character, one uppercase "
+"character, one number, and one special character."
 msgstr ""
 
 msgid "Repeat new password"
@@ -619,16 +666,16 @@ msgstr "معرف LDAP"
 msgid "External authentication only (OpenID / LDAP)"
 msgstr ""
 
-msgid "Send invite"
-msgstr "إرسال دعوة"
-
-msgid "Cancel invite"
-msgstr ""
-
 msgid "Invalid username"
 msgstr ""
 
 msgid "Invalid WhatsApp number"
+msgstr ""
+
+msgid "Send invite"
+msgstr "إرسال دعوة"
+
+msgid "Cancel invite"
 msgstr ""
 
 msgid "Error updating user"
@@ -702,6 +749,9 @@ msgstr ""
 
 msgid "Edit user"
 msgstr "تعديل المستخدم"
+
+msgid "You do not have access to edit this user group"
+msgstr ""
 
 msgid "Overview"
 msgstr "نظرة عامة"
@@ -784,6 +834,13 @@ msgstr "جديد"
 msgid "Error loading user groups"
 msgstr ""
 
+msgid ""
+"There are no user groups to show here. You can add a new user group below."
+msgstr ""
+
+msgid "Add new user group"
+msgstr ""
+
 msgid "Member?"
 msgstr ""
 
@@ -823,6 +880,13 @@ msgstr "إدارة دور المستخدم"
 msgid "Error loading user roles"
 msgstr ""
 
+msgid ""
+"There are no user roles to show here. You can add a new user role below."
+msgstr ""
+
+msgid "Add new user role"
+msgstr ""
+
 msgid "Profile"
 msgstr "الملف الشخصي"
 
@@ -838,29 +902,13 @@ msgstr "تعطيل"
 msgid "Enable"
 msgstr "تمكين"
 
-msgid "Disable Two Factor Authentication"
-msgstr "تعطيل Two Factor Authentication"
+msgid "Reset two factor authentication"
+msgstr ""
 
 msgid "There was an error deleting the user: {{- error}}"
 msgstr ""
 
 msgid "Delete user {{- name}}"
-msgstr ""
-
-msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
-msgstr ""
-
-msgid "There was an error disabling two factor authentication: {{- error}}"
-msgstr ""
-
-msgid "Disable two factor authentication for user {{- name}}"
-msgstr ""
-
-msgid ""
-"Are you sure you want to disable two factor authentication for {{- name}}?"
-msgstr ""
-
-msgid "Yes, disable two factor authentication"
 msgstr ""
 
 msgid "User \"{{- name}}\" disabled successfuly"
@@ -908,11 +956,6 @@ msgstr "اسم المستخدم للمستخدم الجديد"
 msgid "Password for new user"
 msgstr "كلمة السر للمستخدم الجديد"
 
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
-msgstr ""
-
 msgid "Replicate user"
 msgstr "إنشاء نسخة من المستخدم"
 
@@ -928,6 +971,23 @@ msgstr ""
 msgid "Yes, reset"
 msgstr ""
 
+msgid "Two factor authentication for \"{{- name}}\" has reset successfully"
+msgstr ""
+
+msgid ""
+"There was an error resetting the two factor authentication: {{- error}}"
+msgstr ""
+
+msgid ""
+"If {{- name}} has two factor authentication enabled, resetting the two "
+"factor authentication will make it possible for them to log in without "
+"providing a two factor authentication code."
+msgstr ""
+
+msgid ""
+"Are you sure you want to reset two factor authentication for {{- name}}?"
+msgstr ""
+
 msgid "1 month"
 msgstr ""
 
@@ -935,6 +995,18 @@ msgid "{{months}} months"
 msgstr ""
 
 msgid "Time inactive"
+msgstr ""
+
+msgid "Email verification"
+msgstr ""
+
+msgid "All"
+msgstr "الجميع"
+
+msgid "Email verified"
+msgstr ""
+
+msgid "Email not verified"
 msgstr ""
 
 msgid "Invitation"
@@ -958,11 +1030,23 @@ msgstr ""
 msgid "User Management"
 msgstr "إدارة المستخدم"
 
+msgid "There are no users to show here. You can add a new user below."
+msgstr ""
+
+msgid "Add new user"
+msgstr ""
+
 msgid "Last login"
 msgstr "آخر عملية تسجيل دخول"
 
 msgid "Status"
 msgstr "الحالة"
+
+msgid "Verified"
+msgstr "تم التحقق منه"
+
+msgid "Not verified"
+msgstr ""
 
 msgid "Disabled"
 msgstr "معطل"
@@ -1026,3 +1110,12 @@ msgstr "الاهتمامات"
 
 msgid "Birthday"
 msgstr "تاريخ الميلاد"
+
+msgid "Network error"
+msgstr ""
+
+msgid "Could not load current user information."
+msgstr ""
+
+msgid "Could not load system information."
+msgstr ""

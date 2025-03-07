@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2024
+# Khurshid Ibatov <Khurshid.Ibatov@tibbiysugurta.uz>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-03-27T09:03:25.496Z\n"
+"POT-Creation-Date: 2025-02-21T10:16:54.865Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2024\n"
+"Last-Translator: Khurshid Ibatov <Khurshid.Ibatov@tibbiysugurta.uz>, 2025\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -59,12 +59,6 @@ msgid "Will be added"
 msgstr ""
 
 msgid "Will be removed"
-msgstr ""
-
-msgid "Network error"
-msgstr "Тармоқда хатолик"
-
-msgid "Could not load current user information."
 msgstr ""
 
 msgid "Filter options"
@@ -178,10 +172,29 @@ msgid ""
 "There was a problem whilst checking the availability of this group code"
 msgstr ""
 
-msgid "Only show selected metadata authorities"
+msgid ""
+"You cannot assign this role because you are assigned to this role, and your "
+"system does not allow you to assign roles of which you are a member."
 msgstr ""
 
+msgid ""
+"You cannot assign this role because it has authorities that you do not have."
+msgstr ""
+
+msgid ""
+"There are no legacy or nonstandard authorities assigned to this user role."
+msgstr ""
+
+msgid "Remove"
+msgstr "Олиб ташлаш"
+
 msgid "Authority"
+msgstr ""
+
+msgid "Remove authority"
+msgstr ""
+
+msgid "Only show selected metadata authorities"
 msgstr ""
 
 msgid "Add/Update Public"
@@ -243,6 +256,14 @@ msgid "Available system authorities"
 msgstr ""
 
 msgid "Selected system authorities"
+msgstr ""
+
+msgid "Legacy and nonstandard authorities"
+msgstr ""
+
+msgid ""
+"Authorities not recognized as standard authorities. These authorities may be"
+" legacy authorities if you have upgraded versions."
 msgstr ""
 
 msgid "All (Full authority)"
@@ -526,6 +547,15 @@ msgstr "Telegram"
 msgid "Twitter"
 msgstr "Telegram"
 
+msgid "This user does not have a verified email"
+msgstr ""
+
+msgid "This user email has been verified."
+msgstr ""
+
+msgid "This user does not have a verified email."
+msgstr ""
+
 msgid "Invite user"
 msgstr ""
 
@@ -585,7 +615,13 @@ msgstr ""
 msgid "User roles this user is assigned"
 msgstr ""
 
+msgid "You do not have permission to assign certain user roles"
+msgstr ""
+
 msgid "User groups this user is a member of"
+msgstr ""
+
+msgid "Invalid password"
 msgstr ""
 
 msgid "Security"
@@ -604,8 +640,9 @@ msgid "Password"
 msgstr "Парол"
 
 msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
+"Password should be between {{minPasswordLength}} and {{maxPasswordLength}} "
+"characters long, with at least one lowercase character, one uppercase "
+"character, one number, and one special character."
 msgstr ""
 
 msgid "Repeat new password"
@@ -865,29 +902,13 @@ msgstr "Ўчириб қўйиш"
 msgid "Enable"
 msgstr "Ёқиб қўйиш"
 
-msgid "Disable Two Factor Authentication"
-msgstr "Икки факторли аутентиификацияни ўчириш"
+msgid "Reset two factor authentication"
+msgstr ""
 
 msgid "There was an error deleting the user: {{- error}}"
 msgstr ""
 
 msgid "Delete user {{- name}}"
-msgstr ""
-
-msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
-msgstr ""
-
-msgid "There was an error disabling two factor authentication: {{- error}}"
-msgstr ""
-
-msgid "Disable two factor authentication for user {{- name}}"
-msgstr ""
-
-msgid ""
-"Are you sure you want to disable two factor authentication for {{- name}}?"
-msgstr ""
-
-msgid "Yes, disable two factor authentication"
 msgstr ""
 
 msgid "User \"{{- name}}\" disabled successfuly"
@@ -950,6 +971,23 @@ msgstr ""
 msgid "Yes, reset"
 msgstr ""
 
+msgid "Two factor authentication for \"{{- name}}\" has reset successfully"
+msgstr ""
+
+msgid ""
+"There was an error resetting the two factor authentication: {{- error}}"
+msgstr ""
+
+msgid ""
+"If {{- name}} has two factor authentication enabled, resetting the two "
+"factor authentication will make it possible for them to log in without "
+"providing a two factor authentication code."
+msgstr ""
+
+msgid ""
+"Are you sure you want to reset two factor authentication for {{- name}}?"
+msgstr ""
+
 msgid "1 month"
 msgstr ""
 
@@ -957,6 +995,18 @@ msgid "{{months}} months"
 msgstr ""
 
 msgid "Time inactive"
+msgstr ""
+
+msgid "Email verification"
+msgstr ""
+
+msgid "All"
+msgstr "Барчаси"
+
+msgid "Email verified"
+msgstr ""
+
+msgid "Email not verified"
 msgstr ""
 
 msgid "Invitation"
@@ -991,6 +1041,12 @@ msgstr "Охирги кириш"
 
 msgid "Status"
 msgstr "Статус"
+
+msgid "Verified"
+msgstr "Тасдиқланган"
+
+msgid "Not verified"
+msgstr ""
 
 msgid "Disabled"
 msgstr "Ўчириб қўйилган"
@@ -1054,3 +1110,12 @@ msgstr "Қизиқиши"
 
 msgid "Birthday"
 msgstr "Тугилган кун"
+
+msgid "Network error"
+msgstr "Тармоқда хатолик"
+
+msgid "Could not load current user information."
+msgstr ""
+
+msgid "Could not load system information."
+msgstr ""

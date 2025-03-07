@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2022
-# Philip Larsen Donnelly, 2022
 # Thiago Rocha, 2024
+# Viktor Varland <viktor@dhis2.org>, 2025
+# Philip Larsen Donnelly, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-01-19T12:15:17.744Z\n"
+"POT-Creation-Date: 2025-02-21T10:16:54.865Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Thiago Rocha, 2024\n"
+"Last-Translator: Philip Larsen Donnelly, 2025\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/hisp-uio/teams/100509/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -63,12 +63,6 @@ msgstr "Será adicionado"
 
 msgid "Will be removed"
 msgstr "Será removido"
-
-msgid "Network error"
-msgstr "Erro de rede"
-
-msgid "Could not load current user information."
-msgstr "Não foi possível carregar as informações atuais do usuário."
 
 msgid "Filter options"
 msgstr "Opções de filtro"
@@ -184,11 +178,30 @@ msgid ""
 msgstr ""
 "Houve um problema ao verificar a disponibilidade desse código de grupo"
 
-msgid "Only show selected metadata authorities"
-msgstr "Mostrar apenas as autoridades de metadados selecionadas"
+msgid ""
+"You cannot assign this role because you are assigned to this role, and your "
+"system does not allow you to assign roles of which you are a member."
+msgstr ""
+
+msgid ""
+"You cannot assign this role because it has authorities that you do not have."
+msgstr ""
+
+msgid ""
+"There are no legacy or nonstandard authorities assigned to this user role."
+msgstr ""
+
+msgid "Remove"
+msgstr "Remover"
 
 msgid "Authority"
 msgstr "Autoridade"
+
+msgid "Remove authority"
+msgstr ""
+
+msgid "Only show selected metadata authorities"
+msgstr "Mostrar apenas as autoridades de metadados selecionadas"
 
 msgid "Add/Update Public"
 msgstr "Adicionar/Atualizar Público"
@@ -252,6 +265,14 @@ msgstr "Autoridades de sistema disponíveis"
 
 msgid "Selected system authorities"
 msgstr "Autoridades de sistema selecionadas"
+
+msgid "Legacy and nonstandard authorities"
+msgstr ""
+
+msgid ""
+"Authorities not recognized as standard authorities. These authorities may be"
+" legacy authorities if you have upgraded versions."
+msgstr ""
 
 msgid "All (Full authority)"
 msgstr "Todos (autoridade total)"
@@ -536,6 +557,15 @@ msgstr "Telegram"
 msgid "Twitter"
 msgstr "Twitter"
 
+msgid "This user does not have a verified email"
+msgstr ""
+
+msgid "This user email has been verified."
+msgstr ""
+
+msgid "This user does not have a verified email."
+msgstr ""
+
 msgid "Invite user"
 msgstr "Convidar usuário"
 
@@ -602,8 +632,14 @@ msgstr "Funções de usuário disponíveis"
 msgid "User roles this user is assigned"
 msgstr "Funções de usuário atribuídas a esse usuário"
 
+msgid "You do not have permission to assign certain user roles"
+msgstr ""
+
 msgid "User groups this user is a member of"
 msgstr "Grupos de usuários dos quais esse usuário é membro"
+
+msgid "Invalid password"
+msgstr ""
 
 msgid "Security"
 msgstr "Segurança"
@@ -621,11 +657,10 @@ msgid "Password"
 msgstr "Password"
 
 msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
+"Password should be between {{minPasswordLength}} and {{maxPasswordLength}} "
+"characters long, with at least one lowercase character, one uppercase "
+"character, one number, and one special character."
 msgstr ""
-"A senha deve ter pelo menos 8 caracteres, com pelo menos um caractere "
-"minúsculo, um caractere maiúsculo e um caractere especial."
 
 msgid "Repeat new password"
 msgstr "Repetir a nova senha"
@@ -734,6 +769,9 @@ msgstr "Ocorreu um erro ao buscar esse usuário."
 
 msgid "Edit user"
 msgstr "Alterar usuário"
+
+msgid "You do not have access to edit this user group"
+msgstr ""
 
 msgid "Overview"
 msgstr "Visão geral"
@@ -888,33 +926,14 @@ msgstr "Desactivar"
 msgid "Enable"
 msgstr "Habilitar"
 
-msgid "Disable Two Factor Authentication"
-msgstr "Desativar dois factores de autenticação"
+msgid "Reset two factor authentication"
+msgstr ""
 
 msgid "There was an error deleting the user: {{- error}}"
 msgstr "Ocorreu um erro ao excluir o usuário: {{- error}}"
 
 msgid "Delete user {{- name}}"
 msgstr "Excluir usuário {{- name}}"
-
-msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
-msgstr "Desativou a autenticação de dois fatores para \"{{- name}}\" com sucesso"
-
-msgid "There was an error disabling two factor authentication: {{- error}}"
-msgstr ""
-"Ocorreu um erro ao desativar a autenticação de dois fatores: {{- error}}"
-
-msgid "Disable two factor authentication for user {{- name}}"
-msgstr "Desativar a autenticação de dois fatores para o usuário {{- name}}"
-
-msgid ""
-"Are you sure you want to disable two factor authentication for {{- name}}?"
-msgstr ""
-"Tem certeza de que deseja desativar a autenticação de dois fatores para {{- "
-"name}}?"
-
-msgid "Yes, disable two factor authentication"
-msgstr "Sim, desative a autenticação de dois fatores"
 
 msgid "User \"{{- name}}\" disabled successfuly"
 msgstr "Usuário \"{{- name}}\" desativado com sucesso"
@@ -976,6 +995,23 @@ msgstr "Tem certeza de que deseja redefinir a senha de {{- name}}?"
 msgid "Yes, reset"
 msgstr "Sim, redefinir"
 
+msgid "Two factor authentication for \"{{- name}}\" has reset successfully"
+msgstr ""
+
+msgid ""
+"There was an error resetting the two factor authentication: {{- error}}"
+msgstr ""
+
+msgid ""
+"If {{- name}} has two factor authentication enabled, resetting the two "
+"factor authentication will make it possible for them to log in without "
+"providing a two factor authentication code."
+msgstr ""
+
+msgid ""
+"Are you sure you want to reset two factor authentication for {{- name}}?"
+msgstr ""
+
 msgid "1 month"
 msgstr "1 mês"
 
@@ -984,6 +1020,18 @@ msgstr "{{months}} meses"
 
 msgid "Time inactive"
 msgstr "Tempo inativo"
+
+msgid "Email verification"
+msgstr ""
+
+msgid "All"
+msgstr "Tudo"
+
+msgid "Email verified"
+msgstr ""
+
+msgid "Email not verified"
+msgstr ""
 
 msgid "Invitation"
 msgstr "Convite"
@@ -1019,6 +1067,12 @@ msgstr "Última entrada"
 
 msgid "Status"
 msgstr "Estado"
+
+msgid "Verified"
+msgstr "Verificado"
+
+msgid "Not verified"
+msgstr ""
 
 msgid "Disabled"
 msgstr "Desabilitar"
@@ -1082,3 +1136,12 @@ msgstr "Interesses"
 
 msgid "Birthday"
 msgstr "Aniversário"
+
+msgid "Network error"
+msgstr "Erro de rede"
+
+msgid "Could not load current user information."
+msgstr "Não foi possível carregar as informações atuais do usuário."
+
+msgid "Could not load system information."
+msgstr ""
