@@ -9,6 +9,7 @@ import {
     DataTableColumnHeader,
     DataTableBody,
     DataTableCell,
+    Tooltip,
 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
@@ -29,20 +30,44 @@ ColumnHeader.propTypes = {
     children: PropTypes.node.isRequired,
 }
 
+const TooltipDisabledWrapper = ({ disabled, children }) => {
+    if (!disabled) {
+        return <>{children}</>
+    }
+    return (
+        <Tooltip
+            content={i18n.t(
+                'Select all is not possible while filter is applied'
+            )}
+        >
+            {children}
+        </Tooltip>
+    )
+}
+
+TooltipDisabledWrapper.propTypes = {
+    children: PropTypes.node.isRequired,
+    disabled: PropTypes.bool,
+}
+
 const CheckboxColumnHeader = ({
     name,
     label,
     selectedColumns,
     onSelectedColumnToggle,
+    disabled,
 }) => (
     <ColumnHeader>
-        <CheckboxField
-            dense
-            name={name}
-            label={label}
-            checked={selectedColumns.has(name)}
-            onChange={() => onSelectedColumnToggle(name)}
-        />
+        <TooltipDisabledWrapper disabled={disabled}>
+            <CheckboxField
+                dense
+                name={name}
+                label={label}
+                checked={selectedColumns.has(name)}
+                onChange={() => onSelectedColumnToggle(name)}
+                disabled={disabled}
+            />
+        </TooltipDisabledWrapper>
     </ColumnHeader>
 )
 
@@ -51,6 +76,7 @@ CheckboxColumnHeader.propTypes = {
     name: PropTypes.string.isRequired,
     selectedColumns: PropTypes.instanceOf(Set).isRequired,
     onSelectedColumnToggle: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
 }
 
 const AuthorityCell = React.memo(
@@ -181,24 +207,28 @@ const MetadataAuthoritiesTable = React.memo(
                             label={i18n.t('Add/Update Public')}
                             selectedColumns={selectedColumns}
                             onSelectedColumnToggle={onSelectedColumnToggle}
+                            disabled={Boolean(filter)}
                         />
                         <CheckboxColumnHeader
                             name="addUpdatePrivate"
                             label={i18n.t('Add/Update Private')}
                             selectedColumns={selectedColumns}
                             onSelectedColumnToggle={onSelectedColumnToggle}
+                            disabled={Boolean(filter)}
                         />
                         <CheckboxColumnHeader
                             name="delete"
                             label={i18n.t('Delete')}
                             selectedColumns={selectedColumns}
                             onSelectedColumnToggle={onSelectedColumnToggle}
+                            disabled={Boolean(filter)}
                         />
                         <CheckboxColumnHeader
                             name="externalAccess"
                             label={i18n.t('External access')}
                             selectedColumns={selectedColumns}
                             onSelectedColumnToggle={onSelectedColumnToggle}
+                            disabled={Boolean(filter)}
                         />
                     </DataTableRow>
                 </DataTableHead>
