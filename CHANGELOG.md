@@ -1,3 +1,10 @@
+## [100.6.3](https://github.com/dhis2/user-app/compare/v100.6.2...v100.6.3) (2025-03-12)
+
+
+### Bug Fixes
+
+* disable authority select all when there is a filter [DHIS2-19009] ([#1532](https://github.com/dhis2/user-app/issues/1532)) ([fbf0515](https://github.com/dhis2/user-app/commit/fbf05150a838c9e6dccbf3aa52fe2be4fbad01e2))
+
 ## [100.6.2](https://github.com/dhis2/user-app/compare/v100.6.1...v100.6.2) (2025-03-02)
 
 
