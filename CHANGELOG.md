@@ -1,3 +1,10 @@
+# [100.7.0](https://github.com/dhis2/user-app/compare/v100.6.3...v100.7.0) (2025-03-13)
+
+
+### Features
+
+* **app-platform:** upgrade platform tools to use vite and react 18 ([#1527](https://github.com/dhis2/user-app/issues/1527)) ([d671ff5](https://github.com/dhis2/user-app/commit/d671ff512585b80b36cf367fd2b933bbe6d2aa9f))
+
 ## [100.6.3](https://github.com/dhis2/user-app/compare/v100.6.2...v100.6.3) (2025-03-12)
 
 
