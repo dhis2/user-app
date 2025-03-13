@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react'
 import React from 'react'
-import EmailStatusMessage from './EmailStatusMessage.js'
+import EmailStatusMessage from './EmailStatusMessage.jsx'
 
 jest.mock('@dhis2/ui', () => ({
     ...jest.requireActual('@dhis2/ui'),

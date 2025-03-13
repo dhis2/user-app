@@ -1,2 +1,2 @@
-import UserForm from './UserForm.js'
+import UserForm from './UserForm.jsx'
 export default UserForm

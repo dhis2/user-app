@@ -7,7 +7,7 @@ const config = {
     description:
         'An application for managing users, user-groups and user-roles',
     entryPoints: {
-        app: './src/AppWrapper.js',
+        app: './src/AppWrapper.jsx',
     },
     minDHIS2Version: '2.41',
 }

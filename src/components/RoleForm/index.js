@@ -1,3 +1,3 @@
-import RoleForm from './RoleForm.js'
-export { AssignmentRestrictionWarning } from './AssignmentRestrictionsWarning.js'
+import RoleForm from './RoleForm.jsx'
+export { AssignmentRestrictionWarning } from './AssignmentRestrictionsWarning.jsx'
 export default RoleForm

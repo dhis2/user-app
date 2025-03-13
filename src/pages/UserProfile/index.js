@@ -1,2 +1,2 @@
-import UserProfile from './UserProfile.js'
+import UserProfile from './UserProfile.jsx'
 export default UserProfile
