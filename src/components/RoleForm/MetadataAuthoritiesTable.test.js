@@ -2,7 +2,7 @@ import { ReactFinalForm } from '@dhis2/ui'
 import { act, render, screen } from '@testing-library/react'
 import PropTypes from 'prop-types'
 import React from 'react'
-import MetadataAuthoritiesTable from './MetadataAuthoritiesTable.js'
+import MetadataAuthoritiesTable from './MetadataAuthoritiesTable.jsx'
 
 const { Form } = ReactFinalForm
 
