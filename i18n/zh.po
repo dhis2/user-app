@@ -908,7 +908,7 @@ msgid "Enable"
 msgstr "显示"
 
 msgid "Reset two factor authentication"
-msgstr ""
+msgstr "重置双因素身份验证"
 
 msgid "There was an error deleting the user: {{- error}}"
 msgstr "删除用户时出错：{{- error}}"
@@ -977,21 +977,21 @@ msgid "Yes, reset"
 msgstr "是的，重置"
 
 msgid "Two factor authentication for \"{{- name}}\" has reset successfully"
-msgstr ""
+msgstr "{{- name}}\" 的双因素身份验证已重置成功"
 
 msgid ""
 "There was an error resetting the two factor authentication: {{- error}}"
-msgstr ""
+msgstr "重置双因素身份验证时出现错误：{{- error}}"
 
 msgid ""
 "If {{- name}} has two factor authentication enabled, resetting the two "
 "factor authentication will make it possible for them to log in without "
 "providing a two factor authentication code."
-msgstr ""
+msgstr "如果{{- name}} 启用了双因素身份验证，重置双因素身份验证后，他们就可以在不提供双因素身份验证代码的情况下登录。"
 
 msgid ""
 "Are you sure you want to reset two factor authentication for {{- name}}?"
-msgstr ""
+msgstr "您确定要重置{{- name}} 的双因素身份验证吗？"
 
 msgid "1 month"
 msgstr "1个月"
