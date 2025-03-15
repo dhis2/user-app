@@ -1,13 +1,13 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2023
-# phil_dhis2, 2023
+# Philip Larsen Donnelly, 2023
 # Hamza Assada <7amza.it@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-06T13:36:07.125Z\n"
+"POT-Creation-Date: 2025-02-21T10:16:54.865Z\n"
 "PO-Revision-Date: 2023-05-22 19:30+0000\n"
 "Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2023\n"
 "Language-Team: Arabic (https://app.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -424,6 +424,12 @@ msgstr "تخطي تدقيق استيراد البيانات"
 msgid "Visualization"
 msgstr "التخطيط البياني"
 
+msgid "Event Hook"
+msgstr ""
+
+msgid "Route"
+msgstr ""
+
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
 
@@ -598,7 +604,8 @@ msgid "Password"
 msgstr "كلمة المرور"
 
 msgid ""
-"Minimum 8 characters, one uppercase and lowercase letter and one number"
+"Password should be at least 8 characters long, with at least one lowercase "
+"character, one uppercase character and one special character."
 msgstr ""
 
 msgid "Repeat new password"
@@ -705,6 +712,9 @@ msgstr ""
 
 msgid "Edit user"
 msgstr "تعديل المستخدم"
+
+msgid "You do not have access to edit this user group"
+msgstr ""
 
 msgid "Overview"
 msgstr "نظرة عامة"
@@ -855,29 +865,13 @@ msgstr "تعطيل"
 msgid "Enable"
 msgstr "تمكين"
 
-msgid "Disable Two Factor Authentication"
-msgstr "تعطيل Two Factor Authentication"
+msgid "Reset two factor authentication"
+msgstr ""
 
 msgid "There was an error deleting the user: {{- error}}"
 msgstr ""
 
 msgid "Delete user {{- name}}"
-msgstr ""
-
-msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
-msgstr ""
-
-msgid "There was an error disabling two factor authentication: {{- error}}"
-msgstr ""
-
-msgid "Disable two factor authentication for user {{- name}}"
-msgstr ""
-
-msgid ""
-"Are you sure you want to disable two factor authentication for {{- name}}?"
-msgstr ""
-
-msgid "Yes, disable two factor authentication"
 msgstr ""
 
 msgid "User \"{{- name}}\" disabled successfuly"
@@ -925,11 +919,6 @@ msgstr "اسم المستخدم للمستخدم الجديد"
 msgid "Password for new user"
 msgstr "كلمة السر للمستخدم الجديد"
 
-msgid ""
-"Password should be at least 8 characters long, with at least one lowercase "
-"character, one uppercase character and one special character."
-msgstr ""
-
 msgid "Replicate user"
 msgstr "إنشاء نسخة من المستخدم"
 
@@ -943,6 +932,23 @@ msgid "Are you sure you want to reset the password for {{- name}}?"
 msgstr ""
 
 msgid "Yes, reset"
+msgstr ""
+
+msgid "Two factor authentication for \"{{- name}}\" has reset successfully"
+msgstr ""
+
+msgid ""
+"There was an error resetting the two factor authentication: {{- error}}"
+msgstr ""
+
+msgid ""
+"If {{- name}} has two factor authentication enabled, resetting the two "
+"factor authentication will make it possible for them to log in without "
+"providing a two factor authentication code."
+msgstr ""
+
+msgid ""
+"Are you sure you want to reset two factor authentication for {{- name}}?"
 msgstr ""
 
 msgid "1 month"
