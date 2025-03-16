@@ -1,3 +1,10 @@
+## [100.7.1](https://github.com/dhis2/user-app/compare/v100.7.0...v100.7.1) (2025-03-16)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6bc7a00](https://github.com/dhis2/user-app/commit/6bc7a009abf455ce99159d22275a47f9ec6c27f8))
+
 # [100.7.0](https://github.com/dhis2/user-app/compare/v100.6.3...v100.7.0) (2025-03-13)
 
 
