@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-01-19T12:15:17.744Z\n"
+"POT-Creation-Date: 2025-02-21T10:16:54.865Z\n"
 "PO-Revision-Date: 2023-05-22 19:30+0000\n"
 "Last-Translator: Thiago Rocha, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/hisp-uio/teams/100509/pt_BR/)\n"
@@ -735,6 +735,9 @@ msgstr "Ocorreu um erro ao buscar esse usuário."
 msgid "Edit user"
 msgstr "Alterar usuário"
 
+msgid "You do not have access to edit this user group"
+msgstr ""
+
 msgid "Overview"
 msgstr "Visão geral"
 
@@ -888,33 +891,14 @@ msgstr "Desactivar"
 msgid "Enable"
 msgstr "Habilitar"
 
-msgid "Disable Two Factor Authentication"
-msgstr "Desativar dois factores de autenticação"
+msgid "Reset two factor authentication"
+msgstr ""
 
 msgid "There was an error deleting the user: {{- error}}"
 msgstr "Ocorreu um erro ao excluir o usuário: {{- error}}"
 
 msgid "Delete user {{- name}}"
 msgstr "Excluir usuário {{- name}}"
-
-msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
-msgstr "Desativou a autenticação de dois fatores para \"{{- name}}\" com sucesso"
-
-msgid "There was an error disabling two factor authentication: {{- error}}"
-msgstr ""
-"Ocorreu um erro ao desativar a autenticação de dois fatores: {{- error}}"
-
-msgid "Disable two factor authentication for user {{- name}}"
-msgstr "Desativar a autenticação de dois fatores para o usuário {{- name}}"
-
-msgid ""
-"Are you sure you want to disable two factor authentication for {{- name}}?"
-msgstr ""
-"Tem certeza de que deseja desativar a autenticação de dois fatores para {{- "
-"name}}?"
-
-msgid "Yes, disable two factor authentication"
-msgstr "Sim, desative a autenticação de dois fatores"
 
 msgid "User \"{{- name}}\" disabled successfuly"
 msgstr "Usuário \"{{- name}}\" desativado com sucesso"
@@ -975,6 +959,23 @@ msgstr "Tem certeza de que deseja redefinir a senha de {{- name}}?"
 
 msgid "Yes, reset"
 msgstr "Sim, redefinir"
+
+msgid "Two factor authentication for \"{{- name}}\" has reset successfully"
+msgstr ""
+
+msgid ""
+"There was an error resetting the two factor authentication: {{- error}}"
+msgstr ""
+
+msgid ""
+"If {{- name}} has two factor authentication enabled, resetting the two "
+"factor authentication will make it possible for them to log in without "
+"providing a two factor authentication code."
+msgstr ""
+
+msgid ""
+"Are you sure you want to reset two factor authentication for {{- name}}?"
+msgstr ""
 
 msgid "1 month"
 msgstr "1 mês"
