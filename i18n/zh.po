@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-08T17:31:59.581Z\n"
+"POT-Creation-Date: 2024-03-22T08:26:32.388Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2024\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -48,6 +48,9 @@ msgstr "编辑用户角色"
 
 msgid "Send message"
 msgstr "发生信息"
+
+msgid "ID"
+msgstr "Id"
 
 msgid "Filter options"
 msgstr "过滤选项"
@@ -614,9 +617,6 @@ msgstr "创建、修改、查看和删除用户"
 
 msgid "Display name"
 msgstr "显示名"
-
-msgid "ID"
-msgstr "Id"
 
 msgid "Last login"
 msgstr "上次登录"
