@@ -17,6 +17,8 @@ const query = {
     },
 }
 
+const EXCLUDED_AUTHORITIES = ['F_PREVIOUS_IMPERSONATOR_AUTHORITY']
+
 export const SystemProvider = ({ children }) => {
     const { data, error, fetching, loading } = useDataQuery(query)
 
@@ -43,7 +45,10 @@ export const SystemProvider = ({ children }) => {
     }
 
     const value = {
-        authorities: data.systemAuthorities?.systemAuthorities ?? [],
+        authorities:
+            data.systemAuthorities?.systemAuthorities?.filter(
+                (a) => !EXCLUDED_AUTHORITIES.includes(a?.id)
+            ) ?? [],
         authorityIdToNameMap: !data.systemAuthorities?.systemAuthorities
             ? new Map()
             : data.systemAuthorities?.systemAuthorities?.reduce(
