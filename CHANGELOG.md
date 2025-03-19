@@ -1,3 +1,10 @@
+# [100.8.0](https://github.com/dhis2/user-app/compare/v100.7.1...v100.8.0) (2025-03-19)
+
+
+### Features
+
+* filter out impersonation authority [DHIS2-19324] ([#1539](https://github.com/dhis2/user-app/issues/1539)) ([e2b4373](https://github.com/dhis2/user-app/commit/e2b4373f3a2d1a7ff877f9ddefc4dc083e5de82c))
+
 ## [100.7.1](https://github.com/dhis2/user-app/compare/v100.7.0...v100.7.1) (2025-03-16)
 
 
