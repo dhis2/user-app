@@ -1,3 +1,10 @@
+## [100.8.1](https://github.com/dhis2/user-app/compare/v100.8.0...v100.8.1) (2025-03-30)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([667c7a5](https://github.com/dhis2/user-app/commit/667c7a565dddb36034b516e9aedd83abdbff3829))
+
 # [100.8.0](https://github.com/dhis2/user-app/compare/v100.7.1...v100.8.0) (2025-03-19)
 
 
