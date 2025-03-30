@@ -11,13 +11,14 @@
 # Yassine NAHDI <yassine_nahdi@gnet.tn>, 2023
 # Philip Larsen Donnelly, 2024
 # Elise Desailly, 2024
+# Cyrille Kabrane, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-03-27T09:03:25.496Z\n"
 "PO-Revision-Date: 2022-10-15 22:33+0000\n"
-"Last-Translator: Elise Desailly, 2024\n"
+"Last-Translator: Cyrille Kabrane, 2025\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -443,7 +444,7 @@ msgid "Route"
 msgstr ""
 
 msgid "Impersonate user"
-msgstr ""
+msgstr "Prendre l'identité d'un utilisateur"
 
 msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
