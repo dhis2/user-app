@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-02-21T10:16:54.865Z\n"
-"PO-Revision-Date: 2025-02-21T10:16:54.865Z\n"
+"POT-Creation-Date: 2025-05-09T12:36:26.531Z\n"
+"PO-Revision-Date: 2025-05-09T12:36:26.532Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -183,6 +183,9 @@ msgstr "Authority"
 msgid "Remove authority"
 msgstr "Remove authority"
 
+msgid "Select all is not possible while filter is applied"
+msgstr "Select all is not possible while filter is applied"
+
 msgid "Only show selected metadata authorities"
 msgstr "Only show selected metadata authorities"
 
@@ -258,6 +261,9 @@ msgstr ""
 
 msgid "All (Full authority)"
 msgstr "All (Full authority)"
+
+msgid "Update Tracked Entity Type"
+msgstr "Update Tracked Entity Type"
 
 msgid "Aggregate Data Exchange"
 msgstr "Aggregate Data Exchange"
@@ -397,8 +403,8 @@ msgstr "Section"
 msgid "SQL View"
 msgstr "SQL View"
 
-msgid "Tracked Entity"
-msgstr "Tracked Entity"
+msgid "Tracked Entity Type"
+msgstr "Tracked Entity Type"
 
 msgid "Tracked Entity Attribute"
 msgstr "Tracked Entity Attribute"

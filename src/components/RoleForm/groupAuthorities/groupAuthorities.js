@@ -61,6 +61,11 @@ const AUTHORITY_GROUPS = {
 
 const APP_AUTH_PREFIX = 'M_'
 
+const AUTHORITY_NAME_OVERRIDES = {
+    ALL: i18n.t('All (Full authority)'),
+    F_TRACKED_ENTITY_UPDATE: i18n.t('Update Tracked Entity Type'),
+}
+
 const groupForAuthority = (auth) => {
     for (const [group, authorityIDs] of Object.entries(AUTHORITY_GROUPS)) {
         if (authorityIDs.has(auth.id)) {
@@ -93,9 +98,7 @@ const groupAuthorities = (authorities) => {
 
     const groupedAuthorities = authorities.reduce(
         (groupedAuthorities, auth) => {
-            if (auth.id === 'ALL') {
-                auth.name = i18n.t('All (Full authority)')
-            }
+            auth.name = AUTHORITY_NAME_OVERRIDES[auth.id] || auth.name
 
             if (!lookup.has(auth.id)) {
                 // Do nothing if authority has already been removed from lookup

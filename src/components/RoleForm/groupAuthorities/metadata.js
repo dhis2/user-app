@@ -49,7 +49,7 @@ const GROUP_NAMES = {
     F_REPORT: i18n.t('Report'),
     F_SECTION: i18n.t('Section'),
     F_SQLVIEW: i18n.t('SQL View'),
-    F_TRACKED_ENTITY: i18n.t('Tracked Entity'),
+    F_TRACKED_ENTITY: i18n.t('Tracked Entity Type'),
     F_TRACKED_ENTITY_ATTRIBUTE: i18n.t('Tracked Entity Attribute'),
     F_TRACKED_ENTITY_DATAVALUE: i18n.t('Tracked Entity Data Value'),
     F_TRACKED_ENTITY_INSTANCE: i18n.t('Tracked Entity Instance'),
