@@ -1,3 +1,10 @@
+## [100.8.2](https://github.com/dhis2/user-app/compare/v100.8.1...v100.8.2) (2025-05-28)
+
+
+### Bug Fixes
+
+* tracked entity type authorities [DHIS2-15942] ([#1545](https://github.com/dhis2/user-app/issues/1545)) ([caad601](https://github.com/dhis2/user-app/commit/caad6015f5b6f244a0d048ff24595900ade2d970))
+
 ## [100.8.1](https://github.com/dhis2/user-app/compare/v100.8.0...v100.8.1) (2025-03-30)
 
 
