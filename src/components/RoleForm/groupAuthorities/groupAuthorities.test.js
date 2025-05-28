@@ -37,6 +37,17 @@ describe('groupAuthorities', () => {
         expect(groupedAuthorities.system[0].name).toBe('All (Full authority)')
     })
 
+    it(`sets the name of the F_TRACKED_ENTITY_UPDATE authority to 'Update Tracked Entity Type'`, () => {
+        const authorities = [{ id: 'F_TRACKED_ENTITY_UPDATE' }]
+        const groupedAuthorities = groupAuthorities(authorities)
+
+        expect(groupedAuthorities.tracker).toHaveLength(1)
+        expect(groupedAuthorities.tracker[0].id).toBe('F_TRACKED_ENTITY_UPDATE')
+        expect(groupedAuthorities.tracker[0].name).toBe(
+            'Update Tracked Entity Type'
+        )
+    })
+
     it('groups authorities with the app authority prefix M_ under the apps group', () => {
         const authorities = [{ id: 'M_SOME_APP' }]
         const groupedAuthorities = groupAuthorities(authorities)
