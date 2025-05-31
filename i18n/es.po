@@ -3,20 +3,20 @@
 # Pablo Pajuelo Cabezas <pablo@dhis2.org>, 2022
 # William Aviles <waviles@clintonhealthaccess.org>, 2022
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
-# Janeth Cruz, 2023
 # Enzo Nicolas Rossi <enzo@dhis2.org>, 2024
 # Viktor Varland <viktor@dhis2.org>, 2025
 # Prabhjot Singh, 2025
 # Philip Larsen Donnelly, 2025
 # Carlos Tejo Alonso, 2025
 # Pablo Del Médico, 2025
+# Janeth Cruz, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-02-21T10:16:54.865Z\n"
+"POT-Creation-Date: 2025-05-09T12:36:26.531Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Pablo Del Médico, 2025\n"
+"Last-Translator: Janeth Cruz, 2025\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -208,6 +208,9 @@ msgstr "Autoridad"
 msgid "Remove authority"
 msgstr "Eliminar autoridad"
 
+msgid "Select all is not possible while filter is applied"
+msgstr ""
+
 msgid "Only show selected metadata authorities"
 msgstr "Mostrar solo las autoridades de metadatos seleccionadas"
 
@@ -284,6 +287,9 @@ msgstr ""
 
 msgid "All (Full authority)"
 msgstr "Todo (Plena autoridad)"
+
+msgid "Update Tracked Entity Type"
+msgstr ""
 
 msgid "Aggregate Data Exchange"
 msgstr "Intercambio de datos agregados"
@@ -423,8 +429,8 @@ msgstr "Sección"
 msgid "SQL View"
 msgstr "Vista SQL"
 
-msgid "Tracked Entity"
-msgstr "Entidad de Tracker"
+msgid "Tracked Entity Type"
+msgstr "Tipo de entidad de Tracker"
 
 msgid "Tracked Entity Attribute"
 msgstr "Atributo de Entidad Rastreada"
