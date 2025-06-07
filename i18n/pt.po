@@ -9,13 +9,14 @@
 # Viktor Varland <viktor@dhis2.org>, 2025
 # Philip Larsen Donnelly, 2025
 # Shelsea Chumaio, 2025
+# António Fernando Macaringue, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-02-21T10:16:54.865Z\n"
+"POT-Creation-Date: 2025-05-09T12:36:26.531Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Shelsea Chumaio, 2025\n"
+"Last-Translator: António Fernando Macaringue, 2025\n"
 "Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -202,6 +203,9 @@ msgstr ""
 msgid "Remove authority"
 msgstr ""
 
+msgid "Select all is not possible while filter is applied"
+msgstr ""
+
 msgid "Only show selected metadata authorities"
 msgstr ""
 
@@ -276,6 +280,9 @@ msgstr ""
 
 msgid "All (Full authority)"
 msgstr "Tudo (Autoridade total)"
+
+msgid "Update Tracked Entity Type"
+msgstr ""
 
 msgid "Aggregate Data Exchange"
 msgstr ""
@@ -415,8 +422,8 @@ msgstr "Secção"
 msgid "SQL View"
 msgstr "Ver SQL"
 
-msgid "Tracked Entity"
-msgstr "Entidade Rastreada"
+msgid "Tracked Entity Type"
+msgstr "Tipo de Entidade Rastreada"
 
 msgid "Tracked Entity Attribute"
 msgstr "Atributo da entidade rastreada"
