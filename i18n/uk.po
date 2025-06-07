@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-02-21T10:16:54.865Z\n"
+"POT-Creation-Date: 2025-05-09T12:36:26.531Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Nadiia <semchuk@aph.org.ua>, 2025\n"
 "Language-Team: Ukrainian (https://app.transifex.com/hisp-uio/teams/100509/uk/)\n"
@@ -202,6 +202,9 @@ msgstr "Повноваження"
 msgid "Remove authority"
 msgstr ""
 
+msgid "Select all is not possible while filter is applied"
+msgstr ""
+
 msgid "Only show selected metadata authorities"
 msgstr "Показувати лише вибрані повноваження для метаданих"
 
@@ -278,6 +281,9 @@ msgstr ""
 
 msgid "All (Full authority)"
 msgstr "Усе (всі повноваження)"
+
+msgid "Update Tracked Entity Type"
+msgstr ""
 
 msgid "Aggregate Data Exchange"
 msgstr ""
@@ -417,8 +423,8 @@ msgstr "Секція"
 msgid "SQL View"
 msgstr "Перегляд SQL"
 
-msgid "Tracked Entity"
-msgstr "Відстежуваний об'єкт"
+msgid "Tracked Entity Type"
+msgstr ""
 
 msgid "Tracked Entity Attribute"
 msgstr "Атрибут відстежуваного об'єкта"

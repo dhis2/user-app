@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-02-21T10:16:54.865Z\n"
+"POT-Creation-Date: 2025-05-09T12:36:26.531Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -195,6 +195,9 @@ msgstr ""
 msgid "Remove authority"
 msgstr ""
 
+msgid "Select all is not possible while filter is applied"
+msgstr ""
+
 msgid "Only show selected metadata authorities"
 msgstr ""
 
@@ -269,6 +272,9 @@ msgstr ""
 
 msgid "All (Full authority)"
 msgstr "所有（完全授权）"
+
+msgid "Update Tracked Entity Type"
+msgstr ""
 
 msgid "Aggregate Data Exchange"
 msgstr ""
@@ -408,8 +414,8 @@ msgstr "分区"
 msgid "SQL View"
 msgstr "SQL视图"
 
-msgid "Tracked Entity"
-msgstr "跟踪实体"
+msgid "Tracked Entity Type"
+msgstr ""
 
 msgid "Tracked Entity Attribute"
 msgstr "跟踪实体属性"
