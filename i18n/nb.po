@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-02-21T10:16:54.865Z\n"
+"POT-Creation-Date: 2025-05-09T12:36:26.531Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2025\n"
 "Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -195,6 +195,9 @@ msgstr ""
 msgid "Remove authority"
 msgstr ""
 
+msgid "Select all is not possible while filter is applied"
+msgstr ""
+
 msgid "Only show selected metadata authorities"
 msgstr ""
 
@@ -269,6 +272,9 @@ msgstr ""
 
 msgid "All (Full authority)"
 msgstr "Alle (Fulle rettigheter)"
+
+msgid "Update Tracked Entity Type"
+msgstr ""
 
 msgid "Aggregate Data Exchange"
 msgstr ""
@@ -408,8 +414,8 @@ msgstr "Seksjon"
 msgid "SQL View"
 msgstr "SQL visning"
 
-msgid "Tracked Entity"
-msgstr "Sporet enhet"
+msgid "Tracked Entity Type"
+msgstr "Sporet enhetstype"
 
 msgid "Tracked Entity Attribute"
 msgstr "Sporet enhetattributt"
