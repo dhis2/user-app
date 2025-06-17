@@ -27,11 +27,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
+            - uses: actions/setup-node@v3
               with:
-                  node-version: 12.x
-
-            - uses: c-hive/gha-yarn-cache@v1
+                  node-version: 16.x
+                  cache: 'yarn'
+                  
             - run: yarn install --frozen-lockfile
 
             - name: Build
@@ -49,11 +49,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
+            - uses: actions/setup-node@v3
               with:
-                  node-version: 12.x
-
-            - uses: c-hive/gha-yarn-cache@v1
+                  node-version: 16.x
+                  cache: 'yarn'
+                  
             - run: yarn install --frozen-lockfile
 
             # Can be removed if translations aren't required for tests,
@@ -68,11 +68,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
+            - uses: actions/setup-node@v3
               with:
-                  node-version: 12.x
-
-            - uses: c-hive/gha-yarn-cache@v1
+                  node-version: 16.x
+                  cache: 'yarn'
+                  
             - run: yarn install --frozen-lockfile
 
             # Can be removed if translations aren't required for tests,
