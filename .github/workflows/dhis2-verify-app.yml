@@ -96,9 +96,10 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v2
 
-            - uses: actions/setup-node@v1
+            - uses: actions/setup-node@v3
               with:
-                  node-version: 12.x
+                  node-version: 16.x
+                  cache: 'yarn'
 
             - name: End-to-End tests
               uses: cypress-io/github-action@v2
@@ -125,16 +126,15 @@ jobs:
               with:
                   token: ${{ secrets.DHIS2_BOT_GITHUB_TOKEN }}
 
-            - uses: actions/setup-node@v1
+            - uses: actions/setup-node@v3
               with:
-                  node-version: 12.x
+                  node-version: 16.x
+                  cache: 'yarn'
 
             - uses: actions/download-artifact@v4
               with:
                   name: app-build
 
-            # ensure that d2-app-scripts is available
-            - uses: c-hive/gha-yarn-cache@v1
             - run: yarn install --frozen-lockfile
 
             - uses: dhis2/action-semantic-release@master
