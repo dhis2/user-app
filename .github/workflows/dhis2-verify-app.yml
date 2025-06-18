@@ -31,7 +31,7 @@ jobs:
               with:
                   node-version: 16.x
                   cache: 'yarn'
-                  
+
             - run: yarn install --frozen-lockfile
 
             - name: Build
@@ -53,7 +53,7 @@ jobs:
               with:
                   node-version: 16.x
                   cache: 'yarn'
-                  
+
             - run: yarn install --frozen-lockfile
 
             # Can be removed if translations aren't required for tests,
@@ -72,7 +72,7 @@ jobs:
               with:
                   node-version: 16.x
                   cache: 'yarn'
-                  
+
             - run: yarn install --frozen-lockfile
 
             # Can be removed if translations aren't required for tests,
