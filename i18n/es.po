@@ -5,20 +5,20 @@
 # Pablo Pajuelo Cabezas <pablo@dhis2.org>, 2023
 # William Aviles <waviles@clintonhealthaccess.org>, 2023
 # Prabhjot Singh, 2023
-# Carlos Tejo Alonso, 2023
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023
 # Viktor Varland <viktor@dhis2.org>, 2023
 # Janeth Cruz, 2023
 # Pablo Del Médico, 2023
 # Philip Larsen Donnelly, 2024
 # Enzo Nicolas Rossi <enzo@dhis2.org>, 2024
+# Carlos Tejo Alonso, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2025-02-21T10:16:54.865Z\n"
 "PO-Revision-Date: 2023-05-22 19:30+0000\n"
-"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2024\n"
+"Last-Translator: Carlos Tejo Alonso, 2025\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1030,7 +1030,7 @@ msgid "Status"
 msgstr "Estado"
 
 msgid "Disabled"
-msgstr "Inhabilitar"
+msgstr "Deshabilitado"
 
 msgid "Active"
 msgstr "Activo"
