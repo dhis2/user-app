@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-02-21T10:16:54.865Z\n"
+"POT-Creation-Date: 2025-05-09T12:36:26.531Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Philip Larsen Donnelly, 2025\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/hisp-uio/teams/100509/pt_BR/)\n"
@@ -200,6 +200,9 @@ msgstr "Autoridade"
 msgid "Remove authority"
 msgstr ""
 
+msgid "Select all is not possible while filter is applied"
+msgstr ""
+
 msgid "Only show selected metadata authorities"
 msgstr "Mostrar apenas as autoridades de metadados selecionadas"
 
@@ -276,6 +279,9 @@ msgstr ""
 
 msgid "All (Full authority)"
 msgstr "Todos (autoridade total)"
+
+msgid "Update Tracked Entity Type"
+msgstr ""
 
 msgid "Aggregate Data Exchange"
 msgstr "Intercâmbio de dados agregados"
@@ -415,8 +421,8 @@ msgstr "Seção"
 msgid "SQL View"
 msgstr "Ver SQL"
 
-msgid "Tracked Entity"
-msgstr "Entidade Rastreada"
+msgid "Tracked Entity Type"
+msgstr ""
 
 msgid "Tracked Entity Attribute"
 msgstr "Atributo da entidade rastreada"
