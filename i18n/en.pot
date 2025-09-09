@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-05-09T12:36:26.531Z\n"
-"PO-Revision-Date: 2025-05-09T12:36:26.532Z\n"
+"POT-Creation-Date: 2025-09-09T14:23:00.214Z\n"
+"PO-Revision-Date: 2025-09-09T14:23:00.215Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -1118,3 +1118,35 @@ msgstr "Could not load current user information."
 
 msgid "Could not load system information."
 msgstr "Could not load system information."
+
+msgctxt "Application title"
+msgid "__MANIFEST_APP_TITLE"
+msgstr "Users"
+
+msgctxt "Application description"
+msgid "__MANIFEST_APP_DESCRIPTION"
+msgstr "An application for managing users, user-groups and user-roles"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Users"
+msgstr "Users"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_New user"
+msgstr "New user"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_User roles"
+msgstr "User roles"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_New user role"
+msgstr "New user role"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_User groups"
+msgstr "User groups"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_New user group"
+msgstr "New user group"
