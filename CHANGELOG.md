@@ -1,3 +1,10 @@
+# [100.9.0](https://github.com/dhis2/user-app/compare/v100.8.3...v100.9.0) (2025-09-22)
+
+
+### Features
+
+* add shortcuts to the command palette ([#1557](https://github.com/dhis2/user-app/issues/1557)) ([867d07b](https://github.com/dhis2/user-app/commit/867d07bf0197e2d7dc1a7f66e79a55cfe292e4ee))
+
 ## [100.8.3](https://github.com/dhis2/user-app/compare/v100.8.2...v100.8.3) (2025-07-04)
 
 
