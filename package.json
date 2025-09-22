@@ -35,7 +35,7 @@
         "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
         "@badeball/cypress-cucumber-preprocessor": "^20.0.7",
         "@cypress/webpack-preprocessor": "^6.0.2",
-        "@dhis2/cli-app-scripts": "^12.3.0",
+        "@dhis2/cli-app-scripts": "^12.7.2",
         "@dhis2/cli-style": "^10.7.6",
         "@dhis2/cypress-commands": "10.0.6",
         "@dhis2/cypress-plugins": "10.0.6",
