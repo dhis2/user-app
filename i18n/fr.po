@@ -1,22 +1,22 @@
 # 
 # Translators:
-# Sakibou ALASSANI <sakibou.alass@gmail.com>, 2022
-# Matthieu Pinard <matthieu@dhis2.org>, 2022
 # Edem Kossi <ekossi@hispwca.org>, 2022
+# Matthieu Pinard <matthieu@dhis2.org>, 2022
 # Bram Piot <bram.piot@gmail.com>, 2022
 # Karoline Tufte Lien <karoline@dhis2.org>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # Yassine NAHDI <yassine_nahdi@gnet.tn>, 2023
-# Philip Larsen Donnelly, 2024
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2024
-# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2024
+# Philip Larsen Donnelly, 2024
+# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
+# Cyrille Kabrane, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-08T17:31:59.581Z\n"
+"POT-Creation-Date: 2024-03-22T08:26:32.388Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
-"Last-Translator: Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2024\n"
+"Last-Translator: Cyrille Kabrane, 2025\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,7 +31,7 @@ msgid "No"
 msgstr "Non"
 
 msgid "Attribute value needs to be unique, value already taken."
-msgstr "La valeur d'attribut doit être unique, valeur déjà prise."
+msgstr "La valeur de l'attribut doit être unique, valeur déjà utilisée."
 
 msgid ""
 "There was a problem whilst checking the availability of this attribute value"
@@ -52,16 +52,19 @@ msgid "Edit user group"
 msgstr "Modifier le groupe d'utilisateurs"
 
 msgid "Edit user role"
-msgstr "Modifier le rôle utilisateur"
+msgstr "Modifier le rôle d'utilisateur"
 
 msgid "Send message"
 msgstr "Envoyer Message"
+
+msgid "ID"
+msgstr "ID"
 
 msgid "Filter options"
 msgstr "Options de filtre"
 
 msgid "Error fetching form"
-msgstr "Erreur lors de la récupération de formulaire"
+msgstr "Erreur lors de la récupération du formulaire"
 
 msgid "There was an error fetching this form."
 msgstr "Une erreur est survenue lors de la récupération de ce formulaire."
@@ -76,7 +79,7 @@ msgid "Name"
 msgstr "Nom"
 
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 msgid "Used in analytics reports."
 msgstr "Utilisé dans les rapports analytiques."
@@ -102,7 +105,7 @@ msgstr ""
 "donné."
 
 msgid "Attributes"
-msgstr "Les attributs"
+msgstr "Attributs"
 
 msgid "User group management"
 msgstr "Gestion des groupes d'utilisateurs"
@@ -165,10 +168,10 @@ msgid "Description"
 msgstr "Description"
 
 msgid "Short, clear description of what this role is for."
-msgstr "Description brève et claire de la nature de ce rôle."
+msgstr "Description brève et claire de ce rôle."
 
 msgid "Metadata authorities"
-msgstr "Autorités en matière de métadonnées"
+msgstr "Autorités pour métadonnées"
 
 msgid "Set what metadata access this role has."
 msgstr "Définit l'accès aux métadonnées dont dispose ce rôle."
@@ -183,40 +186,40 @@ msgstr ""
 "données et aux paramètres du système."
 
 msgid "Available app authorities"
-msgstr "Droits d'accès aux applications"
+msgstr "Autorités pour applications disponibles "
 
 msgid "Selected app authorities"
-msgstr "Droits d'accès aux applications sélectionnés"
+msgstr "Autorités pour applications sélectionnées"
 
 msgid "Available tracker authorities"
-msgstr "Droits d'accès au tracker disponibles"
+msgstr "Autorités pour tracker disponibles"
 
 msgid "Selected tracker authorities"
-msgstr "Droits d'accès au tracker sélectionnés"
+msgstr "Autorités pour tracker sélectionnées"
 
 msgid "Available import/export authorities"
-msgstr "Droits d'accès à l'importation et à l'exportation"
+msgstr "Autorités pour importation/exportation disponibles"
 
 msgid "Selected import/export authorities"
-msgstr "Droits d'accès à l'importation et à l'exportation (Sélectionnés)"
+msgstr "Autorités pour importation/exportation sélectionnées"
 
 msgid "Available system authorities"
-msgstr "Droits d'accès au système (disponibles)"
+msgstr "Autorités système disponibles"
 
 msgid "Selected system authorities"
-msgstr "Droits d'accès au système ((Sélectionnés))"
+msgstr "Autorités système sélectionnées"
 
 msgid "All (Full authority)"
-msgstr "Tout (Pleine autorisation)"
+msgstr "Tout (Pleine autorité)"
 
 msgid "Analytics Table Hook"
-msgstr "Crochet de Tables Analytiques"
+msgstr "Crochet du tableau analytique"
 
 msgid "Attribute"
 msgstr "Attribut"
 
 msgid "Category Combo"
-msgstr "La combo de catégories"
+msgstr "Combinaison de catégories"
 
 msgid "Category"
 msgstr "Catégorie"
@@ -231,7 +234,7 @@ msgid "Category Option Group Set"
 msgstr "Ensemble de groupes d'options de catégorie"
 
 msgid "Color Set"
-msgstr "Jeu de Couleurs"
+msgstr "Ensemble de couleurs"
 
 msgid "Constant"
 msgstr "Constante"
@@ -246,7 +249,7 @@ msgid "Data Element Groups"
 msgstr "Groupes d'éléments de données"
 
 msgid "Data Element"
-msgstr "Élément de donnée"
+msgstr "Éléments de données"
 
 msgid "Min/max rule"
 msgstr "Règle de min / max"
@@ -267,7 +270,7 @@ msgid "Event Report"
 msgstr "Rapport d'évènements"
 
 msgid "External Map Layer"
-msgstr "Couche de Carte Externe"
+msgstr "Couche de carte externe"
 
 msgid "Indicator Group Sets"
 msgstr "Ensembles de groupes d'indicateurs"
@@ -288,7 +291,7 @@ msgid "Map"
 msgstr "Carte"
 
 msgid "Min-Max Data Element"
-msgstr "Élément de Données Min-Max"
+msgstr "Élément de données Min-Max"
 
 msgid "Option Group Set"
 msgstr "Ensemble de groupes d'options"
@@ -306,7 +309,7 @@ msgid "Organisation Unit Group Set"
 msgstr "Ensemble de groupes d'unités d'organisation"
 
 msgid "Organisation Unit Group"
-msgstr "Groupe d'Unités d'Organisation"
+msgstr "Groupe d'unités d'organisation"
 
 msgid "Predictor"
 msgstr "Prédicteur"
@@ -318,19 +321,19 @@ msgid "Program"
 msgstr "Programme"
 
 msgid "Program Indicator"
-msgstr "Indicateur de Programme"
+msgstr "Indicateur de programme"
 
 msgid "Program Indicator Group"
-msgstr "Groupe d'indicateurs de Programme"
+msgstr "Groupe d'indicateurs de programme"
 
 msgid "Program Rule"
-msgstr "Règles de Programme"
+msgstr "Règle de programme"
 
 msgid "Program Tracked Entity Attribute Group"
 msgstr "Groupe d'attributs d'entité suivie par programme"
 
 msgid "Push Analysis"
-msgstr "Analyse Pousser "
+msgstr "Analyse push"
 
 msgid "Relationship Type"
 msgstr "Type de relation"
@@ -351,7 +354,7 @@ msgid "Tracked Entity Attribute"
 msgstr "Attribut d'entité suivie"
 
 msgid "Tracked Entity Data Value"
-msgstr "Valeur des données d'entité suivie"
+msgstr "Valeur de donnée d'entité suivie"
 
 msgid "Tracked Entity Instance"
 msgstr "Instance d'entité suivie"
@@ -395,10 +398,10 @@ msgid "There was a problem displaying the GroupEditor"
 msgstr "Un problème est survenu lors de l'affichage de l'éditeur de groupe"
 
 msgid "Filter available options"
-msgstr ""
+msgstr "Filtrer les options disponibles"
 
 msgid "Filter selected options"
-msgstr ""
+msgstr "Filtrer les options sélectionnées"
 
 msgid "Search for an organisation unit"
 msgstr "Rechercher une unité d'organisation"
@@ -463,7 +466,7 @@ msgid "Database language"
 msgstr "Langue de la base de données"
 
 msgid "Use database locale / no translation"
-msgstr "Utiliser la localisation de la base de données/ pas de traduction"
+msgstr "Utiliser la localisation de la base de données / pas de traduction"
 
 msgid "Disable this user account"
 msgstr "Désactiver ce compte d'utilisateur"
@@ -509,7 +512,7 @@ msgid ""
 "capturing and managing data."
 msgstr ""
 "Personnaliser les unités d'organisation auxquelles cet utilisateur a accès "
-"pour rechercher, capturer et gérer les données."
+"pour rechercher, saisir et gérer les données."
 
 msgid "Organisation unit selections are recursive"
 msgstr "Les sélections des unités d'organisation sont récursives"
@@ -549,7 +552,7 @@ msgid "Roles and groups"
 msgstr "Rôles et groupes"
 
 msgid "Manage what roles and groups this user is a member of."
-msgstr "Gérer les rôles et les groupes dont cet utilisateur est membre."
+msgstr "Gérer les rôles et les groupes auxquels cet utilisateur est assigné."
 
 msgid "Available user roles"
 msgstr "Rôles d'utilisateurs disponibles"
@@ -592,10 +595,10 @@ msgid "Account expiration date"
 msgstr "Date d'expiration du compte"
 
 msgid "OIDC mapping value"
-msgstr "Valeur de mappage OIDC"
+msgstr "Valeur de mapping OIDC"
 
 msgid "OpenID Connect mapping claim for your identity platform"
-msgstr "Demande de mappage OpenID Connect pour votre plateforme d'identité"
+msgstr "Demande de mapping OpenID Connect pour votre plateforme d'identité"
 
 msgid "LDAP identifier"
 msgstr "Identifiant LDAP"
@@ -622,7 +625,7 @@ msgid "Error creating user"
 msgstr "Erreur lors de la création de l'utilisateur"
 
 msgid "Username already taken"
-msgstr "Nom d'utilisateur déjà pris"
+msgstr "Nom d'utilisateur déjà utilisé"
 
 msgid "There was a problem whilst checking the availability of this username"
 msgstr ""
@@ -652,9 +655,6 @@ msgstr "Créer, modifier, afficher et supprimer des groupes d'utilisateurs"
 
 msgid "Display name"
 msgstr "Afficher un nom"
-
-msgid "ID"
-msgstr "ID"
 
 msgid "Last login"
 msgstr "Dernière connexion"
@@ -721,8 +721,8 @@ msgstr "Erreur lors de la récupération de la langue de l'interface"
 
 msgid "There was an error fetching the default interface language."
 msgstr ""
-"Une erreur s'est produite lors de la récupération de la langue par défaut de"
-" l'interface."
+"Une erreur est survenue lors de la récupération de la langue par défaut de "
+"l'interface."
 
 msgid "New user"
 msgstr "Nouvel utilisateur"
@@ -746,7 +746,7 @@ msgid "Error fetching role"
 msgstr "Erreur lors de la récupération du rôle"
 
 msgid "There was an error fetching this role."
-msgstr "Une erreur s'est produite lors de la récupération de ce rôle."
+msgstr "Une erreur est survenue lors de la récupération de ce rôle."
 
 msgid "Edit role"
 msgstr "Modifier le rôle"
@@ -755,7 +755,7 @@ msgid "Error fetching user"
 msgstr "Erreur lors de la récupération de l'utilisateur"
 
 msgid "There was an error fetching this user."
-msgstr "Une erreur s'est produite lors de la récupération de cet utilisateur."
+msgstr "Une erreur est survenue lors de la récupération de cet utilisateur."
 
 msgid "Show details"
 msgstr "Afficher les détails"
@@ -777,7 +777,7 @@ msgstr "\"{{- name}}\" supprimé avec succès"
 
 msgid "There was an error deleting the user group: {{- error}}"
 msgstr ""
-"Une erreur s'est produite lors de la suppression du groupe d'utilisateurs : "
+"Une erreur est survenue lors de la suppression du groupe d'utilisateurs : "
 "{{- error}}"
 
 msgid "Delete user group {{- name}}"
@@ -797,8 +797,8 @@ msgstr "\"{{- name}}\" a rejoint avec succès le groupe d'utilisateurs"
 
 msgid "There was an error joining the user group: {{- error}}"
 msgstr ""
-"Une erreur s'est produite lors du processus d'adhésion au groupe "
-"d'utilisateurs : {{- error}}"
+"Une erreur est survenue pendant l'adhésion au groupe d'utilisateurs : {{- "
+"error}}"
 
 msgid "Join user group {{- name}}"
 msgstr "Rejoindre le groupe d'utilisateurs {{- name}}"
@@ -814,14 +814,14 @@ msgstr "\"{{- name}}\" a quitté avec succès le groupe d'utilisateurs"
 
 msgid "There was an error leaving the user group: {{- error}}"
 msgstr ""
-"Une erreur s'est produite lors de la sortie du groupe d'utilisateurs : {{- "
+"Une erreur est survenue lors de la sortie du groupe d'utilisateurs : {{- "
 "error}}"
 
 msgid "Leave user group {{- name}}"
 msgstr "Quitter le groupe d'utilisateurs {{- name}}"
 
 msgid "Are you sure you want to leave {{- name}}?"
-msgstr "Vous êtes sûr de vouloir quitter {{- name}} ?"
+msgstr "Êtes-vous sûr de vouloir quitter {{- name}} ?"
 
 msgid "Yes, leave"
 msgstr "Oui, quitter"
@@ -853,11 +853,11 @@ msgstr "Autorisations insuffisantes"
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
 msgstr ""
-"Vous n'avez accès à aucune section du DHIS 2 Application de gestion des "
-"utilisateurs"
+"Vous n'avez accès à aucune section de l'Application Gestion d'Utilisateurs "
+"de DHIS 2"
 
 msgid "List"
-msgstr "Lister"
+msgstr "Liste"
 
 msgid "Add"
 msgstr "Ajouter"
@@ -869,12 +869,12 @@ msgid "No match for"
 msgstr "Pas de correspondance pour"
 
 msgid "Go back home"
-msgstr "Rentrer à la maison"
+msgstr "Revenir à la page d'accueil"
 
 msgid "There was an error deleting the user role: {{- error}}"
 msgstr ""
-"Une erreur s'est produite lors de la suppression du rôle de l'utilisateur : "
-"{{- error}}"
+"Une erreur est survenue lors de la suppression du rôle d'utilisateur : {{- "
+"error}}"
 
 msgid "Delete user role {{- name}}"
 msgstr "Supprimer le rôle d'utilisateur {{- name}}"
@@ -889,7 +889,7 @@ msgid "Profile"
 msgstr "Profil"
 
 msgid "Replicate"
-msgstr "Cloner"
+msgstr "Répliquer"
 
 msgid "Reset password"
 msgstr "Réinitialiser le mot de passe"
@@ -901,11 +901,11 @@ msgid "Enable"
 msgstr "Activer"
 
 msgid "Disable Two Factor Authentication"
-msgstr "Désactiver l'authentification à Deux Facteurs"
+msgstr "Désactiver l'authentification à deux facteurs"
 
 msgid "There was an error deleting the user: {{- error}}"
 msgstr ""
-"Une erreur s'est produite lors de la suppression de l'utilisateur : {{- "
+"Une erreur est survenue lors de la suppression de l'utilisateur : {{- "
 "error}}"
 
 msgid "Delete user {{- name}}"
@@ -939,7 +939,7 @@ msgstr "Utilisateur \"{{- name}}\" désactivé avec succès"
 
 msgid "There was an error disabling the user: {{- error}}"
 msgstr ""
-"Une erreur s'est produite lors de la désactivation de l'utilisateur : {{- "
+"Une erreur est survenue lors de la désactivation de l'utilisateur : {{- "
 "error}}"
 
 msgid "Disable user {{- name}}"
@@ -956,8 +956,7 @@ msgstr "Utilisateur \"{{- name}}\" activé avec succès"
 
 msgid "There was an error enabling the user: {{- error}}"
 msgstr ""
-"Une erreur s'est produite lors de l'activation de l'utilisateur : {{- "
-"error}}"
+"Une erreur est survenue lors de l'activation de l'utilisateur : {{- error}}"
 
 msgid "Enable user {{- name}}"
 msgstr "Activer l'utilisateur {{- name}}"
@@ -973,7 +972,7 @@ msgstr "Utilisateur \"{{- name}}\" répliqué avec succès"
 
 msgid "There was an error replicating the user: {{- error}}"
 msgstr ""
-"Une erreur s'est produite lors de la réplication de l'utilisateur : {{- "
+"Une erreur est survenue lors de la réplication de l'utilisateur : {{- "
 "error}}"
 
 msgid "Replicate user {{- name}}"
@@ -983,7 +982,7 @@ msgid "Username for new user"
 msgstr "Nom d'utilisateur pour le nouvel utilisateur"
 
 msgid "Password for new user"
-msgstr "Mot de passe pour nouvel utilisateur"
+msgstr "Mot de passe pour le nouvel utilisateur"
 
 msgid "Cancel"
 msgstr "Annuler"
@@ -996,7 +995,7 @@ msgstr "Mot de passe de l'utilisateur \"{{- name}}\" réinitialisé avec succès
 
 msgid "There was an error resetting the password: {{- error}}"
 msgstr ""
-"Une erreur s'est produite lors de la réinitialisation du mot de passe : {{- "
+"Une erreur est survenue lors de la réinitialisation du mot de passe : {{- "
 "error}}"
 
 msgid "Are you sure you want to reset the password for {{- name}}?"
@@ -1021,7 +1020,7 @@ msgid "All invitations"
 msgstr "Toutes les invitations"
 
 msgid "Expired invitations"
-msgstr "Invitations périmées"
+msgstr "Invitations expirées"
 
 msgid "Show self-registrations"
 msgstr "Afficher les auto-inscriptions"
@@ -1048,4 +1047,4 @@ msgid "Active"
 msgstr "Actif"
 
 msgid "Something went wrong when processing your request."
-msgstr "Une erreur s'est produite lors du traitement de votre demande."
+msgstr "Une erreur s'est produite lors du traitement de votre requête."
