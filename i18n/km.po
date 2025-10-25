@@ -699,7 +699,7 @@ msgid "Edit group"
 msgstr ""
 
 msgid "Save changes"
-msgstr ""
+msgstr "រក្សាទុកការផ្លាស់ប្តូរ"
 
 msgid "Error fetching role"
 msgstr ""
@@ -792,7 +792,7 @@ msgid "Are you sure you want to leave {{- name}}?"
 msgstr ""
 
 msgid "Yes, leave"
-msgstr ""
+msgstr "បាទ/ចាស, ចាកចេញ"
 
 msgid "User Group Management"
 msgstr ""
