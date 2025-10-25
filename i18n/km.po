@@ -619,7 +619,7 @@ msgstr ""
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
-msgstr[0] ""
+msgstr[0] "{{count}} បានជ្រើសរើស"
 
 msgid "Yes"
 msgstr "បាទ/ចាស"
