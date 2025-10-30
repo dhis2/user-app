@@ -15,7 +15,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import DataTableInfoWrapper from '../../components/DataTableInfoWrapper.jsx'
 import EmptyTableInfo from '../../components/EmptyTableInfo.jsx'
-import { useCurrentUser, useReferrerInfo } from '../../providers/index.js'
+import { useReferrerInfo } from '../../providers/index.js'
 import navigateTo from '../../utils/navigateTo.js'
 import ContextMenuButton from './ContextMenu/ContextMenuButton.jsx'
 
@@ -27,7 +27,6 @@ const GroupTable = ({
     nameSortDirection,
     onNameSortDirectionToggle,
 }) => {
-    const currentUser = useCurrentUser()
     const { setReferrer } = useReferrerInfo()
 
     if (loading && !groups) {
