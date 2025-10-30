@@ -6,6 +6,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { useFeatureToggle } from '../../hooks/useFeatureToggle.js'
 import { FormSection, TextField } from '../Form.jsx'
 import {
     useDebouncedUniqueGroupNameValidator,
@@ -19,6 +20,7 @@ const BasicInformationSection = React.memo(({ group }) => {
         useDebouncedUniqueGroupNameValidator({ groupName: group?.name })
     const debouncedUniqueGroupCodeValidator =
         useDebouncedUniqueGroupCodeValidator({ groupCode: group?.code })
+    const { showUserGroupDescription } = useFeatureToggle()
 
     return (
         <FormSection title={i18n.t('Basic information')}>
@@ -42,14 +44,16 @@ const BasicInformationSection = React.memo(({ group }) => {
                     debouncedUniqueGroupCodeValidator
                 )}
             />
-            <TextField
-                name="description"
-                label={i18n.t('Description')}
-                helpText={i18n.t(
-                    'Short, clear description of what this group is for.'
-                )}
-                initialValue={group?.description}
-            />
+            {showUserGroupDescription && (
+                <TextField
+                    name="description"
+                    label={i18n.t('Description')}
+                    helpText={i18n.t(
+                        'Short, clear description of what this group is for.'
+                    )}
+                    initialValue={group?.description}
+                />
+            )}
         </FormSection>
     )
 })

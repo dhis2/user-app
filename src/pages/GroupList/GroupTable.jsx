@@ -15,7 +15,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import DataTableInfoWrapper from '../../components/DataTableInfoWrapper.jsx'
 import EmptyTableInfo from '../../components/EmptyTableInfo.jsx'
-import { useReferrerInfo } from '../../providers/index.js'
+import { useFeatureToggle } from '../../hooks/useFeatureToggle.js'
+import { useCurrentUser, useReferrerInfo } from '../../providers/index.js'
 import navigateTo from '../../utils/navigateTo.js'
 import ContextMenuButton from './ContextMenu/ContextMenuButton.jsx'
 
@@ -27,7 +28,9 @@ const GroupTable = ({
     nameSortDirection,
     onNameSortDirectionToggle,
 }) => {
+    const currentUser = useCurrentUser()
     const { setReferrer } = useReferrerInfo()
+    const { showUserGroupDescription } = useFeatureToggle()
 
     if (loading && !groups) {
         return (
@@ -81,8 +84,14 @@ const GroupTable = ({
                     >
                         {i18n.t('Display name')}
                     </DataTableColumnHeader>
+                    {showUserGroupDescription && (
+                        <DataTableColumnHeader>
+                            {i18n.t('Description')}
+                        </DataTableColumnHeader>
+                    )}
+
                     <DataTableColumnHeader>
-                        {i18n.t('Description')}
+                        {i18n.t('Member?')}
                     </DataTableColumnHeader>
                     <DataTableColumnHeader>
                         {i18n.t('Actions')}
@@ -106,8 +115,14 @@ const GroupTable = ({
                             <DataTableCell onClick={handleClick}>
                                 {displayName}
                             </DataTableCell>
+                            {showUserGroupDescription && (
+                                <DataTableCell onClick={handleClick}>
+                                    {description}
+                                </DataTableCell>
+                            )}
                             <DataTableCell onClick={handleClick}>
-                                {description}
+                                {currentUser.userGroupIds.includes(id) &&
+                                    i18n.t('Member')}
                             </DataTableCell>
                             <DataTableCell>
                                 <ContextMenuButton
