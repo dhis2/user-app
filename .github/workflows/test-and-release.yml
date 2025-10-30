@@ -20,7 +20,7 @@ jobs:
         if: '!github.event.push.repository.fork'
         secrets: inherit
         with:
-            api_version: 42
+            api_version: 43
     release:
         needs: [lint-commits, lint, test, e2e]
         uses: dhis2/workflows-platform/.github/workflows/release.yml@v1
