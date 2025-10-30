@@ -123,6 +123,7 @@ GroupForm.propTypes = {
         id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         code: PropTypes.string,
+        description: PropTypes.string,
         managedGroups: PropTypes.arrayOf(
             PropTypes.shape({
                 id: PropTypes.string.isRequired,

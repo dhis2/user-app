@@ -6,7 +6,7 @@ const query = {
         resource: 'userGroups',
         id: ({ id }) => id,
         params: {
-            fields: ['id', 'access', 'displayName'],
+            fields: ['id', 'access', 'displayName', 'description'],
         },
     },
 }

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-09-09T14:23:00.214Z\n"
-"PO-Revision-Date: 2025-09-09T14:23:00.215Z\n"
+"POT-Creation-Date: 2025-10-29T15:13:52.520Z\n"
+"PO-Revision-Date: 2025-10-29T15:13:52.521Z\n"
 
 msgid "Yes"
 msgstr "Yes"
@@ -76,6 +76,12 @@ msgstr "Code"
 
 msgid "Used in analytics reports."
 msgstr "Used in analytics reports."
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Short, clear description of what this group is for."
+msgstr "Short, clear description of what this group is for."
 
 msgid "Search for a user in this group"
 msgstr "Search for a user in this group"
@@ -206,9 +212,6 @@ msgstr "Error updating role"
 
 msgid "Error creating role"
 msgstr "Error creating role"
-
-msgid "Description"
-msgstr "Description"
 
 msgid "Short, clear description of what this role is for."
 msgstr "Short, clear description of what this role is for."
@@ -840,14 +843,8 @@ msgstr "There are no user groups to show here. You can add a new user group belo
 msgid "Add new user group"
 msgstr "Add new user group"
 
-msgid "Member?"
-msgstr "Member?"
-
 msgid "Actions"
 msgstr "Actions"
-
-msgid "Member"
-msgstr "Member"
 
 msgid "List"
 msgstr "List"

@@ -51,6 +51,12 @@ const GroupDetails = ({ groupId }) => {
                 }
             >
                 <Field label={i18n.t('ID')} value={group.id} />
+                {group.description && (
+                    <Field
+                        label={i18n.t('Description')}
+                        value={group.description}
+                    />
+                )}
             </Section>
         </Details>
     )

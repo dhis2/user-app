@@ -83,7 +83,7 @@ const GroupTable = ({
                         {i18n.t('Display name')}
                     </DataTableColumnHeader>
                     <DataTableColumnHeader>
-                        {i18n.t('Member?')}
+                        {i18n.t('Description')}
                     </DataTableColumnHeader>
                     <DataTableColumnHeader>
                         {i18n.t('Actions')}
@@ -92,7 +92,7 @@ const GroupTable = ({
             </DataTableHead>
             <DataTableBody loading={loading}>
                 {groups.map((group) => {
-                    const { id, displayName, access } = group
+                    const { id, displayName, access, description } = group
                     const handleClick = () => {
                         setReferrer('user-groups')
                         if (access.update) {
@@ -108,8 +108,7 @@ const GroupTable = ({
                                 {displayName}
                             </DataTableCell>
                             <DataTableCell onClick={handleClick}>
-                                {currentUser.userGroupIds.includes(id) &&
-                                    i18n.t('Member')}
+                                {description}
                             </DataTableCell>
                             <DataTableCell>
                                 <ContextMenuButton
@@ -138,6 +137,7 @@ GroupTable.propTypes = {
             }).isRequired,
             displayName: PropTypes.string.isRequired,
             id: PropTypes.string.isRequired,
+            description: PropTypes.string,
         }).isRequired
     ),
     loading: PropTypes.bool,

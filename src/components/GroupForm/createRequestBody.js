@@ -3,11 +3,12 @@ import { getAttributeValues } from '../../attributes.js'
 const ATTRIBUTE_VALUES = 'attributeValues'
 
 export const createPostRequestBody = ({ values, attributes }) => {
-    const { name, code, members, managedGroups } = values
+    const { name, code, description, members, managedGroups } = values
 
     return {
         name,
         code,
+        description,
         users: members.additions.map(({ id }) => ({ id })),
         managedGroups: managedGroups.map((id) => ({ id })),
         attributeValues: getAttributeValues({ attributes, values }),

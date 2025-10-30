@@ -42,6 +42,14 @@ const BasicInformationSection = React.memo(({ group }) => {
                     debouncedUniqueGroupCodeValidator
                 )}
             />
+            <TextField
+                name="description"
+                label={i18n.t('Description')}
+                helpText={i18n.t(
+                    'Short, clear description of what this group is for.'
+                )}
+                initialValue={group?.description}
+            />
         </FormSection>
     )
 })
