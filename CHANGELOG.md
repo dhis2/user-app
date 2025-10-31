@@ -1,3 +1,10 @@
+# [100.10.0](https://github.com/dhis2/user-app/compare/v100.9.0...v100.10.0) (2025-10-31)
+
+
+### Features
+
+* add description field for user groups ([#1559](https://github.com/dhis2/user-app/issues/1559)) ([84beace](https://github.com/dhis2/user-app/commit/84beace2364006e07d62d0ed4451b9627ce47f3e))
+
 # [100.9.0](https://github.com/dhis2/user-app/compare/v100.8.3...v100.9.0) (2025-09-22)
 
 
