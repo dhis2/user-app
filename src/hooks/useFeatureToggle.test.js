@@ -43,4 +43,20 @@ describe('useFeatureToggle', () => {
         const { result } = renderHook(() => useFeatureToggle())
         expect(result.current.displayEmailVerifiedStatus).toBe(false)
     })
+    it.each([
+        [null, false],
+        ['41', false],
+        ['42', false],
+        ['43', true],
+        ['44', true],
+    ])(
+        'with api minor version of %s it sets showUserGroupDescription to %b',
+        (apiMinorVersion, expected) => {
+            useConfig.mockReturnValue({
+                serverVersion: { minor: apiMinorVersion },
+            })
+            const { result } = renderHook(() => useFeatureToggle())
+            expect(result.current.showUserGroupDescription).toBe(expected)
+        }
+    )
 })

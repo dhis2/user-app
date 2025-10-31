@@ -4,6 +4,7 @@ import { NoticeBox, FinalForm } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+import { useFeatureToggle } from '../../hooks/useFeatureToggle.js'
 import { useCurrentUser, useReferrerInfo } from '../../providers/index.js'
 import navigateTo from '../../utils/navigateTo.js'
 import Attributes from '../Attributes/index.js'
@@ -22,6 +23,7 @@ const GroupForm = ({ submitButtonLabel, group }) => {
     const engine = useDataEngine()
     const { loading, error, userGroupOptions, attributes } = useFormData()
     const currentUser = useCurrentUser()
+    const { showUserGroupDescription } = useFeatureToggle()
     const { referrer } = useReferrerInfo()
     const history = useHistory()
     const handleSubmit = async (values, form) => {
@@ -41,7 +43,11 @@ const GroupForm = ({ submitButtonLabel, group }) => {
                 await engine.mutate({
                     resource: 'userGroups',
                     type: 'create',
-                    data: createPostRequestBody({ values, attributes }),
+                    data: createPostRequestBody({
+                        values,
+                        attributes,
+                        includeDescription: showUserGroupDescription,
+                    }),
                 })
             }
 
@@ -123,6 +129,7 @@ GroupForm.propTypes = {
         id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         code: PropTypes.string,
+        description: PropTypes.string,
         managedGroups: PropTypes.arrayOf(
             PropTypes.shape({
                 id: PropTypes.string.isRequired,

@@ -8,5 +8,6 @@ export const useFeatureToggle = () => {
         displayEmailVerifiedStatus: Boolean(
             emailConfigured && Number(minorVersion) >= 42
         ),
+        showUserGroupDescription: Number(minorVersion) >= 43,
     }
 }

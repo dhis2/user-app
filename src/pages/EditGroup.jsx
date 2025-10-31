@@ -11,7 +11,13 @@ const query = {
         resource: 'userGroups',
         id: ({ groupId }) => groupId,
         params: {
-            fields: [':owner', 'access', 'displayName', '!users'],
+            fields: [
+                ':owner',
+                'access',
+                'displayName',
+                'description',
+                '!users',
+            ],
         },
     },
 }

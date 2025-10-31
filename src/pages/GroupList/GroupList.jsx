@@ -27,6 +27,7 @@ const groupsQuery = {
                 'user[id,displayName]',
                 'publicAccess',
                 'userGroupAccesses',
+                'description',
             ],
             order: `name:${nameSortDirection}`,
             page,
