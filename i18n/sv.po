@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-01-30T10:02:13.474Z\n"
+"POT-Creation-Date: 2025-10-30T12:12:29.056Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Philip Larsen Donnelly, 2025\n"
 "Language-Team: Swedish (https://app.transifex.com/hisp-uio/teams/100509/sv/)\n"
@@ -85,6 +85,12 @@ msgid "Code"
 msgstr "Koda"
 
 msgid "Used in analytics reports."
+msgstr ""
+
+msgid "Description"
+msgstr "Beskrivning"
+
+msgid "Short, clear description of what this group is for."
 msgstr ""
 
 msgid "Search for a user in this group"
@@ -196,6 +202,9 @@ msgstr ""
 msgid "Remove authority"
 msgstr ""
 
+msgid "Select all is not possible while filter is applied"
+msgstr ""
+
 msgid "Only show selected metadata authorities"
 msgstr ""
 
@@ -216,9 +225,6 @@ msgstr ""
 
 msgid "Error creating role"
 msgstr ""
-
-msgid "Description"
-msgstr "Beskrivning"
 
 msgid "Short, clear description of what this role is for."
 msgstr ""
@@ -269,6 +275,9 @@ msgid ""
 msgstr ""
 
 msgid "All (Full authority)"
+msgstr ""
+
+msgid "Update Tracked Entity Type"
 msgstr ""
 
 msgid "Aggregate Data Exchange"
@@ -409,7 +418,7 @@ msgstr ""
 msgid "SQL View"
 msgstr ""
 
-msgid "Tracked Entity"
+msgid "Tracked Entity Type"
 msgstr ""
 
 msgid "Tracked Entity Attribute"
@@ -547,13 +556,13 @@ msgstr ""
 msgid "Twitter"
 msgstr ""
 
+msgid "This user does not have a verified email"
+msgstr ""
+
 msgid "This user email has been verified."
 msgstr ""
 
 msgid "This user does not have a verified email."
-msgstr ""
-
-msgid "This user does not have a verified email"
 msgstr ""
 
 msgid "Invite user"
@@ -904,29 +913,13 @@ msgstr ""
 msgid "Enable"
 msgstr ""
 
-msgid "Disable Two Factor Authentication"
+msgid "Reset two factor authentication"
 msgstr ""
 
 msgid "There was an error deleting the user: {{- error}}"
 msgstr ""
 
 msgid "Delete user {{- name}}"
-msgstr ""
-
-msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
-msgstr ""
-
-msgid "There was an error disabling two factor authentication: {{- error}}"
-msgstr ""
-
-msgid "Disable two factor authentication for user {{- name}}"
-msgstr ""
-
-msgid ""
-"Are you sure you want to disable two factor authentication for {{- name}}?"
-msgstr ""
-
-msgid "Yes, disable two factor authentication"
 msgstr ""
 
 msgid "User \"{{- name}}\" disabled successfuly"
@@ -987,6 +980,23 @@ msgid "Are you sure you want to reset the password for {{- name}}?"
 msgstr ""
 
 msgid "Yes, reset"
+msgstr ""
+
+msgid "Two factor authentication for \"{{- name}}\" has reset successfully"
+msgstr ""
+
+msgid ""
+"There was an error resetting the two factor authentication: {{- error}}"
+msgstr ""
+
+msgid ""
+"If {{- name}} has two factor authentication enabled, resetting the two "
+"factor authentication will make it possible for them to log in without "
+"providing a two factor authentication code."
+msgstr ""
+
+msgid ""
+"Are you sure you want to reset two factor authentication for {{- name}}?"
 msgstr ""
 
 msgid "1 month"
