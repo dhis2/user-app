@@ -5,15 +5,16 @@
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Karoline Tufte Lien <karoline@dhis2.org>, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
-# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
 # Philip Larsen Donnelly, 2024
+# Cyrille Kabrane, 2025
+# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-03-11T14:08:46.110Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Last-Translator: Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +23,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "Use database locale / no translation"
-msgstr "Utiliser la localisation de la base de donnée/ pas de traduction"
+msgstr "Utiliser la localisation de la base de données / pas de traduction"
 
 msgid "Search"
 msgstr "Chercher"
@@ -56,13 +57,13 @@ msgid "All (Full authority)"
 msgstr "Tout (Pleine autorité)"
 
 msgid "Analytics Table Hook"
-msgstr "Crochet de Tables Analytiques"
+msgstr "Crochet du tableau analytique"
 
 msgid "Attribute"
 msgstr "Attribut"
 
 msgid "Category Combo"
-msgstr "La combo de catégories"
+msgstr "Combinaison de catégories"
 
 msgid "Category"
 msgstr "Catégorie"
@@ -74,10 +75,10 @@ msgid "Category Option Group"
 msgstr "Groupe d'options de catégorie"
 
 msgid "Category Option Group Set"
-msgstr "Category Option Group Set"
+msgstr "Ensemble de groupes d'options de catégorie"
 
 msgid "Color Set"
-msgstr "Jeu de Couleurs"
+msgstr "Ensemble de couleurs"
 
 msgid "Constant"
 msgstr "Constante"
@@ -113,7 +114,7 @@ msgid "Event Report"
 msgstr "Rapport d'évènements"
 
 msgid "External Map Layer"
-msgstr "Couche de Carte Externe"
+msgstr "Couche de carte externe"
 
 msgid "Indicator Group Sets"
 msgstr "Ensembles de groupes d'indicateurs"
@@ -128,13 +129,13 @@ msgid "Indicator"
 msgstr "Indicateur"
 
 msgid "Legend Set"
-msgstr "Jeu de légende"
+msgstr "Légende"
 
 msgid "Map"
 msgstr "Carte"
 
 msgid "Min-Max Data Element"
-msgstr "Élément de Données Min-Max"
+msgstr "Élément de données Min-Max"
 
 msgid "Option Group Set"
 msgstr "Ensemble de groupes d'options"
@@ -152,31 +153,31 @@ msgid "Organisation Unit Group Set"
 msgstr "Ensemble de groupes d'unités d'organisation"
 
 msgid "Organisation Unit Group"
-msgstr "Groupe d'Unités d'Organisation"
+msgstr "Groupe d'unités d'organisation"
 
 msgid "Predictor"
 msgstr "Prédicteur"
 
 msgid "Program Stage"
-msgstr "Etape de programme"
+msgstr "Stade de programme"
 
 msgid "Program"
 msgstr "Programme"
 
 msgid "Program Indicator"
-msgstr "Indicateur de Programme"
+msgstr "Indicateur de programme"
 
 msgid "Program Indicator Group"
-msgstr "Groupe d'indicateurs de pPogramme"
+msgstr "Groupe d'indicateurs de programme"
 
 msgid "Program Rule"
-msgstr "Règles de Programme"
+msgstr "Règle de programme"
 
 msgid "Program Tracked Entity Attribute Group"
 msgstr "Groupe d'attributs d'entité suivie par programme"
 
 msgid "Push Analysis"
-msgstr "Analyse Pousser "
+msgstr "Analyse push"
 
 msgid "Relationship Type"
 msgstr "Type de relation"
@@ -197,7 +198,7 @@ msgid "Tracked Entity Attribute"
 msgstr "Attribut d'entité suivie"
 
 msgid "Tracked Entity Data Value"
-msgstr "Valeur des données d'entité suivie"
+msgstr "Valeur de donnée d'entité suivie"
 
 msgid "Tracked Entity Instance"
 msgstr "Instance d'entité suivie"
@@ -221,7 +222,7 @@ msgid "Data predictor group"
 msgstr "Groupe de prédicteur de données"
 
 msgid "Skip data import audit"
-msgstr "Sauter l'audit d'importation de données"
+msgstr "Ignorer l'audit d'importation de données"
 
 msgid "Visualization"
 msgstr "Visualisation"
@@ -233,7 +234,7 @@ msgid "Tracker"
 msgstr "Tracker"
 
 msgid "Import-Export"
-msgstr "Importer-Exporter"
+msgstr "Import-Export"
 
 msgid "System"
 msgstr "Système"
@@ -247,8 +248,8 @@ msgstr "liste"
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
 msgstr ""
-"Vous n'avez accès à aucune section du DHIS 2 Application de gestion des "
-"utilisateurs"
+"Vous n'avez accès à aucune section de l'Application Gestion d'Utilisateurs "
+"de DHIS 2"
 
 msgid "Edit user"
 msgstr "Modifier l'utilisateur"
@@ -281,7 +282,7 @@ msgid "There was an error fetching the list"
 msgstr "Une erreur s'est produite lors de la récupération de la liste"
 
 msgid "Select an organisation unit"
-msgstr "Selectionner une unité d'organisation"
+msgstr "Sélectionner une unité d'organisation"
 
 msgid "Organisation unit"
 msgstr "Unité d'organisation"
@@ -293,7 +294,7 @@ msgid "No match for"
 msgstr "Pas de correspondance pour"
 
 msgid "Go back home"
-msgstr "Rentrer à la maison"
+msgstr "Revenir à la page d'accueil"
 
 msgid "User \"{{displayName}}\" replicated successfuly"
 msgstr "Utilisateur \"{{displayName}}\"  répliqué avec succès"
@@ -314,7 +315,7 @@ msgid "Password for new user"
 msgstr "Mot de passe pour nouvel utilisateur"
 
 msgid "Replicate"
-msgstr "Replier"
+msgstr "Répliquer"
 
 msgid "Cancel"
 msgstr "Annuler"
@@ -341,7 +342,7 @@ msgid "Clear all"
 msgstr "Tout effacer"
 
 msgid "There was an error loading the current user"
-msgstr "Une erreur s'est produite lors du chargement de l'utilisateur actuel"
+msgstr "Une erreur est survenue lors du chargement de l'utilisateur actuel"
 
 msgid "You do not have authorities to see users, user roles or user groups"
 msgstr ""
@@ -349,7 +350,7 @@ msgstr ""
 "groupes d'utilisateurs"
 
 msgid "Display name"
-msgstr "Afficher un nom"
+msgstr "Nom d'affichage"
 
 msgid "ID"
 msgstr "Id"
@@ -388,7 +389,7 @@ msgid "Birthday"
 msgstr "Date de naissance"
 
 msgid "Gender"
-msgstr "Genre"
+msgstr "Sexe"
 
 msgid "Speaks"
 msgstr "Parle"
@@ -421,7 +422,7 @@ msgid "Create, modify, view and delete User Roles"
 msgstr "Créer, modifier, afficher et supprimer des rôles d'utilisateur"
 
 msgid "User group"
-msgstr "Groupe d'utilisateur"
+msgstr "Groupe d'utilisateurs"
 
 msgid "Create, modify, view and delete User Groups"
 msgstr "Créer, modifier, afficher et supprimer des groupes d'utilisateurs"
@@ -429,7 +430,7 @@ msgstr "Créer, modifier, afficher et supprimer des groupes d'utilisateurs"
 msgid "Could not load the user group data. Please refresh the page."
 msgstr ""
 "Impossible de charger les données du groupe d'utilisateurs. Veuillez "
-"rafraîchir la page"
+"rafraîchir la page."
 
 msgid "User group \"{{displayName}}\" saved successfully"
 msgstr "Groupe d'utilisateurs \"{{displayName}}\" enregistré avec succès"
@@ -486,7 +487,7 @@ msgid "Description"
 msgstr "Description"
 
 msgid "User Role Management"
-msgstr "Gestion des rôles utilisateur"
+msgstr "Gestion des rôles d'utilisateur"
 
 msgid "Could not load the user data. Please refresh the page."
 msgstr ""
@@ -502,7 +503,7 @@ msgid "Show fewer options"
 msgstr "Afficher moins d'options"
 
 msgid "Show more options"
-msgstr "Afficher d'autres options"
+msgstr "Afficher plus d'options"
 
 msgid "Send invite"
 msgstr "Envoyer une invitation"
@@ -511,8 +512,8 @@ msgid ""
 "Selecting an organisation unit provides access to all units in the sub-"
 "hierarchy"
 msgstr ""
-"La sélection d'une unité d'organisation donne accès à toutes les unités dans"
-" la sous-hiérarchie"
+"La sélection d'une unité d'organisation donne accès à toutes les unités de "
+"sa sous-hiérarchie"
 
 msgid "Create account or email invitation"
 msgstr "Créer un compte ou une invitation par e-mail"
@@ -536,7 +537,7 @@ msgid "Retype password"
 msgstr "Retapez le mot de passe"
 
 msgid "OIDC mapping value"
-msgstr "Valeur de mappage OIDC"
+msgstr "Valeur de mapping OIDC"
 
 msgid "LDAP identifier"
 msgstr "Identifiant LDAP"
@@ -569,10 +570,10 @@ msgid "Selected roles"
 msgstr "Rôles sélectionnés"
 
 msgid "Data capture and maintenance organisation units"
-msgstr "Unités d'organisation de la capture et de la maintenance des données"
+msgstr "Unités d'organisation de saisie de données et de maintenance"
 
 msgid "Data output and analytic organisation units"
-msgstr "Sortie de données et unités d'organisation analytique"
+msgstr "Unités d'organisation de sortie de données et d'analyse"
 
 msgid "Search Organisation Units"
 msgstr "Rechercher des unités d'organisation"
@@ -656,7 +657,7 @@ msgid "No"
 msgstr "Non"
 
 msgid "Something went wrong when processing your request."
-msgstr "Une erreur s'est produite lors du traitement de votre demande."
+msgstr "Une erreur s'est produite lors du traitement de votre requête."
 
 msgid "Validating..."
 msgstr "Valider..."
@@ -669,13 +670,14 @@ msgstr "{{type}} \"{{displayName}}\" supprimé avec succès"
 
 msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
 msgstr ""
-"Un problème est survenu lors de la suppression {{type}} \"{{displayName}}\"?"
+"Un problème est survenu lors de la suppression du {{type}} "
+"\"{{displayName}}\" ?"
 
 msgid "Exceeds maximum character limit of 50"
 msgstr "Dépasse la limite de 50 caractères maximum"
 
 msgid "Please enter a valid date with the following format yyyy-mm-dd"
-msgstr "Veuillez saisir une date valide au format suivant aaaa-mm-jj"
+msgstr "Veuillez saisir une date valide au format suivant : aaaa-mm-jj"
 
 msgid "Please provide a valid email address"
 msgstr "Veuillez saisir une adresse email valide"
@@ -730,7 +732,7 @@ msgid "Password should have at least one special character"
 msgstr "Le mot de passe doit avoir au moins un caractère spécial"
 
 msgid "Username already taken"
-msgstr "Nom d'utilisateur déjà pris"
+msgstr "Nom d'utilisateur déjà utilisé"
 
 msgid "There was a problem whilst checking the availability of this username"
 msgstr ""
@@ -738,15 +740,14 @@ msgstr ""
 "nom d'utilisateur"
 
 msgid "{{fieldDisplayName}} is already taken"
-msgstr "{{fieldDisplayName}} est déjà pris"
+msgstr "{{fieldDisplayName}} est déjà utilisé"
 
 msgid "Could not verify if this {{fieldDisplayName}} is unique"
-msgstr "Impossible de vérifier si cela {{fieldDisplayName}} est unique"
+msgstr "Impossible de vérifier si {{fieldDisplayName}} est unique"
 
 msgid "Attribute value needs to be unique, value already taken."
-msgstr "La valeur d'attribut doit être unique, valeur déjà prise."
+msgstr "La valeur de l'attribut doit être unique, valeur déjà utilisée."
 
 msgid "There was a problem checking if this attribute value is unique"
 msgstr ""
-"Un problème est survenu lors de la vérification si cette valeur d'attribut "
-"est unique"
+"Un problème est survenu en vérifiant si cette valeur d'attribut est unique."
