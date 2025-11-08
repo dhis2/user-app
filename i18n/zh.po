@@ -92,7 +92,7 @@ msgid "Description"
 msgstr "描述"
 
 msgid "Short, clear description of what this group is for."
-msgstr ""
+msgstr "简明扼要地说明该小组的作用。"
 
 msgid "Search for a user in this group"
 msgstr "在该组中搜索用户"
