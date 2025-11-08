@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-05-09T12:36:26.531Z\n"
+"POT-Creation-Date: 2025-10-30T12:12:29.056Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Em Le <em.hispvietnam@gmail.com>, 2025\n"
 "Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -87,6 +87,12 @@ msgid "Code"
 msgstr "Mã"
 
 msgid "Used in analytics reports."
+msgstr ""
+
+msgid "Description"
+msgstr "Miêu tả"
+
+msgid "Short, clear description of what this group is for."
 msgstr ""
 
 msgid "Search for a user in this group"
@@ -222,9 +228,6 @@ msgstr ""
 msgid "Error creating role"
 msgstr ""
 
-msgid "Description"
-msgstr "Miêu tả"
-
 msgid "Short, clear description of what this role is for."
 msgstr ""
 
@@ -280,7 +283,7 @@ msgid "Update Tracked Entity Type"
 msgstr ""
 
 msgid "Aggregate Data Exchange"
-msgstr ""
+msgstr "Trao đổi dữ liệu tổng hợp"
 
 msgid "Analytics Table Hook"
 msgstr "Bảng phân tích Hook"
@@ -632,7 +635,7 @@ msgid "User groups this user is a member of"
 msgstr ""
 
 msgid "Invalid password"
-msgstr ""
+msgstr "Mật khẩu không hợp lệ"
 
 msgid "Security"
 msgstr "Bảo mật"
@@ -654,6 +657,9 @@ msgid ""
 "characters long, with at least one lowercase character, one uppercase "
 "character, one number, and one special character."
 msgstr ""
+"Độ dài mật khẩu phải tối thiểu {{minPasswordLength}} và tối đa "
+"{{maxPasswordLength}} kí tự, với ít nhất một chữ viết thường, một chữ viết "
+"hoa, một con số, và một kí tự đặc biệt."
 
 msgid "Repeat new password"
 msgstr "Gõ lại mật khẩu mới"
