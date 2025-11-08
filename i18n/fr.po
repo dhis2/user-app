@@ -1,20 +1,21 @@
 # 
 # Translators:
 # Edem Kossi <ekossi@hispwca.org>, 2021
-# Matthieu Pinard <matthieu@dhis2.org>, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
+# Matthieu Pinard <matthieu@dhis2.org>, 2021
 # Karoline Tufte Lien <karoline@dhis2.org>, 2021
 # Bram Piot <bram.piot@gmail.com>, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
-# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
 # Philip Larsen Donnelly, 2024
+# Cyrille Kabrane, 2025
+# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-03-06T12:01:39.768Z\n"
 "PO-Revision-Date: 2021-09-04 00:49+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Last-Translator: Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,11 +27,11 @@ msgid ""
 "Could not reset user password. Make sure you have the appropriate "
 "permissions."
 msgstr ""
-"Impossible de réinitialiser le mot de passe de l'utilisateur. Vérifiez que "
+"Impossible de réinitialiser le mot de passe de l'utilisateur. Vérifiez si "
 "vous disposez des autorisations nécessaires."
 
 msgid "Use database locale / no translation"
-msgstr "Utiliser la localisation de la base de données/ pas de traduction"
+msgstr "Utiliser la localisation de la base de données / pas de traduction"
 
 msgid "Search"
 msgstr "Chercher"
@@ -61,7 +62,7 @@ msgid "Selected authorities only"
 msgstr "Autorisations sélectionnées uniquement"
 
 msgid "All (Full authority)"
-msgstr "Tout (Pleine autorisation)"
+msgstr "Tout (Pleine autorité)"
 
 msgid "Analytics Table Hook"
 msgstr "Crochet de Tables Analytiques"
@@ -70,7 +71,7 @@ msgid "Attribute"
 msgstr "Attribut"
 
 msgid "Category Combo"
-msgstr "La combo de catégories"
+msgstr "Combinaison de catégories"
 
 msgid "Category"
 msgstr "Catégorie"
@@ -184,7 +185,7 @@ msgid "Program Tracked Entity Attribute Group"
 msgstr "Groupe d'attributs d'entité suivie par programme"
 
 msgid "Push Analysis"
-msgstr "Analyse Pousser "
+msgstr "Analyse push"
 
 msgid "Relationship Type"
 msgstr "Type de relation"
@@ -226,7 +227,7 @@ msgid "Validation Rule"
 msgstr "Règle de validation"
 
 msgid "Data predictor group"
-msgstr "Groupe de prédicteur de données"
+msgstr "Groupe de prédicteurs de données"
 
 msgid "Skip data import audit"
 msgstr "Ignorer l'audit d'importation de données"
@@ -247,7 +248,7 @@ msgid "System"
 msgstr "Système"
 
 msgid "Add"
-msgstr "Add"
+msgstr "Ajouter"
 
 msgid "list"
 msgstr "liste"
@@ -255,8 +256,8 @@ msgstr "liste"
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
 msgstr ""
-"Vous n'avez accès à aucune section du DHIS 2 Application de gestion des "
-"utilisateurs"
+"Vous n'avez accès à aucune section de l'Application Gestion d'Utilisateurs "
+"de DHIS 2"
 
 msgid "Edit user"
 msgstr "Modifier l'utilisateur"
@@ -301,7 +302,7 @@ msgid "No match for"
 msgstr "Pas de correspondance pour"
 
 msgid "Go back home"
-msgstr "Rentrer à la maison"
+msgstr "Revenir à la page d'accueil"
 
 msgid "User \"{{displayName}}\" replicated successfuly"
 msgstr "Utilisateur \"{{displayName}}\"  répliqué avec succès"
@@ -437,7 +438,7 @@ msgstr "Créer, modifier, afficher et supprimer des groupes d'utilisateurs"
 msgid "Could not load the user group data. Please refresh the page."
 msgstr ""
 "Impossible de charger les données du groupe d'utilisateurs. Veuillez "
-"rafraîchir la page"
+"rafraîchir la page."
 
 msgid "User group \"{{displayName}}\" saved successfully"
 msgstr "Groupe d'utilisateurs \"{{displayName}}\" enregistré avec succès"
@@ -510,7 +511,7 @@ msgid "Show fewer options"
 msgstr "Afficher moins d'options"
 
 msgid "Show more options"
-msgstr "Afficher d'autres options"
+msgstr "Afficher plus d'options"
 
 msgid "Send invite"
 msgstr "Envoyer une invitation"
@@ -544,7 +545,7 @@ msgid "Retype password"
 msgstr "Retapez le mot de passe"
 
 msgid "OIDC mapping value"
-msgstr "Valeur de mappage OIDC"
+msgstr "Valeur de mapping OIDC"
 
 msgid "LDAP identifier"
 msgstr "Identifiant LDAP"
@@ -577,10 +578,10 @@ msgid "Selected roles"
 msgstr "Rôles sélectionnés"
 
 msgid "Data capture and maintenance organisation units"
-msgstr "Capture et de la maintenance des données aux unités d'organisation"
+msgstr "Unités d'organisation de saisie de données et de maintenance"
 
 msgid "Data output and analytic organisation units"
-msgstr "Sortie de données et unités d'organisation analytique"
+msgstr "Unités d'organisation de sortie de données et d'analyse"
 
 msgid "Search Organisation Units"
 msgstr "Rechercher des unités d'organisation"
@@ -647,7 +648,7 @@ msgid "All invitations"
 msgstr "Toutes les invitations"
 
 msgid "Expired invitations"
-msgstr "Invitations périmées"
+msgstr "Invitations expirées"
 
 msgid "Invitations"
 msgstr "Invitations"
@@ -684,7 +685,8 @@ msgstr "{{type}} \"{{displayName}}\" supprimé avec succès"
 
 msgid "There was a problem removing {{type}} \"{{displayName}}\"?"
 msgstr ""
-"Un problème est survenu lors de la suppression {{type}} \"{{displayName}}\"?"
+"Un problème est survenu lors de la suppression du {{type}} "
+"\"{{displayName}}\"?"
 
 msgid "Exceeds maximum character limit of 50"
 msgstr "Dépasse la limite de 50 caractères maximum"
@@ -711,7 +713,7 @@ msgid "Passwords do not match"
 msgstr "Les mots de passe ne correspondent pas"
 
 msgid "This field is required"
-msgstr "Ce champs est requis"
+msgstr "Ce champ est requis"
 
 msgid "This field is required. Please select at least one"
 msgstr "Ce champ est requis. Veuillez sélectionner au moins un"
@@ -723,16 +725,16 @@ msgid "Username may not exceed 140 characters"
 msgstr "Le nom d'utilisateur ne doit pas dépasser 140 caractères"
 
 msgid "Surname should be at least 2 characters long"
-msgstr ""
+msgstr "Le nom de famille doit comporter au moins 2 caractères."
 
 msgid "Surname may not exceed 160 characters"
-msgstr ""
+msgstr "Le nom de famille ne doit pas dépasser 160 caractères"
 
 msgid "First name should be at least 2 characters long"
-msgstr ""
+msgstr "Le prénom doit comporter au moins 2 caractères"
 
 msgid "First name may not exceed 160 characters"
-msgstr ""
+msgstr "Le prénom ne doit pas dépasser 160 caractères"
 
 msgid "Please provide a valid international phone number (+0123456789)"
 msgstr ""
@@ -765,10 +767,10 @@ msgstr ""
 "nom d'utilisateur"
 
 msgid "{{fieldDisplayName}} is already taken"
-msgstr "{{fieldDisplayName}} est déjà pris"
+msgstr "{{fieldDisplayName}} est déjà utilisé"
 
 msgid "Could not verify if this {{fieldDisplayName}} is unique"
-msgstr "Impossible de vérifier si cela {{fieldDisplayName}} est unique"
+msgstr "Impossible de vérifier si {{fieldDisplayName}} est unique"
 
 msgid "Attribute value needs to be unique, value already taken."
 msgstr "La valeur d'attribut doit être unique, valeur déjà prise."
