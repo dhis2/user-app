@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-09T14:23:00.214Z\n"
+"POT-Creation-Date: 2025-10-30T12:12:29.056Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Rohit Wadhwani, 2025\n"
 "Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
@@ -72,7 +72,7 @@ msgid "There was an error fetching this form."
 msgstr ""
 
 msgid "Cancel without saving"
-msgstr ""
+msgstr "सेव किए बिना कैंसल करें"
 
 msgid "Basic information"
 msgstr ""
@@ -84,6 +84,12 @@ msgid "Code"
 msgstr ""
 
 msgid "Used in analytics reports."
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Short, clear description of what this group is for."
 msgstr ""
 
 msgid "Search for a user in this group"
@@ -217,9 +223,6 @@ msgid "Error updating role"
 msgstr ""
 
 msgid "Error creating role"
-msgstr ""
-
-msgid "Description"
 msgstr ""
 
 msgid "Short, clear description of what this role is for."
@@ -385,7 +388,7 @@ msgid "Program Stage"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "प्रोग्राम"
 
 msgid "Program Indicator"
 msgstr ""
@@ -795,7 +798,7 @@ msgid "Are you sure you want to delete {{- name}}?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr ""
+msgstr "नहीं, कैंसल"
 
 msgid "Yes, delete"
 msgstr ""
@@ -834,7 +837,7 @@ msgid "User Group Management"
 msgstr ""
 
 msgid "New"
-msgstr ""
+msgstr "नया"
 
 msgid "Error loading user groups"
 msgstr ""
@@ -1123,36 +1126,4 @@ msgid "Could not load current user information."
 msgstr ""
 
 msgid "Could not load system information."
-msgstr ""
-
-msgctxt "Application title"
-msgid "__MANIFEST_APP_TITLE"
-msgstr ""
-
-msgctxt "Application description"
-msgid "__MANIFEST_APP_DESCRIPTION"
-msgstr ""
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Users"
-msgstr ""
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_New user"
-msgstr ""
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_User roles"
-msgstr ""
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_New user role"
-msgstr ""
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_User groups"
-msgstr ""
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_New user group"
 msgstr ""
