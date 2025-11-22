@@ -157,7 +157,7 @@ msgid "Program Stage"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "प्रोग्राम"
 
 msgid "Program Indicator"
 msgstr ""
@@ -260,7 +260,7 @@ msgid "Update"
 msgstr "अपडेट करें"
 
 msgid "Create new"
-msgstr ""
+msgstr "नया बनाएँ"
 
 msgid "Back to"
 msgstr ""
