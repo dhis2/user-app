@@ -72,7 +72,7 @@ msgid "There was an error fetching this form."
 msgstr ""
 
 msgid "Cancel without saving"
-msgstr ""
+msgstr "सेव किए बिना कैंसल करें"
 
 msgid "Basic information"
 msgstr ""
@@ -349,7 +349,7 @@ msgid "Program Stage"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "प्रोग्राम"
 
 msgid "Program Indicator"
 msgstr ""
@@ -757,7 +757,7 @@ msgid "Are you sure you want to delete {{- name}}?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr ""
+msgstr "नहीं, कैंसल"
 
 msgid "Yes, delete"
 msgstr ""
@@ -796,7 +796,7 @@ msgid "User Group Management"
 msgstr ""
 
 msgid "New"
-msgstr ""
+msgstr "नया"
 
 msgid "Error loading user groups"
 msgstr ""
