@@ -1,29 +1,25 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# Philip Larsen Donnelly, 2019
-# channara rin, 2023
-# Em Le <em.hispvietnam@gmail.com>, 2025
-# Kiry Heng, 2025
+# Rohit Wadhwani, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-03-11T14:08:46.110Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Kiry Heng, 2025\n"
-"Language-Team: Khmer (https://app.transifex.com/hisp-uio/teams/100509/km/)\n"
+"Last-Translator: Rohit Wadhwani, 2025\n"
+"Language-Team: English (United States) (https://app.transifex.com/hisp-uio/teams/100509/en_US/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: km\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Use database locale / no translation"
 msgstr ""
 
 msgid "Search"
-msgstr "ស្វែងរក"
+msgstr "खोज"
 
 msgid "Enter search term"
 msgstr ""
@@ -77,7 +73,7 @@ msgid "Constant"
 msgstr ""
 
 msgid "Dashboard"
-msgstr "ផ្ទាំងចម្រោះ​សង្ខេបព័ត៌មាន"
+msgstr ""
 
 msgid "Data Element Group Sets"
 msgstr ""
@@ -92,7 +88,7 @@ msgid "Min/max rule"
 msgstr ""
 
 msgid "Data Set"
-msgstr "ទិន្នន័យឈុត"
+msgstr ""
 
 msgid "Data Value"
 msgstr ""
@@ -119,7 +115,7 @@ msgid "Indicator Type"
 msgstr ""
 
 msgid "Indicator"
-msgstr "សួចនាករ"
+msgstr ""
 
 msgid "Legend Set"
 msgstr ""
@@ -140,7 +136,7 @@ msgid "Option Set"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr "ផ្នែក​នៃ​អង្គការ"
+msgstr ""
 
 msgid "Organisation Unit Group Set"
 msgstr ""
@@ -155,7 +151,7 @@ msgid "Program Stage"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "प्रोग्राम"
 
 msgid "Program Indicator"
 msgstr ""
@@ -221,19 +217,19 @@ msgid "Visualization"
 msgstr ""
 
 msgid "Apps"
-msgstr "កម្មវិធី"
+msgstr ""
 
 msgid "Tracker"
 msgstr ""
 
 msgid "Import-Export"
-msgstr "បញ្ចេញ-បញ្ចូលទិន្នន័យ"
+msgstr ""
 
 msgid "System"
-msgstr "ប្រព័ន្ធ"
+msgstr ""
 
 msgid "Add"
-msgstr "បន្ថែម"
+msgstr ""
 
 msgid "list"
 msgstr ""
@@ -255,10 +251,10 @@ msgid "Send message"
 msgstr ""
 
 msgid "Update"
-msgstr "ធ្វើ​បច្ចុប្បន្នភាព"
+msgstr ""
 
 msgid "Create new"
-msgstr ""
+msgstr "नया बनाएँ"
 
 msgid "Back to"
 msgstr ""
@@ -267,7 +263,7 @@ msgid "You are not allowed to edit"
 msgstr ""
 
 msgid "Confirm"
-msgstr "បញ្ជាក់"
+msgstr ""
 
 msgid "There was an error fetching the list"
 msgstr ""
@@ -276,7 +272,7 @@ msgid "Select an organisation unit"
 msgstr ""
 
 msgid "Organisation unit"
-msgstr "ផ្នែក​នៃ​អង្គការ"
+msgstr ""
 
 msgid "Page not found."
 msgstr ""
@@ -294,13 +290,13 @@ msgid "There was a problem replicating the user"
 msgstr ""
 
 msgid "Username"
-msgstr "ឈ្មោះ​គណនី"
+msgstr ""
 
 msgid "Username for new user"
 msgstr ""
 
 msgid "Password"
-msgstr "ពាក្យ​សម្ងាត់"
+msgstr ""
 
 msgid "Password for new user"
 msgstr ""
@@ -309,7 +305,7 @@ msgid "Replicate"
 msgstr ""
 
 msgid "Cancel"
-msgstr "បោះបង់"
+msgstr "कैंसल"
 
 msgid "Search by name"
 msgstr ""
@@ -318,7 +314,7 @@ msgid "Could not load available items"
 msgstr ""
 
 msgid "Filter"
-msgstr "ការច្រោះ"
+msgstr ""
 
 msgid "Filter available and selected items"
 msgstr ""
@@ -342,7 +338,7 @@ msgid "Display name"
 msgstr ""
 
 msgid "ID"
-msgstr "​លេខ​សម្គាល់"
+msgstr ""
 
 msgid "Last login"
 msgstr ""
@@ -351,49 +347,49 @@ msgid "Created"
 msgstr ""
 
 msgid "Surname"
-msgstr "នាម​ត្រកូល​"
+msgstr ""
 
 msgid "First name"
-msgstr "នាមខ្លួន"
+msgstr ""
 
 msgid "Introduction"
-msgstr "ការ​ណែនាំ"
+msgstr ""
 
 msgid "Job title"
-msgstr "មុខងារ​"
+msgstr ""
 
 msgid "Works at"
 msgstr ""
 
 msgid "Education"
-msgstr "ការ​អប់រំ"
+msgstr ""
 
 msgid "Interests"
-msgstr "ចំណាប់អារម្មណ៍"
+msgstr ""
 
 msgid "Nationality"
-msgstr "សញ្ជាតិ"
+msgstr ""
 
 msgid "Birthday"
-msgstr "ថ្ងៃកំណើត"
+msgstr ""
 
 msgid "Gender"
-msgstr "ភេទ"
+msgstr ""
 
 msgid "Speaks"
 msgstr ""
 
 msgid "E-mail"
-msgstr "សារ​អេឡិចត្រូនិក"
+msgstr ""
 
 msgid "Mobile phone number"
-msgstr "លេខ​ទូរស័ព្ទ​ដៃ"
+msgstr ""
 
 msgid "Organisations units"
 msgstr ""
 
 msgid "User roles"
-msgstr "សិទ្ធិអ្នកប្រើប្រាស់"
+msgstr ""
 
 msgid "Members"
 msgstr ""
@@ -426,13 +422,13 @@ msgid "There was a problem saving the user group."
 msgstr ""
 
 msgid "Save"
-msgstr "រក្សាទុក​"
+msgstr "सेव"
 
 msgid "Name"
-msgstr "ឈ្មោះ"
+msgstr ""
 
 msgid "Code"
-msgstr "លេខកូដ"
+msgstr ""
 
 msgid ""
 "To add a user to this group, go to the User section and edit the user group "
@@ -464,7 +460,7 @@ msgid "There was a problem saving the user role."
 msgstr ""
 
 msgid "Description"
-msgstr "ការ​ពិពណ៌នា"
+msgstr ""
 
 msgid "User Role Management"
 msgstr ""
@@ -535,7 +531,7 @@ msgid "Twitter"
 msgstr ""
 
 msgid "Interface language"
-msgstr "ផ្ទាំងភាសា"
+msgstr ""
 
 msgid "Database language"
 msgstr ""
@@ -620,13 +616,14 @@ msgstr ""
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
-msgstr[0] "{{count}} បានជ្រើសរើស"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Yes"
-msgstr "បាទ/ចាស"
+msgstr "हाँ"
 
 msgid "No"
-msgstr "ទេ"
+msgstr "नहीं"
 
 msgid "Something went wrong when processing your request."
 msgstr ""
@@ -683,7 +680,7 @@ msgid "Please provide a valid international phone number (+0123456789)"
 msgstr ""
 
 msgid "Password should be at least 8 characters long"
-msgstr "លេខសំងាត់គួរតែតិចបំផុត៨តួ"
+msgstr ""
 
 msgid "Password should be no longer than 34 characters"
 msgstr ""
