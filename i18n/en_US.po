@@ -1,6 +1,5 @@
 # 
 # Translators:
-# Siddharth Agarwal, 2025
 # Rohit Wadhwani, 2025
 # 
 msgid ""
@@ -9,11 +8,11 @@ msgstr ""
 "POT-Creation-Date: 2024-03-22T08:26:32.388Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
 "Last-Translator: Rohit Wadhwani, 2025\n"
-"Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
+"Language-Team: English (United States) (https://app.transifex.com/hisp-uio/teams/100509/en_US/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hi_IN\n"
+"Language: en_US\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Yes"
@@ -48,7 +47,7 @@ msgid "Send message"
 msgstr ""
 
 msgid "ID"
-msgstr "आईडी"
+msgstr ""
 
 msgid "Filter options"
 msgstr ""
@@ -60,13 +59,13 @@ msgid "There was an error fetching this form."
 msgstr ""
 
 msgid "Cancel without saving"
-msgstr "सेव किए बिना कैंसल करें"
+msgstr ""
 
 msgid "Basic information"
 msgstr ""
 
 msgid "Name"
-msgstr "नाम"
+msgstr ""
 
 msgid "Code"
 msgstr ""
@@ -134,7 +133,7 @@ msgid "Add/Update Private"
 msgstr ""
 
 msgid "Delete"
-msgstr "हटाएं"
+msgstr "डिलीट"
 
 msgid "External access"
 msgstr ""
@@ -502,7 +501,7 @@ msgid "The organisation units that this user can export and analyse."
 msgstr ""
 
 msgid "Search"
-msgstr "सर्च करें / खोजें"
+msgstr "खोज"
 
 msgid "The organisation that this user can search for and in."
 msgstr ""
@@ -720,7 +719,7 @@ msgid "Sharing settings"
 msgstr ""
 
 msgid "Edit"
-msgstr "संपादन करें"
+msgstr ""
 
 msgid "Join group"
 msgstr ""
@@ -786,7 +785,7 @@ msgid "Error loading user groups"
 msgstr ""
 
 msgid "No results found"
-msgstr "कोई परिणाम नहीं मिला"
+msgstr ""
 
 msgid "Member?"
 msgstr ""
@@ -808,7 +807,7 @@ msgid "List"
 msgstr ""
 
 msgid "Add"
-msgstr "जोड़ें"
+msgstr ""
 
 msgid "Page not found."
 msgstr ""
@@ -917,7 +916,7 @@ msgid "Password for new user"
 msgstr ""
 
 msgid "Cancel"
-msgstr "रद्द करें"
+msgstr "कैंसल"
 
 msgid "Replicate user"
 msgstr ""

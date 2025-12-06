@@ -2,13 +2,14 @@
 # Translators:
 # Karoline Tufte Lien <karoline@dhis2.org>, 2024
 # Caroline Hesthagen Holen <caroline@devotta.no>, 2024
+# Thomas Zemp, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-08T17:31:59.581Z\n"
+"POT-Creation-Date: 2024-03-22T08:26:32.388Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
-"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2024\n"
+"Last-Translator: Thomas Zemp, 2025\n"
 "Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,6 +47,9 @@ msgstr "Rediger brukerrolle"
 
 msgid "Send message"
 msgstr "Send melding"
+
+msgid "ID"
+msgstr "ID"
 
 msgid "Filter options"
 msgstr "Filteralternativ"
@@ -107,7 +111,7 @@ msgid "Managed user groups"
 msgstr "Administrerte brukergrupper"
 
 msgid "Name is already taken"
-msgstr ""
+msgstr "Dette navnet er allerede i bruk"
 
 msgid ""
 "There was a problem whilst checking the availability of this group name"
@@ -614,9 +618,6 @@ msgstr "Opprett, endre, vis og slett brukergrupper"
 
 msgid "Display name"
 msgstr "Visningsnavn"
-
-msgid "ID"
-msgstr "ID"
 
 msgid "Last login"
 msgstr "Sist innlogget"
