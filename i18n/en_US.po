@@ -1,46 +1,44 @@
 # 
 # Translators:
-# Karoline Tufte Lien <karoline@dhis2.org>, 2023
-# Caroline Hesthagen Holen <caroline@devotta.no>, 2023
-# Thomas Zemp, 2025
+# Rohit Wadhwani, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2025-02-21T10:16:54.865Z\n"
 "PO-Revision-Date: 2023-05-22 19:30+0000\n"
-"Last-Translator: Thomas Zemp, 2025\n"
-"Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
+"Last-Translator: Rohit Wadhwani, 2025\n"
+"Language-Team: English (United States) (https://app.transifex.com/hisp-uio/teams/100509/en_US/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nb\n"
+"Language: en_US\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Yes"
-msgstr "Ja"
+msgstr "हाँ"
 
 msgid "No"
-msgstr "Nei"
+msgstr "नहीं"
 
 msgid "Attribute value needs to be unique, value already taken."
-msgstr "Attributtverdien må være unik, verdien er allerede opptatt"
+msgstr ""
 
 msgid ""
 "There was a problem whilst checking the availability of this attribute value"
 msgstr ""
 
 msgid "Value should be a positive integer"
-msgstr "Verdien skal være et positivt heltall"
+msgstr ""
 
 msgid "Value should be a negative integer"
 msgstr ""
 
 msgid "No results found"
-msgstr "Ingen resultater funnet"
+msgstr ""
 
 msgid "Display name"
-msgstr "Visningsnavn"
+msgstr ""
 
 msgid "1 pending change"
 msgstr ""
@@ -52,10 +50,10 @@ msgid "Cancel all"
 msgstr ""
 
 msgid "Cancel"
-msgstr "Avbryt"
+msgstr "कैंसल"
 
 msgid "Action"
-msgstr "Handling"
+msgstr ""
 
 msgid "Will be added"
 msgstr ""
@@ -70,7 +68,7 @@ msgid "Could not load current user information."
 msgstr ""
 
 msgid "Filter options"
-msgstr "Filteralternativ"
+msgstr ""
 
 msgid "Error fetching form"
 msgstr ""
@@ -79,16 +77,16 @@ msgid "There was an error fetching this form."
 msgstr ""
 
 msgid "Cancel without saving"
-msgstr "Avbryt uten å lagre"
+msgstr ""
 
 msgid "Basic information"
 msgstr ""
 
 msgid "Name"
-msgstr "Navn"
+msgstr ""
 
 msgid "Code"
-msgstr "Kode"
+msgstr ""
 
 msgid "Used in analytics reports."
 msgstr ""
@@ -133,7 +131,7 @@ msgid "Add users to group"
 msgstr ""
 
 msgid "Username"
-msgstr "Brukernavn"
+msgstr ""
 
 msgid "Error loading users"
 msgstr ""
@@ -145,7 +143,7 @@ msgid "Error creating group"
 msgstr ""
 
 msgid "Attributes"
-msgstr "Attributter"
+msgstr ""
 
 msgid "User group management"
 msgstr ""
@@ -155,19 +153,19 @@ msgid ""
 msgstr ""
 
 msgid "Available user groups"
-msgstr "Tilgjengelige brukergrupper"
+msgstr ""
 
 msgid "Managed user groups"
-msgstr "Administrerte brukergrupper"
+msgstr ""
 
 msgid "User management"
-msgstr "Brukeradministrasjon"
+msgstr ""
 
 msgid "Add or remove users from this group."
 msgstr ""
 
 msgid "Name is already taken"
-msgstr "Dette navnet er allerede i bruk"
+msgstr ""
 
 msgid ""
 "There was a problem whilst checking the availability of this group name"
@@ -193,10 +191,10 @@ msgid "Add/Update Private"
 msgstr ""
 
 msgid "Delete"
-msgstr "Slett"
+msgstr "डिलीट"
 
 msgid "External access"
-msgstr "Ekstern tilgang"
+msgstr ""
 
 msgid "Error updating role"
 msgstr ""
@@ -205,7 +203,7 @@ msgid "Error creating role"
 msgstr ""
 
 msgid "Description"
-msgstr "Beskrivelse"
+msgstr ""
 
 msgid "Short, clear description of what this role is for."
 msgstr ""
@@ -248,181 +246,181 @@ msgid "Selected system authorities"
 msgstr ""
 
 msgid "All (Full authority)"
-msgstr "Alle (Fulle rettigheter)"
+msgstr ""
 
 msgid "Aggregate Data Exchange"
 msgstr ""
 
 msgid "Analytics Table Hook"
-msgstr "Analysetabell-krok"
+msgstr ""
 
 msgid "Attribute"
-msgstr "Attributt"
+msgstr ""
 
 msgid "Category Combo"
-msgstr "Kategorikombo"
+msgstr ""
 
 msgid "Category"
-msgstr "Kategori"
+msgstr ""
 
 msgid "Category Option"
-msgstr "Kategorialternativ"
+msgstr ""
 
 msgid "Category Option Group"
-msgstr "Kategorialternativgruppe"
+msgstr ""
 
 msgid "Category Option Group Set"
-msgstr "Kategorialternativgruppesett"
+msgstr ""
 
 msgid "Color Set"
-msgstr "Fargesett"
+msgstr ""
 
 msgid "Constant"
-msgstr "Konstant"
+msgstr ""
 
 msgid "Dashboard"
-msgstr "Dashbord"
+msgstr ""
 
 msgid "Data Element Group Sets"
-msgstr "Dataelementgruppesett"
+msgstr ""
 
 msgid "Data Element Groups"
-msgstr "Dataelementgrupper"
+msgstr ""
 
 msgid "Data Element"
-msgstr "Dataelementer"
+msgstr ""
 
 msgid "Min/max rule"
-msgstr "Min/Max regel"
+msgstr ""
 
 msgid "Data Set"
-msgstr "Datasett"
+msgstr ""
 
 msgid "Data Value"
-msgstr "Dataverdi"
+msgstr ""
 
 msgid "Document"
-msgstr "Dokument"
+msgstr ""
 
 msgid "Event Chart"
-msgstr "Hendelsesdiagram"
+msgstr ""
 
 msgid "Event Report"
-msgstr "Hendelsesrapport"
+msgstr ""
 
 msgid "External Map Layer"
-msgstr "Eksternt kartlag"
+msgstr ""
 
 msgid "Indicator Group Sets"
-msgstr "Indikatorgruppesett"
+msgstr ""
 
 msgid "Indicator Group"
-msgstr "Indikatorgruppe"
+msgstr ""
 
 msgid "Indicator Type"
-msgstr "Indikatortype"
+msgstr ""
 
 msgid "Indicator"
-msgstr "Indikator"
+msgstr ""
 
 msgid "Legend Set"
-msgstr "Tegnforklaringssett"
+msgstr ""
 
 msgid "Map"
-msgstr "Kart"
+msgstr ""
 
 msgid "Min-Max Data Element"
-msgstr "Min-Max Dataelement"
+msgstr ""
 
 msgid "Option Group Set"
-msgstr "Alternativgruppesett"
+msgstr ""
 
 msgid "Option Group"
-msgstr "Alternativgruppe"
+msgstr ""
 
 msgid "Option Set"
-msgstr "Alternativsett"
+msgstr ""
 
 msgid "Organisation Unit"
-msgstr "Organisasjonsenhet"
+msgstr ""
 
 msgid "Organisation Unit Group Set"
-msgstr "Organisasjonsenhetgruppesett"
+msgstr ""
 
 msgid "Organisation Unit Group"
-msgstr "Organisasjonsenhetgruppe"
+msgstr ""
 
 msgid "Predictor"
-msgstr "Prediktor"
+msgstr ""
 
 msgid "Program Stage"
-msgstr "Programfase"
+msgstr ""
 
 msgid "Program"
-msgstr "Program"
+msgstr "प्रोग्राम"
 
 msgid "Program Indicator"
-msgstr "Programindikator"
+msgstr ""
 
 msgid "Program Indicator Group"
-msgstr "Programindikator gruppe"
+msgstr ""
 
 msgid "Program Rule"
-msgstr "Programregel"
+msgstr ""
 
 msgid "Program Tracked Entity Attribute Group"
-msgstr "Programsporet enhetattributtgruppe"
+msgstr ""
 
 msgid "Push Analysis"
-msgstr "Push-analyse"
+msgstr ""
 
 msgid "Relationship Type"
-msgstr "Relasjonstype"
+msgstr ""
 
 msgid "Report"
-msgstr "Rapport"
+msgstr ""
 
 msgid "Section"
-msgstr "Seksjon"
+msgstr ""
 
 msgid "SQL View"
-msgstr "SQL visning"
+msgstr ""
 
 msgid "Tracked Entity"
-msgstr "Sporet enhet"
+msgstr ""
 
 msgid "Tracked Entity Attribute"
-msgstr "Sporet enhetattributt"
+msgstr ""
 
 msgid "Tracked Entity Data Value"
-msgstr "Sporet enhetdataverdi"
+msgstr ""
 
 msgid "Tracked Entity Instance"
-msgstr "Sporet enhetforekomst"
+msgstr ""
 
 msgid "User Group"
-msgstr "Brukergruppe"
+msgstr ""
 
 msgid "User Role"
-msgstr "Brukerrolle"
+msgstr ""
 
 msgid "User"
-msgstr "Bruker"
+msgstr ""
 
 msgid "Validation Rule Group"
-msgstr "Valideringsregelgruppe"
+msgstr ""
 
 msgid "Validation Rule"
-msgstr "Valideringsregel"
+msgstr ""
 
 msgid "Data predictor group"
-msgstr "Dataprediktorgruppe"
+msgstr ""
 
 msgid "Skip data import audit"
-msgstr "Hopp over revisjon av dataimport"
+msgstr ""
 
 msgid "Visualization"
-msgstr "Visualisering"
+msgstr ""
 
 msgid "Event Hook"
 msgstr ""
@@ -434,7 +432,7 @@ msgid "There was a problem whilst checking the availability of this role name"
 msgstr ""
 
 msgid "Search by name"
-msgstr "Søk på navn"
+msgstr ""
 
 msgid "Search for an organisation unit"
 msgstr ""
@@ -445,22 +443,22 @@ msgid ""
 msgstr ""
 
 msgid "Something went wrong when processing your request."
-msgstr "Noe gikk galt ved behandling av forespørselen"
+msgstr ""
 
 msgid "There was a problem retreiving your search results"
-msgstr "Det oppstod et problem med å hente søkeresultatene dine"
+msgstr ""
 
 msgid "Please enter at least {{ minCharLength }} characters"
 msgstr ""
 
 msgid "No matches found"
-msgstr "Ingen treff funnet"
+msgstr ""
 
 msgid "Apply"
-msgstr "Bruk"
+msgstr ""
 
 msgid "Clear all"
-msgstr "Fjern alt"
+msgstr ""
 
 msgid "Insufficient permissions"
 msgstr ""
@@ -468,14 +466,12 @@ msgstr ""
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
 msgstr ""
-"Du har ikke tilgang til noen seksjon av DHIS 2 Brukeradministrasjon-"
-"applikasjonen"
 
 msgid "User role"
-msgstr "Brukerrolle"
+msgstr ""
 
 msgid "User group"
-msgstr "Brukergruppe"
+msgstr ""
 
 msgid "Analytics dimension restrictions"
 msgstr ""
@@ -490,19 +486,19 @@ msgid "Email address"
 msgstr ""
 
 msgid "First name"
-msgstr "Fornavn"
+msgstr ""
 
 msgid "Last name"
-msgstr "Etternavn"
+msgstr ""
 
 msgid "Interface language"
-msgstr "Grensesnittspråk"
+msgstr ""
 
 msgid "Database language"
-msgstr "Databasespråk"
+msgstr ""
 
 msgid "Use database locale / no translation"
-msgstr "Bruk databasespråket / ingen oversettelse"
+msgstr ""
 
 msgid "Disable this user account"
 msgstr ""
@@ -511,34 +507,34 @@ msgid "Contact details"
 msgstr ""
 
 msgid "Mobile phone number"
-msgstr "Mobilnummer"
+msgstr ""
 
 msgid "WhatsApp"
-msgstr "WhatsApp"
+msgstr ""
 
 msgid "Facebook Messenger"
-msgstr "Facebook Messenger"
+msgstr ""
 
 msgid "Skype"
-msgstr "Skype"
+msgstr ""
 
 msgid "Telegram"
-msgstr "Telegram"
+msgstr ""
 
 msgid "Twitter"
-msgstr "Twitter"
+msgstr ""
 
 msgid "Invite user"
 msgstr ""
 
 msgid "Create account or email invitation"
-msgstr "Opprett en konto eller e-post invitasjon"
+msgstr ""
 
 msgid "Create account with user details"
-msgstr "Opprett konto med brukerinformasjon"
+msgstr ""
 
 msgid "Email invitation to create account"
-msgstr "Send invitasjon på e-post om å opprette konto"
+msgstr ""
 
 msgid "Organisation unit access"
 msgstr ""
@@ -567,7 +563,7 @@ msgid "The organisation units that this user can export and analyse."
 msgstr ""
 
 msgid "Search"
-msgstr "Søk"
+msgstr "खोज"
 
 msgid "The organisation that this user can search for and in."
 msgstr ""
@@ -591,7 +587,7 @@ msgid "User groups this user is a member of"
 msgstr ""
 
 msgid "Security"
-msgstr "Sikkerhet"
+msgstr ""
 
 msgid "Settings for how this user can log in."
 msgstr ""
@@ -600,10 +596,10 @@ msgid "Change user password"
 msgstr ""
 
 msgid "New password"
-msgstr "Nytt passord"
+msgstr ""
 
 msgid "Password"
-msgstr "Passord"
+msgstr ""
 
 msgid ""
 "Password should be at least 8 characters long, with at least one lowercase "
@@ -611,22 +607,22 @@ msgid ""
 msgstr ""
 
 msgid "Repeat new password"
-msgstr "Gjenta nytt passord"
+msgstr ""
 
 msgid "Repeat password"
 msgstr ""
 
 msgid "Account expiration date"
-msgstr "Kontoens utløpsdato"
+msgstr ""
 
 msgid "OIDC mapping value"
-msgstr "OIDC kartleggingsverdi"
+msgstr ""
 
 msgid "OpenID Connect mapping claim for your identity platform"
 msgstr ""
 
 msgid "LDAP identifier"
-msgstr "LDAP-ID"
+msgstr ""
 
 msgid "External authentication only (OpenID / LDAP)"
 msgstr ""
@@ -638,7 +634,7 @@ msgid "Invalid WhatsApp number"
 msgstr ""
 
 msgid "Send invite"
-msgstr "Send invitasjon"
+msgstr ""
 
 msgid "Cancel invite"
 msgstr ""
@@ -650,14 +646,13 @@ msgid "Error creating user"
 msgstr ""
 
 msgid "Username already taken"
-msgstr "Dette brukernavnet er allerede brukt"
+msgstr ""
 
 msgid "There was a problem whilst checking the availability of this username"
 msgstr ""
-"Det oppsto et problem ved sjekking av tilgjengelighet av dette brukernavnet"
 
 msgid "Passwords do not match"
-msgstr "Passordene matcher ikke"
+msgstr ""
 
 msgid "Please provide a value"
 msgstr ""
@@ -696,7 +691,7 @@ msgid "Edit group"
 msgstr ""
 
 msgid "Save changes"
-msgstr "Lagre endringer"
+msgstr ""
 
 msgid "Error fetching role"
 msgstr ""
@@ -714,34 +709,34 @@ msgid "There was an error fetching this user."
 msgstr ""
 
 msgid "Edit user"
-msgstr "Rediger bruker"
+msgstr ""
 
 msgid "You do not have access to edit this user group"
 msgstr ""
 
 msgid "Overview"
-msgstr "Oversikt"
+msgstr ""
 
 msgid "Edit user group"
-msgstr "Rediger brukergruppe"
+msgstr ""
 
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 msgid "Show details"
-msgstr "Vis detaljer"
+msgstr ""
 
 msgid "Sharing settings"
-msgstr "Deleinnstillinger"
+msgstr ""
 
 msgid "Edit"
-msgstr "Rediger"
+msgstr ""
 
 msgid "Join group"
-msgstr "Bli med i gruppe"
+msgstr ""
 
 msgid "Leave group"
-msgstr "Forlat gruppe"
+msgstr ""
 
 msgid "Deleted \"{{- name}}\" successfully"
 msgstr ""
@@ -756,7 +751,7 @@ msgid "Are you sure you want to delete {{- name}}?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr "Nei, avbryt"
+msgstr "नहीं, कैंसल"
 
 msgid "Yes, delete"
 msgstr ""
@@ -789,13 +784,13 @@ msgid "Are you sure you want to leave {{- name}}?"
 msgstr ""
 
 msgid "Yes, leave"
-msgstr "Ja, avslutt"
+msgstr ""
 
 msgid "User Group Management"
-msgstr "Administrasjon av brukerroller"
+msgstr ""
 
 msgid "New"
-msgstr "Ny"
+msgstr "नया"
 
 msgid "Error loading user groups"
 msgstr ""
@@ -811,28 +806,28 @@ msgid "Member?"
 msgstr ""
 
 msgid "Actions"
-msgstr "Handlinger"
+msgstr ""
 
 msgid "Member"
 msgstr ""
 
 msgid "List"
-msgstr "Vis"
+msgstr ""
 
 msgid "Add"
-msgstr "Legg til"
+msgstr ""
 
 msgid "Create, modify, view and delete Users"
-msgstr "Opprett, endre, vis og slett brukere"
+msgstr ""
 
 msgid "Create, modify, view and delete User Roles"
-msgstr "Opprett, endre, vis og slett brukerrroller"
+msgstr ""
 
 msgid "Create, modify, view and delete User Groups"
-msgstr "Opprett, endre, vis og slett brukergrupper"
+msgstr ""
 
 msgid "Edit user role"
-msgstr "Rediger brukerrolle"
+msgstr ""
 
 msgid "There was an error deleting the user role: {{- error}}"
 msgstr ""
@@ -841,7 +836,7 @@ msgid "Delete user role {{- name}}"
 msgstr ""
 
 msgid "User Role Management"
-msgstr "Administrasjon av brukerroller"
+msgstr ""
 
 msgid "Error loading user roles"
 msgstr ""
@@ -854,19 +849,19 @@ msgid "Add new user role"
 msgstr ""
 
 msgid "Profile"
-msgstr "Profil"
+msgstr ""
 
 msgid "Replicate"
-msgstr "Repliker"
+msgstr ""
 
 msgid "Reset password"
 msgstr ""
 
 msgid "Disable"
-msgstr "Deaktiver"
+msgstr ""
 
 msgid "Enable"
-msgstr "Aktiver"
+msgstr ""
 
 msgid "Reset two factor authentication"
 msgstr ""
@@ -917,13 +912,13 @@ msgid "Replicate user {{- name}}"
 msgstr ""
 
 msgid "Username for new user"
-msgstr "Brukernavn for ny bruker"
+msgstr ""
 
 msgid "Password for new user"
-msgstr "Passord for ny bruker"
+msgstr ""
 
 msgid "Replicate user"
-msgstr "Repliker bruker"
+msgstr ""
 
 msgid "Password of user \"{{- name}}\" reset successfuly"
 msgstr ""
@@ -967,22 +962,22 @@ msgid "Invitation"
 msgstr ""
 
 msgid "All invitations"
-msgstr "Alle invitasjoner"
+msgstr ""
 
 msgid "Expired invitations"
-msgstr "Utgåtte invitasjoner"
+msgstr ""
 
 msgid "Show self-registrations"
 msgstr ""
 
 msgid "Clear filters"
-msgstr "Tøm filtre"
+msgstr ""
 
 msgid "Org.unit"
 msgstr ""
 
 msgid "User Management"
-msgstr "Brukeradministrasjon"
+msgstr ""
 
 msgid "There are no users to show here. You can add a new user below."
 msgstr ""
@@ -991,70 +986,70 @@ msgid "Add new user"
 msgstr ""
 
 msgid "Last login"
-msgstr "Sist innlogget"
+msgstr ""
 
 msgid "Status"
-msgstr "Status"
+msgstr ""
 
 msgid "Disabled"
-msgstr "Deaktivert"
+msgstr ""
 
 msgid "Active"
-msgstr "Aktiv"
+msgstr ""
 
 msgid "Male"
-msgstr "Mann"
+msgstr ""
 
 msgid "Female"
-msgstr "Kvinne"
+msgstr ""
 
 msgid "Other"
-msgstr "Annet"
+msgstr ""
 
 msgid "Created"
-msgstr "Opprettet"
+msgstr ""
 
 msgid "Contact"
 msgstr ""
 
 msgid "Send message"
-msgstr "Send melding"
+msgstr ""
 
 msgid "E-mail"
-msgstr "E-post"
+msgstr ""
 
 msgid "Permissions"
-msgstr "Tillatelser"
+msgstr ""
 
 msgid "Organisations units"
-msgstr "Organisasjonsenheter"
+msgstr ""
 
 msgid "User units"
 msgstr ""
 
 msgid "Introduction"
-msgstr "Introduksjon"
+msgstr ""
 
 msgid "Job title"
-msgstr "Jobtittel"
+msgstr ""
 
 msgid "Works at"
-msgstr "Jobber hos"
+msgstr ""
 
 msgid "Gender"
-msgstr "Kjønn"
+msgstr ""
 
 msgid "Speaks"
-msgstr "Snakker"
+msgstr ""
 
 msgid "Nationality"
-msgstr "Nasjonalitet"
+msgstr ""
 
 msgid "Education"
-msgstr "Utdanning"
+msgstr ""
 
 msgid "Interests"
-msgstr "Interesser"
+msgstr ""
 
 msgid "Birthday"
-msgstr "Fødselsdato"
+msgstr ""
