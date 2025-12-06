@@ -2,13 +2,14 @@
 # Translators:
 # Caroline Hesthagen Holen <caroline@devotta.no>, 2025
 # Karoline Tufte Lien <karoline@dhis2.org>, 2025
+# Thomas Zemp, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-05-09T12:36:26.531Z\n"
+"POT-Creation-Date: 2025-10-30T12:12:29.056Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2025\n"
+"Last-Translator: Thomas Zemp, 2025\n"
 "Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -86,6 +87,12 @@ msgstr "Kode"
 msgid "Used in analytics reports."
 msgstr ""
 
+msgid "Description"
+msgstr "Beskrivelse"
+
+msgid "Short, clear description of what this group is for."
+msgstr ""
+
 msgid "Search for a user in this group"
 msgstr ""
 
@@ -160,7 +167,7 @@ msgid "Add or remove users from this group."
 msgstr ""
 
 msgid "Name is already taken"
-msgstr ""
+msgstr "Dette navnet er allerede i bruk"
 
 msgid ""
 "There was a problem whilst checking the availability of this group name"
@@ -218,9 +225,6 @@ msgstr ""
 
 msgid "Error creating role"
 msgstr ""
-
-msgid "Description"
-msgstr "Beskrivelse"
 
 msgid "Short, clear description of what this role is for."
 msgstr ""

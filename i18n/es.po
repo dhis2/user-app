@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-05-09T12:36:26.531Z\n"
+"POT-Creation-Date: 2025-10-30T12:12:29.056Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Janeth Cruz, 2025\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
@@ -94,6 +94,12 @@ msgstr "Código"
 
 msgid "Used in analytics reports."
 msgstr "Se utiliza en informes analíticos."
+
+msgid "Description"
+msgstr "Descripción"
+
+msgid "Short, clear description of what this group is for."
+msgstr ""
 
 msgid "Search for a user in this group"
 msgstr "Buscar un usuario en este grupo"
@@ -231,9 +237,6 @@ msgstr "Error al actualizar el rol"
 
 msgid "Error creating role"
 msgstr "Error al crear el rol"
-
-msgid "Description"
-msgstr "Descripción"
 
 msgid "Short, clear description of what this role is for."
 msgstr "Descripción breve y clara de para qué sirve este rol."
