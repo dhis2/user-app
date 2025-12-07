@@ -198,7 +198,7 @@ const TransferFF = ({ input, meta, className, ...props }) => {
             input.onChange(selected)
             input.onBlur()
         },
-        [input.onChange, input.onBlur]
+        [input]
     )
     const error = meta.touched && meta.invalid ? meta.error : undefined
 
