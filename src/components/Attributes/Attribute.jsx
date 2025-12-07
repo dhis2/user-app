@@ -75,8 +75,12 @@ const Attribute = ({ attribute, value, entity, entityType }) => {
 
         if (isMultiSelect) {
             const parseMultiSelectValue = (val) => {
-                if (!val || val === '') return []
-                if (Array.isArray(val)) return val
+                if (!val || val === '') {
+                    return []
+                }
+                if (Array.isArray(val)) {
+                    return val
+                }
                 return val.split(';').filter((v) => v.trim() !== '')
             }
 
