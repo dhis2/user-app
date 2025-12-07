@@ -32,7 +32,7 @@ export const getAttributeValues = ({ attributes, values }) =>
 
         // Handle multi-select option sets: convert array to semicolon-separated string
         if (attribute.optionSet && Array.isArray(value)) {
-            value = value.filter((v) => v).join(';')
+            value = value.filter(Boolean).join(';')
         }
 
         if (attribute.valueType === 'TRUE_ONLY' && !value) {
