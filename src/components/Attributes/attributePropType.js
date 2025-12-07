@@ -6,6 +6,8 @@ const AttributePropType = PropTypes.shape({
     mandatory: PropTypes.bool.isRequired,
     unique: PropTypes.bool.isRequired,
     optionSet: PropTypes.shape({
+        id: PropTypes.string,
+        valueType: PropTypes.string,
         options: PropTypes.arrayOf(
             PropTypes.shape({
                 displayName: PropTypes.string.isRequired,

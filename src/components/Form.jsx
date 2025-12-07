@@ -7,6 +7,7 @@ import {
     InputFieldFF,
     TextAreaFieldFF,
     SingleSelectFieldFF,
+    MultiSelectFieldFF,
     CheckboxFieldFF,
     ButtonStrip,
     Button,
@@ -99,6 +100,14 @@ export const SingleSelectField = (props) => (
         {...props}
         className={styles.singleSelectField}
         component={SingleSelectFieldFF}
+    />
+)
+
+export const MultiSelectField = (props) => (
+    <ReactFinalForm.Field
+        {...props}
+        className={styles.multiSelectField}
+        component={MultiSelectFieldFF}
     />
 )
 

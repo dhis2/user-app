@@ -5,6 +5,7 @@ import {
     TextField,
     TextAreaField,
     SingleSelectField,
+    MultiSelectField,
     EmailField,
     DateField,
     CheckboxField,
@@ -67,7 +68,42 @@ const Attribute = ({ attribute, value, entity, entityType }) => {
                 value: id,
             })
         )
-        // SingleSelectField throws an error if its value does not correspond to an option
+
+        const isMultiSelect =
+            attribute.valueType === 'MULTI_TEXT' ||
+            attribute.optionSet.valueType === 'MULTI_TEXT'
+
+        if (isMultiSelect) {
+            const parseMultiSelectValue = (val) => {
+                if (!val || val === '') return []
+                if (Array.isArray(val)) return val
+                return val.split(';').filter((v) => v.trim() !== '')
+            }
+
+            const initialValue = parseMultiSelectValue(value)
+            const validInitialValue = initialValue.filter((v) =>
+                options.some((option) => option.value === v)
+            )
+
+            return (
+                <MultiSelectField
+                    required={required}
+                    clearable={!required}
+                    name={name}
+                    label={label}
+                    options={options}
+                    initialValue={validInitialValue}
+                    validate={validators(
+                        {
+                            hasValue: required,
+                            unique,
+                        },
+                        uniqueValidator
+                    )}
+                />
+            )
+        }
+
         const initialValue = options.find((option) => option.value === value)
             ? value
             : undefined
@@ -213,7 +249,6 @@ const Attribute = ({ attribute, value, entity, entityType }) => {
                 />
             )
         case 'BOOLEAN': {
-            // SingleSelectField throws an error if its value does not correspond to an option
             const initialValue = ['true', 'false'].includes(value)
                 ? value
                 : undefined
