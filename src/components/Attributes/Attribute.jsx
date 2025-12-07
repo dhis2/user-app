@@ -81,7 +81,7 @@ const Attribute = ({ attribute, value, entity, entityType }) => {
                 if (Array.isArray(val)) {
                     return val
                 }
-                return val.split(';').filter((v) => v.trim() !== '')
+                return val.split(';').map((v) => v.trim()).filter(Boolean)
             }
 
             const initialValue = parseMultiSelectValue(value)
