@@ -39,6 +39,11 @@
     max-width: 330px;
 }
 
+.multiSelectField {
+    composes: field;
+    width: 500px !important;
+}
+
 .numberField {
     composes: field;
     max-width: 150px;

@@ -12,6 +12,8 @@ const AttributePropType = PropTypes.shape({
                 id: PropTypes.string.isRequired,
             }).isRequired
         ).isRequired,
+        id: PropTypes.string,
+        valueType: PropTypes.string,
     }),
     valueType: PropTypes.string,
 })
