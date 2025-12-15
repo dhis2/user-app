@@ -7,6 +7,7 @@ import {
     InputFieldFF,
     TextAreaFieldFF,
     SingleSelectFieldFF,
+    MultiSelectFieldFF,
     CheckboxFieldFF,
     ButtonStrip,
     Button,
@@ -102,6 +103,14 @@ export const SingleSelectField = (props) => (
     />
 )
 
+export const MultiSelectField = (props) => (
+    <ReactFinalForm.Field
+        {...props}
+        className={styles.multiSelectField}
+        component={MultiSelectFieldFF}
+    />
+)
+
 export const CheckboxField = (props) => (
     <ReactFinalForm.Field
         {...props}
@@ -189,7 +198,7 @@ const TransferFF = ({ input, meta, className, ...props }) => {
             input.onChange(selected)
             input.onBlur()
         },
-        [input.onChange, input.onBlur]
+        [input]
     )
     const error = meta.touched && meta.invalid ? meta.error : undefined
 
