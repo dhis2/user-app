@@ -30,9 +30,9 @@ export const getAttributeValues = ({ attributes, values }) =>
     attributes.map((attribute) => {
         let value = values.attributeValues?.[attribute.id] || ''
 
-        // Handle multi-select option sets: convert array to semicolon-separated string
+        // Handle multi-select option sets: convert array to comma-separated string
         if (attribute.optionSet && Array.isArray(value)) {
-            value = value.filter(Boolean).join(';')
+            value = value.filter(Boolean).join(',')
         }
 
         if (attribute.valueType === 'TRUE_ONLY' && !value) {
