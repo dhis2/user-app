@@ -66,4 +66,75 @@ describe('getAttributeValues', () => {
             },
         ])
     })
+
+    it('converts multi-select option set array values to comma-separated string', () => {
+        const attributes = [
+            {
+                id: 'ATTR_MULTI',
+                valueType: 'MULTI_TEXT',
+                optionSet: {
+                    id: 'OPTION_SET_1',
+                    valueType: 'MULTI_TEXT',
+                },
+            },
+            {
+                id: 'ATTR_SINGLE',
+                valueType: 'TEXT',
+                optionSet: {
+                    id: 'OPTION_SET_2',
+                    valueType: 'TEXT',
+                },
+            },
+        ]
+        const values = {
+            attributeValues: {
+                ATTR_MULTI: ['OPTION_1', 'OPTION_2', 'OPTION_3'],
+                ATTR_SINGLE: 'SINGLE_VALUE',
+            },
+        }
+
+        const attributeValues = getAttributeValues({ attributes, values })
+        expect(attributeValues).toEqual([
+            {
+                attribute: {
+                    id: 'ATTR_MULTI',
+                },
+                value: 'OPTION_1,OPTION_2,OPTION_3',
+            },
+            {
+                attribute: {
+                    id: 'ATTR_SINGLE',
+                },
+                value: 'SINGLE_VALUE',
+            },
+        ])
+    })
+
+    it('filters out empty values when converting multi-select array to comma-separated string', () => {
+        const attributes = [
+            {
+                id: 'ATTR_MULTI',
+                valueType: 'MULTI_TEXT',
+                optionSet: {
+                    id: 'OPTION_SET_1',
+                    valueType: 'MULTI_TEXT',
+                },
+            },
+        ]
+        const values = {
+            attributeValues: {
+                ATTR_MULTI: ['OPTION_1', '', 'OPTION_2', null, undefined, 'OPTION_3'],
+            },
+        }
+
+        const attributeValues = getAttributeValues({ attributes, values })
+        expect(attributeValues).toEqual([
+            {
+                attribute: {
+                    id: 'ATTR_MULTI',
+                },
+                value: 'OPTION_1,OPTION_2,OPTION_3',
+            },
+        ])
+    })
 })

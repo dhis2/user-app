@@ -82,7 +82,7 @@ const Attribute = ({ attribute, value, entity, entityType }) => {
                     return val
                 }
                 return val
-                    .split(';')
+                    .split(',')
                     .map((v) => v.trim())
                     .filter(Boolean)
             }
