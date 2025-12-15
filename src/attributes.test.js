@@ -123,7 +123,14 @@ describe('getAttributeValues', () => {
         ]
         const values = {
             attributeValues: {
-                ATTR_MULTI: ['OPTION_1', '', 'OPTION_2', null, undefined, 'OPTION_3'],
+                ATTR_MULTI: [
+                    'OPTION_1',
+                    '',
+                    'OPTION_2',
+                    null,
+                    undefined,
+                    'OPTION_3',
+                ],
             },
         }
 
