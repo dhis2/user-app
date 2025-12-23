@@ -1,3 +1,16 @@
+# [100.11.0](https://github.com/dhis2/user-app/compare/v100.10.0...v100.11.0) (2025-12-23)
+
+
+### Bug Fixes
+
+* trigger release ([d66c681](https://github.com/dhis2/user-app/commit/d66c681f28c8cde11044837fad61f34b28633c64))
+* trigger release ([0829520](https://github.com/dhis2/user-app/commit/0829520925298a539a00a47e932e30b9ea0d7609))
+
+
+### Features
+
+* enhance attribute handling with multi-select support ([a46e209](https://github.com/dhis2/user-app/commit/a46e209f25f276fa884bb2ede7ebf68e19143524))
+
 # [100.10.0](https://github.com/dhis2/user-app/compare/v100.9.0...v100.10.0) (2025-10-31)
 
 
