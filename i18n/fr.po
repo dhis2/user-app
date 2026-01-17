@@ -9,13 +9,14 @@
 # Philip Larsen Donnelly, 2024
 # Cyrille Kabrane, 2025
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
+# Esther Tokouli, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-03-06T12:01:39.768Z\n"
 "PO-Revision-Date: 2021-09-04 00:49+0000\n"
-"Last-Translator: Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025\n"
+"Last-Translator: Esther Tokouli, 2026\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -182,7 +183,7 @@ msgid "Program Rule"
 msgstr "Règles de Programme"
 
 msgid "Program Tracked Entity Attribute Group"
-msgstr "Groupe d'attributs d'entité suivie par programme"
+msgstr "Groupe d'attributs d'entité suivie d'un programme"
 
 msgid "Push Analysis"
 msgstr "Analyse push"
@@ -299,7 +300,7 @@ msgid "Page not found."
 msgstr "Page non trouvée."
 
 msgid "No match for"
-msgstr "Pas de correspondance pour"
+msgstr "Aucune correspondance pour"
 
 msgid "Go back home"
 msgstr "Revenir à la page d'accueil"
@@ -379,7 +380,7 @@ msgid "Introduction"
 msgstr "Introduction"
 
 msgid "Job title"
-msgstr "Intitulé de l'emploi"
+msgstr "Titre du poste"
 
 msgid "Works at"
 msgstr "Travaille à"
@@ -499,7 +500,8 @@ msgstr "Gestion des rôles d'utilisateur"
 
 msgid "Could not load the user data. Please refresh the page."
 msgstr ""
-"Impossible de charger les données utilisateur. Veuillez rafraîchir la page."
+"Impossible de charger les données de l'utilisateur. Veuillez rafraîchir la "
+"page."
 
 msgid "User \"{{displayName}}\" saved successfully"
 msgstr "Utilisateur \"{{displayName}}\" enregistré avec succès"
@@ -542,7 +544,7 @@ msgid "Disabled"
 msgstr "Désactivé"
 
 msgid "Retype password"
-msgstr "Retapez le mot de passe"
+msgstr "Saisissez  à nouveau le mot de passe"
 
 msgid "OIDC mapping value"
 msgstr "Valeur de mapping OIDC"
@@ -675,7 +677,7 @@ msgid "Something went wrong when processing your request."
 msgstr "Une erreur s'est produite lors du traitement de votre demande."
 
 msgid "Validating..."
-msgstr "Valider..."
+msgstr "Validation..."
 
 msgid "Are you sure you want to remove the {{type}} \"{{displayName}}\"?"
 msgstr "Voulez-vous vraiment supprimer le {{type}} \"{{displayName}}\"?"
