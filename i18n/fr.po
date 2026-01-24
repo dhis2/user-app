@@ -103,7 +103,7 @@ msgid "Description"
 msgstr "Description"
 
 msgid "Short, clear description of what this group is for."
-msgstr ""
+msgstr "Description brève et claire de ce groupe."
 
 msgid "Search for a user in this group"
 msgstr "Rechercher un utilisateur dans ce groupe"
