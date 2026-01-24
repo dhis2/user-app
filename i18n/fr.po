@@ -432,7 +432,7 @@ msgid "Clear all"
 msgstr "Tout effacer"
 
 msgid "There was an error loading the current user"
-msgstr "Une erreur s'est produite lors du chargement de l'utilisateur actuel"
+msgstr "Une erreur est survenue lors du chargement de l'utilisateur actuel"
 
 msgid "You do not have authorities to see users, user roles or user groups"
 msgstr ""
@@ -500,7 +500,7 @@ msgid "Create account or email invitation"
 msgstr "Créer un compte ou une invitation par e-mail"
 
 msgid "Create account with user details"
-msgstr "Créer un compte avec les détails de l'utilisateur"
+msgstr "Créer un compte avec les informations de l'utilisateur"
 
 msgid "Email invitation to create account"
 msgstr "Invitation par e-mail pour créer un compte"
@@ -587,7 +587,7 @@ msgstr ""
 "caractère minuscule, un caractère majuscule et un caractère spécial."
 
 msgid "Repeat new password"
-msgstr "Répéter le mot de passe"
+msgstr "Saisir à nouveau le nouveau mot de passe"
 
 msgid "Repeat password"
 msgstr "Saisir à nouveau le mot de passe"
@@ -637,7 +637,7 @@ msgid "Passwords do not match"
 msgstr "Les mots de passe ne correspondent pas"
 
 msgid "Please provide a value"
-msgstr "Veuillez entrer une valeur"
+msgstr "Veuillez saisir une valeur"
 
 msgid "Create, modify, view and delete Users"
 msgstr "Créer, modifier, afficher et supprimer des utilisateurs"
@@ -667,13 +667,13 @@ msgid "Introduction"
 msgstr "Introduction"
 
 msgid "Job title"
-msgstr "Intitulé de l'emploi"
+msgstr "Titre du poste"
 
 msgid "Works at"
 msgstr "Travaille à"
 
 msgid "Education"
-msgstr "Éducation"
+msgstr "Parcours académique"
 
 msgid "Interests"
 msgstr "Intérêts"
