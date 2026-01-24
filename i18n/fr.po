@@ -10,13 +10,14 @@
 # Elise Desailly, 2024
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
 # Cyrille Kabrane, 2025
+# Esther Tokouli, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-03-27T09:03:25.496Z\n"
 "PO-Revision-Date: 2022-10-15 22:33+0000\n"
-"Last-Translator: Cyrille Kabrane, 2025\n"
+"Last-Translator: Esther Tokouli, 2026\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,7 +50,7 @@ msgid "No results found"
 msgstr "Aucun résultat trouvé"
 
 msgid "Display name"
-msgstr "Afficher un nom"
+msgstr "Nom d'affichage"
 
 msgid "1 pending change"
 msgstr "1 modification en attente"
@@ -379,7 +380,7 @@ msgid "Program Rule"
 msgstr "Règle de programme"
 
 msgid "Program Tracked Entity Attribute Group"
-msgstr "Groupe d'attributs d'entité suivie par programme"
+msgstr "Groupe d'attributs d'entité suivie d'un programme"
 
 msgid "Push Analysis"
 msgstr "Analyse push"
@@ -474,7 +475,7 @@ msgid "Please enter at least {{ minCharLength }} characters"
 msgstr "Veuillez saisir au moins {{ minCharLength }} caractères"
 
 msgid "No matches found"
-msgstr "Aucun résultat"
+msgstr "Aucune correspondance trouvée"
 
 msgid "Apply"
 msgstr "Appliquer"
@@ -635,7 +636,7 @@ msgstr ""
 "caractère minuscule, un caractère majuscule et un caractère spécial."
 
 msgid "Repeat new password"
-msgstr "Répéter le mot de passe"
+msgstr "Saisir à nouveau le nouveau mot de passe"
 
 msgid "Repeat password"
 msgstr "Saisir à nouveau le mot de passe"
@@ -674,7 +675,7 @@ msgid "Error creating user"
 msgstr "Erreur lors de la création de l'utilisateur"
 
 msgid "Username already taken"
-msgstr "Nom d'utilisateur déjà pris"
+msgstr "Nom d'utilisateur déjà utilisé"
 
 msgid "There was a problem whilst checking the availability of this username"
 msgstr ""
@@ -685,7 +686,7 @@ msgid "Passwords do not match"
 msgstr "Les mots de passe ne correspondent pas"
 
 msgid "Please provide a value"
-msgstr "Veuillez entrer une valeur"
+msgstr "Veuillez saisir une valeur"
 
 msgid "Create, modify, view and delete Users"
 msgstr "Créer, modifier, afficher et supprimer des utilisateurs"
@@ -738,7 +739,7 @@ msgid "Edit group"
 msgstr "Modifier le groupe"
 
 msgid "Save changes"
-msgstr "Sauvegarder les modifications"
+msgstr "Enregistrer les modifications"
 
 msgid "Error fetching role"
 msgstr "Erreur lors de la récupération du rôle"
@@ -762,7 +763,7 @@ msgid "You do not have access to edit this user group"
 msgstr "Vous n'êtes pas autorisé à modifier ce groupe d'utilisateurs"
 
 msgid "Overview"
-msgstr "Général"
+msgstr "Aperçu"
 
 msgid "Edit user group"
 msgstr "Modifier le groupe d'utilisateurs"
@@ -876,7 +877,7 @@ msgid "Page not found."
 msgstr "Page non trouvée."
 
 msgid "No match for"
-msgstr "Pas de correspondance pour"
+msgstr "Aucune correspondance pour"
 
 msgid "Go back home"
 msgstr "Revenir à la page d'accueil"
@@ -926,8 +927,8 @@ msgstr "Supprimer l'utilisateur {{- name}}"
 
 msgid "Disabled two factor authentication for \"{{- name}}\" successfuly"
 msgstr ""
-"Désactivation réussie de l'authentification à deux facteurs pour \"{{- "
-"name}}\""
+"Désactivation de l'authentification à deux facteurs pour \"{{- name}}\" "
+"réussie"
 
 msgid "There was an error disabling two factor authentication: {{- error}}"
 msgstr ""
@@ -1072,7 +1073,7 @@ msgid "Contact"
 msgstr "Contact"
 
 msgid "Send message"
-msgstr "Envoyer Message"
+msgstr "Envoyer un message"
 
 msgid "E-mail"
 msgstr "Adresse email"
@@ -1090,7 +1091,7 @@ msgid "Introduction"
 msgstr "Introduction"
 
 msgid "Job title"
-msgstr "Intitulé de l'emploi"
+msgstr "Titre du poste"
 
 msgid "Works at"
 msgstr "Travaille à"
@@ -1105,7 +1106,7 @@ msgid "Nationality"
 msgstr "Nationalité"
 
 msgid "Education"
-msgstr "Éducation"
+msgstr "Parcours académique"
 
 msgid "Interests"
 msgstr "Intérêts"
