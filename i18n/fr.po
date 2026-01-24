@@ -10,13 +10,14 @@
 # Elise Desailly, 2024
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
 # Cyrille Kabrane, 2025
+# Esther Tokouli, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2025-02-21T10:16:54.865Z\n"
 "PO-Revision-Date: 2023-05-22 19:30+0000\n"
-"Last-Translator: Cyrille Kabrane, 2025\n"
+"Last-Translator: Esther Tokouli, 2026\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -88,7 +89,7 @@ msgid "There was an error fetching this form."
 msgstr "Une erreur est survenue lors de la récupération de ce formulaire."
 
 msgid "Cancel without saving"
-msgstr "Annuler sans sauvegarder"
+msgstr "Annuler sans enregistrer"
 
 msgid "Basic information"
 msgstr "Informations de base"
@@ -310,7 +311,7 @@ msgid "Data Element"
 msgstr "Élément de donnée"
 
 msgid "Min/max rule"
-msgstr "Règle de min / max"
+msgstr "Règle min / max"
 
 msgid "Data Set"
 msgstr "Ensemble de données"
@@ -388,7 +389,7 @@ msgid "Program Rule"
 msgstr "Règle de programme"
 
 msgid "Program Tracked Entity Attribute Group"
-msgstr "Groupe d'attributs d'entité suivie par programme"
+msgstr "Groupe d'attributs d'entité suivie d'un programme"
 
 msgid "Push Analysis"
 msgstr "Analyse push"
@@ -466,7 +467,7 @@ msgstr ""
 "de recherche, veuillez affiner votre recherche pour en afficher davantage."
 
 msgid "Something went wrong when processing your request."
-msgstr "Une erreur s'est produite lors du traitement de votre demande."
+msgstr "Une erreur s'est produite lors du traitement de votre requête."
 
 msgid "There was a problem retreiving your search results"
 msgstr ""
@@ -477,7 +478,7 @@ msgid "Please enter at least {{ minCharLength }} characters"
 msgstr "Veuillez saisir au moins {{ minCharLength }} caractères"
 
 msgid "No matches found"
-msgstr "Aucun résultat"
+msgstr "Aucune correspondance trouvée"
 
 msgid "Apply"
 msgstr "Appliquer"
@@ -558,7 +559,7 @@ msgid "Create account or email invitation"
 msgstr "Créer un compte ou une invitation par e-mail"
 
 msgid "Create account with user details"
-msgstr "Créer un compte avec les détails de l'utilisateur"
+msgstr "Créer un compte avec les informations de l'utilisateur"
 
 msgid "Email invitation to create account"
 msgstr "Invitation par e-mail pour créer un compte"
@@ -645,7 +646,7 @@ msgstr ""
 "caractère minuscule, un caractère majuscule et un caractère spécial."
 
 msgid "Repeat new password"
-msgstr "Répéter le mot de passe"
+msgstr "Saisir à nouveau le nouveau mot de passe"
 
 msgid "Repeat password"
 msgstr "Saisir à nouveau le mot de passe"
@@ -695,7 +696,7 @@ msgid "Passwords do not match"
 msgstr "Les mots de passe ne correspondent pas"
 
 msgid "Please provide a value"
-msgstr "Veuillez entrer une valeur"
+msgstr "Veuillez saisir une valeur"
 
 msgid "New group"
 msgstr "Nouveau groupe"
@@ -733,7 +734,7 @@ msgid "Edit group"
 msgstr "Modifier le groupe"
 
 msgid "Save changes"
-msgstr "Sauvegarder les modifications"
+msgstr "Enregistrer les modifications"
 
 msgid "Error fetching role"
 msgstr "Erreur lors de la récupération du rôle"
@@ -757,7 +758,7 @@ msgid "You do not have access to edit this user group"
 msgstr "Vous n'êtes pas autorisé à modifier ce groupe d'utilisateurs"
 
 msgid "Overview"
-msgstr "Général"
+msgstr "Aperçu"
 
 msgid "Edit user group"
 msgstr "Modifier le groupe d'utilisateurs"
@@ -1105,7 +1106,7 @@ msgid "Introduction"
 msgstr "Introduction"
 
 msgid "Job title"
-msgstr "Intitulé de l'emploi"
+msgstr "Titre du poste"
 
 msgid "Works at"
 msgstr "Travaille à"
@@ -1120,7 +1121,7 @@ msgid "Nationality"
 msgstr "Nationalité"
 
 msgid "Education"
-msgstr "Éducation"
+msgstr "Parcours académique"
 
 msgid "Interests"
 msgstr "Intérêts"
