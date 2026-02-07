@@ -520,7 +520,7 @@ msgid "Email address"
 msgstr ""
 
 msgid "First name"
-msgstr "ນາມສະກຸນ"
+msgstr "ຊື່ແທ້"
 
 msgid "Last name"
 msgstr "ນາມສະກຸນ"
