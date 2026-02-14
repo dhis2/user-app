@@ -1087,7 +1087,7 @@ msgid "E-mail"
 msgstr "ອີເມວ"
 
 msgid "Permissions"
-msgstr ""
+msgstr "ານເຂົ້າເຖີງ"
 
 msgid "Organisations units"
 msgstr ""

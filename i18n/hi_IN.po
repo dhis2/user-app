@@ -132,7 +132,7 @@ msgid "Add users to group"
 msgstr ""
 
 msgid "Username"
-msgstr ""
+msgstr "यूज़रनेम"
 
 msgid "Error loading users"
 msgstr ""
@@ -436,7 +436,7 @@ msgid "User Role"
 msgstr ""
 
 msgid "User"
-msgstr ""
+msgstr "यूज़र"
 
 msgid "Validation Rule Group"
 msgstr ""
@@ -517,10 +517,10 @@ msgid "Email address"
 msgstr ""
 
 msgid "First name"
-msgstr ""
+msgstr "पहला नाम"
 
 msgid "Last name"
-msgstr ""
+msgstr "अंतिम नाम"
 
 msgid "Interface language"
 msgstr ""
@@ -630,7 +630,7 @@ msgid "User groups this user is a member of"
 msgstr ""
 
 msgid "Invalid password"
-msgstr ""
+msgstr "अमान्य पासवर्ड"
 
 msgid "Security"
 msgstr ""
@@ -645,7 +645,7 @@ msgid "New password"
 msgstr ""
 
 msgid "Password"
-msgstr ""
+msgstr "पासवर्ड"
 
 msgid ""
 "Password should be between {{minPasswordLength}} and {{maxPasswordLength}} "
@@ -902,7 +902,7 @@ msgid "Replicate"
 msgstr ""
 
 msgid "Reset password"
-msgstr ""
+msgstr "पासवर्ड रीसेट करें"
 
 msgid "Disable"
 msgstr ""
@@ -1009,7 +1009,7 @@ msgid "Email verification"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "सभी"
 
 msgid "Email verified"
 msgstr ""
