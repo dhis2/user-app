@@ -200,7 +200,7 @@ msgid "User Role"
 msgstr ""
 
 msgid "User"
-msgstr ""
+msgstr "यूज़र"
 
 msgid "Validation Rule Group"
 msgstr ""
@@ -291,13 +291,13 @@ msgid "There was a problem replicating the user"
 msgstr ""
 
 msgid "Username"
-msgstr ""
+msgstr "यूज़रनेम"
 
 msgid "Username for new user"
 msgstr ""
 
 msgid "Password"
-msgstr ""
+msgstr "पासवर्ड"
 
 msgid "Password for new user"
 msgstr ""
@@ -351,7 +351,7 @@ msgid "Surname"
 msgstr ""
 
 msgid "First name"
-msgstr ""
+msgstr "पहला नाम"
 
 msgid "Introduction"
 msgstr ""
@@ -648,7 +648,7 @@ msgid "Please enter a valid date with the following format yyyy-mm-dd"
 msgstr ""
 
 msgid "Please provide a valid email address"
-msgstr ""
+msgstr "कृपया एक मान्य ईमेल पता दर्ज करें"
 
 msgid "Value should be an integer"
 msgstr ""
@@ -666,7 +666,7 @@ msgid "Passwords do not match"
 msgstr ""
 
 msgid "This field is required"
-msgstr ""
+msgstr "यह फ़ील्ड आवश्यक है"
 
 msgid "This field is required. Please select at least one"
 msgstr ""
