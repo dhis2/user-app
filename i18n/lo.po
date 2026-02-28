@@ -1,4 +1,3 @@
-# 
 # Translators:
 # Philip Larsen Donnelly, 2019
 # Viktor Varland <viktor@dhis2.org>, 2021
@@ -35,7 +34,7 @@ msgid "No matches found"
 msgstr "ບໍ່ພົບລາຍການທີ່ຄືກັນ"
 
 msgid "There was a problem retreiving your search results"
-msgstr ""
+msgstr "ເກີດບັນຫາໃນການດຶງຂໍ້ມູນຜົນການຄົ້ນຫາຂອງທ່ານ"
 
 msgid "There was a problem retreiving the available authorities."
 msgstr ""
@@ -47,31 +46,31 @@ msgid "Selected authorities only"
 msgstr ""
 
 msgid "All (Full authority)"
-msgstr ""
+msgstr "ທັງໝົດ (ອຳນາດເຕັມ)"
 
 msgid "Analytics Table Hook"
-msgstr ""
+msgstr "Analytics Table Hook"
 
 msgid "Attribute"
 msgstr "Attribute"
 
 msgid "Category Combo"
-msgstr ""
+msgstr "ໝວດໝູ່ແບບປະສົມ (Category Combo)"
 
 msgid "Category"
 msgstr "ລວງນອນ"
 
 msgid "Category Option"
-msgstr ""
+msgstr "ຕົວເລືອກໝວດໝູ່"
 
 msgid "Category Option Group"
-msgstr ""
+msgstr "ກຸ່ມຕົວເລືອກໝວດໝູ່"
 
 msgid "Category Option Group Set"
-msgstr ""
+msgstr "ຊຸດກຸ່ມຕົວເລືອກໝວດໝູ່"
 
 msgid "Color Set"
-msgstr ""
+msgstr "ຊຸດສີ"
 
 msgid "Constant"
 msgstr "Constant"
@@ -80,73 +79,73 @@ msgid "Dashboard"
 msgstr "ຕາໜ່າງສັງລວມຂໍ້ມູນຂ່າວສານ"
 
 msgid "Data Element Group Sets"
-msgstr ""
+msgstr "ຊຸດກຸ່ມອົງປະກອບຂໍ້ມູນ"
 
 msgid "Data Element Groups"
-msgstr ""
+msgstr "ກຸ່ມອົງປະກອບຂໍ້ມູນ"
 
 msgid "Data Element"
-msgstr ""
+msgstr "ອົງປະກອບຂໍ້ມູນ"
 
 msgid "Min/max rule"
-msgstr ""
+msgstr "ກົດເກນ ຄ່າຕ່ຳສຸດ/ສູງສຸດ"
 
 msgid "Data Set"
 msgstr "ແບບຟອມ (ຊຸດ​ຂໍ້​ມູນ)"
 
 msgid "Data Value"
-msgstr ""
+msgstr "ຄ່າຂອງຂໍ້ມູນ"
 
 msgid "Document"
-msgstr ""
+msgstr "ເອກະສານ"
 
 msgid "Event Chart"
-msgstr ""
+msgstr "ແຜນພູມເຫດການ"
 
 msgid "Event Report"
-msgstr ""
+msgstr "ລາຍງານເຫດການ"
 
 msgid "External Map Layer"
-msgstr ""
+msgstr "ຊັ້ນແຜນທີ່ພາຍນອກ"
 
 msgid "Indicator Group Sets"
-msgstr ""
+msgstr "ຊຸດກຸ່ມຕົວຊີ້ວັດ"
 
 msgid "Indicator Group"
-msgstr ""
+msgstr "ກຸ່ມຕົວຊີ້ວັດ"
 
 msgid "Indicator Type"
-msgstr ""
+msgstr "ປະເພດຕົວຊີ້ວັດ"
 
 msgid "Indicator"
 msgstr "ຕົວຊີ້ວັດ"
 
 msgid "Legend Set"
-msgstr ""
+msgstr "ຊຸດຄຳອະທິບາຍສັນຍະລັກ"
 
 msgid "Map"
 msgstr "ແຜນທີ່"
 
 msgid "Min-Max Data Element"
-msgstr ""
+msgstr "ຄ່າຕ່ຳສຸດ-ສູງສຸດ ຂອງອົງປະກອບຂໍ້ມູນ"
 
 msgid "Option Group Set"
-msgstr ""
+msgstr "ຊຸດກຸ່ມຕົວເລືອກ"
 
 msgid "Option Group"
-msgstr ""
+msgstr "ກຸ່ມຕົວເລືອກ"
 
 msgid "Option Set"
-msgstr ""
+msgstr "ຊຸດຕົວເລືອກ"
 
 msgid "Organisation Unit"
 msgstr "ຫົວໜ່ວຍ ການຈັດຕັ້ງ"
 
 msgid "Organisation Unit Group Set"
-msgstr ""
+msgstr "ຊຸດກຸ່ມຫົວໜ່ວຍການຈັດຕັ້ງ"
 
 msgid "Organisation Unit Group"
-msgstr ""
+msgstr "ກຸ່ມຫົວໜ່ວຍການຈັດຕັ້ງ"
 
 msgid "Predictor"
 msgstr "ຕົວຄາດການ (Predictor)"
@@ -158,22 +157,22 @@ msgid "Program"
 msgstr "ສາຍງານ"
 
 msgid "Program Indicator"
-msgstr ""
+msgstr "ຕົວຊີ້ວັດສາຍງານ"
 
 msgid "Program Indicator Group"
-msgstr ""
+msgstr "ກຸ່ມຕົວຊີ້ວັດສາຍງານ"
 
 msgid "Program Rule"
-msgstr ""
+msgstr "ກົດເກນສາຍງານ"
 
 msgid "Program Tracked Entity Attribute Group"
-msgstr ""
+msgstr "ກຸ່ມຄຸນລັກສະນະຂອງສິ່ງທີ່ຖືກຕິດຕາມໃນສາຍງານ"
 
 msgid "Push Analysis"
-msgstr ""
+msgstr "ການວິເຄາະແບບສົ່ງອອກ (Push Analysis)"
 
 msgid "Relationship Type"
-msgstr ""
+msgstr "ປະເພດຄວາມສຳພັນ"
 
 msgid "Report"
 msgstr "ລາຍງານ"
@@ -188,37 +187,37 @@ msgid "Tracked Entity"
 msgstr ""
 
 msgid "Tracked Entity Attribute"
-msgstr ""
+msgstr "ຄຸນລັກສະນະຂອງສິ່ງທີ່ຖືກຕິດຕາມ"
 
 msgid "Tracked Entity Data Value"
-msgstr ""
+msgstr "ຄ່າຂໍ້ມູນຂອງສິ່ງທີ່ຖືກຕິດຕາມ"
 
 msgid "Tracked Entity Instance"
-msgstr ""
+msgstr "ລາຍການສິ່ງທີ່ຖືກຕິດຕາມ"
 
 msgid "User Group"
 msgstr "User Group:"
 
 msgid "User Role"
-msgstr ""
+msgstr "ສິດຜູ້ໃຊ້ (User Role)"
 
 msgid "User"
 msgstr "User"
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "ກຸ່ມກົດເກນການກວດສອບຄວາມຖືກຕ້ອງ"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "ກົດເກນການກວດສອບຄວາມຖືກຕ້ອງ"
 
 msgid "Data predictor group"
-msgstr ""
+msgstr "ກຸ່ມຕົວຄາດການຂໍ້ມູນ"
 
 msgid "Skip data import audit"
 msgstr "ຂ້າມການກວດສອບການນຳເຂົ້າຂໍ້ມູນ"
 
 msgid "Visualization"
-msgstr ""
+msgstr "ການສະແດງຜົນ (Visualization)"
 
 msgid "Apps"
 msgstr "ແອັບ"
@@ -240,16 +239,16 @@ msgstr ""
 
 msgid ""
 "You do not have access to any section of the DHIS 2 User Management App"
-msgstr ""
+msgstr "ທ່ານບໍ່ມີສິດເຂົ້າເຖິງພາກສ່ວນໃດໆຂອງແອັບຈັດການຜູ້ໃຊ້ DHIS 2"
 
 msgid "Edit user"
-msgstr ""
+msgstr "ແກ້ໄຂຜູ້ໃຊ້"
 
 msgid "Edit user group"
-msgstr ""
+msgstr "ແກ້ໄຂກຸ່ມຜູ້ໃຊ້"
 
 msgid "Edit user role"
-msgstr ""
+msgstr "ແກ້ໄຂສິດຜູ້ໃຊ້"
 
 msgid "Send message"
 msgstr "Send message"
@@ -297,16 +296,16 @@ msgid "Username"
 msgstr "ຊື່ຜູ້ໃຊ້"
 
 msgid "Username for new user"
-msgstr ""
+msgstr "ຊື່ຜູ້ໃຊ້ສຳລັບຜູ້ໃຊ້ໃໝ່"
 
 msgid "Password"
 msgstr "ລະຫັດ"
 
 msgid "Password for new user"
-msgstr ""
+msgstr "ລະຫັດຜ່ານສຳລັບຜູ້ໃຊ້ໃໝ່"
 
 msgid "Replicate"
-msgstr ""
+msgstr "ເຮັດສຳເນົາ (Replicate)"
 
 msgid "Cancel"
 msgstr "ຍົກເລີກ"
@@ -330,7 +329,7 @@ msgid "Apply"
 msgstr "ນຳໃຊ້"
 
 msgid "Clear all"
-msgstr ""
+msgstr "ລຶບທັງໝົດ"
 
 msgid "There was an error loading the current user"
 msgstr ""
@@ -345,7 +344,7 @@ msgid "ID"
 msgstr "ລະຫັດ"
 
 msgid "Last login"
-msgstr ""
+msgstr "ເຂົ້າສູ່ລະບົບຫຼ້າສຸດ"
 
 msgid "Created"
 msgstr "ສ້າງແລ້ວ"
@@ -363,7 +362,7 @@ msgid "Job title"
 msgstr "ອາຊີບ"
 
 msgid "Works at"
-msgstr ""
+msgstr "ເຮັດວຽກຢູ່"
 
 msgid "Education"
 msgstr "ລະດັບການສືກສາ"
@@ -381,7 +380,7 @@ msgid "Gender"
 msgstr "ເພດ"
 
 msgid "Speaks"
-msgstr ""
+msgstr "ພາສາທີ່ເວົ້າ"
 
 msgid "E-mail"
 msgstr "ອີເມວ"
@@ -390,7 +389,7 @@ msgid "Mobile phone number"
 msgstr "ໝາຍເລກໂທລະສັບ"
 
 msgid "Organisations units"
-msgstr ""
+msgstr "ຫົວໜ່ວຍການຈັດຕັ້ງ"
 
 msgid "User roles"
 msgstr "ຕຳແໜ່ງຮັບພິດຊອບໃນລະບົບ"
@@ -402,19 +401,19 @@ msgid "Number of users"
 msgstr ""
 
 msgid "Create, modify, view and delete Users"
-msgstr ""
+msgstr "ສ້າງ, ແກ້ໄຂ, ເບິ່ງ ແລະ ລຶບ ຜູ້ໃຊ້"
 
 msgid "User role"
-msgstr ""
+msgstr "ສິດຜູ້ໃຊ້"
 
 msgid "Create, modify, view and delete User Roles"
-msgstr ""
+msgstr "ສ້າງ, ແກ້ໄຂ, ເບິ່ງ ແລະ ລຶບ ສິດຜູ້ໃຊ້"
 
 msgid "User group"
-msgstr ""
+msgstr "ກຸ່ມຜູ້ໃຊ້"
 
 msgid "Create, modify, view and delete User Groups"
-msgstr ""
+msgstr "ສ້າງ, ແກ້ໄຂ, ເບິ່ງ ແລະ ລຶບ ກຸ່ມຜູ້ໃຊ້"
 
 msgid "Could not load the user group data. Please refresh the page."
 msgstr ""
@@ -440,10 +439,10 @@ msgid ""
 msgstr ""
 
 msgid "Available user groups"
-msgstr ""
+msgstr "ກຸ່ມຜູ້ໃຊ້ທີ່ມີຢູ່"
 
 msgid "Managed user groups"
-msgstr ""
+msgstr "ກຸ່ມຜູ້ໃຊ້ທີ່ຖືກຈັດການ"
 
 msgid "You left group"
 msgstr ""
@@ -455,7 +454,7 @@ msgid "There was a problem updating your group membership"
 msgstr ""
 
 msgid "User Group Management"
-msgstr ""
+msgstr "ການຈັດການກຸ່ມຜູ້ໃຊ້"
 
 msgid "User role \"{{displayName}}\" saved successfully"
 msgstr ""
@@ -467,7 +466,7 @@ msgid "Description"
 msgstr "ລາຍລະອຽດ"
 
 msgid "User Role Management"
-msgstr ""
+msgstr "ການຈັດການສິດຜູ້ໃຊ້"
 
 msgid "Could not load the user data. Please refresh the page."
 msgstr ""
@@ -485,7 +484,7 @@ msgid "Show more options"
 msgstr "​ສະ​ແດງ​ໃຫ້​ເຫັນ​ທາງ​ເລືອກ​ອື່ນໆ"
 
 msgid "Send invite"
-msgstr ""
+msgstr "ສົ່ງຄຳເຊີນ"
 
 msgid ""
 "Selecting an organisation unit provides access to all units in the sub-"
@@ -493,19 +492,19 @@ msgid ""
 msgstr ""
 
 msgid "Create account or email invitation"
-msgstr ""
+msgstr "ສ້າງບັນຊີ ຫຼື ສົ່ງຄຳເຊີນທາງອີເມວ"
 
 msgid "Create account with user details"
-msgstr ""
+msgstr "ສ້າງບັນຊີດ້ວຍລາຍລະອຽດຜູ້ໃຊ້"
 
 msgid "Email invitation to create account"
-msgstr ""
+msgstr "ສົ່ງຄຳເຊີນທາງອີເມວເພື່ອສ້າງບັນຊີ"
 
 msgid "External authentication only (OpenID or LDAP)"
 msgstr ""
 
 msgid "Account expiration date"
-msgstr ""
+msgstr "ວັນໝົດອາຍຸຂອງບັນຊີ"
 
 msgid "Disabled"
 msgstr "Disabled"
@@ -514,10 +513,10 @@ msgid "Retype password"
 msgstr ""
 
 msgid "OIDC mapping value"
-msgstr ""
+msgstr "ຄ່າການຈັບຄູ່ OIDC"
 
 msgid "LDAP identifier"
-msgstr ""
+msgstr "ລະຫັດລະບຸ LDAP"
 
 msgid "WhatsApp"
 msgstr "WhatsApp"
@@ -604,10 +603,10 @@ msgid "Inactivity"
 msgstr ""
 
 msgid "All invitations"
-msgstr ""
+msgstr "ຄຳເຊີນທັງໝົດ"
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "ຄຳເຊີນທີ່ໝົດອາຍຸແລ້ວ"
 
 msgid "Invitations"
 msgstr ""
@@ -616,11 +615,11 @@ msgid "Self registrations"
 msgstr ""
 
 msgid "User Management"
-msgstr ""
+msgstr "ການຈັດການຜູ້ໃຊ້"
 
 msgid "{{count}} selected"
 msgid_plural "{{count}} selected"
-msgstr[0] ""
+msgstr[0] "{{count}}ເລືອກແລ້ວ"
 
 msgid "Yes"
 msgstr "ແມ່ນ"
@@ -629,7 +628,7 @@ msgid "No"
 msgstr "ບໍ່ແມນ"
 
 msgid "Something went wrong when processing your request."
-msgstr ""
+msgstr "ເກີດຂໍ້ຜິດພາດບາງຢ່າງ ໃນຂະນະທີ່ກຳລັງປະມວນຜົນຄຳຮ້ອງຂໍຂອງທ່ານ."
 
 msgid "Validating..."
 msgstr ""
@@ -662,10 +661,10 @@ msgid "Value should be a number"
 msgstr ""
 
 msgid "Value should be a positive integer"
-msgstr ""
+msgstr "ຄ່າຄວນເປັນເລກຖ້ວນບວກ"
 
 msgid "Passwords do not match"
-msgstr ""
+msgstr "ລະຫັດຜ່ານບໍ່ກົງກັນ"
 
 msgid "This field is required"
 msgstr "This field is required"
@@ -701,10 +700,10 @@ msgid "Password should have at least one special character"
 msgstr "ລະຫັດຜ່ານຄວນມີຢ່າງໜ້ອຍໜຶ່ງຕົວອັກສອນພິເສດ"
 
 msgid "Username already taken"
-msgstr ""
+msgstr "ຊື່ຜູ້ໃຊ້ນີ້ຖືກນຳໃຊ້ໄປແລ້ວ"
 
 msgid "There was a problem whilst checking the availability of this username"
-msgstr ""
+msgstr "ເກີດບັນຫາໃນຂະນະທີ່ກວດສອບການນຳໃຊ້ໄດ້ຂອງຊື່ຜູ້ໃຊ້ນີ້"
 
 msgid "{{fieldDisplayName}} is already taken"
 msgstr ""
@@ -713,7 +712,7 @@ msgid "Could not verify if this {{fieldDisplayName}} is unique"
 msgstr ""
 
 msgid "Attribute value needs to be unique, value already taken."
-msgstr ""
+msgstr "ຄ່າຄຸນລັກສະນະຕ້ອງບໍ່ຊ້ຳກັນ, ຄ່ານີ້ຖືກນຳໃຊ້ໄປແລ້ວ."
 
 msgid "There was a problem checking if this attribute value is unique"
 msgstr ""
