@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-05-09T12:36:26.531Z\n"
+"POT-Creation-Date: 2025-10-30T12:12:29.056Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2025\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -84,6 +84,12 @@ msgstr "Kód"
 
 msgid "Used in analytics reports."
 msgstr "Používá se v analytických přehledech."
+
+msgid "Description"
+msgstr "Popis"
+
+msgid "Short, clear description of what this group is for."
+msgstr ""
 
 msgid "Search for a user in this group"
 msgstr "Vyhledejte uživatele v této skupině"
@@ -219,9 +225,6 @@ msgstr "Při aktualizaci role došlo k chybě"
 
 msgid "Error creating role"
 msgstr "Při vytváření role došlo k chybě"
-
-msgid "Description"
-msgstr "Popis"
 
 msgid "Short, clear description of what this role is for."
 msgstr "Krátký a jasný popis toho, k čemu tato role slouží."
@@ -638,7 +641,7 @@ msgid "User groups this user is a member of"
 msgstr "Skupiny uživatelů, jejichž je tento uživatel členem"
 
 msgid "Invalid password"
-msgstr ""
+msgstr "Neplatné heslo"
 
 msgid "Security"
 msgstr "Zabezpečení"
@@ -660,6 +663,9 @@ msgid ""
 "characters long, with at least one lowercase character, one uppercase "
 "character, one number, and one special character."
 msgstr ""
+"Heslo by mělo mít délku od {{minPasswordLength}} do {{maxPasswordLength}} a "
+"obsahovat alespoň jeden malý znak, jeden velký znak, jednu číslici a jeden "
+"speciální znak."
 
 msgid "Repeat new password"
 msgstr "opakujte nové heslo"

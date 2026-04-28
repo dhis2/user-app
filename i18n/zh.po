@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-05-09T12:36:26.531Z\n"
+"POT-Creation-Date: 2025-10-30T12:12:29.056Z\n"
 "PO-Revision-Date: 2019-09-02 16:26+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2025\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -87,6 +87,12 @@ msgstr "代码"
 
 msgid "Used in analytics reports."
 msgstr "用于分析报告。"
+
+msgid "Description"
+msgstr "描述"
+
+msgid "Short, clear description of what this group is for."
+msgstr "简明扼要地说明该小组的作用。"
 
 msgid "Search for a user in this group"
 msgstr "在该组中搜索用户"
@@ -220,9 +226,6 @@ msgstr "更新角色时出错"
 
 msgid "Error creating role"
 msgstr "创建角色时出错"
-
-msgid "Description"
-msgstr "描述"
 
 msgid "Short, clear description of what this role is for."
 msgstr "简短、清晰地描述此角色的用途。"
