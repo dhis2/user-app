@@ -1,3 +1,10 @@
+## [100.11.2](https://github.com/dhis2/user-app/compare/v100.11.1...v100.11.2) (2026-05-11)
+
+
+### Bug Fixes
+
+* update UI library [DHIS2-19573] ([8d7c47e](https://github.com/dhis2/user-app/commit/8d7c47ec53377c4432924ed42e1b83e5326552d6))
+
 ## [100.11.1](https://github.com/dhis2/user-app/compare/v100.11.0...v100.11.1) (2026-04-28)
 
 
