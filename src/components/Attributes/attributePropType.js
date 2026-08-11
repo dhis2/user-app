@@ -10,6 +10,7 @@ const AttributePropType = PropTypes.shape({
             PropTypes.shape({
                 displayName: PropTypes.string.isRequired,
                 id: PropTypes.string.isRequired,
+                code: PropTypes.string,
             }).isRequired
         ).isRequired,
         id: PropTypes.string,

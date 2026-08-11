@@ -63,9 +63,10 @@ const Attribute = ({ attribute, value, entity, entityType }) => {
 
     if (attribute.optionSet) {
         const options = attribute.optionSet.options.map(
-            ({ id, displayName }) => ({
+            ({ id, code, displayName }) => ({
                 label: displayName,
-                value: id,
+                value: code || id,
+                id,
             })
         )
 
@@ -88,9 +89,14 @@ const Attribute = ({ attribute, value, entity, entityType }) => {
             }
 
             const initialValue = parseMultiSelectValue(value)
-            const validInitialValue = initialValue.filter((v) =>
-                options.some((option) => option.value === v)
-            )
+            const validInitialValue = initialValue
+                .map((val) => {
+                    const option = options.find(
+                        (opt) => opt.value === val || opt.id === val
+                    )
+                    return option ? option.value : null
+                })
+                .filter(Boolean)
 
             return (
                 <MultiSelectField
@@ -111,9 +117,10 @@ const Attribute = ({ attribute, value, entity, entityType }) => {
             )
         }
 
-        const initialValue = options.find((option) => option.value === value)
-            ? value
-            : undefined
+        const option = options.find(
+            (opt) => opt.value === value || opt.id === value
+        )
+        const initialValue = option ? option.value : undefined
 
         return (
             <SingleSelectField

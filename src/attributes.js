@@ -5,7 +5,7 @@ const fields = [
     'mandatory',
     'unique',
     'valueType',
-    'optionSet[id,valueType,options[id,displayName]]',
+    'optionSet[id,valueType,options[id,code,displayName]]',
 ]
 
 export const userAttributesQuery = {
