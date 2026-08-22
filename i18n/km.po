@@ -998,7 +998,7 @@ msgid "Disabled"
 msgstr ""
 
 msgid "Active"
-msgstr ""
+msgstr "កំពុងដំណើរការ"
 
 msgid "Male"
 msgstr "ប្រុស"
