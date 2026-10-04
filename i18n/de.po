@@ -1,28 +1,24 @@
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2022
-# channara rin, 2023
-# Philip Larsen Donnelly, 2023
-# Em Le <em.hispvietnam@gmail.com>, 2025
-# Kiry Heng, 2026
+# Brar Piening, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-03-22T08:26:32.388Z\n"
 "PO-Revision-Date: 2022-04-20 11:10+0000\n"
-"Last-Translator: Kiry Heng, 2026\n"
-"Language-Team: Khmer (https://app.transifex.com/hisp-uio/teams/100509/km/)\n"
+"Last-Translator: Brar Piening, 2026\n"
+"Language-Team: German (https://app.transifex.com/hisp-uio/teams/100509/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: km\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Yes"
-msgstr "បាទ/ចាស"
+msgstr ""
 
 msgid "No"
-msgstr "ទេ"
+msgstr ""
 
 msgid "Attribute value needs to be unique, value already taken."
 msgstr ""
@@ -50,10 +46,10 @@ msgid "Send message"
 msgstr ""
 
 msgid "ID"
-msgstr "​លេខ​សម្គាល់"
+msgstr ""
 
 msgid "Filter options"
-msgstr "ជំរើសសម្រាប់ច្រោះមើលទិន្នន័យ"
+msgstr ""
 
 msgid "Error fetching form"
 msgstr ""
@@ -68,10 +64,10 @@ msgid "Basic information"
 msgstr ""
 
 msgid "Name"
-msgstr "ឈ្មោះ"
+msgstr "Name"
 
 msgid "Code"
-msgstr "លេខកូដ"
+msgstr ""
 
 msgid "Used in analytics reports."
 msgstr ""
@@ -94,7 +90,7 @@ msgid ""
 msgstr ""
 
 msgid "Attributes"
-msgstr "លក្ខណៈ (Attributes)"
+msgstr ""
 
 msgid "User group management"
 msgstr ""
@@ -136,7 +132,7 @@ msgid "Add/Update Private"
 msgstr ""
 
 msgid "Delete"
-msgstr "​លុប​"
+msgstr ""
 
 msgid "External access"
 msgstr ""
@@ -148,7 +144,7 @@ msgid "Error creating role"
 msgstr ""
 
 msgid "Description"
-msgstr "ការ​ពិពណ៌នា"
+msgstr ""
 
 msgid "Short, clear description of what this role is for."
 msgstr ""
@@ -203,7 +199,7 @@ msgid "Category Combo"
 msgstr ""
 
 msgid "Category"
-msgstr "ចំណាត់ក្រុម"
+msgstr ""
 
 msgid "Category Option"
 msgstr ""
@@ -221,7 +217,7 @@ msgid "Constant"
 msgstr ""
 
 msgid "Dashboard"
-msgstr "ផ្ទាំងចម្រោះ​សង្ខេបព័ត៌មាន"
+msgstr ""
 
 msgid "Data Element Group Sets"
 msgstr ""
@@ -236,7 +232,7 @@ msgid "Min/max rule"
 msgstr ""
 
 msgid "Data Set"
-msgstr "ទិន្នន័យឈុត"
+msgstr ""
 
 msgid "Data Value"
 msgstr ""
@@ -263,7 +259,7 @@ msgid "Indicator Type"
 msgstr ""
 
 msgid "Indicator"
-msgstr "សួចនាករ"
+msgstr ""
 
 msgid "Legend Set"
 msgstr ""
@@ -284,7 +280,7 @@ msgid "Option Set"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr "ផ្នែក​នៃ​អង្គការ"
+msgstr ""
 
 msgid "Organisation Unit Group Set"
 msgstr ""
@@ -347,7 +343,7 @@ msgid "User Role"
 msgstr ""
 
 msgid "User"
-msgstr ""
+msgstr "Benutzer"
 
 msgid "Validation Rule Group"
 msgstr ""
@@ -421,19 +417,19 @@ msgid "Selected restrictions"
 msgstr ""
 
 msgid "Username"
-msgstr "ឈ្មោះ​គណនី"
+msgstr "Benutzername"
 
 msgid "Email address"
 msgstr ""
 
 msgid "First name"
-msgstr "នាមខ្លួន"
+msgstr ""
 
 msgid "Last name"
-msgstr "នាម​ត្រកូល"
+msgstr ""
 
 msgid "Interface language"
-msgstr "ផ្ទាំងភាសា"
+msgstr ""
 
 msgid "Database language"
 msgstr ""
@@ -448,7 +444,7 @@ msgid "Contact details"
 msgstr ""
 
 msgid "Mobile phone number"
-msgstr "លេខ​ទូរស័ព្ទ​ដៃ"
+msgstr ""
 
 msgid "WhatsApp"
 msgstr ""
@@ -504,7 +500,7 @@ msgid "The organisation units that this user can export and analyse."
 msgstr ""
 
 msgid "Search"
-msgstr "ស្វែងរក"
+msgstr ""
 
 msgid "The organisation that this user can search for and in."
 msgstr ""
@@ -537,10 +533,10 @@ msgid "Change user password"
 msgstr ""
 
 msgid "New password"
-msgstr "ពាក្យ​សម្ងាត់​ថ្មី"
+msgstr "Neues Passwort"
 
 msgid "Password"
-msgstr "ពាក្យ​សម្ងាត់"
+msgstr ""
 
 msgid ""
 "Password should be at least 8 characters long, with at least one lowercase "
@@ -548,7 +544,7 @@ msgid ""
 msgstr ""
 
 msgid "Repeat new password"
-msgstr ""
+msgstr "Neues Passwort wiederholen"
 
 msgid "Repeat password"
 msgstr ""
@@ -623,40 +619,40 @@ msgid "Created"
 msgstr ""
 
 msgid "Introduction"
-msgstr "ការ​ណែនាំ"
+msgstr ""
 
 msgid "Job title"
-msgstr "មុខងារ​"
+msgstr ""
 
 msgid "Works at"
 msgstr ""
 
 msgid "Education"
-msgstr "ការ​អប់រំ"
+msgstr ""
 
 msgid "Interests"
-msgstr "ចំណាប់អារម្មណ៍"
+msgstr ""
 
 msgid "Nationality"
-msgstr "សញ្ជាតិ"
+msgstr ""
 
 msgid "Birthday"
-msgstr "ថ្ងៃកំណើត"
+msgstr ""
 
 msgid "Gender"
-msgstr "ភេទ"
+msgstr ""
 
 msgid "Speaks"
 msgstr ""
 
 msgid "E-mail"
-msgstr "សារ​អេឡិចត្រូនិក"
+msgstr ""
 
 msgid "Organisations units"
 msgstr ""
 
 msgid "User roles"
-msgstr "សិទ្ធិអ្នកប្រើប្រាស់"
+msgstr ""
 
 msgid "Members"
 msgstr ""
@@ -698,7 +694,7 @@ msgid "Edit group"
 msgstr ""
 
 msgid "Save changes"
-msgstr "រក្សាទុកការផ្លាស់ប្តូរ"
+msgstr ""
 
 msgid "Error fetching role"
 msgstr ""
@@ -716,13 +712,13 @@ msgid "There was an error fetching this user."
 msgstr ""
 
 msgid "Show details"
-msgstr "បង្ហាញ​សេចក្ដី​លម្អិត"
+msgstr ""
 
 msgid "Sharing settings"
 msgstr ""
 
 msgid "Edit"
-msgstr "កែសម្រួល​"
+msgstr ""
 
 msgid "Join group"
 msgstr ""
@@ -743,7 +739,7 @@ msgid "Are you sure you want to delete {{- name}}?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr "ទេ, បោះបង់ចោល"
+msgstr ""
 
 msgid "Yes, delete"
 msgstr ""
@@ -776,19 +772,19 @@ msgid "Are you sure you want to leave {{- name}}?"
 msgstr ""
 
 msgid "Yes, leave"
-msgstr "បាទ/ចាស, ចាកចេញ"
+msgstr ""
 
 msgid "User Group Management"
 msgstr ""
 
 msgid "New"
-msgstr "ថ្មី"
+msgstr ""
 
 msgid "Error loading user groups"
 msgstr ""
 
 msgid "No results found"
-msgstr "មិនមានលទ្ធផលបង្ហាញ"
+msgstr ""
 
 msgid "Member?"
 msgstr ""
@@ -810,7 +806,7 @@ msgid "List"
 msgstr ""
 
 msgid "Add"
-msgstr "បន្ថែម"
+msgstr ""
 
 msgid "Page not found."
 msgstr ""
@@ -834,7 +830,7 @@ msgid "Error loading user roles"
 msgstr ""
 
 msgid "Profile"
-msgstr "ជីវប្រវត្តិ"
+msgstr ""
 
 msgid "Replicate"
 msgstr ""
@@ -919,7 +915,7 @@ msgid "Password for new user"
 msgstr ""
 
 msgid "Cancel"
-msgstr "បោះបង់"
+msgstr ""
 
 msgid "Replicate user"
 msgstr ""
@@ -958,7 +954,7 @@ msgid "Show self-registrations"
 msgstr ""
 
 msgid "Clear filters"
-msgstr "លុបចោលការច្រោះមើលទិន្នន័យ"
+msgstr ""
 
 msgid "Org.unit"
 msgstr ""
@@ -970,13 +966,13 @@ msgid "Error loading users"
 msgstr ""
 
 msgid "Status"
-msgstr "ស្ថានភាព"
+msgstr ""
 
 msgid "Disabled"
 msgstr ""
 
 msgid "Active"
-msgstr "កំពុងដំណើរការ"
+msgstr ""
 
 msgid "Something went wrong when processing your request."
 msgstr ""
