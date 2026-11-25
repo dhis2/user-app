@@ -410,7 +410,7 @@
         }
     },
     {
-        "path": "/api/43/attributes?fields=id,displayName,mandatory,unique,valueType,optionSet%5Bid%2CvalueType%2Coptions%5Bid%2CdisplayName%5D%5D&filter=userAttribute%3Aeq%3Atrue&paging=false",
+        "path": "/api/43/attributes?fields=id,displayName,mandatory,unique,valueType,optionSet%5Bid%2CvalueType%2Coptions%5Bid%2Ccode%2CdisplayName%5D%5D&filter=userAttribute%3Aeq%3Atrue&paging=false",
         "featureName": "Show tiles with list and add action to all available sections",
         "static": false,
         "count": 1,
@@ -601,7 +601,7 @@
         }
     },
     {
-        "path": "/api/43/attributes?fields=id,displayName,mandatory,unique,valueType,optionSet%5Bid%2CvalueType%2Coptions%5Bid%2CdisplayName%5D%5D&filter=userGroupAttribute%3Aeq%3Atrue&paging=false",
+        "path": "/api/43/attributes?fields=id,displayName,mandatory,unique,valueType,optionSet%5Bid%2CvalueType%2Coptions%5Bid%2Ccode%2CdisplayName%5D%5D&filter=userGroupAttribute%3Aeq%3Atrue&paging=false",
         "featureName": "Show tiles with list and add action to all available sections",
         "static": false,
         "count": 1,
