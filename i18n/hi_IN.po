@@ -1,4 +1,3 @@
-# 
 # Translators:
 # Siddharth Agarwal, 2025
 # Rohit Wadhwani, 2026
@@ -1069,7 +1068,7 @@ msgid "Female"
 msgstr "महिला"
 
 msgid "Other"
-msgstr ""
+msgstr "दूसरा"
 
 msgid "Created"
 msgstr "बनाया गया"
